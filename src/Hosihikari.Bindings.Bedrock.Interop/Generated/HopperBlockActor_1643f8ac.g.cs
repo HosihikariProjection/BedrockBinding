@@ -465,13 +465,13 @@ public sealed unsafe partial class HopperBlockActor : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainInterlockData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9d9d0a5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9d9d0a5d((void*)__hosihikari_shim_handle);
     }
 
     public int mTickCount
     {
-        get => NativeMethods.TablePtr->C1.hs_get_2f73fef2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_2f73fef2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2f73fef2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2f73fef2((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()

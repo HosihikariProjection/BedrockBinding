@@ -50,9 +50,16 @@ public sealed unsafe partial class StringRequestBody : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_01eafdfb((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const unsigned char' is not supported.", false)]
-    public nint _getLoggableData() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const unsigned char' is not supported.");
+    public byte[] _getLoggableData()
+    {
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_1d0c0a0e((void*)__hosihikari_shim_handle);
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<byte>() : new byte[checked((int)__hs_view.Size)];
+        if (__hs_view.Size > 0)
+        {
+            new global::System.ReadOnlySpan<byte>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
+        }
+        return __hs_result;
+    }
 
     public static StringRequestBody Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.StringRequestBody arg0)
     {
@@ -85,9 +92,16 @@ public sealed unsafe partial class StringRequestBody : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const unsigned char' is not supported.", false)]
-    public nint getLoggableData() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const unsigned char' is not supported.");
+    public byte[] getLoggableData()
+    {
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_d89b91f9((void*)__hosihikari_shim_handle);
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<byte>() : new byte[checked((int)__hs_view.Size)];
+        if (__hs_view.Size > 0)
+        {
+            new global::System.ReadOnlySpan<byte>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
+        }
+        return __hs_result;
+    }
 
 
     public void Dispose()

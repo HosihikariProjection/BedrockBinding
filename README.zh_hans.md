@@ -15,7 +15,7 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 ## 当前状态
 
 - Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,146 个生成的 C# 文件。
-- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 154,443 个函数。
+- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 154,476 个函数。
 - 覆盖：`win-x64-server` 配置绑定 12,080 个声明与 101,068 个成员。
 - `scripts/headers-26.51.txt` 列出解析的 5,199 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
 
@@ -32,6 +32,7 @@ shim 以 `--symbol-dispatch --resolve-by-name` 模式发射。支持的 ABI：
 - 类型未投影的字段以只读 `nint` 暴露字段存储地址，属性名为 `<field>_Address`；
 - `optional_ref<T>` 参数与返回使用存在标志；
 - `std::vector<T>` 参数与按值返回，元素支持标量/枚举、字符串、单层指针（以 `nint[]` 传入），或 layout 已知且平凡析构的 record；引用与指针 vector 返回仍是借用句柄；
+- `gsl::span<T>` 参数与返回：返回的 `{size, pointer}` span 转为数组；标量元素复制为数组，指针与 `gsl::not_null<T*>` 元素为 `nint[]`，平凡析构的 record 元素成为拥有型包装对象；
 - `std::optional<T>` 参数与返回，支持标量、字符串与 trivially copyable record；record payload 使用 layout 兼容的 blob，返回的 record 成为拥有包装；
 - `std::shared_ptr<T>` 参数与返回，由 shim holder 持有一个共享引用；`std::weak_ptr<T>` 返回锁定一次形成强快照，过期时为空。
 

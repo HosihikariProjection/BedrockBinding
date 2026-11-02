@@ -47,9 +47,17 @@ public sealed unsafe partial class NetherFortressFeature : global::System.IDispo
         return (nint)NativeMethods.TablePtr->C2.hs_method_93b7586b((void*)__hosihikari_shim_handle, (void*)seed, (void*)baseGameVersion.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const BiomeIdType' is not supported.", false)]
-    public nint _getRequiredBiomes() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const BiomeIdType' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[] _getRequiredBiomes()
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_db38b74e((void*)__hosihikari_shim_handle);
+        var __hs_items = (void**)__hs_view.Data;
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType>() : new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[checked((int)__hs_view.Size)];
+        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
+        {
+            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_items[__hs_i]);
+        }
+        return __hs_result;
+    }
 
     public bool _isFeatureChunk(global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, uint levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.IPreliminarySurfaceProvider preliminarySurfaceLevel, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
@@ -102,9 +110,17 @@ public sealed unsafe partial class NetherFortressFeature : global::System.IDispo
     public nint createStructureStart(nint generator, nint biomeSource, nint random, nint cp, nint preliminarySurfaceLevel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'StructureStart' has no accessible destructor.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const BiomeIdType' is not supported.", false)]
-    public nint getRequiredBiomes() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const BiomeIdType' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[] getRequiredBiomes()
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_c48d15ba((void*)__hosihikari_shim_handle);
+        var __hs_items = (void**)__hs_view.Data;
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType>() : new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[checked((int)__hs_view.Size)];
+        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
+        {
+            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)__hs_items[__hs_i]);
+        }
+        return __hs_result;
+    }
 
     public bool isFeatureChunk(global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, uint levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.IPreliminarySurfaceProvider preliminarySurfaceLevel, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {

@@ -15,7 +15,7 @@ This branch targets **BDS 1.26.51.1** through the headers of LeviLamina `ee049f1
 ## Current state
 
 - Interop: 9,146 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
-- Binding Shim: 154,443 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
+- Binding Shim: 154,476 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
 - Coverage: 12,080 declarations and 101,068 members bound for `win-x64-server`.
 - `scripts/headers-26.51.txt` lists the 5,199 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
 
@@ -32,6 +32,7 @@ The shim is emitted in `--symbol-dispatch --resolve-by-name` mode. Supported ABI
 - fields whose type is not projected expose the address of the field storage as a read-only `nint` named `<field>_Address`;
 - `optional_ref<T>` parameters and results with the presence flag;
 - `std::vector<T>` parameters and by-value results whose element is a scalar/enum, a string, a single-level pointer (surfacing as `nint[]`), or a trivially destructible record with a recorded layout; reference and pointer vector results remain borrowed handles;
+- `gsl::span<T>` parameters and results: a returned `{size, pointer}` span becomes an array; scalar elements are copied, pointer and `gsl::not_null<T*>` elements surface as `nint[]`, and trivially destructible record elements become owned wrapper objects;
 - `std::optional<T>` parameters and results over scalars, strings, and trivially copyable records; record payloads use a layout-compatible blob and returned records become owned wrappers;
 - `std::shared_ptr<T>` parameters and results, which keep one shared reference alive in a shim holder; `std::weak_ptr<T>` results are locked once into a strong snapshot and surface as null when expired.
 

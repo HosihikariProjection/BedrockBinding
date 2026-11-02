@@ -40,7 +40,7 @@ public sealed unsafe partial class HopperCallbacks : global::System.IDisposable
 
     public static HopperCallbacks Create(global::Hosihikari.Bindings.Bedrock.Interop.HopperCallbacks arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8844f26a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8844f26a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class HopperCallbacks : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint afterAcquireItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ac7136cf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ac7136cf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint beforeAcquireItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7fda1c4b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7fda1c4b((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class HopperCallbacks : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_b4de5636((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b4de5636((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

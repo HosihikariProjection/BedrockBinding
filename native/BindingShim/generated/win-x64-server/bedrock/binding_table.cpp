@@ -114137,6 +114137,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_ab975207(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@AncientCityFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_5daa8685(void* hs_self, void* biomeSource, void* random, void* chunkPos, std::uint32_t levelSeed, void* arg4, void* arg5) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@AncientCityFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -114233,6 +114269,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_1cc65813(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@AncientCityFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_8001669d(void* hs_self, void* biomeSource, void* random, void* chunkPos, std::uint32_t levelSeed, void* arg4, void* arg5) try
@@ -123295,6 +123373,32 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_60beddb5(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getSkeletalHierarchiesToProcess@AnimationComponent@@QEBA?AV?$span@$$CBW4SkeletalHierarchyIndex@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static void hs_method_3e974f3b(void* hs_self) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$setDirty@AnimationComponent@@QEAAXXZ");
@@ -123551,6 +123655,38 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_5f2f11a1(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getSkeletalHierarchiesToProcess@AnimationComponent@@UEBA?AV?$span@$$CBW4SkeletalHierarchyIndex@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[8];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static std::int32_t hs_get_a12368e1(void* hs_self) try
@@ -231940,6 +232076,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_01f8c208(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@BastionFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_87babcd4(void* hs_self, void* biomeSource, void* random, void* chunkPos, std::uint32_t levelSeed, void* arg4, void* arg5) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@BastionFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -232059,6 +232231,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_4003487c(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@BastionFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_bccf2f45(void* hs_self, void* biomeSource, void* random, void* chunkPos, std::uint32_t levelSeed, void* arg4, void* arg5) try
@@ -251206,6 +251420,32 @@ catch (...)
     return;
 }
 
+static HosihikariArrayView hs_method_0fdf3505(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getLoggableData@BinaryRequestBody@Http@Bedrock@@QEBA?AV?$span@$$CBE$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static HosihikariStringView hs_method_a720d514(void* hs_self) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getLoggableSource@BinaryRequestBody@Http@Bedrock@@QEBAAEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@XZ");
@@ -251357,6 +251597,38 @@ catch (...)
 {
     setLastError("unknown native exception");
     return;
+}
+
+static HosihikariArrayView hs_method_bd4affba(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getLoggableData@BinaryRequestBody@Http@Bedrock@@UEBA?AV?$span@$$CBE$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[5];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static HosihikariStringView hs_method_fa9050f6(void* hs_self) try
@@ -252927,6 +253199,33 @@ catch (...)
 {
     setLastError("unknown native exception");
     return;
+}
+
+static HosihikariArrayView hs_method_76a8e2c4(void* hs_self) try
+{
+    auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+    auto const hs_target = hs_vtable[5];
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static HosihikariStringView hs_method_8eacecd0(void* hs_self) try
@@ -254700,6 +254999,32 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_1d0c0a0e(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getLoggableData@StringRequestBody@Http@Bedrock@@QEBA?AV?$span@$$CBE$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static void* hs_create_5b4bb3a1(void* arg0) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "??0StringRequestBody@Http@Bedrock@@QEAA@AEBV012@@Z");
@@ -254753,6 +255078,38 @@ catch (...)
 {
     setLastError("unknown native exception");
     return HosihikariSharedHandle{nullptr, nullptr, nullptr};
+}
+
+static HosihikariArrayView hs_method_d89b91f9(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getLoggableData@StringRequestBody@Http@Bedrock@@UEBA?AV?$span@$$CBE$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[5];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static void hs_destroy_599f45b8(void* hs_self) try
@@ -358724,7 +359081,8 @@ static HosihikariArrayView hs_method_5dfabce9(void* hs_self, void* except, void*
     using HsFn = void (*)(void*, void*, void*, void*, bool, bool);
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_spanStorage), except, bb, useHitbox, getDisplayEntities);
-    return *reinterpret_cast<HosihikariArrayView*>(hs_spanStorage);
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
 }
 catch (std::exception const& hs_error)
 {
@@ -360538,7 +360896,8 @@ static HosihikariArrayView hs_method_34130af8(void* hs_self, void* actorId, void
     using HsFn = void (*)(void*, void*, void*, void*);
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_spanStorage), actorId, bb);
-    return *reinterpret_cast<HosihikariArrayView*>(hs_spanStorage);
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
 }
 catch (std::exception const& hs_error)
 {
@@ -360656,7 +361015,8 @@ static HosihikariArrayView hs_method_92162e84(void* hs_self, void* except, void*
     using HsFn = void (*)(void*, void*, void*, void*, bool, bool);
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_spanStorage), except, bb, useHitbox, getDisplayEntities);
-    return *reinterpret_cast<HosihikariArrayView*>(hs_spanStorage);
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
 }
 catch (std::exception const& hs_error)
 {
@@ -432159,6 +432519,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_0b76bd7e(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@BuriedTreasureFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_3807c5e3(void* hs_self, void* biomeSource, void* random, void* pos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@BuriedTreasureFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -432255,6 +432651,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_40be95d7(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@BuriedTreasureFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_c8a99ff9(void* hs_self, void* biomeSource, void* random, void* pos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
@@ -1033696,7 +1034134,8 @@ static HosihikariArrayView hs_method_16d23913(void* hs_self) try
     using HsFn = void (*)(void*, void*);
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
-    return *reinterpret_cast<HosihikariArrayView*>(hs_spanStorage);
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
 }
 catch (std::exception const& hs_error)
 {
@@ -1168336,7 +1168775,8 @@ static HosihikariArrayView hs_method_9929bdf6(void* hs_self, void* except, void*
     using HsFn = void (*)(void*, void*, void*, void*, bool, bool);
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_spanStorage), except, bb, useHitbox, getDisplayEntities);
-    return *reinterpret_cast<HosihikariArrayView*>(hs_spanStorage);
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
 }
 catch (std::exception const& hs_error)
 {
@@ -1669851,6 +1670291,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_db38b74e(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@NetherFortressFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_9308bd7a(void* hs_self, void* biomeSource, void* random, void* chunkPos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* dimension) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@NetherFortressFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -1669970,6 +1670446,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_c48d15ba(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@NetherFortressFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_ff8602ae(void* hs_self, void* biomeSource, void* random, void* chunkPos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* dimension) try
@@ -1722915,6 +1723433,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_257b99ad(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@OceanMonumentFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_9b19f62b(void* hs_self, void* biomeSource, void* random, void* pos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@OceanMonumentFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -1723087,6 +1723641,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_8d65236f(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@OceanMonumentFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_c3726421(void* hs_self, void* biomeSource, void* random, void* pos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
@@ -1725849,6 +1726445,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_e004ca30(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@OceanRuinFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_7e6d7225(void* hs_self, void* biomeSource, void* random, void* lc, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* dimension) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@OceanRuinFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -1725960,6 +1726592,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_d4323670(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@OceanRuinFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_aff94136(void* hs_self, void* biomeSource, void* random, void* lc, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* dimension) try
@@ -1812746,6 +1813420,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_954cb236(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@PillagerOutpostFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_a6013666(void* hs_self, void* biomeSource, void* random, void* lc, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@PillagerOutpostFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -1812918,6 +1813628,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_edd5867b(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@PillagerOutpostFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_74ed0796(void* hs_self, void* biomeSource, void* random, void* lc, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
@@ -1988241,6 +1988993,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_6ced5b49(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@RandomScatteredLargeFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_637c5f47(void* hs_self, void* biomeSource, void* random, void* pos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* dimension) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@RandomScatteredLargeFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -1988383,6 +1989171,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_e2a38c07(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@RandomScatteredLargeFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_efc6fa93(void* hs_self, void* biomeSource, void* random, void* pos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* dimension) try
@@ -2362480,6 +2363310,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_5430a077(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@ShipwreckFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_499c89a8(void* hs_self, void* biomeSource, void* random, void* pos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* dimension) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@ShipwreckFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -2362576,6 +2363442,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_1a84c0d7(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@ShipwreckFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_1a957d5e(void* hs_self, void* biomeSource, void* random, void* pos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* dimension) try
@@ -2545934,6 +2546842,42 @@ catch (...)
     return;
 }
 
+static HosihikariArrayView hs_method_63b414dc(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@StructureFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static void* hs_method_727661bb(void* hs_self, std::int32_t cellX, std::int32_t cellY, std::int32_t cellZ) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getStructureAt@StructureFeature@@QEAAPEAVStructureStart@@HHH@Z");
@@ -2546133,6 +2547077,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_949c3021(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@StructureFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static void* hs_method_db2f8f88(void* hs_self, std::int32_t cellX, std::int32_t cellY, std::int32_t cellZ) try
@@ -2755547,6 +2756533,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_579b9c1f(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@VillageFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_ecda154f(void* hs_self, void* biomeSource, void* random, void* chunkPos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@VillageFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -2755666,6 +2756688,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_9ff7ed40(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@VillageFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_987a08f2(void* hs_self, void* biomeSource, void* random, void* chunkPos, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
@@ -2835272,6 +2836336,42 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_726dd8f2(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$getRequiredBiomes@WoodlandMansionFeature@@QEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static bool hs_method_fb5a910e(void* hs_self, void* biomeSource, void* random, void* lc, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?$isFeatureChunk@WoodlandMansionFeature@@QEAA_NAEBVBiomeSource@@AEAVRandom@@AEBVChunkPos@@IAEBVIPreliminarySurfaceProvider@@AEBVDimension@@@Z");
@@ -2835391,6 +2836491,48 @@ catch (...)
 {
     setLastError("unknown native exception");
     return nullptr;
+}
+
+static HosihikariArrayView hs_method_da8bd63c(void* hs_self) try
+{
+    static auto const hs_symbol = hs_resolve(std::uintptr_t{0}, "?getRequiredBiomes@WoodlandMansionFeature@@UEBA?AV?$span@$$CBUBiomeIdType@@$0?0@gsl@@XZ");
+    void const* hs_target = hs_symbol;
+    if (hs_target == nullptr)
+    {
+        auto* const hs_vtable = *reinterpret_cast<void***>(hs_self);
+        hs_target = hs_vtable[3];
+    }
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    thread_local std::vector<void*> hs_spanItems;
+    hs_spanItems.clear();
+    hs_spanItems.reserve(hs_span.size);
+    auto const* hs_spanBytes = static_cast<unsigned char const*>(hs_span.data);
+    for (std::size_t hs_i = 0; hs_i < hs_span.size; ++hs_i)
+    {
+        auto* const hs_copy = static_cast<void*>(hs_allocate(static_cast<std::size_t>(2), 2));
+        std::memcpy(hs_copy, hs_spanBytes + hs_i * 2, static_cast<std::size_t>(2));
+        hs_spanItems.push_back(hs_copy);
+    }
+    return HosihikariArrayView{hs_spanItems.data(), hs_spanItems.size()};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
 }
 
 static bool hs_method_ff9313c0(void* hs_self, void* biomeSource, void* random, void* lc, std::uint32_t levelSeed, void* preliminarySurfaceLevel, void* arg5) try
@@ -2898838,6 +2899980,58 @@ catch (...)
     return nullptr;
 }
 
+static HosihikariArrayView hs_method_823fcd53(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?getSpan@Blob@mce@@QEBA?AV?$span@$$CBE$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
+static HosihikariArrayView hs_method_9fb599ee(void* hs_self) try
+{
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?getSpan@Blob@mce@@QEAA?AV?$span@E$0?0@gsl@@XZ");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return HosihikariArrayView{nullptr, 0};
+    }
+    alignas(8) unsigned char hs_spanStorage[sizeof(HosihikariArrayView)];
+    using HsFn = void (*)(void*, void*);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    hs_fn(hs_self, static_cast<void*>(hs_spanStorage));
+    auto const& hs_span = *reinterpret_cast<HosihikariSpanView const*>(hs_spanStorage);
+    return HosihikariArrayView{hs_span.data, hs_span.size};
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return HosihikariArrayView{nullptr, 0};
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return HosihikariArrayView{nullptr, 0};
+}
+
 static std::uint64_t hs_method_62e77b1e(void* hs_self) try
 {
     static auto const hs_target = hs_resolve(std::uintptr_t{0}, "?max_size@Blob@mce@@QEBA_KXZ");
@@ -2961600,10 +2962794,12 @@ const HosihikariBindingTableV1 kTable{
     &hs_method_89c5d8ed,
     &hs_destroy_6a0ad146,
     &hs_method_cc530071,
+    &hs_method_ab975207,
     &hs_method_5daa8685,
     &hs_create_ff399b37,
     &hs_create_d2a7324c,
     &hs_create_b59b5673,
+    &hs_method_1cc65813,
     &hs_method_8001669d,
     &hs_get_507ad328,
     &hs_get_aaa193e7,
@@ -2962112,6 +2963308,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_method_b8ee5474,
     &hs_method_2f98a74c,
     &hs_method_3a707706,
+    &hs_method_60beddb5,
     &hs_method_3e974f3b,
     &hs_method_3fa160e6,
     &hs_method_4b1dd40a,
@@ -2962122,6 +2963319,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_method_616d9dfe,
     &hs_method_1833ac22,
     &hs_method_c8ab8ecb,
+    &hs_method_5f2f11a1,
     &hs_get_a12368e1,
     &hs_set_a12368e1,
     &hs_get_4ec84b05,
@@ -2967724,11 +2968922,13 @@ const HosihikariBindingTableV1 kTable{
     &hs_set_2d311ebd,
     &hs_destroy_81b6150a,
     &hs_method_46941452,
+    &hs_method_01f8c208,
     &hs_method_87babcd4,
     &hs_method_0ddf4c4e,
     &hs_create_89e2a7ce,
     &hs_create_36ccc8fc,
     &hs_create_5b74f6fe,
+    &hs_method_4003487c,
     &hs_method_bccf2f45,
     &hs_get_6f071ccd,
     &hs_method_3543ed9b,
@@ -2968771,12 +2969971,14 @@ const HosihikariBindingTableV1 kTable{
     &hs_method_c882605d,
     &hs_destroy_3ff85556,
     &hs_method_c155ce14,
+    &hs_method_0fdf3505,
     &hs_method_a720d514,
     &hs_method_775e7a0c,
     &hs_method_0417ade0,
     &hs_create_bd5f42d3,
     &hs_create_bba681a8,
     &hs_method_64bd4614,
+    &hs_method_bd4affba,
     &hs_method_fa9050f6,
     &hs_method_bb68d28d,
     &hs_get_18409372,
@@ -2968848,6 +2970050,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_destroy_2fe6670f,
     &hs_create_ea9a42d7,
     &hs_method_d5290180,
+    &hs_method_76a8e2c4,
     &hs_method_8eacecd0,
     &hs_method_e59eeb09,
     &hs_method_a0aaedf4,
@@ -2968933,8 +2970136,10 @@ const HosihikariBindingTableV1 kTable{
     &hs_destroy_06dc6b34,
     &hs_get_c17e0899,
     &hs_get_01eafdfb,
+    &hs_method_1d0c0a0e,
     &hs_create_5b4bb3a1,
     &hs_method_dbdd707f,
+    &hs_method_d89b91f9,
     &hs_destroy_599f45b8,
     &hs_method_f932aae9,
     &hs_method_f0909d53,
@@ -2977966,10 +2979171,12 @@ const HosihikariBindingTableV1 kTable{
     &hs_set_1c5b5a5e,
     &hs_destroy_b2a9cac9,
     &hs_method_af9b2457,
+    &hs_method_0b76bd7e,
     &hs_method_3807c5e3,
     &hs_create_e31196d3,
     &hs_create_d5dbc004,
     &hs_create_7b9c6b0c,
+    &hs_method_40be95d7,
     &hs_method_c8a99ff9,
     &hs_get_2af1a7e4,
     &hs_get_cb7219ca,
@@ -3042573,11 +3043780,13 @@ const HosihikariBindingTableV1 kTable{
     &hs_method_bf2fb9b5,
     &hs_destroy_9ce9392e,
     &hs_method_93b7586b,
+    &hs_method_db38b74e,
     &hs_method_9308bd7a,
     &hs_method_9328d259,
     &hs_create_4dd32444,
     &hs_create_a4de15e1,
     &hs_create_6b5a6d4b,
+    &hs_method_c48d15ba,
     &hs_method_ff8602ae,
     &hs_get_9d5beb7b,
     &hs_method_1846eefa,
@@ -3045334,6 +3046543,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_get_420b63fb,
     &hs_destroy_89ffba29,
     &hs_method_2e5c7a0a,
+    &hs_method_257b99ad,
     &hs_method_9b19f62b,
     &hs_method_49283c25,
     &hs_method_d17cbe58,
@@ -3045342,6 +3046552,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_create_10661a98,
     &hs_get_48b5878d,
     &hs_get_b2c977ea,
+    &hs_method_8d65236f,
     &hs_method_c3726421,
     &hs_get_d2fcd58f,
     &hs_set_d2fcd58f,
@@ -3045487,11 +3046698,13 @@ const HosihikariBindingTableV1 kTable{
     &hs_set_84158160,
     &hs_destroy_d9570727,
     &hs_method_355f2b32,
+    &hs_method_e004ca30,
     &hs_method_7e6d7225,
     &hs_create_bd972630,
     &hs_create_18bb6411,
     &hs_create_c913f0e1,
     &hs_get_50d9d519,
+    &hs_method_d4323670,
     &hs_method_aff94136,
     &hs_get_3d8c365a,
     &hs_get_b1b484bd,
@@ -3050366,6 +3051579,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_method_2680ac46,
     &hs_destroy_d87d7680,
     &hs_method_3ba4522c,
+    &hs_method_954cb236,
     &hs_method_a6013666,
     &hs_method_f9d67201,
     &hs_method_8f6d4fbf,
@@ -3050374,6 +3051588,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_create_c57a212f,
     &hs_create_1e1185ac,
     &hs_create_4f52ebb2,
+    &hs_method_edd5867b,
     &hs_method_74ed0796,
     &hs_get_339b4447,
     &hs_method_4bbaa49c,
@@ -3059525,12 +3060740,14 @@ const HosihikariBindingTableV1 kTable{
     &hs_get_5c682974,
     &hs_destroy_5f5868bb,
     &hs_method_1e63a2f3,
+    &hs_method_6ced5b49,
     &hs_method_637c5f47,
     &hs_method_429ea5ab,
     &hs_method_7f463e86,
     &hs_create_862bc12f,
     &hs_create_f35ab857,
     &hs_create_b6876c78,
+    &hs_method_e2a38c07,
     &hs_method_efc6fa93,
     &hs_get_1fb7d529,
     &hs_get_68dbaece,
@@ -3078495,10 +3079712,12 @@ const HosihikariBindingTableV1 kTable{
     &hs_set_bb2d5bef,
     &hs_destroy_66f10468,
     &hs_method_f6e38d2a,
+    &hs_method_5430a077,
     &hs_method_499c89a8,
     &hs_create_c3d92034,
     &hs_create_0d821ee6,
     &hs_create_e4864e42,
+    &hs_method_1a84c0d7,
     &hs_method_1a957d5e,
     &hs_get_2cd231d7,
     &hs_get_57e66084,
@@ -3088638,6 +3089857,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_destroy_96a09b3a,
     &hs_method_aa28492b,
     &hs_method_70ddbddf,
+    &hs_method_63b414dc,
     &hs_method_727661bb,
     &hs_method_0774efab,
     &hs_method_f2320b10,
@@ -3088646,6 +3089866,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_create_deb6ec7c,
     &hs_method_ba202a54,
     &hs_method_4afc6441,
+    &hs_method_949c3021,
     &hs_method_db2f8f88,
     &hs_method_d28e1071,
     &hs_get_a9281ae3,
@@ -3099648,11 +3100869,13 @@ const HosihikariBindingTableV1 kTable{
     &hs_get_3c7218ce,
     &hs_set_3c7218ce,
     &hs_method_30e24614,
+    &hs_method_579b9c1f,
     &hs_method_ecda154f,
     &hs_method_119289c9,
     &hs_create_44cda593,
     &hs_create_792fb022,
     &hs_create_2a5c9148,
+    &hs_method_9ff7ed40,
     &hs_method_987a08f2,
     &hs_get_c072b123,
     &hs_get_6550aa91,
@@ -3104283,11 +3105506,13 @@ const HosihikariBindingTableV1 kTable{
     &hs_get_ace3437a,
     &hs_set_ace3437a,
     &hs_method_07481fe5,
+    &hs_method_726dd8f2,
     &hs_method_fb5a910e,
     &hs_method_b2c59508,
     &hs_create_311146ba,
     &hs_create_84b31944,
     &hs_create_d3934d54,
+    &hs_method_da8bd63c,
     &hs_method_ff9313c0,
     &hs_get_04c88445,
     &hs_get_d84d6051,
@@ -3107622,6 +3108847,8 @@ const HosihikariBindingTableV1 kTable{
     &hs_method_6ccebd18,
     &hs_method_aa898d5a,
     &hs_method_24c2c917,
+    &hs_method_823fcd53,
+    &hs_method_9fb599ee,
     &hs_method_62e77b1e,
     &hs_method_68934cf4,
     &hs_method_b747da03,

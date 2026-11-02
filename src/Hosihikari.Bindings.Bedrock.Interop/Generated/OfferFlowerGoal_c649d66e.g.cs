@@ -41,19 +41,19 @@ public sealed unsafe partial class OfferFlowerGoal : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9231e534((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9231e534((void*)__hosihikari_shim_handle);
     }
 
     public int mRequiredControlFlags
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c980cb33((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c980cb33((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c980cb33((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c980cb33((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort mTypeId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_26d54ef4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_26d54ef4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_26d54ef4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_26d54ef4((void*)__hosihikari_shim_handle, value);
     }
 
     public string _appendDebugInfo(string str)
@@ -71,19 +71,19 @@ public sealed unsafe partial class OfferFlowerGoal : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(str, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C2.hs_method_290fa695((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_view = NativeMethods.TablePtr->C3.hs_method_290fa695((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
 
     public bool _canContinueToUse()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7951ae15((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_7951ae15((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _canUse()
     {
-        return NativeMethods.TablePtr->C2.hs_method_1d782e8e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_1d782e8e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, string name, nint goalId)
@@ -101,7 +101,7 @@ public sealed unsafe partial class OfferFlowerGoal : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C2.hs_method_e13fe7a3((void*)__hosihikari_shim_handle, (void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId);
+            return (nint)NativeMethods.TablePtr->C3.hs_method_e13fe7a3((void*)__hosihikari_shim_handle, (void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId);
         }
     }
 
@@ -278,7 +278,7 @@ public sealed unsafe partial class OfferFlowerGoal : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c649d66e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c649d66e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

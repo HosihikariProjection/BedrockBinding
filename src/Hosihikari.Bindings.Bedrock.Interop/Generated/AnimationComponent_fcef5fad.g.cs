@@ -58,9 +58,16 @@ public sealed unsafe partial class AnimationComponent : global::System.IDisposab
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)__hs_handle, false) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const SkeletalHierarchyIndex' is not supported.", false)]
-    public nint _getSkeletalHierarchiesToProcess() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const SkeletalHierarchyIndex' is not supported.");
+    public int[] _getSkeletalHierarchiesToProcess()
+    {
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_60beddb5((void*)__hosihikari_shim_handle);
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<int>() : new int[checked((int)__hs_view.Size)];
+        if (__hs_view.Size > 0)
+        {
+            new global::System.ReadOnlySpan<int>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
+        }
+        return __hs_result;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void _initializeClientAnimationComponent(nint animationComponentInitFunction) =>
@@ -142,9 +149,16 @@ public sealed unsafe partial class AnimationComponent : global::System.IDisposab
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)__hs_handle, false) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const SkeletalHierarchyIndex' is not supported.", false)]
-    public nint getSkeletalHierarchiesToProcess() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const SkeletalHierarchyIndex' is not supported.");
+    public int[] getSkeletalHierarchiesToProcess()
+    {
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_5f2f11a1((void*)__hosihikari_shim_handle);
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<int>() : new int[checked((int)__hs_view.Size)];
+        if (__hs_view.Size > 0)
+        {
+            new global::System.ReadOnlySpan<int>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
+        }
+        return __hs_result;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void initializeClientAnimationComponent(nint animationComponentInitFunction) =>

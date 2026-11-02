@@ -41,19 +41,19 @@ public sealed unsafe partial class HopperComponent : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mCallbacks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f50f91f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f50f91f5((void*)__hosihikari_shim_handle);
     }
 
     public int mCooldownTime
     {
-        get => NativeMethods.TablePtr->C1.hs_get_5af4550a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_5af4550a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_5af4550a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_5af4550a((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsEntity
     {
-        get => NativeMethods.TablePtr->C1.hs_get_e7e5b1b5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_e7e5b1b5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e7e5b1b5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_e7e5b1b5((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMoveCooldownTime
@@ -103,7 +103,7 @@ public sealed unsafe partial class HopperComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f1e750a3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f1e750a3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

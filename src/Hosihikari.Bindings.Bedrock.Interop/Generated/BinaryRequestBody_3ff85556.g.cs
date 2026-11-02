@@ -43,9 +43,16 @@ public sealed unsafe partial class BinaryRequestBody : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_c155ce14((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const unsigned char' is not supported.", false)]
-    public nint _getLoggableData() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const unsigned char' is not supported.");
+    public byte[] _getLoggableData()
+    {
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_0fdf3505((void*)__hosihikari_shim_handle);
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<byte>() : new byte[checked((int)__hs_view.Size)];
+        if (__hs_view.Size > 0)
+        {
+            new global::System.ReadOnlySpan<byte>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
+        }
+        return __hs_result;
+    }
 
     public string _getLoggableSource()
     {
@@ -97,9 +104,16 @@ public sealed unsafe partial class BinaryRequestBody : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_64bd4614((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const unsigned char' is not supported.", false)]
-    public nint getLoggableData() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const unsigned char' is not supported.");
+    public byte[] getLoggableData()
+    {
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_bd4affba((void*)__hosihikari_shim_handle);
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<byte>() : new byte[checked((int)__hs_view.Size)];
+        if (__hs_view.Size > 0)
+        {
+            new global::System.ReadOnlySpan<byte>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
+        }
+        return __hs_result;
+    }
 
     public string getLoggableSource()
     {
