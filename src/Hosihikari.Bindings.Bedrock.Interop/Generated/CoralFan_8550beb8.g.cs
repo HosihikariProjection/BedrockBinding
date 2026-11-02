@@ -458,17 +458,6 @@ public sealed unsafe partial class CoralFan : global::System.IDisposable
         return new CoralFan((nint)handle);
     }
 
-    public static CoralFan Create(global::Hosihikari.Bindings.Bedrock.Interop.CoralFan arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_054c4d07((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CoralFan((nint)handle);
-    }
-
     public static CoralFan Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.HashedString deadVersion)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

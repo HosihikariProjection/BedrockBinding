@@ -692,10 +692,10 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_6cad29ab((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C3.hs_get_4a1b433d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_4a1b433d((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9996cd25((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -1395,7 +1395,7 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_2767c779((void*)__hosihikari_shim_handle, (void*)position.Handle, minDistance);
     }
 
-    public void _addChunksToQueue(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] chunkPostions)
+    public void _addChunksToQueue(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] chunkPostions, bool isBiomeUpdate)
     {
         var __hs_vectorItems0 = chunkPostions;
         var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
@@ -1406,7 +1406,7 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            NativeMethods.TablePtr->C3.hs_method_5fbde36f((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(chunkPostions?.Length ?? 0));
+            NativeMethods.TablePtr->C3.hs_method_f8b37ba8((void*)__hosihikari_shim_handle, isBiomeUpdate, __hs_vectorData0, (nuint)(chunkPostions?.Length ?? 0));
         }
     }
 
@@ -1645,11 +1645,6 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
                 }
             }
         }
-    }
-
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_426c36f5((void*)__hosihikari_shim_handle);
     }
 
     public void _frameUpdate(nint arg0)
@@ -1920,6 +1915,11 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_428a3ddd((void*)__hosihikari_shim_handle, option1, option2, option3, option4);
     }
 
+    public void _logPartyState()
+    {
+        NativeMethods.TablePtr->C3.hs_method_e6beb3ba((void*)__hosihikari_shim_handle);
+    }
+
     public void _removeNearbyEntities()
     {
         NativeMethods.TablePtr->C3.hs_method_4a11b576((void*)__hosihikari_shim_handle);
@@ -1945,7 +1945,7 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_90ba70a4((void*)__hosihikari_shim_handle, (void*)(actor?.Handle ?? 0), autonomous);
     }
 
-    public void addChunksToQueue(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] chunkPostions)
+    public void addChunksToQueue(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] chunkPostions, bool isBiomeUpdate)
     {
         var __hs_vectorItems0 = chunkPostions;
         var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
@@ -1956,7 +1956,7 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            NativeMethods.TablePtr->C3.hs_method_b37e8f07((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(chunkPostions?.Length ?? 0));
+            NativeMethods.TablePtr->C3.hs_method_4a5d3224((void*)__hosihikari_shim_handle, isBiomeUpdate, __hs_vectorData0, (nuint)(chunkPostions?.Length ?? 0));
         }
     }
 

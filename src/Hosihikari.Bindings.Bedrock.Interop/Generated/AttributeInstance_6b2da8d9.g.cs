@@ -79,14 +79,14 @@ public sealed unsafe partial class AttributeInstance : global::System.IDisposabl
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __ec4134dd
+    public nint __d8a93d5a
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: anonymous fields are not projected.", false)]
-    public nint __df88a3c9
+    public nint __1812af4c
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
@@ -107,20 +107,16 @@ public sealed unsafe partial class AttributeInstance : global::System.IDisposabl
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.", false)]
-    public void addModifier_b6bbd7f6(nint modifier, nint context) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.", false)]
-    public void addModifier_5ddb29b4(nint modifier, nint context) =>
+    public void addModifier(nint modifier, nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'AttributeModifier' is not supported.", false)]
     public nint getModifiers() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'AttributeModifier' is not supported.");
 
-    public bool hasModifier(global::Hosihikari.Bindings.Abi.SharedHandle? modifier)
+    public bool hasModifier(global::Hosihikari.Bindings.Bedrock.Interop.AttributeModifier modifier)
     {
-        return NativeMethods.TablePtr->C0.hs_method_a8aaf52c((void*)__hosihikari_shim_handle, modifier?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_3f28ced4((void*)__hosihikari_shim_handle, (void*)modifier.Handle) != 0;
     }
 
     public nint mAttribute
@@ -174,10 +170,6 @@ public sealed unsafe partial class AttributeInstance : global::System.IDisposabl
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.", false)]
     public void removeModifier_73aadb54(nint modifier, nint context) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.", false)]
-    public void removeModifier_dc49f833(nint modifier, nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeModificationContext' is not a known bindable declaration.", false)]

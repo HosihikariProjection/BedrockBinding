@@ -460,17 +460,6 @@ public sealed unsafe partial class ShulkerBoxBlock : global::System.IDisposable
         return new ShulkerBoxBlock((nint)handle);
     }
 
-    public static ShulkerBoxBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ShulkerBoxBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4f15ffe8((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ShulkerBoxBlock((nint)handle);
-    }
-
     public static ShulkerBoxBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

@@ -44,6 +44,11 @@ public sealed unsafe partial class FireResistantItemComponent : global::System.I
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C4.hs_method_715b5d09((void*)ctx.Handle);
+    }
+
     public bool mValue
     {
         get => NativeMethods.TablePtr->C4.hs_get_a51b3087((void*)__hosihikari_shim_handle) != 0;

@@ -181,10 +181,10 @@ public sealed unsafe partial class PickupItemsGoal : global::System.IDisposable
     public nint _filterValidTargets(nint entities) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'WeakEntityRef' is not supported.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Shareable? _getShareableItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.ShareableComponentDefinition_Nested.ShareableData? _getShareableItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_713189ca((void*)__hosihikari_shim_handle, (void*)item.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Shareable((nint)__hs_handle, false) : null;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b840b09f((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.ShareableComponentDefinition_Nested.ShareableData((nint)__hs_handle, false) : null;
     }
 
     public bool _hasRoomForCarriedItem()

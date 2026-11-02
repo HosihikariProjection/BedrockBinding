@@ -65,11 +65,6 @@ public sealed unsafe partial class ImpactDamageSubcomponentDefinition : global::
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_e90a0e1a((void*)ctx.Handle);
-    }
-
     public string getName()
     {
         var __hs_view = NativeMethods.TablePtr->C4.hs_method_b0d7ca05((void*)__hosihikari_shim_handle);

@@ -399,7 +399,7 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
         return NativeMethods.TablePtr->C3.hs_method_09be76e0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id)
+    public nint _ctor(string nameId, int id, int connectionUpdateFlags)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -414,13 +414,18 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_2bb5b197((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            return (nint)NativeMethods.TablePtr->C3.hs_method_ab743724((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, connectionUpdateFlags);
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C3.hs_method_1722ef2d((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block _getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_752225cd((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue), false);
     }
 
     public bool _mayPlace(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -431,6 +436,21 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
     public void _neighborChanged(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos neighborPos)
     {
         NativeMethods.TablePtr->C3.hs_method_3d692dd5((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)neighborPos.Handle);
+    }
+
+    public void _onRemove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        NativeMethods.TablePtr->C3.hs_method_2c4d1398((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public void _onStructureBlockPlace(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        NativeMethods.TablePtr->C3.hs_method_8150f99d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_60675254((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -458,18 +478,7 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
         return new RedStoneWireBlock((nint)handle);
     }
 
-    public static RedStoneWireBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.RedStoneWireBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_88e70371((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RedStoneWireBlock((nint)handle);
-    }
-
-    public static RedStoneWireBlock Create(string nameId, int id)
+    public static RedStoneWireBlock Create(string nameId, int id, int connectionUpdateFlags)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -484,7 +493,7 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C3.hs_create_6db288d2(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            var handle = NativeMethods.TablePtr->C3.hs_create_d6755f97(__hs_stringData0, (nuint)__hs_stringByteCount0, id, connectionUpdateFlags);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -497,6 +506,16 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
     public void _onRedstoneUpdate(nint blockEvent)
     {
         NativeMethods.TablePtr->C3.hs_method_9efe2748((void*)__hosihikari_shim_handle, (void*)blockEvent);
+    }
+
+    public static bool _shouldUpdateConnectionShapes(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_3e931ef8((void*)region.Handle, (void*)pos.Handle) != 0;
+    }
+
+    public void _updateIndirectConnectionShapes(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isBeingRemoved)
+    {
+        NativeMethods.TablePtr->C3.hs_method_5b4004ac((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, isBeingRemoved);
     }
 
     public void animateTickBedrockLegacy(nint tickData)
@@ -519,9 +538,24 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
         return NativeMethods.TablePtr->C3.hs_method_65c0de7a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
+    public static int computeWireSideShape(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte direction)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_7e0401ca((void*)region.Handle, (void*)pos.Handle, direction);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C3.hs_method_05402023((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_05bb1ba0((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue), false);
+    }
+
+    public int mConnectionUpdateFlags
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_a4d286f9((void*)__hosihikari_shim_handle);
     }
 
     public bool mayPlace(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -539,6 +573,21 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
         NativeMethods.TablePtr->C3.hs_method_5794bd5d((void*)__hosihikari_shim_handle, (void*)eventData);
     }
 
+    public void onRemove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        NativeMethods.TablePtr->C3.hs_method_1d904200((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public void onStructureBlockPlace(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        NativeMethods.TablePtr->C3.hs_method_eb58b37e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_b04c050d((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C3.hs_method_aeaafa4b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -552,6 +601,11 @@ public sealed unsafe partial class RedStoneWireBlock : global::System.IDisposabl
     public void tick(nint eventData)
     {
         NativeMethods.TablePtr->C3.hs_method_d6f7e459((void*)__hosihikari_shim_handle, (void*)eventData);
+    }
+
+    public void updateConnectionShape(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        NativeMethods.TablePtr->C3.hs_method_df72af69((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
 

@@ -13,5 +13,6 @@ public enum ResourceType : int
     ClientScriptAddOn = 4,
     Mandatory = 5,
     WorldTemplate = 6,
-    Count = 7,
+    AppScriptAddOn = 7,
+    Count = 8,
 }

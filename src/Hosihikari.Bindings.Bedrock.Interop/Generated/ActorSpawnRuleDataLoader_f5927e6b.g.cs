@@ -38,36 +38,9 @@ public sealed unsafe partial class ActorSpawnRuleDataLoader : global::System.IDi
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, nint packLoadContext, nint spawnPlacements)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_f9584657((void*)__hosihikari_shim_handle, (void*)ctx.Handle, (void*)packLoadContext, (void*)spawnPlacements);
-    }
-
-    public static ActorSpawnRuleDataLoader Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_eaeb9dc6();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorSpawnRuleDataLoader((nint)handle);
-    }
-
     public static ActorSpawnRuleDataLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleDataLoader arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5c25cf28((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorSpawnRuleDataLoader((nint)handle);
-    }
-
-    public static ActorSpawnRuleDataLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, nint packLoadContext, nint spawnPlacements)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_00b53dfe((void*)ctx.Handle, (void*)packLoadContext, (void*)spawnPlacements);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

@@ -70,6 +70,31 @@ public sealed unsafe partial class ClassRegistry : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_0028902e((void*)__hosihikari_shim_handle, (void*)allProperties, (void*)classBinding.Handle);
     }
 
+    public nint findClassByType(nint type)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_62543c55((void*)__hosihikari_shim_handle, (void*)type);
+    }
+
+    public nint findClassByTypeOrBase(nint type)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_18014e7f((void*)__hosihikari_shim_handle, (void*)type);
+    }
+
+    public nint findEnumByType(nint type)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_0d15df9f((void*)__hosihikari_shim_handle, (void*)type);
+    }
+
+    public nint findErrorByType(nint type)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_301a4e04((void*)__hosihikari_shim_handle, (void*)type);
+    }
+
+    public nint findInterfaceByType(nint type)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_d7488b0c((void*)__hosihikari_shim_handle, (void*)type);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo? getNameForType(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ResolvedTypes resolvedTypes, nint type, bool allowUnknownTypes)
     {
         var __hs_hasValue = false;

@@ -51,9 +51,9 @@ public sealed unsafe partial class RemoteConnector : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_338f703c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ceb988ae((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -62,10 +62,41 @@ public sealed unsafe partial class RemoteConnector : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9b25ec9a((void*)__hosihikari_shim_handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: parameter type 'brstd::copyable_function<bool () const>' is not supported.", false)]
+    public nint _ctor(nint callbacks, nint isNetworkAllowed) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'brstd::copyable_function<bool () const>' is not supported.");
+
     public void _dtor()
     {
         NativeMethods.TablePtr->C3.hs_method_c2176d76((void*)__hosihikari_shim_handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftableForConnector() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftableForEnableNonOwnerReferences() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftableForNetworkEnableDisableListener() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static RemoteConnector Create()
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_44712b13();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new RemoteConnector((nint)handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: parameter type 'brstd::copyable_function<bool () const>' is not supported.", false)]
+    public static RemoteConnector Create(nint callbacks, nint isNetworkAllowed) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'brstd::copyable_function<bool () const>' is not supported.");
 
     public static RemoteConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.RemoteConnector arg0)
     {

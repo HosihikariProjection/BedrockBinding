@@ -778,10 +778,10 @@ public sealed unsafe partial class Camel : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_d6af46d2((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C0.hs_get_b7380d27((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_b7380d27((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_f6bd2dab((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

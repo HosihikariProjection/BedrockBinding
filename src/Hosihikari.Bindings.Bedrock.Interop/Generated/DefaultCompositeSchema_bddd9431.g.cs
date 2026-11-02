@@ -63,10 +63,6 @@ public sealed unsafe partial class DefaultCompositeSchema : global::System.IDisp
         return NativeMethods.TablePtr->C5.hs_method_919c6928((void*)__hosihikari_shim_handle, (void*)ctx, (void*)type) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.", false)]
-    public nint makeDescriptionForType(nint ctx, nint type, nint config) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.");
-
 
     public void Dispose()
     {

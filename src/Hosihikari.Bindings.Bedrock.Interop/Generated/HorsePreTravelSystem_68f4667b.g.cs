@@ -38,6 +38,11 @@ public sealed unsafe partial class HorsePreTravelSystem : global::System.IDispos
         return __hs_handle;
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createHorsePreTravelSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_c64e2a8b());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

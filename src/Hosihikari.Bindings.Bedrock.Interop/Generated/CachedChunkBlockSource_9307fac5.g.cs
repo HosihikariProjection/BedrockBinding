@@ -70,11 +70,6 @@ public sealed unsafe partial class CachedChunkBlockSource : global::System.IDisp
         return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_703435bb((void*)__hosihikari_shim_handle, (void*)position.Handle), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getLiquidBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_eb039b6a((void*)__hosihikari_shim_handle, (void*)position.Handle), false);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.Material getMaterial(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Material((nint)NativeMethods.TablePtr->C0.hs_method_6f11816f((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);

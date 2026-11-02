@@ -120,7 +120,7 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
 
     public bool calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C3.hs_method_89ae1059((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ebe8f70b((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponent_Nested.BlockPlacementContext getBlockPlacementContext(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)

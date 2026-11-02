@@ -82,35 +82,6 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_a660ca32((void*)__hosihikari_shim_handle);
     }
 
-    public void _reinit(global::Hosihikari.Bindings.Bedrock.Interop.Block block, int count)
-    {
-        NativeMethods.TablePtr->C2.hs_method_bb351bbd((void*)__hosihikari_shim_handle, (void*)block.Handle, count);
-    }
-
-    public void _reinit(global::Hosihikari.Bindings.Bedrock.Interop.Item item, int count, int auxValue)
-    {
-        NativeMethods.TablePtr->C2.hs_method_98094038((void*)__hosihikari_shim_handle, (void*)item.Handle, count, auxValue);
-    }
-
-    public void _reinit(string name, int count, int auxValue)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C2.hs_method_a5db5216((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, count, auxValue);
-        }
-    }
-
     public void _setNull(string? reason)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(reason ?? string.Empty);
@@ -154,17 +125,6 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase_Nested.ComparisonOptions COMPARISONOPTIONS_RELEVANTUSERDATA()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase_Nested.ComparisonOptions((nint)NativeMethods.TablePtr->C2.hs_method_e9d04c3d(), false);
-    }
-
-    public static ItemStackBase Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3742976e();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ItemStackBase((nint)handle);
     }
 
     public static ItemStackBase Create(global::Hosihikari.Bindings.Bedrock.Interop.Block block, int count, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _userData)
@@ -381,11 +341,6 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_44fcbdb7((void*)__hosihikari_shim_handle, (void*)item.Handle);
     }
 
-    public bool _setItem(int id, bool doRemap)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_30b1306f((void*)__hosihikari_shim_handle, id, doRemap) != 0;
-    }
-
     public void _updateCompareHashes()
     {
         NativeMethods.TablePtr->C2.hs_method_90e3e3e2((void*)__hosihikari_shim_handle);
@@ -584,11 +539,6 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_cd1ed460((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
-    public bool hasTag(global::Hosihikari.Bindings.Bedrock.Interop.ItemTag @string)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_18c5e6f5((void*)__hosihikari_shim_handle, (void*)@string.Handle) != 0;
-    }
-
     public bool hurtAndBreak(int deltaDamage, global::Hosihikari.Bindings.Bedrock.Interop.Actor? owner)
     {
         return NativeMethods.TablePtr->C2.hs_method_064d8f0a((void*)__hosihikari_shim_handle, deltaDamage, (void*)(owner?.Handle ?? 0)) != 0;
@@ -602,11 +552,6 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
     public void init(global::Hosihikari.Bindings.Bedrock.Interop.Item item, int count, int auxValue, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData, bool doRemap)
     {
         NativeMethods.TablePtr->C2.hs_method_7bd24239((void*)__hosihikari_shim_handle, (void*)item.Handle, count, auxValue, (void*)(userData?.Handle ?? 0), doRemap);
-    }
-
-    public void init(int id, int count_, int aux_, bool doRemap)
-    {
-        NativeMethods.TablePtr->C2.hs_method_94955317((void*)__hosihikari_shim_handle, id, count_, aux_, doRemap);
     }
 
     public bool isArmorItem()
@@ -960,11 +905,6 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
         {
             NativeMethods.TablePtr->C2.hs_method_9dde0a2b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, reason is not null);
         }
-    }
-
-    public void setPickupTime()
-    {
-        NativeMethods.TablePtr->C2.hs_method_5ff538fd((void*)__hosihikari_shim_handle);
     }
 
     public void setRepairCost(int cost)

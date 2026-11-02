@@ -428,17 +428,6 @@ public sealed unsafe partial class FurnaceBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static FurnaceBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3dfe2246((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FurnaceBlock((nint)handle);
-    }
-
     public void animateTickBedrockLegacy(nint tickData)
     {
         NativeMethods.TablePtr->C1.hs_method_0f9440b5((void*)__hosihikari_shim_handle, (void*)tickData);

@@ -40,7 +40,7 @@ public sealed unsafe partial class RemovePassengersTooLargeForVehicleSystem : gl
 
     public static void _removePassengersTooLargeForVehicle(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext strictEntityContext, global::Hosihikari.Bindings.Bedrock.Interop.PassengerComponent passengerComponent, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabbShapeComponent, nint vehicleView, nint modifier)
     {
-        NativeMethods.TablePtr->C3.hs_method_21cf4c7b((void*)strictEntityContext.Handle, (void*)passengerComponent.Handle, (void*)aabbShapeComponent.Handle, (void*)vehicleView, (void*)modifier);
+        NativeMethods.TablePtr->C3.hs_method_16f03004((void*)strictEntityContext.Handle, (void*)passengerComponent.Handle, (void*)aabbShapeComponent.Handle, (void*)vehicleView, (void*)modifier);
     }
 
     public void Dispose()

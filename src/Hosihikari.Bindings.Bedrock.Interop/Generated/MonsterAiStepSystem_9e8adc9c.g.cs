@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-public sealed unsafe partial class MonsterAiStepSystem
+public sealed unsafe partial class MonsterAiStepSystem : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -43,16 +43,38 @@ public sealed unsafe partial class MonsterAiStepSystem
         NativeMethods.TablePtr->C2.hs_method_d1458c71((void*)__hosihikari_shim_handle, (void*)strictContext);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_531c2942());
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ef7892b((void*)__hosihikari_shim_handle);
+    }
 
     public void tick(nint strictContext)
     {
         NativeMethods.TablePtr->C2.hs_method_803c1534((void*)__hosihikari_shim_handle, (void*)strictContext);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, Include<BlazeFlagComponent>>' is not a known bindable declaration.", false)]
-    public static void tickMonsterAiStep(nint entity, nint aabbShapeComponent, nint offsetsComponent, nint stateVectorComponent, nint noActionTimeComponent, nint blazeView, nint lavaSlimeView, nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, Include<BlazeFlagComponent>>' is not a known bindable declaration.");
+    public static void tickMonsterAiStep(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabbShapeComponent, global::Hosihikari.Bindings.Bedrock.Interop.OffsetsComponent offsetsComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.NoActionTimeComponent noActionTimeComponent, nint blazeView, nint lavaSlimeView, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
+    {
+        NativeMethods.TablePtr->C2.hs_method_1bd36d89((void*)entity.Handle, (void*)aabbShapeComponent.Handle, (void*)offsetsComponent.Handle, (void*)stateVectorComponent.Handle, (void*)noActionTimeComponent.Handle, (void*)blazeView, (void*)lavaSlimeView, (void*)region.Handle);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C2.hs_destroy_9e8adc9c((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

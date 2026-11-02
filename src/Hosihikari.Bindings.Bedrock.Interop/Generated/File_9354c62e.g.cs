@@ -86,6 +86,11 @@ public sealed unsafe partial class File : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_e5a72b38((void*)__hosihikari_shim_handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result open(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView fileName, global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode openMode, int bufferingMode)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_e3c38a31((void*)__hosihikari_shim_handle, (void*)fileName.Handle, (void*)openMode.Handle, bufferingMode));
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.File operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.File arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.File((nint)NativeMethods.TablePtr->C1.hs_method_e502811e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);

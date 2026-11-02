@@ -393,17 +393,6 @@ public sealed unsafe partial class LogBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static LogBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.LogBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3b1698d9((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LogBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getMapColor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C2.hs_method_06737230((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle));

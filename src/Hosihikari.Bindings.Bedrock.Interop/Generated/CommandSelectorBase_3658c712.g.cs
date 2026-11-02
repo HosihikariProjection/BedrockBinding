@@ -76,50 +76,9 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
         return new CommandSelectorBase((nint)handle);
     }
 
-    public void addFamilyFilter(global::Hosihikari.Bindings.Bedrock.Interop.InvertableFilter_std__basic_string_char__ filter)
-    {
-        NativeMethods.TablePtr->C1.hs_method_b50f6e14((void*)__hosihikari_shim_handle, (void*)filter.Handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void addFilter(nint filter) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    public void addHasItemFilter(string itemName, int? auxValue, global::Hosihikari.Bindings.Bedrock.Interop.CommandIntegerRange quantity, int equipmentSlot, global::Hosihikari.Bindings.Bedrock.Interop.CommandIntegerRange slot)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(itemName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(itemName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_508afd4f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, auxValue ?? default(int), (void*)quantity.Handle, equipmentSlot, (void*)slot.Handle, auxValue.HasValue);
-        }
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'HasPermissionFilter' is not supported.", false)]
-    public void addHasPermissionFilters(nint filters) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'HasPermissionFilter' is not supported.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'std::variant<CommandRationalRange, bool, std::basic_string<char>>' is abstract or not copy-constructible.", false)]
-    public void addHasPropertyFilter(nint propertyName, bool inverted, nint optionalValue) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::variant<CommandRationalRange, bool, std::basic_string<char>>' is abstract or not copy-constructible.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void addScoreFilter(nint objName, nint range, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    public void addTypeFilter(global::Hosihikari.Bindings.Bedrock.Interop.InvertableFilter_std__basic_string_char__ filter)
-    {
-        NativeMethods.TablePtr->C1.hs_method_26d6a170((void*)__hosihikari_shim_handle, (void*)filter.Handle);
-    }
 
     public bool compile(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, ref string error)
     {
@@ -235,6 +194,12 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
         set => NativeMethods.TablePtr->C1.hs_set_377ab3fc((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mIsCodeBuilderEnabled
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_1c933789((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_1c933789((void*)__hosihikari_shim_handle, value);
+    }
+
     public bool mIsExplicitIdSelector
     {
         get => NativeMethods.TablePtr->C1.hs_get_5616bfe6((void*)__hosihikari_shim_handle) != 0;
@@ -331,25 +296,6 @@ public sealed unsafe partial class CommandSelectorBase : global::System.IDisposa
     {
         var __hs_shared = NativeMethods.TablePtr->C1.hs_method_1ecf33ba((void*)__hosihikari_shim_handle, (void*)origin.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
-
-    public void setExplicitIdSelector(string playerName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playerName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(playerName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_d8dc4dfe((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
     }
 
 

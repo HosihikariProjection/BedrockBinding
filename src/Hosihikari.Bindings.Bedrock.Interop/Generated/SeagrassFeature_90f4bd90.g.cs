@@ -67,10 +67,6 @@ public sealed unsafe partial class SeagrassFeature : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_2c70805e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static SeagrassFeature Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_01d600e0();

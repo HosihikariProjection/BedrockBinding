@@ -38,6 +38,16 @@ public sealed unsafe partial class PopulateGlobalPassengersToPositionListSystem 
         return __hs_handle;
     }
 
+    public static bool _populateList(nint rootVehicles, nint vehicles, nint flaggedPassengers, nint passengers, global::Hosihikari.Bindings.Bedrock.Interop.PassengersToPositionComponent destination)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_fae71f21((void*)rootVehicles, (void*)vehicles, (void*)flaggedPassengers, (void*)passengers, (void*)destination.Handle) != 0;
+    }
+
+    public static void _removeRequestsFromBrokenLinks(nint vehicles, nint flaggedPassengers, nint passengers, nint modifier)
+    {
+        NativeMethods.TablePtr->C3.hs_method_e667b73a((void*)vehicles, (void*)flaggedPassengers, (void*)passengers, (void*)modifier);
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

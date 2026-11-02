@@ -65,6 +65,11 @@ public sealed unsafe partial class EquipItemDefinition : global::System.IDisposa
         NativeMethods.TablePtr->C1.hs_method_64f554a9((void*)__hosihikari_shim_handle, (void*)itemDescriptor.Handle);
     }
 
+    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
+    {
+        NativeMethods.TablePtr->C1.hs_method_ca8ad2b9(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk282f0a_Address
     {

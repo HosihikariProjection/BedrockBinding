@@ -48,7 +48,7 @@ public sealed unsafe partial class FertilizerItem : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_149c4212((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)container.Handle, slot, (void*)pos.Handle, arg4) != 0;
     }
 
-    public void _executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
+    public void _executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -63,7 +63,7 @@ public sealed unsafe partial class FertilizerItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_fe8c32ed((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)@params.Handle);
+            NativeMethods.TablePtr->C1.hs_method_9b9ac5be((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, handSlot, (void*)@params.Handle);
         }
     }
 
@@ -82,7 +82,7 @@ public sealed unsafe partial class FertilizerItem : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_0cd44a44((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)container.Handle, slot, (void*)pos.Handle, arg4) != 0;
     }
 
-    public void executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
+    public void executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -97,13 +97,19 @@ public sealed unsafe partial class FertilizerItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_daf40c8c((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)@params.Handle);
+            NativeMethods.TablePtr->C1.hs_method_eb690704((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, handSlot, (void*)@params.Handle);
         }
     }
 
     public bool isFertilizer()
     {
         return NativeMethods.TablePtr->C1.hs_method_1464ff90((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_763eb424((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_763eb424((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mType

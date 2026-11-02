@@ -388,17 +388,6 @@ public sealed unsafe partial class RedstoneBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static RedstoneBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.RedstoneBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c51a6b06((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RedstoneBlock((nint)handle);
-    }
-
     public bool canSpawnOn(global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg0)
     {
         return NativeMethods.TablePtr->C3.hs_method_a36f142a((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0)) != 0;

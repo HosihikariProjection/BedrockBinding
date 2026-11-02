@@ -692,10 +692,10 @@ public sealed unsafe partial class Slime : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_89fb3541((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C4.hs_get_82f54e32((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_82f54e32((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_106fb08c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -38,9 +38,9 @@ public sealed unsafe partial class GlideMoveControl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.MoveControlDescription? description)
+    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C1.hs_method_52d98aa3((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C1.hs_method_77fbe1b3((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
@@ -63,9 +63,9 @@ public sealed unsafe partial class GlideMoveControl : global::System.IDisposable
         return new GlideMoveControl((nint)handle);
     }
 
-    public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.MoveControlDescription? description)
+    public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C1.hs_method_2f83796a((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C1.hs_method_49d0ab78((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -394,17 +394,6 @@ public sealed unsafe partial class CopperGrateBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static CopperGrateBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CopperGrateBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_700ac884((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CopperGrateBlock((nint)handle);
-    }
-
     public bool getCollisionShapeForCamera(global::Hosihikari.Bindings.Bedrock.Interop.AABB outAABB, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C1.hs_method_4cfbc816((void*)__hosihikari_shim_handle, (void*)outAABB.Handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle) != 0;

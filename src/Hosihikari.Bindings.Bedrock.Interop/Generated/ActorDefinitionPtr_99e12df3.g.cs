@@ -38,6 +38,11 @@ public sealed unsafe partial class ActorDefinitionPtr : global::System.IDisposab
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr rhs)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_85963da0((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+    }
+
     public void _dtor()
     {
         NativeMethods.TablePtr->C0.hs_method_3b774765((void*)__hosihikari_shim_handle);
@@ -54,9 +59,9 @@ public sealed unsafe partial class ActorDefinitionPtr : global::System.IDisposab
         return new ActorDefinitionPtr((nint)handle);
     }
 
-    public static ActorDefinitionPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr arg0)
+    public static ActorDefinitionPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr rhs)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_d35dc98c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_d35dc98c((void*)rhs.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

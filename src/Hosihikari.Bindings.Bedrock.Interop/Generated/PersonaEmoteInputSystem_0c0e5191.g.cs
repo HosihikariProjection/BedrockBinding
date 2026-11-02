@@ -38,9 +38,15 @@ public sealed unsafe partial class PersonaEmoteInputSystem : global::System.IDis
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, EventingRequestQueueComponent>' is not a known bindable declaration.", false)]
-    public static void _personaEmoteInputSystem(nint entity, nint eventingDispatcherComponent, nint emotePlayedTelemetryDataComponent, nint requestQueueView, nint modifier) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, EventingRequestQueueComponent>' is not a known bindable declaration.");
+    public static void _personaEmoteInputSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.EventingDispatcherComponent eventingDispatcherComponent, global::Hosihikari.Bindings.Bedrock.Interop.EmotePlayedTelemetryDataComponent emotePlayedTelemetryDataComponent, nint requestQueueView, nint modifier)
+    {
+        NativeMethods.TablePtr->C3.hs_method_c0d4b0e0((void*)entity.Handle, (void*)eventingDispatcherComponent.Handle, (void*)emotePlayedTelemetryDataComponent.Handle, (void*)requestQueueView, (void*)modifier);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C3.hs_method_cdefe086());
+    }
 
     public void Dispose()
     {

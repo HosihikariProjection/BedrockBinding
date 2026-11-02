@@ -80,6 +80,12 @@ public sealed unsafe partial class InternalSystemInfo : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C2.hs_get_e402fcf4((void*)__hosihikari_shim_handle);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mPerfHints_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1973b477((void*)__hosihikari_shim_handle);
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

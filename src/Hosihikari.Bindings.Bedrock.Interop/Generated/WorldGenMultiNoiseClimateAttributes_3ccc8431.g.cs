@@ -38,6 +38,10 @@ public sealed unsafe partial class WorldGenMultiNoiseClimateAttributes : global:
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static WorldGenMultiNoiseClimateAttributes Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldGenMultiNoiseClimateAttributes arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_832929c7((void*)arg0.Handle);

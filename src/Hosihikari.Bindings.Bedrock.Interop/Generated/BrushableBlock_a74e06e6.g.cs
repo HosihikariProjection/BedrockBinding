@@ -459,17 +459,6 @@ public sealed unsafe partial class BrushableBlock : global::System.IDisposable
         return new BrushableBlock((nint)handle);
     }
 
-    public static BrushableBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BrushableBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f4d27555((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BrushableBlock((nint)handle);
-    }
-
     public static BrushableBlock Create(string nameID, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameID);

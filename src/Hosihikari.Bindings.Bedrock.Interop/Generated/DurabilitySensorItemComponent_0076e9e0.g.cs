@@ -38,11 +38,6 @@ public sealed unsafe partial class DurabilitySensorItemComponent : global::Syste
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_c8c3ab9a((void*)__hosihikari_shim_handle);
-    }
-
     public static DurabilitySensorItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_10.DurabilitySensorItemComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_c9708582((void*)arg0.Handle);

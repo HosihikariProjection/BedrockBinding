@@ -233,11 +233,6 @@ public sealed unsafe partial class EndDragonFight : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_98c87475((void*)__hosihikari_shim_handle);
     }
 
-    public void verifyExitPositions(global::Hosihikari.Bindings.Bedrock.Interop.EndGatewayBlockActor endGatewayBlockActor)
-    {
-        NativeMethods.TablePtr->C1.hs_method_521bba91((void*)__hosihikari_shim_handle, (void*)endGatewayBlockActor.Handle);
-    }
-
 
     public void Dispose()
     {

@@ -56,6 +56,22 @@ public sealed unsafe partial class Experiments : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_1cd70959((void*)__hosihikari_shim_handle, value);
     }
 
+    public nint _ctor()
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_9fde7aa5((void*)__hosihikari_shim_handle);
+    }
+
+    public static Experiments Create()
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_c3c8a52e();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Experiments((nint)handle);
+    }
+
     public static Experiments Create(global::Hosihikari.Bindings.Bedrock.Interop.Experiments arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_49750156((void*)arg0.Handle);

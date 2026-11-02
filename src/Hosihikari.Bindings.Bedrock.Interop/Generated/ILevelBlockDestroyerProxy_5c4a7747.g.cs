@@ -54,9 +54,9 @@ public sealed unsafe partial class ILevelBlockDestroyerProxy : global::System.ID
         NativeMethods.TablePtr->C2.hs_method_dcedbed0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)(actorContext?.Handle ?? 0));
     }
 
-    public void sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager levelEventManager, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public void sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager levelEventManager, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte destroySound)
     {
-        NativeMethods.TablePtr->C2.hs_method_cb4f9707((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
+        NativeMethods.TablePtr->C2.hs_method_22fffe4a((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, destroySound);
     }
 
 

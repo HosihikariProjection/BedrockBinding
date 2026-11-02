@@ -51,6 +51,12 @@ public sealed unsafe partial class RandomizableBlockActorFillingContainer : glob
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1f33d436((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9a9fe0b0((void*)__hosihikari_shim_handle);

@@ -38,6 +38,17 @@ public sealed unsafe partial class StructureSet : global::System.IDisposable
         return __hs_handle;
     }
 
+    public static StructureSet Create()
+    {
+        var handle = NativeMethods.TablePtr->C5.hs_create_2f2e789f();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new StructureSet((nint)handle);
+    }
+
     public static StructureSet Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSet arg0)
     {
         var handle = NativeMethods.TablePtr->C5.hs_create_36e141b3((void*)arg0.Handle);

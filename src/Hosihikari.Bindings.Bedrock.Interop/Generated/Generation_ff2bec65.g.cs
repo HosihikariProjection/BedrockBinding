@@ -49,6 +49,11 @@ public sealed unsafe partial class Generation : global::System.IDisposable
         return new Generation((nint)handle);
     }
 
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C4.hs_method_48bdb8a6((void*)ctx.Handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mGeneratorType_Address
     {

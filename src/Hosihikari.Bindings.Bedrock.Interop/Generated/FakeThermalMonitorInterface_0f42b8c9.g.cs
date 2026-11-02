@@ -38,6 +38,37 @@ public sealed unsafe partial class FakeThermalMonitorInterface : global::System.
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static FakeThermalMonitorInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.FakeThermalMonitorInterface arg0)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_ef389c6c((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new FakeThermalMonitorInterface((nint)handle);
+    }
+
+    public int getThermalState()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_fca58731((void*)__hosihikari_shim_handle);
+    }
+
+    public float getThermalValueCelsius()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_1f086769((void*)__hosihikari_shim_handle);
+    }
+
+    public bool isLowBatteryModeEnabled()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_2ba7592d((void*)__hosihikari_shim_handle) != 0;
+    }
+
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

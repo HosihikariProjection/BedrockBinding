@@ -48,11 +48,6 @@ public sealed unsafe partial class Abilities : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C0.hs_method_576e7f7e((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
     }
 
-    public static nint ABILITY_NAMES()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_6d357c5c();
-    }
-
     public static Abilities Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_46e31b22();

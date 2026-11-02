@@ -50,15 +50,21 @@ public sealed unsafe partial class ActorHurtResult : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mHurtOrDamage_Address
+    public nint mDamageAmount_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_3a4b01bf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_aa362653((void*)__hosihikari_shim_handle);
     }
 
     public bool mShouldAllowKnockback
     {
         get => NativeMethods.TablePtr->C0.hs_get_398d79f1((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C0.hs_set_398d79f1((void*)__hosihikari_shim_handle, value);
+    }
+
+    public int mType
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_ec5c15be((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_ec5c15be((void*)__hosihikari_shim_handle, value);
     }
 
     public bool operator_bool()

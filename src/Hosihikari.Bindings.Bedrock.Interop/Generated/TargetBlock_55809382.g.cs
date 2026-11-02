@@ -389,6 +389,11 @@ public sealed unsafe partial class TargetBlock : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_a449e55d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)projectile.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_02d8c392((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C4.hs_method_1d5dc10a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -402,17 +407,6 @@ public sealed unsafe partial class TargetBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static TargetBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.TargetBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_13778c5d((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TargetBlock((nint)handle);
-    }
 
     public void _processHitByProjectileAtPos(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 hitPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, global::Hosihikari.Bindings.Bedrock.Interop.Actor projectile)
     {
@@ -432,6 +426,11 @@ public sealed unsafe partial class TargetBlock : global::System.IDisposable
     public void onProjectileHit(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor projectile)
     {
         NativeMethods.TablePtr->C4.hs_method_7ea8e81d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)projectile.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_a0063b71((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

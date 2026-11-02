@@ -763,10 +763,10 @@ public sealed unsafe partial class Bee : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_7963b812((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C0.hs_get_f02fb143((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_f02fb143((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_20792e72((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

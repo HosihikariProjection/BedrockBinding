@@ -38,6 +38,11 @@ public sealed unsafe partial class AsyncBase : global::System.IDisposable
         return __hs_handle;
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AsyncBase_Nested.DiagnosticInfo _getAsyncDiagnosticInfo()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AsyncBase_Nested.DiagnosticInfo((nint)NativeMethods.TablePtr->C0.hs_method_b1f32dd9((void*)__hosihikari_shim_handle));
+    }
+
     public static AsyncBase Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AsyncBase arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_70562364((void*)arg0.Handle);
@@ -47,6 +52,11 @@ public sealed unsafe partial class AsyncBase : global::System.IDisposable
         }
 
         return new AsyncBase((nint)handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AsyncBase_Nested.DiagnosticInfo getAsyncDiagnosticInfo()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.AsyncBase_Nested.DiagnosticInfo((nint)NativeMethods.TablePtr->C0.hs_method_dd1f5846((void*)__hosihikari_shim_handle));
     }
 
 

@@ -55,46 +55,6 @@ public sealed unsafe partial class DynamicProperties : global::System.IDisposabl
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties_Nested.PropertyCollection? _getPropertyCollection_f5bafe9b(string collectionName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(collectionName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(collectionName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f5bafe9b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties_Nested.PropertyCollection((nint)__hs_handle, false) : null;
-        }
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties_Nested.PropertyCollection? _getPropertyCollection_35618876(string collectionName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(collectionName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(collectionName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_35618876((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties_Nested.PropertyCollection((nint)__hs_handle, false) : null;
-        }
-    }
-
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
         NativeMethods.TablePtr->C1.hs_method_691e770d((void*)ctx.Handle);
@@ -180,6 +140,25 @@ public sealed unsafe partial class DynamicProperties : global::System.IDisposabl
                 __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
             }
             return __hs_result;
+        }
+    }
+
+    public ulong getTotalByteCount(string collectionName)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(collectionName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(collectionName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return NativeMethods.TablePtr->C1.hs_method_effd1e2d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 

@@ -383,17 +383,6 @@ public sealed unsafe partial class DriedKelpBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static DriedKelpBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DriedKelpBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f3dba0cb((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DriedKelpBlock((nint)handle);
-    }
-
 
     public void Dispose()
     {

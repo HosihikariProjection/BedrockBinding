@@ -91,6 +91,25 @@ public sealed unsafe partial class FollowFlockGoal : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_bcca4202((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, float speed, string name, nint goalId)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            return (nint)NativeMethods.TablePtr->C1.hs_method_db1ce11c((void*)__hosihikari_shim_handle, (void*)mob.Handle, speed, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)goalId);
+        }
+    }
+
     public void _start()
     {
         NativeMethods.TablePtr->C1.hs_method_4d3fb1cb((void*)__hosihikari_shim_handle);
@@ -119,6 +138,31 @@ public sealed unsafe partial class FollowFlockGoal : global::System.IDisposable
         }
 
         return new FollowFlockGoal((nint)handle);
+    }
+
+    public static FollowFlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, float speed, string name, nint goalId)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            var handle = NativeMethods.TablePtr->C1.hs_create_94d55d7b((void*)mob.Handle, speed, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)goalId);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new FollowFlockGoal((nint)handle);
+        }
     }
 
     public static FollowFlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.FollowFlockGoal arg0)

@@ -42,6 +42,11 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
     public void _uploadStream(nint file, ulong streamSize, nint boundary, nint onCompleteCallback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
+    public bool _useFileSizeLimit()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_d72def7e((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public static IFileChunkUploader Create(global::Hosihikari.Bindings.Bedrock.Interop.IFileChunkUploader arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_9c6f7eb6((void*)arg0.Handle);
@@ -98,6 +103,11 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void uploadStream(nint file, ulong streamSize, nint boundary, nint onCompleteCallback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
+    public bool useFileSizeLimit()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_c43672a2((void*)__hosihikari_shim_handle) != 0;
+    }
 
 
     public void Dispose()

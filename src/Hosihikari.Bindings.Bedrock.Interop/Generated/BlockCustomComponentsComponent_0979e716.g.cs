@@ -58,6 +58,11 @@ public sealed unsafe partial class BlockCustomComponentsComponent : global::Syst
         NativeMethods.TablePtr->C0.hs_method_e0a27858((void*)__hosihikari_shim_handle, (void*)registry, (void*)parameterCache);
     }
 
+    public bool hasRegisteredEventHandler(ushort eventType, global::Hosihikari.Bindings.Bedrock.Interop.BlockType baseBlock)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_027d8b47((void*)__hosihikari_shim_handle, eventType, (void*)baseBlock.Handle) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mCustomComponentData_Address
     {

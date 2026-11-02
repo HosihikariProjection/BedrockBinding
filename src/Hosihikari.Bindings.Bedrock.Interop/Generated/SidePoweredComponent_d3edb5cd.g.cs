@@ -177,6 +177,11 @@ public sealed unsafe partial class SidePoweredComponent : global::System.IDispos
         return NativeMethods.TablePtr->C4.hs_method_be168509((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C4.hs_method_df35085e((void*)__hosihikari_shim_handle);
+    }
+
     public byte _getPoweroutDirection()
     {
         return NativeMethods.TablePtr->C4.hs_method_99ef17f1((void*)__hosihikari_shim_handle);
@@ -191,6 +196,10 @@ public sealed unsafe partial class SidePoweredComponent : global::System.IDispos
     {
         NativeMethods.TablePtr->C4.hs_method_4df46c02((void*)__hosihikari_shim_handle, (void*)posSource.Handle, (void*)(pComponent?.Handle ?? 0));
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
     public static SidePoweredComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SidePoweredComponent arg0)
     {

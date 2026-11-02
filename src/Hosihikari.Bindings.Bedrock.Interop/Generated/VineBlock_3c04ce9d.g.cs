@@ -448,17 +448,6 @@ public sealed unsafe partial class VineBlock : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C4.hs_method_64962e11();
     }
 
-    public static VineBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.VineBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ea6cb14f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new VineBlock((nint)handle);
-    }
-
     public static int _nextVineDirections(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C4.hs_method_2e076067((void*)region.Handle, (void*)pos.Handle);
@@ -507,6 +496,11 @@ public sealed unsafe partial class VineBlock : global::System.IDisposable
     public void growUp(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int spawnFacings)
     {
         NativeMethods.TablePtr->C4.hs_method_2f666823((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, spawnFacings);
+    }
+
+    public static bool isAcceptableNeighbour(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_fc6c64b5((void*)block.Handle) != 0;
     }
 
     public bool mayPlace(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face)

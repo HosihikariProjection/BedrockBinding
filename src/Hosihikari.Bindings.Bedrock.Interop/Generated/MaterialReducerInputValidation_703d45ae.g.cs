@@ -98,6 +98,11 @@ public sealed unsafe partial class MaterialReducerInputValidation : global::Syst
         return NativeMethods.TablePtr->C2.hs_method_00fdb698((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
     }
 
+    public bool isItemAllowed(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_881a3539((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+    }
+
     public bool isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
     {
         return NativeMethods.TablePtr->C2.hs_method_e0d1fd53((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, slot, (void*)item.Handle, amount, arg4) != 0;

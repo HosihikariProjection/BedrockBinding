@@ -394,25 +394,6 @@ public sealed unsafe partial class SugarCaneBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_c4c32745((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_fa8f347b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
-        }
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C4.hs_method_5af20efd((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
@@ -441,53 +422,6 @@ public sealed unsafe partial class SugarCaneBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static SugarCaneBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_25c35032();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SugarCaneBlock((nint)handle);
-    }
-
-    public static SugarCaneBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SugarCaneBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_130cd36e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SugarCaneBlock((nint)handle);
-    }
-
-    public static SugarCaneBlock Create(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_7487e1ab(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new SugarCaneBlock((nint)handle);
-        }
-    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {

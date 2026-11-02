@@ -44,43 +44,18 @@ public sealed unsafe partial class EducationOptions : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_40c479da((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? packMan)
+    public nint _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_a22400a2((void*)__hosihikari_shim_handle, (void*)(packMan?.Handle ?? 0));
-    }
-
-    public void _onActiveResourcePacksChanged(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager manager)
-    {
-        NativeMethods.TablePtr->C1.hs_method_59391fb0((void*)__hosihikari_shim_handle, (void*)manager.Handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_03290fa2((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftableForEnableNonOwnerReferences() =>
+    public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftableForResourcePackListener() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions DEFAULT_OPTION()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions((nint)NativeMethods.TablePtr->C1.hs_method_350a8341(), false);
-    }
 
     public static EducationOptions Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f80e7691();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EducationOptions((nint)handle);
-    }
-
-    public static EducationOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? packMan)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b3d9e02b((void*)(packMan?.Handle ?? 0));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -100,23 +75,9 @@ public sealed unsafe partial class EducationOptions : global::System.IDisposable
         return new EducationOptions((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'ServiceReference<EducationOptions>' requires --link-carrier or --virtual-dispatch.", false)]
-    public static nint _getCurrentOptions() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'ServiceReference<EducationOptions>' requires --link-carrier or --virtual-dispatch.");
-
-    public static bool isBaseCodeBuilderEnabled()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_92e8e459() != 0;
-    }
-
     public static bool isChemistryEnabled()
     {
         return NativeMethods.TablePtr->C1.hs_method_85a8c8a6() != 0;
-    }
-
-    public static bool isCodeBuilderEnabled()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_35664db7() != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -129,17 +90,6 @@ public sealed unsafe partial class EducationOptions : global::System.IDisposable
     public nint mUnke6a413_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_66b11cce((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkecbd05_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_57c2ace0((void*)__hosihikari_shim_handle);
-    }
-
-    public void onActiveResourcePacksChanged(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager manager)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e034e5e3((void*)__hosihikari_shim_handle, (void*)manager.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EducationOptions arg0)

@@ -38,6 +38,63 @@ public sealed unsafe partial class Response : global::System.IDisposable
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C0.hs_method_7a9336ce((void*)__hosihikari_shim_handle);
+    }
+
+    public static Response Create()
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_84f7522a();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Response((nint)handle);
+    }
+
+    public static Response Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Response arg0)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_f89dbbc5((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Response((nint)handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value getBodyAsJson()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_61d55b5b((void*)__hosihikari_shim_handle));
+    }
+
+    public string getBodyAsUtf8String()
+    {
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_ab072832((void*)__hosihikari_shim_handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mBody_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_18a38983((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mHeaders_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_476cccdd((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mStatus_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_fe2a8856((void*)__hosihikari_shim_handle);
+    }
+
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

@@ -233,6 +233,12 @@ public sealed unsafe partial class JSONSchema : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mExtraEnumBinaryValue_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ed1fae0e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mExtraNonPublicEnumValues_Address
     {
         get => (nint)NativeMethods.TablePtr->C5.hs_get_4df37c72((void*)__hosihikari_shim_handle);

@@ -177,11 +177,6 @@ public sealed unsafe partial class PulseCapacitor : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_2dd52038((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ae25a626((void*)__hosihikari_shim_handle);
-    }
-
     public bool _evaluate(global::Hosihikari.Bindings.Bedrock.Interop.CircuitSystem system, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C3.hs_method_16a85294((void*)__hosihikari_shim_handle, (void*)system.Handle, (void*)pos.Handle) != 0;
@@ -210,17 +205,6 @@ public sealed unsafe partial class PulseCapacitor : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static PulseCapacitor Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_12abd190();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PulseCapacitor((nint)handle);
-    }
 
     public static PulseCapacitor Create(global::Hosihikari.Bindings.Bedrock.Interop.PulseCapacitor arg0)
     {

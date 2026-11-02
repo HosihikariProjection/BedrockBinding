@@ -74,6 +74,11 @@ public sealed unsafe partial class InventoryTransaction : global::System.IDispos
         NativeMethods.TablePtr->C2.hs_method_28b12211((void*)__hosihikari_shim_handle);
     }
 
+    public nint getActions(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_113da8ae((void*)__hosihikari_shim_handle, (void*)source.Handle);
+    }
+
     public static string getInventoryTransactionErrorName(int type)
     {
         var __hs_view = NativeMethods.TablePtr->C2.hs_method_0de2974e(type);

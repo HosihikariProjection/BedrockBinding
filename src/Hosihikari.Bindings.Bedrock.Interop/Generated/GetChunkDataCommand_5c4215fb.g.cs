@@ -112,11 +112,6 @@ public sealed unsafe partial class GetChunkDataCommand : global::System.IDisposa
         set => NativeMethods.TablePtr->C1.hs_set_97619e5d((void*)__hosihikari_shim_handle, value);
     }
 
-    public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_296102b5((void*)registry.Handle);
-    }
-
 
     public void Dispose()
     {

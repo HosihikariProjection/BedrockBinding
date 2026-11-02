@@ -224,11 +224,9 @@ public sealed unsafe partial class File_c_windows : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_20f75553((void*)__hosihikari_shim_handle, (void*)buf, numBytes));
     }
 
-    public static string getExtendedLengthPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_d8b743d3((void*)path.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Core::PathBuffer<Core::BasicStackString<char, 1024>>' requires --link-carrier or --virtual-dispatch.", false)]
+    public static nint getExtendedLengthPath(nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Core::PathBuffer<Core::BasicStackString<char, 1024>>' requires --link-carrier or --virtual-dispatch.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk59b465_Address

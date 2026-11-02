@@ -45,7 +45,7 @@ public sealed unsafe partial class ToXAsyncBlock : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'long' is not a known bindable declaration.", false)]
-    public void _handleResult(nint hr) =>
+    public void _handleResult(nint hr, nint asyncBlock) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'long' is not a known bindable declaration.");
 
     // The native field type is not projected; this is the address of the field storage.
@@ -58,6 +58,12 @@ public sealed unsafe partial class ToXAsyncBlock : global::System.IDisposable
     public nint mAsyncContext_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_e0c4db71((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mInvoked
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_e2476970((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_e2476970((void*)__hosihikari_shim_handle, value);
     }
 
 

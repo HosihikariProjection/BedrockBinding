@@ -44,11 +44,6 @@ public sealed unsafe partial class CreativeItemGroupCategory : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_eacc4875((void*)__hosihikari_shim_handle);
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_a67ec00c((void*)__hosihikari_shim_handle);
-    }
-
     public static CreativeItemGroupCategory Create(global::Hosihikari.Bindings.Bedrock.Interop.CreativeItemGroupCategory arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a03d4b67((void*)arg0.Handle);

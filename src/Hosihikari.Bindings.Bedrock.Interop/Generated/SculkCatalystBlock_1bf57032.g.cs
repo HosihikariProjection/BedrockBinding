@@ -388,17 +388,6 @@ public sealed unsafe partial class SculkCatalystBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static SculkCatalystBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkCatalystBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_40f29ee6((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SculkCatalystBlock((nint)handle);
-    }
-
     public static void bloom(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.Random arg3)
     {
         NativeMethods.TablePtr->C3.hs_method_cec26249((void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)arg3.Handle);

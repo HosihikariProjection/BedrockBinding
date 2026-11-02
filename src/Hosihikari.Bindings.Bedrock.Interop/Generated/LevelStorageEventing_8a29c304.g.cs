@@ -186,11 +186,26 @@ public sealed unsafe partial class LevelStorageEventing : global::System.IDispos
         }
     }
 
+    public void fireEventWorldSaveAndExit(nint folderWatcher, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView levelDbSubfolder)
+    {
+        NativeMethods.TablePtr->C2.hs_method_310ef53c((void*)__hosihikari_shim_handle, (void*)folderWatcher, (void*)levelDbSubfolder.Handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mContext_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_9000d7f0((void*)__hosihikari_shim_handle);
     }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mWorldSaveAndExitPackTelemetry_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9d16323c((void*)__hosihikari_shim_handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    public void setWorldSaveAndExitPackTelemetry(nint packs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
 
 
     public void Dispose()

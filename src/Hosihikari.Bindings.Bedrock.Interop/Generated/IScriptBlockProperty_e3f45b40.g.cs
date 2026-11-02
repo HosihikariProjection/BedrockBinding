@@ -91,6 +91,10 @@ public sealed unsafe partial class IScriptBlockProperty : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_658c563b((void*)__hosihikari_shim_handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockProperty operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockProperty arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.IScriptBlockProperty((nint)NativeMethods.TablePtr->C3.hs_method_31a5d2dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);

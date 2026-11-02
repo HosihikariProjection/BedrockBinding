@@ -384,25 +384,6 @@ public sealed unsafe partial class SoulSandBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_1d8bfce6((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)version.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_29ae17e4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
-        }
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C4.hs_method_ea3cac74((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
@@ -430,53 +411,6 @@ public sealed unsafe partial class SoulSandBlock : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion SOUL_SAND_BREAKS_FALLING_BLOCK_VERSION()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C4.hs_method_986f8255(), false);
-    }
-
-    public static SoulSandBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_43cc2542();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SoulSandBlock((nint)handle);
-    }
-
-    public static SoulSandBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SoulSandBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_14143dda((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SoulSandBlock((nint)handle);
-    }
-
-    public static SoulSandBlock Create(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_5ce802c3(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new SoulSandBlock((nint)handle);
-        }
     }
 
     public bool breaksFallingBlocks(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion version)

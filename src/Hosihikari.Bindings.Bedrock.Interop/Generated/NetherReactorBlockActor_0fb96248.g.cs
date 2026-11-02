@@ -51,6 +51,12 @@ public sealed unsafe partial class NetherReactorBlockActor : global::System.IDis
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ff8bc780((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_c02ae2ca((void*)__hosihikari_shim_handle);

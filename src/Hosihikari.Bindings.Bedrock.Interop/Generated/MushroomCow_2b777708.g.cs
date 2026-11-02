@@ -692,10 +692,10 @@ public sealed unsafe partial class MushroomCow : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_69f20983((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e9fb220c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_e9fb220c((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ee5b53df((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -726,9 +726,36 @@ public sealed unsafe partial class MushroomCow : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_322fa28c((void*)__hosihikari_shim_handle, fromSpawner) != 0;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_5f55d259((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static MushroomCow Create()
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_120fcbe7();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new MushroomCow((nint)handle);
+    }
+
+    public static MushroomCow Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_aeeafdac((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new MushroomCow((nint)handle);
+    }
 
     public float _getWalkTargetValue(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {

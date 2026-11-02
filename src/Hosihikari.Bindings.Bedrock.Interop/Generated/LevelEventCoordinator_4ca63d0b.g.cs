@@ -144,10 +144,6 @@ public sealed unsafe partial class LevelEventCoordinator : global::System.IDispo
         NativeMethods.TablePtr->C2.hs_method_ac85d740((void*)__hosihikari_shim_handle, (void*)gameplayUserManagerConnector.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EventRef<MutableLevelGameplayEvent<CoordinatorResult>>' is not a known bindable declaration.", false)]
-    public nint sendEvent(nint @event) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EventRef<MutableLevelGameplayEvent<CoordinatorResult>>' is not a known bindable declaration.");
-
     public void sendLevelRemovedActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
         NativeMethods.TablePtr->C2.hs_method_134f7c59((void*)__hosihikari_shim_handle, (void*)actor.Handle);
@@ -172,21 +168,10 @@ public sealed unsafe partial class LevelEventCoordinator : global::System.IDispo
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<WorldClock>>' is not a known bindable declaration.", false)]
-    public void sendWorldClockPaused(nint clock) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<WorldClock>>' is not a known bindable declaration.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<WorldClock>>' is not a known bindable declaration.", false)]
-    public void sendWorldClockResumed(nint clock) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<WorldClock>>' is not a known bindable declaration.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<WorldClock>>' is not a known bindable declaration.", false)]
-    public void sendWorldClockTimeMarker(nint clock, nint timeMarkerName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<WorldClock>>' is not a known bindable declaration.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<WorldClock>>' is not a known bindable declaration.", false)]
-    public void sendWorldClockTimeModified(nint clock) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<WorldClock>>' is not a known bindable declaration.");
+    public void sendWorldClockTimeModified(nint clock)
+    {
+        NativeMethods.TablePtr->C2.hs_method_733cbc91((void*)__hosihikari_shim_handle, (void*)clock);
+    }
 
 
     public void Dispose()

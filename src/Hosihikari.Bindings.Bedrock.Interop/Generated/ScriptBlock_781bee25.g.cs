@@ -70,6 +70,10 @@ public sealed unsafe partial class ScriptBlock : global::System.IDisposable
     public nint canContainLiquid(nint liquidType) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result<bool, ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError, Scripting::Error>' requires --link-carrier or --virtual-dispatch.");
 
+    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptBlock>' is not supported.", false)]
+    public static nint createOptionalHandle(nint dimension, nint blockPos, nint scope) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptBlock>' is not supported.");
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result<std::optional<Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptBlock>>, ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint east(int steps) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result<std::optional<Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptBlock>>, ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError, ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError>' requires --link-carrier or --virtual-dispatch.");

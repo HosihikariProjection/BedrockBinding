@@ -38,33 +38,6 @@ public sealed unsafe partial class InteractPacketPayload : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(byte action, global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID targetId, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? pos)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_53dbe68f((void*)__hosihikari_shim_handle, action, (void*)targetId.Handle, (void*)(pos?.Handle ?? 0), pos is not null);
-    }
-
-    public static InteractPacketPayload Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3b384811();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new InteractPacketPayload((nint)handle);
-    }
-
-    public static InteractPacketPayload Create(byte action, global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID targetId, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? pos)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5d833bee(action, (void*)targetId.Handle, (void*)(pos?.Handle ?? 0), pos is not null);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new InteractPacketPayload((nint)handle);
-    }
-
     public static InteractPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.InteractPacketPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_77e09b36((void*)arg0.Handle);

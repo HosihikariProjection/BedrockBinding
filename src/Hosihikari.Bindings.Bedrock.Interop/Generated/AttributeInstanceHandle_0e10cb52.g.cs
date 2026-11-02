@@ -38,6 +38,10 @@ public sealed unsafe partial class AttributeInstanceHandle : global::System.IDis
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'AttributeInstanceConstRef' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint getInstance(nint map) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceConstRef' requires --link-carrier or --virtual-dispatch.");
+
     public uint mAttributeID
     {
         get => NativeMethods.TablePtr->C0.hs_get_aa0ee810((void*)__hosihikari_shim_handle);

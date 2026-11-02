@@ -70,13 +70,15 @@ public sealed unsafe partial class DynamicPropertiesManager : global::System.IDi
         return new DynamicPropertiesManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.", false)]
-    public nint _collectMemoryStats(ulong arg0, ulong arg1, ulong arg2) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.");
+    public void _collectMemoryStats(nint dynamicPropertiesStats)
+    {
+        NativeMethods.TablePtr->C1.hs_method_07a20c6d((void*)__hosihikari_shim_handle, (void*)dynamicPropertiesStats);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.", false)]
-    public nint _collectPropertiesStats(ulong arg0, ulong arg1, ulong arg2) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.");
+    public void _collectPropertiesStats(nint dynamicProperties)
+    {
+        NativeMethods.TablePtr->C1.hs_method_6dec673f((void*)__hosihikari_shim_handle, (void*)dynamicProperties);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DynamicProperties getOrAddLevelDynamicProperties()
     {

@@ -103,6 +103,11 @@ public sealed unsafe partial class SubChunk : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_f0faff2f((void*)__hosihikari_shim_handle, (void*)subChunkOrigin.Handle, (void*)volumeOrigin.Handle, dimensionMinHeight, (void*)volume.Handle);
     }
 
+    public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.Block? initBlock, bool maxSkyLight, bool maxLight, sbyte absoluteIndex)
+    {
+        NativeMethods.TablePtr->C4.hs_method_17a3aaf8((void*)__hosihikari_shim_handle, (void*)(initBlock?.Handle ?? 0), maxSkyLight, maxLight, absoluteIndex);
+    }
+
     public bool isUniform(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         return NativeMethods.TablePtr->C4.hs_method_41fa1f87((void*)__hosihikari_shim_handle, (void*)block.Handle) != 0;

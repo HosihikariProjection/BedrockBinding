@@ -61,9 +61,9 @@ public sealed unsafe partial class CompoundTagEditHelper : global::System.IDispo
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk43c659_Address
+    public nint mUnk753b1e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_456f2064((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b9364390((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -73,9 +73,9 @@ public sealed unsafe partial class CompoundTagEditHelper : global::System.IDispo
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk9ba84f_Address
+    public nint mUnka643d6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4b53fa08((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7441b3d6((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagEditHelper arg0)

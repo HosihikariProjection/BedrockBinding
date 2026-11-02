@@ -54,6 +54,11 @@ public sealed unsafe partial class Description : global::System.IDisposable
         return new Description((nint)handle);
     }
 
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C4.hs_method_727dcd04((void*)ctx.Handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mIdentifier_Address
     {

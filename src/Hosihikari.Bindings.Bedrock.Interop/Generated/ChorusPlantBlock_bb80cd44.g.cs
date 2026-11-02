@@ -394,14 +394,14 @@ public sealed unsafe partial class ChorusPlantBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_ff4c2f7f((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_69c3b6ce((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_69c3b6ce((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_b48b74ba((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)bufferValue.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_b48b74ba((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)bufferValue.Handle), false);
     }
 
     public bool _isLavaBlocking()
@@ -423,22 +423,6 @@ public sealed unsafe partial class ChorusPlantBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ChorusPlantBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ChorusPlantBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_450aab30((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ChorusPlantBlock((nint)handle);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.AABB _getShape(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_123d7a56((void*)region.Handle, (void*)pos.Handle, (void*)bufferValue.Handle), false);
-    }
-
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, byte arg1, int arg2)
     {
         return NativeMethods.TablePtr->C0.hs_method_6e7153fb((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, arg2) != 0;
@@ -454,14 +438,18 @@ public sealed unsafe partial class ChorusPlantBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_18b4d415((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_9674d9ad((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_9674d9ad((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'NeighborBlockDirections' is not a known bindable declaration.", false)]
+    public static nint getConnectedBlock(nint region, nint block, nint pos, nint directionsToCheck) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'NeighborBlockDirections' is not a known bindable declaration.");
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_fda52b18((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)bufferValue.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_fda52b18((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)bufferValue.Handle), false);
     }
 
     public bool isLavaBlocking()

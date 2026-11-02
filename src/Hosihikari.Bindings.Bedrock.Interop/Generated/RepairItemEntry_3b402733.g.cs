@@ -61,11 +61,6 @@ public sealed unsafe partial class RepairItemEntry : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_4bb775ae((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.RepairableItemComponent_Nested.RepairItemEntry a)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_ef641c18((void*)__hosihikari_shim_handle, (void*)a.Handle) != 0;
-    }
-
 
     public void Dispose()
     {

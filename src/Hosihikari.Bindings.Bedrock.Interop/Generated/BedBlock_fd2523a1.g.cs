@@ -154,17 +154,6 @@ public sealed unsafe partial class BedBlock : global::System.IDisposable
         return new BedBlock((nint)handle);
     }
 
-    public static BedBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BedBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_8e098ba8((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BedBlock((nint)handle);
-    }
-
     public static BedBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

@@ -409,17 +409,6 @@ public sealed unsafe partial class PressurePlateBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static PressurePlateBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.PressurePlateBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_97d3f6d2((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PressurePlateBlock((nint)handle);
-    }
-
     public void _addHardCodedBlockComponents(global::Hosihikari.Bindings.Bedrock.Interop.Experiments arg0)
     {
         NativeMethods.TablePtr->C3.hs_method_c56be3d9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);

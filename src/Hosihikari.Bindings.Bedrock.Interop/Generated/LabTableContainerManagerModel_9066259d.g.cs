@@ -120,11 +120,6 @@ public sealed unsafe partial class LabTableContainerManagerModel : global::Syste
         NativeMethods.TablePtr->C2.hs_method_75bad46b((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_f6e51460((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle, (void*)blockPos.Handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.", false)]
     public nint _getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
@@ -152,28 +147,6 @@ public sealed unsafe partial class LabTableContainerManagerModel : global::Syste
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static LabTableContainerManagerModel Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6c1765ff();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LabTableContainerManagerModel((nint)handle);
-    }
-
-    public static LabTableContainerManagerModel Create(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a9922041(containerId, (void*)player.Handle, (void*)blockPos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LabTableContainerManagerModel((nint)handle);
-    }
 
     public static LabTableContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.LabTableContainerManagerModel arg0)
     {

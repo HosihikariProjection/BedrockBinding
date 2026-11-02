@@ -269,9 +269,9 @@ public sealed unsafe partial class Level : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_6a0453ad((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
-    public bool _destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool dropResources, nint changeSourceContext)
+    public bool _destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool dropResources, nint changeSourceContext, byte destroySound)
     {
-        return NativeMethods.TablePtr->C2.hs_method_d34f93a2((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, dropResources, (void*)changeSourceContext) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_5d22a640((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, dropResources, (void*)changeSourceContext, destroySound) != 0;
     }
 
     public void _digestServerBlockProperties(global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacket packet)
@@ -1794,7 +1794,7 @@ public sealed unsafe partial class Level : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.", false)]
-    public bool _initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData) =>
+    public bool _initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData, nint init) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.");
 
     public void _initializeBlockDefinitionGroup()
@@ -2634,11 +2634,6 @@ public sealed unsafe partial class Level : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_fd1e2516((void*)__hosihikari_shim_handle);
     }
 
-    public static uint createRandomSeed()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_f052661a();
-    }
-
     public void decrementTagCache(string tag, global::Hosihikari.Bindings.Bedrock.Interop.TagRegistry_IDType_LevelTagIDType___IDType_LevelTagSetIDType__ tagRegistry)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(tag);
@@ -2663,9 +2658,9 @@ public sealed unsafe partial class Level : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_cf38a803((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
-    public bool destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool dropResources, nint changeSourceContext)
+    public bool destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool dropResources, nint changeSourceContext, byte destroySound)
     {
-        return NativeMethods.TablePtr->C2.hs_method_437b1797((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, dropResources, (void*)changeSourceContext) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_b6a489d5((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, dropResources, (void*)changeSourceContext, destroySound) != 0;
     }
 
     public void digestServerBlockProperties(global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacket packet)
@@ -3396,11 +3391,6 @@ public sealed unsafe partial class Level : global::System.IDisposable
     public nint getLightTextureImageBuilderFactory_fb65c598()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_fb65c598((void*)__hosihikari_shim_handle);
-    }
-
-    public nint getLinkedAssetValidator()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_ac3ecdbf((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HitResult getLiquidHitResult()
@@ -4208,7 +4198,7 @@ public sealed unsafe partial class Level : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.", false)]
-    public bool initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData) =>
+    public bool initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData, nint init) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.");
 
     public void initializeBlockDefinitionGroup()
@@ -4463,6 +4453,11 @@ public sealed unsafe partial class Level : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_8d85653d((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mConstructedAsNewLevel
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_a4c742ae((void*)__hosihikari_shim_handle) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerRegistry_Address
     {
@@ -4586,6 +4581,11 @@ public sealed unsafe partial class Level : global::System.IDisposable
     {
         get => NativeMethods.TablePtr->C2.hs_get_9bf2019c((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C2.hs_set_9bf2019c((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsTrialMode
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_1b06edbf((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -5386,6 +5386,10 @@ public sealed unsafe partial class Level : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetEventCallback>' is not a known bindable declaration.", false)]
     public void setNetEventCallback(nint val) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetEventCallback>' is not a known bindable declaration.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public void setPerformanceTelemetryPeriodicCallback(nint callback) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void setPlatformBroadcastIntent(int broadcastMode)
     {

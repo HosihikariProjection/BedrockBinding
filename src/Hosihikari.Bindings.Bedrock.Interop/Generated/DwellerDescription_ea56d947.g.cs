@@ -43,6 +43,11 @@ public sealed unsafe partial class DwellerDescription : global::System.IDisposab
         NativeMethods.TablePtr->C1.hs_method_0676f6c2((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C1.hs_method_9073cf02((void*)__hosihikari_shim_handle);
+    }
+
     public nint _getJsonName()
     {
         return (nint)NativeMethods.TablePtr->C1.hs_method_a037744d((void*)__hosihikari_shim_handle);

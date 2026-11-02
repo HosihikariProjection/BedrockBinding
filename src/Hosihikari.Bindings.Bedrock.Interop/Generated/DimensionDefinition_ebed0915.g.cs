@@ -54,6 +54,12 @@ public sealed unsafe partial class DimensionDefinition : global::System.IDisposa
         return new DimensionDefinition((nint)handle);
     }
 
+    public int mCloudHeight
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_0cd4923d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_0cd4923d((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultBiome_Address
     {
@@ -88,6 +94,12 @@ public sealed unsafe partial class DimensionDefinition : global::System.IDisposa
     public nint mPackId_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_67e869e8((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mRenderClouds
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_b96a19f4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_b96a19f4((void*)__hosihikari_shim_handle, value);
     }
 
 

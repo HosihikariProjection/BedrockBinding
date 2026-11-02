@@ -379,20 +379,25 @@ public sealed unsafe partial class FrostedIceBlock : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_51905779((void*)__hosihikari_shim_handle);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mOnDestroyBlock_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_09295e67((void*)__hosihikari_shim_handle);
+    }
+
+    public bool __shouldEnvironmentIncreaseCracking(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
+    {
+        return NativeMethods.TablePtr->C1.hs_method_96d6cbdb((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)random.Handle) != 0;
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance _asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C1.hs_method_5d9ce14f((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0)));
     }
 
-    public bool _breaksFallingBlocks(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion version)
+    public void _onStandOn(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_8d3c20de((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)version.Handle) != 0;
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block? _playerWillDestroy(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_6780a5ef((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)pos.Handle, (void*)block.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+        NativeMethods.TablePtr->C1.hs_method_2b269412((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)pos.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -410,9 +415,9 @@ public sealed unsafe partial class FrostedIceBlock : global::System.IDisposable
         return new FrostedIceBlock((nint)handle);
     }
 
-    public void _slightlyMelt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random, bool propagate)
+    public bool _shouldEnvironmentIncreaseCracking(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        NativeMethods.TablePtr->C1.hs_method_9bb2b608((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle, propagate);
+        return NativeMethods.TablePtr->C1.hs_method_ccd72af3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)random.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
@@ -420,25 +425,9 @@ public sealed unsafe partial class FrostedIceBlock : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C1.hs_method_e42ddb06((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)(arg1?.Handle ?? 0)));
     }
 
-    public bool breaksFallingBlocks(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion version)
+    public void onStandOn(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_f561ddd3((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)version.Handle) != 0;
-    }
-
-    public void onPlace(nint eventData)
-    {
-        NativeMethods.TablePtr->C1.hs_method_0c576a40((void*)__hosihikari_shim_handle, (void*)eventData);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block? playerWillDestroy(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1b5fb673((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)pos.Handle, (void*)block.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
-
-    public void tick(nint eventData)
-    {
-        NativeMethods.TablePtr->C1.hs_method_450a590a((void*)__hosihikari_shim_handle, (void*)eventData);
+        NativeMethods.TablePtr->C1.hs_method_91bb5865((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)pos.Handle);
     }
 
 

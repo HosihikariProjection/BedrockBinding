@@ -39,7 +39,7 @@ public sealed unsafe partial class Pack : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public nint _ctor(nint loc, nint manifest, nint accessStrategy, nint subpacks, nint metadata) =>
+    public nint _ctor(nint loc, nint manifest, nint accessStrategy, nint subpacks, nint metadata, nint isBaseGameOverride) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void _dtor()
@@ -64,7 +64,7 @@ public sealed unsafe partial class Pack : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public static Pack Create(nint loc, nint manifest, nint accessStrategy, nint subpacks, nint metadata) =>
+    public static Pack Create(nint loc, nint manifest, nint accessStrategy, nint subpacks, nint metadata, nint isBaseGameOverride) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Pack' has no accessible destructor.", false)]
@@ -85,6 +85,12 @@ public sealed unsafe partial class Pack : global::System.IDisposable
     public nint mDependenciesUpgrade_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a570440a((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mIsBaseGameOverride_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2768442c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

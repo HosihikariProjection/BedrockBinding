@@ -40,7 +40,7 @@ public sealed unsafe partial class ComponentItem : global::System.IDisposable
 
     public bool __calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_30e2a6a5((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_b44f33ea((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public bool __checkUseOnPermissions(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -268,6 +268,11 @@ public sealed unsafe partial class ComponentItem : global::System.IDisposable
     {
         var __hs_view = NativeMethods.TablePtr->C1.hs_method_67b4856e((void*)__hosihikari_shim_handle, (void*)player.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Matrix _getItemTransform(uint type, float normalizedUnitScale)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)NativeMethods.TablePtr->C1.hs_method_371bded2((void*)__hosihikari_shim_handle, type, normalizedUnitScale));
     }
 
     public int _getLevelDataForAuxValue(int arg0)
@@ -550,7 +555,7 @@ public sealed unsafe partial class ComponentItem : global::System.IDisposable
 
     public bool _calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_10cb1e7f((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_54d927b8((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public bool _checkUseOnPermissions(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -762,6 +767,11 @@ public sealed unsafe partial class ComponentItem : global::System.IDisposable
     {
         var __hs_view = NativeMethods.TablePtr->C1.hs_method_c2e899a5((void*)__hosihikari_shim_handle, (void*)player.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Matrix getItemTransform(uint type, float normalizedUnitScale)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)NativeMethods.TablePtr->C1.hs_method_56232fa4((void*)__hosihikari_shim_handle, type, normalizedUnitScale));
     }
 
     public int getLevelDataForAuxValue(int arg0)

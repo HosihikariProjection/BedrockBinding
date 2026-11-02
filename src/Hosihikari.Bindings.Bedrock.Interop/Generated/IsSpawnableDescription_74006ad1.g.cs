@@ -43,6 +43,10 @@ public sealed unsafe partial class IsSpawnableDescription : global::System.IDisp
         return (nint)NativeMethods.TablePtr->C2.hs_method_a57726a1((void*)__hosihikari_shim_handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static IsSpawnableDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.IsSpawnableDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_68e99943((void*)arg0.Handle);

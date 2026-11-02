@@ -51,6 +51,12 @@ public sealed unsafe partial class EndGatewayBlockActor : global::System.IDispos
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_e46d5d18((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2cb301d1((void*)__hosihikari_shim_handle);
@@ -113,11 +119,6 @@ public sealed unsafe partial class EndGatewayBlockActor : global::System.IDispos
     public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos findExitPortal(global::Hosihikari.Bindings.Bedrock.Interop.WorldGenerator endGenerator, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_5ef9a5bd((void*)endGenerator.Handle, (void*)origin.Handle));
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos findTallestBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos around, int dist, bool allowBedrock)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_51a90534((void*)region.Handle, (void*)around.Handle, dist, allowBedrock));
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos findValidSpawnAround(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos around, bool searchForEndStoneOnly, int searchRadius, bool searchAboveBlock)

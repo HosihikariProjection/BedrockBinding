@@ -398,17 +398,6 @@ public sealed unsafe partial class TrialSpawnerBlock : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static TrialSpawnerBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.TrialSpawnerBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3046e95a((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TrialSpawnerBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C4.hs_method_8b617e92((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));

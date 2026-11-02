@@ -48,6 +48,11 @@ public sealed unsafe partial class ServerNetworkEventListener : global::System.I
         return NativeMethods.TablePtr->C3.hs_method_bf2666bb((void*)__hosihikari_shim_handle, (void*)@event.Handle);
     }
 
+    public int _onMatchmakingTicketCancelRequested(nint @event)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_4a4a2169((void*)__hosihikari_shim_handle, (void*)@event);
+    }
+
     public int _onMessage(global::Hosihikari.Bindings.Bedrock.Interop.MessageEvent messageEvent)
     {
         return NativeMethods.TablePtr->C3.hs_method_bbde2739((void*)__hosihikari_shim_handle, (void*)messageEvent.Handle);
@@ -82,6 +87,11 @@ public sealed unsafe partial class ServerNetworkEventListener : global::System.I
     public int onEvent(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkGameplayNotificationEvent @event)
     {
         return NativeMethods.TablePtr->C3.hs_method_60cc5443((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+    }
+
+    public int onMatchmakingTicketCancelRequested(nint @event)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_9d1b5c9f((void*)__hosihikari_shim_handle, (void*)@event);
     }
 
     public int onMessage(global::Hosihikari.Bindings.Bedrock.Interop.MessageEvent messageEvent)

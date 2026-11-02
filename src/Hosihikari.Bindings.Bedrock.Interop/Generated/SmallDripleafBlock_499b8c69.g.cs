@@ -478,17 +478,6 @@ public sealed unsafe partial class SmallDripleafBlock : global::System.IDisposab
         return new SmallDripleafBlock((nint)handle);
     }
 
-    public static SmallDripleafBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SmallDripleafBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_bbdbd2ce((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SmallDripleafBlock((nint)handle);
-    }
-
     public static SmallDripleafBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

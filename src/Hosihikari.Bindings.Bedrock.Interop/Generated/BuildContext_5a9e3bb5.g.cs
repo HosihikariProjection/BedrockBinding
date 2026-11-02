@@ -49,6 +49,12 @@ public sealed unsafe partial class BuildContext : global::System.IDisposable
         return new BuildContext((nint)handle);
     }
 
+    public int mActionMode
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_831bd569((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_831bd569((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mBuildDirection_Address
     {

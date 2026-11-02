@@ -394,25 +394,14 @@ public sealed unsafe partial class RootedDirtBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_ab130d19((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
     }
 
-    public bool _tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public bool _tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte handSlot)
     {
-        return NativeMethods.TablePtr->C3.hs_method_f8e4392e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e2734c18((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle, handSlot) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static RootedDirtBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.RootedDirtBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2c892c8f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RootedDirtBlock((nint)handle);
-    }
 
     public bool canBeFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
     {
@@ -429,9 +418,9 @@ public sealed unsafe partial class RootedDirtBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_c402321e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
     }
 
-    public bool tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public bool tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte handSlot)
     {
-        return NativeMethods.TablePtr->C3.hs_method_866d9cde((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_945b0b95((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle, handSlot) != 0;
     }
 
     public void use(nint eventData)

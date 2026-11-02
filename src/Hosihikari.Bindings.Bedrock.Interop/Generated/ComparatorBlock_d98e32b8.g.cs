@@ -448,6 +448,11 @@ public sealed unsafe partial class ComparatorBlock : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_1077f521((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)neighborPos.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_863dec70((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C1.hs_method_6d43b6c0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -470,17 +475,6 @@ public sealed unsafe partial class ComparatorBlock : global::System.IDisposable
     public static ComparatorBlock Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_da926bcb();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ComparatorBlock((nint)handle);
-    }
-
-    public static ComparatorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ComparatorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_64cb857d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -522,6 +516,11 @@ public sealed unsafe partial class ComparatorBlock : global::System.IDisposable
     public void _onRedstoneUpdate(nint blockEvent)
     {
         NativeMethods.TablePtr->C1.hs_method_69c12170((void*)__hosihikari_shim_handle, (void*)blockEvent);
+    }
+
+    public void _onStateChange(nint eventData)
+    {
+        NativeMethods.TablePtr->C1.hs_method_8f1094d2((void*)__hosihikari_shim_handle, (void*)eventData);
     }
 
     public static void _refreshOutputState(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int strength)
@@ -588,6 +587,11 @@ public sealed unsafe partial class ComparatorBlock : global::System.IDisposable
     public void onPlace(nint eventData)
     {
         NativeMethods.TablePtr->C1.hs_method_b8909575((void*)__hosihikari_shim_handle, (void*)eventData);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_2242db45((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

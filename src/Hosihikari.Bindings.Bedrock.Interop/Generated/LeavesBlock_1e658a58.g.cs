@@ -458,17 +458,6 @@ public sealed unsafe partial class LeavesBlock : global::System.IDisposable
         return new LeavesBlock((nint)handle);
     }
 
-    public static LeavesBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.LeavesBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f0c74018((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LeavesBlock((nint)handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static LeavesBlock Create(nint nameId, int id, nint sapling, nint particleParams) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");

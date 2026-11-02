@@ -38,9 +38,25 @@ public sealed unsafe partial class GameTestClearTask : global::System.IDisposabl
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox bounds)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_493ad617((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)bounds.Handle);
+    }
+
     public static GameTestClearTask Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_80934b61();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new GameTestClearTask((nint)handle);
+    }
+
+    public static GameTestClearTask Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox bounds)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_5ac7d4eb((void*)dimension.Handle, (void*)bounds.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -93,11 +109,6 @@ public sealed unsafe partial class GameTestClearTask : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask((nint)NativeMethods.TablePtr->C1.hs_method_4c04543d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
-
-    public void tick()
-    {
-        NativeMethods.TablePtr->C1.hs_method_f72bcef3((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()

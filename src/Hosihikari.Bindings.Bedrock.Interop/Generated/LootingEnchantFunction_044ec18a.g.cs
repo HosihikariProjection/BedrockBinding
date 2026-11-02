@@ -44,6 +44,11 @@ public sealed unsafe partial class LootingEnchantFunction : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C2.hs_get_0dd285c9((void*)__hosihikari_shim_handle);
     }
 
+    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C2.hs_method_670a5f75((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
         NativeMethods.TablePtr->C2.hs_method_69662ee7((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
@@ -54,6 +59,10 @@ public sealed unsafe partial class LootingEnchantFunction : global::System.IDisp
         return NativeMethods.TablePtr->C2.hs_method_c4cda8be((void*)__hosihikari_shim_handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static LootingEnchantFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.LootingEnchantFunction arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_644244e5((void*)arg0.Handle);
@@ -63,6 +72,16 @@ public sealed unsafe partial class LootingEnchantFunction : global::System.IDisp
         }
 
         return new LootingEnchantFunction((nint)handle);
+    }
+
+    public static int _getLootingEnchantLevel(global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_6dc22885((void*)context.Handle);
+    }
+
+    public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C2.hs_method_29d80a82((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)

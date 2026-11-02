@@ -418,17 +418,6 @@ public sealed unsafe partial class DeadBushBlock : global::System.IDisposable
         return new DeadBushBlock((nint)handle);
     }
 
-    public static DeadBushBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DeadBushBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8ddd6da1((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DeadBushBlock((nint)handle);
-    }
-
     public static DeadBushBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

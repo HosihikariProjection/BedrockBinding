@@ -428,17 +428,6 @@ public sealed unsafe partial class CarrotBlock : global::System.IDisposable
         return new CarrotBlock((nint)handle);
     }
 
-    public static CarrotBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CarrotBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_0ead0922((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CarrotBlock((nint)handle);
-    }
-
     public static CarrotBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

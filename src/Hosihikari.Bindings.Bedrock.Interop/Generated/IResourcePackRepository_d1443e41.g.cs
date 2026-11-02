@@ -295,9 +295,9 @@ public sealed unsafe partial class IResourcePackRepository : global::System.IDis
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePack((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? getResourcePackSatisfiesPackId(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion idAndVersion, bool requireOwnership)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? getResourcePackSatisfiesPackId(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion idAndVersion, bool requireOwnership, int selectionPolicy)
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_44611e51((void*)__hosihikari_shim_handle, (void*)idAndVersion.Handle, requireOwnership);
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_03de8d25((void*)__hosihikari_shim_handle, (void*)idAndVersion.Handle, requireOwnership, selectionPolicy);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 

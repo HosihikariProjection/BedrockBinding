@@ -51,15 +51,15 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk8d8c35_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2d99d4c1((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
     public nint mUnka60262_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4bea9ed9((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkb97d57_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_886a1f6b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -68,16 +68,57 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         get => (nint)NativeMethods.TablePtr->C1.hs_get_5ea6b2a2((void*)__hosihikari_shim_handle);
     }
 
+    public bool __getArchiveAssetFallback(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativeArchivePath, nint entryInfo, ref string result)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(result);
+        scoped global::System.Span<byte> __hs_stringBytes3;
+        if (__hs_stringByteCount3 <= 256)
+        {
+            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
+        }
+        else
+        {
+            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(result, __hs_stringBytes3);
+        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C1.hs_method_b19a3315((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)packRelativeArchivePath.Handle, (void*)entryInfo, __hs_stringData3, (nuint)__hs_stringByteCount3, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                result = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
+
     public string __getContentsFile()
     {
         var __hs_view = NativeMethods.TablePtr->C1.hs_method_966360bf((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public string __getEncryptedAssetStream(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath)
+    public string __getEncryptedAssetStream(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, string result)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_9d16a3d0((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(result, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            var __hs_view = NativeMethods.TablePtr->C1.hs_method_c49e367d((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+        }
     }
 
     public string __getRawContentsFile()
@@ -103,7 +144,7 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         return NativeMethods.TablePtr->C1.hs_method_b7114ba4((void*)__hosihikari_shim_handle);
     }
 
-    public bool _getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, ref string result, bool trustedContentOnly)
+    public bool _getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, ref string result, bool trustedContentOnly)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
@@ -121,7 +162,7 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         {
             try
             {
-                return NativeMethods.TablePtr->C1.hs_method_3a8e9d61((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C1.hs_method_7c9a2e80((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -140,9 +181,9 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_382fe154((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null));
     }
 
-    public bool _hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, bool trustedContentOnly, bool caseSensative)
+    public bool _hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
     {
-        return NativeMethods.TablePtr->C1.hs_method_5d66dbb2((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_c353f5cc((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
     }
 
     public bool _isAssetExtractionViable()
@@ -215,6 +256,33 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         }
     }
 
+    public bool _getArchiveAssetFallback(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativeArchivePath, nint entryInfo, ref string result)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(result);
+        scoped global::System.Span<byte> __hs_stringBytes3;
+        if (__hs_stringByteCount3 <= 256)
+        {
+            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
+        }
+        else
+        {
+            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(result, __hs_stringBytes3);
+        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C1.hs_method_28c5ff89((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)packRelativeArchivePath.Handle, (void*)entryInfo, __hs_stringData3, (nuint)__hs_stringByteCount3, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                result = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
+
     public static bool _getContentIdentityFromEncryptedStream(ref string stream, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
@@ -248,10 +316,24 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public string _getEncryptedAssetStream(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath)
+    public string _getEncryptedAssetStream(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, string result)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_fdbf3025((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(result, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            var __hs_view = NativeMethods.TablePtr->C1.hs_method_51eaa94f((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+        }
     }
 
     public string _getRawContentsFile()
@@ -343,7 +425,7 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         return NativeMethods.TablePtr->C1.hs_method_db8f07e1((void*)__hosihikari_shim_handle);
     }
 
-    public bool getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, ref string result, bool trustedContentOnly)
+    public bool getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, ref string result, bool trustedContentOnly)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
@@ -361,7 +443,7 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         {
             try
             {
-                return NativeMethods.TablePtr->C1.hs_method_f1a1d59f((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C1.hs_method_4979ec62((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -380,9 +462,9 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_e57be60a((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null));
     }
 
-    public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, bool trustedContentOnly, bool caseSensative)
+    public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
     {
-        return NativeMethods.TablePtr->C1.hs_method_0b3e1edc((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_3469d0bd((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
     }
 
     public bool isAssetExtractionViable()

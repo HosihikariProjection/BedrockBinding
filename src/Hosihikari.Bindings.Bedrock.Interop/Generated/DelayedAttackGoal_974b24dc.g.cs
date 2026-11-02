@@ -291,6 +291,12 @@ public sealed unsafe partial class DelayedAttackGoal : global::System.IDisposabl
         set => NativeMethods.TablePtr->C1.hs_set_167e2a27((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mCheckTargetInsideAABB
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_ea513c00((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_ea513c00((void*)__hosihikari_shim_handle, value);
+    }
+
     public int mCooldownTicks
     {
         get => NativeMethods.TablePtr->C1.hs_get_62e4db13((void*)__hosihikari_shim_handle);

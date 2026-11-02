@@ -50,12 +50,6 @@ public sealed unsafe partial class InitProxy : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mExperiments_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d407825e((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
     public nint mWorldClockRegistry_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6fcee4e9((void*)__hosihikari_shim_handle);

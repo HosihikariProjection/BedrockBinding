@@ -205,6 +205,11 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_fb209d33((void*)__hosihikari_shim_handle);
     }
 
+    public void serverInitialize(global::Hosihikari.Bindings.Bedrock.Interop.ILevelStorageManagerConnector levelStorageManagerConnector, global::Hosihikari.Bindings.Bedrock.Interop.DimensionDefinitionGroup jsonDefinitionGroup)
+    {
+        NativeMethods.TablePtr->C1.hs_method_0f00cf5c((void*)__hosihikari_shim_handle, (void*)levelStorageManagerConnector.Handle, (void*)jsonDefinitionGroup.Handle);
+    }
+
     public void serverSaveDimensionNameIdStoreTable(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
     {
         NativeMethods.TablePtr->C1.hs_method_89996618((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle);

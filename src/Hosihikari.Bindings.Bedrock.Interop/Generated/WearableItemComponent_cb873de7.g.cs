@@ -44,11 +44,6 @@ public sealed unsafe partial class WearableItemComponent : global::System.IDispo
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_cfa0e4aa((void*)ctx.Handle);
-    }
-
     public int mProtection
     {
         get => NativeMethods.TablePtr->C4.hs_get_4f0eb177((void*)__hosihikari_shim_handle);

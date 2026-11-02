@@ -38,6 +38,20 @@ public sealed unsafe partial class SchemaReader : global::System.IDisposable
         return __hs_handle;
     }
 
+    public ushort? _inputError()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_9df264e2((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (ushort?)null;
+    }
+
+    public ulong? _remainingInputBytes()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_8cc9ce9b((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (ulong?)null;
+    }
+
     public static SchemaReader Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaReader arg0)
     {
         var handle = NativeMethods.TablePtr->C5.hs_create_1d83545e((void*)arg0.Handle);
@@ -144,6 +158,13 @@ public sealed unsafe partial class SchemaReader : global::System.IDisposable
         return NativeMethods.TablePtr->C5.hs_method_4f6fc601((void*)__hosihikari_shim_handle);
     }
 
+    public ushort? inputError()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_8e757e38((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (ushort?)null;
+    }
+
     public bool isValid()
     {
         return NativeMethods.TablePtr->C5.hs_method_ba2d3b53((void*)__hosihikari_shim_handle) != 0;
@@ -192,6 +213,13 @@ public sealed unsafe partial class SchemaReader : global::System.IDisposable
     {
         var __hs_view = NativeMethods.TablePtr->C5.hs_method_75a5bd78((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
+    public ulong? remainingInputBytes()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_78f882b3((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (ulong?)null;
     }
 
 

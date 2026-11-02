@@ -49,27 +49,7 @@ public sealed unsafe partial class NpcDialogueStorage : global::System.IDisposab
         return new NpcDialogueStorage((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NpcDialogueScene? getScene_e267154d(string sceneName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(sceneName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(sceneName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e267154d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NpcDialogueScene((nint)__hs_handle, false) : null;
-        }
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.NpcDialogueScene? getScene_80a35e51(string sceneName)
+    public global::Hosihikari.Bindings.Bedrock.Interop.NpcDialogueScene? getScene(string sceneName)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(sceneName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -98,39 +78,6 @@ public sealed unsafe partial class NpcDialogueStorage : global::System.IDisposab
     public nint mScenes_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_8e956834((void*)__hosihikari_shim_handle);
-    }
-
-    public bool parseFile(string fileData, string fileName, int packCommandVersion)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fileData);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(fileData, __hs_stringBytes0);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(fileName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(fileName, __hs_stringBytes1);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                return NativeMethods.TablePtr->C2.hs_method_0d7a161f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, packCommandVersion) != 0;
-            }
-        }
     }
 
 

@@ -233,11 +233,6 @@ public sealed unsafe partial class NBTSchemaWriter : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_bffab79c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag getSavedCompoundTag()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)NativeMethods.TablePtr->C2.hs_method_315e33d8((void*)__hosihikari_shim_handle));
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc969d0_Address
     {

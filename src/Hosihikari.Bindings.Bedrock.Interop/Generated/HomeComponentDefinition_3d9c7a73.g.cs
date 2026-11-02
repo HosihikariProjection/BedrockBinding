@@ -55,11 +55,6 @@ public sealed unsafe partial class HomeComponentDefinition : global::System.IDis
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5f2b6930((void*)ctx.Handle);
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mHomeBlockNames_Address
     {

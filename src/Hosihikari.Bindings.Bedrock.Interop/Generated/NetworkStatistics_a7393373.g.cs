@@ -294,10 +294,6 @@ public sealed unsafe partial class NetworkStatistics : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_09cecfdc((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public void tick(nint userList) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
-
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mQueuedStatsInfo_Address

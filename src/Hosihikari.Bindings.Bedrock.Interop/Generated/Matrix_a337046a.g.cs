@@ -71,6 +71,11 @@ public sealed unsafe partial class Matrix : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_7852a8ae((void*)__hosihikari_shim_handle);
     }
 
+    public void rotateXYZ(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 rotation)
+    {
+        NativeMethods.TablePtr->C2.hs_method_d469467a((void*)__hosihikari_shim_handle, (void*)rotation.Handle);
+    }
+
 
     public void Dispose()
     {

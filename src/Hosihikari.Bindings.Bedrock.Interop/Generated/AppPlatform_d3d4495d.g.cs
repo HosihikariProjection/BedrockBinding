@@ -58,9 +58,31 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_af8880a1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ __readAssetFileInternal(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ __readAssetFileInternal(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, ref string buffer)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_87d6a7da((void*)__hosihikari_shim_handle, (void*)filename.Handle));
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(buffer);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(buffer, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            try
+            {
+                return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_f9d6d8e8((void*)__hosihikari_shim_handle, (void*)filename.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0));
+            }
+            finally
+            {
+                buffer = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
     }
 
     public void __teardownFileStorageAreas()
@@ -1457,9 +1479,31 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_12e5176b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ _readAssetFileInternal(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ _readAssetFileInternal(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, ref string buffer)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_0d81caac((void*)__hosihikari_shim_handle, (void*)filename.Handle));
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(buffer);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(buffer, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            try
+            {
+                return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_4db23ea7((void*)__hosihikari_shim_handle, (void*)filename.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0));
+            }
+            finally
+            {
+                buffer = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
     }
 
     public void _setDeviceTier(string tier)
@@ -2116,12 +2160,6 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_34e1f34a((void*)__hosihikari_shim_handle);
     }
 
-    public string getSubPlatformString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_b7479f6a((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
-
     public string getTextBoxBackend()
     {
         var __hs_view = NativeMethods.TablePtr->C0.hs_method_103827d4((void*)__hosihikari_shim_handle);
@@ -2508,9 +2546,23 @@ public sealed unsafe partial class AppPlatform : global::System.IDisposable
     public void queueForMainThread_DEPRECATED(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ readAssetFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode readMode)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_ readAssetFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform_Nested.ReadMode readMode, string buffer)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_7baa3fd5((void*)__hosihikari_shim_handle, (void*)filename.Handle, (void*)readMode.Handle));
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(buffer);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(buffer, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_std__basic_string_char___std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_22653d64((void*)__hosihikari_shim_handle, (void*)filename.Handle, (void*)readMode.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2));
+        }
     }
 
     public void readyForApplicationExitInfo()

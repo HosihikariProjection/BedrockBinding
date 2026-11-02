@@ -49,6 +49,11 @@ public sealed unsafe partial class VersionInfo : global::System.IDisposable
         return new VersionInfo((nint)handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SemVersion getMinFormatVersion(nint version)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)NativeMethods.TablePtr->C1.hs_method_9c1d3f37((void*)version));
+    }
+
     public static global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange? getRangeFromVersion(nint version)
     {
         var __hs_hasValue = false;

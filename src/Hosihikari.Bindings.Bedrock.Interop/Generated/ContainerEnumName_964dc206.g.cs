@@ -73,4 +73,8 @@ public enum ContainerEnumName : byte
     RecipeFoodContainer = 64,
     RecipeBlocksContainer = 65,
     RecipeFurnaceItemsContainer = 66,
+    DiscPressBlockContainer = 67,
+    DiscPressDyeContainer = 68,
+    DiscPressDiscContainer = 69,
+    DiscPressResultPreviewContainer = 70,
 }

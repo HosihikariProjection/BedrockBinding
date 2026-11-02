@@ -389,7 +389,7 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_ba20144e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id)
+    public nint _ctor(string nameId, int id, string? featureToBonemealInto)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -402,9 +402,23 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
             __hs_stringBytes0 = new byte[__hs_stringByteCount0];
         }
         global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(featureToBonemealInto ?? string.Empty);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(featureToBonemealInto ?? string.Empty, __hs_stringBytes2);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C2.hs_method_c6c20c65((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+            {
+                return (nint)NativeMethods.TablePtr->C2.hs_method_70486dca((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, __hs_stringData2, (nuint)__hs_stringByteCount2, featureToBonemealInto is not null);
+            }
         }
     }
 
@@ -418,9 +432,9 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_d63a1092((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public bool _onFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, byte fType)
+    public bool _onFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, byte fertilizerType)
     {
-        return NativeMethods.TablePtr->C2.hs_method_d084db99((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_d084db99((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fertilizerType) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -438,18 +452,7 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
         return new MushroomBlock((nint)handle);
     }
 
-    public static MushroomBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.MushroomBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2361f64c((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MushroomBlock((nint)handle);
-    }
-
-    public static MushroomBlock Create(string nameId, int id)
+    public static MushroomBlock Create(string nameId, int id, string? featureToBonemealInto)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -462,15 +465,29 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
             __hs_stringBytes0 = new byte[__hs_stringByteCount0];
         }
         global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(featureToBonemealInto ?? string.Empty);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(featureToBonemealInto ?? string.Empty, __hs_stringBytes2);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C2.hs_create_3ef912dc(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
-            if (handle == null)
+            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
+                var handle = NativeMethods.TablePtr->C2.hs_create_53efa0fd(__hs_stringData0, (nuint)__hs_stringByteCount0, id, __hs_stringData2, (nuint)__hs_stringByteCount2, featureToBonemealInto is not null);
+                if (handle == null)
+                {
+                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                }
 
-            return new MushroomBlock((nint)handle);
+                return new MushroomBlock((nint)handle);
+            }
         }
     }
 
@@ -484,6 +501,12 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_a35ac5db((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mFeatureToBonemealInto_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b20159f0((void*)__hosihikari_shim_handle);
+    }
+
     public bool mayPlace(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face)
     {
         return NativeMethods.TablePtr->C2.hs_method_b49b0a9d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, face) != 0;
@@ -494,9 +517,9 @@ public sealed unsafe partial class MushroomBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_48e6b8fc((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public bool onFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, byte fType)
+    public bool onFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, byte fertilizerType)
     {
-        return NativeMethods.TablePtr->C2.hs_method_4e13ba49((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_4e13ba49((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fertilizerType) != 0;
     }
 
     public void randomTick(global::Hosihikari.Bindings.Bedrock.Interop.BlockEvents.BlockRandomTickEvent eventData)

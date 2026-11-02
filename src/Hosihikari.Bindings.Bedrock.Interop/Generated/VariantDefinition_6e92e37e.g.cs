@@ -60,6 +60,11 @@ public sealed unsafe partial class VariantDefinition : global::System.IDisposabl
         return new VariantDefinition((nint)handle);
     }
 
+    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
+    {
+        NativeMethods.TablePtr->C4.hs_method_5ea3a364(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk48dbb7_Address
     {

@@ -386,11 +386,6 @@ public sealed unsafe partial class CommandRegistry : global::System.IDisposable
     public void forEachNonTerminal(nint func) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value generateDocumentationMetadata(bool generateInternalMetadata)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_50d974e5((void*)__hosihikari_shim_handle, generateInternalMetadata));
-    }
-
     public string[] getAliases(string command)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(command);
@@ -639,6 +634,12 @@ public sealed unsafe partial class CommandRegistry : global::System.IDisposable
     public nint mGetScoreForObjective_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_26bc6251((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mIsCodeBuilderEnabled
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_37f6e309((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_37f6e309((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsEduMode

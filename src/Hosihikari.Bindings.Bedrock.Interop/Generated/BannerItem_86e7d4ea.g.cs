@@ -54,6 +54,25 @@ public sealed unsafe partial class BannerItem : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
+    public nint _ctor(string name, int id)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return (nint)NativeMethods.TablePtr->C0.hs_method_b77538ea((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+        }
+    }
+
     public void _fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
         NativeMethods.TablePtr->C0.hs_method_bdace08c((void*)__hosihikari_shim_handle, (void*)item.Handle);
@@ -98,6 +117,31 @@ public sealed unsafe partial class BannerItem : global::System.IDisposable
         }
 
         return new BannerItem((nint)handle);
+    }
+
+    public static BannerItem Create(string name, int id)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var handle = NativeMethods.TablePtr->C0.hs_create_4b6c6ca5(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new BannerItem((nint)handle);
+        }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)

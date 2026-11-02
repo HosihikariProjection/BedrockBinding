@@ -38,6 +38,16 @@ public sealed unsafe partial class BlockMaterialData : global::System.IDisposabl
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData arg0)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_21e15755((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+    }
+
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C0.hs_method_9991b351((void*)__hosihikari_shim_handle);
+    }
+
     public static BlockMaterialData Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_f27152d6();

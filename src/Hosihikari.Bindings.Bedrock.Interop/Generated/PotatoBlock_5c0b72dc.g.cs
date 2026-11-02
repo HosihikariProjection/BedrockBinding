@@ -463,17 +463,6 @@ public sealed unsafe partial class PotatoBlock : global::System.IDisposable
         return new PotatoBlock((nint)handle);
     }
 
-    public static PotatoBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.PotatoBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8dcd086e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PotatoBlock((nint)handle);
-    }
-
     public static PotatoBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

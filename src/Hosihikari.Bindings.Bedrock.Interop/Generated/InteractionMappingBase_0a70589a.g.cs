@@ -49,9 +49,9 @@ public sealed unsafe partial class InteractionMappingBase : global::System.IDisp
         return new InteractionMappingBase((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor arg0, global::Hosihikari.Bindings.Bedrock.Interop.Player arg1, byte arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_532a7d63((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_67b50953((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2));
     }
 
 

@@ -44,7 +44,7 @@ public sealed unsafe partial class Scheduler : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c276cda9((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(string name, uint FPS)
+    public nint _ctor(string name, ushort idealFPS)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -59,7 +59,7 @@ public sealed unsafe partial class Scheduler : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_9e0c9541((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, FPS);
+            return (nint)NativeMethods.TablePtr->C3.hs_method_36e81925((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, idealFPS);
         }
     }
 
@@ -78,7 +78,7 @@ public sealed unsafe partial class Scheduler : global::System.IDisposable
         return new Scheduler((nint)handle);
     }
 
-    public static Scheduler Create(string name, uint FPS)
+    public static Scheduler Create(string name, ushort idealFPS)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -93,7 +93,7 @@ public sealed unsafe partial class Scheduler : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C3.hs_create_40ae2139(__hs_stringData0, (nuint)__hs_stringByteCount0, FPS);
+            var handle = NativeMethods.TablePtr->C3.hs_create_aaf855e5(__hs_stringData0, (nuint)__hs_stringByteCount0, idealFPS);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -101,6 +101,18 @@ public sealed unsafe partial class Scheduler : global::System.IDisposable
 
             return new Scheduler((nint)handle);
         }
+    }
+
+    public uint mConsideredBadFrames
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_d0ae03d5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d0ae03d5((void*)__hosihikari_shim_handle, value);
+    }
+
+    public uint mConsideredGoodFrames
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_c993ac2b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c993ac2b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -115,10 +127,22 @@ public sealed unsafe partial class Scheduler : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e7c26ed0((void*)__hosihikari_shim_handle);
     }
 
-    public uint mEffectiveFPS
+    public ushort mEffectiveTargetFPS
     {
-        get => NativeMethods.TablePtr->C3.hs_get_55ba701b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_55ba701b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2f9242c2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2f9242c2((void*)__hosihikari_shim_handle, value);
+    }
+
+    public ushort mIdealFPS
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_98d92f28((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_98d92f28((void*)__hosihikari_shim_handle, value);
+    }
+
+    public ushort mIdealNonBoostedFPS
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_4277dc0c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4277dc0c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -127,28 +151,22 @@ public sealed unsafe partial class Scheduler : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2465fba7((void*)__hosihikari_shim_handle);
     }
 
+    public uint mObservedBadFrames
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_d62d4671((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d62d4671((void*)__hosihikari_shim_handle, value);
+    }
+
+    public uint mObservedGoodFrames
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_fe47aff7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_fe47aff7((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredictedCoroutineDuration_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_14908f8c((void*)__hosihikari_shim_handle);
-    }
-
-    public uint mPromotionFrames
-    {
-        get => NativeMethods.TablePtr->C3.hs_get_1c33ee50((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_1c33ee50((void*)__hosihikari_shim_handle, value);
-    }
-
-    public uint mStarvedFrames
-    {
-        get => NativeMethods.TablePtr->C3.hs_get_8ea0cc15((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_8ea0cc15((void*)__hosihikari_shim_handle, value);
-    }
-
-    public uint mTargetFPS
-    {
-        get => NativeMethods.TablePtr->C3.hs_get_766d9b03((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_766d9b03((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -161,12 +179,6 @@ public sealed unsafe partial class Scheduler : global::System.IDisposable
     public nint mTotalCoroutineDuration_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_bd716971((void*)__hosihikari_shim_handle);
-    }
-
-    public uint mTotalFrames
-    {
-        get => NativeMethods.TablePtr->C3.hs_get_23564fbd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_23564fbd((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mTotalRunCoroutines

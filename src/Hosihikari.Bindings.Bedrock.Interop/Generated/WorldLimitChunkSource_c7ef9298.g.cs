@@ -109,6 +109,10 @@ public sealed unsafe partial class WorldLimitChunkSource : global::System.IDispo
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public nint _ctor(nint storage, nint center, int width, int depth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
     public nint _getChunkMap()
     {
         return (nint)NativeMethods.TablePtr->C4.hs_method_7836bd11((void*)__hosihikari_shim_handle);
@@ -135,6 +139,10 @@ public sealed unsafe partial class WorldLimitChunkSource : global::System.IDispo
 
         return new WorldLimitChunkSource((nint)handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public static WorldLimitChunkSource Create(nint storage, nint center, int width, int depth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public bool canCreateViews()
     {

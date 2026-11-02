@@ -93,6 +93,11 @@ public sealed unsafe partial class EntitySystemsManager : global::System.IDispos
         get => NativeMethods.TablePtr->C1.hs_get_1a2936c9((void*)__hosihikari_shim_handle);
     }
 
+    public void tickEntitySystems()
+    {
+        NativeMethods.TablePtr->C1.hs_method_796a7915((void*)__hosihikari_shim_handle);
+    }
+
 
     public void Dispose()
     {

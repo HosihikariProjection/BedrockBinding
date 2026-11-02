@@ -205,6 +205,11 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_92ac2cb5((void*)__hosihikari_shim_handle, (void*)file.Handle) != 0;
     }
 
+    public void _queueFileForRemoval(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ file)
+    {
+        NativeMethods.TablePtr->C4.hs_method_8f5e7d49((void*)__hosihikari_shim_handle, (void*)file.Handle);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength[] createSnapshot(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path dir)
     {
         var __hs_view = NativeMethods.TablePtr->C4.hs_method_6d02cfd1((void*)__hosihikari_shim_handle, (void*)dir.Handle);
@@ -224,15 +229,21 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk270131_Address
+    public nint mUnk4f336e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1ff7d807((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d5dca38b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7b1f17_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_cfd53935((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk7ef456_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8eece913((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -257,12 +268,6 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
     public nint mUnkcecc5a_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_da372d31((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkfaff08_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9fe18025((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv arg0)

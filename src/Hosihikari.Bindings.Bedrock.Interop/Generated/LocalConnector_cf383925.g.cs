@@ -105,6 +105,11 @@ public sealed unsafe partial class LocalConnector : global::System.IDisposable
         return new LocalConnector((nint)handle);
     }
 
+    public void disconnect(bool skipMessage)
+    {
+        NativeMethods.TablePtr->C2.hs_method_f1ff07af((void*)__hosihikari_shim_handle, skipMessage);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo getConnectedGameInfo()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)NativeMethods.TablePtr->C2.hs_method_d20f64f8((void*)__hosihikari_shim_handle), false);
@@ -168,11 +173,6 @@ public sealed unsafe partial class LocalConnector : global::System.IDisposable
     public nint mMutex_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_2b7c7445((void*)__hosihikari_shim_handle);
-    }
-
-    public void runEvents()
-    {
-        NativeMethods.TablePtr->C2.hs_method_a781bd1c((void*)__hosihikari_shim_handle);
     }
 
     public static nint sLocalConnectivitySystem()

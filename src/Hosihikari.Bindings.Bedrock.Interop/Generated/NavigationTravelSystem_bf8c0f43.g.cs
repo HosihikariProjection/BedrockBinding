@@ -38,6 +38,11 @@ public sealed unsafe partial class NavigationTravelSystem : global::System.IDisp
         return __hs_handle;
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createNavigationTravelSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_cdfbb423());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

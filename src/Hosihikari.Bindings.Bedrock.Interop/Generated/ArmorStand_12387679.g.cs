@@ -604,9 +604,9 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_10fc7350((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_d6ae89cc((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_cea9d0d8((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
     }
 
     public float _getShadowRadius()
@@ -661,71 +661,6 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
         return new ArmorStand((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_ATHENA()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_dc8f625f(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_BRANDISH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_3205fe64(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_CANCAN_A()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_d295594c(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_CANCAN_B()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_3be01ba4(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_DEFAULT()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_3b2c5537(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_ENTERTAIN()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_35dd7815(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_HERO()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_cb3a4da9(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_HONOR()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_e500478e(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_RIPOSTE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_3778634c(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_SALUTE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_eb9aa433(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_SOLEMN()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_47a50d48(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_ZERO_ROTATION()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_d2dfac7b(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose POSE_ZOMBIE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ArmorStand_Nested.Pose((nint)NativeMethods.TablePtr->C0.hs_method_9252c6ec(), false);
-    }
-
     public void _causeDamage(float damage)
     {
         NativeMethods.TablePtr->C0.hs_method_b71ea852((void*)__hosihikari_shim_handle, damage);
@@ -756,11 +691,6 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_d438c24f((void*)__hosihikari_shim_handle, (void*)sourceActor.Handle);
     }
 
-    public bool _trySwapItem(global::Hosihikari.Bindings.Bedrock.Interop.Player player, int slot)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_2eb24acb((void*)__hosihikari_shim_handle, (void*)player.Handle, slot) != 0;
-    }
-
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
         NativeMethods.TablePtr->C0.hs_method_7d3ebe38((void*)__hosihikari_shim_handle, (void*)tag.Handle);
@@ -771,9 +701,9 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_b418ec8d((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_1453d939((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_c0b9520f((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
     }
 
     public float getShadowRadius()
@@ -932,10 +862,10 @@ public sealed unsafe partial class ArmorStand : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_bcb85c95((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C0.hs_get_b916569d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_b916569d((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_89c990a5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

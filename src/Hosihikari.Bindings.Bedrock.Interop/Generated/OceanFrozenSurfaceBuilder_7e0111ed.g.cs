@@ -43,6 +43,11 @@ public sealed unsafe partial class OceanFrozenSurfaceBuilder : global::System.ID
         NativeMethods.TablePtr->C4.hs_method_d342d72c((void*)__hosihikari_shim_handle, (void*)globalParams.Handle, (void*)surfaceBuilderParams.Handle, (void*)columnParams.Handle);
     }
 
+    public nint _ctor()
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_8d4e4311((void*)__hosihikari_shim_handle);
+    }
+
     public bool _getUsesDepthValue()
     {
         return NativeMethods.TablePtr->C4.hs_method_adda2e77((void*)__hosihikari_shim_handle) != 0;

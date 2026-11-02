@@ -38,6 +38,11 @@ public sealed unsafe partial class Effect : global::System.IDisposable
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C1.hs_method_9f19a4c0((void*)__hosihikari_shim_handle);
+    }
+
     public static Effect Create(global::Hosihikari.Bindings.Bedrock.Interop.FeedItem_Nested.Effect arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_1591da6c((void*)arg0.Handle);

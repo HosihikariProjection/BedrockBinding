@@ -338,7 +338,7 @@ public sealed unsafe partial class PickaxeItem : global::System.IDisposable
         }
     }
 
-    public void _executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
+    public void _executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -353,7 +353,7 @@ public sealed unsafe partial class PickaxeItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C3.hs_method_afd5cc40((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)@params.Handle);
+            NativeMethods.TablePtr->C3.hs_method_56284a69((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, handSlot, (void*)@params.Handle);
         }
     }
 
@@ -419,7 +419,7 @@ public sealed unsafe partial class PickaxeItem : global::System.IDisposable
         }
     }
 
-    public void executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
+    public void executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -434,7 +434,7 @@ public sealed unsafe partial class PickaxeItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C3.hs_method_449580e5((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)@params.Handle);
+            NativeMethods.TablePtr->C3.hs_method_13256c9d((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, handSlot, (void*)@params.Handle);
         }
     }
 

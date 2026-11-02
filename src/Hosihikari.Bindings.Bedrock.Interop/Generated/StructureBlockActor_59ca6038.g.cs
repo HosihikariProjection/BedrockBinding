@@ -51,6 +51,12 @@ public sealed unsafe partial class StructureBlockActor : global::System.IDisposa
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_652a5971((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_bb851aba((void*)__hosihikari_shim_handle);
@@ -74,11 +80,6 @@ public sealed unsafe partial class StructureBlockActor : global::System.IDisposa
     public void __onUpdatePacket(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag data, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         NativeMethods.TablePtr->C4.hs_method_4bc473e0((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)region.Handle);
-    }
-
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_e1f19db2((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
     public void _load(global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag @base, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
@@ -136,28 +137,6 @@ public sealed unsafe partial class StructureBlockActor : global::System.IDisposa
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static StructureBlockActor Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_57e47090();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StructureBlockActor((nint)handle);
-    }
-
-    public static StructureBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ffda5a16((void*)pos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StructureBlockActor((nint)handle);
-    }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BlockActorDataPacket' has no accessible destructor.", false)]
     public nint _getUpdatePacket(nint region) =>

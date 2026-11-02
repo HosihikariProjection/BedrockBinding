@@ -52,6 +52,11 @@ public sealed unsafe partial class CommandLexer : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_3e577833((void*)__hosihikari_shim_handle);
     }
 
+    public bool mIsCodeBuilderEnabled
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_15fe9619((void*)__hosihikari_shim_handle) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mToken_Address
     {

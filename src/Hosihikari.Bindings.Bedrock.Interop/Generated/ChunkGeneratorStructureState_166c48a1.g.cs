@@ -63,10 +63,10 @@ public sealed unsafe partial class ChunkGeneratorStructureState : global::System
         return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState((nint)NativeMethods.TablePtr->C5.hs_method_eb982308(levelSeed, (void*)biomeSource.Handle, (void*)allStructures.Handle));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? findNearestStructureFeature(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.HashedString feature, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, bool mustBeInNewChunks)
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? findNearestStructureFeature(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.HashedString feature, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, bool mustBeInNewChunks, int searchRadiusCells)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_a19e7905((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)feature.Handle, (void*)origin.Handle, (void*)biomeSource.Handle, mustBeInNewChunks, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_919bd5e1((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)feature.Handle, (void*)origin.Handle, (void*)biomeSource.Handle, mustBeInNewChunks, searchRadiusCells, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 

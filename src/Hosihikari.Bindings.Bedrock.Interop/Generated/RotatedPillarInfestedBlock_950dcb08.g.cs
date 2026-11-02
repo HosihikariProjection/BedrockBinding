@@ -384,17 +384,6 @@ public sealed unsafe partial class RotatedPillarInfestedBlock : global::System.I
         NativeMethods.TablePtr->C3.hs_method_27b793b1((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)resourceDropsContext.Handle);
     }
 
-    public static RotatedPillarInfestedBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.RotatedPillarInfestedBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_61ddb0c8((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RotatedPillarInfestedBlock((nint)handle);
-    }
-
     public void spawnAfterBreak(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Block arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ResourceDropsContext resourceDropsContext)
     {
         NativeMethods.TablePtr->C3.hs_method_015bf473((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)resourceDropsContext.Handle);

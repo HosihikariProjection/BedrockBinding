@@ -741,10 +741,10 @@ public sealed unsafe partial class Armadillo : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_cf489538((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C0.hs_get_e0d5e43d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_e0d5e43d((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_df167346((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

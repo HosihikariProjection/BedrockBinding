@@ -450,17 +450,6 @@ public sealed unsafe partial class FenceBlock : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C1.hs_method_9e72cd17(), false);
     }
 
-    public static FenceBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FenceBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_12d9534d((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FenceBlock((nint)handle);
-    }
-
     public bool addCollisionShapes(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB? intersectTestBox, global::Hosihikari.Bindings.Bedrock.Interop.AABB[] inoutBoxes, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
     {
         var __hs_vectorItems4 = inoutBoxes;

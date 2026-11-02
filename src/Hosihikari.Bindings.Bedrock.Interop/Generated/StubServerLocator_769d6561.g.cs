@@ -39,15 +39,20 @@ public sealed unsafe partial class StubServerLocator : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d6549768((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3c728482((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkaf3b65_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_17f303f7((void*)__hosihikari_shim_handle);
+    }
+
+    public void _addCustomServer(global::Hosihikari.Bindings.Bedrock.Interop.AsynchronousIPResolver futureIP, int port)
+    {
+        NativeMethods.TablePtr->C4.hs_method_1755bf93((void*)__hosihikari_shim_handle, (void*)futureIP.Handle, port);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -57,6 +62,62 @@ public sealed unsafe partial class StubServerLocator : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
     public nint _getPingTimeForGUID(nint guid) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the return type needs a generated C++ type.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.", false)]
+    public nint _getServerList() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.");
+
+    public void _startAnnouncingServer(string playerName, string worldName, int worldGameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playerName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(playerName, __hs_stringBytes0);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(worldName);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(worldName, __hs_stringBytes1);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+            {
+                NativeMethods.TablePtr->C4.hs_method_7a70df4b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, worldGameType, numPlayers, maxNumPlayers, isJoinableThroughServerScreen, isEditorWorld, isHardcore, (void*)supportedAuth.Handle, (void*)nonce.Handle);
+            }
+        }
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'PortPair' is not a known bindable declaration.", false)]
+    public void _startServerDiscovery(nint ports) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'PortPair' is not a known bindable declaration.");
+
+    public void _stopAnnouncingServer()
+    {
+        NativeMethods.TablePtr->C4.hs_method_ca88d00f((void*)__hosihikari_shim_handle);
+    }
+
+    public void _stopServerDiscovery()
+    {
+        NativeMethods.TablePtr->C4.hs_method_e345d0a8((void*)__hosihikari_shim_handle);
+    }
+
+    public void _update()
+    {
+        NativeMethods.TablePtr->C4.hs_method_67bd4560((void*)__hosihikari_shim_handle);
+    }
 
     public static StubServerLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.StubServerLocator arg0)
     {
@@ -86,7 +147,7 @@ public sealed unsafe partial class StubServerLocator : global::System.IDisposabl
     public nint getServerList() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.");
 
-    public void startAnnouncingServer(string playerName, string worldName, int gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)
+    public void startAnnouncingServer(string playerName, string worldName, int worldGameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playerName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -114,7 +175,7 @@ public sealed unsafe partial class StubServerLocator : global::System.IDisposabl
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C4.hs_method_948dc854((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, gameType, numPlayers, maxNumPlayers, isJoinableThroughServerScreen, isEditorWorld, isHardcore, (void*)supportedAuth.Handle, (void*)nonce.Handle);
+                NativeMethods.TablePtr->C4.hs_method_948dc854((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, worldGameType, numPlayers, maxNumPlayers, isJoinableThroughServerScreen, isEditorWorld, isHardcore, (void*)supportedAuth.Handle, (void*)nonce.Handle);
             }
         }
     }

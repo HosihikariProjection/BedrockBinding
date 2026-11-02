@@ -292,9 +292,9 @@ public sealed unsafe partial class ResourcePackRepository : global::System.IDisp
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePack((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getResourcePackSatisfiesPackId(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion idAndVersion, bool requireOwnership)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? _getResourcePackSatisfiesPackId(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion idAndVersion, bool requireOwnership, int selectionPolicy)
     {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_22ae9053((void*)__hosihikari_shim_handle, (void*)idAndVersion.Handle, requireOwnership);
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_8e0dbc2d((void*)__hosihikari_shim_handle, (void*)idAndVersion.Handle, requireOwnership, selectionPolicy);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -422,10 +422,6 @@ public sealed unsafe partial class ResourcePackRepository : global::System.IDisp
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'const ResourceLocation' is not supported.", false)]
     public void _postDeletePacks(nint packLocations) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const ResourceLocation' is not supported.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void _removePacksIf(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: map key type 'ContentIdentity' is not supported.", false)]
     public void addCachedResourcePacks(nint tempCacheKeys) =>
@@ -675,9 +671,9 @@ public sealed unsafe partial class ResourcePackRepository : global::System.IDisp
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePack((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? getResourcePackSatisfiesPackId(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion idAndVersion, bool requireOwnership)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? getResourcePackSatisfiesPackId(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion idAndVersion, bool requireOwnership, int selectionPolicy)
     {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_78581d21((void*)__hosihikari_shim_handle, (void*)idAndVersion.Handle, requireOwnership);
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_209aa033((void*)__hosihikari_shim_handle, (void*)idAndVersion.Handle, requireOwnership, selectionPolicy);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 

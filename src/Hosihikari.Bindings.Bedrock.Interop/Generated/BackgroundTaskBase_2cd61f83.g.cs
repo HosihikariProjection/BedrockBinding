@@ -94,6 +94,11 @@ public sealed unsafe partial class BackgroundTaskBase : global::System.IDisposab
     public static nint gCurrentTask() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase_Nested.DiagnosticInfo getDiagnosticInfo()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase_Nested.DiagnosticInfo((nint)NativeMethods.TablePtr->C0.hs_method_d74a7ea1((void*)__hosihikari_shim_handle));
+    }
+
     public bool isOrphaned()
     {
         return NativeMethods.TablePtr->C0.hs_method_b4a94884((void*)__hosihikari_shim_handle) != 0;
@@ -113,6 +118,12 @@ public sealed unsafe partial class BackgroundTaskBase : global::System.IDisposab
     public int mBackDownPriorityAmount
     {
         get => NativeMethods.TablePtr->C0.hs_get_e985425d((void*)__hosihikari_shim_handle);
+    }
+
+    public ulong mDiagnosticId
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_1fc10efb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_1fc10efb((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mGroup
@@ -148,6 +159,18 @@ public sealed unsafe partial class BackgroundTaskBase : global::System.IDisposab
     {
         get => NativeMethods.TablePtr->C0.hs_get_546e4c26((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C0.hs_set_546e4c26((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSourceFile_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_65c9d9d1((void*)__hosihikari_shim_handle);
+    }
+
+    public uint mSourceLine
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_e413dffb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_e413dffb((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

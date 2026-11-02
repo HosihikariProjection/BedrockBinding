@@ -63,6 +63,13 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_a95356ca((void*)__hosihikari_shim_handle);
     }
 
+    public int? _getSelectedRecipeIndex()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C0.hs_method_f601c6f1((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (int?)null;
+    }
+
     public bool _isResultSlot(int slot)
     {
         return NativeMethods.TablePtr->C0.hs_method_91f5116f((void*)__hosihikari_shim_handle, slot) != 0;
@@ -87,9 +94,14 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_f1fd85cd((void*)__hosihikari_shim_handle, type);
     }
 
-    public void _setData(int id, int value)
+    public void _setData(int arg0, int arg1)
     {
-        NativeMethods.TablePtr->C0.hs_method_90094c91((void*)__hosihikari_shim_handle, id, value);
+        NativeMethods.TablePtr->C0.hs_method_90094c91((void*)__hosihikari_shim_handle, arg0, arg1);
+    }
+
+    public void _setSelectedRecipeIndex(int arg0, bool arg1)
+    {
+        NativeMethods.TablePtr->C0.hs_method_2cb04b48((void*)__hosihikari_shim_handle, arg0, arg1);
     }
 
     public static BaseContainerMenu Create()
@@ -143,6 +155,13 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.", false)]
     public nint getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
+
+    public int? getSelectedRecipeIndex()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C0.hs_method_f27207ad((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (int?)null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
     {
@@ -236,9 +255,14 @@ public sealed unsafe partial class BaseContainerMenu : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_36eeeefb((void*)__hosihikari_shim_handle, type);
     }
 
-    public void setData(int id, int value)
+    public void setData(int arg0, int arg1)
     {
-        NativeMethods.TablePtr->C0.hs_method_51e16494((void*)__hosihikari_shim_handle, id, value);
+        NativeMethods.TablePtr->C0.hs_method_51e16494((void*)__hosihikari_shim_handle, arg0, arg1);
+    }
+
+    public void setSelectedRecipeIndex(int arg0, bool arg1)
+    {
+        NativeMethods.TablePtr->C0.hs_method_e3040db9((void*)__hosihikari_shim_handle, arg0, arg1);
     }
 
     public void setSlot(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arg1, bool arg2)

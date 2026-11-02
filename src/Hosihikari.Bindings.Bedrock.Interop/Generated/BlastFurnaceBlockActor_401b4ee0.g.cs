@@ -38,6 +38,11 @@ public sealed unsafe partial class BlastFurnaceBlockActor : global::System.IDisp
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_677c8782((void*)__hosihikari_shim_handle, (void*)blockPos.Handle);
+    }
+
     public string _getName()
     {
         var __hs_view = NativeMethods.TablePtr->C0.hs_method_72805313((void*)__hosihikari_shim_handle);
@@ -64,9 +69,31 @@ public sealed unsafe partial class BlastFurnaceBlockActor : global::System.IDisp
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    public static BlastFurnaceBlockActor Create()
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_af2f5c52();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new BlastFurnaceBlockActor((nint)handle);
+    }
+
     public static BlastFurnaceBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlastFurnaceBlockActor arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_5e68d60c((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new BlastFurnaceBlockActor((nint)handle);
+    }
+
+    public static BlastFurnaceBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_c9e053d9((void*)blockPos.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -92,6 +119,12 @@ public sealed unsafe partial class BlastFurnaceBlockActor : global::System.IDisp
     public nint mDynamicProperties_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_672da0b9((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_30e972ee((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

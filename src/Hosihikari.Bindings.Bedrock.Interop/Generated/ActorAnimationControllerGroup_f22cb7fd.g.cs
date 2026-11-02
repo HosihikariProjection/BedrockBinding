@@ -90,7 +90,7 @@ public sealed unsafe partial class ActorAnimationControllerGroup : global::Syste
         global::System.Text.Encoding.UTF8.GetBytes(fileData, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C0.hs_method_4782bf53((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)filenameWithExtension.Handle, (void*)minEngineVersion.Handle, packCommandVersion);
+            NativeMethods.TablePtr->C0.hs_method_71b4813e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)filenameWithExtension.Handle, (void*)minEngineVersion.Handle, packCommandVersion);
         }
     }
 

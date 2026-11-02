@@ -124,9 +124,9 @@ public sealed unsafe partial class ShapelessRecipe : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_85f7656f((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public bool _matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
+    public bool _matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return NativeMethods.TablePtr->C4.hs_method_c4da5246((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_c4da5246((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle) != 0;
     }
 
     public int _size()
@@ -169,9 +169,9 @@ public sealed unsafe partial class ShapelessRecipe : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_0a69ea96((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public bool matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
+    public bool matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return NativeMethods.TablePtr->C4.hs_method_4cf8edbb((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_4cf8edbb((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle) != 0;
     }
 
     public int size()

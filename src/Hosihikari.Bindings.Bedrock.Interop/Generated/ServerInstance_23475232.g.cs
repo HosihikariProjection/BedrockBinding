@@ -203,11 +203,6 @@ public sealed unsafe partial class ServerInstance : global::System.IDisposable
     public nint _postLevelInitialization(nint args) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<bool>' requires --link-carrier or --virtual-dispatch.");
 
-    public void _resetServerScriptManager()
-    {
-        NativeMethods.TablePtr->C3.hs_method_477edb71((void*)__hosihikari_shim_handle);
-    }
-
     public static bool _useClientSideChunkGeneration(global::Hosihikari.Bindings.Bedrock.Interop.LevelData? levelData)
     {
         return NativeMethods.TablePtr->C3.hs_method_53f7d734((void*)(levelData?.Handle ?? 0)) != 0;
@@ -527,6 +522,12 @@ public sealed unsafe partial class ServerInstance : global::System.IDisposable
     public nint mWakeupInterval_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b8306dae((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mWorldSaveAndExitPackTelemetry_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c8940f98((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

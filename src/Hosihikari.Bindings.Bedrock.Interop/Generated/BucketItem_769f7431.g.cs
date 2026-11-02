@@ -142,11 +142,6 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public void _broadcastBucketEmptySound(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e840b02a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)entity.Handle, (void*)pos.Handle);
-    }
-
     public static void _broadcastBucketFillSound(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.Material material)
     {
         NativeMethods.TablePtr->C0.hs_method_5cbe3243((void*)region.Handle, (void*)entity.Handle, (void*)material.Handle);
@@ -160,16 +155,6 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
     public static void _replaceWithEmptyBucket(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
     {
         NativeMethods.TablePtr->C0.hs_method_ba9a7f64((void*)instance.Handle, (void*)entity.Handle);
-    }
-
-    public bool _supportsWaterlessEntity(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.HashedString bucketType, bool onlyCheckActorType)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_9c80651c((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)bucketType.Handle, onlyCheckActorType) != 0;
-    }
-
-    public bool _takePowderSnow(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_c76fdee6((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)actor.Handle, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
@@ -232,11 +217,6 @@ public sealed unsafe partial class BucketItem : global::System.IDisposable
     {
         get => NativeMethods.TablePtr->C0.hs_get_3e4699d6((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C0.hs_set_3e4699d6((void*)__hosihikari_shim_handle, value);
-    }
-
-    public static nint mFillTypeEntityData()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_6eda3ed0();
     }
 
     public bool readBucketEntitySaveData(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Actor? placer, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance instance)

@@ -124,6 +124,12 @@ public sealed unsafe partial class SubClientConnectionRequest : global::System.I
         }
     }
 
+    public string getPrimaryPlayFabId()
+    {
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_5d36cb2a((void*)__hosihikari_shim_handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
 
     public void Dispose()
     {

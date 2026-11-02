@@ -453,17 +453,6 @@ public sealed unsafe partial class TwistingVinesBlock : global::System.IDisposab
         return new TwistingVinesBlock((nint)handle);
     }
 
-    public static TwistingVinesBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.TwistingVinesBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a7adebe7((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TwistingVinesBlock((nint)handle);
-    }
-
     public static TwistingVinesBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

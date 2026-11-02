@@ -67,12 +67,6 @@ public sealed unsafe partial class BuiltInActorComponents : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_780c242d((void*)__hosihikari_shim_handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mWalkAnimationComponent_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_0bfa2531((void*)__hosihikari_shim_handle);
-    }
-
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

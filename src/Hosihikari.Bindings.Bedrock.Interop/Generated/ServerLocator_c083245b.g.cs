@@ -39,9 +39,9 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_191b6cc4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4570e7ee((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -58,6 +58,17 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
     public void __onEnable()
     {
         NativeMethods.TablePtr->C3.hs_method_7b5e3fa5((void*)__hosihikari_shim_handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription _acquireHttpProbePermission()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)NativeMethods.TablePtr->C3.hs_method_8249667a((void*)__hosihikari_shim_handle));
+    }
+
+    public global::Hosihikari.Bindings.Abi.SharedHandle? _getTransportEndpointCache()
+    {
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_50eb034a((void*)__hosihikari_shim_handle);
+        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public static ServerLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLocator arg0)
@@ -81,6 +92,11 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_30715cea((void*)__hosihikari_shim_handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription acquireHttpProbePermission()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)NativeMethods.TablePtr->C3.hs_method_112a9da1((void*)__hosihikari_shim_handle));
+    }
+
     public void addCustomServer(global::Hosihikari.Bindings.Bedrock.Interop.AsynchronousIPResolver futureIP, int port)
     {
         NativeMethods.TablePtr->C3.hs_method_77dc6c7e((void*)__hosihikari_shim_handle, (void*)futureIP.Handle, port);
@@ -98,7 +114,13 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
     public nint getServerList() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.");
 
-    public void startAnnouncingServer(string playerName, string worldName, int gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? getTransportEndpointCache()
+    {
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_93c7c7bb((void*)__hosihikari_shim_handle);
+        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
+    }
+
+    public void startAnnouncingServer(string playerName, string worldName, int worldGameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playerName);
         scoped global::System.Span<byte> __hs_stringBytes0;
@@ -126,7 +148,7 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C3.hs_method_6717a6d4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, gameType, numPlayers, maxNumPlayers, isJoinableThroughServerScreen, isEditorWorld, isHardcore, (void*)supportedAuth.Handle, (void*)nonce.Handle);
+                NativeMethods.TablePtr->C3.hs_method_6717a6d4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, worldGameType, numPlayers, maxNumPlayers, isJoinableThroughServerScreen, isEditorWorld, isHardcore, (void*)supportedAuth.Handle, (void*)nonce.Handle);
             }
         }
     }

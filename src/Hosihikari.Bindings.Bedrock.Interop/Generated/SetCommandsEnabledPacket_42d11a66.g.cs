@@ -69,70 +69,70 @@ public sealed unsafe partial class SetCommandsEnabledPacket : global::System.IDi
 
     public int mReliability
     {
-        get => NativeMethods.TablePtr->C3.hs_get_129db6f8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_129db6f8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_129db6f8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_129db6f8((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mSenderSubId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_df793374((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_df793374((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_df793374((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_df793374((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_676a8dc8((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_676a8dc8((void*)__hosihikari_shim_handle, (void*)stream.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_2adb67e9((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_2adb67e9((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
     }
 
     public bool _disallowBatching()
     {
-        return NativeMethods.TablePtr->C3.hs_method_b34b696b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_b34b696b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int _getId()
     {
-        return NativeMethods.TablePtr->C3.hs_method_e4bbe272((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_e4bbe272((void*)__hosihikari_shim_handle);
     }
 
     public ulong _getMaxSize()
     {
-        return NativeMethods.TablePtr->C3.hs_method_e622444c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_e622444c((void*)__hosihikari_shim_handle);
     }
 
     public string _getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_2c89d52d((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_2c89d52d((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public int _getSerializationMode()
     {
-        return NativeMethods.TablePtr->C3.hs_method_289d5278((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_289d5278((void*)__hosihikari_shim_handle);
     }
 
     public bool _isValid()
     {
-        return NativeMethods.TablePtr->C3.hs_method_a1c21f79((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_a1c21f79((void*)__hosihikari_shim_handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read_601aa90e(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream bitStream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_601aa90e((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_601aa90e((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle));
     }
 
     public void _setSerializationMode(int mode)
     {
-        NativeMethods.TablePtr->C3.hs_method_54f91cf7((void*)__hosihikari_shim_handle, mode);
+        NativeMethods.TablePtr->C4.hs_method_54f91cf7((void*)__hosihikari_shim_handle, mode);
     }
 
     public string _toString()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_26016ed2((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_26016ed2((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -142,22 +142,22 @@ public sealed unsafe partial class SetCommandsEnabledPacket : global::System.IDi
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C3.hs_method_e92f3cc0((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C4.hs_method_e92f3cc0((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        NativeMethods.TablePtr->C3.hs_method_0e5b3ffe((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_0e5b3ffe((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle);
     }
 
     public void _writeWithSerializationMode(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx, int? overrideMode)
     {
-        NativeMethods.TablePtr->C3.hs_method_9a5c6a41((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle, overrideMode ?? default(int), overrideMode.HasValue);
+        NativeMethods.TablePtr->C4.hs_method_9a5c6a41((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle, overrideMode ?? default(int), overrideMode.HasValue);
     }
 
     public static SetCommandsEnabledPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.SetCommandsEnabledPacket arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c684ce5c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_c684ce5c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -168,87 +168,87 @@ public sealed unsafe partial class SetCommandsEnabledPacket : global::System.IDi
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_7b6bd88e((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_7b6bd88e((void*)__hosihikari_shim_handle, (void*)stream.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read_24f6c5bb(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_24f6c5bb((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_24f6c5bb((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
     }
 
     public bool disallowBatching()
     {
-        return NativeMethods.TablePtr->C3.hs_method_889e9308((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_889e9308((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int getId()
     {
-        return NativeMethods.TablePtr->C3.hs_method_ddef2957((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_ddef2957((void*)__hosihikari_shim_handle);
     }
 
     public ulong getMaxSize()
     {
-        return NativeMethods.TablePtr->C3.hs_method_4497ab8c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_4497ab8c((void*)__hosihikari_shim_handle);
     }
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_ea941924((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_ea941924((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public int getSerializationMode()
     {
-        return NativeMethods.TablePtr->C3.hs_method_315b9166((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_315b9166((void*)__hosihikari_shim_handle);
     }
 
     public bool isValid()
     {
-        return NativeMethods.TablePtr->C3.hs_method_6efddeee((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_6efddeee((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int mSerializationMode
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e8ab6c56((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e8ab6c56((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_e8ab6c56((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_e8ab6c56((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream bitStream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_33b066a6((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_33b066a6((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle));
     }
 
     public void setSerializationMode(int mode)
     {
-        NativeMethods.TablePtr->C3.hs_method_99ee0a7c((void*)__hosihikari_shim_handle, mode);
+        NativeMethods.TablePtr->C4.hs_method_99ee0a7c((void*)__hosihikari_shim_handle, mode);
     }
 
     public string toString()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_4db440d1((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_4db440d1((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C3.hs_method_d95c9e59((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C4.hs_method_d95c9e59((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
     public void write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx)
     {
-        NativeMethods.TablePtr->C3.hs_method_a6dcf8a0((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_a6dcf8a0((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle);
     }
 
     public void writeWithSerializationMode(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx, int? overrideMode)
     {
-        NativeMethods.TablePtr->C3.hs_method_13102bbe((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle, overrideMode ?? default(int), overrideMode.HasValue);
+        NativeMethods.TablePtr->C4.hs_method_13102bbe((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle, overrideMode ?? default(int), overrideMode.HasValue);
     }
 
 
     public bool mCommandsEnabled
     {
-        get => NativeMethods.TablePtr->C3.hs_get_99eb73f7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_99eb73f7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_99eb73f7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_99eb73f7((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()

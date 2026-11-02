@@ -413,17 +413,6 @@ public sealed unsafe partial class EndGatewayBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static EndGatewayBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.EndGatewayBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_784a6dac((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EndGatewayBlock((nint)handle);
-    }
-
     public bool addCollisionShapes(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB? intersectTestBox, global::Hosihikari.Bindings.Bedrock.Interop.AABB[] inoutBoxes, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
     {
         var __hs_vectorItems4 = inoutBoxes;

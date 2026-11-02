@@ -65,6 +65,18 @@ public sealed unsafe partial class Beardifier : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C5.hs_get_454f51bb((void*)__hosihikari_shim_handle);
     }
 
+    public int mMaxAffectedY
+    {
+        get => NativeMethods.TablePtr->C5.hs_get_8b592aab((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_8b592aab((void*)__hosihikari_shim_handle, value);
+    }
+
+    public int mMinAffectedY
+    {
+        get => NativeMethods.TablePtr->C5.hs_get_ea29104e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_ea29104e((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mPieces_Address
     {

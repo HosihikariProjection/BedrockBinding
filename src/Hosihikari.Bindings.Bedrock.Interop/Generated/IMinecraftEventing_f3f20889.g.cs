@@ -889,6 +889,11 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         NativeMethods.TablePtr->C2.hs_method_6634a7ba((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
+    public void fireEventChunkProfilerCapture(nint scores)
+    {
+        NativeMethods.TablePtr->C2.hs_method_f288e8df((void*)__hosihikari_shim_handle, (void*)scores);
+    }
+
     public void fireEventChunkUnloaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
         NativeMethods.TablePtr->C2.hs_method_c3efe3ab((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
@@ -995,6 +1000,25 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 NativeMethods.TablePtr->C2.hs_method_f010f9c6((void*)__hosihikari_shim_handle, operation, cloudItemType, __hs_stringData2, (nuint)__hs_stringByteCount2, size, __hs_stringData4, (nuint)__hs_stringByteCount4, driveItemId is not null);
             }
+        }
+    }
+
+    public void fireEventCloudSpoAuthenticationEdu(string cloudWorldCorrelationId, int spoTokenAcquisitionOperation, bool spoTokenAcquisitionSucceeded, long? spoTokenTimeToExpiry, long? spoTokenAge, bool? spoTokenAcquiredIsNew)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(cloudWorldCorrelationId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(cloudWorldCorrelationId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_475f0320((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, spoTokenAcquisitionOperation, spoTokenAcquisitionSucceeded, spoTokenTimeToExpiry ?? default(long), spoTokenAge ?? default(long), spoTokenAcquiredIsNew ?? default(bool), spoTokenTimeToExpiry.HasValue, spoTokenAge.HasValue, spoTokenAcquiredIsNew.HasValue);
         }
     }
 
@@ -1423,9 +1447,9 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         NativeMethods.TablePtr->C2.hs_method_ded9fcd6((void*)__hosihikari_shim_handle, (void*)data);
     }
 
-    public void fireEventDiskStatus(byte status, int errorCode, ulong freeSpace)
+    public void fireEventDiskStatus(byte status, int errorCode, ulong freeSpace, long remoteRemainingStorageB)
     {
-        NativeMethods.TablePtr->C2.hs_method_c98227bb((void*)__hosihikari_shim_handle, status, errorCode, freeSpace);
+        NativeMethods.TablePtr->C2.hs_method_a3202a4c((void*)__hosihikari_shim_handle, status, errorCode, freeSpace, remoteRemainingStorageB);
     }
 
     public void fireEventDisplayLoggedError(string errorMessageTemplate, string errorMessage, string errorParameters)
@@ -1744,9 +1768,10 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void fireEventImmersiveReaderStatus(nint status) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void fireEventImmersiveReaderStatus(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status status)
+    {
+        NativeMethods.TablePtr->C2.hs_method_1f0d5a63((void*)__hosihikari_shim_handle, (void*)status.Handle);
+    }
 
     public void fireEventInGamePause(bool pauseStatus)
     {
@@ -2403,6 +2428,11 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void fireEventOreUIScreenPerformance(nint userId, nint writer) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
+    public void fireEventOreUIScreenTracking(nint userId, nint trackingData)
+    {
+        NativeMethods.TablePtr->C2.hs_method_dddb4747((void*)__hosihikari_shim_handle, (void*)userId, (void*)trackingData);
+    }
 
     public void fireEventPackActivationError(string errorType, string errorDetail, string packAction, string packId, string contentType, bool isFatal)
     {
@@ -3604,6 +3634,25 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         NativeMethods.TablePtr->C2.hs_method_78e05992((void*)__hosihikari_shim_handle, (void*)@params);
     }
 
+    public void fireEventProfilerUsed(string profilerName)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(profilerName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(profilerName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_f3984ca0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
+
     public void fireEventProgressionsSet(string[] progressions)
     {
         var __hs_vectorItems0 = progressions ?? global::System.Array.Empty<string>();
@@ -3949,9 +3998,24 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void fireEventRealmsGeneralCall(nint callName, nint returnCode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void fireEventRealmsGeneralCall(string callName, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status returnCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(callName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(callName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_7ca99d71((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)returnCode.Handle);
+        }
+    }
 
     public void fireEventRealmsPackUpload(int realmId, int slotIndex, string packId, string packVersion, sbyte packType, string packClassification, string packOptimizationVersion, bool hasContentIdentity, bool isPremium, byte packOrigin, int stackPosition, ulong packSizeBytes)
     {
@@ -4014,9 +4078,24 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void fireEventRealmsRealmSpecificCall(nint callName, long realmId, nint returnCode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void fireEventRealmsRealmSpecificCall(string callName, long realmId, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status returnCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(callName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(callName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_dd6b4766((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, realmId, (void*)returnCode.Handle);
+        }
+    }
 
     public void fireEventRealmsStoriesOptIn(string correlationId, string action, string realmId, bool isOwner)
     {
@@ -5277,6 +5356,10 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         }
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public void fireEventUserStorageAreaSpaceInfo(nint spaceInfoStatus, nint worldsSizeOnDiskFn, nint storageAreaSpaceInfo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
     public void fireEventUwpToGdkMigrationComplete(nint deviceIdContext, string gdkDeviceId, string migrationErrors)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(gdkDeviceId);
@@ -5391,9 +5474,9 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         NativeMethods.TablePtr->C2.hs_method_7ed3a9f5((void*)__hosihikari_shim_handle, worldSeed, worldSize);
     }
 
-    public void fireEventWorldFilesListed(ulong numLevels, ulong totalSizeMB, ulong largestLevelMB, ulong smallestLevelMB)
+    public void fireEventWorldFilesListed(ulong numLevels, ulong totalSizeMB, ulong largestLevelMB, ulong smallestLevelMB, ulong totalRemoteStorageMB, ulong avgRemoteStorageMB)
     {
-        NativeMethods.TablePtr->C2.hs_method_5a7b973c((void*)__hosihikari_shim_handle, numLevels, totalSizeMB, largestLevelMB, smallestLevelMB);
+        NativeMethods.TablePtr->C2.hs_method_24b947d6((void*)__hosihikari_shim_handle, numLevels, totalSizeMB, largestLevelMB, smallestLevelMB, totalRemoteStorageMB, avgRemoteStorageMB);
     }
 
     public void fireEventWorldGenerated(string levelId, global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings levelSettings, bool fromTemplate)
@@ -5483,6 +5566,10 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'std::pair<std::basic_string_view<char>, std::basic_string_view<char>>' is not supported.", false)]
     public void fireEventWorldLoadedClassroomCustomization(nint customization, nint details) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'std::pair<std::basic_string_view<char>, std::basic_string_view<char>>' is not supported.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    public void fireEventWorldSaveAndExit(nint context, nint storageData, nint packs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void fireEventWriteBudgetLow(ulong remainingWriteBudget, float writeRateMBPerMin, float writeCountPerMin, nint timeSinceLastLargeFileTransactionCompleted, bool anyLargeFileTransactionInProgress, nint correlationId) =>

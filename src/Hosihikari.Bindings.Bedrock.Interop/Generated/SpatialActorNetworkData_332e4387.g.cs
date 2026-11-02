@@ -67,11 +67,6 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
         return __hs_hasValue ? __hs_value : (ulong?)null;
     }
 
-    public static bool isPredictedMovementComponentEnabled()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_7f32bde6() != 0;
-    }
-
     public static global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers mDebugSpatialPacketModifiers()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers((nint)NativeMethods.TablePtr->C4.hs_method_593746aa(), false);
@@ -127,11 +122,6 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
     public void sendUpdate(bool forceMove, bool forceMoveLocalEntity, bool forceAbsoluteMovement, bool forceCompletion)
     {
         NativeMethods.TablePtr->C4.hs_method_429b9516((void*)__hosihikari_shim_handle, forceMove, forceMoveLocalEntity, forceAbsoluteMovement, forceCompletion);
-    }
-
-    public bool shouldSendMotionPredictionHintsPacket()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_14296a2b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void teleportEntity(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 rot, float yHeadRot)

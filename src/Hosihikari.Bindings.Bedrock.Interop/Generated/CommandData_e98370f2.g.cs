@@ -61,6 +61,12 @@ public sealed unsafe partial class CommandData : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_0175b2f9((void*)__hosihikari_shim_handle, value);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mHandle_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ed17a408((void*)__hosihikari_shim_handle);
+    }
+
     public byte mRepeatMode
     {
         get => NativeMethods.TablePtr->C2.hs_get_22749df9((void*)__hosihikari_shim_handle);

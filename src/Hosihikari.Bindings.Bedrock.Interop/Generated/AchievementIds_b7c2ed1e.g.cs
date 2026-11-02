@@ -88,5 +88,6 @@ public enum AchievementIds : byte
     MonsterHunter = 124,
     Diamonds = 125,
     PlethoraOfCats = 126,
-    Count = 127,
+    WhatGoesAroundComesAround = 127,
+    Count = 128,
 }

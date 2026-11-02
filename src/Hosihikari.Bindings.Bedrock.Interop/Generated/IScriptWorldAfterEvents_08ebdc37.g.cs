@@ -188,6 +188,21 @@ public sealed unsafe partial class IScriptWorldAfterEvents : global::System.IDis
         NativeMethods.TablePtr->C3.hs_method_8b10979f((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
+    public void _onPlayerCraftRecipe(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_e96bd238((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
+    public void _onPlayerCursorItemGrab(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_7f2e535b((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
+    public void _onPlayerCursorItemRelease(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_3bb240cb((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
     public void _onPlayerDimensionChange(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)
     {
         NativeMethods.TablePtr->C3.hs_method_4a868318((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
@@ -532,6 +547,21 @@ public sealed unsafe partial class IScriptWorldAfterEvents : global::System.IDis
     public void onPlayerCancelBreakingBlock(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)
     {
         NativeMethods.TablePtr->C3.hs_method_03b81fb2((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
+    public void onPlayerCraftRecipe(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_c1d7175a((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
+    public void onPlayerCursorItemGrab(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_2937674d((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
+    public void onPlayerCursorItemRelease(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_0b78fb1b((void*)__hosihikari_shim_handle, eventData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void onPlayerDimensionChange(global::Hosihikari.Bindings.Abi.SharedHandle? eventData)

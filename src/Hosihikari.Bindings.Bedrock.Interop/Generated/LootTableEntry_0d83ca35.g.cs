@@ -77,10 +77,6 @@ public sealed unsafe partial class LootTableEntry : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_e4d0e088((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public bool _createItem(nint output, nint random, nint context) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");

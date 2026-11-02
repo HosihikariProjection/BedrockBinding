@@ -38,6 +38,11 @@ public sealed unsafe partial class VanillaAncientCityJigsawStructureBlockRules :
         return __hs_handle;
     }
 
+    public static void initialize(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry jigsawRegistry)
+    {
+        NativeMethods.TablePtr->C4.hs_method_dc31e675((void*)jigsawRegistry.Handle);
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

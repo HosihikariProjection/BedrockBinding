@@ -67,6 +67,12 @@ public sealed unsafe partial class CrashDump_AllData : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk445480_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_4d56e699((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnk69c5c5_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_beea2efd((void*)__hosihikari_shim_handle);
@@ -94,12 +100,6 @@ public sealed unsafe partial class CrashDump_AllData : global::System.IDisposabl
     public nint mUnkb28d77_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_15c06b02((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkc2cd5b_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_bc86ba66((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -136,6 +136,12 @@ public sealed unsafe partial class CrashDump_AllData : global::System.IDisposabl
     public nint mUnkf26b20_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_9b8ec764((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkfdf32c_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c9427319((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

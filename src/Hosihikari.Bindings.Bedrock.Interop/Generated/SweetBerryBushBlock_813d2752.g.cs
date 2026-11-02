@@ -497,17 +497,6 @@ public sealed unsafe partial class SweetBerryBushBlock : global::System.IDisposa
         return new SweetBerryBushBlock((nint)handle);
     }
 
-    public static SweetBerryBushBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SweetBerryBushBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_76aa89bb((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SweetBerryBushBlock((nint)handle);
-    }
-
     public static SweetBerryBushBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

@@ -388,17 +388,6 @@ public sealed unsafe partial class CameraBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static CameraBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_8a0edf84((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CameraBlock((nint)handle);
-    }
-
     public bool canBeUsedInCommands(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion requiredBaseGameVersion)
     {
         return NativeMethods.TablePtr->C0.hs_method_6c693b8f((void*)__hosihikari_shim_handle, (void*)requiredBaseGameVersion.Handle) != 0;

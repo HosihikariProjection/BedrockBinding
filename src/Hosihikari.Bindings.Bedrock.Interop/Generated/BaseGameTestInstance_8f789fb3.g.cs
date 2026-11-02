@@ -52,6 +52,11 @@ public sealed unsafe partial class BaseGameTestInstance : global::System.IDispos
     public nint _ctor(nint testFunction, nint helper) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C5.hs_method_a07c023b((void*)__hosihikari_shim_handle);
+    }
+
     public void _initialize()
     {
         NativeMethods.TablePtr->C5.hs_method_bfb99f8b((void*)__hosihikari_shim_handle);
@@ -61,6 +66,10 @@ public sealed unsafe partial class BaseGameTestInstance : global::System.IDispos
     {
         NativeMethods.TablePtr->C5.hs_method_380c8279((void*)__hosihikari_shim_handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
     public static BaseGameTestInstance Create()
     {
@@ -375,11 +384,6 @@ public sealed unsafe partial class BaseGameTestInstance : global::System.IDispos
     public void succeed()
     {
         NativeMethods.TablePtr->C5.hs_method_36f0391f((void*)__hosihikari_shim_handle);
-    }
-
-    public void tick()
-    {
-        NativeMethods.TablePtr->C5.hs_method_bf82d234((void*)__hosihikari_shim_handle);
     }
 
 

@@ -68,7 +68,7 @@ public sealed unsafe partial class FilterGroup : global::System.IDisposable
         return new FilterGroup((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _createSubgroup(int type)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? _createSubgroup(byte type)
     {
         var __hs_shared = NativeMethods.TablePtr->C1.hs_method_5669853b((void*)__hosihikari_shim_handle, type);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
@@ -78,7 +78,7 @@ public sealed unsafe partial class FilterGroup : global::System.IDisposable
     public bool _parseFilterParam(nint filter, nint member, nint param, nint paramDef, nint input) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public bool _parseMemberCollection(int collectionType, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterGroupData filterGroupData)
+    public bool _parseMemberCollection(byte collectionType, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterGroupData filterGroupData)
     {
         return NativeMethods.TablePtr->C1.hs_method_05b32f5e((void*)__hosihikari_shim_handle, collectionType, (void*)filterGroupData.Handle) != 0;
     }
@@ -114,7 +114,7 @@ public sealed unsafe partial class FilterGroup : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_577dfd9f((void*)__hosihikari_shim_handle);
     }
 
-    public int mCollectionType
+    public byte mCollectionType
     {
         get => NativeMethods.TablePtr->C1.hs_get_73e11fd9((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C1.hs_set_73e11fd9((void*)__hosihikari_shim_handle, value);

@@ -70,10 +70,6 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_369fa828((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static EmptyPoolElement Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_269a6bb9();

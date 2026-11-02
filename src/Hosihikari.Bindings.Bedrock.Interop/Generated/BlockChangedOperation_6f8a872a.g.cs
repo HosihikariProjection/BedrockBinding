@@ -95,6 +95,12 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
+    public static string LIQUID_SAFE_OPERATION_NAME()
+    {
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_5e68625f();
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint _clearActiveProcess() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.");
@@ -102,6 +108,11 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
     public int _getProcessingState()
     {
         return NativeMethods.TablePtr->C1.hs_method_cb42d099((void*)__hosihikari_shim_handle);
+    }
+
+    public void _neutralizeLiquids(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, ulong startIndex, ulong count)
+    {
+        NativeMethods.TablePtr->C1.hs_method_5428cdde((void*)__hosihikari_shim_handle, (void*)region.Handle, startIndex, count);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -125,6 +136,15 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint _setBlocks(nint level, nint region, bool isUndo, ulong startIndex, ulong count) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.");
+
+    public void _updateNeighbors(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, int transition, ulong startIndex, ulong count)
+    {
+        NativeMethods.TablePtr->C1.hs_method_d6d1f40e((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)region.Handle, transition, startIndex, count);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'Editor::Transactions::BlockChangedOperationData' is not supported.", false)]
+    public static void appendResolvedBlockChange(nint region, nint blockIntentData, nint changedBlocks) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'Editor::Transactions::BlockChangedOperationData' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'Editor::Transactions::BlockChangeIntentData' is not supported.", false)]
     public static nint createBlockChangeIntentFromLocation(nint region, nint pos, bool includeAll) =>
@@ -158,6 +178,12 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
     public nint mUnk4da484_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_64060d6e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk59efd7_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2b7c80b2((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.BlockChangedOperation operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.BlockChangedOperation arg0)

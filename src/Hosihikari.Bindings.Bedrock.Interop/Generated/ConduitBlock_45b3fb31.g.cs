@@ -388,17 +388,6 @@ public sealed unsafe partial class ConduitBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ConduitBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ConduitBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_74572bf9((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ConduitBlock((nint)handle);
-    }
-
     public bool mayPlace(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte facing)
     {
         return NativeMethods.TablePtr->C1.hs_method_fc0e5aca((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, facing) != 0;

@@ -64,17 +64,6 @@ public sealed unsafe partial class StructureEditorData : global::System.IDisposa
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static StructureEditorData Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d9980b95();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StructureEditorData((nint)handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public static StructureEditorData Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");

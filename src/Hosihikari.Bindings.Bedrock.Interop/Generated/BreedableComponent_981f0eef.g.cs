@@ -49,6 +49,11 @@ public sealed unsafe partial class BreedableComponent : global::System.IDisposab
         return new BreedableComponent((nint)handle);
     }
 
+    public bool _canBreed(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack playerItem, byte handSlot)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_a70f04de((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, (void*)playerItem.Handle, handSlot) != 0;
+    }
+
     public static void _spawnExperienceOrbs(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
     {
         NativeMethods.TablePtr->C0.hs_method_97307bc6((void*)owner.Handle);
@@ -69,9 +74,9 @@ public sealed unsafe partial class BreedableComponent : global::System.IDisposab
         return NativeMethods.TablePtr->C0.hs_method_731e40d0((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)partner.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_abf3f2db((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_8a93f2a2((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
     }
 
     public int mBreedCooldown

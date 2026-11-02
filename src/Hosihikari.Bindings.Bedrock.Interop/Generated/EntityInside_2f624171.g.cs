@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.EntityInsideSystemImpl;
 
-public sealed unsafe partial class EntityInside
+public sealed unsafe partial class EntityInside : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -52,9 +52,26 @@ public sealed unsafe partial class EntityInside
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    public static EntityInside Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityInsideSystemImpl.EntityInside arg0)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_07649d1d((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new EntityInside((nint)handle);
+    }
+
     public bool mIsClientSide
     {
         get => NativeMethods.TablePtr->C1.hs_get_4a323e94((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0237d17c((void*)__hosihikari_shim_handle);
     }
 
     public void singleTick(nint executionContext, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
@@ -65,5 +82,19 @@ public sealed unsafe partial class EntityInside
     public void tick(nint executionContext)
     {
         NativeMethods.TablePtr->C1.hs_method_600f9143((void*)__hosihikari_shim_handle, (void*)executionContext);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C1.hs_destroy_2f624171((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

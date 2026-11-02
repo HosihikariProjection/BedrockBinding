@@ -68,9 +68,9 @@ public sealed unsafe partial class Timer : global::System.IDisposable
     public static Timer Create(float ticksPerSecond, nint getTimeMSCallback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public void advanceTime(float preferredFrameStep)
+    public void advanceTime(float preferredFrameStep, bool forceOnlySingleTick)
     {
-        NativeMethods.TablePtr->C4.hs_method_7c51b4b9((void*)__hosihikari_shim_handle, preferredFrameStep);
+        NativeMethods.TablePtr->C4.hs_method_af5f54bd((void*)__hosihikari_shim_handle, preferredFrameStep, forceOnlySingleTick);
     }
 
     public static long getMillisecondsSinceLaunch()

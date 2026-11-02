@@ -60,9 +60,10 @@ public sealed unsafe partial class CommandManager : global::System.IDisposable
         return new CommandManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.", false)]
-    public nint _collectScriptStats(ulong currentTick, ulong lastCollectedTick, ulong collectionFrequency) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.");
+    public void _collectScriptStats(nint commandRunCounts, ulong currentTick, ulong lastCollectedTick, ulong collectionFrequency)
+    {
+        NativeMethods.TablePtr->C1.hs_method_a2922159((void*)__hosihikari_shim_handle, (void*)commandRunCounts, currentTick, lastCollectedTick, collectionFrequency);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void initialize(nint functionManager) =>

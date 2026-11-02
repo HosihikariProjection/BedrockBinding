@@ -49,6 +49,11 @@ public sealed unsafe partial class RenderOffsetsItemComponent : global::System.I
         return new RenderOffsetsItemComponent((nint)handle);
     }
 
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C4.hs_method_6412ee86((void*)ctx.Handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mMainHand_Address
     {

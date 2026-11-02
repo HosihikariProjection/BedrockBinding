@@ -91,6 +91,12 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
         NativeMethods.TablePtr->C2.hs_method_36f8244c((void*)__hosihikari_shim_handle, (void*)registryRef.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Abi.SharedHandle? create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef registryRef)
+    {
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_614f0577((void*)registryRef.Handle);
+        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
+    }
+
     public bool mIsSet
     {
         get => NativeMethods.TablePtr->C2.hs_get_71581bea((void*)__hosihikari_shim_handle) != 0;

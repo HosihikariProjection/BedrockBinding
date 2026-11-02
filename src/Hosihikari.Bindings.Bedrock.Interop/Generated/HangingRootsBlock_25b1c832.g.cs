@@ -403,17 +403,6 @@ public sealed unsafe partial class HangingRootsBlock : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static HangingRootsBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.HangingRootsBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_54bd54a3((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new HangingRootsBlock((nint)handle);
-    }
-
     public bool canSurvive(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C1.hs_method_8e08d50f((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;

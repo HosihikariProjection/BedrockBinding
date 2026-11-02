@@ -321,6 +321,10 @@ public sealed unsafe partial class SpyglassItem : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_74a304eb((void*)__hosihikari_shim_handle, (void*)inoutInstance.Handle, (void*)(level?.Handle ?? 0), (void*)(player?.Handle ?? 0));
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public float getViewDamping()
     {
         return NativeMethods.TablePtr->C4.hs_method_d7e00e11((void*)__hosihikari_shim_handle);

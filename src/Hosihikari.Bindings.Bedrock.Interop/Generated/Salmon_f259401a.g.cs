@@ -692,10 +692,10 @@ public sealed unsafe partial class Salmon : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_4cff983e((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0074eca6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_0074eca6((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a14e2ad1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

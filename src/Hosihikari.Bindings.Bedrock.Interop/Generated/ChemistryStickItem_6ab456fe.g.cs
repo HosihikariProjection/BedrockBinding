@@ -38,6 +38,11 @@ public sealed unsafe partial class ChemistryStickItem : global::System.IDisposab
         return __hs_handle;
     }
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_561aef61((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
     {
         NativeMethods.TablePtr->C0.hs_method_c4611b1f((void*)__hosihikari_shim_handle, (void*)stack.Handle);
@@ -86,12 +91,6 @@ public sealed unsafe partial class ChemistryStickItem : global::System.IDisposab
     public static string ACTIVATION_TIMESTAMP_TAG()
     {
         var __hs_view = NativeMethods.TablePtr->C0.hs_method_1cc0a9e4();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
-
-    public string _getColorName(int data)
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_3f9ed8be((void*)__hosihikari_shim_handle, data);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 

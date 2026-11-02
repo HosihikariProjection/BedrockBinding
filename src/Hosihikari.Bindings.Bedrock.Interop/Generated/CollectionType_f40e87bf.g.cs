@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.FilterGroup_Nested;
 
-public enum CollectionType : int
+public enum CollectionType : byte
 {
     And = 0,
     Or = 1,

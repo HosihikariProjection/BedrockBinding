@@ -68,6 +68,25 @@ public sealed unsafe partial class AgentCommandExecutionGoal : global::System.ID
         return NativeMethods.TablePtr->C0.hs_method_40cacc7c((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, string name, nint goalId)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            return (nint)NativeMethods.TablePtr->C0.hs_method_b7ee13af((void*)__hosihikari_shim_handle, (void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId);
+        }
+    }
+
     public void _start()
     {
         NativeMethods.TablePtr->C0.hs_method_1658b23d((void*)__hosihikari_shim_handle);
@@ -91,6 +110,31 @@ public sealed unsafe partial class AgentCommandExecutionGoal : global::System.ID
         }
 
         return new AgentCommandExecutionGoal((nint)handle);
+    }
+
+    public static AgentCommandExecutionGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, string name, nint goalId)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            var handle = NativeMethods.TablePtr->C0.hs_create_e1a466e9((void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new AgentCommandExecutionGoal((nint)handle);
+        }
     }
 
     public static AgentCommandExecutionGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommandExecutionGoal arg0)

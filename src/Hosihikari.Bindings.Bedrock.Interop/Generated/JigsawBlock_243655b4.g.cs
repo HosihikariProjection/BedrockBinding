@@ -420,17 +420,6 @@ public sealed unsafe partial class JigsawBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static JigsawBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9a778283((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new JigsawBlock((nint)handle);
-    }
-
     public static bool canAttach(global::Hosihikari.Bindings.Bedrock.Interop.JigsawBlockInfo block1, global::Hosihikari.Bindings.Bedrock.Interop.JigsawBlockInfo block2)
     {
         return NativeMethods.TablePtr->C2.hs_method_ebe0ff6b((void*)block1.Handle, (void*)block2.Handle) != 0;

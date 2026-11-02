@@ -9,4 +9,5 @@ public enum NeighborAwareBlockUpdateType : int
     None = 0,
     WallBlockConnections = 1,
     ConnectionUpgrade = 2,
+    RedstoneWireConnections = 3,
 }

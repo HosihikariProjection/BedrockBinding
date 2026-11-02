@@ -47,17 +47,6 @@ public sealed unsafe partial class BedrockBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static BedrockBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BedrockBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f5d9885b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BedrockBlock((nint)handle);
-    }
-
     public bool canBeOriginalSurface(bool arg0)
     {
         return NativeMethods.TablePtr->C0.hs_method_af7d37e9((void*)__hosihikari_shim_handle, arg0) != 0;

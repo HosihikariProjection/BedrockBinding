@@ -513,17 +513,6 @@ public sealed unsafe partial class ButtonBlock : global::System.IDisposable
         return new ButtonBlock((nint)handle);
     }
 
-    public static ButtonBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ButtonBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_87a120ae((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ButtonBlock((nint)handle);
-    }
-
     public static ButtonBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.Material material, bool sensitive)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

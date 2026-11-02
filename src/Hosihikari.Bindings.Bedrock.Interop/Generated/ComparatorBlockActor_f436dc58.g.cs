@@ -51,6 +51,12 @@ public sealed unsafe partial class ComparatorBlockActor : global::System.IDispos
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_835d344e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2a07409b((void*)__hosihikari_shim_handle);

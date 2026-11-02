@@ -482,17 +482,6 @@ public sealed unsafe partial class CaveVinesBlock : global::System.IDisposable
         return new CaveVinesBlock((nint)handle);
     }
 
-    public static CaveVinesBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CaveVinesBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_1c571f4a((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CaveVinesBlock((nint)handle);
-    }
-
     public static CaveVinesBlock Create(string nameId, int id, int variant)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

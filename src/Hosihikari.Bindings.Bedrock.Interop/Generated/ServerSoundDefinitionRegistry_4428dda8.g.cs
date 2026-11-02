@@ -60,20 +60,43 @@ public sealed unsafe partial class ServerSoundDefinitionRegistry : global::Syste
         return new ServerSoundDefinitionRegistry((nint)handle);
     }
 
-    public void loadFromPacks(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, bool betaApis)
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_26_60::Sound::ServerSoundDefinitionDocument' is not a known bindable declaration.", false)]
+    public void _addDefinitions(nint source, nint document, nint audioContentPlaybackRegistration) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_26_60::Sound::ServerSoundDefinitionDocument' is not a known bindable declaration.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_26_60::Sound::ServerSoundDefinitionDocument' is not a known bindable declaration.", false)]
+    public void addAudioContentDefinitions(nint source, nint document, nint audioContentPlaybackRegistration) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_26_60::Sound::ServerSoundDefinitionDocument' is not a known bindable declaration.");
+
+    public void loadFromPacks(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager)
     {
-        NativeMethods.TablePtr->C3.hs_method_83018056((void*)__hosihikari_shim_handle, (void*)ctx.Handle, (void*)resourcePackManager.Handle, betaApis);
+        NativeMethods.TablePtr->C3.hs_method_42dace57((void*)__hosihikari_shim_handle, (void*)ctx.Handle, (void*)resourcePackManager.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk5d2794_Address
+    public nint mUnkb92808_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2a0effcf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4f467a82((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkc6ff5f_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1221266b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundDefinitionRegistry((nint)NativeMethods.TablePtr->C3.hs_method_6aa15e8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SharedTypes::v1_26_60::Sound::ServerSoundDefinitionDocument' is not supported.", false)]
+    public static nint parseDefinitionDocument(nint ctx, nint fileData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SharedTypes::v1_26_60::Sound::ServerSoundDefinitionDocument' is not supported.");
+
+    public void removeDefinitionsForSource(nint source)
+    {
+        NativeMethods.TablePtr->C3.hs_method_f6dfc9d8((void*)__hosihikari_shim_handle, (void*)source);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? tryGet(string soundEventName)
@@ -91,7 +114,7 @@ public sealed unsafe partial class ServerSoundDefinitionRegistry : global::Syste
         global::System.Text.Encoding.UTF8.GetBytes(soundEventName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_shared = NativeMethods.TablePtr->C3.hs_method_9d5442a3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_shared = NativeMethods.TablePtr->C3.hs_method_725f2de6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
         }
     }

@@ -39,9 +39,9 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_56e19593((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_29786b2d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -68,10 +68,6 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void _checkCanConnectToCustomServerAsync(nint hostIpAddress, int port, nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<RakNet::RakPeerInterface, void (*)(RakNet::RakPeerInterface *)>' is not supported.", false)]
-    public nint _ctor(nint rakNetConnector, nint ipInterface, nint overrideBroadcastAddresses, bool isServer, nint serverLanVisibility, nint permissionLAN, nint permissionIPv6, nint appPlatform, nint createUniqueRakPeerFunc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<RakNet::RakPeerInterface, void (*)(RakNet::RakPeerInterface *)>' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
     public nint _getPingTimeForGUID(nint guid) =>
@@ -143,10 +139,6 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
 
         return new RakNetServerLocator((nint)handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<RakNet::RakPeerInterface, void (*)(RakNet::RakPeerInterface *)>' is not supported.", false)]
-    public static RakNetServerLocator Create(nint rakNetConnector, nint ipInterface, nint overrideBroadcastAddresses, bool isServer, nint serverLanVisibility, nint permissionLAN, nint permissionIPv6, nint appPlatform, nint createUniqueRakPeerFunc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<RakNet::RakPeerInterface, void (*)(RakNet::RakPeerInterface *)>' is not supported.");
 
     public static RakNetServerLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator arg0)
     {
@@ -400,6 +392,12 @@ public sealed unsafe partial class RakNetServerLocator : global::System.IDisposa
     public nint mUnk518100_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_30b5aa83((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk54d289_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5a996c87((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

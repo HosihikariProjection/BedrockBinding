@@ -158,6 +158,11 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode((nint)__hs_handle, false) : null;
     }
 
+    public bool _isBlockWater(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_c405f0b4((void*)__hosihikari_shim_handle, (void*)pos.Handle) != 0;
+    }
+
     public int _isFreeStartNode(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Bindings.Bedrock.Interop.AABB entityAABB, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos testPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos size)
     {
         return NativeMethods.TablePtr->C3.hs_method_2491ba09((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)entityAABB.Handle, (void*)testPos.Handle, (void*)size.Handle);

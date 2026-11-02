@@ -51,6 +51,12 @@ public sealed unsafe partial class SporeBlossomBlockActor : global::System.IDisp
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2ed344d8((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_7a375597((void*)__hosihikari_shim_handle);

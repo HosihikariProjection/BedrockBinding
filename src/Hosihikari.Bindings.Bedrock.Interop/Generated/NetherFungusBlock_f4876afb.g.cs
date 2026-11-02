@@ -453,17 +453,6 @@ public sealed unsafe partial class NetherFungusBlock : global::System.IDisposabl
         return new NetherFungusBlock((nint)handle);
     }
 
-    public static NetherFungusBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFungusBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b955f9e1((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new NetherFungusBlock((nint)handle);
-    }
-
     public static NetherFungusBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

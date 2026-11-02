@@ -60,11 +60,6 @@ public sealed unsafe partial class VanillaBlockData : global::System.IDisposable
         return new VanillaBlockData((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_40ae0e3e((void*)ctx.Handle);
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockArchetype_Address
     {

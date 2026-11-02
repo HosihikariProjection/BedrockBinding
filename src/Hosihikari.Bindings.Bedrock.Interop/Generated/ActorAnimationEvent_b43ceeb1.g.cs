@@ -53,7 +53,7 @@ public sealed unsafe partial class ActorAnimationEvent : global::System.IDisposa
         global::System.Text.Encoding.UTF8.GetBytes(@event, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_439db2e3((void*)__hosihikari_shim_handle, time, __hs_stringData1, (nuint)__hs_stringByteCount1, commandVersion, molangVersion);
+            return (nint)NativeMethods.TablePtr->C0.hs_method_c3580974((void*)__hosihikari_shim_handle, time, __hs_stringData1, (nuint)__hs_stringByteCount1, commandVersion, molangVersion);
         }
     }
 
@@ -94,7 +94,7 @@ public sealed unsafe partial class ActorAnimationEvent : global::System.IDisposa
         global::System.Text.Encoding.UTF8.GetBytes(@event, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            var handle = NativeMethods.TablePtr->C0.hs_create_8dcaf9c3(time, __hs_stringData1, (nuint)__hs_stringByteCount1, commandVersion, molangVersion);
+            var handle = NativeMethods.TablePtr->C0.hs_create_91c84e9f(time, __hs_stringData1, (nuint)__hs_stringByteCount1, commandVersion, molangVersion);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

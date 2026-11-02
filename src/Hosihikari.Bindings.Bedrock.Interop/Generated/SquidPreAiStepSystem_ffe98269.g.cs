@@ -43,6 +43,11 @@ public sealed unsafe partial class SquidPreAiStepSystem : global::System.IDispos
         NativeMethods.TablePtr->C4.hs_method_8b81b8af((void*)arg0.Handle, (void*)localMoveVelocityComponent.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_5bfc93fe());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

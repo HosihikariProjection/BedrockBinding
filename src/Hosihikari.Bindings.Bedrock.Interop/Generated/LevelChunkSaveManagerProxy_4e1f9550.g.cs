@@ -38,6 +38,11 @@ public sealed unsafe partial class LevelChunkSaveManagerProxy : global::System.I
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler scheduler)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_e7ec8fb5((void*)__hosihikari_shim_handle, (void*)random.Handle, (void*)scheduler.Handle);
+    }
+
     public bool _doesLevelChunkNeedSaving(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk, int minTicksBeforeLiveSave, int maxTicksBeforeLiveSave)
     {
         return NativeMethods.TablePtr->C2.hs_method_d269c5f0((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle, minTicksBeforeLiveSave, maxTicksBeforeLiveSave) != 0;
@@ -87,6 +92,17 @@ public sealed unsafe partial class LevelChunkSaveManagerProxy : global::System.I
     public static LevelChunkSaveManagerProxy Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_853a6f14();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new LevelChunkSaveManagerProxy((nint)handle);
+    }
+
+    public static LevelChunkSaveManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler scheduler)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_2f3f4aa1((void*)random.Handle, (void*)scheduler.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

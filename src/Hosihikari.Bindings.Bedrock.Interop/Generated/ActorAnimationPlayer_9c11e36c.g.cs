@@ -51,10 +51,6 @@ public sealed unsafe partial class ActorAnimationPlayer : global::System.IDispos
         NativeMethods.TablePtr->C0.hs_method_363f54e5((void*)__hosihikari_shim_handle, (void*)animationComponent.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public void _visit(nint dispatcher) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");

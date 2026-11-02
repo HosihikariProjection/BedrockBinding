@@ -437,17 +437,6 @@ public sealed unsafe partial class MossBlock : global::System.IDisposable
         return new MossBlock((nint)handle);
     }
 
-    public static MossBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.MossBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_fa7b2008((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MossBlock((nint)handle);
-    }
-
     public static MossBlock Create(string nameId, int id, string? onFertilizeFeature)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

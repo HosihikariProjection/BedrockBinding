@@ -47,6 +47,11 @@ public sealed unsafe partial class ScriptWorld : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_3b6ee8f0((void*)__hosihikari_shim_handle, (void*)scope.Handle, (void*)(level?.Handle ?? 0), (void*)listeners, (void*)locator.Handle, (void*)config.Handle, (void*)serverModuleVersion.Handle);
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C3.hs_method_32c33dd7((void*)__hosihikari_shim_handle);
+    }
+
     public static ScriptWorld Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_12d4d631();

@@ -60,6 +60,73 @@ public sealed unsafe partial class LogDetails : global::System.IDisposable
         return new LogDetails((nint)handle);
     }
 
+    public string _appendLogEntryMetadata(string logEntry, string timestamp, int area, uint priority, string functionName, int lineNumber, int _messageId)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(logEntry);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(logEntry, __hs_stringBytes0);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(timestamp);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(timestamp, __hs_stringBytes1);
+        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(functionName);
+        scoped global::System.Span<byte> __hs_stringBytes4;
+        if (__hs_stringByteCount4 <= 256)
+        {
+            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
+        }
+        else
+        {
+            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(functionName, __hs_stringBytes4);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+            {
+                fixed (byte* __hs_stringData4 = __hs_stringBytes4)
+                {
+                    var __hs_view = NativeMethods.TablePtr->C0.hs_method_ddec4318((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, area, priority, __hs_stringData4, (nuint)__hs_stringByteCount4, lineNumber, _messageId);
+                    return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+                }
+            }
+        }
+    }
+
+    public void _log(int _area, uint _priority, nint _function, int line, int _messageId, string message)
+    {
+        var __hs_stringByteCount5 = global::System.Text.Encoding.UTF8.GetByteCount(message);
+        scoped global::System.Span<byte> __hs_stringBytes5;
+        if (__hs_stringByteCount5 <= 256)
+        {
+            __hs_stringBytes5 = stackalloc byte[__hs_stringByteCount5 == 0 ? 1 : __hs_stringByteCount5];
+        }
+        else
+        {
+            __hs_stringBytes5 = new byte[__hs_stringByteCount5];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes5);
+        fixed (byte* __hs_stringData5 = __hs_stringBytes5)
+        {
+            NativeMethods.TablePtr->C0.hs_method_5a046d4b((void*)__hosihikari_shim_handle, _area, _priority, (void*)_function, line, _messageId, __hs_stringData5, (nuint)__hs_stringByteCount5);
+        }
+    }
+
     public void _logToFile(string debugEvent)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(debugEvent);
@@ -76,59 +143,6 @@ public sealed unsafe partial class LogDetails : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             NativeMethods.TablePtr->C0.hs_method_e045087c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
-
-    public void _log_va(int _area, uint _priority, nint _function, int line, int _messageId, nint pszFormat, nint argptr)
-    {
-        NativeMethods.TablePtr->C0.hs_method_c5dfb554((void*)__hosihikari_shim_handle, _area, _priority, (void*)_function, line, _messageId, (void*)pszFormat, (void*)argptr);
-    }
-
-    public string _makeLogString(string timestamp, int area, uint priority, string functionName, int lineNumber, int messageId, string logMessage)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(timestamp);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(timestamp, __hs_stringBytes0);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(functionName);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(functionName, __hs_stringBytes3);
-        var __hs_stringByteCount6 = global::System.Text.Encoding.UTF8.GetByteCount(logMessage);
-        scoped global::System.Span<byte> __hs_stringBytes6;
-        if (__hs_stringByteCount6 <= 256)
-        {
-            __hs_stringBytes6 = stackalloc byte[__hs_stringByteCount6 == 0 ? 1 : __hs_stringByteCount6];
-        }
-        else
-        {
-            __hs_stringBytes6 = new byte[__hs_stringByteCount6];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(logMessage, __hs_stringBytes6);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                fixed (byte* __hs_stringData6 = __hs_stringBytes6)
-                {
-                    var __hs_view = NativeMethods.TablePtr->C0.hs_method_9983a1cc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, area, priority, __hs_stringData3, (nuint)__hs_stringByteCount3, lineNumber, messageId, __hs_stringData6, (nuint)__hs_stringByteCount6);
-                    return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-                }
-            }
         }
     }
 

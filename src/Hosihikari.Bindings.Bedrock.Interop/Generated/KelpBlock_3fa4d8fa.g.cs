@@ -463,17 +463,6 @@ public sealed unsafe partial class KelpBlock : global::System.IDisposable
         return new KelpBlock((nint)handle);
     }
 
-    public static KelpBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.KelpBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ff808a94((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new KelpBlock((nint)handle);
-    }
-
     public static KelpBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

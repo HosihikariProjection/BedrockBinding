@@ -43,9 +43,19 @@ public sealed unsafe partial class ChemistryAuxDataBlockItem : global::System.ID
         get => (nint)NativeMethods.TablePtr->C0.hs_get_007dd597((void*)__hosihikari_shim_handle);
     }
 
+    public void _fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
+    {
+        NativeMethods.TablePtr->C0.hs_method_725951ef((void*)__hosihikari_shim_handle, (void*)stack.Handle);
+    }
+
     public void fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
     {
         NativeMethods.TablePtr->C0.hs_method_aaed871b((void*)__hosihikari_shim_handle, (void*)stack.Handle);
+    }
+
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_aed685f7((void*)__hosihikari_shim_handle) != 0;
     }
 
 

@@ -458,17 +458,6 @@ public sealed unsafe partial class FarmBlock : global::System.IDisposable
         return new FarmBlock((nint)handle);
     }
 
-    public static FarmBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FarmBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_196e0cdf((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FarmBlock((nint)handle);
-    }
-
     public static FarmBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor baseBlock)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

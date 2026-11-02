@@ -226,7 +226,7 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
 
     public bool mayPlace(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Actor? placer, bool ignoreEntities, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_96e6b218((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)pos.Handle, face, (void*)(placer?.Handle ?? 0), ignoreEntities, (void*)clickPos.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_ef8cc6cf((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)pos.Handle, face, (void*)(placer?.Handle ?? 0), ignoreEntities, (void*)clickPos.Handle) != 0;
     }
 
     public void postGameEvent(global::Hosihikari.Bindings.Bedrock.Interop.Actor? source, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos originPos, global::Hosihikari.Bindings.Bedrock.Interop.Block? affectedBlock)

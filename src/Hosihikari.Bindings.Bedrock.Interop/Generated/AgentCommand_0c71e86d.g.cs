@@ -54,11 +54,6 @@ public sealed unsafe partial class AgentCommand : global::System.IDisposable
         return new AgentCommand((nint)handle);
     }
 
-    public void createAgent(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C0.hs_method_83a143b7((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)origin.Handle, (void*)output.Handle);
-    }
-
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
         NativeMethods.TablePtr->C0.hs_method_664295ee((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);

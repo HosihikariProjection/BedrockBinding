@@ -43,10 +43,6 @@ public sealed unsafe partial class AttackDamageMobEffect : global::System.IDispo
         return NativeMethods.TablePtr->C0.hs_method_ce8ed605((void*)__hosihikari_shim_handle, amplifier, (void*)modifier.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static AttackDamageMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.AttackDamageMobEffect arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_7420f18c((void*)arg0.Handle);

@@ -2,7 +2,7 @@ name: verify
 
 on:
   push:
-    branches: [v1.26.51]
+    branches: [v1.26.60]
   pull_request:
 
 jobs:

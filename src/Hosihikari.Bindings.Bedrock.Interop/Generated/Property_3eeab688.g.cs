@@ -70,11 +70,6 @@ public sealed unsafe partial class Property : global::System.IDisposable
         return new Property((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property addChildProperty(global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property prop)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property((nint)NativeMethods.TablePtr->C2.hs_method_119c1a12((void*)__hosihikari_shim_handle, (void*)prop.Handle), false);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property addConditionalProperty(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property prop)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property((nint)NativeMethods.TablePtr->C2.hs_method_de837e44((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)prop.Handle), false);

@@ -38,10 +38,6 @@ public sealed unsafe partial class LevelEventManager : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<LevelEventCoordinator>>' is not a known bindable declaration.", false)]
-    public nint _ctor(bool isClientSide, nint levelEventCoordinator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<LevelEventCoordinator>>' is not a known bindable declaration.");
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint _getLevelEventCompoundTagConnector() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
@@ -49,25 +45,6 @@ public sealed unsafe partial class LevelEventManager : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint _getLevelEventDataConnector() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static LevelEventManager Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f13b5f30();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LevelEventManager((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<LevelEventCoordinator>>' is not a known bindable declaration.", false)]
-    public static LevelEventManager Create(bool isClientSide, nint levelEventCoordinator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<LevelEventCoordinator>>' is not a known bindable declaration.");
 
     public static LevelEventManager Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager arg0)
     {
@@ -130,11 +107,6 @@ public sealed unsafe partial class LevelEventManager : global::System.IDisposabl
     public nint mPacketSender_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_bf7289f7((void*)__hosihikari_shim_handle);
-    }
-
-    public void potionSplash(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.mce.Color color, bool instantaneousEffect)
-    {
-        NativeMethods.TablePtr->C2.hs_method_6206cd18((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)color.Handle, instantaneousEffect);
     }
 
 

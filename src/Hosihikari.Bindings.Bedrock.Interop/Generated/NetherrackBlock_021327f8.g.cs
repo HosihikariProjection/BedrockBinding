@@ -393,17 +393,6 @@ public sealed unsafe partial class NetherrackBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static NetherrackBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherrackBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a0e5f9f4((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new NetherrackBlock((nint)handle);
-    }
-
     public bool canBeFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
     {
         return NativeMethods.TablePtr->C2.hs_method_730c5d29((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)aboveBlock.Handle) != 0;

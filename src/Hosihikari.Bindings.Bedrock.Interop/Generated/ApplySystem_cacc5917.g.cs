@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.ClientRewind;
 
-public sealed unsafe partial class ApplySystem
+public sealed unsafe partial class ApplySystem : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -52,6 +52,23 @@ public sealed unsafe partial class ApplySystem
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    public static ApplySystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientRewind.ApplySystem arg0)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_8f9841e6((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ApplySystem((nint)handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_0273f417((void*)__hosihikari_shim_handle);
+    }
+
     public void singleTick(nint executionContext, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
     {
         NativeMethods.TablePtr->C0.hs_method_e56f853b((void*)__hosihikari_shim_handle, (void*)executionContext, (void*)entityContext.Handle);
@@ -65,5 +82,19 @@ public sealed unsafe partial class ApplySystem
     public static void tickEntity(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, nint request, global::Hosihikari.Bindings.Bedrock.Interop.ActorDataDirtyFlagsComponent dirtyFlags, nint tracked)
     {
         NativeMethods.TablePtr->C0.hs_method_35061f32((void*)entity.Handle, (void*)request, (void*)dirtyFlags.Handle, (void*)tracked);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_cacc5917((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

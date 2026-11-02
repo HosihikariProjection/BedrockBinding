@@ -61,6 +61,12 @@ public sealed unsafe partial class AnimatePacketPayload : global::System.IDispos
         set => NativeMethods.TablePtr->C0.hs_set_19d3e94f((void*)__hosihikari_shim_handle, value);
     }
 
+    public byte mHandSlot
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_7eb23a48((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_7eb23a48((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mRuntimeId_Address
     {

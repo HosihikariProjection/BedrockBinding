@@ -394,17 +394,6 @@ public sealed unsafe partial class StoneBricksBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static StoneBricksBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.StoneBricksBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e1c2efc2((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StoneBricksBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C4.hs_method_4091a442((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)(arg1?.Handle ?? 0)));

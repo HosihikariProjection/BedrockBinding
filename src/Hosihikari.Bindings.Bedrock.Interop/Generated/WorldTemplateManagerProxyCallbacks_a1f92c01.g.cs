@@ -40,7 +40,7 @@ public sealed unsafe partial class WorldTemplateManagerProxyCallbacks : global::
 
     public static WorldTemplateManagerProxyCallbacks Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ff2591a1();
+        var handle = NativeMethods.TablePtr->C5.hs_create_ff2591a1();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class WorldTemplateManagerProxyCallbacks : global::
 
     public static WorldTemplateManagerProxyCallbacks Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ea32428e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_ea32428e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class WorldTemplateManagerProxyCallbacks : global::
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcc2ce5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_23ce7a95((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_23ce7a95((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf80408_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_18dc3a6c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_18dc3a6c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks((nint)NativeMethods.TablePtr->C4.hs_method_ad093c83((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateManagerProxyCallbacks((nint)NativeMethods.TablePtr->C5.hs_method_ad093c83((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class WorldTemplateManagerProxyCallbacks : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a1f92c01((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_a1f92c01((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

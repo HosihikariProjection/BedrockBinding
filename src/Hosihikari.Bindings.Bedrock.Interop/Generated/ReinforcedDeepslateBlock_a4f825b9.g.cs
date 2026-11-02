@@ -388,17 +388,6 @@ public sealed unsafe partial class ReinforcedDeepslateBlock : global::System.IDi
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ReinforcedDeepslateBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ReinforcedDeepslateBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_aee24434((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ReinforcedDeepslateBlock((nint)handle);
-    }
-
     public bool canBeOriginalSurface(bool arg0)
     {
         return NativeMethods.TablePtr->C3.hs_method_42cb1a2b((void*)__hosihikari_shim_handle, arg0) != 0;

@@ -122,11 +122,6 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_594ac6f5((void*)__hosihikari_shim_handle, (void*)(endPoint?.Handle ?? 0));
     }
 
-    public void updateEnabledStatus()
-    {
-        NativeMethods.TablePtr->C1.hs_method_27ee4c70((void*)__hosihikari_shim_handle);
-    }
-
 
     public void Dispose()
     {

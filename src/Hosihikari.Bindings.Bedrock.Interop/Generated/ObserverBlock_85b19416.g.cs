@@ -429,6 +429,11 @@ public sealed unsafe partial class ObserverBlock : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_d3ed054c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_8482261e((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C2.hs_method_8661ec2b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -443,20 +448,14 @@ public sealed unsafe partial class ObserverBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ObserverBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ObserverBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1974e21b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ObserverBlock((nint)handle);
-    }
-
     public void _installCircuit(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool calledFromLoad, bool turnOn)
     {
         NativeMethods.TablePtr->C2.hs_method_16285a9e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, calledFromLoad, turnOn);
+    }
+
+    public void _onStateChange(nint eventData)
+    {
+        NativeMethods.TablePtr->C2.hs_method_6133d1bf((void*)__hosihikari_shim_handle, (void*)eventData);
     }
 
     public void _updateState(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.PulseCapacitor component, bool turnOn)
@@ -517,6 +516,11 @@ public sealed unsafe partial class ObserverBlock : global::System.IDisposable
     public void onRemove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C2.hs_method_6d2edd0d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_d0a81f8c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

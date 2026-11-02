@@ -206,6 +206,11 @@ public sealed unsafe partial class Container : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_83898327((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
+    public void _receiveContainerLifetimes(nint tracker)
+    {
+        NativeMethods.TablePtr->C1.hs_method_fd33ea60((void*)__hosihikari_shim_handle, (void*)tracker);
+    }
+
     public void _removeAllItems()
     {
         NativeMethods.TablePtr->C1.hs_method_9db8d8b2((void*)__hosihikari_shim_handle);
@@ -636,6 +641,11 @@ public sealed unsafe partial class Container : global::System.IDisposable
     public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
         NativeMethods.TablePtr->C1.hs_method_947e27d6((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+    }
+
+    public void receiveContainerLifetimes(nint tracker)
+    {
+        NativeMethods.TablePtr->C1.hs_method_925b5d93((void*)__hosihikari_shim_handle, (void*)tracker);
     }
 
     public void removeAllItems()

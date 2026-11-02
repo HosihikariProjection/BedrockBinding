@@ -86,6 +86,17 @@ public sealed unsafe partial class ItemInstance : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C2.hs_method_a0727547(), false);
     }
 
+    public static ItemInstance Create()
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_f5455602();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ItemInstance((nint)handle);
+    }
+
     public static ItemInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance rhs)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_99485dd7((void*)rhs.Handle);

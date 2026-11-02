@@ -38,6 +38,11 @@ public sealed unsafe partial class MedicineItem : global::System.IDisposable
         return __hs_handle;
     }
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_9f9f3574((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public byte mAllowOffhand
     {
         get => NativeMethods.TablePtr->C2.hs_get_524ac1a8((void*)__hosihikari_shim_handle);

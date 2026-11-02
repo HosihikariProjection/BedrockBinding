@@ -522,12 +522,6 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainer(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_adf9fa54((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
-    }
-
     public int _getItemEntityCount(global::Hosihikari.Bindings.Bedrock.Interop.Item item, global::Hosihikari.Bindings.Bedrock.Interop.AABB searchBounds)
     {
         return NativeMethods.TablePtr->C2.hs_method_097ffd10((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)searchBounds.Handle);

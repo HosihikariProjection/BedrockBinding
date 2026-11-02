@@ -61,6 +61,12 @@ public sealed unsafe partial class LibHttpClientInstance : global::System.IDispo
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk2786af_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_fb92d2f5((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnk42bd1b_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_f7c0d3f5((void*)__hosihikari_shim_handle);
@@ -70,6 +76,12 @@ public sealed unsafe partial class LibHttpClientInstance : global::System.IDispo
     public nint mUnkaefb5e_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_d60381f0((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkce99b3_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_867bf1ae((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

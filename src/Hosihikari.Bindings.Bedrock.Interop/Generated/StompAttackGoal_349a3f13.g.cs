@@ -80,6 +80,12 @@ public sealed unsafe partial class StompAttackGoal : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_fa5281b4((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mCheckTargetInsideAABB
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_0d658183((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_0d658183((void*)__hosihikari_shim_handle, value);
+    }
+
     public int mCooldownTicks
     {
         get => NativeMethods.TablePtr->C4.hs_get_4f610ac3((void*)__hosihikari_shim_handle);

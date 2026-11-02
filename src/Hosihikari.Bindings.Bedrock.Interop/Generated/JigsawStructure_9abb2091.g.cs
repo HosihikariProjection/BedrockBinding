@@ -145,6 +145,12 @@ public sealed unsafe partial class JigsawStructure : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C5.hs_get_2ff60fa0((void*)__hosihikari_shim_handle);
     }
 
+    public uint mOnPlaced
+    {
+        get => NativeMethods.TablePtr->C5.hs_get_4d27bd1f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_4d27bd1f((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mPoolAliases_Address
     {

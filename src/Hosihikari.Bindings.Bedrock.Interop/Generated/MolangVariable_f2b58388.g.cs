@@ -74,6 +74,11 @@ public sealed unsafe partial class MolangVariable : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_8de87268();
     }
 
+    public static nint mHasInitializedVariableMaps()
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_57d340a2();
+    }
+
     public static nint mHasSetWatermark()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_5305a352();

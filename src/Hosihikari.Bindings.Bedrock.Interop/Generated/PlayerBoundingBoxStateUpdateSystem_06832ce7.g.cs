@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-public sealed unsafe partial class PlayerBoundingBoxStateUpdateSystem
+public sealed unsafe partial class PlayerBoundingBoxStateUpdateSystem : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -47,13 +47,33 @@ public sealed unsafe partial class PlayerBoundingBoxStateUpdateSystem
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7441acd0((void*)__hosihikari_shim_handle);
+    }
+
     public void tick(nint strictContext)
     {
         NativeMethods.TablePtr->C3.hs_method_9abc4895((void*)__hosihikari_shim_handle, (void*)strictContext);
     }
 
-    public static void tickPlayerBoundingBoxStateUpdateSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabb, global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputRequestComponent request, nint executionContext, float sneakHeight, global::Hosihikari.Bindings.Bedrock.Interop.GetAttachPositionViews views, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
+    public static void tickPlayerBoundingBoxStateUpdateSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabb, global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputRequestComponent request, float sneakHeight, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews collisionViews, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
     {
-        NativeMethods.TablePtr->C3.hs_method_a47a45e0((void*)context.Handle, (void*)aabb.Handle, (void*)request.Handle, (void*)executionContext, sneakHeight, (void*)views.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e22a26cc((void*)context.Handle, (void*)aabb.Handle, (void*)request.Handle, sneakHeight, (void*)collisionViews.Handle, (void*)region.Handle);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C3.hs_destroy_06832ce7((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

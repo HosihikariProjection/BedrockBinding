@@ -74,16 +74,6 @@ public sealed unsafe partial class EduAppConfigs : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_fc2f6838((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion EDUOreUIResourcePack()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)NativeMethods.TablePtr->C1.hs_method_2678e483(), false);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion EDUResourcePack()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)NativeMethods.TablePtr->C1.hs_method_fc437a18(), false);
-    }
-
     public static EduAppConfigs Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5a093ba7();
@@ -104,6 +94,16 @@ public sealed unsafe partial class EduAppConfigs : global::System.IDisposable
         }
 
         return new EduAppConfigs((nint)handle);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion EduOreUIResourcePack()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)NativeMethods.TablePtr->C1.hs_method_73471ebf(), false);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion EduResourcePack()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)NativeMethods.TablePtr->C1.hs_method_515c948e(), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IContentAccessibilityProvider' has no accessible destructor.", false)]

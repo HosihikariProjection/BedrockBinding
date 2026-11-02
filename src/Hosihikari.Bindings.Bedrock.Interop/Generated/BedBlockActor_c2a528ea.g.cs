@@ -47,6 +47,11 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_8c3da3a3((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)region.Handle);
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_e0fcc487((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.IVanillaRenderBlockActorComponent? _getCrackEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         var __hs_handle = NativeMethods.TablePtr->C0.hs_method_76103e26((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -119,6 +124,17 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
     public static BedBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BedBlockActor arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_ebd6f365((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new BedBlockActor((nint)handle);
+    }
+
+    public static BedBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_577727f7((void*)pos.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -223,6 +239,12 @@ public sealed unsafe partial class BedBlockActor : global::System.IDisposable
     public nint mDynamicProperties_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_014e773c((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_ef79912d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

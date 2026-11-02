@@ -59,25 +59,6 @@ public sealed unsafe partial class IdentityDictionary : global::System.IDisposab
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)NativeMethods.TablePtr->C2.hs_method_4c8c05dc((void*)__hosihikari_shim_handle, (void*)scoreboardId.Handle, (void*)playerId.Handle), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId getScoreboardId(string fakePlayerName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fakePlayerName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(fakePlayerName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)NativeMethods.TablePtr->C2.hs_method_21a6188c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
-        }
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntities_Address
     {
@@ -100,25 +81,6 @@ public sealed unsafe partial class IdentityDictionary : global::System.IDisposab
     public nint mPlayers_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_703c5d1e((void*)__hosihikari_shim_handle);
-    }
-
-    public bool shouldConvertFakePlayer(global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId playerId, string displayName)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(displayName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(displayName, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            return NativeMethods.TablePtr->C2.hs_method_de2933c6((void*)__hosihikari_shim_handle, (void*)playerId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1) != 0;
-        }
     }
 
 

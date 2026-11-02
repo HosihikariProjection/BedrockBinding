@@ -265,6 +265,11 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_ac1b236a((void*)__hosihikari_shim_handle, (void*)directionalLightControls);
     }
 
+    public bool _shouldRenderClouds()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_e3e37551((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public bool _showSky()
     {
         return NativeMethods.TablePtr->C1.hs_method_1246a585((void*)__hosihikari_shim_handle) != 0;
@@ -392,6 +397,10 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public nint findPlayer(nint pred) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
     public void fixWallChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
     {
         NativeMethods.TablePtr->C1.hs_method_1dd9c4f2((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)lc.Handle);
@@ -439,11 +448,6 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp getBrightnessRamp()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp((nint)NativeMethods.TablePtr->C1.hs_method_691ea60b((void*)__hosihikari_shim_handle), false);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource getChunkSource()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource((nint)NativeMethods.TablePtr->C1.hs_method_b1ace0ef((void*)__hosihikari_shim_handle), false);
     }
 
     public short getCloudHeight()
@@ -960,6 +964,11 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     public void setDimensionDirectionalLightControls(nint directionalLightControls)
     {
         NativeMethods.TablePtr->C1.hs_method_c36c82e6((void*)__hosihikari_shim_handle, (void*)directionalLightControls);
+    }
+
+    public bool shouldRenderClouds()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_d06c1bce((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool showSky()

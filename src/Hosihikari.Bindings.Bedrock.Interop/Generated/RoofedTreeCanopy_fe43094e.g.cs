@@ -38,32 +38,9 @@ public sealed unsafe partial class RoofedTreeCanopy : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _placeCanopy(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy_Nested.BranchSize trunkSize, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams arg4, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams arg5, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos[] arg6, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy_Nested.BranchSize[] arg7)
-    {
-        var __hs_hasValue = false;
-        var __hs_vectorItems6 = arg6;
-        var __hs_vectorHandles6 = new nint[__hs_vectorItems6?.Length ?? 0];
-        for (var __hs_i6 = 0; __hs_i6 < __hs_vectorHandles6.Length; __hs_i6++)
-        {
-            __hs_vectorHandles6[__hs_i6] = __hs_vectorItems6![__hs_i6]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData6 = __hs_vectorHandles6)
-        {
-            var __hs_vectorData6 = (void**)__hs_vectorHandleData6;
-            var __hs_vectorItems7 = arg7;
-            var __hs_vectorHandles7 = new nint[__hs_vectorItems7?.Length ?? 0];
-            for (var __hs_i7 = 0; __hs_i7 < __hs_vectorHandles7.Length; __hs_i7++)
-            {
-                __hs_vectorHandles7[__hs_i7] = __hs_vectorItems7![__hs_i7]?.Handle ?? 0;
-            }
-            fixed (nint* __hs_vectorHandleData7 = __hs_vectorHandles7)
-            {
-                var __hs_vectorData7 = (void**)__hs_vectorHandleData7;
-                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b9d3d293((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)trunkSize.Handle, (void*)random.Handle, (void*)arg4.Handle, (void*)arg5.Handle, __hs_vectorData6, (nuint)(arg6?.Length ?? 0), __hs_vectorData7, (nuint)(arg7?.Length ?? 0), &__hs_hasValue);
-                return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    public nint _placeCanopy(nint target, nint pos, nint trunkSize, nint random, nint arg4, nint arg5, int arg6, nint arg7) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     public static RoofedTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.RoofedTreeCanopy arg0)
     {
@@ -112,32 +89,9 @@ public sealed unsafe partial class RoofedTreeCanopy : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_fa8477d6((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? placeCanopy(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy_Nested.BranchSize trunkSize, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams arg4, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams arg5, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos[] arg6, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy_Nested.BranchSize[] arg7)
-    {
-        var __hs_hasValue = false;
-        var __hs_vectorItems6 = arg6;
-        var __hs_vectorHandles6 = new nint[__hs_vectorItems6?.Length ?? 0];
-        for (var __hs_i6 = 0; __hs_i6 < __hs_vectorHandles6.Length; __hs_i6++)
-        {
-            __hs_vectorHandles6[__hs_i6] = __hs_vectorItems6![__hs_i6]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData6 = __hs_vectorHandles6)
-        {
-            var __hs_vectorData6 = (void**)__hs_vectorHandleData6;
-            var __hs_vectorItems7 = arg7;
-            var __hs_vectorHandles7 = new nint[__hs_vectorItems7?.Length ?? 0];
-            for (var __hs_i7 = 0; __hs_i7 < __hs_vectorHandles7.Length; __hs_i7++)
-            {
-                __hs_vectorHandles7[__hs_i7] = __hs_vectorItems7![__hs_i7]?.Handle ?? 0;
-            }
-            fixed (nint* __hs_vectorHandleData7 = __hs_vectorHandles7)
-            {
-                var __hs_vectorData7 = (void**)__hs_vectorHandleData7;
-                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ce0a09ee((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)trunkSize.Handle, (void*)random.Handle, (void*)arg4.Handle, (void*)arg5.Handle, __hs_vectorData6, (nuint)(arg6?.Length ?? 0), __hs_vectorData7, (nuint)(arg7?.Length ?? 0), &__hs_hasValue);
-                return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    public nint placeCanopy(nint target, nint pos, nint trunkSize, nint random, nint arg4, nint arg5, int arg6, nint arg7) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
 
     public void Dispose()

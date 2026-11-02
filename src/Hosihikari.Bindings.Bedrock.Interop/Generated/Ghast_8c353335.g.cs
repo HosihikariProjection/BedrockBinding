@@ -770,10 +770,10 @@ public sealed unsafe partial class Ghast : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_4adf516f((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C1.hs_get_2ea48cdb((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_2ea48cdb((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_ffb7ef8c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -69,9 +69,9 @@ public sealed unsafe partial class ThrowableItemComponent : global::System.IDisp
         return new ThrowableItemComponent((nint)handle);
     }
 
-    public void _doThrow(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileItemComponent projectileComponent, float power)
+    public void _doThrow(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileItemComponent projectileComponent, float power, byte handSlot)
     {
-        NativeMethods.TablePtr->C4.hs_method_6ed7d426((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, (void*)projectileComponent.Handle, power);
+        NativeMethods.TablePtr->C4.hs_method_b50be492((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)player.Handle, (void*)projectileComponent.Handle, power, handSlot);
     }
 
     public void _initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
@@ -136,9 +136,9 @@ public sealed unsafe partial class ThrowableItemComponent : global::System.IDisp
         set => NativeMethods.TablePtr->C4.hs_set_e2048299((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool releaseUsing(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int durationLeft)
+    public bool releaseUsing(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int durationLeft, byte handSlot)
     {
-        return NativeMethods.TablePtr->C4.hs_method_2630e383((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)(player?.Handle ?? 0), durationLeft) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_03f71fd1((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)(player?.Handle ?? 0), durationLeft, handSlot) != 0;
     }
 
 

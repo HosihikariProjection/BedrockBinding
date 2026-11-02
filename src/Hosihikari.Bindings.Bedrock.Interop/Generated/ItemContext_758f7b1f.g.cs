@@ -308,10 +308,6 @@ public sealed unsafe partial class ItemContext : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_a86362bb((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
-
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemContext arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemContext((nint)NativeMethods.TablePtr->C2.hs_method_94622b0d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);

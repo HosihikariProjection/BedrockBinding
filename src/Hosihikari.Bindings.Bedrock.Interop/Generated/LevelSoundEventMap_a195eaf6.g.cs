@@ -57,12 +57,6 @@ public sealed unsafe partial class LevelSoundEventMap : global::System.IDisposab
         }
     }
 
-    public static string getName(uint type)
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_8e31624d(type);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
-
     public static nint map()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_67983411();

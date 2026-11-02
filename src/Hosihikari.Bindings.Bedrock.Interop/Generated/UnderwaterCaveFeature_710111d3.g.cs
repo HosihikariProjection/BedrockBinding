@@ -177,10 +177,6 @@ public sealed unsafe partial class UnderwaterCaveFeature : global::System.IDispo
         return NativeMethods.TablePtr->C4.hs_method_2a91a472((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)arg1.Handle, (void*)random.Handle, (void*)pos.Handle, (void*)startPos.Handle, (void*)volume.Handle, rad, yRad, (void*)carveValues.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static UnderwaterCaveFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.UnderwaterCaveFeature arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_90ecd2b0((void*)arg0.Handle);

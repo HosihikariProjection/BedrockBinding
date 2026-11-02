@@ -60,7 +60,10 @@ public enum CurrentCmdVersion : int
     PlayerWaypointsGamerule = 49,
     ClonePartialBedBlockFix = 50,
     TeleportEntityDimensionPositionFix = 51,
-    Latest = 52,
     TimeOfCommandOverloads = 52,
-    Count = 53,
+    RedstoneCircuitStateChangeFix = 53,
+    TimeCommandPreventNegativeTime = 54,
+    Latest = 55,
+    TimeCommandClocksRelease = 55,
+    Count = 56,
 }

@@ -51,9 +51,9 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5fbb0e64((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b5c3abf0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -80,11 +80,6 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
     public bool _connect(global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo primaryConnection, global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo backupConnection, global::Hosihikari.Bindings.Abi.SharedHandle? arg2)
     {
         return NativeMethods.TablePtr->C3.hs_method_2cc13318((void*)__hosihikari_shim_handle, (void*)primaryConnection.Handle, (void*)backupConnection.Handle, arg2?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)) != 0;
-    }
-
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.ConnectionCallbacks callbacks, global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper_Nested.IPSupportInterface ipInterface, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_AppPlatform_ appPlatform, nint rakPeerConfig)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_822601cd((void*)__hosihikari_shim_handle, (void*)callbacks.Handle, (void*)ipInterface.Handle, (void*)appPlatform.Handle, (void*)rakPeerConfig);
     }
 
     public void _disconnect()
@@ -187,17 +182,6 @@ public sealed unsafe partial class RakNetConnector : global::System.IDisposable
     public static RakNetConnector Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_19cb8263();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RakNetConnector((nint)handle);
-    }
-
-    public static RakNetConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.ConnectionCallbacks callbacks, global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper_Nested.IPSupportInterface ipInterface, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_AppPlatform_ appPlatform, nint rakPeerConfig)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_907a4862((void*)callbacks.Handle, (void*)ipInterface.Handle, (void*)appPlatform.Handle, (void*)rakPeerConfig);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

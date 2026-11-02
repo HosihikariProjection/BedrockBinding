@@ -51,6 +51,12 @@ public sealed unsafe partial class CommandBlockActor : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_ec535cdf((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_563a66f5((void*)__hosihikari_shim_handle);
@@ -79,11 +85,6 @@ public sealed unsafe partial class CommandBlockActor : global::System.IDisposabl
     public bool __playerCanUpdate(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
         return NativeMethods.TablePtr->C1.hs_method_e9581632((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
-    }
-
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, ushort mode)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_01db2849((void*)__hosihikari_shim_handle, (void*)pos.Handle, mode);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString _getCustomName()
@@ -146,28 +147,6 @@ public sealed unsafe partial class CommandBlockActor : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static CommandBlockActor Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0047875e();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CommandBlockActor((nint)handle);
-    }
-
-    public static CommandBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, ushort mode)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_65044b37((void*)pos.Handle, mode);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CommandBlockActor((nint)handle);
-    }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BlockActorDataPacket' has no accessible destructor.", false)]
     public nint _getUpdatePacket(nint region) =>
@@ -284,6 +263,11 @@ public sealed unsafe partial class CommandBlockActor : global::System.IDisposabl
     public void saveBlockData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         NativeMethods.TablePtr->C1.hs_method_3b1756a7((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)region.Handle);
+    }
+
+    public void setAutomatic(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, bool automatic, ushort oldMode)
+    {
+        NativeMethods.TablePtr->C1.hs_method_8d159c15((void*)__hosihikari_shim_handle, (void*)region.Handle, automatic, oldMode);
     }
 
     public void setCustomName(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString str)

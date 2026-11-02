@@ -38,11 +38,6 @@ public sealed unsafe partial class FilterInputs : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(short subject, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput domain, short op, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput value)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_b2d5569a((void*)__hosihikari_shim_handle, subject, (void*)domain.Handle, op, (void*)value.Handle);
-    }
-
     public void _dtor()
     {
         NativeMethods.TablePtr->C1.hs_method_6fe1f671((void*)__hosihikari_shim_handle);
@@ -51,17 +46,6 @@ public sealed unsafe partial class FilterInputs : global::System.IDisposable
     public static FilterInputs Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4e67fdac();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FilterInputs((nint)handle);
-    }
-
-    public static FilterInputs Create(short subject, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput domain, short op, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput value)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_959ac5b4(subject, (void*)domain.Handle, op, (void*)value.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

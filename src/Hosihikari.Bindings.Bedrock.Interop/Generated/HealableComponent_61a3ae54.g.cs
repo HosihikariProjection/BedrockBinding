@@ -38,10 +38,40 @@ public sealed unsafe partial class HealableComponent : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public static HealableComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.HealableComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C1.hs_method_d5ef9d51((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        var handle = NativeMethods.TablePtr->C1.hs_create_119737c9((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new HealableComponent((nint)handle);
     }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C1.hs_method_36b3f688((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mFilter_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3cb186d1((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mForceUse
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_11828706((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_11828706((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mHealItems_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_db3a5036((void*)__hosihikari_shim_handle);
+    }
+
 
     public void Dispose()
     {

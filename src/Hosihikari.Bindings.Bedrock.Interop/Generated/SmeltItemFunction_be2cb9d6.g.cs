@@ -44,6 +44,11 @@ public sealed unsafe partial class SmeltItemFunction : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_5815d7bf((void*)__hosihikari_shim_handle);
     }
 
+    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C4.hs_method_fc80caae((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
         NativeMethods.TablePtr->C4.hs_method_42361b64((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
@@ -67,6 +72,11 @@ public sealed unsafe partial class SmeltItemFunction : global::System.IDisposabl
         }
 
         return new SmeltItemFunction((nint)handle);
+    }
+
+    public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C4.hs_method_680ff30e((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)

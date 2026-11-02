@@ -57,11 +57,6 @@ public sealed unsafe partial class ScriptDebugger : global::System.IDisposable
         }
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings settings, global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel serverLevel, global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands commands, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptEngine scriptEngine, global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManager pluginManager, global::Hosihikari.Bindings.Bedrock.Interop.IScriptDebuggerWatchdog watchdog, global::Hosihikari.Bindings.Bedrock.Interop.IScriptTelemetryLogger telemetry, nint profilerControlBroker)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b33c50d7((void*)__hosihikari_shim_handle, (void*)settings.Handle, (void*)serverLevel.Handle, (void*)commands.Handle, (void*)ctx.Handle, (void*)scriptEngine.Handle, (void*)pluginManager.Handle, (void*)watchdog.Handle, (void*)telemetry.Handle, (void*)profilerControlBroker);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings _getSettings()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings((nint)NativeMethods.TablePtr->C3.hs_method_1f272598((void*)__hosihikari_shim_handle), false);
@@ -106,17 +101,6 @@ public sealed unsafe partial class ScriptDebugger : global::System.IDisposable
         return new ScriptDebugger((nint)handle);
     }
 
-    public static ScriptDebugger Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings settings, global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel serverLevel, global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands commands, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptEngine scriptEngine, global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManager pluginManager, global::Hosihikari.Bindings.Bedrock.Interop.IScriptDebuggerWatchdog watchdog, global::Hosihikari.Bindings.Bedrock.Interop.IScriptTelemetryLogger telemetry, nint profilerControlBroker)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ebcf4e20((void*)settings.Handle, (void*)serverLevel.Handle, (void*)commands.Handle, (void*)ctx.Handle, (void*)scriptEngine.Handle, (void*)pluginManager.Handle, (void*)watchdog.Handle, (void*)telemetry.Handle, (void*)profilerControlBroker);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptDebugger((nint)handle);
-    }
-
     public static ScriptDebugger Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebugger arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a2a1c2e4((void*)arg0.Handle);
@@ -147,9 +131,29 @@ public sealed unsafe partial class ScriptDebugger : global::System.IDisposable
         }
     }
 
+    public void _handleCommandMessage(nint commandMessage)
+    {
+        NativeMethods.TablePtr->C3.hs_method_178f20da((void*)__hosihikari_shim_handle, (void*)commandMessage);
+    }
+
     public void _handleDebuggerRequestMessage(nint debuggerRequestPayload)
     {
         NativeMethods.TablePtr->C3.hs_method_1a4ef835((void*)__hosihikari_shim_handle, (void*)debuggerRequestPayload);
+    }
+
+    public static void _handleDiagnosticsSetActiveMessage(nint payload)
+    {
+        NativeMethods.TablePtr->C3.hs_method_0e2c7052((void*)payload);
+    }
+
+    public void _handleStartProfilerMessage(nint profilerMessage)
+    {
+        NativeMethods.TablePtr->C3.hs_method_b71fe0ba((void*)__hosihikari_shim_handle, (void*)profilerMessage);
+    }
+
+    public void _handleStopProfilerMessage(nint profilerMessage)
+    {
+        NativeMethods.TablePtr->C3.hs_method_36a610c8((void*)__hosihikari_shim_handle, (void*)profilerMessage);
     }
 
     public string _sanitizeHostName(string host)
@@ -403,15 +407,6 @@ public sealed unsafe partial class ScriptDebugger : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'Core::Path' is not supported.", false)]
     public nint stopProfiler() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'Core::Path' is not supported.");
-
-    public void update()
-    {
-        NativeMethods.TablePtr->C3.hs_method_f3ceb414((void*)__hosihikari_shim_handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void waitAutoAttach(nint waitDuration) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
 
     public void Dispose()

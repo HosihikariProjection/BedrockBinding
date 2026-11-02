@@ -79,6 +79,12 @@ public sealed unsafe partial class LevelChunkPacketPayload : global::System.IDis
         set => NativeMethods.TablePtr->C2.hs_set_c06e1514((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mIsClientBiomeUpdate
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_40d63f4b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_40d63f4b((void*)__hosihikari_shim_handle, value);
+    }
+
     public bool mIsClientPacket
     {
         get => NativeMethods.TablePtr->C2.hs_get_db46f576((void*)__hosihikari_shim_handle) != 0;

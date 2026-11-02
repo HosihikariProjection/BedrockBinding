@@ -38,21 +38,6 @@ public sealed unsafe partial class GameTestRunner : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void clearAllTests(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker testTicker, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox[] gameTestInstanceBounds)
-    {
-        var __hs_vectorItems2 = gameTestInstanceBounds;
-        var __hs_vectorHandles2 = new nint[__hs_vectorItems2?.Length ?? 0];
-        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorHandles2.Length; __hs_i2++)
-        {
-            __hs_vectorHandles2[__hs_i2] = __hs_vectorItems2![__hs_i2]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData2 = __hs_vectorHandles2)
-        {
-            var __hs_vectorData2 = (void**)__hs_vectorHandleData2;
-            NativeMethods.TablePtr->C1.hs_method_33fbc3b1((void*)region.Handle, (void*)testTicker.Handle, __hs_vectorData2, (nuint)(gameTestInstanceBounds?.Length ?? 0));
-        }
-    }
-
     public static void clearMarkers(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
         NativeMethods.TablePtr->C1.hs_method_c3609485((void*)level.Handle);

@@ -88,6 +88,10 @@ public sealed unsafe partial class ScriptHealthComponent : global::System.IDispo
     public nint _setCurrentV2(nint value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result<bool, ScriptModuleMinecraft::ScriptInvalidActorError, Scripting::ArgumentOutOfBoundsError>' requires --link-carrier or --virtual-dispatch.");
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint ComponentId() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static ScriptHealthComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptHealthComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_c507591f((void*)arg0.Handle);
@@ -97,6 +101,11 @@ public sealed unsafe partial class ScriptHealthComponent : global::System.IDispo
         }
 
         return new ScriptHealthComponent((nint)handle);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_f8482036());
     }
 
     public void notifyHealthChange(float oldValue, float newValue)

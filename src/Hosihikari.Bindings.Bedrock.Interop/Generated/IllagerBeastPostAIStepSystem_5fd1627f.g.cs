@@ -43,6 +43,11 @@ public sealed unsafe partial class IllagerBeastPostAIStepSystem : global::System
         NativeMethods.TablePtr->C2.hs_method_0514d8d8((void*)arg0.Handle, (void*)stateVectorComponent.Handle, (void*)subBBsComponent.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_3cbad916());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

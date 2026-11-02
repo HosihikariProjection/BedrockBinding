@@ -138,7 +138,7 @@ public sealed unsafe partial class LevelListCache : global::System.IDisposable
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LevelStorageObserver' has no accessible destructor.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const AppPlatform>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint levelStorageSource, nint appPlatform, nint checkIsSafeToFlushCache) =>
+    public nint _ctor(nint levelStorageSource, nint appPlatform, nint checkIsSafeToFlushCache, nint checkIsCloudSyncAvailable) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const AppPlatform>>' is not a known bindable declaration.");
 
     public void _deleteLevel(string levelId)
@@ -545,7 +545,7 @@ public sealed unsafe partial class LevelListCache : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const AppPlatform>>' is not a known bindable declaration.", false)]
-    public static LevelListCache Create(nint levelStorageSource, nint appPlatform, nint checkIsSafeToFlushCache) =>
+    public static LevelListCache Create(nint levelStorageSource, nint appPlatform, nint checkIsSafeToFlushCache, nint checkIsCloudSyncAvailable) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const AppPlatform>>' is not a known bindable declaration.");
 
     public static LevelListCache Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelListCache arg0)
@@ -1016,6 +1016,12 @@ public sealed unsafe partial class LevelListCache : global::System.IDisposable
     public nint mCachedUnSyncedLevelData_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_8640333c((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mCheckIsCloudSyncAvailable_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_500ca71f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

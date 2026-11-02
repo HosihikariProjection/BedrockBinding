@@ -38,6 +38,11 @@ public sealed unsafe partial class ScriptBlockCustomComponentsFinalizer : global
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C3.hs_method_c9b9056e((void*)__hosihikari_shim_handle);
+    }
+
     public static ScriptBlockCustomComponentsFinalizer Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBlockCustomComponentsFinalizer arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_18e432e3((void*)arg0.Handle);

@@ -399,6 +399,25 @@ public sealed unsafe partial class RedstoneTorchBlock : global::System.IDisposab
         return NativeMethods.TablePtr->C3.hs_method_c478e27e((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0)) != 0;
     }
 
+    public nint _ctor(string nameId, int id, bool on)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return (nint)NativeMethods.TablePtr->C3.hs_method_dbcd8c8b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, on);
+        }
+    }
+
     public int _getTickDelay()
     {
         return NativeMethods.TablePtr->C3.hs_method_02de70aa((void*)__hosihikari_shim_handle);
@@ -412,6 +431,11 @@ public sealed unsafe partial class RedstoneTorchBlock : global::System.IDisposab
     public void _neighborChanged(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos neighborPos)
     {
         NativeMethods.TablePtr->C3.hs_method_65488832((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)neighborPos.Handle);
+    }
+
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_cbe59664((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -428,15 +452,40 @@ public sealed unsafe partial class RedstoneTorchBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static RedstoneTorchBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.RedstoneTorchBlock arg0)
+    public static RedstoneTorchBlock Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_80ee4338((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_82b42b8d();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
         }
 
         return new RedstoneTorchBlock((nint)handle);
+    }
+
+    public static RedstoneTorchBlock Create(string nameId, int id, bool on)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var handle = NativeMethods.TablePtr->C3.hs_create_4c8e2214(__hs_stringData0, (nuint)__hs_stringByteCount0, id, on);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new RedstoneTorchBlock((nint)handle);
+        }
     }
 
     public void _addHardCodedBlockComponents(global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
@@ -488,6 +537,11 @@ public sealed unsafe partial class RedstoneTorchBlock : global::System.IDisposab
     public void onPlaceRedstoneTorchBlock(nint eventData)
     {
         NativeMethods.TablePtr->C3.hs_method_d829f03c((void*)__hosihikari_shim_handle, (void*)eventData);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_679d02c9((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

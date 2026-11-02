@@ -38,9 +38,9 @@ public sealed unsafe partial class BucketableComponent : global::System.IDisposa
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_884264c9((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_3831db60((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
     }
 
     public void Dispose()

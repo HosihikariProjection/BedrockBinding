@@ -39,7 +39,7 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IPacketObserver>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController) =>
+    public nint _ctor(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController, nint identityPublicKey) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IPacketObserver>' is not a known bindable declaration.");
 
     public static NetworkConnection Create()
@@ -65,7 +65,7 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IPacketObserver>' is not a known bindable declaration.", false)]
-    public static NetworkConnection Create(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController) =>
+    public static NetworkConnection Create(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController, nint identityPublicKey) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IPacketObserver>' is not a known bindable declaration.");
 
     // The native field type is not projected; this is the address of the field storage.
@@ -108,6 +108,12 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
     public nint mId_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_6793996a((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mIdentityPublicKey_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_01fa3396((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -180,33 +186,6 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
     {
         get => NativeMethods.TablePtr->C2.hs_get_564ae063((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C2.hs_set_564ae063((void*)__hosihikari_shim_handle, value);
-    }
-
-    public int receivePacket(ref string receiveBuffer, global::Hosihikari.Bindings.Abi.SharedHandle? timepointPtr)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(receiveBuffer);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(receiveBuffer, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            try
-            {
-                return NativeMethods.TablePtr->C2.hs_method_29824e76((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, timepointPtr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), &__hs_strOut0);
-            }
-            finally
-            {
-                receiveBuffer = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-            }
-        }
     }
 
 

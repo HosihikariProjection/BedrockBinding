@@ -379,25 +379,6 @@ public sealed unsafe partial class StructureBlock : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_9d1c216b((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_c807deaf((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
-        }
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.Block _getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_6e156687((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue), false);
@@ -416,53 +397,6 @@ public sealed unsafe partial class StructureBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static StructureBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9f5863a9();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StructureBlock((nint)handle);
-    }
-
-    public static StructureBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a716065e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StructureBlock((nint)handle);
-    }
-
-    public static StructureBlock Create(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_3a61adbe(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new StructureBlock((nint)handle);
-        }
-    }
 
     public void _onRedstoneUpdate(nint blockEvent)
     {

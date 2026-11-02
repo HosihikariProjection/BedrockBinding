@@ -43,6 +43,10 @@ public sealed unsafe partial class BaseScriptBlockActorComponent : global::Syste
         return NativeMethods.TablePtr->C3.hs_method_95cd4b9f((void*)__hosihikari_shim_handle) != 0;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static BaseScriptBlockActorComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.BaseScriptBlockActorComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_ab19a041((void*)arg0.Handle);

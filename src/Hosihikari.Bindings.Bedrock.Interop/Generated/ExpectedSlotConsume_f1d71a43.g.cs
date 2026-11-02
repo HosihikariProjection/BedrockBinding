@@ -38,11 +38,6 @@ public sealed unsafe partial class ExpectedSlotConsume : global::System.IDisposa
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName openContainerNetId, byte slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte amountOverride)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_532fa4f1((void*)__hosihikari_shim_handle, (void*)openContainerNetId.Handle, slot, (void*)item.Handle, amountOverride);
-    }
-
     public static ExpectedSlotConsume Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_f89908ab();
@@ -57,17 +52,6 @@ public sealed unsafe partial class ExpectedSlotConsume : global::System.IDisposa
     public static ExpectedSlotConsume Create(global::Hosihikari.Bindings.Bedrock.Interop.ExpectedSlotConsume arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_8ff151b4((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ExpectedSlotConsume((nint)handle);
-    }
-
-    public static ExpectedSlotConsume Create(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName openContainerNetId, byte slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte amountOverride)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_98137089((void*)openContainerNetId.Handle, slot, (void*)item.Handle, amountOverride);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

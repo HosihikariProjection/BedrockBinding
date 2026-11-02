@@ -38,9 +38,10 @@ public sealed unsafe partial class NoClipOrNoBlockMoveFilterSystem : global::Sys
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EntityModifier<MoveRequestComponent>' is not a known bindable declaration.", false)]
-    public static void tick(nint context, nint moveRequest, nint offsets, nint actorData, nint aabb, nint state, nint subBBs, nint mod, nint eventingComponent, nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EntityModifier<MoveRequestComponent>' is not a known bindable declaration.");
+    public static void tick(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.MoveRequestComponent moveRequest, global::Hosihikari.Bindings.Bedrock.Interop.OffsetsComponent offsets, global::Hosihikari.Bindings.Bedrock.Interop.ActorDataFlagComponent actorData, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabb, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent state, global::Hosihikari.Bindings.Bedrock.Interop.SubBBsComponent subBBs, nint mod, nint eventingComponent, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
+    {
+        NativeMethods.TablePtr->C4.hs_method_32425903((void*)context.Handle, (void*)moveRequest.Handle, (void*)offsets.Handle, (void*)actorData.Handle, (void*)aabb.Handle, (void*)state.Handle, (void*)subBBs.Handle, (void*)mod, (void*)eventingComponent, (void*)region.Handle);
+    }
 
     public void Dispose()
     {

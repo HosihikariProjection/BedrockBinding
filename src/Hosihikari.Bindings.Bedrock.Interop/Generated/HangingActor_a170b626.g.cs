@@ -671,6 +671,11 @@ public sealed unsafe partial class HangingActor : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_155ddb7e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)blockPos.Handle) != 0;
     }
 
+    public void _calculateAABB()
+    {
+        NativeMethods.TablePtr->C1.hs_method_46a56797((void*)__hosihikari_shim_handle);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float arg1, nint arg2)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C1.hs_method_2bdacec5((void*)__hosihikari_shim_handle, (void*)source.Handle, arg1, (void*)arg2));

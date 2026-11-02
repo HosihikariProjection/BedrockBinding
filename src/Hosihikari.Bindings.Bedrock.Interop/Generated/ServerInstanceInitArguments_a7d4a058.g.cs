@@ -61,6 +61,12 @@ public sealed unsafe partial class ServerInstanceInitArguments : global::System.
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk13aa02_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f1450cf1((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1abde8_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_28617034((void*)__hosihikari_shim_handle);
@@ -76,6 +82,12 @@ public sealed unsafe partial class ServerInstanceInitArguments : global::System.
     public nint mUnk2668ac_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_058e5ab0((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk329e60_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_179b89cc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -235,6 +247,12 @@ public sealed unsafe partial class ServerInstanceInitArguments : global::System.
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkb2d049_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cb1a16bf((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb4db5c_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d6df91fc((void*)__hosihikari_shim_handle);
@@ -247,6 +265,12 @@ public sealed unsafe partial class ServerInstanceInitArguments : global::System.
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkd3172f_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b9f53d66((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd99218_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b98f065f((void*)__hosihikari_shim_handle);
@@ -256,6 +280,12 @@ public sealed unsafe partial class ServerInstanceInitArguments : global::System.
     public nint mUnke48055_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c988582e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnke4860f_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_915ae176((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -295,15 +325,15 @@ public sealed unsafe partial class ServerInstanceInitArguments : global::System.
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkf0f0b6_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2f869c89((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf7d817_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b7f01c3e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkf88874_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bced6c4c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceInitArguments arg0)

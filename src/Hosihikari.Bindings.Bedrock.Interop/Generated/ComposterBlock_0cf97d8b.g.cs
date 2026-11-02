@@ -493,17 +493,6 @@ public sealed unsafe partial class ComposterBlock : global::System.IDisposable
         return new ComposterBlock((nint)handle);
     }
 
-    public static ComposterBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ComposterBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_1efcd0ba((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ComposterBlock((nint)handle);
-    }
-
     public static ComposterBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

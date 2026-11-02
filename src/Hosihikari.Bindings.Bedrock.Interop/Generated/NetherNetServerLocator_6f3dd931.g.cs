@@ -38,6 +38,11 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         return __hs_handle;
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription _acquireHttpProbePermission()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)NativeMethods.TablePtr->C2.hs_method_a793cd13((void*)__hosihikari_shim_handle));
+    }
+
     public void _addCustomServer(global::Hosihikari.Bindings.Bedrock.Interop.AsynchronousIPResolver futureIP, int port)
     {
         NativeMethods.TablePtr->C2.hs_method_47b6a42e((void*)__hosihikari_shim_handle, (void*)futureIP.Handle, port);
@@ -50,6 +55,12 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.", false)]
     public nint _getServerList() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.");
+
+    public global::Hosihikari.Bindings.Abi.SharedHandle? _getTransportEndpointCache()
+    {
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_4c98603e((void*)__hosihikari_shim_handle);
+        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
+    }
 
     public void _startAnnouncingServer(string playerName, string worldName, int gameType, int numPlayers, int maxNumPlayers, bool isJoinableThroughServerScreen, bool isEditorWorld, bool isHardcore, global::Hosihikari.Bindings.Bedrock.Interop.ServerSupportedAuthenticationTypes supportedAuth, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)
     {
@@ -139,37 +150,44 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         return NativeMethods.TablePtr->C2.hs_method_0e149eb7((void*)__hosihikari_shim_handle, (void*)writer.Handle, area) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<PingedCompatibleServer>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint _pingExternalServer(nint futureIP, ushort port, nint urls, ulong index) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<PingedCompatibleServer>' requires --link-carrier or --virtual-dispatch.");
-
     public void _setDiscoveryRequestCallback(bool enable)
     {
         NativeMethods.TablePtr->C2.hs_method_ff3b8b6c((void*)__hosihikari_shim_handle, enable);
     }
 
-    public void _setDiscoveryResponseCallback(bool enable)
+    public void _setIsDiscovering(bool isDiscovering)
     {
-        NativeMethods.TablePtr->C2.hs_method_f04529c4((void*)__hosihikari_shim_handle, enable);
+        NativeMethods.TablePtr->C2.hs_method_d9799bc2((void*)__hosihikari_shim_handle, isDiscovering);
+    }
+
+    public void _startPendingExternalServerRequests()
+    {
+        NativeMethods.TablePtr->C2.hs_method_b1a98534((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public static nint _transformFrom(nint networkID, nint serverData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription acquireHttpProbePermission()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)NativeMethods.TablePtr->C2.hs_method_2bcf3ad5((void*)__hosihikari_shim_handle));
+    }
+
     public void addCustomServer(global::Hosihikari.Bindings.Bedrock.Interop.AsynchronousIPResolver futureIP, int port)
     {
         NativeMethods.TablePtr->C2.hs_method_d2904e5c((void*)__hosihikari_shim_handle, (void*)futureIP.Handle, port);
     }
 
-    public void clearServerList()
-    {
-        NativeMethods.TablePtr->C2.hs_method_66880ea2((void*)__hosihikari_shim_handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.", false)]
     public nint getServerList() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.");
+
+    public global::Hosihikari.Bindings.Abi.SharedHandle? getTransportEndpointCache()
+    {
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_d6b96a77((void*)__hosihikari_shim_handle);
+        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1ca294_Address
@@ -184,9 +202,21 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk4488db_Address
+    public nint mUnk36b3eb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a0670081((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_48c2f5f5((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk3ee0a8_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9863dcf5((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk4b5a50_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7ca0ca8f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -302,9 +332,9 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
 
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_68ffffca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_298ed909((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

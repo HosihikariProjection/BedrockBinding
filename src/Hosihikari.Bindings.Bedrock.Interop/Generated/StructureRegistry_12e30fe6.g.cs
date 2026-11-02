@@ -70,9 +70,50 @@ public sealed unsafe partial class StructureRegistry : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mOnStructurePlaced_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ec58bc9b((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mOnStructurePlacedMap_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_3821a330((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mOnStructurePlacedNames_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_014ebeaa((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mStructures_Address
     {
         get => (nint)NativeMethods.TablePtr->C5.hs_get_e89ec2de((void*)__hosihikari_shim_handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public nint record(nint name, nint cb) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
+    public uint reserveOnPlaced(string name)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return NativeMethods.TablePtr->C5.hs_method_c87ff491((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
     }
 
 

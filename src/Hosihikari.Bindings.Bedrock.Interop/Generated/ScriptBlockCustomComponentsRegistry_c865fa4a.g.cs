@@ -185,9 +185,9 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
         return __hs_result;
     }
 
-    public bool hasSubscriptionFor(ushort type, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public bool hasSubscriptionFor(ushort type, global::Hosihikari.Bindings.Bedrock.Interop.BlockCustomComponentsComponent customComponents)
     {
-        return NativeMethods.TablePtr->C3.hs_method_49d2118a((void*)__hosihikari_shim_handle, type, (void*)block.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_afb13081((void*)__hosihikari_shim_handle, type, (void*)customComponents.Handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -255,6 +255,16 @@ public sealed unsafe partial class ScriptBlockCustomComponentsRegistry : global:
     public void onFlushBlockCustomComponentAfterEvents(nint deferredTracker)
     {
         NativeMethods.TablePtr->C3.hs_method_4a28c4b8((void*)__hosihikari_shim_handle, (void*)deferredTracker);
+    }
+
+    public void onNamedTick(nint eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_f7e6c659((void*)__hosihikari_shim_handle, (void*)eventData);
+    }
+
+    public void onNeighborChanged(nint eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_b8edbc41((void*)__hosihikari_shim_handle, (void*)eventData);
     }
 
     public void onPlace(nint eventData)

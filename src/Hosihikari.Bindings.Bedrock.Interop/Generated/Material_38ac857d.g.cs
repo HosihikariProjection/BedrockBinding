@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-public sealed unsafe partial class Material
+public sealed unsafe partial class Material : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -38,11 +38,6 @@ public sealed unsafe partial class Material
         return __hs_handle;
     }
 
-    public static void _setupMaterials()
-    {
-        NativeMethods.TablePtr->C2.hs_method_dc2204af();
-    }
-
     public static global::Hosihikari.Bindings.Bedrock.Interop.Material getMaterial(byte type)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Material((nint)NativeMethods.TablePtr->C2.hs_method_61beab2d(type), false);
@@ -64,11 +59,6 @@ public sealed unsafe partial class Material
     {
         get => NativeMethods.TablePtr->C2.hs_get_a5b9fe70((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C2.hs_set_a5b9fe70((void*)__hosihikari_shim_handle, value);
-    }
-
-    public static nint mMaterials()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_5c9db910();
     }
 
     public bool mNeverBuildable
@@ -98,5 +88,18 @@ public sealed unsafe partial class Material
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Material rhs)
     {
         return NativeMethods.TablePtr->C2.hs_method_6ad7d869((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
+    }
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C2.hs_destroy_38ac857d((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

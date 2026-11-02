@@ -395,25 +395,6 @@ public sealed unsafe partial class SnifferEggBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_7f446f66((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_ae7e9054((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
-        }
-    }
-
     public int _getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         return NativeMethods.TablePtr->C4.hs_method_47d8e385((void*)__hosihikari_shim_handle, (void*)block.Handle);
@@ -427,53 +408,6 @@ public sealed unsafe partial class SnifferEggBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static SnifferEggBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_5ee51fcf();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SnifferEggBlock((nint)handle);
-    }
-
-    public static SnifferEggBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SnifferEggBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f4bd3812((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SnifferEggBlock((nint)handle);
-    }
-
-    public static SnifferEggBlock Create(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_1ba385e5(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new SnifferEggBlock((nint)handle);
-        }
-    }
 
     public string buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
     {

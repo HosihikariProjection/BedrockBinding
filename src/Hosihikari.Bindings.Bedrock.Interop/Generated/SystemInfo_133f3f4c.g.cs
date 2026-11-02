@@ -89,6 +89,12 @@ public sealed unsafe partial class SystemInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_e3ea4dce((void*)__hosihikari_shim_handle);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mPerfHints_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_356f0eb1((void*)__hosihikari_shim_handle);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.SystemInfo((nint)NativeMethods.TablePtr->C4.hs_method_b8cf264c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);

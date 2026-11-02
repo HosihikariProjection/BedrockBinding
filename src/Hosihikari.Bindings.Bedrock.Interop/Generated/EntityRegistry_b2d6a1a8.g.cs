@@ -144,11 +144,6 @@ public sealed unsafe partial class EntityRegistry : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C1.hs_method_3dbb5901();
     }
 
-    public void postViewEachCount(ulong count)
-    {
-        NativeMethods.TablePtr->C1.hs_method_6c91af79((void*)__hosihikari_shim_handle, count);
-    }
-
 
     public void Dispose()
     {

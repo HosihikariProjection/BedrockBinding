@@ -60,15 +60,6 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
         return new GameContext((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value blocksToJson()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_138f0429((void*)__hosihikari_shim_handle));
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CodeBuilder::GameContext' has no accessible destructor.", false)]
-    public static nint create(nint levelGetter) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CodeBuilder::GameContext' has no accessible destructor.");
-
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value getFileJson(string filePath, string fileContents)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(filePath);
@@ -140,44 +131,16 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value itemsToJson()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_f50ad55b((void*)__hosihikari_shim_handle));
-    }
-
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk55791e_Address
+    public nint mUnk62ec0b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4707f275((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk8ef71e_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_21753912((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnka2ed89_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0a260855((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkec8ea4_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_147276be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c59ebb15((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfd6f86_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_70af28d1((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value mobsToJson()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_b10786dc((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext arg0)

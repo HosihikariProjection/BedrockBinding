@@ -51,12 +51,6 @@ public sealed unsafe partial class ScriptScoreboard : global::System.IDisposable
     public nint getOrCreateScoreboardIdentity(nint identity) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptScoreboardIdentity>' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardIdentityRef? getOrCreateScoreboardIdentityRef(nint participant)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ceae37a6((void*)__hosihikari_shim_handle, (void*)participant);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardIdentityRef((nint)__hs_handle, false) : null;
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mIdentities_Address
     {
@@ -91,12 +85,6 @@ public sealed unsafe partial class ScriptScoreboard : global::System.IDisposable
     public nint mScoreboardListener_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_9d6df16e((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardIdentityRef? tryGetScoreboardParticipantIdentityRef(nint participant)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9030fc89((void*)__hosihikari_shim_handle, (void*)participant);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardIdentityRef((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId? tryGetScoreboardParticipantScoreboardId(nint participant)

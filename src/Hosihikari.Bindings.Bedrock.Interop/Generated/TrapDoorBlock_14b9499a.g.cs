@@ -473,17 +473,6 @@ public sealed unsafe partial class TrapDoorBlock : global::System.IDisposable
         return new TrapDoorBlock((nint)handle);
     }
 
-    public static TrapDoorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.TrapDoorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e43e97fc((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TrapDoorBlock((nint)handle);
-    }
-
     public static TrapDoorBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.Material material)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

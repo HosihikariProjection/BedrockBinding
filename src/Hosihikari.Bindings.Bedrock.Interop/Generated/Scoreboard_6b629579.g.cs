@@ -428,6 +428,11 @@ public sealed unsafe partial class Scoreboard : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)NativeMethods.TablePtr->C3.hs_method_970bffd7((void*)__hosihikari_shim_handle, (void*)entity.Handle), false);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId getScoreboardId(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID entityId)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)NativeMethods.TablePtr->C3.hs_method_56b4f0b0((void*)__hosihikari_shim_handle, (void*)entityId.Handle), false);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId getScoreboardId(string name)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
@@ -445,6 +450,18 @@ public sealed unsafe partial class Scoreboard : global::System.IDisposable
         {
             return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)NativeMethods.TablePtr->C3.hs_method_6b9c66c7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId[] getTrackedIds()
+    {
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_f9f28ce5((void*)__hosihikari_shim_handle);
+        var __hs_items = (void**)__hs_view.Data;
+        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId>() : new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId[checked((int)__hs_view.Size)];
+        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
+        {
+            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_items[__hs_i]);
+        }
+        return __hs_result;
     }
 
     public bool isClientSide()

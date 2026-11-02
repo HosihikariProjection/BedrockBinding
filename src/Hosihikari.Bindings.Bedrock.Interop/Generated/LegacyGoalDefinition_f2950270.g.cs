@@ -1388,6 +1388,11 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_e7ba3c87((void*)__hosihikari_shim_handle, value);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyGoalDefinition((nint)NativeMethods.TablePtr->C2.hs_method_30424bee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+    }
+
     public bool parse(global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams deserializeDataParams, int priority)
     {
         return NativeMethods.TablePtr->C2.hs_method_537eec78((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle, priority) != 0;

@@ -38,11 +38,6 @@ public sealed unsafe partial class BehaviorSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b023c3cc((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
-
     public static BehaviorSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.BehaviorSystem arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_350c4af4((void*)arg0.Handle);
@@ -54,9 +49,9 @@ public sealed unsafe partial class BehaviorSystem : global::System.IDisposable
         return new BehaviorSystem((nint)handle);
     }
 
-    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
+    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry arg0)
     {
-        NativeMethods.TablePtr->C0.hs_method_76aeb95f((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C0.hs_method_76aeb95f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
 

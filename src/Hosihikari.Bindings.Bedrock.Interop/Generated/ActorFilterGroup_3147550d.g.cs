@@ -38,7 +38,7 @@ public sealed unsafe partial class ActorFilterGroup : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? __createSubgroup(int type)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? __createSubgroup(byte type)
     {
         var __hs_shared = NativeMethods.TablePtr->C0.hs_method_e9d76c17((void*)__hosihikari_shim_handle, type);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
@@ -83,13 +83,13 @@ public sealed unsafe partial class ActorFilterGroup : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _createSubgroup(int type)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? _createSubgroup(byte type)
     {
         var __hs_shared = NativeMethods.TablePtr->C0.hs_method_b58b5fa7((void*)__hosihikari_shim_handle, type);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public bool _parseMemberCollectionJSONCpp(int collectionType, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonVal)
+    public bool _parseMemberCollectionJSONCpp(byte collectionType, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonVal)
     {
         return NativeMethods.TablePtr->C0.hs_method_a8019547((void*)__hosihikari_shim_handle, collectionType, (void*)jsonVal.Handle) != 0;
     }
@@ -173,7 +173,7 @@ public sealed unsafe partial class ActorFilterGroup : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_1b123fa2((void*)__hosihikari_shim_handle);
     }
 
-    public int mCollectionType
+    public byte mCollectionType
     {
         get => NativeMethods.TablePtr->C0.hs_get_3bda1a58((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C0.hs_set_3bda1a58((void*)__hosihikari_shim_handle, value);

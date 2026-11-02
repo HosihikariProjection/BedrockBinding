@@ -43,6 +43,11 @@ public sealed unsafe partial class ShulkerPostAiStepSystem : global::System.IDis
         NativeMethods.TablePtr->C4.hs_method_92a2ae61((void*)arg0.Handle, (void*)actorRotationComponent.Handle, (void*)mobBodyRotationComponent.Handle, (void*)stateVectorComponent.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_affa16b0());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

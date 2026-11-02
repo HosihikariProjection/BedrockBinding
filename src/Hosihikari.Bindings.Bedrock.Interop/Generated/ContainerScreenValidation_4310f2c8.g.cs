@@ -75,11 +75,6 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
         NativeMethods.TablePtr->C1.hs_method_74dbef53((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationSlotInfo _createContainerValidatorSlotInfo(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationSlotData slotData)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationSlotInfo((nint)NativeMethods.TablePtr->C1.hs_method_a8aadacf((void*)__hosihikari_shim_handle, (void*)slotData.Handle));
-    }
-
     public bool _dropItems()
     {
         return NativeMethods.TablePtr->C1.hs_method_40827fb5((void*)__hosihikari_shim_handle) != 0;

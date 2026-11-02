@@ -40,7 +40,7 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
 
     public void _consumeCount(uint rounds)
     {
-        NativeMethods.TablePtr->C4.hs_method_73281afe((void*)__hosihikari_shim_handle, rounds);
+        NativeMethods.TablePtr->C5.hs_method_73281afe((void*)__hosihikari_shim_handle, rounds);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IPositionalRandomFactory' has no accessible destructor.", false)]
@@ -49,37 +49,37 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
 
     public bool _nextBoolean()
     {
-        return NativeMethods.TablePtr->C4.hs_method_ab3115d3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_ab3115d3((void*)__hosihikari_shim_handle) != 0;
     }
 
     public double _nextDouble()
     {
-        return NativeMethods.TablePtr->C4.hs_method_4a3392f4((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_4a3392f4((void*)__hosihikari_shim_handle);
     }
 
     public float _nextFloat()
     {
-        return NativeMethods.TablePtr->C4.hs_method_9fcbbb70((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_9fcbbb70((void*)__hosihikari_shim_handle);
     }
 
     public double _nextGaussianDouble()
     {
-        return NativeMethods.TablePtr->C4.hs_method_63cdebbc((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_63cdebbc((void*)__hosihikari_shim_handle);
     }
 
     public int _nextInt()
     {
-        return NativeMethods.TablePtr->C4.hs_method_962886c8((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_962886c8((void*)__hosihikari_shim_handle);
     }
 
     public int _nextInt(int bound)
     {
-        return NativeMethods.TablePtr->C4.hs_method_3c7df33d((void*)__hosihikari_shim_handle, bound);
+        return NativeMethods.TablePtr->C5.hs_method_3c7df33d((void*)__hosihikari_shim_handle, bound);
     }
 
     public long _nextLong()
     {
-        return NativeMethods.TablePtr->C4.hs_method_d528ab9f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_d528ab9f((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -88,7 +88,7 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
 
     public static XoroshiroRandom Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_27a61d89();
+        var handle = NativeMethods.TablePtr->C5.hs_create_27a61d89();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,7 +99,7 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
 
     public static XoroshiroRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2c7fe673((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_2c7fe673((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -110,7 +110,7 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
 
     public void consumeCount(uint rounds)
     {
-        NativeMethods.TablePtr->C4.hs_method_d61e7418((void*)__hosihikari_shim_handle, rounds);
+        NativeMethods.TablePtr->C5.hs_method_d61e7418((void*)__hosihikari_shim_handle, rounds);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IPositionalRandomFactory' has no accessible destructor.", false)]
@@ -120,53 +120,53 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7653d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e009db94((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e009db94((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka94e01_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4720d7f9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_4720d7f9((void*)__hosihikari_shim_handle);
     }
 
     public bool nextBoolean()
     {
-        return NativeMethods.TablePtr->C4.hs_method_475b920f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_475b920f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public double nextDouble()
     {
-        return NativeMethods.TablePtr->C4.hs_method_6711956a((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_6711956a((void*)__hosihikari_shim_handle);
     }
 
     public float nextFloat()
     {
-        return NativeMethods.TablePtr->C4.hs_method_3f0c4b11((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_3f0c4b11((void*)__hosihikari_shim_handle);
     }
 
     public double nextGaussianDouble()
     {
-        return NativeMethods.TablePtr->C4.hs_method_aa2c9a87((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_aa2c9a87((void*)__hosihikari_shim_handle);
     }
 
     public int nextInt()
     {
-        return NativeMethods.TablePtr->C4.hs_method_68a99474((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_68a99474((void*)__hosihikari_shim_handle);
     }
 
     public int nextInt(int bound)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6cba37e4((void*)__hosihikari_shim_handle, bound);
+        return NativeMethods.TablePtr->C5.hs_method_6cba37e4((void*)__hosihikari_shim_handle, bound);
     }
 
     public long nextLong()
     {
-        return NativeMethods.TablePtr->C4.hs_method_09091dd8((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_09091dd8((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom((nint)NativeMethods.TablePtr->C4.hs_method_fd7d85f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom((nint)NativeMethods.TablePtr->C5.hs_method_fd7d85f0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -176,7 +176,7 @@ public sealed unsafe partial class XoroshiroRandom : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ee364c9f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_ee364c9f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -80,17 +80,6 @@ public sealed unsafe partial class ItemDescriptorCount : global::System.IDisposa
         return new ItemDescriptorCount((nint)handle);
     }
 
-    public static ItemDescriptorCount Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptorCount arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_35e13abe((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ItemDescriptorCount((nint)handle);
-    }
-
     public ushort mStackSize
     {
         get => NativeMethods.TablePtr->C2.hs_get_3698e744((void*)__hosihikari_shim_handle);

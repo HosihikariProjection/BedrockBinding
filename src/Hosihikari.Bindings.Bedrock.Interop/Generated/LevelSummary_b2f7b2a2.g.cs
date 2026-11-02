@@ -159,6 +159,11 @@ public sealed unsafe partial class LevelSummary : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C2.hs_method_380ce53f(), false);
     }
 
+    public void _initializeWorldIconPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path directory)
+    {
+        NativeMethods.TablePtr->C2.hs_method_b70b66be((void*)__hosihikari_shim_handle, (void*)directory.Handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mBaseGameVersion_Address
     {

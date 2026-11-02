@@ -43,11 +43,6 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
         return (nint)NativeMethods.TablePtr->C0.hs_method_c5599d71((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_507df849((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
-
     public void _dtor()
     {
         NativeMethods.TablePtr->C0.hs_method_6eedae75((void*)__hosihikari_shim_handle);
@@ -67,17 +62,6 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
     public static CloudSaveLevelInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d2fdecab((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CloudSaveLevelInfo((nint)handle);
-    }
-
-    public static CloudSaveLevelInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_9439ccda((void*)tag.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -129,11 +113,6 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo((nint)NativeMethods.TablePtr->C0.hs_method_f38a78d1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
-
-    public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a15894d5((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
 

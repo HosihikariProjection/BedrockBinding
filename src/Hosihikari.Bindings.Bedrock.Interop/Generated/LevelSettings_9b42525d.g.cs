@@ -205,6 +205,12 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_21989cf8((void*)__hosihikari_shim_handle, value);
     }
 
+    public sbyte mEditorLevelMigrationVersion
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_0987cdb0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_0987cdb0((void*)__hosihikari_shim_handle, value);
+    }
+
     public int mEditorWorldType
     {
         get => NativeMethods.TablePtr->C2.hs_get_a4485bee((void*)__hosihikari_shim_handle);

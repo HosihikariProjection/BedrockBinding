@@ -38,32 +38,10 @@ public sealed unsafe partial class CompoundTagUpdaterContext : global::System.ID
         return __hs_handle;
     }
 
-    public static CompoundTagUpdaterContext Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_9be82056((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CompoundTagUpdaterContext((nint)handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder addUpdater(byte major, byte minor, byte patch)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder((nint)NativeMethods.TablePtr->C1.hs_method_827b5371((void*)__hosihikari_shim_handle, major, minor, patch));
-    }
-
-    public byte mUpdaterVersion
-    {
-        get => NativeMethods.TablePtr->C1.hs_get_4553fe19((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_4553fe19((void*)__hosihikari_shim_handle, value);
-    }
-
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUpdaters_Address
+    public nint mImpl_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_6584fda0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_18b46872((void*)__hosihikari_shim_handle);
     }
 
     public int update(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, uint version)

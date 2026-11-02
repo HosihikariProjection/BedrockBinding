@@ -9,4 +9,5 @@ public enum Query : int
     DayTime = 0,
     GameTime = 1,
     Day = 2,
+    Time = 3,
 }

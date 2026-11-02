@@ -59,6 +59,10 @@ public sealed unsafe partial class ScreenHandlerBeacon : global::System.IDisposa
         NativeMethods.TablePtr->C3.hs_method_656c60a0((void*)__hosihikari_shim_handle, wasSuccess);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static ScreenHandlerBeacon Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_0e548a18();

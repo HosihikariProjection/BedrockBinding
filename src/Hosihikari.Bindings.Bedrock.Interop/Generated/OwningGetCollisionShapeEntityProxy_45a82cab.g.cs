@@ -38,6 +38,18 @@ public sealed unsafe partial class OwningGetCollisionShapeEntityProxy : global::
         return __hs_handle;
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnka19660_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b0181e3c((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkeeb197_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e2ad2a33((void*)__hosihikari_shim_handle);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
@@ -65,15 +77,16 @@ public sealed unsafe partial class OwningGetCollisionShapeEntityProxy : global::
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkc9873d_Address
+    public nint mUnk534bef_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_99f1901c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cc3c2cb4((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.OwningGetCollisionShapeEntityProxy((nint)NativeMethods.TablePtr->C3.hs_method_97dbff3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
+
 
     public void Dispose()
     {

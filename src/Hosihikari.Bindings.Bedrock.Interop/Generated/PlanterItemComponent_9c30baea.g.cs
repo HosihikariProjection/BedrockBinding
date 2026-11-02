@@ -71,11 +71,6 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
         return new PlanterItemComponent((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_05955ffd((void*)ctx.Handle);
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlock_Address
     {

@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.PlayerMoveSystemsImpl;
 
-public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal
+public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -52,13 +52,30 @@ public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    public static LocalPlayerFilterAutoJumpInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMoveSystemsImpl.LocalPlayerFilterAutoJumpInternal arg0)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_0d9bc28d((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new LocalPlayerFilterAutoJumpInternal((nint)handle);
+    }
+
+    public static bool _isAutoJumpEnabledGlobally(nint data)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_73d9464f((void*)data) != 0;
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.", false)]
-    public static void _setJumpingIfPlayerCanAutoJump(nint entity, nint aabbShape, nint actorRotation, nint attributes, nint stateVector, nint synchedActorData, nint inputLock, nint moveInput, nint isOnGround, nint isRiding, nint executionContext, nint region) =>
+    public static void _setJumpingIfPlayerCanAutoJump(nint entity, nint aabbShape, nint actorRotation, nint attributes, nint stateVector, nint synchedActorData, nint inputLock, nint moveInput, nint isOnGround, nint isRiding, nint collisionViews, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.");
 
-    public static void commonTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext? entity)
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
     {
-        NativeMethods.TablePtr->C3.hs_method_8c25c515((void*)context, (void*)(entity?.Handle ?? 0));
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6ced8681((void*)__hosihikari_shim_handle);
     }
 
     public void singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity)
@@ -69,5 +86,19 @@ public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal
     public void tick(nint context)
     {
         NativeMethods.TablePtr->C3.hs_method_e95d14ca((void*)__hosihikari_shim_handle, (void*)context);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C3.hs_destroy_3b51598f((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

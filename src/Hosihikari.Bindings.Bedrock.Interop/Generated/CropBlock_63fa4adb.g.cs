@@ -492,17 +492,6 @@ public sealed unsafe partial class CropBlock : global::System.IDisposable
         return new CropBlock((nint)handle);
     }
 
-    public static CropBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CropBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_48dc163c((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CropBlock((nint)handle);
-    }
-
     public static CropBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.CropParams @params)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

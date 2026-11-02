@@ -38,11 +38,6 @@ public sealed unsafe partial class Aquifer : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, global::Hosihikari.Bindings.Bedrock.Interop.AquiferNoises aquiferNoises, global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d terrainNoises, global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache surfaceLevelCache, int dimensionMinHeight, int levelGenHeight, int seaLevel)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_38be10ec((void*)__hosihikari_shim_handle, (void*)chunkPos.Handle, (void*)aquiferNoises.Handle, (void*)terrainNoises.Handle, (void*)surfaceLevelCache.Handle, dimensionMinHeight, levelGenHeight, seaLevel);
-    }
-
     public static Aquifer Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_81667cb9();
@@ -57,17 +52,6 @@ public sealed unsafe partial class Aquifer : global::System.IDisposable
     public static Aquifer Create(global::Hosihikari.Bindings.Bedrock.Interop.Aquifer arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2d3a5762((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Aquifer((nint)handle);
-    }
-
-    public static Aquifer Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, global::Hosihikari.Bindings.Bedrock.Interop.AquiferNoises aquiferNoises, global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d terrainNoises, global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache surfaceLevelCache, int dimensionMinHeight, int levelGenHeight, int seaLevel)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_3fd66ee1((void*)chunkPos.Handle, (void*)aquiferNoises.Handle, (void*)terrainNoises.Handle, (void*)surfaceLevelCache.Handle, dimensionMinHeight, levelGenHeight, seaLevel);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

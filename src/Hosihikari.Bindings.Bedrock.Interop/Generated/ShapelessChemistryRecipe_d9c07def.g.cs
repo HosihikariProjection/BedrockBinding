@@ -104,16 +104,6 @@ public sealed unsafe partial class ShapelessChemistryRecipe : global::System.IDi
         set => NativeMethods.TablePtr->C4.hs_set_2631147e((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID _getId()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C4.hs_method_5f0fa63f((void*)__hosihikari_shim_handle), false);
-    }
-
-    public bool _matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_bf32d547((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle) != 0;
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
@@ -132,16 +122,6 @@ public sealed unsafe partial class ShapelessChemistryRecipe : global::System.IDi
         }
 
         return new ShapelessChemistryRecipe((nint)handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID getId()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C4.hs_method_0fd306c9((void*)__hosihikari_shim_handle), false);
-    }
-
-    public bool matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftSlots, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_73e2073e((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle) != 0;
     }
 
 

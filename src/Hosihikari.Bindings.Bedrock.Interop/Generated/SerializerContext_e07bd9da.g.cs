@@ -84,10 +84,6 @@ public sealed unsafe partial class SerializerContext : global::System.IDisposabl
         NativeMethods.TablePtr->C5.hs_method_b4c758c2((void*)__hosihikari_shim_handle, from, to, filter);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'cereal::LogCheckpoint' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint getLogCheckpoint() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'cereal::LogCheckpoint' requires --link-carrier or --virtual-dispatch.");
-
     public void log(ushort res, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString msg)
     {
         NativeMethods.TablePtr->C5.hs_method_07a61d4a((void*)__hosihikari_shim_handle, res, (void*)msg.Handle);

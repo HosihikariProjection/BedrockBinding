@@ -394,25 +394,6 @@ public sealed unsafe partial class TorchBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_2927609e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id, int flameParticle)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_b9fbe983((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, flameParticle);
-        }
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C4.hs_method_6e7ea183((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
@@ -450,53 +431,6 @@ public sealed unsafe partial class TorchBlock : global::System.IDisposable
     public static nint FACING_FROM_DATA() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'const unsigned short (&)[6]' is not supported.");
 
-    public static TorchBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d784da90();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TorchBlock((nint)handle);
-    }
-
-    public static TorchBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.TorchBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a6510a0b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TorchBlock((nint)handle);
-    }
-
-    public static TorchBlock Create(string nameId, int id, int flameParticle)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_b0a0e3c1(__hs_stringData0, (nuint)__hs_stringByteCount0, id, flameParticle);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new TorchBlock((nint)handle);
-        }
-    }
-
     public void _addHardCodedBlockComponents(global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
     {
         NativeMethods.TablePtr->C4.hs_method_a365fd68((void*)__hosihikari_shim_handle, (void*)experiments.Handle);
@@ -505,6 +439,11 @@ public sealed unsafe partial class TorchBlock : global::System.IDisposable
     public void animateTickBedrockLegacy(nint tickData)
     {
         NativeMethods.TablePtr->C4.hs_method_0a56721b((void*)__hosihikari_shim_handle, (void*)tickData);
+    }
+
+    public bool canBePlacedOn(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte facing)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_438eba20((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, facing) != 0;
     }
 
     public bool canSurvive(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

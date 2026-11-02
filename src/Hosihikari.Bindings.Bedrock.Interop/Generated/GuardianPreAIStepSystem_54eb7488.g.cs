@@ -43,6 +43,11 @@ public sealed unsafe partial class GuardianPreAIStepSystem : global::System.IDis
         NativeMethods.TablePtr->C1.hs_method_3a54eefc((void*)arg0.Handle, (void*)actorOwnerComponent.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_c8d60e2c());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

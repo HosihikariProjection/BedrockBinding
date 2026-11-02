@@ -79,6 +79,12 @@ public sealed unsafe partial class TypeDescriptor : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C5.hs_get_5b201da2((void*)__hosihikari_shim_handle);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mVisitorData_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_4a7d43d7((void*)__hosihikari_shim_handle);
+    }
+
 
     public void Dispose()
     {

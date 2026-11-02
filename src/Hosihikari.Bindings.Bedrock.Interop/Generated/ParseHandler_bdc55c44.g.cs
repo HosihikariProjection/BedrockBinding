@@ -38,36 +38,6 @@ public sealed unsafe partial class ParseHandler : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool Bool(bool b)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_2173e338((void*)__hosihikari_shim_handle, b) != 0;
-    }
-
-    public bool Double(double d)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_7b811cf9((void*)__hosihikari_shim_handle, d) != 0;
-    }
-
-    public bool Int(int i)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_866933e2((void*)__hosihikari_shim_handle, i) != 0;
-    }
-
-    public bool Int64(long i)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_6391881f((void*)__hosihikari_shim_handle, i) != 0;
-    }
-
-    public bool Key(nint str, uint length, bool copy)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_546e0be2((void*)__hosihikari_shim_handle, (void*)str, length, copy) != 0;
-    }
-
-    public bool Null()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_2eab8c4f((void*)__hosihikari_shim_handle) != 0;
-    }
-
     public static ParseHandler Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_d1f660bf();
@@ -88,21 +58,6 @@ public sealed unsafe partial class ParseHandler : global::System.IDisposable
         }
 
         return new ParseHandler((nint)handle);
-    }
-
-    public bool String(nint str, uint length, bool copy)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_30016992((void*)__hosihikari_shim_handle, (void*)str, length, copy) != 0;
-    }
-
-    public bool Uint(uint u)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_cefccbd1((void*)__hosihikari_shim_handle, u) != 0;
-    }
-
-    public bool Uint64(ulong u)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_113ee6ef((void*)__hosihikari_shim_handle, u) != 0;
     }
 
     public bool _addObjectOrArray(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper value)

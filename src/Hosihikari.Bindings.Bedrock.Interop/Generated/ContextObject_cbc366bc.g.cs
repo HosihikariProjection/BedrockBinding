@@ -157,39 +157,6 @@ public sealed unsafe partial class ContextObject : global::System.IDisposable
     public nint call(nint closureHandle, nint args, uint argc, nint expectedReturnType) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::ClosureType>' is not a known bindable declaration.");
 
-    public int checkModuleImportAllowed(string baseName, string moduleName, bool dynamicImport)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(baseName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(baseName, __hs_stringBytes0);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(moduleName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(moduleName, __hs_stringBytes1);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                return NativeMethods.TablePtr->C3.hs_method_cc316fa3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, dynamicImport);
-            }
-        }
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk182a63_Address
     {

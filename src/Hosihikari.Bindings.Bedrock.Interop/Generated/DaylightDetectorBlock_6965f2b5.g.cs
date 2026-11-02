@@ -389,25 +389,6 @@ public sealed unsafe partial class DaylightDetectorBlock : global::System.IDispo
         return NativeMethods.TablePtr->C1.hs_method_f51f0140((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id, bool isInverted)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_cc151e0e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, isInverted);
-        }
-    }
-
     public int _getVariant(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         return NativeMethods.TablePtr->C1.hs_method_db797e25((void*)__hosihikari_shim_handle, (void*)block.Handle);
@@ -428,6 +409,11 @@ public sealed unsafe partial class DaylightDetectorBlock : global::System.IDispo
         NativeMethods.TablePtr->C1.hs_method_eafc5cf3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_fb670de4((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C1.hs_method_fd2a1afb((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -446,53 +432,6 @@ public sealed unsafe partial class DaylightDetectorBlock : global::System.IDispo
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static DaylightDetectorBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_39f03f92();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DaylightDetectorBlock((nint)handle);
-    }
-
-    public static DaylightDetectorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DaylightDetectorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_18e2a11b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DaylightDetectorBlock((nint)handle);
-    }
-
-    public static DaylightDetectorBlock Create(string nameId, int id, bool isInverted)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C1.hs_create_39edf896(__hs_stringData0, (nuint)__hs_stringByteCount0, id, isInverted);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new DaylightDetectorBlock((nint)handle);
-        }
-    }
 
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, byte face, int arg2)
     {
@@ -533,6 +472,11 @@ public sealed unsafe partial class DaylightDetectorBlock : global::System.IDispo
     public void onRemove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C1.hs_method_02edf123((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_344ce5bf((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

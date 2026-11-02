@@ -40,7 +40,7 @@ public sealed unsafe partial class FireChargeItem : global::System.IDisposable
 
     public bool __calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_6a08426f((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_25aa22d1((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult __useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
@@ -70,7 +70,7 @@ public sealed unsafe partial class FireChargeItem : global::System.IDisposable
 
     public bool _calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7229195e((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_858178ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)

@@ -124,11 +124,6 @@ public sealed unsafe partial class CraftHandlerSmithingTable : global::System.ID
         return NativeMethods.TablePtr->C1.hs_method_64def646((void*)__hosihikari_shim_handle, (void*)requestAction.Handle);
     }
 
-    public bool _recipeMatches(global::Hosihikari.Bindings.Bedrock.Interop.Recipe recipe, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer currentCraftingItems)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_62e5ff02((void*)__hosihikari_shim_handle, (void*)recipe.Handle, (void*)currentCraftingItems.Handle) != 0;
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {

@@ -236,6 +236,11 @@ public sealed unsafe partial class FileSecureStorage : global::System.IDisposabl
         }
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey _getSecureStorageKey()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey((nint)NativeMethods.TablePtr->C1.hs_method_f9943c33((void*)__hosihikari_shim_handle));
+    }
+
     public string _initalizeSymmetricEncyrption(string symmetricKey, bool force)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(symmetricKey);

@@ -129,6 +129,12 @@ public sealed unsafe partial class ItemStackRequestActionCraftHandler : global::
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mPendingCraftRecipeItem_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_29f24176((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_a9b79a38((void*)__hosihikari_shim_handle);
@@ -153,6 +159,11 @@ public sealed unsafe partial class ItemStackRequestActionCraftHandler : global::
     public byte preHandleAction(byte requestActionType)
     {
         return NativeMethods.TablePtr->C2.hs_method_43f4ea3a((void*)__hosihikari_shim_handle, requestActionType);
+    }
+
+    public void sendPlayerCraftRecipe()
+    {
+        NativeMethods.TablePtr->C2.hs_method_4dc84117((void*)__hosihikari_shim_handle);
     }
 
 

@@ -51,6 +51,12 @@ public sealed unsafe partial class SculkCatalystBlockActor : global::System.IDis
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d86c1909((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_40ec794d((void*)__hosihikari_shim_handle);

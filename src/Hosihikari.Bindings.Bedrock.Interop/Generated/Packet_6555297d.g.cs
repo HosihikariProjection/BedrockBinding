@@ -222,11 +222,6 @@ public sealed unsafe partial class Packet : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_7bca8100((void*)__hosihikari_shim_handle, (void*)bitStream.Handle, (void*)reflectionCtx.Handle));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ readNoHeader(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream bitstream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx, nint subid)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_cfc37d3a((void*)__hosihikari_shim_handle, (void*)bitstream.Handle, (void*)reflectionCtx.Handle, (void*)subid));
-    }
-
     public void sendTo(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player? except)
     {
         NativeMethods.TablePtr->C3.hs_method_7969d282((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)(except?.Handle ?? 0), except is not null);

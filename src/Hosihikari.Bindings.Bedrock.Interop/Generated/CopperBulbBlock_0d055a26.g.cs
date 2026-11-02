@@ -409,17 +409,6 @@ public sealed unsafe partial class CopperBulbBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static CopperBulbBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CopperBulbBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c7d26f3f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CopperBulbBlock((nint)handle);
-    }
-
     public void _onRedstoneUpdate(nint blockEvent)
     {
         NativeMethods.TablePtr->C1.hs_method_3ef4cee0((void*)__hosihikari_shim_handle, (void*)blockEvent);

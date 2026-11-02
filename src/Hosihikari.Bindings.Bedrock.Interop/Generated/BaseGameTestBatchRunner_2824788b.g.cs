@@ -60,6 +60,10 @@ public sealed unsafe partial class BaseGameTestBatchRunner : global::System.IDis
         return new BaseGameTestBatchRunner((nint)handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestInstance>' is not supported.", false)]
+    public void _addTestInstanceWithRotation(nint instances, nint testFunction, nint rotation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestInstance>' is not supported.");
+
     public global::Hosihikari.Bindings.Abi.SharedHandle? _createGameTestInstance(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction function)
     {
         var __hs_shared = NativeMethods.TablePtr->C5.hs_method_5c70337a((void*)__hosihikari_shim_handle, (void*)function.Handle);

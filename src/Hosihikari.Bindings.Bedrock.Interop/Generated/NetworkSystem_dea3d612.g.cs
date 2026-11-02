@@ -39,9 +39,9 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4ae5f18c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b150a19b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -122,10 +122,9 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
         }
     }
 
-    public bool _onNewIncomingConnection(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, global::Hosihikari.Bindings.Abi.SharedHandle? peer)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_dc02140a((void*)__hosihikari_shim_handle, (void*)id.Handle, peer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public bool _onNewIncomingConnection(nint id, nint peer, nint identityPublicKey) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public bool _onNewOutgoingConnection(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, global::Hosihikari.Bindings.Abi.SharedHandle? peer)
     {
@@ -181,11 +180,6 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
     {
         var __hs_shared = NativeMethods.TablePtr->C2.hs_method_cc41a6ef((void*)__hosihikari_shim_handle, (void*)id.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
-
-    public bool _isUsingNetherNetTransportLayer()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_67c3baf4((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void _onDisable()
@@ -459,10 +453,9 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
         }
     }
 
-    public bool onNewIncomingConnection(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, global::Hosihikari.Bindings.Abi.SharedHandle? peer)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_3d3d5da3((void*)__hosihikari_shim_handle, (void*)id.Handle, peer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public bool onNewIncomingConnection(nint id, nint peer, nint identityPublicKey) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public bool onNewOutgoingConnection(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, global::Hosihikari.Bindings.Abi.SharedHandle? peer)
     {
@@ -493,19 +486,9 @@ public sealed unsafe partial class NetworkSystem : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_54f183ef((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)packet.Handle, recipientSubId);
     }
 
-    public void sendToMultiple(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId[] ids, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
+    public void setCloseConnection(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, int closeConnectionReason)
     {
-        var __hs_vectorItems0 = ids;
-        var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
-        for (var __hs_i0 = 0; __hs_i0 < __hs_vectorHandles0.Length; __hs_i0++)
-        {
-            __hs_vectorHandles0[__hs_i0] = __hs_vectorItems0![__hs_i0]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
-        {
-            var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            NativeMethods.TablePtr->C2.hs_method_1a9098ad((void*)__hosihikari_shim_handle, (void*)packet.Handle, __hs_vectorData0, (nuint)(ids?.Length ?? 0));
-        }
+        NativeMethods.TablePtr->C2.hs_method_e751ad1b((void*)__hosihikari_shim_handle, (void*)id.Handle, closeConnectionReason);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]

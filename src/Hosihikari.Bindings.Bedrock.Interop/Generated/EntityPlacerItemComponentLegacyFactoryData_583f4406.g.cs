@@ -38,6 +38,26 @@ public sealed unsafe partial class EntityPlacerItemComponentLegacyFactoryData : 
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C1.hs_method_1737a6c5((void*)__hosihikari_shim_handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static EntityPlacerItemComponentLegacyFactoryData Create()
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_ce64143f();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new EntityPlacerItemComponentLegacyFactoryData((nint)handle);
+    }
+
     public static EntityPlacerItemComponentLegacyFactoryData Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityPlacerItemComponentLegacyFactoryData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_4147a70b((void*)arg0.Handle);
@@ -48,6 +68,10 @@ public sealed unsafe partial class EntityPlacerItemComponentLegacyFactoryData : 
 
         return new EntityPlacerItemComponentLegacyFactoryData((nint)handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAllowedDispenseBlocks_Address
@@ -65,6 +89,15 @@ public sealed unsafe partial class EntityPlacerItemComponentLegacyFactoryData : 
     public nint mIdentifier_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_6b6dfc50((void*)__hosihikari_shim_handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.EntityPlacerItemComponentLegacyFactoryData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EntityPlacerItemComponentLegacyFactoryData arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.EntityPlacerItemComponentLegacyFactoryData((nint)NativeMethods.TablePtr->C1.hs_method_21c029e5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 

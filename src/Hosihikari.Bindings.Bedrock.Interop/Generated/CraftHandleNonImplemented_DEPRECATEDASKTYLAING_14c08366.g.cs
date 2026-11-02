@@ -43,10 +43,6 @@ public sealed unsafe partial class CraftHandleNonImplemented_DEPRECATEDASKTYLAIN
         return NativeMethods.TablePtr->C1.hs_method_1f0165a1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static CraftHandleNonImplemented_DEPRECATEDASKTYLAING Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandleNonImplemented_DEPRECATEDASKTYLAING arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_d7b810bd((void*)arg0.Handle);

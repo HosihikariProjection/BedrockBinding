@@ -58,6 +58,10 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_1d6a2e1c((void*)__hosihikari_shim_handle));
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Append(nint data)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_e6770b9c((void*)__hosihikari_shim_handle, (void*)data));
@@ -101,9 +105,9 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk3809e9_Address
+    public nint mUnk63f034_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_54e2322e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ca709847((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

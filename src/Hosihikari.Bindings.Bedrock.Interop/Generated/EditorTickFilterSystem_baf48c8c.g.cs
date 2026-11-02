@@ -40,7 +40,7 @@ public sealed unsafe partial class EditorTickFilterSystem : global::System.IDisp
 
     public static void _addPauseTickNeeded(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.ActorTickNeededComponent arg1, nint modifier)
     {
-        NativeMethods.TablePtr->C1.hs_method_8103c0d6((void*)entity.Handle, (void*)arg1.Handle, (void*)modifier);
+        NativeMethods.TablePtr->C1.hs_method_85ea5890((void*)entity.Handle, (void*)arg1.Handle, (void*)modifier);
     }
 
     public void Dispose()

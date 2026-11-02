@@ -38,6 +38,11 @@ public sealed unsafe partial class InsideEndPortalBlockSystem : global::System.I
         return __hs_handle;
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_249fd82f());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

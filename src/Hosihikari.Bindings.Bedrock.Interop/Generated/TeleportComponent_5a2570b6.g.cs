@@ -54,6 +54,11 @@ public sealed unsafe partial class TeleportComponent : global::System.IDisposabl
         NativeMethods.TablePtr->C4.hs_method_4c08d7d3((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
+    public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TeleportComponentDefinition definition)
+    {
+        NativeMethods.TablePtr->C4.hs_method_7a5811d0((void*)__hosihikari_shim_handle, (void*)definition.Handle);
+    }
+
     public float mDarkTeleportChance
     {
         get => NativeMethods.TablePtr->C4.hs_get_b66b2c5f((void*)__hosihikari_shim_handle);

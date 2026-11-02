@@ -38,6 +38,39 @@ public sealed unsafe partial class Option : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint _ctor(int id, int ownerType, int resetFlags, string captionId, string saveTag, int optionType, global::Hosihikari.Bindings.Bedrock.Interop.GameVersion version)
+    {
+        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(captionId);
+        scoped global::System.Span<byte> __hs_stringBytes3;
+        if (__hs_stringByteCount3 <= 256)
+        {
+            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
+        }
+        else
+        {
+            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(captionId, __hs_stringBytes3);
+        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(saveTag);
+        scoped global::System.Span<byte> __hs_stringBytes4;
+        if (__hs_stringByteCount4 <= 256)
+        {
+            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
+        }
+        else
+        {
+            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(saveTag, __hs_stringBytes4);
+        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
+        {
+            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
+            {
+                return (nint)NativeMethods.TablePtr->C3.hs_method_ab4d66bc((void*)__hosihikari_shim_handle, id, ownerType, resetFlags, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, optionType, (void*)version.Handle);
+            }
+        }
+    }
+
     public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value valueJson)
     {
         NativeMethods.TablePtr->C3.hs_method_b39f2314((void*)__hosihikari_shim_handle, (void*)valueJson.Handle);
@@ -62,6 +95,49 @@ public sealed unsafe partial class Option : global::System.IDisposable
 
         return new Option((nint)handle);
     }
+
+    public static Option Create(int id, int ownerType, int resetFlags, string captionId, string saveTag, int optionType, global::Hosihikari.Bindings.Bedrock.Interop.GameVersion version)
+    {
+        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(captionId);
+        scoped global::System.Span<byte> __hs_stringBytes3;
+        if (__hs_stringByteCount3 <= 256)
+        {
+            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
+        }
+        else
+        {
+            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(captionId, __hs_stringBytes3);
+        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(saveTag);
+        scoped global::System.Span<byte> __hs_stringBytes4;
+        if (__hs_stringByteCount4 <= 256)
+        {
+            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
+        }
+        else
+        {
+            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(saveTag, __hs_stringBytes4);
+        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
+        {
+            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
+            {
+                var handle = NativeMethods.TablePtr->C3.hs_create_99cfaf95(id, ownerType, resetFlags, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, optionType, (void*)version.Handle);
+                if (handle == null)
+                {
+                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+                }
+
+                return new Option((nint)handle);
+            }
+        }
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    public void _updatePropertyVector(nint propertyVector, nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value valueJson)
     {
@@ -97,6 +173,29 @@ public sealed unsafe partial class Option : global::System.IDisposable
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e786a14e((void*)__hosihikari_shim_handle);
     }
+
+    public static bool read(string valueString, nint output)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(valueString);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(valueString, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return NativeMethods.TablePtr->C3.hs_method_d78721ff(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)output) != 0;
+        }
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public nint registerLock(nint isModifiableCondition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public void save(nint propertyVector) =>

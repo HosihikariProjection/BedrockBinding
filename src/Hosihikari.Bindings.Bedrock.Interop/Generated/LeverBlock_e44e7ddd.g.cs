@@ -453,25 +453,9 @@ public sealed unsafe partial class LeverBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static LeverBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.LeverBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_650cbfc9((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LeverBlock((nint)handle);
-    }
-
     public void _addHardCodedBlockComponents(global::Hosihikari.Bindings.Bedrock.Interop.Experiments arg0)
     {
         NativeMethods.TablePtr->C2.hs_method_703a6ba0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
-
-    public static byte _getFacing(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_bea037ed((void*)block.Handle);
     }
 
     public void _onHitByActivatingAttack(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg2)

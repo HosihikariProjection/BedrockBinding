@@ -85,6 +85,11 @@ public sealed unsafe partial class BalloonItem : global::System.IDisposable
     }
 
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_0695e753((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public byte mAllowOffhand
     {
         get => NativeMethods.TablePtr->C0.hs_get_0a8c71c1((void*)__hosihikari_shim_handle);

@@ -51,6 +51,12 @@ public sealed unsafe partial class HangingSignBlockActor : global::System.IDispo
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7f0263bd((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_56c19f7f((void*)__hosihikari_shim_handle);

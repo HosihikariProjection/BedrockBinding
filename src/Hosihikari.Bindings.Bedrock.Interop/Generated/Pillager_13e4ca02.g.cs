@@ -692,10 +692,10 @@ public sealed unsafe partial class Pillager : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_49a327b6((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ef6010e2((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_ef6010e2((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_555594c3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

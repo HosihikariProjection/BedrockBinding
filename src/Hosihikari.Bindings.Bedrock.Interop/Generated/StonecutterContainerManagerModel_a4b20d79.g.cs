@@ -124,6 +124,13 @@ public sealed unsafe partial class StonecutterContainerManagerModel : global::Sy
     public nint _getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
 
+    public int? _getSelectedRecipeIndex()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C4.hs_method_dc6759e3((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (int?)null;
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack _getSlot(int slot)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_8744c76f((void*)__hosihikari_shim_handle, slot), false);
@@ -137,6 +144,11 @@ public sealed unsafe partial class StonecutterContainerManagerModel : global::Sy
     public void _setData(int arg0, int arg1)
     {
         NativeMethods.TablePtr->C4.hs_method_1424aede((void*)__hosihikari_shim_handle, arg0, arg1);
+    }
+
+    public void _setSelectedRecipeIndex(int recipeIndex, bool fromNetwork)
+    {
+        NativeMethods.TablePtr->C4.hs_method_5c447273((void*)__hosihikari_shim_handle, recipeIndex, fromNetwork);
     }
 
     public void _setSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool fromNetwork)
@@ -173,6 +185,17 @@ public sealed unsafe partial class StonecutterContainerManagerModel : global::Sy
     public nint getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
 
+    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'std::pair<ItemInstance, TypedServerNetId<RecipeNetIdTag>>' is not supported.", false)]
+    public nint getResultForItem(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'std::pair<ItemInstance, TypedServerNetId<RecipeNetIdTag>>' is not supported.");
+
+    public int? getSelectedRecipeIndex()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C4.hs_method_8f418ca4((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (int?)null;
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_5ef7edf8((void*)__hosihikari_shim_handle, slot), false);
@@ -189,9 +212,37 @@ public sealed unsafe partial class StonecutterContainerManagerModel : global::Sy
         get => (nint)NativeMethods.TablePtr->C4.hs_get_38bc93c7((void*)__hosihikari_shim_handle);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mOnSelectedStoneIndexChangedPublisher_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_53ee33b0((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mPacketSender_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e215eb80((void*)__hosihikari_shim_handle);
+    }
+
+    public int mSelectedStoneIndex
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_10a10d34((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_10a10d34((void*)__hosihikari_shim_handle, value);
+    }
+
     public void setData(int arg0, int arg1)
     {
         NativeMethods.TablePtr->C4.hs_method_8ab241d8((void*)__hosihikari_shim_handle, arg0, arg1);
+    }
+
+    public void setSelectedRecipeIndex(int recipeIndex, bool fromNetwork)
+    {
+        NativeMethods.TablePtr->C4.hs_method_66031710((void*)__hosihikari_shim_handle, recipeIndex, fromNetwork);
+    }
+
+    public void setSelectedStone(int collectionIndex)
+    {
+        NativeMethods.TablePtr->C4.hs_method_c180d064((void*)__hosihikari_shim_handle, collectionIndex);
     }
 
     public void setSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool fromNetwork)

@@ -38,6 +38,11 @@ public sealed unsafe partial class SparklerItem : global::System.IDisposable
         return __hs_handle;
     }
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_66b465b9((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public int mMaxActiveTime
     {
         get => NativeMethods.TablePtr->C4.hs_get_f001ca99((void*)__hosihikari_shim_handle);

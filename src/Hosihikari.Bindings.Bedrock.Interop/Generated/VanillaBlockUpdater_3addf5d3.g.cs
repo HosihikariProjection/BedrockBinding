@@ -182,6 +182,11 @@ public sealed unsafe partial class VanillaBlockUpdater : global::System.IDisposa
         NativeMethods.TablePtr->C4.hs_method_d35e99be((void*)context.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext get()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext((nint)NativeMethods.TablePtr->C4.hs_method_029b6eae(), false);
+    }
+
     public static void initialize()
     {
         NativeMethods.TablePtr->C4.hs_method_c9463c87();

@@ -70,9 +70,9 @@ public sealed unsafe partial class MountTamingComponent : global::System.IDispos
         NativeMethods.TablePtr->C2.hs_method_695a8644((void*)__hosihikari_shim_handle, (void*)owner.Handle, tamingParticles);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_33a7fc24((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_ba9ed481((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
     }
 
     // The native field type is not projected; this is the address of the field storage.

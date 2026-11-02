@@ -935,10 +935,10 @@ public sealed unsafe partial class Horse : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_e721272d((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C2.hs_get_819f86ae((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_819f86ae((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fcb010ef((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

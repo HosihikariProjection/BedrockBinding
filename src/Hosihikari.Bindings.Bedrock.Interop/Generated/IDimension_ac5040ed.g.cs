@@ -124,6 +124,11 @@ public sealed unsafe partial class IDimension : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_66f4a2de((void*)__hosihikari_shim_handle, (void*)position.Handle, (void*)packet.Handle, (void*)(except?.Handle ?? 0));
     }
 
+    public bool shouldRenderClouds()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_5403ed48((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_f89e09f7((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle));

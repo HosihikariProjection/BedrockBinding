@@ -60,5 +60,8 @@ public enum PlayerUISlot : int
     SmithingTableInput = 51,
     SmithingTableMaterial = 52,
     SmithingTableTemplate = 53,
-    Count = 54,
+    DiscPressBlockInput = 54,
+    DiscPressDyeInput = 55,
+    DiscPressDiscInput = 56,
+    Count = 57,
 }

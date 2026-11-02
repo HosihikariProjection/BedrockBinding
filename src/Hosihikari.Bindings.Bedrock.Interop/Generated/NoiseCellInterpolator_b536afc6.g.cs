@@ -157,6 +157,11 @@ public sealed unsafe partial class NoiseCellInterpolator : global::System.IDispo
         set => NativeMethods.TablePtr->C2.hs_set_79af8fe5((void*)__hosihikari_shim_handle, value);
     }
 
+    public void selectCellXZ(int xzMinMinIdx, int xzMinMaxIdx, int xzMaxMinIdx, int xzMaxMaxIdx)
+    {
+        NativeMethods.TablePtr->C2.hs_method_5a957daa((void*)__hosihikari_shim_handle, xzMinMinIdx, xzMinMaxIdx, xzMaxMinIdx, xzMaxMaxIdx);
+    }
+
 
     public void Dispose()
     {

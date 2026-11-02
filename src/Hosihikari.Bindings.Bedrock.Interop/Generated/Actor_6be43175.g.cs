@@ -385,9 +385,9 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_84d1c914((void*)__hosihikari_shim_handle, a));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_d31c6182((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_00ad46fa((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
     }
 
     public float _getInterpolatedBodyRot(float a)
@@ -1081,11 +1081,6 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_fac4b441((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public bool canFly()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_7101b187((void*)__hosihikari_shim_handle) != 0;
-    }
-
     public bool canInteractWithOtherEntitiesInGame()
     {
         return NativeMethods.TablePtr->C0.hs_method_1b878e6f((void*)__hosihikari_shim_handle) != 0;
@@ -1324,25 +1319,6 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_67b619f2((void*)__hosihikari_shim_handle, (void*)rideable.Handle, useVehicleRenderParams);
     }
 
-    public bool executeEvent(string name, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList list)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C0.hs_method_d9def1d2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)list.Handle) != 0;
-        }
-    }
-
     public void exitVehicle(bool exitFromPassenger, bool actorIsBeingDestroyed, bool wasEjectedByActivatorRail)
     {
         NativeMethods.TablePtr->C0.hs_method_5bdfdb49((void*)__hosihikari_shim_handle, exitFromPassenger, actorIsBeingDestroyed, wasEjectedByActivatorRail);
@@ -1562,12 +1538,6 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? getEntityRegistry()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_6be13426((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
-
     public int getEntityTypeId()
     {
         return NativeMethods.TablePtr->C0.hs_method_88e34288((void*)__hosihikari_shim_handle);
@@ -1669,9 +1639,9 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_fa164d32((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_f68156b0((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_d4727b2c((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
     }
 
     public float getInterpolatedBodyRot(float a)
@@ -2294,6 +2264,11 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_064b407c((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public bool isLayingDown()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_c2b461f2((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public bool isLeashed()
     {
         return NativeMethods.TablePtr->C0.hs_method_e4d2accf((void*)__hosihikari_shim_handle) != 0;
@@ -2409,11 +2384,6 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_30028ad2((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public bool isSwimmer()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_59b0c6a5((void*)__hosihikari_shim_handle) != 0;
-    }
-
     public bool isSwimming()
     {
         return NativeMethods.TablePtr->C0.hs_method_f02b6eeb((void*)__hosihikari_shim_handle) != 0;
@@ -2457,11 +2427,6 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public bool isValidTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? attacker)
     {
         return NativeMethods.TablePtr->C0.hs_method_bc9e61bc((void*)__hosihikari_shim_handle, (void*)(attacker?.Handle ?? 0)) != 0;
-    }
-
-    public bool isWalker()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_7d73169e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isWearingLeatherArmor()
@@ -3084,6 +3049,11 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_5428525e((void*)__hosihikari_shim_handle, (void*)effect.Handle);
     }
 
+    public void onEffectUpdated(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance effect)
+    {
+        NativeMethods.TablePtr->C0.hs_method_776e5b2b((void*)__hosihikari_shim_handle, (void*)effect.Handle);
+    }
+
     public void onFailedTame()
     {
         NativeMethods.TablePtr->C0.hs_method_fb5ad9af((void*)__hosihikari_shim_handle);
@@ -3420,6 +3390,25 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_fd6062b1((void*)__hosihikari_shim_handle, (void*)id.Handle);
     }
 
+    public void setScoreTag(string score)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(score);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(score, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C0.hs_method_3c572078((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
+
     public void setSitting(bool value)
     {
         NativeMethods.TablePtr->C0.hs_method_d2bc68ee((void*)__hosihikari_shim_handle, value);
@@ -3443,6 +3432,11 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public void setStrength(int strength)
     {
         NativeMethods.TablePtr->C0.hs_method_c786a930((void*)__hosihikari_shim_handle, strength);
+    }
+
+    public void setStrengthMax(int strength)
+    {
+        NativeMethods.TablePtr->C0.hs_method_fad32b96((void*)__hosihikari_shim_handle, strength);
     }
 
     public void setTarget(global::Hosihikari.Bindings.Bedrock.Interop.Actor? entity)
@@ -3579,12 +3573,9 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C0.hs_method_e1ebc12b((void*)__hosihikari_shim_handle, slotNumber);
     }
 
-    public int? tryGetEquippableSlotForItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
-    {
-        var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C0.hs_method_222f3f74((void*)__hosihikari_shim_handle, (void*)item.Handle, &__hs_hasValue);
-        return __hs_hasValue ? __hs_value : (int?)null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ItemDescriptor' is not copy-constructible.", false)]
+    public nint tryGetEquippableSlotForItem(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ItemDescriptor' is not copy-constructible.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Actor? tryGetFromEntity(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, bool includeRemoved)
     {
@@ -3605,11 +3596,6 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public bool tryTeleportTo(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool landOnBlock, bool avoidLiquid, int cause, int entityType)
     {
         return NativeMethods.TablePtr->C0.hs_method_8778e5c9((void*)__hosihikari_shim_handle, (void*)pos.Handle, landOnBlock, avoidLiquid, cause, entityType) != 0;
-    }
-
-    public void updateDescription()
-    {
-        NativeMethods.TablePtr->C0.hs_method_5bebd1fd((void*)__hosihikari_shim_handle);
     }
 
     public void updateDimensionChunkMove()

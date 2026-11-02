@@ -64,7 +64,7 @@ public sealed unsafe partial class ExitVehicleSystemImpl : global::System.IDispo
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const ExitFromPassengerFlagComponent>' is not a known bindable declaration.", false)]
-    public static void _tickExitVehicle(nint entity, nint passenger, nint aabb, nint svc, nint offsetsComponent, nint actorDataSeatOffset, nint rotation, nint exitFromPassengerFlag, nint actorIsBeingDestroyedFlag, nint ejectedByActivatorRailFlagComponent, nint baseGameVersion, nint vehicleView, nint modifier, nint executionContext, bool isClientSide, nint region) =>
+    public static void _tickExitVehicle(nint entity, nint passenger, nint aabb, nint svc, nint offsetsComponent, nint actorDataSeatOffset, nint rotation, nint exitFromPassengerFlag, nint actorIsBeingDestroyedFlag, nint ejectedByActivatorRailFlagComponent, nint baseGameVersion, nint vehicleView, nint modifier, bool isClientSide, nint collisionViews, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const ExitFromPassengerFlagComponent>' is not a known bindable declaration.");
 
     public bool mIsClient
@@ -76,6 +76,12 @@ public sealed unsafe partial class ExitVehicleSystemImpl : global::System.IDispo
     public nint mVersion_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_af4bbd3e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f2e815f4((void*)__hosihikari_shim_handle);
     }
 
     public void singleTick(nint executionContext, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)

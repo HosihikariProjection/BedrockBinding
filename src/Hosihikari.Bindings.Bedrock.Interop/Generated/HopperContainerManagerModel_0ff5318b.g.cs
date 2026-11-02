@@ -115,52 +115,9 @@ public sealed unsafe partial class HopperContainerManagerModel : global::System.
         return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C2.hs_method_74fd073a((void*)__hosihikari_shim_handle));
     }
 
-    public nint _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uniqueID)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_a991e288((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle, (void*)uniqueID.Handle);
-    }
-
-    public nint _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_7e8b1093((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle, (void*)blockPos.Handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static HopperContainerManagerModel Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_adff95d5();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new HopperContainerManagerModel((nint)handle);
-    }
-
-    public static HopperContainerManagerModel Create(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uniqueID)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_91a72100(containerId, (void*)player.Handle, (void*)uniqueID.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new HopperContainerManagerModel((nint)handle);
-    }
-
-    public static HopperContainerManagerModel Create(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_28c7819e(containerId, (void*)player.Handle, (void*)blockPos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new HopperContainerManagerModel((nint)handle);
-    }
 
     public static HopperContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.HopperContainerManagerModel arg0)
     {

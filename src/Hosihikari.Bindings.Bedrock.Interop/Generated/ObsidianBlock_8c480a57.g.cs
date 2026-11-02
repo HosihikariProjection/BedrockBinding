@@ -388,17 +388,6 @@ public sealed unsafe partial class ObsidianBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ObsidianBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ObsidianBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d4b041a7((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ObsidianBlock((nint)handle);
-    }
-
     public void animateTickBedrockLegacy(nint tickData)
     {
         NativeMethods.TablePtr->C2.hs_method_652470c4((void*)__hosihikari_shim_handle, (void*)tickData);

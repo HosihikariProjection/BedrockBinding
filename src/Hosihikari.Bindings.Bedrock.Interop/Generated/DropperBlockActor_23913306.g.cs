@@ -51,6 +51,12 @@ public sealed unsafe partial class DropperBlockActor : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_da59edc1((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4d4707f5((void*)__hosihikari_shim_handle);
@@ -181,11 +187,6 @@ public sealed unsafe partial class DropperBlockActor : global::System.IDisposabl
     public void _onUpdatePacket(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag data, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         NativeMethods.TablePtr->C1.hs_method_b461da5a((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)region.Handle);
-    }
-
-    public static bool _tryMoveInItemsAndDepleteStack(global::Hosihikari.Bindings.Bedrock.Interop.Container container, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, int stackSizeLimit, int slot, int face)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_6080c2bd((void*)container.Handle, (void*)item.Handle, stackSizeLimit, slot, face) != 0;
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainerAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)

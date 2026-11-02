@@ -90,6 +90,11 @@ public sealed unsafe partial class BlockLightDampeningDescription : global::Syst
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C0.hs_method_525b56ca((void*)ctx.Handle);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
     public nint buildNetworkTag(nint ctx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");

@@ -453,17 +453,6 @@ public sealed unsafe partial class ThinFenceBlock : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C4.hs_method_e45d116c(), false);
     }
 
-    public static ThinFenceBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ThinFenceBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c55aacd5((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ThinFenceBlock((nint)handle);
-    }
-
     public void addAABBs(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB? intersectTestBox, global::Hosihikari.Bindings.Bedrock.Interop.AABB[] inoutBoxes)
     {
         var __hs_vectorItems4 = inoutBoxes;

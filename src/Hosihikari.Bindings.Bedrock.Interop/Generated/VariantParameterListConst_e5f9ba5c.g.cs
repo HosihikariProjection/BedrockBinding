@@ -53,6 +53,12 @@ public sealed unsafe partial class VariantParameterListConst : global::System.ID
         get => (nint)NativeMethods.TablePtr->C4.hs_get_66777ce7((void*)__hosihikari_shim_handle);
     }
 
+    public byte mHandSlot
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_29cd910e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_29cd910e((void*)__hosihikari_shim_handle, value);
+    }
+
     public nint mHolder
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6f845dcb((void*)__hosihikari_shim_handle);

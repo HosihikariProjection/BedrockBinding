@@ -404,6 +404,11 @@ public sealed unsafe partial class JukeboxBlock : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_bdabbb46((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_8b5c3e83((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C2.hs_method_04dd5789((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -417,17 +422,6 @@ public sealed unsafe partial class JukeboxBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static JukeboxBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.JukeboxBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_79e73382((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new JukeboxBlock((nint)handle);
-    }
 
     public void dropRecording(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
@@ -462,6 +456,11 @@ public sealed unsafe partial class JukeboxBlock : global::System.IDisposable
     public void onRemove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C2.hs_method_1b198c87((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_7793f4da((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

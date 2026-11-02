@@ -38,6 +38,68 @@ public sealed unsafe partial class VolumeEntityManager : global::System.IDisposa
         return __hs_handle;
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mControlBlock_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f03aba22((void*)__hosihikari_shim_handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static VolumeEntityManager Create()
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_e3283bef();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new VolumeEntityManager((nint)handle);
+    }
+
+    public static VolumeEntityManager Create(global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManager arg0)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_56febb31((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new VolumeEntityManager((nint)handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk2b84c0_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6c994795((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk401f77_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b5e16a68((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk4d91e3_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_47fe8bd3((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk75b10e_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_bae63e47((void*)__hosihikari_shim_handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManager arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManager((nint)NativeMethods.TablePtr->C4.hs_method_47a2b2b6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+    }
+
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

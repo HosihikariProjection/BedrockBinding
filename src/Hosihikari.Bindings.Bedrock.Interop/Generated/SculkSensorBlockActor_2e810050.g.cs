@@ -51,6 +51,12 @@ public sealed unsafe partial class SculkSensorBlockActor : global::System.IDispo
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_94699ec2((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b23d022e((void*)__hosihikari_shim_handle);
@@ -70,11 +76,6 @@ public sealed unsafe partial class SculkSensorBlockActor : global::System.IDispo
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return (nint)NativeMethods.TablePtr->C3.hs_method_13777001((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-    }
-
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_11c107ae((void*)__hosihikari_shim_handle);
     }
 
     public bool _isTypeOrDerived(byte type)

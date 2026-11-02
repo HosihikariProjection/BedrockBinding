@@ -43,6 +43,11 @@ public sealed unsafe partial class ElementBlockItem : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_9a0f4477((void*)__hosihikari_shim_handle);
     }
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_23a6b435((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
     {
         NativeMethods.TablePtr->C1.hs_method_8f74f46e((void*)__hosihikari_shim_handle, (void*)stack.Handle);

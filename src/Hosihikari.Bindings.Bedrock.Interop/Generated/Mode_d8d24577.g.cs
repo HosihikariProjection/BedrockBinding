@@ -9,4 +9,6 @@ public enum Mode : int
     Set = 0,
     Add = 1,
     Query = 2,
+    Pause = 3,
+    Resume = 4,
 }

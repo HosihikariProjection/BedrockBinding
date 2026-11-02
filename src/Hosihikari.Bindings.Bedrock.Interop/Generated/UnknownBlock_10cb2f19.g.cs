@@ -383,17 +383,6 @@ public sealed unsafe partial class UnknownBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static UnknownBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.UnknownBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b52a4df3((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new UnknownBlock((nint)handle);
-    }
-
 
     public void Dispose()
     {

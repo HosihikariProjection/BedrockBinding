@@ -124,16 +124,6 @@ public sealed unsafe partial class BackgroundWorker : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_d1521788((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint gLocalWorkerMappingSingleton() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BackgroundWorker? getLocal()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6a0dbc3e();
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BackgroundWorker((nint)__hs_handle, false) : null;
-    }
-
     public bool isAsync()
     {
         return NativeMethods.TablePtr->C0.hs_method_ab73d329((void*)__hosihikari_shim_handle) != 0;

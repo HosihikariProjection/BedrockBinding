@@ -303,7 +303,7 @@ public sealed unsafe partial class SlabBlockItem : global::System.IDisposable
 
     public bool __calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C4.hs_method_7088bb89((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_1b2bd1ef((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult __useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
@@ -372,12 +372,12 @@ public sealed unsafe partial class SlabBlockItem : global::System.IDisposable
 
     public bool _calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C4.hs_method_2b2443dd((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_ee45f0c2((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public bool _canConvertToDoubleBlock(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, nint face, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return NativeMethods.TablePtr->C4.hs_method_17be70a3((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)arg1.Handle, (void*)face, (void*)block.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_a2fafa58((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)arg1.Handle, (void*)face, (void*)block.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)

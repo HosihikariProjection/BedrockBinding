@@ -392,6 +392,11 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_65427bca((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle);
     }
 
+    public void _handle_df9dfae2(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
+    {
+        NativeMethods.TablePtr->C3.hs_method_df9dfae2((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
+    }
+
     public void _handle_e35afc9b(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
     {
         NativeMethods.TablePtr->C3.hs_method_e35afc9b((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
@@ -412,9 +417,19 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_1e29c19a((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
     }
 
+    public void _handle_5b134a1d(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
+    {
+        NativeMethods.TablePtr->C3.hs_method_5b134a1d((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
+    }
+
     public void _handle_59dcb719(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
     {
         NativeMethods.TablePtr->C3.hs_method_59dcb719((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
+    }
+
+    public void _handle_c38a364d(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
+    {
+        NativeMethods.TablePtr->C3.hs_method_c38a364d((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
     }
 
     public void _handle(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.SetDefaultGameTypePacket packet)
@@ -515,6 +530,11 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public void _handle_0af11fb9(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Abi.SharedHandle? packet)
     {
         NativeMethods.TablePtr->C3.hs_method_0af11fb9((void*)__hosihikari_shim_handle, (void*)source.Handle, packet?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
+    public void _handle_8b221a34(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Abi.SharedHandle? packet)
+    {
+        NativeMethods.TablePtr->C3.hs_method_8b221a34((void*)__hosihikari_shim_handle, (void*)source.Handle, packet?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void _handle_7a5222df(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Abi.SharedHandle? packet)
@@ -816,10 +836,6 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     {
         NativeMethods.TablePtr->C3.hs_method_4c28af87((void*)__hosihikari_shim_handle, (void*)source.Handle, packet?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)playerInfo.Handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public static void _populateCDNValues(nint resourcePacksData, nint cdnUrls, nint deviceModel) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'MessToken' is abstract or not copy-constructible.", false)]
     public void _processValidatedLoginPacket(nint source, nint packet, nint playerInfo, nint hostMessToken) =>
@@ -1308,6 +1324,11 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_1316aa75((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle);
     }
 
+    public void handle_a236e77e(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
+    {
+        NativeMethods.TablePtr->C3.hs_method_a236e77e((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
+    }
+
     public void handle_6b2632ef(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
     {
         NativeMethods.TablePtr->C3.hs_method_6b2632ef((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
@@ -1328,9 +1349,19 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_65308fcb((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
     }
 
+    public void handle_424a2f8f(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
+    {
+        NativeMethods.TablePtr->C3.hs_method_424a2f8f((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
+    }
+
     public void handle_3e641dd5(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
     {
         NativeMethods.TablePtr->C3.hs_method_3e641dd5((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
+    }
+
+    public void handle_29ad977a(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint packet)
+    {
+        NativeMethods.TablePtr->C3.hs_method_29ad977a((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet);
     }
 
     public void handle(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.SetDefaultGameTypePacket packet)
@@ -1433,6 +1464,11 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_8f45f4a5((void*)__hosihikari_shim_handle, (void*)source.Handle, packet?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
+    public void handle_ba1ae269(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Abi.SharedHandle? packet)
+    {
+        NativeMethods.TablePtr->C3.hs_method_ba1ae269((void*)__hosihikari_shim_handle, (void*)source.Handle, packet?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
     public void handle_ff542d0d(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Abi.SharedHandle? packet)
     {
         NativeMethods.TablePtr->C3.hs_method_ff542d0d((void*)__hosihikari_shim_handle, (void*)source.Handle, packet?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
@@ -1485,6 +1521,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public nint mAsyncJoinTaskManager_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_fee198fd((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mAudioContentRegistrationHandler_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_43cd71bf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

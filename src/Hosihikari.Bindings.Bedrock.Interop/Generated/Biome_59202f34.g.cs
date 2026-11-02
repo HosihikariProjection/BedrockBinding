@@ -109,6 +109,10 @@ public sealed unsafe partial class Biome : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_e1917290((void*)chunk.Handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public static nint getColorBySamplingSurroundings(nint region, nint pos, nint pattern, nint sampler) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
     public float getTemperature(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C0.hs_method_ddeed90b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);

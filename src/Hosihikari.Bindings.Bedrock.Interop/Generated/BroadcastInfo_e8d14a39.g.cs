@@ -38,6 +38,11 @@ public sealed unsafe partial class BroadcastInfo : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo arg0)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_8205c6a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+    }
+
     public static BroadcastInfo Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_69e1cf0f();

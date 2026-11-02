@@ -100,9 +100,9 @@ public sealed unsafe partial class Enchant : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_59971069((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)victim.Handle, (void*)attacker.Handle, level);
     }
 
-    public void _doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, int arg2)
+    public void _doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, int enchantLevel)
     {
-        NativeMethods.TablePtr->C1.hs_method_63e10892((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2);
+        NativeMethods.TablePtr->C1.hs_method_63e10892((void*)__hosihikari_shim_handle, (void*)attacker.Handle, (void*)victim.Handle, enchantLevel);
     }
 
     public void _doPostPiercingAttack(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, int enchantLevel)
@@ -260,9 +260,9 @@ public sealed unsafe partial class Enchant : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_b24ce666((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)victim.Handle, (void*)attacker.Handle, level);
     }
 
-    public void doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, int arg2)
+    public void doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, int enchantLevel)
     {
-        NativeMethods.TablePtr->C1.hs_method_66ce8339((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2);
+        NativeMethods.TablePtr->C1.hs_method_66ce8339((void*)__hosihikari_shim_handle, (void*)attacker.Handle, (void*)victim.Handle, enchantLevel);
     }
 
     public void doPostPiercingAttack(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, int enchantLevel)

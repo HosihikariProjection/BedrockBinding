@@ -388,17 +388,6 @@ public sealed unsafe partial class InvisibleBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static InvisibleBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.InvisibleBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_672b2268((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new InvisibleBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.HitResult clip(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 A, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 B, byte shapeType, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)NativeMethods.TablePtr->C2.hs_method_5ec17e4e((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)A.Handle, (void*)B.Handle, shapeType, (void*)(entity?.Handle ?? 0), entity is not null));

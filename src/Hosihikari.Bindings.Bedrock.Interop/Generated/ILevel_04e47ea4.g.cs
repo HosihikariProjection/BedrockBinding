@@ -300,9 +300,9 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_802b8fa9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
-    public bool destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool dropResources, nint changeSourceContext)
+    public bool destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool dropResources, nint changeSourceContext, byte destroySound)
     {
-        return NativeMethods.TablePtr->C2.hs_method_d2770c86((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, dropResources, (void*)changeSourceContext) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_bb78932c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, dropResources, (void*)changeSourceContext, destroySound) != 0;
     }
 
     public void digestServerBlockProperties(global::Hosihikari.Bindings.Bedrock.Interop.StartGamePacket packet)
@@ -1821,7 +1821,7 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.", false)]
-    public bool initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData) =>
+    public bool initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData, nint init) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.");
 
     public void initializeBlockDefinitionGroup()

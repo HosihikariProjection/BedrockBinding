@@ -388,17 +388,6 @@ public sealed unsafe partial class GlowItemFrameBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static GlowItemFrameBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.GlowItemFrameBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_4eabad5a((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GlowItemFrameBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString getSpawnedItemName()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C1.hs_method_a7790219((void*)__hosihikari_shim_handle));

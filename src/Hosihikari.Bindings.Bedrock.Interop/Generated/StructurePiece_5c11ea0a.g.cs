@@ -146,6 +146,11 @@ public sealed unsafe partial class StructurePiece : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_33b5b584((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, x0, y0, z0, x1, y1, z1, (void*)fillBlock.Handle, skipAir);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_d59fbaca((void*)__hosihikari_shim_handle, (void*)region.Handle, x, y, z, (void*)chunkBB.Handle), false);
+    }
+
     public ushort getOrientationData(global::Hosihikari.Bindings.Bedrock.Interop.Block? block, ushort data)
     {
         return NativeMethods.TablePtr->C4.hs_method_9efc531a((void*)__hosihikari_shim_handle, (void*)(block?.Handle ?? 0), data);

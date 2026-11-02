@@ -206,6 +206,12 @@ public sealed unsafe partial class BannerBlockActor : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_dcb3f8bd((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_e2671487((void*)__hosihikari_shim_handle);

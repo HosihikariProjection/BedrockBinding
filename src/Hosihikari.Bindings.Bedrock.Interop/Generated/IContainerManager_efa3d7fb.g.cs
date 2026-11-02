@@ -73,6 +73,13 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
     public nint getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
 
+    public int? getSelectedRecipeIndex()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C2.hs_method_a7720c81((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (int?)null;
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_fee45252((void*)__hosihikari_shim_handle, slot), false);
@@ -105,6 +112,11 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
     public void setFullContainerSlot(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arg2, bool arg3)
     {
         NativeMethods.TablePtr->C2.hs_method_5fcefa57((void*)__hosihikari_shim_handle, arg0, (void*)arg1.Handle, (void*)arg2.Handle, arg3);
+    }
+
+    public void setSelectedRecipeIndex(int recipeIndex, bool fromNetwork)
+    {
+        NativeMethods.TablePtr->C2.hs_method_99105430((void*)__hosihikari_shim_handle, recipeIndex, fromNetwork);
     }
 
     public void setSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool fromNetwork)

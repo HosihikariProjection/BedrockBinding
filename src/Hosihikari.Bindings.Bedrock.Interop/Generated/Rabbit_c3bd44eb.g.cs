@@ -692,10 +692,10 @@ public sealed unsafe partial class Rabbit : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_a7741517((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a75770f2((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_a75770f2((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c9070ab8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -716,6 +716,11 @@ public sealed unsafe partial class Rabbit : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_2caf055f((void*)__hosihikari_shim_handle, value);
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_308956aa((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+    }
+
     public void _onSynchedDataUpdate(int dataId)
     {
         NativeMethods.TablePtr->C3.hs_method_3f02c520((void*)__hosihikari_shim_handle, dataId);
@@ -724,6 +729,28 @@ public sealed unsafe partial class Rabbit : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static Rabbit Create()
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_d4376c7b();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Rabbit((nint)handle);
+    }
+
+    public static Rabbit Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_ab8d8479((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Rabbit((nint)handle);
+    }
 
     public void onSynchedDataUpdate(int dataId)
     {

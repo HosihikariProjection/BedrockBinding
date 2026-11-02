@@ -51,6 +51,12 @@ public sealed unsafe partial class PistonBlockActor : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c6f09c7e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_cd893fb7((void*)__hosihikari_shim_handle);
@@ -131,6 +137,11 @@ public sealed unsafe partial class PistonBlockActor : global::System.IDisposable
     public nint _getUpdatePacket(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'BlockActorDataPacket' has no accessible destructor.");
 
+    public bool _hasBlockAttached(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_64fd23f6((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+    }
+
     public void _moveCollidedEntities(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         NativeMethods.TablePtr->C3.hs_method_0a9125a5((void*)__hosihikari_shim_handle, (void*)region.Handle);
@@ -159,6 +170,12 @@ public sealed unsafe partial class PistonBlockActor : global::System.IDisposable
     public void _spawnMovingBlocks(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         NativeMethods.TablePtr->C3.hs_method_d0c1608b((void*)__hosihikari_shim_handle, (void*)region.Handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? getCorrectArmBlock()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_57e6cb1e((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getFacingDir(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
@@ -269,6 +286,21 @@ public sealed unsafe partial class PistonBlockActor : global::System.IDisposable
     public void onRemoved(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         NativeMethods.TablePtr->C3.hs_method_c9d4ca09((void*)__hosihikari_shim_handle, (void*)region.Handle);
+    }
+
+    public byte pushOrHurtCollidedEntity(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pushDelta)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_0caea65b((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)pushDelta.Handle);
+    }
+
+    public void resetAfterCommandStateChange(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block previousPiston)
+    {
+        NativeMethods.TablePtr->C3.hs_method_6676edf3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)previousPiston.Handle);
+    }
+
+    public void resetToRetracted()
+    {
+        NativeMethods.TablePtr->C3.hs_method_cf79ba20((void*)__hosihikari_shim_handle);
     }
 
     public bool save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, nint saveContext)

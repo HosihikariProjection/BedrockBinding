@@ -403,17 +403,6 @@ public sealed unsafe partial class EnchantingTableBlock : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static EnchantingTableBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.EnchantingTableBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b8ca4e17((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EnchantingTableBlock((nint)handle);
-    }
-
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, byte face, int arg2)
     {
         return NativeMethods.TablePtr->C1.hs_method_db2a9034((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, arg2) != 0;

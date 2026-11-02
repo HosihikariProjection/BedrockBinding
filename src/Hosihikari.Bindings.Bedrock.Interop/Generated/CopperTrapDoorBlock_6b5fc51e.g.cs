@@ -399,17 +399,6 @@ public sealed unsafe partial class CopperTrapDoorBlock : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static CopperTrapDoorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CopperTrapDoorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_75d7b732((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CopperTrapDoorBlock((nint)handle);
-    }
-
     public void _addHardCodedBlockComponents(global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
     {
         NativeMethods.TablePtr->C1.hs_method_c4cf53eb((void*)__hosihikari_shim_handle, (void*)experiments.Handle);

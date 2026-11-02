@@ -49,6 +49,11 @@ public sealed unsafe partial class StatesProxy : global::System.IDisposable
         return new StatesProxy((nint)handle);
     }
 
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C0.hs_method_3cb34731((void*)ctx.Handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockStates_Address
     {

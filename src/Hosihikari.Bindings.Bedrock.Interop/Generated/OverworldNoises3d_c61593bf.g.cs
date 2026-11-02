@@ -75,10 +75,6 @@ public sealed unsafe partial class OverworldNoises3d : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry((nint)NativeMethods.TablePtr->C3.hs_method_701a9607((void*)__hosihikari_shim_handle, (void*)worldQuartPos));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'TerrainInfo' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint computeOffsetAndFactor(nint worldQuartPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'TerrainInfo' requires --link-carrier or --virtual-dispatch.");
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mContinentalnessNoise_Address
     {

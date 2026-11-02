@@ -53,6 +53,15 @@ public sealed unsafe partial class ScriptListBlockVolume : global::System.IDispo
         return (nint)NativeMethods.TablePtr->C3.hs_method_b70b8f10((void*)__hosihikari_shim_handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint _ctor(nint rhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptListBlockVolume rhs)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_f8925433((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptBlockLocationIterator>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint _getBlockLocationIterator(nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptBlockLocationIterator>' requires --link-carrier or --virtual-dispatch.");
@@ -64,6 +73,21 @@ public sealed unsafe partial class ScriptListBlockVolume : global::System.IDispo
     public static ScriptListBlockVolume Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3e9f1532();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptListBlockVolume((nint)handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public static ScriptListBlockVolume Create(nint rhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
+    public static ScriptListBlockVolume Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptListBlockVolume rhs)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_0fd81699((void*)rhs.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,6 +123,15 @@ public sealed unsafe partial class ScriptListBlockVolume : global::System.IDispo
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptBlockLocationIterator>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getBlockLocationIterator(nint scope) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptBlockLocationIterator>' requires --link-carrier or --virtual-dispatch.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint operator_assign(nint rhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptListBlockVolume operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptListBlockVolume rhs)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptListBlockVolume((nint)NativeMethods.TablePtr->C3.hs_method_ab4e9f88((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+    }
 
     public void remove(global::Hosihikari.Bindings.Bedrock.Interop.Vec3[] locations)
     {

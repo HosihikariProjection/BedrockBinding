@@ -85,6 +85,18 @@ public sealed unsafe partial class ConstraintDescription : global::System.IDispo
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mConstraintFunction_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_999dff2f((void*)__hosihikari_shim_handle);
+    }
+
+    public uint mConstraintId
+    {
+        get => NativeMethods.TablePtr->C5.hs_get_9dbaf966((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_9dbaf966((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mCustomDescription_Address
     {
         get => (nint)NativeMethods.TablePtr->C5.hs_get_7e064e13((void*)__hosihikari_shim_handle);

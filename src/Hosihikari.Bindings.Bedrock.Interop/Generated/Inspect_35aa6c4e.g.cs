@@ -65,10 +65,10 @@ public sealed unsafe partial class Inspect : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_cb08c411((void*)__hosihikari_shim_handle, value);
     }
 
-    public int mSubCommand
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSubCommand_Address
     {
-        get => NativeMethods.TablePtr->C0.hs_get_de175bc3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_de175bc3((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_de175bc3((void*)__hosihikari_shim_handle);
     }
 
 

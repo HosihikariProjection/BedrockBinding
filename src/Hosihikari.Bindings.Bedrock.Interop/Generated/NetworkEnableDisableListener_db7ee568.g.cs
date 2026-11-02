@@ -38,11 +38,6 @@ public sealed unsafe partial class NetworkEnableDisableListener : global::System
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_991c6f4c((void*)__hosihikari_shim_handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
@@ -80,9 +75,9 @@ public sealed unsafe partial class NetworkEnableDisableListener : global::System
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a8761b4c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b8bbad85((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

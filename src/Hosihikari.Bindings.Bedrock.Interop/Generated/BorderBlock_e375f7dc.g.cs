@@ -429,6 +429,11 @@ public sealed unsafe partial class BorderBlock : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_b9f804fb((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_e3f27cee((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C0.hs_method_b066d417((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -441,17 +446,6 @@ public sealed unsafe partial class BorderBlock : global::System.IDisposable
     public static BorderBlock Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_75dc4b7a();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BorderBlock((nint)handle);
-    }
-
-    public static BorderBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BorderBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_e2502388((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -519,6 +513,11 @@ public sealed unsafe partial class BorderBlock : global::System.IDisposable
     public void onRemove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C0.hs_method_f3bfbca4((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_30602dfc((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

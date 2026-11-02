@@ -38,6 +38,10 @@ public sealed unsafe partial class VolumeComponentFactory : global::System.IDisp
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

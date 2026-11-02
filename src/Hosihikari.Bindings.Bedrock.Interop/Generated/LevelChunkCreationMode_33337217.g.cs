@@ -10,4 +10,5 @@ public enum LevelChunkCreationMode : byte
     GeneratingData = 1,
     ReplacingData = 2,
     QueueingUnblock = 3,
+    NeighborQueueingCheck = 4,
 }

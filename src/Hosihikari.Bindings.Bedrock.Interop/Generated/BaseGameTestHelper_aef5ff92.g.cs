@@ -66,6 +66,21 @@ public sealed unsafe partial class BaseGameTestHelper : global::System.IDisposab
         return new BaseGameTestHelper((nint)handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos _absolutePos(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos relativePos)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C5.hs_method_54ecd0dc((void*)__hosihikari_shim_handle, (void*)relativePos.Handle));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 _absoluteVec(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 relativeVec)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C5.hs_method_f7ca294f((void*)__hosihikari_shim_handle, (void*)relativeVec.Handle));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos _relativePos(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos absolutePos)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C5.hs_method_be374822((void*)__hosihikari_shim_handle, (void*)absolutePos.Handle));
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isPresent)
     {
         var __hs_hasValue = false;
@@ -515,6 +530,11 @@ public sealed unsafe partial class BaseGameTestHelper : global::System.IDisposab
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::optional<gametest::GameTestError>' is not supported.", false)]
     public void succeedIf(nint fn) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::optional<gametest::GameTestError>' is not supported.");
+
+    public void succeedOnTick(int tick)
+    {
+        NativeMethods.TablePtr->C5.hs_method_fdf5226f((void*)__hosihikari_shim_handle, tick);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::optional<gametest::GameTestError>' is not supported.", false)]
     public void succeedOnTickWhen(int tick, nint fn) =>

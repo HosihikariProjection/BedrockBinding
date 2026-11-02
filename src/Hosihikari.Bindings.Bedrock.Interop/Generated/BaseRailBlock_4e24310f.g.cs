@@ -112,6 +112,11 @@ public sealed unsafe partial class BaseRailBlock : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_da9be99c((void*)__hosihikari_shim_handle, (void*)context);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_a859fb12((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C0.hs_method_5800a840((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -129,17 +134,6 @@ public sealed unsafe partial class BaseRailBlock : global::System.IDisposable
     public static BaseRailBlock Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_a10055e5();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BaseRailBlock((nint)handle);
-    }
-
-    public static BaseRailBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_958247cc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -186,6 +180,11 @@ public sealed unsafe partial class BaseRailBlock : global::System.IDisposable
     public void _onRedstoneUpdateBase(nint blockEvent)
     {
         NativeMethods.TablePtr->C0.hs_method_5cdc7eb8((void*)__hosihikari_shim_handle, (void*)blockEvent);
+    }
+
+    public void _onStateChange(nint eventData)
+    {
+        NativeMethods.TablePtr->C0.hs_method_efff4885((void*)__hosihikari_shim_handle, (void*)eventData);
     }
 
     public bool canSpawnOn(global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg0)
@@ -271,6 +270,11 @@ public sealed unsafe partial class BaseRailBlock : global::System.IDisposable
     public void onPlace(nint eventData)
     {
         NativeMethods.TablePtr->C0.hs_method_b0e2c97d((void*)__hosihikari_shim_handle, (void*)eventData);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_913dabea((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

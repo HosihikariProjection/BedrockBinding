@@ -109,6 +109,10 @@ public sealed unsafe partial class ScriptWorldBeforeEvents : global::System.IDis
     public nint _onBeforePlayerInteractWithEntity(nint player, nint target, nint eventData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>' is not supported.");
 
+    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>' is not supported.", false)]
+    public nint _onBeforePlayerItemAttackEntity(nint player, nint target, nint eventData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>' is not supported.");
+
     public void _onBeforePlayerLeave(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
         NativeMethods.TablePtr->C3.hs_method_d867f384((void*)__hosihikari_shim_handle, (void*)player.Handle);
@@ -266,6 +270,12 @@ public sealed unsafe partial class ScriptWorldBeforeEvents : global::System.IDis
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mBeforePlayerItemAttackEntityEventSignal_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ee20687e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mBeforePlayerLeaveEventSignal_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_57443f96((void*)__hosihikari_shim_handle);
@@ -375,6 +385,10 @@ public sealed unsafe partial class ScriptWorldBeforeEvents : global::System.IDis
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>' is not supported.", false)]
     public nint onBeforePlayerInteractWithEntity(nint player, nint target, nint eventData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptPlayerInteractWithEntityBeforeEvent>' is not supported.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>' is not supported.", false)]
+    public nint onBeforePlayerItemAttackEntity(nint player, nint target, nint eventData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptPlayerItemAttackEntityBeforeEvent>' is not supported.");
 
     public void onBeforePlayerLeave(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {

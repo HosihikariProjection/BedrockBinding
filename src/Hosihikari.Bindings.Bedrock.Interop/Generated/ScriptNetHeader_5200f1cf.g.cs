@@ -38,6 +38,11 @@ public sealed unsafe partial class ScriptNetHeader : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader arg0)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_46ebd03f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::variant<std::basic_string<char>, ScriptModuleServerAdmin::ScriptSecretString>' is not a known bindable declaration.", false)]
     public nint _ctor(nint key, nint value) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::variant<std::basic_string<char>, ScriptModuleServerAdmin::ScriptSecretString>' is not a known bindable declaration.");
@@ -88,6 +93,10 @@ public sealed unsafe partial class ScriptNetHeader : global::System.IDisposable
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c2198f4a((void*)__hosihikari_shim_handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHeader arg0)
     {

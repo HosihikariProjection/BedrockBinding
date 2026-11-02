@@ -444,6 +444,11 @@ public sealed unsafe partial class LecternBlock : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_97eb30c4((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C2.hs_method_85738720((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -461,17 +466,6 @@ public sealed unsafe partial class LecternBlock : global::System.IDisposable
     public static LecternBlock Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_881f69e9();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LecternBlock((nint)handle);
-    }
-
-    public static LecternBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.LecternBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6e1a52eb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -559,6 +553,11 @@ public sealed unsafe partial class LecternBlock : global::System.IDisposable
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_22b11495((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)pos.Handle, (void*)block.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_b362bb6f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

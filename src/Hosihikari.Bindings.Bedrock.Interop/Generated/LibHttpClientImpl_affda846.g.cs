@@ -91,6 +91,15 @@ public sealed unsafe partial class LibHttpClientImpl : global::System.IDisposabl
         return new LibHttpClientImpl((nint)handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<Bedrock::Http::Internal::IResponseBody>>' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint _getResponseBody(nint call) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<Bedrock::Http::Internal::IResponseBody>>' requires --link-carrier or --virtual-dispatch.");
+
+    public void _logRequestUrl(nint callHandle)
+    {
+        NativeMethods.TablePtr->C0.hs_method_8a61aff5((void*)__hosihikari_shim_handle, (void*)callHandle);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'long' requires --link-carrier or --virtual-dispatch.", false)]
     public static nint _requestBodyRead(nint call, ulong arg1, ulong bytesAvailable, nint arg3, nint destination, nint bytesWritten) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'long' requires --link-carrier or --virtual-dispatch.");
@@ -99,50 +108,33 @@ public sealed unsafe partial class LibHttpClientImpl : global::System.IDisposabl
     public static nint _responseBodyWrite(nint call, nint source, ulong bytesAvailable, nint arg3) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'long' requires --link-carrier or --virtual-dispatch.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _tryGetResponseBody(nint call)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_b2835325((void*)__hosihikari_shim_handle, (void*)call);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
-
     public void initialize()
     {
         NativeMethods.TablePtr->C0.hs_method_249295bf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk2fe4b9_Address
+    public nint mHttpLibrary_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_cd6bb42c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_0605e9d5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk419653_Address
+    public nint mRequestCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_ab7e00ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_82741eda((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk807d26_Address
+    public nint mRequestCacheMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_7ed73498((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_d8f06cf4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkcb3229_Address
+    public nint mTaskGroup_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_f9342057((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkf64a92_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_26d7df5d((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientImpl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientImpl arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientImpl((nint)NativeMethods.TablePtr->C0.hs_method_fd4cb549((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_02c29b5e((void*)__hosihikari_shim_handle);
     }
 
     public static nint sWeakThisMutex()

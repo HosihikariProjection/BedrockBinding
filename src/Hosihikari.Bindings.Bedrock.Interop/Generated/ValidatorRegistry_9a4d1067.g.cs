@@ -59,11 +59,6 @@ public sealed unsafe partial class ValidatorRegistry : global::System.IDisposabl
         return new ValidatorRegistry((nint)handle);
     }
 
-    public static nint getValidatorMap()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5d82e4a6();
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8ed098_Address
     {

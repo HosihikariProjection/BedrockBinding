@@ -218,6 +218,11 @@ public sealed unsafe partial class FileSystem : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_ead2a737((void*)__hosihikari_shim_handle, (void*)dirPath.Handle));
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result deleteEmptyDirectoryRecursively(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView dirPath)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_601886d1((void*)__hosihikari_shim_handle, (void*)dirPath.Handle));
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result deleteFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_0882792d((void*)__hosihikari_shim_handle, (void*)filePath.Handle));

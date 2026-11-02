@@ -71,6 +71,11 @@ public sealed unsafe partial class TaggedBinding : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2b3b0f35((void*)__hosihikari_shim_handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding onlyStable()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding((nint)NativeMethods.TablePtr->C3.hs_method_b1eb2416((void*)__hosihikari_shim_handle), false);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding((nint)NativeMethods.TablePtr->C3.hs_method_9a26601c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);

@@ -407,17 +407,6 @@ public sealed unsafe partial class MangroveLeavesBlock : global::System.IDisposa
         return NativeMethods.TablePtr->C2.hs_method_d6eed989((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
     }
 
-    public static MangroveLeavesBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.MangroveLeavesBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5730e9fe((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MangroveLeavesBlock((nint)handle);
-    }
-
     public bool canBeFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
     {
         return NativeMethods.TablePtr->C2.hs_method_91eacb4e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)aboveBlock.Handle) != 0;

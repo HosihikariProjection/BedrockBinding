@@ -53,9 +53,9 @@ public sealed unsafe partial class VanillaGameModuleServer : global::System.IDis
     public void _configureLevel(nint level, nint experiments, nint resourcePackManager, nint baseGameVersion, nint scriptManager, nint biomeIdToResolvedData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.");
 
-    public void _configureNewPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public void _configureNewPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_f49d920c((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C4.hs_method_f49d920c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>>' is not a known bindable declaration.", false)]
@@ -131,9 +131,9 @@ public sealed unsafe partial class VanillaGameModuleServer : global::System.IDis
     public void configureLevel(nint level, nint experiments, nint resourcePackManager, nint baseGameVersion, nint scriptManager, nint biomeIdToResolvedData) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.");
 
-    public void configureNewPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public void configureNewPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_c147720b((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C4.hs_method_c147720b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>>' is not a known bindable declaration.", false)]

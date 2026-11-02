@@ -407,6 +407,11 @@ public sealed unsafe partial class Minecraft : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_c3bc3035((void*)__hosihikari_shim_handle, stopNetwork);
     }
 
+    public void unpauseServerForDimensionTransfer()
+    {
+        NativeMethods.TablePtr->C2.hs_method_17f193d8((void*)__hosihikari_shim_handle);
+    }
+
     public bool update()
     {
         return NativeMethods.TablePtr->C2.hs_method_b27630a7((void*)__hosihikari_shim_handle) != 0;

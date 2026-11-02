@@ -408,17 +408,6 @@ public sealed unsafe partial class SculkShriekerBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static SculkShriekerBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkShriekerBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0f9ee249((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SculkShriekerBlock((nint)handle);
-    }
-
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, byte face, int arg2)
     {
         return NativeMethods.TablePtr->C3.hs_method_f3b38f2f((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, arg2) != 0;

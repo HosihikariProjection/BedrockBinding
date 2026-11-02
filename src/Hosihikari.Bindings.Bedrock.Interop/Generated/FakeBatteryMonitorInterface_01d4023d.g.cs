@@ -38,6 +38,32 @@ public sealed unsafe partial class FakeBatteryMonitorInterface : global::System.
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static FakeBatteryMonitorInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.FakeBatteryMonitorInterface arg0)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_cca3ecc0((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new FakeBatteryMonitorInterface((nint)handle);
+    }
+
+    public float getBatteryLevel()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_44a9d154((void*)__hosihikari_shim_handle);
+    }
+
+    public int getBatteryStatus()
+    {
+        return NativeMethods.TablePtr->C1.hs_method_1eb20983((void*)__hosihikari_shim_handle);
+    }
+
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

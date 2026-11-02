@@ -40,7 +40,7 @@ public sealed unsafe partial class PreventMobEjectionFromLegacyVehicleSystem : g
 
     public static void _preventEjectionIfNeeded(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext strictEntityContext, global::Hosihikari.Bindings.Bedrock.Interop.PassengerComponent passengerComponent, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabbShapeComponent, nint vehicleView, nint modifier)
     {
-        NativeMethods.TablePtr->C3.hs_method_d8032bd3((void*)strictEntityContext.Handle, (void*)passengerComponent.Handle, (void*)aabbShapeComponent.Handle, (void*)vehicleView, (void*)modifier);
+        NativeMethods.TablePtr->C3.hs_method_02d1c063((void*)strictEntityContext.Handle, (void*)passengerComponent.Handle, (void*)aabbShapeComponent.Handle, (void*)vehicleView, (void*)modifier);
     }
 
     public void Dispose()

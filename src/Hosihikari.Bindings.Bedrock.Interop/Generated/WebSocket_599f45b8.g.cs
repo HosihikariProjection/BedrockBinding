@@ -38,6 +38,11 @@ public sealed unsafe partial class WebSocket : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint _ctor()
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_3bb91b61((void*)__hosihikari_shim_handle);
+    }
+
     public void _dtor()
     {
         NativeMethods.TablePtr->C0.hs_method_f932aae9((void*)__hosihikari_shim_handle);
@@ -105,9 +110,9 @@ public sealed unsafe partial class WebSocket : global::System.IDisposable
         return new WebSocket((nint)handle);
     }
 
-    public static void _deallocateSocketAsync(nint handle)
+    public static void _deallocateSocketAsync(nint handle, global::Hosihikari.Bindings.Abi.SharedHandle? callbackContext)
     {
-        NativeMethods.TablePtr->C0.hs_method_6ce17dc6((void*)handle);
+        NativeMethods.TablePtr->C0.hs_method_2984e959((void*)handle, callbackContext?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<nonstd::expected_lite::expected<Bedrock::Http::StatusCode, std::error_code>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -130,6 +135,12 @@ public sealed unsafe partial class WebSocket : global::System.IDisposable
     public nint mUnk5cda29_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b663bc4f((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk90188a_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_d4cdf17b((void*)__hosihikari_shim_handle);
     }
 
     public void onBinaryMessage(byte[] arg0)

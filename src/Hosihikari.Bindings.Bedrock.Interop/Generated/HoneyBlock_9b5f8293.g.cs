@@ -408,17 +408,6 @@ public sealed unsafe partial class HoneyBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static HoneyBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.HoneyBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c237b5a1((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new HoneyBlock((nint)handle);
-    }
-
     public float getBounciness(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg1)
     {
         return NativeMethods.TablePtr->C1.hs_method_c8977bb4((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);

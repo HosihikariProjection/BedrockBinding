@@ -91,17 +91,6 @@ public sealed unsafe partial class AbstractCandleBlock : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static AbstractCandleBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.AbstractCandleBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_46a461aa((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new AbstractCandleBlock((nint)handle);
-    }
-
     public void _addExtinguishEffects(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C0.hs_method_d3ec77e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)region.Handle, (void*)pos.Handle);

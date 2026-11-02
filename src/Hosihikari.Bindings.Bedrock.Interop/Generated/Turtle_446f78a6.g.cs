@@ -692,10 +692,10 @@ public sealed unsafe partial class Turtle : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_db129b45((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C4.hs_get_14d902cf((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_14d902cf((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1276244d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

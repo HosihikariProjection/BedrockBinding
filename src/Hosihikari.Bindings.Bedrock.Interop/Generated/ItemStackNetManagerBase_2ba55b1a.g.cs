@@ -131,17 +131,33 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
         NativeMethods.TablePtr->C2.hs_method_fb1c9724((void*)__hosihikari_shim_handle, (void*)screen.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'gsl::final_action<std::function<void ()>>' is not supported.", false)]
-    public nint _tryBeginClientLegacyTransactionRequest() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'gsl::final_action<std::function<void ()>>' is not supported.");
+    public bool _isRequestActionAllowed(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestAction requestAction)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_641e2854((void*)__hosihikari_shim_handle, (void*)requestAction.Handle) != 0;
+    }
+
+    public void _pushScreen(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
+    {
+        NativeMethods.TablePtr->C2.hs_method_36fec62d((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: return type 'gsl::final_action<std::function<void ()>>' is not supported.", false)]
-    public static nint _tryBeginClientLegacyTransactionRequest(nint player) =>
+    public nint _tryBeginClientLegacyTransactionRequest() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'gsl::final_action<std::function<void ()>>' is not supported.");
 
     public bool allowInventoryTransactionManager()
     {
         return NativeMethods.TablePtr->C2.hs_method_b2765fbb((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public void beginCursorItemDrag()
+    {
+        NativeMethods.TablePtr->C2.hs_method_a5c5d6ea((void*)__hosihikari_shim_handle);
+    }
+
+    public void endCursorItemDrag()
+    {
+        NativeMethods.TablePtr->C2.hs_method_b76a3569((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'TypedClientNetId<ItemStackRequestIdTag, int>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -168,6 +184,12 @@ public sealed unsafe partial class ItemStackNetManagerBase : global::System.IDis
     {
         get => NativeMethods.TablePtr->C2.hs_get_45a8ebe9((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C2.hs_set_45a8ebe9((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCursorItemDragActive
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_7b5bbec6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_7b5bbec6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -448,17 +448,6 @@ public sealed unsafe partial class MangrovePropaguleBlock : global::System.IDisp
         return new MangrovePropaguleBlock((nint)handle);
     }
 
-    public static MangrovePropaguleBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.MangrovePropaguleBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c7310a4d((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MangrovePropaguleBlock((nint)handle);
-    }
-
     public static MangrovePropaguleBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

@@ -389,6 +389,25 @@ public sealed unsafe partial class ColoredTorchBlock : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_3e7ad4e9((void*)__hosihikari_shim_handle, (void*)requiredBaseGameVersion.Handle) != 0;
     }
 
+    public nint _ctor(string nameId, int id, byte baseColor)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return (nint)NativeMethods.TablePtr->C1.hs_method_3229cd24((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, baseColor);
+        }
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Block _getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_dc1fe1fd((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue), false);
@@ -398,15 +417,40 @@ public sealed unsafe partial class ColoredTorchBlock : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ColoredTorchBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ColoredTorchBlock arg0)
+    public static ColoredTorchBlock Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3503a3dd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_0d3d7bc8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
         }
 
         return new ColoredTorchBlock((nint)handle);
+    }
+
+    public static ColoredTorchBlock Create(string nameId, int id, byte baseColor)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var handle = NativeMethods.TablePtr->C1.hs_create_2ece0ef6(__hs_stringData0, (nuint)__hs_stringByteCount0, id, baseColor);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new ColoredTorchBlock((nint)handle);
+        }
     }
 
     public void animateTickBedrockLegacy(nint tickData)

@@ -43,6 +43,11 @@ public sealed unsafe partial class EyeOfEnderPreNormalTickSystem : global::Syste
         NativeMethods.TablePtr->C1.hs_method_6685fdb2((void*)arg0.Handle, (void*)actorOwnerComponent.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_57224d4e());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

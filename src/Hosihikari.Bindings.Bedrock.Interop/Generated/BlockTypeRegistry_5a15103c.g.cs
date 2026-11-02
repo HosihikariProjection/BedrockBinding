@@ -78,23 +78,10 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_29dce3e6((void*)__hosihikari_shim_handle, (void*)worldBaseGameVersion.Handle);
     }
 
-    public void finalizeBlockComponentStorage()
-    {
-        NativeMethods.TablePtr->C0.hs_method_dc6db67c((void*)__hosihikari_shim_handle);
-    }
-
     public void finalizeBlockCustomComponentEvents(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager scriptManager)
     {
         NativeMethods.TablePtr->C0.hs_method_6e57adc0((void*)__hosihikari_shim_handle, (void*)scriptManager.Handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void forEachBlockMutable(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void forEachBlockType(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry get()
     {
@@ -114,21 +101,6 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     public global::Hosihikari.Bindings.Bedrock.Interop.Block getDefaultBlockState(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, bool logNotFound)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_c4530951((void*)__hosihikari_shim_handle, (void*)name.Handle, logNotFound), false);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks getDirectAccessBlocks()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTypeRegistry_Nested.DirectAccessBlocks((nint)NativeMethods.TablePtr->C0.hs_method_b1fc16b9((void*)__hosihikari_shim_handle), false);
-    }
-
-    public void initHardCodedBlockComponents(global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
-    {
-        NativeMethods.TablePtr->C0.hs_method_9a18d890((void*)__hosihikari_shim_handle, (void*)experiments.Handle);
-    }
-
-    public void initRWLock()
-    {
-        NativeMethods.TablePtr->C0.hs_method_5ceabb82((void*)__hosihikari_shim_handle);
     }
 
     public bool isComplexAliasBlock(global::Hosihikari.Bindings.Bedrock.Interop.HashedString blockName)
@@ -206,12 +178,6 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mRWLock_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_18f9f859((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
     public nint mShapeRegistry_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_1f091270((void*)__hosihikari_shim_handle);
@@ -230,11 +196,6 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'const Block *' is not supported.", false)]
     public void registerComplexAlias(nint alias, nint callback, nint postSplitBlockNames, nint minRequiredVersion, nint blocksJsonFormatVersion, nint defaultNewBlockName, int startVariant) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'const Block *' is not supported.");
-
-    public void unregisterBlock(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
-    {
-        NativeMethods.TablePtr->C0.hs_method_eba94349((void*)__hosihikari_shim_handle, (void*)name.Handle);
-    }
 
     public void unregisterBlocks()
     {

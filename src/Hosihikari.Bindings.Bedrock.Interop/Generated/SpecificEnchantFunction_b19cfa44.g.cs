@@ -70,6 +70,10 @@ public sealed unsafe partial class SpecificEnchantFunction : global::System.IDis
         NativeMethods.TablePtr->C4.hs_method_69bdbeef((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    public static nint deserialize(nint @object, nint predicates) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
+
     public int getFunctionType()
     {
         return NativeMethods.TablePtr->C4.hs_method_e03ff1e3((void*)__hosihikari_shim_handle);

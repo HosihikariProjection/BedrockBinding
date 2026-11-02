@@ -38,6 +38,36 @@ public sealed unsafe partial class VolumeEntityManagerServer : global::System.ID
         return __hs_handle;
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mControlBlock_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6dfe2b32((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk2b84c0_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d19e9d93((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk401f77_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c2409597((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk4d91e3_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9708cc94((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk75b10e_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d7ca4f61((void*)__hosihikari_shim_handle);
+    }
+
     public static VolumeEntityManagerServer Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_e51e6e30();
@@ -90,6 +120,7 @@ public sealed unsafe partial class VolumeEntityManagerServer : global::System.ID
     {
         NativeMethods.TablePtr->C4.hs_method_79fb9e09((void*)__hosihikari_shim_handle, (void*)userIdentifier.Handle, (void*)source.Handle, (void*)packetSender.Handle);
     }
+
 
     public void Dispose()
     {

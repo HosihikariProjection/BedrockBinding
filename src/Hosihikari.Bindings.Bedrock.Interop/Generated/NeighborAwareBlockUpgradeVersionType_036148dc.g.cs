@@ -10,7 +10,9 @@ public enum NeighborAwareBlockUpgradeVersionType : int
     WallBlock = 1,
     FenceBlock = 2,
     StairBlock = 3,
-    Latest = 4,
     ThinFenceAndTripWireBlock = 4,
-    Count = 5,
+    RedstoneWireBlock = 5,
+    ChorusPlantAndFireBlock = 6,
+    Latest = 6,
+    Count = 7,
 }

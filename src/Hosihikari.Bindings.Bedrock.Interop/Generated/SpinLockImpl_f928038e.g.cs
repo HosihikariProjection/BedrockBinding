@@ -38,11 +38,6 @@ public sealed unsafe partial class SpinLockImpl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_501ab02f((void*)__hosihikari_shim_handle);
-    }
-
     public static SpinLockImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.SpinLockImpl arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_365b0a53((void*)arg0.Handle);

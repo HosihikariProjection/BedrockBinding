@@ -413,17 +413,6 @@ public sealed unsafe partial class FallingBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static FallingBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FallingBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b850c225((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FallingBlock((nint)handle);
-    }
-
     public void _tickBlocksAround2D(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block oldBlock)
     {
         NativeMethods.TablePtr->C1.hs_method_92fcb04e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)oldBlock.Handle);

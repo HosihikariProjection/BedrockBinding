@@ -404,17 +404,6 @@ public sealed unsafe partial class FaceDirectionalBlock : global::System.IDispos
         return NativeMethods.TablePtr->C1.hs_method_3a4a5da0((void*)__hosihikari_shim_handle, auxValue) != 0;
     }
 
-    public static FaceDirectionalBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FaceDirectionalBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_51bcb621((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FaceDirectionalBlock((nint)handle);
-    }
-
     public byte getFaceFlip(byte face, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         return NativeMethods.TablePtr->C1.hs_method_a866c2f5((void*)__hosihikari_shim_handle, face, (void*)block.Handle);

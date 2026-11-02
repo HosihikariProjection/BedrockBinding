@@ -411,17 +411,6 @@ public sealed unsafe partial class SeasonsAgnosticLeavesBlock : global::System.I
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static SeasonsAgnosticLeavesBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SeasonsAgnosticLeavesBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_47412055((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SeasonsAgnosticLeavesBlock((nint)handle);
-    }
-
     public byte getRenderLayer(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C3.hs_method_f122eda5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)region.Handle, (void*)pos.Handle);

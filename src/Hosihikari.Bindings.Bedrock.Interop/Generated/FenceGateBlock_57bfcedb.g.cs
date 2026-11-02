@@ -448,17 +448,6 @@ public sealed unsafe partial class FenceGateBlock : global::System.IDisposable
         return new FenceGateBlock((nint)handle);
     }
 
-    public static FenceGateBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FenceGateBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8595285d((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FenceGateBlock((nint)handle);
-    }
-
     public static FenceGateBlock Create(string nameId, int id, byte arg2)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

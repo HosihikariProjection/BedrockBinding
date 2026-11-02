@@ -109,11 +109,6 @@ public sealed unsafe partial class BlockBreakSensorComponent : global::System.ID
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlockBreakSensorComponent((nint)NativeMethods.TablePtr->C0.hs_method_afc69d43((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void updateSensorPos(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 newPos)
-    {
-        NativeMethods.TablePtr->C0.hs_method_182a3d0c((void*)__hosihikari_shim_handle, (void*)newPos.Handle);
-    }
-
 
     public void Dispose()
     {

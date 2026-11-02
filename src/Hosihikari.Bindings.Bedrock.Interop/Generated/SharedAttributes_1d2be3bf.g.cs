@@ -103,6 +103,11 @@ public sealed unsafe partial class SharedAttributes : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C4.hs_method_172d5e3e(), false);
     }
 
+    public static bool _isDefaultAttribute(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance instance, global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance defaults)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_29d433e4((void*)instance.Handle, (void*)defaults.Handle) != 0;
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.", false)]
     public static nint _legacyGetInstance(nint attributes, nint attributeName) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.");
@@ -131,13 +136,13 @@ public sealed unsafe partial class SharedAttributes : global::System.IDisposable
     public static nint _saveAttribute(nint instance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
 
-    public static void loadAttributes(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap? attributes, global::Hosihikari.Bindings.Bedrock.Interop.ListTag? list)
+    public static void loadAttributes(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap? attributes, global::Hosihikari.Bindings.Bedrock.Interop.ListTag? list, global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap? defaults)
     {
-        NativeMethods.TablePtr->C4.hs_method_a1dc2317((void*)(attributes?.Handle ?? 0), (void*)(list?.Handle ?? 0));
+        NativeMethods.TablePtr->C4.hs_method_ff52ef15((void*)(attributes?.Handle ?? 0), (void*)(list?.Handle ?? 0), (void*)(defaults?.Handle ?? 0));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ListTag' has no accessible destructor.", false)]
-    public static nint saveAttributes(nint attributes) =>
+    public static nint saveAttributes(nint attributes, nint defaults) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ListTag' has no accessible destructor.");
 
     public void Dispose()

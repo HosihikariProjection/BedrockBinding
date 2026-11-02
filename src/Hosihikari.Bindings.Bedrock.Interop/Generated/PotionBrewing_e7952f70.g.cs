@@ -63,9 +63,9 @@ public sealed unsafe partial class PotionBrewing : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_8dc3f22a((void*)source.Handle, (void*)ingredient.Handle) != 0;
     }
 
-    public static void initPotionBrewing()
+    public static void initPotionBrewing(global::Hosihikari.Bindings.Bedrock.Interop.IEducationOptions educationOptions)
     {
-        NativeMethods.TablePtr->C3.hs_method_d01bc3de();
+        NativeMethods.TablePtr->C3.hs_method_0550548e((void*)educationOptions.Handle);
     }
 
     public static bool isFuel(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)

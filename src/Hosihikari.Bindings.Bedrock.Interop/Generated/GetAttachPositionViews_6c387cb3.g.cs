@@ -38,6 +38,33 @@ public sealed unsafe partial class GetAttachPositionViews : global::System.IDisp
         return __hs_handle;
     }
 
+    public nint _ctor(nint c)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_b3ca37d9((void*)__hosihikari_shim_handle, (void*)c);
+    }
+
+    public static GetAttachPositionViews Create()
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_53f7d1ec();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new GetAttachPositionViews((nint)handle);
+    }
+
+    public static GetAttachPositionViews Create(nint c)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_dbcb9e4a((void*)c);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new GetAttachPositionViews((nint)handle);
+    }
+
     public static GetAttachPositionViews Create(global::Hosihikari.Bindings.Bedrock.Interop.GetAttachPositionViews arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_91a789fe((void*)arg0.Handle);

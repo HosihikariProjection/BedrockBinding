@@ -394,17 +394,6 @@ public sealed unsafe partial class CopperDoorBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static CopperDoorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CopperDoorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_375763d1((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CopperDoorBlock((nint)handle);
-    }
-
     public void _useDoor(nint eventData)
     {
         NativeMethods.TablePtr->C1.hs_method_1b3c248f((void*)__hosihikari_shim_handle, (void*)eventData);

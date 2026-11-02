@@ -398,17 +398,6 @@ public sealed unsafe partial class DeepslateRedStoneOreBlock : global::System.ID
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static DeepslateRedStoneOreBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DeepslateRedStoneOreBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c1601772((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DeepslateRedStoneOreBlock((nint)handle);
-    }
-
     public void _lightUpBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C1.hs_method_f2b437b7((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);

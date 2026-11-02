@@ -86,11 +86,6 @@ public sealed unsafe partial class HugeMushroomFeature : global::System.IDisposa
         return NativeMethods.TablePtr->C2.hs_method_7473438c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
     }
 
-    public bool placeFixed(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int mushroomType, int height)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_5659cfc4((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, mushroomType, height) != 0;
-    }
-
 
     public bool mCanUseInternalFeature
     {

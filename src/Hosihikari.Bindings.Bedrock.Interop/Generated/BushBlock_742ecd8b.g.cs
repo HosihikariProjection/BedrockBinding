@@ -384,25 +384,6 @@ public sealed unsafe partial class BushBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_84fa0e54((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)aboveBlock.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_95707e32((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
-        }
-    }
-
     public bool _mayPlace(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C0.hs_method_2a14f8dc((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
@@ -416,28 +397,6 @@ public sealed unsafe partial class BushBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static BushBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f4fcf28d();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BushBlock((nint)handle);
-    }
-
-    public static BushBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BushBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_84a0da9e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BushBlock((nint)handle);
-    }
 
     public static BushBlock Create(string nameId, int id)
     {

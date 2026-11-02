@@ -4,7 +4,7 @@
 
 The **Bedrock / MCAPI** interop surface for the Hosihikari projection: a generated native-style **Interop** and a symbol-dispatched native **binding shim**.
 
-This branch targets **BDS 1.26.51.1** through the headers of LeviLamina `v26.51.9`. The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols.
+This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `f28a4b5` (the 26.60 development line). The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols, and `v1.26.51` keeps the 1.26.51.1 surface.
 
 ## Boundary
 
@@ -14,10 +14,10 @@ This branch targets **BDS 1.26.51.1** through the headers of LeviLamina `v26.51.
 
 ## Current state
 
-- Interop: 9,146 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
-- Binding Shim: 154,702 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
-- Coverage: 12,080 declarations and 101,068 members bound for `win-x64-server`.
-- `scripts/headers-26.51.txt` lists the 5,199 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
+- Interop: 9,222 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
+- Binding Shim: 155,450 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
+- Coverage: 12,150 declarations and 101,789 members bound for `win-x64-server`.
+- `scripts/headers-26.60.txt` lists the 5,169 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
 
 The shim is emitted in `--symbol-dispatch --resolve-by-name` mode. Supported ABI:
 
@@ -27,7 +27,7 @@ The shim is emitted in `--symbol-dispatch --resolve-by-name` mode. Supported ABI
 - by-value records: small `triviallyCopyable` records travel in integer registers, larger records use a stack temporary; a record that is not trivially copyable is built through its copy constructor (resolved by name) and released by the callee when its destructor is non-trivial, and a trivially destructible record without a recorded copy constructor is copied as bytes while still using the hidden-reference convention;
 - by-value results whose signature spelling omits defaulted template arguments resolve to the recorded specialization (`Bedrock::Result<T>` binds to `Bedrock::Result<T, std::error_code>`); `GameplayHandlerResult<T>` and the other template results are instantiated by the second frontend pass, so the call returns an owned wrapper with a working `Dispose`. A template is only used as a by-value result when its header proves the layout with a data member or a base record; an empty reconstructed shell is rejected instead of being sized at one byte;
 - `leveldb::Status` results come from the carrier's pinned leveldb 1.23 package, which `regenerate.ps1` passes to the frontend as an external root; enum template arguments (`Bedrock::Result<T, ActorValidationError>`) and record results with complete arguments (`StreamableAssetSource`) are instantiated by the same sizeof prelude;
-- virtual methods, including pure declarations, dispatch through the object's vftable at the slot recorded in the IR; a pure method has no implementation symbol, so its vtable slot is the only path, and a non-pure method keeps its symbol path but falls back to the same slot when that symbol is not exported (the leveldb and WebRTC overrides); `Bedrock::Result` specializations have no destructor symbols in 1.26.51.1, so `Dispose` releases the result buffer but not an error payload;
+- virtual methods, including pure declarations, dispatch through the object's vftable at the slot recorded in the IR; a pure method has no implementation symbol, so its vtable slot is the only path, and a non-pure method keeps its symbol path but falls back to the same slot when that symbol is not exported (the leveldb and WebRTC overrides); `Bedrock::Result` specializations have no destructor symbols in 1.26.60.6, so `Dispose` releases the result buffer but not an error payload;
 - bitfields are read and written through their storage bits; bool, integer and enum bitfields project as scalar properties, and inherited flags appear on every derived class;
 - fields whose type is not projected expose the address of the field storage as a read-only `nint` named `<field>_Address`;
 - `optional_ref<T>` parameters and results with the presence flag;
@@ -40,14 +40,14 @@ Maps require named key/value types and matching hash/equality functors, which th
 
 ## Generate
 
-Regeneration needs only public inputs: a LeviLamina `v26.51.9` checkout and a generator built with LLVM 23.1.4. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
+Regeneration needs only public inputs: a LeviLamina `f28a4b5` checkout and a generator built with LLVM 23.1.4. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
 
 ```shell
 powershell -File scripts/regenerate.ps1 `
   -LeviLaminaRoot C:\path\to\LeviLamina
 ```
 
-The script parses `scripts/headers-26.51.txt`, emits the surface with `--symbol-dispatch --resolve-by-name`, and updates `src/`, `native/BindingShim/generated/`, and `coverage/`. `leveldb/status.h` from the pinned leveldb 1.23 package is added as an external root, because the carrier refers to `leveldb::Status` by value while its definition lives outside the carrier source root. Pass `-SkipFrontend -IrDirectory <dir>` to reuse an existing IR while iterating on the emitter. Review the diff, then run `python scripts/verify_generated.py`.
+The script parses `scripts/headers-26.60.txt`, emits the surface with `--symbol-dispatch --resolve-by-name`, and updates `src/`, `native/BindingShim/generated/`, and `coverage/`. `leveldb/status.h` from the pinned leveldb 1.23 package is added as an external root, because the carrier refers to `leveldb::Status` by value while its definition lives outside the carrier source root. Pass `-SkipFrontend -IrDirectory <dir>` to reuse an existing IR while iterating on the emitter. Review the diff, then run `python scripts/verify_generated.py`.
 
 ## Build
 
@@ -60,11 +60,11 @@ The generated shim directories contain `hosihikari_abi.h` from `BindingAbi`, so 
 
 ## Runtime smoke
 
-`tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `HashedString`, a `Core::Random`, and a `TextPacket` before calling instance methods, and copies a `HashedString` through its copy constructor before passing it by value to `ExpressionNode::unregisterQueryFunction`. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`.
+`tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `TextPacket` and calls an instance method, and creates a system-message packet through a factory that takes a string and returns `TextPacket` by value. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`. The server itself needs PreLoader 1.16.6, `bedrock_runtime_data` from `bedrockdata v26.60.6-server.1`, and a LeviLamina built from the same `f28a4b5` carrier.
 
 ## Distribution
 
-Two NuGet packages share the version `1.26.51-r0`:
+Two NuGet packages share the version `1.26.60-r0`:
 
 - `Hosihikari.Bindings.Bedrock.Interop` — the managed interop; depends on `Hosihikari.Bindings.Abi`.
 - `Hosihikari.Bindings.Bedrock.Shim` — the native Windows shim under `runtimes/win-x64/native/`.

@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-public sealed unsafe partial class ActorSetPosSystem
+public sealed unsafe partial class ActorSetPosSystem : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -57,9 +57,20 @@ public sealed unsafe partial class ActorSetPosSystem
         NativeMethods.TablePtr->C0.hs_method_32b13913((void*)entity.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem(bool isClientSide)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C0.hs_method_fb0b814e(isClientSide));
+    }
+
     public bool mIsClientSide
     {
         get => NativeMethods.TablePtr->C0.hs_get_e775abd4((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_dbfca902((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -79,5 +90,19 @@ public sealed unsafe partial class ActorSetPosSystem
     public void tick(nint executionContext)
     {
         NativeMethods.TablePtr->C0.hs_method_f9aa1181((void*)__hosihikari_shim_handle, (void*)executionContext);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_9f2558dc((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

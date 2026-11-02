@@ -774,10 +774,10 @@ public sealed unsafe partial class LavaSlime : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_7562fad0((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C2.hs_get_f3773f8e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_f3773f8e((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_be84d68d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

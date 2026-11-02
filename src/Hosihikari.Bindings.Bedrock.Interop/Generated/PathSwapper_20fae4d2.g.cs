@@ -83,6 +83,10 @@ public sealed unsafe partial class PathSwapper : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.PathSwapper((nint)NativeMethods.TablePtr->C3.hs_method_8e214be1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::small_vector<Puv::internal::PathElement, 1>' is not a known bindable declaration.", false)]
+    public void swap(nint temp) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::small_vector<Puv::internal::PathElement, 1>' is not a known bindable declaration.");
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

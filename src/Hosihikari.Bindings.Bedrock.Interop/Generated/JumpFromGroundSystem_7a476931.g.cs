@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.MobJumpFromGroundSystemImpl;
 
-public sealed unsafe partial class JumpFromGroundSystem
+public sealed unsafe partial class JumpFromGroundSystem : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -52,6 +52,23 @@ public sealed unsafe partial class JumpFromGroundSystem
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    public static JumpFromGroundSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.MobJumpFromGroundSystemImpl.JumpFromGroundSystem arg0)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_9ea3c12b((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new JumpFromGroundSystem((nint)handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_46d098a0((void*)__hosihikari_shim_handle);
+    }
+
     public void singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity)
     {
         NativeMethods.TablePtr->C2.hs_method_cadd7329((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
@@ -60,5 +77,19 @@ public sealed unsafe partial class JumpFromGroundSystem
     public void tick(nint context)
     {
         NativeMethods.TablePtr->C2.hs_method_0a6b1da3((void*)__hosihikari_shim_handle, (void*)context);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C2.hs_destroy_7a476931((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

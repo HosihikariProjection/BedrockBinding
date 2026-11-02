@@ -66,6 +66,12 @@ public sealed unsafe partial class NewIncomingConnectionEvent : global::System.I
         get => (nint)NativeMethods.TablePtr->C2.hs_get_a93efb36((void*)__hosihikari_shim_handle);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkd149c4_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fb4544a5((void*)__hosihikari_shim_handle);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.NetherNetConnector_Nested.NewIncomingConnectionEvent((nint)NativeMethods.TablePtr->C2.hs_method_4f027969((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);

@@ -413,17 +413,6 @@ public sealed unsafe partial class LiquidBlockBase : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static LiquidBlockBase Create(global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlockBase arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_adc08ef6((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LiquidBlockBase((nint)handle);
-    }
-
     public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3 _getFlow(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Material material)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_3b381efc((void*)region.Handle, (void*)pos.Handle, (void*)material.Handle));

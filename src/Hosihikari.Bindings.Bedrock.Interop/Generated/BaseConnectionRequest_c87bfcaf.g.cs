@@ -87,16 +87,6 @@ public sealed unsafe partial class BaseConnectionRequest : global::System.IDispo
         return NativeMethods.TablePtr->C0.hs_method_375362e1((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public bool _isSupportedPersonaData()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_9dba412a((void*)__hosihikari_shim_handle) != 0;
-    }
-
-    public bool _isUsingRestrictedIds()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_162e8338((void*)__hosihikari_shim_handle) != 0;
-    }
-
     public static global::Hosihikari.Bindings.Bedrock.Interop.BaseConnectionRequest_Nested.ParsedConnectionString _parseConnectionString(string str)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(str);

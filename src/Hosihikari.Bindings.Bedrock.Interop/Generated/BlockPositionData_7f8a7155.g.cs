@@ -77,6 +77,18 @@ public sealed unsafe partial class BlockPositionData : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mNamedTickData_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7b1506ef((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mNeighborChangedQueueData_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c7751c98((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mTickData_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_54a81f0c((void*)__hosihikari_shim_handle);

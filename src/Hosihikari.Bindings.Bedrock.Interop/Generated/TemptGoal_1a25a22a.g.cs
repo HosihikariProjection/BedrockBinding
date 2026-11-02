@@ -206,9 +206,24 @@ public sealed unsafe partial class TemptGoal : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_195acbe8((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public nint _ctor(nint mob, nint name, nint goalId, float speed, nint itemList, nint sound, nint soundIntervalRange, bool canGetScared, float temptDistance, float stopDistance, bool canTemptVertically, bool canTemptWhileRidden, nint onStartEvent, nint onEndEvent) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, string name, nint goalId)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            return (nint)NativeMethods.TablePtr->C4.hs_method_3064514c((void*)__hosihikari_shim_handle, (void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId);
+        }
+    }
 
     public void _start()
     {
@@ -250,9 +265,30 @@ public sealed unsafe partial class TemptGoal : global::System.IDisposable
         return new TemptGoal((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public static TemptGoal Create(nint mob, nint name, nint goalId, float speed, nint itemList, nint sound, nint soundIntervalRange, bool canGetScared, float temptDistance, float stopDistance, bool canTemptVertically, bool canTemptWhileRidden, nint onStartEvent, nint onEndEvent) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+    public static TemptGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, string name, nint goalId)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            var handle = NativeMethods.TablePtr->C4.hs_create_cb763d66((void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new TemptGoal((nint)handle);
+        }
+    }
 
     public static TemptGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.TemptGoal arg0)
     {

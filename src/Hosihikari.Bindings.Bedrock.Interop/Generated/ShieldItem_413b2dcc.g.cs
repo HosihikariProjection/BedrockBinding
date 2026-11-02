@@ -337,9 +337,9 @@ public sealed unsafe partial class ShieldItem : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_279e546e((void*)__hosihikari_shim_handle);
     }
 
-    public sbyte _getInHandUpdateType(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, bool isMainHand, bool slotChanged)
+    public sbyte _getInHandUpdateType(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, bool arg3, bool slotChanged)
     {
-        return NativeMethods.TablePtr->C4.hs_method_0778c2e2((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)oldItem.Handle, (void*)newItem.Handle, isMainHand, slotChanged);
+        return NativeMethods.TablePtr->C4.hs_method_0778c2e2((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)oldItem.Handle, (void*)newItem.Handle, arg3, slotChanged);
     }
 
     public void _hurtActor(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Mob attacker)
@@ -423,9 +423,9 @@ public sealed unsafe partial class ShieldItem : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_dca9c12c((void*)__hosihikari_shim_handle);
     }
 
-    public sbyte getInHandUpdateType(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, bool isMainHand, bool slotChanged)
+    public sbyte getInHandUpdateType(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, bool arg3, bool slotChanged)
     {
-        return NativeMethods.TablePtr->C4.hs_method_cd669f44((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)oldItem.Handle, (void*)newItem.Handle, isMainHand, slotChanged);
+        return NativeMethods.TablePtr->C4.hs_method_cd669f44((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)oldItem.Handle, (void*)newItem.Handle, arg3, slotChanged);
     }
 
     public void hurtActor(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Mob attacker)

@@ -38,9 +38,9 @@ public sealed unsafe partial class MoveControl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.MoveControlDescription? description)
+    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C2.hs_method_99cc38f7((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_21adb12b((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void _setWantedPosition(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, float speed)
@@ -68,14 +68,19 @@ public sealed unsafe partial class MoveControl : global::System.IDisposable
         return new MoveControl((nint)handle);
     }
 
-    public float calculateMoveSpeed(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 endPosition, float maxMoveSpeed)
+    public static float calculateMoveSpeed(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 endPosition, float maxMoveSpeed)
     {
-        return NativeMethods.TablePtr->C2.hs_method_cc306e52((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle, (void*)endPosition.Handle, maxMoveSpeed);
+        return NativeMethods.TablePtr->C2.hs_method_2b0fc7ad((void*)parent.Handle, (void*)mob.Handle, (void*)endPosition.Handle, maxMoveSpeed);
     }
 
-    public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.MoveControlDescription? description)
+    public static float calculateYRotation(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 positionDifference, float maxMoveSpeed)
     {
-        NativeMethods.TablePtr->C2.hs_method_c15f955a((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        return NativeMethods.TablePtr->C2.hs_method_9202727e((void*)parent.Handle, (void*)mob.Handle, (void*)positionDifference.Handle, maxMoveSpeed);
+    }
+
+    public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
+    {
+        NativeMethods.TablePtr->C2.hs_method_c699c6ba((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void setWantedPosition(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, float speed)

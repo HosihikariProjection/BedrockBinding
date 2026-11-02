@@ -58,17 +58,19 @@ public sealed unsafe partial class IEntitySystemsCollection : global::System.IDi
     public void foreachComponentInfo(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void foreachSingleTickingSystem(nint filter, nint callback, bool captureTimings) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+    public void foreachSingleTickingSystem(nint it)
+    {
+        NativeMethods.TablePtr->C2.hs_method_9a9cd127((void*)__hosihikari_shim_handle, (void*)it);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void foreachSystem(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void foreachTickingSystem(nint filter, nint callback, bool captureTimings) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+    public void foreachTickingSystem(nint it)
+    {
+        NativeMethods.TablePtr->C2.hs_method_7a74f7bd((void*)__hosihikari_shim_handle, (void*)it);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'SystemTiming' is not supported.", false)]
     public nint gatherSystemTimings() =>
@@ -96,6 +98,11 @@ public sealed unsafe partial class IEntitySystemsCollection : global::System.IDi
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public bool hasSingleTickCategory(nint category) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
+    public void initPerfHints()
+    {
+        NativeMethods.TablePtr->C2.hs_method_6705654b((void*)__hosihikari_shim_handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void registerSystem(nint system, nint info) =>

@@ -86,7 +86,7 @@ public sealed unsafe partial class ItemEventResponseFactory : global::System.IDi
     public global::Hosihikari.Bindings.Bedrock.Interop.LegacyEventItemComponentData? makeLegacyEvents(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion documentVersion, nint itemDocument)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5d40b827((void*)__hosihikari_shim_handle, (void*)documentVersion.Handle, (void*)itemDocument, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_db1f0e9d((void*)__hosihikari_shim_handle, (void*)documentVersion.Handle, (void*)itemDocument, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LegacyEventItemComponentData((nint)__hs_handle) : null;
     }
 

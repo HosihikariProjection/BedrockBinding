@@ -389,25 +389,6 @@ public sealed unsafe partial class ChestBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_69ed914a((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, type) != 0;
     }
 
-    public nint _ctor(string nameId, int id, byte type, byte materialType)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_d4064df6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, type, materialType);
-        }
-    }
-
     public bool _detachesOnPistonMove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C0.hs_method_d6eedc40((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
@@ -473,6 +454,11 @@ public sealed unsafe partial class ChestBlock : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_fcd5f75d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_e38764cd((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C0.hs_method_7c292c56((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -486,53 +472,6 @@ public sealed unsafe partial class ChestBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static ChestBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_c1154538();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ChestBlock((nint)handle);
-    }
-
-    public static ChestBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ChestBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_af3f93ec((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ChestBlock((nint)handle);
-    }
-
-    public static ChestBlock Create(string nameId, int id, byte type, byte materialType)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C0.hs_create_d8e64c7c(__hs_stringData0, (nuint)__hs_stringByteCount0, id, type, materialType);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new ChestBlock((nint)handle);
-        }
-    }
 
     public bool breaksFallingBlocks(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion version)
     {
@@ -623,6 +562,11 @@ public sealed unsafe partial class ChestBlock : global::System.IDisposable
     public void onRemove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C0.hs_method_29eda12c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_c992ba45((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

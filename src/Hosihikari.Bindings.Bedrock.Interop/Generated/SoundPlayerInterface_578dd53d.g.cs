@@ -186,43 +186,13 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
     public ulong playAttached(nint eventName, nint getSoundProperties) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public void playMusic(string eventName, float volume)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(eventName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(eventName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_9ad90df5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, volume);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'PlayMusicOptions' is not a known bindable declaration.", false)]
+    public void playMusic(nint options) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'PlayMusicOptions' is not a known bindable declaration.");
 
-    public void playMusic(string eventName, float volume, nint playlistIndex)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(eventName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(eventName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_4754dc16((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, volume, (void*)playlistIndex);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'PlayMusicOptions' is not a known bindable declaration.", false)]
+    public void playMusic(nint options, nint playlistIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'PlayMusicOptions' is not a known bindable declaration.");
 
     public ulong playUI(string name, float volume, float pitch)
     {
@@ -331,6 +301,11 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
     public void unregisterLoop(ulong handle, bool hard)
     {
         NativeMethods.TablePtr->C4.hs_method_98d124a5((void*)__hosihikari_shim_handle, handle, hard);
+    }
+
+    public bool wasSoundStoppedExplicitly(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_abffeffa((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle) != 0;
     }
 
 

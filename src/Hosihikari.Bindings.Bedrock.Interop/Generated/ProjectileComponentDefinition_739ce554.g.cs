@@ -279,6 +279,12 @@ public sealed unsafe partial class ProjectileComponentDefinition : global::Syste
         set => NativeMethods.TablePtr->C4.hs_set_6cf37ce3((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mSpreadFire
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_4b6de0c2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_4b6de0c2((void*)__hosihikari_shim_handle, value);
+    }
+
     public bool mStopOnHurt
     {
         get => NativeMethods.TablePtr->C4.hs_get_c79dd977((void*)__hosihikari_shim_handle) != 0;

@@ -389,17 +389,6 @@ public sealed unsafe partial class InfestedDeepslateBlock : global::System.IDisp
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static InfestedDeepslateBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.InfestedDeepslateBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_0b89683e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new InfestedDeepslateBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetUninfested(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_86955f83((void*)__hosihikari_shim_handle, (void*)block.Handle);

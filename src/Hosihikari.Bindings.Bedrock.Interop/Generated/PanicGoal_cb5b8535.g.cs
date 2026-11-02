@@ -86,10 +86,6 @@ public sealed unsafe partial class PanicGoal : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_22b29733((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint mob, nint name, nint goalId, float speedMultiplier, bool ignoreMobDamage, nint sound, nint soundIntervalRange, bool forceUse, bool preferWater, nint damageCauses) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
-
     public void _start()
     {
         NativeMethods.TablePtr->C3.hs_method_b0ade0bf((void*)__hosihikari_shim_handle);
@@ -105,6 +101,10 @@ public sealed unsafe partial class PanicGoal : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_f5330169((void*)__hosihikari_shim_handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static PanicGoal Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a2e4ddd0();
@@ -116,10 +116,6 @@ public sealed unsafe partial class PanicGoal : global::System.IDisposable
         return new PanicGoal((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
-    public static PanicGoal Create(nint mob, nint name, nint goalId, float speedMultiplier, bool ignoreMobDamage, nint sound, nint soundIntervalRange, bool forceUse, bool preferWater, nint damageCauses) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
-
     public static PanicGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.PanicGoal arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f808c7d6((void*)arg0.Handle);
@@ -129,6 +125,18 @@ public sealed unsafe partial class PanicGoal : global::System.IDisposable
         }
 
         return new PanicGoal((nint)handle);
+    }
+
+    public bool _shouldTryToMoveAway()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_5d355a51((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3? _tryGeneratePathEnd()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6fe6c63b((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
     public string appendDebugInfo(string str)

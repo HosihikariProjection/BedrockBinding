@@ -44,6 +44,11 @@ public sealed unsafe partial class SetOminousBottleFunction : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C4.hs_get_0112cd0f((void*)__hosihikari_shim_handle);
     }
 
+    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C4.hs_method_1499e0bf((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
         NativeMethods.TablePtr->C4.hs_method_27dde17c((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
@@ -53,6 +58,10 @@ public sealed unsafe partial class SetOminousBottleFunction : global::System.IDi
     {
         return NativeMethods.TablePtr->C4.hs_method_e98e1389((void*)__hosihikari_shim_handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
     public static SetOminousBottleFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetOminousBottleFunction arg0)
     {
@@ -65,10 +74,19 @@ public sealed unsafe partial class SetOminousBottleFunction : global::System.IDi
         return new SetOminousBottleFunction((nint)handle);
     }
 
+    public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C4.hs_method_46d74f9d((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
         NativeMethods.TablePtr->C4.hs_method_37d513fa((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    public static nint deserialize(nint @object, nint predicates) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
 
     public int getFunctionType()
     {

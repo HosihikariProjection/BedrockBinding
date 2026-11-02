@@ -49,19 +49,10 @@ public sealed unsafe partial class ScriptItemComponents : global::System.IDispos
         return new ScriptItemComponents((nint)handle);
     }
 
-    public nint _getOrCreateNativeItemComponentFactories()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_9350894a((void*)__hosihikari_shim_handle);
-    }
-
     public void bind(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBindingBuilder moduleBuilder, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version scriptingVersion, global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptComponentTypeEnumBuilder componentTypeEnumBuilder)
     {
         NativeMethods.TablePtr->C3.hs_method_fc306da5((void*)__hosihikari_shim_handle, (void*)moduleBuilder.Handle, (void*)scriptingVersion.Handle, (void*)componentTypeEnumBuilder.Handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::WeakTypedObjectHandle<ScriptModuleMinecraft::ScriptItemStack>' is not a known bindable declaration.", false)]
-    public nint getSupportedItemComponentIds(nint item, bool includeCustom) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::WeakTypedObjectHandle<ScriptModuleMinecraft::ScriptItemStack>' is not a known bindable declaration.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCustomComponentReader_Address
@@ -74,10 +65,6 @@ public sealed unsafe partial class ScriptItemComponents : global::System.IDispos
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1e580142((void*)__hosihikari_shim_handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptItemComponent>' is not supported.", false)]
-    public nint tryCreateComponent(nint componentName, nint item, nint scope, bool includeCustom) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptItemComponent>' is not supported.");
 
     public nint tryGetFactory(string componentName)
     {

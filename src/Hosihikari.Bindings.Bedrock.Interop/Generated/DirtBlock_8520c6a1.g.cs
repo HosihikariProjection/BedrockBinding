@@ -433,9 +433,9 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_3a20d552((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
     }
 
-    public bool _tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public bool _tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte handSlot)
     {
-        return NativeMethods.TablePtr->C1.hs_method_737a4a3c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_13609990((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle, handSlot) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -445,17 +445,6 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
     public static DirtBlock Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_a1f01aab();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DirtBlock((nint)handle);
-    }
-
-    public static DirtBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DirtBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_74ea75d0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -530,9 +519,9 @@ public sealed unsafe partial class DirtBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_0ed0b5ff((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(actor?.Handle ?? 0), fType) != 0;
     }
 
-    public bool tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public bool tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte handSlot)
     {
-        return NativeMethods.TablePtr->C1.hs_method_dd13ff2b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_9558c44a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle, handSlot) != 0;
     }
 
     public void use(nint eventData)

@@ -38,9 +38,25 @@ public sealed unsafe partial class SeedItemComponentLegacy : global::System.IDis
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Item owner)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_dcba3f20((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+    }
+
     public static SeedItemComponentLegacy Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_8e404160();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new SeedItemComponentLegacy((nint)handle);
+    }
+
+    public static SeedItemComponentLegacy Create(global::Hosihikari.Bindings.Bedrock.Interop.Item owner)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_c7bca4b4((void*)owner.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -114,9 +130,9 @@ public sealed unsafe partial class SeedItemComponentLegacy : global::System.IDis
         return new global::Hosihikari.Bindings.Bedrock.Interop.SeedItemComponentLegacy((nint)NativeMethods.TablePtr->C3.hs_method_e3d467e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
+    public bool useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, byte arg5)
     {
-        return NativeMethods.TablePtr->C3.hs_method_ef9bd4d8((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)blockPos.Handle, face, (void*)clickPos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_506788ce((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)blockPos.Handle, face, (void*)clickPos.Handle, arg5) != 0;
     }
 
 

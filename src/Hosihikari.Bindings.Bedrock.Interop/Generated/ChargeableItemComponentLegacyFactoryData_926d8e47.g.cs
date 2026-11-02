@@ -38,10 +38,6 @@ public sealed unsafe partial class ChargeableItemComponentLegacyFactoryData : gl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static ChargeableItemComponentLegacyFactoryData Create(global::Hosihikari.Bindings.Bedrock.Interop.ChargeableItemComponentLegacyFactoryData arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_c6e824b1((void*)arg0.Handle);

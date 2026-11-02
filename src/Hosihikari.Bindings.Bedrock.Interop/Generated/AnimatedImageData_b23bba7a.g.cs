@@ -38,11 +38,6 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.AnimatedImageData rhs)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_feb1228b((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-    }
-
     public nint _ctor(uint type, uint animationExpression, global::Hosihikari.Bindings.Bedrock.Interop.mce.Image animatedImage, float frames)
     {
         return (nint)NativeMethods.TablePtr->C0.hs_method_865d812c((void*)__hosihikari_shim_handle, type, animationExpression, (void*)animatedImage.Handle, frames);
@@ -59,9 +54,9 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
         return new AnimatedImageData((nint)handle);
     }
 
-    public static AnimatedImageData Create(global::Hosihikari.Bindings.Bedrock.Interop.AnimatedImageData rhs)
+    public static AnimatedImageData Create(global::Hosihikari.Bindings.Bedrock.Interop.AnimatedImageData arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f4a77ddc((void*)rhs.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_f4a77ddc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -103,11 +98,6 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
     {
         get => NativeMethods.TablePtr->C0.hs_get_e33902f7((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C0.hs_set_e33902f7((void*)__hosihikari_shim_handle, value);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.AnimatedImageData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AnimatedImageData rhs)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AnimatedImageData((nint)NativeMethods.TablePtr->C0.hs_method_cc8880ff((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
     }
 
     public void setSkinImage(global::Hosihikari.Bindings.Bedrock.Interop.SkinImage image)

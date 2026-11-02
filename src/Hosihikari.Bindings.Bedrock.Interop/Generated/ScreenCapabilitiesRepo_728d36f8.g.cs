@@ -77,15 +77,15 @@ public sealed unsafe partial class ScreenCapabilitiesRepo : global::System.IDisp
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk23eeca_Address
+    public nint mUnk789d94_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7f1c6af7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d8b4561b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk65af2c_Address
+    public nint mUnk9c7233_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3c082785((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d9860572((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

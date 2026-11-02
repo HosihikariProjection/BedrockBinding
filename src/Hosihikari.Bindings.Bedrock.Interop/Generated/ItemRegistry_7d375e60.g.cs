@@ -73,6 +73,11 @@ public sealed unsafe partial class ItemRegistry : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef_Nested.LoadedItem((nint)NativeMethods.TablePtr->C2.hs_method_93c6a565((void*)__hosihikari_shim_handle, (void*)loadedItemAsset.Handle, (void*)parseContext));
     }
 
+    public void addItemToTagMap(global::Hosihikari.Bindings.Bedrock.Interop.Item item)
+    {
+        NativeMethods.TablePtr->C2.hs_method_c9c06173((void*)__hosihikari_shim_handle, (void*)item.Handle);
+    }
+
     public void alterAvailableCreativeItems(global::Hosihikari.Bindings.Bedrock.Interop.ActorInfoRegistry? registry, global::Hosihikari.Bindings.Bedrock.Interop.LevelData levelData)
     {
         NativeMethods.TablePtr->C2.hs_method_ab861fee((void*)__hosihikari_shim_handle, (void*)(registry?.Handle ?? 0), (void*)levelData.Handle);
@@ -268,12 +273,6 @@ public sealed unsafe partial class ItemRegistry : global::System.IDisposable
     public nint mItemAliasLookupMap_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_5f7568dd((void*)__hosihikari_shim_handle);
-    }
-
-    public byte mItemRegistrationOrder
-    {
-        get => NativeMethods.TablePtr->C2.hs_get_e9700e55((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_e9700e55((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mItemRegistrationState

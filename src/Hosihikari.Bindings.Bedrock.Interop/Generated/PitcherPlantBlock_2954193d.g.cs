@@ -399,17 +399,6 @@ public sealed unsafe partial class PitcherPlantBlock : global::System.IDisposabl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static PitcherPlantBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.PitcherPlantBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a7b14524((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PitcherPlantBlock((nint)handle);
-    }
-
     public bool canBeFertilized(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
     {
         return NativeMethods.TablePtr->C3.hs_method_6c2d02d8((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)aboveBlock.Handle) != 0;

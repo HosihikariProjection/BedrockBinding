@@ -393,17 +393,6 @@ public sealed unsafe partial class SpongeBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static SpongeBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SpongeBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_87abbdc4((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SpongeBlock((nint)handle);
-    }
-
     public static void _attemptAbsorbWater(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C4.hs_method_e3ea22a4((void*)region.Handle, (void*)pos.Handle);

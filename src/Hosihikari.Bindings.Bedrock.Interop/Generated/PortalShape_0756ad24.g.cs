@@ -117,9 +117,9 @@ public sealed unsafe partial class PortalShape : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_5f8f72ab((void*)__hosihikari_shim_handle, (void*)transaction.Handle, (void*)firstPortalPosition.Handle);
     }
 
-    public void updateNeighboringBlocks(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource source, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 perpendicularAxis)
+    public void updateNeighboringBlocks(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource source, global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction transaction, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 perpendicularAxis)
     {
-        NativeMethods.TablePtr->C3.hs_method_5e173f86((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)perpendicularAxis.Handle);
+        NativeMethods.TablePtr->C3.hs_method_354445ff((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)transaction.Handle, (void*)perpendicularAxis.Handle);
     }
 
 

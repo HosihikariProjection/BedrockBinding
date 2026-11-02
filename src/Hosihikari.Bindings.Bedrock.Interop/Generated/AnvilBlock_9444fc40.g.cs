@@ -128,17 +128,6 @@ public sealed unsafe partial class AnvilBlock : global::System.IDisposable
         return new AnvilBlock((nint)handle);
     }
 
-    public static AnvilBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.AnvilBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_bcb13e4b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new AnvilBlock((nint)handle);
-    }
-
     public static AnvilBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

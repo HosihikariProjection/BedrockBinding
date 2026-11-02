@@ -102,6 +102,36 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
         return NativeMethods.TablePtr->C2.hs_method_9306b62c((void*)__hosihikari_shim_handle, (void*)requestAction.Handle, (void*)removedItem.Handle, removeType);
     }
 
+    public byte _handleTransfer(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionTransferBase requestAction, bool isSrcHintSlot, bool isDstHintSlot, bool isSwap)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_48840a24((void*)__hosihikari_shim_handle, (void*)requestAction.Handle, isSrcHintSlot, isDstHintSlot, isSwap);
+    }
+
+    public void _queueCursorEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionTransferBase requestAction, global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult result, bool isSwap)
+    {
+        NativeMethods.TablePtr->C2.hs_method_9d149e9e((void*)__hosihikari_shim_handle, (void*)requestAction.Handle, (void*)result.Handle, isSwap);
+    }
+
+    public void _queueCursorGrab(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte dispatchPolicy)
+    {
+        NativeMethods.TablePtr->C2.hs_method_3e77fe53((void*)__hosihikari_shim_handle, (void*)item.Handle, dispatchPolicy);
+    }
+
+    public void _queueCursorRelease(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte dispatchPolicy)
+    {
+        NativeMethods.TablePtr->C2.hs_method_aec5d01b((void*)__hosihikari_shim_handle, (void*)item.Handle, dispatchPolicy);
+    }
+
+    public void _sendCursorItemEvent(byte type, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    {
+        NativeMethods.TablePtr->C2.hs_method_3013c5b7((void*)__hosihikari_shim_handle, type, (void*)item.Handle);
+    }
+
+    public void _trackCursorDragDeferredSlot(byte containerName, global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationSlotData slotData, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    {
+        NativeMethods.TablePtr->C2.hs_method_2327582c((void*)__hosihikari_shim_handle, containerName, (void*)slotData.Handle, (void*)item.Handle);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler_Nested.ScreenData? _tryGetCurrentScreenData()
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0d1c389b((void*)__hosihikari_shim_handle);
@@ -132,6 +162,12 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
     public nint mCurrentRequestScreen_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d4ea89e1((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mCursorDragDeferredSlots_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_43412403((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -180,6 +216,12 @@ public sealed unsafe partial class ItemStackRequestActionHandler : global::Syste
     public nint mPlayerUIContainerRuntimeId_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d7a65c8d((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mQueuedCursorItemEvents_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d5ee15e3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

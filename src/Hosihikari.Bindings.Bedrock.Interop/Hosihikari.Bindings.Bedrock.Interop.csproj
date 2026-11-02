@@ -11,7 +11,7 @@
 
   <PropertyGroup>
     <PackageId>Hosihikari.Bindings.Bedrock.Interop</PackageId>
-    <Version>1.26.51-r0</Version>
+    <Version>1.26.60-r0</Version>
     <Authors>Hosihikari</Authors>
     <Description>Generated native-style .NET Interop for the Bedrock Dedicated Server (MCAPI) surface, resolved by symbol name through the LeviLamina preloader.</Description>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>

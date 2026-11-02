@@ -41,22 +41,26 @@ public sealed unsafe partial class SetItemDamageFunction : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cf210994((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_cf210994((void*)__hosihikari_shim_handle);
     }
 
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_f6c3d009((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C4.hs_method_f6c3d009((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
     }
 
     public int _getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_39ea7f48((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_39ea7f48((void*)__hosihikari_shim_handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
     public static SetItemDamageFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetItemDamageFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b17b447d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b17b447d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,18 +71,22 @@ public sealed unsafe partial class SetItemDamageFunction : global::System.IDispo
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_3c6b1d62((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C4.hs_method_3c6b1d62((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    public static nint deserialize(nint @object, nint predicates) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_011ce7d6((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_011ce7d6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDamage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6134b75d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6134b75d((void*)__hosihikari_shim_handle);
     }
 
 
@@ -88,7 +96,7 @@ public sealed unsafe partial class SetItemDamageFunction : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c8ea0d37((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c8ea0d37((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -82,9 +82,9 @@ public sealed unsafe partial class IFoodItemComponent : global::System.IDisposab
         return NativeMethods.TablePtr->C2.hs_method_98a68a6a((void*)__hosihikari_shim_handle);
     }
 
-    public void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        NativeMethods.TablePtr->C2.hs_method_c34ab6ab((void*)__hosihikari_shim_handle, (void*)result, (void*)instance.Handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C2.hs_method_7f88249d((void*)__hosihikari_shim_handle, (void*)result, (void*)instance.Handle, (void*)player.Handle, handSlot);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? useTimeDepleted(nint itemUseMethod, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack initialInstance, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Level level)

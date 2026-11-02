@@ -43,6 +43,11 @@ public sealed unsafe partial class SetPreviousPositionSystem : global::System.ID
         NativeMethods.TablePtr->C4.hs_method_4384f136((void*)arg0.Handle, (void*)stateVectorComponent.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_825cf41c());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

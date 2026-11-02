@@ -38,9 +38,24 @@ public sealed unsafe partial class ServerSoundInstance : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<const ServerSoundRuntime::Definition>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint handle, nint manager, nint soundEventId, nint definition, int loopCount, nint recipient) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<const ServerSoundRuntime::Definition>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle handle, global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager manager, string soundEventId, global::Hosihikari.Bindings.Abi.SharedHandle? definition, int loopCount, global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId? recipient)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(soundEventId);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(soundEventId, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            return (nint)NativeMethods.TablePtr->C3.hs_method_d5a0578c((void*)__hosihikari_shim_handle, (void*)handle.Handle, (void*)manager.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, definition?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), loopCount, (void*)(recipient?.Handle ?? 0), recipient is not null);
+        }
+    }
 
     public void _dtor()
     {
@@ -58,9 +73,30 @@ public sealed unsafe partial class ServerSoundInstance : global::System.IDisposa
         return new ServerSoundInstance((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<const ServerSoundRuntime::Definition>' is not a known bindable declaration.", false)]
-    public static ServerSoundInstance Create(nint handle, nint manager, nint soundEventId, nint definition, int loopCount, nint recipient) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<const ServerSoundRuntime::Definition>' is not a known bindable declaration.");
+    public static ServerSoundInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle handle, global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager manager, string soundEventId, global::Hosihikari.Bindings.Abi.SharedHandle? definition, int loopCount, global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId? recipient)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(soundEventId);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(soundEventId, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_create_4d91e71b((void*)handle.Handle, (void*)manager.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, definition?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), loopCount, (void*)(recipient?.Handle ?? 0), recipient is not null);
+            if (__hs_handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new ServerSoundInstance((nint)__hs_handle);
+        }
+    }
 
     public static ServerSoundInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstance arg0)
     {
@@ -78,12 +114,6 @@ public sealed unsafe partial class ServerSoundInstance : global::System.IDisposa
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk133689_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_945d14df((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1ca53f_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6a822619((void*)__hosihikari_shim_handle);
@@ -99,6 +129,12 @@ public sealed unsafe partial class ServerSoundInstance : global::System.IDisposa
     public nint mUnk337e6c_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4ac40511((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk34c084_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_81cf5fd2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -74,10 +74,6 @@ public sealed unsafe partial class ResourceLoadManager : global::System.IDisposa
         return new ResourceLoadManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
-    public static nint _wrapMainThreadCallback(nint resourceLoadTaskGroup, nint mainThreadCallback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.");
-
     public bool isComplete()
     {
         return NativeMethods.TablePtr->C3.hs_method_38020730((void*)__hosihikari_shim_handle) != 0;
@@ -142,6 +138,10 @@ public sealed unsafe partial class ResourceLoadManager : global::System.IDisposa
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
     public static void queueChild(nint threadedCallback, nint mainThreadCallback, uint taskPriority) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
+    public nint queueFromBackground(nint resourceLoadType, nint threadedCallback, nint mainThreadCallback, uint taskPriority) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]

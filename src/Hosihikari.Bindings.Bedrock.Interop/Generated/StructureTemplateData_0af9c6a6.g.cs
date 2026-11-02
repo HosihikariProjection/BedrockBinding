@@ -47,11 +47,6 @@ public sealed unsafe partial class StructureTemplateData : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static nint CURRENT_FORMAT_VERSION()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_517085bd();
-    }
-
     public static string DEFAULT_PALETTE_NAME()
     {
         var __hs_view = NativeMethods.TablePtr->C4.hs_method_7846dd39();
@@ -95,35 +90,15 @@ public sealed unsafe partial class StructureTemplateData : global::System.IDispo
         return NativeMethods.TablePtr->C4.hs_method_764b3589((void*)__hosihikari_shim_handle, (void*)structureTag.Handle);
     }
 
-    public int _parseFormatVersion(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_30921eb7((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
-
-    public int _parseNeighborAwareBlockUpgradeVersion(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_476ed6ee((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
-
     public int _parsePalettes(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag structureTag)
     {
         return NativeMethods.TablePtr->C4.hs_method_da896d30((void*)__hosihikari_shim_handle, (void*)structureTag.Handle);
     }
 
-    public int _parseSize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
+    public static global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _parseStructureTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, int compression, nint decompressedStructure)
     {
-        return NativeMethods.TablePtr->C4.hs_method_d6397bad((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _parseStructureTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_570d7456((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ccc6242e((void*)tag.Handle, compression, (void*)decompressedStructure);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle, false) : null;
-    }
-
-    public int _parseStructureWorldOrigin(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_d0246e60((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
     public static bool _readBlockIndexArray(global::Hosihikari.Bindings.Bedrock.Interop.Tag tag, int formatVersion, int[] blockIndices)
@@ -134,29 +109,14 @@ public sealed unsafe partial class StructureTemplateData : global::System.IDispo
         }
     }
 
-    public void _saveBlockIndices(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag structureTag)
-    {
-        NativeMethods.TablePtr->C4.hs_method_3d8e1314((void*)__hosihikari_shim_handle, (void*)structureTag.Handle);
-    }
-
-    public void _saveEntities(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag structureTag)
-    {
-        NativeMethods.TablePtr->C4.hs_method_766e6ddb((void*)__hosihikari_shim_handle, (void*)structureTag.Handle);
-    }
-
-    public void _savePalettes(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag structureTag)
-    {
-        NativeMethods.TablePtr->C4.hs_method_374280c5((void*)__hosihikari_shim_handle, (void*)structureTag.Handle);
-    }
-
     public void _saveSize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
         NativeMethods.TablePtr->C4.hs_method_933778e2((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
-    public void _saveStructureTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
+    public bool _saveStructureTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, int compression)
     {
-        NativeMethods.TablePtr->C4.hs_method_67bd67f7((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+        return NativeMethods.TablePtr->C4.hs_method_bd5fef7c((void*)__hosihikari_shim_handle, (void*)tag.Handle, compression) != 0;
     }
 
     public void _saveStructureWorldOrigin(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
@@ -262,7 +222,7 @@ public sealed unsafe partial class StructureTemplateData : global::System.IDispo
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
-    public nint save() =>
+    public nint save(nint compression) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]

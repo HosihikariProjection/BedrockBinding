@@ -34,6 +34,7 @@ public enum PieceType : uint
     Capes = 25,
     ClassicSkin = 26,
     Emote = 27,
-    Unsupported = 28,
-    Count = 29,
+    CoCo = 28,
+    Unsupported = 29,
+    Count = 30,
 }

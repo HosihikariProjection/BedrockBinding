@@ -52,17 +52,6 @@ public sealed unsafe partial class Test : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static Test Create()
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_d41b9404();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Test((nint)handle);
-    }
-
     public static Test Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.Test arg0)
     {
         var handle = NativeMethods.TablePtr->C5.hs_create_07f4c2cc((void*)arg0.Handle);

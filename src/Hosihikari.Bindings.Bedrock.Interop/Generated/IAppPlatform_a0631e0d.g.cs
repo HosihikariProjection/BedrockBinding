@@ -76,6 +76,12 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
+    public string getEdition()
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_204060ab((void*)__hosihikari_shim_handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
     public nint getHardwareMemoryTierUtil()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_b53c5fb6((void*)__hosihikari_shim_handle);

@@ -212,6 +212,11 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_16bc7aa4((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mConstructedAsNewLevel
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_fa6447b1((void*)__hosihikari_shim_handle) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerRegistry_Address
     {
@@ -335,6 +340,11 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
     {
         get => NativeMethods.TablePtr->C3.hs_get_1b4bb7f6((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C3.hs_set_1b4bb7f6((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsTrialMode
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_764f0c4f((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -976,7 +986,7 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.", false)]
-    public bool _initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData) =>
+    public bool _initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData, nint init) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.");
 
     public void _loadFunctionManager()
@@ -1214,7 +1224,7 @@ public sealed unsafe partial class ServerLevel : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.", false)]
-    public bool initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData) =>
+    public bool initialize(nint levelName, nint levelSettings, nint experiments, nint levelId, nint biomeIdToResolvedData, nint init) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::reference_wrapper<std::unordered_map<std::basic_string<char>, std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>>>' is abstract or not copy-constructible.");
 
     public void loadFunctionManager()

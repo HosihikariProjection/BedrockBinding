@@ -38,6 +38,11 @@ public sealed unsafe partial class ExplosionDecayFunction : global::System.IDisp
         return __hs_handle;
     }
 
+    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C1.hs_method_84b3132e((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
         NativeMethods.TablePtr->C1.hs_method_ce7acce5((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
@@ -57,6 +62,11 @@ public sealed unsafe partial class ExplosionDecayFunction : global::System.IDisp
         }
 
         return new ExplosionDecayFunction((nint)handle);
+    }
+
+    public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C1.hs_method_c6be4f1f((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)

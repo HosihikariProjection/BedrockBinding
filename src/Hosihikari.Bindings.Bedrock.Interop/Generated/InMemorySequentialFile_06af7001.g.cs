@@ -48,6 +48,10 @@ public sealed unsafe partial class InMemorySequentialFile : global::System.IDisp
         return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_a492801d((void*)__hosihikari_shim_handle, n));
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static InMemorySequentialFile Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_eef75078();

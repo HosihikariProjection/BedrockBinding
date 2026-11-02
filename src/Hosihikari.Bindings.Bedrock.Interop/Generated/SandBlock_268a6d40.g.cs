@@ -449,17 +449,6 @@ public sealed unsafe partial class SandBlock : global::System.IDisposable
         return new SandBlock((nint)handle);
     }
 
-    public static SandBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SandBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_15be1a8f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SandBlock((nint)handle);
-    }
-
     public static SandBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

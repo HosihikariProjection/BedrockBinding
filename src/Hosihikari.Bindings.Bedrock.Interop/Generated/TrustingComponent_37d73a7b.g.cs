@@ -54,9 +54,9 @@ public sealed unsafe partial class TrustingComponent : global::System.IDisposabl
         return NativeMethods.TablePtr->C4.hs_method_64c9a0f9((void*)__hosihikari_shim_handle, (void*)instance.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_2d762f51((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_12db0836((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
     }
 
     public float mChance

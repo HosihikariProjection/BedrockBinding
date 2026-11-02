@@ -49,6 +49,11 @@ public sealed unsafe partial class OnHitActorTriggerItemComponent : global::Syst
         return new OnHitActorTriggerItemComponent((nint)handle);
     }
 
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C4.hs_method_97715196((void*)ctx.Handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnHitActor_Address
     {

@@ -115,6 +115,11 @@ public sealed unsafe partial class ScopedGameTestTickingArea : global::System.ID
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
+    public void _createTickingArea()
+    {
+        NativeMethods.TablePtr->C3.hs_method_5051b53b((void*)__hosihikari_shim_handle);
+    }
+
     public void _removeTickingArea()
     {
         NativeMethods.TablePtr->C3.hs_method_d8e2231b((void*)__hosihikari_shim_handle);

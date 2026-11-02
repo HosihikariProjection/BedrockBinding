@@ -54,6 +54,11 @@ public sealed unsafe partial class GlobalActorLegacyTickSystem : global::System.
         return new GlobalActorLegacyTickSystem((nint)handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_08234296());
+    }
+
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
         NativeMethods.TablePtr->C1.hs_method_70b416ed((void*)__hosihikari_shim_handle, (void*)registry.Handle);

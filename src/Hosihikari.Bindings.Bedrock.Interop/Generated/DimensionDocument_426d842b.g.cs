@@ -38,6 +38,11 @@ public sealed unsafe partial class DimensionDocument : global::System.IDisposabl
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C4.hs_method_1a4593b9((void*)__hosihikari_shim_handle);
+    }
+
     public static DimensionDocument Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.DimensionDefinition.DimensionDocument arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_b1854e6a((void*)arg0.Handle);
@@ -63,6 +68,12 @@ public sealed unsafe partial class DimensionDocument : global::System.IDisposabl
     public nint mDimension_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_a3170cc1((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mFormatVersion_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f03849da((void*)__hosihikari_shim_handle);
     }
 
 

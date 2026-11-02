@@ -692,10 +692,10 @@ public sealed unsafe partial class VillagerV2 : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_675cdd9a((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C4.hs_get_90711a5d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_90711a5d((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3e598806((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -763,9 +763,9 @@ public sealed unsafe partial class VillagerV2 : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_a4dd67f7((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_dd23bebd((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_79fa92f9((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
     }
 
     public void _newServerAiStep()
@@ -844,9 +844,9 @@ public sealed unsafe partial class VillagerV2 : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_d611b343((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_8ab2e6e1((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_075e3757((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
     }
 
     public void newServerAiStep()

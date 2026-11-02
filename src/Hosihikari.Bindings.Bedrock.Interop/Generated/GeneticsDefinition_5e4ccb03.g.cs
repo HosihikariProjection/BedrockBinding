@@ -38,11 +38,6 @@ public sealed unsafe partial class GeneticsDefinition : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static nint DEFAULT_MUTATION_RATE()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_c3f18aff();
-    }
-
     public static GeneticsDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.GeneticsDefinition arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e7f7d8a6((void*)arg0.Handle);

@@ -82,7 +82,7 @@ public sealed unsafe partial class AppConfigs : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'PackIdVersion' is not supported.", false)]
-    public nint _getAdditionalClientPacks(bool enteringLevel) =>
+    public nint _getAdditionalClientPacks(bool shouldIncludeEduResourcePacks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PackIdVersion' is not supported.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition _getConnectionDefinition()
@@ -319,7 +319,7 @@ public sealed unsafe partial class AppConfigs : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'PackIdVersion' is not supported.", false)]
-    public nint getAdditionalClientPacks(bool enteringLevel) =>
+    public nint getAdditionalClientPacks(bool shouldIncludeEduResourcePacks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PackIdVersion' is not supported.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition getConnectionDefinition()

@@ -65,6 +65,10 @@ public sealed unsafe partial class CameraPresets : global::System.IDisposable
         return new CameraPresets((nint)handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
+    public nint _parseAndLoadCameraPreset(nint fileData, nint molangVersion, nint ctx, nint validator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public void _storeCameraList(nint list) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");

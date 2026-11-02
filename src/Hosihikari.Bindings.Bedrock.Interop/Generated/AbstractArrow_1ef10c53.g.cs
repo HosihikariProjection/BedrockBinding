@@ -87,11 +87,6 @@ public sealed unsafe partial class AbstractArrow : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public bool _canPickup(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_b5ad0548((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
-    }
-
     public void _defineEntityData()
     {
         NativeMethods.TablePtr->C0.hs_method_71ae9921((void*)__hosihikari_shim_handle);

@@ -38,9 +38,9 @@ public sealed unsafe partial class AgeableComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _growthToggle(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.AgeableDefinition definition, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool growthPaused)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _growthToggle(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.AgeableDefinition definition, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool growthPaused, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_58dc2603((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle, (void*)definition.Handle, (void*)item.Handle, growthPaused));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_9b9b0ca0((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle, (void*)definition.Handle, (void*)item.Handle, growthPaused, handSlot));
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
@@ -48,9 +48,9 @@ public sealed unsafe partial class AgeableComponent : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_b4cb0168((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_ce19c0ad((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_7d5d118d((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle, handSlot));
     }
 
     public int mAge

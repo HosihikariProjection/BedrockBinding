@@ -403,17 +403,6 @@ public sealed unsafe partial class StonecutterBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static StonecutterBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.StonecutterBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_613fe790((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StonecutterBlock((nint)handle);
-    }
-
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, byte face, int arg2)
     {
         return NativeMethods.TablePtr->C4.hs_method_6e5082eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, arg2) != 0;

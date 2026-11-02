@@ -97,14 +97,6 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunk((nint)__hs_handle, false) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _getBlock(nint coordIndex, nint block, nint extraBlock) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _getBlock(nint coordIndex, nint block, nint extraBlock, nint subChunkIndex) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
-
     public void _propagateBlockLight()
     {
         NativeMethods.TablePtr->C4.hs_method_b070ee4c((void*)__hosihikari_shim_handle);
@@ -144,6 +136,10 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
     {
         NativeMethods.TablePtr->C4.hs_method_16f69951((void*)__hosihikari_shim_handle, (void*)coordIndex.Handle, (void*)oldBrightness.Handle, (void*)newBrightness.Handle, (void*)oldAbsorption.Handle, (void*)newAbsorption.Handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public void getBlock(nint pos, nint block, nint extraBlock) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkBrightnessStorage_Nested.LightPair getLightPair(global::Hosihikari.Bindings.Bedrock.Interop.Pos coord)
     {

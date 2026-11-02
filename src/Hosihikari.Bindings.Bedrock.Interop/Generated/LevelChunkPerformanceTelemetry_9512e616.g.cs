@@ -105,22 +105,6 @@ public sealed unsafe partial class LevelChunkPerformanceTelemetry : global::Syst
         return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkPerformanceTelemetry((nint)NativeMethods.TablePtr->C2.hs_method_9d62e4cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ChunkPerformanceData>' is not a known bindable declaration.", false)]
-    public void reset(nint subClientId, nint chunkPerformanceData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ChunkPerformanceData>' is not a known bindable declaration.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ChunkPerformanceData>' is not a known bindable declaration.", false)]
-    public void sendPerformanceTelemetry(nint chunkPerformanceData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ChunkPerformanceData>' is not a known bindable declaration.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void setPerformanceTelemetryPeriodicCallback(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ChunkPerformanceData>' is not a known bindable declaration.", false)]
-    public void tick(nint chunkPerformanceData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ChunkPerformanceData>' is not a known bindable declaration.");
-
 
     public void Dispose()
     {

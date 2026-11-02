@@ -444,17 +444,6 @@ public sealed unsafe partial class CoralPlantBlock : global::System.IDisposable
         return new CoralPlantBlock((nint)handle);
     }
 
-    public static CoralPlantBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CoralPlantBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_a900ac45((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CoralPlantBlock((nint)handle);
-    }
-
     public static CoralPlantBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.HashedString deadVersion)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

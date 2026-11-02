@@ -83,6 +83,27 @@ public sealed unsafe partial class TimeCommand : global::System.IDisposable
         return new TimeCommand((nint)handle);
     }
 
+    public int? _tryGetTimeFromTimeMarker(nint clock, string timeMarkerName, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(timeMarkerName);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(timeMarkerName, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            var __hs_value = NativeMethods.TablePtr->C4.hs_method_17c774cd((void*)__hosihikari_shim_handle, (void*)clock, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)output.Handle, &__hs_hasValue);
+            return __hs_hasValue ? __hs_value : (int?)null;
+        }
+    }
+
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
         NativeMethods.TablePtr->C4.hs_method_5f7855aa((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
@@ -104,6 +125,18 @@ public sealed unsafe partial class TimeCommand : global::System.IDisposable
     {
         get => NativeMethods.TablePtr->C4.hs_get_81fd1efc((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C4.hs_set_81fd1efc((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mTimeMarkerName_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_91c8e168((void*)__hosihikari_shim_handle);
+    }
+
+    public int mTimeMarkerOccurrence
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_7c5d1e78((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_7c5d1e78((void*)__hosihikari_shim_handle, value);
     }
 
     public int mValue

@@ -89,11 +89,6 @@ public sealed unsafe partial class ResourcePackStackPacket : global::System.IDis
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_c57fd756((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_2daec452((void*)__hosihikari_shim_handle);
-    }
-
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStackPacketPayload payload)
     {
         return (nint)NativeMethods.TablePtr->C3.hs_method_81bfacd8((void*)__hosihikari_shim_handle, (void*)payload.Handle);

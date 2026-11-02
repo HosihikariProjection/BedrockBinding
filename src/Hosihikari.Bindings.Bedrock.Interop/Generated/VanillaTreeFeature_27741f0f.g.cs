@@ -92,11 +92,6 @@ public sealed unsafe partial class VanillaTreeFeature : global::System.IDisposab
         return new VanillaTreeFeature((nint)handle);
     }
 
-    public static void _buildSchema(nint schemaNode)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1cd65587((void*)schemaNode);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'ITreeCanopyWrapper &' is not supported.", false)]
     public static void _buildVanillaCanopyVariants(nint schemaNode, nint canopyAccessor) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'ITreeCanopyWrapper &' is not supported.");

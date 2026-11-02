@@ -128,6 +128,12 @@ public sealed unsafe partial class BoneMealItem : global::System.IDisposable
     }
 
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_02567747((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_02567747((void*)__hosihikari_shim_handle, value);
+    }
+
     public byte mType
     {
         get => NativeMethods.TablePtr->C0.hs_get_5d05b471((void*)__hosihikari_shim_handle);

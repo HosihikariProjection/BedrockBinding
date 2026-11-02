@@ -47,11 +47,6 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
     public nint _apply(nint random, nint existingTag) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_76029a50((void*)__hosihikari_shim_handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
@@ -75,6 +70,25 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
     public nint apply(nint random, nint existingTag) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.AppendLoot from(string lootTable)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(lootTable);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(lootTable, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.AppendLoot((nint)NativeMethods.TablePtr->C5.hs_method_7b2c6331(__hs_stringData0, (nuint)__hs_stringByteCount0));
+        }
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLootTable_Address

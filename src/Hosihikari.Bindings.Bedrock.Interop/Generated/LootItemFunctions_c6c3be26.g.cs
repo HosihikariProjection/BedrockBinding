@@ -38,10 +38,6 @@ public sealed unsafe partial class LootItemFunctions : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'std::unique_ptr<LootItemFunction>' is not supported.", false)]
-    public static nint deserialize(nint @object, bool usingUpcomingCreatorFeaturesExperiment) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'std::unique_ptr<LootItemFunction>' is not supported.");
-
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

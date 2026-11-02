@@ -59,24 +59,9 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.TagUpdateToken((nint)NativeMethods.TablePtr->C2.hs_method_b55122dc((void*)__hosihikari_shim_handle));
     }
 
-    public void alterAvailableCreativeItems(global::Hosihikari.Bindings.Bedrock.Interop.ActorInfoRegistry? infoRegistry, global::Hosihikari.Bindings.Bedrock.Interop.LevelData levelData)
-    {
-        NativeMethods.TablePtr->C2.hs_method_010f7f7d((void*)__hosihikari_shim_handle, (void*)(infoRegistry?.Handle ?? 0), (void*)levelData.Handle);
-    }
-
-    public void bindDynamicScriptTypes(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager scripts)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f505ca41((void*)__hosihikari_shim_handle, (void*)scripts.Handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public void buildServerRegistry(nint experiments, nint baseGameVersion, nint rpm, nint validator, nint eventing) =>
+    public void buildServerRegistry(nint experiments, nint baseGameVersion, nint educationOptions, nint rpm, nint validator, nint eventing) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
-
-    public bool canUpdateTags()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_71dc225c((void*)__hosihikari_shim_handle) != 0;
-    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_const_cereal__ReflectionCtx_ cerealContext()
     {
@@ -93,15 +78,9 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C2.hs_method_7e3fcf48((void*)__hosihikari_shim_handle, (void*)oldName.Handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? getCreativeItemRegistry_6c3f06a6()
+    public global::Hosihikari.Bindings.Abi.SharedHandle? getCreativeItemRegistry()
     {
         var __hs_shared = NativeMethods.TablePtr->C2.hs_method_6c3f06a6((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
-
-    public global::Hosihikari.Bindings.Abi.SharedHandle? getCreativeItemRegistry_8711489a()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_8711489a((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -113,11 +92,6 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_ getItem(short itemId)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_((nint)NativeMethods.TablePtr->C2.hs_method_c24b0f19((void*)__hosihikari_shim_handle, itemId));
-    }
-
-    public int getItemCount()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_16fc765d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString getNameFromLegacyID(short id)
@@ -136,7 +110,7 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public void initCreativeItemsServer(nint blockDefinitionGroup, nint experiment, nint resourcePackManager, nint validator, nint eventing, nint registerCallback) =>
+    public void initCreativeItemsServer(nint blockDefinitionGroup, nint experiment, nint resourcePackManager, nint validator, nint eventing, nint educationOptions, nint registerCallback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
 
     public bool isComplexAlias(global::Hosihikari.Bindings.Bedrock.Interop.HashedString oldName)
@@ -147,16 +121,6 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
     public bool isCreativeItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance itemInstance)
     {
         return NativeMethods.TablePtr->C2.hs_method_fe93a7a9((void*)__hosihikari_shim_handle, (void*)itemInstance.Handle) != 0;
-    }
-
-    public bool isRegistryInitialized()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_2fc61c31((void*)__hosihikari_shim_handle) != 0;
-    }
-
-    public bool isServerInitializingCreativeItems()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_9bcecd4a((void*)__hosihikari_shim_handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef_Nested.LockGuard lockItemWorldCompatibilityMutex()
@@ -258,10 +222,6 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_0e360b18((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public nint onFinishedInitServer() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'WeakRef<IDynamicContainerSerialization>' is not a known bindable declaration.", false)]
     public void onLevelInit(nint containerSerialization, nint containerAccess, nint containerTracker) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'WeakRef<IDynamicContainerSerialization>' is not a known bindable declaration.");
@@ -290,11 +250,6 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_221f4ac9((void*)__hosihikari_shim_handle, (void*)alias.Handle, (void*)name.Handle, (void*)fromVersion.Handle);
     }
 
-    public ulong remapToFullLegacyNameByHash(ulong newHash)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_490d13d5((void*)__hosihikari_shim_handle, newHash);
-    }
-
     public ulong remapToLegacyNameByHash(ulong newHash)
     {
         return NativeMethods.TablePtr->C2.hs_method_b196357a((void*)__hosihikari_shim_handle, newHash);
@@ -305,29 +260,10 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_03b17583((void*)__hosihikari_shim_handle, value);
     }
 
-    public void setServerInitializingCreativeItems(bool value)
-    {
-        NativeMethods.TablePtr->C2.hs_method_c057a3d1((void*)__hosihikari_shim_handle, value);
-    }
-
-    public bool shouldCheckForItemWorldCompatibility()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_44a155f7((void*)__hosihikari_shim_handle) != 0;
-    }
-
-    public void shutdown()
-    {
-        NativeMethods.TablePtr->C2.hs_method_10c9ab42((void*)__hosihikari_shim_handle);
-    }
-
     public void unregisterItem(global::Hosihikari.Bindings.Bedrock.Interop.HashedString itemName)
     {
         NativeMethods.TablePtr->C2.hs_method_4d13d0ed((void*)__hosihikari_shim_handle, (void*)itemName.Handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public nint validateServerItemComponents(nint itemData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
 
     public void Dispose()

@@ -475,17 +475,6 @@ public sealed unsafe partial class DoublePlantBaseBlock : global::System.IDispos
         return new DoublePlantBaseBlock((nint)handle);
     }
 
-    public static DoublePlantBaseBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DoublePlantBaseBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_4be3f28e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DoublePlantBaseBlock((nint)handle);
-    }
-
     public static DoublePlantBaseBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

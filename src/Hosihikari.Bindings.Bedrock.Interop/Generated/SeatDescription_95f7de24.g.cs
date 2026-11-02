@@ -54,11 +54,6 @@ public sealed unsafe partial class SeatDescription : global::System.IDisposable
         return new SeatDescription((nint)handle);
     }
 
-    public void addRotationExpressionNode(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode node)
-    {
-        NativeMethods.TablePtr->C3.hs_method_ee3c444c((void*)__hosihikari_shim_handle, (void*)node.Handle);
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mCameraRelaxDistanceSmoothing_Address
     {
@@ -116,16 +111,6 @@ public sealed unsafe partial class SeatDescription : global::System.IDisposable
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SeatDescription seat)
     {
         return NativeMethods.TablePtr->C3.hs_method_21bed981((void*)__hosihikari_shim_handle, (void*)seat.Handle) != 0;
-    }
-
-    public void setCameraRelaxDistanceSmoothing(nint value)
-    {
-        NativeMethods.TablePtr->C3.hs_method_411d4b60((void*)__hosihikari_shim_handle, (void*)value);
-    }
-
-    public void setThirdPersonCamerRadiusOverride(nint value)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3f17f511((void*)__hosihikari_shim_handle, (void*)value);
     }
 
 

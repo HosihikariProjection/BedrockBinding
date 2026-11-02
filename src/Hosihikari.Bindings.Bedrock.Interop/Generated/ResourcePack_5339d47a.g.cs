@@ -95,7 +95,7 @@ public sealed unsafe partial class ResourcePack : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_0a2234d4((void*)__hosihikari_shim_handle);
     }
 
-    public bool getResource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path resourceName, ref string resourceStream, int subpackIndex)
+    public bool getResource(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView resourceName, ref string resourceStream, int subpackIndex)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
@@ -113,7 +113,7 @@ public sealed unsafe partial class ResourcePack : global::System.IDisposable
         {
             try
             {
-                return NativeMethods.TablePtr->C3.hs_method_7a5febde((void*)__hosihikari_shim_handle, (void*)resourceName.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, subpackIndex, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C3.hs_method_a88b8d48((void*)__hosihikari_shim_handle, (void*)resourceName.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, subpackIndex, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -122,9 +122,9 @@ public sealed unsafe partial class ResourcePack : global::System.IDisposable
         }
     }
 
-    public bool hasResource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path resourceName, int subpackIndex)
+    public bool hasResource(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView resourceName, int subpackIndex)
     {
-        return NativeMethods.TablePtr->C3.hs_method_29a58ed3((void*)__hosihikari_shim_handle, (void*)resourceName.Handle, subpackIndex) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_92fdbfba((void*)__hosihikari_shim_handle, (void*)resourceName.Handle, subpackIndex) != 0;
     }
 
     public bool isAssetExtractionViable()

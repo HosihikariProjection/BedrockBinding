@@ -399,17 +399,6 @@ public sealed unsafe partial class FaceDirectionalActorBlock : global::System.ID
         return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_246fca54((void*)__hosihikari_shim_handle), false);
     }
 
-    public static FaceDirectionalActorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FaceDirectionalActorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ad3602de((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FaceDirectionalActorBlock((nint)handle);
-    }
-
     public byte getFaceFlip(byte face, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         return NativeMethods.TablePtr->C1.hs_method_94e3cab9((void*)__hosihikari_shim_handle, face, (void*)block.Handle);

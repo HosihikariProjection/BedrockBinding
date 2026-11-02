@@ -94,11 +94,6 @@ public sealed unsafe partial class BasicSchema : global::System.IDisposable
         return NativeMethods.TablePtr->C5.hs_method_4be79c13((void*)__hosihikari_shim_handle, (void*)ctx) != 0;
     }
 
-    public void load(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaReader value, nint any, nint udata, nint state)
-    {
-        NativeMethods.TablePtr->C5.hs_method_b89dc6a3((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)any, (void*)udata, (void*)state);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.", false)]
     public nint makeDescription(nint ctx, nint config) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.");

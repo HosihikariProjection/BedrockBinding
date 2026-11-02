@@ -38,6 +38,12 @@ public sealed unsafe partial class RapidFertilizerItem : global::System.IDisposa
         return __hs_handle;
     }
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_dc97c53c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_dc97c53c((void*)__hosihikari_shim_handle, value);
+    }
+
     public byte mType
     {
         get => NativeMethods.TablePtr->C3.hs_get_34ba1d8c((void*)__hosihikari_shim_handle);
@@ -311,6 +317,10 @@ public sealed unsafe partial class RapidFertilizerItem : global::System.IDisposa
     {
         NativeMethods.TablePtr->C3.hs_method_1e2d785d((void*)__hosihikari_shim_handle, (void*)stack.Handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
     public void fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
     {

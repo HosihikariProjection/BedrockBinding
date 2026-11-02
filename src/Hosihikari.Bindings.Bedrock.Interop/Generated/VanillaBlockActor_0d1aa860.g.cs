@@ -51,6 +51,12 @@ public sealed unsafe partial class VanillaBlockActor : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_fe666d8c((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_d1551858((void*)__hosihikari_shim_handle);

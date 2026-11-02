@@ -38,6 +38,25 @@ public sealed unsafe partial class TickingArea : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uniqueId, string name, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID entityId, global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds, bool isCircle, float maxDistToPlayers, bool alwaysActive, byte loadMode)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            return (nint)NativeMethods.TablePtr->C4.hs_method_2a235564((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)uniqueId.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)entityId.Handle, (void*)bounds.Handle, isCircle, maxDistToPlayers, alwaysActive, loadMode);
+        }
+    }
+
     public bool _entityHasBeenFound()
     {
         return NativeMethods.TablePtr->C4.hs_method_f354546c((void*)__hosihikari_shim_handle) != 0;
@@ -196,6 +215,31 @@ public sealed unsafe partial class TickingArea : global::System.IDisposable
         }
 
         return new TickingArea((nint)handle);
+    }
+
+    public static TickingArea Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uniqueId, string name, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID entityId, global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds, bool isCircle, float maxDistToPlayers, bool alwaysActive, byte loadMode)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            var handle = NativeMethods.TablePtr->C4.hs_create_59fdf31a((void*)dimension.Handle, (void*)uniqueId.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)entityId.Handle, (void*)bounds.Handle, isCircle, maxDistToPlayers, alwaysActive, loadMode);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new TickingArea((nint)handle);
+        }
     }
 
     public static TickingArea Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingArea arg0)

@@ -594,11 +594,6 @@ public sealed unsafe partial class Axolotl : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_e96c2714((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_86788795((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
-    }
-
     public void _initializeComponents(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
         NativeMethods.TablePtr->C0.hs_method_c8964d32((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
@@ -607,28 +602,6 @@ public sealed unsafe partial class Axolotl : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static Axolotl Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_778e0097();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Axolotl((nint)handle);
-    }
-
-    public static Axolotl Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_db0b2391((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Axolotl((nint)handle);
-    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getAdjustedAABBForSpawnCheck(global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 mobPos)
     {
@@ -754,10 +727,10 @@ public sealed unsafe partial class Axolotl : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_36b01873((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C0.hs_get_2de551c1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_2de551c1((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_456c8a21((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

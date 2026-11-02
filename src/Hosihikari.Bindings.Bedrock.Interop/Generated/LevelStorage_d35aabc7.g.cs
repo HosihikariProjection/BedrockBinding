@@ -452,6 +452,10 @@ public sealed unsafe partial class LevelStorage : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_da06e5d1((void*)__hosihikari_shim_handle, flushAllowed);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    public void setWorldSaveAndExitPackTelemetry(nint packs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+
     public void startShutdown()
     {
         NativeMethods.TablePtr->C2.hs_method_c2c118ae((void*)__hosihikari_shim_handle);

@@ -48,9 +48,9 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_a60b05c4((void*)__hosihikari_shim_handle, (void*)pos.Handle, face, handSlot, isSimTick) != 0;
     }
 
-    public void _continueBuildBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot)
+    public void _continueBuildBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, float buildDelayScale)
     {
-        NativeMethods.TablePtr->C1.hs_method_1c9594d6((void*)__hosihikari_shim_handle, (void*)pos.Handle, face, handSlot);
+        NativeMethods.TablePtr->C1.hs_method_3f9ea6ea((void*)__hosihikari_shim_handle, (void*)pos.Handle, face, handSlot, buildDelayScale);
     }
 
     public bool _continueDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 playerPos, nint hasDestroyedBlock)
@@ -217,14 +217,14 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_0ba0fc10((void*)__hosihikari_shim_handle);
     }
 
-    public void continueBuildBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot)
+    public void continueBuildBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, float buildDelayScale)
     {
-        NativeMethods.TablePtr->C1.hs_method_55e00031((void*)__hosihikari_shim_handle, (void*)pos.Handle, face, handSlot);
+        NativeMethods.TablePtr->C1.hs_method_0b9fc833((void*)__hosihikari_shim_handle, (void*)pos.Handle, face, handSlot, buildDelayScale);
     }
 
-    public void continueBuildBlockAction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.HitResult hr, byte handSlot)
+    public void continueBuildBlockAction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.HitResult hr, byte handSlot, float buildDelayScale)
     {
-        NativeMethods.TablePtr->C1.hs_method_e0b7a4cd((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)hr.Handle, handSlot);
+        NativeMethods.TablePtr->C1.hs_method_efa0c5d7((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)hr.Handle, handSlot, buildDelayScale);
     }
 
     public bool continueDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 playerPos, nint hasDestroyedBlock)

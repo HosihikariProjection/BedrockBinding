@@ -42,9 +42,10 @@ public sealed unsafe partial class SpatialQueryUtility : global::System.IDisposa
     public static bool forEachBlockInAABB(nint region, nint aabb, float grow, nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, Include<CollidableMobFlagComponent>, const AABBShapeComponent>' is not a known bindable declaration.", false)]
-    public static void testForCollidableMobs(nint except, nint fetcher, nint actorAABB, nint intersectTestBox, nint view, nint fallingBlockView, nint collisionShapes) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, Include<CollidableMobFlagComponent>, const AABBShapeComponent>' is not a known bindable declaration.");
+    public static void testForCollidableMobs(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext except, global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher fetcher, global::Hosihikari.Bindings.Bedrock.Interop.AABB actorAABB, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, nint view, nint fallingBlockView, global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes collisionShapes)
+    {
+        NativeMethods.TablePtr->C4.hs_method_7b0ff334((void*)except.Handle, (void*)fetcher.Handle, (void*)actorAABB.Handle, (void*)intersectTestBox.Handle, (void*)view, (void*)fallingBlockView, (void*)collisionShapes.Handle);
+    }
 
     public static void testForEntityStacking(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext except, global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher component, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, nint view, global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes collisionShapes)
     {

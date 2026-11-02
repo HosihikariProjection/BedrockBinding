@@ -86,9 +86,9 @@ public sealed unsafe partial class LegacyTradeableComponent : global::System.IDi
         return new global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacket((nint)NativeMethods.TablePtr->C2.hs_method_89727d6a((void*)__hosihikari_shim_handle, (void*)owner.Handle, containerID));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_72632a80((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_628874a1((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, arg2));
     }
 
     public static bool isUseNewTradeScreen(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)

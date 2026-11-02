@@ -168,6 +168,12 @@ public sealed unsafe partial class ImpactDamageSubcomponent : global::System.IDi
         set => NativeMethods.TablePtr->C2.hs_set_717f232e((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mSpreadFire
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_8210f587((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_8210f587((void*)__hosihikari_shim_handle, value);
+    }
+
     public void writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value component)
     {
         NativeMethods.TablePtr->C2.hs_method_35fa38fe((void*)__hosihikari_shim_handle, (void*)component.Handle);

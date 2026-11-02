@@ -38,6 +38,11 @@ public sealed unsafe partial class MobTravelTeleportedFilterSystem : global::Sys
         return __hs_handle;
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo create()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_928ac11f());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

@@ -383,17 +383,6 @@ public sealed unsafe partial class MangroveRootsBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static MangroveRootsBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.MangroveRootsBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_98322932((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MangroveRootsBlock((nint)handle);
-    }
-
 
     public void Dispose()
     {

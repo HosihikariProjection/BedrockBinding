@@ -38,17 +38,6 @@ public sealed unsafe partial class PoolElementStructureSection : global::System.
         return __hs_handle;
     }
 
-    public static PoolElementStructureSection Create()
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_056cae8e();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PoolElementStructureSection((nint)handle);
-    }
-
     public static PoolElementStructureSection Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.PoolElementStructureSection arg0)
     {
         var handle = NativeMethods.TablePtr->C5.hs_create_e7910799((void*)arg0.Handle);

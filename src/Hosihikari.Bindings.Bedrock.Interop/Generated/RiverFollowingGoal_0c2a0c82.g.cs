@@ -86,6 +86,25 @@ public sealed unsafe partial class RiverFollowingGoal : global::System.IDisposab
         return NativeMethods.TablePtr->C3.hs_method_9ae3d2e6((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, string name, nint goalId, float lookAhead, float speed)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            return (nint)NativeMethods.TablePtr->C3.hs_method_4b9c3ad2((void*)__hosihikari_shim_handle, (void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId, lookAhead, speed);
+        }
+    }
+
     public void _start()
     {
         NativeMethods.TablePtr->C3.hs_method_1b0d7bd1((void*)__hosihikari_shim_handle);
@@ -114,6 +133,31 @@ public sealed unsafe partial class RiverFollowingGoal : global::System.IDisposab
         }
 
         return new RiverFollowingGoal((nint)handle);
+    }
+
+    public static RiverFollowingGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, string name, nint goalId, float lookAhead, float speed)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            var handle = NativeMethods.TablePtr->C3.hs_create_c1811e4e((void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId, lookAhead, speed);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new RiverFollowingGoal((nint)handle);
+        }
     }
 
     public static RiverFollowingGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.RiverFollowingGoal arg0)

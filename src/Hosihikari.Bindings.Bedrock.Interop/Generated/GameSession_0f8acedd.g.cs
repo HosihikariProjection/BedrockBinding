@@ -38,6 +38,11 @@ public sealed unsafe partial class GameSession : global::System.IDisposable
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C1.hs_method_c1803ab4((void*)__hosihikari_shim_handle);
+    }
+
     public static GameSession Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_59ea2a07();
@@ -107,10 +112,9 @@ public sealed unsafe partial class GameSession : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.GameSession((nint)NativeMethods.TablePtr->C1.hs_method_477f681f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void tick()
-    {
-        NativeMethods.TablePtr->C1.hs_method_d4ad186c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::pair<std::unique_ptr<Level>, OwnerPtr<EntityContext>>' is not a known bindable declaration.", false)]
+    public void setLevel(nint levelEntity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::pair<std::unique_ptr<Level>, OwnerPtr<EntityContext>>' is not a known bindable declaration.");
 
 
     public void Dispose()

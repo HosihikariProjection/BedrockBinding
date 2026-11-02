@@ -207,10 +207,6 @@ public sealed unsafe partial class TheEndGenerator : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C4.hs_method_2e00d4b0((void*)__hosihikari_shim_handle));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Util::MultidimensionalArray<float, 3, 3, 33>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint generateDensityCellsForChunk(nint chunkPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Util::MultidimensionalArray<float, 3, 3, 33>' requires --link-carrier or --virtual-dispatch.");
-
     // The native field type is not projected; this is the address of the field storage.
     public nint generatorHelpersPool_Address
     {

@@ -53,6 +53,11 @@ public sealed unsafe partial class BlockPos : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C0.hs_method_62cc45ae(), false);
     }
 
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C0.hs_method_c7f25ca9((void*)ctx.Handle);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 bottomCenter()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C0.hs_method_d2f2d8cb((void*)__hosihikari_shim_handle));
@@ -92,11 +97,6 @@ public sealed unsafe partial class BlockPos : global::System.IDisposable
     {
         var __hs_view = NativeMethods.TablePtr->C0.hs_method_44a7ea4e((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos transform(byte rotation, byte mirror, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pivot)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C0.hs_method_2c30648b((void*)__hosihikari_shim_handle, rotation, mirror, (void*)pivot.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos west()

@@ -505,17 +505,6 @@ public sealed unsafe partial class DoorBlock : global::System.IDisposable
         return new DoorBlock((nint)handle);
     }
 
-    public static DoorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DoorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d587ca3f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DoorBlock((nint)handle);
-    }
-
     public static DoorBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.Material material, int type)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

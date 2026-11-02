@@ -88,6 +88,10 @@ public sealed unsafe partial class ScriptPackConfigurationManager : global::Syst
     public static ScriptPackConfigurationManager Create(nint configDirectory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint getNetModuleConfig(nint packIdentifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' requires --link-carrier or --virtual-dispatch.");
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration getPackConfiguration(string packIdentifier)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(packIdentifier);

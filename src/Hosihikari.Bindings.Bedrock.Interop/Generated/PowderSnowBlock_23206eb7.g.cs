@@ -443,17 +443,6 @@ public sealed unsafe partial class PowderSnowBlock : global::System.IDisposable
         return new PowderSnowBlock((nint)handle);
     }
 
-    public static PowderSnowBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.PowderSnowBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_74ef397e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PowderSnowBlock((nint)handle);
-    }
-
     public static PowderSnowBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.Material material)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
@@ -497,6 +486,11 @@ public sealed unsafe partial class PowderSnowBlock : global::System.IDisposable
     public bool causesFreezeEffect()
     {
         return NativeMethods.TablePtr->C3.hs_method_787d0512((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public static void clearFire(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    {
+        NativeMethods.TablePtr->C3.hs_method_8f2a98ed((void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? entity)

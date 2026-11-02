@@ -53,6 +53,11 @@ public sealed unsafe partial class ReplayStateComponent : global::System.IDispos
         return NativeMethods.TablePtr->C3.hs_method_0c4f2c93((void*)__hosihikari_shim_handle, (void*)actor.Handle, correction?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), frame);
     }
 
+    public void clearHistory()
+    {
+        NativeMethods.TablePtr->C3.hs_method_f8072eef((void*)__hosihikari_shim_handle);
+    }
+
     public ulong mCurrentTick
     {
         get => NativeMethods.TablePtr->C3.hs_get_fd3f84eb((void*)__hosihikari_shim_handle);

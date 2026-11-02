@@ -167,6 +167,11 @@ public sealed unsafe partial class ChunkRecyclerTelemetryData : global::System.I
         get => (nint)NativeMethods.TablePtr->C0.hs_get_7953a89d((void*)__hosihikari_shim_handle);
     }
 
+    public void recordChunkDeleted(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
+    {
+        NativeMethods.TablePtr->C0.hs_method_e3130dd9((void*)__hosihikari_shim_handle, (void*)lc.Handle);
+    }
+
     public void startLevel(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
         NativeMethods.TablePtr->C0.hs_method_df66e6ed((void*)__hosihikari_shim_handle, (void*)level.Handle);

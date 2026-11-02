@@ -389,25 +389,6 @@ public sealed unsafe partial class SculkSensorBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_819cd356((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, arg2) != 0;
     }
 
-    public nint _ctor(string nameId, int id, byte type, int activeTicks)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_7845e993((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id, type, activeTicks);
-        }
-    }
-
     public int _getComparatorSignal(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte dir)
     {
         return NativeMethods.TablePtr->C3.hs_method_e81a7814((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, dir);
@@ -442,6 +423,11 @@ public sealed unsafe partial class SculkSensorBlock : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_3b974182((void*)__hosihikari_shim_handle, (void*)entityContext.Handle, (void*)pos.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_5bf736c6((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C3.hs_method_f03e5414((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -455,53 +441,6 @@ public sealed unsafe partial class SculkSensorBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static SculkSensorBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2b788b5c();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SculkSensorBlock((nint)handle);
-    }
-
-    public static SculkSensorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkSensorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_927c45e3((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SculkSensorBlock((nint)handle);
-    }
-
-    public static SculkSensorBlock Create(string nameId, int id, byte type, int activeTicks)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C3.hs_create_0971922e(__hs_stringData0, (nuint)__hs_stringByteCount0, id, type, activeTicks);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new SculkSensorBlock((nint)handle);
-        }
-    }
 
     public void animateTickBedrockLegacy(nint tickData)
     {
@@ -566,6 +505,11 @@ public sealed unsafe partial class SculkSensorBlock : global::System.IDisposable
     public void onStandOn(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C3.hs_method_bf72cd04((void*)__hosihikari_shim_handle, (void*)entityContext.Handle, (void*)pos.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_3456b98e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public static void setActivePhase(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor? source, int redstoneStrength, int vibrationFrequency)

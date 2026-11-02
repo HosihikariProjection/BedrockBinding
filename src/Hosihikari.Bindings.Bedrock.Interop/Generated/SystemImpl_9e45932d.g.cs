@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.UpdateBoundingBox;
 
-public sealed unsafe partial class SystemImpl
+public sealed unsafe partial class SystemImpl : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -52,9 +52,26 @@ public sealed unsafe partial class SystemImpl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    public static SystemImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateBoundingBox.SystemImpl arg0)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_2a90546a((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new SystemImpl((nint)handle);
+    }
+
     public bool mIsClientSide
     {
         get => NativeMethods.TablePtr->C4.hs_get_7ce0b5ef((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mParams_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_980f2d0a((void*)__hosihikari_shim_handle);
     }
 
     public float mSneakHeight
@@ -70,5 +87,19 @@ public sealed unsafe partial class SystemImpl
     public void tick(nint executionContext)
     {
         NativeMethods.TablePtr->C4.hs_method_800e1519((void*)__hosihikari_shim_handle, (void*)executionContext);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_9e45932d((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

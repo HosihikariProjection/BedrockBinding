@@ -413,17 +413,6 @@ public sealed unsafe partial class GrindstoneBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static GrindstoneBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.GrindstoneBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c592ba6f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GrindstoneBlock((nint)handle);
-    }
-
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte face, int type)
     {
         return NativeMethods.TablePtr->C1.hs_method_9d559c94((void*)__hosihikari_shim_handle, (void*)block.Handle, face, type) != 0;

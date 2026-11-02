@@ -102,6 +102,11 @@ public sealed unsafe partial class NetworkItemStackDescriptor : global::System.I
         return new NetworkItemStackDescriptor((nint)handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItemStack(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_0b991daa((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle));
+    }
+
     public uint mBlockRuntimeId
     {
         get => NativeMethods.TablePtr->C2.hs_get_20832048((void*)__hosihikari_shim_handle);

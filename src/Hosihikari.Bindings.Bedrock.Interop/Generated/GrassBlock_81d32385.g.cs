@@ -423,17 +423,6 @@ public sealed unsafe partial class GrassBlock : global::System.IDisposable
         return new GrassBlock((nint)handle);
     }
 
-    public static GrassBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.GrassBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ba7c1e6c((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GrassBlock((nint)handle);
-    }
-
     public static GrassBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

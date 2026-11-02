@@ -38,10 +38,6 @@ public sealed unsafe partial class SavedDataStorage : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static SavedDataStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.SavedDataStorage arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3cb9fa84((void*)arg0.Handle);
@@ -51,11 +47,6 @@ public sealed unsafe partial class SavedDataStorage : global::System.IDisposable
         }
 
         return new SavedDataStorage((nint)handle);
-    }
-
-    public void _save(global::Hosihikari.Bindings.Bedrock.Interop.SavedData data)
-    {
-        NativeMethods.TablePtr->C3.hs_method_8259c693((void*)__hosihikari_shim_handle, (void*)data.Handle);
     }
 
     public nint levelStorage

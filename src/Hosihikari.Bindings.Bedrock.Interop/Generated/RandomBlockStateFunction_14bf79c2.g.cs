@@ -44,6 +44,11 @@ public sealed unsafe partial class RandomBlockStateFunction : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_e792a760((void*)__hosihikari_shim_handle);
     }
 
+    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C3.hs_method_34b0f3fd((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
         NativeMethods.TablePtr->C3.hs_method_2a56c441((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
@@ -52,6 +57,21 @@ public sealed unsafe partial class RandomBlockStateFunction : global::System.IDi
     public int _getFunctionType()
     {
         return NativeMethods.TablePtr->C3.hs_method_ca6ccd40((void*)__hosihikari_shim_handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static RandomBlockStateFunction Create()
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_1bd06a3f();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new RandomBlockStateFunction((nint)handle);
     }
 
     public static RandomBlockStateFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomBlockStateFunction arg0)
@@ -63,6 +83,16 @@ public sealed unsafe partial class RandomBlockStateFunction : global::System.IDi
         }
 
         return new RandomBlockStateFunction((nint)handle);
+    }
+
+    public void _internalApply(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion jsonVersion)
+    {
+        NativeMethods.TablePtr->C3.hs_method_4d5f402e((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle, (void*)jsonVersion.Handle);
+    }
+
+    public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C3.hs_method_8aa6277e((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)

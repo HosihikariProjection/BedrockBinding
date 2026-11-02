@@ -449,17 +449,6 @@ public sealed unsafe partial class PistonArmBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static PistonArmBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.PistonArmBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ddac283b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PistonArmBlock((nint)handle);
-    }
-
     public void _addHardCodedBlockComponents(global::Hosihikari.Bindings.Bedrock.Interop.Experiments arg0)
     {
         NativeMethods.TablePtr->C3.hs_method_e15775cd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);

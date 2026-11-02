@@ -44,11 +44,6 @@ public sealed unsafe partial class DamageItemComponent : global::System.IDisposa
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_67cdee3d((void*)ctx.Handle);
-    }
-
     public short mDamage
     {
         get => NativeMethods.TablePtr->C4.hs_get_1f6f6b5e((void*)__hosihikari_shim_handle);

@@ -51,6 +51,12 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a555b8fc((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_e3b5c732((void*)__hosihikari_shim_handle);
@@ -155,6 +161,11 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
     public nint _ctor(byte blockActorType, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.HashedString recipeTag, uint smeltSound, sbyte containerType, int burnInterval, global::Hosihikari.Bindings.Bedrock.Interop.Block unlitFurnace, global::Hosihikari.Bindings.Bedrock.Interop.Block litFurnace)
     {
         return (nint)NativeMethods.TablePtr->C1.hs_method_15274579((void*)__hosihikari_shim_handle, blockActorType, (void*)pos.Handle, (void*)recipeTag.Handle, smeltSound, containerType, burnInterval, (void*)unlitFurnace.Handle, (void*)litFurnace.Handle);
+    }
+
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_6d87ee61((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
     public void _dtor()
@@ -325,6 +336,17 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
         return new FurnaceBlockActor((nint)handle);
     }
 
+    public static FurnaceBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_70788e2a((void*)pos.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new FurnaceBlockActor((nint)handle);
+    }
+
     public static FurnaceBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceBlockActor arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_08a0ff58((void*)arg0.Handle);
@@ -395,11 +417,6 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_a0507afa((void*)__hosihikari_shim_handle, slot, face, (void*)item.Handle) != 0;
     }
 
-    public void checkForAlternativeFuelAchievement(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
-    {
-        NativeMethods.TablePtr->C1.hs_method_99fb7f7d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)item.Handle);
-    }
-
     public void checkForSmeltEverythingAchievement(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         NativeMethods.TablePtr->C1.hs_method_cddcfa13((void*)__hosihikari_shim_handle, (void*)region.Handle);
@@ -413,11 +430,6 @@ public sealed unsafe partial class FurnaceBlockActor : global::System.IDisposabl
     public static int getAvailableFuelSetCount(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
         return NativeMethods.TablePtr->C1.hs_method_41ba274c(slot, (void*)item.Handle);
-    }
-
-    public static float getBurnDuration(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase itemInstance, float burnInterval)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_deb22913((void*)itemInstance.Handle, burnInterval);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? getContainer_790b19a8()

@@ -692,10 +692,10 @@ public sealed unsafe partial class Pufferfish : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_fc2b1ab7((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C3.hs_get_fbe87aba((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_fbe87aba((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_23539c34((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

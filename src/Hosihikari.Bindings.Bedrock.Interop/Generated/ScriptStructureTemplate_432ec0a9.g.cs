@@ -124,12 +124,6 @@ public sealed unsafe partial class ScriptStructureTemplate : global::System.IDis
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate? getStructureTemplate()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9be0aa07((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)__hs_handle, false) : null;
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mId_Address
     {

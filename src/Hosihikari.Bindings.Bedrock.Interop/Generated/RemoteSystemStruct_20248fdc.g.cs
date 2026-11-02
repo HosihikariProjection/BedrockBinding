@@ -55,6 +55,12 @@ public sealed unsafe partial class RemoteSystemStruct : global::System.IDisposab
         return new RemoteSystemStruct((nint)handle);
     }
 
+    public bool addressVerified
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_670a7efd((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_670a7efd((void*)__hosihikari_shim_handle, value);
+    }
+
     public bool applicationHandshakeCompleted
     {
         get => NativeMethods.TablePtr->C3.hs_get_4a9a190d((void*)__hosihikari_shim_handle) != 0;

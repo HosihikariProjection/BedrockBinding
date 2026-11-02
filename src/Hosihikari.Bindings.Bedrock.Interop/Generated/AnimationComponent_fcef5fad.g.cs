@@ -43,10 +43,6 @@ public sealed unsafe partial class AnimationComponent : global::System.IDisposab
         return NativeMethods.TablePtr->C0.hs_method_b8ee5474((void*)__hosihikari_shim_handle, (void*)data);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint args) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
-
     public void _ensureClientAnimationComponentIsInitialized()
     {
         NativeMethods.TablePtr->C0.hs_method_2f98a74c((void*)__hosihikari_shim_handle);
@@ -106,10 +102,6 @@ public sealed unsafe partial class AnimationComponent : global::System.IDisposab
 
         return new AnimationComponent((nint)handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static AnimationComponent Create(nint args) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public static AnimationComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent arg0)
     {

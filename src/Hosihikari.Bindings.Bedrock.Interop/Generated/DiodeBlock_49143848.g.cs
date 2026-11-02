@@ -444,17 +444,6 @@ public sealed unsafe partial class DiodeBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_25e8e807((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
-    public static DiodeBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DiodeBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_be7d5aba((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DiodeBlock((nint)handle);
-    }
-
     public bool canSpawnOn(global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg0)
     {
         return NativeMethods.TablePtr->C1.hs_method_6ee5c36e((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0)) != 0;

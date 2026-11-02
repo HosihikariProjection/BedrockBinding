@@ -423,17 +423,6 @@ public sealed unsafe partial class FireBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static FireBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FireBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d64edf59((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FireBlock((nint)handle);
-    }
-
     public static bool _trySpawnSoulFire(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return NativeMethods.TablePtr->C1.hs_method_404062bf((void*)region.Handle, (void*)pos.Handle) != 0;
@@ -463,6 +452,10 @@ public sealed unsafe partial class FireBlock : global::System.IDisposable
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C1.hs_method_82a9d500((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'NeighborBlockDirections' is not a known bindable declaration.", false)]
+    public static nint getConnectedBlock(nint region, nint block, nint pos, nint directionsToCheck) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'NeighborBlockDirections' is not a known bindable declaration.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB getOutline(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.AABB bufferValue)
     {

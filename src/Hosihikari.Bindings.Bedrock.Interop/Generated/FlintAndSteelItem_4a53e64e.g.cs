@@ -40,7 +40,7 @@ public sealed unsafe partial class FlintAndSteelItem : global::System.IDisposabl
 
     public bool __calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_2b3ac535((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_9977e20f((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult __useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
@@ -74,7 +74,7 @@ public sealed unsafe partial class FlintAndSteelItem : global::System.IDisposabl
 
     public bool _calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_a4be37c0((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_c1499901((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)

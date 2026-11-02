@@ -54,10 +54,6 @@ public sealed unsafe partial class OceanRuinPieces : global::System.IDisposable
     public static nint bigRuinsMossy() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.", false)]
-    public static nint bigWarmRuins() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.");
-
     [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.", false)]
     public static nint ruinsBrick() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.");
@@ -70,17 +66,13 @@ public sealed unsafe partial class OceanRuinPieces : global::System.IDisposable
     public static nint ruinsMossy() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[8]' is not supported.", false)]
-    public static nint warmRuins() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[8]' is not supported.");
-
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_b003c700((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b003c700((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -69,6 +69,11 @@ public sealed unsafe partial class RenderOffsetsItemComponent : global::System.I
         return new RenderOffsetsItemComponent((nint)handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Matrix _getDisplayTransform(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.ItemTransforms mainHand, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.ItemTransforms offhand, uint type)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)NativeMethods.TablePtr->C3.hs_method_9de73c5d((void*)mainHand.Handle, (void*)offhand.Handle, type));
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");

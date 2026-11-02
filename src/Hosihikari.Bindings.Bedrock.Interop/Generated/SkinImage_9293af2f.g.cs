@@ -49,11 +49,6 @@ public sealed unsafe partial class SkinImage : global::System.IDisposable
         return new SkinImage((nint)handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SkinImage rhs)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_8b75d4c3((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
-    }
-
 
     public uint imageFormat
     {

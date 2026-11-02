@@ -66,6 +66,12 @@ public sealed unsafe partial class Components : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mCloudsComponent_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d5f3dc03((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultBiomeComponent_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_1b316a65((void*)__hosihikari_shim_handle);

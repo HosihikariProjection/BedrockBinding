@@ -38,10 +38,6 @@ public sealed unsafe partial class UserStorageChecker : global::System.IDisposab
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public nint _ctor(nint taskGroup, nint fileStorageFetcher) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
     public static UserStorageChecker Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_5e3e8fc4();
@@ -64,10 +60,6 @@ public sealed unsafe partial class UserStorageChecker : global::System.IDisposab
         return new UserStorageChecker((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public static UserStorageChecker Create(nint taskGroup, nint fileStorageFetcher) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6cf0ff_Address
     {
@@ -83,11 +75,6 @@ public sealed unsafe partial class UserStorageChecker : global::System.IDisposab
     public global::Hosihikari.Bindings.Bedrock.Interop.UserStorageChecker operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.UserStorageChecker arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.UserStorageChecker((nint)NativeMethods.TablePtr->C4.hs_method_0532129f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
-
-    public void queueCheckUserStorage(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView storagePath)
-    {
-        NativeMethods.TablePtr->C4.hs_method_838be40f((void*)__hosihikari_shim_handle, (void*)storagePath.Handle);
     }
 
     public void Dispose()

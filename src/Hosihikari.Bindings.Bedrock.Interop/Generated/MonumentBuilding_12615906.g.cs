@@ -38,11 +38,6 @@ public sealed unsafe partial class MonumentBuilding : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Random random, short seaLevel, int west, int north, nint orientation)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_3a5d0635((void*)__hosihikari_shim_handle, (void*)random.Handle, seaLevel, west, north, (void*)orientation);
-    }
-
     public int _getType()
     {
         return NativeMethods.TablePtr->C2.hs_method_7eca6784((void*)__hosihikari_shim_handle);
@@ -56,28 +51,6 @@ public sealed unsafe partial class MonumentBuilding : global::System.IDisposable
     public void _postProcessMobsAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
         NativeMethods.TablePtr->C2.hs_method_efc94d10((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle);
-    }
-
-    public static MonumentBuilding Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5c7c0616();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MonumentBuilding((nint)handle);
-    }
-
-    public static MonumentBuilding Create(global::Hosihikari.Bindings.Bedrock.Interop.Random random, short seaLevel, int west, int north, nint orientation)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_bc2ee258((void*)random.Handle, seaLevel, west, north, (void*)orientation);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MonumentBuilding((nint)handle);
     }
 
     public static MonumentBuilding Create(global::Hosihikari.Bindings.Bedrock.Interop.MonumentBuilding arg0)

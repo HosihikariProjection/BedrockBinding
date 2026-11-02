@@ -60,6 +60,11 @@ public sealed unsafe partial class MarkVariantDefinition : global::System.IDispo
         return new MarkVariantDefinition((nint)handle);
     }
 
+    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
+    {
+        NativeMethods.TablePtr->C2.hs_method_1c615cd7(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk83dc2e_Address
     {

@@ -102,9 +102,36 @@ public sealed unsafe partial class PlayerUIContainerModel : global::System.IDisp
         return NativeMethods.TablePtr->C3.hs_method_1bbda0a0((void*)__hosihikari_shim_handle);
     }
 
+    public nint _ctor(byte containerName, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_db2756d2((void*)__hosihikari_shim_handle, containerName, (void*)player.Handle);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static PlayerUIContainerModel Create()
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_1b62dd2f();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PlayerUIContainerModel((nint)handle);
+    }
+
+    public static PlayerUIContainerModel Create(byte containerName, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_35d791a9(containerName, (void*)player.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PlayerUIContainerModel((nint)handle);
+    }
 
     public static PlayerUIContainerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerUIContainerModel arg0)
     {
@@ -117,9 +144,19 @@ public sealed unsafe partial class PlayerUIContainerModel : global::System.IDisp
         return new PlayerUIContainerModel((nint)handle);
     }
 
+    public static int _getContainerCategory(byte containerName)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_76fbb753(containerName);
+    }
+
     public int _getContainerOffset()
     {
         return NativeMethods.TablePtr->C3.hs_method_24a1868f((void*)__hosihikari_shim_handle);
+    }
+
+    public static int _getContainerSize(byte containerName)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_32862116(containerName);
     }
 
 

@@ -213,9 +213,34 @@ public sealed unsafe partial class OverworldBiomeBuilder : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_63389e62(), false);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter dripstoneCavesHumidity()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_d652542e(), false);
+    }
+
     public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter farInlandContinentalness()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_00bec9a5(), false);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter iceCavesContinentalness()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_b40a4a77(), false);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter iceCavesHumidity()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_052a49d6(), false);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter iceCavesTemperature()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_6dc385ae(), false);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter iceCavesWeirdness()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_b039c18a(), false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter inlandContinentalness()
@@ -273,6 +298,11 @@ public sealed unsafe partial class OverworldBiomeBuilder : global::System.IDispo
     public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter sulfurCavesErosion()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_a58b6128(), false);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter sulfurCavesHumidity()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter((nint)NativeMethods.TablePtr->C3.hs_method_9c647039(), false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.Parameter sulfurCavesWeirdness()

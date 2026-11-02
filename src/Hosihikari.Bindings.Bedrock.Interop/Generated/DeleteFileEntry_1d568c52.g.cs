@@ -38,9 +38,25 @@ public sealed unsafe partial class DeleteFileEntry : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ fileName, bool wasRename)
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_088fc06f((void*)__hosihikari_shim_handle, (void*)fileName.Handle, wasRename);
+    }
+
     public static DeleteFileEntry Create()
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_726792d7();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new DeleteFileEntry((nint)handle);
+    }
+
+    public static DeleteFileEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ fileName, bool wasRename)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_7329b862((void*)fileName.Handle, wasRename);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

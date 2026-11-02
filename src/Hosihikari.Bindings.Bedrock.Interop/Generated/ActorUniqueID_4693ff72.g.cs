@@ -63,6 +63,12 @@ public sealed unsafe partial class ActorUniqueID : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_88a5f77d((void*)__hosihikari_shim_handle, value);
     }
 
+    public string toString()
+    {
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_e7231f01((void*)__hosihikari_shim_handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

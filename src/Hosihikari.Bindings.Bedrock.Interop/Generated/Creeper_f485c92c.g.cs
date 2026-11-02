@@ -744,10 +744,10 @@ public sealed unsafe partial class Creeper : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_cef16073((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C1.hs_get_fdfaee63((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_fdfaee63((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_733007da((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

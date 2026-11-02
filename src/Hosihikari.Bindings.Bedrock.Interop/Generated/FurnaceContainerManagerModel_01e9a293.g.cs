@@ -235,10 +235,6 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_d6f670ae((void*)__hosihikari_shim_handle, slot), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemInstance' is not supported.", false)]
-    public nint getUnlockedRecipeIngredientsForResult(nint item) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemInstance' is not supported.");
-
     public bool isValid(float pickRange)
     {
         return NativeMethods.TablePtr->C1.hs_method_d0fe3bd1((void*)__hosihikari_shim_handle, pickRange) != 0;
@@ -344,18 +340,9 @@ public sealed unsafe partial class FurnaceContainerManagerModel : global::System
         set => NativeMethods.TablePtr->C1.hs_set_a431348e((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'IngredientSearchInfo' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint searchIngredientInContainers(nint itemInstance, nint containers) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'IngredientSearchInfo' requires --link-carrier or --virtual-dispatch.");
-
     public void setData(int id, int value)
     {
         NativeMethods.TablePtr->C1.hs_method_59e13840((void*)__hosihikari_shim_handle, id, value);
-    }
-
-    public void setIsFiltering(bool smeltableFilterOn)
-    {
-        NativeMethods.TablePtr->C1.hs_method_74b34b69((void*)__hosihikari_shim_handle, smeltableFilterOn);
     }
 
     public void setSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool fromNetwork)

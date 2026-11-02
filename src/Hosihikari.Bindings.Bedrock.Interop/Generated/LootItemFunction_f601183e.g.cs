@@ -38,19 +38,24 @@ public sealed unsafe partial class LootItemFunction : global::System.IDisposable
         return __hs_handle;
     }
 
-    public int _apply26U5(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context, global::Hosihikari.Bindings.Bedrock.Interop.Trade trade)
+    public int _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context, global::Hosihikari.Bindings.Bedrock.Interop.Trade trade)
     {
-        return NativeMethods.TablePtr->C2.hs_method_1570ef37((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle, (void*)trade.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_1fbe94d8((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle, (void*)trade.Handle);
     }
 
-    public void _apply26U5(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C2.hs_method_0a6e41d3((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C2.hs_method_3583d7ab((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public int _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context, global::Hosihikari.Bindings.Bedrock.Interop.Trade arg3)
     {
         return NativeMethods.TablePtr->C2.hs_method_172aa4dc((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle, (void*)arg3.Handle);
+    }
+
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C2.hs_method_355ee703((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -73,14 +78,14 @@ public sealed unsafe partial class LootItemFunction : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_b7f418d3((void*)__hosihikari_shim_handle, (void*)arguments.Handle);
     }
 
-    public int apply26U5(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context, global::Hosihikari.Bindings.Bedrock.Interop.Trade trade)
+    public int apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context, global::Hosihikari.Bindings.Bedrock.Interop.Trade trade)
     {
-        return NativeMethods.TablePtr->C2.hs_method_787dd522((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle, (void*)trade.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_fecfdaf2((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle, (void*)trade.Handle);
     }
 
-    public void apply26U5(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C2.hs_method_8a3677db((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C2.hs_method_60c49aba((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public int applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context, global::Hosihikari.Bindings.Bedrock.Interop.Trade arg3)

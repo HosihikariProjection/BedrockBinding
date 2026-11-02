@@ -444,17 +444,6 @@ public sealed unsafe partial class WallBlock : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C4.hs_method_b7b8cf36(), false);
     }
 
-    public static WallBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.WallBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_09cb7c84((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new WallBlock((nint)handle);
-    }
-
     public int _desiredConnectionState(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte neighbor)
     {
         return NativeMethods.TablePtr->C4.hs_method_a3fa3e42((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, neighbor);

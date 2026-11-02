@@ -87,11 +87,6 @@ public sealed unsafe partial class RecordItemComponent : global::System.IDisposa
     public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString getIdentifier()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_f1d264f7(), false);
-    }
-
     public string getRecordDescription()
     {
         var __hs_view = NativeMethods.TablePtr->C3.hs_method_253edddc((void*)__hosihikari_shim_handle);

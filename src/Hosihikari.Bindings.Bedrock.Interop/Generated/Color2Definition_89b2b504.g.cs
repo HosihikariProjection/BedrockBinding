@@ -49,6 +49,11 @@ public sealed unsafe partial class Color2Definition : global::System.IDisposable
         return new Color2Definition((nint)handle);
     }
 
+    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
+    {
+        NativeMethods.TablePtr->C1.hs_method_81c1cdcc(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb1b293_Address
     {

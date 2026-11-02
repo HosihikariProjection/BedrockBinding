@@ -393,17 +393,6 @@ public sealed unsafe partial class MobSpawnerBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static MobSpawnerBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnerBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2ca3f61e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MobSpawnerBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB getCollisionShape(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? arg3)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C2.hs_method_4720b523((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));

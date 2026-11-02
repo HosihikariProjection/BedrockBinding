@@ -82,17 +82,6 @@ public sealed unsafe partial class BarrelBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static BarrelBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BarrelBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_2e59fbaf((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BarrelBlock((nint)handle);
-    }
-
     public int getComparatorSignal(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte dir)
     {
         return NativeMethods.TablePtr->C0.hs_method_1f67ca5f((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, dir);

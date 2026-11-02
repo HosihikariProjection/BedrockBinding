@@ -599,6 +599,11 @@ public sealed unsafe partial class GlowSquid : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C1.hs_method_7dd82ed7((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_52c7c307((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+    }
+
     public void _handleEntityEvent(byte id, int data)
     {
         NativeMethods.TablePtr->C1.hs_method_2f4c8581((void*)__hosihikari_shim_handle, id, data);
@@ -612,6 +617,28 @@ public sealed unsafe partial class GlowSquid : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static GlowSquid Create()
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_756463b6();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new GlowSquid((nint)handle);
+    }
+
+    public static GlowSquid Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_ff1b8a8c((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new GlowSquid((nint)handle);
+    }
 
     public uint _getInkSquirtSoundEvent()
     {
@@ -759,10 +786,10 @@ public sealed unsafe partial class GlowSquid : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_706e44e8((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C1.hs_get_bc79bdd4((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_bc79bdd4((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_cbc78f91((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

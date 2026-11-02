@@ -38,6 +38,11 @@ public sealed unsafe partial class CompoundTagUpdaterNodeBuilder : global::Syste
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C1.hs_method_b542cc89((void*)__hosihikari_shim_handle);
+    }
+
     public static CompoundTagUpdaterNodeBuilder Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_e6bcfbfc();
@@ -60,13 +65,44 @@ public sealed unsafe partial class CompoundTagUpdaterNodeBuilder : global::Syste
         return new CompoundTagUpdaterNodeBuilder((nint)handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder _addChildNode()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder((nint)NativeMethods.TablePtr->C1.hs_method_5c7ffed7((void*)__hosihikari_shim_handle));
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint edit(nint tagName, nint update) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void fork(ulong size, nint function) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+    public bool mEditsName
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_b797c4f8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_b797c4f8((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mInsert_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f00dcd33((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mIsNameLiteral
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_26ad65b1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_26ad65b1((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mName_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_dd673305((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUpdater_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7fc20099((void*)__hosihikari_shim_handle);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUpdaterNode_Address
@@ -243,6 +279,7 @@ public sealed unsafe partial class CompoundTagUpdaterNodeBuilder : global::Syste
             return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder((nint)NativeMethods.TablePtr->C1.hs_method_c8fdacff((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
+
 
     public void Dispose()
     {

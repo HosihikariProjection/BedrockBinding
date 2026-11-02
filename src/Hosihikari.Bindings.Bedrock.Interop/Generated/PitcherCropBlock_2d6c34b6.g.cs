@@ -473,17 +473,6 @@ public sealed unsafe partial class PitcherCropBlock : global::System.IDisposable
         return new PitcherCropBlock((nint)handle);
     }
 
-    public static PitcherCropBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.PitcherCropBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8d2a256d((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PitcherCropBlock((nint)handle);
-    }
-
     public static PitcherCropBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

@@ -66,11 +66,7 @@ public sealed unsafe partial class LayeredAbilities : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void forEachAbility_4f505b7f(nint callback, nint requiredOptions) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public void forEachAbility_85e9bfaf(nint callback, nint requiredOptions) =>
+    public void forEachAbility(nint callback, nint requiredOptions) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

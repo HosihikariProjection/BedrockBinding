@@ -400,25 +400,6 @@ public sealed unsafe partial class FrogSpawnBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_df57893a((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
     }
 
-    public nint _ctor(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_b9dcad6a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
-        }
-    }
-
     public void _entityInside(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
     {
         NativeMethods.TablePtr->C1.hs_method_96d502ab((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle);
@@ -448,53 +429,6 @@ public sealed unsafe partial class FrogSpawnBlock : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static FrogSpawnBlock Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_02bd6189();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FrogSpawnBlock((nint)handle);
-    }
-
-    public static FrogSpawnBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FrogSpawnBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_071ddffe((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FrogSpawnBlock((nint)handle);
-    }
-
-    public static FrogSpawnBlock Create(string nameId, int id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C1.hs_create_335d6f4b(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new FrogSpawnBlock((nint)handle);
-        }
-    }
 
     public string buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0)
     {

@@ -43,14 +43,23 @@ public sealed unsafe partial class ChemistryItem : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_ab797a9f((void*)__hosihikari_shim_handle, (void*)stack.Handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public void fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
     {
         NativeMethods.TablePtr->C0.hs_method_2b5fc14a((void*)__hosihikari_shim_handle, (void*)stack.Handle);
     }
 
-    public static void validate(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
+    public bool mIsChemistryEnabled
     {
-        NativeMethods.TablePtr->C0.hs_method_27ab42c2((void*)stack.Handle);
+        get => NativeMethods.TablePtr->C0.hs_get_0dc7bd1f((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public static void validate(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack, bool isChemistryEnabled)
+    {
+        NativeMethods.TablePtr->C0.hs_method_e5957de0((void*)stack.Handle, isChemistryEnabled);
     }
 
 

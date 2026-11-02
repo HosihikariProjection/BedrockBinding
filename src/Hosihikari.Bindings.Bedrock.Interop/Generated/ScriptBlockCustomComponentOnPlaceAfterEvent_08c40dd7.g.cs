@@ -38,36 +38,9 @@ public sealed unsafe partial class ScriptBlockCustomComponentOnPlaceAfterEvent :
         return __hs_handle;
     }
 
-    public nint _ctor(nint eventData, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_f901ee42((void*)__hosihikari_shim_handle, (void*)eventData, (void*)scope.Handle);
-    }
-
-    public static ScriptBlockCustomComponentOnPlaceAfterEvent Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_337e2d7f();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptBlockCustomComponentOnPlaceAfterEvent((nint)handle);
-    }
-
     public static ScriptBlockCustomComponentOnPlaceAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentOnPlaceAfterEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_75222774((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptBlockCustomComponentOnPlaceAfterEvent((nint)handle);
-    }
-
-    public static ScriptBlockCustomComponentOnPlaceAfterEvent Create(nint eventData, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_454e1e08((void*)eventData, (void*)scope.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

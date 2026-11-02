@@ -43,6 +43,11 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
         return (nint)NativeMethods.TablePtr->C2.hs_method_e7d8d443((void*)__hosihikari_shim_handle, id, (void*)duration.Handle);
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C2.hs_method_d4d2d9c8((void*)__hosihikari_shim_handle);
+    }
+
     public static MobEffectInstance Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8ccac967();
@@ -145,6 +150,12 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEffects_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9b733efa((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mFactorCalculationData_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ca70ff10((void*)__hosihikari_shim_handle);
@@ -168,6 +179,15 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
         set => NativeMethods.TablePtr->C2.hs_set_02a28618((void*)__hosihikari_shim_handle, value);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance((nint)NativeMethods.TablePtr->C2.hs_method_46626e80((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
     public nint save() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
@@ -175,6 +195,16 @@ public sealed unsafe partial class MobEffectInstance : global::System.IDisposabl
     public static nint splashDurationMultiplier()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_37118c3d();
+    }
+
+    public bool tick()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_5705d41b((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public void update(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance takeOver)
+    {
+        NativeMethods.TablePtr->C2.hs_method_cab2d2e8((void*)__hosihikari_shim_handle, (void*)takeOver.Handle);
     }
 
     public void updateEffects(global::Hosihikari.Bindings.Bedrock.Interop.Actor mob)

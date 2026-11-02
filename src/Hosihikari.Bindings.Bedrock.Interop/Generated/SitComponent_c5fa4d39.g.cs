@@ -38,9 +38,9 @@ public sealed unsafe partial class SitComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_db1ad595((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_6e0e6657((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle, arg2));
     }
 
     public void Dispose()

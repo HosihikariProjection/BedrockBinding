@@ -47,17 +47,6 @@ public sealed unsafe partial class BeaconBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static BeaconBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BeaconBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_d0515b8d((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BeaconBlock((nint)handle);
-    }
-
     public bool isInteractiveBlock()
     {
         return NativeMethods.TablePtr->C0.hs_method_ca0c8a9a((void*)__hosihikari_shim_handle) != 0;

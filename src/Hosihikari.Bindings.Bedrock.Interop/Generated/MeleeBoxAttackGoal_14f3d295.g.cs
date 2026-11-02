@@ -80,6 +80,12 @@ public sealed unsafe partial class MeleeBoxAttackGoal : global::System.IDisposab
         set => NativeMethods.TablePtr->C2.hs_set_2d7e6ad9((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mCheckTargetInsideAABB
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_ac59b585((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_ac59b585((void*)__hosihikari_shim_handle, value);
+    }
+
     public int mCooldownTicks
     {
         get => NativeMethods.TablePtr->C2.hs_get_590c64b7((void*)__hosihikari_shim_handle);

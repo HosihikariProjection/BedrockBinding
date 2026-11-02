@@ -124,11 +124,6 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
     public nint thenWaitAfter(int tickDelay, nint fn) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::optional<gametest::GameTestError>' is not supported.");
 
-    public bool tickAndFailIfNotComplete(int currentTick)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_b6553adb((void*)__hosihikari_shim_handle, currentTick) != 0;
-    }
-
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

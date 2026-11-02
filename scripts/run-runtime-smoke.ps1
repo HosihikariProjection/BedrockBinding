@@ -18,7 +18,13 @@ if (-not (Test-Path $ServerExecutable)) {
 }
 
 dotnet build (Join-Path $RepoRoot "Hosihikari.Bindings.Bedrock.slnx") -c Release --nologo -v:q
+if ($LASTEXITCODE -ne 0) {
+    throw "dotnet build failed with exit code $LASTEXITCODE."
+}
 & (Join-Path $RepoRoot "native\BindingShim\build.ps1") -Configuration $Configuration -Output (Join-Path $Output "Hosihikari.Bindings.Bedrock.Shim.dll")
+if ($LASTEXITCODE -ne 0) {
+    throw "the shim build failed with exit code $LASTEXITCODE."
+}
 
 $InteropDll = Join-Path $RepoRoot "src\Hosihikari.Bindings.Bedrock.Interop\bin\Release\net10.0\Hosihikari.Bindings.Bedrock.Interop.dll"
 $AbiDll = Join-Path (Split-Path $InteropDll -Parent) "Hosihikari.Bindings.Abi.dll"

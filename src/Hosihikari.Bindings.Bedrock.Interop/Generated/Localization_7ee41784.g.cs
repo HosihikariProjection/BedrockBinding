@@ -166,6 +166,66 @@ public sealed unsafe partial class Localization : global::System.IDisposable
         }
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.OptionalString _get(string id, string[] @params)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(id);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(id, __hs_stringBytes0);
+        var __hs_vectorItems1 = @params ?? global::System.Array.Empty<string>();
+        var __hs_vectorCount1 = __hs_vectorItems1.Length;
+        var __hs_vectorByteTotal1 = 0;
+        for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++) { __hs_vectorByteTotal1 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems1[__hs_i1] ?? string.Empty); }
+        scoped global::System.Span<byte> __hs_vectorArena1;
+        if (__hs_vectorByteTotal1 <= 1024) { __hs_vectorArena1 = stackalloc byte[__hs_vectorByteTotal1 == 0 ? 1 : __hs_vectorByteTotal1]; } else { __hs_vectorArena1 = new byte[__hs_vectorByteTotal1]; }
+        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews1;
+        if (__hs_vectorCount1 <= 64) { __hs_vectorViews1 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1 == 0 ? 1 : __hs_vectorCount1]; } else { __hs_vectorViews1 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1]; }
+        fixed (byte* __hs_vectorArenaPtr1 = __hs_vectorArena1)
+        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData1 = __hs_vectorViews1)
+        {
+            var __hs_vectorOffset1 = 0;
+            for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++)
+            {
+                var __hs_item1 = __hs_vectorItems1[__hs_i1] ?? string.Empty;
+                var __hs_length1 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item1);
+                global::System.Text.Encoding.UTF8.GetBytes(__hs_item1, __hs_vectorArena1.Slice(__hs_vectorOffset1, __hs_length1));
+                __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
+                __hs_vectorOffset1 += __hs_length1;
+            }
+            fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+            {
+                return new global::Hosihikari.Bindings.Bedrock.Interop.OptionalString((nint)NativeMethods.TablePtr->C2.hs_method_1aadf153((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_vectorData1, (nuint)(@params?.Length ?? 0)));
+            }
+        }
+    }
+
+    public static string _getDigitGroupSeparator(string langCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(langCode);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(langCode, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_view = NativeMethods.TablePtr->C2.hs_method_b2b40aff(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+        }
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.OptionalString _getSimple(string id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(id);
@@ -182,6 +242,25 @@ public sealed unsafe partial class Localization : global::System.IDisposable
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             return new global::Hosihikari.Bindings.Bedrock.Interop.OptionalString((nint)NativeMethods.TablePtr->C2.hs_method_c859c404((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+        }
+    }
+
+    public static bool _isCommaSeperatedLanguage(string langCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(langCode);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(langCode, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return NativeMethods.TablePtr->C2.hs_method_ea913b7b(__hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
@@ -267,6 +346,11 @@ public sealed unsafe partial class Localization : global::System.IDisposable
                 }
             }
         }
+    }
+
+    public void appendTranslations(nint locStrings)
+    {
+        NativeMethods.TablePtr->C2.hs_method_899cdf3e((void*)__hosihikari_shim_handle, (void*)locStrings);
     }
 
     public bool get(string id, ref string @out, string[] @params)
@@ -356,6 +440,66 @@ public sealed unsafe partial class Localization : global::System.IDisposable
         }
     }
 
+    public static string getLanguageCode(string fullCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fullCode);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(fullCode, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_view = NativeMethods.TablePtr->C2.hs_method_6c4e1f4b(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+        }
+    }
+
+    public void loadFromPack(string keyPrefix, global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy accessStrategy, string[] allowedKeys)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(keyPrefix);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(keyPrefix, __hs_stringBytes0);
+        var __hs_vectorItems2 = allowedKeys ?? global::System.Array.Empty<string>();
+        var __hs_vectorCount2 = __hs_vectorItems2.Length;
+        var __hs_vectorByteTotal2 = 0;
+        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++) { __hs_vectorByteTotal2 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems2[__hs_i2] ?? string.Empty); }
+        scoped global::System.Span<byte> __hs_vectorArena2;
+        if (__hs_vectorByteTotal2 <= 1024) { __hs_vectorArena2 = stackalloc byte[__hs_vectorByteTotal2 == 0 ? 1 : __hs_vectorByteTotal2]; } else { __hs_vectorArena2 = new byte[__hs_vectorByteTotal2]; }
+        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews2;
+        if (__hs_vectorCount2 <= 64) { __hs_vectorViews2 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2 == 0 ? 1 : __hs_vectorCount2]; } else { __hs_vectorViews2 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2]; }
+        fixed (byte* __hs_vectorArenaPtr2 = __hs_vectorArena2)
+        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData2 = __hs_vectorViews2)
+        {
+            var __hs_vectorOffset2 = 0;
+            for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++)
+            {
+                var __hs_item2 = __hs_vectorItems2[__hs_i2] ?? string.Empty;
+                var __hs_length2 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item2);
+                global::System.Text.Encoding.UTF8.GetBytes(__hs_item2, __hs_vectorArena2.Slice(__hs_vectorOffset2, __hs_length2));
+                __hs_vectorData2[__hs_i2] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr2 + __hs_vectorOffset2, Size = (nuint)__hs_length2 };
+                __hs_vectorOffset2 += __hs_length2;
+            }
+            fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+            {
+                NativeMethods.TablePtr->C2.hs_method_24e49dc6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)accessStrategy.Handle, __hs_vectorData2, (nuint)(allowedKeys?.Length ?? 0));
+            }
+        }
+    }
+
     public void loadFromResourcePackManager(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, string[] blockedKeys)
     {
         var __hs_vectorItems1 = blockedKeys ?? global::System.Array.Empty<string>();
@@ -426,6 +570,11 @@ public sealed unsafe partial class Localization : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Localization operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Localization arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Localization((nint)NativeMethods.TablePtr->C2.hs_method_149ba593((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+    }
+
+    public void replaceIdentifiers()
+    {
+        NativeMethods.TablePtr->C2.hs_method_4186845c((void*)__hosihikari_shim_handle);
     }
 
 

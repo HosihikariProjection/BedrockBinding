@@ -38,11 +38,6 @@ public sealed unsafe partial class ItemStack : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_39e49aa1((void*)__hosihikari_shim_handle);
-    }
-
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack rhs)
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_b805c0eb((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
@@ -147,11 +142,6 @@ public sealed unsafe partial class ItemStack : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack clone()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_18fec385((void*)__hosihikari_shim_handle));
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ItemStack fromDescriptor(global::Hosihikari.Bindings.Bedrock.Interop.NetworkItemStackDescriptor descriptor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, bool isClientSide)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_4ccfb5aa((void*)descriptor.Handle, (void*)blockPalette.Handle, isClientSide));
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemStack fromTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)

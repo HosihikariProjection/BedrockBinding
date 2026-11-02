@@ -89,6 +89,21 @@ public sealed unsafe partial class NetworkChunkPublisher : global::System.IDispo
     public void _serializeAndCache(nint packet, nint transfer, nint serialize) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
+    public void addChunksToQueue(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] chunkPositions, bool isBiomeUpdate)
+    {
+        var __hs_vectorItems0 = chunkPositions;
+        var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
+        for (var __hs_i0 = 0; __hs_i0 < __hs_vectorHandles0.Length; __hs_i0++)
+        {
+            __hs_vectorHandles0[__hs_i0] = __hs_vectorItems0![__hs_i0]?.Handle ?? 0;
+        }
+        fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
+        {
+            var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
+            NativeMethods.TablePtr->C2.hs_method_098dba32((void*)__hosihikari_shim_handle, isBiomeUpdate, __hs_vectorData0, (nuint)(chunkPositions?.Length ?? 0));
+        }
+    }
+
     public void clearRegion()
     {
         NativeMethods.TablePtr->C2.hs_method_36c5baee((void*)__hosihikari_shim_handle);
@@ -207,9 +222,24 @@ public sealed unsafe partial class NetworkChunkPublisher : global::System.IDispo
         set => NativeMethods.TablePtr->C2.hs_set_5f5d149b((void*)__hosihikari_shim_handle, value);
     }
 
+    public void moveRegion(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, uint blockRadius, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction, bool notifyBroadcastSounds, float minDistance)
+    {
+        NativeMethods.TablePtr->C2.hs_method_ae61c61e((void*)__hosihikari_shim_handle, (void*)position.Handle, blockRadius, (void*)direction.Handle, notifyBroadcastSounds, minDistance);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisher((nint)NativeMethods.TablePtr->C2.hs_method_792adc14((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+    }
+
+    public void prepareRegion(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource mainChunkSource, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos center)
+    {
+        NativeMethods.TablePtr->C2.hs_method_98527a2f((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle, (void*)center.Handle);
+    }
+
+    public void sendQueuedChunks()
+    {
+        NativeMethods.TablePtr->C2.hs_method_d2687880((void*)__hosihikari_shim_handle);
     }
 
 

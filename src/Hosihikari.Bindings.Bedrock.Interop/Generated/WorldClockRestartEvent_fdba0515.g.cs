@@ -61,7 +61,6 @@ public sealed unsafe partial class WorldClockRestartEvent : global::System.IDisp
         set => NativeMethods.TablePtr->C4.hs_set_f5a8ed5a((void*)__hosihikari_shim_handle, value);
     }
 
-
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

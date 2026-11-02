@@ -52,17 +52,6 @@ public sealed unsafe partial class ActivatorRailBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ActivatorRailBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ActivatorRailBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_c5f4292e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActivatorRailBlock((nint)handle);
-    }
-
     public void _onRedstoneUpdate(nint blockEvent)
     {
         NativeMethods.TablePtr->C0.hs_method_34d020a2((void*)__hosihikari_shim_handle, (void*)blockEvent);

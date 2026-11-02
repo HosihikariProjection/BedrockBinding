@@ -43,17 +43,6 @@ public sealed unsafe partial class HeaderCollection : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_4cb43cb2((void*)__hosihikari_shim_handle);
     }
 
-    public static HeaderCollection Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f4e31d3a();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new HeaderCollection((nint)handle);
-    }
-
     public static HeaderCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HeaderCollection arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_2bfba5d2((void*)arg0.Handle);
@@ -152,14 +141,9 @@ public sealed unsafe partial class HeaderCollection : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk689353_Address
+    public nint mData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_7dd3498a((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HeaderCollection operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HeaderCollection arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HeaderCollection((nint)NativeMethods.TablePtr->C0.hs_method_bb41348f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8a2bfc0d((void*)__hosihikari_shim_handle);
     }
 
     public void set(string headerName, string headerValue)

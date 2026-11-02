@@ -303,7 +303,7 @@ public sealed unsafe partial class SignItem : global::System.IDisposable
 
     public bool __calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C4.hs_method_e4d7a67e((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_87926394((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult __useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
@@ -383,7 +383,7 @@ public sealed unsafe partial class SignItem : global::System.IDisposable
 
     public bool _calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C4.hs_method_94103b3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_e589f174((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
@@ -393,7 +393,7 @@ public sealed unsafe partial class SignItem : global::System.IDisposable
 
     public static bool calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6ea111a4((void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_12ddcebd((void*)entity.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? getBlockToPlace(byte face, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

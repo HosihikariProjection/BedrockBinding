@@ -38,33 +38,6 @@ public sealed unsafe partial class ScriptItemCustomComponentReloadVersionError :
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString componentName)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_7f022a3e((void*)__hosihikari_shim_handle, (void*)componentName.Handle);
-    }
-
-    public static ScriptItemCustomComponentReloadVersionError Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_297fb004();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptItemCustomComponentReloadVersionError((nint)handle);
-    }
-
-    public static ScriptItemCustomComponentReloadVersionError Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString componentName)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6bcc16da((void*)componentName.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptItemCustomComponentReloadVersionError((nint)handle);
-    }
-
     public static ScriptItemCustomComponentReloadVersionError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentReloadVersionError arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_52e8f19f((void*)arg0.Handle);

@@ -474,17 +474,6 @@ public sealed unsafe partial class ScaffoldingBlock : global::System.IDisposable
         return new ScaffoldingBlock((nint)handle);
     }
 
-    public static ScaffoldingBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ScaffoldingBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_9f426e09((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScaffoldingBlock((nint)handle);
-    }
-
     public static ScaffoldingBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

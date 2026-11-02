@@ -38,25 +38,6 @@ public sealed unsafe partial class ScriptScoreboardObjective : global::System.ID
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the by-value record parameter has no eligible layout.", false)]
-    public nint _ctor(nint scoreboardHandle, nint objectiveId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the by-value record parameter has no eligible layout.");
-
-    public static ScriptScoreboardObjective Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d7e4b61a();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptScoreboardObjective((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the by-value record parameter has no eligible layout.", false)]
-    public static ScriptScoreboardObjective Create(nint scoreboardHandle, nint objectiveId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the by-value record parameter has no eligible layout.");
-
     public static ScriptScoreboardObjective Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptScoreboardObjective arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2407535d((void*)arg0.Handle);
@@ -95,12 +76,6 @@ public sealed unsafe partial class ScriptScoreboardObjective : global::System.ID
     public nint mScoreboardHandle_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_fff9c163((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Objective? tryGetObjective()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_92b67559((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Objective((nint)__hs_handle, false) : null;
     }
 
 

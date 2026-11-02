@@ -65,25 +65,28 @@ public sealed unsafe partial class ScriptPluginManager : global::System.IDisposa
         return new ScriptPluginManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.", false)]
-    public nint _collectHandleCountStats(ulong arg0, ulong arg1, ulong arg2) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.");
+    public void _collectHandleCountStats(nint pluginStats, ulong arg1, ulong arg2, ulong arg3)
+    {
+        NativeMethods.TablePtr->C3.hs_method_c4990d64((void*)__hosihikari_shim_handle, (void*)pluginStats, arg1, arg2, arg3);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.", false)]
-    public nint _collectMemoryStats(ulong arg0, ulong arg1, ulong arg2) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.");
+    public void _collectMemoryStats(nint javaScriptStats)
+    {
+        NativeMethods.TablePtr->C3.hs_method_d6df1ddc((void*)__hosihikari_shim_handle, (void*)javaScriptStats);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.", false)]
-    public nint _collectQuickJsStats(ulong arg0, ulong arg1, ulong arg2) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.");
+    public void _collectQuickJsStats(nint javaScriptStats)
+    {
+        NativeMethods.TablePtr->C3.hs_method_3439ee23((void*)__hosihikari_shim_handle, (void*)javaScriptStats);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.", false)]
-    public nint _collectScriptingStats(nint serverLevel, ulong arg1, ulong arg2, ulong arg3) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.");
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ServerLevel>' is not a known bindable declaration.", false)]
+    public void _collectScriptingStats(nint serverLevel, nint allScriptingStats) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ServerLevel>' is not a known bindable declaration.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.", false)]
-    public nint _collectSubscriberCountStats(nint serverLevel, nint locator, ulong arg2, ulong arg3, ulong arg4) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'DebuggerStat' is not supported.");
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerLevel>>' is not a known bindable declaration.", false)]
+    public void _collectSubscriberCountStats(nint serverLevel, nint locator, nint subscriberStats) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerLevel>>' is not a known bindable declaration.");
 
     public void _disableHandleCounter()
     {
@@ -111,10 +114,6 @@ public sealed unsafe partial class ScriptPluginManager : global::System.IDisposa
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void forEachRuntime(nint func) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'Scripting::ModuleDescriptor' is not supported.", false)]
-    public nint getPluginModuleDescriptors() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'Scripting::ModuleDescriptor' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ScriptPluginManager::PackNameAndWeakScope' is not supported.", false)]
     public nint getPluginScopes() =>

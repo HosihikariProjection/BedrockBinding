@@ -692,10 +692,10 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_5e88f751((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C4.hs_get_61593b59((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_61593b59((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d506b298((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -2004,11 +2004,6 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
     public bool simulateUseItem()
     {
         return NativeMethods.TablePtr->C4.hs_method_8db3d9da((void*)__hosihikari_shim_handle) != 0;
-    }
-
-    public bool simulateUseItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_ecdadd4b((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public bool simulateUseItemInSlot(int slot)

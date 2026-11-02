@@ -83,6 +83,12 @@ public sealed unsafe partial class ServerSoundInstanceManager : global::System.I
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk8bb819_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_80fc6f2c((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnka661b6_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f7079fa2((void*)__hosihikari_shim_handle);

@@ -47,27 +47,6 @@ public sealed unsafe partial class ResourcePackStack : global::System.IDisposabl
         NativeMethods.TablePtr->C3.hs_method_ec245615((void*)__hosihikari_shim_handle);
     }
 
-    public bool _loadAllVersionsOf(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, nint mergeStrategy)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_cf7e8719((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, (void*)mergeStrategy) != 0;
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public bool _loadAllVersionsOf(nint resourceLocation, nint packInstanceFilter, nint mergeStrategy) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData[] _loadAllVersionsOf(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_a430b14c((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
-        var __hs_items = (void**)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData>() : new global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData((nint)__hs_items[__hs_i]);
-        }
-        return __hs_result;
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
@@ -121,27 +100,6 @@ public sealed unsafe partial class ResourcePackStack : global::System.IDisposabl
         NativeMethods.TablePtr->C3.hs_method_bc09b199((void*)__hosihikari_shim_handle, (void*)clientStack.Handle, (void*)serverStack.Handle);
     }
 
-    public bool loadAllVersionsOf(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, nint mergeStrategy)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_5f7352a5((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, (void*)mergeStrategy) != 0;
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public bool loadAllVersionsOf(nint resourceLocation, nint packInstanceFilter, nint mergeStrategy) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData[] loadAllVersionsOf(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_a43eabd5((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
-        var __hs_items = (void**)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData>() : new global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData((nint)__hs_items[__hs_i]);
-        }
-        return __hs_result;
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackSourceReport_Address
     {
@@ -152,11 +110,6 @@ public sealed unsafe partial class ResourcePackStack : global::System.IDisposabl
     public nint mStack_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_5aa6481c((void*)__hosihikari_shim_handle);
-    }
-
-    public void removeInvalidPacks()
-    {
-        NativeMethods.TablePtr->C3.hs_method_da0f79a1((void*)__hosihikari_shim_handle);
     }
 
 

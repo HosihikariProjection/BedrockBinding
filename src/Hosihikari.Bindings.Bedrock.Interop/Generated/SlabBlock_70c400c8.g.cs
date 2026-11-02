@@ -462,17 +462,6 @@ public sealed unsafe partial class SlabBlock : global::System.IDisposable
         return new SlabBlock((nint)handle);
     }
 
-    public static SlabBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SlabBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_977dae36((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SlabBlock((nint)handle);
-    }
-
     public static SlabBlock Create(string nameId, int id, bool isDouble, global::Hosihikari.Bindings.Bedrock.Interop.Material mat, global::Hosihikari.Bindings.Bedrock.Interop.HashedString otherSlab)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
@@ -526,6 +515,11 @@ public sealed unsafe partial class SlabBlock : global::System.IDisposable
     public bool checkIsPathable(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos lastPathPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pathPos)
     {
         return NativeMethods.TablePtr->C4.hs_method_52ce46db((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)lastPathPos.Handle, (void*)pathPos.Handle) != 0;
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block getDoubleSlab()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_241a9be4((void*)__hosihikari_shim_handle), false);
     }
 
     public nint getMobToSpawn(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions conditions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)

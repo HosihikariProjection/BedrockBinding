@@ -53,19 +53,9 @@ public sealed unsafe partial class ComplexInventoryTransaction : global::System.
         NativeMethods.TablePtr->C1.hs_method_b68dc3a7((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_a1d6a30e((void*)__hosihikari_shim_handle, (void*)stream.Handle));
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
-    {
-        NativeMethods.TablePtr->C1.hs_method_8188018f((void*)__hosihikari_shim_handle, (void*)stream.Handle);
-    }
 
     public static ComplexInventoryTransaction Create(global::Hosihikari.Bindings.Bedrock.Interop.ComplexInventoryTransaction arg0)
     {
@@ -76,6 +66,11 @@ public sealed unsafe partial class ComplexInventoryTransaction : global::System.
         }
 
         return new ComplexInventoryTransaction((nint)handle);
+    }
+
+    public static void _setDepenetrationOverride(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
+    {
+        NativeMethods.TablePtr->C1.hs_method_9a7cf55b((void*)entity.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ComplexInventoryTransaction' has no accessible destructor.", false)]
@@ -115,19 +110,9 @@ public sealed unsafe partial class ComplexInventoryTransaction : global::System.
         NativeMethods.TablePtr->C1.hs_method_aa97f5f8((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_deba95c6((void*)__hosihikari_shim_handle, (void*)stream.Handle));
-    }
-
     public static nint transactionTypeMap()
     {
         return (nint)NativeMethods.TablePtr->C1.hs_method_c912b217();
-    }
-
-    public void write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
-    {
-        NativeMethods.TablePtr->C1.hs_method_1d6c486c((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
 

@@ -86,10 +86,6 @@ public sealed unsafe partial class SendEventGoal : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_1ee91833((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public nint _ctor(nint mob, nint name, nint goalId, nint spellTypes) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
-
     public void _start()
     {
         NativeMethods.TablePtr->C3.hs_method_4819d505((void*)__hosihikari_shim_handle);
@@ -119,10 +115,6 @@ public sealed unsafe partial class SendEventGoal : global::System.IDisposable
 
         return new SendEventGoal((nint)handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public static SendEventGoal Create(nint mob, nint name, nint goalId, nint spellTypes) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     public static SendEventGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SendEventGoal arg0)
     {

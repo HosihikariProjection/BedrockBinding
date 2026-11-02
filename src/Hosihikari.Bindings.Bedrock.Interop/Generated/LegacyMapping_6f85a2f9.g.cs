@@ -84,7 +84,7 @@ public sealed unsafe partial class LegacyMapping : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_95b14d15((void*)__hosihikari_shim_handle, value);
     }
 
-    public int mType
+    public byte mType
     {
         get => NativeMethods.TablePtr->C0.hs_get_d978891d((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C0.hs_set_d978891d((void*)__hosihikari_shim_handle, value);

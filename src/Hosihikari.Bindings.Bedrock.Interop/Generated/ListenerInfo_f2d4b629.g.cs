@@ -49,6 +49,11 @@ public sealed unsafe partial class ListenerInfo : global::System.IDisposable
         return new ListenerInfo((nint)handle);
     }
 
+    public static nint SQRT_FLT_MAX()
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_85febce0();
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mCallback_Address
     {

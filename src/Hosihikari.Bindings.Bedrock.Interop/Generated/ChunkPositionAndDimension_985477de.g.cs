@@ -49,6 +49,12 @@ public sealed unsafe partial class ChunkPositionAndDimension : global::System.ID
         return new ChunkPositionAndDimension((nint)handle);
     }
 
+    public bool mIsBiomeOverride
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_02d3a914((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_02d3a914((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {

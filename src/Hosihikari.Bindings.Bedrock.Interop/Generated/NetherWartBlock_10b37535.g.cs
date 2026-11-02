@@ -438,17 +438,6 @@ public sealed unsafe partial class NetherWartBlock : global::System.IDisposable
         return new NetherWartBlock((nint)handle);
     }
 
-    public static NetherWartBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherWartBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_12d1ae7b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new NetherWartBlock((nint)handle);
-    }
-
     public static NetherWartBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

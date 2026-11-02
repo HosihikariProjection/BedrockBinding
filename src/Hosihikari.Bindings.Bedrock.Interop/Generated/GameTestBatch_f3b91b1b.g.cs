@@ -38,6 +38,21 @@ public sealed unsafe partial class GameTestBatch : global::System.IDisposable
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestFunction>' is not supported.", false)]
+    public nint _ctor(nint name, nint testFunctions, nint beforeBatchFunction, nint afterBatchFunction) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestFunction>' is not supported.");
+
+    public static GameTestBatch Create()
+    {
+        var handle = NativeMethods.TablePtr->C5.hs_create_469f59c6();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new GameTestBatch((nint)handle);
+    }
+
     public static GameTestBatch Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestBatch arg0)
     {
         var handle = NativeMethods.TablePtr->C5.hs_create_d78f5553((void*)arg0.Handle);
@@ -48,6 +63,10 @@ public sealed unsafe partial class GameTestBatch : global::System.IDisposable
 
         return new GameTestBatch((nint)handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestFunction>' is not supported.", false)]
+    public static GameTestBatch Create(nint name, nint testFunctions, nint beforeBatchFunction, nint afterBatchFunction) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestFunction>' is not supported.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAfterBatchFunction_Address

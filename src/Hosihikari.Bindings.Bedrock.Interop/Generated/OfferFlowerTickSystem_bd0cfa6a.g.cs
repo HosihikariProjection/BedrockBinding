@@ -43,6 +43,11 @@ public sealed unsafe partial class OfferFlowerTickSystem : global::System.IDispo
         NativeMethods.TablePtr->C3.hs_method_49f023c3((void*)arg0.Handle, (void*)offerFlowerTickComponent.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C3.hs_method_16cbe605());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

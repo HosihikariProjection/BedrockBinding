@@ -99,10 +99,9 @@ public sealed unsafe partial class NetherNetConnector : global::System.IDisposab
         return NativeMethods.TablePtr->C2.hs_method_d413e039((void*)__hosihikari_shim_handle, (void*)primaryConnection.Handle, (void*)backupConnection.Handle, identityGenerator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)) != 0;
     }
 
-    public nint _ctor(nint factory, global::Hosihikari.Bindings.Bedrock.Interop.Connector_Nested.ConnectionCallbacks callbacks, global::Hosihikari.Bindings.Bedrock.Interop.NetherNet.NetworkID? networkId)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_769e7b45((void*)__hosihikari_shim_handle, (void*)factory, (void*)callbacks.Handle, (void*)(networkId?.Handle ?? 0), networkId is not null);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: parameter type 'brstd::copyable_function<bool () const>' is not supported.", false)]
+    public nint _ctor(nint factory, nint callbacks, nint httpLibrary, nint isNetworkAllowed, nint networkId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'brstd::copyable_function<bool () const>' is not supported.");
 
     public void _dtor()
     {
@@ -155,16 +154,9 @@ public sealed unsafe partial class NetherNetConnector : global::System.IDisposab
         return new NetherNetConnector((nint)handle);
     }
 
-    public static NetherNetConnector Create(nint factory, global::Hosihikari.Bindings.Bedrock.Interop.Connector_Nested.ConnectionCallbacks callbacks, global::Hosihikari.Bindings.Bedrock.Interop.NetherNet.NetworkID? networkId)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d5438bbb((void*)factory, (void*)callbacks.Handle, (void*)(networkId?.Handle ?? 0), networkId is not null);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new NetherNetConnector((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: parameter type 'brstd::copyable_function<bool () const>' is not supported.", false)]
+    public static NetherNetConnector Create(nint factory, nint callbacks, nint httpLibrary, nint isNetworkAllowed, nint networkId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'brstd::copyable_function<bool () const>' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: return type 'brstd::move_only_function<bool (cereal::SchemaWriter &, cereal::ContextArea)>' is not supported.", false)]
     public nint OnDiscoveryRequest() =>
@@ -198,6 +190,11 @@ public sealed unsafe partial class NetherNetConnector : global::System.IDisposab
     public void _onEnable()
     {
         NativeMethods.TablePtr->C2.hs_method_26f466b3((void*)__hosihikari_shim_handle);
+    }
+
+    public void _resetEventQueue()
+    {
+        NativeMethods.TablePtr->C2.hs_method_3c3c7a0d((void*)__hosihikari_shim_handle);
     }
 
     public void closeNetworkConnection(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier arg0)
@@ -310,9 +307,9 @@ public sealed unsafe partial class NetherNetConnector : global::System.IDisposab
 
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a58c50b5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ffe917c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -65,11 +65,6 @@ public sealed unsafe partial class SpellStage : global::System.IDisposable
         return new SpellStage((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_c8e51029((void*)ctx.Handle);
-    }
-
     public float mBaseDelay
     {
         get => NativeMethods.TablePtr->C4.hs_get_b5e3dc59((void*)__hosihikari_shim_handle);

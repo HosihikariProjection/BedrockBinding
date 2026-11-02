@@ -55,9 +55,9 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
     public nint _createSubPack(nint subPath) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'PackAccessStrategy' has no accessible destructor.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::basic_string<char>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Bedrock::Result<std::basic_string<char>>' is not supported.", false)]
     public nint _ctor(nint packLocation, bool recurse, nint reader, nint handlePool) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::basic_string<char>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'Bedrock::Result<std::basic_string<char>>' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'PackAssetSet' has no generated wrapper.", false)]
     public nint _ctor(nint assetSet, nint packLocation, bool recurse, nint reader, nint handlePool) =>
@@ -72,7 +72,7 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
     public void _forEachIn(nint packRelativePath, nint callback, bool recurseAnyways) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public bool _getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, ref string result, bool trustedContentOnly)
+    public bool _getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, ref string result, bool trustedContentOnly)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
@@ -90,7 +90,7 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         {
             try
             {
-                return NativeMethods.TablePtr->C1.hs_method_602fdc51((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C1.hs_method_3e34d20b((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -125,9 +125,9 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_77311823((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null));
     }
 
-    public bool _hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, bool trustedContentOnly, bool caseSensative)
+    public bool _hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7e67b3c8((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_5f64528b((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
     }
 
     public bool _hasFolder(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath)
@@ -172,9 +172,9 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         return new DirectoryPackAccessStrategy((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::basic_string<char>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Bedrock::Result<std::basic_string<char>>' is not supported.", false)]
     public static DirectoryPackAccessStrategy Create(nint packLocation, bool recurse, nint reader, nint handlePool) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::basic_string<char>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'Bedrock::Result<std::basic_string<char>>' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'PackAssetSet' has no generated wrapper.", false)]
     public static DirectoryPackAccessStrategy Create(nint assetSet, nint packLocation, bool recurse, nint reader, nint handlePool) =>
@@ -201,7 +201,7 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
     public void forEachIn(nint packRelativePath, nint callback, bool recurseAnyways) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public bool getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, ref string result, bool trustedContentOnly)
+    public bool getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, ref string result, bool trustedContentOnly)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
@@ -219,7 +219,7 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         {
             try
             {
-                return NativeMethods.TablePtr->C1.hs_method_96c718dc((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C1.hs_method_f683e76a((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -254,9 +254,9 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_StreamableAssetSource__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_28769f25((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, (void*)(tempDirectory?.Handle ?? 0), tempDirectory is not null));
     }
 
-    public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, bool trustedContentOnly, bool caseSensative)
+    public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7b6b32cb((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_6c5261ae((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
     }
 
     public bool hasFolder(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath)
@@ -287,15 +287,15 @@ public sealed unsafe partial class DirectoryPackAccessStrategy : global::System.
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk8d8c35_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_c41ffe14((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
     public nint mUnka60262_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a9e9a2fd((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkb97d57_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_31dcabf6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

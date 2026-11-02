@@ -102,10 +102,39 @@ public sealed unsafe partial class StructureCommand : global::System.IDisposable
         }
     }
 
+    public static void _editorSave(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, string fullName, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos from, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos to, global::Hosihikari.Bindings.Bedrock.Interop.StructureSettings settings)
+    {
+        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(fullName);
+        scoped global::System.Span<byte> __hs_stringBytes3;
+        if (__hs_stringByteCount3 <= 256)
+        {
+            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
+        }
+        else
+        {
+            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(fullName, __hs_stringBytes3);
+        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
+        {
+            NativeMethods.TablePtr->C4.hs_method_b5a868fd((void*)origin.Handle, (void*)output.Handle, (void*)region.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3, (void*)from.Handle, (void*)to.Handle, (void*)settings.Handle);
+        }
+    }
+
+    public uint _generateSeed()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_9d2ee1f3((void*)__hosihikari_shim_handle);
+    }
+
     public string _getFullName()
     {
         var __hs_view = NativeMethods.TablePtr->C4.hs_method_6474d129((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID _getPlayerId(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C4.hs_method_d62b8619((void*)__hosihikari_shim_handle, (void*)origin.Handle));
     }
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)

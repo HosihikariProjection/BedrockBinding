@@ -51,6 +51,12 @@ public sealed unsafe partial class MobSpawnerBlockActor : global::System.IDispos
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b8aed489((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_11eca59f((void*)__hosihikari_shim_handle);

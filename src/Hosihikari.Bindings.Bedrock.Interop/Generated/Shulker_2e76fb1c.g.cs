@@ -692,10 +692,10 @@ public sealed unsafe partial class Shulker : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_c2193974((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C4.hs_get_16e331a3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_16e331a3((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6229c3b3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -815,6 +815,11 @@ public sealed unsafe partial class Shulker : global::System.IDisposable
     public bool _isPosOccupiedByOtherShulker(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
         return NativeMethods.TablePtr->C4.hs_method_97c841ce((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+    }
+
+    public bool _isValidAttach(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos attachPos, byte direction)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_c967431f((void*)__hosihikari_shim_handle, (void*)attachPos.Handle, direction) != 0;
     }
 
     public void _peekAmountTick()

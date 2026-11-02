@@ -70,6 +70,10 @@ public sealed unsafe partial class SetBookContentsFunction : global::System.IDis
         NativeMethods.TablePtr->C3.hs_method_9d0fb76a((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    public static nint deserialize(nint @object, nint predicates) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
+
     public int getFunctionType()
     {
         return NativeMethods.TablePtr->C3.hs_method_1eda0d3e((void*)__hosihikari_shim_handle);

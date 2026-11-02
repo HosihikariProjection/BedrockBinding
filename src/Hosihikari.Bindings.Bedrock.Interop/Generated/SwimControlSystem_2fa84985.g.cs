@@ -38,6 +38,11 @@ public sealed unsafe partial class SwimControlSystem : global::System.IDisposabl
         return __hs_handle;
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo create()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_f96bbe79());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

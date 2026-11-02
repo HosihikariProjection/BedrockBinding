@@ -172,6 +172,10 @@ public sealed unsafe partial class FileSystem_windows : global::System.IDisposab
         return (nint)NativeMethods.TablePtr->C1.hs_method_0b65eed9((void*)__hosihikari_shim_handle, accessType, storageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), manifestTracker?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static FileSystem_windows Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5ad3c9f0();

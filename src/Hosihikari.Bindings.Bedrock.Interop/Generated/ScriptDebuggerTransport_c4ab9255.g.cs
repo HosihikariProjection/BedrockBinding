@@ -129,6 +129,10 @@ public sealed unsafe partial class ScriptDebuggerTransport : global::System.IDis
         return NativeMethods.TablePtr->C3.hs_method_822554b2((void*)__hosihikari_shim_handle) != 0;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static ScriptDebuggerTransport Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_f5354eda();
@@ -183,6 +187,25 @@ public sealed unsafe partial class ScriptDebuggerTransport : global::System.IDis
     public bool listen(ushort port)
     {
         return NativeMethods.TablePtr->C3.hs_method_ab9a090a((void*)__hosihikari_shim_handle, port) != 0;
+    }
+
+    public bool listen(ushort port, string? bindAddress)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(bindAddress ?? string.Empty);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(bindAddress ?? string.Empty, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            return NativeMethods.TablePtr->C3.hs_method_403baca9((void*)__hosihikari_shim_handle, port, __hs_stringData1, (nuint)__hs_stringByteCount1, bindAddress is not null) != 0;
+        }
     }
 
     public bool lostConnection()

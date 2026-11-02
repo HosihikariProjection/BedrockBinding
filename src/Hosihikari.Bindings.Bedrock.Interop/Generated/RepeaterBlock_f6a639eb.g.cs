@@ -471,6 +471,11 @@ public sealed unsafe partial class RepeaterBlock : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_1816e2b3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
+    public bool _requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_5902a09c((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public void _setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C3.hs_method_bad4abe1((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
@@ -492,17 +497,6 @@ public sealed unsafe partial class RepeaterBlock : global::System.IDisposable
     public static RepeaterBlock Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_524935db();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RepeaterBlock((nint)handle);
-    }
-
-    public static RepeaterBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.RepeaterBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_140e2429((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -539,6 +533,11 @@ public sealed unsafe partial class RepeaterBlock : global::System.IDisposable
     public void _onRedstoneUpdate(nint blockEvent)
     {
         NativeMethods.TablePtr->C3.hs_method_d33e2c9b((void*)__hosihikari_shim_handle, (void*)blockEvent);
+    }
+
+    public void _onStateChange(nint eventData)
+    {
+        NativeMethods.TablePtr->C3.hs_method_0c60db4b((void*)__hosihikari_shim_handle, (void*)eventData);
     }
 
     public void animateTickBedrockLegacy(nint tickData)
@@ -611,6 +610,11 @@ public sealed unsafe partial class RepeaterBlock : global::System.IDisposable
     public void onRemove(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         NativeMethods.TablePtr->C3.hs_method_d836cfc5((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
+    }
+
+    public bool requiresLegacyRedstoneSetup()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_56d5327c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setupRedstoneComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

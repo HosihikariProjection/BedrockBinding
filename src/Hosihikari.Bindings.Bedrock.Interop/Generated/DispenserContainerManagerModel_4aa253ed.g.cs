@@ -115,36 +115,9 @@ public sealed unsafe partial class DispenserContainerManagerModel : global::Syst
         return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C1.hs_method_3bbdec89((void*)__hosihikari_shim_handle));
     }
 
-    public nint _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_7249b737((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle, (void*)blockPos.Handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static DispenserContainerManagerModel Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_71621bc9();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DispenserContainerManagerModel((nint)handle);
-    }
-
-    public static DispenserContainerManagerModel Create(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_753c5d7b(containerId, (void*)player.Handle, (void*)blockPos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DispenserContainerManagerModel((nint)handle);
-    }
 
     public static DispenserContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.DispenserContainerManagerModel arg0)
     {

@@ -44,5 +44,6 @@ public enum MobEffectIds : uint
     Infested = 35,
     RaidOmen = 36,
     BreathOfTheNautilus = 37,
-    Count = 38,
+    Freezing = 38,
+    Count = 39,
 }

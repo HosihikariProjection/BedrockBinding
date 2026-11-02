@@ -147,5 +147,6 @@ public enum ActorDataIDs : byte
     AimAssistPriorityActorId = 138,
     Reserved139 = 139,
     NameplateRenderDistanceMax = 140,
-    Count = 141,
+    InteractionResult = 141,
+    Count = 142,
 }

@@ -44,6 +44,12 @@ public sealed unsafe partial class ItemStackNetManagerServer : global::System.ID
         set => NativeMethods.TablePtr->C2.hs_set_7f11564e((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mCursorItemDragActive
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_3625ce2c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_3625ce2c((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityRegistry_Address
     {
@@ -94,9 +100,19 @@ public sealed unsafe partial class ItemStackNetManagerServer : global::System.ID
         return NativeMethods.TablePtr->C2.hs_method_6b1cf239((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public void _beginCursorItemDrag()
+    {
+        NativeMethods.TablePtr->C2.hs_method_b556587a((void*)__hosihikari_shim_handle);
+    }
+
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer serverPlayer, bool isEnabled)
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_971d189c((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, isEnabled);
+    }
+
+    public void _endCursorItemDrag()
+    {
+        NativeMethods.TablePtr->C2.hs_method_c27741f8((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'TypedClientNetId<ItemStackRequestIdTag, int>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -157,9 +173,24 @@ public sealed unsafe partial class ItemStackNetManagerServer : global::System.ID
     public void _queueRequest(nint request) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
+    public void _setTextFilterState(int state)
+    {
+        NativeMethods.TablePtr->C2.hs_method_5e49ef36((void*)__hosihikari_shim_handle, state);
+    }
+
     public bool allowInventoryTransactionManager()
     {
         return NativeMethods.TablePtr->C2.hs_method_37a65cfe((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public void beginCursorItemDrag()
+    {
+        NativeMethods.TablePtr->C2.hs_method_6e098128((void*)__hosihikari_shim_handle);
+    }
+
+    public void endCursorItemDrag()
+    {
+        NativeMethods.TablePtr->C2.hs_method_c18486f0((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'TypedClientNetId<ItemStackRequestIdTag, int>' requires --link-carrier or --virtual-dispatch.", false)]

@@ -73,11 +73,6 @@ public sealed unsafe partial class ScriptItemDurabilityComponent : global::Syste
         return new ScriptItemDurabilityComponent((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_c3e9dbbc());
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<int>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getCurrentDamage() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<int>' requires --link-carrier or --virtual-dispatch.");

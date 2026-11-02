@@ -228,6 +228,10 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         }
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint queryFunctionAccessorFromString(nint functionName, nint molangVersion, nint functionReturnType, bool missingIsOkay_returnNullIfSo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'const MolangScriptArg &' is not supported.", false)]
     public static nint registerQueryFunction(nint queryFunctionName, nint accessor, nint documentation, nint returnType, nint querySetIdentifier, ulong minArgumentCount, ulong maxArgumentCount, nint experiments) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'const MolangScriptArg &' is not supported.");

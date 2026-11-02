@@ -384,17 +384,6 @@ public sealed unsafe partial class CherryLeavesBlock : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_416428f8((void*)__hosihikari_shim_handle, (void*)tickData);
     }
 
-    public static CherryLeavesBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CherryLeavesBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_613bdf43((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CherryLeavesBlock((nint)handle);
-    }
-
     public void animateTick(nint tickData)
     {
         NativeMethods.TablePtr->C0.hs_method_afd3c413((void*)__hosihikari_shim_handle, (void*)tickData);

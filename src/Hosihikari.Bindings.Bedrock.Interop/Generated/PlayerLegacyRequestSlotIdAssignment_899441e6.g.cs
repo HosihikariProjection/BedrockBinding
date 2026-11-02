@@ -38,6 +38,33 @@ public sealed unsafe partial class PlayerLegacyRequestSlotIdAssignment : global:
         return __hs_handle;
     }
 
+    public nint _ctor(byte containerName, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_f7b737e1((void*)__hosihikari_shim_handle, containerName, (void*)container.Handle);
+    }
+
+    public static PlayerLegacyRequestSlotIdAssignment Create()
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_1c3f2c9d();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PlayerLegacyRequestSlotIdAssignment((nint)handle);
+    }
+
+    public static PlayerLegacyRequestSlotIdAssignment Create(byte containerName, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_9a420307(containerName, (void*)container.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PlayerLegacyRequestSlotIdAssignment((nint)handle);
+    }
+
     public static PlayerLegacyRequestSlotIdAssignment Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler_Nested.PlayerLegacyRequestSlotIdAssignment arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_bb093de0((void*)arg0.Handle);

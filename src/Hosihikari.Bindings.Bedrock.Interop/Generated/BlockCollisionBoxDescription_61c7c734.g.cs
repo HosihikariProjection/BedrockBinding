@@ -42,9 +42,9 @@ public sealed unsafe partial class BlockCollisionBoxDescription : global::System
     public nint _buildNetworkTag(nint ctx) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 origin, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 size)
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 min, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 max, bool hasLegacyCoordinates)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_7b2d7c0e((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)size.Handle);
+        return (nint)NativeMethods.TablePtr->C0.hs_method_762d624f((void*)__hosihikari_shim_handle, (void*)min.Handle, (void*)max.Handle, hasLegacyCoordinates);
     }
 
     public string _getName()
@@ -99,9 +99,9 @@ public sealed unsafe partial class BlockCollisionBoxDescription : global::System
         return new BlockCollisionBoxDescription((nint)handle);
     }
 
-    public static BlockCollisionBoxDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 origin, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 size)
+    public static BlockCollisionBoxDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 min, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 max, bool hasLegacyCoordinates)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f6920f03((void*)origin.Handle, (void*)size.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_d288b264((void*)min.Handle, (void*)max.Handle, hasLegacyCoordinates);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

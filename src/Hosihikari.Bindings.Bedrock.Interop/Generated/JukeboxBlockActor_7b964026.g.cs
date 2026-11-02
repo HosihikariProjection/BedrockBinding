@@ -51,6 +51,12 @@ public sealed unsafe partial class JukeboxBlockActor : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3367ae6b((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1f79ccc4((void*)__hosihikari_shim_handle);
@@ -247,9 +253,9 @@ public sealed unsafe partial class JukeboxBlockActor : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_9a6e9e21((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)region.Handle);
     }
 
-    public void _startRecordSound(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.RecordItemComponent record)
+    public void _startRecordSound(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, nint playback)
     {
-        NativeMethods.TablePtr->C2.hs_method_b652c38a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)record.Handle);
+        NativeMethods.TablePtr->C2.hs_method_ca13e1ce((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)playback);
     }
 
     public bool canPullOutItem(int arg0, int arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arg2)
@@ -298,6 +304,12 @@ public sealed unsafe partial class JukeboxBlockActor : global::System.IDisposabl
     {
         get => NativeMethods.TablePtr->C2.hs_get_aeda95ae((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C2.hs_set_aeda95ae((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mOnChunkDiscardedSubscription_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_aebecc40((void*)__hosihikari_shim_handle);
     }
 
     public bool mPostBlockChangeGameEvent

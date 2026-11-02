@@ -49,23 +49,6 @@ public sealed unsafe partial class ActorFetcher : global::System.IDisposable
         return new ActorFetcher((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? fetchActorAllDimensions(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorId, bool getRemoved)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_df615183((void*)__hosihikari_shim_handle, (void*)actorId.Handle, getRemoved);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Mob? fetchMobAllDimensions(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID mobId)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_88c0c2de((void*)__hosihikari_shim_handle, (void*)mobId.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Mob((nint)__hs_handle, false) : null;
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext fetchStrictActorAllDimensions(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorId, bool getRemoved)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext((nint)NativeMethods.TablePtr->C0.hs_method_2e413ed9((void*)__hosihikari_shim_handle, (void*)actorId.Handle, getRemoved));
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionManager_Address
     {

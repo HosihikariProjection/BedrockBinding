@@ -140,6 +140,12 @@ public sealed unsafe partial class PlayerListEntry : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mPlayFabId_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a6e6575b((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mSkin_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d3453e24((void*)__hosihikari_shim_handle);

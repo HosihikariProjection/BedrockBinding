@@ -405,17 +405,6 @@ public sealed unsafe partial class GlazedTerracottaBlock : global::System.IDispo
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static GlazedTerracottaBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.GlazedTerracottaBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e4b646e2((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GlazedTerracottaBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.Block getPlacementBlock(global::Hosihikari.Bindings.Bedrock.Interop.Actor by, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos, int itemValue)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_807f4182((void*)__hosihikari_shim_handle, (void*)by.Handle, (void*)pos.Handle, face, (void*)clickPos.Handle, itemValue), false);

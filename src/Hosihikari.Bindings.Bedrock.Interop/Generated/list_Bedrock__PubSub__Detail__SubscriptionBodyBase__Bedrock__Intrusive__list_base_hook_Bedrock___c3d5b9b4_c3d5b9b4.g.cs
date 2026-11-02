@@ -38,4 +38,8 @@ public sealed partial class list_Bedrock__PubSub__Detail__SubscriptionBodyBase__
         __hosihikari_shim_handle = 0;
         return __hs_handle;
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    public void Destroy() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
 }

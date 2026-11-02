@@ -472,17 +472,6 @@ public sealed unsafe partial class CandleCakeBlock : global::System.IDisposable
         return new CandleCakeBlock((nint)handle);
     }
 
-    public static CandleCakeBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CandleCakeBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_0d101bd8((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CandleCakeBlock((nint)handle);
-    }
-
     public static CandleCakeBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

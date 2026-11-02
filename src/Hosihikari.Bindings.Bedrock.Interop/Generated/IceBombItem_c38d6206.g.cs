@@ -38,6 +38,11 @@ public sealed unsafe partial class IceBombItem : global::System.IDisposable
         return __hs_handle;
     }
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_843fddb9((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? _createProjectileActor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arg1, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_28fd9178((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)direction.Handle);

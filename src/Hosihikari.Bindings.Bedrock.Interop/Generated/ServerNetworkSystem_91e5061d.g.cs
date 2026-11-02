@@ -45,9 +45,9 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_13236fb7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_09657631((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -219,7 +219,7 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetworkDebugManager>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController) =>
+    public nint _ctor(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController, nint httpLibraryToken) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetworkDebugManager>' is not a known bindable declaration.");
 
     public static ServerNetworkSystem Create()
@@ -234,7 +234,7 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetworkDebugManager>' is not a known bindable declaration.", false)]
-    public static ServerNetworkSystem Create(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController) =>
+    public static ServerNetworkSystem Create(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController, nint httpLibraryToken) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetworkDebugManager>' is not a known bindable declaration.");
 
     public static ServerNetworkSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkSystem arg0)
@@ -251,12 +251,6 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier getLocalNetworkId()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C3.hs_method_7fa27eec((void*)__hosihikari_shim_handle));
-    }
-
-    public string getMultiplayerCorrelationId()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_4e2880b1((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool host(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition definition, global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager keys)

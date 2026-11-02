@@ -60,10 +60,6 @@ public sealed unsafe partial class StrongholdPiece : global::System.IDisposable
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'StructurePiece' has no accessible destructor.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
-    public static void forceAddPortalRoom(nint startPiece, nint pieces, nint random) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
     public static nint generateAndAddPiece(nint startPiece, nint pieces, nint random, int footX, int footY, int footZ, int direction, int depth) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
 

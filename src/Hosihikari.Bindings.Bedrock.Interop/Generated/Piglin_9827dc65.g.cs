@@ -692,10 +692,10 @@ public sealed unsafe partial class Piglin : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_eb6a441f((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C3.hs_get_208ba46c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_208ba46c((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e46d929f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -727,9 +727,9 @@ public sealed unsafe partial class Piglin : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_0e564e10((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_6cc8f12d((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_f1454540((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
     }
 
     public bool _isDarkEnoughToSpawn()
@@ -759,9 +759,9 @@ public sealed unsafe partial class Piglin : global::System.IDisposable
         return new Piglin((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_69a73e41((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_6ef3a1d3((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)location.Handle, handSlot));
     }
 
     public bool isDarkEnoughToSpawn()

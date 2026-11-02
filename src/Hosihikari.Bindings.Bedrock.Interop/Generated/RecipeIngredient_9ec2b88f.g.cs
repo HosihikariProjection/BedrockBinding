@@ -59,17 +59,6 @@ public sealed unsafe partial class RecipeIngredient : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C3.hs_method_8ae872b7(), false);
     }
 
-    public static RecipeIngredient Create(global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_5f6e5fe6((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RecipeIngredient((nint)handle);
-    }
-
 
     public void Dispose()
     {

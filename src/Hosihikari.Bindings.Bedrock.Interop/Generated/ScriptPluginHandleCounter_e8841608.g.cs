@@ -38,6 +38,11 @@ public sealed unsafe partial class ScriptPluginHandleCounter : global::System.ID
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPlugin plugin)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_2b8e6c02((void*)__hosihikari_shim_handle, (void*)plugin.Handle);
+    }
+
     public void _onDestroyObject(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry arg0, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle arg1, nint type, uint size)
     {
         NativeMethods.TablePtr->C3.hs_method_e16ff711((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)type, size);
@@ -51,6 +56,17 @@ public sealed unsafe partial class ScriptPluginHandleCounter : global::System.ID
     public static ScriptPluginHandleCounter Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_e2aaa9bd();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptPluginHandleCounter((nint)handle);
+    }
+
+    public static ScriptPluginHandleCounter Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPlugin plugin)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_0eff2b50((void*)plugin.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

@@ -6,9 +6,11 @@ using Hosihikari;
 using Hosihikari.Bindings.Bedrock.Interop;
 
 // Loads the generated BindingShim inside a real BDS process and exercises the
-// name-resolved surface: static constants, a constructed RNG, a constructed packet, a
-// shim-owned string whose destructor is resolved by name, and a by-value record parameter
-// whose copy constructor is resolved by name.
+// name-resolved surface: static string accessors, a constructed packet, an instance
+// method, and a by-value TextPacket returned from a factory that also takes a string.
+// HashedString's constructors and Core::Random::Random are not in the 1.26.60.6 runtime
+// data snapshot (v26.60.6-server.1), so the 26.51 checks that build those values do not
+// apply here.
 public sealed class BedrockSmokePlugin : IPlugin
 {
     private IPluginContext _context = null!;
@@ -42,16 +44,6 @@ public sealed class BedrockSmokePlugin : IPlugin
                 throw new InvalidOperationException($"unexpected enchant tag: {enchants}");
             }
 
-            using (var hashed = HashedString.Create_0d67d647("hello"))
-            {
-                log.AppendLine($"hashedstring.create={(hashed.Handle != 0 ? "ok" : "failed")}");
-            }
-
-            using (var random = global::Hosihikari.Bindings.Bedrock.Interop.Core.Random.Create())
-            {
-                log.AppendLine($"random.nextint={random.nextInt()}");
-            }
-
             using (var packet = TextPacket.Create())
             {
                 log.AppendLine($"textpacket.isvalid={packet.isValid()}");
@@ -61,21 +53,16 @@ public sealed class BedrockSmokePlugin : IPlugin
                 }
             }
 
-            // HashedString is 48 bytes with non-trivial copy and destructor symbols. Copying it
-            // through Create(HashedString) resolves the copy constructor by name; passing it by
-            // value to ExpressionNode::unregisterQueryFunction copies it into the hidden
-            // reference, and the callee destroys that copy.
-            using (var hashed = HashedString.Create_0d67d647("projection-smoke"))
-            using (var copy = HashedString.Create(hashed))
+            // Returns a TextPacket by value while taking a std::string argument, so this
+            // exercises the shim-owned string, the by-value result, and Dispose of the owned
+            // wrapper in one call.
+            using (var packet = TextPacketPayload.createSystemMessage("projection-smoke"))
             {
-                log.AppendLine($"hashedstring.copy={(copy.Handle != 0 ? "ok" : "failed")}");
-                if (copy.Handle == 0)
+                log.AppendLine($"systemmessage.isvalid={packet.isValid()}");
+                if (!packet.isValid())
                 {
-                    throw new InvalidOperationException("the by-value record copy constructor did not run.");
+                    throw new InvalidOperationException("the created system message packet is not valid.");
                 }
-
-                ExpressionNode.unregisterQueryFunction("projection-smoke", hashed);
-                log.AppendLine("expression.unregister=ok");
             }
 
             log.AppendLine("result=OK");

@@ -113,6 +113,11 @@ public sealed unsafe partial class FileSystemImpl : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_3525f858((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle));
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result __deleteEmptyDirectoryRecursively(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_5b859bcb((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle));
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result __deleteFilePriority(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_19f41fcb((void*)__hosihikari_shim_handle, (void*)filePath.Handle));
@@ -384,6 +389,11 @@ public sealed unsafe partial class FileSystemImpl : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _deleteEmptyDirectory(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_d10a299b((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _deleteEmptyDirectoryRecursively(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_eef4a86a((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _deleteFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)

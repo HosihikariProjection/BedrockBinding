@@ -217,11 +217,6 @@ public sealed unsafe partial class FillingContainer : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_96f6941b((void*)__hosihikari_shim_handle, (void*)newItem.Handle);
     }
 
-    public void _release(int slot)
-    {
-        NativeMethods.TablePtr->C1.hs_method_11e92942((void*)__hosihikari_shim_handle, slot);
-    }
-
     public void _trySetInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, nint slot, nint inventorySize, nint backCompatOffset)
     {
         NativeMethods.TablePtr->C1.hs_method_c3806dcb((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)slot, (void*)inventorySize, (void*)backCompatOffset);

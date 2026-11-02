@@ -107,6 +107,18 @@ public sealed unsafe partial class SchemaDescription : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C5.hs_get_b1582c9d((void*)__hosihikari_shim_handle);
     }
 
+    public bool mIsDefaultSetter
+    {
+        get => NativeMethods.TablePtr->C5.hs_get_f10d5a51((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_f10d5a51((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsOptional
+    {
+        get => NativeMethods.TablePtr->C5.hs_get_340e3458((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_340e3458((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mKeyType_Address
     {
@@ -153,6 +165,12 @@ public sealed unsafe partial class SchemaDescription : global::System.IDisposabl
     public nint mSerializationTraits_Address
     {
         get => (nint)NativeMethods.TablePtr->C5.hs_get_273c93ef((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSetterFunction_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_30a2fe8a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

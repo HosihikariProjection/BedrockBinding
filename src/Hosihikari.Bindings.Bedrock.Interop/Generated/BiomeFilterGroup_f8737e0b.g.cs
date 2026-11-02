@@ -38,7 +38,7 @@ public sealed unsafe partial class BiomeFilterGroup : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? __createSubgroup(int type)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? __createSubgroup(byte type)
     {
         var __hs_shared = NativeMethods.TablePtr->C0.hs_method_6054b7c2((void*)__hosihikari_shim_handle, type);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
@@ -59,7 +59,7 @@ public sealed unsafe partial class BiomeFilterGroup : global::System.IDisposable
         return new BiomeFilterGroup((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _createSubgroup(int type)
+    public global::Hosihikari.Bindings.Abi.SharedHandle? _createSubgroup(byte type)
     {
         var __hs_shared = NativeMethods.TablePtr->C0.hs_method_c4162c9d((void*)__hosihikari_shim_handle, type);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
@@ -77,7 +77,7 @@ public sealed unsafe partial class BiomeFilterGroup : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_87af8dd6((void*)__hosihikari_shim_handle);
     }
 
-    public int mCollectionType
+    public byte mCollectionType
     {
         get => NativeMethods.TablePtr->C0.hs_get_83f2d48f((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C0.hs_set_83f2d48f((void*)__hosihikari_shim_handle, value);

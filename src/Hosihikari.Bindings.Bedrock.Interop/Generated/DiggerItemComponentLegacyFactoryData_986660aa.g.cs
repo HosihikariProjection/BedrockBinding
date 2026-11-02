@@ -38,6 +38,10 @@ public sealed unsafe partial class DiggerItemComponentLegacyFactoryData : global
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static DiggerItemComponentLegacyFactoryData Create(global::Hosihikari.Bindings.Bedrock.Interop.DiggerItemComponentLegacyFactoryData arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_40684b65((void*)arg0.Handle);
@@ -48,6 +52,10 @@ public sealed unsafe partial class DiggerItemComponentLegacyFactoryData : global
 
         return new DiggerItemComponentLegacyFactoryData((nint)handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDestroySpeeds_Address

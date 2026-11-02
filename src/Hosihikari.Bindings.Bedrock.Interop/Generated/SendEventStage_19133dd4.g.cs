@@ -38,6 +38,11 @@ public sealed unsafe partial class SendEventStage : global::System.IDisposable
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C3.hs_method_197ad9c3((void*)__hosihikari_shim_handle);
+    }
+
     public static SendEventStage Create(global::Hosihikari.Bindings.Bedrock.Interop.SendEventStage arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_6c25436b((void*)arg0.Handle);

@@ -50,6 +50,26 @@ public sealed unsafe partial class ScriptDebuggerDiagnosticsPayload : global::Sy
         set => NativeMethods.TablePtr->C3.hs_set_8bd937ed((void*)__hosihikari_shim_handle, value);
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload arg0)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_e74a5831((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static ScriptDebuggerDiagnosticsPayload Create()
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_879b1aaa();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptDebuggerDiagnosticsPayload((nint)handle);
+    }
+
     public static ScriptDebuggerDiagnosticsPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_2d7e2b9d((void*)arg0.Handle);
@@ -59,6 +79,16 @@ public sealed unsafe partial class ScriptDebuggerDiagnosticsPayload : global::Sy
         }
 
         return new ScriptDebuggerDiagnosticsPayload((nint)handle);
+    }
+
+    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        NativeMethods.TablePtr->C3.hs_method_9ba5ffbc((void*)ctx.Handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload((nint)NativeMethods.TablePtr->C3.hs_method_67307174((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 

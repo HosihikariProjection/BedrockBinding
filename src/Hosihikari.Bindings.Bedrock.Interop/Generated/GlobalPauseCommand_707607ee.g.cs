@@ -100,11 +100,6 @@ public sealed unsafe partial class GlobalPauseCommand : global::System.IDisposab
         set => NativeMethods.TablePtr->C1.hs_set_06480843((void*)__hosihikari_shim_handle, value);
     }
 
-    public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_63f854b7((void*)registry.Handle);
-    }
-
 
     public void Dispose()
     {

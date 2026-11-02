@@ -49,9 +49,9 @@ public sealed unsafe partial class CompoundTagUpdater : global::System.IDisposab
         return new CompoundTagUpdater((nint)handle);
     }
 
-    public bool _update(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdater_Nested.Node node, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
+    public static bool _update(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdater_Nested.Node node, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        return NativeMethods.TablePtr->C1.hs_method_2a21a572((void*)__hosihikari_shim_handle, (void*)node.Handle, (void*)tag.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_2a21a572((void*)node.Handle, (void*)tag.Handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.

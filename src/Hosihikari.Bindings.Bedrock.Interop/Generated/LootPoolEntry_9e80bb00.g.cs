@@ -38,10 +38,6 @@ public sealed unsafe partial class LootPoolEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static nint START_VERSIONING_VERSION()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_49dc8403();

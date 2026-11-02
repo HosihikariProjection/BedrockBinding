@@ -41,22 +41,22 @@ public sealed unsafe partial class SetItemLoreFunction : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_15a7b7a2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_15a7b7a2((void*)__hosihikari_shim_handle);
     }
 
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_8dfebe97((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C4.hs_method_8dfebe97((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
     }
 
     public int _getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_9e8b914c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_9e8b914c((void*)__hosihikari_shim_handle);
     }
 
     public static SetItemLoreFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetItemLoreFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_eafb2efe((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_eafb2efe((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,18 +67,22 @@ public sealed unsafe partial class SetItemLoreFunction : global::System.IDisposa
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_86dba1d9((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C4.hs_method_86dba1d9((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    public static nint deserialize(nint @object, nint predicates) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_faeeabb4((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_faeeabb4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLore_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8fa73734((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8fa73734((void*)__hosihikari_shim_handle);
     }
 
 
@@ -88,7 +92,7 @@ public sealed unsafe partial class SetItemLoreFunction : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b021ec34((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b021ec34((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

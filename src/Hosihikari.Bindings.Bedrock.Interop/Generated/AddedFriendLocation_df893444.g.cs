@@ -16,4 +16,5 @@ public enum AddedFriendLocation : int
     ProfileFollowersList = 7,
     SocialDrawerOpenParty = 8,
     SocialDrawerFriendRequests = 9,
+    RealmInvite = 10,
 }

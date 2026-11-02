@@ -393,17 +393,6 @@ public sealed unsafe partial class NyliumBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static NyliumBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.NyliumBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_87f57a6f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new NyliumBlock((nint)handle);
-    }
-
     public static bool _isGrowthBlockingHalfSlabBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         return NativeMethods.TablePtr->C2.hs_method_68fbc20c((void*)block.Handle) != 0;

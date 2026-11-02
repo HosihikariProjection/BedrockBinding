@@ -170,6 +170,31 @@ public sealed unsafe partial class RakWebSocket : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_68366f3a((void*)__hosihikari_shim_handle);
     }
 
+    public string _generateBase64SHA1Key(string key)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(key);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_view = NativeMethods.TablePtr->C3.hs_method_7a0f2947((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+        }
+    }
+
+    public void _processDataFrames(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BitStream newIncoming)
+    {
+        NativeMethods.TablePtr->C3.hs_method_8801e628((void*)__hosihikari_shim_handle, (void*)newIncoming.Handle);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public bool _processPacket(nint processStep, bool acceptNewConnection) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");

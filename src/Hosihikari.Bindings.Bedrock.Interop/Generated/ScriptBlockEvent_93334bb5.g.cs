@@ -38,6 +38,33 @@ public sealed unsafe partial class ScriptBlockEvent : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos location, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_4f0b5745((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)location.Handle, (void*)scope.Handle);
+    }
+
+    public static ScriptBlockEvent Create()
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_fd1ed04b();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptBlockEvent((nint)handle);
+    }
+
+    public static ScriptBlockEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos location, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_67424b6f((void*)dimension.Handle, (void*)location.Handle, (void*)scope.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptBlockEvent((nint)handle);
+    }
+
     public static ScriptBlockEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockEvent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_7d3d2a4a((void*)arg0.Handle);

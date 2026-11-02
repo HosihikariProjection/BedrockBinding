@@ -44,26 +44,6 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_fcfaa41f((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_d9b49882((void*)__hosihikari_shim_handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static ImguiProfiler Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_8462f88b();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ImguiProfiler((nint)handle);
-    }
-
     public static ImguiProfiler Create(global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_efdd3588((void*)arg0.Handle);
@@ -137,11 +117,6 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
     public static nint sRecordMutex()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_ffb61cab();
-    }
-
-    public void update()
-    {
-        NativeMethods.TablePtr->C2.hs_method_d8d915ea((void*)__hosihikari_shim_handle);
     }
 
 

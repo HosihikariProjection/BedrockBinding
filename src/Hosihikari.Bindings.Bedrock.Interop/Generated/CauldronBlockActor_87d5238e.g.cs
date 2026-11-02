@@ -51,6 +51,12 @@ public sealed unsafe partial class CauldronBlockActor : global::System.IDisposab
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_f51314c9((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_6d7c0eac((void*)__hosihikari_shim_handle);

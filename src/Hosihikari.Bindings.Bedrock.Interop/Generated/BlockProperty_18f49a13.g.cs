@@ -45,4 +45,5 @@ public enum BlockProperty : ulong
     CanDamperVibrations = 34359738368,
     CanOccludeVibrations = 68719476736,
     LegacyComparatorReadThrough = 137438953472,
+    HasAlignedPlacement = 274877906944,
 }

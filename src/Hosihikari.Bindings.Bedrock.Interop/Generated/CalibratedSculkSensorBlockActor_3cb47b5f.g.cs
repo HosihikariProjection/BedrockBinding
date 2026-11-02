@@ -51,6 +51,12 @@ public sealed unsafe partial class CalibratedSculkSensorBlockActor : global::Sys
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_11f4667f((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b1c74eeb((void*)__hosihikari_shim_handle);

@@ -54,36 +54,6 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
         return new StructureBlockPalette((nint)handle);
     }
 
-    public int _parseBlockPalette(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_bca27e24((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
-
-    public int _parseBlockPositionDataList(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_7a2a8a56((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
-
-    public void _saveBlockPalette(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C4.hs_method_6fc71456((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
-
-    public void _saveBlockPositionDataList(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C4.hs_method_ac989103((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
-
-    public void addBlockPositionData(ulong id, global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData blockPositionData)
-    {
-        NativeMethods.TablePtr->C4.hs_method_14ae33a7((void*)__hosihikari_shim_handle, id, (void*)blockPositionData.Handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette clone()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette((nint)NativeMethods.TablePtr->C4.hs_method_987120f8((void*)__hosihikari_shim_handle));
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
     public nint getBlock(nint blockPalette, ulong paletteId, nint unknownBlockRegistry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
@@ -105,10 +75,6 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_b4c3c2bd((void*)__hosihikari_shim_handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
-    public nint save() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
     public nint tryGetBlock(ulong paletteId, nint unknownBlockRegistry) =>

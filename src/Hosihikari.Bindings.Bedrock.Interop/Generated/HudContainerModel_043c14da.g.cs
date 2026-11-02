@@ -123,10 +123,6 @@ public sealed unsafe partial class HudContainerModel : global::System.IDisposabl
         return NativeMethods.TablePtr->C2.hs_method_eb93ec9b((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static HudContainerModel Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_98b18f78();

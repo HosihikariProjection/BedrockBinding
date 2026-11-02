@@ -864,11 +864,6 @@ public sealed unsafe partial class ItemActor : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_fa7bbe80((void*)__hosihikari_shim_handle, arg0, (void*)arg1.Handle);
     }
 
-    public void setSourceEntity(global::Hosihikari.Bindings.Bedrock.Interop.Actor? owner)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f07eb9c6((void*)__hosihikari_shim_handle, (void*)(owner?.Handle ?? 0));
-    }
-
     public nint throwTime_dfefdf28()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_dfefdf28((void*)__hosihikari_shim_handle);

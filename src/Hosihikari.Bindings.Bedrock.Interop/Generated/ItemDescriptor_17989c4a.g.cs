@@ -156,17 +156,6 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
         return new ItemDescriptor((nint)handle);
     }
 
-    public static ItemDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9cfa94b3((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ItemDescriptor((nint)handle);
-    }
-
     public static ItemDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemTag itemTag)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_05648c85((void*)itemTag.Handle);
@@ -291,19 +280,19 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_3f47e235((void*)__hosihikari_shim_handle);
     }
 
-    public void operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor rhs)
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance operator_ItemInstance()
     {
-        NativeMethods.TablePtr->C2.hs_method_e563d82f((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C2.hs_method_6e4b753f((void*)__hosihikari_shim_handle));
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor rhs)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor((nint)NativeMethods.TablePtr->C2.hs_method_0fab631b((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
     }
 
     public bool sameItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor otherItemDescriptor, bool compareAux)
     {
         return NativeMethods.TablePtr->C2.hs_method_5a5098d2((void*)__hosihikari_shim_handle, (void*)otherItemDescriptor.Handle, compareAux) != 0;
-    }
-
-    public bool sameItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool compareAux)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_fef2a252((void*)__hosihikari_shim_handle, (void*)item.Handle, compareAux) != 0;
     }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)

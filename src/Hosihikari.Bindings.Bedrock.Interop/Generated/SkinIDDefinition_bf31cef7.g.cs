@@ -60,6 +60,11 @@ public sealed unsafe partial class SkinIDDefinition : global::System.IDisposable
         return new SkinIDDefinition((nint)handle);
     }
 
+    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
+    {
+        NativeMethods.TablePtr->C4.hs_method_cca8de60(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk567d00_Address
     {

@@ -53,6 +53,11 @@ public sealed unsafe partial class BlockVolume : global::System.IDisposable
     public nint computeHeightMap() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'std::vector<short>' is not a known bindable declaration.");
 
+    public short findHighestNonAirBlock()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_178bed03((void*)__hosihikari_shim_handle);
+    }
+
     public short getAboveTopSolidBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos start, bool dimensionShowsSky, bool includeWater, bool includeLeaves)
     {
         return NativeMethods.TablePtr->C0.hs_method_67f3cf64((void*)__hosihikari_shim_handle, (void*)start.Handle, dimensionShowsSky, includeWater, includeLeaves);

@@ -151,6 +151,12 @@ public sealed unsafe partial class ActiveDirectoryIdentity : global::System.IDis
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk51f69f_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_20f95524((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnka7ac16_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_3be7a1a5((void*)__hosihikari_shim_handle);
@@ -178,12 +184,6 @@ public sealed unsafe partial class ActiveDirectoryIdentity : global::System.IDis
     public nint mUnke3078c_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_747ce384((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkf84d67_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_a5a7ac3a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryIdentity operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActiveDirectoryIdentity arg0)

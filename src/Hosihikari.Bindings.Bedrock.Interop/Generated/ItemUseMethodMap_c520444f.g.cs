@@ -38,12 +38,6 @@ public sealed unsafe partial class ItemUseMethodMap : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static string getItemUseMethodName(int useMethod)
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_7c164422(useMethod);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
-
     public static nint mMap()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_9d85d1c3();

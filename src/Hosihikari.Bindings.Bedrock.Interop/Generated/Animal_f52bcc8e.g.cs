@@ -589,11 +589,6 @@ public sealed unsafe partial class Animal : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_b4d36339((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_d9048832((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
-    }
-
     public bool _isInvulnerableTo(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
         return NativeMethods.TablePtr->C0.hs_method_3b85a119((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
@@ -607,28 +602,6 @@ public sealed unsafe partial class Animal : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static Animal Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_792c7540();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Animal((nint)handle);
-    }
-
-    public static Animal Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_8cae17cd((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Animal((nint)handle);
-    }
 
     public float _getWalkTargetValue(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
@@ -754,10 +727,10 @@ public sealed unsafe partial class Animal : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_fed4be7f((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C0.hs_get_8733a0d5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_8733a0d5((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_1e258ff6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

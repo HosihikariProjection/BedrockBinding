@@ -388,15 +388,9 @@ public sealed unsafe partial class MyceliumBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static MyceliumBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.MyceliumBlock arg0)
+    public static bool _canSpreadToBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_22ba62aa((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MyceliumBlock((nint)handle);
+        return NativeMethods.TablePtr->C2.hs_method_77f0a6b2((void*)region.Handle, (void*)blockPos.Handle) != 0;
     }
 
     public void animateTickBedrockLegacy(nint tickData)

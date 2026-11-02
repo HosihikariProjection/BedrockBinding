@@ -92,11 +92,6 @@ public sealed unsafe partial class Client : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a7445bd6((void*)__hosihikari_shim_handle);
     }
 
-    public void removeSubClientPlayerInfo(byte subClientId)
-    {
-        NativeMethods.TablePtr->C3.hs_method_552f709b((void*)__hosihikari_shim_handle, subClientId);
-    }
-
 
     public void Dispose()
     {

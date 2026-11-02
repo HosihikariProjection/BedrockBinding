@@ -126,10 +126,10 @@ public sealed unsafe partial class MegaTreeTrunk : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d73a28ed((void*)__hosihikari_shim_handle);
     }
 
-    public int mTrunkWidth
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mTrunkWidth_Address
     {
-        get => NativeMethods.TablePtr->C2.hs_get_999c0831((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_999c0831((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_999c0831((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? placeTrunk(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random, int treeHeight, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy? canopy)

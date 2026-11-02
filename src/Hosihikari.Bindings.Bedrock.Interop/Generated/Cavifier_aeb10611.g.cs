@@ -60,11 +60,6 @@ public sealed unsafe partial class Cavifier : global::System.IDisposable
         return new Cavifier((nint)handle);
     }
 
-    public float cavify(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 worldPos, int arg1, float density)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_3d81ed58((void*)__hosihikari_shim_handle, (void*)worldPos.Handle, arg1, density);
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mCavifierNoises_Address
     {

@@ -82,10 +82,9 @@ public sealed unsafe partial class ConnectionCallbacks : global::System.IDisposa
         }
     }
 
-    public bool onNewIncomingConnection(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, global::Hosihikari.Bindings.Abi.SharedHandle? peer)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_9a0b1407((void*)__hosihikari_shim_handle, (void*)id.Handle, peer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public bool onNewIncomingConnection(nint id, nint peer, nint identityPublicKey) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public bool onNewOutgoingConnection(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, global::Hosihikari.Bindings.Abi.SharedHandle? peer)
     {

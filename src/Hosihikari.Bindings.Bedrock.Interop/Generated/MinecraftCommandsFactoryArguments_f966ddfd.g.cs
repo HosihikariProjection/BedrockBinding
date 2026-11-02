@@ -38,6 +38,17 @@ public sealed unsafe partial class MinecraftCommandsFactoryArguments : global::S
         return __hs_handle;
     }
 
+    public static MinecraftCommandsFactoryArguments Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftArguments_Nested.MinecraftCommandsFactoryArguments arg0)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_dff88828((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new MinecraftCommandsFactoryArguments((nint)handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mAutoCompletePlayerMention_Address
     {
@@ -49,6 +60,13 @@ public sealed unsafe partial class MinecraftCommandsFactoryArguments : global::S
         get => (nint)NativeMethods.TablePtr->C2.hs_get_a4f877c0((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C2.hs_set_a4f877c0((void*)__hosihikari_shim_handle, (void*)value);
     }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mEducationOptions_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4693d114((void*)__hosihikari_shim_handle);
+    }
+
 
     public void Dispose()
     {

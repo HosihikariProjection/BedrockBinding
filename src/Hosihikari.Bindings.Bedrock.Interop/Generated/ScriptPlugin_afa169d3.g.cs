@@ -38,6 +38,10 @@ public sealed unsafe partial class ScriptPlugin : global::System.IDisposable
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint _ctor(nint pluginSource, nint moduleDesc, nint moduleDependencies, nint capabilities, nint minEngineVersion, nint packId, nint packOrigin, nint runtimeName, nint mainScriptFilePath, nint pluginType, nint executionGroup, nint printLogger) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
     public void _onError(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, string message)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message);
@@ -130,6 +134,21 @@ public sealed unsafe partial class ScriptPlugin : global::System.IDisposable
     {
         return NativeMethods.TablePtr->C3.hs_method_2b09be20((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)error.Handle, (void*)errorAny) != 0;
     }
+
+    public static ScriptPlugin Create()
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_e9ef76d8();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptPlugin((nint)handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public static ScriptPlugin Create(nint pluginSource, nint moduleDesc, nint moduleDependencies, nint capabilities, nint minEngineVersion, nint packId, nint packOrigin, nint runtimeName, nint mainScriptFilePath, nint pluginType, nint executionGroup, nint printLogger) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData? _loadScript(string fileName)
     {

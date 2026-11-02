@@ -405,17 +405,6 @@ public sealed unsafe partial class ElementBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ElementBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ElementBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_05865531((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ElementBlock((nint)handle);
-    }
-
     public string buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
         var __hs_view = NativeMethods.TablePtr->C1.hs_method_7d03edc1((void*)__hosihikari_shim_handle, (void*)block.Handle);

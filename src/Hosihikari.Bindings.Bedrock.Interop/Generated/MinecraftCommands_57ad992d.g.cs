@@ -167,6 +167,11 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_ce08c40b((void*)registry.Handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT requestCommandExecution(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool suppressOutput)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT((nint)NativeMethods.TablePtr->C2.hs_method_7f00910f((void*)__hosihikari_shim_handle, (void*)context.Handle, suppressOutput));
+    }
+
     public void runCommand(global::Hosihikari.Bindings.Bedrock.Interop.HashedString commandStr, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int commandVersion)
     {
         NativeMethods.TablePtr->C2.hs_method_41a42581((void*)__hosihikari_shim_handle, (void*)commandStr.Handle, (void*)origin.Handle, commandVersion);

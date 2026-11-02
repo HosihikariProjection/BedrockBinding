@@ -80,25 +80,6 @@ public sealed unsafe partial class GameTestError : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C5.hs_get_b74ad263((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(int type_, string message_)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message_);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message_, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            return (nint)NativeMethods.TablePtr->C5.hs_method_e01ea4d1((void*)__hosihikari_shim_handle, type_, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
     public nint _ctor(nint type_, nint message_, nint params_) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
@@ -127,31 +108,6 @@ public sealed unsafe partial class GameTestError : global::System.IDisposable
         }
 
         return new GameTestError((nint)handle);
-    }
-
-    public static GameTestError Create(int type_, string message_)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message_);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message_, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            var handle = NativeMethods.TablePtr->C5.hs_create_9bf5098d(type_, __hs_stringData1, (nuint)__hs_stringByteCount1);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new GameTestError((nint)handle);
-        }
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]

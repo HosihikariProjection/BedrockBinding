@@ -44,6 +44,11 @@ public sealed unsafe partial class SetSpawnEggFunction : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C4.hs_get_b1eae3bf((void*)__hosihikari_shim_handle);
     }
 
+    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C4.hs_method_65a8e36a((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
         NativeMethods.TablePtr->C4.hs_method_9d12e8c8((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
@@ -65,10 +70,19 @@ public sealed unsafe partial class SetSpawnEggFunction : global::System.IDisposa
         return new SetSpawnEggFunction((nint)handle);
     }
 
+    public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C4.hs_method_09bbad9b((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
         NativeMethods.TablePtr->C4.hs_method_b790e273((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    public static nint deserialize(nint @object, nint predicates) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
 
     public int getFunctionType()
     {

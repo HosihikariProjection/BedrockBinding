@@ -41,22 +41,31 @@ public sealed unsafe partial class SetDataFromColorIndexFunction : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c44f89cc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c44f89cc((void*)__hosihikari_shim_handle);
+    }
+
+    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C4.hs_method_014c6801((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C3.hs_method_859dc492((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C4.hs_method_859dc492((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
     }
 
     public int _getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_57de0299((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_57de0299((void*)__hosihikari_shim_handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
     public static SetDataFromColorIndexFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetDataFromColorIndexFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a6793f06((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_a6793f06((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,14 +74,23 @@ public sealed unsafe partial class SetDataFromColorIndexFunction : global::Syste
         return new SetDataFromColorIndexFunction((nint)handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public static bool _applyImpl(nint inOutItemDef, nint thisEntity, nint originalItemName, nint outResultAux) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
+    public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
+    {
+        NativeMethods.TablePtr->C4.hs_method_3cfd00dd((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+    }
+
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C3.hs_method_66fa4502((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C4.hs_method_66fa4502((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
     }
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_d63da6e2((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_d63da6e2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -82,7 +100,7 @@ public sealed unsafe partial class SetDataFromColorIndexFunction : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_15553b61((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_15553b61((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

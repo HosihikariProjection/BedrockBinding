@@ -40,7 +40,7 @@ public sealed unsafe partial class BlockItem : global::System.IDisposable
 
     public bool __calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C0.hs_method_a3bb6d3e((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_512ccb56((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult __useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
@@ -135,7 +135,7 @@ public sealed unsafe partial class BlockItem : global::System.IDisposable
 
     public bool _calculatePlacePos(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C0.hs_method_3497882d((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_8f87e9fe((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
     public void _displayHeightLimitErrorMessages(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int y, bool displayClientSideOnly)

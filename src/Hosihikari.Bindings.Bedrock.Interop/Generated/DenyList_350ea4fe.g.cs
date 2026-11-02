@@ -75,6 +75,11 @@ public sealed unsafe partial class DenyList : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_4a4d467e((void*)__hosihikari_shim_handle, (void*)entry.Handle) != 0;
     }
 
+    public bool isBlocked(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry entry, nint it)
+    {
+        return NativeMethods.TablePtr->C1.hs_method_7a7a7c46((void*)__hosihikari_shim_handle, (void*)entry.Handle, (void*)it) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3f8199_Address
     {

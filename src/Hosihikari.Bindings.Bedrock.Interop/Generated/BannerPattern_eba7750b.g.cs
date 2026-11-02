@@ -304,11 +304,6 @@ public sealed unsafe partial class BannerPattern : global::System.IDisposable
     public static BannerPattern Create(nint name, nint nameID, nint itemFunctor, short patternItemType, bool ignoreAux) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'ItemStack' is not supported.");
 
-    public bool hasPattern()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_50dbd945((void*)__hosihikari_shim_handle) != 0;
-    }
-
     public bool mHiddenFromCrafting
     {
         get => NativeMethods.TablePtr->C0.hs_get_5d02c52e((void*)__hosihikari_shim_handle) != 0;

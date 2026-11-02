@@ -111,6 +111,12 @@ public sealed unsafe partial class BlendedMultiNoiseBiomeProvider : global::Syst
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Biome? tryGetBiome(nint getBiomeOptions, global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry xzCacheEntry, global::Hosihikari.Bindings.Bedrock.Interop.RTree_Nested.Hint? hint)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1a862077((void*)__hosihikari_shim_handle, (void*)getBiomeOptions, (void*)xzCacheEntry.Handle, (void*)(hint?.Handle ?? 0));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
+    }
+
 
     public void Dispose()
     {

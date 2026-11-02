@@ -51,6 +51,12 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_a893ac15((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_f942d3f7((void*)__hosihikari_shim_handle);
@@ -244,6 +250,11 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
     public void _openBy(global::Hosihikari.Bindings.Bedrock.Interop.Player p)
     {
         NativeMethods.TablePtr->C0.hs_method_9620b629((void*)__hosihikari_shim_handle, (void*)p.Handle);
+    }
+
+    public void _receiveContainerLifetimes(nint tracker)
+    {
+        NativeMethods.TablePtr->C0.hs_method_3a4bc013((void*)__hosihikari_shim_handle, (void*)tracker);
     }
 
     public void _removeContentChangeListener(global::Hosihikari.Bindings.Bedrock.Interop.ContainerContentChangeListener? listener)
@@ -681,6 +692,11 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
     public void openBy(global::Hosihikari.Bindings.Bedrock.Interop.Player p)
     {
         NativeMethods.TablePtr->C0.hs_method_d9eb7978((void*)__hosihikari_shim_handle, (void*)p.Handle);
+    }
+
+    public void receiveContainerLifetimes(nint tracker)
+    {
+        NativeMethods.TablePtr->C0.hs_method_4f9ba23d((void*)__hosihikari_shim_handle, (void*)tracker);
     }
 
     public void removeContentChangeListener(global::Hosihikari.Bindings.Bedrock.Interop.ContainerContentChangeListener? listener)

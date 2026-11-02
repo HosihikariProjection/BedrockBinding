@@ -51,6 +51,12 @@ public sealed unsafe partial class SmokerBlockActor : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mEntityStorage_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6c3ba5de((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_7383919f((void*)__hosihikari_shim_handle);
@@ -240,6 +246,11 @@ public sealed unsafe partial class SmokerBlockActor : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_43fc09aa((void*)__hosihikari_shim_handle);
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_e8de35d5((void*)__hosihikari_shim_handle, (void*)blockPos.Handle);
+    }
+
     public string _getName()
     {
         var __hs_view = NativeMethods.TablePtr->C4.hs_method_49335d5a((void*)__hosihikari_shim_handle);
@@ -265,6 +276,28 @@ public sealed unsafe partial class SmokerBlockActor : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftableForIVanillaTickBlockActorComponent() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static SmokerBlockActor Create()
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_d4fafb22();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new SmokerBlockActor((nint)handle);
+    }
+
+    public static SmokerBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_b18796a2((void*)blockPos.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new SmokerBlockActor((nint)handle);
+    }
 
     public static SmokerBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.SmokerBlockActor arg0)
     {

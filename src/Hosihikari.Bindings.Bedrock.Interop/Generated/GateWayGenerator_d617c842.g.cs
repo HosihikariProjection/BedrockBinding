@@ -38,11 +38,6 @@ public sealed unsafe partial class GateWayGenerator : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_90f019ed((void*)__hosihikari_shim_handle);
-    }
-
     public bool mPlaceNewBlocks
     {
         get => NativeMethods.TablePtr->C1.hs_get_e553bf92((void*)__hosihikari_shim_handle) != 0;

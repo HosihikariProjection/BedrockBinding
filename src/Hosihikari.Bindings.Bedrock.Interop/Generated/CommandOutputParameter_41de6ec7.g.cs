@@ -123,6 +123,16 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         }
     }
 
+    public nint _ctor(float value)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_c5d8b821((void*)__hosihikari_shim_handle, value);
+    }
+
+    public nint _ctor(int value)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_8e50d7da((void*)__hosihikari_shim_handle, value);
+    }
+
     public void _dtor()
     {
         NativeMethods.TablePtr->C1.hs_method_f20b47d1((void*)__hosihikari_shim_handle);
@@ -270,6 +280,28 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
 
             return new CommandOutputParameter((nint)handle);
         }
+    }
+
+    public static CommandOutputParameter Create(float value)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_e2e4a52c(value);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new CommandOutputParameter((nint)handle);
+    }
+
+    public static CommandOutputParameter Create(int value)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_32b3ac8c(value);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new CommandOutputParameter((nint)handle);
     }
 
     public int mCount

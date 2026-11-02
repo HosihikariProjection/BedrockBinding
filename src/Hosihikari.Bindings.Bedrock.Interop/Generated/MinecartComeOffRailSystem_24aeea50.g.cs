@@ -38,6 +38,10 @@ public sealed unsafe partial class MinecartComeOffRailSystem : global::System.ID
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.", false)]
+    public static void _minecartComeOffRailSystem(nint context, nint railMovementComponent, nint stateVectorComponent, nint onGroundFlagComponent, nint mod) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.");
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

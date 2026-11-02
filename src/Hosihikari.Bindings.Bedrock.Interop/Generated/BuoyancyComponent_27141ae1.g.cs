@@ -49,6 +49,11 @@ public sealed unsafe partial class BuoyancyComponent : global::System.IDisposabl
         return new BuoyancyComponent((nint)handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serialize()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_79bd28d4((void*)__hosihikari_shim_handle));
+    }
+
     public bool canFloat(global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
     {
         return NativeMethods.TablePtr->C0.hs_method_a22bdf7f((void*)__hosihikari_shim_handle, (void*)stateVectorComponent.Handle, (void*)region.Handle) != 0;

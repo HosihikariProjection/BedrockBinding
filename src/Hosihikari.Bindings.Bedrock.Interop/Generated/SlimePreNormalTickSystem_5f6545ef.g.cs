@@ -42,6 +42,11 @@ public sealed unsafe partial class SlimePreNormalTickSystem : global::System.IDi
     public static void _doSlimePreNormalTickSystem(nint context, nint actorOwnerComponent, nint onGround, nint mod) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.");
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_d6e53f61());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

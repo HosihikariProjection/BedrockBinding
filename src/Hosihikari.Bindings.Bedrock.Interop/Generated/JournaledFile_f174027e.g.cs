@@ -80,11 +80,6 @@ public sealed unsafe partial class JournaledFile : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C2.hs_method_82df12d2((void*)fileName.Handle));
     }
 
-    public static bool isOldFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path fileName)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_ee0aca15((void*)fileName.Handle) != 0;
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk35a4f6_Address
     {

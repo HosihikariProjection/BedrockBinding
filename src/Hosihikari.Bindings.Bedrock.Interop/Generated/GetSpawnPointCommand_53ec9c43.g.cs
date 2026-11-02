@@ -94,11 +94,6 @@ public sealed unsafe partial class GetSpawnPointCommand : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a2f2c59a((void*)__hosihikari_shim_handle);
     }
 
-    public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_5a90b8c6((void*)registry.Handle);
-    }
-
 
     public void Dispose()
     {

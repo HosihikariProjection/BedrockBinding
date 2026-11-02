@@ -182,7 +182,7 @@ public sealed unsafe partial class ScriptPlayer : global::System.IDisposable
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint _playSoundInternal(nint soundID, nint soundOptions, nint serverSoundHandle) =>
+    public nint _playSoundInternal(nint soundID, nint soundOptions, nint serverSoundInstance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()

@@ -49,6 +49,11 @@ public sealed unsafe partial class IntermediateStorage : global::System.IDisposa
         return new IntermediateStorage((nint)handle);
     }
 
+    public byte mHandSlot
+    {
+        get => NativeMethods.TablePtr->C3.hs_get_ee791805((void*)__hosihikari_shim_handle);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemStack_Address
     {

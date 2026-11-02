@@ -38,6 +38,16 @@ public sealed unsafe partial class ItemLockHelper : global::System.IDisposable
         return __hs_handle;
     }
 
+    public static bool _parseItemLockMode(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value data)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_0dfa48cf((void*)item.Handle, (void*)data.Handle) != 0;
+    }
+
+    public static bool addItemLockMode(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value data)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_1cf2baea((void*)item.Handle, (void*)data.Handle) != 0;
+    }
+
     public static bool addKeepOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value data)
     {
         return NativeMethods.TablePtr->C2.hs_method_2524fae8((void*)item.Handle, (void*)data.Handle) != 0;

@@ -423,17 +423,6 @@ public sealed unsafe partial class LiquidBlock : global::System.IDisposable
         return new LiquidBlock((nint)handle);
     }
 
-    public static LiquidBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.LiquidBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b940085b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LiquidBlock((nint)handle);
-    }
-
     public static LiquidBlock Create(string nameId, int id, global::Hosihikari.Bindings.Bedrock.Interop.Material material)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

@@ -44,6 +44,12 @@ public sealed unsafe partial class LevelSeed64 : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_773c3f24((void*)__hosihikari_shim_handle, value);
     }
 
+    public string toUiString()
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_62fa895a((void*)__hosihikari_shim_handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

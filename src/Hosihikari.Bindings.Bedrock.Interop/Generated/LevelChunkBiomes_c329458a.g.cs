@@ -38,6 +38,17 @@ public sealed unsafe partial class LevelChunkBiomes : global::System.IDisposable
         return __hs_handle;
     }
 
+    public static LevelChunkBiomes Create()
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_aff9ca41();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new LevelChunkBiomes((nint)handle);
+    }
+
     public static LevelChunkBiomes Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_e97d6b09((void*)arg0.Handle);
@@ -83,6 +94,11 @@ public sealed unsafe partial class LevelChunkBiomes : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_714935f9((void*)__hosihikari_shim_handle, (void*)biome.Handle);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes((nint)NativeMethods.TablePtr->C2.hs_method_5280a2fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+    }
+
     public void pruneBiomesSubChunk3D(ushort subChunkIndex, int pruneType)
     {
         NativeMethods.TablePtr->C2.hs_method_b893e119((void*)__hosihikari_shim_handle, subChunkIndex, pruneType);
@@ -98,6 +114,11 @@ public sealed unsafe partial class LevelChunkBiomes : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_ee810ad1((void*)__hosihikari_shim_handle, (void*)volume, dimensionNumSubChunks);
     }
 
+    public void setBiomeInSubChunk3D(global::Hosihikari.Bindings.Bedrock.Interop.Biome biome, ushort subChunkIndex, ushort storageIndex, ushort dimensionSubchunkHeight, nint writeLock, bool allowRebuildingAdditionalSubChunk)
+    {
+        NativeMethods.TablePtr->C2.hs_method_43a5bd7a((void*)__hosihikari_shim_handle, (void*)biome.Handle, subChunkIndex, storageIndex, dimensionSubchunkHeight, (void*)writeLock, allowRebuildingAdditionalSubChunk);
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<SubChunkStorage<Biome>>' is not supported.", false)]
     public void setBiomeStorages(nint biomes, ushort biomeStackSize) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<SubChunkStorage<Biome>>' is not supported.");
@@ -106,10 +127,6 @@ public sealed unsafe partial class LevelChunkBiomes : global::System.IDisposable
     {
         NativeMethods.TablePtr->C2.hs_method_d7b02d93((void*)__hosihikari_shim_handle, (void*)biome.Handle, subChunkIndex, dimensionSubchunkHeight, allowRebuildingAdditionalSubChunk);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<SubChunkStorage<Biome>>' is not supported.", false)]
-    public void setBiomes(nint biomes, ushort biomeStackSize) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<SubChunkStorage<Biome>>' is not supported.");
 
 
     public void Dispose()

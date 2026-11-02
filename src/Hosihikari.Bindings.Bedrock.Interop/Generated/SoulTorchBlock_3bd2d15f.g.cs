@@ -418,17 +418,6 @@ public sealed unsafe partial class SoulTorchBlock : global::System.IDisposable
         return new SoulTorchBlock((nint)handle);
     }
 
-    public static SoulTorchBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.SoulTorchBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_23dc4642((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SoulTorchBlock((nint)handle);
-    }
-
     public static SoulTorchBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

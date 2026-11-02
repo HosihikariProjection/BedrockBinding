@@ -89,11 +89,6 @@ public sealed unsafe partial class StructureBlockUpdatePacket : global::System.I
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_c26b20ff((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d85945e2((void*)__hosihikari_shim_handle);
-    }
-
     public bool _disallowBatching()
     {
         return NativeMethods.TablePtr->C4.hs_method_95575275((void*)__hosihikari_shim_handle) != 0;
@@ -158,17 +153,6 @@ public sealed unsafe partial class StructureBlockUpdatePacket : global::System.I
     public void _writeWithSerializationMode(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx reflectionCtx, int? overrideMode)
     {
         NativeMethods.TablePtr->C4.hs_method_61661a9a((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle, overrideMode ?? default(int), overrideMode.HasValue);
-    }
-
-    public static StructureBlockUpdatePacket Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_07e5428a();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StructureBlockUpdatePacket((nint)handle);
     }
 
     public static StructureBlockUpdatePacket Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockUpdatePacket arg0)

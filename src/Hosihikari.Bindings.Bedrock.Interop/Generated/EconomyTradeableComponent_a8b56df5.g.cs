@@ -43,6 +43,11 @@ public sealed unsafe partial class EconomyTradeableComponent : global::System.ID
         return (nint)NativeMethods.TablePtr->C1.hs_method_75d33a25((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C1.hs_method_17a27aba((void*)__hosihikari_shim_handle);
+    }
+
     public static EconomyTradeableComponent Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_5565f498();
@@ -133,6 +138,16 @@ public sealed unsafe partial class EconomyTradeableComponent : global::System.ID
         return NativeMethods.TablePtr->C1.hs_method_20417273((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public void initFromDefinition()
+    {
+        NativeMethods.TablePtr->C1.hs_method_c860780b((void*)__hosihikari_shim_handle);
+    }
+
+    public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.EconomyTradeableComponentDefinition definition)
+    {
+        NativeMethods.TablePtr->C1.hs_method_e1910609((void*)__hosihikari_shim_handle, (void*)definition.Handle);
+    }
+
     public string loadDisplayName()
     {
         var __hs_view = NativeMethods.TablePtr->C1.hs_method_3440ec6e((void*)__hosihikari_shim_handle);
@@ -145,10 +160,22 @@ public sealed unsafe partial class EconomyTradeableComponent : global::System.ID
         set => NativeMethods.TablePtr->C1.hs_set_c313ce8d((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mConvertTradesEconomy
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_6243f42e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_6243f42e((void*)__hosihikari_shim_handle, value);
+    }
+
     public bool mConvertedFromVillagerV1
     {
         get => NativeMethods.TablePtr->C1.hs_get_4eea5fc0((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C1.hs_set_4eea5fc0((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mCuredDiscount_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2fdca98a((void*)__hosihikari_shim_handle);
     }
 
     public int mDiscountDegradationTimeStamp
@@ -169,10 +196,34 @@ public sealed unsafe partial class EconomyTradeableComponent : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_6a57a05f((void*)__hosihikari_shim_handle);
     }
 
+    public int mHeroDemandDiscount
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_d78d3cb0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_d78d3cb0((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastTradingPlayer_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2c0e5049((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mMaxCuredDiscount_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_57c23133((void*)__hosihikari_shim_handle);
+    }
+
+    public int mMaxNearbyCuredDiscount
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_2347a44b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_2347a44b((void*)__hosihikari_shim_handle, value);
+    }
+
+    public int mNearbyCuredDiscount
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_c6dee79e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_c6dee79e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -187,16 +238,46 @@ public sealed unsafe partial class EconomyTradeableComponent : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2ef70fda((void*)__hosihikari_shim_handle);
     }
 
+    public bool mPersistTrades
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_358e0fd2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_358e0fd2((void*)__hosihikari_shim_handle, value);
+    }
+
     public int mRiches
     {
         get => NativeMethods.TablePtr->C1.hs_get_fed2e964((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C1.hs_set_fed2e964((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mShowTradeScreen
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_52ab2a63((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_52ab2a63((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mTradeTablePath_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0ef0fab4((void*)__hosihikari_shim_handle);
+    }
+
     public int mUpdateMerchantTimer
     {
         get => NativeMethods.TablePtr->C1.hs_get_e00440bd((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C1.hs_set_e00440bd((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mUseLegacyPrices
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_e832f658((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_e832f658((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mUseNewTradeScreen
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_258a31d2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_258a31d2((void*)__hosihikari_shim_handle, value);
     }
 
     public void matchExpAndTier()

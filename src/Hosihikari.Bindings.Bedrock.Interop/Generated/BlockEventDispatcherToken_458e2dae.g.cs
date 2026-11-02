@@ -38,11 +38,6 @@ public sealed unsafe partial class BlockEventDispatcherToken : global::System.ID
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_5f315fea((void*)__hosihikari_shim_handle);
-    }
-
     public static BlockEventDispatcherToken Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_64131696();

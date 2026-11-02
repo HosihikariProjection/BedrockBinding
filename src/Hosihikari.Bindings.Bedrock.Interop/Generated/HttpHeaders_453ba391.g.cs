@@ -142,6 +142,11 @@ public sealed unsafe partial class HttpHeaders : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.HttpHeaders((nint)NativeMethods.TablePtr->C2.hs_method_d817ac23((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
+    public int parse(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BitStream data)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_6a396368((void*)__hosihikari_shim_handle, (void*)data.Handle);
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

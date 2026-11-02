@@ -60,9 +60,9 @@ public sealed unsafe partial class ItemStackRequestActionCraftResults_DEPRECATED
         NativeMethods.TablePtr->C2.hs_method_92e35247((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'NetworkItemInstanceDescriptor' is not supported.", false)]
     public nint _ctor(nint craftResults, byte numCrafts) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'NetworkItemInstanceDescriptor' is not supported.");
 
     public void _postLoadItems_DEPRECATEDASKTYLAING(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, bool isClientSide)
     {
@@ -99,9 +99,9 @@ public sealed unsafe partial class ItemStackRequestActionCraftResults_DEPRECATED
         return new ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'NetworkItemInstanceDescriptor' is not supported.", false)]
     public static ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING Create(nint craftResults, byte numCrafts) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'NetworkItemInstanceDescriptor' is not supported.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {

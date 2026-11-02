@@ -423,9 +423,9 @@ public sealed unsafe partial class GrassBlockBase : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_37835673((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)(entity?.Handle ?? 0), fType) != 0;
     }
 
-    public bool _tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public bool _tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte handSlot)
     {
-        return NativeMethods.TablePtr->C1.hs_method_4dcb74f2((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_14ac82d5((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle, handSlot) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -435,17 +435,6 @@ public sealed unsafe partial class GrassBlockBase : global::System.IDisposable
     public static GrassBlockBase Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_fe3908dc();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GrassBlockBase((nint)handle);
-    }
-
-    public static GrassBlockBase Create(global::Hosihikari.Bindings.Bedrock.Interop.GrassBlockBase arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d7373d7c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -531,9 +520,9 @@ public sealed unsafe partial class GrassBlockBase : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_670953a5((void*)__hosihikari_shim_handle, (void*)eventData.Handle);
     }
 
-    public bool tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public bool tryToTill(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte handSlot)
     {
-        return NativeMethods.TablePtr->C1.hs_method_cfebaf4e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_eb376803((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)entity.Handle, (void*)item.Handle, handSlot) != 0;
     }
 
     public void use(nint eventData)

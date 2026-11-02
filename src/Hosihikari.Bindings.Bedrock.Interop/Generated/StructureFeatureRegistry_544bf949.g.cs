@@ -55,7 +55,7 @@ public sealed unsafe partial class StructureFeatureRegistry : global::System.IDi
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public bool findNearestStructureFeature(nint dimension, nint surfaceProvider, nint feature, nint origin, nint pos, nint biomeSource, bool mustBeInNewChunks, nint biomeTag) =>
+    public bool findNearestStructureFeature(nint dimension, nint surfaceProvider, nint feature, nint origin, nint pos, nint biomeSource, bool mustBeInNewChunks, nint biomeTag, int searchRadiusCells) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString findStructureFeatureTypeAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

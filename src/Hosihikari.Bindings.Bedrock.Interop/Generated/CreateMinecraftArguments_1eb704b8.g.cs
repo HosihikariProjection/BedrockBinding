@@ -67,6 +67,12 @@ public sealed unsafe partial class CreateMinecraftArguments : global::System.IDi
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk8c6b52_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a254f021((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9de261_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f5704083((void*)__hosihikari_shim_handle);

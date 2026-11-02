@@ -115,36 +115,9 @@ public sealed unsafe partial class DropperContainerManagerModel : global::System
         return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C1.hs_method_df92ebce((void*)__hosihikari_shim_handle));
     }
 
-    public nint _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_050426a9((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle, (void*)blockPos.Handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static DropperContainerManagerModel Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_1029e388();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DropperContainerManagerModel((nint)handle);
-    }
-
-    public static DropperContainerManagerModel Create(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_1d42454f(containerId, (void*)player.Handle, (void*)blockPos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DropperContainerManagerModel((nint)handle);
-    }
 
     public static DropperContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.DropperContainerManagerModel arg0)
     {

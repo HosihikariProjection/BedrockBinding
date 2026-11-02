@@ -56,6 +56,10 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
         return NativeMethods.TablePtr->C5.hs_method_7d2716c3((void*)__hosihikari_shim_handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.", false)]
     public static nint BlockIgnore(nint blocks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.");
@@ -90,6 +94,11 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
         NativeMethods.TablePtr->C5.hs_method_99de623c((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+    }
+
+    public static void bootstrap()
+    {
+        NativeMethods.TablePtr->C5.hs_method_e54fe944();
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]

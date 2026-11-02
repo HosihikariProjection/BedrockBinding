@@ -49,16 +49,6 @@ public sealed unsafe partial class RopeSystem : global::System.IDisposable
         return new RopeSystem((nint)handle);
     }
 
-    public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.RopeParams @params, ulong initialRopeCount)
-    {
-        NativeMethods.TablePtr->C3.hs_method_a9b6d42b((void*)__hosihikari_shim_handle, (void*)@params.Handle, initialRopeCount);
-    }
-
-    public void initializePins(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startPin, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 endPin)
-    {
-        NativeMethods.TablePtr->C3.hs_method_96c85e2e((void*)__hosihikari_shim_handle, (void*)startPin.Handle, (void*)endPin.Handle);
-    }
-
     public ulong mCutRenderNode
     {
         get => NativeMethods.TablePtr->C3.hs_get_e208e1a1((void*)__hosihikari_shim_handle);
@@ -78,9 +68,9 @@ public sealed unsafe partial class RopeSystem : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mRopeMutex_Address
+    public nint mRenderMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_330fbf32((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9d3a53b5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -99,11 +89,6 @@ public sealed unsafe partial class RopeSystem : global::System.IDisposable
     {
         get => NativeMethods.TablePtr->C3.hs_get_ddecebcc((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C3.hs_set_ddecebcc((void*)__hosihikari_shim_handle, value);
-    }
-
-    public void queueTick(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Abi.SharedHandle? self)
-    {
-        NativeMethods.TablePtr->C3.hs_method_4098f48a((void*)__hosihikari_shim_handle, (void*)region.Handle, self?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
 

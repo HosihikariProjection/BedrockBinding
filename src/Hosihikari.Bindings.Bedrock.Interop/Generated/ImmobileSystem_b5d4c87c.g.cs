@@ -38,9 +38,15 @@ public sealed unsafe partial class ImmobileSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EntityModifier<MobIsJumpingFlagComponent>' is not a known bindable declaration.", false)]
-    public static void doImmobileSystem(nint context, nint localMoveVelocityComponent, nint mobRotationComponent, nint stateVectorComponent, nint mod) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EntityModifier<MobIsJumpingFlagComponent>' is not a known bindable declaration.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_9d759429());
+    }
+
+    public static void doImmobileSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.LocalMoveVelocityComponent localMoveVelocityComponent, global::Hosihikari.Bindings.Bedrock.Interop.MobRotationComponent mobRotationComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, nint mod)
+    {
+        NativeMethods.TablePtr->C2.hs_method_c54881fb((void*)context.Handle, (void*)localMoveVelocityComponent.Handle, (void*)mobRotationComponent.Handle, (void*)stateVectorComponent.Handle, (void*)mod);
+    }
 
     public void Dispose()
     {

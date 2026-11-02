@@ -43,46 +43,18 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         return (nint)NativeMethods.TablePtr->C3.hs_method_0b78810f((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(string playFabId, global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest connectionRequest)
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest connectionRequest)
     {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playFabId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(playFabId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_78ac9cb3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)connectionRequest.Handle);
-        }
+        return (nint)NativeMethods.TablePtr->C3.hs_method_ebd0705a((void*)__hosihikari_shim_handle, (void*)connectionRequest.Handle);
     }
 
-    public nint _ctor(string playFabId, global::Hosihikari.Bindings.Bedrock.Interop.SubClientConnectionRequest request)
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SubClientConnectionRequest request)
     {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playFabId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(playFabId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_4c3a7331((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)request.Handle);
-        }
+        return (nint)NativeMethods.TablePtr->C3.hs_method_1d087975((void*)__hosihikari_shim_handle, (void*)request.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint name, nint playFabId, nint resourcePatch, nint skinImage, nint skinImageWidth, nint skinImageHeight, nint capeImage, nint capeImageWidth, nint capeImageHeight, nint geometryData, nint geometryDataMinEngineVersion, nint animationData, nint capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, bool isPrimaryUser, bool overridesPlayerAppearance) =>
+    public nint _ctor(nint name, nint resourcePatch, nint skinImage, nint skinImageWidth, nint skinImageHeight, nint capeImage, nint capeImageWidth, nint capeImageHeight, nint geometryData, nint geometryDataMinEngineVersion, nint animationData, nint capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, bool isPrimaryUser, bool overridesPlayerAppearance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public void _dtor()
@@ -93,6 +65,17 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
     public static SerializedSkinRef Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_cd5e7fa2();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new SerializedSkinRef((nint)handle);
+    }
+
+    public static SerializedSkinRef Create(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest connectionRequest)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_570c57cd((void*)connectionRequest.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -112,58 +95,19 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         return new SerializedSkinRef((nint)handle);
     }
 
-    public static SerializedSkinRef Create(string playFabId, global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest connectionRequest)
+    public static SerializedSkinRef Create(global::Hosihikari.Bindings.Bedrock.Interop.SubClientConnectionRequest request)
     {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playFabId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
+        var handle = NativeMethods.TablePtr->C3.hs_create_328c8d5a((void*)request.Handle);
+        if (handle == null)
         {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
         }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(playFabId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C3.hs_create_4cbb6a7c(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)connectionRequest.Handle);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
 
-            return new SerializedSkinRef((nint)handle);
-        }
-    }
-
-    public static SerializedSkinRef Create(string playFabId, global::Hosihikari.Bindings.Bedrock.Interop.SubClientConnectionRequest request)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playFabId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(playFabId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C3.hs_create_e127f971(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)request.Handle);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new SerializedSkinRef((nint)handle);
-        }
+        return new SerializedSkinRef((nint)handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static SerializedSkinRef Create(nint name, nint playFabId, nint resourcePatch, nint skinImage, nint skinImageWidth, nint skinImageHeight, nint capeImage, nint capeImageWidth, nint capeImageHeight, nint geometryData, nint geometryDataMinEngineVersion, nint animationData, nint capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, bool isPrimaryUser, bool overridesPlayerAppearance) =>
+    public static SerializedSkinRef Create(nint name, nint resourcePatch, nint skinImage, nint skinImageWidth, nint skinImageHeight, nint capeImage, nint capeImageWidth, nint capeImageHeight, nint geometryData, nint geometryDataMinEngineVersion, nint animationData, nint capeId, bool isTrustedSkin, bool isPremium, bool isPersona, bool isPersonaCapeOnClassicSkin, bool isPrimaryUser, bool overridesPlayerAppearance) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef createTrustedDefaultSerializedSkin()
@@ -308,25 +252,6 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
     public void setPieceTintColors(nint pieceTintColors) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'TintMapColor' is not supported.");
 
-    public void setPlayFabId(string playFabId)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playFabId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(playFabId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C3.hs_method_32025d3e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
-
     public void setProfileHash(string profileHash)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(profileHash);
@@ -343,25 +268,6 @@ public sealed unsafe partial class SerializedSkinRef : global::System.IDisposabl
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
             NativeMethods.TablePtr->C3.hs_method_fae81fed((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
-
-    public void setResourcePatch(string resourcePatch)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(resourcePatch);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourcePatch, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C3.hs_method_544cf0f1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 

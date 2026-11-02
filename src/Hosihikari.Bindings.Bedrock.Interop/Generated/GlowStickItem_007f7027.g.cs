@@ -38,6 +38,11 @@ public sealed unsafe partial class GlowStickItem : global::System.IDisposable
         return __hs_handle;
     }
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_a22c246b((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public int mMaxActiveTime
     {
         get => NativeMethods.TablePtr->C1.hs_get_2757b998((void*)__hosihikari_shim_handle);

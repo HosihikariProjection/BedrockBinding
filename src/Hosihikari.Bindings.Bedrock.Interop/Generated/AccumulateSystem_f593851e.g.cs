@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.ClientRewind;
 
-public sealed unsafe partial class AccumulateSystem
+public sealed unsafe partial class AccumulateSystem : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -47,6 +47,23 @@ public sealed unsafe partial class AccumulateSystem
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
+    public static AccumulateSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientRewind.AccumulateSystem arg0)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_2150f441((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new AccumulateSystem((nint)handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_bffc82a4((void*)__hosihikari_shim_handle);
+    }
+
     public void tick(nint executionContext)
     {
         NativeMethods.TablePtr->C0.hs_method_0934ba04((void*)__hosihikari_shim_handle, (void*)executionContext);
@@ -55,5 +72,19 @@ public sealed unsafe partial class AccumulateSystem
     public static void tickEntity(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.ReplayStateTrackerComponent tracker, nint tracked)
     {
         NativeMethods.TablePtr->C0.hs_method_452cffcf((void*)entity.Handle, (void*)tracker.Handle, (void*)tracked);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_f593851e((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

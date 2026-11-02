@@ -112,17 +112,6 @@ public sealed unsafe partial class BambooSaplingBlock : global::System.IDisposab
         return new BambooSaplingBlock((nint)handle);
     }
 
-    public static BambooSaplingBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BambooSaplingBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_2a42577a((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BambooSaplingBlock((nint)handle);
-    }
-
     public static BambooSaplingBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

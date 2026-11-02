@@ -54,6 +54,11 @@ public sealed unsafe partial class CommandBlockSystem : global::System.IDisposab
         return new CommandBlockSystem((nint)handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_259d086b());
+    }
+
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
         NativeMethods.TablePtr->C1.hs_method_3e1f4b96((void*)__hosihikari_shim_handle, (void*)registry.Handle);

@@ -38,17 +38,6 @@ public sealed unsafe partial class ActorSkeletalAnimation : global::System.IDisp
         return __hs_handle;
     }
 
-    public static ActorSkeletalAnimation Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_9cd13b97();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorSkeletalAnimation((nint)handle);
-    }
-
     public static ActorSkeletalAnimation Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimation arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_973d00b6((void*)arg0.Handle);

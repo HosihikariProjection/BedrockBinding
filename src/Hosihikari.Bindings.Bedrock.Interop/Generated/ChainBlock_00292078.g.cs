@@ -393,17 +393,6 @@ public sealed unsafe partial class ChainBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static ChainBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ChainBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_b4a0f02b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ChainBlock((nint)handle);
-    }
-
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte face, int type)
     {
         return NativeMethods.TablePtr->C0.hs_method_e681d5f3((void*)__hosihikari_shim_handle, (void*)block.Handle, face, type) != 0;

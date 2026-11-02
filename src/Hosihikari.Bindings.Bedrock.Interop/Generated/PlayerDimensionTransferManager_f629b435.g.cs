@@ -93,6 +93,11 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         NativeMethods.TablePtr->C3.hs_method_d832481e((void*)__hosihikari_shim_handle);
     }
 
+    public bool isAnyPlayerChangingDimension()
+    {
+        return NativeMethods.TablePtr->C3.hs_method_2ac90faa((void*)__hosihikari_shim_handle) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionManager_Address
     {

@@ -38,9 +38,25 @@ public sealed unsafe partial class MemberDescriptor : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint _ctor()
+    {
+        return (nint)NativeMethods.TablePtr->C5.hs_method_21a6ce10((void*)__hosihikari_shim_handle);
+    }
+
     public void _dtor()
     {
         NativeMethods.TablePtr->C5.hs_method_dd1efe24((void*)__hosihikari_shim_handle);
+    }
+
+    public static MemberDescriptor Create()
+    {
+        var handle = NativeMethods.TablePtr->C5.hs_create_bd1cecea();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new MemberDescriptor((nint)handle);
     }
 
     public byte mAllowedAreas
@@ -107,6 +123,12 @@ public sealed unsafe partial class MemberDescriptor : global::System.IDisposable
     public nint mUserPropertiesMap_Address
     {
         get => (nint)NativeMethods.TablePtr->C5.hs_get_cd532ca4((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mVisitorData_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a0881961((void*)__hosihikari_shim_handle);
     }
 
 

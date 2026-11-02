@@ -38,6 +38,11 @@ public sealed unsafe partial class UpdateAttributesSystem : global::System.IDisp
         return __hs_handle;
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createProcessRequestSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_e4383307());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

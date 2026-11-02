@@ -88,14 +88,14 @@ public sealed unsafe partial class CameraItemComponentLegacy : global::System.ID
         NativeMethods.TablePtr->C0.hs_method_5337aeea((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)(camera?.Handle ?? 0), (void*)(target?.Handle ?? 0));
     }
 
-    public void _use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public void _use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        NativeMethods.TablePtr->C0.hs_method_21d7cf10((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C0.hs_method_2bf82cb6((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot);
     }
 
-    public bool _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 arg4)
+    public bool _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 arg4, byte handSlot)
     {
-        return NativeMethods.TablePtr->C0.hs_method_ac4b47cb((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)blockPos.Handle, face, (void*)arg4.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_fa67f4f3((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)blockPos.Handle, face, (void*)arg4.Handle, handSlot) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -242,14 +242,14 @@ public sealed unsafe partial class CameraItemComponentLegacy : global::System.ID
         NativeMethods.TablePtr->C0.hs_method_5da57fc8((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)(camera?.Handle ?? 0), (void*)(target?.Handle ?? 0));
     }
 
-    public void use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public void use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        NativeMethods.TablePtr->C0.hs_method_50170c3d((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C0.hs_method_2938345b((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot);
     }
 
-    public bool useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 arg4)
+    public bool useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 arg4, byte handSlot)
     {
-        return NativeMethods.TablePtr->C0.hs_method_3db424f7((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)blockPos.Handle, face, (void*)arg4.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_b400dd7b((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)blockPos.Handle, face, (void*)arg4.Handle, handSlot) != 0;
     }
 
 

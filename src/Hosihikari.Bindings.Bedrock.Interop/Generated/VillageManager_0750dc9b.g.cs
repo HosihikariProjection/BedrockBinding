@@ -153,6 +153,11 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_16bef584((void*)__hosihikari_shim_handle, (void*)levelStorageManagerConnector.Handle);
     }
 
+    public bool isValidPOIType(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_74401827((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mClusteredPOIs_Address
     {
@@ -245,6 +250,11 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
     public void submitFindPOIQuery(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorID)
     {
         NativeMethods.TablePtr->C4.hs_method_eb08aefb((void*)__hosihikari_shim_handle, (void*)actorID.Handle);
+    }
+
+    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Tick tick)
+    {
+        NativeMethods.TablePtr->C4.hs_method_a65eefa3((void*)__hosihikari_shim_handle, (void*)tick.Handle);
     }
 
     public void tickVillages(global::Hosihikari.Bindings.Bedrock.Interop.Tick tick, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)

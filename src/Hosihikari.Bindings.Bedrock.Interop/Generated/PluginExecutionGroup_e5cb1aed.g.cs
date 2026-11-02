@@ -9,5 +9,6 @@ public enum PluginExecutionGroup : byte
     PrePackLoadExecution = 0,
     ServerStartExecution = 1,
     ClientLevelCreation = 2,
-    All = 3,
+    AppInitialization = 3,
+    All = 4,
 }

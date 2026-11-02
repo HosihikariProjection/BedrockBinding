@@ -49,6 +49,21 @@ public sealed unsafe partial class ChunkGenerationManager : global::System.IDisp
         return new ChunkGenerationManager((nint)handle);
     }
 
+    public void addServerChunksToPacket(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier player, byte clientId, global::Hosihikari.Bindings.Bedrock.Interop.NetworkChunkPublisherUpdatePacket updatePacket)
+    {
+        NativeMethods.TablePtr->C0.hs_method_b5b1a32b((void*)__hosihikari_shim_handle, (void*)player.Handle, clientId, (void*)updatePacket.Handle);
+    }
+
+    public void clearAllGenerationRequests(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier player, byte clientId)
+    {
+        NativeMethods.TablePtr->C0.hs_method_bed14700((void*)__hosihikari_shim_handle, (void*)player.Handle, clientId);
+    }
+
+    public bool hasPendingGenerationRequests(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier player, byte clientId)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_377c5fb4((void*)__hosihikari_shim_handle, (void*)player.Handle, clientId) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mGenerationRequestLock_Address
     {
@@ -59,6 +74,11 @@ public sealed unsafe partial class ChunkGenerationManager : global::System.IDisp
     public nint mGenerationRequests_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_0e139dac((void*)__hosihikari_shim_handle);
+    }
+
+    public void queueChunkGenerationRequest(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier player, byte clientId, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos)
+    {
+        NativeMethods.TablePtr->C0.hs_method_63706e89((void*)__hosihikari_shim_handle, (void*)player.Handle, clientId, (void*)pos.Handle);
     }
 
 

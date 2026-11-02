@@ -38,11 +38,6 @@ public sealed unsafe partial class CustomFileHandlers : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_ab00916c((void*)__hosihikari_shim_handle);
-    }
-
     public static CustomFileHandlers Create()
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_b9915da8();
@@ -87,7 +82,6 @@ public sealed unsafe partial class CustomFileHandlers : global::System.IDisposab
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.DataStore_Nested.CustomFileHandlers((nint)NativeMethods.TablePtr->C0.hs_method_aa351faa((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
-
 
     public void Dispose()
     {

@@ -49,9 +49,9 @@ public sealed unsafe partial class UseModifiersItemComponent : global::System.ID
         NativeMethods.TablePtr->C4.hs_method_f554bacd((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::Beta::UseModifiersItemComponent' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_26_50::UseModifiersItemComponent' is not a known bindable declaration.", false)]
     public nint _ctor(nint component) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::Beta::UseModifiersItemComponent' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_26_50::UseModifiersItemComponent' is not a known bindable declaration.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
@@ -68,9 +68,9 @@ public sealed unsafe partial class UseModifiersItemComponent : global::System.ID
         return new UseModifiersItemComponent((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::Beta::UseModifiersItemComponent' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_26_50::UseModifiersItemComponent' is not a known bindable declaration.", false)]
     public static UseModifiersItemComponent Create(nint component) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::Beta::UseModifiersItemComponent' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_26_50::UseModifiersItemComponent' is not a known bindable declaration.");
 
     public static UseModifiersItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.UseModifiersItemComponent arg0)
     {

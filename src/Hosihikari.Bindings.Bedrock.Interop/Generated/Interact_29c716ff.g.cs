@@ -65,10 +65,10 @@ public sealed unsafe partial class Interact : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_53d7587f((void*)__hosihikari_shim_handle, value);
     }
 
-    public int mSubCommand
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSubCommand_Address
     {
-        get => NativeMethods.TablePtr->C0.hs_get_f265f773((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_f265f773((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_f265f773((void*)__hosihikari_shim_handle);
     }
 
 

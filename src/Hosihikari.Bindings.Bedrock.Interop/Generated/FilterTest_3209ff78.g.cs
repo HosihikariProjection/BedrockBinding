@@ -89,21 +89,6 @@ public sealed unsafe partial class FilterTest : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_4107ca9f((void*)__hosihikari_shim_handle));
     }
 
-    public bool _testValuesWithOperator(bool a, bool b)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_768baf03((void*)__hosihikari_shim_handle, a, b) != 0;
-    }
-
-    public bool _testValuesWithOperator(global::Hosihikari.Bindings.Bedrock.Interop.HashedString a, global::Hosihikari.Bindings.Bedrock.Interop.HashedString b)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_7d226dce((void*)__hosihikari_shim_handle, (void*)a.Handle, (void*)b.Handle) != 0;
-    }
-
-    public bool _testValuesWithOperator(float a, float b)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ea35bc85((void*)__hosihikari_shim_handle, a, b) != 0;
-    }
-
     public bool evaluate(nint context)
     {
         return NativeMethods.TablePtr->C1.hs_method_695c54e9((void*)__hosihikari_shim_handle, (void*)context) != 0;

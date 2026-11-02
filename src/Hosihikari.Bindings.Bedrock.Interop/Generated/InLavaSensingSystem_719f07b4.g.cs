@@ -38,9 +38,10 @@ public sealed unsafe partial class InLavaSensingSystem : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EntityModifier<WasInLavaFlagComponent>' is not a known bindable declaration.", false)]
-    public static void doInLavaSensing(nint entity, nint updateWaterStateRequestComponent, nint mod) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EntityModifier<WasInLavaFlagComponent>' is not a known bindable declaration.");
+    public static void doInLavaSensing(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.UpdateWaterStateRequestComponent updateWaterStateRequestComponent, nint mod)
+    {
+        NativeMethods.TablePtr->C2.hs_method_9aae81c8((void*)entity.Handle, (void*)updateWaterStateRequestComponent.Handle, (void*)mod);
+    }
 
     public void Dispose()
     {

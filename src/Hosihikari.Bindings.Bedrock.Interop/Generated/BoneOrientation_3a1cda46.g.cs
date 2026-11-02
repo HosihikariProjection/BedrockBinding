@@ -38,27 +38,6 @@ public sealed unsafe partial class BoneOrientation : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientation rhs)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_b2ee885b((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
-    }
-
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_73a056f3((void*)__hosihikari_shim_handle);
-    }
-
-    public static BoneOrientation Create(global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientation rhs)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_8ad66b05((void*)rhs.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BoneOrientation((nint)handle);
-    }
-
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoneBindingExpression_Address
     {
@@ -130,19 +109,6 @@ public sealed unsafe partial class BoneOrientation : global::System.IDisposable
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c13a20ac((void*)__hosihikari_shim_handle);
     }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientation operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientation rhs)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientation((nint)NativeMethods.TablePtr->C0.hs_method_b9c031c1((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DirectX::XMMATRIX' is not a known bindable declaration.", false)]
-    public void rotateAndUpdateLocalPreTransformMatrix(nint matrix, float rotationInDegrees, nint axis) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DirectX::XMMATRIX' is not a known bindable declaration.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'DirectX::XMMATRIX' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint updateLocalPreTransformMatrix() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'DirectX::XMMATRIX' requires --link-carrier or --virtual-dispatch.");
 
 
     public void Dispose()

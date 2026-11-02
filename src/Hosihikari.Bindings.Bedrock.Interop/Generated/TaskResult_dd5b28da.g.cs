@@ -43,9 +43,9 @@ public sealed unsafe partial class TaskResult : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.TaskResult((nint)NativeMethods.TablePtr->C4.hs_method_29cb6145(), false);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TaskResult Requeue()
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TaskResult RequeueImmediateAggressive()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TaskResult((nint)NativeMethods.TablePtr->C4.hs_method_ba82eb3a(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TaskResult((nint)NativeMethods.TablePtr->C4.hs_method_f3e1d03f(), false);
     }
 
     public static TaskResult Create(global::Hosihikari.Bindings.Bedrock.Interop.TaskResult arg0)

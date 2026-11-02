@@ -22,5 +22,7 @@ public enum EventType : byte
     RedstoneUpdate = 13,
     Actor = 14,
     InternalActor = 15,
-    Count = 16,
+    NamedTick = 16,
+    NeighborChanged = 17,
+    Count = 18,
 }

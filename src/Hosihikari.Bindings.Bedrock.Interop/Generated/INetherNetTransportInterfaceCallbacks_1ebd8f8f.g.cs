@@ -72,13 +72,27 @@ public sealed unsafe partial class INetherNetTransportInterfaceCallbacks : globa
         NativeMethods.TablePtr->C2.hs_method_e9532fe2((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1);
     }
 
-    public void OnSessionOpen(global::Hosihikari.Bindings.Bedrock.Interop.NetherNet.NetworkID networkID, ulong sessionId, bool isLan)
+    public void OnSessionOpen(global::Hosihikari.Bindings.Bedrock.Interop.NetherNet.NetworkID networkID, ulong sessionId, string assertion, bool isLan)
     {
-        NativeMethods.TablePtr->C2.hs_method_4f1ae636((void*)__hosihikari_shim_handle, (void*)networkID.Handle, sessionId, isLan);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(assertion);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(assertion, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            NativeMethods.TablePtr->C2.hs_method_fe411884((void*)__hosihikari_shim_handle, (void*)networkID.Handle, sessionId, __hs_stringData2, (nuint)__hs_stringByteCount2, isLan);
+        }
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<bool>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint OnSessionRequested(nint networkID, ulong sessionId, nint assertion, nint fingerprintJson, bool isLan) =>
+    public nint OnSessionRequested(nint arg0, ulong arg1, nint arg2, nint arg3, bool arg4) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<bool>' requires --link-carrier or --virtual-dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<bool>' requires --link-carrier or --virtual-dispatch.", false)]

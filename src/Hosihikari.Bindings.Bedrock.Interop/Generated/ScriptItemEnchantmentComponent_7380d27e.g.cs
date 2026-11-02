@@ -62,6 +62,34 @@ public sealed unsafe partial class ScriptItemEnchantmentComponent : global::Syst
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6edd381e((void*)__hosihikari_shim_handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: the by-value record parameter has no eligible layout.", false)]
+    public nint _ctor(nint item, nint scope) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the by-value record parameter has no eligible layout.");
+
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent arg0)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_895dd7ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static ScriptItemEnchantmentComponent Create()
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_04f88c7f();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptItemEnchantmentComponent((nint)handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: the by-value record parameter has no eligible layout.", false)]
+    public static ScriptItemEnchantmentComponent Create(nint item, nint scope) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the by-value record parameter has no eligible layout.");
+
     public static ScriptItemEnchantmentComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_a9d061ba((void*)arg0.Handle);
@@ -82,6 +110,11 @@ public sealed unsafe partial class ScriptItemEnchantmentComponent : global::Syst
     public nint mEnchants_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_11759c47((void*)__hosihikari_shim_handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentComponent((nint)NativeMethods.TablePtr->C3.hs_method_15f5152b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 

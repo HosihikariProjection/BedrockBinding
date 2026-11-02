@@ -94,6 +94,10 @@ public sealed unsafe partial class EncryptedNetworkPeer : global::System.IDispos
         }
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public int _receivePacket(ref string outData, global::Hosihikari.Bindings.Abi.SharedHandle? timepointPtr)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);

@@ -38,9 +38,9 @@ public sealed unsafe partial class VanillaDataDrivenGeometry : global::System.ID
         return __hs_handle;
     }
 
-    public static void addComponentsToBlocks(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments arg1)
+    public static void addComponentsToBlocks(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
     {
-        NativeMethods.TablePtr->C4.hs_method_9cfb3834((void*)baseGameVersion.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C4.hs_method_9cfb3834((void*)baseGameVersion.Handle, (void*)experiments.Handle);
     }
 
     public void Dispose()

@@ -392,17 +392,6 @@ public sealed unsafe partial class HeavyCoreBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static HeavyCoreBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.HeavyCoreBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_28cb8dba((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new HeavyCoreBlock((nint)handle);
-    }
-
     public bool canProvideSupport(global::Hosihikari.Bindings.Bedrock.Interop.Block arg0, byte face, int type)
     {
         return NativeMethods.TablePtr->C1.hs_method_63accc25((void*)__hosihikari_shim_handle, (void*)arg0.Handle, face, type) != 0;

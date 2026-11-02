@@ -8,5 +8,6 @@ public enum SoundPauseSource : byte
 {
     PauseMenu = 0,
     Script = 1,
-    Count = 2,
+    PersonalMusicPlayer = 2,
+    Count = 3,
 }

@@ -52,7 +52,7 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C2.hs_method_9e26ecea((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings settings, string levelName, int generatorVersion, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos defaultSpawn, bool achievementsDisabled, uint eduOffer, float rainLevel, float lightningLevel)
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings settings, string levelName, int generatorVersion, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos defaultSpawn, bool achievementsDisabled, float rainLevel, float lightningLevel)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(levelName);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -67,13 +67,43 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(levelName, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C2.hs_method_260a50d3((void*)__hosihikari_shim_handle, (void*)settings.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, generatorVersion, (void*)defaultSpawn.Handle, achievementsDisabled, eduOffer, rainLevel, lightningLevel);
+            return (nint)NativeMethods.TablePtr->C2.hs_method_fb3e834a((void*)__hosihikari_shim_handle, (void*)settings.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, generatorVersion, (void*)defaultSpawn.Handle, achievementsDisabled, rainLevel, lightningLevel);
         }
     }
 
     public void _dtor()
     {
         NativeMethods.TablePtr->C2.hs_method_f4f959c7((void*)__hosihikari_shim_handle);
+    }
+
+    public bool _educationFeaturesEnabled()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_939b8153((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public uint _getEducationEditionOffer()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_6c1c3690((void*)__hosihikari_shim_handle);
+    }
+
+    public bool _isCodeBuilderEnabled()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_b856b7ac((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public void _setCodeBuilderEnabled(bool codeBuilderEnabled)
+    {
+        NativeMethods.TablePtr->C2.hs_method_9e41570d((void*)__hosihikari_shim_handle, codeBuilderEnabled);
+    }
+
+    public void _setEducationEditionOffer(uint eduOffer)
+    {
+        NativeMethods.TablePtr->C2.hs_method_f738eb7c((void*)__hosihikari_shim_handle, eduOffer);
+    }
+
+    public void _setEducationFeaturesEnabled(bool educationEnabled)
+    {
+        NativeMethods.TablePtr->C2.hs_method_d9b69b18((void*)__hosihikari_shim_handle, educationEnabled);
     }
 
     public static LevelData Create()
@@ -124,7 +154,7 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         return new LevelData((nint)handle);
     }
 
-    public static LevelData Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings settings, string levelName, int generatorVersion, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos defaultSpawn, bool achievementsDisabled, uint eduOffer, float rainLevel, float lightningLevel)
+    public static LevelData Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings settings, string levelName, int generatorVersion, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos defaultSpawn, bool achievementsDisabled, float rainLevel, float lightningLevel)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(levelName);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -139,7 +169,7 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(levelName, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            var handle = NativeMethods.TablePtr->C2.hs_create_1dd3daa4((void*)settings.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, generatorVersion, (void*)defaultSpawn.Handle, achievementsDisabled, eduOffer, rainLevel, lightningLevel);
+            var handle = NativeMethods.TablePtr->C2.hs_create_bf958252((void*)settings.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, generatorVersion, (void*)defaultSpawn.Handle, achievementsDisabled, rainLevel, lightningLevel);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -149,13 +179,7 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelDataValue? _getValue_18419885(global::Hosihikari.Bindings.Bedrock.Interop.HashedString key)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_18419885((void*)__hosihikari_shim_handle, (void*)key.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDataValue((nint)__hs_handle, false) : null;
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelDataValue? _getValue_0d63b965(global::Hosihikari.Bindings.Bedrock.Interop.HashedString key)
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelDataValue? _getValue(global::Hosihikari.Bindings.Bedrock.Interop.HashedString key)
     {
         var __hs_handle = NativeMethods.TablePtr->C2.hs_method_0d63b965((void*)__hosihikari_shim_handle, (void*)key.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelDataValue((nint)__hs_handle, false) : null;
@@ -175,6 +199,11 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_46b54048((void*)__hosihikari_shim_handle);
     }
 
+    public bool educationFeaturesEnabled()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_e503a9e8((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion getBaseGameVersion()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C2.hs_method_7b550360((void*)__hosihikari_shim_handle), false);
@@ -191,6 +220,11 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)NativeMethods.TablePtr->C2.hs_method_e92323a4((void*)__hosihikari_shim_handle), false);
     }
 
+    public uint getEducationEditionOffer()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_26ab37db((void*)__hosihikari_shim_handle);
+    }
+
     public int getGenerator()
     {
         return NativeMethods.TablePtr->C2.hs_method_c7a0d0a0((void*)__hosihikari_shim_handle);
@@ -201,9 +235,19 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_15a32a2c((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
+    public byte getWorldVersion()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_8846ed10((void*)__hosihikari_shim_handle);
+    }
+
     public bool hasCloudSaveAssociation()
     {
         return NativeMethods.TablePtr->C2.hs_method_5c35460b((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public bool isCodeBuilderEnabled()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_459b5f73((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mAchievementsDisabled
@@ -306,6 +350,12 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
     public nint mDefaultPermissions_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d648401b((void*)__hosihikari_shim_handle);
+    }
+
+    public sbyte mEditorLevelMigrationVersion
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_3814295f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_3814295f((void*)__hosihikari_shim_handle, value);
     }
 
     public int mEditorWorldType
@@ -710,6 +760,10 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_96535952((void*)__hosihikari_shim_handle, value);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint operator_assign(nint rhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelData arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)NativeMethods.TablePtr->C2.hs_method_b884190f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
@@ -744,6 +798,11 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_f84a7835((void*)__hosihikari_shim_handle, cheatsEnabled);
     }
 
+    public void setCodeBuilderEnabled(bool codeBuilderEnabled)
+    {
+        NativeMethods.TablePtr->C2.hs_method_5d7638cb((void*)__hosihikari_shim_handle, codeBuilderEnabled);
+    }
+
     public void setCommandsEnabled(bool commandsEnabled)
     {
         NativeMethods.TablePtr->C2.hs_method_ea4e069f((void*)__hosihikari_shim_handle, commandsEnabled);
@@ -757,6 +816,11 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
     public void setEduSharedUriResource(global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource eduSharedUriResource)
     {
         NativeMethods.TablePtr->C2.hs_method_0919305b((void*)__hosihikari_shim_handle, (void*)eduSharedUriResource.Handle);
+    }
+
+    public void setEducationEditionOffer(uint eduOffer)
+    {
+        NativeMethods.TablePtr->C2.hs_method_d6e0a4a8((void*)__hosihikari_shim_handle, eduOffer);
     }
 
     public void setEducationFeaturesEnabled(bool educationEnabled)
@@ -860,6 +924,11 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
     public void setWorldVersion(byte version)
     {
         NativeMethods.TablePtr->C2.hs_method_d76d0e60((void*)__hosihikari_shim_handle, version);
+    }
+
+    public bool shouldAttemptOneTimeAchievementsRepair()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_62d65cb4((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void touchLastLoadedWithVersion()

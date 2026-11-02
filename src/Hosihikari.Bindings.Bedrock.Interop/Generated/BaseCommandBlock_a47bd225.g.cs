@@ -273,11 +273,6 @@ public sealed unsafe partial class BaseCommandBlock : global::System.IDisposable
         }
     }
 
-    public void setTrackOutput(bool trackOutput)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e21102f2((void*)__hosihikari_shim_handle, trackOutput);
-    }
-
 
     public void Dispose()
     {

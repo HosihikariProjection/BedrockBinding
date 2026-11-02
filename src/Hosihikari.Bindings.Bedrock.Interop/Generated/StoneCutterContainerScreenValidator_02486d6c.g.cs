@@ -68,11 +68,6 @@ public sealed unsafe partial class StoneCutterContainerScreenValidator : global:
         return new StoneCutterContainerScreenValidator((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance _getResultFromId(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, nint recipeNetId)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C4.hs_method_0ac16525((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)recipeNetId));
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint getCraftResult(nint screenContext, nint screenValidation, nint craftInputs, nint numCrafts) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");

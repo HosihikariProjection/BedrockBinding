@@ -38,6 +38,11 @@ public sealed unsafe partial class AliasInfoDescription : global::System.IDispos
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C0.hs_method_73ebc6fb((void*)__hosihikari_shim_handle);
+    }
+
     public static AliasInfoDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.AliasInfoDescription arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_92fc729a((void*)arg0.Handle);

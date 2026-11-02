@@ -145,6 +145,11 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_5ba8793d((void*)__hosihikari_shim_handle, (void*)region.Handle) != 0;
     }
 
+    public void changeState(byte from, byte to)
+    {
+        NativeMethods.TablePtr->C2.hs_method_c3cc7d10((void*)__hosihikari_shim_handle, from, to);
+    }
+
     public bool checkSeasonsPostProcessDirty()
     {
         return NativeMethods.TablePtr->C2.hs_method_fdd4c342((void*)__hosihikari_shim_handle) != 0;
@@ -240,6 +245,10 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public bool generateOriginalLighting(nint neighborhood, bool enforceBorderCheck, nint prepareNeighborhood) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
     public global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalHeight getAboveTopSolidBlock(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos start, bool iteratePastInitialBlocking, bool includeWater, bool includeLeaves)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalHeight((nint)NativeMethods.TablePtr->C2.hs_method_9048cf61((void*)__hosihikari_shim_handle, (void*)start.Handle, iteratePastInitialBlocking, includeWater, includeLeaves));
@@ -265,6 +274,12 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_5d99aaf4((void*)__hosihikari_shim_handle, (void*)pos.Handle), false);
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? getBlockEntity(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos localPos)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_22ec3fdf((void*)__hosihikari_shim_handle, (void*)localPos.Handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)__hs_handle, false) : null;
+    }
+
     public void getEntities(int type, global::Hosihikari.Bindings.Bedrock.Interop.AABB bb, nint[] es, bool ignoreTargetType)
     {
         var __hs_vectorItems2 = es ?? global::System.Array.Empty<nint>();
@@ -279,20 +294,10 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public void getEntities(nint ignoredEntities, nint bb, nint entities, bool useHitbox, nint selector) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public short getMaxAllocatedY()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_fa35f472((void*)__hosihikari_shim_handle);
-    }
-
     public global::Hosihikari.Bindings.Abi.SharedHandle? getMetaDataCopy()
     {
         var __hs_shared = NativeMethods.TablePtr->C2.hs_method_18b63be3((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
-
-    public int getSubChunkCountUpToHighestNonAirBlock()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_dd8b7213((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue getTickQueue_58feba36()
@@ -304,6 +309,10 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue((nint)NativeMethods.TablePtr->C2.hs_method_a72689c4((void*)__hosihikari_shim_handle), false);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::LevelChunkTimingData' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint getTimingDataDiagnosticOnly() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::LevelChunkTimingData' requires --link-carrier or --virtual-dispatch.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getTopRainBlockPos(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos)
     {
@@ -344,6 +353,12 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public nint mBlockEntityAccessLock_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_c2b52f04((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mBlockNamedTickEventManager_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0806c372((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -647,6 +662,12 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mNeighborChangedQueue_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4cffdae3((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mNonAirMaxHeight_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_e0afdd1c((void*)__hosihikari_shim_handle);
@@ -866,6 +887,11 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_cac5ccd8((void*)__hosihikari_shim_handle, subChunkAbsoluteIndex, (void*)subChunkPacketData.Handle);
     }
 
+    public void pruneBiomesAboveHeightmap()
+    {
+        NativeMethods.TablePtr->C2.hs_method_e2c352c3((void*)__hosihikari_shim_handle);
+    }
+
     public void recomputeHeightMap(bool resetLighting)
     {
         NativeMethods.TablePtr->C2.hs_method_d2e6527e((void*)__hosihikari_shim_handle, resetLighting);
@@ -925,6 +951,16 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public void serializeEntityRemovals(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
+    public void serializeNamedTicks(global::Hosihikari.Bindings.Bedrock.Interop.IDataOutput stream)
+    {
+        NativeMethods.TablePtr->C2.hs_method_d8757156((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+    }
+
+    public void serializeNeighborChanges(global::Hosihikari.Bindings.Bedrock.Interop.IDataOutput stream)
+    {
+        NativeMethods.TablePtr->C2.hs_method_e8806ef2((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+    }
+
     public void serializeRandomTicks(global::Hosihikari.Bindings.Bedrock.Interop.IDataOutput stream)
     {
         NativeMethods.TablePtr->C2.hs_method_23edb3c8((void*)__hosihikari_shim_handle, (void*)stream.Handle);
@@ -934,10 +970,6 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     {
         NativeMethods.TablePtr->C2.hs_method_c3aae8ba((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'BlockID' is not supported.", false)]
-    public void setAllBlockTypeIDAndData(nint ids, nint data) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'BlockID' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<SubChunkStorage<Biome>>' is not supported.", false)]
     public void setBiomeStorages(nint biomeStorages) =>
@@ -966,11 +998,6 @@ public sealed unsafe partial class LevelChunk : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.Block setExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos localPos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? issuingSource)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_4a4a315a((void*)__hosihikari_shim_handle, (void*)localPos.Handle, (void*)block.Handle, (void*)(issuingSource?.Handle ?? 0)), false);
-    }
-
-    public void setExtraBlockSimple(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C2.hs_method_66a4a619((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle);
     }
 
     public void setPendingEntities(string entitiesData)

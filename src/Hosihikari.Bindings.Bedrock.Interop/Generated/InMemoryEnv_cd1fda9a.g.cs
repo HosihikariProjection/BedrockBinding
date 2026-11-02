@@ -97,6 +97,25 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
         }
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _GetFileSize(string f, nint size)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(f);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(f, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_1c61fd48((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)size));
+        }
+    }
+
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public nint _NewAppendableFile(nint f, nint r) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
@@ -165,19 +184,10 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
         }
     }
 
-    public nint _ctor(nint env, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path rootDbPath)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_96a0b172((void*)__hosihikari_shim_handle, (void*)env, (void*)rootDbPath.Handle);
-    }
-
     public void _flushToPermanentStorage()
     {
         NativeMethods.TablePtr->C2.hs_method_5eb1f335((void*)__hosihikari_shim_handle);
     }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
     public bool FileExists(string f)
     {
@@ -238,6 +248,25 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
         }
     }
 
+    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status GetFileSize(string f, nint size)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(f);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(f, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_d96721bf((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)size));
+        }
+    }
+
     public static InMemoryEnv Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_53f5f531();
@@ -252,17 +281,6 @@ public sealed unsafe partial class InMemoryEnv : global::System.IDisposable
     public static InMemoryEnv Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryEnv arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_1f5fd306((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new InMemoryEnv((nint)handle);
-    }
-
-    public static InMemoryEnv Create(nint env, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path rootDbPath)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f00200e8((void*)env, (void*)rootDbPath.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

@@ -43,6 +43,11 @@ public sealed unsafe partial class FallingBlockNormalTickSystem : global::System
         NativeMethods.TablePtr->C1.hs_method_5da309cb((void*)arg0.Handle, (void*)actorOwnerComponent.Handle, (void*)onLand.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_6350744c());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

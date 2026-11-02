@@ -38,6 +38,94 @@ public sealed unsafe partial class LevelDataWrapper : global::System.IDisposable
         return __hs_handle;
     }
 
+    public nint mpSubject
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a0647f02((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a0647f02((void*)__hosihikari_shim_handle, (void*)value);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static LevelDataWrapper Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelDataWrapper arg0)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_3e99a1de((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new LevelDataWrapper((nint)handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk9c0114_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_387e1bb0((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkab2ff4_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4fc99952((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkc5446e_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fe6e6702((void*)__hosihikari_shim_handle);
+    }
+
+    public void onLevelDeleted(string levelId)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(levelId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(levelId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_eb20623d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
+
+    public void onLevelUpdated(string levelId)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(levelId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(levelId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_e3732e13((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
+
+    public void onStorageChanged()
+    {
+        NativeMethods.TablePtr->C2.hs_method_ecb29909((void*)__hosihikari_shim_handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelDataWrapper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelDataWrapper arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelDataWrapper((nint)NativeMethods.TablePtr->C2.hs_method_243f10d0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+    }
+
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

@@ -49,7 +49,7 @@ public sealed unsafe partial class EntitySystems : global::System.IDisposable
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public nint _ctor(nint systems, nint name) =>
+    public nint _ctor(nint systems, nint name, bool useVariableTicks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'const Bedrock::typeid_t<SystemCategory>' is not supported.", false)]
@@ -78,7 +78,7 @@ public sealed unsafe partial class EntitySystems : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public static EntitySystems Create(nint systems, nint name) =>
+    public static EntitySystems Create(nint systems, nint name, bool useVariableTicks) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -143,6 +143,17 @@ public sealed unsafe partial class EntitySystems : global::System.IDisposable
     public nint mTickingAnnotation_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_cc8c7045((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mVariableTick_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_e4e8af28((void*)__hosihikari_shim_handle);
+    }
+
+    public void realTick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
+    {
+        NativeMethods.TablePtr->C1.hs_method_5eeee734((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
     public void registerEvents(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)

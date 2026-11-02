@@ -434,17 +434,6 @@ public sealed unsafe partial class DragonEggBlock : global::System.IDisposable
         return new DragonEggBlock((nint)handle);
     }
 
-    public static DragonEggBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.DragonEggBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_96d8af4f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DragonEggBlock((nint)handle);
-    }
-
     public static DragonEggBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

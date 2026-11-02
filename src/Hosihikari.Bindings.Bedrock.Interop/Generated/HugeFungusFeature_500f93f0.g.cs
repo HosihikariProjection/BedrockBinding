@@ -50,6 +50,11 @@ public sealed unsafe partial class HugeFungusFeature : global::System.IDisposabl
         set => NativeMethods.TablePtr->C2.hs_set_76e4d4d4((void*)__hosihikari_shim_handle, (void*)value);
     }
 
+    public nint _ctor(bool isBlue)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_f00f6e92((void*)__hosihikari_shim_handle, isBlue);
+    }
+
     public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
         return NativeMethods.TablePtr->C2.hs_method_d35257ee((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)origin.Handle, (void*)random.Handle) != 0;
@@ -58,6 +63,28 @@ public sealed unsafe partial class HugeFungusFeature : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
+    public static HugeFungusFeature Create()
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_d26c1ef9();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new HugeFungusFeature((nint)handle);
+    }
+
+    public static HugeFungusFeature Create(bool isBlue)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_2fdd9f0b(isBlue);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new HugeFungusFeature((nint)handle);
+    }
 
     public static HugeFungusFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.HugeFungusFeature arg0)
     {

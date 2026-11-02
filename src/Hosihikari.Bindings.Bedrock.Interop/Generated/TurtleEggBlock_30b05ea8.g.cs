@@ -450,17 +450,6 @@ public sealed unsafe partial class TurtleEggBlock : global::System.IDisposable
         return new TurtleEggBlock((nint)handle);
     }
 
-    public static TurtleEggBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.TurtleEggBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_88300919((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TurtleEggBlock((nint)handle);
-    }
-
     public static TurtleEggBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

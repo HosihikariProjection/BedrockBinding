@@ -38,9 +38,15 @@ public sealed unsafe partial class WitherBossPreAIStepSystem : global::System.ID
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EntityModifier<WitherBossPreAIStepResultComponent>' is not a known bindable declaration.", false)]
-    public static void _doWitherBossPreAIStepSystem(nint context, nint actorOwnerComponent, nint mod) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EntityModifier<WitherBossPreAIStepResultComponent>' is not a known bindable declaration.");
+    public static void _doWitherBossPreAIStepSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, nint mod)
+    {
+        NativeMethods.TablePtr->C4.hs_method_ddb26d77((void*)context.Handle, (void*)actorOwnerComponent.Handle, (void*)mod);
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_b945862f());
+    }
 
     public void Dispose()
     {

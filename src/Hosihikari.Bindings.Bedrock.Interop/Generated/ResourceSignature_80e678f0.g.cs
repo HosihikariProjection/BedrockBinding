@@ -65,6 +65,11 @@ public sealed unsafe partial class ResourceSignature : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_616d4640(), false);
     }
 
+    public bool _areKnownFilesValid(global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy accessStrategy, bool requiresSignaturesFile)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_116c225e((void*)__hosihikari_shim_handle, (void*)accessStrategy.Handle, requiresSignaturesFile) != 0;
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke8472c_Address
     {

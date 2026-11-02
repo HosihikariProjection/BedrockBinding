@@ -38,11 +38,6 @@ public sealed unsafe partial class Definition : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_720b2791((void*)__hosihikari_shim_handle);
-    }
-
     public static Definition Create()
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_823c467a();
@@ -90,6 +85,12 @@ public sealed unsafe partial class Definition : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk85d9cf_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d660ed5b((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf8284a_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_efbc67ae((void*)__hosihikari_shim_handle);
@@ -99,7 +100,6 @@ public sealed unsafe partial class Definition : global::System.IDisposable
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundRuntime.Definition((nint)NativeMethods.TablePtr->C3.hs_method_b109be67((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
-
 
     public void Dispose()
     {

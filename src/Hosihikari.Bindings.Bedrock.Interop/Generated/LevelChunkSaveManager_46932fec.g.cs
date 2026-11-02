@@ -73,19 +73,9 @@ public sealed unsafe partial class LevelChunkSaveManager : global::System.IDispo
     public static LevelChunkSaveManager Create(nint levelChunkSaverProxy, nint gameplayUserManager, nint dimensionManager) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.");
 
-    public void _findRandomChunkToSave()
-    {
-        NativeMethods.TablePtr->C2.hs_method_00e24b27((void*)__hosihikari_shim_handle);
-    }
-
     public void _onChunkLoaded(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource chunkSource, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk, int closestPlayerDistanceSquared)
     {
         NativeMethods.TablePtr->C2.hs_method_f213b4e7((void*)__hosihikari_shim_handle, (void*)chunkSource.Handle, (void*)levelChunk.Handle, closestPlayerDistanceSquared);
-    }
-
-    public bool _shouldDoSave()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_8a4fa5e6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mChunkSaveInProgress

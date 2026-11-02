@@ -150,9 +150,9 @@ public sealed unsafe partial class StorageItemComponent : global::System.IDispos
     public void setContainerRegistryHandlers(nint containerSerialization, nint containerAccess, nint containerTracker) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'WeakRef<IDynamicContainerSerialization>' is not a known bindable declaration.");
 
-    public static void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public static void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        NativeMethods.TablePtr->C4.hs_method_07a5ba3f((void*)result, (void*)item.Handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C4.hs_method_94f2e636((void*)result, (void*)item.Handle, (void*)player.Handle, handSlot);
     }
 
 

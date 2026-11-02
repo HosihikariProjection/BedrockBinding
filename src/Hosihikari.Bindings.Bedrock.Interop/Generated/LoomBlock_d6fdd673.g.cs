@@ -405,17 +405,6 @@ public sealed unsafe partial class LoomBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static LoomBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.LoomBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2ee89c18((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LoomBlock((nint)handle);
-    }
-
     public bool isCraftingBlock()
     {
         return NativeMethods.TablePtr->C2.hs_method_ae797610((void*)__hosihikari_shim_handle) != 0;

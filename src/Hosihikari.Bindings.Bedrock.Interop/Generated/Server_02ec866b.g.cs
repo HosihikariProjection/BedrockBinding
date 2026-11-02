@@ -53,9 +53,9 @@ public sealed unsafe partial class Server : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_b470f46d((void*)region.Handle, (void*)pos.Handle, (void*)serverData.Handle, sound);
     }
 
-    public static void tryInsertKey(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultConfig config, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultSharedData sharedData, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultServerData serverData)
+    public static void tryInsertKey(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultConfig config, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultSharedData sharedData, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultServerData serverData)
     {
-        NativeMethods.TablePtr->C4.hs_method_5470a49d((void*)region.Handle, (void*)player.Handle, (void*)pos.Handle, (void*)config.Handle, (void*)sharedData.Handle, (void*)serverData.Handle);
+        NativeMethods.TablePtr->C4.hs_method_8db8fa5d((void*)region.Handle, (void*)player.Handle, (void*)pos.Handle, handSlot, (void*)config.Handle, (void*)sharedData.Handle, (void*)serverData.Handle);
     }
 
     public static void updateConnectedPlayersWithinRange(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultServerData serverData, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultSharedData sharedData, float range)

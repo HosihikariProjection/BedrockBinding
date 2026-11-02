@@ -50,286 +50,33 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ad84722b((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Core::PathBuffer<std::basic_string<char>>' is not supported.", false)]
-    public nint _ctor(nint getPath, nint contentTierManager, bool needsToInitialize) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'Core::PathBuffer<std::basic_string<char>>' is not supported.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<int, std::basic_string_view<char>>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint _getPackStackIndexOfResource(nint resourceLocation, nint extensionList) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<int, std::basic_string_view<char>>' requires --link-carrier or --virtual-dispatch.");
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk86cf50_Address
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_b302a682((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle));
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_90340fd9((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkea7f9a_Address
     {
-        var __hs_vectorItems1 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount1 = __hs_vectorItems1.Length;
-        var __hs_vectorByteTotal1 = 0;
-        for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++) { __hs_vectorByteTotal1 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems1[__hs_i1] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena1;
-        if (__hs_vectorByteTotal1 <= 1024) { __hs_vectorArena1 = stackalloc byte[__hs_vectorByteTotal1 == 0 ? 1 : __hs_vectorByteTotal1]; } else { __hs_vectorArena1 = new byte[__hs_vectorByteTotal1]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews1;
-        if (__hs_vectorCount1 <= 64) { __hs_vectorViews1 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1 == 0 ? 1 : __hs_vectorCount1]; } else { __hs_vectorViews1 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1]; }
-        fixed (byte* __hs_vectorArenaPtr1 = __hs_vectorArena1)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData1 = __hs_vectorViews1)
-        {
-            var __hs_vectorOffset1 = 0;
-            for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++)
-            {
-                var __hs_item1 = __hs_vectorItems1[__hs_i1] ?? string.Empty;
-                var __hs_length1 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item1);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item1, __hs_vectorArena1.Slice(__hs_vectorOffset1, __hs_length1));
-                __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
-                __hs_vectorOffset1 += __hs_length1;
-            }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_db718763((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0)));
-        }
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1c4a1274((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkf914db_Address
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_af5e3a56((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle));
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_48110c9c((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkfb1985_Address
     {
-        var __hs_vectorItems1 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount1 = __hs_vectorItems1.Length;
-        var __hs_vectorByteTotal1 = 0;
-        for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++) { __hs_vectorByteTotal1 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems1[__hs_i1] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena1;
-        if (__hs_vectorByteTotal1 <= 1024) { __hs_vectorArena1 = stackalloc byte[__hs_vectorByteTotal1 == 0 ? 1 : __hs_vectorByteTotal1]; } else { __hs_vectorArena1 = new byte[__hs_vectorByteTotal1]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews1;
-        if (__hs_vectorCount1 <= 64) { __hs_vectorViews1 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1 == 0 ? 1 : __hs_vectorCount1]; } else { __hs_vectorViews1 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1]; }
-        fixed (byte* __hs_vectorArenaPtr1 = __hs_vectorArena1)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData1 = __hs_vectorViews1)
-        {
-            var __hs_vectorOffset1 = 0;
-            for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++)
-            {
-                var __hs_item1 = __hs_vectorItems1[__hs_i1] ?? string.Empty;
-                var __hs_length1 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item1);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item1, __hs_vectorArena1.Slice(__hs_vectorOffset1, __hs_length1));
-                __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
-                __hs_vectorOffset1 += __hs_length1;
-            }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_0c8f26e5((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0)));
-        }
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_252b0f89((void*)__hosihikari_shim_handle);
     }
 
-    public bool _hasCapability(string requiredCapability)
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader_Nested.ConstructorKey arg0, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs args)
     {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(requiredCapability);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(requiredCapability, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C3.hs_method_63a6ed3d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
-        }
-    }
-
-    public bool _isInStreamableLocation(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_9d91ec2c((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle) != 0;
-    }
-
-    public bool _isInStreamableLocation(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
-    {
-        var __hs_vectorItems1 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount1 = __hs_vectorItems1.Length;
-        var __hs_vectorByteTotal1 = 0;
-        for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++) { __hs_vectorByteTotal1 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems1[__hs_i1] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena1;
-        if (__hs_vectorByteTotal1 <= 1024) { __hs_vectorArena1 = stackalloc byte[__hs_vectorByteTotal1 == 0 ? 1 : __hs_vectorByteTotal1]; } else { __hs_vectorArena1 = new byte[__hs_vectorByteTotal1]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews1;
-        if (__hs_vectorCount1 <= 64) { __hs_vectorViews1 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1 == 0 ? 1 : __hs_vectorCount1]; } else { __hs_vectorViews1 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1]; }
-        fixed (byte* __hs_vectorArenaPtr1 = __hs_vectorArena1)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData1 = __hs_vectorViews1)
-        {
-            var __hs_vectorOffset1 = 0;
-            for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++)
-            {
-                var __hs_item1 = __hs_vectorItems1[__hs_i1] ?? string.Empty;
-                var __hs_length1 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item1);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item1, __hs_vectorArena1.Slice(__hs_vectorOffset1, __hs_length1));
-                __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
-                __hs_vectorOffset1 += __hs_length1;
-            }
-            return NativeMethods.TablePtr->C3.hs_method_1009f679((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0)) != 0;
-        }
-    }
-
-    public bool _load(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, ref string resourceStream)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            try
-            {
-                return NativeMethods.TablePtr->C3.hs_method_a1ad0db8((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0) != 0;
-            }
-            finally
-            {
-                resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-            }
-        }
-    }
-
-    public bool _load(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, ref string resourceStream, string[] extensionList)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
-        var __hs_vectorItems2 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount2 = __hs_vectorItems2.Length;
-        var __hs_vectorByteTotal2 = 0;
-        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++) { __hs_vectorByteTotal2 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems2[__hs_i2] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena2;
-        if (__hs_vectorByteTotal2 <= 1024) { __hs_vectorArena2 = stackalloc byte[__hs_vectorByteTotal2 == 0 ? 1 : __hs_vectorByteTotal2]; } else { __hs_vectorArena2 = new byte[__hs_vectorByteTotal2]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews2;
-        if (__hs_vectorCount2 <= 64) { __hs_vectorViews2 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2 == 0 ? 1 : __hs_vectorCount2]; } else { __hs_vectorViews2 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2]; }
-        fixed (byte* __hs_vectorArenaPtr2 = __hs_vectorArena2)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData2 = __hs_vectorViews2)
-        {
-            var __hs_vectorOffset2 = 0;
-            for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++)
-            {
-                var __hs_item2 = __hs_vectorItems2[__hs_i2] ?? string.Empty;
-                var __hs_length2 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item2);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item2, __hs_vectorArena2.Slice(__hs_vectorOffset2, __hs_length2));
-                __hs_vectorData2[__hs_i2] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr2 + __hs_vectorOffset2, Size = (nuint)__hs_length2 };
-                __hs_vectorOffset2 += __hs_length2;
-            }
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                try
-                {
-                    return NativeMethods.TablePtr->C3.hs_method_77cd0e1d((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(extensionList?.Length ?? 0), &__hs_strOut0) != 0;
-                }
-                finally
-                {
-                    resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-                }
-            }
-        }
-    }
-
-    public bool _load(nint resourceLocationPair, ref string resourceStream, string[] extensionList)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
-        var __hs_vectorItems2 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount2 = __hs_vectorItems2.Length;
-        var __hs_vectorByteTotal2 = 0;
-        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++) { __hs_vectorByteTotal2 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems2[__hs_i2] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena2;
-        if (__hs_vectorByteTotal2 <= 1024) { __hs_vectorArena2 = stackalloc byte[__hs_vectorByteTotal2 == 0 ? 1 : __hs_vectorByteTotal2]; } else { __hs_vectorArena2 = new byte[__hs_vectorByteTotal2]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews2;
-        if (__hs_vectorCount2 <= 64) { __hs_vectorViews2 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2 == 0 ? 1 : __hs_vectorCount2]; } else { __hs_vectorViews2 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2]; }
-        fixed (byte* __hs_vectorArenaPtr2 = __hs_vectorArena2)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData2 = __hs_vectorViews2)
-        {
-            var __hs_vectorOffset2 = 0;
-            for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++)
-            {
-                var __hs_item2 = __hs_vectorItems2[__hs_i2] ?? string.Empty;
-                var __hs_length2 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item2);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item2, __hs_vectorArena2.Slice(__hs_vectorOffset2, __hs_length2));
-                __hs_vectorData2[__hs_i2] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr2 + __hs_vectorOffset2, Size = (nuint)__hs_length2 };
-                __hs_vectorOffset2 += __hs_length2;
-            }
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                try
-                {
-                    return NativeMethods.TablePtr->C3.hs_method_962aec2f((void*)__hosihikari_shim_handle, (void*)resourceLocationPair, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(extensionList?.Length ?? 0), &__hs_strOut0) != 0;
-                }
-                finally
-                {
-                    resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-                }
-            }
-        }
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData[] _loadAllVersionsOf(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_7fa92783((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
-        var __hs_items = (void**)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData>() : new global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData((nint)__hs_items[__hs_i]);
-        }
-        return __hs_result;
-    }
-
-    public bool _loadText(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, ref string resourceStream)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            try
-            {
-                return NativeMethods.TablePtr->C3.hs_method_2114a92f((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0) != 0;
-            }
-            finally
-            {
-                resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-            }
-        }
+        return (nint)NativeMethods.TablePtr->C3.hs_method_85d6a30b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)args.Handle);
     }
 
     public static ResourcePackManager Create()
@@ -343,9 +90,16 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
         return new ResourcePackManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Core::PathBuffer<std::basic_string<char>>' is not supported.", false)]
-    public static ResourcePackManager Create(nint getPath, nint contentTierManager, bool needsToInitialize) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'Core::PathBuffer<std::basic_string<char>>' is not supported.");
+    public static ResourcePackManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader_Nested.ConstructorKey arg0, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs args)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_1f99f56f((void*)arg0.Handle, (void*)args.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ResourcePackManager((nint)handle);
+    }
 
     public void _calculateMinEngineVersionFromFullStack()
     {
@@ -357,17 +111,14 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
         NativeMethods.TablePtr->C3.hs_method_358d6daf((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public bool _doStackOperation(nint stackType, nint operation) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public static void _getResourcesOfGroup(nint packInstance, nint group, nint resources) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
-
     public void _updateLanguageSubpacks()
     {
         NativeMethods.TablePtr->C3.hs_method_43521c55((void*)__hosihikari_shim_handle);
+    }
+
+    public void clearStack(int stackType)
+    {
+        NativeMethods.TablePtr->C3.hs_method_0ddeda30((void*)__hosihikari_shim_handle, stackType);
     }
 
     public int composeFullStack(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack output, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack globalStack, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack levelStack)
@@ -375,303 +126,15 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
         return NativeMethods.TablePtr->C3.hs_method_dab10bb7((void*)__hosihikari_shim_handle, (void*)output.Handle, (void*)globalStack.Handle, (void*)levelStack.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<int, std::basic_string_view<char>>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint getPackStackIndexOfResource(nint resourceLocation, nint extensionList) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<int, std::basic_string_view<char>>' requires --link-carrier or --virtual-dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'PackInstance' is not supported.", false)]
-    public nint getPacksWhereAssetExtractionNotViable(nint getContentKey, nint sourceContext) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'PackInstance' is not supported.");
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
+    public static global::Hosihikari.Bindings.Abi.SharedHandle? create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs args)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_a7a04389((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle));
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPath(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
-    {
-        var __hs_vectorItems1 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount1 = __hs_vectorItems1.Length;
-        var __hs_vectorByteTotal1 = 0;
-        for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++) { __hs_vectorByteTotal1 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems1[__hs_i1] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena1;
-        if (__hs_vectorByteTotal1 <= 1024) { __hs_vectorArena1 = stackalloc byte[__hs_vectorByteTotal1 == 0 ? 1 : __hs_vectorByteTotal1]; } else { __hs_vectorArena1 = new byte[__hs_vectorByteTotal1]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews1;
-        if (__hs_vectorCount1 <= 64) { __hs_vectorViews1 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1 == 0 ? 1 : __hs_vectorCount1]; } else { __hs_vectorViews1 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1]; }
-        fixed (byte* __hs_vectorArenaPtr1 = __hs_vectorArena1)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData1 = __hs_vectorViews1)
-        {
-            var __hs_vectorOffset1 = 0;
-            for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++)
-            {
-                var __hs_item1 = __hs_vectorItems1[__hs_i1] ?? string.Empty;
-                var __hs_length1 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item1);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item1, __hs_vectorArena1.Slice(__hs_vectorOffset1, __hs_length1));
-                __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
-                __hs_vectorOffset1 += __hs_length1;
-            }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_c3eabc8e((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0)));
-        }
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_efea5d5f((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle));
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getPathContainingResource(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
-    {
-        var __hs_vectorItems1 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount1 = __hs_vectorItems1.Length;
-        var __hs_vectorByteTotal1 = 0;
-        for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++) { __hs_vectorByteTotal1 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems1[__hs_i1] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena1;
-        if (__hs_vectorByteTotal1 <= 1024) { __hs_vectorArena1 = stackalloc byte[__hs_vectorByteTotal1 == 0 ? 1 : __hs_vectorByteTotal1]; } else { __hs_vectorArena1 = new byte[__hs_vectorByteTotal1]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews1;
-        if (__hs_vectorCount1 <= 64) { __hs_vectorViews1 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1 == 0 ? 1 : __hs_vectorCount1]; } else { __hs_vectorViews1 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1]; }
-        fixed (byte* __hs_vectorArenaPtr1 = __hs_vectorArena1)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData1 = __hs_vectorViews1)
-        {
-            var __hs_vectorOffset1 = 0;
-            for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++)
-            {
-                var __hs_item1 = __hs_vectorItems1[__hs_i1] ?? string.Empty;
-                var __hs_length1 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item1);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item1, __hs_vectorArena1.Slice(__hs_vectorOffset1, __hs_length1));
-                __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
-                __hs_vectorOffset1 += __hs_length1;
-            }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_e7793e72((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0)));
-        }
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'ResourceGroup' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint getResourcesOfGroup(nint packInstance, nint group) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'ResourceGroup' requires --link-carrier or --virtual-dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'ResourceGroup' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint getResourcesOfGroup(nint group) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'ResourceGroup' requires --link-carrier or --virtual-dispatch.");
-
-    public bool hasCapability(string requiredCapability)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(requiredCapability);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(requiredCapability, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C3.hs_method_b1fd705e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
-        }
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::basic_string<char>' is not supported.", false)]
-    public bool isAssetExtractionViableForFullStack(nint getContentKey, nint sourceContext) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::basic_string<char>' is not supported.");
-
-    public bool isInStreamableLocation(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_6446a125((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle) != 0;
-    }
-
-    public bool isInStreamableLocation(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, string[] extensionList)
-    {
-        var __hs_vectorItems1 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount1 = __hs_vectorItems1.Length;
-        var __hs_vectorByteTotal1 = 0;
-        for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++) { __hs_vectorByteTotal1 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems1[__hs_i1] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena1;
-        if (__hs_vectorByteTotal1 <= 1024) { __hs_vectorArena1 = stackalloc byte[__hs_vectorByteTotal1 == 0 ? 1 : __hs_vectorByteTotal1]; } else { __hs_vectorArena1 = new byte[__hs_vectorByteTotal1]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews1;
-        if (__hs_vectorCount1 <= 64) { __hs_vectorViews1 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1 == 0 ? 1 : __hs_vectorCount1]; } else { __hs_vectorViews1 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount1]; }
-        fixed (byte* __hs_vectorArenaPtr1 = __hs_vectorArena1)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData1 = __hs_vectorViews1)
-        {
-            var __hs_vectorOffset1 = 0;
-            for (var __hs_i1 = 0; __hs_i1 < __hs_vectorCount1; __hs_i1++)
-            {
-                var __hs_item1 = __hs_vectorItems1[__hs_i1] ?? string.Empty;
-                var __hs_length1 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item1);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item1, __hs_vectorArena1.Slice(__hs_vectorOffset1, __hs_length1));
-                __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
-                __hs_vectorOffset1 += __hs_length1;
-            }
-            return NativeMethods.TablePtr->C3.hs_method_88f109dc((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_vectorData1, (nuint)(extensionList?.Length ?? 0)) != 0;
-        }
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_8f72f5be((void*)args.Handle);
+        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void iteratePacks(nint pred) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    public bool load(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, ref string resourceStream)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            try
-            {
-                return NativeMethods.TablePtr->C3.hs_method_bc9ee04d((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0) != 0;
-            }
-            finally
-            {
-                resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-            }
-        }
-    }
-
-    public bool load(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, ref string resourceStream, string[] extensionList)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
-        var __hs_vectorItems2 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount2 = __hs_vectorItems2.Length;
-        var __hs_vectorByteTotal2 = 0;
-        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++) { __hs_vectorByteTotal2 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems2[__hs_i2] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena2;
-        if (__hs_vectorByteTotal2 <= 1024) { __hs_vectorArena2 = stackalloc byte[__hs_vectorByteTotal2 == 0 ? 1 : __hs_vectorByteTotal2]; } else { __hs_vectorArena2 = new byte[__hs_vectorByteTotal2]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews2;
-        if (__hs_vectorCount2 <= 64) { __hs_vectorViews2 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2 == 0 ? 1 : __hs_vectorCount2]; } else { __hs_vectorViews2 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2]; }
-        fixed (byte* __hs_vectorArenaPtr2 = __hs_vectorArena2)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData2 = __hs_vectorViews2)
-        {
-            var __hs_vectorOffset2 = 0;
-            for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++)
-            {
-                var __hs_item2 = __hs_vectorItems2[__hs_i2] ?? string.Empty;
-                var __hs_length2 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item2);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item2, __hs_vectorArena2.Slice(__hs_vectorOffset2, __hs_length2));
-                __hs_vectorData2[__hs_i2] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr2 + __hs_vectorOffset2, Size = (nuint)__hs_length2 };
-                __hs_vectorOffset2 += __hs_length2;
-            }
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                try
-                {
-                    return NativeMethods.TablePtr->C3.hs_method_e1babf95((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(extensionList?.Length ?? 0), &__hs_strOut0) != 0;
-                }
-                finally
-                {
-                    resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-                }
-            }
-        }
-    }
-
-    public bool load(nint resourceLocationPair, ref string resourceStream, string[] extensionList)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
-        var __hs_vectorItems2 = extensionList ?? global::System.Array.Empty<string>();
-        var __hs_vectorCount2 = __hs_vectorItems2.Length;
-        var __hs_vectorByteTotal2 = 0;
-        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++) { __hs_vectorByteTotal2 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems2[__hs_i2] ?? string.Empty); }
-        scoped global::System.Span<byte> __hs_vectorArena2;
-        if (__hs_vectorByteTotal2 <= 1024) { __hs_vectorArena2 = stackalloc byte[__hs_vectorByteTotal2 == 0 ? 1 : __hs_vectorByteTotal2]; } else { __hs_vectorArena2 = new byte[__hs_vectorByteTotal2]; }
-        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews2;
-        if (__hs_vectorCount2 <= 64) { __hs_vectorViews2 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2 == 0 ? 1 : __hs_vectorCount2]; } else { __hs_vectorViews2 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount2]; }
-        fixed (byte* __hs_vectorArenaPtr2 = __hs_vectorArena2)
-        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData2 = __hs_vectorViews2)
-        {
-            var __hs_vectorOffset2 = 0;
-            for (var __hs_i2 = 0; __hs_i2 < __hs_vectorCount2; __hs_i2++)
-            {
-                var __hs_item2 = __hs_vectorItems2[__hs_i2] ?? string.Empty;
-                var __hs_length2 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item2);
-                global::System.Text.Encoding.UTF8.GetBytes(__hs_item2, __hs_vectorArena2.Slice(__hs_vectorOffset2, __hs_length2));
-                __hs_vectorData2[__hs_i2] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr2 + __hs_vectorOffset2, Size = (nuint)__hs_length2 };
-                __hs_vectorOffset2 += __hs_length2;
-            }
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                try
-                {
-                    return NativeMethods.TablePtr->C3.hs_method_559644dd((void*)__hosihikari_shim_handle, (void*)resourceLocationPair, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(extensionList?.Length ?? 0), &__hs_strOut0) != 0;
-                }
-                finally
-                {
-                    resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-                }
-            }
-        }
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData[] loadAllVersionsOf(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_c8e120ff((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle);
-        var __hs_items = (void**)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData>() : new global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.LoadedResourceData((nint)__hs_items[__hs_i]);
-        }
-        return __hs_result;
-    }
-
-    public bool loadText(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, ref string resourceStream)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            try
-            {
-                return NativeMethods.TablePtr->C3.hs_method_7e090234((void*)__hosihikari_shim_handle, (void*)resourceLocation.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0) != 0;
-            }
-            finally
-            {
-                resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-            }
-        }
-    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBaseGameStack_Address
@@ -683,12 +146,6 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
     public nint mContentTierManager_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6a29bc2a((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mFullStack_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cfcd34f4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -766,10 +223,6 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void removeIf(nint pred) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public void setPackSourceReport(nint report) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public bool setStack(nint stack, nint stackType) =>

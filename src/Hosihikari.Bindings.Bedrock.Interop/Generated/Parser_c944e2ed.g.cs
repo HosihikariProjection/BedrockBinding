@@ -53,9 +53,9 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_a88f8d5c((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, convertToTicks) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'ItemDescriptor' is not supported.", false)]
     public static bool parse_e480c694(nint val, nint molangVersion, nint itemDescriptors) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'ItemDescriptor' is not supported.");
 
     public static bool parse_a834636e(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint target, nint jsonName, nint defaultValue)
     {
@@ -73,11 +73,6 @@ public sealed unsafe partial class Parser : global::System.IDisposable
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier variable, nint jsonName, nint defaultValue)
     {
         NativeMethods.TablePtr->C3.hs_method_ecded49b((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue);
-    }
-
-    public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.HashedString variable, nint jsonName, nint defaultValue)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e9c8ce9d((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue);
     }
 
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance variable, nint jsonName)

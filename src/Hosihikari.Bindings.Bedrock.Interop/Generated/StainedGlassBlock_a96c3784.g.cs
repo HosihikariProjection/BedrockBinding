@@ -398,17 +398,6 @@ public sealed unsafe partial class StainedGlassBlock : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C4.hs_method_0d9731eb(), false);
     }
 
-    public static StainedGlassBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.StainedGlassBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_91724122((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StainedGlassBlock((nint)handle);
-    }
-
     public bool breaksFallingBlocks(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion version)
     {
         return NativeMethods.TablePtr->C4.hs_method_4a4522e2((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)version.Handle) != 0;

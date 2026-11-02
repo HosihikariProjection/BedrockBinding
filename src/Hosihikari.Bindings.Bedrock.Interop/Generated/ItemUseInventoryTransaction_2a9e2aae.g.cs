@@ -75,19 +75,9 @@ public sealed unsafe partial class ItemUseInventoryTransaction : global::System.
         NativeMethods.TablePtr->C2.hs_method_8c30457c((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_f9165f26((void*)__hosihikari_shim_handle, (void*)stream.Handle));
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f3282ea9((void*)__hosihikari_shim_handle, (void*)stream.Handle);
-    }
 
     public static ItemUseInventoryTransaction Create()
     {
@@ -208,11 +198,6 @@ public sealed unsafe partial class ItemUseInventoryTransaction : global::System.
         NativeMethods.TablePtr->C2.hs_method_13da3d68((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_278ea941((void*)__hosihikari_shim_handle, (void*)stream.Handle));
-    }
-
     public static void resendBlocksAroundArea(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte facing)
     {
         NativeMethods.TablePtr->C2.hs_method_3ea0c9f7((void*)player.Handle, (void*)pos.Handle, facing);
@@ -226,11 +211,6 @@ public sealed unsafe partial class ItemUseInventoryTransaction : global::System.
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction setSelectedItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemUseInventoryTransaction((nint)NativeMethods.TablePtr->C2.hs_method_7355b6fd((void*)__hosihikari_shim_handle, (void*)item.Handle), false);
-    }
-
-    public void write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
-    {
-        NativeMethods.TablePtr->C2.hs_method_1ddd7f63((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
 

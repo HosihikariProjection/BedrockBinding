@@ -110,6 +110,12 @@ public sealed unsafe partial class Impl : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mIsStorageItemEmpty_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d0e4782f((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mTrimMaterialRegistry_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_09d6682f((void*)__hosihikari_shim_handle);

@@ -398,17 +398,6 @@ public sealed unsafe partial class RotatedPillarBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static RotatedPillarBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.RotatedPillarBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e914dc9c((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RotatedPillarBlock((nint)handle);
-    }
-
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance asItemInstance(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? arg1)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C3.hs_method_f7134ff5((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)(arg1?.Handle ?? 0)));

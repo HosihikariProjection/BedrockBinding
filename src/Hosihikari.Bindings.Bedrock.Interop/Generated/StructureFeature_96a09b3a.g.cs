@@ -123,7 +123,7 @@ public sealed unsafe partial class StructureFeature : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'StructureStart' has no accessible destructor.", false)]
-    public nint createStructureStart(nint dimension, nint biomeSource, nint random, nint cp, nint preliminarySurfaceLevel) =>
+    public nint createStructureStart(nint generator, nint biomeSource, nint random, nint lc, nint preliminarySurfaceLevel) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'StructureStart' has no accessible destructor.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]

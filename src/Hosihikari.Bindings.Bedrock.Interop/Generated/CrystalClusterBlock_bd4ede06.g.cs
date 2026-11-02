@@ -428,17 +428,6 @@ public sealed unsafe partial class CrystalClusterBlock : global::System.IDisposa
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static CrystalClusterBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CrystalClusterBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_106b056d((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CrystalClusterBlock((nint)handle);
-    }
-
     public void _addHardCodedBlockComponents(global::Hosihikari.Bindings.Bedrock.Interop.Experiments arg0)
     {
         NativeMethods.TablePtr->C1.hs_method_5cc63119((void*)__hosihikari_shim_handle, (void*)arg0.Handle);

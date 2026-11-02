@@ -52,7 +52,7 @@ public sealed unsafe partial class XoroshiroPositionalRandomFactory : global::Sy
 
     public static XoroshiroPositionalRandomFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d14d7e0e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_d14d7e0e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,19 +71,19 @@ public sealed unsafe partial class XoroshiroPositionalRandomFactory : global::Sy
 
     public ulong mSeedHi
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1b9275a6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1b9275a6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_1b9275a6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_1b9275a6((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mSeedLo
     {
-        get => NativeMethods.TablePtr->C4.hs_get_560cb56a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_560cb56a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_560cb56a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_560cb56a((void*)__hosihikari_shim_handle, value);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Hash.md5 mThreadLocalDigest()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Hash.md5((nint)NativeMethods.TablePtr->C4.hs_method_540bade5(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Hash.md5((nint)NativeMethods.TablePtr->C5.hs_method_540bade5(), false);
     }
 
 
@@ -93,7 +93,7 @@ public sealed unsafe partial class XoroshiroPositionalRandomFactory : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bcbc5012((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_bcbc5012((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

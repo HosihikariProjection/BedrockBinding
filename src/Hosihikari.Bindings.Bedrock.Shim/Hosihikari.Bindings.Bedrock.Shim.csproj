@@ -8,7 +8,7 @@
     <IncludeBuildOutput>false</IncludeBuildOutput>
     <SuppressDependenciesWhenPacking>true</SuppressDependenciesWhenPacking>
     <PackageId>Hosihikari.Bindings.Bedrock.Shim</PackageId>
-    <Version>1.26.51-r0</Version>
+    <Version>1.26.60-r0</Version>
     <Authors>Hosihikari</Authors>
     <Description>Native BindingShim for the Bedrock Dedicated Server (MCAPI) surface, resolved by symbol name through the LeviLamina preloader.</Description>
     <PackageLicenseExpression>LGPL-3.0-or-later</PackageLicenseExpression>

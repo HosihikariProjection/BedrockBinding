@@ -403,17 +403,6 @@ public sealed unsafe partial class TntBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static TntBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.TntBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9ec0b0e9((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TntBlock((nint)handle);
-    }
-
     public void _onRedstoneUpdate(nint blockEvent)
     {
         NativeMethods.TablePtr->C4.hs_method_54f73875((void*)__hosihikari_shim_handle, (void*)blockEvent);
@@ -444,9 +433,9 @@ public sealed unsafe partial class TntBlock : global::System.IDisposable
         return NativeMethods.TablePtr->C4.hs_method_15121ff7((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)container.Handle) != 0;
     }
 
-    public static bool tryLightTnt(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
+    public static bool tryLightTnt(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C4.hs_method_5608227a((void*)player.Handle, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_db6d647b((void*)player.Handle, (void*)pos.Handle, (void*)item.Handle) != 0;
     }
 
     public void use(nint eventData)

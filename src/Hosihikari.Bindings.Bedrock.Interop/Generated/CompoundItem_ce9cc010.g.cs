@@ -38,6 +38,11 @@ public sealed unsafe partial class CompoundItem : global::System.IDisposable
         return __hs_handle;
     }
 
+    public bool mIsChemistryEnabled
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_2e9116c5((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public string _buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData)
     {
         var __hs_view = NativeMethods.TablePtr->C1.hs_method_45a0124f((void*)__hosihikari_shim_handle, (void*)itemDescriptor.Handle, (void*)(userData?.Handle ?? 0));
@@ -76,11 +81,6 @@ public sealed unsafe partial class CompoundItem : global::System.IDisposable
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static void _registerSpecialCompound(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, byte type)
-    {
-        NativeMethods.TablePtr->C1.hs_method_b967a32b((void*)item.Handle, type);
-    }
 
     public string buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData)
     {

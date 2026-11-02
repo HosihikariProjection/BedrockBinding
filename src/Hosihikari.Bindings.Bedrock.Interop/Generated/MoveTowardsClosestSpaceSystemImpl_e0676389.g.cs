@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-public sealed unsafe partial class MoveTowardsClosestSpaceSystemImpl
+public sealed unsafe partial class MoveTowardsClosestSpaceSystemImpl : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -43,12 +43,19 @@ public sealed unsafe partial class MoveTowardsClosestSpaceSystemImpl
         NativeMethods.TablePtr->C2.hs_method_0534bfd8((void*)__hosihikari_shim_handle, (void*)context);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+    public static MoveTowardsClosestSpaceSystemImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveTowardsClosestSpaceSystemImpl arg0)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_65346ba7((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new MoveTowardsClosestSpaceSystemImpl((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const MovementInterpolatorComponent>' is not a known bindable declaration.", false)]
-    public static void doTick(nint entity, nint synchedActorData, nint aabbShape, nint depenetration, nint moveInterpolator, nint stateVector, nint executionContext, bool isClientSide, nint region) =>
+    public static void doTick(nint entity, nint synchedActorData, nint aabbShape, nint depenetration, nint moveInterpolator, nint stateVector, bool isClientSide, nint collisionViews, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const MovementInterpolatorComponent>' is not a known bindable declaration.");
 
     public bool mIsClientSide
@@ -57,8 +64,28 @@ public sealed unsafe partial class MoveTowardsClosestSpaceSystemImpl
         set => NativeMethods.TablePtr->C2.hs_set_3d93782e((void*)__hosihikari_shim_handle, value);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e04a2ee7((void*)__hosihikari_shim_handle);
+    }
+
     public void tick(nint context)
     {
         NativeMethods.TablePtr->C2.hs_method_e4966d81((void*)__hosihikari_shim_handle, (void*)context);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C2.hs_destroy_e0676389((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

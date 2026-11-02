@@ -38,6 +38,11 @@ public sealed unsafe partial class OptionalString : global::System.IDisposable
         return __hs_handle;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C3.hs_method_91bd782b((void*)__hosihikari_shim_handle);
+    }
+
     public static OptionalString Create(global::Hosihikari.Bindings.Bedrock.Interop.OptionalString arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_99e20e32((void*)arg0.Handle);

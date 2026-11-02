@@ -43,6 +43,11 @@ public sealed unsafe partial class WaterAnimalPreAIStepSystem : global::System.I
         NativeMethods.TablePtr->C4.hs_method_be6566ab((void*)arg0.Handle, (void*)actorOwnerComponent.Handle);
     }
 
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_39e91034());
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

@@ -90,6 +90,12 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C5.hs_get_fdc7eb3c((void*)__hosihikari_shim_handle);
     }
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mValidBiomes_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_913f6f29((void*)__hosihikari_shim_handle);
+    }
+
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext((nint)NativeMethods.TablePtr->C5.hs_method_c2216d19((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);

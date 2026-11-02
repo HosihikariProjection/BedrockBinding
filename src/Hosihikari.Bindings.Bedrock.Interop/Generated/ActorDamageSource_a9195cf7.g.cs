@@ -354,12 +354,6 @@ public sealed unsafe partial class ActorDamageSource : global::System.IDisposabl
         }
     }
 
-    public static string lookupCauseName(int cause)
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_193ca59b(cause);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
-
     public int mCause
     {
         get => NativeMethods.TablePtr->C0.hs_get_118377a7((void*)__hosihikari_shim_handle);

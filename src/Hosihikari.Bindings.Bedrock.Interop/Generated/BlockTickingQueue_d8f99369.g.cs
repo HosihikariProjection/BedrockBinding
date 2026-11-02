@@ -59,11 +59,6 @@ public sealed unsafe partial class BlockTickingQueue : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_2e9506e6((void*)__hosihikari_shim_handle, (void*)otherChunkQueue.Handle);
     }
 
-    public void _addToNextTickQueue(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int tickDelay, int priorityOffset)
-    {
-        NativeMethods.TablePtr->C0.hs_method_bd749c64((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, tickDelay, priorityOffset);
-    }
-
     public void _eliminateTicksForZeroAndAbove(global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.TickDataSet queue)
     {
         NativeMethods.TablePtr->C0.hs_method_a0dcb060((void*)__hosihikari_shim_handle, (void*)queue.Handle);

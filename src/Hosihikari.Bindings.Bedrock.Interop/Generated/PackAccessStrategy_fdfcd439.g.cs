@@ -169,7 +169,7 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
         return NativeMethods.TablePtr->C3.hs_method_8e50dcde((void*)__hosihikari_shim_handle);
     }
 
-    public bool getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, ref string result, bool trustedContentOnly)
+    public bool getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, ref string result, bool trustedContentOnly)
     {
         var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
@@ -187,7 +187,7 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
         {
             try
             {
-                return NativeMethods.TablePtr->C3.hs_method_d3d0544b((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C3.hs_method_95803e30((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -227,9 +227,9 @@ public sealed unsafe partial class PackAccessStrategy : global::System.IDisposab
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_7ed84413((void*)__hosihikari_shim_handle), false);
     }
 
-    public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, bool trustedContentOnly, bool caseSensative)
+    public bool hasAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView packRelativePath, bool trustedContentOnly, bool caseSensative)
     {
-        return NativeMethods.TablePtr->C3.hs_method_4d36c635((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_9e50ede5((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, trustedContentOnly, caseSensative) != 0;
     }
 
     public bool hasFolder(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath)

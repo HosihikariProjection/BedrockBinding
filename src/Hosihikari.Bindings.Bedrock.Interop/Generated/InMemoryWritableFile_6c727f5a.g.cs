@@ -58,6 +58,10 @@ public sealed unsafe partial class InMemoryWritableFile : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_40b6cd8d((void*)__hosihikari_shim_handle));
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Append(nint data)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_4ca2d7de((void*)__hosihikari_shim_handle, (void*)data));

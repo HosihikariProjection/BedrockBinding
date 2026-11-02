@@ -388,17 +388,6 @@ public sealed unsafe partial class GlowstoneBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static GlowstoneBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.GlowstoneBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_6d49b914((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GlowstoneBlock((nint)handle);
-    }
-
     public bool dispense(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Container container, int slot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, byte face)
     {
         return NativeMethods.TablePtr->C1.hs_method_135a7ba0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)container.Handle, slot, (void*)pos.Handle, face) != 0;

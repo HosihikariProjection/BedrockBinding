@@ -897,10 +897,10 @@ public sealed unsafe partial class Guardian : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_1faf2bff((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C1.hs_get_21749ca7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_21749ca7((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b19f5fa2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -38,9 +38,25 @@ public sealed unsafe partial class LevelLooseFileStorage : global::System.IDispo
         return __hs_handle;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path levelDirectory, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity, nint keyProvider)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_3ad86e69((void*)__hosihikari_shim_handle, (void*)levelDirectory.Handle, (void*)contentIdentity.Handle, (void*)keyProvider);
+    }
+
     public static LevelLooseFileStorage Create()
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_3571fda3();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new LevelLooseFileStorage((nint)handle);
+    }
+
+    public static LevelLooseFileStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path levelDirectory, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity, nint keyProvider)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_5a473a79((void*)levelDirectory.Handle, (void*)contentIdentity.Handle, (void*)keyProvider);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

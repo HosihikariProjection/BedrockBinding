@@ -82,6 +82,12 @@ public sealed unsafe partial class NetworkIdentifier : global::System.IDisposabl
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
+    public string getCorrelationId()
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_e49bf61b((void*)__hosihikari_shim_handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
     public ulong getHash()
     {
         return NativeMethods.TablePtr->C2.hs_method_a2d6b4f8((void*)__hosihikari_shim_handle);

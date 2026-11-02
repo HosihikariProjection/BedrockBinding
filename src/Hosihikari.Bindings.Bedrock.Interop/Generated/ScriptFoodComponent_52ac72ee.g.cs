@@ -50,29 +50,6 @@ public sealed unsafe partial class ScriptFoodComponent : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_64373e8b((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the by-value record parameter has no eligible layout.", false)]
-    public nint _ctor(nint itemStackHandle, nint scope) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the by-value record parameter has no eligible layout.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static ScriptFoodComponent Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b661eccf();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptFoodComponent((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the by-value record parameter has no eligible layout.", false)]
-    public static ScriptFoodComponent Create(nint itemStackHandle, nint scope) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the by-value record parameter has no eligible layout.");
-
     public static ScriptFoodComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptFoodComponent arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_3a1a95da((void*)arg0.Handle);
@@ -82,11 +59,6 @@ public sealed unsafe partial class ScriptFoodComponent : global::System.IDisposa
         }
 
         return new ScriptFoodComponent((nint)handle);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_cc872ff1());
     }
 
 

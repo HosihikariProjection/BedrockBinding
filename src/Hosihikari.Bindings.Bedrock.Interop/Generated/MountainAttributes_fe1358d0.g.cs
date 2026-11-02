@@ -38,6 +38,10 @@ public sealed unsafe partial class MountainAttributes : global::System.IDisposab
         return __hs_handle;
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    public static nint _vftable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+
     public static MountainAttributes Create(global::Hosihikari.Bindings.Bedrock.Interop.MountainAttributes arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cad91247((void*)arg0.Handle);

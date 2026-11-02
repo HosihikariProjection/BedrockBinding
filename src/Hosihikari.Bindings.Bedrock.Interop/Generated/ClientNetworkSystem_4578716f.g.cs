@@ -129,9 +129,9 @@ public sealed unsafe partial class ClientNetworkSystem : global::System.IDisposa
 
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk1d223d_Address
+    public nint mUnk9364d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_4c00a1f6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_17f76712((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

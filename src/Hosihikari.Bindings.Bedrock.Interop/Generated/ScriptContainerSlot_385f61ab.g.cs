@@ -47,6 +47,10 @@ public sealed unsafe partial class ScriptContainerSlot : global::System.IDisposa
         return (nint)NativeMethods.TablePtr->C3.hs_method_7824b9d7((void*)__hosihikari_shim_handle, (void*)itemContext.Handle, (void*)scope.Handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptContainerSlot arg0)
     {
         return (nint)NativeMethods.TablePtr->C3.hs_method_9784bddd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
@@ -82,6 +86,10 @@ public sealed unsafe partial class ScriptContainerSlot : global::System.IDisposa
 
         return new ScriptContainerSlot((nint)handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public static ScriptContainerSlot Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public static ScriptContainerSlot Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptContainerSlot arg0)
     {
@@ -152,6 +160,10 @@ public sealed unsafe partial class ScriptContainerSlot : global::System.IDisposa
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a46a54ff((void*)__hosihikari_shim_handle);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptContainerSlot operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptContainerSlot arg0)
     {

@@ -92,9 +92,9 @@ public sealed unsafe partial class WindBurstEnchant : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_52f1197f((void*)__hosihikari_shim_handle);
     }
 
-    public void _doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, int enchantLevel)
+    public void _doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, int enchantLevel)
     {
-        NativeMethods.TablePtr->C4.hs_method_90b4ef0d((void*)__hosihikari_shim_handle, (void*)attacker.Handle, (void*)arg1.Handle, enchantLevel);
+        NativeMethods.TablePtr->C4.hs_method_90b4ef0d((void*)__hosihikari_shim_handle, (void*)attacker.Handle, (void*)victim.Handle, enchantLevel);
     }
 
     public float _getDamageBonus(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg2)
@@ -138,9 +138,9 @@ public sealed unsafe partial class WindBurstEnchant : global::System.IDisposable
         return new WindBurstEnchant((nint)handle);
     }
 
-    public void doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, int enchantLevel)
+    public void doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, int enchantLevel)
     {
-        NativeMethods.TablePtr->C4.hs_method_0706725e((void*)__hosihikari_shim_handle, (void*)attacker.Handle, (void*)arg1.Handle, enchantLevel);
+        NativeMethods.TablePtr->C4.hs_method_0706725e((void*)__hosihikari_shim_handle, (void*)attacker.Handle, (void*)victim.Handle, enchantLevel);
     }
 
     public float getDamageBonus(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg2)

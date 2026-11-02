@@ -44,10 +44,6 @@ public sealed unsafe partial class CraftingContainerScreenValidator : global::Sy
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f4708f19((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static CraftingContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainerScreenValidator arg0)
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_38af8ab5((void*)arg0.Handle);

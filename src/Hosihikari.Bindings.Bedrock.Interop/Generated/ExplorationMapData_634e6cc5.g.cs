@@ -39,7 +39,7 @@ public sealed unsafe partial class ExplorationMapData : global::System.IDisposab
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public nint _ctor(nint mapType, nint markerType, nint featureName, nint structureType, bool featureMustBeInNewChunks, nint biomeTag) =>
+    public nint _ctor(nint mapType, nint markerType, nint featureName, nint structureType, bool featureMustBeInNewChunks, nint biomeTag, int searchRadiusCells) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void _dtor()
@@ -59,7 +59,7 @@ public sealed unsafe partial class ExplorationMapData : global::System.IDisposab
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public static ExplorationMapData Create(nint mapType, nint markerType, nint featureName, nint structureType, bool featureMustBeInNewChunks, nint biomeTag) =>
+    public static ExplorationMapData Create(nint mapType, nint markerType, nint featureName, nint structureType, bool featureMustBeInNewChunks, nint biomeTag, int searchRadiusCells) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public static ExplorationMapData Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplorationMapData arg0)
@@ -101,6 +101,12 @@ public sealed unsafe partial class ExplorationMapData : global::System.IDisposab
     {
         get => NativeMethods.TablePtr->C1.hs_get_8f7c0e92((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C1.hs_set_8f7c0e92((void*)__hosihikari_shim_handle, value);
+    }
+
+    public int mSearchRadiusCells
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_dd478547((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_dd478547((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

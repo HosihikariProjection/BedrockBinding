@@ -148,7 +148,7 @@ public sealed unsafe partial class RapidJSONSchemaReader : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C5.hs_method_2d291e52((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return (nint)NativeMethods.TablePtr->C5.hs_method_617549bc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -160,6 +160,13 @@ public sealed unsafe partial class RapidJSONSchemaReader : global::System.IDispo
     public byte _expectedType()
     {
         return NativeMethods.TablePtr->C5.hs_method_e33000a7((void*)__hosihikari_shim_handle);
+    }
+
+    public ushort? _inputError()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_e3f1b7e6((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (ushort?)null;
     }
 
     public bool _isValid()
@@ -264,7 +271,7 @@ public sealed unsafe partial class RapidJSONSchemaReader : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C5.hs_create_06262199(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            var handle = NativeMethods.TablePtr->C5.hs_create_03743015(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -369,6 +376,13 @@ public sealed unsafe partial class RapidJSONSchemaReader : global::System.IDispo
         return NativeMethods.TablePtr->C5.hs_method_3f13d89c((void*)__hosihikari_shim_handle);
     }
 
+    public ushort? inputError()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_17577d73((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (ushort?)null;
+    }
+
     public bool isValid()
     {
         return NativeMethods.TablePtr->C5.hs_method_ae07b3b8((void*)__hosihikari_shim_handle) != 0;
@@ -383,6 +397,12 @@ public sealed unsafe partial class RapidJSONSchemaReader : global::System.IDispo
     public nint mDoc_Address
     {
         get => (nint)NativeMethods.TablePtr->C5.hs_get_47785d9f((void*)__hosihikari_shim_handle);
+    }
+
+    public int mParseResult
+    {
+        get => NativeMethods.TablePtr->C5.hs_get_f9e7931f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_f9e7931f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

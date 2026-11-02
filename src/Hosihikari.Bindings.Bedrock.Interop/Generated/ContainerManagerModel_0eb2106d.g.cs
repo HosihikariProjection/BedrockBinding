@@ -78,6 +78,13 @@ public sealed unsafe partial class ContainerManagerModel : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_ada4e440((void*)__hosihikari_shim_handle, slot, (void*)name.Handle), false);
     }
 
+    public int? _getSelectedRecipeIndex()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C1.hs_method_70b589cd((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (int?)null;
+    }
+
     public bool _isClientSide()
     {
         return NativeMethods.TablePtr->C1.hs_method_b3ff0399((void*)__hosihikari_shim_handle) != 0;
@@ -120,6 +127,11 @@ public sealed unsafe partial class ContainerManagerModel : global::System.IDispo
     public void _setFullContainerSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName name, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool arg3)
     {
         NativeMethods.TablePtr->C1.hs_method_5eca5c88((void*)__hosihikari_shim_handle, slot, (void*)name.Handle, (void*)item.Handle, arg3);
+    }
+
+    public void _setSelectedRecipeIndex(int recipeIndex, bool fromNetwork)
+    {
+        NativeMethods.TablePtr->C1.hs_method_116293b5((void*)__hosihikari_shim_handle, recipeIndex, fromNetwork);
     }
 
     public bool _tick()
@@ -181,6 +193,11 @@ public sealed unsafe partial class ContainerManagerModel : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C1.hs_method_7858b32f((void*)__hosihikari_shim_handle));
     }
 
+    public void addDynamicContainer(global::Hosihikari.Bindings.Abi.SharedHandle? model)
+    {
+        NativeMethods.TablePtr->C1.hs_method_4206f150((void*)__hosihikari_shim_handle, model?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
     public void broadcastChanges()
     {
         NativeMethods.TablePtr->C1.hs_method_cec99588((void*)__hosihikari_shim_handle);
@@ -204,6 +221,13 @@ public sealed unsafe partial class ContainerManagerModel : global::System.IDispo
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getFullContainerSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName name)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_044f5e6c((void*)__hosihikari_shim_handle, slot, (void*)name.Handle), false);
+    }
+
+    public int? getSelectedRecipeIndex()
+    {
+        var __hs_hasValue = false;
+        var __hs_value = NativeMethods.TablePtr->C1.hs_method_179a7dc6((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue ? __hs_value : (int?)null;
     }
 
     public bool isClientSide()
@@ -330,6 +354,11 @@ public sealed unsafe partial class ContainerManagerModel : global::System.IDispo
     public void setFullContainerSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName name, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool arg3)
     {
         NativeMethods.TablePtr->C1.hs_method_c126c8dc((void*)__hosihikari_shim_handle, slot, (void*)name.Handle, (void*)item.Handle, arg3);
+    }
+
+    public void setSelectedRecipeIndex(int recipeIndex, bool fromNetwork)
+    {
+        NativeMethods.TablePtr->C1.hs_method_04e4f219((void*)__hosihikari_shim_handle, recipeIndex, fromNetwork);
     }
 
     public bool tick()

@@ -53,6 +53,11 @@ public sealed unsafe partial class MapInfoRequestPacket : global::System.IDispos
         return NativeMethods.TablePtr->C2.hs_method_35220184((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public void _dtor()
+    {
+        NativeMethods.TablePtr->C2.hs_method_32b27901((void*)__hosihikari_shim_handle);
+    }
+
     public int _getId()
     {
         return NativeMethods.TablePtr->C2.hs_method_c32e78b4((void*)__hosihikari_shim_handle);

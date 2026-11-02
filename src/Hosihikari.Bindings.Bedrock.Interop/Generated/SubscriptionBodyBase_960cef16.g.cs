@@ -38,18 +38,6 @@ public sealed unsafe partial class SubscriptionBodyBase : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint mNext
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d34b87f7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_d34b87f7((void*)__hosihikari_shim_handle, (void*)value);
-    }
-
-    public nint mPrev
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d26b8a06((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_d26b8a06((void*)__hosihikari_shim_handle, (void*)value);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");

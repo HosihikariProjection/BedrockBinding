@@ -43,9 +43,9 @@ public sealed unsafe partial class LevelBlockDestroyerProxy : global::System.IDi
         NativeMethods.TablePtr->C2.hs_method_bd0b02e7((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)(actorContext?.Handle ?? 0));
     }
 
-    public void _sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager levelEventManager, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public void _sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager levelEventManager, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte destroySound)
     {
-        NativeMethods.TablePtr->C2.hs_method_b7051aca((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
+        NativeMethods.TablePtr->C2.hs_method_430d9acd((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, destroySound);
     }
 
     public static LevelBlockDestroyerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyerProxy arg0)
@@ -64,9 +64,9 @@ public sealed unsafe partial class LevelBlockDestroyerProxy : global::System.IDi
         NativeMethods.TablePtr->C2.hs_method_0fda8eb8((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)(actorContext?.Handle ?? 0));
     }
 
-    public void sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager levelEventManager, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
+    public void sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager levelEventManager, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte destroySound)
     {
-        NativeMethods.TablePtr->C2.hs_method_cee317c9((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
+        NativeMethods.TablePtr->C2.hs_method_f4138cef((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, destroySound);
     }
 
 

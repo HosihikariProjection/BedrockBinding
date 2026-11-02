@@ -468,17 +468,6 @@ public sealed unsafe partial class CampfireBlock : global::System.IDisposable
         return new CampfireBlock((nint)handle);
     }
 
-    public static CampfireBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.CampfireBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_98599ee4((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CampfireBlock((nint)handle);
-    }
-
     public static CampfireBlock Create(string nameId, int id, bool spawnRandomParticles, bool setsOnFire)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

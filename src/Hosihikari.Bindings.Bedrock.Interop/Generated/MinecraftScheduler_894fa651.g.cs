@@ -38,11 +38,6 @@ public sealed unsafe partial class MinecraftScheduler : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scheduler client()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scheduler((nint)NativeMethods.TablePtr->C2.hs_method_894f4a8b(), false);
-    }
-
     public static nint mInstance()
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_0277a0b9();

@@ -18,6 +18,7 @@ public enum ResultCode : ushort
     DeprecatedMember = 512,
     UnrecognizedComponent = 1024,
     UnsupportedVersion = 2048,
+    InputTooLarge = 4096,
     InvalidEnumValue = 4096,
     All = 65535,
     EnttEnumAsBitmask = 65535,

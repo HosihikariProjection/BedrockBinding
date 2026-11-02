@@ -78,6 +78,12 @@ public sealed unsafe partial class PackLoadInfo : global::System.IDisposable
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk8f457c_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6f9128f8((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9c7297_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ded6d6c4((void*)__hosihikari_shim_handle);

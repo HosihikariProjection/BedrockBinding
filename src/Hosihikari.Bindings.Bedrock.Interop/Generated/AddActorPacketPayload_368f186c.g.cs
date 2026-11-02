@@ -112,6 +112,12 @@ public sealed unsafe partial class AddActorPacketPayload : global::System.IDispo
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mPassengerOfBlockData_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_e715b3b0((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_6e343f94((void*)__hosihikari_shim_handle);

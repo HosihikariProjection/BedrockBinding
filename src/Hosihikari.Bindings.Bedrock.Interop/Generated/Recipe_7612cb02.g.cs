@@ -72,9 +72,9 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_0e1fcecb((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public bool _itemValidForRecipe(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor recipeItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public bool _itemValidForRecipe(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor recipeItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext? arg2)
     {
-        return NativeMethods.TablePtr->C3.hs_method_357c40b6((void*)__hosihikari_shim_handle, (void*)recipeItem.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_eeca4b94((void*)__hosihikari_shim_handle, (void*)recipeItem.Handle, (void*)item.Handle, (void*)(arg2?.Handle ?? 0)) != 0;
     }
 
     public bool _itemsMatch(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor lhs, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor rhs)
@@ -172,9 +172,9 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_33744f0e((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public bool itemValidForRecipe(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor recipeItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    public bool itemValidForRecipe(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor recipeItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext? arg2)
     {
-        return NativeMethods.TablePtr->C3.hs_method_785c73d8((void*)__hosihikari_shim_handle, (void*)recipeItem.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_f0e52009((void*)__hosihikari_shim_handle, (void*)recipeItem.Handle, (void*)item.Handle, (void*)(arg2?.Handle ?? 0)) != 0;
     }
 
     public bool itemsMatch(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor lhs, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor rhs)

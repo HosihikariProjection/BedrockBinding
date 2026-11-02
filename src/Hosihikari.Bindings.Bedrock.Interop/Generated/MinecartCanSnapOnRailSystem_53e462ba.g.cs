@@ -38,9 +38,10 @@ public sealed unsafe partial class MinecartCanSnapOnRailSystem : global::System.
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EntityModifier<SnapOnRailComponent>' is not a known bindable declaration.", false)]
-    public static void _checkCanSnapOnRail(nint context, nint stateVectorComponent, nint mod, nint constBlockSource) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EntityModifier<SnapOnRailComponent>' is not a known bindable declaration.");
+    public static void _checkCanSnapOnRail(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, nint mod, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource constBlockSource)
+    {
+        NativeMethods.TablePtr->C2.hs_method_82289c24((void*)context.Handle, (void*)stateVectorComponent.Handle, (void*)mod, (void*)constBlockSource.Handle);
+    }
 
     public void Dispose()
     {

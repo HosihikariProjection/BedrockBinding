@@ -137,17 +137,6 @@ public sealed unsafe partial class BigDripleafBlock : global::System.IDisposable
         return new BigDripleafBlock((nint)handle);
     }
 
-    public static BigDripleafBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.BigDripleafBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_02e3b940((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BigDripleafBlock((nint)handle);
-    }
-
     public static BigDripleafBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

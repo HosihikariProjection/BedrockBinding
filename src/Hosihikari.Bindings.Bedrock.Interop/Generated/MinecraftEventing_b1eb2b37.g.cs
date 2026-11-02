@@ -882,6 +882,11 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_8d7b0cee((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
+    public void _fireEventChunkProfilerCapture(nint scores)
+    {
+        NativeMethods.TablePtr->C2.hs_method_ffd95d67((void*)__hosihikari_shim_handle, (void*)scores);
+    }
+
     public void _fireEventChunkUnloaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
         NativeMethods.TablePtr->C2.hs_method_d65912e8((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
@@ -988,6 +993,25 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
             {
                 NativeMethods.TablePtr->C2.hs_method_d16d8b8c((void*)__hosihikari_shim_handle, operation, cloudItemType, __hs_stringData2, (nuint)__hs_stringByteCount2, size, __hs_stringData4, (nuint)__hs_stringByteCount4, driveItemId is not null);
             }
+        }
+    }
+
+    public void _fireEventCloudSpoAuthenticationEdu(string cloudWorldCorrelationId, int spoTokenAcquisitionOperation, bool spoTokenAcquisitionSucceeded, long? spoTokenTimeToExpiry, long? spoTokenAge, bool? spoTokenAcquiredIsNew)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(cloudWorldCorrelationId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(cloudWorldCorrelationId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_9e8450bb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, spoTokenAcquisitionOperation, spoTokenAcquisitionSucceeded, spoTokenTimeToExpiry ?? default(long), spoTokenAge ?? default(long), spoTokenAcquiredIsNew ?? default(bool), spoTokenTimeToExpiry.HasValue, spoTokenAge.HasValue, spoTokenAcquiredIsNew.HasValue);
         }
     }
 
@@ -1416,9 +1440,9 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_55aa48fc((void*)__hosihikari_shim_handle, (void*)data);
     }
 
-    public void _fireEventDiskStatus(byte status, int errorCode, ulong freeSpace)
+    public void _fireEventDiskStatus(byte status, int errorCode, ulong freeSpace, long remoteRemainingStorageB)
     {
-        NativeMethods.TablePtr->C2.hs_method_02da568c((void*)__hosihikari_shim_handle, status, errorCode, freeSpace);
+        NativeMethods.TablePtr->C2.hs_method_fc53fee6((void*)__hosihikari_shim_handle, status, errorCode, freeSpace, remoteRemainingStorageB);
     }
 
     public void _fireEventDisplayLoggedError(string errorMessageTemplate, string errorMessage, string errorParameters)
@@ -1741,9 +1765,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     public void _fireEventImGuiScreenChanged(nint screenName, nint additionalProperties) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void _fireEventImmersiveReaderStatus(nint status) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void _fireEventImmersiveReaderStatus(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status status)
+    {
+        NativeMethods.TablePtr->C2.hs_method_07e19f6c((void*)__hosihikari_shim_handle, (void*)status.Handle);
+    }
 
     public void _fireEventInGamePause(bool pauseStatus)
     {
@@ -2400,6 +2425,11 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void _fireEventOreUIScreenPerformance(nint userId, nint writer) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
+    public void _fireEventOreUIScreenTracking(nint userId, nint trackingData)
+    {
+        NativeMethods.TablePtr->C2.hs_method_f98c0f77((void*)__hosihikari_shim_handle, (void*)userId, (void*)trackingData);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public void _fireEventPUVLoad(nint resourceCategory, nint loadData) =>
@@ -3605,6 +3635,25 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_cfeac9a7((void*)__hosihikari_shim_handle, (void*)@params);
     }
 
+    public void _fireEventProfilerUsed(string profilerName)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(profilerName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(profilerName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_8cb9b058((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
+
     public void _fireEventProgressionsSet(string[] progressions)
     {
         var __hs_vectorItems0 = progressions ?? global::System.Array.Empty<string>();
@@ -3950,9 +3999,24 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void _fireEventRealmsGeneralCall(nint callName, nint returnCode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void _fireEventRealmsGeneralCall(string callName, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status returnCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(callName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(callName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_da283d9c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)returnCode.Handle);
+        }
+    }
 
     public void _fireEventRealmsPackUpload(int realmId, int slotIndex, string packId, string packVersion, sbyte packType, string packClassification, string packOptimizationVersion, bool hasContentIdentity, bool isPremium, byte packOrigin, int stackPosition, ulong packSizeBytes)
     {
@@ -4015,9 +4079,24 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void _fireEventRealmsRealmSpecificCall(nint callName, long realmId, nint returnCode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void _fireEventRealmsRealmSpecificCall(string callName, long realmId, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status returnCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(callName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(callName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_63f13cc5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, realmId, (void*)returnCode.Handle);
+        }
+    }
 
     public void _fireEventRealmsStoriesOptIn(string correlationId, string action, string realmId, bool isOwner)
     {
@@ -5320,6 +5399,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public void _fireEventUserStorageAreaSpaceInfo(nint spaceInfoStatus, nint worldsSizeOnDiskFn, nint storageAreaSpaceInfo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
     public void _fireEventUwpToGdkMigrationComplete(nint deviceIdContext, string gdkDeviceId, string migrationErrors)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(gdkDeviceId);
@@ -5434,9 +5517,9 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_0cbcf9b0((void*)__hosihikari_shim_handle, worldSeed, worldSize);
     }
 
-    public void _fireEventWorldFilesListed(ulong numLevels, ulong totalSizeMB, ulong largestLevelMB, ulong smallestLevelMB)
+    public void _fireEventWorldFilesListed(ulong numLevels, ulong totalSizeMB, ulong largestLevelMB, ulong smallestLevelMB, ulong totalRemoteStorageMB, ulong avgRemoteStorageMB)
     {
-        NativeMethods.TablePtr->C2.hs_method_43fe2926((void*)__hosihikari_shim_handle, numLevels, totalSizeMB, largestLevelMB, smallestLevelMB);
+        NativeMethods.TablePtr->C2.hs_method_c31d859a((void*)__hosihikari_shim_handle, numLevels, totalSizeMB, largestLevelMB, smallestLevelMB, totalRemoteStorageMB, avgRemoteStorageMB);
     }
 
     public void _fireEventWorldGenerated(string levelId, global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings levelSettings, bool fromTemplate)
@@ -5526,6 +5609,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'std::pair<std::basic_string_view<char>, std::basic_string_view<char>>' is not supported.", false)]
     public void _fireEventWorldLoadedClassroomCustomization(nint customization, nint details) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'std::pair<std::basic_string_view<char>, std::basic_string_view<char>>' is not supported.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    public void _fireEventWorldSaveAndExit(nint context, nint storageData, nint packs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void _fireEventWriteBudgetLow(ulong remainingWriteBudget, float writeRateMBPerMin, float writeCountPerMin, nint timeSinceLastLargeFileTransactionCompleted, bool anyLargeFileTransactionInProgress, nint correlationId) =>
@@ -7535,6 +7622,11 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_81f0af82((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
+    public void fireEventChunkProfilerCapture(nint scores)
+    {
+        NativeMethods.TablePtr->C2.hs_method_26dea53a((void*)__hosihikari_shim_handle, (void*)scores);
+    }
+
     public void fireEventChunkUnloaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
         NativeMethods.TablePtr->C2.hs_method_076413e9((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
@@ -7641,6 +7733,25 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
             {
                 NativeMethods.TablePtr->C2.hs_method_74f9b26f((void*)__hosihikari_shim_handle, operation, cloudItemType, __hs_stringData2, (nuint)__hs_stringByteCount2, size, __hs_stringData4, (nuint)__hs_stringByteCount4, driveItemId is not null);
             }
+        }
+    }
+
+    public void fireEventCloudSpoAuthenticationEdu(string cloudWorldCorrelationId, int spoTokenAcquisitionOperation, bool spoTokenAcquisitionSucceeded, long? spoTokenTimeToExpiry, long? spoTokenAge, bool? spoTokenAcquiredIsNew)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(cloudWorldCorrelationId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(cloudWorldCorrelationId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_8847bc9d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, spoTokenAcquisitionOperation, spoTokenAcquisitionSucceeded, spoTokenTimeToExpiry ?? default(long), spoTokenAge ?? default(long), spoTokenAcquiredIsNew ?? default(bool), spoTokenTimeToExpiry.HasValue, spoTokenAge.HasValue, spoTokenAcquiredIsNew.HasValue);
         }
     }
 
@@ -8069,9 +8180,9 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_7a346858((void*)__hosihikari_shim_handle, (void*)data);
     }
 
-    public void fireEventDiskStatus(byte status, int errorCode, ulong freeSpace)
+    public void fireEventDiskStatus(byte status, int errorCode, ulong freeSpace, long remoteRemainingStorageB)
     {
-        NativeMethods.TablePtr->C2.hs_method_a068888f((void*)__hosihikari_shim_handle, status, errorCode, freeSpace);
+        NativeMethods.TablePtr->C2.hs_method_6125b6c7((void*)__hosihikari_shim_handle, status, errorCode, freeSpace, remoteRemainingStorageB);
     }
 
     public void fireEventDisplayLoggedError(string errorMessageTemplate, string errorMessage, string errorParameters)
@@ -8394,9 +8505,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     public void fireEventImGuiScreenChanged(nint screenName, nint additionalProperties) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void fireEventImmersiveReaderStatus(nint status) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void fireEventImmersiveReaderStatus(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status status)
+    {
+        NativeMethods.TablePtr->C2.hs_method_cfb61cd2((void*)__hosihikari_shim_handle, (void*)status.Handle);
+    }
 
     public void fireEventInGamePause(bool pauseStatus)
     {
@@ -9078,6 +9190,11 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void fireEventOreUIScreenPerformance(nint userId, nint writer) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
+    public void fireEventOreUIScreenTracking(nint userId, nint trackingData)
+    {
+        NativeMethods.TablePtr->C2.hs_method_b8e0a503((void*)__hosihikari_shim_handle, (void*)userId, (void*)trackingData);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public void fireEventPUVLoad(nint resourceCategory, nint loadData) =>
@@ -10354,6 +10471,25 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_6d4a41e6((void*)__hosihikari_shim_handle, (void*)@params);
     }
 
+    public void fireEventProfilerUsed(string profilerName)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(profilerName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(profilerName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_bd47a836((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+        }
+    }
+
     public void fireEventProgressionsSet(string[] progressions)
     {
         var __hs_vectorItems0 = progressions ?? global::System.Array.Empty<string>();
@@ -10699,9 +10835,24 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void fireEventRealmsGeneralCall(nint callName, nint returnCode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void fireEventRealmsGeneralCall(string callName, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status returnCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(callName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(callName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_f65ed0ca((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)returnCode.Handle);
+        }
+    }
 
     public void fireEventRealmsPackUpload(int realmId, int slotIndex, string packId, string packVersion, sbyte packType, string packClassification, string packOptimizationVersion, bool hasContentIdentity, bool isPremium, byte packOrigin, int stackPosition, ulong packSizeBytes)
     {
@@ -10764,9 +10915,24 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.", false)]
-    public void fireEventRealmsRealmSpecificCall(nint callName, long realmId, nint returnCode) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Http::Status' is not a known bindable declaration.");
+    public void fireEventRealmsRealmSpecificCall(string callName, long realmId, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.Status returnCode)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(callName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(callName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            NativeMethods.TablePtr->C2.hs_method_75228913((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, realmId, (void*)returnCode.Handle);
+        }
+    }
 
     public void fireEventRealmsStoriesOptIn(string correlationId, string action, string realmId, bool isOwner)
     {
@@ -12102,6 +12268,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         }
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public void fireEventUserStorageAreaSpaceInfo(nint spaceInfoStatus, nint worldsSizeOnDiskFn, nint storageAreaSpaceInfo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
     public void fireEventUwpToGdkMigrationComplete(nint deviceIdContext, string gdkDeviceId, string migrationErrors)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(gdkDeviceId);
@@ -12221,9 +12391,9 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_a3929f50((void*)__hosihikari_shim_handle, worldSeed, worldSize);
     }
 
-    public void fireEventWorldFilesListed(ulong numLevels, ulong totalSizeMB, ulong largestLevelMB, ulong smallestLevelMB)
+    public void fireEventWorldFilesListed(ulong numLevels, ulong totalSizeMB, ulong largestLevelMB, ulong smallestLevelMB, ulong totalRemoteStorageMB, ulong avgRemoteStorageMB)
     {
-        NativeMethods.TablePtr->C2.hs_method_894de72b((void*)__hosihikari_shim_handle, numLevels, totalSizeMB, largestLevelMB, smallestLevelMB);
+        NativeMethods.TablePtr->C2.hs_method_9277bb74((void*)__hosihikari_shim_handle, numLevels, totalSizeMB, largestLevelMB, smallestLevelMB, totalRemoteStorageMB, avgRemoteStorageMB);
     }
 
     public void fireEventWorldGenerated(string levelId, global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings levelSettings, bool fromTemplate)
@@ -12313,6 +12483,10 @@ public sealed unsafe partial class MinecraftEventing : global::System.IDisposabl
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'std::pair<std::basic_string_view<char>, std::basic_string_view<char>>' is not supported.", false)]
     public void fireEventWorldLoadedClassroomCustomization(nint customization, nint details) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'std::pair<std::basic_string_view<char>, std::basic_string_view<char>>' is not supported.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    public void fireEventWorldSaveAndExit(nint context, nint storageData, nint packs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void fireEventWriteBudgetLow(ulong remainingWriteBudget, float writeRateMBPerMin, float writeCountPerMin, nint timeSinceLastLargeFileTransactionCompleted, bool anyLargeFileTransactionInProgress, nint correlationId) =>

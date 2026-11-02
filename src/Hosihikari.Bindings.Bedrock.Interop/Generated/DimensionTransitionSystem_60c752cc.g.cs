@@ -38,13 +38,28 @@ public sealed unsafe partial class DimensionTransitionSystem : global::System.ID
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, DimensionStateComponent, StateVectorComponent>' is not a known bindable declaration.", false)]
-    public static void requestPlayerChangeDimension(nint player, nint request, nint playerData, nint modifier) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, DimensionStateComponent, StateVectorComponent>' is not a known bindable declaration.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createPortalTransition()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_abcd0e53());
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, Include<PlayerComponent>, PlayerChangeDimensionRequestComponent, ActorOwnerComponent>' is not a known bindable declaration.", false)]
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createReadyToContinueServer()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_2712891f());
+    }
+
+    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createVehicleDismount()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_88cd864c());
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    public static void requestPlayerChangeDimension(nint player, nint request, nint playerData, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static void tryHandleChangeDimensionRequestLevel(nint requests, nint modifier, nint callback, nint isSuspended) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, Include<PlayerComponent>, PlayerChangeDimensionRequestComponent, ActorOwnerComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void Dispose()
     {

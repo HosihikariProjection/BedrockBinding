@@ -69,9 +69,9 @@ public sealed unsafe partial class FoodItemComponent : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_a02c18f3((void*)__hosihikari_shim_handle);
     }
 
-    public void _use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public void _use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        NativeMethods.TablePtr->C1.hs_method_7f441fb6((void*)__hosihikari_shim_handle, (void*)result, (void*)instance.Handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C1.hs_method_24717896((void*)__hosihikari_shim_handle, (void*)result, (void*)instance.Handle, (void*)player.Handle, handSlot);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? _useTimeDepleted(nint itemUseMethod, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack initialInstance, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
@@ -182,9 +182,9 @@ public sealed unsafe partial class FoodItemComponent : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_19f4be3c((void*)__hosihikari_shim_handle);
     }
 
-    public void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        NativeMethods.TablePtr->C1.hs_method_7e1c6646((void*)__hosihikari_shim_handle, (void*)result, (void*)instance.Handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C1.hs_method_bd025458((void*)__hosihikari_shim_handle, (void*)result, (void*)instance.Handle, (void*)player.Handle, handSlot);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? useTimeDepleted(nint itemUseMethod, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack initialInstance, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Level level)

@@ -413,17 +413,6 @@ public sealed unsafe partial class MudBlock : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C2.hs_method_9c204039(), false);
     }
 
-    public static MudBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.MudBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b2d87878((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MudBlock((nint)handle);
-    }
-
     public bool breaksFallingBlocks(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion version)
     {
         return NativeMethods.TablePtr->C2.hs_method_b0988955((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)version.Handle) != 0;

@@ -53,6 +53,10 @@ public sealed unsafe partial class ThrowableItemComponentLegacyFactoryData : glo
         return new ThrowableItemComponentLegacyFactoryData((nint)handle);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+
     public bool mDoSwing
     {
         get => NativeMethods.TablePtr->C4.hs_get_c0351a4b((void*)__hosihikari_shim_handle) != 0;

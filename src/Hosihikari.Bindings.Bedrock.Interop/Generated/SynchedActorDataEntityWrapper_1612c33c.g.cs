@@ -86,11 +86,6 @@ public sealed unsafe partial class SynchedActorDataEntityWrapper : global::Syste
         return NativeMethods.TablePtr->C4.hs_method_0ebe2498((void*)__hosihikari_shim_handle, id);
     }
 
-    public long getInt64(ushort id)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_27cb30ef((void*)__hosihikari_shim_handle, id);
-    }
-
     public sbyte getInt8(ushort id)
     {
         return NativeMethods.TablePtr->C4.hs_method_0b7b5989((void*)__hosihikari_shim_handle, id);
@@ -144,6 +139,11 @@ public sealed unsafe partial class SynchedActorDataEntityWrapper : global::Syste
     public nint mFlagData_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_0b8ba7b5((void*)__hosihikari_shim_handle);
+    }
+
+    public void markDirty(ushort id)
+    {
+        NativeMethods.TablePtr->C4.hs_method_52f928a7((void*)__hosihikari_shim_handle, id);
     }
 
 

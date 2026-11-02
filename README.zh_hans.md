@@ -4,7 +4,7 @@
 
 Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近原生风格的 **Interop** 与按符号分发的原生 **绑定垫片**。
 
-本分支面向 **BDS 1.26.51.1**，数据来自 LeviLamina `v26.51.9` 的头文件；`v1.21.3` 分支保留从载体调试符号生成的 1.21.3.01 面。
+本分支面向 **BDS 1.26.60.6**，数据来自 LeviLamina `f28a4b5`（26.60 开发线）的头文件；`v1.21.3` 分支保留从载体调试符号生成的 1.21.3.01 面，`v1.26.51` 分支保留 1.26.51.1 面。
 
 ## 边界
 
@@ -14,10 +14,10 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 
 ## 当前状态
 
-- Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,146 个生成的 C# 文件。
-- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 154,702 个函数。
-- 覆盖：`win-x64-server` 配置绑定 12,080 个声明与 101,068 个成员。
-- `scripts/headers-26.51.txt` 列出解析的 5,199 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
+- Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,222 个生成的 C# 文件。
+- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 155,450 个函数。
+- 覆盖：`win-x64-server` 配置绑定 12,150 个声明与 101,789 个成员。
+- `scripts/headers-26.60.txt` 列出解析的 5,169 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
 
 shim 以 `--symbol-dispatch --resolve-by-name` 模式发射。支持的 ABI：
 
@@ -27,7 +27,7 @@ shim 以 `--symbol-dispatch --resolve-by-name` 模式发射。支持的 ABI：
 - 按值 record：小的 `triviallyCopyable` record 走整数寄存器，较大 record 走栈上临时区；非 triviallyCopyable 的 record 通过按名解析的拷贝构造函数构造实参，析构非平凡时由被调方释放；无拷贝构造记录的平凡析构 record 按字节复制，但仍使用隐藏引用；
 - 按值返回的签名省略默认模板实参时（如 `Bedrock::Result<T>`）会归一为已记录的特化 `Bedrock::Result<T, std::error_code>`；`GameplayHandlerResult<T>` 等模板返回由第二遍前端实例化，调用返回拥有型包装并可正常 `Dispose`。模板只有在头文件用数据成员或基类证明布局时才作为按值返回；重建的空壳会被拒绝，而不是按 1 字节定尺；
 - `leveldb::Status` 返回来自载体固定的 leveldb 1.23 包，`regenerate.ps1` 把它作为外部根传给前端；枚举模板实参（`Bedrock::Result<T, ActorValidationError>`）与实参完整的 record 返回（`StreamableAssetSource`）由同一份 sizeof 预置实例化；
-- 虚方法（含纯虚声明）按 IR 记录的槽位经对象 vftable 调用；纯虚方法没有实现符号，槽位是唯一路径；非纯虚方法优先走符号，符号未导出时回退到同一槽位（leveldb 与 WebRTC 的覆盖方法即是如此）；`Bedrock::Result` 特化在 1.26.51.1 中没有析构符号，`Dispose` 会释放结果缓冲，但不会释放错误载荷；
+- 虚方法（含纯虚声明）按 IR 记录的槽位经对象 vftable 调用；纯虚方法没有实现符号，槽位是唯一路径；非纯虚方法优先走符号，符号未导出时回退到同一槽位（leveldb 与 WebRTC 的覆盖方法即是如此）；`Bedrock::Result` 特化在 1.26.60.6 中没有析构符号，`Dispose` 会释放结果缓冲，但不会释放错误载荷；
 - 位域按存储位读写：bool、整数与枚举位域投影为标量属性，继承来的标志会出现在每个派生类上；
 - 类型未投影的字段以只读 `nint` 暴露字段存储地址，属性名为 `<field>_Address`；
 - `optional_ref<T>` 参数与返回使用存在标志；
@@ -40,14 +40,14 @@ map 需要具名 key/value 类型与匹配的 hash/equality functor，合并后�
 
 ## 生成
 
-重新生成只需要公开输入：一份 LeviLamina `v26.51.9` 检出，以及用 LLVM 23.1.4 构建的生成器。预编译依赖来自 LeviLamina 构建所用的本地 xmake 包仓库。
+重新生成只需要公开输入：一份 LeviLamina `f28a4b5` 检出，以及用 LLVM 23.1.4 构建的生成器。预编译依赖来自 LeviLamina 构建所用的本地 xmake 包仓库。
 
 ```shell
 powershell -File scripts/regenerate.ps1 `
   -LeviLaminaRoot C:\path\to\LeviLamina
 ```
 
-脚本解析 `scripts/headers-26.51.txt`，以 `--symbol-dispatch --resolve-by-name` 发射，并更新 `src/`、`native/BindingShim/generated/` 与 `coverage/`。载体按值引用 `leveldb::Status`，而定义在载体源码根之外，因此脚本把固定 leveldb 1.23 包中的 `leveldb/status.h` 作为外部根加入解析。迭代发射器时可传 `-SkipFrontend -IrDirectory <dir>` 复用已有 IR。审查 diff 后运行 `python scripts/verify_generated.py`。
+脚本解析 `scripts/headers-26.60.txt`，以 `--symbol-dispatch --resolve-by-name` 发射，并更新 `src/`、`native/BindingShim/generated/` 与 `coverage/`。载体按值引用 `leveldb::Status`，而定义在载体源码根之外，因此脚本把固定 leveldb 1.23 包中的 `leveldb/status.h` 作为外部根加入解析。迭代发射器时可传 `-SkipFrontend -IrDirectory <dir>` 复用已有 IR。审查 diff 后运行 `python scripts/verify_generated.py`。
 
 ## 构建
 
@@ -60,11 +60,11 @@ powershell -File native/BindingShim/build.ps1
 
 ## 运行时冒烟
 
-`tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `HashedString`、`Core::Random` 与 `TextPacket` 后调用实例方法，并复制一个 `HashedString`、按值传入 `ExpressionNode::unregisterQueryFunction` 以校验拷贝构造 ABI。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。
+`tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `TextPacket` 并调用实例方法，再经一个接收字符串、按值返回 `TextPacket` 的工厂创建系统消息包。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。服务器本身需要 PreLoader 1.16.6、来自 `bedrockdata v26.60.6-server.1` 的 `bedrock_runtime_data`，以及用同一 `f28a4b5` 载体构建的 LeviLamina。
 
 ## 分发
 
-两个 NuGet 包共用版本 `1.26.51-r0`：
+两个 NuGet 包共用版本 `1.26.60-r0`：
 
 - `Hosihikari.Bindings.Bedrock.Interop` —— 托管互操作；依赖 `Hosihikari.Bindings.Abi`。
 - `Hosihikari.Bindings.Bedrock.Shim` —— 原生 Windows 垫片，位于 `runtimes/win-x64/native/`。

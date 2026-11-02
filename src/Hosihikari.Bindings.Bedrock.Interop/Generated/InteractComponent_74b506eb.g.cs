@@ -49,9 +49,9 @@ public sealed unsafe partial class InteractComponent : global::System.IDisposabl
         return new InteractComponent((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _runInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, nint desc, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _runInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, nint desc, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_970cbe3e((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)desc, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_0a833e9c((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)desc, (void*)player.Handle, handSlot));
     }
 
     public static void _trySendEquipmentSlot(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, int equipmentSlot)
@@ -59,9 +59,9 @@ public sealed unsafe partial class InteractComponent : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_86ef6818((void*)owner.Handle, equipmentSlot);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_e20f98d6((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_b5b4684a((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
     }
 
     public short mCooldownCounter

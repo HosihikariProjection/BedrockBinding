@@ -38,9 +38,9 @@ public sealed unsafe partial class PassengerFreezeMovementSystem : global::Syste
         return __hs_handle;
     }
 
-    public static void freezeMovement(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVector)
+    public static void _freezeMovement(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVector)
     {
-        NativeMethods.TablePtr->C3.hs_method_3e7494ff((void*)arg0.Handle, (void*)stateVector.Handle);
+        NativeMethods.TablePtr->C3.hs_method_c8d0b0af((void*)arg0.Handle, (void*)stateVector.Handle);
     }
 
     public void Dispose()

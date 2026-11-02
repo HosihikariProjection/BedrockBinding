@@ -38,25 +38,6 @@ public sealed unsafe partial class ScriptScoreboardObjectiveDisplayOptions : glo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptScoreboardObjective>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint objective, nint sortOrder) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptScoreboardObjective>' is not a known bindable declaration.");
-
-    public static ScriptScoreboardObjectiveDisplayOptions Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_112c0feb();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptScoreboardObjectiveDisplayOptions((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptScoreboardObjective>' is not a known bindable declaration.", false)]
-    public static ScriptScoreboardObjectiveDisplayOptions Create(nint objective, nint sortOrder) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptScoreboardObjective>' is not a known bindable declaration.");
-
     public static ScriptScoreboardObjectiveDisplayOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptScoreboardObjectiveDisplayOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_d877db16((void*)arg0.Handle);

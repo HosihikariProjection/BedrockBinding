@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-public sealed unsafe partial class PlayJumpSoundSystemImpl
+public sealed unsafe partial class PlayJumpSoundSystemImpl : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -52,13 +52,31 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, SoundEventRequestQueueComponent>' is not a known bindable declaration.", false)]
-    public static void doPlayJumpSoundSystem(nint entity, nint actorFlags, nint actorIdentifier, nint actorUniqueID, nint dimensionType, nint soundEventPlayerComponent, nint stateVectorComponent, nint aabbShapeComponent, nint requestQueueView, nint jumpType, nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, SoundEventRequestQueueComponent>' is not a known bindable declaration.");
+    public static PlayJumpSoundSystemImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayJumpSoundSystemImpl arg0)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_b1679d56((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PlayJumpSoundSystemImpl((nint)handle);
+    }
+
+    public static void doPlayJumpSoundSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.ActorDataFlagComponent actorFlags, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifierComponent actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueIDComponent actorUniqueID, global::Hosihikari.Bindings.Bedrock.Interop.DimensionTypeComponent dimensionType, global::Hosihikari.Bindings.Bedrock.Interop.SoundEventPlayerComponent soundEventPlayerComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabbShapeComponent, nint requestQueueView, int jumpType, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
+    {
+        NativeMethods.TablePtr->C3.hs_method_f92a34ee((void*)entity.Handle, (void*)actorFlags.Handle, (void*)actorIdentifier.Handle, (void*)actorUniqueID.Handle, (void*)dimensionType.Handle, (void*)soundEventPlayerComponent.Handle, (void*)stateVectorComponent.Handle, (void*)aabbShapeComponent.Handle, (void*)requestQueueView, jumpType, (void*)region.Handle);
+    }
 
     public int mJumpType
     {
         get => NativeMethods.TablePtr->C3.hs_get_76146403((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1e0a3769((void*)__hosihikari_shim_handle);
     }
 
     public void singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
@@ -69,5 +87,19 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl
     public void tick(nint context)
     {
         NativeMethods.TablePtr->C3.hs_method_4b356af0((void*)__hosihikari_shim_handle, (void*)context);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C3.hs_destroy_682b246c((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-public sealed unsafe partial class UnderWaterSensingSystem
+public sealed unsafe partial class UnderWaterSensingSystem : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -56,6 +56,12 @@ public sealed unsafe partial class UnderWaterSensingSystem
     public static void doUnderWaterSensing(nint entity, nint stateVectorComponent, nint request, nint headInWater, nint modifier, nint views, nint region) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const ActorHeadInWaterFlagComponent>' is not a known bindable declaration.");
 
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1b4358ce((void*)__hosihikari_shim_handle);
+    }
+
     public void singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
     {
         NativeMethods.TablePtr->C4.hs_method_a6e3e8e0((void*)__hosihikari_shim_handle, (void*)context, (void*)entityContext.Handle);
@@ -64,5 +70,19 @@ public sealed unsafe partial class UnderWaterSensingSystem
     public void tick(nint context)
     {
         NativeMethods.TablePtr->C4.hs_method_5b4b51c1((void*)__hosihikari_shim_handle, (void*)context);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_ba5d06a4((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

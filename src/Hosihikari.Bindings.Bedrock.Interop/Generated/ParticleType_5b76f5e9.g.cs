@@ -111,5 +111,6 @@ public enum ParticleType : int
     OrangePoplarLeaves = 102,
     RedPoplarLeaves = 103,
     YellowPoplarLeaves = 104,
-    Count = 105,
+    IceBallBreak = 105,
+    Count = 106,
 }

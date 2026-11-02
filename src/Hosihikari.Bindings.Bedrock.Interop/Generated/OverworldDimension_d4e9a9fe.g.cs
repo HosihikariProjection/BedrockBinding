@@ -410,10 +410,6 @@ public sealed unsafe partial class OverworldDimension : global::System.IDisposab
     public nint _createGenerator(nint structureSetRegistry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'WorldGenerator' has no accessible destructor.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint args) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
-
     public void _fixWallChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
     {
         NativeMethods.TablePtr->C3.hs_method_315362bf((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)lc.Handle);
@@ -443,21 +439,6 @@ public sealed unsafe partial class OverworldDimension : global::System.IDisposab
     {
         NativeMethods.TablePtr->C3.hs_method_6a3ce503((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)lc.Handle, (void*)generatedChunk.Handle);
     }
-
-    public static OverworldDimension Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7a5a0862();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new OverworldDimension((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static OverworldDimension Create(nint args) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public static OverworldDimension Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldDimension arg0)
     {

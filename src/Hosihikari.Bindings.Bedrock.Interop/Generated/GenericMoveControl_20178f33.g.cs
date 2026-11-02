@@ -38,9 +38,9 @@ public sealed unsafe partial class GenericMoveControl : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.MoveControlDescription? description)
+    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C1.hs_method_be681bcf((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C1.hs_method_f179fd76((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
@@ -63,9 +63,9 @@ public sealed unsafe partial class GenericMoveControl : global::System.IDisposab
         return new GenericMoveControl((nint)handle);
     }
 
-    public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.MoveControlDescription? description)
+    public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C1.hs_method_6f920c4e((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C1.hs_method_73baa0ac((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)

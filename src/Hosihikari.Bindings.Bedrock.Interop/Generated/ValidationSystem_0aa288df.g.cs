@@ -43,17 +43,6 @@ public sealed unsafe partial class ValidationSystem : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_2fed4266((void*)__hosihikari_shim_handle, (void*)context);
     }
 
-    public static ValidationSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerValidation.ValidationSystem arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c1cc3b66((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ValidationSystem((nint)handle);
-    }
-
     public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem(string message)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(message);
@@ -77,6 +66,12 @@ public sealed unsafe partial class ValidationSystem : global::System.IDisposable
     public nint mMessage_Address
     {
         get => (nint)NativeMethods.TablePtr->C3.hs_get_93067c9c((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mViews_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_119f98f5((void*)__hosihikari_shim_handle);
     }
 
     public void tick(nint context)

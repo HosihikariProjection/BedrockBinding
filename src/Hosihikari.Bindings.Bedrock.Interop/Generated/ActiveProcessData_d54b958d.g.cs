@@ -67,9 +67,21 @@ public sealed unsafe partial class ActiveProcessData : global::System.IDisposabl
     }
 
     // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk3ee0be_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_bcc4610b((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3f28df_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_b82318ee((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnk445537_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_30e7bdfb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -124,6 +136,12 @@ public sealed unsafe partial class ActiveProcessData : global::System.IDisposabl
     public nint mUnke42f4f_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ab3b97d4((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mUnkef720a_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c50f98b1((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.BlockChangedOperation_Nested.ActiveProcessData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.BlockChangedOperation_Nested.ActiveProcessData arg0)

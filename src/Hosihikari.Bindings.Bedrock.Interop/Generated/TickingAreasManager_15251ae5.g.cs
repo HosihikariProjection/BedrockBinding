@@ -39,7 +39,7 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint levelStorage) =>
+    public nint _ctor(nint levelStorage, nint limitPolicy) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.");
 
     public static TickingAreasManager Create()
@@ -54,7 +54,7 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.", false)]
-    public static TickingAreasManager Create(nint levelStorage) =>
+    public static TickingAreasManager Create(nint levelStorage, nint limitPolicy) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.");
 
     public static TickingAreasManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreasManager arg0)
@@ -166,6 +166,12 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
     public nint mLevelStorage_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_4f2b020b((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mLimitPolicy_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9be61b0d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -38,9 +38,10 @@ public sealed unsafe partial class StandingVehiclePostPositionPassengerSystem : 
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, Include<HorseFlagComponent>, const StandAnimationComponent, const RenderRotationComponent, Include<VehicleComponent>, const RenderPositionComponent>' is not a known bindable declaration.", false)]
-    public static void _impl(nint arg0, nint passengerComponent, nint setPositionRequest, nint horseView) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ViewT<StrictEntityContext, Include<HorseFlagComponent>, const StandAnimationComponent, const RenderRotationComponent, Include<VehicleComponent>, const RenderPositionComponent>' is not a known bindable declaration.");
+    public static void _impl(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PassengerComponent passengerComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorSetPositionRequestComponent setPositionRequest, nint horseView)
+    {
+        NativeMethods.TablePtr->C4.hs_method_2364d3eb((void*)arg0.Handle, (void*)passengerComponent.Handle, (void*)setPositionRequest.Handle, (void*)horseView);
+    }
 
     public void Dispose()
     {

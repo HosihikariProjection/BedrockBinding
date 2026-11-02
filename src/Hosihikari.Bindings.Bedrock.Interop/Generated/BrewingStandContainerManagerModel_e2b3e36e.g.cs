@@ -48,11 +48,6 @@ public sealed unsafe partial class BrewingStandContainerManagerModel : global::S
         NativeMethods.TablePtr->C0.hs_method_db006cae((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_8d6fccc6((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle, (void*)blockPos.Handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.", false)]
     public nint _getItemCopies() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.");
@@ -80,28 +75,6 @@ public sealed unsafe partial class BrewingStandContainerManagerModel : global::S
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
-    public static BrewingStandContainerManagerModel Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_9d7daf52();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BrewingStandContainerManagerModel((nint)handle);
-    }
-
-    public static BrewingStandContainerManagerModel Create(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_2c2b7623(containerId, (void*)player.Handle, (void*)blockPos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BrewingStandContainerManagerModel((nint)handle);
-    }
 
     public static BrewingStandContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.BrewingStandContainerManagerModel arg0)
     {

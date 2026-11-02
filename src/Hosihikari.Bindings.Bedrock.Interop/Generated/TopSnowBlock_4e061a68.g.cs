@@ -540,17 +540,6 @@ public sealed unsafe partial class TopSnowBlock : global::System.IDisposable
         return new TopSnowBlock((nint)handle);
     }
 
-    public static TopSnowBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.TopSnowBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_5f99a246((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TopSnowBlock((nint)handle);
-    }
-
     public static TopSnowBlock Create(string nameId, int id, bool usePartialHeight, bool allowFallOnPlace)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

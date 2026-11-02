@@ -49,11 +49,6 @@ public sealed unsafe partial class ChunkBlenderFactory : global::System.IDisposa
         return new ChunkBlenderFactory((nint)handle);
     }
 
-    public void freeChunkBlenderCache()
-    {
-        NativeMethods.TablePtr->C0.hs_method_81c49f8e((void*)__hosihikari_shim_handle);
-    }
-
     public global::Hosihikari.Bindings.Abi.SharedHandle? getOrCreateChunkBlender(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos lcPosition)
     {
         var __hs_shared = NativeMethods.TablePtr->C0.hs_method_1725cdd1((void*)__hosihikari_shim_handle, (void*)lcPosition.Handle);

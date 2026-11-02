@@ -38,9 +38,9 @@ public sealed unsafe partial class SwimMoveControl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.MoveControlDescription? description)
+    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C4.hs_method_df180333((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C4.hs_method_124a9ab1((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
@@ -59,9 +59,9 @@ public sealed unsafe partial class SwimMoveControl : global::System.IDisposable
         return new SwimMoveControl((nint)handle);
     }
 
-    public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.MoveControlDescription? description)
+    public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C4.hs_method_68499e35((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C4.hs_method_83cd57f0((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)

@@ -59,6 +59,12 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_d4d2308c((void*)ctx.Handle);
     }
 
+    public string getFullName()
+    {
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_def5f296((void*)__hosihikari_shim_handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mMap_Address
     {

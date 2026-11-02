@@ -108,6 +108,12 @@ public sealed unsafe partial class Structure : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C5.hs_get_4d8b7f8c((void*)__hosihikari_shim_handle);
     }
 
+    public uint mOnPlaced
+    {
+        get => NativeMethods.TablePtr->C5.hs_get_83eaa28d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_83eaa28d((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mPoolAliases_Address
     {

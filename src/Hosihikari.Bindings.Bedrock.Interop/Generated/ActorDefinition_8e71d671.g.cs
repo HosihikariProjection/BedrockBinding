@@ -146,6 +146,12 @@ public sealed unsafe partial class ActorDefinition : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b43d8988((void*)__hosihikari_shim_handle);
     }
 
+    public bool mAttemptOffhandInteractions
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_e3fc03ba((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_e3fc03ba((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttributes_Address
     {

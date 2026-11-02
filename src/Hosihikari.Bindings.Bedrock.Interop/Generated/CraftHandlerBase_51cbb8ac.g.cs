@@ -64,10 +64,6 @@ public sealed unsafe partial class CraftHandlerBase : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_76f9b39a((void*)__hosihikari_shim_handle, requestActionType);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
-    public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
-
     public static CraftHandlerBase Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_3568f8b0();
@@ -114,11 +110,6 @@ public sealed unsafe partial class CraftHandlerBase : global::System.IDisposable
     public byte handleConsumedItem(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName openContainerNetId, byte slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack consumedItem)
     {
         return NativeMethods.TablePtr->C1.hs_method_367d65aa((void*)__hosihikari_shim_handle, (void*)openContainerNetId.Handle, slot, (void*)consumedItem.Handle);
-    }
-
-    public byte handleCraftAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase requestAction, byte currentResult)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1dace660((void*)__hosihikari_shim_handle, (void*)requestAction.Handle, currentResult);
     }
 
     // The native field type is not projected; this is the address of the field storage.

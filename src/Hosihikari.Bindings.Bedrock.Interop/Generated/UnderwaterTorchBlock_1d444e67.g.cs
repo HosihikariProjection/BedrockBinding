@@ -395,6 +395,25 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
         return NativeMethods.TablePtr->C4.hs_method_e34a9fbb((void*)__hosihikari_shim_handle, (void*)baseGameVersion.Handle) != 0;
     }
 
+    public nint _ctor(string nameId, int id)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return (nint)NativeMethods.TablePtr->C4.hs_method_15b360b4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, id);
+        }
+    }
+
     public bool _isLavaBlocking()
     {
         return NativeMethods.TablePtr->C4.hs_method_3b185555((void*)__hosihikari_shim_handle) != 0;
@@ -409,15 +428,40 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static UnderwaterTorchBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.UnderwaterTorchBlock arg0)
+    public static UnderwaterTorchBlock Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c23e1bd6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_05cfd456();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
         }
 
         return new UnderwaterTorchBlock((nint)handle);
+    }
+
+    public static UnderwaterTorchBlock Create(string nameId, int id)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var handle = NativeMethods.TablePtr->C4.hs_create_9a176670(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new UnderwaterTorchBlock((nint)handle);
+        }
     }
 
     public void animateTickBedrockLegacy(nint tickData)

@@ -43,6 +43,17 @@ public sealed unsafe partial class SchemaInfo : global::System.IDisposable
         NativeMethods.TablePtr->C5.hs_method_414dedc7((void*)__hosihikari_shim_handle);
     }
 
+    public static SchemaInfo Create()
+    {
+        var handle = NativeMethods.TablePtr->C5.hs_create_0e273973();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new SchemaInfo((nint)handle);
+    }
+
     public static SchemaInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.SchemaInfo arg0)
     {
         var handle = NativeMethods.TablePtr->C5.hs_create_978d3858((void*)arg0.Handle);
@@ -76,6 +87,11 @@ public sealed unsafe partial class SchemaInfo : global::System.IDisposable
     public nint mType_Address
     {
         get => (nint)NativeMethods.TablePtr->C5.hs_get_cbbaa27f((void*)__hosihikari_shim_handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.SchemaInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.SchemaInfo arg0)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.SchemaInfo((nint)NativeMethods.TablePtr->C5.hs_method_e3c3ff50((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 

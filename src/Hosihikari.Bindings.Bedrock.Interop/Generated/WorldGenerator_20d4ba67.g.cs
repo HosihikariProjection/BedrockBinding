@@ -124,7 +124,7 @@ public sealed unsafe partial class WorldGenerator : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public bool _findNearestStructureFeature(nint feature, nint origin, nint pos, bool mustBeInNewChunks, nint biomeTag) =>
+    public bool _findNearestStructureFeature(nint feature, nint origin, nint pos, bool mustBeInNewChunks, nint biomeTag, int searchRadiusCells) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString _findStructureFeatureTypeAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
@@ -243,7 +243,7 @@ public sealed unsafe partial class WorldGenerator : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
-    public bool findNearestStructureFeature(nint feature, nint origin, nint pos, bool mustBeInNewChunks, nint biomeTag) =>
+    public bool findNearestStructureFeature(nint feature, nint origin, nint pos, bool mustBeInNewChunks, nint biomeTag, int searchRadiusCells) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos findSpawnPosition()

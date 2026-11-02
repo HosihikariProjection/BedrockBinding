@@ -305,6 +305,10 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_484ebbaf((void*)__hosihikari_shim_handle, flushAllowed);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    public void _setWorldSaveAndExitPackTelemetry(nint packs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+
     public void _startShutdown()
     {
         NativeMethods.TablePtr->C1.hs_method_bd42edcd((void*)__hosihikari_shim_handle);
@@ -895,6 +899,10 @@ public sealed unsafe partial class DBStorage : global::System.IDisposable
     {
         NativeMethods.TablePtr->C1.hs_method_648f78dc((void*)__hosihikari_shim_handle, flushAllowed);
     }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    public void setWorldSaveAndExitPackTelemetry(nint packs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
 
     public void startShutdown()
     {

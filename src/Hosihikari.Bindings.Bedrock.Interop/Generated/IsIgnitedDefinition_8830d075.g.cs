@@ -44,6 +44,12 @@ public sealed unsafe partial class IsIgnitedDefinition : global::System.IDisposa
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
+    public static string TITLE()
+    {
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_cc31a8a4();
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
+
     public void Dispose()
     {
         if (__hosihikari_shim_handle != 0)

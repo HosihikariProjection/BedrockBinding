@@ -64,9 +64,9 @@ public sealed unsafe partial class RideableComponent : global::System.IDisposabl
         return NativeMethods.TablePtr->C3.hs_method_14e7d300((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)potentialPassenger.Handle, (void*)result.Handle) != 0;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_366f3d5c((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_4e3e2a67((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, arg2));
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -418,15 +418,29 @@ public sealed unsafe partial class FoliageBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static FoliageBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.FoliageBlock arg0)
+    public static FoliageBlock Create(string nameId, int id)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3c63edb1((void*)arg0.Handle);
-        if (handle == null)
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
         {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
         }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(nameId, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var handle = NativeMethods.TablePtr->C1.hs_create_d2eb0753(__hs_stringData0, (nuint)__hs_stringByteCount0, id);
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
 
-        return new FoliageBlock((nint)handle);
+            return new FoliageBlock((nint)handle);
+        }
     }
 
     public bool canSurvive(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)

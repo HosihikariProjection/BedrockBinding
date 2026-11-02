@@ -38,18 +38,6 @@ public sealed unsafe partial class FileSizePresetTokenImpl : global::System.IDis
         return __hs_handle;
     }
 
-    public nint mNext
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ffdd19d3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_ffdd19d3((void*)__hosihikari_shim_handle, (void*)value);
-    }
-
-    public nint mPrev
-    {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d6d28c60((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_d6d28c60((void*)__hosihikari_shim_handle, (void*)value);
-    }
-
     public static FileSizePresetTokenImpl Create()
     {
         var handle = NativeMethods.TablePtr->C1.hs_create_485499a4();

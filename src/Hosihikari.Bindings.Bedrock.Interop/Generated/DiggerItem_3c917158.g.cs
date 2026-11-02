@@ -48,7 +48,7 @@ public sealed unsafe partial class DiggerItem : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_6fdb3c23((void*)__hosihikari_shim_handle, (void*)block.Handle) != 0;
     }
 
-    public void _executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
+    public void _executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -63,7 +63,7 @@ public sealed unsafe partial class DiggerItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_53e3787d((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)@params.Handle);
+            NativeMethods.TablePtr->C1.hs_method_98ecabe0((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, handSlot, (void*)@params.Handle);
         }
     }
 
@@ -140,7 +140,7 @@ public sealed unsafe partial class DiggerItem : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_a2d65d2d((void*)__hosihikari_shim_handle, (void*)block.Handle) != 0;
     }
 
-    public void executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
+    public void executeEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, string name, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
         var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
         scoped global::System.Span<byte> __hs_stringBytes1;
@@ -155,7 +155,7 @@ public sealed unsafe partial class DiggerItem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_3ec9813a((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)@params.Handle);
+            NativeMethods.TablePtr->C1.hs_method_c61a7670((void*)__hosihikari_shim_handle, (void*)item.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, handSlot, (void*)@params.Handle);
         }
     }
 

@@ -52,17 +52,6 @@ public sealed unsafe partial class AmethystBlock : global::System.IDisposable
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static AmethystBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.AmethystBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_9b3b7cbc((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new AmethystBlock((nint)handle);
-    }
-
     public bool isSilentWhenJumpingOff()
     {
         return NativeMethods.TablePtr->C0.hs_method_f6eb34a8((void*)__hosihikari_shim_handle) != 0;

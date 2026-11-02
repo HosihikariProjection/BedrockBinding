@@ -439,17 +439,6 @@ public sealed unsafe partial class ConcretePowderBlock : global::System.IDisposa
         return new ConcretePowderBlock((nint)handle);
     }
 
-    public static ConcretePowderBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.ConcretePowderBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b48ce7d9((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ConcretePowderBlock((nint)handle);
-    }
-
     public static ConcretePowderBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

@@ -699,6 +699,11 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_679e756b((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_0d15d40d((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+    }
+
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
     {
         return (nint)NativeMethods.TablePtr->C2.hs_method_7b81b77b((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)entityContext.Handle);
@@ -1055,6 +1060,17 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         return new Mob((nint)handle);
     }
 
+    public static Mob Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_8a30d126((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Mob((nint)handle);
+    }
+
     public static Mob Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_cb96d540((void*)level.Handle, (void*)entityContext.Handle);
@@ -1119,6 +1135,11 @@ public sealed unsafe partial class Mob : global::System.IDisposable
     public void _processSoulSpeed()
     {
         NativeMethods.TablePtr->C2.hs_method_894e05f0((void*)__hosihikari_shim_handle);
+    }
+
+    public static void _registerMobAttributes(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap attributes)
+    {
+        NativeMethods.TablePtr->C2.hs_method_6523f595((void*)attributes.Handle);
     }
 
     public void _updateSprintingState()
@@ -1311,11 +1332,6 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_4b916984((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
-    public void frostWalk()
-    {
-        NativeMethods.TablePtr->C2.hs_method_6799efd0((void*)__hosihikari_shim_handle);
-    }
-
     public nint[] getAllEquipment()
     {
         var __hs_view = NativeMethods.TablePtr->C2.hs_method_a811256e((void*)__hosihikari_shim_handle);
@@ -1448,9 +1464,9 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_01744b4b((void*)__hosihikari_shim_handle);
     }
 
-    public int getModifiedSwingDuration()
+    public int getModifiedSwingDuration(byte handSlot)
     {
-        return NativeMethods.TablePtr->C2.hs_method_3eb447f0((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_843f9091((void*)__hosihikari_shim_handle, handSlot);
     }
 
     public int getNoActionTime()
@@ -1560,6 +1576,11 @@ public sealed unsafe partial class Mob : global::System.IDisposable
     public bool isSurfaceMob()
     {
         return NativeMethods.TablePtr->C2.hs_method_8f8b8512((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public bool isTransitioningSitting()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_788d3204((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void joinCaravan(global::Hosihikari.Bindings.Bedrock.Interop.Mob? head)
@@ -1700,10 +1721,10 @@ public sealed unsafe partial class Mob : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_ebe7c00d((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool mSwinging
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSwingingHand_Address
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0667fb9d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_0667fb9d((void*)__hosihikari_shim_handle, value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d78fdeb3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

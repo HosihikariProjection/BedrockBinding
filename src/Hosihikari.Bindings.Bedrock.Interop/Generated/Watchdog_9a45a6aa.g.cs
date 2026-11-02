@@ -114,6 +114,10 @@ public sealed unsafe partial class Watchdog : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_cf3417af((void*)ctx, (void*)runtimeOpaque);
     }
 
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::WatchdogEvent' is not a known bindable declaration.", false)]
+    public void _sendWatchdogEvent(nint watchdogEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::WatchdogEvent' is not a known bindable declaration.");
+
     public static int _stackOverflowHandler(nint ctx, nint runtimeOpaque)
     {
         return NativeMethods.TablePtr->C3.hs_method_919c45dc((void*)ctx, (void*)runtimeOpaque);

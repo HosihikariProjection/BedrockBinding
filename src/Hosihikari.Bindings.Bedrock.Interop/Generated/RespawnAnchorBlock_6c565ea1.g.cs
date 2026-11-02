@@ -423,17 +423,6 @@ public sealed unsafe partial class RespawnAnchorBlock : global::System.IDisposab
     public static nint _vftable() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    public static RespawnAnchorBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.RespawnAnchorBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b76f6e7a((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RespawnAnchorBlock((nint)handle);
-    }
-
     public static void _bumpCharge(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Player? source, short delta)
     {
         NativeMethods.TablePtr->C3.hs_method_9e2fc8c5((void*)region.Handle, (void*)pos.Handle, (void*)(source?.Handle ?? 0), delta);

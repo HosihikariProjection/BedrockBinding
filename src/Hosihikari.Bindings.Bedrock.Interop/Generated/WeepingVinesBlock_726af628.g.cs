@@ -453,17 +453,6 @@ public sealed unsafe partial class WeepingVinesBlock : global::System.IDisposabl
         return new WeepingVinesBlock((nint)handle);
     }
 
-    public static WeepingVinesBlock Create(global::Hosihikari.Bindings.Bedrock.Interop.WeepingVinesBlock arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_58d02cac((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new WeepingVinesBlock((nint)handle);
-    }
-
     public static WeepingVinesBlock Create(string nameId, int id)
     {
         var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(nameId);

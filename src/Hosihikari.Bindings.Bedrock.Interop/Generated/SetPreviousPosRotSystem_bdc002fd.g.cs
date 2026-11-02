@@ -38,9 +38,10 @@ public sealed unsafe partial class SetPreviousPosRotSystem : global::System.IDis
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EntityModifier<PrevPosRotSetThisTickFlagComponent>' is not a known bindable declaration.", false)]
-    public static void _setPreviousPosRot(nint entity, nint stateVectorComponent, nint actorRotationComponent, nint modifier) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EntityModifier<PrevPosRotSetThisTickFlagComponent>' is not a known bindable declaration.");
+    public static void _setPreviousPosRot(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorRotationComponent actorRotationComponent, nint modifier)
+    {
+        NativeMethods.TablePtr->C4.hs_method_e0e18cf6((void*)entity.Handle, (void*)stateVectorComponent.Handle, (void*)actorRotationComponent.Handle, (void*)modifier);
+    }
 
     public static void _setPreviousPosRotSystem(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {

@@ -179,25 +179,10 @@ public sealed unsafe partial class LegacyStructureTemplate : global::System.IDis
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block? _fixExtraWaterBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a0d4f5c1((void*)__hosihikari_shim_handle, (void*)blockType.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
-
     public static void _fixItemStack(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag itemTag, int dataVersion)
     {
         NativeMethods.TablePtr->C2.hs_method_6a248594((void*)itemTag.Handle, dataVersion);
     }
-
-    public static void _mapPropertiesToTags(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag originalTag, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag paletteTag)
-    {
-        NativeMethods.TablePtr->C2.hs_method_91e7f1e9((void*)originalTag.Handle, (void*)paletteTag.Handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
-    public static nint _mapTag(nint originalTag, nint javaBlockName, int dataVersion, nint block) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Block? _mapToBlock(string blockName)
     {
@@ -279,11 +264,6 @@ public sealed unsafe partial class LegacyStructureTemplate : global::System.IDis
     [global::System.Obsolete("BindingShim cannot project this member: map key type 'BlockPos' is not supported.", false)]
     public nint getMarkers(nint position, nint settings) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'BlockPos' is not supported.");
-
-    public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C2.hs_method_1720ea48((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAuthor_Address

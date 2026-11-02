@@ -60,9 +60,9 @@ public sealed unsafe partial class MinecraftArguments : global::System.IDisposab
         return new MinecraftArguments((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ResourcePackManager' has no accessible destructor.", false)]
-    public static nint createResourcePackManager(nint filePathManager, nint contentTierManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ResourcePackManager' has no accessible destructor.");
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Resources::CategoryFileMapping' is not a known bindable declaration.", false)]
+    public static nint createResourcePackManager(nint filePathManager, nint contentTierManager, nint categoryFileMapping, nint mergeStrategyFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Resources::CategoryFileMapping' is not a known bindable declaration.");
 
     [global::System.Obsolete("BindingShim cannot project this member: return type 'brstd::move_only_function<std::unique_ptr<ServerNetworkHandler> (MinecraftArguments::CreateServerNetworkHandlerArgs &&)>' is not supported.", false)]
     public nint createServerNetworkHandlerFactory(nint args) =>
