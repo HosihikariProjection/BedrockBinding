@@ -155,9 +155,12 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         NativeMethods.TablePtr->C5.hs_method_566389f4((void*)__hosihikari_shim_handle, (void*)error.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.", false)]
-    public nint _GetAudioDeviceStats() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats? _GetAudioDeviceStats()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_0c00b5bc((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats _GetCallStats()
     {
@@ -820,9 +823,12 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
     public nint FindTransceiverBySender(nint sender) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::RtpTransceiverProxyWithInternal<webrtc::RtpTransceiver>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.", false)]
-    public nint GetAudioDeviceStats() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats? GetAudioDeviceStats()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_ab9e8675((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats GetCallStats()
     {

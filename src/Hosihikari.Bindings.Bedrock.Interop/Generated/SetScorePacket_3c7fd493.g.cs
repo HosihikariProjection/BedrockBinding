@@ -40,43 +40,43 @@ public sealed unsafe partial class SetScorePacket : global::System.IDisposable
 
     public int mCompressible
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e5b9765f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e5b9765f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_e5b9765f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_e5b9765f((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mHandler
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3584df73((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3584df73((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsHandled
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a07c2386((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_a07c2386((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a07c2386((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_a07c2386((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPriority
     {
-        get => NativeMethods.TablePtr->C3.hs_get_131ce29c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_131ce29c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_131ce29c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_131ce29c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReceiveTimepoint_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8b885aa0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8b885aa0((void*)__hosihikari_shim_handle);
     }
 
     public int mReliability
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a76b2945((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a76b2945((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a76b2945((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a76b2945((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mSenderSubId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_09ef1663((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_09ef1663((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_09ef1663((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_09ef1663((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
@@ -257,7 +257,7 @@ public sealed unsafe partial class SetScorePacket : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_3c7fd493((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_3c7fd493((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

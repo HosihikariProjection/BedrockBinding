@@ -101,9 +101,12 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
         return new PortalForcer((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PortalRecord' is not supported.", false)]
-    public nint _findPortal(nint dimensionId, nint centerBlockPos, int radius, nint targetBlockPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'PortalRecord' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PortalRecord? _findPortal(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionId, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos centerBlockPos, int radius, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos targetBlockPos)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a02c7209((void*)__hosihikari_shim_handle, (void*)dimensionId.Handle, (void*)centerBlockPos.Handle, radius, (void*)targetBlockPos.Handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PortalRecord((nint)__hs_handle) : null;
+    }
 
     public void deserialize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {

@@ -68,9 +68,9 @@ public sealed unsafe partial class NativeRuntime : global::System.IDisposable
     public nint computeRuntimeStats() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::RuntimeStats' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ScriptContext' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public nint createContext(nint bindings, nint loader, nint printer, nint arg3) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ScriptContext' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public void destroyContext(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId)
     {
@@ -111,9 +111,12 @@ public sealed unsafe partial class NativeRuntime : global::System.IDisposable
     public nint getFutureStatus(nint arg0, nint arg1) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::FutureType>' is not a known bindable declaration.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::TypeNameInfo' is not supported.", false)]
-    public nint getNameForType(nint arg0, nint arg1, bool arg2) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::TypeNameInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo? getNameForType(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, nint arg1, bool arg2)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ba98efbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1, arg2, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog? getWatchdog()
     {

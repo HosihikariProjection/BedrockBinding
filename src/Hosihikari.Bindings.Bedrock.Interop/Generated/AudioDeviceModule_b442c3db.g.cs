@@ -89,9 +89,12 @@ public sealed unsafe partial class AudioDeviceModule : global::System.IDisposabl
         return NativeMethods.TablePtr->C5.hs_method_144e2b48((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.", false)]
-    public nint GetStats() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats? GetStats()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_d4b77250((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats((nint)__hs_handle) : null;
+    }
 
     public int Init()
     {

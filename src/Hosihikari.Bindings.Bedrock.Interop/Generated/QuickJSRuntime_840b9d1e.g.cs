@@ -46,9 +46,9 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
     public nint _computeRuntimeStats() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::RuntimeStats' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ScriptContext' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public nint _createContext(nint bindings, nint loader, nint printer, nint config) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ScriptContext' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'Scripting::IRuntimeMetadata' has no generated wrapper.", false)]
     public nint _ctor(nint registryManager, nint metadata, nint locator, nint mallocFns, nint normalizerFn) =>
@@ -98,9 +98,12 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_38216ac6((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::TypeNameInfo' is not supported.", false)]
-    public nint _getNameForType(nint contextId, nint type, bool allowUnknownTypes) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::TypeNameInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo? _getNameForType(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, nint type, bool allowUnknownTypes)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_95af1b01((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)type, allowUnknownTypes, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog? _getWatchdog()
     {
@@ -222,9 +225,9 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
     public nint computeRuntimeStats() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::RuntimeStats' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ScriptContext' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public nint createContext(nint bindings, nint loader, nint printer, nint config) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ScriptContext' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public void destroyContext(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId)
     {
@@ -270,9 +273,12 @@ public sealed unsafe partial class QuickJSRuntime : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_2d89ec74((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::TypeNameInfo' is not supported.", false)]
-    public nint getNameForType(nint contextId, nint type, bool allowUnknownTypes) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::TypeNameInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo? getNameForType(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, nint type, bool allowUnknownTypes)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_84ae91f8((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)type, allowUnknownTypes, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IWatchdog? getWatchdog()
     {

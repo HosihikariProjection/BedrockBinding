@@ -180,9 +180,12 @@ public sealed unsafe partial class BaseConnectionRequest : global::System.IDispo
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Social::Nonce' is not supported.", false)]
-    public nint getNonce() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Social::Nonce' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce? getNonce()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1f9c68c1((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce((nint)__hs_handle) : null;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'SerializedPersonaPieceHandle' is not supported.", false)]
     public nint getPersonaPieces() =>

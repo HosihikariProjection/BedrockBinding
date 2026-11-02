@@ -58,9 +58,12 @@ public sealed unsafe partial class TrimPatternRegistry : global::System.IDisposa
     public nint getAllEntries() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'TrimPattern' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'HashedString' is not supported.", false)]
-    public nint getPatternIdByItem(nint itemId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'HashedString' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getPatternIdByItem(global::Hosihikari.Bindings.Bedrock.Interop.HashedString itemId)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8ada6f66((void*)__hosihikari_shim_handle, (void*)itemId.Handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle) : null;
+    }
 
     public void initializeServer(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef itemRegistry)
     {

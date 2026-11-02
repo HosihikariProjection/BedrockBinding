@@ -77,9 +77,12 @@ public sealed unsafe partial class ScriptMusicOptions : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C3.hs_get_f397135e((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::PropertyOutOfBoundsError' is not supported.", false)]
-    public nint validate() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::PropertyOutOfBoundsError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError? validate()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a0547da8((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyOutOfBoundsError((nint)__hs_handle) : null;
+    }
 
 
     public void Dispose()

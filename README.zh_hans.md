@@ -4,7 +4,7 @@
 
 Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近原生风格的 **Interop** 与按符号分发的原生 **绑定垫片**。
 
-本分支面向 **BDS 1.26.51.1**，数据来自 LeviLamina `ee049f1dc` 的头文件；`v1.21.3` 分支保留从载体调试符号生成的 1.21.3.01 面。
+本分支面向 **BDS 1.26.51.1**，数据来自 LeviLamina `v26.51.9` 的头文件；`v1.21.3` 分支保留从载体调试符号生成的 1.21.3.01 面。
 
 ## 边界
 
@@ -15,7 +15,7 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 ## 当前状态
 
 - Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,146 个生成的 C# 文件。
-- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 154,480 个函数。
+- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 154,702 个函数。
 - 覆盖：`win-x64-server` 配置绑定 12,080 个声明与 101,068 个成员。
 - `scripts/headers-26.51.txt` 列出解析的 5,199 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
 
@@ -33,14 +33,14 @@ shim 以 `--symbol-dispatch --resolve-by-name` 模式发射。支持的 ABI：
 - `optional_ref<T>` 参数与返回使用存在标志；
 - `std::vector<T>` 参数与按值返回，元素支持标量/枚举、字符串、单层指针（以 `nint[]` 传入），或 layout 已知且平凡析构的 record；引用与指针 vector 返回仍是借用句柄；
 - `gsl::span<T>` 参数与返回：返回的 `{size, pointer}` span 转为数组；标量元素复制为数组，指针与 `gsl::not_null<T*>` 元素为 `nint[]`，平凡析构的 record 元素成为拥有型包装对象；
-- `std::optional<T>` 参数与返回，支持标量、字符串与 trivially copyable record；record payload 使用 layout 兼容的 blob，返回的 record 成为拥有包装；
+- `std::optional<T>` 参数与返回，支持标量、字符串与 record；trivially copyable 的 payload 使用 layout 兼容的 blob，非平凡 record payload 经按名解析的拷贝构造复制、就地析构原值，返回的 record 成为拥有包装；
 - `std::shared_ptr<T>` 参数与返回，由 shim holder 持有一个共享引用；`std::weak_ptr<T>` 返回锁定一次形成强快照，过期时为空。
 
 map 需要具名 key/value 类型与匹配的 hash/equality functor，合并后的 IR 不携带这些信息。回调、variant、自定义拥有型包装，以及缺少可证明布局的 record 保留 Interop stub。
 
 ## 生成
 
-重新生成只需要公开输入：一份 LeviLamina `ee049f1dc` 检出，以及用 LLVM 23.1.4 构建的生成器。预编译依赖来自 LeviLamina 构建所用的本地 xmake 包仓库。
+重新生成只需要公开输入：一份 LeviLamina `v26.51.9` 检出，以及用 LLVM 23.1.4 构建的生成器。预编译依赖来自 LeviLamina 构建所用的本地 xmake 包仓库。
 
 ```shell
 powershell -File scripts/regenerate.ps1 `

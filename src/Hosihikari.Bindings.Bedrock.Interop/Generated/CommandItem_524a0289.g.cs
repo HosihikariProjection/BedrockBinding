@@ -45,9 +45,12 @@ public sealed unsafe partial class CommandItem : global::System.IDisposable
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'ItemInstance' is not supported.", false)]
-    public nint createInstance(int count, int aux, nint output, bool requireExactAux) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'ItemInstance' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? createInstance(int count, int aux, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, bool requireExactAux)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_aa268d85((void*)__hosihikari_shim_handle, count, aux, (void*)output.Handle, requireExactAux, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
+    }
 
     public ulong mVersionId
     {

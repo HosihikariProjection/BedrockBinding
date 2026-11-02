@@ -4,7 +4,7 @@
 
 The **Bedrock / MCAPI** interop surface for the Hosihikari projection: a generated native-style **Interop** and a symbol-dispatched native **binding shim**.
 
-This branch targets **BDS 1.26.51.1** through the headers of LeviLamina `ee049f1dc`. The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols.
+This branch targets **BDS 1.26.51.1** through the headers of LeviLamina `v26.51.9`. The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols.
 
 ## Boundary
 
@@ -15,7 +15,7 @@ This branch targets **BDS 1.26.51.1** through the headers of LeviLamina `ee049f1
 ## Current state
 
 - Interop: 9,146 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
-- Binding Shim: 154,480 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
+- Binding Shim: 154,702 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
 - Coverage: 12,080 declarations and 101,068 members bound for `win-x64-server`.
 - `scripts/headers-26.51.txt` lists the 5,199 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
 
@@ -33,14 +33,14 @@ The shim is emitted in `--symbol-dispatch --resolve-by-name` mode. Supported ABI
 - `optional_ref<T>` parameters and results with the presence flag;
 - `std::vector<T>` parameters and by-value results whose element is a scalar/enum, a string, a single-level pointer (surfacing as `nint[]`), or a trivially destructible record with a recorded layout; reference and pointer vector results remain borrowed handles;
 - `gsl::span<T>` parameters and results: a returned `{size, pointer}` span becomes an array; scalar elements are copied, pointer and `gsl::not_null<T*>` elements surface as `nint[]`, and trivially destructible record elements become owned wrapper objects;
-- `std::optional<T>` parameters and results over scalars, strings, and trivially copyable records; record payloads use a layout-compatible blob and returned records become owned wrappers;
+- `std::optional<T>` parameters and results over scalars, strings, and records; a trivially copyable payload uses a layout-compatible blob, a non-trivial record payload is copied through its resolved copy constructor and the in-place original is destroyed through its resolved destructor, and returned records become owned wrappers;
 - `std::shared_ptr<T>` parameters and results, which keep one shared reference alive in a shim holder; `std::weak_ptr<T>` results are locked once into a strong snapshot and surface as null when expired.
 
 Maps require named key/value types and matching hash/equality functors, which the merged IR does not carry. Callbacks, variants, custom owning wrappers, and records without a proven layout remain Interop stubs.
 
 ## Generate
 
-Regeneration needs only public inputs: a LeviLamina `ee049f1dc` checkout and a generator built with LLVM 23.1.4. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
+Regeneration needs only public inputs: a LeviLamina `v26.51.9` checkout and a generator built with LLVM 23.1.4. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
 
 ```shell
 powershell -File scripts/regenerate.ps1 `

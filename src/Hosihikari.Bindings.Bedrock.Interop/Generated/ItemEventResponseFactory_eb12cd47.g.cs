@@ -83,9 +83,12 @@ public sealed unsafe partial class ItemEventResponseFactory : global::System.IDi
         NativeMethods.TablePtr->C2.hs_method_4b01f5b3((void*)__hosihikari_shim_handle, (void*)packLoadInfo.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'LegacyEventItemComponentData' is not supported.", false)]
-    public nint makeLegacyEvents(nint documentVersion, nint itemDocument) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'LegacyEventItemComponentData' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyEventItemComponentData? makeLegacyEvents(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion documentVersion, nint itemDocument)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_5d40b827((void*)__hosihikari_shim_handle, (void*)documentVersion.Handle, (void*)itemDocument, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LegacyEventItemComponentData((nint)__hs_handle) : null;
+    }
 
 
     public void Dispose()

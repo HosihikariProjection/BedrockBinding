@@ -44,7 +44,7 @@ public sealed unsafe partial class SetPreviousPosRotSystem : global::System.IDis
 
     public static void _setPreviousPosRotSystem(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        NativeMethods.TablePtr->C3.hs_method_7768abd1((void*)entity.Handle);
+        NativeMethods.TablePtr->C4.hs_method_7768abd1((void*)entity.Handle);
     }
 
     public void Dispose()
@@ -53,7 +53,7 @@ public sealed unsafe partial class SetPreviousPosRotSystem : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bdc002fd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_bdc002fd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

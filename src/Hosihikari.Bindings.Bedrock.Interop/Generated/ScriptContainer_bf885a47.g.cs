@@ -115,13 +115,19 @@ public sealed unsafe partial class ScriptContainer : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemContext((nint)NativeMethods.TablePtr->C3.hs_method_b943e2e6((void*)__hosihikari_shim_handle, slot));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::Error' is not supported.", false)]
-    public static nint _isSlotBeyondMaxCapacity(nint container, int slot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::Error' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error? _isSlotBeyondMaxCapacity(global::Hosihikari.Bindings.Bedrock.Interop.Container container, int slot)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c4f43f92((void*)container.Handle, slot, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error((nint)__hs_handle) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::Error' is not supported.", false)]
-    public static nint _isSlotInvalid(nint container, int slot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::Error' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error? _isSlotInvalid(global::Hosihikari.Bindings.Bedrock.Interop.Container container, int slot)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_42e58cd9((void*)container.Handle, slot, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error((nint)__hs_handle) : null;
+    }
 
     public void _onContainerChanged()
     {

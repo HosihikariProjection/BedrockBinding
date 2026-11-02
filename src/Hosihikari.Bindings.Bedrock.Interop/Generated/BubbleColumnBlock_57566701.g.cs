@@ -448,9 +448,12 @@ public sealed unsafe partial class BubbleColumnBlock : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_7c2ad85b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'HashedString' is not supported.", false)]
-    public nint _getRequiredMedium() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'HashedString' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? _getRequiredMedium()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ea9e4b57((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle) : null;
+    }
 
     public bool _isPreservingMediumWhenPlaced(global::Hosihikari.Bindings.Bedrock.Interop.BlockType? medium)
     {
@@ -593,9 +596,12 @@ public sealed unsafe partial class BubbleColumnBlock : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_6b4a7764((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)(arg3?.Handle ?? 0), arg3 is not null));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'HashedString' is not supported.", false)]
-    public nint getRequiredMedium() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'HashedString' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getRequiredMedium()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ead2a687((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle) : null;
+    }
 
     public bool isPreservingMediumWhenPlaced(global::Hosihikari.Bindings.Bedrock.Interop.BlockType? medium)
     {

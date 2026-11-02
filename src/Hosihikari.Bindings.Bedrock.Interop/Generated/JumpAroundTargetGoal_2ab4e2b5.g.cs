@@ -172,9 +172,12 @@ public sealed unsafe partial class JumpAroundTargetGoal : global::System.IDispos
         return new JumpAroundTargetGoal((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'JumpAroundTargetGoal::Jump' is not supported.", false)]
-    public nint _calculateOptimalJumpVector(nint targetPosition) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'JumpAroundTargetGoal::Jump' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal_Nested.Jump? _calculateOptimalJumpVector(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 targetPosition)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dc8ddf64((void*)__hosihikari_shim_handle, (void*)targetPosition.Handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.JumpAroundTargetGoal_Nested.Jump((nint)__hs_handle) : null;
+    }
 
     public string appendDebugInfo(string str)
     {

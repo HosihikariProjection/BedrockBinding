@@ -92,9 +92,12 @@ public sealed unsafe partial class CerealItemComponentFactory : global::System.I
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SemVersion' is not supported.", false)]
-    public static nint getReleasedMinFormatVersionForAnyComponent(nint ctx) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SemVersion' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SemVersion? getReleasedMinFormatVersionForAnyComponent(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_420dde61((void*)ctx.Handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)__hs_handle) : null;
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRegisteredComponents_Address

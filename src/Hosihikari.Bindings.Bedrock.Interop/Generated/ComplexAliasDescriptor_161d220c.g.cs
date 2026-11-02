@@ -96,9 +96,12 @@ public sealed unsafe partial class ComplexAliasDescriptor : global::System.IDisp
         return NativeMethods.TablePtr->C1.hs_method_b19ac8a4((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'CompoundTag' is not supported.", false)]
-    public nint _save() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'CompoundTag' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _save()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_19cd8680((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+    }
 
     public void _serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
@@ -207,9 +210,12 @@ public sealed unsafe partial class ComplexAliasDescriptor : global::System.IDisp
         return NativeMethods.TablePtr->C1.hs_method_c6efff7b((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'CompoundTag' is not supported.", false)]
-    public nint save() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'CompoundTag' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? save()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_97458604((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
+    }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {

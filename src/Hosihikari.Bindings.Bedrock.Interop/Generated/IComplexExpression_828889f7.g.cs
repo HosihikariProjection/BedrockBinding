@@ -79,9 +79,12 @@ public sealed unsafe partial class IComplexExpression : global::System.IDisposab
         return (nint)NativeMethods.TablePtr->C2.hs_method_03b69df9((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'MolangScriptArg' is not supported.", false)]
-    public nint getValueIfConstant() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'MolangScriptArg' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? getValueIfConstant()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_edcad9d9((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle) : null;
+    }
 
     public bool hasVariableAssignments()
     {

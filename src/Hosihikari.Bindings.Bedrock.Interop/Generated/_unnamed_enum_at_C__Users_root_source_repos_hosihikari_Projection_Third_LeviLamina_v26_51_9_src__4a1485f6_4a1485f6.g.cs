@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeer_Nested;
 
-public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_ee049f1_src_m_5c87e267 : int
+public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_51_9_src__4a1485f6 : int
 {
     RequestedConnectionListMutex = 0,
     OfflinePingResponseMutex = 1,

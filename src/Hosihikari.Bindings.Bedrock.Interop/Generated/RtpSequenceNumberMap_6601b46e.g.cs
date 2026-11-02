@@ -48,9 +48,12 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
         NativeMethods.TablePtr->C5.hs_method_b0b78131((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::RtpSequenceNumberMap::Info' is not supported.", false)]
-    public nint Get(ushort sequence_number) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'webrtc::RtpSequenceNumberMap::Info' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info? Get(ushort sequence_number)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_2d7e01d8((void*)__hosihikari_shim_handle, sequence_number, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info((nint)__hs_handle) : null;
+    }
 
     public void InsertPacket(ushort sequence_number, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info info)
     {

@@ -38,9 +38,12 @@ public sealed unsafe partial class SyncGameTestFunctionRunResult : global::Syste
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
-    public nint _getError() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _getError()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_2c9c6c5f((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+    }
 
     public bool _isComplete()
     {
@@ -73,9 +76,12 @@ public sealed unsafe partial class SyncGameTestFunctionRunResult : global::Syste
         return new SyncGameTestFunctionRunResult((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
-    public nint getError() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? getError()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_1661277c((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+    }
 
     public bool isComplete()
     {

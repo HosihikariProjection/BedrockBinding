@@ -81,9 +81,26 @@ public sealed unsafe partial class ScriptPlugin : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ScriptData' is not supported.", false)]
-    public nint _onLoadScript(nint name) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ScriptData' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData? _onLoadScript(string name)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_faa95535((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData((nint)__hs_handle) : null;
+        }
+    }
 
     public void _onPromiseRejection(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.BaseError error, nint errorAny, bool isHandled)
     {
@@ -114,9 +131,26 @@ public sealed unsafe partial class ScriptPlugin : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_2b09be20((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)error.Handle, (void*)errorAny) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ScriptData' is not supported.", false)]
-    public nint _loadScript(nint fileName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ScriptData' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData? _loadScript(string fileName)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fileName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(fileName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_df50c7d9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData((nint)__hs_handle) : null;
+        }
+    }
 
     public void enableHandleCounter(bool enabled)
     {
@@ -267,9 +301,26 @@ public sealed unsafe partial class ScriptPlugin : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ScriptData' is not supported.", false)]
-    public nint onLoadScript(nint name) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ScriptData' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData? onLoadScript(string name)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9ff86df0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ScriptData((nint)__hs_handle) : null;
+        }
+    }
 
     public void onPromiseRejection(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.BaseError error, nint errorAny, bool isHandled)
     {

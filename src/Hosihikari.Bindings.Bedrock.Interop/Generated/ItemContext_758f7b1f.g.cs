@@ -184,9 +184,12 @@ public sealed unsafe partial class ItemContext : global::System.IDisposable
         return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'ItemStack' is not supported.", false)]
-    public nint getItem() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'ItemStack' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? getItem()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_59c810f6((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle) : null;
+    }
 
     public bool? getKeepOnDeath()
     {

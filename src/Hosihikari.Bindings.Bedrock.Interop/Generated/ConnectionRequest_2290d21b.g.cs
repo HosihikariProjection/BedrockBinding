@@ -158,9 +158,12 @@ public sealed unsafe partial class ConnectionRequest : global::System.IDisposabl
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.", false)]
-    public nint getPartyInfo() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo? getPartyInfo()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_dc5eebce((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo((nint)__hs_handle) : null;
+    }
 
     public bool isEduMode()
     {

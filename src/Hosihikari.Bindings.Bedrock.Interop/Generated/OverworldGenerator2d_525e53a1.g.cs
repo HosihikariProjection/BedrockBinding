@@ -141,9 +141,12 @@ public sealed unsafe partial class OverworldGenerator2d : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise((nint)NativeMethods.TablePtr->C3.hs_method_0b439fca((void*)__hosihikari_shim_handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'XoroshiroPositionalRandomFactory' is not supported.", false)]
-    public nint _getXoroshiroPositionalRandomFactory() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'XoroshiroPositionalRandomFactory' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory? _getXoroshiroPositionalRandomFactory()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_0ecda459((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory((nint)__hs_handle) : null;
+    }
 
     public static OverworldGenerator2d Create()
     {
@@ -221,9 +224,12 @@ public sealed unsafe partial class OverworldGenerator2d : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise((nint)NativeMethods.TablePtr->C3.hs_method_3c073276((void*)__hosihikari_shim_handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'XoroshiroPositionalRandomFactory' is not supported.", false)]
-    public nint getXoroshiroPositionalRandomFactory() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'XoroshiroPositionalRandomFactory' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory? getXoroshiroPositionalRandomFactory()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ad524006((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory((nint)__hs_handle) : null;
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBeardKernel_Address

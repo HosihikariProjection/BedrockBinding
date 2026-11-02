@@ -1343,9 +1343,12 @@ public sealed unsafe partial class Player : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C3.hs_method_9c96c233((void*)__hosihikari_shim_handle));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.", false)]
-    public nint _getPartyInfo_UNTRUSTED() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo? _getPartyInfo_UNTRUSTED()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_90a82569((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo((nint)__hs_handle) : null;
+    }
 
     public float _getShadowRadius()
     {
@@ -2679,13 +2682,19 @@ public sealed unsafe partial class Player : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C3.hs_method_1d60adf5((void*)__hosihikari_shim_handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'NetworkPeer::NetworkStatus' is not supported.", false)]
-    public nint getNetworkStatus() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'NetworkPeer::NetworkStatus' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus? getNetworkStatus()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_d549a210((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)__hs_handle) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.", false)]
-    public nint getPartyInfo_UNTRUSTED() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo? getPartyInfo_UNTRUSTED()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f8ba02b1((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB getPickupArea()
     {

@@ -43,9 +43,12 @@ public sealed unsafe partial class PeerConnectionInternal : global::System.IDisp
         NativeMethods.TablePtr->C5.hs_method_1699ba19((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.", false)]
-    public nint GetAudioDeviceStats() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats? GetAudioDeviceStats()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_ac881ea2((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule_Nested.Stats((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats GetCallStats()
     {

@@ -49,9 +49,9 @@ public sealed unsafe partial class IModuleBindingFactory : global::System.IDispo
         return new IModuleBindingFactory((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ModuleBinding' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint createModuleBinding(nint version, nint config, bool requireDynamicImport) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ModuleBinding' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'Scripting::ModuleDependency' is not supported.", false)]
     public nint getDependencies(nint version) =>

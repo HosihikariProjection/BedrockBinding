@@ -71,9 +71,12 @@ public sealed unsafe partial class BaseGameTestAction : global::System.IDisposab
         return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestAction((nint)NativeMethods.TablePtr->C5.hs_method_0406c6e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
-    public nint run() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? run()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_4af56145((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+    }
 
 
     public void Dispose()

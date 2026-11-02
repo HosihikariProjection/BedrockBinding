@@ -62,9 +62,12 @@ public sealed unsafe partial class ScriptSimulatedPlayer : global::System.IDispo
         return new ScriptSimulatedPlayer((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
-    public static nint _toWorld(nint player, nint blockPos, nint face, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _toWorld(global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? blockPos, nint face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? pos)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_16bae467((void*)player.Handle, (void*)(blockPos?.Handle ?? 0), (void*)face, (void*)(pos?.Handle ?? 0), &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+    }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult _worldToLocalNavigationResult(global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer player, global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptNavigationResult navigationResult)
     {

@@ -60,13 +60,16 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
         return new GameTestSequence((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _executeWithoutFail(nint error) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
-    public nint _tick(int currentTick) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _tick(int currentTick)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_02fa4952((void*)__hosihikari_shim_handle, currentTick, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk10d998_Address

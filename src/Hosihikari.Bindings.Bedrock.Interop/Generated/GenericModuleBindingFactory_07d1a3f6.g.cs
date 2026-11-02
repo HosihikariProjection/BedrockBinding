@@ -38,9 +38,9 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ModuleBinding' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _createModuleBinding(nint version, nint config, bool requireDynamicImport) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ModuleBinding' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void _dtor()
     {
@@ -123,9 +123,9 @@ public sealed unsafe partial class GenericModuleBindingFactory : global::System.
     public void addVersionedModuleBinding(nint alias, nint version, nint moduleCreatorFn, nint runtimeVersion, nint dependencies, bool importRestricted) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::optional<Scripting::ModuleBinding>' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ModuleBinding' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint createModuleBinding(nint version, nint config, bool requireDynamicImport) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ModuleBinding' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'Scripting::ModuleDependency' is not supported.", false)]
     public nint getDependencies(nint version) =>

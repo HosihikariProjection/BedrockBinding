@@ -49,9 +49,12 @@ public sealed unsafe partial class VersionInfo : global::System.IDisposable
         return new VersionInfo((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Puv::VersionRange' is not supported.", false)]
-    public static nint getRangeFromVersion(nint version) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Puv::VersionRange' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange? getRangeFromVersion(nint version)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_52cda3e9((void*)version, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange((nint)__hs_handle) : null;
+    }
 
     public int mFeatureVersion
     {

@@ -38,9 +38,9 @@ public sealed unsafe partial class SctpPacket : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'dcsctp::SctpPacket' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
     public static nint Parse(nint data, nint options) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'dcsctp::SctpPacket' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.");
 
     public static SctpPacket Create()
     {

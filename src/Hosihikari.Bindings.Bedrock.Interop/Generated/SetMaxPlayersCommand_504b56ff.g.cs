@@ -40,41 +40,41 @@ public sealed unsafe partial class SetMaxPlayersCommand : global::System.IDispos
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C3.hs_get_06a8fc4e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_06a8fc4e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_06a8fc4e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_06a8fc4e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c4f1e754((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c4f1e754((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ace539ee((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_ace539ee((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ace539ee((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_ace539ee((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e262a774((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e262a774((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c69bfbbe((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_c69bfbbe((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_c69bfbbe((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_c69bfbbe((void*)__hosihikari_shim_handle, value);
     }
 
     public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C3.hs_method_414b7e5c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C4.hs_method_414b7e5c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public static SetMaxPlayersCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.SetMaxPlayersCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7b78ef62((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_7b78ef62((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,18 +85,18 @@ public sealed unsafe partial class SetMaxPlayersCommand : global::System.IDispos
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C3.hs_method_282cea89((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C4.hs_method_282cea89((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public int mMaxPlayers
     {
-        get => NativeMethods.TablePtr->C3.hs_get_001a3dc6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_001a3dc6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_001a3dc6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_001a3dc6((void*)__hosihikari_shim_handle, value);
     }
 
     public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
     {
-        NativeMethods.TablePtr->C3.hs_method_d1036004((void*)registry.Handle);
+        NativeMethods.TablePtr->C4.hs_method_d1036004((void*)registry.Handle);
     }
 
 
@@ -106,7 +106,7 @@ public sealed unsafe partial class SetMaxPlayersCommand : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_504b56ff((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_504b56ff((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

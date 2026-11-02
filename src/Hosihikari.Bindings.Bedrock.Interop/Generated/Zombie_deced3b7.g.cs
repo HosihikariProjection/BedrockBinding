@@ -683,83 +683,83 @@ public sealed unsafe partial class Zombie : global::System.IDisposable
     public bool mSurfaceMob
     {
         get => NativeMethods.TablePtr->C4.hs_get_61af63cb((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_61af63cb((void*)__hosihikari_shim_handle, value);
+        set => NativeMethods.TablePtr->C5.hs_set_61af63cb((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSwingTime
     {
-        get => NativeMethods.TablePtr->C4.hs_get_508185b6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_508185b6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_508185b6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_508185b6((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mSwinging
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8a82e355((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_8a82e355((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_8a82e355((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_8a82e355((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetCaptainId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_abeda065((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_abeda065((void*)__hosihikari_shim_handle);
     }
 
     public float mTilt
     {
-        get => NativeMethods.TablePtr->C4.hs_get_95e9b568((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_95e9b568((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_95e9b568((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_95e9b568((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mWantsToBeJockey
     {
-        get => NativeMethods.TablePtr->C4.hs_get_58cb611f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_58cb611f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_58cb611f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_58cb611f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastHurtByMobId_d141f658_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_731590c1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_731590c1((void*)__hosihikari_shim_handle);
     }
 
     public bool _canPickupItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C4.hs_method_3bdb2636((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_3bdb2636((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public bool _checkSpawnRules(bool fromSpawner)
     {
-        return NativeMethods.TablePtr->C4.hs_method_766ee5f1((void*)__hosihikari_shim_handle, fromSpawner) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_766ee5f1((void*)__hosihikari_shim_handle, fromSpawner) != 0;
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_eab575b7((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_eab575b7((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
     }
 
     public int _getArmorValue()
     {
-        return NativeMethods.TablePtr->C4.hs_method_6246bb31((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_6246bb31((void*)__hosihikari_shim_handle);
     }
 
     public void _reloadHardcoded(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
-        NativeMethods.TablePtr->C4.hs_method_0857d831((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
+        NativeMethods.TablePtr->C5.hs_method_0857d831((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID SPAWN_BONUS_UUID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C4.hs_method_03fc8425(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C5.hs_method_03fc8425(), false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute SPAWN_REINFORCEMENTS_CHANCE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C4.hs_method_48a2b367(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C5.hs_method_48a2b367(), false);
     }
 
     public static Zombie Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6ef1c895();
+        var handle = NativeMethods.TablePtr->C5.hs_create_6ef1c895();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -770,7 +770,7 @@ public sealed unsafe partial class Zombie : global::System.IDisposable
 
     public static Zombie Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a221ea06((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_a221ea06((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -781,22 +781,22 @@ public sealed unsafe partial class Zombie : global::System.IDisposable
 
     public bool canPickupItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C4.hs_method_08c9b40a((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_08c9b40a((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public bool checkSpawnRules(bool fromSpawner)
     {
-        return NativeMethods.TablePtr->C4.hs_method_7016a6fe((void*)__hosihikari_shim_handle, fromSpawner) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_7016a6fe((void*)__hosihikari_shim_handle, fromSpawner) != 0;
     }
 
     public int getArmorValue()
     {
-        return NativeMethods.TablePtr->C4.hs_method_3c0feda8((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_3c0feda8((void*)__hosihikari_shim_handle);
     }
 
     public void reloadHardcoded(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
-        NativeMethods.TablePtr->C4.hs_method_b3ba46ae((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
+        NativeMethods.TablePtr->C5.hs_method_b3ba46ae((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
 

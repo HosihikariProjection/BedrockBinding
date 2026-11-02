@@ -40,26 +40,26 @@ public sealed unsafe partial class CobblestoneBlock : global::System.IDisposable
 
     public bool mAllowsRunes
     {
-        get => NativeMethods.TablePtr->C0.hs_get_f32f3f7d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_f32f3f7d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_f32f3f7d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_f32f3f7d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAlteredStateCollections_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_3050c66b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3050c66b((void*)__hosihikari_shim_handle);
     }
 
     public uint mBitsUsed
     {
-        get => NativeMethods.TablePtr->C0.hs_get_fde3aff9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_fde3aff9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_fde3aff9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_fde3aff9((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockComponentEventSubscriber_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_c723d1c6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c723d1c6((void*)__hosihikari_shim_handle);
     }
 
     public byte mBlockEntityType
@@ -413,7 +413,7 @@ public sealed unsafe partial class CobblestoneBlock : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_e93b4057((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e93b4057((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -107,9 +107,26 @@ public sealed unsafe partial class ActorDefinitionDescriptor : global::System.ID
         return NativeMethods.TablePtr->C0.hs_method_7d97244b((void*)entity.Handle, (void*)trigger.Handle, (void*)list.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'ActorDefinitionAttribute' is not supported.", false)]
-    public nint findAttributeByName(nint attributeName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'ActorDefinitionAttribute' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionAttribute? findAttributeByName(string attributeName)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(attributeName);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(attributeName, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e0826c3b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionAttribute((nint)__hs_handle) : null;
+        }
+    }
 
     public static void forceExecuteTrigger(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger trigger, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList list)
     {

@@ -110,9 +110,12 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_08954a1f((void*)stack.Handle, (void*)level.Handle, (void*)hovertext.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'ArmorTrim' is not supported.", false)]
-    public static nint getTrim(nint instance) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'ArmorTrim' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrim? getTrim(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6f54f162((void*)instance.Handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrim((nint)__hs_handle) : null;
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMaterialId_Address

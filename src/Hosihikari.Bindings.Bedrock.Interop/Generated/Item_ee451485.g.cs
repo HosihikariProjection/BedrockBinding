@@ -225,9 +225,12 @@ public sealed unsafe partial class Item : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_17e16581((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.", false)]
-    public nint _getAttackCriticalHitSound() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier? _getAttackCriticalHitSound()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_bac63ace((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)__hs_handle) : null;
+    }
 
     public int _getAttackDamage()
     {
@@ -239,13 +242,19 @@ public sealed unsafe partial class Item : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_e9d37f15((void*)__hosihikari_shim_handle, (void*)attacker.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.", false)]
-    public nint _getAttackHitSound() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier? _getAttackHitSound()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_19d45677((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)__hs_handle) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.", false)]
-    public nint _getAttackMissSound() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier? _getAttackMissSound()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9960dd14((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)__hs_handle) : null;
+    }
 
     public int _getBaseRarity()
     {
@@ -1020,9 +1029,12 @@ public sealed unsafe partial class Item : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_d9dd5ede((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.", false)]
-    public nint getAttackCriticalHitSound() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier? getAttackCriticalHitSound()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f03a62a1((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)__hs_handle) : null;
+    }
 
     public int getAttackDamage()
     {
@@ -1034,13 +1046,19 @@ public sealed unsafe partial class Item : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_02682f80((void*)__hosihikari_shim_handle, (void*)attacker.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.", false)]
-    public nint getAttackHitSound() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier? getAttackHitSound()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c94c77ac((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)__hs_handle) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.", false)]
-    public nint getAttackMissSound() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventIdentifier' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier? getAttackMissSound()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3236a313((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)__hs_handle) : null;
+    }
 
     public int getBaseRarity()
     {

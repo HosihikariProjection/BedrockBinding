@@ -152,9 +152,12 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
     public static nint _defaultUnknownQueryFunction() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'MolangScriptArg' is not supported.", false)]
-    public nint _getValueIfConstant() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'MolangScriptArg' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg? _getValueIfConstant()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_d961d519((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg((nint)__hs_handle) : null;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public static bool _initializeMolangQueries(nint queries) =>

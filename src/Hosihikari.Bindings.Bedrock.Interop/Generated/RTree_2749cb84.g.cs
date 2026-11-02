@@ -49,13 +49,13 @@ public sealed unsafe partial class RTree : global::System.IDisposable
         return new RTree((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'RTree::Node' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public static nint build(nint children) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'RTree::Node' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'RTree' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public static nint create(nint biomes) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'RTree' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRoot_Address

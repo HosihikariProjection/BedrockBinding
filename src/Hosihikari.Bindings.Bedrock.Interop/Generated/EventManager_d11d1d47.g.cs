@@ -88,9 +88,26 @@ public sealed unsafe partial class EventManager : global::System.IDisposable
     public void buildCommonProperties(nint props, uint userId, nint exclude) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'Social::Events::Property' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Social::Events::Property' is not supported.", false)]
-    public nint getCommonProperty(nint name) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Social::Events::Property' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Property? getCommonProperty(string name)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_dba58964((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Property((nint)__hs_handle) : null;
+        }
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Property getGlobalProperty(string name)
     {

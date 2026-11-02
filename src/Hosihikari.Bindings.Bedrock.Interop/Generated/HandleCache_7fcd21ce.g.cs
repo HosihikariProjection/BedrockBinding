@@ -70,9 +70,12 @@ public sealed unsafe partial class HandleCache : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_4bfcaab3((void*)__hosihikari_shim_handle, typeHash, keyHash);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ObjectHandle' is not supported.", false)]
-    public nint _tryGetHandle(ulong typeHash, ulong keyHash) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ObjectHandle' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle? _tryGetHandle(ulong typeHash, ulong keyHash)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bfaf1b83((void*)__hosihikari_shim_handle, typeHash, keyHash, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle((nint)__hs_handle) : null;
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8ba42a_Address

@@ -523,7 +523,7 @@ public sealed unsafe partial class CoalItem : global::System.IDisposable
     public byte mUseAnim
     {
         get => NativeMethods.TablePtr->C0.hs_get_1968cf60((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_1968cf60((void*)__hosihikari_shim_handle, value);
+        set => NativeMethods.TablePtr->C1.hs_set_1968cf60((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()

@@ -60,13 +60,19 @@ public sealed unsafe partial class ScriptBlockValidator : global::System.IDispos
         return new ScriptBlockValidator((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError' is not supported.", false)]
-    public nint getChunkAtPositionLoadedAndTickingError() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'ScriptModuleMinecraft::ScriptLocationInUnloadedChunkError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptLocationInUnloadedChunkError? getChunkAtPositionLoadedAndTickingError()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7ea12d87((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptLocationInUnloadedChunkError((nint)__hs_handle) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError' is not supported.", false)]
-    public nint getPositionWithinWorldBoundsError() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'ScriptModuleMinecraft::ScriptLocationOutOfWorldBoundsError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptLocationOutOfWorldBoundsError? getPositionWithinWorldBoundsError()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7ed764fa((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptLocationOutOfWorldBoundsError((nint)__hs_handle) : null;
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockSource_Address

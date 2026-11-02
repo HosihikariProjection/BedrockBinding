@@ -1678,9 +1678,12 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_6729156c((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.", false)]
-    public nint _getPartyInfo_UNTRUSTED() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo? _getPartyInfo_UNTRUSTED()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_2bce483c((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator _getPlayerEventCoordinator()
     {
@@ -2241,9 +2244,12 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_a6f15072((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.", false)]
-    public nint getPartyInfo_UNTRUSTED() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo? getPartyInfo_UNTRUSTED()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_66babe32((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerPartyInfo((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator getPlayerEventCoordinator()
     {

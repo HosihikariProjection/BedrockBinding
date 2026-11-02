@@ -49,9 +49,9 @@ public sealed unsafe partial class Node : global::System.IDisposable
         return new Node((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'RTree::Node' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public static nint branch(nint children) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'RTree::Node' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBiome_Address

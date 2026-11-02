@@ -70,13 +70,19 @@ public sealed unsafe partial class WebToken : global::System.IDisposable
         return new WebToken((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'WebToken' is not supported.", false)]
-    public static nint createFromData(nint dataInfo, nint manager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'WebToken' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.WebToken? createFromData(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value dataInfo, global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager manager)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d68bd07f((void*)dataInfo.Handle, (void*)manager.Handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WebToken((nint)__hs_handle) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'WebToken' is not supported.", false)]
-    public static nint createFromData(nint dataInfo, nint manager, nint extraHeaders, nint signatureType) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'WebToken' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.WebToken? createFromData(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value dataInfo, global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager manager, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value extraHeaders, nint signatureType)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8f6792b5((void*)dataInfo.Handle, (void*)manager.Handle, (void*)extraHeaders.Handle, (void*)signatureType, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WebToken((nint)__hs_handle) : null;
+    }
 
     public string getKeyId()
     {
@@ -123,9 +129,26 @@ public sealed unsafe partial class WebToken : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.WebToken((nint)NativeMethods.TablePtr->C4.hs_method_c0996adb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'WebToken' is not supported.", false)]
-    public static nint parse(nint token, ulong maxLength) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'WebToken' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.WebToken? parse(string token, ulong maxLength)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(token);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(token, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_acd70f53(__hs_stringData0, (nuint)__hs_stringByteCount0, maxLength, &__hs_hasValue);
+            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WebToken((nint)__hs_handle) : null;
+        }
+    }
 
     public bool verifyWithExternalKey(string publicKey, int? expectedSystem)
     {

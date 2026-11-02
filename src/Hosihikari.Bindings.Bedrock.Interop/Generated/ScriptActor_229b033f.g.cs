@@ -180,9 +180,40 @@ public sealed unsafe partial class ScriptActor : global::System.IDisposable
     public nint _teleport(nint self, nint location, nint options, bool safeTeleport) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result<bool, ScriptModuleMinecraft::ScriptInvalidActorError, Scripting::UnsupportedAPIError, Scripting::Error>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::Error' is not supported.", false)]
-    public nint _validateDynamicProperty_V010(nint self, nint key, nint value, nint functionName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::Error' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error? _validateDynamicProperty_V010(global::Hosihikari.Bindings.Bedrock.Interop.Actor self, string key, nint value, string functionName)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(key);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes1);
+        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(functionName);
+        scoped global::System.Span<byte> __hs_stringBytes3;
+        if (__hs_stringByteCount3 <= 256)
+        {
+            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
+        }
+        else
+        {
+            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(functionName, __hs_stringBytes3);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
+            {
+                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_28c341df((void*)__hosihikari_shim_handle, (void*)self.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)value, __hs_stringData3, (nuint)__hs_stringByteCount3, &__hs_hasValue);
+                return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error((nint)__hs_handle) : null;
+            }
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result<std::optional<Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::ScriptMobEffectInstance>>, ScriptModuleMinecraft::ScriptInvalidActorError, Scripting::ArgumentOutOfBoundsError, Scripting::InvalidArgumentError>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint addEffect(nint self, nint effectType, nint duration, nint options) =>

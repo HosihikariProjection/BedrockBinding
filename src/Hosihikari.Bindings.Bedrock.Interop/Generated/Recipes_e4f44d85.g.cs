@@ -115,9 +115,26 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'RecipeUnlockingRequirement' is not supported.", false)]
-    public nint _loadUnlockingRequirementFromJson(nint obj, nint molangVersion, nint recipeId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'RecipeUnlockingRequirement' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingRequirement? _loadUnlockingRequirementFromJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value obj, short molangVersion, string recipeId)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(recipeId);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(recipeId, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6bc9da05((void*)__hosihikari_shim_handle, (void*)obj.Handle, molangVersion, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_hasValue);
+            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingRequirement((nint)__hs_handle) : null;
+        }
+    }
 
     public void addDyedItemRecipe(string recipeId, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance result, global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient itemToDye, global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient dye, global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingRequirement unlockingReq, int priority, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion formatVersion)
     {

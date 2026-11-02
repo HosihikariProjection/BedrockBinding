@@ -4,7 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.RakNet.RakPeer_Nested.RequestedConnectionStruct_Nested;
 
-public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_ee049f1_src_m_2b09b48e : int
+public enum _unnamed_enum_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_51_9_src__252ff30f : int
 {
     Connect = 1,
 }

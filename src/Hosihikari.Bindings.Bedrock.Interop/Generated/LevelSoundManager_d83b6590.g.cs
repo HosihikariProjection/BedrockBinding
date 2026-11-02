@@ -113,9 +113,9 @@ public sealed unsafe partial class LevelSoundManager : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_8584f99f((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)soundEvent.Handle, (void*)pos.Handle, data, (void*)actorSoundIdentifier, isGlobal, (void*)(primaryLocalPlayer?.Handle ?? 0), (void*)(fireAtPosition?.Handle ?? 0), fireAtPosition is not null);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'ServerSoundInstance' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'BroadcastOptions' is abstract or not copy-constructible.", false)]
     public nint createServerSoundInstance(nint soundEventName, int loopCount, nint recipient, nint broadcast) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'ServerSoundInstance' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'BroadcastOptions' is abstract or not copy-constructible.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint getOnLevelSoundEventConnector() =>

@@ -67,17 +67,26 @@ public sealed unsafe partial class SoundEventRequest : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_7c96f89f((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventRequest' is not supported.", false)]
-    public static nint tryPlayPredictiveSynchronizedSound(nint actorFlags, nint identifier, nint actorId, nint dimension, nint type, nint entity, nint location, int data, bool isGlobal) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventRequest' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest? tryPlayPredictiveSynchronizedSound(global::Hosihikari.Bindings.Bedrock.Interop.ActorDataFlagComponent actorFlags, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier identifier, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorId, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension, uint type, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, int location, int data, bool isGlobal)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_93a5c51f((void*)actorFlags.Handle, (void*)identifier.Handle, (void*)actorId.Handle, (void*)dimension.Handle, type, (void*)entity.Handle, location, data, isGlobal, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest((nint)__hs_handle) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventRequest' is not supported.", false)]
-    public static nint tryPlayPredictiveSynchronizedSound(nint actorFlags, nint identifier, nint actorId, nint dimension, nint type, nint pos, int data, bool isGlobal) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventRequest' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest? tryPlayPredictiveSynchronizedSound(global::Hosihikari.Bindings.Bedrock.Interop.ActorDataFlagComponent actorFlags, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier identifier, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorId, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension, uint type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, bool isGlobal)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_cf940a27((void*)actorFlags.Handle, (void*)identifier.Handle, (void*)actorId.Handle, (void*)dimension.Handle, type, (void*)pos.Handle, data, isGlobal, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest((nint)__hs_handle) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'SoundEventRequest' is not supported.", false)]
-    public static nint tryPlaySound(nint actorFlags, nint identifier, nint actorId, nint dimension, nint type, nint entity, nint location, int data) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'SoundEventRequest' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest? tryPlaySound(global::Hosihikari.Bindings.Bedrock.Interop.ActorDataFlagComponent actorFlags, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier identifier, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorId, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension, uint type, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, int location, int data)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3a8c0e7b((void*)actorFlags.Handle, (void*)identifier.Handle, (void*)actorId.Handle, (void*)dimension.Handle, type, (void*)entity.Handle, location, data, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest((nint)__hs_handle) : null;
+    }
 
 
     public void Dispose()

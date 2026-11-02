@@ -44,9 +44,12 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
         get => (nint)NativeMethods.TablePtr->C5.hs_get_a9d56b05((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
-    public nint _run() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _run()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_2b3952f8((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public static nint _vftable() =>
@@ -85,9 +88,12 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
         return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction((nint)NativeMethods.TablePtr->C5.hs_method_27f067cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
-    public nint run() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? run()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_12f2dbf5((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+    }
 
 
     public void Dispose()

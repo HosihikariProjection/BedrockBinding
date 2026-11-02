@@ -142,9 +142,12 @@ public sealed unsafe partial class BaseGameTestInstance : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox((nint)NativeMethods.TablePtr->C5.hs_method_2d9db78c((void*)__hosihikari_shim_handle));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'AABB' is not supported.", false)]
-    public nint getStructureBounds() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'AABB' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.AABB? getStructureBounds()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_7633d014((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType getStructureDimension()
     {

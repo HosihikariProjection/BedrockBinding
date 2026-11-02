@@ -49,9 +49,12 @@ public sealed unsafe partial class IGameTestFunctionRunResult : global::System.I
         return new IGameTestFunctionRunResult((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
-    public nint getError() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? getError()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_4359d6b1((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
+    }
 
     public bool isComplete()
     {

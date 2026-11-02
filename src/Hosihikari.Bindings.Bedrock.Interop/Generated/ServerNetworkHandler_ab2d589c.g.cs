@@ -72,9 +72,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public void __onClientAsyncAuthorized(nint source, nint request, nint playerInfo, nint hostMessToken) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'MessToken' is abstract or not copy-constructible.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PlayerAuthenticationInfo' is not supported.", false)]
-    public nint __validateLoginPacket(nint source, nint packet) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'PlayerAuthenticationInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo? __validateLoginPacket(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.LoginPacket packet)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7512fdf3((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)__hs_handle) : null;
+    }
 
     public int _allowIncomingPacketId(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId sender, int packetId, ulong packetSize)
     {
@@ -842,9 +845,12 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         return NativeMethods.TablePtr->C3.hs_method_ff643301((void*)__hosihikari_shim_handle, (void*)requester.Handle, (void*)packet.Handle, (void*)abilities.Handle, (void*)permissions.Handle, (void*)(player?.Handle ?? 0)) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PlayerAuthenticationInfo' is not supported.", false)]
-    public nint _validateLoginPacket(nint source, nint packet) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'PlayerAuthenticationInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo? _validateLoginPacket(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.LoginPacket packet)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b789fa71((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)__hs_handle) : null;
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer? _validatePrimaryPlayerForSubClient(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, byte subClientId)
     {

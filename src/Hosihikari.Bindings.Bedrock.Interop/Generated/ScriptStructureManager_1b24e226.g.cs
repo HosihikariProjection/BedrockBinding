@@ -124,9 +124,26 @@ public sealed unsafe partial class ScriptStructureManager : global::System.IDisp
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptStructureManager((nint)NativeMethods.TablePtr->C3.hs_method_11347f6d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::InvalidArgumentError' is not supported.", false)]
-    public nint validateIdentifier(nint identifier) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::InvalidArgumentError' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError? validateIdentifier(string identifier)
+    {
+        var __hs_hasValue = false;
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(identifier);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4cc23439((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError((nint)__hs_handle) : null;
+        }
+    }
 
 
     public void Dispose()

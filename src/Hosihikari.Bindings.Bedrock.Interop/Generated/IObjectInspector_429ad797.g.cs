@@ -64,9 +64,12 @@ public sealed unsafe partial class IObjectInspector : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_9cc4e35b((void*)__hosihikari_shim_handle, (void*)handle.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::ResultAny' is not supported.", false)]
-    public nint getPropertyValue(nint handle, nint name, nint expectedType) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::ResultAny' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny? getPropertyValue(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle handle, nint name, nint expectedType)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4afe9039((void*)__hosihikari_shim_handle, (void*)handle.Handle, (void*)name, (void*)expectedType, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)__hs_handle) : null;
+    }
 
     public bool hasBooleanPropertyValue(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle handle, nint name, bool expectedValue)
     {

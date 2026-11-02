@@ -70,9 +70,12 @@ public sealed unsafe partial class ClassRegistry : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_0028902e((void*)__hosihikari_shim_handle, (void*)allProperties, (void*)classBinding.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::TypeNameInfo' is not supported.", false)]
-    public nint getNameForType(nint resolvedTypes, nint type, bool allowUnknownTypes) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::TypeNameInfo' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo? getNameForType(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ResolvedTypes resolvedTypes, nint type, bool allowUnknownTypes)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fd3b770e((void*)__hosihikari_shim_handle, (void*)resolvedTypes.Handle, (void*)type, allowUnknownTypes, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TypeNameInfo((nint)__hs_handle) : null;
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk167758_Address

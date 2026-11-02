@@ -40,7 +40,7 @@ public sealed unsafe partial class SetPreviousPositionSystem : global::System.ID
 
     public static void _doSetPreviousPositionSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent)
     {
-        NativeMethods.TablePtr->C3.hs_method_4384f136((void*)arg0.Handle, (void*)stateVectorComponent.Handle);
+        NativeMethods.TablePtr->C4.hs_method_4384f136((void*)arg0.Handle, (void*)stateVectorComponent.Handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class SetPreviousPositionSystem : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_7aa322a8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_7aa322a8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

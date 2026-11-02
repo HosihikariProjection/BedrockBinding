@@ -205,9 +205,12 @@ public sealed unsafe partial class OverworldGenerator : global::System.IDisposab
         return new global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise((nint)NativeMethods.TablePtr->C3.hs_method_86a36bad((void*)__hosihikari_shim_handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'XoroshiroPositionalRandomFactory' is not supported.", false)]
-    public nint getXoroshiroPositionalRandomFactory() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'XoroshiroPositionalRandomFactory' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory? getXoroshiroPositionalRandomFactory()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_1f8977d6((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory((nint)__hs_handle) : null;
+    }
 
     public void loadChunk(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, bool forceImmediateReplacementDataLoad)
     {

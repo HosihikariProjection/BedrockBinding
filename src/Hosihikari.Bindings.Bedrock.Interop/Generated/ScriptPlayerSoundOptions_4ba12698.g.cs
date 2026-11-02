@@ -78,9 +78,12 @@ public sealed unsafe partial class ScriptPlayerSoundOptions : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_0c1a5f52((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::Error' is not supported.", false)]
-    public nint validate() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::Error' is not supported.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error? validate()
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_536ff19b((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Error((nint)__hs_handle) : null;
+    }
 
 
     public void Dispose()

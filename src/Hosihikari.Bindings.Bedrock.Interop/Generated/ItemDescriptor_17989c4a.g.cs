@@ -228,9 +228,12 @@ public sealed unsafe partial class ItemDescriptor : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_14ee34b9((void*)instance.Handle, (void*)desc.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'ItemDescriptor' is not supported.", false)]
-    public static nint fromTag(nint tag) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'ItemDescriptor' is not supported.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor? fromTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? tag)
+    {
+        var __hs_hasValue = false;
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b7c425e9((void*)(tag?.Handle ?? 0), &__hs_hasValue);
+        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor((nint)__hs_handle) : null;
+    }
 
     public short getAuxValue()
     {
