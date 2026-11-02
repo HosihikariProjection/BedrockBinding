@@ -47,17 +47,17 @@ public sealed unsafe partial class StringByteOutput : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_5941244c((void*)__hosihikari_shim_handle, (void*)data, bytes);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: classes that store borrowed strings are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the class stores borrowed strings but the constructor has no string parameter.", false)]
     public static StringByteOutput Create() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: classes that store borrowed strings are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the class stores borrowed strings but the constructor has no string parameter.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: classes that store borrowed strings are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the class stores borrowed strings but the constructor has no string parameter.", false)]
     public static StringByteOutput Create_7240faa0(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: classes that store borrowed strings are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the class stores borrowed strings but the constructor has no string parameter.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: classes that store borrowed strings are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: constructors do not accept mutable string references.", false)]
     public static StringByteOutput Create_3fb98a06(nint str) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: classes that store borrowed strings are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: constructors do not accept mutable string references.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBuffer_Address

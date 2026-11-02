@@ -36384,6 +36384,8 @@ struct HosihikariBindingTableV1 {
     HosihikariStringView (*hs_method_de34bf52)(void*);
     void* (*hs_get_6759aa09)(void*);
     void (*hs_destroy_6299541a)(void*);
+    void* (*hs_create_76941211)(const char*, std::size_t);
+    void* (*hs_create_a64c2ef6)(const char*, std::size_t);
     bool (*hs_method_338d54b0)(void*);
     void* (*hs_method_753faf1c)(void*);
     HosihikariStringView (*hs_method_5d31a4f9)(void*);
@@ -104302,6 +104304,7 @@ struct HosihikariBindingTableV1 {
     void (*hs_destroy_a73888ed)(void*);
     void (*hs_method_6aaf6be8)(void*);
     void* (*hs_method_e4db625c)(void*, void*, std::uint64_t);
+    void* (*hs_create_2efc8a75)(const char*, std::size_t, bool);
     void* (*hs_method_7673be7f)(void*);
     void* (*hs_method_24f13301)(void*);
     void* (*hs_method_309baa7e)(void*);
@@ -132205,6 +132208,7 @@ struct HosihikariBindingTableV1 {
     void (*hs_destroy_38a9e07c)(void*);
     std::uint64_t (*hs_method_f13cb1b4)(void*);
     void* (*hs_method_57713712)(void*, void*, std::uint64_t);
+    void* (*hs_create_d3d076ec)(const char*, std::size_t, std::uint64_t);
     void* (*hs_get_39915c7d)(void*);
     std::uint64_t (*hs_get_9aa91c6e)(void*);
     void (*hs_set_9aa91c6e)(void*, std::uint64_t);

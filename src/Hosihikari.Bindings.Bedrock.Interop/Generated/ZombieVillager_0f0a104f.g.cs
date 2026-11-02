@@ -581,19 +581,19 @@ public sealed unsafe partial class ZombieVillager : global::System.IDisposable
     public bool mWasHurtThisTick
     {
         get => NativeMethods.TablePtr->C4.hs_get_a625a5f1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_a625a5f1((void*)__hosihikari_shim_handle, value);
+        set => NativeMethods.TablePtr->C5.hs_set_a625a5f1((void*)__hosihikari_shim_handle, value);
     }
 
     public float mAttackAnim
     {
-        get => NativeMethods.TablePtr->C4.hs_get_39e95882((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_39e95882((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_39e95882((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_39e95882((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoundOrigin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_38b7d68d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_38b7d68d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -7,12 +7,14 @@
 #include <cstring>
 #include <exception>
 #include <memory>
+#include <mutex>
 #include <new>
 #include <optional>
 #include <stdexcept>
 #include <string>
 #include <string_view>
 #include <typeindex>
+#include <unordered_map>
 #include <utility>
 #include <vector>
 #ifdef _WIN32
@@ -44,6 +46,37 @@ struct hs_string_out_guard
         }
     }
 };
+
+// Keeps the strings a borrowed-string class refers to alive until the object is
+// destroyed; the registry is keyed by the object pointer.
+struct hs_symbol_holder
+{
+    std::vector<std::string> strings;
+};
+
+inline std::mutex hs_symbolHolderMutex;
+inline std::unordered_map<void*, hs_symbol_holder*> hs_symbolHolders;
+
+inline void hs_register_symbol_holder(void* target, hs_symbol_holder* holder)
+{
+    std::lock_guard<std::mutex> lock(hs_symbolHolderMutex);
+    hs_symbolHolders[target] = holder;
+}
+
+inline void hs_release_symbol_holder(void* target)
+{
+    hs_symbol_holder* holder = nullptr;
+    {
+        std::lock_guard<std::mutex> lock(hs_symbolHolderMutex);
+        auto it = hs_symbolHolders.find(target);
+        if (it != hs_symbolHolders.end())
+        {
+            holder = it->second;
+            hs_symbolHolders.erase(it);
+        }
+    }
+    delete holder;
+}
 
 using HsResolveSymbol = void* (*)(char const* symbolName);
 
@@ -248567,6 +248600,7 @@ static void hs_destroy_9a2fa5e9(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_dtor));
     if (hs_fn != nullptr) { hs_fn(hs_self); }
     hs_deallocate(hs_self, 8);
+    hs_release_symbol_holder(hs_self);
 }
 catch (std::exception const& hs_error)
 {
@@ -300875,6 +300909,7 @@ static void hs_destroy_a7a1a588(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_dtor));
     if (hs_fn != nullptr) { hs_fn(hs_self); }
     hs_deallocate(hs_self, 8);
+    hs_release_symbol_holder(hs_self);
 }
 catch (std::exception const& hs_error)
 {
@@ -602493,6 +602528,7 @@ static void hs_destroy_c86b9ac2(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_dtor));
     if (hs_fn != nullptr) { hs_fn(hs_self); }
     hs_deallocate(hs_self, 8);
+    hs_release_symbol_holder(hs_self);
 }
 catch (std::exception const& hs_error)
 {
@@ -705382,6 +705418,7 @@ static void hs_destroy_6299541a(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_dtor));
     if (hs_fn != nullptr) { hs_fn(hs_self); }
     hs_deallocate(hs_self, 8);
+    hs_release_symbol_holder(hs_self);
 }
 catch (std::exception const& hs_error)
 {
@@ -705392,6 +705429,66 @@ catch (...)
 {
     setLastError("unknown native exception");
     return;
+}
+
+static void* hs_create_76941211(const char* s_data, std::size_t s_size) try
+{
+    std::basic_string<char> hs_str0(s_data, s_size);
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "??0PathView@Core@@QEAA@AEBV?$basic_string@DU?$char_traits@D@std@@V?$allocator@D@2@@std@@@Z");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return nullptr;
+    }
+    auto* const hs_memory = static_cast<void*>(hs_allocate(static_cast<std::size_t>(16), 8));
+    using HsFn = void (*)(void*, const std::basic_string<char> &);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    auto* const hs_holder = new hs_symbol_holder();
+    hs_holder->strings.reserve(1);
+    hs_holder->strings.emplace_back(hs_str0);
+    hs_fn(hs_memory, hs_holder->strings[0]);
+    hs_register_symbol_holder(hs_memory, hs_holder);
+    return hs_memory;
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return nullptr;
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return nullptr;
+}
+
+static void* hs_create_a64c2ef6(const char* s_data, std::size_t s_size) try
+{
+    std::basic_string_view<char> hs_str0(s_data, s_size);
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "??0PathView@Core@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@@Z");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return nullptr;
+    }
+    auto* const hs_memory = static_cast<void*>(hs_allocate(static_cast<std::size_t>(16), 8));
+    using HsFn = void (*)(void*, std::basic_string_view<char>);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    auto* const hs_holder = new hs_symbol_holder();
+    hs_holder->strings.reserve(1);
+    hs_holder->strings.emplace_back(hs_str0);
+    hs_fn(hs_memory, hs_holder->strings[0]);
+    hs_register_symbol_holder(hs_memory, hs_holder);
+    return hs_memory;
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return nullptr;
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return nullptr;
 }
 
 static bool hs_method_338d54b0(void* hs_self) try
@@ -1999824,6 +1999921,7 @@ static void hs_destroy_a73888ed(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_dtor));
     if (hs_fn != nullptr) { hs_fn(hs_self); }
     hs_deallocate(hs_self, 8);
+    hs_release_symbol_holder(hs_self);
 }
 catch (std::exception const& hs_error)
 {
@@ -1999872,6 +1999970,36 @@ static void* hs_method_e4db625c(void* hs_self, void* target, std::uint64_t num) 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_record), target, num);
     return hs_record;
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return nullptr;
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return nullptr;
+}
+
+static void* hs_create_2efc8a75(const char* buffer_data, std::size_t buffer_size, bool copyBuffer) try
+{
+    std::basic_string_view<char> hs_str0(buffer_data, buffer_size);
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "??0ReadOnlyBinaryStream@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@_N@Z");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return nullptr;
+    }
+    auto* const hs_memory = static_cast<void*>(hs_allocate(static_cast<std::size_t>(72), 8));
+    using HsFn = void (*)(void*, std::basic_string_view<char>, bool);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    auto* const hs_holder = new hs_symbol_holder();
+    hs_holder->strings.reserve(1);
+    hs_holder->strings.emplace_back(hs_str0);
+    hs_fn(hs_memory, hs_holder->strings[0], copyBuffer);
+    hs_register_symbol_holder(hs_memory, hs_holder);
+    return hs_memory;
 }
 catch (std::exception const& hs_error)
 {
@@ -2534978,6 +2535106,7 @@ static void hs_destroy_38a9e07c(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_dtor));
     if (hs_fn != nullptr) { hs_fn(hs_self); }
     hs_deallocate(hs_self, 8);
+    hs_release_symbol_holder(hs_self);
 }
 catch (std::exception const& hs_error)
 {
@@ -2535026,6 +2535155,36 @@ static void* hs_method_57713712(void* hs_self, void* data, std::uint64_t bytes) 
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
     hs_fn(hs_self, static_cast<void*>(hs_record), data, bytes);
     return hs_record;
+}
+catch (std::exception const& hs_error)
+{
+    setLastError(hs_error.what());
+    return nullptr;
+}
+catch (...)
+{
+    setLastError("unknown native exception");
+    return nullptr;
+}
+
+static void* hs_create_d3d076ec(const char* sv_data, std::size_t sv_size, std::uint64_t offset) try
+{
+    std::basic_string_view<char> hs_str0(sv_data, sv_size);
+    static auto const hs_target = hs_resolve(std::uintptr_t{0}, "??0StringByteInput@@QEAA@V?$basic_string_view@DU?$char_traits@D@std@@@std@@_K@Z");
+    if (hs_target == nullptr)
+    {
+        setLastError("symbol was not resolved");
+        return nullptr;
+    }
+    auto* const hs_memory = static_cast<void*>(hs_allocate(static_cast<std::size_t>(32), 8));
+    using HsFn = void (*)(void*, std::basic_string_view<char>, std::uint64_t);
+    auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_target));
+    auto* const hs_holder = new hs_symbol_holder();
+    hs_holder->strings.reserve(1);
+    hs_holder->strings.emplace_back(hs_str0);
+    hs_fn(hs_memory, hs_holder->strings[0], offset);
+    hs_register_symbol_holder(hs_memory, hs_holder);
+    return hs_memory;
 }
 catch (std::exception const& hs_error)
 {
@@ -2535150,6 +2535309,7 @@ static void hs_destroy_ae451fd5(void* hs_self) try
     auto const hs_fn = reinterpret_cast<HsFn>(const_cast<void*>(hs_dtor));
     if (hs_fn != nullptr) { hs_fn(hs_self); }
     hs_deallocate(hs_self, 8);
+    hs_release_symbol_holder(hs_self);
 }
 catch (std::exception const& hs_error)
 {
@@ -2993421,6 +2993581,8 @@ const HosihikariBindingTableV1 kTable{
     &hs_method_de34bf52,
     &hs_get_6759aa09,
     &hs_destroy_6299541a,
+    &hs_create_76941211,
+    &hs_create_a64c2ef6,
     &hs_method_338d54b0,
     &hs_method_753faf1c,
     &hs_method_5d31a4f9,
@@ -3061339,6 +3061501,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_destroy_a73888ed,
     &hs_method_6aaf6be8,
     &hs_method_e4db625c,
+    &hs_create_2efc8a75,
     &hs_method_7673be7f,
     &hs_method_24f13301,
     &hs_method_309baa7e,
@@ -3089242,6 +3089405,7 @@ const HosihikariBindingTableV1 kTable{
     &hs_destroy_38a9e07c,
     &hs_method_f13cb1b4,
     &hs_method_57713712,
+    &hs_create_d3d076ec,
     &hs_get_39915c7d,
     &hs_get_9aa91c6e,
     &hs_set_9aa91c6e,

@@ -458,8 +458,8 @@ public sealed unsafe partial class HopperBlockActor : global::System.IDisposable
 
     public byte mRendererId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_04833728((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_04833728((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_04833728((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_04833728((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

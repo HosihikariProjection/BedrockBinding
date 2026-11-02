@@ -269,7 +269,7 @@ public sealed unsafe partial class OcelotSitOnBlockGoal : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            var handle = NativeMethods.TablePtr->C2.hs_create_03397ec9((void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId);
+            var handle = NativeMethods.TablePtr->C3.hs_create_03397ec9((void*)mob.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)goalId);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -281,7 +281,7 @@ public sealed unsafe partial class OcelotSitOnBlockGoal : global::System.IDispos
 
     public static OcelotSitOnBlockGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.OcelotSitOnBlockGoal arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2cf6727e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_2cf6727e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
