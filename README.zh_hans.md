@@ -10,6 +10,7 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 
 - `Hosihikari.Bindings.Bedrock.Interop` 由 `HosihikariProjection/BindingGenerator` 从 LeviLamina `src/mc` 与 `ll/api` 头文件树的头文件级 IR 生成。它映照 MCAPI 声明：record 保留生成的包装类型，枚举声明投影为携带头文件枚举值的 C# 枚举，单层指针与引用返回变为类型化借用包装，`optional_ref<T>` 复用该路径，不受支持的成员保留带原因的 `NotSupportedException` stub；没有可用成员的类型保留类型身份并标记 `[Obsolete]`。ABI 值类型与 shim 加载器来自 `HosihikariProjection/BindingAbi`。
 - `native/BindingShim/` 是 C ABI 投影，自包含：不包含游戏头文件，也不链接 import library。每个成员在运行期向预加载器（`pl_resolve_symbol`）查询其修饰名；查询入口通过 `GetModuleHandleW`/`dlsym` 动态取得，因此没有预加载器的进程里垫片也能加载，只是调用返回 `symbol was not resolved`。解析结果按函数缓存，每个名称只查找一次。
+- 采用按名解析而不是链接载体导入库，是刻意的选择：BDS 只导出少量 PE 符号，链接版垫片必须依赖由第三方运行期数据包合成的导入库，而本分支只从公开头文件重生成。按名查询还让缺失符号只影响单次调用（虚成员回退到 IR 记录的 vtable 槽位），不会在加载期使整个 DLL 失败，并能服务运行期数据能映射该名字的任意载体构建。
 - 手写 Idiomatic 层延后；生成的 Interop 是当前公开的互操作面。
 
 ## 当前状态
