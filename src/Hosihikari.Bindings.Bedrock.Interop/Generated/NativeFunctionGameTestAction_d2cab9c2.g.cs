@@ -41,7 +41,7 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf1db7c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a9d56b05((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a9d56b05((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
 
     public static NativeFunctionGameTestAction Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e70f2cdc();
+        var handle = NativeMethods.TablePtr->C5.hs_create_e70f2cdc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,7 +65,7 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
 
     public static NativeFunctionGameTestAction Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d024c0b5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_d024c0b5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,12 +77,12 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk69d2a1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_318ddd4b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_318ddd4b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction((nint)NativeMethods.TablePtr->C4.hs_method_27f067cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.NativeFunctionGameTestAction((nint)NativeMethods.TablePtr->C5.hs_method_27f067cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gametest::GameTestError' is not supported.", false)]
@@ -96,7 +96,7 @@ public sealed unsafe partial class NativeFunctionGameTestAction : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d2cab9c2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_d2cab9c2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

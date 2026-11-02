@@ -41,12 +41,12 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_425092e0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_425092e0((void*)__hosihikari_shim_handle);
     }
 
     public static IStructureTemplateManager Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplateManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f3dbaa7b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_f3dbaa7b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,13 +70,13 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)NativeMethods.TablePtr->C1.hs_method_4ebf5d76((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)NativeMethods.TablePtr->C2.hs_method_4ebf5d76((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getOrCreateJigsawStructureMetadata(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement structurePoolElement)
     {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_3367b1e3((void*)__hosihikari_shim_handle, (void*)structurePoolElement.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_3367b1e3((void*)__hosihikari_shim_handle, (void*)structurePoolElement.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -95,7 +95,7 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate((nint)NativeMethods.TablePtr->C1.hs_method_a51f3bcb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate((nint)NativeMethods.TablePtr->C2.hs_method_a51f3bcb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
@@ -114,14 +114,14 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9d6dc98d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9d6dc98d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)__hs_handle, false) : null;
         }
     }
 
     public bool readStructure(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structureTemplate)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7bf6b7b3((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_7bf6b7b3((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle) != 0;
     }
 
 
@@ -131,7 +131,7 @@ public sealed unsafe partial class IStructureTemplateManager : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f41a5ede((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f41a5ede((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

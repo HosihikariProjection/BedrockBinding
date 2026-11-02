@@ -40,12 +40,12 @@ public sealed unsafe partial class Option : global::System.IDisposable
 
     public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value valueJson)
     {
-        NativeMethods.TablePtr->C2.hs_method_b39f2314((void*)__hosihikari_shim_handle, (void*)valueJson.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b39f2314((void*)__hosihikari_shim_handle, (void*)valueJson.Handle);
     }
 
     public void _load(nint propertyMap)
     {
-        NativeMethods.TablePtr->C2.hs_method_7cc042ec((void*)__hosihikari_shim_handle, (void*)propertyMap);
+        NativeMethods.TablePtr->C3.hs_method_7cc042ec((void*)__hosihikari_shim_handle, (void*)propertyMap);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class Option : global::System.IDisposable
 
     public static Option Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_65283b96();
+        var handle = NativeMethods.TablePtr->C3.hs_create_65283b96();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,7 +65,7 @@ public sealed unsafe partial class Option : global::System.IDisposable
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value valueJson)
     {
-        NativeMethods.TablePtr->C2.hs_method_2b091a71((void*)__hosihikari_shim_handle, (void*)valueJson.Handle);
+        NativeMethods.TablePtr->C3.hs_method_2b091a71((void*)__hosihikari_shim_handle, (void*)valueJson.Handle);
     }
 
     public void load(string valueString)
@@ -83,19 +83,19 @@ public sealed unsafe partial class Option : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(valueString, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_1c45628d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C3.hs_method_1c45628d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void load(nint propertyMap)
     {
-        NativeMethods.TablePtr->C2.hs_method_0bf80b02((void*)__hosihikari_shim_handle, (void*)propertyMap);
+        NativeMethods.TablePtr->C3.hs_method_0bf80b02((void*)__hosihikari_shim_handle, (void*)propertyMap);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mImpl_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e786a14e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e786a14e((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -109,7 +109,7 @@ public sealed unsafe partial class Option : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_b2204e9e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b2204e9e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

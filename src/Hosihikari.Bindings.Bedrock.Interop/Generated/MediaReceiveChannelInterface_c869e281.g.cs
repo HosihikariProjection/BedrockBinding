@@ -40,43 +40,43 @@ public sealed unsafe partial class MediaReceiveChannelInterface : global::System
 
     public bool AddRecvStream(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_85ee2e8f((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_85ee2e8f((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? AsVideoReceiveChannel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3a2393cd((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_3a2393cd((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface? AsVoiceReceiveChannel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_10a3bdfe((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_10a3bdfe((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public void ChooseReceiverReportSsrc(nint arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_7cd9946d((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C5.hs_method_7cd9946d((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int? GetBaseMinimumPlayoutDelayMs(uint arg0)
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_60b53732((void*)__hosihikari_shim_handle, arg0, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_60b53732((void*)__hosihikari_shim_handle, arg0, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
     public uint? GetUnsignaledSsrc()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_e927ffd9((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_e927ffd9((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (uint?)null;
     }
 
     public static MediaReceiveChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveChannelInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_7c4feaef((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_7c4feaef((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,32 +87,32 @@ public sealed unsafe partial class MediaReceiveChannelInterface : global::System
 
     public void OnDemuxerCriteriaUpdateComplete()
     {
-        NativeMethods.TablePtr->C4.hs_method_acdad49c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_acdad49c((void*)__hosihikari_shim_handle);
     }
 
     public void OnDemuxerCriteriaUpdatePending()
     {
-        NativeMethods.TablePtr->C4.hs_method_c2e2a999((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_c2e2a999((void*)__hosihikari_shim_handle);
     }
 
     public void OnPacketReceived(nint arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_2a31a88d((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C5.hs_method_2a31a88d((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public bool RemoveRecvStream(uint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_63dc3d36((void*)__hosihikari_shim_handle, arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_63dc3d36((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
     public void ResetUnsignaledRecvStream()
     {
-        NativeMethods.TablePtr->C4.hs_method_2b217270((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_2b217270((void*)__hosihikari_shim_handle);
     }
 
     public bool SetBaseMinimumPlayoutDelayMs(uint arg0, int arg1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_3cd8eabf((void*)__hosihikari_shim_handle, arg0, arg1) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_3cd8eabf((void*)__hosihikari_shim_handle, arg0, arg1) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::FrameTransformerInterface>' is not a known bindable declaration.", false)]
@@ -125,12 +125,12 @@ public sealed unsafe partial class MediaReceiveChannelInterface : global::System
 
     public void SetInterface(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaChannelNetworkInterface? arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_40fe4af6((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_40fe4af6((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public int media_type()
     {
-        return NativeMethods.TablePtr->C4.hs_method_3a58eedd((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_3a58eedd((void*)__hosihikari_shim_handle);
     }
 
 
@@ -140,7 +140,7 @@ public sealed unsafe partial class MediaReceiveChannelInterface : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c869e281((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_c869e281((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

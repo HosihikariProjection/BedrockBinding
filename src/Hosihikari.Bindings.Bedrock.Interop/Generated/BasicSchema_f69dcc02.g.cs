@@ -40,27 +40,27 @@ public sealed unsafe partial class BasicSchema : global::System.IDisposable
 
     public bool _doMap(nint src, nint dst, nint visitor)
     {
-        return NativeMethods.TablePtr->C4.hs_method_982ccc1d((void*)__hosihikari_shim_handle, (void*)src, (void*)dst, (void*)visitor) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_982ccc1d((void*)__hosihikari_shim_handle, (void*)src, (void*)dst, (void*)visitor) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema _doUnwrap(nint elem, bool fillIfEmpty)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema((nint)NativeMethods.TablePtr->C4.hs_method_12331393((void*)__hosihikari_shim_handle, (void*)elem, fillIfEmpty), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema((nint)NativeMethods.TablePtr->C5.hs_method_12331393((void*)__hosihikari_shim_handle, (void*)elem, fillIfEmpty), false);
     }
 
     public bool _isGreedy(nint ctx)
     {
-        return NativeMethods.TablePtr->C4.hs_method_2a46ea7f((void*)__hosihikari_shim_handle, (void*)ctx) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_2a46ea7f((void*)__hosihikari_shim_handle, (void*)ctx) != 0;
     }
 
     public byte _minVariantPriorityLevel(nint ctx)
     {
-        return NativeMethods.TablePtr->C4.hs_method_0ecaae41((void*)__hosihikari_shim_handle, (void*)ctx);
+        return NativeMethods.TablePtr->C5.hs_method_0ecaae41((void*)__hosihikari_shim_handle, (void*)ctx);
     }
 
     public static BasicSchema Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f8ae9a14((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_f8ae9a14((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,32 +71,32 @@ public sealed unsafe partial class BasicSchema : global::System.IDisposable
 
     public void doLoad(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaReader reader, nint any, nint udata, nint state)
     {
-        NativeMethods.TablePtr->C4.hs_method_092ead57((void*)__hosihikari_shim_handle, (void*)reader.Handle, (void*)any, (void*)udata, (void*)state);
+        NativeMethods.TablePtr->C5.hs_method_092ead57((void*)__hosihikari_shim_handle, (void*)reader.Handle, (void*)any, (void*)udata, (void*)state);
     }
 
     public bool doMap(nint src, nint dst, nint visitor)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6293fe89((void*)__hosihikari_shim_handle, (void*)src, (void*)dst, (void*)visitor) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_6293fe89((void*)__hosihikari_shim_handle, (void*)src, (void*)dst, (void*)visitor) != 0;
     }
 
     public void doSave(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaWriter value, nint any, nint state)
     {
-        NativeMethods.TablePtr->C4.hs_method_29fce2d5((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)any, (void*)state);
+        NativeMethods.TablePtr->C5.hs_method_29fce2d5((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)any, (void*)state);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema doUnwrap(nint elem, bool fillIfEmpty)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema((nint)NativeMethods.TablePtr->C4.hs_method_31a1ec7d((void*)__hosihikari_shim_handle, (void*)elem, fillIfEmpty), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema((nint)NativeMethods.TablePtr->C5.hs_method_31a1ec7d((void*)__hosihikari_shim_handle, (void*)elem, fillIfEmpty), false);
     }
 
     public bool isGreedy(nint ctx)
     {
-        return NativeMethods.TablePtr->C4.hs_method_4be79c13((void*)__hosihikari_shim_handle, (void*)ctx) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_4be79c13((void*)__hosihikari_shim_handle, (void*)ctx) != 0;
     }
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaReader value, nint any, nint udata, nint state)
     {
-        NativeMethods.TablePtr->C4.hs_method_b89dc6a3((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)any, (void*)udata, (void*)state);
+        NativeMethods.TablePtr->C5.hs_method_b89dc6a3((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)any, (void*)udata, (void*)state);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.", false)]
@@ -105,12 +105,12 @@ public sealed unsafe partial class BasicSchema : global::System.IDisposable
 
     public bool map(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema schema, nint src, nint dst, nint visitor)
     {
-        return NativeMethods.TablePtr->C4.hs_method_81444211((void*)__hosihikari_shim_handle, (void*)schema.Handle, (void*)src, (void*)dst, (void*)visitor) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_81444211((void*)__hosihikari_shim_handle, (void*)schema.Handle, (void*)src, (void*)dst, (void*)visitor) != 0;
     }
 
     public byte minVariantPriorityLevel(nint ctx)
     {
-        return NativeMethods.TablePtr->C4.hs_method_711dd238((void*)__hosihikari_shim_handle, (void*)ctx);
+        return NativeMethods.TablePtr->C5.hs_method_711dd238((void*)__hosihikari_shim_handle, (void*)ctx);
     }
 
 
@@ -120,7 +120,7 @@ public sealed unsafe partial class BasicSchema : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f69dcc02((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_f69dcc02((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

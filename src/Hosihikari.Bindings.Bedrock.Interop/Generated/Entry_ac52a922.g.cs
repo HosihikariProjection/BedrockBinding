@@ -40,12 +40,12 @@ public sealed unsafe partial class Entry : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_181ab51e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_181ab51e((void*)__hosihikari_shim_handle);
     }
 
     public static Entry Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSet_Nested.Entry arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_326d45f9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_326d45f9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,13 +57,13 @@ public sealed unsafe partial class Entry : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructure_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_73add6f2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_73add6f2((void*)__hosihikari_shim_handle);
     }
 
     public int mWeight
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0e8762f6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_0e8762f6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_0e8762f6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_0e8762f6((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -73,7 +73,7 @@ public sealed unsafe partial class Entry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ac52a922((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_ac52a922((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

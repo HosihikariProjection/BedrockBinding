@@ -38,6 +38,12 @@ public sealed unsafe partial class NoteBlock : global::System.IDisposable
         return __hs_handle;
     }
 
+    public bool mAllowsRunes
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_797c0de1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_797c0de1((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mAlteredStateCollections_Address
     {
@@ -74,6 +80,36 @@ public sealed unsafe partial class NoteBlock : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_31aca42e((void*)__hosihikari_shim_handle);
     }
 
+    public bool mCanBeBrokenFromFalling
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_73a773ff((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_73a773ff((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanBeExtraBlock
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_37f67d71((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_37f67d71((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanBeOriginalSurface
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_e92d7790((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_e92d7790((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanReactToNeighborsDuringInstatick
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_4cb1f62e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_4cb1f62e((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanSlide
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_0519e27b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_0519e27b((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientPredictionOverrides_Address
     {
@@ -96,6 +132,12 @@ public sealed unsafe partial class NoteBlock : global::System.IDisposable
     public nint mCreativeGroup_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_708bf653((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mDataDrivenVanillaBlocksAndItemsEnabled
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_f53d4611((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_f53d4611((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mDefaultState
@@ -121,6 +163,18 @@ public sealed unsafe partial class NoteBlock : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_5f76da6e((void*)__hosihikari_shim_handle);
     }
 
+    public bool mFalling
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_75d1e48f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_75d1e48f((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mFancy
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_f24c13f1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_f24c13f1((void*)__hosihikari_shim_handle, value);
+    }
+
     public float mFriction
     {
         get => NativeMethods.TablePtr->C2.hs_get_909fc5dc((void*)__hosihikari_shim_handle);
@@ -137,6 +191,36 @@ public sealed unsafe partial class NoteBlock : global::System.IDisposable
     public nint mID_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_23d81432((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mIgnoreBlockForInsideCubeRenderer
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_b0b87e62((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_b0b87e62((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsHiddenInCommands
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_e9825f99((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_e9825f99((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsMobPiece
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_3296bb7f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_3296bb7f((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsOpaqueFullBlock
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_5d905104((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_5d905104((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsVanilla
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_27c92a51((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_27c92a51((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -193,10 +277,28 @@ public sealed unsafe partial class NoteBlock : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_73fb5c48((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mPushesOutItems
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_415898f8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_415898f8((void*)__hosihikari_shim_handle, value);
+    }
+
     public byte mRenderLayer
     {
         get => NativeMethods.TablePtr->C2.hs_get_acff45a2((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C2.hs_set_acff45a2((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mRenderLayerCanRenderAsOpaque
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_b415815e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_b415815e((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mRequiresCorrectToolForDrops
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_09535623((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_09535623((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -205,10 +307,28 @@ public sealed unsafe partial class NoteBlock : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_658745a6((void*)__hosihikari_shim_handle);
     }
 
+    public bool mReturnDefaultBlockOnUnidentifiedBlockState
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_328745df((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_328745df((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mShapeRegistry_Address
     {
         get => (nint)NativeMethods.TablePtr->C2.hs_get_e64164fc((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mShouldRandomTickExtraLayer
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_2203d6fc((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_2203d6fc((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mSolid
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_3a7b5ccc((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_3a7b5ccc((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

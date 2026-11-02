@@ -69,13 +69,13 @@ public sealed unsafe partial class VideoEncoderFactory : global::System.IDisposa
         global::System.Text.Encoding.UTF8.GetBytes(arg1 ?? string.Empty, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport((nint)NativeMethods.TablePtr->C4.hs_method_daf4b134((void*)__hosihikari_shim_handle, (void*)arg0, __hs_stringData1, (nuint)__hs_stringByteCount1, arg1 is not null));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.CodecSupport((nint)NativeMethods.TablePtr->C5.hs_method_daf4b134((void*)__hosihikari_shim_handle, (void*)arg0, __hs_stringData1, (nuint)__hs_stringByteCount1, arg1 is not null));
         }
     }
 
     public static VideoEncoderFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_95f28e22((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_95f28e22((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -91,7 +91,7 @@ public sealed unsafe partial class VideoEncoderFactory : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_353420b0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_353420b0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

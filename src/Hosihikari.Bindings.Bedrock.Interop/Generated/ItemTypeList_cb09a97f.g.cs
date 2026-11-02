@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemTypeList : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C0.hs_method_16fc7426((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_16fc7426((void*)__hosihikari_shim_handle);
     }
 
     public static ItemTypeList Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_07d6a9e7();
+        var handle = NativeMethods.TablePtr->C1.hs_create_07d6a9e7();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class ItemTypeList : global::System.IDisposable
 
     public static ItemTypeList Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext_Nested.ItemTypeList arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f2c9a6cb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f2c9a6cb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,24 +68,24 @@ public sealed unsafe partial class ItemTypeList : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8dc5cd_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_abedd96a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_abedd96a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9844ff_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_58371953((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_58371953((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk99ac7c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_39c3a123((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_39c3a123((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext_Nested.ItemTypeList operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext_Nested.ItemTypeList arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext_Nested.ItemTypeList((nint)NativeMethods.TablePtr->C0.hs_method_9a9b34cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext_Nested.ItemTypeList((nint)NativeMethods.TablePtr->C1.hs_method_9a9b34cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -95,7 +95,7 @@ public sealed unsafe partial class ItemTypeList : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_cb09a97f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_cb09a97f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class ContinuousLookAtPositionIntent : global::Syst
 
     public static ContinuousLookAtPositionIntent Create(global::Hosihikari.Bindings.Bedrock.Interop.sim.ContinuousLookAtPositionIntent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_fc8843f4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_fc8843f4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class ContinuousLookAtPositionIntent : global::Syst
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f7b1d7fe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f7b1d7fe((void*)__hosihikari_shim_handle);
     }
 
     public bool mStopOnMove
     {
-        get => NativeMethods.TablePtr->C4.hs_get_854cb9f6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_854cb9f6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_854cb9f6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_854cb9f6((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class ContinuousLookAtPositionIntent : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9ac1cd0e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_9ac1cd0e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,6 +38,12 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
         return __hs_handle;
     }
 
+    public bool mAllowsRunes
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_d96c6c9f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_d96c6c9f((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mAlteredStateCollections_Address
     {
@@ -74,6 +80,36 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_fc537b62((void*)__hosihikari_shim_handle);
     }
 
+    public bool mCanBeBrokenFromFalling
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_b3c55e79((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_b3c55e79((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanBeExtraBlock
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_a75f98d1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_a75f98d1((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanBeOriginalSurface
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_46f00a04((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_46f00a04((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanReactToNeighborsDuringInstatick
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_30b0acc1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_30b0acc1((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanSlide
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_a1c0c63b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_a1c0c63b((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientPredictionOverrides_Address
     {
@@ -96,6 +132,12 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
     public nint mCreativeGroup_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_4184b647((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mDataDrivenVanillaBlocksAndItemsEnabled
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_81c4d165((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_81c4d165((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mDefaultState
@@ -121,6 +163,18 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6279f92f((void*)__hosihikari_shim_handle);
     }
 
+    public bool mFalling
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_fef88a25((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_fef88a25((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mFancy
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_460f8ba5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_460f8ba5((void*)__hosihikari_shim_handle, value);
+    }
+
     public float mFriction
     {
         get => NativeMethods.TablePtr->C4.hs_get_8fba8467((void*)__hosihikari_shim_handle);
@@ -137,6 +191,36 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
     public nint mID_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_717f61d1((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mIgnoreBlockForInsideCubeRenderer
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_58e4f0f5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_58e4f0f5((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsHiddenInCommands
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_cfec8ac6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_cfec8ac6((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsMobPiece
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_ed12ce9b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_ed12ce9b((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsOpaqueFullBlock
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_f6f6fba6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_f6f6fba6((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsVanilla
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_32bcc376((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_32bcc376((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -193,10 +277,28 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
         set => NativeMethods.TablePtr->C4.hs_set_9995f098((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mPushesOutItems
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_a8bc8c62((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_a8bc8c62((void*)__hosihikari_shim_handle, value);
+    }
+
     public byte mRenderLayer
     {
         get => NativeMethods.TablePtr->C4.hs_get_344f7536((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C4.hs_set_344f7536((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mRenderLayerCanRenderAsOpaque
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_6ae1b530((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_6ae1b530((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mRequiresCorrectToolForDrops
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_5681522a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_5681522a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -205,10 +307,28 @@ public sealed unsafe partial class UnderwaterTorchBlock : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C4.hs_get_fa532095((void*)__hosihikari_shim_handle);
     }
 
+    public bool mReturnDefaultBlockOnUnidentifiedBlockState
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_5c4915c2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_5c4915c2((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mShapeRegistry_Address
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_284b2763((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mShouldRandomTickExtraLayer
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_5ce56514((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_5ce56514((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mSolid
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_6128ed93((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_6128ed93((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

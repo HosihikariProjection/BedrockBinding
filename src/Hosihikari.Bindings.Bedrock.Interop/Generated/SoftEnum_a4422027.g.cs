@@ -40,7 +40,7 @@ public sealed unsafe partial class SoftEnum : global::System.IDisposable
 
     public nint name
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e7699f37((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e7699f37((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class SoftEnum : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a4422027((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_a4422027((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

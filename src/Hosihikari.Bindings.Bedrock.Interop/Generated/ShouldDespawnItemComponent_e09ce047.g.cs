@@ -40,13 +40,13 @@ public sealed unsafe partial class ShouldDespawnItemComponent : global::System.I
 
     public nint mOwner
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_eb0cea1c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_eb0cea1c((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_eb0cea1c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_eb0cea1c((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void __initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C3.hs_method_43c94cf4((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C4.hs_method_43c94cf4((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -55,7 +55,7 @@ public sealed unsafe partial class ShouldDespawnItemComponent : global::System.I
 
     public static ShouldDespawnItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ShouldDespawnItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_842e30c3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_842e30c3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class ShouldDespawnItemComponent : global::System.I
 
     public void _initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C3.hs_method_b4e9a1db((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C4.hs_method_b4e9a1db((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -75,8 +75,8 @@ public sealed unsafe partial class ShouldDespawnItemComponent : global::System.I
 
     public bool mShouldDespawn
     {
-        get => NativeMethods.TablePtr->C3.hs_get_bc773908((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_bc773908((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_bc773908((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_bc773908((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class ShouldDespawnItemComponent : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e09ce047((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e09ce047((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,6 +38,12 @@ public sealed unsafe partial class CopperTrapDoorBlock : global::System.IDisposa
         return __hs_handle;
     }
 
+    public bool mAllowsRunes
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_330a2cfc((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_330a2cfc((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mAlteredStateCollections_Address
     {
@@ -74,6 +80,36 @@ public sealed unsafe partial class CopperTrapDoorBlock : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_af84adc2((void*)__hosihikari_shim_handle);
     }
 
+    public bool mCanBeBrokenFromFalling
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_0a512707((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_0a512707((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanBeExtraBlock
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_18817830((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_18817830((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanBeOriginalSurface
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_b07e1e24((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_b07e1e24((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanReactToNeighborsDuringInstatick
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_55be0687((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_55be0687((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mCanSlide
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_0387cfb5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_0387cfb5((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientPredictionOverrides_Address
     {
@@ -96,6 +132,12 @@ public sealed unsafe partial class CopperTrapDoorBlock : global::System.IDisposa
     public nint mCreativeGroup_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_af8f96d1((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mDataDrivenVanillaBlocksAndItemsEnabled
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_534b8e37((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_534b8e37((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mDefaultState
@@ -121,6 +163,18 @@ public sealed unsafe partial class CopperTrapDoorBlock : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2bc9eb78((void*)__hosihikari_shim_handle);
     }
 
+    public bool mFalling
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_c2205ba9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_c2205ba9((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mFancy
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_e99cb002((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_e99cb002((void*)__hosihikari_shim_handle, value);
+    }
+
     public float mFriction
     {
         get => NativeMethods.TablePtr->C1.hs_get_83dda002((void*)__hosihikari_shim_handle);
@@ -137,6 +191,36 @@ public sealed unsafe partial class CopperTrapDoorBlock : global::System.IDisposa
     public nint mID_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_9732a92f((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mIgnoreBlockForInsideCubeRenderer
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_f05b2604((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_f05b2604((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsHiddenInCommands
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_310023a5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_310023a5((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsMobPiece
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_0ed88335((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_0ed88335((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsOpaqueFullBlock
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_9404f024((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_9404f024((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsVanilla
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_c619eb55((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_c619eb55((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -193,10 +277,28 @@ public sealed unsafe partial class CopperTrapDoorBlock : global::System.IDisposa
         set => NativeMethods.TablePtr->C1.hs_set_e8f4c7d0((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mPushesOutItems
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_e93520bf((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_e93520bf((void*)__hosihikari_shim_handle, value);
+    }
+
     public byte mRenderLayer
     {
         get => NativeMethods.TablePtr->C1.hs_get_1ed8b025((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C1.hs_set_1ed8b025((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mRenderLayerCanRenderAsOpaque
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_6c8a49d7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_6c8a49d7((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mRequiresCorrectToolForDrops
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_bf52ab0a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_bf52ab0a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -205,10 +307,28 @@ public sealed unsafe partial class CopperTrapDoorBlock : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_555813ce((void*)__hosihikari_shim_handle);
     }
 
+    public bool mReturnDefaultBlockOnUnidentifiedBlockState
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_5a3401d9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_5a3401d9((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mShapeRegistry_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_00d75e9a((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mShouldRandomTickExtraLayer
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_cd319c88((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_cd319c88((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mSolid
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_e7d9d049((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_e7d9d049((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

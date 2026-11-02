@@ -40,7 +40,7 @@ public sealed unsafe partial class ITreeCanopy : global::System.IDisposable
 
     public static ITreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_66f0f809((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_66f0f809((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +70,7 @@ public sealed unsafe partial class ITreeCanopy : global::System.IDisposable
             fixed (nint* __hs_vectorHandleData7 = __hs_vectorHandles7)
             {
                 var __hs_vectorData7 = (void**)__hs_vectorHandleData7;
-                var __hs_handle = NativeMethods.TablePtr->C1.hs_method_21907866((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg3.Handle, (void*)arg4.Handle, (void*)arg5.Handle, __hs_vectorData6, (nuint)(arg6?.Length ?? 0), __hs_vectorData7, (nuint)(arg7?.Length ?? 0), &__hs_hasValue);
+                var __hs_handle = NativeMethods.TablePtr->C2.hs_method_21907866((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg3.Handle, (void*)arg4.Handle, (void*)arg5.Handle, __hs_vectorData6, (nuint)(arg6?.Length ?? 0), __hs_vectorData7, (nuint)(arg7?.Length ?? 0), &__hs_hasValue);
                 return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
             }
         }
@@ -83,7 +83,7 @@ public sealed unsafe partial class ITreeCanopy : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_1e366c71((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_1e366c71((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

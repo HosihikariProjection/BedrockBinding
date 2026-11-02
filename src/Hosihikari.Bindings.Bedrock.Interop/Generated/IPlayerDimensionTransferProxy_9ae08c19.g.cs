@@ -40,7 +40,7 @@ public sealed unsafe partial class IPlayerDimensionTransferProxy : global::Syste
 
     public static IPlayerDimensionTransferProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerDimensionTransferProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b763f844((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b763f844((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,33 +51,33 @@ public sealed unsafe partial class IPlayerDimensionTransferProxy : global::Syste
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 calculateAgentSpawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_1c775c44((void*)__hosihikari_shim_handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_1c775c44((void*)__hosihikari_shim_handle, (void*)player.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacket createMovePlayerPacket(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte resetPosition)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacket((nint)NativeMethods.TablePtr->C1.hs_method_9b301f36((void*)__hosihikari_shim_handle, (void*)player.Handle, resetPosition));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MovePlayerPacket((nint)NativeMethods.TablePtr->C2.hs_method_9b301f36((void*)__hosihikari_shim_handle, (void*)player.Handle, resetPosition));
     }
 
     public void fireWillChangeDimension(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        NativeMethods.TablePtr->C1.hs_method_e2115ed4((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C2.hs_method_e2115ed4((void*)__hosihikari_shim_handle, (void*)player.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getAgent(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_53739814((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_53739814((void*)__hosihikari_shim_handle, (void*)player.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSpawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_8d7bf8ed((void*)__hosihikari_shim_handle, (void*)player.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C2.hs_method_8d7bf8ed((void*)__hosihikari_shim_handle, (void*)player.Handle), false);
     }
 
     public bool hasRespawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return NativeMethods.TablePtr->C1.hs_method_0c1d7a4d((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_0c1d7a4d((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<bool, std::optional<SubChunkPos>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -86,57 +86,57 @@ public sealed unsafe partial class IPlayerDimensionTransferProxy : global::Syste
 
     public bool isRespawnReady(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return NativeMethods.TablePtr->C1.hs_method_8040a7eb((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_8040a7eb((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool isRespawningFromTheEnd(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return NativeMethods.TablePtr->C1.hs_method_4b94f628((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_4b94f628((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public void moveTo(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position)
     {
-        NativeMethods.TablePtr->C1.hs_method_516a460d((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)position.Handle);
+        NativeMethods.TablePtr->C2.hs_method_516a460d((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)position.Handle);
     }
 
     public void playerDimensionChangedEvent(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromDimensionId, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType toDimensionId)
     {
-        NativeMethods.TablePtr->C1.hs_method_27019543((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)fromDimensionId.Handle, (void*)toDimensionId.Handle);
+        NativeMethods.TablePtr->C2.hs_method_27019543((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)fromDimensionId.Handle, (void*)toDimensionId.Handle);
     }
 
     public void prepareRegion(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        NativeMethods.TablePtr->C1.hs_method_04270443((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C2.hs_method_04270443((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)dimension.Handle);
     }
 
     public void resetAgent(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        NativeMethods.TablePtr->C1.hs_method_f4f66d8f((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C2.hs_method_f4f66d8f((void*)__hosihikari_shim_handle, (void*)player.Handle);
     }
 
     public void resetInterpolation(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        NativeMethods.TablePtr->C1.hs_method_fae82e00((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C2.hs_method_fae82e00((void*)__hosihikari_shim_handle, (void*)player.Handle);
     }
 
     public void setAgent(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Actor agent)
     {
-        NativeMethods.TablePtr->C1.hs_method_9d6ed48f((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)agent.Handle);
+        NativeMethods.TablePtr->C2.hs_method_9d6ed48f((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)agent.Handle);
     }
 
     public void setPreviousPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        NativeMethods.TablePtr->C1.hs_method_c801c601((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c801c601((void*)__hosihikari_shim_handle, (void*)player.Handle);
     }
 
     public void stopUsingItem(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        NativeMethods.TablePtr->C1.hs_method_d70e3e55((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C2.hs_method_d70e3e55((void*)__hosihikari_shim_handle, (void*)player.Handle);
     }
 
     public void transferTickingArea(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        NativeMethods.TablePtr->C1.hs_method_89565897((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C2.hs_method_89565897((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)dimension.Handle);
     }
 
 
@@ -146,7 +146,7 @@ public sealed unsafe partial class IPlayerDimensionTransferProxy : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_9ae08c19((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9ae08c19((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

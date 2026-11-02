@@ -40,12 +40,12 @@ public sealed unsafe partial class SpawnActorSystem : global::System.IDisposable
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C3.hs_method_6feb945f((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C4.hs_method_6feb945f((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
     public static SpawnActorSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d4ddf730((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_d4ddf730((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class SpawnActorSystem : global::System.IDisposable
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C3.hs_method_5ebfcb0f((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C4.hs_method_5ebfcb0f((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class SpawnActorSystem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_7942c34d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_7942c34d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

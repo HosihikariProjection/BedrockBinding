@@ -40,7 +40,7 @@ public sealed unsafe partial class EncoderSelectorInterface : global::System.IDi
 
     public static EncoderSelectorInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoEncoderFactory_Nested.EncoderSelectorInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0acf44c3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_0acf44c3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class EncoderSelectorInterface : global::System.IDi
 
     public void OnCurrentEncoder(nint arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_a8d118ac((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C5.hs_method_a8d118ac((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::SdpVideoFormat' is not supported.", false)]
@@ -73,7 +73,7 @@ public sealed unsafe partial class EncoderSelectorInterface : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2009b612((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_2009b612((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

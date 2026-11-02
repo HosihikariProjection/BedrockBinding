@@ -48,7 +48,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public void _NotifyOutgoingMessageBufferEmpty()
     {
-        NativeMethods.TablePtr->C4.hs_method_b8698505((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_b8698505((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::Timestamp' requires --link-carrier or --virtual-dispatch.", false)]
@@ -77,12 +77,12 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public void _OnMessageReady()
     {
-        NativeMethods.TablePtr->C4.hs_method_e4a0bb83((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_e4a0bb83((void*)__hosihikari_shim_handle);
     }
 
     public void _OnTotalBufferedAmountLow()
     {
-        NativeMethods.TablePtr->C4.hs_method_3708f771((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_3708f771((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
@@ -111,7 +111,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public static DcSctpSocketCallbacks Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b0eb2ec7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_b0eb2ec7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -122,12 +122,12 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public uint GetRandomInt(uint low, uint high)
     {
-        return NativeMethods.TablePtr->C4.hs_method_fa685527((void*)__hosihikari_shim_handle, low, high);
+        return NativeMethods.TablePtr->C5.hs_method_fa685527((void*)__hosihikari_shim_handle, low, high);
     }
 
     public void NotifyOutgoingMessageBufferEmpty()
     {
-        NativeMethods.TablePtr->C4.hs_method_3391adfa((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_3391adfa((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::Timestamp' requires --link-carrier or --virtual-dispatch.", false)]
@@ -149,7 +149,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C4.hs_method_ca9d5ed2((void*)__hosihikari_shim_handle, error, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C5.hs_method_ca9d5ed2((void*)__hosihikari_shim_handle, error, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -159,17 +159,17 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public void OnClosed()
     {
-        NativeMethods.TablePtr->C4.hs_method_bfb1ba59((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_bfb1ba59((void*)__hosihikari_shim_handle);
     }
 
     public void OnConnected()
     {
-        NativeMethods.TablePtr->C4.hs_method_59be00a7((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_59be00a7((void*)__hosihikari_shim_handle);
     }
 
     public void OnConnectionRestarted()
     {
-        NativeMethods.TablePtr->C4.hs_method_12f7b320((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_12f7b320((void*)__hosihikari_shim_handle);
     }
 
     public void OnError(int error, string message)
@@ -187,7 +187,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C4.hs_method_9540f418((void*)__hosihikari_shim_handle, error, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C5.hs_method_9540f418((void*)__hosihikari_shim_handle, error, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -213,7 +213,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public void OnMessageReady()
     {
-        NativeMethods.TablePtr->C4.hs_method_d6c2f770((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_d6c2f770((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'dcsctp::DcSctpMessage' is not a known bindable declaration.", false)]
@@ -230,7 +230,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public void OnTotalBufferedAmountLow()
     {
-        NativeMethods.TablePtr->C4.hs_method_c9dbd9fc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_c9dbd9fc((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
@@ -252,7 +252,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_98c410f9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_98c410f9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

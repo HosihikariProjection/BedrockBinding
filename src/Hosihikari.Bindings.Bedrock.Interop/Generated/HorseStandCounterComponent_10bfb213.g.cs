@@ -40,8 +40,8 @@ public sealed unsafe partial class HorseStandCounterComponent : global::System.I
 
     public int mCounter
     {
-        get => NativeMethods.TablePtr->C1.hs_get_8bf8f669((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8bf8f669((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_8bf8f669((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_8bf8f669((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class HorseStandCounterComponent : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_10bfb213((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_10bfb213((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

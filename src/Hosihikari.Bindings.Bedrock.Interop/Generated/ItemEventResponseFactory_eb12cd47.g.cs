@@ -41,17 +41,17 @@ public sealed unsafe partial class ItemEventResponseFactory : global::System.IDi
     // The native field type is not projected; this is the address of the field storage.
     public nint mSchema_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3e857cf9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3e857cf9((void*)__hosihikari_shim_handle);
     }
 
     public void _initSchema()
     {
-        NativeMethods.TablePtr->C1.hs_method_d61e700e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_d61e700e((void*)__hosihikari_shim_handle);
     }
 
     public void _initializeFactory(global::Hosihikari.Bindings.Bedrock.Interop.PackLoadInfo packLoadInfo)
     {
-        NativeMethods.TablePtr->C1.hs_method_44bac3ee((void*)__hosihikari_shim_handle, (void*)packLoadInfo.Handle);
+        NativeMethods.TablePtr->C2.hs_method_44bac3ee((void*)__hosihikari_shim_handle, (void*)packLoadInfo.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -64,7 +64,7 @@ public sealed unsafe partial class ItemEventResponseFactory : global::System.IDi
 
     public static ItemEventResponseFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemEventResponseFactory arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c988458c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_c988458c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,12 +75,12 @@ public sealed unsafe partial class ItemEventResponseFactory : global::System.IDi
 
     public void initSchema()
     {
-        NativeMethods.TablePtr->C1.hs_method_64a5c4d9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_64a5c4d9((void*)__hosihikari_shim_handle);
     }
 
     public void initializeFactory(global::Hosihikari.Bindings.Bedrock.Interop.PackLoadInfo packLoadInfo)
     {
-        NativeMethods.TablePtr->C1.hs_method_4b01f5b3((void*)__hosihikari_shim_handle, (void*)packLoadInfo.Handle);
+        NativeMethods.TablePtr->C2.hs_method_4b01f5b3((void*)__hosihikari_shim_handle, (void*)packLoadInfo.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'LegacyEventItemComponentData' is not supported.", false)]
@@ -94,7 +94,7 @@ public sealed unsafe partial class ItemEventResponseFactory : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_eb12cd47((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_eb12cd47((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerStopLoadingEvent : global::System.IDisp
 
     public static PlayerStopLoadingEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerStopLoadingEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9731c58c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9731c58c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class PlayerStopLoadingEvent : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3175ca20((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3175ca20((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class PlayerStopLoadingEvent : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5566458b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5566458b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

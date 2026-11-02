@@ -40,18 +40,18 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_abcf5638((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_abcf5638((void*)__hosihikari_shim_handle);
     }
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_8ee457b3();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_8ee457b3();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static PlanterItemComponent Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b2a026e1();
+        var handle = NativeMethods.TablePtr->C4.hs_create_b2a026e1();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,7 +62,7 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
 
     public static PlanterItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0edaecec((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_0edaecec((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,19 +73,19 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_05955ffd((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_05955ffd((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6476613f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6476613f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUseOn_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e00706b3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e00706b3((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -94,7 +94,7 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent((nint)NativeMethods.TablePtr->C3.hs_method_0dc6e015((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.PlanterItemComponent((nint)NativeMethods.TablePtr->C4.hs_method_0dc6e015((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class PlanterItemComponent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9c30baea((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9c30baea((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

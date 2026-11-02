@@ -40,17 +40,17 @@ public sealed unsafe partial class RuleSet : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet arg0)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_adbc9672((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_adbc9672((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_d1fabba9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_d1fabba9((void*)__hosihikari_shim_handle);
     }
 
     public static RuleSet Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2813b75e();
+        var handle = NativeMethods.TablePtr->C5.hs_create_2813b75e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class RuleSet : global::System.IDisposable
 
     public static RuleSet Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_12b23705((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_12b23705((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,45 +73,45 @@ public sealed unsafe partial class RuleSet : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockEntityModifier_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0a12cc19((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0a12cc19((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInputPredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b111c23e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b111c23e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLocPredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bf6560f3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_bf6560f3((void*)__hosihikari_shim_handle);
     }
 
     public nint mOutputState
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9dd80d45((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_9dd80d45((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosPredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bdc2c447((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_bdc2c447((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)NativeMethods.TablePtr->C4.hs_method_b5a0e3cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)NativeMethods.TablePtr->C5.hs_method_b5a0e3cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet withModifier(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.Modifier modifier)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)NativeMethods.TablePtr->C4.hs_method_934de7e5((void*)__hosihikari_shim_handle, (void*)modifier.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)NativeMethods.TablePtr->C5.hs_method_934de7e5((void*)__hosihikari_shim_handle, (void*)modifier.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet withPos(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.PosRules.Test pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)NativeMethods.TablePtr->C4.hs_method_43aedfa4((void*)__hosihikari_shim_handle, (void*)pos.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.RuleSet((nint)NativeMethods.TablePtr->C5.hs_method_43aedfa4((void*)__hosihikari_shim_handle, (void*)pos.Handle));
     }
 
 
@@ -121,7 +121,7 @@ public sealed unsafe partial class RuleSet : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e1cebaa1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_e1cebaa1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

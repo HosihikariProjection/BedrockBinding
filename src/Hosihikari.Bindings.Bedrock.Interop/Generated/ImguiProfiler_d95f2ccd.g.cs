@@ -41,12 +41,12 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_fcfaa41f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fcfaa41f((void*)__hosihikari_shim_handle);
     }
 
     public nint _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_d9b49882((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_d9b49882((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -55,7 +55,7 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
 
     public static ImguiProfiler Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8462f88b();
+        var handle = NativeMethods.TablePtr->C2.hs_create_8462f88b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
 
     public static ImguiProfiler Create(global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_efdd3588((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_efdd3588((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -107,7 +107,7 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.TimeAccumulator((nint)NativeMethods.TablePtr->C1.hs_method_af1f27e8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, isClientSide));
+                return new global::Hosihikari.Bindings.Bedrock.Interop.TimeAccumulator((nint)NativeMethods.TablePtr->C2.hs_method_af1f27e8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, isClientSide));
             }
         }
     }
@@ -115,33 +115,33 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecordGroupMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_aa03a649((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_aa03a649((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecordGroups_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a6b481f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a6b481f5((void*)__hosihikari_shim_handle);
     }
 
     public static nint sPendingRecords()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_fc96cd05();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_fc96cd05();
     }
 
     public static nint sProduceRecords()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_67687011();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_67687011();
     }
 
     public static nint sRecordMutex()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_ffb61cab();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_ffb61cab();
     }
 
     public void update()
     {
-        NativeMethods.TablePtr->C1.hs_method_d8d915ea((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_d8d915ea((void*)__hosihikari_shim_handle);
     }
 
 
@@ -151,7 +151,7 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d95f2ccd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d95f2ccd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

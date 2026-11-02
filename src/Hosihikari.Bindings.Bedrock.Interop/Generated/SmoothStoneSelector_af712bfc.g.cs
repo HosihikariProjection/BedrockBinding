@@ -40,12 +40,12 @@ public sealed unsafe partial class SmoothStoneSelector : global::System.IDisposa
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block _next(global::Hosihikari.Bindings.Bedrock.Interop.Random random, int arg1, int arg2, int arg3, bool isEdge)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_b593efe5((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, isEdge), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_b593efe5((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, isEdge), false);
     }
 
     public static SmoothStoneSelector Create(global::Hosihikari.Bindings.Bedrock.Interop.SmoothStoneSelector arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_cb8437ac((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_cb8437ac((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,12 +57,12 @@ public sealed unsafe partial class SmoothStoneSelector : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mLocalRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4eaa1dbd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4eaa1dbd((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block next(global::Hosihikari.Bindings.Bedrock.Interop.Random random, int arg1, int arg2, int arg3, bool isEdge)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C3.hs_method_ac1fec97((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, isEdge), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_ac1fec97((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, isEdge), false);
     }
 
 
@@ -72,7 +72,7 @@ public sealed unsafe partial class SmoothStoneSelector : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_af712bfc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_af712bfc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

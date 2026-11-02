@@ -40,7 +40,7 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
 
     public static CommandParseTableEntry Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_545d1a2c();
+        var handle = NativeMethods.TablePtr->C2.hs_create_545d1a2c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
 
     public static CommandParseTableEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_7b01e024((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_7b01e024((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk92e4f2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_575d46e1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_575d46e1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf81146_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4cc63d8d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4cc63d8d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry((nint)NativeMethods.TablePtr->C1.hs_method_fbc31d72((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry((nint)NativeMethods.TablePtr->C2.hs_method_fbc31d72((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class CommandParseTableEntry : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_715a30e0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_715a30e0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class WindOffsetter : global::System.IDisposable
 
     public static WindOffsetter Create(global::Hosihikari.Bindings.Bedrock.Interop.SpeleothemUtils.WindOffsetter arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3664c40a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_3664c40a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class WindOffsetter : global::System.IDisposable
 
     public int originY
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f2b9c9ce((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_f2b9c9ce((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f2b9c9ce((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f2b9c9ce((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint windSpeed_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_04ffb0d3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_04ffb0d3((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class WindOffsetter : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_fe65255f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_fe65255f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

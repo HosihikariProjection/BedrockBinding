@@ -51,8 +51,8 @@ public sealed unsafe partial class CommandItem : global::System.IDisposable
 
     public ulong mVersionId
     {
-        get => NativeMethods.TablePtr->C0.hs_get_8a9ad8c0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_8a9ad8c0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_8a9ad8c0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_8a9ad8c0((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -61,7 +61,7 @@ public sealed unsafe partial class CommandItem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_524a0289((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_524a0289((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

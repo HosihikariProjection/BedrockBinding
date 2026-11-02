@@ -40,12 +40,12 @@ public sealed unsafe partial class AudioDeviceModule : global::System.IDisposabl
 
     public int ActiveAudioLayer(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_dbcb5fb1((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_dbcb5fb1((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public static AudioDeviceModule Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioDeviceModule arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_663f5cb2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_663f5cb2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,37 +56,37 @@ public sealed unsafe partial class AudioDeviceModule : global::System.IDisposabl
 
     public bool BuiltInAECIsAvailable()
     {
-        return NativeMethods.TablePtr->C4.hs_method_4ceb6887((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_4ceb6887((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool BuiltInAGCIsAvailable()
     {
-        return NativeMethods.TablePtr->C4.hs_method_de72b100((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_de72b100((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool BuiltInNSIsAvailable()
     {
-        return NativeMethods.TablePtr->C4.hs_method_1715366b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_1715366b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int EnableBuiltInAEC(bool arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_119121a4((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_119121a4((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int EnableBuiltInAGC(bool arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6f82e1a2((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_6f82e1a2((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int EnableBuiltInNS(bool arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_1c15a8d8((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_1c15a8d8((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int GetPlayoutUnderrunCount()
     {
-        return NativeMethods.TablePtr->C4.hs_method_144e2b48((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_144e2b48((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.", false)]
@@ -95,257 +95,257 @@ public sealed unsafe partial class AudioDeviceModule : global::System.IDisposabl
 
     public int Init()
     {
-        return NativeMethods.TablePtr->C4.hs_method_6e49c178((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_6e49c178((void*)__hosihikari_shim_handle);
     }
 
     public int InitMicrophone()
     {
-        return NativeMethods.TablePtr->C4.hs_method_5b30ea8d((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_5b30ea8d((void*)__hosihikari_shim_handle);
     }
 
     public int InitPlayout()
     {
-        return NativeMethods.TablePtr->C4.hs_method_e49ffa63((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_e49ffa63((void*)__hosihikari_shim_handle);
     }
 
     public int InitRecording()
     {
-        return NativeMethods.TablePtr->C4.hs_method_1da14085((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_1da14085((void*)__hosihikari_shim_handle);
     }
 
     public int InitSpeaker()
     {
-        return NativeMethods.TablePtr->C4.hs_method_71d4a9c3((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_71d4a9c3((void*)__hosihikari_shim_handle);
     }
 
     public bool Initialized()
     {
-        return NativeMethods.TablePtr->C4.hs_method_56244710((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_56244710((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int MaxMicrophoneVolume(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_7df03b60((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_7df03b60((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int MaxSpeakerVolume(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_f553a519((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_f553a519((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public bool MicrophoneIsInitialized()
     {
-        return NativeMethods.TablePtr->C4.hs_method_dfab397e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_dfab397e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int MicrophoneMute(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_47c2a63a((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_47c2a63a((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int MicrophoneMuteIsAvailable(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ad4022b7((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_ad4022b7((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int MicrophoneVolume(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_8dccddfe((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_8dccddfe((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int MicrophoneVolumeIsAvailable(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_889c1272((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_889c1272((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int MinMicrophoneVolume(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_f552ee4d((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_f552ee4d((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int MinSpeakerVolume(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_3a39959f((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_3a39959f((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public bool Playing()
     {
-        return NativeMethods.TablePtr->C4.hs_method_b4ee0451((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_b4ee0451((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int PlayoutDelay(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_0f5dffd2((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_0f5dffd2((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int PlayoutDeviceName(ushort arg0, nint arg1, nint arg2)
     {
-        return NativeMethods.TablePtr->C4.hs_method_9d583482((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)arg2);
+        return NativeMethods.TablePtr->C5.hs_method_9d583482((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)arg2);
     }
 
     public short PlayoutDevices()
     {
-        return NativeMethods.TablePtr->C4.hs_method_b7f9f1f6((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_b7f9f1f6((void*)__hosihikari_shim_handle);
     }
 
     public int PlayoutIsAvailable(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ad6b2def((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_ad6b2def((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public bool PlayoutIsInitialized()
     {
-        return NativeMethods.TablePtr->C4.hs_method_0aa5ae9c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_0aa5ae9c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool Recording()
     {
-        return NativeMethods.TablePtr->C4.hs_method_a3101e00((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_a3101e00((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int RecordingDeviceName(ushort arg0, nint arg1, nint arg2)
     {
-        return NativeMethods.TablePtr->C4.hs_method_9781794b((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)arg2);
+        return NativeMethods.TablePtr->C5.hs_method_9781794b((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)arg2);
     }
 
     public short RecordingDevices()
     {
-        return NativeMethods.TablePtr->C4.hs_method_53beeb4f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_53beeb4f((void*)__hosihikari_shim_handle);
     }
 
     public int RecordingIsAvailable(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_8f5bf941((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_8f5bf941((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public bool RecordingIsInitialized()
     {
-        return NativeMethods.TablePtr->C4.hs_method_2c0db243((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_2c0db243((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int RegisterAudioCallback(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_1775a12d((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_1775a12d((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int SetMicrophoneMute(bool arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_548cb58e((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_548cb58e((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetMicrophoneVolume(uint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_feea97df((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_feea97df((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetPlayoutDevice(ushort arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ce3d1d3a((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_ce3d1d3a((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetPlayoutDevice(int arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_2f908212((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_2f908212((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetRecordingDevice(ushort arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_5c6a707f((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_5c6a707f((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetRecordingDevice(int arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6656e3f0((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_6656e3f0((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetSpeakerMute(bool arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_1593d8c3((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_1593d8c3((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetSpeakerVolume(uint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_c75987a9((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_c75987a9((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetStereoPlayout(bool arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6a8c9daf((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_6a8c9daf((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int SetStereoRecording(bool arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_5674654c((void*)__hosihikari_shim_handle, arg0);
+        return NativeMethods.TablePtr->C5.hs_method_5674654c((void*)__hosihikari_shim_handle, arg0);
     }
 
     public bool SpeakerIsInitialized()
     {
-        return NativeMethods.TablePtr->C4.hs_method_82ac861d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_82ac861d((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int SpeakerMute(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_efc04110((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_efc04110((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int SpeakerMuteIsAvailable(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_e5c6c7cd((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_e5c6c7cd((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int SpeakerVolume(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ff44c3fe((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_ff44c3fe((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int SpeakerVolumeIsAvailable(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_2ab5279e((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_2ab5279e((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int StartPlayout()
     {
-        return NativeMethods.TablePtr->C4.hs_method_64663a49((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_64663a49((void*)__hosihikari_shim_handle);
     }
 
     public int StartRecording()
     {
-        return NativeMethods.TablePtr->C4.hs_method_b2dd95ec((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_b2dd95ec((void*)__hosihikari_shim_handle);
     }
 
     public int StereoPlayout(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_abb77ebc((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_abb77ebc((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int StereoPlayoutIsAvailable(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_9fa90c73((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_9fa90c73((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int StereoRecording(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_bf0cdfb5((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_bf0cdfb5((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int StereoRecordingIsAvailable(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_fa286cf1((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C5.hs_method_fa286cf1((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public int StopPlayout()
     {
-        return NativeMethods.TablePtr->C4.hs_method_a2ca57df((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_a2ca57df((void*)__hosihikari_shim_handle);
     }
 
     public int StopRecording()
     {
-        return NativeMethods.TablePtr->C4.hs_method_5228c366((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_5228c366((void*)__hosihikari_shim_handle);
     }
 
     public int Terminate()
     {
-        return NativeMethods.TablePtr->C4.hs_method_d6a12970((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_d6a12970((void*)__hosihikari_shim_handle);
     }
 
 
@@ -355,7 +355,7 @@ public sealed unsafe partial class AudioDeviceModule : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b442c3db((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_b442c3db((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

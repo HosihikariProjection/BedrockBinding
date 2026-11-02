@@ -44,7 +44,7 @@ public sealed unsafe partial class InsideHoneyBlockSystem : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f3b6d073((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f3b6d073((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

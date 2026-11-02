@@ -40,7 +40,7 @@ public sealed unsafe partial class AchievementEventing : global::System.IDisposa
 
     public static AchievementEventing Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e4195ba3();
+        var handle = NativeMethods.TablePtr->C4.hs_create_e4195ba3();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class AchievementEventing : global::System.IDisposa
 
     public static AchievementEventing Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventing arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6bc009e8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_6bc009e8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,28 +62,28 @@ public sealed unsafe partial class AchievementEventing : global::System.IDisposa
 
     public void AwardAchievement(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte achievementId)
     {
-        NativeMethods.TablePtr->C3.hs_method_74452d78((void*)__hosihikari_shim_handle, (void*)player.Handle, achievementId);
+        NativeMethods.TablePtr->C4.hs_method_74452d78((void*)__hosihikari_shim_handle, (void*)player.Handle, achievementId);
     }
 
     public void MobEffectChanged(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance effectInstance, int change)
     {
-        NativeMethods.TablePtr->C3.hs_method_262bcbc8((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)effectInstance.Handle, change);
+        NativeMethods.TablePtr->C4.hs_method_262bcbc8((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)effectInstance.Handle, change);
     }
 
     public void PlayerTeleported(global::Hosihikari.Bindings.Bedrock.Interop.Player player, float metersTravelled, int cause, int sourceType)
     {
-        NativeMethods.TablePtr->C3.hs_method_7e8e0f43((void*)__hosihikari_shim_handle, (void*)player.Handle, metersTravelled, cause, sourceType);
+        NativeMethods.TablePtr->C4.hs_method_7e8e0f43((void*)__hosihikari_shim_handle, (void*)player.Handle, metersTravelled, cause, sourceType);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk266bfd_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae8630e7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae8630e7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventing operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventing arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventing((nint)NativeMethods.TablePtr->C3.hs_method_349777e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventing((nint)NativeMethods.TablePtr->C4.hs_method_349777e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -92,7 +92,7 @@ public sealed unsafe partial class AchievementEventing : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_5959473c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_5959473c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

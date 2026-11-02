@@ -521,11 +521,10 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_f2dd39d4((void*)__hosihikari_shim_handle, (void*)@base.Handle, (void*)level.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mAlongX
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C0.hs_get_1328d369((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_1328d369((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mAlwayCheckObstructionComponent
@@ -546,18 +545,16 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_bed35384((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mConverted
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C0.hs_get_54b54353((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_54b54353((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mDeferredPairLoad
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C0.hs_get_73957862((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_73957862((void*)__hosihikari_shim_handle, value);
     }
 
     public int mDeferredPairX
@@ -626,18 +623,16 @@ public sealed unsafe partial class ChestBlockActor : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_596aa7de((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mPairLead
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C0.hs_get_49ea3e4d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_49ea3e4d((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mPairingChanged
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C0.hs_get_ec4ce11e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_ec4ce11e((void*)__hosihikari_shim_handle, value);
     }
 
     public float mSpeed

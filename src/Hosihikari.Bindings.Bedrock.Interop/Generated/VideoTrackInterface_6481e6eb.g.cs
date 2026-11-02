@@ -40,47 +40,47 @@ public sealed unsafe partial class VideoTrackInterface : global::System.IDisposa
 
     public void _AddOrUpdateSink(nint a1, nint a2)
     {
-        NativeMethods.TablePtr->C4.hs_method_f3094448((void*)__hosihikari_shim_handle, (void*)a1, (void*)a2);
+        NativeMethods.TablePtr->C5.hs_method_f3094448((void*)__hosihikari_shim_handle, (void*)a1, (void*)a2);
     }
 
     public void _RemoveSink(nint a1)
     {
-        NativeMethods.TablePtr->C4.hs_method_88257ec9((void*)__hosihikari_shim_handle, (void*)a1);
+        NativeMethods.TablePtr->C5.hs_method_88257ec9((void*)__hosihikari_shim_handle, (void*)a1);
     }
 
     public int _content_hint()
     {
-        return NativeMethods.TablePtr->C4.hs_method_c145002c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_c145002c((void*)__hosihikari_shim_handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_33335d23((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_33335d23((void*)__hosihikari_shim_handle);
     }
 
     public void _set_content_hint(int a1)
     {
-        NativeMethods.TablePtr->C4.hs_method_1abf763b((void*)__hosihikari_shim_handle, a1);
+        NativeMethods.TablePtr->C5.hs_method_1abf763b((void*)__hosihikari_shim_handle, a1);
     }
 
     public void AddOrUpdateSink(nint a1, nint a2)
     {
-        NativeMethods.TablePtr->C4.hs_method_8301a8f5((void*)__hosihikari_shim_handle, (void*)a1, (void*)a2);
+        NativeMethods.TablePtr->C5.hs_method_8301a8f5((void*)__hosihikari_shim_handle, (void*)a1, (void*)a2);
     }
 
     public nint GetSource()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_621485da((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_621485da((void*)__hosihikari_shim_handle);
     }
 
     public void RemoveSink(nint a1)
     {
-        NativeMethods.TablePtr->C4.hs_method_724fc27f((void*)__hosihikari_shim_handle, (void*)a1);
+        NativeMethods.TablePtr->C5.hs_method_724fc27f((void*)__hosihikari_shim_handle, (void*)a1);
     }
 
     public static VideoTrackInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoTrackInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b8423bb3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_b8423bb3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -91,12 +91,12 @@ public sealed unsafe partial class VideoTrackInterface : global::System.IDisposa
 
     public int content_hint()
     {
-        return NativeMethods.TablePtr->C4.hs_method_859fc0d5((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_859fc0d5((void*)__hosihikari_shim_handle);
     }
 
     public void set_content_hint(int a1)
     {
-        NativeMethods.TablePtr->C4.hs_method_b26ba7f4((void*)__hosihikari_shim_handle, a1);
+        NativeMethods.TablePtr->C5.hs_method_b26ba7f4((void*)__hosihikari_shim_handle, a1);
     }
 
 
@@ -106,7 +106,7 @@ public sealed unsafe partial class VideoTrackInterface : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6481e6eb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6481e6eb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

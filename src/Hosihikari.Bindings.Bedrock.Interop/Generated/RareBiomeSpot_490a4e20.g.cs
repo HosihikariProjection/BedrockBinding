@@ -40,18 +40,18 @@ public sealed unsafe partial class RareBiomeSpot : global::System.IDisposable
 
     public uint mChance
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9e237d97((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_9e237d97((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9e237d97((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_9e237d97((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mFromBiome
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ef2cc86a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ef2cc86a((void*)__hosihikari_shim_handle);
     }
 
     public nint mToBiome
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9130a0c7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9130a0c7((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -60,7 +60,7 @@ public sealed unsafe partial class RareBiomeSpot : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_490a4e20((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_490a4e20((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

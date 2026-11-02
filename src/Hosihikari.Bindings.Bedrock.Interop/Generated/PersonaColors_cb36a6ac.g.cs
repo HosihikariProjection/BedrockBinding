@@ -40,32 +40,32 @@ public sealed unsafe partial class PersonaColors : global::System.IDisposable
 
     public static nint mHairColors()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_def8152c();
+        return (nint)NativeMethods.TablePtr->C5.hs_method_def8152c();
     }
 
     public static nint mIrisColors()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_68a29835();
+        return (nint)NativeMethods.TablePtr->C5.hs_method_68a29835();
     }
 
     public static nint mMouthColors()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_c6d4c9c5();
+        return (nint)NativeMethods.TablePtr->C5.hs_method_c6d4c9c5();
     }
 
     public static nint mPremiumColors()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3d9237bd();
+        return (nint)NativeMethods.TablePtr->C5.hs_method_3d9237bd();
     }
 
     public static nint mScleraColors()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_45912b3b();
+        return (nint)NativeMethods.TablePtr->C5.hs_method_45912b3b();
     }
 
     public static nint mSkinColors()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d12c0986();
+        return (nint)NativeMethods.TablePtr->C5.hs_method_d12c0986();
     }
 
     public void Dispose()
@@ -74,7 +74,7 @@ public sealed unsafe partial class PersonaColors : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cb36a6ac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_cb36a6ac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

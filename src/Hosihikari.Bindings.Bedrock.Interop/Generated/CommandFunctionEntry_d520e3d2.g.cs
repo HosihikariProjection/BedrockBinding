@@ -40,18 +40,18 @@ public sealed unsafe partial class CommandFunctionEntry : global::System.IDispos
 
     public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.FunctionManager functionManager, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, byte order)
     {
-        NativeMethods.TablePtr->C0.hs_method_7412fc61((void*)__hosihikari_shim_handle, (void*)functionManager.Handle, (void*)origin.Handle, order);
+        NativeMethods.TablePtr->C1.hs_method_7412fc61((void*)__hosihikari_shim_handle, (void*)functionManager.Handle, (void*)origin.Handle, order);
     }
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.FunctionManager functionManager, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, byte order)
     {
-        NativeMethods.TablePtr->C0.hs_method_a141280a((void*)__hosihikari_shim_handle, (void*)functionManager.Handle, (void*)origin.Handle, order);
+        NativeMethods.TablePtr->C1.hs_method_a141280a((void*)__hosihikari_shim_handle, (void*)functionManager.Handle, (void*)origin.Handle, order);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCommand_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_65c53f6a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_65c53f6a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class CommandFunctionEntry : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_d520e3d2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_d520e3d2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

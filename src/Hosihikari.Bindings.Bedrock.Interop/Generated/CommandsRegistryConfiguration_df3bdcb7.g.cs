@@ -41,7 +41,7 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_c2550edd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c2550edd((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -50,7 +50,7 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
 
     public static CommandsRegistryConfiguration Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandsRegistryConfiguration arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_efcbb2a0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_efcbb2a0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +75,7 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
         global::System.Text.Encoding.UTF8.GetBytes(command, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_value = NativeMethods.TablePtr->C0.hs_method_d6c41ab7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            var __hs_value = NativeMethods.TablePtr->C1.hs_method_d6c41ab7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
             return __hs_hasValue ? __hs_value : (byte?)null;
         }
     }
@@ -83,13 +83,13 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mCommandPermissionLevels_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_191565de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_191565de((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultCommandPermissionLevel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_3d5cb674((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3d5cb674((void*)__hosihikari_shim_handle);
     }
 
 
@@ -99,7 +99,7 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_df3bdcb7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_df3bdcb7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

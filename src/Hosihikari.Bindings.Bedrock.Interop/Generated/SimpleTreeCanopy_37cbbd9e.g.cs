@@ -59,7 +59,7 @@ public sealed unsafe partial class SimpleTreeCanopy : global::System.IDisposable
             fixed (nint* __hs_vectorHandleData7 = __hs_vectorHandles7)
             {
                 var __hs_vectorData7 = (void**)__hs_vectorHandleData7;
-                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c53f81f0((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)arg2.Handle, (void*)random.Handle, (void*)arg4.Handle, (void*)arg5.Handle, __hs_vectorData6, (nuint)(arg6?.Length ?? 0), __hs_vectorData7, (nuint)(arg7?.Length ?? 0), &__hs_hasValue);
+                var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c53f81f0((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)arg2.Handle, (void*)random.Handle, (void*)arg4.Handle, (void*)arg5.Handle, __hs_vectorData6, (nuint)(arg6?.Length ?? 0), __hs_vectorData7, (nuint)(arg7?.Length ?? 0), &__hs_hasValue);
                 return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
             }
         }
@@ -67,7 +67,7 @@ public sealed unsafe partial class SimpleTreeCanopy : global::System.IDisposable
 
     public static SimpleTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleTreeCanopy arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_33b09f9f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_33b09f9f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,49 +79,49 @@ public sealed unsafe partial class SimpleTreeCanopy : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mDecoration_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_03ac1968((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_03ac1968((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLeafBlockDescriptor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae3ce778((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae3ce778((void*)__hosihikari_shim_handle);
     }
 
     public int mMaxOffset
     {
-        get => NativeMethods.TablePtr->C3.hs_get_509173df((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_509173df((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_509173df((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_509173df((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMinOffset
     {
-        get => NativeMethods.TablePtr->C3.hs_get_d115fa57((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_d115fa57((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_d115fa57((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_d115fa57((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMinWidth
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f3794b3d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_f3794b3d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f3794b3d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f3794b3d((void*)__hosihikari_shim_handle, value);
     }
 
     public float mRiseInv
     {
-        get => NativeMethods.TablePtr->C3.hs_get_348e9ce8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_348e9ce8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_348e9ce8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_348e9ce8((void*)__hosihikari_shim_handle, value);
     }
 
     public int mRun
     {
-        get => NativeMethods.TablePtr->C3.hs_get_38a5a1ac((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_38a5a1ac((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_38a5a1ac((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_38a5a1ac((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVariationChancePerLayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_33dd424e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_33dd424e((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? placeCanopy(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy_Nested.BranchSize arg2, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams arg4, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams arg5, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos[] arg6, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy_Nested.BranchSize[] arg7)
@@ -145,7 +145,7 @@ public sealed unsafe partial class SimpleTreeCanopy : global::System.IDisposable
             fixed (nint* __hs_vectorHandleData7 = __hs_vectorHandles7)
             {
                 var __hs_vectorData7 = (void**)__hs_vectorHandleData7;
-                var __hs_handle = NativeMethods.TablePtr->C3.hs_method_545232c6((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)arg2.Handle, (void*)random.Handle, (void*)arg4.Handle, (void*)arg5.Handle, __hs_vectorData6, (nuint)(arg6?.Length ?? 0), __hs_vectorData7, (nuint)(arg7?.Length ?? 0), &__hs_hasValue);
+                var __hs_handle = NativeMethods.TablePtr->C4.hs_method_545232c6((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)arg2.Handle, (void*)random.Handle, (void*)arg4.Handle, (void*)arg5.Handle, __hs_vectorData6, (nuint)(arg6?.Length ?? 0), __hs_vectorData7, (nuint)(arg7?.Length ?? 0), &__hs_hasValue);
                 return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
             }
         }
@@ -158,7 +158,7 @@ public sealed unsafe partial class SimpleTreeCanopy : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_37cbbd9e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_37cbbd9e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

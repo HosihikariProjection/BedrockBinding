@@ -40,7 +40,7 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
 
     public static GameContext Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_55372beb();
+        var handle = NativeMethods.TablePtr->C1.hs_create_55372beb();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
 
     public static GameContext Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f334a0ca((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f334a0ca((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,7 +62,7 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value blocksToJson()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_138f0429((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_138f0429((void*)__hosihikari_shim_handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CodeBuilder::GameContext' has no accessible destructor.", false)]
@@ -97,7 +97,7 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_b5f3ad24((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
+                return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_b5f3ad24((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
             }
         }
     }
@@ -117,7 +117,7 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(filePath, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_6d692cfc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_6d692cfc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
@@ -136,53 +136,53 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(tutorialPath, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_80bdfe9c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_80bdfe9c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value itemsToJson()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_f50ad55b((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_f50ad55b((void*)__hosihikari_shim_handle));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk55791e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_4707f275((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_4707f275((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8ef71e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_21753912((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_21753912((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka2ed89_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_0a260855((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0a260855((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkec8ea4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_147276be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_147276be((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfd6f86_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_70af28d1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_70af28d1((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value mobsToJson()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C0.hs_method_b10786dc((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_b10786dc((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext((nint)NativeMethods.TablePtr->C0.hs_method_d6aea03d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.GameContext((nint)NativeMethods.TablePtr->C1.hs_method_d6aea03d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -191,7 +191,7 @@ public sealed unsafe partial class GameContext : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_72721213((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_72721213((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -44,7 +44,7 @@ public sealed unsafe partial class IFoodItemComponent : global::System.IDisposab
 
     public static IFoodItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.IFoodItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2ed83279((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2ed83279((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,33 +63,33 @@ public sealed unsafe partial class IFoodItemComponent : global::System.IDisposab
 
     public bool canAlwaysEat()
     {
-        return NativeMethods.TablePtr->C1.hs_method_15f320d8((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_15f320d8((void*)__hosihikari_shim_handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? eatItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7a525207((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)level.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7a525207((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)level.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
     }
 
     public int getNutrition()
     {
-        return NativeMethods.TablePtr->C1.hs_method_e398de8d((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_e398de8d((void*)__hosihikari_shim_handle);
     }
 
     public float getSaturationModifier()
     {
-        return NativeMethods.TablePtr->C1.hs_method_98a68a6a((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_98a68a6a((void*)__hosihikari_shim_handle);
     }
 
     public void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        NativeMethods.TablePtr->C1.hs_method_c34ab6ab((void*)__hosihikari_shim_handle, (void*)result, (void*)instance.Handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c34ab6ab((void*)__hosihikari_shim_handle, (void*)result, (void*)instance.Handle, (void*)player.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Item? useTimeDepleted(nint itemUseMethod, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack initialInstance, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2df1570a((void*)__hosihikari_shim_handle, (void*)itemUseMethod, (void*)initialInstance.Handle, (void*)instance.Handle, (void*)player.Handle, (void*)level.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2df1570a((void*)__hosihikari_shim_handle, (void*)itemUseMethod, (void*)initialInstance.Handle, (void*)instance.Handle, (void*)player.Handle, (void*)level.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Item((nint)__hs_handle, false) : null;
     }
 
@@ -100,7 +100,7 @@ public sealed unsafe partial class IFoodItemComponent : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_b6237cfa((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b6237cfa((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

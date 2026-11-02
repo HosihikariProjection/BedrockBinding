@@ -41,25 +41,25 @@ public sealed unsafe partial class ItemCerealSchemaUpgrade : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk40e0d7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_512204ce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_512204ce((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb0e3c9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_461d9a53((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_461d9a53((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc96bdc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4bf85487((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4bf85487((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd8210b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e8f3dba6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e8f3dba6((void*)__hosihikari_shim_handle);
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion targetVersion, string mSchemaKey, string mJsonMemberName)
@@ -90,7 +90,7 @@ public sealed unsafe partial class ItemCerealSchemaUpgrade : global::System.IDis
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                return (nint)NativeMethods.TablePtr->C1.hs_method_481b69b3((void*)__hosihikari_shim_handle, (void*)targetVersion.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                return (nint)NativeMethods.TablePtr->C2.hs_method_481b69b3((void*)__hosihikari_shim_handle, (void*)targetVersion.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -101,7 +101,7 @@ public sealed unsafe partial class ItemCerealSchemaUpgrade : global::System.IDis
 
     public static ItemCerealSchemaUpgrade Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_9f2cb679();
+        var handle = NativeMethods.TablePtr->C2.hs_create_9f2cb679();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -138,7 +138,7 @@ public sealed unsafe partial class ItemCerealSchemaUpgrade : global::System.IDis
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                var handle = NativeMethods.TablePtr->C1.hs_create_0b5e64f7((void*)targetVersion.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                var handle = NativeMethods.TablePtr->C2.hs_create_0b5e64f7((void*)targetVersion.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 if (handle == null)
                 {
                     throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -151,7 +151,7 @@ public sealed unsafe partial class ItemCerealSchemaUpgrade : global::System.IDis
 
     public static ItemCerealSchemaUpgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemCerealSchemaUpgrade arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ec5718d2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ec5718d2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -167,7 +167,7 @@ public sealed unsafe partial class ItemCerealSchemaUpgrade : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_fb00137e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_fb00137e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

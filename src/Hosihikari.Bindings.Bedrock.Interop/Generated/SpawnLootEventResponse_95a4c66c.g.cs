@@ -40,29 +40,29 @@ public sealed unsafe partial class SpawnLootEventResponse : global::System.IDisp
 
     public void _buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root, global::Hosihikari.Bindings.Bedrock.Interop.Factory_EventResponse_ factory)
     {
-        NativeMethods.TablePtr->C3.hs_method_b91ac4fd((void*)__hosihikari_shim_handle, root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
+        NativeMethods.TablePtr->C4.hs_method_b91ac4fd((void*)__hosihikari_shim_handle, root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
     }
 
     public void _executeAction(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
-        NativeMethods.TablePtr->C3.hs_method_0ae55836((void*)__hosihikari_shim_handle, (void*)@params.Handle);
+        NativeMethods.TablePtr->C4.hs_method_0ae55836((void*)__hosihikari_shim_handle, (void*)@params.Handle);
     }
 
     public string _getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_057cdae6((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_057cdae6((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static string NameID()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_82963bbc();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_82963bbc();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static SpawnLootEventResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnLootEventResponse arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2b3c4087((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_2b3c4087((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,24 +73,24 @@ public sealed unsafe partial class SpawnLootEventResponse : global::System.IDisp
 
     public void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root, global::Hosihikari.Bindings.Bedrock.Interop.Factory_EventResponse_ factory)
     {
-        NativeMethods.TablePtr->C3.hs_method_061dc8a8((void*)__hosihikari_shim_handle, root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
+        NativeMethods.TablePtr->C4.hs_method_061dc8a8((void*)__hosihikari_shim_handle, root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
     }
 
     public void executeAction(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
-        NativeMethods.TablePtr->C3.hs_method_8be9f7f4((void*)__hosihikari_shim_handle, (void*)@params.Handle);
+        NativeMethods.TablePtr->C4.hs_method_8be9f7f4((void*)__hosihikari_shim_handle, (void*)@params.Handle);
     }
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_375bf30a((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_375bf30a((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint lootTablePath_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_74e4f571((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_74e4f571((void*)__hosihikari_shim_handle);
     }
 
 
@@ -100,7 +100,7 @@ public sealed unsafe partial class SpawnLootEventResponse : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_95a4c66c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_95a4c66c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

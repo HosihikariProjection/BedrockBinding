@@ -40,17 +40,17 @@ public sealed unsafe partial class DefinitionTrigger : global::System.IDisposabl
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_6379c4ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_6379c4ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_fadb7034((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_fadb7034((void*)__hosihikari_shim_handle);
     }
 
     public static DefinitionTrigger Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_271d89df();
+        var handle = NativeMethods.TablePtr->C4.hs_create_271d89df();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class DefinitionTrigger : global::System.IDisposabl
 
     public static DefinitionTrigger Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_08e7a277((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_08e7a277((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,35 +72,35 @@ public sealed unsafe partial class DefinitionTrigger : global::System.IDisposabl
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_ac4a2612((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_ac4a2612((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCondition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7c1d5232((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7c1d5232((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEvent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_31a13e9b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_31a13e9b((void*)__hosihikari_shim_handle);
     }
 
     public short mTarget
     {
-        get => NativeMethods.TablePtr->C3.hs_get_d3134973((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_d3134973((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_d3134973((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_d3134973((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger((nint)NativeMethods.TablePtr->C3.hs_method_62dc40a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger((nint)NativeMethods.TablePtr->C4.hs_method_62dc40a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger arg0)
     {
-        return NativeMethods.TablePtr->C3.hs_method_bf18df73((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_bf18df73((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
     }
 
 
@@ -110,7 +110,7 @@ public sealed unsafe partial class DefinitionTrigger : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c3cdfe7c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c3cdfe7c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

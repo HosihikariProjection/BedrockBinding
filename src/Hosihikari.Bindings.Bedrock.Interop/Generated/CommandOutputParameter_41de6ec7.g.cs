@@ -40,22 +40,22 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter rhs)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_0b48fb0a((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_0b48fb0a((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
     }
 
     public nint _ctor_6f714c6d(nint entities)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_6f714c6d((void*)__hosihikari_shim_handle, (void*)entities);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_6f714c6d((void*)__hosihikari_shim_handle, (void*)entities);
     }
 
     public nint _ctor_9534e964(nint players)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_9534e964((void*)__hosihikari_shim_handle, (void*)players);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_9534e964((void*)__hosihikari_shim_handle, (void*)players);
     }
 
     public nint _ctor_3343d302(nint text)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_3343d302((void*)__hosihikari_shim_handle, (void*)text);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_3343d302((void*)__hosihikari_shim_handle, (void*)text);
     }
 
     public nint _ctor(string text)
@@ -73,7 +73,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(text, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_c97cbcc6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return (nint)NativeMethods.TablePtr->C1.hs_method_c97cbcc6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorItems0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            return (nint)NativeMethods.TablePtr->C0.hs_method_d6935fa6((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(entities?.Length ?? 0));
+            return (nint)NativeMethods.TablePtr->C1.hs_method_d6935fa6((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(entities?.Length ?? 0));
         }
     }
 
@@ -93,7 +93,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorItems0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            return (nint)NativeMethods.TablePtr->C0.hs_method_a7f03a05((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(players?.Length ?? 0));
+            return (nint)NativeMethods.TablePtr->C1.hs_method_a7f03a05((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(players?.Length ?? 0));
         }
     }
 
@@ -119,18 +119,18 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            return (nint)NativeMethods.TablePtr->C0.hs_method_889dcce1((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(strings?.Length ?? 0));
+            return (nint)NativeMethods.TablePtr->C1.hs_method_889dcce1((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(strings?.Length ?? 0));
         }
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C0.hs_method_f20b47d1((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_f20b47d1((void*)__hosihikari_shim_handle);
     }
 
     public static CommandOutputParameter Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_dd09a74f();
+        var handle = NativeMethods.TablePtr->C1.hs_create_dd09a74f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -141,7 +141,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
 
     public static CommandOutputParameter Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter rhs)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f2d3b159((void*)rhs.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f2d3b159((void*)rhs.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -152,7 +152,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
 
     public static CommandOutputParameter Create_a93bd541(nint entities)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_a93bd541((void*)entities);
+        var handle = NativeMethods.TablePtr->C1.hs_create_a93bd541((void*)entities);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -163,7 +163,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
 
     public static CommandOutputParameter Create_55f42bb7(nint players)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_55f42bb7((void*)players);
+        var handle = NativeMethods.TablePtr->C1.hs_create_55f42bb7((void*)players);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -174,7 +174,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
 
     public static CommandOutputParameter Create_19021bf7(nint text)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_19021bf7((void*)text);
+        var handle = NativeMethods.TablePtr->C1.hs_create_19021bf7((void*)text);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -198,7 +198,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(text, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C0.hs_create_f8975370(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            var handle = NativeMethods.TablePtr->C1.hs_create_f8975370(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -214,7 +214,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorItems0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            var handle = NativeMethods.TablePtr->C0.hs_create_4a7a0c66(__hs_vectorData0, (nuint)(entities?.Length ?? 0));
+            var handle = NativeMethods.TablePtr->C1.hs_create_4a7a0c66(__hs_vectorData0, (nuint)(entities?.Length ?? 0));
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -230,7 +230,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorItems0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            var handle = NativeMethods.TablePtr->C0.hs_create_b37cd82c(__hs_vectorData0, (nuint)(players?.Length ?? 0));
+            var handle = NativeMethods.TablePtr->C1.hs_create_b37cd82c(__hs_vectorData0, (nuint)(players?.Length ?? 0));
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -262,7 +262,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            var handle = NativeMethods.TablePtr->C0.hs_create_411380cd(__hs_vectorData0, (nuint)(strings?.Length ?? 0));
+            var handle = NativeMethods.TablePtr->C1.hs_create_411380cd(__hs_vectorData0, (nuint)(strings?.Length ?? 0));
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -274,25 +274,25 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
 
     public int mCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_d7d65159((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_d7d65159((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_d7d65159((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_d7d65159((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mString_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_c9423501((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c9423501((void*)__hosihikari_shim_handle);
     }
 
     public string operator_const_std__basic_string_char___()
     {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_9fa846ff((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_9fa846ff((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter((nint)NativeMethods.TablePtr->C0.hs_method_416c1ec0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputParameter((nint)NativeMethods.TablePtr->C1.hs_method_416c1ec0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -302,7 +302,7 @@ public sealed unsafe partial class CommandOutputParameter : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_41de6ec7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_41de6ec7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

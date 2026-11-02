@@ -40,7 +40,7 @@ public sealed unsafe partial class Association : global::System.IDisposable
 
     public static Association Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_af196601();
+        var handle = NativeMethods.TablePtr->C5.hs_create_af196601();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Association : global::System.IDisposable
 
     public static Association Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_502197f5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_502197f5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class Association : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7bc739_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1058e1f7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_1058e1f7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke71be6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_004a35ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_004a35ba((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association((nint)NativeMethods.TablePtr->C4.hs_method_90e03d21((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Association((nint)NativeMethods.TablePtr->C5.hs_method_90e03d21((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class Association : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_43d83be4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_43d83be4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

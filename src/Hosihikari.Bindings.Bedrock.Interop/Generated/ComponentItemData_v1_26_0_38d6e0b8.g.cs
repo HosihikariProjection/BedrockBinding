@@ -44,17 +44,17 @@ public sealed unsafe partial class ComponentItemData_v1_26_0 : global::System.ID
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_26_0 arg0)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_21d79a66((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_21d79a66((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C0.hs_method_8f769bd5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_8f769bd5((void*)__hosihikari_shim_handle);
     }
 
     public static ComponentItemData_v1_26_0 Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_c7b62ad4();
+        var handle = NativeMethods.TablePtr->C1.hs_create_c7b62ad4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,7 +69,7 @@ public sealed unsafe partial class ComponentItemData_v1_26_0 : global::System.ID
 
     public static ComponentItemData_v1_26_0 Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_26_0 arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_88c1017d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_88c1017d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -80,30 +80,30 @@ public sealed unsafe partial class ComponentItemData_v1_26_0 : global::System.ID
 
     public static nint VERSION()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_bd42d113();
+        return (nint)NativeMethods.TablePtr->C1.hs_method_bd42d113();
     }
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C0.hs_method_c7d2d00f((void*)ctx.Handle);
+        NativeMethods.TablePtr->C1.hs_method_c7d2d00f((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDeprecatedItemComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_bdd9951c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_bdd9951c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_16480159((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_16480159((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_162d7787((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_162d7787((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -112,7 +112,7 @@ public sealed unsafe partial class ComponentItemData_v1_26_0 : global::System.ID
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_26_0 operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_26_0 arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_26_0((nint)NativeMethods.TablePtr->C0.hs_method_b67a09ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_26_0((nint)NativeMethods.TablePtr->C1.hs_method_b67a09ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -122,7 +122,7 @@ public sealed unsafe partial class ComponentItemData_v1_26_0 : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_38d6e0b8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_38d6e0b8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

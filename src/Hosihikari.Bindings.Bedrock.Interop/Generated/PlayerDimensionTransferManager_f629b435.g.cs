@@ -44,12 +44,12 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_c2c117e2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_c2c117e2((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerDimensionTransferManager Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_25c2f60c();
+        var handle = NativeMethods.TablePtr->C3.hs_create_25c2f60c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +60,7 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
 
     public static PlayerDimensionTransferManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionTransferManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_dd88e61b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_dd88e61b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,70 +75,70 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
 
     public bool _isPlayerSuspended(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_d7ef6816((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_d7ef6816((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public void _onGameplayUserRemoved(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_99915e33((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_99915e33((void*)__hosihikari_shim_handle, (void*)entity.Handle);
     }
 
     public bool _playerChangeDimension(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest)
     {
-        return NativeMethods.TablePtr->C2.hs_method_cb5bb5dd((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_cb5bb5dd((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle) != 0;
     }
 
     public void handleChangeDimensionRequests()
     {
-        NativeMethods.TablePtr->C2.hs_method_d832481e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_d832481e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d7452c2a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d7452c2a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d99d3c99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d99d3c99((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameplayUserManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_de95315a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_de95315a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelCrashDumpManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_87cef43a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_87cef43a((void*)__hosihikari_shim_handle);
     }
 
     public bool mLevelFinishedInitializing
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3b06578b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_3b06578b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3b06578b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_3b06578b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnGameplayUserRemoved_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2006dbec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2006dbec((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerDimensionTransferer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ac8d69a8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ac8d69a8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerLimboActorManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2c816814((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2c816814((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -152,7 +152,7 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f629b435((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f629b435((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

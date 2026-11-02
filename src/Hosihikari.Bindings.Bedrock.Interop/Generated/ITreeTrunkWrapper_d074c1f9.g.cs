@@ -41,7 +41,7 @@ public sealed unsafe partial class ITreeTrunkWrapper : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mPtr_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_af0ccc84((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_af0ccc84((void*)__hosihikari_shim_handle);
     }
 
 
@@ -51,7 +51,7 @@ public sealed unsafe partial class ITreeTrunkWrapper : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d074c1f9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d074c1f9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

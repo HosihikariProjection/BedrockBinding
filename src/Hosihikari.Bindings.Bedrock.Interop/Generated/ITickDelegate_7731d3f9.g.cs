@@ -40,7 +40,7 @@ public sealed unsafe partial class ITickDelegate : global::System.IDisposable
 
     public static ITickDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.ITickDelegate arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_a21858d1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a21858d1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class ITickDelegate : global::System.IDisposable
 
     public void breakBlock(global::Hosihikari.Bindings.Bedrock.Interop.FallingBlockActor fallingBlock)
     {
-        NativeMethods.TablePtr->C1.hs_method_5c9801dc((void*)__hosihikari_shim_handle, (void*)fallingBlock.Handle);
+        NativeMethods.TablePtr->C2.hs_method_5c9801dc((void*)__hosihikari_shim_handle, (void*)fallingBlock.Handle);
     }
 
     public void onLand(global::Hosihikari.Bindings.Bedrock.Interop.FallingBlock block, global::Hosihikari.Bindings.Bedrock.Interop.IBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        NativeMethods.TablePtr->C1.hs_method_ea7926a0((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle);
+        NativeMethods.TablePtr->C2.hs_method_ea7926a0((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class ITickDelegate : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_7731d3f9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7731d3f9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

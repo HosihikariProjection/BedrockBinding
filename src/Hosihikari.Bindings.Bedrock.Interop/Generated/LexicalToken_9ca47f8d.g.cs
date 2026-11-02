@@ -40,7 +40,7 @@ public sealed unsafe partial class LexicalToken : global::System.IDisposable
 
     public static LexicalToken Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_c47b9efd();
+        var handle = NativeMethods.TablePtr->C1.hs_create_c47b9efd();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class LexicalToken : global::System.IDisposable
 
     public static LexicalToken Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_a4030fe1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_a4030fe1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,40 +63,40 @@ public sealed unsafe partial class LexicalToken : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mIdentifierInfo_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_1de102c4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_1de102c4((void*)__hosihikari_shim_handle);
     }
 
     public uint mLength
     {
-        get => NativeMethods.TablePtr->C0.hs_get_b8605edb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_b8605edb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_b8605edb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_b8605edb((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_f4423d20((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f4423d20((void*)__hosihikari_shim_handle);
     }
 
     public nint mText
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_c5b57404((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c5b57404((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_2b3aa62e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2b3aa62e((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandLexer_Nested.Token token)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken((nint)NativeMethods.TablePtr->C0.hs_method_ad28671a((void*)__hosihikari_shim_handle, (void*)token.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken((nint)NativeMethods.TablePtr->C1.hs_method_ad28671a((void*)__hosihikari_shim_handle, (void*)token.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken((nint)NativeMethods.TablePtr->C0.hs_method_8ba66f09((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.LexicalToken((nint)NativeMethods.TablePtr->C1.hs_method_8ba66f09((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -105,7 +105,7 @@ public sealed unsafe partial class LexicalToken : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_9ca47f8d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_9ca47f8d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
 
     public static PermissionsFile Create(global::Hosihikari.Bindings.Bedrock.Interop.PermissionsFile arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_edbe3d55((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_edbe3d55((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,30 +51,30 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
 
     public static string _getPermissionIdForPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_af73ac96((void*)player.Handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_af73ac96((void*)player.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void applyPlayerPermissionsFromDisk(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte opCommandPermissionLevel)
     {
-        NativeMethods.TablePtr->C2.hs_method_baa14a98((void*)__hosihikari_shim_handle, (void*)player.Handle, opCommandPermissionLevel);
+        NativeMethods.TablePtr->C3.hs_method_baa14a98((void*)__hosihikari_shim_handle, (void*)player.Handle, opCommandPermissionLevel);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilePath_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_28207037((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_28207037((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPermissions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4ef33bd6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4ef33bd6((void*)__hosihikari_shim_handle);
     }
 
     public void persistPlayerPermissionsToDisk(global::Hosihikari.Bindings.Bedrock.Interop.Player player, sbyte permission)
     {
-        NativeMethods.TablePtr->C2.hs_method_6b995daa((void*)__hosihikari_shim_handle, (void*)player.Handle, permission);
+        NativeMethods.TablePtr->C3.hs_method_6b995daa((void*)__hosihikari_shim_handle, (void*)player.Handle, permission);
     }
 
     public void persistPlayerPermissionsToDisk(string playerId, sbyte permission)
@@ -92,7 +92,7 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(playerId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_c45c42c4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, permission);
+            NativeMethods.TablePtr->C3.hs_method_c45c42c4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, permission);
         }
     }
 
@@ -102,7 +102,7 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
 
     public int reload()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b87bd9cd((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_b87bd9cd((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.", false)]
@@ -116,7 +116,7 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c6f71462((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c6f71462((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

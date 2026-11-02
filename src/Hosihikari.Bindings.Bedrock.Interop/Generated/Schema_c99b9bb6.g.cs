@@ -40,7 +40,7 @@ public sealed unsafe partial class Schema : global::System.IDisposable
 
     public static Schema Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.Schema arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_84a05671((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_84a05671((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,12 +56,12 @@ public sealed unsafe partial class Schema : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mContext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ce79a818((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ce79a818((void*)__hosihikari_shim_handle);
     }
 
     public nint mSchema
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ccb5ce8f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ccb5ce8f((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'entt::meta_handle' is not a known bindable declaration.", false)]
@@ -75,7 +75,7 @@ public sealed unsafe partial class Schema : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c99b9bb6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_c99b9bb6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

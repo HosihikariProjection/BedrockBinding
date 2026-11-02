@@ -40,7 +40,7 @@ public sealed unsafe partial class InsideBlockNotifierComponent : global::System
 
     public static InsideBlockNotifierComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockNotifierComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2d849832((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2d849832((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class InsideBlockNotifierComponent : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockList_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d5f0264f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d5f0264f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class InsideBlockNotifierComponent : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d0cf825c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d0cf825c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

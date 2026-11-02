@@ -41,30 +41,30 @@ public sealed unsafe partial class SpikeFeature : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlacerID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b18e4812((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b18e4812((void*)__hosihikari_shim_handle);
     }
 
     public nint mTransaction
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2c64d3d6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2c64d3d6((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2c64d3d6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_2c64d3d6((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public bool mCanUseInternalFeature
     {
-        get => NativeMethods.TablePtr->C3.hs_get_20536ca3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_20536ca3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_20536ca3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_20536ca3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInternal
     {
-        get => NativeMethods.TablePtr->C3.hs_get_8224138e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_8224138e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_8224138e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_8224138e((void*)__hosihikari_shim_handle, value);
     }
 
     public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        return NativeMethods.TablePtr->C3.hs_method_e882210d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_e882210d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -73,7 +73,7 @@ public sealed unsafe partial class SpikeFeature : global::System.IDisposable
 
     public static SpikeFeature Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_90aad3ac();
+        var handle = NativeMethods.TablePtr->C4.hs_create_90aad3ac();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,7 +84,7 @@ public sealed unsafe partial class SpikeFeature : global::System.IDisposable
 
     public static SpikeFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.SpikeFeature arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a180ab44((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_a180ab44((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -96,44 +96,44 @@ public sealed unsafe partial class SpikeFeature : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mCrystalBeamTarget_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6945ec4b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6945ec4b((void*)__hosihikari_shim_handle);
     }
 
     public bool mCrystalInvulnerable
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0d3727c1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_0d3727c1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0d3727c1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_0d3727c1((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpike_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9eb96d6d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9eb96d6d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpikeFeature operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpikeFeature arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpikeFeature((nint)NativeMethods.TablePtr->C3.hs_method_ac943483((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpikeFeature((nint)NativeMethods.TablePtr->C4.hs_method_ac943483((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        return NativeMethods.TablePtr->C3.hs_method_6f2144a6((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_6f2144a6((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool clearAirAbove)
     {
-        return NativeMethods.TablePtr->C3.hs_method_af2854d9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, clearAirAbove) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_af2854d9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, clearAirAbove) != 0;
     }
 
     public void postProcessMobsAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        NativeMethods.TablePtr->C3.hs_method_ab4367bd((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle);
+        NativeMethods.TablePtr->C4.hs_method_ab4367bd((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle);
     }
 
     public bool wasClippedDuringDecoration(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C3.hs_method_9ad86379((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_9ad86379((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
     }
 
 
@@ -143,7 +143,7 @@ public sealed unsafe partial class SpikeFeature : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e17b3c33((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e17b3c33((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockMatch : global::System.IDisposable
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_5a3d79bd((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_5a3d79bd((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public bool _test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_53bf6f5b((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_53bf6f5b((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class BlockMatch : global::System.IDisposable
 
     public static BlockMatch Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.BlockMatch arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e449c351((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_e449c351((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,17 +65,17 @@ public sealed unsafe partial class BlockMatch : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_e2e6028d((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_e2e6028d((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public nint mBlock
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_23717466((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_23717466((void*)__hosihikari_shim_handle);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_c7cff64f((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_c7cff64f((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle) != 0;
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class BlockMatch : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bed9711b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_bed9711b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

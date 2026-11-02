@@ -40,17 +40,17 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
 
     public nint _ctor(uint seed, int levels)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_0c2767ae((void*)__hosihikari_shim_handle, seed, levels);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_0c2767ae((void*)__hosihikari_shim_handle, seed, levels);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_b02c5356((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_b02c5356((void*)__hosihikari_shim_handle);
     }
 
     public static PerlinSimplexNoise Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_39619adb();
+        var handle = NativeMethods.TablePtr->C3.hs_create_39619adb();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
 
     public static PerlinSimplexNoise Create(global::Hosihikari.Bindings.Bedrock.Interop.PerlinSimplexNoise arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e635907b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_e635907b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,7 +72,7 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
 
     public static PerlinSimplexNoise Create(uint seed, int levels)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_bbc773f9(seed, levels);
+        var handle = NativeMethods.TablePtr->C3.hs_create_bbc773f9(seed, levels);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -83,25 +83,25 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
 
     public float getValue(float x, float y)
     {
-        return NativeMethods.TablePtr->C2.hs_method_94b180c4((void*)__hosihikari_shim_handle, x, y);
+        return NativeMethods.TablePtr->C3.hs_method_94b180c4((void*)__hosihikari_shim_handle, x, y);
     }
 
     public int mLevels
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a6c3f7fd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_a6c3f7fd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a6c3f7fd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a6c3f7fd((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoiseLevels_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f9aac188((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f9aac188((void*)__hosihikari_shim_handle);
     }
 
     public float mNormalizationFactor
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5f71fc92((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_5f71fc92((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_5f71fc92((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_5f71fc92((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -111,7 +111,7 @@ public sealed unsafe partial class PerlinSimplexNoise : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0b13626a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0b13626a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

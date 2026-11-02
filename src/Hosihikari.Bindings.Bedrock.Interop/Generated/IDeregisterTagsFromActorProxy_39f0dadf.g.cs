@@ -40,7 +40,7 @@ public sealed unsafe partial class IDeregisterTagsFromActorProxy : global::Syste
 
     public static IDeregisterTagsFromActorProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.IDeregisterTagsFromActorProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8735e879((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8735e879((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IDeregisterTagsFromActorProxy : global::Syste
 
     public void deregisterTagsFromActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        NativeMethods.TablePtr->C1.hs_method_3c078e50((void*)__hosihikari_shim_handle, (void*)actor.Handle);
+        NativeMethods.TablePtr->C2.hs_method_3c078e50((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class IDeregisterTagsFromActorProxy : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_39f0dadf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_39f0dadf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

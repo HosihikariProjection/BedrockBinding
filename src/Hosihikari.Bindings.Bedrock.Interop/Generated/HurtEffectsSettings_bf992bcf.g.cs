@@ -40,7 +40,7 @@ public sealed unsafe partial class HurtEffectsSettings : global::System.IDisposa
 
     public static HurtEffectsSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.HurtEffectsSettings arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8ace8b1a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8ace8b1a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,31 +52,31 @@ public sealed unsafe partial class HurtEffectsSettings : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mAimDirection_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a1aeffa6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a1aeffa6((void*)__hosihikari_shim_handle);
     }
 
     public float mExtraKnockbackPower
     {
-        get => NativeMethods.TablePtr->C1.hs_get_0bf7623e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_0bf7623e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_0bf7623e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_0bf7623e((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIgnition
     {
-        get => NativeMethods.TablePtr->C1.hs_get_55fb5728((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_55fb5728((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_55fb5728((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_55fb5728((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mKnockback
     {
-        get => NativeMethods.TablePtr->C1.hs_get_53348516((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_53348516((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_53348516((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_53348516((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mReceiveDamage
     {
-        get => NativeMethods.TablePtr->C1.hs_get_e95fc82f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_e95fc82f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e95fc82f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_e95fc82f((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class HurtEffectsSettings : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_bf992bcf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bf992bcf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

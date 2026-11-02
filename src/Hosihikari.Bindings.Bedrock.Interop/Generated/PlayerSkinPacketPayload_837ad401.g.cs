@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload arg0)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_a4b9aeb6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_a4b9aeb6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid, global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef skin, string newSkinName, string oldSkinName)
@@ -71,19 +71,19 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                return (nint)NativeMethods.TablePtr->C2.hs_method_ead27389((void*)__hosihikari_shim_handle, (void*)uuid.Handle, (void*)skin.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                return (nint)NativeMethods.TablePtr->C3.hs_method_ead27389((void*)__hosihikari_shim_handle, (void*)uuid.Handle, (void*)skin.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
             }
         }
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_df402df9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_df402df9((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerSkinPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_69f01af8();
+        var handle = NativeMethods.TablePtr->C3.hs_create_69f01af8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -94,7 +94,7 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
 
     public static PlayerSkinPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f8c3eb59((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_f8c3eb59((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -131,7 +131,7 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                var handle = NativeMethods.TablePtr->C2.hs_create_152e7e21((void*)uuid.Handle, (void*)skin.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                var handle = NativeMethods.TablePtr->C3.hs_create_152e7e21((void*)uuid.Handle, (void*)skin.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                 if (handle == null)
                 {
                     throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -145,30 +145,30 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mLocalizedNewSkinName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3306ea1c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3306ea1c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLocalizedOldSkinName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8bae8f5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8bae8f5d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSkin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_56b8f9ff((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_56b8f9ff((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUUID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_de05adec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_de05adec((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload((nint)NativeMethods.TablePtr->C2.hs_method_b012fd4d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload((nint)NativeMethods.TablePtr->C3.hs_method_b012fd4d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -178,7 +178,7 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_837ad401((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_837ad401((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

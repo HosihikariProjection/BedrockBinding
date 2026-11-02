@@ -40,47 +40,47 @@ public sealed unsafe partial class SharedBuffs : global::System.IDisposable
 
     public static nint ABSORPTION()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_6a8dafbb();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_6a8dafbb();
     }
 
     public static nint FATAL_POISON()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_3c6b260a();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_3c6b260a();
     }
 
     public static nint FOOD_POSIONING()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8502124c();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_8502124c();
     }
 
     public static nint HARM()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b2582893();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_b2582893();
     }
 
     public static nint HEAL()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_71277347();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_71277347();
     }
 
     public static nint POISON()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_a406f867();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_a406f867();
     }
 
     public static nint REGENERATION()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_e2cd8e68();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_e2cd8e68();
     }
 
     public static nint SATURATION()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_9b5f4bb4();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_9b5f4bb4();
     }
 
     public static nint WITHER()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_7252c200();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_7252c200();
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class SharedBuffs : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e0abc92c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e0abc92c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

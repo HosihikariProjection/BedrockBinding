@@ -40,22 +40,22 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
 
     public nint _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_132c4c8b((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_132c4c8b((void*)__hosihikari_shim_handle);
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source, uint slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack fromItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack toItem)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_95be235d((void*)__hosihikari_shim_handle, (void*)source.Handle, slot, (void*)fromItem.Handle, (void*)toItem.Handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_95be235d((void*)__hosihikari_shim_handle, (void*)source.Handle, slot, (void*)fromItem.Handle, (void*)toItem.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_64664bcf((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_64664bcf((void*)__hosihikari_shim_handle);
     }
 
     public static InventoryAction Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ee4b4a93();
+        var handle = NativeMethods.TablePtr->C2.hs_create_ee4b4a93();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
 
     public static InventoryAction Create(global::Hosihikari.Bindings.Bedrock.Interop.InventorySource source, uint slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack fromItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack toItem)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e8c9be5a((void*)source.Handle, slot, (void*)fromItem.Handle, (void*)toItem.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e8c9be5a((void*)source.Handle, slot, (void*)fromItem.Handle, (void*)toItem.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,7 +77,7 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
 
     public static InventoryAction Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_83d1d2d5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_83d1d2d5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -89,47 +89,47 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mFromItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_aa7f505e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_aa7f505e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFromItemDescriptor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1d1165df((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1d1165df((void*)__hosihikari_shim_handle);
     }
 
     public uint mSlot
     {
-        get => NativeMethods.TablePtr->C1.hs_get_f3dc5a78((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_f3dc5a78((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_f3dc5a78((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_f3dc5a78((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b3c3c9b4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b3c3c9b4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mToItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ff13ee88((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ff13ee88((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mToItemDescriptor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a7e22673((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a7e22673((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction((nint)NativeMethods.TablePtr->C1.hs_method_4cd406dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction((nint)NativeMethods.TablePtr->C2.hs_method_4cd406dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void postLoadItems(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, bool isClientSide)
     {
-        NativeMethods.TablePtr->C1.hs_method_203b1ce8((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
+        NativeMethods.TablePtr->C2.hs_method_203b1ce8((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
     }
 
 
@@ -139,7 +139,7 @@ public sealed unsafe partial class InventoryAction : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_3aad1c2d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_3aad1c2d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

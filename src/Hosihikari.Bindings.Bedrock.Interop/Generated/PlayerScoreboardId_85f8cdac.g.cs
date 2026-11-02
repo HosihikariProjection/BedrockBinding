@@ -40,18 +40,18 @@ public sealed unsafe partial class PlayerScoreboardId : global::System.IDisposab
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId INVALID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId((nint)NativeMethods.TablePtr->C2.hs_method_a2d0bd6e(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId((nint)NativeMethods.TablePtr->C3.hs_method_a2d0bd6e(), false);
     }
 
     public long mActorUniqueId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ba0275b9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ba0275b9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ba0275b9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ba0275b9((void*)__hosihikari_shim_handle, value);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId rhs)
     {
-        return NativeMethods.TablePtr->C2.hs_method_ae881a45((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ae881a45((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
     }
 
     public void Dispose()
@@ -60,7 +60,7 @@ public sealed unsafe partial class PlayerScoreboardId : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_85f8cdac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_85f8cdac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

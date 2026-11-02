@@ -40,32 +40,32 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
 
     public bool _isInLava()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7c322538((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_7c322538((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isInWater()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b906eb61((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_b906eb61((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isLavaBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_1f30b920((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_1f30b920((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
     public bool _isSolidBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_4254427a((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_4254427a((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
     public bool _isWaterBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_3504ce04((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_3504ce04((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
     public static PathBlockSource Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_de3cd498();
+        var handle = NativeMethods.TablePtr->C3.hs_create_de3cd498();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,7 +76,7 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
 
     public static PathBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b2770d59((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b2770d59((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,48 +87,48 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
 
     public bool isInLava()
     {
-        return NativeMethods.TablePtr->C2.hs_method_70934a30((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_70934a30((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isInWater()
     {
-        return NativeMethods.TablePtr->C2.hs_method_db6a4252((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_db6a4252((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isLavaBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_84a4a05b((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_84a4a05b((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
     public bool isSolidBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_45428b4e((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_45428b4e((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
     public bool isWaterBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_e6d50850((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e6d50850((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_014a56e4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_014a56e4((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsInLava
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4ceeebee((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C3.hs_get_4ceeebee((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mIsInWater
     {
-        get => NativeMethods.TablePtr->C2.hs_get_287cd025((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C3.hs_get_287cd025((void*)__hosihikari_shim_handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource((nint)NativeMethods.TablePtr->C2.hs_method_b25108d4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PathBlockSource((nint)NativeMethods.TablePtr->C3.hs_method_b25108d4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -138,7 +138,7 @@ public sealed unsafe partial class PathBlockSource : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5914953e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5914953e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

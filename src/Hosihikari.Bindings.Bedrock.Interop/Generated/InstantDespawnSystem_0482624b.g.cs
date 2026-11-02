@@ -40,12 +40,12 @@ public sealed unsafe partial class InstantDespawnSystem : global::System.IDispos
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_f601cb9a((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_f601cb9a((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
     public static InstantDespawnSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.InstantDespawnSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f732805f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_f732805f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,12 +56,12 @@ public sealed unsafe partial class InstantDespawnSystem : global::System.IDispos
 
     public static void _tickComponent(global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, global::Hosihikari.Bindings.Bedrock.Interop.InstantDespawnComponent instantDespawnComponent)
     {
-        NativeMethods.TablePtr->C1.hs_method_bf00147e((void*)actorOwnerComponent.Handle, (void*)instantDespawnComponent.Handle);
+        NativeMethods.TablePtr->C2.hs_method_bf00147e((void*)actorOwnerComponent.Handle, (void*)instantDespawnComponent.Handle);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_b1296e9c((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_b1296e9c((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class InstantDespawnSystem : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_0482624b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0482624b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class RtpVideoSenderInterface : global::System.IDis
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_522e4e7d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_522e4e7d((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
@@ -49,12 +49,12 @@ public sealed unsafe partial class RtpVideoSenderInterface : global::System.IDis
 
     public uint GetPayloadBitrateBps()
     {
-        return NativeMethods.TablePtr->C4.hs_method_78b7522a((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_78b7522a((void*)__hosihikari_shim_handle);
     }
 
     public uint GetProtectionBitrateBps()
     {
-        return NativeMethods.TablePtr->C4.hs_method_1817b1d0((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_1817b1d0((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::map<unsigned int, webrtc::RtpPayloadState>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -71,12 +71,12 @@ public sealed unsafe partial class RtpVideoSenderInterface : global::System.IDis
 
     public bool IsActive()
     {
-        return NativeMethods.TablePtr->C4.hs_method_4d4b9b57((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_4d4b9b57((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void OnBitrateAllocationUpdated(nint bitrate)
     {
-        NativeMethods.TablePtr->C4.hs_method_30978d4e((void*)__hosihikari_shim_handle, (void*)bitrate);
+        NativeMethods.TablePtr->C5.hs_method_30978d4e((void*)__hosihikari_shim_handle, (void*)bitrate);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::BitrateAllocationUpdate' is not a known bindable declaration.", false)]
@@ -85,22 +85,22 @@ public sealed unsafe partial class RtpVideoSenderInterface : global::System.IDis
 
     public void OnNetworkAvailability(bool network_available)
     {
-        NativeMethods.TablePtr->C4.hs_method_5e143007((void*)__hosihikari_shim_handle, network_available);
+        NativeMethods.TablePtr->C5.hs_method_5e143007((void*)__hosihikari_shim_handle, network_available);
     }
 
     public void OnTransportOverheadChanged(ulong transport_overhead_bytes_per_packet)
     {
-        NativeMethods.TablePtr->C4.hs_method_b845d68e((void*)__hosihikari_shim_handle, transport_overhead_bytes_per_packet);
+        NativeMethods.TablePtr->C5.hs_method_b845d68e((void*)__hosihikari_shim_handle, transport_overhead_bytes_per_packet);
     }
 
     public void OnVideoLayersAllocationUpdated(nint allocation)
     {
-        NativeMethods.TablePtr->C4.hs_method_6677f54f((void*)__hosihikari_shim_handle, (void*)allocation);
+        NativeMethods.TablePtr->C5.hs_method_6677f54f((void*)__hosihikari_shim_handle, (void*)allocation);
     }
 
     public static RtpVideoSenderInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpVideoSenderInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_43306796((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_43306796((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -115,17 +115,17 @@ public sealed unsafe partial class RtpVideoSenderInterface : global::System.IDis
 
     public void SetEncodingData(ulong width, ulong height, ulong num_temporal_layers)
     {
-        NativeMethods.TablePtr->C4.hs_method_59f4796e((void*)__hosihikari_shim_handle, width, height, num_temporal_layers);
+        NativeMethods.TablePtr->C5.hs_method_59f4796e((void*)__hosihikari_shim_handle, width, height, num_temporal_layers);
     }
 
     public void SetFecAllowed(bool fec_allowed)
     {
-        NativeMethods.TablePtr->C4.hs_method_508f1168((void*)__hosihikari_shim_handle, fec_allowed);
+        NativeMethods.TablePtr->C5.hs_method_508f1168((void*)__hosihikari_shim_handle, fec_allowed);
     }
 
     public void SetSending(bool enabled)
     {
-        NativeMethods.TablePtr->C4.hs_method_a5200f30((void*)__hosihikari_shim_handle, enabled);
+        NativeMethods.TablePtr->C5.hs_method_a5200f30((void*)__hosihikari_shim_handle, enabled);
     }
 
 
@@ -135,7 +135,7 @@ public sealed unsafe partial class RtpVideoSenderInterface : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_800630be((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_800630be((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

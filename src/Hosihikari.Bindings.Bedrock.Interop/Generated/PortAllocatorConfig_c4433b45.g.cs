@@ -40,20 +40,20 @@ public sealed unsafe partial class PortAllocatorConfig : global::System.IDisposa
 
     public uint flags
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2dbe8189((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2dbe8189((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_2dbe8189((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_2dbe8189((void*)__hosihikari_shim_handle, value);
     }
 
     public int max_port
     {
-        get => NativeMethods.TablePtr->C4.hs_get_6bc33789((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_6bc33789((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_6bc33789((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_6bc33789((void*)__hosihikari_shim_handle, value);
     }
 
     public int min_port
     {
-        get => NativeMethods.TablePtr->C4.hs_get_01adf68c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_01adf68c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_01adf68c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_01adf68c((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -62,7 +62,7 @@ public sealed unsafe partial class PortAllocatorConfig : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c4433b45((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_c4433b45((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

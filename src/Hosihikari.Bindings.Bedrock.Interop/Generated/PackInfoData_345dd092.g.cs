@@ -40,7 +40,7 @@ public sealed unsafe partial class PackInfoData : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PackInfoData arg0)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_ad64819a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_ad64819a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID guid, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version, ulong packSize, string contentKey, string subpackName, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity, bool hasScripts, bool isAddonPack, bool isRayTracingCapable, string cdnUrl)
@@ -84,7 +84,7 @@ public sealed unsafe partial class PackInfoData : global::System.IDisposable
             {
                 fixed (byte* __hs_stringData9 = __hs_stringBytes9)
                 {
-                    return (nint)NativeMethods.TablePtr->C2.hs_method_d00938fe((void*)__hosihikari_shim_handle, (void*)guid.Handle, (void*)version.Handle, packSize, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, (void*)contentIdentity.Handle, hasScripts, isAddonPack, isRayTracingCapable, __hs_stringData9, (nuint)__hs_stringByteCount9);
+                    return (nint)NativeMethods.TablePtr->C3.hs_method_d00938fe((void*)__hosihikari_shim_handle, (void*)guid.Handle, (void*)version.Handle, packSize, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, (void*)contentIdentity.Handle, hasScripts, isAddonPack, isRayTracingCapable, __hs_stringData9, (nuint)__hs_stringByteCount9);
                 }
             }
         }
@@ -92,12 +92,12 @@ public sealed unsafe partial class PackInfoData : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_cfd7a297((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_cfd7a297((void*)__hosihikari_shim_handle);
     }
 
     public static PackInfoData Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_86e3a631();
+        var handle = NativeMethods.TablePtr->C3.hs_create_86e3a631();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -108,7 +108,7 @@ public sealed unsafe partial class PackInfoData : global::System.IDisposable
 
     public static PackInfoData Create(global::Hosihikari.Bindings.Bedrock.Interop.PackInfoData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5470f7f1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_5470f7f1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -158,7 +158,7 @@ public sealed unsafe partial class PackInfoData : global::System.IDisposable
             {
                 fixed (byte* __hs_stringData9 = __hs_stringBytes9)
                 {
-                    var handle = NativeMethods.TablePtr->C2.hs_create_6533e194((void*)guid.Handle, (void*)version.Handle, packSize, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, (void*)contentIdentity.Handle, hasScripts, isAddonPack, isRayTracingCapable, __hs_stringData9, (nuint)__hs_stringByteCount9);
+                    var handle = NativeMethods.TablePtr->C3.hs_create_6533e194((void*)guid.Handle, (void*)version.Handle, packSize, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, (void*)contentIdentity.Handle, hasScripts, isAddonPack, isRayTracingCapable, __hs_stringData9, (nuint)__hs_stringByteCount9);
                     if (handle == null)
                     {
                         throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -173,66 +173,66 @@ public sealed unsafe partial class PackInfoData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mCDNUrl_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f03cf62d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f03cf62d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContentIdentity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9d2ae7b8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9d2ae7b8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContentKey_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f978e7db((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f978e7db((void*)__hosihikari_shim_handle);
     }
 
     public bool mHasExceptions
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7f4bced6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_7f4bced6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7f4bced6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_7f4bced6((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHasScripts
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4c8c385e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_4c8c385e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4c8c385e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_4c8c385e((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsAddonPack
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9a91c3a3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_9a91c3a3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9a91c3a3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_9a91c3a3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsRayTracingCapable
     {
-        get => NativeMethods.TablePtr->C2.hs_get_bd884986((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_bd884986((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bd884986((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_bd884986((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackIdVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_17ef10b5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_17ef10b5((void*)__hosihikari_shim_handle);
     }
 
     public ulong mPackSize
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0a9aaf73((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_0a9aaf73((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0a9aaf73((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0a9aaf73((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubpackName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5ffefd0a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5ffefd0a((void*)__hosihikari_shim_handle);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.PackInfoData info)
     {
-        return NativeMethods.TablePtr->C2.hs_method_2150f420((void*)__hosihikari_shim_handle, (void*)info.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_2150f420((void*)__hosihikari_shim_handle, (void*)info.Handle) != 0;
     }
 
 
@@ -242,7 +242,7 @@ public sealed unsafe partial class PackInfoData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_345dd092((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_345dd092((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.BlockDescriptor arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8f62a89c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_8f62a89c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public nint _ctor(string name)
@@ -58,7 +58,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_f088d88f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            return (nint)NativeMethods.TablePtr->C4.hs_method_f088d88f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -68,12 +68,12 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_4fd7c6c4((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_4fd7c6c4((void*)__hosihikari_shim_handle);
     }
 
     public static BlockDescriptor Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_74b90777();
+        var handle = NativeMethods.TablePtr->C4.hs_create_74b90777();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,7 +84,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
 
     public static BlockDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.BlockDescriptor arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1a8b7e2a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_1a8b7e2a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -108,7 +108,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C3.hs_create_87638dfb(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            var handle = NativeMethods.TablePtr->C4.hs_create_87638dfb(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -124,25 +124,25 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_15eb42ae((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_15eb42ae((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8a7c07b9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8a7c07b9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2b3cc7ad((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2b3cc7ad((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0d4b411f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0d4b411f((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -151,7 +151,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.BlockDescriptor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.BlockDescriptor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.BlockDescriptor((nint)NativeMethods.TablePtr->C3.hs_method_4bbd4344((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.BlockDescriptor((nint)NativeMethods.TablePtr->C4.hs_method_4bbd4344((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -161,7 +161,7 @@ public sealed unsafe partial class BlockDescriptor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_ae49d441((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_ae49d441((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

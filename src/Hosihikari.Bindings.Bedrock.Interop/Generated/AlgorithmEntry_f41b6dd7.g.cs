@@ -41,13 +41,13 @@ public sealed unsafe partial class AlgorithmEntry : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint algorithm_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a1bf4702((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a1bf4702((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint packetIds_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_235f7962((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_235f7962((void*)__hosihikari_shim_handle);
     }
 
 
@@ -57,7 +57,7 @@ public sealed unsafe partial class AlgorithmEntry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f41b6dd7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f41b6dd7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

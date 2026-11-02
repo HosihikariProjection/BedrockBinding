@@ -40,12 +40,12 @@ public sealed unsafe partial class PersonaCharacterHandle : global::System.IDisp
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.persona.PersonaCharacterHandle INVALID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.persona.PersonaCharacterHandle((nint)NativeMethods.TablePtr->C4.hs_method_5086db1d(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.persona.PersonaCharacterHandle((nint)NativeMethods.TablePtr->C5.hs_method_5086db1d(), false);
     }
 
     public static PersonaCharacterHandle Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b130ebbb();
+        var handle = NativeMethods.TablePtr->C5.hs_create_b130ebbb();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class PersonaCharacterHandle : global::System.IDisp
 
     public static PersonaCharacterHandle Create(global::Hosihikari.Bindings.Bedrock.Interop.persona.PersonaCharacterHandle arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f8961d42((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_f8961d42((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,13 +68,13 @@ public sealed unsafe partial class PersonaCharacterHandle : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mSkinName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3583eb91((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_3583eb91((void*)__hosihikari_shim_handle);
     }
 
     public byte mType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_693ad1a4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_693ad1a4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_693ad1a4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_693ad1a4((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -84,7 +84,7 @@ public sealed unsafe partial class PersonaCharacterHandle : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c16d61a9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_c16d61a9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

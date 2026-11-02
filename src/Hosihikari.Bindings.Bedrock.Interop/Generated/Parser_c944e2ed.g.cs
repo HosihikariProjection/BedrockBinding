@@ -40,17 +40,17 @@ public sealed unsafe partial class Parser : global::System.IDisposable
 
     public static bool parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger definitionTrigger, bool acceptString)
     {
-        return NativeMethods.TablePtr->C2.hs_method_2baf9dd7((void*)val.Handle, (void*)definitionTrigger.Handle, acceptString) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_2baf9dd7((void*)val.Handle, (void*)definitionTrigger.Handle, acceptString) != 0;
     }
 
     public static bool parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.DefinitionTrigger definitionTrigger, bool acceptString)
     {
-        return NativeMethods.TablePtr->C2.hs_method_4733427f((void*)val.Handle, (void*)definitionTrigger.Handle, acceptString) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_4733427f((void*)val.Handle, (void*)definitionTrigger.Handle, acceptString) != 0;
     }
 
     public static bool parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration variable, nint jsonName, bool convertToTicks)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a88f8d5c((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, convertToTicks) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_a88f8d5c((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, convertToTicks) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -59,7 +59,7 @@ public sealed unsafe partial class Parser : global::System.IDisposable
 
     public static bool parse_a834636e(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint target, nint jsonName, nint defaultValue)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a834636e((void*)val.Handle, (void*)target, (void*)jsonName, (void*)defaultValue) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_a834636e((void*)val.Handle, (void*)target, (void*)jsonName, (void*)defaultValue) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -72,42 +72,42 @@ public sealed unsafe partial class Parser : global::System.IDisposable
 
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier variable, nint jsonName, nint defaultValue)
     {
-        NativeMethods.TablePtr->C2.hs_method_ecded49b((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue);
+        NativeMethods.TablePtr->C3.hs_method_ecded49b((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue);
     }
 
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.HashedString variable, nint jsonName, nint defaultValue)
     {
-        NativeMethods.TablePtr->C2.hs_method_e9c8ce9d((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue);
+        NativeMethods.TablePtr->C3.hs_method_e9c8ce9d((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue);
     }
 
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance variable, nint jsonName)
     {
-        NativeMethods.TablePtr->C2.hs_method_f184efaa((void*)val.Handle, (void*)variable.Handle, (void*)jsonName);
+        NativeMethods.TablePtr->C3.hs_method_f184efaa((void*)val.Handle, (void*)variable.Handle, (void*)jsonName);
     }
 
     public static void parse_3f944d77(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint variable, nint jsonName, nint defaultValue)
     {
-        NativeMethods.TablePtr->C2.hs_method_3f944d77((void*)val.Handle, (void*)variable, (void*)jsonName, (void*)defaultValue);
+        NativeMethods.TablePtr->C3.hs_method_3f944d77((void*)val.Handle, (void*)variable, (void*)jsonName, (void*)defaultValue);
     }
 
     public static void parse_99be0a8d(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint variable, nint jsonName, nint defaultValue)
     {
-        NativeMethods.TablePtr->C2.hs_method_99be0a8d((void*)val.Handle, (void*)variable, (void*)jsonName, (void*)defaultValue);
+        NativeMethods.TablePtr->C3.hs_method_99be0a8d((void*)val.Handle, (void*)variable, (void*)jsonName, (void*)defaultValue);
     }
 
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 variable, nint jsonName, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 defaultValue)
     {
-        NativeMethods.TablePtr->C2.hs_method_d6a9886f((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue.Handle);
+        NativeMethods.TablePtr->C3.hs_method_d6a9886f((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue.Handle);
     }
 
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.WeightedChoices_ActorDefinitionTrigger_ variable, nint jsonName)
     {
-        NativeMethods.TablePtr->C2.hs_method_f2b3301c((void*)val.Handle, (void*)variable.Handle, (void*)jsonName);
+        NativeMethods.TablePtr->C3.hs_method_f2b3301c((void*)val.Handle, (void*)variable.Handle, (void*)jsonName);
     }
 
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint variable, nint jsonName, bool defaultValue)
     {
-        NativeMethods.TablePtr->C2.hs_method_7e674786((void*)val.Handle, (void*)variable, (void*)jsonName, defaultValue);
+        NativeMethods.TablePtr->C3.hs_method_7e674786((void*)val.Handle, (void*)variable, (void*)jsonName, defaultValue);
     }
 
     public static string parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, string variable, nint jsonName, nint defaultValue)
@@ -125,7 +125,7 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(variable, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            var __hs_view = NativeMethods.TablePtr->C2.hs_method_545d0567((void*)val.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)jsonName, (void*)defaultValue);
+            var __hs_view = NativeMethods.TablePtr->C3.hs_method_545d0567((void*)val.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)jsonName, (void*)defaultValue);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
@@ -138,33 +138,33 @@ public sealed unsafe partial class Parser : global::System.IDisposable
     {
         fixed (uint* __hs_vectorData1 = variable)
         {
-            NativeMethods.TablePtr->C2.hs_method_1d37a7ac((void*)val.Handle, (void*)jsonName, (void*)defaultValue, __hs_vectorData1, (nuint)(variable?.Length ?? 0));
+            NativeMethods.TablePtr->C3.hs_method_1d37a7ac((void*)val.Handle, (void*)jsonName, (void*)defaultValue, __hs_vectorData1, (nuint)(variable?.Length ?? 0));
         }
     }
 
     public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint face, byte defaultValue)
     {
-        NativeMethods.TablePtr->C2.hs_method_fee5f1a5((void*)val.Handle, (void*)face, defaultValue);
+        NativeMethods.TablePtr->C3.hs_method_fee5f1a5((void*)val.Handle, (void*)face, defaultValue);
     }
 
     public static void serialize_b8f28fa4(nint variable, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint jsonName)
     {
-        NativeMethods.TablePtr->C2.hs_method_b8f28fa4((void*)variable, (void*)val.Handle, (void*)jsonName);
+        NativeMethods.TablePtr->C3.hs_method_b8f28fa4((void*)variable, (void*)val.Handle, (void*)jsonName);
     }
 
     public static void serialize(global::Hosihikari.Bindings.Bedrock.Interop.FloatRange variable, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint jsonName)
     {
-        NativeMethods.TablePtr->C2.hs_method_5119c913((void*)variable.Handle, (void*)val.Handle, (void*)jsonName);
+        NativeMethods.TablePtr->C3.hs_method_5119c913((void*)variable.Handle, (void*)val.Handle, (void*)jsonName);
     }
 
     public static void serialize_0bfbbb43(nint variable, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint jsonName)
     {
-        NativeMethods.TablePtr->C2.hs_method_0bfbbb43((void*)variable, (void*)val.Handle, (void*)jsonName);
+        NativeMethods.TablePtr->C3.hs_method_0bfbbb43((void*)variable, (void*)val.Handle, (void*)jsonName);
     }
 
     public static void serialize_74f93423(nint variable, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint jsonName)
     {
-        NativeMethods.TablePtr->C2.hs_method_74f93423((void*)variable, (void*)val.Handle, (void*)jsonName);
+        NativeMethods.TablePtr->C3.hs_method_74f93423((void*)variable, (void*)val.Handle, (void*)jsonName);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -185,7 +185,7 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c944e2ed((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c944e2ed((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

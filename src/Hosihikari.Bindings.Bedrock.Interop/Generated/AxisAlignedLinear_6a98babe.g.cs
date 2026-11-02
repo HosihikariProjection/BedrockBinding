@@ -40,12 +40,12 @@ public sealed unsafe partial class AxisAlignedLinear : global::System.IDisposabl
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_d0532fa0((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_d0532fa0((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public bool _test(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos worldPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos worldReference, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C4.hs_method_14201123((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)worldPos.Handle, (void*)worldReference.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_14201123((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)worldPos.Handle, (void*)worldReference.Handle, (void*)random.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class AxisAlignedLinear : global::System.IDisposabl
 
     public static AxisAlignedLinear Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.PosRules.AxisAlignedLinear arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_be500cff((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_be500cff((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,42 +65,42 @@ public sealed unsafe partial class AxisAlignedLinear : global::System.IDisposabl
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_ca3424cf((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_ca3424cf((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public int mAxis
     {
-        get => NativeMethods.TablePtr->C4.hs_get_604d27a9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_604d27a9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_604d27a9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_604d27a9((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMaxChance
     {
-        get => NativeMethods.TablePtr->C4.hs_get_84131b91((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_84131b91((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_84131b91((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_84131b91((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMaxDist
     {
-        get => NativeMethods.TablePtr->C4.hs_get_bd0c6ba2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_bd0c6ba2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_bd0c6ba2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_bd0c6ba2((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMinChance
     {
-        get => NativeMethods.TablePtr->C4.hs_get_46f31548((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_46f31548((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_46f31548((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_46f31548((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMinDist
     {
-        get => NativeMethods.TablePtr->C4.hs_get_eea0648a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_eea0648a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_eea0648a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_eea0648a((void*)__hosihikari_shim_handle, value);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos worldPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos worldReference, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C4.hs_method_5aadc352((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)worldPos.Handle, (void*)worldReference.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_5aadc352((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)worldPos.Handle, (void*)worldReference.Handle, (void*)random.Handle) != 0;
     }
 
 
@@ -110,7 +110,7 @@ public sealed unsafe partial class AxisAlignedLinear : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6a98babe((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6a98babe((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

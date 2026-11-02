@@ -40,7 +40,7 @@ public sealed unsafe partial class InteractButtonItemComponent : global::System.
 
     public void __initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C1.hs_method_8cc3db84((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C2.hs_method_8cc3db84((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
@@ -49,12 +49,12 @@ public sealed unsafe partial class InteractButtonItemComponent : global::System.
 
     public bool _initializeFromNetwork(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        return NativeMethods.TablePtr->C1.hs_method_756b5c3f((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_756b5c3f((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle) != 0;
     }
 
     public bool _isNetworkComponent()
     {
-        return NativeMethods.TablePtr->C1.hs_method_6eb530b1((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_6eb530b1((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -63,7 +63,7 @@ public sealed unsafe partial class InteractButtonItemComponent : global::System.
 
     public static InteractButtonItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.InteractButtonItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3e6bb5f9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_3e6bb5f9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -74,7 +74,7 @@ public sealed unsafe partial class InteractButtonItemComponent : global::System.
 
     public void _initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C1.hs_method_81e73b4d((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C2.hs_method_81e73b4d((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -87,37 +87,37 @@ public sealed unsafe partial class InteractButtonItemComponent : global::System.
 
     public string getInteractText()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_b0f6c4e0((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_b0f6c4e0((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool initializeFromNetwork(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        return NativeMethods.TablePtr->C1.hs_method_906b8cab((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_906b8cab((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle) != 0;
     }
 
     public bool isNetworkComponent()
     {
-        return NativeMethods.TablePtr->C1.hs_method_822d4371((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_822d4371((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInteractText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a78c78bc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a78c78bc((void*)__hosihikari_shim_handle);
     }
 
     public bool mRequiresInteract
     {
-        get => NativeMethods.TablePtr->C1.hs_get_2fa97c94((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_2fa97c94((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2fa97c94((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_2fa97c94((void*)__hosihikari_shim_handle, value);
     }
 
 
     public nint mOwner
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_94e07f2b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_94e07f2b((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_94e07f2b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_94e07f2b((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void Dispose()
@@ -126,7 +126,7 @@ public sealed unsafe partial class InteractButtonItemComponent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_0dbfb8e2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0dbfb8e2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

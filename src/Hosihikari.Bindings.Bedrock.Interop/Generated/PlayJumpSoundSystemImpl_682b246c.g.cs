@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl
 
     public void _singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
     {
-        NativeMethods.TablePtr->C2.hs_method_c133254e((void*)__hosihikari_shim_handle, (void*)context, (void*)entityContext.Handle);
+        NativeMethods.TablePtr->C3.hs_method_c133254e((void*)__hosihikari_shim_handle, (void*)context, (void*)entityContext.Handle);
     }
 
     public void _tick(nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_482553aa((void*)__hosihikari_shim_handle, (void*)context);
+        NativeMethods.TablePtr->C3.hs_method_482553aa((void*)__hosihikari_shim_handle, (void*)context);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -58,16 +58,16 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl
 
     public int mJumpType
     {
-        get => NativeMethods.TablePtr->C2.hs_get_76146403((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_76146403((void*)__hosihikari_shim_handle);
     }
 
     public void singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
     {
-        NativeMethods.TablePtr->C2.hs_method_63548d4c((void*)__hosihikari_shim_handle, (void*)context, (void*)entityContext.Handle);
+        NativeMethods.TablePtr->C3.hs_method_63548d4c((void*)__hosihikari_shim_handle, (void*)context, (void*)entityContext.Handle);
     }
 
     public void tick(nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_4b356af0((void*)__hosihikari_shim_handle, (void*)context);
+        NativeMethods.TablePtr->C3.hs_method_4b356af0((void*)__hosihikari_shim_handle, (void*)context);
     }
 }

@@ -45,7 +45,7 @@ public sealed unsafe partial class function_base_brstd__detail__function__Derive
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a38d50a8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_a38d50a8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

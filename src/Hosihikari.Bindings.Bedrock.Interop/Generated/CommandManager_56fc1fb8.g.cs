@@ -40,7 +40,7 @@ public sealed unsafe partial class CommandManager : global::System.IDisposable
 
     public static CommandManager Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_7031464c();
+        var handle = NativeMethods.TablePtr->C1.hs_create_7031464c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class CommandManager : global::System.IDisposable
 
     public static CommandManager Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_25ed87e8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_25ed87e8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,29 +71,29 @@ public sealed unsafe partial class CommandManager : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mCommands_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_98af759e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_98af759e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFunctionManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_650e86d5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_650e86d5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScriptStatCollector_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_45d97b7f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_45d97b7f((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandManager((nint)NativeMethods.TablePtr->C0.hs_method_75952833((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandManager((nint)NativeMethods.TablePtr->C1.hs_method_75952833((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void runCommand(global::Hosihikari.Bindings.Bedrock.Interop.Command command, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int originSystem)
     {
-        NativeMethods.TablePtr->C0.hs_method_dde6d65f((void*)__hosihikari_shim_handle, (void*)command.Handle, (void*)origin.Handle, originSystem);
+        NativeMethods.TablePtr->C1.hs_method_dde6d65f((void*)__hosihikari_shim_handle, (void*)command.Handle, (void*)origin.Handle, originSystem);
     }
 
 
@@ -103,7 +103,7 @@ public sealed unsafe partial class CommandManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_56fc1fb8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_56fc1fb8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

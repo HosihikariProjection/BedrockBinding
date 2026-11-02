@@ -40,18 +40,18 @@ public sealed unsafe partial class OnFallOnTriggerDescription
 
     public void _buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? componentSchema, global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentFactory factory)
     {
-        NativeMethods.TablePtr->C2.hs_method_d1753194((void*)__hosihikari_shim_handle, componentSchema?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
+        NativeMethods.TablePtr->C3.hs_method_d1753194((void*)__hosihikari_shim_handle, componentSchema?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
     }
 
     public string _getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_a37cd165((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_a37cd165((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void _initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentStorage blockComponentStorage)
     {
-        NativeMethods.TablePtr->C2.hs_method_8a9811b9((void*)__hosihikari_shim_handle, (void*)blockComponentStorage.Handle);
+        NativeMethods.TablePtr->C3.hs_method_8a9811b9((void*)__hosihikari_shim_handle, (void*)blockComponentStorage.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -60,29 +60,29 @@ public sealed unsafe partial class OnFallOnTriggerDescription
 
     public static string NameID()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_37257894();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_37257894();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? componentSchema, global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentFactory factory)
     {
-        NativeMethods.TablePtr->C2.hs_method_688df9ce((void*)__hosihikari_shim_handle, componentSchema?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
+        NativeMethods.TablePtr->C3.hs_method_688df9ce((void*)__hosihikari_shim_handle, componentSchema?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
     }
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_3efa96be((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_3efa96be((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentStorage blockComponentStorage)
     {
-        NativeMethods.TablePtr->C2.hs_method_2ccad338((void*)__hosihikari_shim_handle, (void*)blockComponentStorage.Handle);
+        NativeMethods.TablePtr->C3.hs_method_2ccad338((void*)__hosihikari_shim_handle, (void*)blockComponentStorage.Handle);
     }
 
     public float mMinimumFallDistance
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4f1cc558((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_4f1cc558((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4f1cc558((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4f1cc558((void*)__hosihikari_shim_handle, value);
     }
 }

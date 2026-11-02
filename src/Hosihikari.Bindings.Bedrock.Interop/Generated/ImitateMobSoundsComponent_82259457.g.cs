@@ -44,7 +44,7 @@ public sealed unsafe partial class ImitateMobSoundsComponent : global::System.ID
 
     public static bool imitateNearbyMobs(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C1.hs_method_64d17ef9((void*)actor.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_64d17ef9((void*)actor.Handle, (void*)random.Handle) != 0;
     }
 
     public void Dispose()
@@ -53,7 +53,7 @@ public sealed unsafe partial class ImitateMobSoundsComponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_82259457((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_82259457((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

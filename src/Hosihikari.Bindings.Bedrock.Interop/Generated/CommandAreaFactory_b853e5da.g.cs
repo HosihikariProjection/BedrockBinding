@@ -40,7 +40,7 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
 
     public static CommandAreaFactory Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_d87245ba();
+        var handle = NativeMethods.TablePtr->C1.hs_create_d87245ba();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
 
     public static CommandAreaFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_e53218c8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_e53218c8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,12 +75,12 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_03907492((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_03907492((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory((nint)NativeMethods.TablePtr->C0.hs_method_7ab02f29((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandAreaFactory((nint)NativeMethods.TablePtr->C1.hs_method_7ab02f29((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class CommandAreaFactory : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_b853e5da((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_b853e5da((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

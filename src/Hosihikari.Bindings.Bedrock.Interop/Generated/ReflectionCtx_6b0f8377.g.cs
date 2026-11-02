@@ -41,17 +41,17 @@ public sealed unsafe partial class ReflectionCtx : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b4caa28b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b4caa28b((void*)__hosihikari_shim_handle);
     }
 
     public nint _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_4d2d2fc5((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_4d2d2fc5((void*)__hosihikari_shim_handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_4b650e56((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_4b650e56((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -60,7 +60,7 @@ public sealed unsafe partial class ReflectionCtx : global::System.IDisposable
 
     public static ReflectionCtx Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8d63c708();
+        var handle = NativeMethods.TablePtr->C5.hs_create_8d63c708();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,7 +71,7 @@ public sealed unsafe partial class ReflectionCtx : global::System.IDisposable
 
     public static ReflectionCtx Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6392cd7a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_6392cd7a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,19 +84,19 @@ public sealed unsafe partial class ReflectionCtx : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mForcedJSONSchemaOutput_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_99509773((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_99509773((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mKnownProperties_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_eeacaa4b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_eeacaa4b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMetaCtx_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8b6e0ab4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_8b6e0ab4((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -105,7 +105,7 @@ public sealed unsafe partial class ReflectionCtx : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6b0f8377((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6b0f8377((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

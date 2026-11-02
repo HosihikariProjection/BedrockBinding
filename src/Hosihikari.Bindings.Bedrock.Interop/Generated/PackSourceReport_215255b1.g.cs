@@ -44,7 +44,7 @@ public sealed unsafe partial class PackSourceReport : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport rhs)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_3e4d5bc1((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_3e4d5bc1((void*)__hosihikari_shim_handle, (void*)rhs.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -53,12 +53,12 @@ public sealed unsafe partial class PackSourceReport : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_3c5a5875((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_3c5a5875((void*)__hosihikari_shim_handle);
     }
 
     public static PackSourceReport Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_bf2191a9();
+        var handle = NativeMethods.TablePtr->C3.hs_create_bf2191a9();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,7 +73,7 @@ public sealed unsafe partial class PackSourceReport : global::System.IDisposable
 
     public static PackSourceReport Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport rhs)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b7887d46((void*)rhs.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b7887d46((void*)rhs.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -92,13 +92,13 @@ public sealed unsafe partial class PackSourceReport : global::System.IDisposable
 
     public bool hasErrors()
     {
-        return NativeMethods.TablePtr->C2.hs_method_31368612((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_31368612((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk99296d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_615c3601((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_615c3601((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -111,7 +111,7 @@ public sealed unsafe partial class PackSourceReport : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport((nint)NativeMethods.TablePtr->C2.hs_method_2e67041f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport((nint)NativeMethods.TablePtr->C3.hs_method_2e67041f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -121,7 +121,7 @@ public sealed unsafe partial class PackSourceReport : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_215255b1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_215255b1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

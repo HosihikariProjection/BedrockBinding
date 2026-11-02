@@ -40,13 +40,13 @@ public sealed unsafe partial class StackedByDataItemComponent : global::System.I
 
     public nint mOwner
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_41aff516((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_41aff516((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_41aff516((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_41aff516((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void __initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C3.hs_method_f5398b97((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C4.hs_method_f5398b97((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -55,7 +55,7 @@ public sealed unsafe partial class StackedByDataItemComponent : global::System.I
 
     public static StackedByDataItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.StackedByDataItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7c63ef83((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_7c63ef83((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class StackedByDataItemComponent : global::System.I
 
     public void _initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C3.hs_method_fc98e333((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C4.hs_method_fc98e333((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -75,8 +75,8 @@ public sealed unsafe partial class StackedByDataItemComponent : global::System.I
 
     public bool mIsStackedByData
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ceceb0a7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_ceceb0a7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ceceb0a7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_ceceb0a7((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class StackedByDataItemComponent : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_55bb252e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_55bb252e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

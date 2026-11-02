@@ -41,7 +41,7 @@ public sealed unsafe partial class SmithingTableContainerScreenValidator : globa
     // The native field type is not projected; this is the address of the field storage.
     public nint mValidContainerEnumNames_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ab4f6db5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ab4f6db5((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -50,7 +50,7 @@ public sealed unsafe partial class SmithingTableContainerScreenValidator : globa
 
     public static SmithingTableContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.SmithingTableContainerScreenValidator arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ccc4c9de((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_ccc4c9de((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class SmithingTableContainerScreenValidator : globa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e491db33((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e491db33((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

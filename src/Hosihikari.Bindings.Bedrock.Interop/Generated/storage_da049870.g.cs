@@ -40,24 +40,24 @@ public sealed unsafe partial class storage : global::System.IDisposable
 
     public nint cp_
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_718916f2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_718916f2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint fp__Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_dfd64ccf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_dfd64ccf((void*)__hosihikari_shim_handle);
     }
 
     public nint p_
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2174b977((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2174b977((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2174b977((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_2174b977((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public static storage Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_333945af();
+        var handle = NativeMethods.TablePtr->C5.hs_create_333945af();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,7 +72,7 @@ public sealed unsafe partial class storage : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_da049870((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_da049870((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

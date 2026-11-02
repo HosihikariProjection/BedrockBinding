@@ -40,14 +40,14 @@ public sealed unsafe partial class PeekComponent : global::System.IDisposable
 
     public int mDuration
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b86b19bf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b86b19bf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b86b19bf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b86b19bf((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHadTarget
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ab14e8ce((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_ab14e8ce((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ab14e8ce((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_ab14e8ce((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class PeekComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_9c46255c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9c46255c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

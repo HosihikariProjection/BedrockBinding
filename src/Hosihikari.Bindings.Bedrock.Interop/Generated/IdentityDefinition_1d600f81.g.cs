@@ -40,12 +40,12 @@ public sealed unsafe partial class IdentityDefinition : global::System.IDisposab
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition o)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_90a27ee2((void*)__hosihikari_shim_handle, (void*)o.Handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_90a27ee2((void*)__hosihikari_shim_handle, (void*)o.Handle);
     }
 
     public static IdentityDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_06a752ff();
+        var handle = NativeMethods.TablePtr->C2.hs_create_06a752ff();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class IdentityDefinition : global::System.IDisposab
 
     public static IdentityDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition o)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_aef0a236((void*)o.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_aef0a236((void*)o.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,7 +67,7 @@ public sealed unsafe partial class IdentityDefinition : global::System.IDisposab
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition Invalid()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition((nint)NativeMethods.TablePtr->C1.hs_method_660b45f4(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition((nint)NativeMethods.TablePtr->C2.hs_method_660b45f4(), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'const std::basic_string<char> &' is not supported.", false)]
@@ -77,37 +77,37 @@ public sealed unsafe partial class IdentityDefinition : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_89731eb0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_89731eb0((void*)__hosihikari_shim_handle);
     }
 
     public byte mIdentityType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_25e57ead((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_25e57ead((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_25e57ead((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_25e57ead((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsHiddenFakePlayer
     {
-        get => NativeMethods.TablePtr->C1.hs_get_82ed64c8((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_82ed64c8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_82ed64c8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_82ed64c8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_bbd7ae3b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_bbd7ae3b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f0bb945f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f0bb945f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScoreboardId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9429440b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9429440b((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -116,7 +116,7 @@ public sealed unsafe partial class IdentityDefinition : global::System.IDisposab
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition((nint)NativeMethods.TablePtr->C1.hs_method_cd5e036f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IdentityDefinition((nint)NativeMethods.TablePtr->C2.hs_method_cd5e036f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -126,7 +126,7 @@ public sealed unsafe partial class IdentityDefinition : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_1d600f81((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_1d600f81((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

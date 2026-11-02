@@ -40,13 +40,13 @@ public sealed unsafe partial class RarityItemComponent : global::System.IDisposa
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_e080255e();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_e080255e();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static RarityItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_30.RarityItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a557db4f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_a557db4f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,13 +57,13 @@ public sealed unsafe partial class RarityItemComponent : global::System.IDisposa
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_59f49958((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_59f49958((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_47bccc09((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_47bccc09((void*)__hosihikari_shim_handle);
     }
 
 
@@ -73,7 +73,7 @@ public sealed unsafe partial class RarityItemComponent : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_761f3c13((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_761f3c13((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

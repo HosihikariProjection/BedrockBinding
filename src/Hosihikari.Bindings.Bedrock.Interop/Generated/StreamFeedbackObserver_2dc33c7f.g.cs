@@ -44,7 +44,7 @@ public sealed unsafe partial class StreamFeedbackObserver : global::System.IDisp
 
     public static StreamFeedbackObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.StreamFeedbackObserver arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0b226af9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_0b226af9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +60,7 @@ public sealed unsafe partial class StreamFeedbackObserver : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2dc33c7f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_2dc33c7f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

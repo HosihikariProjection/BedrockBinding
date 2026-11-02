@@ -40,7 +40,7 @@ public sealed unsafe partial class IPuvLoadEventing : global::System.IDisposable
 
     public static IPuvLoadEventing Create(global::Hosihikari.Bindings.Bedrock.Interop.IPuvLoadEventing arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ed030745((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ed030745((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +60,7 @@ public sealed unsafe partial class IPuvLoadEventing : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c62e878e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c62e878e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,47 +40,47 @@ public sealed unsafe partial class VoiceMediaSendChannelInterface : global::Syst
 
     public bool CanInsertDtmf()
     {
-        return NativeMethods.TablePtr->C4.hs_method_f74988f8((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_f74988f8((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool GetStats(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_b90fe7f3((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_b90fe7f3((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     public bool InsertDtmf(uint arg0, int arg1, int arg2)
     {
-        return NativeMethods.TablePtr->C4.hs_method_12be2725((void*)__hosihikari_shim_handle, arg0, arg1, arg2) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_12be2725((void*)__hosihikari_shim_handle, arg0, arg1, arg2) != 0;
     }
 
     public bool SenderNackEnabled()
     {
-        return NativeMethods.TablePtr->C4.hs_method_88629c9c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_88629c9c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool SenderNonSenderRttEnabled()
     {
-        return NativeMethods.TablePtr->C4.hs_method_b4bd8722((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_b4bd8722((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool SetAudioSend(uint arg0, bool arg1, nint arg2, nint arg3)
     {
-        return NativeMethods.TablePtr->C4.hs_method_e18300d1((void*)__hosihikari_shim_handle, arg0, arg1, (void*)arg2, (void*)arg3) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_e18300d1((void*)__hosihikari_shim_handle, arg0, arg1, (void*)arg2, (void*)arg3) != 0;
     }
 
     public void SetSend(bool arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_b16d95fc((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_b16d95fc((void*)__hosihikari_shim_handle, arg0);
     }
 
     public bool SetSenderParameters(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_75b0ca7a((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_75b0ca7a((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     public static VoiceMediaSendChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaSendChannelInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_64171ae5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_64171ae5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -96,7 +96,7 @@ public sealed unsafe partial class VoiceMediaSendChannelInterface : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6b6f2d9a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6b6f2d9a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

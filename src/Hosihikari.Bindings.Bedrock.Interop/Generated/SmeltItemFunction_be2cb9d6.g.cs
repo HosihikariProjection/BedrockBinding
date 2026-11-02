@@ -41,17 +41,17 @@ public sealed unsafe partial class SmeltItemFunction : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5815d7bf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5815d7bf((void*)__hosihikari_shim_handle);
     }
 
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C3.hs_method_42361b64((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C4.hs_method_42361b64((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
     }
 
     public int _getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_29b9cd36((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_29b9cd36((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -60,7 +60,7 @@ public sealed unsafe partial class SmeltItemFunction : global::System.IDisposabl
 
     public static SmeltItemFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SmeltItemFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_11d7e829((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_11d7e829((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,12 +71,12 @@ public sealed unsafe partial class SmeltItemFunction : global::System.IDisposabl
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C3.hs_method_f386dff7((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C4.hs_method_f386dff7((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
     }
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_db4204f6((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_db4204f6((void*)__hosihikari_shim_handle);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class SmeltItemFunction : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_be2cb9d6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_be2cb9d6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

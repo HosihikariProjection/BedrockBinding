@@ -44,7 +44,7 @@ public sealed unsafe partial class SpawnClimateFinder : global::System.IDisposab
 
     public static SpawnClimateFinder Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2e7c4cb4();
+        var handle = NativeMethods.TablePtr->C4.hs_create_2e7c4cb4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class SpawnClimateFinder : global::System.IDisposab
 
     public static SpawnClimateFinder Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3d887a4f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_3d887a4f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,35 +70,35 @@ public sealed unsafe partial class SpawnClimateFinder : global::System.IDisposab
 
     public long _calculateClimateMinFitness(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C3.hs_method_f6ad948b((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return NativeMethods.TablePtr->C4.hs_method_f6ad948b((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder_Nested.ResultDetails _findSpawnPositionDetailedResult()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder_Nested.ResultDetails((nint)NativeMethods.TablePtr->C3.hs_method_e665b589((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder_Nested.ResultDetails((nint)NativeMethods.TablePtr->C4.hs_method_e665b589((void*)__hosihikari_shim_handle));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionHeightRange_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_127db241((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_127db241((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoiseSampler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f21023a3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f21023a3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetClimates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_bb6cd045((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_bb6cd045((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder((nint)NativeMethods.TablePtr->C3.hs_method_9957c8f8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnClimateFinder((nint)NativeMethods.TablePtr->C4.hs_method_9957c8f8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -108,7 +108,7 @@ public sealed unsafe partial class SpawnClimateFinder : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b578705e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b578705e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

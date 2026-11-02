@@ -40,7 +40,7 @@ public sealed unsafe partial class HeightProvider : global::System.IDisposable
 
     public static HeightProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.HeightProvider arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d38803a5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_d38803a5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class HeightProvider : global::System.IDisposable
 
     public int sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom randomSource, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenContext heightAccessor)
     {
-        return NativeMethods.TablePtr->C4.hs_method_39beae75((void*)__hosihikari_shim_handle, (void*)randomSource.Handle, (void*)heightAccessor.Handle);
+        return NativeMethods.TablePtr->C5.hs_method_39beae75((void*)__hosihikari_shim_handle, (void*)randomSource.Handle, (void*)heightAccessor.Handle);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class HeightProvider : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3cbadd53((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_3cbadd53((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

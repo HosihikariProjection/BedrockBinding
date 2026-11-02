@@ -40,7 +40,7 @@ public sealed unsafe partial class ShooterAmmunitionEntry : global::System.IDisp
 
     public static ShooterAmmunitionEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterItemComponent_Nested.ShooterAmmunitionEntry arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8624a8e9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_8624a8e9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class ShooterAmmunitionEntry : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint itemDesc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d2b3b7ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d2b3b7ef((void*)__hosihikari_shim_handle);
     }
 
     public bool searchInventory
     {
-        get => NativeMethods.TablePtr->C3.hs_get_15ed50b4((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_15ed50b4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_15ed50b4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_15ed50b4((void*)__hosihikari_shim_handle, value);
     }
 
     public bool useInCreative
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ff102c85((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_ff102c85((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ff102c85((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_ff102c85((void*)__hosihikari_shim_handle, value);
     }
 
     public bool useOffhand
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0e779f57((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_0e779f57((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0e779f57((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_0e779f57((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class ShooterAmmunitionEntry : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_40fc9458((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_40fc9458((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

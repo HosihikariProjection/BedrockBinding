@@ -40,12 +40,12 @@ public sealed unsafe partial class SinkPair : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_f8c9b569((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_f8c9b569((void*)__hosihikari_shim_handle);
     }
 
     public static SinkPair Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_59e335e8();
+        var handle = NativeMethods.TablePtr->C5.hs_create_59e335e8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class SinkPair : global::System.IDisposable
 
     public static SinkPair Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_00dbf4b5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_00dbf4b5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,18 +68,18 @@ public sealed unsafe partial class SinkPair : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk66d41a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_381a8571((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_381a8571((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka7654f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2624f9e2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2624f9e2((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair((nint)NativeMethods.TablePtr->C4.hs_method_ce72a586((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded_Nested.SinkPair((nint)NativeMethods.TablePtr->C5.hs_method_ce72a586((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -89,7 +89,7 @@ public sealed unsafe partial class SinkPair : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_99b47d44((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_99b47d44((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

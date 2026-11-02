@@ -40,18 +40,18 @@ public sealed unsafe partial class VanillaBlockData : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_682b0461((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_682b0461((void*)__hosihikari_shim_handle);
     }
 
     public static string VanillaBlockArchetypeId()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_2204f7e5();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_2204f7e5();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static VanillaBlockData Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.VanillaBlockData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3aaeb8dd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_3aaeb8dd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,49 +62,49 @@ public sealed unsafe partial class VanillaBlockData : global::System.IDisposable
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_40ae0e3e((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_40ae0e3e((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockArchetype_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_30b27818((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_30b27818((void*)__hosihikari_shim_handle);
     }
 
     public int mBlockID
     {
-        get => NativeMethods.TablePtr->C3.hs_get_4fecb70a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_4fecb70a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_4fecb70a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_4fecb70a((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCanDampenVibrations
     {
-        get => NativeMethods.TablePtr->C3.hs_get_cb89cf5d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_cb89cf5d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_cb89cf5d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_cb89cf5d((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCanOccludeVibrations
     {
-        get => NativeMethods.TablePtr->C3.hs_get_632f8072((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_632f8072((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_632f8072((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_632f8072((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mMaterial
     {
-        get => NativeMethods.TablePtr->C3.hs_get_5e73bd95((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_5e73bd95((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_5e73bd95((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_5e73bd95((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mRequiresCorrectToolForDrops
     {
-        get => NativeMethods.TablePtr->C3.hs_get_21ba1c75((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_21ba1c75((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_21ba1c75((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_21ba1c75((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTranslucency_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_671ff055((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_671ff055((void*)__hosihikari_shim_handle);
     }
 
 
@@ -114,7 +114,7 @@ public sealed unsafe partial class VanillaBlockData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_349d0938((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_349d0938((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

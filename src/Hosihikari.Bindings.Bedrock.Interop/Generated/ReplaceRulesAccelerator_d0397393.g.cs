@@ -40,7 +40,7 @@ public sealed unsafe partial class ReplaceRulesAccelerator : global::System.IDis
 
     public static ReplaceRulesAccelerator Create(global::Hosihikari.Bindings.Bedrock.Interop.OreFeature_Nested.ReplaceRulesAccelerator arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ca3f129d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ca3f129d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class ReplaceRulesAccelerator : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mRules_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_62f5858a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_62f5858a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class ReplaceRulesAccelerator : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d0397393((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d0397393((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

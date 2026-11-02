@@ -40,12 +40,12 @@ public sealed unsafe partial class FilterGroupDataMap : global::System.IDisposab
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_a87b77b6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_a87b77b6((void*)__hosihikari_shim_handle);
     }
 
     public static FilterGroupDataMap Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterGroupDataMap arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_dc11f9f5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_dc11f9f5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,13 +56,13 @@ public sealed unsafe partial class FilterGroupDataMap : global::System.IDisposab
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_f4af3206((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_f4af3206((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCollectionGroups_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_19542748((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_19542748((void*)__hosihikari_shim_handle);
     }
 
 
@@ -72,7 +72,7 @@ public sealed unsafe partial class FilterGroupDataMap : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_7a1ea07e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_7a1ea07e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

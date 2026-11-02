@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerUseNameTagEvent : global::System.IDispo
 
     public static PlayerUseNameTagEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerUseNameTagEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ed5255f9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ed5255f9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class PlayerUseNameTagEvent : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityNamed_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dcdff58e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dcdff58e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNewName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_44d1b530((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_44d1b530((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_63d0dbbe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_63d0dbbe((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreviousName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_262e1662((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_262e1662((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class PlayerUseNameTagEvent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_488801f0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_488801f0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,17 +41,17 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_45fd89d6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_45fd89d6((void*)__hosihikari_shim_handle);
     }
 
     public void _updatePlayerUndergroundStatus(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, bool isUnderground)
     {
-        NativeMethods.TablePtr->C1.hs_method_93dddff3((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), isUnderground);
+        NativeMethods.TablePtr->C2.hs_method_93dddff3((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), isUnderground);
     }
 
     public static IMinecraftEventing Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2628559f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2628559f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void clearListeners()
     {
-        NativeMethods.TablePtr->C1.hs_method_eb08a04e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_eb08a04e((void*)__hosihikari_shim_handle);
     }
 
     public void fileEventCloudWorldPullFailed(string reason, string worldID, bool localLevelDatUsed)
@@ -97,7 +97,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_2346079d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, localLevelDatUsed);
+                NativeMethods.TablePtr->C2.hs_method_2346079d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, localLevelDatUsed);
             }
         }
     }
@@ -130,7 +130,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData4 = __hs_stringBytes4)
             {
-                NativeMethods.TablePtr->C1.hs_method_e866eed7((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1, wasApproved, eventCode, __hs_stringData4, (nuint)__hs_stringByteCount4);
+                NativeMethods.TablePtr->C2.hs_method_e866eed7((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1, wasApproved, eventCode, __hs_stringData4, (nuint)__hs_stringByteCount4);
             }
         }
     }
@@ -176,7 +176,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_dddc711c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)downloadResult, (void*)origin, (void*)elapsedTime);
+                    NativeMethods.TablePtr->C2.hs_method_dddc711c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)downloadResult, (void*)origin, (void*)elapsedTime);
                 }
             }
         }
@@ -184,17 +184,17 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireChatUsedEvent(uint chatLength, bool isSlashCommand)
     {
-        NativeMethods.TablePtr->C1.hs_method_1fa277ab((void*)__hosihikari_shim_handle, chatLength, isSlashCommand);
+        NativeMethods.TablePtr->C2.hs_method_1fa277ab((void*)__hosihikari_shim_handle, chatLength, isSlashCommand);
     }
 
     public void fireChunkRecyclerTelemetryData(global::Hosihikari.Bindings.Bedrock.Interop.ChunkRecyclerTelemetryOutput output)
     {
-        NativeMethods.TablePtr->C1.hs_method_602069ad((void*)__hosihikari_shim_handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C2.hs_method_602069ad((void*)__hosihikari_shim_handle, (void*)output.Handle);
     }
 
     public void fireClassroomSettingUpdated(int classroomSetting, int settingMode)
     {
-        NativeMethods.TablePtr->C1.hs_method_4f33f57c((void*)__hosihikari_shim_handle, classroomSetting, settingMode);
+        NativeMethods.TablePtr->C2.hs_method_4f33f57c((void*)__hosihikari_shim_handle, classroomSetting, settingMode);
     }
 
     public void fireClubsEngagementEvent(int action, int engagementTargetType, nint target, long realmId, string clubId)
@@ -212,7 +212,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(clubId, __hs_stringBytes4);
         fixed (byte* __hs_stringData4 = __hs_stringBytes4)
         {
-            NativeMethods.TablePtr->C1.hs_method_54f524b8((void*)__hosihikari_shim_handle, action, engagementTargetType, (void*)target, realmId, __hs_stringData4, (nuint)__hs_stringByteCount4);
+            NativeMethods.TablePtr->C2.hs_method_54f524b8((void*)__hosihikari_shim_handle, action, engagementTargetType, (void*)target, realmId, __hs_stringData4, (nuint)__hs_stringByteCount4);
         }
     }
 
@@ -231,7 +231,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(clubId, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            NativeMethods.TablePtr->C1.hs_method_4b08318e((void*)__hosihikari_shim_handle, source, realmId, __hs_stringData2, (nuint)__hs_stringByteCount2, unreadPosts);
+            NativeMethods.TablePtr->C2.hs_method_4b08318e((void*)__hosihikari_shim_handle, source, realmId, __hs_stringData2, (nuint)__hs_stringByteCount2, unreadPosts);
         }
     }
 
@@ -249,7 +249,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireCodeCommandButtonPressed()
     {
-        NativeMethods.TablePtr->C1.hs_method_7c3bd4a2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_7c3bd4a2((void*)__hosihikari_shim_handle);
     }
 
     public void fireCommandParseTableTelemetry(bool isServer, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing_Nested.CommandParseTableEntry[] parseTableDetails)
@@ -263,7 +263,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         fixed (nint* __hs_vectorHandleData1 = __hs_vectorHandles1)
         {
             var __hs_vectorData1 = (void**)__hs_vectorHandleData1;
-            NativeMethods.TablePtr->C1.hs_method_dc32b899((void*)__hosihikari_shim_handle, isServer, __hs_vectorData1, (nuint)(parseTableDetails?.Length ?? 0));
+            NativeMethods.TablePtr->C2.hs_method_dc32b899((void*)__hosihikari_shim_handle, isServer, __hs_vectorData1, (nuint)(parseTableDetails?.Length ?? 0));
         }
     }
 
@@ -308,7 +308,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_25d0e7cc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_25d0e7cc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -342,14 +342,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_c5794c0e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_c5794c0e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
 
     public void fireCurrentInputUpdated(uint userId, uint inputMode)
     {
-        NativeMethods.TablePtr->C1.hs_method_00092218((void*)__hosihikari_shim_handle, userId, inputMode);
+        NativeMethods.TablePtr->C2.hs_method_00092218((void*)__hosihikari_shim_handle, userId, inputMode);
     }
 
     public void fireDBStorageError(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageEventingContext context, string errorType)
@@ -367,13 +367,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(errorType, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_047b2a99((void*)__hosihikari_shim_handle, (void*)context.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C2.hs_method_047b2a99((void*)__hosihikari_shim_handle, (void*)context.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public void fireDayOneExperienceStateChanged(int newState, uint? importedWorldIndex, ulong? importedWorldTimestamp)
     {
-        NativeMethods.TablePtr->C1.hs_method_1d054c9b((void*)__hosihikari_shim_handle, newState, importedWorldIndex ?? default(uint), importedWorldTimestamp ?? default(ulong), importedWorldIndex.HasValue, importedWorldTimestamp.HasValue);
+        NativeMethods.TablePtr->C2.hs_method_1d054c9b((void*)__hosihikari_shim_handle, newState, importedWorldIndex ?? default(uint), importedWorldTimestamp ?? default(ulong), importedWorldIndex.HasValue, importedWorldTimestamp.HasValue);
     }
 
     public void fireDelayedEventReportOfflineAction(string offlineAction)
@@ -391,7 +391,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(offlineAction, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_808e114d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_808e114d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -410,7 +410,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(toolName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_1d714fdc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_1d714fdc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -429,7 +429,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(transactionName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_48f94c52((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_48f94c52((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -474,7 +474,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_ed16230f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_ed16230f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -534,7 +534,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_3bc0008a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, state is not null, previousStage is not null);
+                        NativeMethods.TablePtr->C2.hs_method_3bc0008a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, state is not null, previousStage is not null);
                     }
                 }
             }
@@ -556,7 +556,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(transactionName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_724c926e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_724c926e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -609,7 +609,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_c31488b0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_c31488b0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -619,7 +619,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     {
         fixed (float* __hs_vectorData1 = divergences)
         {
-            NativeMethods.TablePtr->C1.hs_method_c60ac4a9((void*)__hosihikari_shim_handle, actorType, __hs_vectorData1, (nuint)(divergences?.Length ?? 0));
+            NativeMethods.TablePtr->C2.hs_method_c60ac4a9((void*)__hosihikari_shim_handle, actorType, __hs_vectorData1, (nuint)(divergences?.Length ?? 0));
         }
     }
 
@@ -638,7 +638,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(invalidValue, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_bf88ed86((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)caller);
+            NativeMethods.TablePtr->C2.hs_method_bf88ed86((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)caller);
         }
     }
 
@@ -657,38 +657,38 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(addedXuid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_95a6e07e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, location, success);
+            NativeMethods.TablePtr->C2.hs_method_95a6e07e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, location, success);
         }
     }
 
     public void fireEventAndroidHelpRequest()
     {
-        NativeMethods.TablePtr->C1.hs_method_c76a7d43((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_c76a7d43((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventAppInitFileOpenStats(nint openForRead, nint openForWrite)
     {
-        NativeMethods.TablePtr->C1.hs_method_d60d280b((void*)__hosihikari_shim_handle, (void*)openForRead, (void*)openForWrite);
+        NativeMethods.TablePtr->C2.hs_method_d60d280b((void*)__hosihikari_shim_handle, (void*)openForRead, (void*)openForWrite);
     }
 
     public void fireEventAppPaused()
     {
-        NativeMethods.TablePtr->C1.hs_method_0210c260((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_0210c260((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventAppSurfaceCreated()
     {
-        NativeMethods.TablePtr->C1.hs_method_3a2a2fd9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_3a2a2fd9((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventAppSurfaceDestroyed()
     {
-        NativeMethods.TablePtr->C1.hs_method_39d1bc20((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_39d1bc20((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventAppUnpaused()
     {
-        NativeMethods.TablePtr->C1.hs_method_f9516055((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_f9516055((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventAssertFailed(string assertBucket, string message)
@@ -719,14 +719,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_a5037709((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_a5037709((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
 
     public void fireEventBlockPlacedByCommand(global::Hosihikari.Bindings.Bedrock.Interop.Block placedBlock, int numberOfBlocksPlaced)
     {
-        NativeMethods.TablePtr->C1.hs_method_1fd8b98e((void*)__hosihikari_shim_handle, (void*)placedBlock.Handle, numberOfBlocksPlaced);
+        NativeMethods.TablePtr->C2.hs_method_1fd8b98e((void*)__hosihikari_shim_handle, (void*)placedBlock.Handle, numberOfBlocksPlaced);
     }
 
     public void fireEventBlockTypeRegistryChecksumMismatch(string reason, nint serverBlockChecksum, nint clientBlockChecksum, string serverVersion)
@@ -757,7 +757,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                NativeMethods.TablePtr->C1.hs_method_273eaad6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)serverBlockChecksum, (void*)clientBlockChecksum, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                NativeMethods.TablePtr->C2.hs_method_273eaad6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)serverBlockChecksum, (void*)clientBlockChecksum, __hs_stringData3, (nuint)__hs_stringByteCount3);
             }
         }
     }
@@ -777,13 +777,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_e5921bfb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isSuccess, isBlocked);
+            NativeMethods.TablePtr->C2.hs_method_e5921bfb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isSuccess, isBlocked);
         }
     }
 
     public void fireEventBoardTextUpdated(global::Hosihikari.Bindings.Bedrock.Interop.ChalkboardBlockActor board)
     {
-        NativeMethods.TablePtr->C1.hs_method_450804b5((void*)__hosihikari_shim_handle, (void*)board.Handle);
+        NativeMethods.TablePtr->C2.hs_method_450804b5((void*)__hosihikari_shim_handle, (void*)board.Handle);
     }
 
     public void fireEventBundleSubOfferClicked(int offerIndex, int bundleSubOfferCount, string telemetryId, string productId, bool isOnSale, string timeRemainingOnSale)
@@ -827,7 +827,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData5 = __hs_stringBytes5)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_6d4e57fe((void*)__hosihikari_shim_handle, offerIndex, bundleSubOfferCount, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, isOnSale, __hs_stringData5, (nuint)__hs_stringByteCount5);
+                    NativeMethods.TablePtr->C2.hs_method_6d4e57fe((void*)__hosihikari_shim_handle, offerIndex, bundleSubOfferCount, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, isOnSale, __hs_stringData5, (nuint)__hs_stringByteCount5);
                 }
             }
         }
@@ -839,7 +839,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventCameraUsed(bool isSelfie)
     {
-        NativeMethods.TablePtr->C1.hs_method_fb53401e((void*)__hosihikari_shim_handle, isSelfie);
+        NativeMethods.TablePtr->C2.hs_method_fb53401e((void*)__hosihikari_shim_handle, isSelfie);
     }
 
     public void fireEventChatFloodingActionTaken(string authorXuid, int action, string message)
@@ -870,7 +870,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C1.hs_method_b8a4be59((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, action, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C2.hs_method_b8a4be59((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, action, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -881,22 +881,22 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventChunkChanged(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
-        NativeMethods.TablePtr->C1.hs_method_1e34cf65((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C2.hs_method_1e34cf65((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
     public void fireEventChunkLoaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
-        NativeMethods.TablePtr->C1.hs_method_6634a7ba((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C2.hs_method_6634a7ba((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
     public void fireEventChunkUnloaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
-        NativeMethods.TablePtr->C1.hs_method_c3efe3ab((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c3efe3ab((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
     public void fireEventClientLastPackets(nint userId, byte subId, int correlationId, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value lastSentPackets, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value lastReceivedPackets)
     {
-        NativeMethods.TablePtr->C1.hs_method_7561b058((void*)__hosihikari_shim_handle, (void*)userId, subId, correlationId, (void*)lastSentPackets.Handle, (void*)lastReceivedPackets.Handle);
+        NativeMethods.TablePtr->C2.hs_method_7561b058((void*)__hosihikari_shim_handle, (void*)userId, subId, correlationId, (void*)lastSentPackets.Handle, (void*)lastReceivedPackets.Handle);
     }
 
     public void fireEventClientLeftGameDueToUnrecoverableError(string reason, bool isServer)
@@ -914,7 +914,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(reason, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_105a5b5c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isServer);
+            NativeMethods.TablePtr->C2.hs_method_105a5b5c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isServer);
         }
     }
 
@@ -933,7 +933,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(correlationId, __hs_stringBytes3);
         fixed (byte* __hs_stringData3 = __hs_stringBytes3)
         {
-            NativeMethods.TablePtr->C1.hs_method_f892d9a9((void*)__hosihikari_shim_handle, (void*)netId.Handle, packetId, clientSubId, __hs_stringData3, (nuint)__hs_stringByteCount3, isOutgoing);
+            NativeMethods.TablePtr->C2.hs_method_f892d9a9((void*)__hosihikari_shim_handle, (void*)netId.Handle, packetId, clientSubId, __hs_stringData3, (nuint)__hs_stringByteCount3, isOutgoing);
         }
     }
 
@@ -952,13 +952,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(cloudCorrelationId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_95b84cae((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, conflictStatus);
+            NativeMethods.TablePtr->C2.hs_method_95b84cae((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, conflictStatus);
         }
     }
 
     public void fireEventCloudMyWorldsSummary(int totalWorldsCount, int placeholderCount, int needsUploadCount, int ctagMismatchCount, int conflictCount)
     {
-        NativeMethods.TablePtr->C1.hs_method_037c564d((void*)__hosihikari_shim_handle, totalWorldsCount, placeholderCount, needsUploadCount, ctagMismatchCount, conflictCount);
+        NativeMethods.TablePtr->C2.hs_method_037c564d((void*)__hosihikari_shim_handle, totalWorldsCount, placeholderCount, needsUploadCount, ctagMismatchCount, conflictCount);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -993,14 +993,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData4 = __hs_stringBytes4)
             {
-                NativeMethods.TablePtr->C1.hs_method_f010f9c6((void*)__hosihikari_shim_handle, operation, cloudItemType, __hs_stringData2, (nuint)__hs_stringByteCount2, size, __hs_stringData4, (nuint)__hs_stringByteCount4, driveItemId is not null);
+                NativeMethods.TablePtr->C2.hs_method_f010f9c6((void*)__hosihikari_shim_handle, operation, cloudItemType, __hs_stringData2, (nuint)__hs_stringByteCount2, size, __hs_stringData4, (nuint)__hs_stringByteCount4, driveItemId is not null);
             }
         }
     }
 
     public void fireEventCodeBuilderClosed()
     {
-        NativeMethods.TablePtr->C1.hs_method_cdf3f758((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_cdf3f758((void*)__hosihikari_shim_handle);
     }
 
     public string fireEventCodeBuilderLog(nint properties, string message, string level)
@@ -1031,7 +1031,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                var __hs_view = NativeMethods.TablePtr->C1.hs_method_7c693463((void*)__hosihikari_shim_handle, (void*)properties, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                var __hs_view = NativeMethods.TablePtr->C2.hs_method_7c693463((void*)__hosihikari_shim_handle, (void*)properties, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
             }
         }
@@ -1052,7 +1052,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(action, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_72732dab((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_72732dab((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -1071,13 +1071,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(objective, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_161c5cd1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, score);
+            NativeMethods.TablePtr->C2.hs_method_161c5cd1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, score);
         }
     }
 
     public void fireEventCompoundCreatorCreated(int compoundId, int count)
     {
-        NativeMethods.TablePtr->C1.hs_method_7a91d446((void*)__hosihikari_shim_handle, compoundId, count);
+        NativeMethods.TablePtr->C2.hs_method_7a91d446((void*)__hosihikari_shim_handle, compoundId, count);
     }
 
     public void fireEventConnectedStorageError(nint message, string levelId, long quotaRemaining)
@@ -1095,7 +1095,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(levelId, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_25a66dd7((void*)__hosihikari_shim_handle, (void*)message, __hs_stringData1, (nuint)__hs_stringByteCount1, quotaRemaining);
+            NativeMethods.TablePtr->C2.hs_method_25a66dd7((void*)__hosihikari_shim_handle, (void*)message, __hs_stringData1, (nuint)__hs_stringByteCount1, quotaRemaining);
         }
     }
 
@@ -1127,7 +1127,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData5 = __hs_stringBytes5)
             {
-                NativeMethods.TablePtr->C1.hs_method_c714b168((void*)__hosihikari_shim_handle, eventType, succeeded, durationMs, chunksSent ?? default(uint), __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5, quotaRemaining, filesToAddCount ?? default(uint), filesToDeleteCount ?? default(uint), HACK_oldFilesToDeleteCount ?? default(uint), chunksSent.HasValue, filesToAddCount.HasValue, filesToDeleteCount.HasValue, HACK_oldFilesToDeleteCount.HasValue);
+                NativeMethods.TablePtr->C2.hs_method_c714b168((void*)__hosihikari_shim_handle, eventType, succeeded, durationMs, chunksSent ?? default(uint), __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5, quotaRemaining, filesToAddCount ?? default(uint), filesToDeleteCount ?? default(uint), HACK_oldFilesToDeleteCount ?? default(uint), chunksSent.HasValue, filesToAddCount.HasValue, filesToDeleteCount.HasValue, HACK_oldFilesToDeleteCount.HasValue);
             }
         }
     }
@@ -1147,7 +1147,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(logArea, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_d92e40a7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, errorCount, warningCount);
+            NativeMethods.TablePtr->C2.hs_method_d92e40a7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, errorCount, warningCount);
         }
     }
 
@@ -1179,7 +1179,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_a117843f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)mode);
+                NativeMethods.TablePtr->C2.hs_method_a117843f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)mode);
             }
         }
     }
@@ -1199,23 +1199,23 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(actionName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_a911cde7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, inputType, keyCode);
+            NativeMethods.TablePtr->C2.hs_method_a911cde7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, inputType, keyCode);
         }
     }
 
     public void fireEventControlTipsPanelUpdated(short updateType, double elapsedTimeSec)
     {
-        NativeMethods.TablePtr->C1.hs_method_2c65bf39((void*)__hosihikari_shim_handle, updateType, elapsedTimeSec);
+        NativeMethods.TablePtr->C2.hs_method_2c65bf39((void*)__hosihikari_shim_handle, updateType, elapsedTimeSec);
     }
 
     public void fireEventCopyWorldEducationEnabled()
     {
-        NativeMethods.TablePtr->C1.hs_method_da12afcf((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_da12afcf((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventCrashSystemFailedToInit()
     {
-        NativeMethods.TablePtr->C1.hs_method_f06784fc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_f06784fc((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventCreatorFollowedUnfollowed(string creatorId, string operation, bool success)
@@ -1246,7 +1246,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_00beb4ca((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, success);
+                NativeMethods.TablePtr->C2.hs_method_00beb4ca((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, success);
             }
         }
     }
@@ -1266,13 +1266,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(reason, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_46e7c71f((void*)__hosihikari_shim_handle, (void*)context.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C2.hs_method_46e7c71f((void*)__hosihikari_shim_handle, (void*)context.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public void fireEventDBStorageSizeSnapshot(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageEventingContext context, nint folderWatcher, byte kind)
     {
-        NativeMethods.TablePtr->C1.hs_method_950948d5((void*)__hosihikari_shim_handle, (void*)context.Handle, (void*)folderWatcher, kind);
+        NativeMethods.TablePtr->C2.hs_method_950948d5((void*)__hosihikari_shim_handle, (void*)context.Handle, (void*)folderWatcher, kind);
     }
 
     public void fireEventDedicatedServerDiscoveryResponse(int retryAttempt, int? errorStatus, string? errorMessage, string? errorCode)
@@ -1303,7 +1303,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                NativeMethods.TablePtr->C1.hs_method_a58ff135((void*)__hosihikari_shim_handle, retryAttempt, errorStatus ?? default(int), __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, errorStatus.HasValue, errorMessage is not null, errorCode is not null);
+                NativeMethods.TablePtr->C2.hs_method_a58ff135((void*)__hosihikari_shim_handle, retryAttempt, errorStatus ?? default(int), __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, errorStatus.HasValue, errorMessage is not null, errorCode is not null);
             }
         }
     }
@@ -1323,13 +1323,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(appearanceName, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            NativeMethods.TablePtr->C1.hs_method_1a040c6a((void*)__hosihikari_shim_handle, previewIndex, (void*)appearanceId.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            NativeMethods.TablePtr->C2.hs_method_1a040c6a((void*)__hosihikari_shim_handle, previewIndex, (void*)appearanceId.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
         }
     }
 
     public void fireEventDefaultGameTypeChanged(int oldGameType, int newGameType)
     {
-        NativeMethods.TablePtr->C1.hs_method_7321cbe9((void*)__hosihikari_shim_handle, oldGameType, newGameType);
+        NativeMethods.TablePtr->C2.hs_method_7321cbe9((void*)__hosihikari_shim_handle, oldGameType, newGameType);
     }
 
     public void fireEventDevSlashCommandExecuted(string commandName, string command)
@@ -1360,7 +1360,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_cfa4d8f2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_cfa4d8f2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -1380,7 +1380,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(accountID, __hs_stringBytes3);
         fixed (byte* __hs_stringData3 = __hs_stringBytes3)
         {
-            NativeMethods.TablePtr->C1.hs_method_338d3bba((void*)__hosihikari_shim_handle, stage, phase, resultStatus, __hs_stringData3, (nuint)__hs_stringByteCount3);
+            NativeMethods.TablePtr->C2.hs_method_338d3bba((void*)__hosihikari_shim_handle, stage, phase, resultStatus, __hs_stringData3, (nuint)__hs_stringByteCount3);
         }
     }
 
@@ -1399,33 +1399,33 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(accountID, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_6668e355((void*)__hosihikari_shim_handle, isNewAccount, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C2.hs_method_6668e355((void*)__hosihikari_shim_handle, isNewAccount, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public void fireEventDeviceIdManagerFailOnIdentityGained()
     {
-        NativeMethods.TablePtr->C1.hs_method_e34e4371((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_e34e4371((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventDeviceLost()
     {
-        NativeMethods.TablePtr->C1.hs_method_6a933e0a((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_6a933e0a((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventDifficultySet(int oldDifficulty, int newDifficulty)
     {
-        NativeMethods.TablePtr->C1.hs_method_e71293fd((void*)__hosihikari_shim_handle, oldDifficulty, newDifficulty);
+        NativeMethods.TablePtr->C2.hs_method_e71293fd((void*)__hosihikari_shim_handle, oldDifficulty, newDifficulty);
     }
 
     public void fireEventDimensionTransfer(nint data)
     {
-        NativeMethods.TablePtr->C1.hs_method_ded9fcd6((void*)__hosihikari_shim_handle, (void*)data);
+        NativeMethods.TablePtr->C2.hs_method_ded9fcd6((void*)__hosihikari_shim_handle, (void*)data);
     }
 
     public void fireEventDiskStatus(byte status, int errorCode, ulong freeSpace)
     {
-        NativeMethods.TablePtr->C1.hs_method_c98227bb((void*)__hosihikari_shim_handle, status, errorCode, freeSpace);
+        NativeMethods.TablePtr->C2.hs_method_c98227bb((void*)__hosihikari_shim_handle, status, errorCode, freeSpace);
     }
 
     public void fireEventDisplayLoggedError(string errorMessageTemplate, string errorMessage, string errorParameters)
@@ -1469,7 +1469,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_c313b415((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_c313b415((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -1490,23 +1490,23 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(productId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_ab05899e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, dlcSize, onDiskScratchSpace, scratchSpace, premiumSpace);
+            NativeMethods.TablePtr->C2.hs_method_ab05899e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, dlcSize, onDiskScratchSpace, scratchSpace, premiumSpace);
         }
     }
 
     public void fireEventEduContentVerificationFailed()
     {
-        NativeMethods.TablePtr->C1.hs_method_ecee672d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_ecee672d((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventEduDemoConversion(byte role, byte lastClickedSource)
     {
-        NativeMethods.TablePtr->C1.hs_method_8eeda109((void*)__hosihikari_shim_handle, role, lastClickedSource);
+        NativeMethods.TablePtr->C2.hs_method_8eeda109((void*)__hosihikari_shim_handle, role, lastClickedSource);
     }
 
     public void fireEventEduResources()
     {
-        NativeMethods.TablePtr->C1.hs_method_f46a2c74((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_f46a2c74((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'std::pair<std::basic_string_view<char>, std::basic_string_view<char>>' is not supported.", false)]
@@ -1515,12 +1515,12 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventEduiOSPurchaseTransaction(nint status)
     {
-        NativeMethods.TablePtr->C1.hs_method_d79c88ea((void*)__hosihikari_shim_handle, (void*)status);
+        NativeMethods.TablePtr->C2.hs_method_d79c88ea((void*)__hosihikari_shim_handle, (void*)status);
     }
 
     public void fireEventElementConstructorUsed(int atomicNumber, int count, int useType)
     {
-        NativeMethods.TablePtr->C1.hs_method_a8413b38((void*)__hosihikari_shim_handle, atomicNumber, count, useType);
+        NativeMethods.TablePtr->C2.hs_method_a8413b38((void*)__hosihikari_shim_handle, atomicNumber, count, useType);
     }
 
     public void fireEventEmptyLibraryCategoryError(string categoryTitle)
@@ -1538,7 +1538,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(categoryTitle, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_13c2ed46((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_13c2ed46((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -1557,13 +1557,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(topicName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_c6da3964((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, inputMode);
+            NativeMethods.TablePtr->C2.hs_method_c6da3964((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, inputMode);
         }
     }
 
     public void fireEventEntitlementCacheLoadTimeout()
     {
-        NativeMethods.TablePtr->C1.hs_method_04afb171((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_04afb171((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -1572,7 +1572,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventEntitySpawned(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int mobType, uint spawnMethod)
     {
-        NativeMethods.TablePtr->C1.hs_method_0b449448((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), mobType, spawnMethod);
+        NativeMethods.TablePtr->C2.hs_method_0b449448((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), mobType, spawnMethod);
     }
 
     public void fireEventFatalClientPackError(int errorType, string[] packIds)
@@ -1597,7 +1597,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
                 __hs_vectorOffset1 += __hs_length1;
             }
-            NativeMethods.TablePtr->C1.hs_method_de2c84c6((void*)__hosihikari_shim_handle, errorType, __hs_vectorData1, (nuint)(packIds?.Length ?? 0));
+            NativeMethods.TablePtr->C2.hs_method_de2c84c6((void*)__hosihikari_shim_handle, errorType, __hs_vectorData1, (nuint)(packIds?.Length ?? 0));
         }
     }
 
@@ -1629,7 +1629,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_e1b037bc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, safetyCheckSuccessful, isValidText);
+                NativeMethods.TablePtr->C2.hs_method_e1b037bc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, safetyCheckSuccessful, isValidText);
             }
         }
     }
@@ -1649,7 +1649,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(gameRuleName, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            NativeMethods.TablePtr->C1.hs_method_c41914c5((void*)__hosihikari_shim_handle, oldValue, newValue, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            NativeMethods.TablePtr->C2.hs_method_c41914c5((void*)__hosihikari_shim_handle, oldValue, newValue, __hs_stringData2, (nuint)__hs_stringByteCount2);
         }
     }
 
@@ -1668,7 +1668,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(gameRuleName, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            NativeMethods.TablePtr->C1.hs_method_c98eca8c((void*)__hosihikari_shim_handle, oldValue, newValue, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            NativeMethods.TablePtr->C2.hs_method_c98eca8c((void*)__hosihikari_shim_handle, oldValue, newValue, __hs_stringData2, (nuint)__hs_stringByteCount2);
         }
     }
 
@@ -1687,23 +1687,23 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(gameRuleName, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            NativeMethods.TablePtr->C1.hs_method_230dca61((void*)__hosihikari_shim_handle, oldValue, newValue, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            NativeMethods.TablePtr->C2.hs_method_230dca61((void*)__hosihikari_shim_handle, oldValue, newValue, __hs_stringData2, (nuint)__hs_stringByteCount2);
         }
     }
 
     public void fireEventGameTip(int gameTipId, int gameTipEventType, int gameTipTestGroup, uint inputMode)
     {
-        NativeMethods.TablePtr->C1.hs_method_a5b86c1d((void*)__hosihikari_shim_handle, gameTipId, gameTipEventType, gameTipTestGroup, inputMode);
+        NativeMethods.TablePtr->C2.hs_method_a5b86c1d((void*)__hosihikari_shim_handle, gameTipId, gameTipEventType, gameTipTestGroup, inputMode);
     }
 
     public void fireEventGoogleAccountHoldWarning(bool navigatedToSubscription)
     {
-        NativeMethods.TablePtr->C1.hs_method_e318bf12((void*)__hosihikari_shim_handle, navigatedToSubscription);
+        NativeMethods.TablePtr->C2.hs_method_e318bf12((void*)__hosihikari_shim_handle, navigatedToSubscription);
     }
 
     public void fireEventHardwareInfo()
     {
-        NativeMethods.TablePtr->C1.hs_method_98056df1((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_98056df1((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventHowToPlayTopicChanged(string topicName, uint inputMode)
@@ -1721,7 +1721,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(topicName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_7af68db3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, inputMode);
+            NativeMethods.TablePtr->C2.hs_method_7af68db3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, inputMode);
         }
     }
 
@@ -1740,7 +1740,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_249d66a1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_249d66a1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -1750,17 +1750,17 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventInGamePause(bool pauseStatus)
     {
-        NativeMethods.TablePtr->C1.hs_method_4f20bf43((void*)__hosihikari_shim_handle, pauseStatus);
+        NativeMethods.TablePtr->C2.hs_method_4f20bf43((void*)__hosihikari_shim_handle, pauseStatus);
     }
 
     public void fireEventInboxSummary(nint data)
     {
-        NativeMethods.TablePtr->C1.hs_method_df9b7871((void*)__hosihikari_shim_handle, (void*)data);
+        NativeMethods.TablePtr->C2.hs_method_df9b7871((void*)__hosihikari_shim_handle, (void*)data);
     }
 
     public void fireEventInventoryVersionRefreshRequestResponse(int status, int retryAttempt, bool asyncServicesManager)
     {
-        NativeMethods.TablePtr->C1.hs_method_9b157fe1((void*)__hosihikari_shim_handle, status, retryAttempt, asyncServicesManager);
+        NativeMethods.TablePtr->C2.hs_method_9b157fe1((void*)__hosihikari_shim_handle, status, retryAttempt, asyncServicesManager);
     }
 
     public void fireEventJoinByCode(string arg0)
@@ -1778,18 +1778,18 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_2e634569((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_2e634569((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void fireEventJoinCanceled(int currentState)
     {
-        NativeMethods.TablePtr->C1.hs_method_1cc5bf23((void*)__hosihikari_shim_handle, currentState);
+        NativeMethods.TablePtr->C2.hs_method_1cc5bf23((void*)__hosihikari_shim_handle, currentState);
     }
 
     public void fireEventLabTableCreated(int reactionId, int productId, int productAux)
     {
-        NativeMethods.TablePtr->C1.hs_method_03fee8a9((void*)__hosihikari_shim_handle, reactionId, productId, productAux);
+        NativeMethods.TablePtr->C2.hs_method_03fee8a9((void*)__hosihikari_shim_handle, reactionId, productId, productAux);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -1798,12 +1798,12 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventLevelChunkPerformanceData(bool isClientSide)
     {
-        NativeMethods.TablePtr->C1.hs_method_728e440f((void*)__hosihikari_shim_handle, isClientSide);
+        NativeMethods.TablePtr->C2.hs_method_728e440f((void*)__hosihikari_shim_handle, isClientSide);
     }
 
     public void fireEventLevelDBPerformanceData(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageEventingContext context, nint perfData)
     {
-        NativeMethods.TablePtr->C1.hs_method_9d299d17((void*)__hosihikari_shim_handle, (void*)context.Handle, (void*)perfData);
+        NativeMethods.TablePtr->C2.hs_method_9d299d17((void*)__hosihikari_shim_handle, (void*)context.Handle, (void*)perfData);
     }
 
     public void fireEventLevelDatLoadFailed(string reason, string worldID, bool isFatal)
@@ -1834,7 +1834,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_0c42470b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, isFatal);
+                NativeMethods.TablePtr->C2.hs_method_0c42470b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, isFatal);
             }
         }
     }
@@ -1854,13 +1854,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(valueName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_a4674a9e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_a4674a9e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void fireEventLevelDestruct()
     {
-        NativeMethods.TablePtr->C1.hs_method_b28fd5da((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_b28fd5da((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -1882,18 +1882,18 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(productId, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            NativeMethods.TablePtr->C1.hs_method_87ebf51b((void*)__hosihikari_shim_handle, sessionId, correlationId, __hs_stringData2, (nuint)__hs_stringByteCount2, row, column);
+            NativeMethods.TablePtr->C2.hs_method_87ebf51b((void*)__hosihikari_shim_handle, sessionId, correlationId, __hs_stringData2, (nuint)__hs_stringByteCount2, row, column);
         }
     }
 
     public void fireEventLicenseCheck(bool isLicensed, nint data)
     {
-        NativeMethods.TablePtr->C1.hs_method_dd528284((void*)__hosihikari_shim_handle, isLicensed, (void*)data);
+        NativeMethods.TablePtr->C2.hs_method_dd528284((void*)__hosihikari_shim_handle, isLicensed, (void*)data);
     }
 
     public void fireEventLockedItemGiven()
     {
-        NativeMethods.TablePtr->C1.hs_method_cf73cafd((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_cf73cafd((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -1915,7 +1915,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(levelId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_44d0dffe((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, local, remote, reason);
+            NativeMethods.TablePtr->C2.hs_method_44d0dffe((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, local, remote, reason);
         }
     }
 
@@ -1947,7 +1947,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_d62e6173((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)data);
+                NativeMethods.TablePtr->C2.hs_method_d62e6173((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)data);
             }
         }
     }
@@ -2019,7 +2019,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                     {
                         fixed (byte* __hs_stringData5 = __hs_stringBytes5)
                         {
-                            NativeMethods.TablePtr->C1.hs_method_78ea793b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, isControl, __hs_stringData5, (nuint)__hs_stringByteCount5);
+                            NativeMethods.TablePtr->C2.hs_method_78ea793b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, isControl, __hs_stringData5, (nuint)__hs_stringByteCount5);
                         }
                     }
                 }
@@ -2094,7 +2094,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                     {
                         fixed (byte* __hs_stringData5 = __hs_stringBytes5)
                         {
-                            NativeMethods.TablePtr->C1.hs_method_4a358c30((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, isControl, __hs_stringData5, (nuint)__hs_stringByteCount5);
+                            NativeMethods.TablePtr->C2.hs_method_4a358c30((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, isControl, __hs_stringData5, (nuint)__hs_stringByteCount5);
                         }
                     }
                 }
@@ -2134,14 +2134,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData4 = __hs_stringBytes4)
             {
-                NativeMethods.TablePtr->C1.hs_method_0c309ac2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, fromState, toState, port, __hs_stringData4, (nuint)__hs_stringByteCount4);
+                NativeMethods.TablePtr->C2.hs_method_0c309ac2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, fromState, toState, port, __hs_stringData4, (nuint)__hs_stringByteCount4);
             }
         }
     }
 
     public void fireEventMultiplayerSessionUpdate(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_Level_ level)
     {
-        NativeMethods.TablePtr->C1.hs_method_524a413f((void*)__hosihikari_shim_handle, (void*)level.Handle);
+        NativeMethods.TablePtr->C2.hs_method_524a413f((void*)__hosihikari_shim_handle, (void*)level.Handle);
     }
 
     public void fireEventMuteUser(string xuid, bool isSuccess, bool isMuted)
@@ -2159,13 +2159,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_5c314918((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isSuccess, isMuted);
+            NativeMethods.TablePtr->C2.hs_method_5c314918((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isSuccess, isMuted);
         }
     }
 
     public void fireEventNPLNLifecycle(int eventType, int multiplayerState, int serviceState)
     {
-        NativeMethods.TablePtr->C1.hs_method_e13fec4b((void*)__hosihikari_shim_handle, eventType, multiplayerState, serviceState);
+        NativeMethods.TablePtr->C2.hs_method_e13fec4b((void*)__hosihikari_shim_handle, eventType, multiplayerState, serviceState);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -2187,18 +2187,18 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(newContentPrefix, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_ab020bf6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, hasNewStoreContent);
+            NativeMethods.TablePtr->C2.hs_method_ab020bf6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, hasNewStoreContent);
         }
     }
 
     public void fireEventNpcPropertiesUpdated(global::Hosihikari.Bindings.Bedrock.Interop.Actor npcOwner, bool isEditorWorldbuilder)
     {
-        NativeMethods.TablePtr->C1.hs_method_474afbcc((void*)__hosihikari_shim_handle, (void*)npcOwner.Handle, isEditorWorldbuilder);
+        NativeMethods.TablePtr->C2.hs_method_474afbcc((void*)__hosihikari_shim_handle, (void*)npcOwner.Handle, isEditorWorldbuilder);
     }
 
     public void fireEventNsaUpgradeResult(int status)
     {
-        NativeMethods.TablePtr->C1.hs_method_3a7d61f5((void*)__hosihikari_shim_handle, status);
+        NativeMethods.TablePtr->C2.hs_method_3a7d61f5((void*)__hosihikari_shim_handle, status);
     }
 
     public void fireEventOSKErrorEncountered(string failureReason)
@@ -2216,7 +2216,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(failureReason, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_0dc3eaab((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_0dc3eaab((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -2273,7 +2273,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData6 = __hs_stringBytes6)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_88727f86((void*)__hosihikari_shim_handle, (void*)id.Handle, subId, isNetworked, reason, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5, __hs_stringData6, (nuint)__hs_stringByteCount6);
+                    NativeMethods.TablePtr->C2.hs_method_88727f86((void*)__hosihikari_shim_handle, (void*)id.Handle, subId, isNetworked, reason, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5, __hs_stringData6, (nuint)__hs_stringByteCount6);
                 }
             }
         }
@@ -2285,7 +2285,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventOnServerAsyncJoinTaskVerdict(nint joinVerdict, byte subId, uint verdictQueueLength)
     {
-        NativeMethods.TablePtr->C1.hs_method_a8dbaa86((void*)__hosihikari_shim_handle, (void*)joinVerdict, subId, verdictQueueLength);
+        NativeMethods.TablePtr->C2.hs_method_a8dbaa86((void*)__hosihikari_shim_handle, (void*)joinVerdict, subId, verdictQueueLength);
     }
 
     public void fireEventOnServerDisconnect(int reason, global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, byte subId, string reasonContext, ulong clientCount, string firstTimeStamp)
@@ -2316,19 +2316,19 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData5 = __hs_stringBytes5)
             {
-                NativeMethods.TablePtr->C1.hs_method_b234a044((void*)__hosihikari_shim_handle, reason, (void*)id.Handle, subId, __hs_stringData3, (nuint)__hs_stringByteCount3, clientCount, __hs_stringData5, (nuint)__hs_stringByteCount5);
+                NativeMethods.TablePtr->C2.hs_method_b234a044((void*)__hosihikari_shim_handle, reason, (void*)id.Handle, subId, __hs_stringData3, (nuint)__hs_stringByteCount3, clientCount, __hs_stringData5, (nuint)__hs_stringByteCount5);
             }
         }
     }
 
     public void fireEventOnSuccessfulClientLogin(global::Hosihikari.Bindings.Bedrock.Interop.Level? level)
     {
-        NativeMethods.TablePtr->C1.hs_method_dc38ff5e((void*)__hosihikari_shim_handle, (void*)(level?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_dc38ff5e((void*)__hosihikari_shim_handle, (void*)(level?.Handle ?? 0));
     }
 
     public void fireEventOnboardingWorldCreationUsage(bool onboardingWorldCreationUsed, bool hasWorlds, bool hasOnlyBaseGamePacks)
     {
-        NativeMethods.TablePtr->C1.hs_method_7f57fb98((void*)__hosihikari_shim_handle, onboardingWorldCreationUsed, hasWorlds, hasOnlyBaseGamePacks);
+        NativeMethods.TablePtr->C2.hs_method_7f57fb98((void*)__hosihikari_shim_handle, onboardingWorldCreationUsed, hasWorlds, hasOnlyBaseGamePacks);
     }
 
     public void fireEventOneDSPlayerReportPayload(string reportPayloadJson, string reportID)
@@ -2359,14 +2359,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_b1e0f267((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_b1e0f267((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
 
     public void fireEventOnlineAudioStreamEnded(nint telemetry)
     {
-        NativeMethods.TablePtr->C1.hs_method_328753b0((void*)__hosihikari_shim_handle, (void*)telemetry);
+        NativeMethods.TablePtr->C2.hs_method_328753b0((void*)__hosihikari_shim_handle, (void*)telemetry);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -2396,7 +2396,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(errorType, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_6011f842((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C2.hs_method_6011f842((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -2471,7 +2471,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                     {
                         fixed (byte* __hs_stringData4 = __hs_stringBytes4)
                         {
-                            NativeMethods.TablePtr->C1.hs_method_46c9a3a5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, isFatal);
+                            NativeMethods.TablePtr->C2.hs_method_46c9a3a5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, isFatal);
                         }
                     }
                 }
@@ -2520,7 +2520,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData4 = __hs_stringBytes4)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_a3f931c5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, packType, packLocation, __hs_stringData4, (nuint)__hs_stringByteCount4, freedBytes, succeeded, remainingBytes);
+                    NativeMethods.TablePtr->C2.hs_method_a3f931c5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, packType, packLocation, __hs_stringData4, (nuint)__hs_stringByteCount4, freedBytes, succeeded, remainingBytes);
                 }
             }
         }
@@ -2541,13 +2541,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(productId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_43ca014b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_43ca014b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void fireEventPackPlayed(global::Hosihikari.Bindings.Bedrock.Interop.PackInstance packInstance, uint priority)
     {
-        NativeMethods.TablePtr->C1.hs_method_9331967f((void*)__hosihikari_shim_handle, (void*)packInstance.Handle, priority);
+        NativeMethods.TablePtr->C2.hs_method_9331967f((void*)__hosihikari_shim_handle, (void*)packInstance.Handle, priority);
     }
 
     public void fireEventPacketSerializationMismatch(int packetId, string legacyStream, string cerealStream)
@@ -2578,7 +2578,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C1.hs_method_9802dbd0((void*)__hosihikari_shim_handle, packetId, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C2.hs_method_9802dbd0((void*)__hosihikari_shim_handle, packetId, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -2598,7 +2598,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(readResultContext, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_f33698c5((void*)__hosihikari_shim_handle, readResult, __hs_stringData1, (nuint)__hs_stringByteCount1, violationResponse, violatingPacketId, (void*)netId.Handle, numViolations, clientSubId, senderSubId, packetStreamLength);
+            NativeMethods.TablePtr->C2.hs_method_f33698c5((void*)__hosihikari_shim_handle, readResult, __hs_stringData1, (nuint)__hs_stringByteCount1, violationResponse, violatingPacketId, (void*)netId.Handle, numViolations, clientSubId, senderSubId, packetStreamLength);
         }
     }
 
@@ -2630,7 +2630,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_5b6869e2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_5b6869e2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -2676,7 +2676,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_e5d0c07a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_e5d0c07a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -2710,7 +2710,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_f800e513((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_f800e513((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -2731,7 +2731,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
     {
         fixed (byte* __hs_vectorData0 = profileTypesUsed)
         {
-            NativeMethods.TablePtr->C1.hs_method_ce53d126((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(profileTypesUsed?.Length ?? 0));
+            NativeMethods.TablePtr->C2.hs_method_ce53d126((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(profileTypesUsed?.Length ?? 0));
         }
     }
 
@@ -2750,7 +2750,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(categoryInformation, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_c623cdc4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_c623cdc4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -2808,7 +2808,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData5 = __hs_stringBytes5)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_547007b3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, missingTop, missingBottom, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5);
+                        NativeMethods.TablePtr->C2.hs_method_547007b3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, missingTop, missingBottom, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5);
                     }
                 }
             }
@@ -2830,7 +2830,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(emoteProductId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_180e14d9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isEmoteEndedEarly, emoteSlotId);
+            NativeMethods.TablePtr->C2.hs_method_180e14d9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isEmoteEndedEarly, emoteSlotId);
         }
     }
 
@@ -2849,7 +2849,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(personaErrorName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_2067238c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, duplicateErrorsFired);
+            NativeMethods.TablePtr->C2.hs_method_2067238c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, duplicateErrorsFired);
         }
     }
 
@@ -2881,7 +2881,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C1.hs_method_896f141c((void*)__hosihikari_shim_handle, secondsToCompletion, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C2.hs_method_896f141c((void*)__hosihikari_shim_handle, secondsToCompletion, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -2940,7 +2940,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData8 = __hs_stringBytes8)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_ea8b4279((void*)__hosihikari_shim_handle, personaProfile, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, row, column, promotionType, isOwned, __hs_stringData7, (nuint)__hs_stringByteCount7, __hs_stringData8, (nuint)__hs_stringByteCount8, secondsToLoadContent, storeType);
+                        NativeMethods.TablePtr->C2.hs_method_ea8b4279((void*)__hosihikari_shim_handle, personaProfile, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, row, column, promotionType, isOwned, __hs_stringData7, (nuint)__hs_stringByteCount7, __hs_stringData8, (nuint)__hs_stringByteCount8, secondsToLoadContent, storeType);
                     }
                 }
             }
@@ -2949,7 +2949,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventPersonaLoadingPieces(uint piecesLoaded, double timeToLoadInSeconds)
     {
-        NativeMethods.TablePtr->C1.hs_method_c9a4e63a((void*)__hosihikari_shim_handle, piecesLoaded, timeToLoadInSeconds);
+        NativeMethods.TablePtr->C2.hs_method_c9a4e63a((void*)__hosihikari_shim_handle, piecesLoaded, timeToLoadInSeconds);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -2958,7 +2958,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventPersonaPiecePackEviction(uint cacheSizeBeforeEviction, uint evictedCount, uint failedCount, uint protectedCount, bool evictionLimitedByBatch, double passDurationInSeconds)
     {
-        NativeMethods.TablePtr->C1.hs_method_edcb10f1((void*)__hosihikari_shim_handle, cacheSizeBeforeEviction, evictedCount, failedCount, protectedCount, evictionLimitedByBatch, passDurationInSeconds);
+        NativeMethods.TablePtr->C2.hs_method_edcb10f1((void*)__hosihikari_shim_handle, cacheSizeBeforeEviction, evictedCount, failedCount, protectedCount, evictionLimitedByBatch, passDurationInSeconds);
     }
 
     public void fireEventPersonaSkinChanged(byte personaProfile, string classicSkinId, bool isClassicSkinUsed)
@@ -2976,7 +2976,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(classicSkinId, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_7712008f((void*)__hosihikari_shim_handle, personaProfile, __hs_stringData1, (nuint)__hs_stringByteCount1, isClassicSkinUsed);
+            NativeMethods.TablePtr->C2.hs_method_7712008f((void*)__hosihikari_shim_handle, personaProfile, __hs_stringData1, (nuint)__hs_stringByteCount1, isClassicSkinUsed);
         }
     }
 
@@ -2995,7 +2995,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(classicSkinId, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_40bf41de((void*)__hosihikari_shim_handle, personaProfile, __hs_stringData1, (nuint)__hs_stringByteCount1, personaUsesClassicSkin);
+            NativeMethods.TablePtr->C2.hs_method_40bf41de((void*)__hosihikari_shim_handle, personaProfile, __hs_stringData1, (nuint)__hs_stringByteCount1, personaUsesClassicSkin);
         }
     }
 
@@ -3027,7 +3027,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_63462729((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_63462729((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -3086,7 +3086,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_9818639e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                        NativeMethods.TablePtr->C2.hs_method_9818639e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                     }
                 }
             }
@@ -3095,7 +3095,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventPlayerAttemptingExploit(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int exploitType)
     {
-        NativeMethods.TablePtr->C1.hs_method_6d6a7965((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), exploitType);
+        NativeMethods.TablePtr->C2.hs_method_6d6a7965((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), exploitType);
     }
 
     public void fireEventPlayerBanned(string bannedPlayer)
@@ -3113,18 +3113,18 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(bannedPlayer, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_33e14626((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_33e14626((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void fireEventPlayerBounced(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int bounceHeight)
     {
-        NativeMethods.TablePtr->C1.hs_method_70880a31((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, bounceHeight);
+        NativeMethods.TablePtr->C2.hs_method_70880a31((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, bounceHeight);
     }
 
     public void fireEventPlayerDamaged(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int damageCause)
     {
-        NativeMethods.TablePtr->C1.hs_method_3910ca7a((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), damageCause);
+        NativeMethods.TablePtr->C2.hs_method_3910ca7a((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), damageCause);
     }
 
     public void fireEventPlayerJoinWorld(nint userId, byte subId, bool isLocalServer, bool? isUsingTURN, int JoinState, int attemptId, int failReason, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value failDebugInfo, int transportLayer, int networkTypeOverride, bool isConnectedToApplicationLayer, bool isFilteringProfanity, int multiplayerServiceIdentifier, string titleMessage, string errorMessage, string codeword, string partyId, bool isPartyLeader, bool isPartyDestination, bool isServerTransfer, byte reconnectionType, bool isDueToSuspend, ulong connectionDurationMs, global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo connectionInfo, int editorConnectionJoinIntent)
@@ -3181,7 +3181,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData16 = __hs_stringBytes16)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_00324380((void*)__hosihikari_shim_handle, (void*)userId, subId, isLocalServer, isUsingTURN ?? default(bool), JoinState, attemptId, failReason, (void*)failDebugInfo.Handle, transportLayer, networkTypeOverride, isConnectedToApplicationLayer, isFilteringProfanity, multiplayerServiceIdentifier, __hs_stringData13, (nuint)__hs_stringByteCount13, __hs_stringData14, (nuint)__hs_stringByteCount14, __hs_stringData15, (nuint)__hs_stringByteCount15, __hs_stringData16, (nuint)__hs_stringByteCount16, isPartyLeader, isPartyDestination, isServerTransfer, reconnectionType, isDueToSuspend, connectionDurationMs, (void*)connectionInfo.Handle, editorConnectionJoinIntent, isUsingTURN.HasValue);
+                        NativeMethods.TablePtr->C2.hs_method_00324380((void*)__hosihikari_shim_handle, (void*)userId, subId, isLocalServer, isUsingTURN ?? default(bool), JoinState, attemptId, failReason, (void*)failDebugInfo.Handle, transportLayer, networkTypeOverride, isConnectedToApplicationLayer, isFilteringProfanity, multiplayerServiceIdentifier, __hs_stringData13, (nuint)__hs_stringByteCount13, __hs_stringData14, (nuint)__hs_stringByteCount14, __hs_stringData15, (nuint)__hs_stringByteCount15, __hs_stringData16, (nuint)__hs_stringByteCount16, isPartyLeader, isPartyDestination, isServerTransfer, reconnectionType, isDueToSuspend, connectionDurationMs, (void*)connectionInfo.Handle, editorConnectionJoinIntent, isUsingTURN.HasValue);
                     }
                 }
             }
@@ -3216,7 +3216,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_b0fbb987((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_b0fbb987((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -3249,7 +3249,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_a2a89168((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_a2a89168((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -3282,7 +3282,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_dfa389d8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_dfa389d8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -3315,7 +3315,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_6d648e78((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_6d648e78((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -3361,7 +3361,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_1c791787((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_1c791787((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -3408,7 +3408,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_e4bf9fa2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_e4bf9fa2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -3455,7 +3455,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_ff45c1ac((void*)__hosihikari_shim_handle, successfulReportSent, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                    NativeMethods.TablePtr->C2.hs_method_ff45c1ac((void*)__hosihikari_shim_handle, successfulReportSent, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                 }
             }
         }
@@ -3463,7 +3463,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventPlayerTravelled(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, float metersTravelledSinceLastEvent, int newBiome)
     {
-        NativeMethods.TablePtr->C1.hs_method_1137c463((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), metersTravelledSinceLastEvent, newBiome);
+        NativeMethods.TablePtr->C2.hs_method_1137c463((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), metersTravelledSinceLastEvent, newBiome);
     }
 
     public void fireEventPopupClosed(string popupName)
@@ -3481,7 +3481,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(popupName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_788086fd((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_788086fd((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -3526,7 +3526,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_108c490b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, postAction);
+                    NativeMethods.TablePtr->C2.hs_method_108c490b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, postAction);
                 }
             }
         }
@@ -3534,12 +3534,12 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventPortfolioExported(int imageCount, int captionedCount)
     {
-        NativeMethods.TablePtr->C1.hs_method_0e92228f((void*)__hosihikari_shim_handle, imageCount, captionedCount);
+        NativeMethods.TablePtr->C2.hs_method_0e92228f((void*)__hosihikari_shim_handle, imageCount, captionedCount);
     }
 
     public void fireEventProfanityFilter(bool localFilter, bool remoteFilter, bool playerFilter)
     {
-        NativeMethods.TablePtr->C1.hs_method_bdcb54af((void*)__hosihikari_shim_handle, localFilter, remoteFilter, playerFilter);
+        NativeMethods.TablePtr->C2.hs_method_bdcb54af((void*)__hosihikari_shim_handle, localFilter, remoteFilter, playerFilter);
     }
 
     public void fireEventProfileButtonPressed(string entryPoint)
@@ -3557,7 +3557,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(entryPoint, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_31617097((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_31617097((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -3589,19 +3589,19 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_23f63e29((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, servedFromCache, httpStatus, fetchDurationMs);
+                NativeMethods.TablePtr->C2.hs_method_23f63e29((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, servedFromCache, httpStatus, fetchDurationMs);
             }
         }
     }
 
     public void fireEventProfilerCapture(nint @params)
     {
-        NativeMethods.TablePtr->C1.hs_method_befaa6e5((void*)__hosihikari_shim_handle, (void*)@params);
+        NativeMethods.TablePtr->C2.hs_method_befaa6e5((void*)__hosihikari_shim_handle, (void*)@params);
     }
 
     public void fireEventProfilerMetadata(nint @params)
     {
-        NativeMethods.TablePtr->C1.hs_method_78e05992((void*)__hosihikari_shim_handle, (void*)@params);
+        NativeMethods.TablePtr->C2.hs_method_78e05992((void*)__hosihikari_shim_handle, (void*)@params);
     }
 
     public void fireEventProgressionsSet(string[] progressions)
@@ -3626,7 +3626,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            NativeMethods.TablePtr->C1.hs_method_ef83bf1a((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(progressions?.Length ?? 0));
+            NativeMethods.TablePtr->C2.hs_method_ef83bf1a((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(progressions?.Length ?? 0));
         }
     }
 
@@ -3671,7 +3671,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_173df6a0((void*)__hosihikari_shim_handle, httpCode, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                    NativeMethods.TablePtr->C2.hs_method_173df6a0((void*)__hosihikari_shim_handle, httpCode, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                 }
             }
         }
@@ -3718,7 +3718,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_9fdb10d5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_9fdb10d5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -3726,7 +3726,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventPurchaseGameResult(int purchaseResult)
     {
-        NativeMethods.TablePtr->C1.hs_method_33a68aec((void*)__hosihikari_shim_handle, purchaseResult);
+        NativeMethods.TablePtr->C2.hs_method_33a68aec((void*)__hosihikari_shim_handle, purchaseResult);
     }
 
     public void fireEventPushNotificationOpened(string threadId, string deepLink)
@@ -3757,14 +3757,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_0a497bc9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_0a497bc9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
 
     public void fireEventPushNotificationReceived(nint msg)
     {
-        NativeMethods.TablePtr->C1.hs_method_15eeb89f((void*)__hosihikari_shim_handle, (void*)msg);
+        NativeMethods.TablePtr->C2.hs_method_15eeb89f((void*)__hosihikari_shim_handle, (void*)msg);
     }
 
     public void fireEventQueryPurchasesResult(string storeID, string priorPurchaseIds, int NumberOfPurchases, bool QuerySucceeded)
@@ -3795,7 +3795,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_8c426c32((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, NumberOfPurchases, QuerySucceeded);
+                NativeMethods.TablePtr->C2.hs_method_8c426c32((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, NumberOfPurchases, QuerySucceeded);
             }
         }
     }
@@ -3835,7 +3835,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             }
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_08e7d85a((void*)__hosihikari_shim_handle, realmId, __hs_stringData1, (nuint)__hs_stringByteCount1, worldSizeBytes, availableStorageBytes, __hs_vectorData4, (nuint)(packIds?.Length ?? 0));
+                NativeMethods.TablePtr->C2.hs_method_08e7d85a((void*)__hosihikari_shim_handle, realmId, __hs_stringData1, (nuint)__hs_stringByteCount1, worldSizeBytes, availableStorageBytes, __hs_vectorData4, (nuint)(packIds?.Length ?? 0));
             }
         }
     }
@@ -3868,14 +3868,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_ec600091((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, errorCode, realmId, fileSizeKB);
+                NativeMethods.TablePtr->C2.hs_method_ec600091((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, errorCode, realmId, fileSizeKB);
             }
         }
     }
 
     public void fireEventRealmMemberlistCleared(nint worldId, nint numberOfUsersRemoved)
     {
-        NativeMethods.TablePtr->C1.hs_method_45343c0a((void*)__hosihikari_shim_handle, (void*)worldId, (void*)numberOfUsersRemoved);
+        NativeMethods.TablePtr->C2.hs_method_45343c0a((void*)__hosihikari_shim_handle, (void*)worldId, (void*)numberOfUsersRemoved);
     }
 
     public void fireEventRealmShared(string url, nint mode, nint worldId)
@@ -3893,7 +3893,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(url, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_8f05279d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)mode, (void*)worldId);
+            NativeMethods.TablePtr->C2.hs_method_8f05279d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)mode, (void*)worldId);
         }
     }
 
@@ -3925,7 +3925,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_e3451d33((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, errorCode, realmId, fileSizeKB, isPack);
+                NativeMethods.TablePtr->C2.hs_method_e3451d33((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, errorCode, realmId, fileSizeKB, isPack);
             }
         }
     }
@@ -3945,7 +3945,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(url, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_00fcee69((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)worldId);
+            NativeMethods.TablePtr->C2.hs_method_00fcee69((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)worldId);
         }
     }
 
@@ -4007,7 +4007,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData6 = __hs_stringBytes6)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_aab393d5((void*)__hosihikari_shim_handle, realmId, slotIndex, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, packType, __hs_stringData5, (nuint)__hs_stringByteCount5, __hs_stringData6, (nuint)__hs_stringByteCount6, hasContentIdentity, isPremium, packOrigin, stackPosition, packSizeBytes);
+                        NativeMethods.TablePtr->C2.hs_method_aab393d5((void*)__hosihikari_shim_handle, realmId, slotIndex, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, packType, __hs_stringData5, (nuint)__hs_stringByteCount5, __hs_stringData6, (nuint)__hs_stringByteCount6, hasContentIdentity, isPremium, packOrigin, stackPosition, packSizeBytes);
                     }
                 }
             }
@@ -4059,7 +4059,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_6056c8d3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, isOwner);
+                    NativeMethods.TablePtr->C2.hs_method_6056c8d3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, isOwner);
                 }
             }
         }
@@ -4093,39 +4093,39 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData6 = __hs_stringBytes6)
             {
-                NativeMethods.TablePtr->C1.hs_method_a6621f6c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, reasonCode, exitCode, importanceCode, residentSetSize, proportionalSetSize, __hs_stringData6, (nuint)__hs_stringByteCount6, deviceSupportsReasonLowMem);
+                NativeMethods.TablePtr->C2.hs_method_a6621f6c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, reasonCode, exitCode, importanceCode, residentSetSize, proportionalSetSize, __hs_stringData6, (nuint)__hs_stringByteCount6, deviceSupportsReasonLowMem);
             }
         }
     }
 
     public void fireEventReducerBlockEntered(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
     {
-        NativeMethods.TablePtr->C1.hs_method_6af8345b((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C2.hs_method_6af8345b((void*)__hosihikari_shim_handle, (void*)item.Handle);
     }
 
     public void fireEventRemoteDesktop(bool isRemoteDesktop)
     {
-        NativeMethods.TablePtr->C1.hs_method_850b69b5((void*)__hosihikari_shim_handle, isRemoteDesktop);
+        NativeMethods.TablePtr->C2.hs_method_850b69b5((void*)__hosihikari_shim_handle, isRemoteDesktop);
     }
 
     public void fireEventRenderingSizeChanged()
     {
-        NativeMethods.TablePtr->C1.hs_method_fa0bea4a((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_fa0bea4a((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventResourceProcessingPerf(nint data)
     {
-        NativeMethods.TablePtr->C1.hs_method_407ba454((void*)__hosihikari_shim_handle, (void*)data);
+        NativeMethods.TablePtr->C2.hs_method_407ba454((void*)__hosihikari_shim_handle, (void*)data);
     }
 
     public void fireEventRespawn(global::Hosihikari.Bindings.Bedrock.Interop.Player player, int dimID)
     {
-        NativeMethods.TablePtr->C1.hs_method_0aef81e8((void*)__hosihikari_shim_handle, (void*)player.Handle, dimID);
+        NativeMethods.TablePtr->C2.hs_method_0aef81e8((void*)__hosihikari_shim_handle, (void*)player.Handle, dimID);
     }
 
     public void fireEventRespondedToAcceptContent(global::Hosihikari.Bindings.Bedrock.Interop.PacksInfoData data, bool accepted, bool downloadOptionalResourcePacks)
     {
-        NativeMethods.TablePtr->C1.hs_method_f3e5b369((void*)__hosihikari_shim_handle, (void*)data.Handle, accepted, downloadOptionalResourcePacks);
+        NativeMethods.TablePtr->C2.hs_method_f3e5b369((void*)__hosihikari_shim_handle, (void*)data.Handle, accepted, downloadOptionalResourcePacks);
     }
 
     public void fireEventSafetyHTTPRequest(string method, string url, int responseCode)
@@ -4156,29 +4156,29 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_ac8c429c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, responseCode);
+                NativeMethods.TablePtr->C2.hs_method_ac8c429c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, responseCode);
             }
         }
     }
 
     public void fireEventSaveDataExpansion(ulong preExpansionSize, ulong postExpansionSize, ulong levelUsedSize)
     {
-        NativeMethods.TablePtr->C1.hs_method_57f8e447((void*)__hosihikari_shim_handle, preExpansionSize, postExpansionSize, levelUsedSize);
+        NativeMethods.TablePtr->C2.hs_method_57f8e447((void*)__hosihikari_shim_handle, preExpansionSize, postExpansionSize, levelUsedSize);
     }
 
     public void fireEventScriptDebuggerConnect(bool client, bool autoAttach, int retries)
     {
-        NativeMethods.TablePtr->C1.hs_method_97febf5f((void*)__hosihikari_shim_handle, client, autoAttach, retries);
+        NativeMethods.TablePtr->C2.hs_method_97febf5f((void*)__hosihikari_shim_handle, client, autoAttach, retries);
     }
 
     public void fireEventScriptDebuggerListen(bool client, bool autoAttach)
     {
-        NativeMethods.TablePtr->C1.hs_method_a78f79ee((void*)__hosihikari_shim_handle, client, autoAttach);
+        NativeMethods.TablePtr->C2.hs_method_a78f79ee((void*)__hosihikari_shim_handle, client, autoAttach);
     }
 
     public void fireEventScriptPluginDiscovery(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginResult pluginResult, bool client)
     {
-        NativeMethods.TablePtr->C1.hs_method_4597cf95((void*)__hosihikari_shim_handle, (void*)pluginResult.Handle, client);
+        NativeMethods.TablePtr->C2.hs_method_4597cf95((void*)__hosihikari_shim_handle, (void*)pluginResult.Handle, client);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -4217,7 +4217,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData6 = __hs_stringBytes6)
             {
-                NativeMethods.TablePtr->C1.hs_method_475ab896((void*)__hosihikari_shim_handle, correlationId, sessionId, __hs_stringData2, (nuint)__hs_stringByteCount2, row, column, currentPage, __hs_stringData6, (nuint)__hs_stringByteCount6);
+                NativeMethods.TablePtr->C2.hs_method_475ab896((void*)__hosihikari_shim_handle, correlationId, sessionId, __hs_stringData2, (nuint)__hs_stringByteCount2, row, column, currentPage, __hs_stringData6, (nuint)__hs_stringByteCount6);
             }
         }
     }
@@ -4245,7 +4245,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(failReason, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_85bf1a5b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, serverLevelExists, serverNetworkHandlerValid);
+            NativeMethods.TablePtr->C2.hs_method_85bf1a5b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, serverLevelExists, serverNetworkHandlerValid);
         }
     }
 
@@ -4264,18 +4264,18 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(firstConnectionTime, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            NativeMethods.TablePtr->C1.hs_method_113b89c8((void*)__hosihikari_shim_handle, (void*)id.Handle, subId, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            NativeMethods.TablePtr->C2.hs_method_113b89c8((void*)__hosihikari_shim_handle, (void*)id.Handle, subId, __hs_stringData2, (nuint)__hs_stringByteCount2);
         }
     }
 
     public void fireEventServerReceivedValidPacket(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier netId, int packetId, byte clientSubId)
     {
-        NativeMethods.TablePtr->C1.hs_method_00f08357((void*)__hosihikari_shim_handle, (void*)netId.Handle, packetId, clientSubId);
+        NativeMethods.TablePtr->C2.hs_method_00f08357((void*)__hosihikari_shim_handle, (void*)netId.Handle, packetId, clientSubId);
     }
 
     public void fireEventServerRespawnSearchTime(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.PlayerRespawnTelemetryData data)
     {
-        NativeMethods.TablePtr->C1.hs_method_54b11329((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)data.Handle);
+        NativeMethods.TablePtr->C2.hs_method_54b11329((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)data.Handle);
     }
 
     public void fireEventServerShutdownDueToError(string reason)
@@ -4293,13 +4293,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(reason, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_42350b20((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_42350b20((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void fireEventSetValidForAchievements(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, bool currentlyValidForAchievements)
     {
-        NativeMethods.TablePtr->C1.hs_method_031155cc((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), currentlyValidForAchievements);
+        NativeMethods.TablePtr->C2.hs_method_031155cc((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), currentlyValidForAchievements);
     }
 
     public void fireEventSidebarNavigation(nint userId, string layoutType, string telemetryId, int depthLevel, bool isSelected, bool areChildrenVisible, bool hasChildren)
@@ -4330,7 +4330,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C1.hs_method_97a1befa((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, depthLevel, isSelected, areChildrenVisible, hasChildren);
+                NativeMethods.TablePtr->C2.hs_method_97a1befa((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, depthLevel, isSelected, areChildrenVisible, hasChildren);
             }
         }
     }
@@ -4363,7 +4363,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C1.hs_method_ad2c5902((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, verboseState);
+                NativeMethods.TablePtr->C2.hs_method_ad2c5902((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, verboseState);
             }
         }
     }
@@ -4400,7 +4400,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData8 = __hs_stringBytes8)
             {
-                NativeMethods.TablePtr->C1.hs_method_d0a0d749((void*)__hosihikari_shim_handle, accountType, trigger, __hs_stringData2, (nuint)__hs_stringByteCount2, signInUIShown, stage, result, retryCount, (void*)ids.Handle, __hs_stringData8, (nuint)__hs_stringByteCount8);
+                NativeMethods.TablePtr->C2.hs_method_d0a0d749((void*)__hosihikari_shim_handle, accountType, trigger, __hs_stringData2, (nuint)__hs_stringByteCount2, signInUIShown, stage, result, retryCount, (void*)ids.Handle, __hs_stringData8, (nuint)__hs_stringByteCount8);
             }
         }
     }
@@ -4446,7 +4446,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_d4ddf7c6((void*)__hosihikari_shim_handle, role, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                    NativeMethods.TablePtr->C2.hs_method_d4ddf7c6((void*)__hosihikari_shim_handle, role, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                 }
             }
         }
@@ -4480,7 +4480,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                NativeMethods.TablePtr->C1.hs_method_ffb0a915((void*)__hosihikari_shim_handle, accountType, trigger, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                NativeMethods.TablePtr->C2.hs_method_ffb0a915((void*)__hosihikari_shim_handle, accountType, trigger, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
             }
         }
     }
@@ -4500,7 +4500,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(signinId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_e9321936((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)messagePerformanceEvent);
+            NativeMethods.TablePtr->C2.hs_method_e9321936((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)messagePerformanceEvent);
         }
     }
 
@@ -4532,14 +4532,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData4 = __hs_stringBytes4)
             {
-                NativeMethods.TablePtr->C1.hs_method_87c672f6((void*)__hosihikari_shim_handle, stage, bIsSigningInAsHost, (void*)stageProperties.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4);
+                NativeMethods.TablePtr->C2.hs_method_87c672f6((void*)__hosihikari_shim_handle, stage, bIsSigningInAsHost, (void*)stageProperties.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4);
             }
         }
     }
 
     public void fireEventSplitScreenUpdated(nint data)
     {
-        NativeMethods.TablePtr->C1.hs_method_f9509625((void*)__hosihikari_shim_handle, (void*)data);
+        NativeMethods.TablePtr->C2.hs_method_f9509625((void*)__hosihikari_shim_handle, (void*)data);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'const PackInstance' is not supported.", false)]
@@ -4561,7 +4561,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(ipAddress, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_e805e2a1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isTextToSpeechEnabled);
+            NativeMethods.TablePtr->C2.hs_method_e805e2a1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isTextToSpeechEnabled);
         }
     }
 
@@ -4580,7 +4580,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(ipAddress, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_b649bb52((void*)__hosihikari_shim_handle, networkType, __hs_stringData1, (nuint)__hs_stringByteCount1, friendWorldType);
+            NativeMethods.TablePtr->C2.hs_method_b649bb52((void*)__hosihikari_shim_handle, networkType, __hs_stringData1, (nuint)__hs_stringByteCount1, friendWorldType);
         }
     }
 
@@ -4603,7 +4603,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(extra, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_939dd1f3((void*)__hosihikari_shim_handle, state, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C2.hs_method_939dd1f3((void*)__hosihikari_shim_handle, state, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -4626,7 +4626,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(report, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_817fe972((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_817fe972((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -4658,7 +4658,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                NativeMethods.TablePtr->C1.hs_method_6301d962((void*)__hosihikari_shim_handle, retryAttempt, errorStatus ?? default(int), __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, errorStatus.HasValue, errorMessage is not null, errorCode is not null);
+                NativeMethods.TablePtr->C2.hs_method_6301d962((void*)__hosihikari_shim_handle, retryAttempt, errorStatus ?? default(int), __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, errorStatus.HasValue, errorMessage is not null, errorCode is not null);
             }
         }
     }
@@ -4717,7 +4717,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_02ef673a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                        NativeMethods.TablePtr->C2.hs_method_02ef673a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                     }
                 }
             }
@@ -4726,7 +4726,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventStoreInventoryRefreshRequestResponse(int status, int retryAttempt, bool asyncServicesManager)
     {
-        NativeMethods.TablePtr->C1.hs_method_ef9b4fd9((void*)__hosihikari_shim_handle, status, retryAttempt, asyncServicesManager);
+        NativeMethods.TablePtr->C2.hs_method_ef9b4fd9((void*)__hosihikari_shim_handle, status, retryAttempt, asyncServicesManager);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -4761,7 +4761,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_2edf472a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_2edf472a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -4785,7 +4785,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(responseType, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_9859541b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, status, retryCount, asyncServicesManager);
+            NativeMethods.TablePtr->C2.hs_method_9859541b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, status, retryCount, asyncServicesManager);
         }
     }
 
@@ -4808,7 +4808,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(tenantType, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_5a2b0189((void*)__hosihikari_shim_handle, role, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C2.hs_method_5a2b0189((void*)__hosihikari_shim_handle, role, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -4827,7 +4827,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(tag, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_8a2f2ccf((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, showMore);
+            NativeMethods.TablePtr->C2.hs_method_8a2f2ccf((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, showMore);
         }
     }
 
@@ -4846,13 +4846,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(stage, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_ddef62e2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, retryCount, maxRetryCount);
+            NativeMethods.TablePtr->C2.hs_method_ddef62e2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, retryCount, maxRetryCount);
         }
     }
 
     public void fireEventTotalDlcSizes(ulong resourceSize, ulong worldTemplateSize)
     {
-        NativeMethods.TablePtr->C1.hs_method_8290da20((void*)__hosihikari_shim_handle, resourceSize, worldTemplateSize);
+        NativeMethods.TablePtr->C2.hs_method_8290da20((void*)__hosihikari_shim_handle, resourceSize, worldTemplateSize);
     }
 
     public void fireEventTrackDeeplinks(string deeplinkDestination, string deeplinkSource, string educationReferrerId, string educationReferrerType)
@@ -4909,7 +4909,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_5ac9fda7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                        NativeMethods.TablePtr->C2.hs_method_5ac9fda7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                     }
                 }
             }
@@ -4918,7 +4918,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventTreatmentPackApplied(global::Hosihikari.Bindings.Bedrock.Interop.PackManifest manifest)
     {
-        NativeMethods.TablePtr->C1.hs_method_68f6a7e2((void*)__hosihikari_shim_handle, (void*)manifest.Handle);
+        NativeMethods.TablePtr->C2.hs_method_68f6a7e2((void*)__hosihikari_shim_handle, (void*)manifest.Handle);
     }
 
     public void fireEventTreatmentPackDownloadFailed(string productId, string packId, string versionNumber, string requiredTreatmentTag)
@@ -4975,7 +4975,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_51f1aa0b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                        NativeMethods.TablePtr->C2.hs_method_51f1aa0b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                     }
                 }
             }
@@ -5036,7 +5036,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 {
                     fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_9f1d4d10((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                        NativeMethods.TablePtr->C2.hs_method_9f1d4d10((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                     }
                 }
             }
@@ -5058,13 +5058,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(packId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_65cf61f1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_65cf61f1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void fireEventTreatmentsCleared()
     {
-        NativeMethods.TablePtr->C1.hs_method_031cde5f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_031cde5f((void*)__hosihikari_shim_handle);
     }
 
     public void fireEventTreatmentsSet(string[] treatments, string treatmentContext)
@@ -5102,7 +5102,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             }
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_54bef898((void*)__hosihikari_shim_handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData0, (nuint)(treatments?.Length ?? 0));
+                NativeMethods.TablePtr->C2.hs_method_54bef898((void*)__hosihikari_shim_handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData0, (nuint)(treatments?.Length ?? 0));
             }
         }
     }
@@ -5135,14 +5135,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                NativeMethods.TablePtr->C1.hs_method_8c5f3a0f((void*)__hosihikari_shim_handle, myTime, __hs_stringData1, (nuint)__hs_stringByteCount1, theirTime, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                NativeMethods.TablePtr->C2.hs_method_8c5f3a0f((void*)__hosihikari_shim_handle, myTime, __hs_stringData1, (nuint)__hs_stringByteCount1, theirTime, __hs_stringData3, (nuint)__hs_stringByteCount3);
             }
         }
     }
 
     public void fireEventTrialStatusFailed(int errorCode)
     {
-        NativeMethods.TablePtr->C1.hs_method_0aae97f4((void*)__hosihikari_shim_handle, errorCode);
+        NativeMethods.TablePtr->C2.hs_method_0aae97f4((void*)__hosihikari_shim_handle, errorCode);
     }
 
     public void fireEventUgcAcquisitionStateChanged(string ugcProductId, ulong downloadSize, double elapsedTime, bool isUpdate, int retries, bool silent, int numContentTrackers, string result, string resultDetails, int httpStatus, int errorCode, bool optimizedPack)
@@ -5186,7 +5186,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData8 = __hs_stringBytes8)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_8eab68ef((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, downloadSize, elapsedTime, isUpdate, retries, silent, numContentTrackers, __hs_stringData7, (nuint)__hs_stringByteCount7, __hs_stringData8, (nuint)__hs_stringByteCount8, httpStatus, errorCode, optimizedPack);
+                    NativeMethods.TablePtr->C2.hs_method_8eab68ef((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, downloadSize, elapsedTime, isUpdate, retries, silent, numContentTrackers, __hs_stringData7, (nuint)__hs_stringByteCount7, __hs_stringData8, (nuint)__hs_stringByteCount8, httpStatus, errorCode, optimizedPack);
                 }
             }
         }
@@ -5194,7 +5194,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventUnknownBlockReceived(global::Hosihikari.Bindings.Bedrock.Interop.NewBlockID blockId, ushort data)
     {
-        NativeMethods.TablePtr->C1.hs_method_8e074435((void*)__hosihikari_shim_handle, (void*)blockId.Handle, data);
+        NativeMethods.TablePtr->C2.hs_method_8e074435((void*)__hosihikari_shim_handle, (void*)blockId.Handle, data);
     }
 
     public void fireEventUriActivation(string activationIdentifier, string activationParameters)
@@ -5225,7 +5225,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_6b3a4cf7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_6b3a4cf7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -5271,7 +5271,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_61ee1b5d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, success);
+                    NativeMethods.TablePtr->C2.hs_method_61ee1b5d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, success);
                 }
             }
         }
@@ -5305,7 +5305,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C1.hs_method_9733cd1d((void*)__hosihikari_shim_handle, (void*)deviceIdContext, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C2.hs_method_9733cd1d((void*)__hosihikari_shim_handle, (void*)deviceIdContext, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -5338,7 +5338,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_4e79ddb5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
+                NativeMethods.TablePtr->C2.hs_method_4e79ddb5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
             }
         }
     }
@@ -5358,13 +5358,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(downloadState, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_a2a1f1f3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)downloadInfo);
+            NativeMethods.TablePtr->C2.hs_method_a2a1f1f3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)downloadInfo);
         }
     }
 
     public void fireEventWorldCopy(ulong worldSize, ulong filesSum, global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64 worldSeed)
     {
-        NativeMethods.TablePtr->C1.hs_method_2d39b72c((void*)__hosihikari_shim_handle, worldSize, filesSum, (void*)worldSeed.Handle);
+        NativeMethods.TablePtr->C2.hs_method_2d39b72c((void*)__hosihikari_shim_handle, worldSize, filesSum, (void*)worldSeed.Handle);
     }
 
     public void fireEventWorldCorruptionCausedWorldShutdown(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageEventingContext context, string reason, bool? isOutOfDiskSpace)
@@ -5382,18 +5382,18 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(reason, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_92ac2d3d((void*)__hosihikari_shim_handle, (void*)context.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, isOutOfDiskSpace ?? default(bool), isOutOfDiskSpace.HasValue);
+            NativeMethods.TablePtr->C2.hs_method_92ac2d3d((void*)__hosihikari_shim_handle, (void*)context.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, isOutOfDiskSpace ?? default(bool), isOutOfDiskSpace.HasValue);
         }
     }
 
     public void fireEventWorldExported(long worldSeed, ulong worldSize)
     {
-        NativeMethods.TablePtr->C1.hs_method_7ed3a9f5((void*)__hosihikari_shim_handle, worldSeed, worldSize);
+        NativeMethods.TablePtr->C2.hs_method_7ed3a9f5((void*)__hosihikari_shim_handle, worldSeed, worldSize);
     }
 
     public void fireEventWorldFilesListed(ulong numLevels, ulong totalSizeMB, ulong largestLevelMB, ulong smallestLevelMB)
     {
-        NativeMethods.TablePtr->C1.hs_method_5a7b973c((void*)__hosihikari_shim_handle, numLevels, totalSizeMB, largestLevelMB, smallestLevelMB);
+        NativeMethods.TablePtr->C2.hs_method_5a7b973c((void*)__hosihikari_shim_handle, numLevels, totalSizeMB, largestLevelMB, smallestLevelMB);
     }
 
     public void fireEventWorldGenerated(string levelId, global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings levelSettings, bool fromTemplate)
@@ -5411,7 +5411,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(levelId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_d09c9d24((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)levelSettings.Handle, fromTemplate);
+            NativeMethods.TablePtr->C2.hs_method_d09c9d24((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)levelSettings.Handle, fromTemplate);
         }
     }
 
@@ -5456,7 +5456,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_e0b6c592((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_e0b6c592((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -5464,12 +5464,12 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireEventWorldImported(long worldSeed, ulong worldSize)
     {
-        NativeMethods.TablePtr->C1.hs_method_e260532f((void*)__hosihikari_shim_handle, worldSeed, worldSize);
+        NativeMethods.TablePtr->C2.hs_method_e260532f((void*)__hosihikari_shim_handle, worldSeed, worldSize);
     }
 
     public void fireEventWorldImportedResult(int importResult)
     {
-        NativeMethods.TablePtr->C1.hs_method_8fe06315((void*)__hosihikari_shim_handle, importResult);
+        NativeMethods.TablePtr->C2.hs_method_8fe06315((void*)__hosihikari_shim_handle, importResult);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
@@ -5507,13 +5507,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(uri, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_bffef087((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_bffef087((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void fireGlobalResourcePackCrashRecovery(global::Hosihikari.Bindings.Bedrock.Interop.PackInstance packInstance, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID recoveryID, int order)
     {
-        NativeMethods.TablePtr->C1.hs_method_80a17623((void*)__hosihikari_shim_handle, (void*)packInstance.Handle, (void*)recoveryID.Handle, order);
+        NativeMethods.TablePtr->C2.hs_method_80a17623((void*)__hosihikari_shim_handle, (void*)packInstance.Handle, (void*)recoveryID.Handle, order);
     }
 
     public void fireIDESelected(string name)
@@ -5531,7 +5531,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_fcfda51c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_fcfda51c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -5580,7 +5580,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_0ddd47ac((void*)__hosihikari_shim_handle, method, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                    NativeMethods.TablePtr->C2.hs_method_0ddd47ac((void*)__hosihikari_shim_handle, method, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                 }
             }
         }
@@ -5601,7 +5601,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(ideName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_937cf87f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_937cf87f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -5620,7 +5620,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(id, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_004b194a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_004b194a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -5669,7 +5669,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_1147dbb0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, buttonAction, score);
+                    NativeMethods.TablePtr->C2.hs_method_1147dbb0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, buttonAction, score);
                 }
             }
         }
@@ -5677,7 +5677,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireLessonCompleteDialogOpened(int entryPoint)
     {
-        NativeMethods.TablePtr->C1.hs_method_58fc5fb5((void*)__hosihikari_shim_handle, entryPoint);
+        NativeMethods.TablePtr->C2.hs_method_58fc5fb5((void*)__hosihikari_shim_handle, entryPoint);
     }
 
     public void fireLessonProgressEvent(string lessonTitle, string lessonId, string courseId, string activityId, string action, string educationCreatorID, string educationCreatorWorldID, int score)
@@ -5773,7 +5773,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                             {
                                 fixed (byte* __hs_stringData6 = __hs_stringBytes6)
                                 {
-                                    NativeMethods.TablePtr->C1.hs_method_c7de4f9d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5, __hs_stringData6, (nuint)__hs_stringByteCount6, score);
+                                    NativeMethods.TablePtr->C2.hs_method_c7de4f9d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5, __hs_stringData6, (nuint)__hs_stringByteCount6, score);
                                 }
                             }
                         }
@@ -5824,7 +5824,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C1.hs_method_8252e1c7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C2.hs_method_8252e1c7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -5832,12 +5832,12 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireMinecraftVersionInviteAccepted(bool launchedLegacy, ulong inviteGameOwner)
     {
-        NativeMethods.TablePtr->C1.hs_method_a63f8d88((void*)__hosihikari_shim_handle, launchedLegacy, inviteGameOwner);
+        NativeMethods.TablePtr->C2.hs_method_a63f8d88((void*)__hosihikari_shim_handle, launchedLegacy, inviteGameOwner);
     }
 
     public void fireMinecraftVersionLaunched(bool launchedLegacy)
     {
-        NativeMethods.TablePtr->C1.hs_method_ef251f1c((void*)__hosihikari_shim_handle, launchedLegacy);
+        NativeMethods.TablePtr->C2.hs_method_ef251f1c((void*)__hosihikari_shim_handle, launchedLegacy);
     }
 
     public void fireNetworkChangedEvent(string networkConnectionType)
@@ -5855,7 +5855,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(networkConnectionType, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_ce00539a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_ce00539a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -5887,7 +5887,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                NativeMethods.TablePtr->C1.hs_method_094ff9c3((void*)__hosihikari_shim_handle, (void*)manifest.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, subpackIndex, __hs_stringData3, (nuint)__hs_stringByteCount3, subpackCount);
+                NativeMethods.TablePtr->C2.hs_method_094ff9c3((void*)__hosihikari_shim_handle, (void*)manifest.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, subpackIndex, __hs_stringData3, (nuint)__hs_stringByteCount3, subpackCount);
             }
         }
     }
@@ -5898,17 +5898,17 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void firePermissionsSetEvent(sbyte prevPlayerPermissionLevel, byte prevCommandPermissionLevel, sbyte playerPermissionLevel, byte commandPermissionLevel)
     {
-        NativeMethods.TablePtr->C1.hs_method_80001148((void*)__hosihikari_shim_handle, prevPlayerPermissionLevel, prevCommandPermissionLevel, playerPermissionLevel, commandPermissionLevel);
+        NativeMethods.TablePtr->C2.hs_method_80001148((void*)__hosihikari_shim_handle, prevPlayerPermissionLevel, prevCommandPermissionLevel, playerPermissionLevel, commandPermissionLevel);
     }
 
     public void firePlayerAccountMetadata(global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult multiPlayerAllowed, global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult chatAllowed, global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult addFriendAllowed, global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult ugcAllowed, global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult clubsAllowed, global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult viewProfilesAllowed, bool isChildAccount, bool isGuest)
     {
-        NativeMethods.TablePtr->C1.hs_method_25814852((void*)__hosihikari_shim_handle, (void*)multiPlayerAllowed.Handle, (void*)chatAllowed.Handle, (void*)addFriendAllowed.Handle, (void*)ugcAllowed.Handle, (void*)clubsAllowed.Handle, (void*)viewProfilesAllowed.Handle, isChildAccount, isGuest);
+        NativeMethods.TablePtr->C2.hs_method_25814852((void*)__hosihikari_shim_handle, (void*)multiPlayerAllowed.Handle, (void*)chatAllowed.Handle, (void*)addFriendAllowed.Handle, (void*)ugcAllowed.Handle, (void*)clubsAllowed.Handle, (void*)viewProfilesAllowed.Handle, isChildAccount, isGuest);
     }
 
     public void firePlayerUnexpectedFallDamage(float fallDistance, bool isVehicle, float divergenceAmount)
     {
-        NativeMethods.TablePtr->C1.hs_method_7b7422d3((void*)__hosihikari_shim_handle, fallDistance, isVehicle, divergenceAmount);
+        NativeMethods.TablePtr->C2.hs_method_7b7422d3((void*)__hosihikari_shim_handle, fallDistance, isVehicle, divergenceAmount);
     }
 
     public void fireQueryOfferResult(string storeID, int NumberOfOffers, bool QuerySucceeded)
@@ -5926,33 +5926,33 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(storeID, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_80e93940((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, NumberOfOffers, QuerySucceeded);
+            NativeMethods.TablePtr->C2.hs_method_80e93940((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, NumberOfOffers, QuerySucceeded);
         }
     }
 
     public void fireQuickPlayEvent()
     {
-        NativeMethods.TablePtr->C1.hs_method_e1e5e0ea((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_e1e5e0ea((void*)__hosihikari_shim_handle);
     }
 
     public void fireRealmConnectionEventGenericLambdaCalled(int realmConnectionFlow, int realmConnectionLambda, int realmConnectionResult)
     {
-        NativeMethods.TablePtr->C1.hs_method_cbf6ffa3((void*)__hosihikari_shim_handle, realmConnectionFlow, realmConnectionLambda, realmConnectionResult);
+        NativeMethods.TablePtr->C2.hs_method_cbf6ffa3((void*)__hosihikari_shim_handle, realmConnectionFlow, realmConnectionLambda, realmConnectionResult);
     }
 
     public void fireRealmConnectionEventRealmAPIRequest(int realmConnectionFlow)
     {
-        NativeMethods.TablePtr->C1.hs_method_7748881b((void*)__hosihikari_shim_handle, realmConnectionFlow);
+        NativeMethods.TablePtr->C2.hs_method_7748881b((void*)__hosihikari_shim_handle, realmConnectionFlow);
     }
 
     public void fireRealmConnectionEventRealmAPIResponse(int realmConnectionFlow, int responseCode)
     {
-        NativeMethods.TablePtr->C1.hs_method_f08e29c6((void*)__hosihikari_shim_handle, realmConnectionFlow, responseCode);
+        NativeMethods.TablePtr->C2.hs_method_f08e29c6((void*)__hosihikari_shim_handle, realmConnectionFlow, responseCode);
     }
 
     public void fireRealmConnectionEventStart(int realmConnectionFlow)
     {
-        NativeMethods.TablePtr->C1.hs_method_63731ec2((void*)__hosihikari_shim_handle, realmConnectionFlow);
+        NativeMethods.TablePtr->C2.hs_method_63731ec2((void*)__hosihikari_shim_handle, realmConnectionFlow);
     }
 
     public void fireSafetyServiceTextProcessEvent(string authorId, int eventOrigin, ushort responseCode, string message, bool wasFlagged, double responseTime, sbyte risk, sbyte trustLevel, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value events, bool isProcessorOffline, bool isCachedResponse)
@@ -5983,7 +5983,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                NativeMethods.TablePtr->C1.hs_method_6b9bab55((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, eventOrigin, responseCode, __hs_stringData3, (nuint)__hs_stringByteCount3, wasFlagged, responseTime, risk, trustLevel, (void*)events.Handle, isProcessorOffline, isCachedResponse);
+                NativeMethods.TablePtr->C2.hs_method_6b9bab55((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, eventOrigin, responseCode, __hs_stringData3, (nuint)__hs_stringByteCount3, wasFlagged, responseTime, risk, trustLevel, (void*)events.Handle, isProcessorOffline, isCachedResponse);
             }
         }
     }
@@ -6016,7 +6016,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C1.hs_method_f2d1db0c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isTransfer, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C2.hs_method_f2d1db0c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, isTransfer, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -6027,7 +6027,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireServerShutdown()
     {
-        NativeMethods.TablePtr->C1.hs_method_f53761e5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_f53761e5((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -6049,7 +6049,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(location, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_f1eb4feb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, shareType, methodType, includesResource);
+            NativeMethods.TablePtr->C2.hs_method_f1eb4feb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, shareType, methodType, includesResource);
         }
     }
 
@@ -6059,22 +6059,22 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void fireStructureBlockAction(int structureBlockActionType, global::Hosihikari.Bindings.Bedrock.Interop.StructureEditorData structureEditorData, global::Hosihikari.Bindings.Bedrock.Interop.StructureTelemetryClientData? telemetryClientData)
     {
-        NativeMethods.TablePtr->C1.hs_method_f76ae9b3((void*)__hosihikari_shim_handle, structureBlockActionType, (void*)structureEditorData.Handle, (void*)(telemetryClientData?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_f76ae9b3((void*)__hosihikari_shim_handle, structureBlockActionType, (void*)structureEditorData.Handle, (void*)(telemetryClientData?.Handle ?? 0));
     }
 
     public void fireStructureBlockRedstoneActivated(int structureBlockActionType, global::Hosihikari.Bindings.Bedrock.Interop.StructureEditorData structureEditorData, global::Hosihikari.Bindings.Bedrock.Interop.StructureTelemetryClientData? telemetryClientData)
     {
-        NativeMethods.TablePtr->C1.hs_method_55227f48((void*)__hosihikari_shim_handle, structureBlockActionType, (void*)structureEditorData.Handle, (void*)(telemetryClientData?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_55227f48((void*)__hosihikari_shim_handle, structureBlockActionType, (void*)structureEditorData.Handle, (void*)(telemetryClientData?.Handle ?? 0));
     }
 
     public void fireTextToSpeechToggled(bool uiTTS, bool chatTTS)
     {
-        NativeMethods.TablePtr->C1.hs_method_305bf4f1((void*)__hosihikari_shim_handle, uiTTS, chatTTS);
+        NativeMethods.TablePtr->C2.hs_method_305bf4f1((void*)__hosihikari_shim_handle, uiTTS, chatTTS);
     }
 
     public void fireTextureStreamingPerf(nint perfData)
     {
-        NativeMethods.TablePtr->C1.hs_method_1b64b1da((void*)__hosihikari_shim_handle, (void*)perfData);
+        NativeMethods.TablePtr->C2.hs_method_1b64b1da((void*)__hosihikari_shim_handle, (void*)perfData);
     }
 
     public void fireUserGeneratedUriLaunchFailed(int source, int reasonCode, string additionalData)
@@ -6092,13 +6092,13 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(additionalData, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            NativeMethods.TablePtr->C1.hs_method_c5197ea7((void*)__hosihikari_shim_handle, source, reasonCode, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            NativeMethods.TablePtr->C2.hs_method_c5197ea7((void*)__hosihikari_shim_handle, source, reasonCode, __hs_stringData2, (nuint)__hs_stringByteCount2);
         }
     }
 
     public void fireUserGeneratedUriLaunched(int source)
     {
-        NativeMethods.TablePtr->C1.hs_method_993bd975((void*)__hosihikari_shim_handle, source);
+        NativeMethods.TablePtr->C2.hs_method_993bd975((void*)__hosihikari_shim_handle, source);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -6120,7 +6120,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(converterVersion, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_cbdff105((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_cbdff105((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -6152,29 +6152,29 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData3 = __hs_stringBytes3)
             {
-                NativeMethods.TablePtr->C1.hs_method_3d62e8c6((void*)__hosihikari_shim_handle, willUpgrade, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)experiments.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3, (void*)worldSeed.Handle, worldSizeMB);
+                NativeMethods.TablePtr->C2.hs_method_3d62e8c6((void*)__hosihikari_shim_handle, willUpgrade, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)experiments.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3, (void*)worldSeed.Handle, worldSizeMB);
             }
         }
     }
 
     public void flagEventDeepLink()
     {
-        NativeMethods.TablePtr->C1.hs_method_039d9d85((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_039d9d85((void*)__hosihikari_shim_handle);
     }
 
     public void flagEventPlayerGameTypeDefault(bool isDefault)
     {
-        NativeMethods.TablePtr->C1.hs_method_e8d11d21((void*)__hosihikari_shim_handle, isDefault);
+        NativeMethods.TablePtr->C2.hs_method_e8d11d21((void*)__hosihikari_shim_handle, isDefault);
     }
 
     public void forceSendEvents()
     {
-        NativeMethods.TablePtr->C1.hs_method_a1fc8c08((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_a1fc8c08((void*)__hosihikari_shim_handle);
     }
 
     public bool getAchievementsAlwaysEnabled()
     {
-        return NativeMethods.TablePtr->C1.hs_method_bcdd51b4((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_bcdd51b4((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<Bedrock::CrashTelemetryProcessor *>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -6183,41 +6183,41 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager getEventManager()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)NativeMethods.TablePtr->C1.hs_method_f5ead2dc((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.EventManager((nint)NativeMethods.TablePtr->C2.hs_method_f5ead2dc((void*)__hosihikari_shim_handle), false);
     }
 
     public string getExperienceId()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_86db4e1a((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_86db4e1a((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getExperienceSessionId()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_920baafb((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_920baafb((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getPlayerSessionId()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_6a96ee6d((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_6a96ee6d((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public uint getPrimaryLocalUserId()
     {
-        return NativeMethods.TablePtr->C1.hs_method_d02593fd((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_d02593fd((void*)__hosihikari_shim_handle);
     }
 
     public string getSessionId()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_198053f1((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_198053f1((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool getShouldHaveAchievementsEnabled()
     {
-        return NativeMethods.TablePtr->C1.hs_method_e0794341((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_e0794341((void*)__hosihikari_shim_handle) != 0;
     }
 
     public string getUserUID(ulong type, string primaryId)
@@ -6235,7 +6235,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(primaryId, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            var __hs_view = NativeMethods.TablePtr->C1.hs_method_a2179a52((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            var __hs_view = NativeMethods.TablePtr->C2.hs_method_a2179a52((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
@@ -6246,27 +6246,27 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
 
     public void init(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_AppPlatform_ appPlatform)
     {
-        NativeMethods.TablePtr->C1.hs_method_86d6e7f8((void*)__hosihikari_shim_handle, (void*)appPlatform.Handle);
+        NativeMethods.TablePtr->C2.hs_method_86d6e7f8((void*)__hosihikari_shim_handle, (void*)appPlatform.Handle);
     }
 
     public void initDeviceAndSessionIds()
     {
-        NativeMethods.TablePtr->C1.hs_method_451e5631((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_451e5631((void*)__hosihikari_shim_handle);
     }
 
     public void initEditorEventListener()
     {
-        NativeMethods.TablePtr->C1.hs_method_0e026b86((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_0e026b86((void*)__hosihikari_shim_handle);
     }
 
     public void initOfflineEventListener()
     {
-        NativeMethods.TablePtr->C1.hs_method_3e8dabaa((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_3e8dabaa((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value propertiesAsJsonValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_adc27fd2((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C2.hs_method_adc27fd2((void*)__hosihikari_shim_handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Bedrock::PubSub::Subscription' is not supported.", false)]
@@ -6288,38 +6288,38 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(uid, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_219d2223((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C2.hs_method_219d2223((void*)__hosihikari_shim_handle, (void*)userId, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public void removeConnectionCommonProperties(uint userId)
     {
-        NativeMethods.TablePtr->C1.hs_method_528f0638((void*)__hosihikari_shim_handle, userId);
+        NativeMethods.TablePtr->C2.hs_method_528f0638((void*)__hosihikari_shim_handle, userId);
     }
 
     public void removeExperienceIdentifiers()
     {
-        NativeMethods.TablePtr->C1.hs_method_24b4c914((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_24b4c914((void*)__hosihikari_shim_handle);
     }
 
     public void removeServerIdsForClient()
     {
-        NativeMethods.TablePtr->C1.hs_method_f3231010((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_f3231010((void*)__hosihikari_shim_handle);
     }
 
     public void removeTestBuildIdTag()
     {
-        NativeMethods.TablePtr->C1.hs_method_a2ebb3b2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_a2ebb3b2((void*)__hosihikari_shim_handle);
     }
 
     public void removeTestTelemetryTag()
     {
-        NativeMethods.TablePtr->C1.hs_method_770a92ff((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_770a92ff((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? requestEventDeferment()
     {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_76efc2f7((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_76efc2f7((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -6338,7 +6338,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(connectionGUID, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_a0af1cd7((void*)__hosihikari_shim_handle, userId, __hs_stringData1, (nuint)__hs_stringByteCount1, networkType);
+            NativeMethods.TablePtr->C2.hs_method_a0af1cd7((void*)__hosihikari_shim_handle, userId, __hs_stringData1, (nuint)__hs_stringByteCount1, networkType);
         }
     }
 
@@ -6370,39 +6370,39 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_7a2ab6da((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)serverTelemetryData.Handle);
+                NativeMethods.TablePtr->C2.hs_method_7a2ab6da((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)serverTelemetryData.Handle);
             }
         }
     }
 
     public void setShouldHaveAchievementsEnabled(bool value)
     {
-        NativeMethods.TablePtr->C1.hs_method_a37a2815((void*)__hosihikari_shim_handle, value);
+        NativeMethods.TablePtr->C2.hs_method_a37a2815((void*)__hosihikari_shim_handle, value);
     }
 
     public void setTestBuildIdTag(nint id)
     {
-        NativeMethods.TablePtr->C1.hs_method_1dbd9e79((void*)__hosihikari_shim_handle, (void*)id);
+        NativeMethods.TablePtr->C2.hs_method_1dbd9e79((void*)__hosihikari_shim_handle, (void*)id);
     }
 
     public void setTestTelemetryTag(nint name)
     {
-        NativeMethods.TablePtr->C1.hs_method_5010ec39((void*)__hosihikari_shim_handle, (void*)name);
+        NativeMethods.TablePtr->C2.hs_method_5010ec39((void*)__hosihikari_shim_handle, (void*)name);
     }
 
     public void shutdown()
     {
-        NativeMethods.TablePtr->C1.hs_method_9543d6dc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_9543d6dc((void*)__hosihikari_shim_handle);
     }
 
     public void stopDebugEventLoggingForAllListeners()
     {
-        NativeMethods.TablePtr->C1.hs_method_34ede9e6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_34ede9e6((void*)__hosihikari_shim_handle);
     }
 
     public void tick()
     {
-        NativeMethods.TablePtr->C1.hs_method_4eb19ca5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_4eb19ca5((void*)__hosihikari_shim_handle);
     }
 
     public void trySetExperienceIdentifiers(string experienceId, string? existingSessionId)
@@ -6433,14 +6433,14 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C1.hs_method_907b8a2b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, existingSessionId is not null);
+                NativeMethods.TablePtr->C2.hs_method_907b8a2b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, existingSessionId is not null);
             }
         }
     }
 
     public void unregisterSecondaryUserCommonProperties(nint userId)
     {
-        NativeMethods.TablePtr->C1.hs_method_a2cc7756((void*)__hosihikari_shim_handle, (void*)userId);
+        NativeMethods.TablePtr->C2.hs_method_a2cc7756((void*)__hosihikari_shim_handle, (void*)userId);
     }
 
     public void updateAppliedTreatmentPacks(string[] treatmentTags)
@@ -6465,38 +6465,38 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            NativeMethods.TablePtr->C1.hs_method_679f8e52((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(treatmentTags?.Length ?? 0));
+            NativeMethods.TablePtr->C2.hs_method_679f8e52((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(treatmentTags?.Length ?? 0));
         }
     }
 
     public void updateClientId()
     {
-        NativeMethods.TablePtr->C1.hs_method_7cde8b8c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_7cde8b8c((void*)__hosihikari_shim_handle);
     }
 
     public void updateEditionType()
     {
-        NativeMethods.TablePtr->C1.hs_method_4acbe4a9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_4acbe4a9((void*)__hosihikari_shim_handle);
     }
 
     public void updateIsLegacyPlayer(bool isLegacyPlayer)
     {
-        NativeMethods.TablePtr->C1.hs_method_601ecf53((void*)__hosihikari_shim_handle, isLegacyPlayer);
+        NativeMethods.TablePtr->C2.hs_method_601ecf53((void*)__hosihikari_shim_handle, isLegacyPlayer);
     }
 
     public void updateIsTrial(bool isTrial)
     {
-        NativeMethods.TablePtr->C1.hs_method_f2075be7((void*)__hosihikari_shim_handle, isTrial);
+        NativeMethods.TablePtr->C2.hs_method_f2075be7((void*)__hosihikari_shim_handle, isTrial);
     }
 
     public void updatePlayerUndergroundStatus(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, bool isUnderground)
     {
-        NativeMethods.TablePtr->C1.hs_method_711518cb((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), isUnderground);
+        NativeMethods.TablePtr->C2.hs_method_711518cb((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), isUnderground);
     }
 
     public void updatePrimaryLocalUserId(nint userId)
     {
-        NativeMethods.TablePtr->C1.hs_method_07981282((void*)__hosihikari_shim_handle, (void*)userId);
+        NativeMethods.TablePtr->C2.hs_method_07981282((void*)__hosihikari_shim_handle, (void*)userId);
     }
 
 
@@ -6506,7 +6506,7 @@ public sealed unsafe partial class IMinecraftEventing : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f3f20889((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f3f20889((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

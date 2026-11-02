@@ -40,7 +40,7 @@ public sealed unsafe partial class BlockAndBlockPos : global::System.IDisposable
 
     public static BlockAndBlockPos Create(global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes_Nested.BlockAndBlockPos arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_bb54e229((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_bb54e229((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,13 +51,13 @@ public sealed unsafe partial class BlockAndBlockPos : global::System.IDisposable
 
     public nint mBlock
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_a51c1031((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a51c1031((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_39c82652((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_39c82652((void*)__hosihikari_shim_handle);
     }
 
 
@@ -67,7 +67,7 @@ public sealed unsafe partial class BlockAndBlockPos : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_bfd6d829((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_bfd6d829((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

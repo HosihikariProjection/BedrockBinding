@@ -40,17 +40,17 @@ public sealed unsafe partial class ServerTelemetryData : global::System.IDisposa
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ServerTelemetryData arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_e87ce84d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_e87ce84d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_69ca382e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_69ca382e((void*)__hosihikari_shim_handle);
     }
 
     public static ServerTelemetryData Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_fbb82b08();
+        var handle = NativeMethods.TablePtr->C4.hs_create_fbb82b08();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class ServerTelemetryData : global::System.IDisposa
 
     public static ServerTelemetryData Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ServerTelemetryData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2ffdc16c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_2ffdc16c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,25 +73,25 @@ public sealed unsafe partial class ServerTelemetryData : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1276d3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_217ac000((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_217ac000((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1d4791_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f316d993((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f316d993((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk64ca34_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a6bbb8a6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a6bbb8a6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkacbc35_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5ef062cb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5ef062cb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -101,7 +101,7 @@ public sealed unsafe partial class ServerTelemetryData : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e4edc86a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e4edc86a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

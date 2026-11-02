@@ -41,12 +41,12 @@ public sealed unsafe partial class IManager : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_e71a6b17((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_e71a6b17((void*)__hosihikari_shim_handle);
     }
 
     public static IManager Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.IManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_8c96cd4f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_8c96cd4f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,13 +57,13 @@ public sealed unsafe partial class IManager : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getAutomationClient()
     {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_38fb060a((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_38fb060a((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getEventing()
     {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_1cd78cbc((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_1cd78cbc((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -74,7 +74,7 @@ public sealed unsafe partial class IManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_04fd49c9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_04fd49c9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

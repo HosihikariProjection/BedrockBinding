@@ -40,7 +40,7 @@ public sealed unsafe partial class InsideGenericBlockComponent : global::System.
 
     public static InsideGenericBlockComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideGenericBlockComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b05e182c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b05e182c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class InsideGenericBlockComponent : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_415f5326((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_415f5326((void*)__hosihikari_shim_handle);
     }
 
     public float mGrow
     {
-        get => NativeMethods.TablePtr->C1.hs_get_a2ab24cf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_a2ab24cf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a2ab24cf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a2ab24cf((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHasChunks
     {
-        get => NativeMethods.TablePtr->C1.hs_get_bda3a3fd((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_bda3a3fd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_bda3a3fd((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_bda3a3fd((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubstituteAABB_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_66d59180((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_66d59180((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class InsideGenericBlockComponent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_04479db8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_04479db8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

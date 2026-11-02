@@ -40,7 +40,7 @@ public sealed unsafe partial class IPathBlockSource : global::System.IDisposable
 
     public static IPathBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.IPathBlockSource arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e33cc729((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e33cc729((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,27 +51,27 @@ public sealed unsafe partial class IPathBlockSource : global::System.IDisposable
 
     public bool isInLava()
     {
-        return NativeMethods.TablePtr->C1.hs_method_5a10d142((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_5a10d142((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isInWater()
     {
-        return NativeMethods.TablePtr->C1.hs_method_aae3e87e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_aae3e87e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isLavaBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7ce84b1d((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_7ce84b1d((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
     public bool isSolidBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_0e8554d9((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_0e8554d9((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
     public bool isWaterBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_f65f0fec((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_f65f0fec((void*)__hosihikari_shim_handle, (void*)blockPos.Handle) != 0;
     }
 
 
@@ -81,7 +81,7 @@ public sealed unsafe partial class IPathBlockSource : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_5a3f0ba5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_5a3f0ba5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

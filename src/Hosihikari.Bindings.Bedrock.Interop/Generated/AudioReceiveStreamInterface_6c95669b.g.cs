@@ -40,7 +40,7 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
 
     public static AudioReceiveStreamInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3a37dba2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_3a37dba2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
 
     public int GetBaseMinimumPlayoutDelayMs()
     {
-        return NativeMethods.TablePtr->C4.hs_method_6d8d19e9((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_6d8d19e9((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats GetStats(bool arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_a10a8fcd((void*)__hosihikari_shim_handle, arg0));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Stats((nint)NativeMethods.TablePtr->C5.hs_method_a10a8fcd((void*)__hosihikari_shim_handle, arg0));
     }
 
     public bool IsRunning()
     {
-        return NativeMethods.TablePtr->C4.hs_method_554b9399((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_554b9399((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool SetBaseMinimumPlayoutDelayMs(int arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_2cfe1d0a((void*)__hosihikari_shim_handle, arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_2cfe1d0a((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::map<int, webrtc::SdpAudioFormat>' is not a known bindable declaration.", false)]
@@ -75,32 +75,32 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
 
     public void SetGain(float arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_8c149890((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_8c149890((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void SetNackHistory(int arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_c77cec42((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_c77cec42((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void SetNonSenderRttMeasurement(bool arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_e36484d8((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_e36484d8((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void SetSink(nint arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_924ca24a((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C5.hs_method_924ca24a((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public uint remote_ssrc()
     {
-        return NativeMethods.TablePtr->C4.hs_method_dcb53fa3((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_dcb53fa3((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source? source()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4bc03525((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_4bc03525((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source((nint)__hs_handle, false) : null;
     }
 
@@ -111,7 +111,7 @@ public sealed unsafe partial class AudioReceiveStreamInterface : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6c95669b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6c95669b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

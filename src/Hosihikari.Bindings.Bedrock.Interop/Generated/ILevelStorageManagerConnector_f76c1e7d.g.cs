@@ -40,7 +40,7 @@ public sealed unsafe partial class ILevelStorageManagerConnector : global::Syste
 
     public static ILevelStorageManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelStorageManagerConnector arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_a620bce8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a620bce8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -80,7 +80,7 @@ public sealed unsafe partial class ILevelStorageManagerConnector : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f76c1e7d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f76c1e7d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

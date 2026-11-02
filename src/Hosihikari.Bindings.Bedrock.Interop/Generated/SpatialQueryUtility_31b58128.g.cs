@@ -48,7 +48,7 @@ public sealed unsafe partial class SpatialQueryUtility : global::System.IDisposa
 
     public static void testForEntityStacking(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext except, global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher component, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, nint view, global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes collisionShapes)
     {
-        NativeMethods.TablePtr->C3.hs_method_749fc5fb((void*)except.Handle, (void*)component.Handle, (void*)intersectTestBox.Handle, (void*)view, (void*)collisionShapes.Handle);
+        NativeMethods.TablePtr->C4.hs_method_749fc5fb((void*)except.Handle, (void*)component.Handle, (void*)intersectTestBox.Handle, (void*)view, (void*)collisionShapes.Handle);
     }
 
     public void Dispose()
@@ -57,7 +57,7 @@ public sealed unsafe partial class SpatialQueryUtility : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_31b58128((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_31b58128((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

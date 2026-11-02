@@ -40,7 +40,7 @@ public sealed unsafe partial class EncryptionResult : global::System.IDisposable
 
     public static EncryptionResult Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_e340d55e();
+        var handle = NativeMethods.TablePtr->C1.hs_create_e340d55e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class EncryptionResult : global::System.IDisposable
 
     public static EncryptionResult Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_4c7ed51c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_4c7ed51c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,24 +63,24 @@ public sealed unsafe partial class EncryptionResult : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk25765c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_f2c3282b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f2c3282b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb6f67f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_24c2943f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_24c2943f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke45cf2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_c929de00((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c929de00((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult((nint)NativeMethods.TablePtr->C0.hs_method_0f5037d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EncryptionResult((nint)NativeMethods.TablePtr->C1.hs_method_0f5037d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class EncryptionResult : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_e31d16ea((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e31d16ea((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

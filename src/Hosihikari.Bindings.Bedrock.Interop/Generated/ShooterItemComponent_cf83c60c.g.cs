@@ -40,23 +40,23 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
 
     public nint mOwner
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae999887((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_ae999887((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae999887((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_ae999887((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void __initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C3.hs_method_72a35744((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C4.hs_method_72a35744((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     public bool _checkComponentDataForContentErrors()
     {
-        return NativeMethods.TablePtr->C3.hs_method_118a0bfb((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_118a0bfb((void*)__hosihikari_shim_handle) != 0;
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.ShooterItemComponent component)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_0fedf11f((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_0fedf11f((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -65,7 +65,7 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
 
     public static ShooterItemComponent Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a7a032d8();
+        var handle = NativeMethods.TablePtr->C4.hs_create_a7a032d8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,7 +76,7 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
 
     public static ShooterItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.ShooterItemComponent component)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d752c7c2((void*)component.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_d752c7c2((void*)component.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,7 +87,7 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
 
     public static ShooterItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_82586418((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_82586418((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -98,22 +98,22 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
 
     public void _consumeAmmunition(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack ammunition, int slotIndex, bool infiniteAmmo, bool fromOffhand)
     {
-        NativeMethods.TablePtr->C3.hs_method_6adddd08((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)ammunition.Handle, slotIndex, infiniteAmmo, fromOffhand);
+        NativeMethods.TablePtr->C4.hs_method_6adddd08((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)ammunition.Handle, slotIndex, infiniteAmmo, fromOffhand);
     }
 
     public int _getAmmunition(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, bool arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack ammo, nint fromOffhand)
     {
-        return NativeMethods.TablePtr->C3.hs_method_461594ca((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), arg1, (void*)ammo.Handle, (void*)fromOffhand);
+        return NativeMethods.TablePtr->C4.hs_method_461594ca((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), arg1, (void*)ammo.Handle, (void*)fromOffhand);
     }
 
     public void _initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C3.hs_method_f53bb9c0((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C4.hs_method_f53bb9c0((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     public void _shootProjectiles(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack shooterStack, global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int durationLeft)
     {
-        NativeMethods.TablePtr->C3.hs_method_8d919368((void*)__hosihikari_shim_handle, (void*)shooterStack.Handle, (void*)(player?.Handle ?? 0), durationLeft);
+        NativeMethods.TablePtr->C4.hs_method_8d919368((void*)__hosihikari_shim_handle, (void*)shooterStack.Handle, (void*)(player?.Handle ?? 0), durationLeft);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -122,48 +122,48 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
 
     public bool checkComponentDataForContentErrors()
     {
-        return NativeMethods.TablePtr->C3.hs_method_7e3d238d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_7e3d238d((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAmmunition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_dbc5b5f1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_dbc5b5f1((void*)__hosihikari_shim_handle);
     }
 
     public bool mChargeOnDraw
     {
-        get => NativeMethods.TablePtr->C3.hs_get_53462884((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_53462884((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_53462884((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_53462884((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDrawDuration_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_33df4b25((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_33df4b25((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnUseSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_93359eec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_93359eec((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnUseTimeDepletedSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_19a74df5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_19a74df5((void*)__hosihikari_shim_handle);
     }
 
     public bool mScalePowerByDrawDuration
     {
-        get => NativeMethods.TablePtr->C3.hs_get_6a7ecbe5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_6a7ecbe5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_6a7ecbe5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_6a7ecbe5((void*)__hosihikari_shim_handle, value);
     }
 
     public bool releaseUsing(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int durationLeft)
     {
-        return NativeMethods.TablePtr->C3.hs_method_80d36974((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)(player?.Handle ?? 0), durationLeft) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_80d36974((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)(player?.Handle ?? 0), durationLeft) != 0;
     }
 
 
@@ -173,7 +173,7 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_cf83c60c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_cf83c60c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

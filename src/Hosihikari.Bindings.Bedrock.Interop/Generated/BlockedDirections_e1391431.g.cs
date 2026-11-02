@@ -40,13 +40,13 @@ public sealed unsafe partial class BlockedDirections : global::System.IDisposabl
 
     public static void bindBlockedDirections(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_750999c5((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_750999c5((void*)ctx.Handle);
     }
 
     public byte mStopsFlowDirectionsMask
     {
-        get => NativeMethods.TablePtr->C3.hs_get_1956d5ff((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_1956d5ff((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_1956d5ff((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_1956d5ff((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -55,7 +55,7 @@ public sealed unsafe partial class BlockedDirections : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e1391431((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e1391431((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

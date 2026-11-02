@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerAddExpEvent : global::System.IDisposabl
 
     public static PlayerAddExpEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAddExpEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1a5caa91((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_1a5caa91((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class PlayerAddExpEvent : global::System.IDisposabl
 
     public int mExp
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4ab38da2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_4ab38da2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4ab38da2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4ab38da2((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a91c5d00((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a91c5d00((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class PlayerAddExpEvent : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0823fb0b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0823fb0b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class IPacketLimitAlgorithm : global::System.IDispo
 
     public static IPacketLimitAlgorithm Create(global::Hosihikari.Bindings.Bedrock.Interop.IPacketLimitAlgorithm arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_adcd20ff((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_adcd20ff((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IPacketLimitAlgorithm : global::System.IDispo
 
     public uint checkPacket(int packet)
     {
-        return NativeMethods.TablePtr->C1.hs_method_4e7605b0((void*)__hosihikari_shim_handle, packet);
+        return NativeMethods.TablePtr->C2.hs_method_4e7605b0((void*)__hosihikari_shim_handle, packet);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IPacketLimitAlgorithm' has no accessible destructor.", false)]
@@ -65,7 +65,7 @@ public sealed unsafe partial class IPacketLimitAlgorithm : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_2be4b796((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2be4b796((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class EphemeralKeyExchangeCipherGroups : global::Sy
 
     public static EphemeralKeyExchangeCipherGroups Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_577fed79();
+        var handle = NativeMethods.TablePtr->C5.hs_create_577fed79();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class EphemeralKeyExchangeCipherGroups : global::Sy
 
     public static EphemeralKeyExchangeCipherGroups Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.EphemeralKeyExchangeCipherGroups arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a5f27781((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_a5f27781((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,19 +64,19 @@ public sealed unsafe partial class EphemeralKeyExchangeCipherGroups : global::Sy
     {
         fixed (ushort* __hs_vectorData1 = disabled_groups)
         {
-            NativeMethods.TablePtr->C4.hs_method_86550c93((void*)__hosihikari_shim_handle, (void*)field_trials, __hs_vectorData1, (nuint)(disabled_groups?.Length ?? 0));
+            NativeMethods.TablePtr->C5.hs_method_86550c93((void*)__hosihikari_shim_handle, (void*)field_trials, __hs_vectorData1, (nuint)(disabled_groups?.Length ?? 0));
         }
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1d51d2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bd248f4a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_bd248f4a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.EphemeralKeyExchangeCipherGroups operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.EphemeralKeyExchangeCipherGroups arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.EphemeralKeyExchangeCipherGroups((nint)NativeMethods.TablePtr->C4.hs_method_00162299((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions_Nested.EphemeralKeyExchangeCipherGroups((nint)NativeMethods.TablePtr->C5.hs_method_00162299((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -85,7 +85,7 @@ public sealed unsafe partial class EphemeralKeyExchangeCipherGroups : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bbb191d8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_bbb191d8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,12 +40,12 @@ public sealed unsafe partial class CommandOutputPacketPayload : global::System.I
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C0.hs_method_9ffb8883((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_9ffb8883((void*)__hosihikari_shim_handle);
     }
 
     public static CommandOutputPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutputPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_9431fab6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_9431fab6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,13 +57,13 @@ public sealed unsafe partial class CommandOutputPacketPayload : global::System.I
     // The native field type is not projected; this is the address of the field storage.
     public nint mOriginData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d8d06491((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d8d06491((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOutput_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_e56a5cc2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_e56a5cc2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -73,7 +73,7 @@ public sealed unsafe partial class CommandOutputPacketPayload : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_12f7454b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_12f7454b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerRespawnBlockRadiusRandomizer : global::
 
     public nint _ctor(uint spawnRadius, global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom random)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_87354ef3((void*)__hosihikari_shim_handle, spawnRadius, (void*)random.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_87354ef3((void*)__hosihikari_shim_handle, spawnRadius, (void*)random.Handle);
     }
 
     public static PlayerRespawnBlockRadiusRandomizer Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_291825ae();
+        var handle = NativeMethods.TablePtr->C3.hs_create_291825ae();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class PlayerRespawnBlockRadiusRandomizer : global::
 
     public static PlayerRespawnBlockRadiusRandomizer Create(uint spawnRadius, global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroRandom random)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f9e8ef55(spawnRadius, (void*)random.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_f9e8ef55(spawnRadius, (void*)random.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,38 +67,38 @@ public sealed unsafe partial class PlayerRespawnBlockRadiusRandomizer : global::
 
     public uint mCurrentOrigin
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b5ec62b3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b5ec62b3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b5ec62b3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b5ec62b3((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mIterationCount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7dfd3c73((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_7dfd3c73((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7dfd3c73((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7dfd3c73((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mLargestPrime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2906206a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_2906206a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2906206a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2906206a((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mPossibleOrigins
     {
-        get => NativeMethods.TablePtr->C2.hs_get_79944f3a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_79944f3a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_79944f3a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_79944f3a((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mSpawnRadius
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ea779db7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ea779db7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ea779db7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ea779db7((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mStartOrigin
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ed82df0e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ed82df0e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ed82df0e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ed82df0e((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -107,7 +107,7 @@ public sealed unsafe partial class PlayerRespawnBlockRadiusRandomizer : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d2774db7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d2774db7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

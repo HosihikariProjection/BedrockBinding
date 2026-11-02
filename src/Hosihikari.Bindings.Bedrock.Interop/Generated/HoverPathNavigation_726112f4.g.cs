@@ -40,7 +40,7 @@ public sealed unsafe partial class HoverPathNavigation : global::System.IDisposa
 
     public bool _canUpdatePath(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        return NativeMethods.TablePtr->C1.hs_method_ce3f5330((void*)__hosihikari_shim_handle, (void*)mob.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_ce3f5330((void*)__hosihikari_shim_handle, (void*)mob.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
@@ -53,27 +53,27 @@ public sealed unsafe partial class HoverPathNavigation : global::System.IDisposa
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 _getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_351f6bcc((void*)__hosihikari_shim_handle, (void*)mob.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_351f6bcc((void*)__hosihikari_shim_handle, (void*)mob.Handle));
     }
 
     public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.NavigationDescription? description)
     {
-        NativeMethods.TablePtr->C1.hs_method_cee39e0f((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_cee39e0f((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void _stop(global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_772e4d60((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C2.hs_method_772e4d60((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_f09aed53((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C2.hs_method_f09aed53((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
     public void _updatePath(global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_354b3b1d((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C2.hs_method_354b3b1d((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -82,7 +82,7 @@ public sealed unsafe partial class HoverPathNavigation : global::System.IDisposa
 
     public static HoverPathNavigation Create(global::Hosihikari.Bindings.Bedrock.Interop.HoverPathNavigation arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_793546e8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_793546e8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -93,7 +93,7 @@ public sealed unsafe partial class HoverPathNavigation : global::System.IDisposa
 
     public bool canUpdatePath(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        return NativeMethods.TablePtr->C1.hs_method_c5ce4e2c((void*)__hosihikari_shim_handle, (void*)mob.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_c5ce4e2c((void*)__hosihikari_shim_handle, (void*)mob.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
@@ -106,33 +106,33 @@ public sealed unsafe partial class HoverPathNavigation : global::System.IDisposa
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getTempMobPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_201e2db9((void*)__hosihikari_shim_handle, (void*)mob.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_201e2db9((void*)__hosihikari_shim_handle, (void*)mob.Handle));
     }
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.NavigationDescription? description)
     {
-        NativeMethods.TablePtr->C1.hs_method_1d370de3((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_1d370de3((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public bool mCanPathFromAir
     {
-        get => NativeMethods.TablePtr->C1.hs_get_6825b0d1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_6825b0d1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_6825b0d1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_6825b0d1((void*)__hosihikari_shim_handle, value);
     }
 
     public void stop(global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_c27b6aec((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c27b6aec((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_315a5b94((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C2.hs_method_315a5b94((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
     public void updatePath(global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_b17e2bff((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C2.hs_method_b17e2bff((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
 
@@ -142,7 +142,7 @@ public sealed unsafe partial class HoverPathNavigation : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_726112f4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_726112f4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

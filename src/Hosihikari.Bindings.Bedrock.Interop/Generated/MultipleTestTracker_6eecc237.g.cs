@@ -40,12 +40,12 @@ public sealed unsafe partial class MultipleTestTracker : global::System.IDisposa
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_2f2f654a((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_2f2f654a((void*)__hosihikari_shim_handle);
     }
 
     public static MultipleTestTracker Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d58ef021();
+        var handle = NativeMethods.TablePtr->C5.hs_create_d58ef021();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class MultipleTestTracker : global::System.IDisposa
 
     public static MultipleTestTracker Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.MultipleTestTracker arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_646bfc99((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_646bfc99((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,18 +67,18 @@ public sealed unsafe partial class MultipleTestTracker : global::System.IDisposa
 
     public void addListener(global::Hosihikari.Bindings.Abi.SharedHandle? listener)
     {
-        NativeMethods.TablePtr->C4.hs_method_ad333d63((void*)__hosihikari_shim_handle, listener?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C5.hs_method_ad333d63((void*)__hosihikari_shim_handle, listener?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3e513d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5919f966((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_5919f966((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.MultipleTestTracker operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.MultipleTestTracker arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.MultipleTestTracker((nint)NativeMethods.TablePtr->C4.hs_method_5e743435((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.MultipleTestTracker((nint)NativeMethods.TablePtr->C5.hs_method_5e743435((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -88,7 +88,7 @@ public sealed unsafe partial class MultipleTestTracker : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6eecc237((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6eecc237((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

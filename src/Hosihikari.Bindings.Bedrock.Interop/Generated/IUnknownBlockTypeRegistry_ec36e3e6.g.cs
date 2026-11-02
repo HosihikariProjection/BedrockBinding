@@ -41,12 +41,12 @@ public sealed unsafe partial class IUnknownBlockTypeRegistry : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_21e82f59((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_21e82f59((void*)__hosihikari_shim_handle);
     }
 
     public static IUnknownBlockTypeRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.IUnknownBlockTypeRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_545990ff((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_545990ff((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,7 +57,7 @@ public sealed unsafe partial class IUnknownBlockTypeRegistry : global::System.ID
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block getUnknownBlock(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag serId)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C1.hs_method_71cc68a9((void*)__hosihikari_shim_handle, (void*)serId.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_71cc68a9((void*)__hosihikari_shim_handle, (void*)serId.Handle), false);
     }
 
 
@@ -67,7 +67,7 @@ public sealed unsafe partial class IUnknownBlockTypeRegistry : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ec36e3e6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ec36e3e6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

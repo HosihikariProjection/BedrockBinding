@@ -40,8 +40,8 @@ public sealed unsafe partial class CommandMessageParams : global::System.IDispos
 
     public bool mAllowEmptyMessages
     {
-        get => NativeMethods.TablePtr->C0.hs_get_753f15b7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_753f15b7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_753f15b7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_753f15b7((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class CommandMessageParams : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_80a7c705((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_80a7c705((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

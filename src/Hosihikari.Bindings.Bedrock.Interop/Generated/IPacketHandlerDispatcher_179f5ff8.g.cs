@@ -44,7 +44,7 @@ public sealed unsafe partial class IPacketHandlerDispatcher : global::System.IDi
 
     public static IPacketHandlerDispatcher Create(global::Hosihikari.Bindings.Bedrock.Interop.IPacketHandlerDispatcher arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_bb8da372((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_bb8da372((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class IPacketHandlerDispatcher : global::System.IDi
 
     public void handle(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.NetEventCallback callback, global::Hosihikari.Bindings.Abi.SharedHandle? packet)
     {
-        NativeMethods.TablePtr->C1.hs_method_c079d0e1((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)callback.Handle, packet?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C2.hs_method_c079d0e1((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)callback.Handle, packet?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
 
@@ -65,7 +65,7 @@ public sealed unsafe partial class IPacketHandlerDispatcher : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_179f5ff8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_179f5ff8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

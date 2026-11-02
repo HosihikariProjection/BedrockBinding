@@ -40,18 +40,18 @@ public sealed unsafe partial class PlayerMovementSettings : global::System.IDisp
 
     public float ActionDirectionThreshold
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3ee9fde7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3ee9fde7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3ee9fde7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3ee9fde7((void*)__hosihikari_shim_handle, value);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings INVALID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)NativeMethods.TablePtr->C2.hs_method_174e133f(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)NativeMethods.TablePtr->C3.hs_method_174e133f(), false);
     }
 
     public static PlayerMovementSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b5ea6f2b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b5ea6f2b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,26 +62,26 @@ public sealed unsafe partial class PlayerMovementSettings : global::System.IDisp
 
     public bool ServerAuthBlockBreaking
     {
-        get => NativeMethods.TablePtr->C2.hs_get_589cc93c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_589cc93c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_589cc93c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_589cc93c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerTickConfig_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0d260faf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0d260faf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReplay_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1eea89a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1eea89a0((void*)__hosihikari_shim_handle);
     }
 
     public float mServerPlayerPickRangeScalar
     {
-        get => NativeMethods.TablePtr->C2.hs_get_f267c7f3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_f267c7f3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f267c7f3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f267c7f3((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -91,7 +91,7 @@ public sealed unsafe partial class PlayerMovementSettings : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_57c70259((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_57c70259((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

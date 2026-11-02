@@ -44,7 +44,7 @@ public sealed unsafe partial class CommandOutputSender : global::System.IDisposa
 
     public void _send(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C0.hs_method_2f645046((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C1.hs_method_2f645046((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,13 +54,13 @@ public sealed unsafe partial class CommandOutputSender : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mCodeBuilderSubject_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_bf1efbb8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_bf1efbb8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEmplaceTestCommandOutputCallback_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_409366b5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_409366b5((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -69,12 +69,12 @@ public sealed unsafe partial class CommandOutputSender : global::System.IDisposa
 
     public void send(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C0.hs_method_094e4701((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C1.hs_method_094e4701((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public void sendToAdmins(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, byte opPermLevel)
     {
-        NativeMethods.TablePtr->C0.hs_method_45532cee((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle, opPermLevel);
+        NativeMethods.TablePtr->C1.hs_method_45532cee((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle, opPermLevel);
     }
 
     public static string[] translate(string[] @in)
@@ -99,7 +99,7 @@ public sealed unsafe partial class CommandOutputSender : global::System.IDisposa
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            var __hs_view = NativeMethods.TablePtr->C0.hs_method_ca697ab9(__hs_vectorData0, (nuint)(@in?.Length ?? 0));
+            var __hs_view = NativeMethods.TablePtr->C1.hs_method_ca697ab9(__hs_vectorData0, (nuint)(@in?.Length ?? 0));
             var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
             var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
             for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -117,7 +117,7 @@ public sealed unsafe partial class CommandOutputSender : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_b9ce83a4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_b9ce83a4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

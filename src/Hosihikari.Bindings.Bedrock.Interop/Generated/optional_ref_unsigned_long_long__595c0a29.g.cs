@@ -40,7 +40,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
 
     public nint as_ptr()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_a013b53a((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_a013b53a((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.", false)]
@@ -69,52 +69,52 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
 
     public nint get()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_af486a12((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_af486a12((void*)__hosihikari_shim_handle);
     }
 
     public bool has_value()
     {
-        return NativeMethods.TablePtr->C4.hs_method_e0aa3b39((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_e0aa3b39((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool operator_bool()
     {
-        return NativeMethods.TablePtr->C4.hs_method_c7d65bce((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_c7d65bce((void*)__hosihikari_shim_handle) != 0;
     }
 
     public nint operator_unsigned_long_long___ebf3a57d()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_ebf3a57d((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_ebf3a57d((void*)__hosihikari_shim_handle);
     }
 
     public nint operator_unsigned_long_long___5284b1c1()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5284b1c1((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_5284b1c1((void*)__hosihikari_shim_handle);
     }
 
     public nint operator_multiply()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_af1ee785((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_af1ee785((void*)__hosihikari_shim_handle);
     }
 
     public nint operator_operator__()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_4fb59797((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_4fb59797((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_ operator_assign_99d2c22e(nint? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)NativeMethods.TablePtr->C4.hs_method_99d2c22e((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)NativeMethods.TablePtr->C5.hs_method_99d2c22e((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_ operator_assign_c34bc040(nint? arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)NativeMethods.TablePtr->C4.hs_method_c34bc040((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.optional_ref_unsigned_long_long_((nint)NativeMethods.TablePtr->C5.hs_method_c34bc040((void*)__hosihikari_shim_handle, (void*)(arg0 ?? 0), arg0 is not null), false);
     }
 
     public static optional_ref_unsigned_long_long_ Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ec1a9bf2();
+        var handle = NativeMethods.TablePtr->C5.hs_create_ec1a9bf2();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -125,7 +125,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
 
     public static optional_ref_unsigned_long_long_ Create_ae82d274(nint? arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ae82d274((void*)(arg0 ?? 0), arg0 is not null);
+        var handle = NativeMethods.TablePtr->C5.hs_create_ae82d274((void*)(arg0 ?? 0), arg0 is not null);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -136,7 +136,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
 
     public static optional_ref_unsigned_long_long_ Create_13f980b9(nint? arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_13f980b9((void*)(arg0 ?? 0), arg0 is not null);
+        var handle = NativeMethods.TablePtr->C5.hs_create_13f980b9((void*)(arg0 ?? 0), arg0 is not null);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -163,7 +163,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
 
     public nint value()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_fc636d29((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_fc636d29((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -172,7 +172,7 @@ public sealed unsafe partial class optional_ref_unsigned_long_long_ : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_595c0a29((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_595c0a29((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

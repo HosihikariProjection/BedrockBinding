@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerFormResponseEvent : global::System.IDis
 
     public static PlayerFormResponseEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerFormResponseEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_be4c808d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_be4c808d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,20 +51,20 @@ public sealed unsafe partial class PlayerFormResponseEvent : global::System.IDis
 
     public uint mFormId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c72204be((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c72204be((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c72204be((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c72204be((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFormResponse_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4fd6d157((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4fd6d157((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_cc97d79f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cc97d79f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -74,7 +74,7 @@ public sealed unsafe partial class PlayerFormResponseEvent : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6e50595e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_6e50595e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

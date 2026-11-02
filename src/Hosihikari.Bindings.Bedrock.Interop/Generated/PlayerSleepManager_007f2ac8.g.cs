@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerSleepManager : global::System.IDisposab
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_6404cc25((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_6404cc25((void*)__hosihikari_shim_handle);
     }
 
     public void _updateSleepingPlayerList()
     {
-        NativeMethods.TablePtr->C2.hs_method_ab6a7803((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_ab6a7803((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class PlayerSleepManager : global::System.IDisposab
 
     public static PlayerSleepManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_efe654c1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_efe654c1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,18 +66,18 @@ public sealed unsafe partial class PlayerSleepManager : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnAnyGameplayUsersRemovedSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_917e5fa3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_917e5fa3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerSleepStatus_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_eae17333((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_eae17333((void*)__hosihikari_shim_handle);
     }
 
     public void updateSleepingPlayerList()
     {
-        NativeMethods.TablePtr->C2.hs_method_45fd8bcb((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_45fd8bcb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -87,7 +87,7 @@ public sealed unsafe partial class PlayerSleepManager : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_007f2ac8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_007f2ac8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

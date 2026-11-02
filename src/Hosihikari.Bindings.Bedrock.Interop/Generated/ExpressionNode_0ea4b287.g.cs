@@ -53,18 +53,18 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(@string, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_a7c6eed7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, molangVersion);
+            return (nint)NativeMethods.TablePtr->C4.hs_method_a7c6eed7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, molangVersion);
         }
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_96eb6675((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_96eb6675((void*)__hosihikari_shim_handle);
     }
 
     public static ExpressionNode Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_dc7b95c1();
+        var handle = NativeMethods.TablePtr->C4.hs_create_dc7b95c1();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +75,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
 
     public static ExpressionNode Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_bc3a816e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_bc3a816e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,7 +99,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(@string, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C3.hs_create_f91f9f3b(__hs_stringData0, (nuint)__hs_stringByteCount0, molangVersion);
+            var handle = NativeMethods.TablePtr->C4.hs_create_f91f9f3b(__hs_stringData0, (nuint)__hs_stringByteCount0, molangVersion);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -111,13 +111,13 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_a9a09d55((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_a9a09d55((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExpression_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5d11dd1c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5d11dd1c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -127,7 +127,7 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0ea4b287((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_0ea4b287((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

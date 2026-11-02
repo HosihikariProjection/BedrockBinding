@@ -40,7 +40,7 @@ public sealed unsafe partial class State : global::System.IDisposable
 
     public static State Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.RapidJSONSchemaReader_Nested.State arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_dd84efe0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_dd84efe0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,12 +52,12 @@ public sealed unsafe partial class State : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mIt_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_30267e52((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_30267e52((void*)__hosihikari_shim_handle);
     }
 
     public nint mValue
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c9f32331((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_c9f32331((void*)__hosihikari_shim_handle);
     }
 
 
@@ -67,7 +67,7 @@ public sealed unsafe partial class State : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3d782d69((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_3d782d69((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

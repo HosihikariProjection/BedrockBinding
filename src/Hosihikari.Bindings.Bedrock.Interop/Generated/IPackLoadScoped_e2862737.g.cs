@@ -40,7 +40,7 @@ public sealed unsafe partial class IPackLoadScoped : global::System.IDisposable
 
     public static IPackLoadScoped Create(global::Hosihikari.Bindings.Bedrock.Interop.IPackLoadScoped arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3859050a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_3859050a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class IPackLoadScoped : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_e2862737((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e2862737((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

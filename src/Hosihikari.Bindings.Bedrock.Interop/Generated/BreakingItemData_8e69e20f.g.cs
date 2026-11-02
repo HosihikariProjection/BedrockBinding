@@ -40,7 +40,7 @@ public sealed unsafe partial class BreakingItemData : global::System.IDisposable
 
     public static BreakingItemData Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_fd4c5480();
+        var handle = NativeMethods.TablePtr->C3.hs_create_fd4c5480();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class BreakingItemData : global::System.IDisposable
 
     public static BreakingItemData Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_172cc944((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_172cc944((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,24 +63,24 @@ public sealed unsafe partial class BreakingItemData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5a4bf7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_23a1fcfa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_23a1fcfa((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka77f79_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_93587180((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_93587180((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb9e8fd_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_71904cda((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_71904cda((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData((nint)NativeMethods.TablePtr->C2.hs_method_4315c896((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.BreakingItemData((nint)NativeMethods.TablePtr->C3.hs_method_4315c896((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class BreakingItemData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_8e69e20f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_8e69e20f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

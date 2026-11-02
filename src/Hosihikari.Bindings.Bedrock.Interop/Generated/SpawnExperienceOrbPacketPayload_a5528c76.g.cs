@@ -40,7 +40,7 @@ public sealed unsafe partial class SpawnExperienceOrbPacketPayload : global::Sys
 
     public static SpawnExperienceOrbPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnExperienceOrbPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6f8b88cd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_6f8b88cd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class SpawnExperienceOrbPacketPayload : global::Sys
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5bebed08((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5bebed08((void*)__hosihikari_shim_handle);
     }
 
     public int mXPValue
     {
-        get => NativeMethods.TablePtr->C3.hs_get_cdba38f9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_cdba38f9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_cdba38f9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_cdba38f9((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class SpawnExperienceOrbPacketPayload : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a5528c76((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_a5528c76((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

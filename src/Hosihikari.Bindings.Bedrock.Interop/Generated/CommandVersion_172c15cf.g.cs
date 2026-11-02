@@ -40,7 +40,7 @@ public sealed unsafe partial class CommandVersion : global::System.IDisposable
 
     public static CommandVersion Create(int from, int to)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_374beced(from, to);
+        var handle = NativeMethods.TablePtr->C1.hs_create_374beced(from, to);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,19 +51,19 @@ public sealed unsafe partial class CommandVersion : global::System.IDisposable
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.SemVersion getLatestCompatibleSemVersion(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion currentGameSemVersion, int version)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)NativeMethods.TablePtr->C0.hs_method_321154da((void*)currentGameSemVersion.Handle, version));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)NativeMethods.TablePtr->C1.hs_method_321154da((void*)currentGameSemVersion.Handle, version));
     }
 
     public int mFrom
     {
-        get => NativeMethods.TablePtr->C0.hs_get_caea1e38((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_caea1e38((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_caea1e38((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_caea1e38((void*)__hosihikari_shim_handle, value);
     }
 
     public int mTo
     {
-        get => NativeMethods.TablePtr->C0.hs_get_4f7c2530((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_4f7c2530((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_4f7c2530((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_4f7c2530((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -72,7 +72,7 @@ public sealed unsafe partial class CommandVersion : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_172c15cf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_172c15cf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,12 +40,12 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, bool isHidden, int packCategory)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_45cd725e((void*)__hosihikari_shim_handle, (void*)path.Handle, isHidden, packCategory);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_45cd725e((void*)__hosihikari_shim_handle, (void*)path.Handle, isHidden, packCategory);
     }
 
     public static MetaData Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_34d7cf1b();
+        var handle = NativeMethods.TablePtr->C2.hs_create_34d7cf1b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
 
     public static MetaData Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, bool isHidden, int packCategory)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_53540607((void*)path.Handle, isHidden, packCategory);
+        var handle = NativeMethods.TablePtr->C2.hs_create_53540607((void*)path.Handle, isHidden, packCategory);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,7 +67,7 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
 
     public static MetaData Create(global::Hosihikari.Bindings.Bedrock.Interop.IInPackagePacks_Nested.MetaData arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d205a332((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d205a332((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,26 +78,26 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
 
     public int mFileSystem
     {
-        get => NativeMethods.TablePtr->C1.hs_get_9de0d9c3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_9de0d9c3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_9de0d9c3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_9de0d9c3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsHidden
     {
-        get => NativeMethods.TablePtr->C1.hs_get_1ac9a5f0((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_1ac9a5f0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_1ac9a5f0((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_1ac9a5f0((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPackCategory
     {
-        get => NativeMethods.TablePtr->C1.hs_get_e51c8c65((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_e51c8c65((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e51c8c65((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e51c8c65((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPath_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_653051ab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_653051ab((void*)__hosihikari_shim_handle);
     }
 
 
@@ -107,7 +107,7 @@ public sealed unsafe partial class MetaData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_55dc5b9d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_55dc5b9d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

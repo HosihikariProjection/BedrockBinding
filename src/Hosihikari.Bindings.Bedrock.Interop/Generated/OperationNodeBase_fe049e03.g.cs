@@ -40,12 +40,12 @@ public sealed unsafe partial class OperationNodeBase : global::System.IDisposabl
 
     public void _init(long seed)
     {
-        NativeMethods.TablePtr->C2.hs_method_f97ba5a2((void*)__hosihikari_shim_handle, seed);
+        NativeMethods.TablePtr->C3.hs_method_f97ba5a2((void*)__hosihikari_shim_handle, seed);
     }
 
     public static OperationNodeBase Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeDetails.OperationNodeBase arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4cd0c32b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4cd0c32b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,19 +56,19 @@ public sealed unsafe partial class OperationNodeBase : global::System.IDisposabl
 
     public void init(long seed)
     {
-        NativeMethods.TablePtr->C2.hs_method_851900ab((void*)__hosihikari_shim_handle, seed);
+        NativeMethods.TablePtr->C3.hs_method_851900ab((void*)__hosihikari_shim_handle, seed);
     }
 
     public long mSeed
     {
-        get => NativeMethods.TablePtr->C2.hs_get_926af337((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_926af337((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_926af337((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_926af337((void*)__hosihikari_shim_handle, value);
     }
 
     public long mSeedMixup
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7be7e03c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_7be7e03c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7be7e03c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7be7e03c((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -78,7 +78,7 @@ public sealed unsafe partial class OperationNodeBase : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_fe049e03((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_fe049e03((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

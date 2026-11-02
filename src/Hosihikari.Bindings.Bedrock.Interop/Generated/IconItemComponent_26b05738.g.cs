@@ -40,12 +40,12 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
 
     public void __initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C1.hs_method_637e7748((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C2.hs_method_637e7748((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_80.IconItemComponent component)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_d863ba8d((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_d863ba8d((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
 
     public static IconItemComponent Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_4032f9fe();
+        var handle = NativeMethods.TablePtr->C2.hs_create_4032f9fe();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,7 +65,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
 
     public static IconItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_80.IconItemComponent component)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b8e75ed8((void*)component.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b8e75ed8((void*)component.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,7 +76,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
 
     public static IconItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.IconItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_9b9cd4fb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_9b9cd4fb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,7 +87,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
 
     public void _initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {
-        NativeMethods.TablePtr->C1.hs_method_63cb0765((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C2.hs_method_63cb0765((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -97,7 +97,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mTextures_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0f22c8bb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0f22c8bb((void*)__hosihikari_shim_handle);
     }
 
     public void setTexturePath(string texturePath)
@@ -115,15 +115,15 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(texturePath, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_ebaca048((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_ebaca048((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
 
     public nint mOwner
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b05f63ac((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_b05f63ac((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b05f63ac((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_b05f63ac((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void Dispose()
@@ -132,7 +132,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_26b05738((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_26b05738((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

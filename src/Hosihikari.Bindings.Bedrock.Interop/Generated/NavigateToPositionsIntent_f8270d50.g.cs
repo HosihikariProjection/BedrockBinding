@@ -40,7 +40,7 @@ public sealed unsafe partial class NavigateToPositionsIntent : global::System.ID
 
     public static NavigateToPositionsIntent Create(global::Hosihikari.Bindings.Bedrock.Interop.sim.NavigateToPositionsIntent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_890b31db((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_890b31db((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,25 +51,25 @@ public sealed unsafe partial class NavigateToPositionsIntent : global::System.ID
 
     public void finalize(global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer player)
     {
-        NativeMethods.TablePtr->C4.hs_method_732ccb50((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C5.hs_method_732ccb50((void*)__hosihikari_shim_handle, (void*)player.Handle);
     }
 
     public ulong mNextTarget
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2ef7ea10((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2ef7ea10((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_2ef7ea10((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_2ef7ea10((void*)__hosihikari_shim_handle, value);
     }
 
     public float mSpeed
     {
-        get => NativeMethods.TablePtr->C4.hs_get_796500c7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_796500c7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_796500c7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_796500c7((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3109439e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_3109439e((void*)__hosihikari_shim_handle);
     }
 
 
@@ -79,7 +79,7 @@ public sealed unsafe partial class NavigateToPositionsIntent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f8270d50((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_f8270d50((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

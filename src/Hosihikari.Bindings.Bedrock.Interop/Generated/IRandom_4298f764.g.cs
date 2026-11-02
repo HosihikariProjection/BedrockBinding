@@ -40,37 +40,37 @@ public sealed unsafe partial class IRandom : global::System.IDisposable
 
     public bool _chance(int likeliness, int possibilities)
     {
-        return NativeMethods.TablePtr->C1.hs_method_81b0d912((void*)__hosihikari_shim_handle, likeliness, possibilities) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_81b0d912((void*)__hosihikari_shim_handle, likeliness, possibilities) != 0;
     }
 
     public bool _chanceAllButOneIn(int possibilities)
     {
-        return NativeMethods.TablePtr->C1.hs_method_808b08b5((void*)__hosihikari_shim_handle, possibilities) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_808b08b5((void*)__hosihikari_shim_handle, possibilities) != 0;
     }
 
     public bool _chanceFloatGreaterOrEqual(float improbability)
     {
-        return NativeMethods.TablePtr->C1.hs_method_6f43cb38((void*)__hosihikari_shim_handle, improbability) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_6f43cb38((void*)__hosihikari_shim_handle, improbability) != 0;
     }
 
     public bool _chanceFloatGreaterThan(float improbability)
     {
-        return NativeMethods.TablePtr->C1.hs_method_6928d308((void*)__hosihikari_shim_handle, improbability) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_6928d308((void*)__hosihikari_shim_handle, improbability) != 0;
     }
 
     public bool _chanceFloatLessOrEqual(float probability)
     {
-        return NativeMethods.TablePtr->C1.hs_method_0e5d6a8a((void*)__hosihikari_shim_handle, probability) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_0e5d6a8a((void*)__hosihikari_shim_handle, probability) != 0;
     }
 
     public bool _chanceFloatLessThan(float probability)
     {
-        return NativeMethods.TablePtr->C1.hs_method_643805d0((void*)__hosihikari_shim_handle, probability) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_643805d0((void*)__hosihikari_shim_handle, probability) != 0;
     }
 
     public bool _chanceOneIn(int possibilities)
     {
-        return NativeMethods.TablePtr->C1.hs_method_c4f071bd((void*)__hosihikari_shim_handle, possibilities) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_c4f071bd((void*)__hosihikari_shim_handle, possibilities) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IPositionalRandomFactory' has no accessible destructor.", false)]
@@ -79,12 +79,12 @@ public sealed unsafe partial class IRandom : global::System.IDisposable
 
     public static nint ChanceFloatGreaterThan_MinExcessiveImprobability()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_8ab524fb();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_8ab524fb();
     }
 
     public static IRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_1ca3633d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_1ca3633d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -95,42 +95,42 @@ public sealed unsafe partial class IRandom : global::System.IDisposable
 
     public bool chance(int likeliness, int possibilities)
     {
-        return NativeMethods.TablePtr->C1.hs_method_c38867f4((void*)__hosihikari_shim_handle, likeliness, possibilities) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_c38867f4((void*)__hosihikari_shim_handle, likeliness, possibilities) != 0;
     }
 
     public bool chanceAllButOneIn(int possibilities)
     {
-        return NativeMethods.TablePtr->C1.hs_method_ce58d742((void*)__hosihikari_shim_handle, possibilities) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_ce58d742((void*)__hosihikari_shim_handle, possibilities) != 0;
     }
 
     public bool chanceFloatGreaterOrEqual(float improbability)
     {
-        return NativeMethods.TablePtr->C1.hs_method_86780855((void*)__hosihikari_shim_handle, improbability) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_86780855((void*)__hosihikari_shim_handle, improbability) != 0;
     }
 
     public bool chanceFloatGreaterThan(float improbability)
     {
-        return NativeMethods.TablePtr->C1.hs_method_b8b1ba77((void*)__hosihikari_shim_handle, improbability) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_b8b1ba77((void*)__hosihikari_shim_handle, improbability) != 0;
     }
 
     public bool chanceFloatLessOrEqual(float probability)
     {
-        return NativeMethods.TablePtr->C1.hs_method_418b841a((void*)__hosihikari_shim_handle, probability) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_418b841a((void*)__hosihikari_shim_handle, probability) != 0;
     }
 
     public bool chanceFloatLessThan(float probability)
     {
-        return NativeMethods.TablePtr->C1.hs_method_e430c3b4((void*)__hosihikari_shim_handle, probability) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_e430c3b4((void*)__hosihikari_shim_handle, probability) != 0;
     }
 
     public bool chanceOneIn(int possibilities)
     {
-        return NativeMethods.TablePtr->C1.hs_method_4942fc9a((void*)__hosihikari_shim_handle, possibilities) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_4942fc9a((void*)__hosihikari_shim_handle, possibilities) != 0;
     }
 
     public void consumeCount(uint rounds)
     {
-        NativeMethods.TablePtr->C1.hs_method_abd9ca65((void*)__hosihikari_shim_handle, rounds);
+        NativeMethods.TablePtr->C2.hs_method_abd9ca65((void*)__hosihikari_shim_handle, rounds);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IPositionalRandomFactory' has no accessible destructor.", false)]
@@ -139,37 +139,37 @@ public sealed unsafe partial class IRandom : global::System.IDisposable
 
     public bool nextBoolean()
     {
-        return NativeMethods.TablePtr->C1.hs_method_559bb6bd((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_559bb6bd((void*)__hosihikari_shim_handle) != 0;
     }
 
     public double nextDouble()
     {
-        return NativeMethods.TablePtr->C1.hs_method_12bdb301((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_12bdb301((void*)__hosihikari_shim_handle);
     }
 
     public float nextFloat()
     {
-        return NativeMethods.TablePtr->C1.hs_method_6a35c347((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_6a35c347((void*)__hosihikari_shim_handle);
     }
 
     public double nextGaussianDouble()
     {
-        return NativeMethods.TablePtr->C1.hs_method_0ef1b75b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_0ef1b75b((void*)__hosihikari_shim_handle);
     }
 
     public int nextInt()
     {
-        return NativeMethods.TablePtr->C1.hs_method_c516ecd2((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_c516ecd2((void*)__hosihikari_shim_handle);
     }
 
     public int nextInt(int bound)
     {
-        return NativeMethods.TablePtr->C1.hs_method_74c41cc2((void*)__hosihikari_shim_handle, bound);
+        return NativeMethods.TablePtr->C2.hs_method_74c41cc2((void*)__hosihikari_shim_handle, bound);
     }
 
     public long nextLong()
     {
-        return NativeMethods.TablePtr->C1.hs_method_194b497b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_194b497b((void*)__hosihikari_shim_handle);
     }
 
 
@@ -179,7 +179,7 @@ public sealed unsafe partial class IRandom : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_4298f764((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4298f764((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

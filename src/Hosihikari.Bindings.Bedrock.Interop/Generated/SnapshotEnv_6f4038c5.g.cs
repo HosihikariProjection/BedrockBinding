@@ -69,7 +69,7 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(f, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_08c046b1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_08c046b1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
@@ -101,7 +101,7 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_9b3bb4b5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
+                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_9b3bb4b5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
             }
         }
     }
@@ -141,7 +141,7 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(f, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_f3494e5a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_f3494e5a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
@@ -173,14 +173,14 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_1bccb894((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
+                return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_1bccb894((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
             }
         }
     }
 
     public static SnapshotEnv Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_359dd779();
+        var handle = NativeMethods.TablePtr->C4.hs_create_359dd779();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -191,7 +191,7 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
 
     public static SnapshotEnv Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_504f38b1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_504f38b1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -202,12 +202,12 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
 
     public bool _isQueuedForRemoval(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ file)
     {
-        return NativeMethods.TablePtr->C3.hs_method_92ac2cb5((void*)__hosihikari_shim_handle, (void*)file.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_92ac2cb5((void*)__hosihikari_shim_handle, (void*)file.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength[] createSnapshot(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path dir)
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_6d02cfd1((void*)__hosihikari_shim_handle, (void*)dir.Handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_6d02cfd1((void*)__hosihikari_shim_handle, (void*)dir.Handle);
         var __hs_items = (void**)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength>() : new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -220,59 +220,59 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk17f475_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d11c4172((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d11c4172((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk270131_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1ff7d807((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1ff7d807((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7b1f17_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cfd53935((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_cfd53935((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7f224d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_83404166((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_83404166((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk953b73_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f7b3a222((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f7b3a222((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbc386b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_be3b90bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_be3b90bd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcecc5a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_da372d31((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_da372d31((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfaff08_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9fe18025((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9fe18025((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv((nint)NativeMethods.TablePtr->C3.hs_method_e06946d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv((nint)NativeMethods.TablePtr->C4.hs_method_e06946d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void releaseSnapshot()
     {
-        NativeMethods.TablePtr->C3.hs_method_7719d9fb((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_7719d9fb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -282,7 +282,7 @@ public sealed unsafe partial class SnapshotEnv : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_6f4038c5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_6f4038c5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

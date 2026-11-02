@@ -40,7 +40,7 @@ public sealed unsafe partial class HurtOnConditionDefinition : global::System.ID
 
     public static HurtOnConditionDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f1ead9e8();
+        var handle = NativeMethods.TablePtr->C2.hs_create_f1ead9e8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class HurtOnConditionDefinition : global::System.ID
 
     public static HurtOnConditionDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.HurtOnConditionDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_a84f5b40((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a84f5b40((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,18 +62,18 @@ public sealed unsafe partial class HurtOnConditionDefinition : global::System.ID
 
     public void addDamageCondition(global::Hosihikari.Bindings.Bedrock.Interop.DamageCondition damageCondition)
     {
-        NativeMethods.TablePtr->C1.hs_method_739ff6db((void*)__hosihikari_shim_handle, (void*)damageCondition.Handle);
+        NativeMethods.TablePtr->C2.hs_method_739ff6db((void*)__hosihikari_shim_handle, (void*)damageCondition.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4b6a61_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5bcefe53((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5bcefe53((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HurtOnConditionDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.HurtOnConditionDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HurtOnConditionDefinition((nint)NativeMethods.TablePtr->C1.hs_method_f919f074((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HurtOnConditionDefinition((nint)NativeMethods.TablePtr->C2.hs_method_f919f074((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -82,7 +82,7 @@ public sealed unsafe partial class HurtOnConditionDefinition : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_e34a4798((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e34a4798((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

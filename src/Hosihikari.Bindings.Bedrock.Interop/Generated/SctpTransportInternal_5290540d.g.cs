@@ -40,12 +40,12 @@ public sealed unsafe partial class SctpTransportInternal : global::System.IDispo
 
     public bool _Start(int local_sctp_port, int remote_sctp_port, int max_message_size)
     {
-        return NativeMethods.TablePtr->C4.hs_method_3bc6e057((void*)__hosihikari_shim_handle, local_sctp_port, remote_sctp_port, max_message_size) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_3bc6e057((void*)__hosihikari_shim_handle, local_sctp_port, remote_sctp_port, max_message_size) != 0;
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_daa1da4d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_daa1da4d((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -58,17 +58,17 @@ public sealed unsafe partial class SctpTransportInternal : global::System.IDispo
 
     public bool ReadyToSendData()
     {
-        return NativeMethods.TablePtr->C4.hs_method_9b667373((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_9b667373((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool ResetStream(int sid)
     {
-        return NativeMethods.TablePtr->C4.hs_method_a7f61e6a((void*)__hosihikari_shim_handle, sid) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_a7f61e6a((void*)__hosihikari_shim_handle, sid) != 0;
     }
 
     public static SctpTransportInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.SctpTransportInternal arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0ff79170((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_0ff79170((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,22 +79,22 @@ public sealed unsafe partial class SctpTransportInternal : global::System.IDispo
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SendData(int sid, nint @params, nint payload)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_195e2a18((void*)__hosihikari_shim_handle, sid, (void*)@params, (void*)payload));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_195e2a18((void*)__hosihikari_shim_handle, sid, (void*)@params, (void*)payload));
     }
 
     public void SetBufferedAmountLowThreshold(int sid, ulong bytes)
     {
-        NativeMethods.TablePtr->C4.hs_method_0b42b909((void*)__hosihikari_shim_handle, sid, bytes);
+        NativeMethods.TablePtr->C5.hs_method_0b42b909((void*)__hosihikari_shim_handle, sid, bytes);
     }
 
     public void SetDataChannelSink(nint sink)
     {
-        NativeMethods.TablePtr->C4.hs_method_be4734e9((void*)__hosihikari_shim_handle, (void*)sink);
+        NativeMethods.TablePtr->C5.hs_method_be4734e9((void*)__hosihikari_shim_handle, (void*)sink);
     }
 
     public void SetDtlsTransport(nint transport)
     {
-        NativeMethods.TablePtr->C4.hs_method_f1de196a((void*)__hosihikari_shim_handle, (void*)transport);
+        NativeMethods.TablePtr->C5.hs_method_f1de196a((void*)__hosihikari_shim_handle, (void*)transport);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -103,46 +103,46 @@ public sealed unsafe partial class SctpTransportInternal : global::System.IDispo
 
     public bool Start(nint options)
     {
-        return NativeMethods.TablePtr->C4.hs_method_8ab3ed9e((void*)__hosihikari_shim_handle, (void*)options) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_8ab3ed9e((void*)__hosihikari_shim_handle, (void*)options) != 0;
     }
 
     public bool Start(int local_sctp_port, int remote_sctp_port, int max_message_size)
     {
-        return NativeMethods.TablePtr->C4.hs_method_cdb03881((void*)__hosihikari_shim_handle, local_sctp_port, remote_sctp_port, max_message_size) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_cdb03881((void*)__hosihikari_shim_handle, local_sctp_port, remote_sctp_port, max_message_size) != 0;
     }
 
     public ulong buffered_amount(int sid)
     {
-        return NativeMethods.TablePtr->C4.hs_method_a27d7332((void*)__hosihikari_shim_handle, sid);
+        return NativeMethods.TablePtr->C5.hs_method_a27d7332((void*)__hosihikari_shim_handle, sid);
     }
 
     public ulong buffered_amount_low_threshold(int sid)
     {
-        return NativeMethods.TablePtr->C4.hs_method_46b9d71e((void*)__hosihikari_shim_handle, sid);
+        return NativeMethods.TablePtr->C5.hs_method_46b9d71e((void*)__hosihikari_shim_handle, sid);
     }
 
     public int? max_inbound_streams()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_99867452((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_99867452((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
     public int max_message_size()
     {
-        return NativeMethods.TablePtr->C4.hs_method_bd58378c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_bd58378c((void*)__hosihikari_shim_handle);
     }
 
     public int? max_outbound_streams()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_1de00831((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_1de00831((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
     public void set_debug_name_for_testing(nint debug_name)
     {
-        NativeMethods.TablePtr->C4.hs_method_9bb7f6cf((void*)__hosihikari_shim_handle, (void*)debug_name);
+        NativeMethods.TablePtr->C5.hs_method_9bb7f6cf((void*)__hosihikari_shim_handle, (void*)debug_name);
     }
 
 
@@ -152,7 +152,7 @@ public sealed unsafe partial class SctpTransportInternal : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_5290540d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_5290540d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

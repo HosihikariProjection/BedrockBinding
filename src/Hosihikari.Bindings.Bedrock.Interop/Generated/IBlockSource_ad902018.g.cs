@@ -40,7 +40,7 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
 
     public static IBlockSource Create(global::Hosihikari.Bindings.Bedrock.Interop.IBlockSource arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_a1b08404((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a1b08404((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,42 +51,42 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
 
     public void addListener(global::Hosihikari.Bindings.Bedrock.Interop.BlockSourceListener l)
     {
-        NativeMethods.TablePtr->C1.hs_method_1fb1a6a6((void*)__hosihikari_shim_handle, (void*)l.Handle);
+        NativeMethods.TablePtr->C2.hs_method_1fb1a6a6((void*)__hosihikari_shim_handle, (void*)l.Handle);
     }
 
     public bool areChunksFullyLoaded(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int r)
     {
-        return NativeMethods.TablePtr->C1.hs_method_2eca7c7c((void*)__hosihikari_shim_handle, (void*)pos.Handle, r) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_2eca7c7c((void*)__hosihikari_shim_handle, (void*)pos.Handle, r) != 0;
     }
 
     public void blockEvent(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int b0, int b1)
     {
-        NativeMethods.TablePtr->C1.hs_method_b8e7aeaf((void*)__hosihikari_shim_handle, (void*)pos.Handle, b0, b1);
+        NativeMethods.TablePtr->C2.hs_method_b8e7aeaf((void*)__hosihikari_shim_handle, (void*)pos.Handle, b0, b1);
     }
 
     public bool canDoBlockDrops(global::Hosihikari.Bindings.Bedrock.Interop.Actor? instigatingActor)
     {
-        return NativeMethods.TablePtr->C1.hs_method_5dadd63f((void*)__hosihikari_shim_handle, (void*)(instigatingActor?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_5dadd63f((void*)__hosihikari_shim_handle, (void*)(instigatingActor?.Handle ?? 0)) != 0;
     }
 
     public bool canDoContainedItemDrops(global::Hosihikari.Bindings.Bedrock.Interop.Actor? instigatingActor)
     {
-        return NativeMethods.TablePtr->C1.hs_method_aa71b638((void*)__hosihikari_shim_handle, (void*)(instigatingActor?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_aa71b638((void*)__hosihikari_shim_handle, (void*)(instigatingActor?.Handle ?? 0)) != 0;
     }
 
     public bool checkBlockDestroyPermissions(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, bool generateParticle)
     {
-        return NativeMethods.TablePtr->C1.hs_method_22cd5c8f((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)pos.Handle, (void*)item.Handle, generateParticle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_22cd5c8f((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)pos.Handle, (void*)item.Handle, generateParticle) != 0;
     }
 
     public bool checkBlockPermissions(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, bool generateParticle)
     {
-        return NativeMethods.TablePtr->C1.hs_method_33423cf0((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)blockPos.Handle, face, (void*)item.Handle, generateParticle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_33423cf0((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)blockPos.Handle, face, (void*)item.Handle, generateParticle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HitResult clip(global::Hosihikari.Bindings.Bedrock.Interop.ClipParameters parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)NativeMethods.TablePtr->C1.hs_method_cc9f9203((void*)__hosihikari_shim_handle, (void*)parameters.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HitResult((nint)NativeMethods.TablePtr->C2.hs_method_cc9f9203((void*)__hosihikari_shim_handle, (void*)parameters.Handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -95,7 +95,7 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
 
     public nint fetchAABBs(global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, bool withUnloadedChunks)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_25ee5c3c((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_25ee5c3c((void*)__hosihikari_shim_handle, (void*)intersectTestBox.Handle, withUnloadedChunks);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -108,7 +108,7 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
 
     public nint[] fetchEntities(global::Hosihikari.Bindings.Bedrock.Interop.Actor? except, global::Hosihikari.Bindings.Bedrock.Interop.AABB bb, bool useHitbox, bool getDisplayEntities)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_9929bdf6((void*)__hosihikari_shim_handle, (void*)(except?.Handle ?? 0), (void*)bb.Handle, useHitbox, getDisplayEntities);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_9929bdf6((void*)__hosihikari_shim_handle, (void*)(except?.Handle ?? 0), (void*)bb.Handle, useHitbox, getDisplayEntities);
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<nint>() : new nint[checked((int)__hs_view.Size)];
         if (__hs_view.Size > 0)
         {
@@ -119,55 +119,55 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
 
     public void fireBlockChanged(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, uint layer, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.Block oldBlock, int flags, byte eventTarget, global::Hosihikari.Bindings.Bedrock.Interop.ActorBlockSyncMessage? syncMsg, global::Hosihikari.Bindings.Bedrock.Interop.Actor? source)
     {
-        NativeMethods.TablePtr->C1.hs_method_9347b2b6((void*)__hosihikari_shim_handle, (void*)pos.Handle, layer, (void*)block.Handle, (void*)oldBlock.Handle, flags, eventTarget, (void*)(syncMsg?.Handle ?? 0), (void*)(source?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_9347b2b6((void*)__hosihikari_shim_handle, (void*)pos.Handle, layer, (void*)block.Handle, (void*)oldBlock.Handle, flags, eventTarget, (void*)(syncMsg?.Handle ?? 0), (void*)(source?.Handle ?? 0));
     }
 
     public void fireBlockEntityChanged(global::Hosihikari.Bindings.Bedrock.Interop.BlockActor te)
     {
-        NativeMethods.TablePtr->C1.hs_method_dfff7e35((void*)__hosihikari_shim_handle, (void*)te.Handle);
+        NativeMethods.TablePtr->C2.hs_method_dfff7e35((void*)__hosihikari_shim_handle, (void*)te.Handle);
     }
 
     public short getAboveTopSolidBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool includeWater, bool includeLeaves, bool iteratePastInitialBlocking)
     {
-        return NativeMethods.TablePtr->C1.hs_method_c19cb414((void*)__hosihikari_shim_handle, (void*)pos.Handle, includeWater, includeLeaves, iteratePastInitialBlocking);
+        return NativeMethods.TablePtr->C2.hs_method_c19cb414((void*)__hosihikari_shim_handle, (void*)pos.Handle, includeWater, includeLeaves, iteratePastInitialBlocking);
     }
 
     public short getAboveTopSolidBlock(int x, int z, bool includeWater, bool includeLeaves)
     {
-        return NativeMethods.TablePtr->C1.hs_method_897a72ab((void*)__hosihikari_shim_handle, x, z, includeWater, includeLeaves);
+        return NativeMethods.TablePtr->C2.hs_method_897a72ab((void*)__hosihikari_shim_handle, x, z, includeWater, includeLeaves);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk? getChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2c56430b((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2c56430b((void*)__hosihikari_shim_handle, (void*)pos.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk? getChunk(int x, int z)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e08ec1d6((void*)__hosihikari_shim_handle, x, z);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e08ec1d6((void*)__hosihikari_shim_handle, x, z);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk? getChunkAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_4135a3a6((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4135a3a6((void*)__hosihikari_shim_handle, (void*)pos.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource getChunkSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource((nint)NativeMethods.TablePtr->C1.hs_method_c8a69ebb((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource((nint)NativeMethods.TablePtr->C2.hs_method_c8a69ebb((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension getDimension()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)NativeMethods.TablePtr->C1.hs_method_72de293d((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)NativeMethods.TablePtr->C2.hs_method_72de293d((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Dimension getDimensionConst()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)NativeMethods.TablePtr->C1.hs_method_59cecab6((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Dimension((nint)NativeMethods.TablePtr->C2.hs_method_59cecab6((void*)__hosihikari_shim_handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -180,78 +180,78 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ILevel getILevel()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ILevel((nint)NativeMethods.TablePtr->C1.hs_method_16acf177((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ILevel((nint)NativeMethods.TablePtr->C2.hs_method_16acf177((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Level getLevel()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)NativeMethods.TablePtr->C1.hs_method_37a552e1((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Level((nint)NativeMethods.TablePtr->C2.hs_method_37a552e1((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64 getLevelSeed64()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64((nint)NativeMethods.TablePtr->C1.hs_method_17189e6b((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64((nint)NativeMethods.TablePtr->C2.hs_method_17189e6b((void*)__hosihikari_shim_handle));
     }
 
     public short getMaxHeight()
     {
-        return NativeMethods.TablePtr->C1.hs_method_7cbdbf6d((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_7cbdbf6d((void*)__hosihikari_shim_handle);
     }
 
     public short getMinHeight()
     {
-        return NativeMethods.TablePtr->C1.hs_method_af373ac8((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_af373ac8((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getWeakRef()
     {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_c9127b5a((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_c9127b5a((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public bool isInstaticking(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_6f3d22a3((void*)__hosihikari_shim_handle, (void*)pos.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_6f3d22a3((void*)__hosihikari_shim_handle, (void*)pos.Handle) != 0;
     }
 
     public bool isSolidBlockingBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos p)
     {
-        return NativeMethods.TablePtr->C1.hs_method_fbb23f38((void*)__hosihikari_shim_handle, (void*)p.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_fbb23f38((void*)__hosihikari_shim_handle, (void*)p.Handle) != 0;
     }
 
     public bool isSolidBlockingBlock(int x, int y, int z)
     {
-        return NativeMethods.TablePtr->C1.hs_method_52a97bfe((void*)__hosihikari_shim_handle, x, y, z) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_52a97bfe((void*)__hosihikari_shim_handle, x, y, z) != 0;
     }
 
     public bool mayPlace(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Actor? placer, bool ignoreEntities, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {
-        return NativeMethods.TablePtr->C1.hs_method_96e6b218((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)pos.Handle, face, (void*)(placer?.Handle ?? 0), ignoreEntities, (void*)clickPos.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_96e6b218((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)pos.Handle, face, (void*)(placer?.Handle ?? 0), ignoreEntities, (void*)clickPos.Handle) != 0;
     }
 
     public void postGameEvent(global::Hosihikari.Bindings.Bedrock.Interop.Actor? source, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos originPos, global::Hosihikari.Bindings.Bedrock.Interop.Block? affectedBlock)
     {
-        NativeMethods.TablePtr->C1.hs_method_00304e14((void*)__hosihikari_shim_handle, (void*)(source?.Handle ?? 0), (void*)gameEvent.Handle, (void*)originPos.Handle, (void*)(affectedBlock?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_00304e14((void*)__hosihikari_shim_handle, (void*)(source?.Handle ?? 0), (void*)gameEvent.Handle, (void*)originPos.Handle, (void*)(affectedBlock?.Handle ?? 0));
     }
 
     public bool removeBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, nint changeSourceContext)
     {
-        return NativeMethods.TablePtr->C1.hs_method_b646232e((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)changeSourceContext) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_b646232e((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)changeSourceContext) != 0;
     }
 
     public void removeListener(global::Hosihikari.Bindings.Bedrock.Interop.BlockSourceListener l)
     {
-        NativeMethods.TablePtr->C1.hs_method_4681dd95((void*)__hosihikari_shim_handle, (void*)l.Handle);
+        NativeMethods.TablePtr->C2.hs_method_4681dd95((void*)__hosihikari_shim_handle, (void*)l.Handle);
     }
 
     public bool setBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int updateFlags, global::Hosihikari.Bindings.Bedrock.Interop.ActorBlockSyncMessage? syncMsg, nint changeSourceContext)
     {
-        return NativeMethods.TablePtr->C1.hs_method_02417dbd((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, updateFlags, (void*)(syncMsg?.Handle ?? 0), (void*)changeSourceContext) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_02417dbd((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, updateFlags, (void*)(syncMsg?.Handle ?? 0), (void*)changeSourceContext) != 0;
     }
 
     public bool setExtraBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int updateFlags)
     {
-        return NativeMethods.TablePtr->C1.hs_method_09c8ab35((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, updateFlags) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_09c8ab35((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, updateFlags) != 0;
     }
 
 
@@ -261,7 +261,7 @@ public sealed unsafe partial class IBlockSource : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ad902018((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ad902018((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

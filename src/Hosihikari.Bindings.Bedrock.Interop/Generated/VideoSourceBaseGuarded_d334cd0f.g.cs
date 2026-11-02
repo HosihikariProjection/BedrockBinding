@@ -40,22 +40,22 @@ public sealed unsafe partial class VideoSourceBaseGuarded : global::System.IDisp
 
     public void _AddOrUpdateSink(nint sink, nint wants)
     {
-        NativeMethods.TablePtr->C4.hs_method_a0ab5c89((void*)__hosihikari_shim_handle, (void*)sink, (void*)wants);
+        NativeMethods.TablePtr->C5.hs_method_a0ab5c89((void*)__hosihikari_shim_handle, (void*)sink, (void*)wants);
     }
 
     public void _RemoveSink(nint sink)
     {
-        NativeMethods.TablePtr->C4.hs_method_3dc6f144((void*)__hosihikari_shim_handle, (void*)sink);
+        NativeMethods.TablePtr->C5.hs_method_3dc6f144((void*)__hosihikari_shim_handle, (void*)sink);
     }
 
     public nint _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_53ffde69((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_53ffde69((void*)__hosihikari_shim_handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_d5976f2e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_d5976f2e((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -64,17 +64,17 @@ public sealed unsafe partial class VideoSourceBaseGuarded : global::System.IDisp
 
     public void AddOrUpdateSink(nint sink, nint wants)
     {
-        NativeMethods.TablePtr->C4.hs_method_37917168((void*)__hosihikari_shim_handle, (void*)sink, (void*)wants);
+        NativeMethods.TablePtr->C5.hs_method_37917168((void*)__hosihikari_shim_handle, (void*)sink, (void*)wants);
     }
 
     public void RemoveSink(nint sink)
     {
-        NativeMethods.TablePtr->C4.hs_method_237bb77f((void*)__hosihikari_shim_handle, (void*)sink);
+        NativeMethods.TablePtr->C5.hs_method_237bb77f((void*)__hosihikari_shim_handle, (void*)sink);
     }
 
     public static VideoSourceBaseGuarded Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c83966b4();
+        var handle = NativeMethods.TablePtr->C5.hs_create_c83966b4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,7 +85,7 @@ public sealed unsafe partial class VideoSourceBaseGuarded : global::System.IDisp
 
     public static VideoSourceBaseGuarded Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_99990f69((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_99990f69((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -97,23 +97,23 @@ public sealed unsafe partial class VideoSourceBaseGuarded : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1e77e0_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3434b9ca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_3434b9ca((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfc1983_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3890437f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_3890437f((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded((nint)NativeMethods.TablePtr->C4.hs_method_60c1992c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceBaseGuarded((nint)NativeMethods.TablePtr->C5.hs_method_60c1992c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public nint sink_pairs()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_0f193d98((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_0f193d98((void*)__hosihikari_shim_handle);
     }
 
 
@@ -123,7 +123,7 @@ public sealed unsafe partial class VideoSourceBaseGuarded : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d334cd0f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_d334cd0f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

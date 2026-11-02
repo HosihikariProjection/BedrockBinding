@@ -40,22 +40,22 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent navigation)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_339d3e6f((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)navigation.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_339d3e6f((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)navigation.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_eb2b59fa((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_eb2b59fa((void*)__hosihikari_shim_handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.PreferredPathComponent DEFAULT_DESC()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PreferredPathComponent((nint)NativeMethods.TablePtr->C2.hs_method_c27edcf9(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PreferredPathComponent((nint)NativeMethods.TablePtr->C3.hs_method_c27edcf9(), false);
     }
 
     public static PathFinder Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e74646d2();
+        var handle = NativeMethods.TablePtr->C3.hs_create_e74646d2();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
 
     public static PathFinder Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent navigation)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3f6b2d7b((void*)region.Handle, (void*)navigation.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_3f6b2d7b((void*)region.Handle, (void*)navigation.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,7 +77,7 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
 
     public static PathFinder Create(global::Hosihikari.Bindings.Bedrock.Interop.PathFinder arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_19641432((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_19641432((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -92,17 +92,17 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
 
     public int _classifyDoorNode(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Bindings.Bedrock.Interop.Block testBlock, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos testPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos lastPathPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a0fff9fa((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)testBlock.Handle, (void*)testPos.Handle, (void*)lastPathPos.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_a0fff9fa((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)testBlock.Handle, (void*)testPos.Handle, (void*)lastPathPos.Handle);
     }
 
     public int _classifyNode(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos lastPathPos, global::Hosihikari.Bindings.Bedrock.Interop.Block testBlock, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos testPos, byte jumpIntoNode, byte climbIntoNode)
     {
-        return NativeMethods.TablePtr->C2.hs_method_108914e8((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)lastPathPos.Handle, (void*)testBlock.Handle, (void*)testPos.Handle, jumpIntoNode, climbIntoNode);
+        return NativeMethods.TablePtr->C3.hs_method_108914e8((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)lastPathPos.Handle, (void*)testBlock.Handle, (void*)testPos.Handle, jumpIntoNode, climbIntoNode);
     }
 
     public bool _findNearestPathableNeighbor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos outPos, global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos testPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a69338e1((void*)__hosihikari_shim_handle, (void*)outPos.Handle, (void*)data.Handle, (void*)testPos.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_a69338e1((void*)__hosihikari_shim_handle, (void*)outPos.Handle, (void*)data.Handle, (void*)testPos.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
@@ -115,57 +115,57 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB _getAABBForHeightComputation(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C2.hs_method_73f13aab((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C3.hs_method_73f13aab((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle));
     }
 
     public float _getHeightAboveBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, float mobHeight)
     {
-        return NativeMethods.TablePtr->C2.hs_method_6045bff3((void*)__hosihikari_shim_handle, (void*)blockPos.Handle, mobHeight);
+        return NativeMethods.TablePtr->C3.hs_method_6045bff3((void*)__hosihikari_shim_handle, (void*)blockPos.Handle, mobHeight);
     }
 
     public float _getHeightBelowBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, float mobHeight)
     {
-        return NativeMethods.TablePtr->C2.hs_method_06205ead((void*)__hosihikari_shim_handle, (void*)blockPos.Handle, mobHeight);
+        return NativeMethods.TablePtr->C3.hs_method_06205ead((void*)__hosihikari_shim_handle, (void*)blockPos.Handle, mobHeight);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode? _getNode(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos fromPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode size, float jumpHeight, byte climbIntoNode)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cc9d5b24((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)fromPos.Handle, (void*)blockPos.Handle, (void*)size.Handle, jumpHeight, climbIntoNode);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cc9d5b24((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)fromPos.Handle, (void*)blockPos.Handle, (void*)size.Handle, jumpHeight, climbIntoNode);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode? _getNode(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int nodeType)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_45b86faf((void*)__hosihikari_shim_handle, (void*)pos.Handle, nodeType);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_45b86faf((void*)__hosihikari_shim_handle, (void*)pos.Handle, nodeType);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode((nint)__hs_handle, false) : null;
     }
 
     public int? _getPartialBlockNodeType(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos currentBlockPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos lastBlockPos, global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data)
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C2.hs_method_59528f86((void*)__hosihikari_shim_handle, (void*)currentBlockPos.Handle, (void*)lastBlockPos.Handle, (void*)data.Handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C3.hs_method_59528f86((void*)__hosihikari_shim_handle, (void*)currentBlockPos.Handle, (void*)lastBlockPos.Handle, (void*)data.Handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
     public float _getPathfindingMalus(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, int nodeType, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        return NativeMethods.TablePtr->C2.hs_method_b97e23a4((void*)__hosihikari_shim_handle, (void*)data.Handle, nodeType, (void*)blockPos.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_b97e23a4((void*)__hosihikari_shim_handle, (void*)data.Handle, nodeType, (void*)blockPos.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode? _getWaterNode(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos lastPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_23a2ff73((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)lastPos.Handle, (void*)blockPos.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_23a2ff73((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)lastPos.Handle, (void*)blockPos.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode((nint)__hs_handle, false) : null;
     }
 
     public int _isFreeStartNode(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Bindings.Bedrock.Interop.AABB entityAABB, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos testPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos size)
     {
-        return NativeMethods.TablePtr->C2.hs_method_2491ba09((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)entityAABB.Handle, (void*)testPos.Handle, (void*)size.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_2491ba09((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)entityAABB.Handle, (void*)testPos.Handle, (void*)size.Handle);
     }
 
     public bool _isNeighborPotentiallyValid(global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode node, global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos offset, uint maxDistSqr)
     {
-        return NativeMethods.TablePtr->C2.hs_method_6628520f((void*)__hosihikari_shim_handle, (void*)node.Handle, (void*)target.Handle, (void*)offset.Handle, maxDistSqr) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_6628520f((void*)__hosihikari_shim_handle, (void*)node.Handle, (void*)target.Handle, (void*)offset.Handle, maxDistSqr) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
@@ -174,7 +174,7 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData extractPathingData(global::Hosihikari.Bindings.Bedrock.Interop.Actor mutableActor, byte purpose, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? targetPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData((nint)NativeMethods.TablePtr->C2.hs_method_b6d08768((void*)mutableActor.Handle, purpose, (void*)(targetPos?.Handle ?? 0), targetPos is not null));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData((nint)NativeMethods.TablePtr->C3.hs_method_b6d08768((void*)mutableActor.Handle, purpose, (void*)(targetPos?.Handle ?? 0), targetPos is not null));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
@@ -183,115 +183,103 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
 
     public int isFree(global::Hosihikari.Bindings.Bedrock.Interop.ActorPathingData data, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos lastPathPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos testPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos size, byte jumpIntoNode, byte climbIntoNode)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a9e2350b((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)lastPathPos.Handle, (void*)testPos.Handle, (void*)size.Handle, jumpIntoNode, climbIntoNode);
+        return NativeMethods.TablePtr->C3.hs_method_a9e2350b((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)lastPathPos.Handle, (void*)testPos.Handle, (void*)size.Handle, jumpIntoNode, climbIntoNode);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mAvoidDamageBlocks
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_80486a76((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_80486a76((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mAvoidPortals
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_c3637105((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c3637105((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mAvoidWater
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_efc1ea50((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_efc1ea50((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanBreach
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_8caf3f0d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_8caf3f0d((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanFloat
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_8dd105ed((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_8dd105ed((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanJump
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_4f9320e4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_4f9320e4((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanOpenDoors
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_fcc66226((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_fcc66226((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanOpenIronDoors
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_321eaeb9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_321eaeb9((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanPassDoors
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_0a621704((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_0a621704((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanPathOverLava
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_f40dc95a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_f40dc95a((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanWalkInLava
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_51292821((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_51292821((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mIsAmphibious
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C3.hs_get_3a508396((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_3a508396((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNeighbors_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4e8fdc7c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4e8fdc7c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNodes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c313e5af((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c313e5af((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOpenSet_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_408c20cf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_408c20cf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRegion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_cbd1207f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cbd1207f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -301,7 +289,7 @@ public sealed unsafe partial class PathFinder : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_df20473e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_df20473e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

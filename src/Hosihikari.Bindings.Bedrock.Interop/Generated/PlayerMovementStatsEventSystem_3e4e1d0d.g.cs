@@ -44,7 +44,7 @@ public sealed unsafe partial class PlayerMovementStatsEventSystem : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_3e4e1d0d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_3e4e1d0d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

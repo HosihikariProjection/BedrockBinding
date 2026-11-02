@@ -40,14 +40,14 @@ public sealed unsafe partial class MaxDistanceFromCenter : global::System.IDispo
 
     public int mHorizontal
     {
-        get => NativeMethods.TablePtr->C4.hs_get_7eaa6338((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_7eaa6338((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_7eaa6338((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_7eaa6338((void*)__hosihikari_shim_handle, value);
     }
 
     public int mVertical
     {
-        get => NativeMethods.TablePtr->C4.hs_get_7bcf0d4a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_7bcf0d4a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_7bcf0d4a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_7bcf0d4a((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class MaxDistanceFromCenter : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2afaca2f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_2afaca2f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

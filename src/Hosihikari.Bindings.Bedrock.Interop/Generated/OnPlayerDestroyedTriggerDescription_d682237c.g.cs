@@ -40,7 +40,7 @@ public sealed unsafe partial class OnPlayerDestroyedTriggerDescription
 
     public string _getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_859737a9((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_859737a9((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -50,13 +50,13 @@ public sealed unsafe partial class OnPlayerDestroyedTriggerDescription
 
     public static string NameID()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0bc850d2();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_0bc850d2();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_05694eaa((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_05694eaa((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 }

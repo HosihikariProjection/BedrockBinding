@@ -40,7 +40,7 @@ public sealed unsafe partial class CommandRationalRange : global::System.IDispos
 
     public static CommandRationalRange Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRationalRange arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_aa9dc4c4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_aa9dc4c4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class CommandRationalRange : global::System.IDispos
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandRationalRange changeToValueType(nint valueType)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRationalRange((nint)NativeMethods.TablePtr->C0.hs_method_3b6dfe5d((void*)__hosihikari_shim_handle, (void*)valueType));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRationalRange((nint)NativeMethods.TablePtr->C1.hs_method_3b6dfe5d((void*)__hosihikari_shim_handle, (void*)valueType));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -60,37 +60,37 @@ public sealed unsafe partial class CommandRationalRange : global::System.IDispos
 
     public byte mBoundType
     {
-        get => NativeMethods.TablePtr->C0.hs_get_b928dc79((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_b928dc79((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_b928dc79((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_b928dc79((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInclusive
     {
-        get => NativeMethods.TablePtr->C0.hs_get_49bdd759((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_49bdd759((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_49bdd759((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_49bdd759((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInvert
     {
-        get => NativeMethods.TablePtr->C0.hs_get_3d2549b4((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_3d2549b4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_3d2549b4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_3d2549b4((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRange_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_bef95896((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_bef95896((void*)__hosihikari_shim_handle);
     }
 
     public int mValueType
     {
-        get => NativeMethods.TablePtr->C0.hs_get_8639ad1b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_8639ad1b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_8639ad1b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_8639ad1b((void*)__hosihikari_shim_handle, value);
     }
 
     public void setInvert(bool val)
     {
-        NativeMethods.TablePtr->C0.hs_method_2f545a76((void*)__hosihikari_shim_handle, val);
+        NativeMethods.TablePtr->C1.hs_method_2f545a76((void*)__hosihikari_shim_handle, val);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -104,7 +104,7 @@ public sealed unsafe partial class CommandRationalRange : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_748c6c00((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_748c6c00((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

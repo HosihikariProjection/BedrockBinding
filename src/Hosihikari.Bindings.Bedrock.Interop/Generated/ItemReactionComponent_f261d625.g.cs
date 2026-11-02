@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemReactionComponent : global::System.IDispo
 
     public void __onEnd(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction owner, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C1.hs_method_9b3637c3((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C2.hs_method_9b3637c3((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,13 +49,13 @@ public sealed unsafe partial class ItemReactionComponent : global::System.IDispo
 
     public void _onEnd(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction owner, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C1.hs_method_d3cfde3f((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C2.hs_method_d3cfde3f((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_dbdfd7d8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_dbdfd7d8((void*)__hosihikari_shim_handle);
     }
 
 
@@ -65,7 +65,7 @@ public sealed unsafe partial class ItemReactionComponent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f261d625((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f261d625((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

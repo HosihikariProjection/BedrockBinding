@@ -40,7 +40,7 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
 
     public static GenerationContext Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f6b4ac96();
+        var handle = NativeMethods.TablePtr->C5.hs_create_f6b4ac96();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
 
     public static GenerationContext Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b749ba0b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_b749ba0b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,36 +63,36 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkAccessor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ce095456((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ce095456((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ecde47e2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ecde47e2((void*)__hosihikari_shim_handle);
     }
 
     public long mLevelSeed
     {
-        get => NativeMethods.TablePtr->C4.hs_get_5aef36dc((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_5aef36dc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_5aef36dc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_5aef36dc((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPools_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7e54edf1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_7e54edf1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRandom_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_fdc7eb3c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_fdc7eb3c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext((nint)NativeMethods.TablePtr->C4.hs_method_c2216d19((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.GenerationContext((nint)NativeMethods.TablePtr->C5.hs_method_c2216d19((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -102,7 +102,7 @@ public sealed unsafe partial class GenerationContext : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_97124bb5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_97124bb5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,41 +40,41 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path baseDir)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_4ea2a62e((void*)__hosihikari_shim_handle, (void*)baseDir.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_4ea2a62e((void*)__hosihikari_shim_handle, (void*)baseDir.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_28f8cf5c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_28f8cf5c((void*)__hosihikari_shim_handle);
     }
 
     public static string BOOKS_DIR()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_76732ec5();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_76732ec5();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static string MANIFEST_NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_97d10972();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_97d10972();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static string PHOTOITEM_DIR()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_f22911f7();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_f22911f7();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static string PHOTO_DIR()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_7a0709eb();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_7a0709eb();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static PhotoStorage Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_bf75800e();
+        var handle = NativeMethods.TablePtr->C3.hs_create_bf75800e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,7 +85,7 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
 
     public static PhotoStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path baseDir)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_473b7200((void*)baseDir.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_473b7200((void*)baseDir.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -96,7 +96,7 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
 
     public static PhotoStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.PhotoStorage arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_eef43e77((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_eef43e77((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -108,37 +108,37 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBaseDir_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_02a0548d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_02a0548d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBookDir_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_86f94832((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_86f94832((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChecksums_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c38334f9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c38334f9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mManifestDir_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e2e4066b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e2e4066b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPhotoDir_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ad955778((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ad955778((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPhotoItemDir_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ffa49637((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ffa49637((void*)__hosihikari_shim_handle);
     }
 
 
@@ -148,7 +148,7 @@ public sealed unsafe partial class PhotoStorage : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_1a1dc320((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_1a1dc320((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

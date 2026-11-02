@@ -40,7 +40,7 @@ public sealed unsafe partial class Palette : global::System.IDisposable
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color WHITE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C2.hs_method_41c2beed(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C3.hs_method_41c2beed(), false);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class Palette : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_da45c7cc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_da45c7cc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

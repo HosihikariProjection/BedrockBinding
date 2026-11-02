@@ -40,7 +40,7 @@ public sealed unsafe partial class ComplexAliasBlockPreSplitBlockInfo : global::
 
     public static ComplexAliasBlockPreSplitBlockInfo Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7c798b5a();
+        var handle = NativeMethods.TablePtr->C4.hs_create_7c798b5a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ComplexAliasBlockPreSplitBlockInfo : global::
 
     public static ComplexAliasBlockPreSplitBlockInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_9c140fc1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_9c140fc1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,36 +63,36 @@ public sealed unsafe partial class ComplexAliasBlockPreSplitBlockInfo : global::
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk11c1a4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c855d422((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c855d422((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk39d1cf_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_14895bc2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_14895bc2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk69e9ec_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0a45bd7a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0a45bd7a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk96e050_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_30ec4e72((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_30ec4e72((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd38e4c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f82675a7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f82675a7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo((nint)NativeMethods.TablePtr->C3.hs_method_b414e23b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AchievementEventingIdUtils.ComplexAliasBlockAchievementEventHelper.ComplexAliasBlockPreSplitBlockInfo((nint)NativeMethods.TablePtr->C4.hs_method_b414e23b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -101,7 +101,7 @@ public sealed unsafe partial class ComplexAliasBlockPreSplitBlockInfo : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0c31a2d3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_0c31a2d3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

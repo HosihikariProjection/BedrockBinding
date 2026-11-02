@@ -40,12 +40,12 @@ public sealed unsafe partial class InventoryTransaction : global::System.IDispos
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_4f3bdfe2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_4f3bdfe2((void*)__hosihikari_shim_handle);
     }
 
     public static InventoryTransaction Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransaction arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0065207e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_0065207e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,45 +56,45 @@ public sealed unsafe partial class InventoryTransaction : global::System.IDispos
 
     public void addAction(global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction action)
     {
-        NativeMethods.TablePtr->C1.hs_method_47d818cb((void*)__hosihikari_shim_handle, (void*)action.Handle);
+        NativeMethods.TablePtr->C2.hs_method_47d818cb((void*)__hosihikari_shim_handle, (void*)action.Handle);
     }
 
     public void addItemToContent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, int count)
     {
-        NativeMethods.TablePtr->C1.hs_method_8811857e((void*)__hosihikari_shim_handle, (void*)item.Handle, count);
+        NativeMethods.TablePtr->C2.hs_method_8811857e((void*)__hosihikari_shim_handle, (void*)item.Handle, count);
     }
 
     public static bool checkTransactionItemsMatch(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack serverItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack clientItem)
     {
-        return NativeMethods.TablePtr->C1.hs_method_4010c7f1((void*)serverItem.Handle, (void*)clientItem.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_4010c7f1((void*)serverItem.Handle, (void*)clientItem.Handle) != 0;
     }
 
     public void forceBalanceTransaction()
     {
-        NativeMethods.TablePtr->C1.hs_method_28b12211((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_28b12211((void*)__hosihikari_shim_handle);
     }
 
     public static string getInventoryTransactionErrorName(int type)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_0de2974e(type);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0de2974e(type);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static nint inventoryTransactionErrorMap()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_8a20d36f();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_8a20d36f();
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2016c71b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2016c71b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2db53fb8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2db53fb8((void*)__hosihikari_shim_handle);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class InventoryTransaction : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d7540fff((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d7540fff((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

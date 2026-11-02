@@ -40,7 +40,7 @@ public sealed unsafe partial class WantsJockeyDefinition : global::System.IDispo
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_6583f4f2();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_6583f4f2();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -50,7 +50,7 @@ public sealed unsafe partial class WantsJockeyDefinition : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4ff366d8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_4ff366d8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -136,11 +136,10 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_fdfb6f4d((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mAlertSameType
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_109c5bed((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_109c5bed((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mAllowNavigatingThroughLiquids
@@ -263,11 +262,10 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_fb90060c((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCanGetScared
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_625d5329((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_625d5329((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCanLandOnTrees
@@ -354,11 +352,10 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_3d1cfbd3((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mCloseDoorAfter
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_47f6a300((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_47f6a300((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mContinueIfLeashed
@@ -779,25 +776,22 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_ab001e31((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mMustBeOnGround
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_c6f20375((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_c6f20375((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mMustReach
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_380af13c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_380af13c((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mMustSee
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_949eef87((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_949eef87((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMustSeeForgetTicks
@@ -872,11 +866,10 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_33f28a08((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mOnlyAtNight
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_641660fa((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_641660fa((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPOIType
@@ -1059,11 +1052,10 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_af417ddd((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mReselectTargets
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_f44a31da((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_f44a31da((void*)__hosihikari_shim_handle, value);
     }
 
     public float mRiseDelta
@@ -1318,11 +1310,10 @@ public sealed unsafe partial class LegacyGoalDefinition : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_bd8397d8((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.", false)]
     public bool mTrackTarget
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: bitfields are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C2.hs_get_71a9296f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_71a9296f((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUseHomePositionRestriction

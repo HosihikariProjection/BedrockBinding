@@ -40,12 +40,12 @@ public sealed unsafe partial class BiomeInit : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.Biome defaultOceanBiome, global::Hosihikari.Bindings.Bedrock.Interop.Biome fallbackBiome, int generator)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_282aa2e8((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)defaultOceanBiome.Handle, (void*)fallbackBiome.Handle, generator);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_282aa2e8((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)defaultOceanBiome.Handle, (void*)fallbackBiome.Handle, generator);
     }
 
     public static BiomeInit Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e15fc015();
+        var handle = NativeMethods.TablePtr->C3.hs_create_e15fc015();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class BiomeInit : global::System.IDisposable
 
     public static BiomeInit Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.Biome defaultOceanBiome, global::Hosihikari.Bindings.Bedrock.Interop.Biome fallbackBiome, int generator)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_814d9a9e((void*)registry.Handle, (void*)defaultOceanBiome.Handle, (void*)fallbackBiome.Handle, generator);
+        var handle = NativeMethods.TablePtr->C3.hs_create_814d9a9e((void*)registry.Handle, (void*)defaultOceanBiome.Handle, (void*)fallbackBiome.Handle, generator);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,7 +67,7 @@ public sealed unsafe partial class BiomeInit : global::System.IDisposable
 
     public static BiomeInit Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.BiomeInit arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c8c4379d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c8c4379d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,24 +78,24 @@ public sealed unsafe partial class BiomeInit : global::System.IDisposable
 
     public nint mDefaultOcean
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1bfce087((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1bfce087((void*)__hosihikari_shim_handle);
     }
 
     public nint mFallbackBiome
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_886953ce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_886953ce((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRegularBiomes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a6774778((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a6774778((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpecialBiomes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_955f629e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_955f629e((void*)__hosihikari_shim_handle);
     }
 
 
@@ -105,7 +105,7 @@ public sealed unsafe partial class BiomeInit : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e3b83435((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e3b83435((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,12 +40,12 @@ public sealed unsafe partial class HurtOnConditionSystem : global::System.IDispo
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_5dc30946((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_5dc30946((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
     public static HurtOnConditionSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.HurtOnConditionSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_dc140757((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_dc140757((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class HurtOnConditionSystem : global::System.IDispo
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_7cb671e0((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_7cb671e0((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class HurtOnConditionSystem : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_48ccf57e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_48ccf57e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

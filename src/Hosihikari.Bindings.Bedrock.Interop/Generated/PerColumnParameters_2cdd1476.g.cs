@@ -40,7 +40,7 @@ public sealed unsafe partial class PerColumnParameters : global::System.IDisposa
 
     public static PerColumnParameters Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c92046ff();
+        var handle = NativeMethods.TablePtr->C2.hs_create_c92046ff();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PerColumnParameters : global::System.IDisposa
 
     public static PerColumnParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2fcd7124((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2fcd7124((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,36 +63,36 @@ public sealed unsafe partial class PerColumnParameters : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_483dda6e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_483dda6e((void*)__hosihikari_shim_handle);
     }
 
     public float mDepthValue
     {
-        get => NativeMethods.TablePtr->C1.hs_get_0549c2d3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_0549c2d3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_0549c2d3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_0549c2d3((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHeightRange_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2a87735d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2a87735d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_be586ea6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_be586ea6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreWorldGenHeightmap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_62a4a681((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_62a4a681((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters((nint)NativeMethods.TablePtr->C1.hs_method_e3625840((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.PerColumnParameters((nint)NativeMethods.TablePtr->C2.hs_method_e3625840((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -102,7 +102,7 @@ public sealed unsafe partial class PerColumnParameters : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_2cdd1476((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2cdd1476((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

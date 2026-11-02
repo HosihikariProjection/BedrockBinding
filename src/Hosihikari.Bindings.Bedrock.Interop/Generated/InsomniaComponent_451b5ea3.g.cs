@@ -40,25 +40,25 @@ public sealed unsafe partial class InsomniaComponent : global::System.IDisposabl
 
     public float mDaysUntilInsomnia
     {
-        get => NativeMethods.TablePtr->C1.hs_get_e5bc1207((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_e5bc1207((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e5bc1207((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e5bc1207((void*)__hosihikari_shim_handle, value);
     }
 
     public int mTicksUntilInsomnia
     {
-        get => NativeMethods.TablePtr->C1.hs_get_10518253((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_10518253((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_10518253((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_10518253((void*)__hosihikari_shim_handle, value);
     }
 
     public int mTimeSinceRest
     {
-        get => NativeMethods.TablePtr->C1.hs_get_091d6e86((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_091d6e86((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_091d6e86((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_091d6e86((void*)__hosihikari_shim_handle, value);
     }
 
     public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.Actor arg0, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper arg2)
     {
-        NativeMethods.TablePtr->C1.hs_method_4db23625((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)tag.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C2.hs_method_4db23625((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)tag.Handle, (void*)arg2.Handle);
     }
 
     public void Dispose()
@@ -67,7 +67,7 @@ public sealed unsafe partial class InsomniaComponent : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_451b5ea3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_451b5ea3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

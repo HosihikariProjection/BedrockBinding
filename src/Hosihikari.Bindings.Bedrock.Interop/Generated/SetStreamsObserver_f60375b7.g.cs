@@ -40,12 +40,12 @@ public sealed unsafe partial class SetStreamsObserver : global::System.IDisposab
 
     public void OnSetStreams()
     {
-        NativeMethods.TablePtr->C4.hs_method_66dd33e5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_66dd33e5((void*)__hosihikari_shim_handle);
     }
 
     public static SetStreamsObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderBase_Nested.SetStreamsObserver arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_aaa51bc1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_aaa51bc1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class SetStreamsObserver : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f60375b7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_f60375b7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

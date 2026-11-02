@@ -40,41 +40,41 @@ public sealed unsafe partial class ImmutableWorldCommand : global::System.IDispo
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C1.hs_get_9e6808a5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_9e6808a5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_9e6808a5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_9e6808a5((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5ff13f5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5ff13f5d((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C1.hs_get_9e6add83((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_9e6add83((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_9e6add83((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_9e6add83((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f8516e74((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f8516e74((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C1.hs_get_44f082b6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_44f082b6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_44f082b6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_44f082b6((void*)__hosihikari_shim_handle, value);
     }
 
     public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C1.hs_method_c72c37c7((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c72c37c7((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public static ImmutableWorldCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ImmutableWorldCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_5498b43c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_5498b43c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,24 +85,24 @@ public sealed unsafe partial class ImmutableWorldCommand : global::System.IDispo
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C1.hs_method_c254f4cb((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c254f4cb((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public bool mHaveValue
     {
-        get => NativeMethods.TablePtr->C1.hs_get_66449bf2((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_66449bf2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_66449bf2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_66449bf2((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mValue
     {
-        get => NativeMethods.TablePtr->C1.hs_get_7bdd33c5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_7bdd33c5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_7bdd33c5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_7bdd33c5((void*)__hosihikari_shim_handle, value);
     }
 
     public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_a6ca29a9((void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_a6ca29a9((void*)registry.Handle);
     }
 
 
@@ -112,7 +112,7 @@ public sealed unsafe partial class ImmutableWorldCommand : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_5a017076((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_5a017076((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

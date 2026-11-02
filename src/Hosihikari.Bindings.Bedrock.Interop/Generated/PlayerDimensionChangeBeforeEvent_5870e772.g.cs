@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerDimensionChangeBeforeEvent : global::Sy
 
     public static PlayerDimensionChangeBeforeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionChangeBeforeEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c24cb049((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c24cb049((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,31 +52,31 @@ public sealed unsafe partial class PlayerDimensionChangeBeforeEvent : global::Sy
     // The native field type is not projected; this is the address of the field storage.
     public nint mFromDimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_26719cc3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_26719cc3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFromLocation_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1babc6df((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1babc6df((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c8ef7a7a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c8ef7a7a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mToDimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_419e1949((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_419e1949((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mToLocation_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b1fb0469((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b1fb0469((void*)__hosihikari_shim_handle);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class PlayerDimensionChangeBeforeEvent : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5870e772((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5870e772((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

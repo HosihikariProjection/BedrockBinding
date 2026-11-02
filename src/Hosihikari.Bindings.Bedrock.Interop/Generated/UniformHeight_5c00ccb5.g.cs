@@ -40,7 +40,7 @@ public sealed unsafe partial class UniformHeight : global::System.IDisposable
 
     public int _sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom randomSource, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenContext heightAccessor)
     {
-        return NativeMethods.TablePtr->C4.hs_method_7d7fbfc0((void*)__hosihikari_shim_handle, (void*)randomSource.Handle, (void*)heightAccessor.Handle);
+        return NativeMethods.TablePtr->C5.hs_method_7d7fbfc0((void*)__hosihikari_shim_handle, (void*)randomSource.Handle, (void*)heightAccessor.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class UniformHeight : global::System.IDisposable
 
     public static UniformHeight Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.UniformHeight arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_581da5ba((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_581da5ba((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,18 +61,18 @@ public sealed unsafe partial class UniformHeight : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mMaxInclusive_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6dec9230((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_6dec9230((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMinInclusive_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b61bd0e2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b61bd0e2((void*)__hosihikari_shim_handle);
     }
 
     public int sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom randomSource, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenContext heightAccessor)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ce170af1((void*)__hosihikari_shim_handle, (void*)randomSource.Handle, (void*)heightAccessor.Handle);
+        return NativeMethods.TablePtr->C5.hs_method_ce170af1((void*)__hosihikari_shim_handle, (void*)randomSource.Handle, (void*)heightAccessor.Handle);
     }
 
 
@@ -82,7 +82,7 @@ public sealed unsafe partial class UniformHeight : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_5c00ccb5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_5c00ccb5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -48,7 +48,7 @@ public sealed unsafe partial class CommandOriginLoader : global::System.IDisposa
 
     public static CommandOriginLoader Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_64e823d0();
+        var handle = NativeMethods.TablePtr->C1.hs_create_64e823d0();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,7 +59,7 @@ public sealed unsafe partial class CommandOriginLoader : global::System.IDisposa
 
     public static CommandOriginLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_3096a8a7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_3096a8a7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,12 +79,12 @@ public sealed unsafe partial class CommandOriginLoader : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mServerLevel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_cd8436a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_cd8436a0((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader((nint)NativeMethods.TablePtr->C0.hs_method_c1eab88f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginLoader((nint)NativeMethods.TablePtr->C1.hs_method_c1eab88f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -94,7 +94,7 @@ public sealed unsafe partial class CommandOriginLoader : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_1d53d0e8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_1d53d0e8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,19 +41,19 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1fd0b620((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1fd0b620((void*)__hosihikari_shim_handle);
     }
 
     public int mRequiredControlFlags
     {
-        get => NativeMethods.TablePtr->C3.hs_get_61f44e5a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_61f44e5a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_61f44e5a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_61f44e5a((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort mTypeId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_bae30510((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_bae30510((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_bae30510((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_bae30510((void*)__hosihikari_shim_handle, value);
     }
 
     public string _appendDebugInfo(string str)
@@ -71,19 +71,19 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(str, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C3.hs_method_77db0cc4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_view = NativeMethods.TablePtr->C4.hs_method_77db0cc4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
 
     public bool _canUse()
     {
-        return NativeMethods.TablePtr->C3.hs_method_40458c3c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_40458c3c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void _tick()
     {
-        NativeMethods.TablePtr->C3.hs_method_a83bcd02((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_a83bcd02((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -92,7 +92,7 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
 
     public static SlimeKeepOnJumpingGoal Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_35f00ee2();
+        var handle = NativeMethods.TablePtr->C4.hs_create_35f00ee2();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -103,7 +103,7 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
 
     public static SlimeKeepOnJumpingGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b6b10a7c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b6b10a7c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -127,36 +127,36 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(str, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C3.hs_method_1772bb40((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_view = NativeMethods.TablePtr->C4.hs_method_1772bb40((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
 
     public bool canUse()
     {
-        return NativeMethods.TablePtr->C3.hs_method_c43f7784((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_c43f7784((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMob_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4c3874d0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4c3874d0((void*)__hosihikari_shim_handle);
     }
 
     public float mSpeedMultiplier
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a390ed6c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a390ed6c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a390ed6c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a390ed6c((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal((nint)NativeMethods.TablePtr->C3.hs_method_c5999a63((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SlimeKeepOnJumpingGoal((nint)NativeMethods.TablePtr->C4.hs_method_c5999a63((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void tick()
     {
-        NativeMethods.TablePtr->C3.hs_method_959fac2f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_959fac2f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -166,7 +166,7 @@ public sealed unsafe partial class SlimeKeepOnJumpingGoal : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_5e082e29((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_5e082e29((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,38 +40,38 @@ public sealed unsafe partial class PlayerTickConfig : global::System.IDisposable
 
     public bool mIsStrictDismount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ca89d64c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_ca89d64c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ca89d64c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_ca89d64c((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsStrictEntityInteractions
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5dca0f42((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_5dca0f42((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_5dca0f42((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_5dca0f42((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsStrictMovement
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e645c33e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_e645c33e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e645c33e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_e645c33e((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mMaxBatchedTicks
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c30c43b4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c30c43b4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c30c43b4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c30c43b4((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mMaxCreditTicks
     {
-        get => NativeMethods.TablePtr->C2.hs_get_050d77b2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_050d77b2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_050d77b2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_050d77b2((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mPolicy
     {
-        get => NativeMethods.TablePtr->C2.hs_get_fe1896aa((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_fe1896aa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_fe1896aa((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_fe1896aa((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -80,7 +80,7 @@ public sealed unsafe partial class PlayerTickConfig : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_deeb862d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_deeb862d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class Noises : global::System.IDisposable
 
     public static Noises Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldGeneratorMultinoise_Nested.Noises arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_fff452a9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_fff452a9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,60 +52,60 @@ public sealed unsafe partial class Noises : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mAquiferNoises_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ecbc194((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6ecbc194((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlendNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_015a5dee((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_015a5dee((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCavifierNoises_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d52814ad((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d52814ad((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCommonNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_97a3bfc5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_97a3bfc5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDeepslateSupplier_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7471b007((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7471b007((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoodleCavifierNoises_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a41a92e1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a41a92e1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOreVeinifierNoises_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_de3e0a47((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_de3e0a47((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSurfaceNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1514c354((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1514c354((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ba38feb0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ba38feb0((void*)__hosihikari_shim_handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.OverworldGeneratorMultinoise_Nested.Noises make(global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory randomFactory)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OverworldGeneratorMultinoise_Nested.Noises((nint)NativeMethods.TablePtr->C2.hs_method_60cf8515((void*)randomFactory.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OverworldGeneratorMultinoise_Nested.Noises((nint)NativeMethods.TablePtr->C3.hs_method_60cf8515((void*)randomFactory.Handle));
     }
 
 
@@ -115,7 +115,7 @@ public sealed unsafe partial class Noises : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c4b0311f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c4b0311f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

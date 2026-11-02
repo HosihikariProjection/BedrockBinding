@@ -40,7 +40,7 @@ public sealed unsafe partial class SitComponent : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_db1ad595((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_db1ad595((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle));
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class SitComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c5fa4d39((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c5fa4d39((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

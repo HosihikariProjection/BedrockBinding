@@ -40,93 +40,93 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
 
     public int mHeight
     {
-        get => NativeMethods.TablePtr->C3.hs_get_4b78a97d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_4b78a97d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_4b78a97d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_4b78a97d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMyId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e497dc24((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e497dc24((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMyIngredients_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_58cc60bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_58cc60bd((void*)__hosihikari_shim_handle);
     }
 
     public int mPriority
     {
-        get => NativeMethods.TablePtr->C3.hs_get_3305d1b3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_3305d1b3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_3305d1b3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_3305d1b3((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecipeDataVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d199e0b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d199e0b6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecipeId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8d42c557((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8d42c557((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecipeNetId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c73068c9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c73068c9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mResults_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b3f73885((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b3f73885((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_15312c7a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_15312c7a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnlockingRequirement_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ff75edf9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ff75edf9((void*)__hosihikari_shim_handle);
     }
 
     public int mWidth
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a04cc96d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a04cc96d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a04cc96d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a04cc96d((void*)__hosihikari_shim_handle, value);
     }
 
     public nint _assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ced376f6((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_ced376f6((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle);
     }
 
     public bool _hasDataDrivenResult()
     {
-        return NativeMethods.TablePtr->C3.hs_method_0a43353a((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_0a43353a((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return NativeMethods.TablePtr->C3.hs_method_6758065f((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_6758065f((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle) != 0;
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID ID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_5f37b880(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C4.hs_method_5f37b880(), false);
     }
 
     public static SmithingTrimRecipe Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d4a6eb43();
+        var handle = NativeMethods.TablePtr->C4.hs_create_d4a6eb43();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -137,7 +137,7 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
 
     public static SmithingTrimRecipe Create(global::Hosihikari.Bindings.Bedrock.Interop.SmithingTrimRecipe arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_81710eca((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_81710eca((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -148,23 +148,23 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
 
     public nint assemble(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_26a5809f((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_26a5809f((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle);
     }
 
     public bool hasDataDrivenResult()
     {
-        return NativeMethods.TablePtr->C3.hs_method_d53d90c1((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_d53d90c1((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRuntimeResults_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fdac6258((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_fdac6258((void*)__hosihikari_shim_handle);
     }
 
     public bool matches(global::Hosihikari.Bindings.Bedrock.Interop.CraftingContainer craftingContainer, global::Hosihikari.Bindings.Bedrock.Interop.CraftingContext craftingContext)
     {
-        return NativeMethods.TablePtr->C3.hs_method_32f1c76b((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_32f1c76b((void*)__hosihikari_shim_handle, (void*)craftingContainer.Handle, (void*)craftingContext.Handle) != 0;
     }
 
 
@@ -174,7 +174,7 @@ public sealed unsafe partial class SmithingTrimRecipe : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_ee0b77f4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_ee0b77f4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

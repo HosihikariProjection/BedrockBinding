@@ -40,22 +40,22 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
 
     public nint _ctor()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_9972731f((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_9972731f((void*)__hosihikari_shim_handle);
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions arg0)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_b71d53bf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_b71d53bf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_ea7f3885((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_ea7f3885((void*)__hosihikari_shim_handle);
     }
 
     public static CryptoOptions Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2f2e8030();
+        var handle = NativeMethods.TablePtr->C5.hs_create_2f2e8030();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
 
     public static CryptoOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_66359f8a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_66359f8a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,7 +77,7 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
 
     public int[] GetSupportedDtlsSrtpCryptoSuites()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_19746c80((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_19746c80((void*)__hosihikari_shim_handle);
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<int>() : new int[checked((int)__hs_view.Size)];
         if (__hs_view.Size > 0)
         {
@@ -89,29 +89,29 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk364cb9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f35d73c8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f35d73c8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3ce9db_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_434f8fcc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_434f8fcc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk86fac7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bce1316b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_bce1316b((void*)__hosihikari_shim_handle);
     }
 
     public bool operator_not_equal(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions other)
     {
-        return NativeMethods.TablePtr->C4.hs_method_92838721((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_92838721((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C4.hs_method_3711f42d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C5.hs_method_3711f42d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -120,7 +120,7 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions other)
     {
-        return NativeMethods.TablePtr->C4.hs_method_78fdf39d((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_78fdf39d((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
 
@@ -130,7 +130,7 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_33f66245((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_33f66245((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

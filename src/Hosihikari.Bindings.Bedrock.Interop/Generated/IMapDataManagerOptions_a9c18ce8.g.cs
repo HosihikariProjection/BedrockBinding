@@ -40,7 +40,7 @@ public sealed unsafe partial class IMapDataManagerOptions : global::System.IDisp
 
     public static IMapDataManagerOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.IMapDataManagerOptions arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2fd24446((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2fd24446((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class IMapDataManagerOptions : global::System.IDisp
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getWorldCenter()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_20df32af((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C2.hs_method_20df32af((void*)__hosihikari_shim_handle), false);
     }
 
     public bool hasMapsCenteredToOrigin()
     {
-        return NativeMethods.TablePtr->C1.hs_method_72135134((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_72135134((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isLegacyLevel()
     {
-        return NativeMethods.TablePtr->C1.hs_method_d7971a28((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_d7971a28((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isPremiumWorldTemplate()
     {
-        return NativeMethods.TablePtr->C1.hs_method_e5ef841b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_e5ef841b((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class IMapDataManagerOptions : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_a9c18ce8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a9c18ce8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

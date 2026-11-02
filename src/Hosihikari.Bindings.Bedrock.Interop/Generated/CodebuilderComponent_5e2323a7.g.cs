@@ -40,8 +40,8 @@ public sealed unsafe partial class CodebuilderComponent : global::System.IDispos
 
     public byte mCodeStatus
     {
-        get => NativeMethods.TablePtr->C0.hs_get_85ea1cdd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_85ea1cdd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_85ea1cdd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_85ea1cdd((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class CodebuilderComponent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_5e2323a7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_5e2323a7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

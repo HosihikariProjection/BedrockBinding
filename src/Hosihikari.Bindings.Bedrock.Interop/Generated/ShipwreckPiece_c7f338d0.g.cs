@@ -40,12 +40,12 @@ public sealed unsafe partial class ShipwreckPiece : global::System.IDisposable
 
     public int _getType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_f8f12bb1((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_f8f12bb1((void*)__hosihikari_shim_handle);
     }
 
     public bool _postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C3.hs_method_3b3d9756((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_3b3d9756((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: return type 'const std::basic_string<char> (&)[20]' is not supported.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class ShipwreckPiece : global::System.IDisposable
 
     public static ShipwreckPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckPiece arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c32e9a44((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_c32e9a44((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,37 +65,37 @@ public sealed unsafe partial class ShipwreckPiece : global::System.IDisposable
 
     public int getType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_d209c845((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_d209c845((void*)__hosihikari_shim_handle);
     }
 
     public bool postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C3.hs_method_23946570((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_23946570((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
     }
 
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoundingBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_20e2c05b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_20e2c05b((void*)__hosihikari_shim_handle);
     }
 
     public int mGenDepth
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0ce1e2d3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_0ce1e2d3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0ce1e2d3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_0ce1e2d3((void*)__hosihikari_shim_handle, value);
     }
 
     public int mOrientation
     {
-        get => NativeMethods.TablePtr->C3.hs_get_761b0de5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_761b0de5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_761b0de5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_761b0de5((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainAdjustmentToken_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae3252ec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae3252ec((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -104,7 +104,7 @@ public sealed unsafe partial class ShipwreckPiece : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c7f338d0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c7f338d0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

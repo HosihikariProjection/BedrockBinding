@@ -41,12 +41,12 @@ public sealed unsafe partial class IClient : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_2fcfb5bc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2fcfb5bc((void*)__hosihikari_shim_handle);
     }
 
     public static IClient Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.IClient arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_e90f2623((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_e90f2623((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,27 +57,27 @@ public sealed unsafe partial class IClient : global::System.IDisposable
 
     public void send(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.AgentMessage message)
     {
-        NativeMethods.TablePtr->C0.hs_method_83412bb3((void*)__hosihikari_shim_handle, (void*)message.Handle);
+        NativeMethods.TablePtr->C1.hs_method_83412bb3((void*)__hosihikari_shim_handle, (void*)message.Handle);
     }
 
     public void send(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage message)
     {
-        NativeMethods.TablePtr->C0.hs_method_110bd801((void*)__hosihikari_shim_handle, (void*)message.Handle);
+        NativeMethods.TablePtr->C1.hs_method_110bd801((void*)__hosihikari_shim_handle, (void*)message.Handle);
     }
 
     public void send(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.CommandMessage message)
     {
-        NativeMethods.TablePtr->C0.hs_method_d15b006e((void*)__hosihikari_shim_handle, (void*)message.Handle);
+        NativeMethods.TablePtr->C1.hs_method_d15b006e((void*)__hosihikari_shim_handle, (void*)message.Handle);
     }
 
     public void send(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ErrorMessage message)
     {
-        NativeMethods.TablePtr->C0.hs_method_649af44d((void*)__hosihikari_shim_handle, (void*)message.Handle);
+        NativeMethods.TablePtr->C1.hs_method_649af44d((void*)__hosihikari_shim_handle, (void*)message.Handle);
     }
 
     public void send(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.EventMessage message)
     {
-        NativeMethods.TablePtr->C0.hs_method_04a2661d((void*)__hosihikari_shim_handle, (void*)message.Handle);
+        NativeMethods.TablePtr->C1.hs_method_04a2661d((void*)__hosihikari_shim_handle, (void*)message.Handle);
     }
 
 
@@ -87,7 +87,7 @@ public sealed unsafe partial class IClient : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_63025d6e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_63025d6e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

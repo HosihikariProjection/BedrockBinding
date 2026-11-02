@@ -41,30 +41,30 @@ public sealed unsafe partial class OnHurtByPlayerDefinition : global::System.IDi
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_912e737f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_912e737f((void*)__hosihikari_shim_handle);
     }
 
     public short mTarget
     {
-        get => NativeMethods.TablePtr->C3.hs_get_129b1a8a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_129b1a8a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_129b1a8a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_129b1a8a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c84ed071((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c84ed071((void*)__hosihikari_shim_handle);
     }
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_c0fda08d();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_c0fda08d();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static OnHurtByPlayerDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnHurtByPlayerDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b5b97cb0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b5b97cb0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +75,7 @@ public sealed unsafe partial class OnHurtByPlayerDefinition : global::System.IDi
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_580b0d56((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_580b0d56((void*)ctx.Handle);
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class OnHurtByPlayerDefinition : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_1f3e28a4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_1f3e28a4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

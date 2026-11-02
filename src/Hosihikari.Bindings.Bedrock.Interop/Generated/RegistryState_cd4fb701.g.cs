@@ -40,12 +40,12 @@ public sealed unsafe partial class RegistryState : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C0.hs_method_72cb8cb9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_72cb8cb9((void*)__hosihikari_shim_handle);
     }
 
     public static RegistryState Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.RegistryState arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f8c94c26((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f8c94c26((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,98 +56,98 @@ public sealed unsafe partial class RegistryState : global::System.IDisposable
 
     public uint chainedSubcommandCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_7aaf08b0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_7aaf08b0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_7aaf08b0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_7aaf08b0((void*)__hosihikari_shim_handle, value);
     }
 
     public uint chainedSubcommandValueCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_c98c7255((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_c98c7255((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_c98c7255((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_c98c7255((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint constrainedValueCount_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_00fde92e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_00fde92e((void*)__hosihikari_shim_handle);
     }
 
     public uint constraintCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_a1c6c456((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_a1c6c456((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_a1c6c456((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_a1c6c456((void*)__hosihikari_shim_handle, value);
     }
 
     public uint enumCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_6dda59bd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_6dda59bd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_6dda59bd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_6dda59bd((void*)__hosihikari_shim_handle, value);
     }
 
     public uint enumLookupCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_03817198((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_03817198((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_03817198((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_03817198((void*)__hosihikari_shim_handle, value);
     }
 
     public uint enumValueCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_f8b813ce((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_f8b813ce((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_f8b813ce((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_f8b813ce((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint enumValuesCount_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_01933e18((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_01933e18((void*)__hosihikari_shim_handle);
     }
 
     public uint factorizationCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_5d8f2d2b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_5d8f2d2b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_5d8f2d2b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_5d8f2d2b((void*)__hosihikari_shim_handle, value);
     }
 
     public uint optionalCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_55b746c5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_55b746c5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_55b746c5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_55b746c5((void*)__hosihikari_shim_handle, value);
     }
 
     public uint postfixCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_c3b1f280((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_c3b1f280((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_c3b1f280((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_c3b1f280((void*)__hosihikari_shim_handle, value);
     }
 
     public uint ruleCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_16d44e63((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_16d44e63((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_16d44e63((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_16d44e63((void*)__hosihikari_shim_handle, value);
     }
 
     public uint signatureCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_56fba4f8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_56fba4f8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_56fba4f8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_56fba4f8((void*)__hosihikari_shim_handle, value);
     }
 
     public uint softEnumCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_d781f485((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_d781f485((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_d781f485((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_d781f485((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint softEnumValuesCount_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_4f5c7905((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_4f5c7905((void*)__hosihikari_shim_handle);
     }
 
     public uint typeLookupCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_32dca8af((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_32dca8af((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_32dca8af((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_32dca8af((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -157,7 +157,7 @@ public sealed unsafe partial class RegistryState : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_cd4fb701((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_cd4fb701((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

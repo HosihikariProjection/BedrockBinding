@@ -40,7 +40,7 @@ public sealed unsafe partial class InMemoryFile : global::System.IDisposable
 
     public static InMemoryFile Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_70a3f34a();
+        var handle = NativeMethods.TablePtr->C2.hs_create_70a3f34a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class InMemoryFile : global::System.IDisposable
 
     public static InMemoryFile Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ab0e4ec6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ab0e4ec6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,54 +62,54 @@ public sealed unsafe partial class InMemoryFile : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getFilename()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C1.hs_method_e8e7fa61((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C2.hs_method_e8e7fa61((void*)__hosihikari_shim_handle));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2c24f7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_c1283027((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c1283027((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5894c2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b2677a0b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b2677a0b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk64039c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d1f778d7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d1f778d7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk722073_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3b390049((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3b390049((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkaa2208_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b6305801((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b6305801((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkea3443_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_fd1058eb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fd1058eb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf5b24e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_03b6c443((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_03b6c443((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile((nint)NativeMethods.TablePtr->C1.hs_method_90b2b35b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFile((nint)NativeMethods.TablePtr->C2.hs_method_90b2b35b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -118,7 +118,7 @@ public sealed unsafe partial class InMemoryFile : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_7d004770((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7d004770((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

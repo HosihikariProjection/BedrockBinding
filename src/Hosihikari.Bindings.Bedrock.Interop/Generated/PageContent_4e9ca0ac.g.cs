@@ -40,7 +40,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PageContent arg0)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_a6957536((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_a6957536((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public nint _ctor(string nText, string? nFilteredText)
@@ -71,24 +71,24 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                return (nint)NativeMethods.TablePtr->C2.hs_method_8acef29e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, nFilteredText is not null);
+                return (nint)NativeMethods.TablePtr->C3.hs_method_8acef29e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, nFilteredText is not null);
             }
         }
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_d38b0f2f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_d38b0f2f((void*)__hosihikari_shim_handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.PageContent BLANK_PAGE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PageContent((nint)NativeMethods.TablePtr->C2.hs_method_8c79de89(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PageContent((nint)NativeMethods.TablePtr->C3.hs_method_8c79de89(), false);
     }
 
     public static PageContent Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c1eb0ce0();
+        var handle = NativeMethods.TablePtr->C3.hs_create_c1eb0ce0();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,7 +99,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
 
     public static PageContent Create(global::Hosihikari.Bindings.Bedrock.Interop.PageContent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_72742174((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_72742174((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -136,7 +136,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                var handle = NativeMethods.TablePtr->C2.hs_create_fec601a6(__hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, nFilteredText is not null);
+                var handle = NativeMethods.TablePtr->C3.hs_create_fec601a6(__hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, nFilteredText is not null);
                 if (handle == null)
                 {
                     throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -154,52 +154,52 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilteredPhotoName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_80dd9dda((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_80dd9dda((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilteredText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6a9c3783((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6a9c3783((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParsedFilteredText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e4431b7f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e4431b7f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParsedText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fc6ca8da((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fc6ca8da((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPhotoName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_01ba88ab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_01ba88ab((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c771488c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c771488c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PageContent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PageContent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PageContent((nint)NativeMethods.TablePtr->C2.hs_method_7246bf96((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PageContent((nint)NativeMethods.TablePtr->C3.hs_method_7246bf96((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.PageContent read(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PageContent((nint)NativeMethods.TablePtr->C2.hs_method_cab30f01((void*)tag.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PageContent((nint)NativeMethods.TablePtr->C3.hs_method_cab30f01((void*)tag.Handle));
     }
 
     public static void write(global::Hosihikari.Bindings.Bedrock.Interop.PageContent page, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        NativeMethods.TablePtr->C2.hs_method_b23ef704((void*)page.Handle, (void*)tag.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b23ef704((void*)page.Handle, (void*)tag.Handle);
     }
 
 
@@ -209,7 +209,7 @@ public sealed unsafe partial class PageContent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_4e9ca0ac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_4e9ca0ac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

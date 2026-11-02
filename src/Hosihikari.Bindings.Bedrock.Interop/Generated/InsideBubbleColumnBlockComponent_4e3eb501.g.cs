@@ -40,7 +40,7 @@ public sealed unsafe partial class InsideBubbleColumnBlockComponent : global::Sy
 
     public static InsideBubbleColumnBlockComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e52aa20b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e52aa20b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class InsideBubbleColumnBlockComponent : global::Sy
     // The native field type is not projected; this is the address of the field storage.
     public nint mData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_073a8d52((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_073a8d52((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class InsideBubbleColumnBlockComponent : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_4e3eb501((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4e3eb501((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

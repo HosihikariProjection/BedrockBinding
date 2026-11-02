@@ -40,17 +40,17 @@ public sealed unsafe partial class GameTestRuleHelper : global::System.IDisposab
 
     public void _addRuleToClear(int ruleID)
     {
-        NativeMethods.TablePtr->C4.hs_method_a03ce6b8((void*)__hosihikari_shim_handle, ruleID);
+        NativeMethods.TablePtr->C5.hs_method_a03ce6b8((void*)__hosihikari_shim_handle, ruleID);
     }
 
     public void _clearRules()
     {
-        NativeMethods.TablePtr->C4.hs_method_f507cc93((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_f507cc93((void*)__hosihikari_shim_handle);
     }
 
     public void _restoreRules()
     {
-        NativeMethods.TablePtr->C4.hs_method_c1a0db36((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_c1a0db36((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -59,7 +59,7 @@ public sealed unsafe partial class GameTestRuleHelper : global::System.IDisposab
 
     public static GameTestRuleHelper Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6cc2430b();
+        var handle = NativeMethods.TablePtr->C5.hs_create_6cc2430b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +70,7 @@ public sealed unsafe partial class GameTestRuleHelper : global::System.IDisposab
 
     public static GameTestRuleHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_96359f2a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_96359f2a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,40 +81,40 @@ public sealed unsafe partial class GameTestRuleHelper : global::System.IDisposab
 
     public void addRuleToClear(int ruleID)
     {
-        NativeMethods.TablePtr->C4.hs_method_e9b52432((void*)__hosihikari_shim_handle, ruleID);
+        NativeMethods.TablePtr->C5.hs_method_e9b52432((void*)__hosihikari_shim_handle, ruleID);
     }
 
     public void clearRules()
     {
-        NativeMethods.TablePtr->C4.hs_method_231f5b39((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_231f5b39((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5d4cbc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1e1dcc32((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_1e1dcc32((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk839b45_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_507b67d1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_507b67d1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk849153_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_de1f2593((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_de1f2593((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper((nint)NativeMethods.TablePtr->C4.hs_method_dbab2ec5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestRuleHelper((nint)NativeMethods.TablePtr->C5.hs_method_dbab2ec5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void restoreRules()
     {
-        NativeMethods.TablePtr->C4.hs_method_ccbad8a2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_ccbad8a2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -124,7 +124,7 @@ public sealed unsafe partial class GameTestRuleHelper : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ed0cc9ef((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_ed0cc9ef((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

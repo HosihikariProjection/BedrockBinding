@@ -40,12 +40,12 @@ public sealed unsafe partial class InventoryTransactionManager : global::System.
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_57accf83((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_57accf83((void*)__hosihikari_shim_handle);
     }
 
     public static InventoryTransactionManager Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_43171f8e();
+        var handle = NativeMethods.TablePtr->C2.hs_create_43171f8e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class InventoryTransactionManager : global::System.
 
     public static InventoryTransactionManager Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_08835eae((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_08835eae((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,41 +67,41 @@ public sealed unsafe partial class InventoryTransactionManager : global::System.
 
     public void _createServerSideAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem)
     {
-        NativeMethods.TablePtr->C1.hs_method_bb964719((void*)__hosihikari_shim_handle, (void*)oldItem.Handle, (void*)newItem.Handle);
+        NativeMethods.TablePtr->C2.hs_method_bb964719((void*)__hosihikari_shim_handle, (void*)oldItem.Handle, (void*)newItem.Handle);
     }
 
     public void addAction(global::Hosihikari.Bindings.Bedrock.Interop.InventoryAction action, bool forceBalanced)
     {
-        NativeMethods.TablePtr->C1.hs_method_49ca41ad((void*)__hosihikari_shim_handle, (void*)action.Handle, forceBalanced);
+        NativeMethods.TablePtr->C2.hs_method_49ca41ad((void*)__hosihikari_shim_handle, (void*)action.Handle, forceBalanced);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCurrentTransaction_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_150eabc5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_150eabc5((void*)__hosihikari_shim_handle);
     }
 
     public bool mEnableLogs
     {
-        get => NativeMethods.TablePtr->C1.hs_get_efbaaf71((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_efbaaf71((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_efbaaf71((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_efbaaf71((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExpectedActions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_898dd532((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_898dd532((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2a22a90b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2a22a90b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager((nint)NativeMethods.TablePtr->C1.hs_method_7f46209b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransactionManager((nint)NativeMethods.TablePtr->C2.hs_method_7f46209b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -111,7 +111,7 @@ public sealed unsafe partial class InventoryTransactionManager : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_85ffaba3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_85ffaba3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

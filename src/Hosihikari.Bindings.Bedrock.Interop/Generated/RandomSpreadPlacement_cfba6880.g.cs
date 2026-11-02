@@ -40,25 +40,25 @@ public sealed unsafe partial class RandomSpreadPlacement : global::System.IDispo
 
     public int mSeparation
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ec984fca((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_ec984fca((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_ec984fca((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_ec984fca((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSpacing
     {
-        get => NativeMethods.TablePtr->C4.hs_get_91092009((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_91092009((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_91092009((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_91092009((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_93d80dfb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_93d80dfb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_93d80dfb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_93d80dfb((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos placementChunk(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructurePlacement def, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState state, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)NativeMethods.TablePtr->C4.hs_method_60887232((void*)__hosihikari_shim_handle, (void*)def.Handle, (void*)state.Handle, (void*)chunkPos.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)NativeMethods.TablePtr->C5.hs_method_60887232((void*)__hosihikari_shim_handle, (void*)def.Handle, (void*)state.Handle, (void*)chunkPos.Handle));
     }
 
     public void Dispose()
@@ -67,7 +67,7 @@ public sealed unsafe partial class RandomSpreadPlacement : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cfba6880((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_cfba6880((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

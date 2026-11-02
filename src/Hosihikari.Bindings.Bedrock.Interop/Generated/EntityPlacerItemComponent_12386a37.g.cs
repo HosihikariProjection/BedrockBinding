@@ -40,17 +40,17 @@ public sealed unsafe partial class EntityPlacerItemComponent : global::System.ID
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.EntityPlacerItemComponent arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_6e2d343b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_6e2d343b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_e7ae4576((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_e7ae4576((void*)__hosihikari_shim_handle);
     }
 
     public static EntityPlacerItemComponent Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_63b72bdd();
+        var handle = NativeMethods.TablePtr->C4.hs_create_63b72bdd();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class EntityPlacerItemComponent : global::System.ID
 
     public static EntityPlacerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.EntityPlacerItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6ef33a5b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_6ef33a5b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,31 +72,31 @@ public sealed unsafe partial class EntityPlacerItemComponent : global::System.ID
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_a908922d();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_a908922d();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_70d5b85b((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_70d5b85b((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDispenseOn_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5a5437e0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5a5437e0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_335ae227((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_335ae227((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUseOn_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_82b6cf18((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_82b6cf18((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -105,12 +105,12 @@ public sealed unsafe partial class EntityPlacerItemComponent : global::System.ID
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.EntityPlacerItemComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.EntityPlacerItemComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.EntityPlacerItemComponent((nint)NativeMethods.TablePtr->C3.hs_method_e9ceb838((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.EntityPlacerItemComponent((nint)NativeMethods.TablePtr->C4.hs_method_e9ceb838((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.EntityPlacerItemComponent arg0)
     {
-        return NativeMethods.TablePtr->C3.hs_method_198918b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_198918b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
     }
 
 
@@ -120,7 +120,7 @@ public sealed unsafe partial class EntityPlacerItemComponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_12386a37((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_12386a37((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

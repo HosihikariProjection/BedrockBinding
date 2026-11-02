@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerBoundingBoxStateUpdateSystem
 
     public void _tick(nint strictContext)
     {
-        NativeMethods.TablePtr->C2.hs_method_55b50b4e((void*)__hosihikari_shim_handle, (void*)strictContext);
+        NativeMethods.TablePtr->C3.hs_method_55b50b4e((void*)__hosihikari_shim_handle, (void*)strictContext);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,11 +49,11 @@ public sealed unsafe partial class PlayerBoundingBoxStateUpdateSystem
 
     public void tick(nint strictContext)
     {
-        NativeMethods.TablePtr->C2.hs_method_9abc4895((void*)__hosihikari_shim_handle, (void*)strictContext);
+        NativeMethods.TablePtr->C3.hs_method_9abc4895((void*)__hosihikari_shim_handle, (void*)strictContext);
     }
 
     public static void tickPlayerBoundingBoxStateUpdateSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabb, global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputRequestComponent request, nint executionContext, float sneakHeight, global::Hosihikari.Bindings.Bedrock.Interop.GetAttachPositionViews views, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
     {
-        NativeMethods.TablePtr->C2.hs_method_a47a45e0((void*)context.Handle, (void*)aabb.Handle, (void*)request.Handle, (void*)executionContext, sneakHeight, (void*)views.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a47a45e0((void*)context.Handle, (void*)aabb.Handle, (void*)request.Handle, (void*)executionContext, sneakHeight, (void*)views.Handle, (void*)region.Handle);
     }
 }

@@ -41,53 +41,53 @@ public sealed unsafe partial class ItemDeprecatedComponentData : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnConsumeTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fc39a917((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_fc39a917((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnHitActorTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_443ed3a8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_443ed3a8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnHitBlockTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7252f79a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7252f79a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnHurtActorTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c1afde03((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c1afde03((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnUseOnTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8313ea60((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8313ea60((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnUseTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0f7d9f9b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0f7d9f9b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint renderOffsetsItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_42437307((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_42437307((void*)__hosihikari_shim_handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_c18a83f5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_c18a83f5((void*)__hosihikari_shim_handle);
     }
 
     public static ItemDeprecatedComponentData Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.ItemDeprecatedComponentData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_9b4c6705((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_9b4c6705((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -98,18 +98,18 @@ public sealed unsafe partial class ItemDeprecatedComponentData : global::System.
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_a259709e((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_a259709e((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnCompleteTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c78d529d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c78d529d((void*)__hosihikari_shim_handle);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.ItemDeprecatedComponentData arg0)
     {
-        return NativeMethods.TablePtr->C3.hs_method_c79562c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_c79562c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
     }
 
 
@@ -119,7 +119,7 @@ public sealed unsafe partial class ItemDeprecatedComponentData : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e5ae57cb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e5ae57cb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

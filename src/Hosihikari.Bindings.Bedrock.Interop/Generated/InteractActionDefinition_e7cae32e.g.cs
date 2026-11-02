@@ -41,23 +41,23 @@ public sealed unsafe partial class InteractActionDefinition : global::System.IDi
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d9637277((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d9637277((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTreeDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7bf65f77((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7bf65f77((void*)__hosihikari_shim_handle);
     }
 
     public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
     {
-        NativeMethods.TablePtr->C1.hs_method_d0e03d22((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
+        NativeMethods.TablePtr->C2.hs_method_d0e03d22((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
     }
 
     public static InteractActionDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.InteractActionDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ab1ff0fd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ab1ff0fd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,19 +68,19 @@ public sealed unsafe partial class InteractActionDefinition : global::System.IDi
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
     {
-        NativeMethods.TablePtr->C1.hs_method_168d3338((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
+        NativeMethods.TablePtr->C2.hs_method_168d3338((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
     }
 
     public int mInteractTicks
     {
-        get => NativeMethods.TablePtr->C1.hs_get_be41cabb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_be41cabb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_be41cabb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_be41cabb((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInteractTicksId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b72dfa51((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b72dfa51((void*)__hosihikari_shim_handle);
     }
 
 
@@ -90,7 +90,7 @@ public sealed unsafe partial class InteractActionDefinition : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_e7cae32e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e7cae32e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

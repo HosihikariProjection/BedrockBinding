@@ -53,18 +53,18 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_57cb2179((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnRules.Handle);
+            return (nint)NativeMethods.TablePtr->C4.hs_method_57cb2179((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnRules.Handle);
         }
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_fd860b9a((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_fd860b9a((void*)__hosihikari_shim_handle);
     }
 
     public static SpawnGroupData Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_96771ba4();
+        var handle = NativeMethods.TablePtr->C4.hs_create_96771ba4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +75,7 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
 
     public static SpawnGroupData Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_9261eeec((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_9261eeec((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,7 +99,7 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C3.hs_create_91073b07(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnRules.Handle);
+            var handle = NativeMethods.TablePtr->C4.hs_create_91073b07(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnRules.Handle);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -112,13 +112,13 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mIdentifier_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5e6026e8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5e6026e8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnRules_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a89eaf66((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a89eaf66((void*)__hosihikari_shim_handle);
     }
 
 
@@ -128,7 +128,7 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2d69c593((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_2d69c593((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

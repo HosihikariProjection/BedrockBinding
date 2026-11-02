@@ -44,17 +44,17 @@ public sealed unsafe partial class SchemaDescription : global::System.IDisposabl
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaDescription arg0)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_0e40f1b2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_0e40f1b2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_897ec509((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_897ec509((void*)__hosihikari_shim_handle);
     }
 
     public static SchemaDescription Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_62635113();
+        var handle = NativeMethods.TablePtr->C5.hs_create_62635113();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,7 +69,7 @@ public sealed unsafe partial class SchemaDescription : global::System.IDisposabl
 
     public static SchemaDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaDescription arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e77ae05a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_e77ae05a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -80,97 +80,97 @@ public sealed unsafe partial class SchemaDescription : global::System.IDisposabl
 
     public static void bindTypes(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C4.hs_method_66ce6504((void*)ctx.Handle);
+        NativeMethods.TablePtr->C5.hs_method_66ce6504((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCerealProperties_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3a041e21((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_3a041e21((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConstraint_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_154a762c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_154a762c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlValueType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c7bbb4a5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_c7bbb4a5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnumValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b1582c9d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b1582c9d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mKeyType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3875dd4d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_3875dd4d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMappedType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_02c264ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_02c264ba((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMembers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e691295d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e691295d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNonPublicFlag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0ea6e846((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0ea6e846((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOrdinalIndex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9d6811bc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_9d6811bc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b2e2e3e4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b2e2e3e4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPatternMembers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_dca7b427((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_dca7b427((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSerializationTraits_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_273c93ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_273c93ef((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSetters_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0b80ce7b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0b80ce7b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnderlyingType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7ddbcb53((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_7ddbcb53((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValueType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_59800887((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_59800887((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -179,32 +179,32 @@ public sealed unsafe partial class SchemaDescription : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaDescription operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaDescription arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaDescription((nint)NativeMethods.TablePtr->C4.hs_method_cca1f6e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaDescription((nint)NativeMethods.TablePtr->C5.hs_method_cca1f6e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e1b798c6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e1b798c6((void*)__hosihikari_shim_handle);
     }
 
     public uint mId
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1513c21f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1513c21f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_1513c21f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_1513c21f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d2438e62((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_d2438e62((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3db7019f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_3db7019f((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -213,7 +213,7 @@ public sealed unsafe partial class SchemaDescription : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_df38aa45((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_df38aa45((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,12 +40,12 @@ public sealed unsafe partial class InsideBlockNotifierSystem : global::System.ID
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_c818bc06((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c818bc06((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
     public static InsideBlockNotifierSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockNotifierSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e8b064b5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e8b064b5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class InsideBlockNotifierSystem : global::System.ID
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_729afdaf((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_729afdaf((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class InsideBlockNotifierSystem : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_a3a6ae82((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a3a6ae82((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,32 +40,32 @@ public sealed unsafe partial class Parameters : global::System.IDisposable
 
     public int mBaseChildrenOnDeathCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b88a1de8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_b88a1de8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_b88a1de8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_b88a1de8((void*)__hosihikari_shim_handle, value);
     }
 
     public float mDecreaseSquishFactor
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a27dd884((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a27dd884((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a27dd884((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a27dd884((void*)__hosihikari_shim_handle, value);
     }
 
     public int mLandParticleType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_9b23c70a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_9b23c70a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_9b23c70a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_9b23c70a((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMaxRandomAdditionalChildren
     {
-        get => NativeMethods.TablePtr->C3.hs_get_3347ae8f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_3347ae8f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_3347ae8f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_3347ae8f((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMinSizeToPlayLandSound
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0985a74e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_0985a74e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0985a74e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_0985a74e((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -74,7 +74,7 @@ public sealed unsafe partial class Parameters : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_96707847((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_96707847((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

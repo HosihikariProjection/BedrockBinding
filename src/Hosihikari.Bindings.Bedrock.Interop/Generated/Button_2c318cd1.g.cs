@@ -40,7 +40,7 @@ public sealed unsafe partial class Button : global::System.IDisposable
 
     public static Button Create(global::Hosihikari.Bindings.Bedrock.Interop.npc.Button arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_35f4cb8a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_35f4cb8a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class Button : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0f5e2cab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0f5e2cab((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRawName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_84d2b201((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_84d2b201((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.npc.Button operator_assign(string newName)
@@ -76,7 +76,7 @@ public sealed unsafe partial class Button : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(newName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.npc.Button((nint)NativeMethods.TablePtr->C4.hs_method_31abeb17((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.npc.Button((nint)NativeMethods.TablePtr->C5.hs_method_31abeb17((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
@@ -87,7 +87,7 @@ public sealed unsafe partial class Button : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2c318cd1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_2c318cd1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

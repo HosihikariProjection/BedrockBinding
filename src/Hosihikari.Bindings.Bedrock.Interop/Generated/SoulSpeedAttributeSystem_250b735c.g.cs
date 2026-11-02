@@ -40,7 +40,7 @@ public sealed unsafe partial class SoulSpeedAttributeSystem : global::System.IDi
 
     public static void _tryProcessSoulSpeed(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent)
     {
-        NativeMethods.TablePtr->C3.hs_method_00b6890c((void*)arg0.Handle, (void*)actorOwnerComponent.Handle);
+        NativeMethods.TablePtr->C4.hs_method_00b6890c((void*)arg0.Handle, (void*)actorOwnerComponent.Handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class SoulSpeedAttributeSystem : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_250b735c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_250b735c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

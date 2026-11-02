@@ -40,32 +40,32 @@ public sealed unsafe partial class SharedModifiers : global::System.IDisposable
 
     public static nint DAMAGE_BOOST()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_783b472d();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_783b472d();
     }
 
     public static nint HEALTH_BOOST()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d2708fa3();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_d2708fa3();
     }
 
     public static nint MOVEMENT_SLOWDOWN()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_fd13bac5();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_fd13bac5();
     }
 
     public static nint MOVEMENT_SPEED()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_0310f9c2();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_0310f9c2();
     }
 
     public static nint SPRINTING_BOOST()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_78a9d0fc();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_78a9d0fc();
     }
 
     public static nint WEAKNESS()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_38fb6799();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_38fb6799();
     }
 
     public void Dispose()
@@ -74,7 +74,7 @@ public sealed unsafe partial class SharedModifiers : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_443fb593((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_443fb593((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

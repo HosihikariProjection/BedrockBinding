@@ -40,7 +40,7 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
 
     public static RequiredResourceOrBehaviorPackType Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a509f0df();
+        var handle = NativeMethods.TablePtr->C3.hs_create_a509f0df();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
 
     public static RequiredResourceOrBehaviorPackType Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_abdb0ba0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_abdb0ba0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2a81d8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e255842a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e255842a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType((nint)NativeMethods.TablePtr->C2.hs_method_a5598598((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSource_Nested.RequiredResourceOrBehaviorPackType((nint)NativeMethods.TablePtr->C3.hs_method_a5598598((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class RequiredResourceOrBehaviorPackType : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_7ddea464((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_7ddea464((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

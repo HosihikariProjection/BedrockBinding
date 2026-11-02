@@ -40,17 +40,17 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_1befbf3f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_1befbf3f((void*)__hosihikari_shim_handle);
     }
 
     public int AttachmentId()
     {
-        return NativeMethods.TablePtr->C4.hs_method_d5a178b7((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_d5a178b7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError CheckCodecParameters(nint parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_f8b3e8aa((void*)__hosihikari_shim_handle, (void*)parameters));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_f8b3e8aa((void*)__hosihikari_shim_handle, (void*)parameters));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError DisableEncodingLayers(string[] rids)
@@ -75,7 +75,7 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_3cd4fde9((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0)));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_3cd4fde9((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(rids?.Length ?? 0)));
         }
     }
 
@@ -93,12 +93,12 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
 
     public void NotifyFirstPacketSent()
     {
-        NativeMethods.TablePtr->C4.hs_method_e720bcbf((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_e720bcbf((void*)__hosihikari_shim_handle);
     }
 
     public static RtpSenderInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderInternal arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b2c0fd8f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_b2c0fd8f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -109,7 +109,7 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
 
     public void SetMediaChannel(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaSendChannelInterface? media_channel)
     {
-        NativeMethods.TablePtr->C4.hs_method_76c7845c((void*)__hosihikari_shim_handle, (void*)(media_channel?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_76c7845c((void*)__hosihikari_shim_handle, (void*)(media_channel?.Handle ?? 0));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::RTCError) &&>' is not supported.", false)]
@@ -118,7 +118,7 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetParametersInternalWithAllLayers(nint parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_a942f0de((void*)__hosihikari_shim_handle, (void*)parameters));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_a942f0de((void*)__hosihikari_shim_handle, (void*)parameters));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::Codec' is not supported.", false)]
@@ -127,17 +127,17 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
 
     public void SetSsrc(uint ssrc)
     {
-        NativeMethods.TablePtr->C4.hs_method_1c0687b3((void*)__hosihikari_shim_handle, ssrc);
+        NativeMethods.TablePtr->C5.hs_method_1c0687b3((void*)__hosihikari_shim_handle, ssrc);
     }
 
     public void SetTransceiverAsStopped()
     {
-        NativeMethods.TablePtr->C4.hs_method_f629153b((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_f629153b((void*)__hosihikari_shim_handle);
     }
 
     public void Stop()
     {
-        NativeMethods.TablePtr->C4.hs_method_519fe115((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_519fe115((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::RtpEncodingParameters' is not supported.", false)]
@@ -166,7 +166,7 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            NativeMethods.TablePtr->C4.hs_method_9d6dcab2((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(stream_ids?.Length ?? 0));
+            NativeMethods.TablePtr->C5.hs_method_9d6dcab2((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(stream_ids?.Length ?? 0));
         }
     }
 
@@ -181,7 +181,7 @@ public sealed unsafe partial class RtpSenderInternal : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_7aa01e4e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_7aa01e4e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

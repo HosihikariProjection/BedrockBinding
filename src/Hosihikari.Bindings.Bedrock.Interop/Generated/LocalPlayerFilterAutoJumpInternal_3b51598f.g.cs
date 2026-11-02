@@ -40,12 +40,12 @@ public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal
 
     public void _singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_286504b9((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_286504b9((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
     }
 
     public void _tick(nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_1e2a0aeb((void*)__hosihikari_shim_handle, (void*)context);
+        NativeMethods.TablePtr->C3.hs_method_1e2a0aeb((void*)__hosihikari_shim_handle, (void*)context);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -58,16 +58,16 @@ public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal
 
     public static void commonTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext? entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_8c25c515((void*)context, (void*)(entity?.Handle ?? 0));
+        NativeMethods.TablePtr->C3.hs_method_8c25c515((void*)context, (void*)(entity?.Handle ?? 0));
     }
 
     public void singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_f95bc174((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_f95bc174((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
     }
 
     public void tick(nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_e95d14ca((void*)__hosihikari_shim_handle, (void*)context);
+        NativeMethods.TablePtr->C3.hs_method_e95d14ca((void*)__hosihikari_shim_handle, (void*)context);
     }
 }

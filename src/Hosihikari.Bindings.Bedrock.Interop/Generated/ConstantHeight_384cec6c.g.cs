@@ -40,7 +40,7 @@ public sealed unsafe partial class ConstantHeight : global::System.IDisposable
 
     public int _sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg0, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenContext heightAccessor)
     {
-        return NativeMethods.TablePtr->C4.hs_method_36ed6a18((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)heightAccessor.Handle);
+        return NativeMethods.TablePtr->C5.hs_method_36ed6a18((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)heightAccessor.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class ConstantHeight : global::System.IDisposable
 
     public static ConstantHeight Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ConstantHeight arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_10cfcb55((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_10cfcb55((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,12 +61,12 @@ public sealed unsafe partial class ConstantHeight : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mAnchor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a5464642((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a5464642((void*)__hosihikari_shim_handle);
     }
 
     public int sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg0, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.WorldGenContext heightAccessor)
     {
-        return NativeMethods.TablePtr->C4.hs_method_15bd1e46((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)heightAccessor.Handle);
+        return NativeMethods.TablePtr->C5.hs_method_15bd1e46((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)heightAccessor.Handle);
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class ConstantHeight : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_384cec6c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_384cec6c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

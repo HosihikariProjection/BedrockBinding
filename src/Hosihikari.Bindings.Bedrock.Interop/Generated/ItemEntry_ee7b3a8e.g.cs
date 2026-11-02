@@ -40,13 +40,13 @@ public sealed unsafe partial class ItemEntry : global::System.IDisposable
 
     public short mAuxValue
     {
-        get => NativeMethods.TablePtr->C1.hs_get_f63efe64((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_f63efe64((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_f63efe64((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_f63efe64((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mItem
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5b4b55c8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5b4b55c8((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -55,7 +55,7 @@ public sealed unsafe partial class ItemEntry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ee7b3a8e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ee7b3a8e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

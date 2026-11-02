@@ -40,7 +40,7 @@ public sealed unsafe partial class IExternalSessionTelemetry : global::System.ID
 
     public static IExternalSessionTelemetry Create(global::Hosihikari.Bindings.Bedrock.Interop.IExternalSessionTelemetry arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_7eba4676((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_7eba4676((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class IExternalSessionTelemetry : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(launcherSessionId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_95db673d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_95db673d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class IExternalSessionTelemetry : global::System.ID
         global::System.Text.Encoding.UTF8.GetBytes(webSessionId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_ca353af0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_ca353af0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -94,7 +94,7 @@ public sealed unsafe partial class IExternalSessionTelemetry : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_6e475fd8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6e475fd8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

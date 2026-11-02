@@ -40,7 +40,7 @@ public sealed unsafe partial class CachedSpawnData : global::System.IDisposable
 
     public static CachedSpawnData Create(global::Hosihikari.Bindings.Bedrock.Interop.Player_Nested.CachedSpawnData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_79360209((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_79360209((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,67 +52,67 @@ public sealed unsafe partial class CachedSpawnData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mActualRespawnPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ef4063de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ef4063de((void*)__hosihikari_shim_handle);
     }
 
     public bool mHasRespawnPosition
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6d5a62c8((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_6d5a62c8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6d5a62c8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_6d5a62c8((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsAdventure
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1700b433((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_1700b433((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1700b433((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_1700b433((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsFlyingOrNotOverworld
     {
-        get => NativeMethods.TablePtr->C2.hs_get_978d7b6a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_978d7b6a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_978d7b6a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_978d7b6a((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsForcedRespawn
     {
-        get => NativeMethods.TablePtr->C2.hs_get_f70f41a4((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_f70f41a4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f70f41a4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_f70f41a4((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_51a836e4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_51a836e4((void*)__hosihikari_shim_handle);
     }
 
     public bool mPositionLoadedFromSave
     {
-        get => NativeMethods.TablePtr->C2.hs_get_eb27c666((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_eb27c666((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_eb27c666((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_eb27c666((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRequestedRespawnPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4d114a71((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4d114a71((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRespawnDimensionId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c2918718((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c2918718((void*)__hosihikari_shim_handle);
     }
 
     public bool mRespawnReady
     {
-        get => NativeMethods.TablePtr->C2.hs_get_eef54927((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_eef54927((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_eef54927((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_eef54927((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSharedSpawnPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9f57f115((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9f57f115((void*)__hosihikari_shim_handle);
     }
 
 
@@ -122,7 +122,7 @@ public sealed unsafe partial class CachedSpawnData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c414ed16((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c414ed16((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

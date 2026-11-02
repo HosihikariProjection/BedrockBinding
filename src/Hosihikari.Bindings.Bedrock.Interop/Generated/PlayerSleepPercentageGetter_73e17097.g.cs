@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerSleepPercentageGetter : global::System.
 
     public float _getPlayerSleepPercentageGoal()
     {
-        return NativeMethods.TablePtr->C2.hs_method_95d86c8d((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_95d86c8d((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerSleepPercentageGetter Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSleepPercentageGetter arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6f03f670((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6f03f670((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,13 +56,13 @@ public sealed unsafe partial class PlayerSleepPercentageGetter : global::System.
 
     public float getPlayerSleepPercentageGoal()
     {
-        return NativeMethods.TablePtr->C2.hs_method_66e00062((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_66e00062((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameRules_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_30e54850((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_30e54850((void*)__hosihikari_shim_handle);
     }
 
 
@@ -72,7 +72,7 @@ public sealed unsafe partial class PlayerSleepPercentageGetter : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_73e17097((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_73e17097((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

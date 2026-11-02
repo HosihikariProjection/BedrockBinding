@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerHotbarSelectedSlotChangeEvent : global:
 
     public static PlayerHotbarSelectedSlotChangeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerHotbarSelectedSlotChangeEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4fefabdb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4fefabdb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class PlayerHotbarSelectedSlotChangeEvent : global:
     // The native field type is not projected; this is the address of the field storage.
     public nint mItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f2cde056((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f2cde056((void*)__hosihikari_shim_handle);
     }
 
     public int mNewSlotSelected
     {
-        get => NativeMethods.TablePtr->C2.hs_get_878c0d3d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_878c0d3d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_878c0d3d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_878c0d3d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_26447197((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_26447197((void*)__hosihikari_shim_handle);
     }
 
     public int mPreviousSlotSelected
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2e84dd84((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_2e84dd84((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2e84dd84((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2e84dd84((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class PlayerHotbarSelectedSlotChangeEvent : global:
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_cc589344((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_cc589344((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

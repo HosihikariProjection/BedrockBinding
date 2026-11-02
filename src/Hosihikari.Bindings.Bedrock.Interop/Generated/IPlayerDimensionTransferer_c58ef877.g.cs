@@ -40,7 +40,7 @@ public sealed unsafe partial class IPlayerDimensionTransferer : global::System.I
 
     public static IPlayerDimensionTransferer Create(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerDimensionTransferer arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_6e48f8d8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_6e48f8d8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,42 +51,42 @@ public sealed unsafe partial class IPlayerDimensionTransferer : global::System.I
 
     public bool doRespawnIfReady(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest, nint addLimboActorHelper)
     {
-        return NativeMethods.TablePtr->C1.hs_method_a0637db6((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)addLimboActorHelper) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_a0637db6((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)addLimboActorHelper) != 0;
     }
 
     public void playerDestroyRegion(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest)
     {
-        NativeMethods.TablePtr->C1.hs_method_395f7150((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle);
+        NativeMethods.TablePtr->C2.hs_method_395f7150((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle);
     }
 
     public void playerDestroyRemotePlayers(global::Hosihikari.Bindings.Bedrock.Interop.GameplayUserManager gameplayUserManager)
     {
-        NativeMethods.TablePtr->C1.hs_method_c703c1a3((void*)__hosihikari_shim_handle, (void*)gameplayUserManager.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c703c1a3((void*)__hosihikari_shim_handle, (void*)gameplayUserManager.Handle);
     }
 
     public void playerPrepareRegion(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest, global::Hosihikari.Bindings.Bedrock.Interop.Dimension toDimension)
     {
-        NativeMethods.TablePtr->C1.hs_method_fa03f486((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)toDimension.Handle);
+        NativeMethods.TablePtr->C2.hs_method_fa03f486((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)toDimension.Handle);
     }
 
     public void playerSaveLimboActors(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest, global::Hosihikari.Bindings.Bedrock.Interop.Dimension toDimension, global::Hosihikari.Bindings.Bedrock.Interop.PlayerLimboActorManager? playerLimboActorManager)
     {
-        NativeMethods.TablePtr->C1.hs_method_d6c146d8((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)toDimension.Handle, (void*)(playerLimboActorManager?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_d6c146d8((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)toDimension.Handle, (void*)(playerLimboActorManager?.Handle ?? 0));
     }
 
     public void playerStartChangeDimensionSuspendRegion(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromDimension)
     {
-        NativeMethods.TablePtr->C1.hs_method_b2a5a81d((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)fromDimension.Handle);
+        NativeMethods.TablePtr->C2.hs_method_b2a5a81d((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)fromDimension.Handle);
     }
 
     public void playerSwitchDimension(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest, nint addLimboActorHelper)
     {
-        NativeMethods.TablePtr->C1.hs_method_acdf8195((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)addLimboActorHelper);
+        NativeMethods.TablePtr->C2.hs_method_acdf8195((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)addLimboActorHelper);
     }
 
     public bool playerWaitForDimensionTransitionSystem(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry entityRegistry)
     {
-        return NativeMethods.TablePtr->C1.hs_method_b49e158e((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)entityRegistry.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_b49e158e((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)entityRegistry.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -95,32 +95,32 @@ public sealed unsafe partial class IPlayerDimensionTransferer : global::System.I
 
     public void sendClientRespawnMovePacketFromServer(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest)
     {
-        NativeMethods.TablePtr->C1.hs_method_367fb3ec((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle);
+        NativeMethods.TablePtr->C2.hs_method_367fb3ec((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle);
     }
 
     public void setPacketSender(global::Hosihikari.Bindings.Bedrock.Interop.PacketSender packetSender)
     {
-        NativeMethods.TablePtr->C1.hs_method_07eabad9((void*)__hosihikari_shim_handle, (void*)packetSender.Handle);
+        NativeMethods.TablePtr->C2.hs_method_07eabad9((void*)__hosihikari_shim_handle, (void*)packetSender.Handle);
     }
 
     public void setTransitionLocation(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest, global::Hosihikari.Bindings.Bedrock.Interop.Dimension toDimension)
     {
-        NativeMethods.TablePtr->C1.hs_method_9f276d07((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)toDimension.Handle);
+        NativeMethods.TablePtr->C2.hs_method_9f276d07((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle, (void*)toDimension.Handle);
     }
 
     public void startWaitForRespawn(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        NativeMethods.TablePtr->C1.hs_method_5229cb73((void*)__hosihikari_shim_handle, (void*)player.Handle);
+        NativeMethods.TablePtr->C2.hs_method_5229cb73((void*)__hosihikari_shim_handle, (void*)player.Handle);
     }
 
     public void syncTransitionComponentTargetPosition(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest)
     {
-        NativeMethods.TablePtr->C1.hs_method_5647a065((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle);
+        NativeMethods.TablePtr->C2.hs_method_5647a065((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle);
     }
 
     public bool waitForSubChunks(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Dimension toDimension)
     {
-        return NativeMethods.TablePtr->C1.hs_method_0a6833bb((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)toDimension.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_0a6833bb((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)toDimension.Handle) != 0;
     }
 
 
@@ -130,7 +130,7 @@ public sealed unsafe partial class IPlayerDimensionTransferer : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c58ef877((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c58ef877((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

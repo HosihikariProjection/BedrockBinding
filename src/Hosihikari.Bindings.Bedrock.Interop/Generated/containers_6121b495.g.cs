@@ -40,7 +40,7 @@ public sealed unsafe partial class containers : global::System.IDisposable
 
     public static containers Create(global::Hosihikari.Bindings.Bedrock.Interop.brstd.associative_adapter_std__basic_string_char___entt__meta_any__std__less_v_13c750f7.containers arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8d461e0e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_8d461e0e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class containers : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint keys_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b6a1a85c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b6a1a85c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint values_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_152360b1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_152360b1((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class containers : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6121b495((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6121b495((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,19 +41,19 @@ public sealed unsafe partial class OnStepOnTrigger : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mCondition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_bc080597((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bc080597((void*)__hosihikari_shim_handle);
     }
 
     public short mTarget
     {
-        get => NativeMethods.TablePtr->C2.hs_get_820c98ea((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_820c98ea((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_820c98ea((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_820c98ea((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0d8f4fab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0d8f4fab((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -62,7 +62,7 @@ public sealed unsafe partial class OnStepOnTrigger : global::System.IDisposable
 
     public static OnStepOnTrigger Create(global::Hosihikari.Bindings.Bedrock.Interop.OnStepOnTrigger arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_7c0ac2c4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_7c0ac2c4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,7 +73,7 @@ public sealed unsafe partial class OnStepOnTrigger : global::System.IDisposable
 
     public void onEvent(nint eventData)
     {
-        NativeMethods.TablePtr->C2.hs_method_791282cf((void*)__hosihikari_shim_handle, (void*)eventData);
+        NativeMethods.TablePtr->C3.hs_method_791282cf((void*)__hosihikari_shim_handle, (void*)eventData);
     }
 
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class OnStepOnTrigger : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d05fb5b0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d05fb5b0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

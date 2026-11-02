@@ -40,12 +40,12 @@ public sealed unsafe partial class ISystem : global::System.IDisposable
 
     public void _registerEvents(nint dispatcher)
     {
-        NativeMethods.TablePtr->C1.hs_method_802d853a((void*)__hosihikari_shim_handle, (void*)dispatcher);
+        NativeMethods.TablePtr->C2.hs_method_802d853a((void*)__hosihikari_shim_handle, (void*)dispatcher);
     }
 
     public static ISystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ISystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_02395030((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_02395030((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class ISystem : global::System.IDisposable
 
     public void registerEvents(nint dispatcher)
     {
-        NativeMethods.TablePtr->C1.hs_method_a79d2262((void*)__hosihikari_shim_handle, (void*)dispatcher);
+        NativeMethods.TablePtr->C2.hs_method_a79d2262((void*)__hosihikari_shim_handle, (void*)dispatcher);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class ISystem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_7cc34073((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7cc34073((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

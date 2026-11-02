@@ -44,18 +44,18 @@ public sealed unsafe partial class OnInteractTriggerDescription
 
     public string _getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_687f426c((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_687f426c((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void _initializeFromNetwork(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C2.hs_method_2dd1019e((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle);
+        NativeMethods.TablePtr->C3.hs_method_2dd1019e((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle);
     }
 
     public bool _isNetworkComponent()
     {
-        return NativeMethods.TablePtr->C2.hs_method_0179c30c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_0179c30c((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -64,7 +64,7 @@ public sealed unsafe partial class OnInteractTriggerDescription
 
     public static string NameID()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_aec3473b();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_aec3473b();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -74,17 +74,17 @@ public sealed unsafe partial class OnInteractTriggerDescription
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_d279987c((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_d279987c((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void initializeFromNetwork(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C2.hs_method_edda87f5((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle);
+        NativeMethods.TablePtr->C3.hs_method_edda87f5((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle);
     }
 
     public bool isNetworkComponent()
     {
-        return NativeMethods.TablePtr->C2.hs_method_eaf68f63((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_eaf68f63((void*)__hosihikari_shim_handle) != 0;
     }
 }

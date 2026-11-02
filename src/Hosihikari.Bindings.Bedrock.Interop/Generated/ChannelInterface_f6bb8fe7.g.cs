@@ -40,19 +40,19 @@ public sealed unsafe partial class ChannelInterface : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel? AsVideoChannel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5f09324e((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_5f09324e((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel? AsVoiceChannel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9e9e9f41((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_9e9e9f41((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel((nint)__hs_handle, false) : null;
     }
 
     public static ChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ChannelInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_532919e0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_532919e0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,7 +63,7 @@ public sealed unsafe partial class ChannelInterface : global::System.IDisposable
 
     public void Enable(bool enable)
     {
-        NativeMethods.TablePtr->C4.hs_method_5c5c8802((void*)__hosihikari_shim_handle, enable);
+        NativeMethods.TablePtr->C5.hs_method_5c5c8802((void*)__hosihikari_shim_handle, enable);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -80,7 +80,7 @@ public sealed unsafe partial class ChannelInterface : global::System.IDisposable
 
     public bool SetPayloadTypeDemuxingEnabled(bool enabled)
     {
-        return NativeMethods.TablePtr->C4.hs_method_acccdf2b((void*)__hosihikari_shim_handle, enabled) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_acccdf2b((void*)__hosihikari_shim_handle, enabled) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
@@ -89,69 +89,69 @@ public sealed unsafe partial class ChannelInterface : global::System.IDisposable
 
     public bool SetRtpTransport(nint rtp_transport)
     {
-        return NativeMethods.TablePtr->C4.hs_method_1d7968a9((void*)__hosihikari_shim_handle, (void*)rtp_transport) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_1d7968a9((void*)__hosihikari_shim_handle, (void*)rtp_transport) != 0;
     }
 
     public nint local_streams()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_89166bea((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_89166bea((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveChannelInterface? media_receive_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b4ae5c14((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_b4ae5c14((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaSendChannelInterface? media_send_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_739089b2((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_739089b2((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaSendChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public int media_type()
     {
-        return NativeMethods.TablePtr->C4.hs_method_87e09232((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_87e09232((void*)__hosihikari_shim_handle);
     }
 
     public string mid()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_b0e0e7a8((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_b0e0e7a8((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public nint remote_streams()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_af14d103((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_af14d103((void*)__hosihikari_shim_handle);
     }
 
     public string transport_name()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_e6620853((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_e6620853((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? video_media_receive_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2c75e16f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_2c75e16f((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface? video_media_send_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_2791c362((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_2791c362((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface? voice_media_receive_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_c8e4a0d7((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_c8e4a0d7((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaSendChannelInterface? voice_media_send_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_01ce6b6d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_01ce6b6d((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaSendChannelInterface((nint)__hs_handle, false) : null;
     }
 
@@ -162,7 +162,7 @@ public sealed unsafe partial class ChannelInterface : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f6bb8fe7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_f6bb8fe7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

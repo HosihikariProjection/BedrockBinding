@@ -53,13 +53,13 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_fb384624((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)type.Handle);
+            return (nint)NativeMethods.TablePtr->C5.hs_method_fb384624((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)type.Handle);
         }
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_60e879da((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_60e879da((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -68,7 +68,7 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
 
     public static JigsawStructureBuilder Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6b998966();
+        var handle = NativeMethods.TablePtr->C5.hs_create_6b998966();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,7 +79,7 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
 
     public static JigsawStructureBuilder Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2e6af16a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_2e6af16a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -103,7 +103,7 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C4.hs_create_301cf276(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)type.Handle);
+            var handle = NativeMethods.TablePtr->C5.hs_create_301cf276(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)type.Handle);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -115,7 +115,7 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
 
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructure build()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructure((nint)NativeMethods.TablePtr->C4.hs_method_31f55e57((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructure((nint)NativeMethods.TablePtr->C5.hs_method_31f55e57((void*)__hosihikari_shim_handle));
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder create(string key, global::Hosihikari.Bindings.Bedrock.Interop.HashedString type)
@@ -133,68 +133,68 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder((nint)NativeMethods.TablePtr->C4.hs_method_71644d8a(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)type.Handle));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder((nint)NativeMethods.TablePtr->C5.hs_method_71644d8a(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)type.Handle));
         }
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionPadding_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_439d77fc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_439d77fc((void*)__hosihikari_shim_handle);
     }
 
     public byte mExpansion
     {
-        get => NativeMethods.TablePtr->C4.hs_get_366e6016((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_366e6016((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_366e6016((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_366e6016((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mLiquidSettings
     {
-        get => NativeMethods.TablePtr->C4.hs_get_dc0eb018((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_dc0eb018((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_dc0eb018((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_dc0eb018((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mMaxDepth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d88188ef((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d88188ef((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_d88188ef((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_d88188ef((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMaxDistanceFromCenter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2dc09a32((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2dc09a32((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPoolAliases_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2e84b2eb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2e84b2eb((void*)__hosihikari_shim_handle);
     }
 
     public byte mProjectStartToHeightmap
     {
-        get => NativeMethods.TablePtr->C4.hs_get_aec8fb9a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_aec8fb9a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_aec8fb9a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_aec8fb9a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStart_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d2b95256((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_d2b95256((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStartHeight_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ed798d5c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ed798d5c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStartJigsawName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8d82382b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_8d82382b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder startPool(string key)
@@ -212,7 +212,7 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder((nint)NativeMethods.TablePtr->C4.hs_method_4a803df5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawStructureBuilder((nint)NativeMethods.TablePtr->C5.hs_method_4a803df5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
@@ -223,7 +223,7 @@ public sealed unsafe partial class JigsawStructureBuilder : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a40579ca((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_a40579ca((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

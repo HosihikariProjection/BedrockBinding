@@ -40,42 +40,42 @@ public sealed unsafe partial class no_mapped_container_t : global::System.IDispo
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator begin()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C4.hs_method_6ddccb47((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C5.hs_method_6ddccb47((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator cbegin()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C4.hs_method_45ff20ad((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C5.hs_method_45ff20ad((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator cend()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C4.hs_method_94710e58((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C5.hs_method_94710e58((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator crbegin()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C4.hs_method_231ae102((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C5.hs_method_231ae102((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator crend()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C4.hs_method_6f6c86e4((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C5.hs_method_6f6c86e4((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator end()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C4.hs_method_907e38c8((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C5.hs_method_907e38c8((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator rbegin()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C4.hs_method_f015b3c1((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C5.hs_method_f015b3c1((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator rend()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C4.hs_method_b901019d((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.no_mapped_container_t_Nested.iterator((nint)NativeMethods.TablePtr->C5.hs_method_b901019d((void*)__hosihikari_shim_handle));
     }
 
     public void Dispose()
@@ -84,7 +84,7 @@ public sealed unsafe partial class no_mapped_container_t : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9feafc57((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_9feafc57((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

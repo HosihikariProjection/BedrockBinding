@@ -40,7 +40,7 @@ public sealed unsafe partial class CREATIVE_ITEM_CATEGORY_MAPPING : global::Syst
 
     public static nint _RT1()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_3b718644();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_3b718644();
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class CREATIVE_ITEM_CATEGORY_MAPPING : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_8ed0ad88((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_8ed0ad88((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

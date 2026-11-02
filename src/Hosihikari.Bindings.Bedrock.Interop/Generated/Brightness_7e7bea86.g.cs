@@ -40,19 +40,19 @@ public sealed unsafe partial class Brightness
 
     public short max
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a23d4b9f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a23d4b9f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_a23d4b9f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_a23d4b9f((void*)__hosihikari_shim_handle, value);
     }
 
     public short min
     {
-        get => NativeMethods.TablePtr->C4.hs_get_dd75d47b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_dd75d47b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_dd75d47b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_dd75d47b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool raw
     {
-        get => NativeMethods.TablePtr->C4.hs_get_b69776f5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_b69776f5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_b69776f5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_b69776f5((void*)__hosihikari_shim_handle, value);
     }
 }

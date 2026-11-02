@@ -40,7 +40,7 @@ public sealed unsafe partial class IScriptPluginSourceEnumerator : global::Syste
 
     public static IScriptPluginSourceEnumerator Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptPluginSourceEnumerator arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_78c97e89((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_78c97e89((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IScriptPluginSourceEnumerator : global::Syste
 
     public nint getPluginSources()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_fe41d765((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_fe41d765((void*)__hosihikari_shim_handle);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class IScriptPluginSourceEnumerator : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_448db917((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_448db917((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

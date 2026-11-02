@@ -40,7 +40,7 @@ public sealed unsafe partial class IContentSourceRepository : global::System.IDi
 
     public static IContentSourceRepository Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentSourceRepository arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_59a9b1dc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_59a9b1dc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,7 +68,7 @@ public sealed unsafe partial class IContentSourceRepository : global::System.IDi
         global::System.Text.Encoding.UTF8.GetBytes(deletionReason, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_49ff6223((void*)__hosihikari_shim_handle, (void*)packLocation.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C2.hs_method_49ff6223((void*)__hosihikari_shim_handle, (void*)packLocation.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -78,7 +78,7 @@ public sealed unsafe partial class IContentSourceRepository : global::System.IDi
 
     public void postDeletePack(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation packLocation)
     {
-        NativeMethods.TablePtr->C1.hs_method_c6de1a30((void*)__hosihikari_shim_handle, (void*)packLocation.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c6de1a30((void*)__hosihikari_shim_handle, (void*)packLocation.Handle);
     }
 
 
@@ -88,7 +88,7 @@ public sealed unsafe partial class IContentSourceRepository : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ba252dea((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ba252dea((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

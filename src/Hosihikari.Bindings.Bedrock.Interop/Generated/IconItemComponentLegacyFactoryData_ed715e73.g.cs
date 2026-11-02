@@ -40,7 +40,7 @@ public sealed unsafe partial class IconItemComponentLegacyFactoryData : global::
 
     public static IconItemComponentLegacyFactoryData Create(global::Hosihikari.Bindings.Bedrock.Interop.IconItemComponentLegacyFactoryData arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_323c865b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_323c865b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class IconItemComponentLegacyFactoryData : global::
     // The native field type is not projected; this is the address of the field storage.
     public nint mTexture_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_6b500d56((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6b500d56((void*)__hosihikari_shim_handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class IconItemComponentLegacyFactoryData : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ed715e73((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ed715e73((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

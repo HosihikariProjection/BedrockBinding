@@ -41,12 +41,12 @@ public sealed unsafe partial class once_flag : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc91192_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1886b459((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_1886b459((void*)__hosihikari_shim_handle);
     }
 
     public static once_flag Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_559fad57();
+        var handle = NativeMethods.TablePtr->C5.hs_create_559fad57();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,7 +57,7 @@ public sealed unsafe partial class once_flag : global::System.IDisposable
 
     public static once_flag Create(global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_7d1908a1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_7d1908a1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,7 +68,7 @@ public sealed unsafe partial class once_flag : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag((nint)NativeMethods.TablePtr->C4.hs_method_f06761d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.once_flag((nint)NativeMethods.TablePtr->C5.hs_method_f06761d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class once_flag : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e0addbea((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_e0addbea((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

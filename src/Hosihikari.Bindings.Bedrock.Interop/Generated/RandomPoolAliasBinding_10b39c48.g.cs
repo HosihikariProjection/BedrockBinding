@@ -40,7 +40,7 @@ public sealed unsafe partial class RandomPoolAliasBinding : global::System.IDisp
 
     public void _appendResolvedAliases(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random, global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding_Nested.PoolAliasLookup inOutResolvedAliases)
     {
-        NativeMethods.TablePtr->C2.hs_method_1f131c21((void*)__hosihikari_shim_handle, (void*)random.Handle, (void*)inOutResolvedAliases.Handle);
+        NativeMethods.TablePtr->C3.hs_method_1f131c21((void*)__hosihikari_shim_handle, (void*)random.Handle, (void*)inOutResolvedAliases.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -53,7 +53,7 @@ public sealed unsafe partial class RandomPoolAliasBinding : global::System.IDisp
 
     public static RandomPoolAliasBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBindingInternal.RandomPoolAliasBinding arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_62486d63((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_62486d63((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class RandomPoolAliasBinding : global::System.IDisp
 
     public void appendResolvedAliases(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random, global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding_Nested.PoolAliasLookup inOutResolvedAliases)
     {
-        NativeMethods.TablePtr->C2.hs_method_de5b8168((void*)__hosihikari_shim_handle, (void*)random.Handle, (void*)inOutResolvedAliases.Handle);
+        NativeMethods.TablePtr->C3.hs_method_de5b8168((void*)__hosihikari_shim_handle, (void*)random.Handle, (void*)inOutResolvedAliases.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -74,13 +74,13 @@ public sealed unsafe partial class RandomPoolAliasBinding : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_52ed4c88((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_52ed4c88((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_667a7738((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_667a7738((void*)__hosihikari_shim_handle);
     }
 
 
@@ -90,7 +90,7 @@ public sealed unsafe partial class RandomPoolAliasBinding : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_10b39c48((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_10b39c48((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

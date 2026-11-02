@@ -40,7 +40,7 @@ public sealed unsafe partial class IEntitySystemsCollection : global::System.IDi
 
     public static IEntitySystemsCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.IEntitySystemsCollection arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_5653f39b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_5653f39b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IEntitySystemsCollection : global::System.IDi
 
     public bool _isValidIndex(uint index)
     {
-        return NativeMethods.TablePtr->C1.hs_method_f17d1825((void*)__hosihikari_shim_handle, index) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_f17d1825((void*)__hosihikari_shim_handle, index) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -76,13 +76,13 @@ public sealed unsafe partial class IEntitySystemsCollection : global::System.IDi
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ComponentInfo? getComponentInfoForId(uint id)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_ed1fa074((void*)__hosihikari_shim_handle, id);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ed1fa074((void*)__hosihikari_shim_handle, id);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ComponentInfo((nint)__hs_handle, false) : null;
     }
 
     public ulong getLargestSystemIndex()
     {
-        return NativeMethods.TablePtr->C1.hs_method_4d68f4c4((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_4d68f4c4((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'TickingSystemId' is not a known bindable declaration.", false)]
@@ -112,7 +112,7 @@ public sealed unsafe partial class IEntitySystemsCollection : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_6c1f8b05((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6c1f8b05((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

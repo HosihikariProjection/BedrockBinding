@@ -41,30 +41,30 @@ public sealed unsafe partial class OnTargetEscapeDefinition : global::System.IDi
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8df54492((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8df54492((void*)__hosihikari_shim_handle);
     }
 
     public short mTarget
     {
-        get => NativeMethods.TablePtr->C3.hs_get_591fdcd0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_591fdcd0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_591fdcd0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_591fdcd0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_dcfb63fe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_dcfb63fe((void*)__hosihikari_shim_handle);
     }
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_e1455964();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_e1455964();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static OnTargetEscapeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.OnTargetEscapeDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_855b7105((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_855b7105((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +75,7 @@ public sealed unsafe partial class OnTargetEscapeDefinition : global::System.IDi
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_3f81da67((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_3f81da67((void*)ctx.Handle);
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class OnTargetEscapeDefinition : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c3a301a4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c3a301a4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

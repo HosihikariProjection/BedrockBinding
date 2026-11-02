@@ -40,12 +40,12 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_2a1d9db8((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_2a1d9db8((void*)__hosihikari_shim_handle);
     }
 
     public static EventScope Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e4b38f79();
+        var handle = NativeMethods.TablePtr->C3.hs_create_e4b38f79();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
 
     public static EventScope Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f8825f05((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_f8825f05((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,18 +68,18 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7fb3d1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_554614df((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_554614df((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkad1144_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1822aabf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1822aabf((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope((nint)NativeMethods.TablePtr->C2.hs_method_c334bcd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.EventScope((nint)NativeMethods.TablePtr->C3.hs_method_c334bcd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -89,7 +89,7 @@ public sealed unsafe partial class EventScope : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_2a2f7c58((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_2a2f7c58((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

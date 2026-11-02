@@ -40,7 +40,7 @@ public sealed unsafe partial class PackSettingsJsonValidator : global::System.ID
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property getValidator()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property((nint)NativeMethods.TablePtr->C2.hs_method_a8794d64());
+        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property((nint)NativeMethods.TablePtr->C3.hs_method_a8794d64());
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class PackSettingsJsonValidator : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_321e5a56((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_321e5a56((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

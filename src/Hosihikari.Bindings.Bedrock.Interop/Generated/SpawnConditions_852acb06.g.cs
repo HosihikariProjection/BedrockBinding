@@ -40,7 +40,7 @@ public sealed unsafe partial class SpawnConditions : global::System.IDisposable
 
     public static SpawnConditions Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b333c3b2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b333c3b2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,50 +51,50 @@ public sealed unsafe partial class SpawnConditions : global::System.IDisposable
 
     public ulong delayEndWorldAge
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0729680f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_0729680f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0729680f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_0729680f((void*)__hosihikari_shim_handle, value);
     }
 
     public bool isInBubble
     {
-        get => NativeMethods.TablePtr->C3.hs_get_fc0955f5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_fc0955f5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_fc0955f5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_fc0955f5((void*)__hosihikari_shim_handle, value);
     }
 
     public bool isInLava
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b0e4f53b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_b0e4f53b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_b0e4f53b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_b0e4f53b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool isInWater
     {
-        get => NativeMethods.TablePtr->C3.hs_get_88712ce5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_88712ce5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_88712ce5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_88712ce5((void*)__hosihikari_shim_handle, value);
     }
 
     public bool isOnSurface
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c61175c1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_c61175c1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_c61175c1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_c61175c1((void*)__hosihikari_shim_handle, value);
     }
 
     public bool isUnderground
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f4c6df6a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_f4c6df6a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f4c6df6a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_f4c6df6a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint pos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d115747c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d115747c((void*)__hosihikari_shim_handle);
     }
 
     public int rawBrightness
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ed292129((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_ed292129((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ed292129((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_ed292129((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class SpawnConditions : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_852acb06((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_852acb06((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,35 +41,35 @@ public sealed unsafe partial class IsWaterLoggedTest : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk20eb73_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ac51dd20((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ac51dd20((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4242cc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_db2e7c93((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_db2e7c93((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk995088_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_45a869b7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_45a869b7((void*)__hosihikari_shim_handle);
     }
 
     public bool _evaluate(nint context)
     {
-        return NativeMethods.TablePtr->C1.hs_method_ccbf758f((void*)__hosihikari_shim_handle, (void*)context) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_ccbf758f((void*)__hosihikari_shim_handle, (void*)context) != 0;
     }
 
     public string _getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_626a2a36((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_626a2a36((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static IsWaterLoggedTest Create(global::Hosihikari.Bindings.Bedrock.Interop.IsWaterLoggedTest arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_283586a0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_283586a0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -80,12 +80,12 @@ public sealed unsafe partial class IsWaterLoggedTest : global::System.IDisposabl
 
     public bool evaluate(nint context)
     {
-        return NativeMethods.TablePtr->C1.hs_method_07d24421((void*)__hosihikari_shim_handle, (void*)context) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_07d24421((void*)__hosihikari_shim_handle, (void*)context) != 0;
     }
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_e181e86d((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_e181e86d((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -93,7 +93,7 @@ public sealed unsafe partial class IsWaterLoggedTest : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka7c087_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a980d6aa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a980d6aa((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -102,7 +102,7 @@ public sealed unsafe partial class IsWaterLoggedTest : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_dfa80dee((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_dfa80dee((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

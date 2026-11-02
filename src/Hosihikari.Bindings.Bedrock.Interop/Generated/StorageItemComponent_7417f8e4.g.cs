@@ -40,13 +40,13 @@ public sealed unsafe partial class StorageItemComponent : global::System.IDispos
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_615aa7f5();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_615aa7f5();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static StorageItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.StorageItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4b07e830((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_4b07e830((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,36 +57,36 @@ public sealed unsafe partial class StorageItemComponent : global::System.IDispos
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_d46853b9((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_d46853b9((void*)ctx.Handle);
     }
 
     public bool mAllowNestedStorageItem
     {
-        get => NativeMethods.TablePtr->C3.hs_get_778f75f3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_778f75f3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_778f75f3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_778f75f3((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAllowedItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3e767745((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3e767745((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBannedItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fee42baa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_fee42baa((void*)__hosihikari_shim_handle);
     }
 
     public int mNumSlots
     {
-        get => NativeMethods.TablePtr->C3.hs_get_14c1a4fd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_14c1a4fd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_14c1a4fd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_14c1a4fd((void*)__hosihikari_shim_handle, value);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.StorageItemComponent arg0)
     {
-        return NativeMethods.TablePtr->C3.hs_method_a9a6655b((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_a9a6655b((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
     }
 
 
@@ -96,7 +96,7 @@ public sealed unsafe partial class StorageItemComponent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_7417f8e4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_7417f8e4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

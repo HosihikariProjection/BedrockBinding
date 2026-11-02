@@ -40,7 +40,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_1e978d1d((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_1e978d1d((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.AppendLoot match)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_8f3e1622((void*)__hosihikari_shim_handle, (void*)match.Handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_8f3e1622((void*)__hosihikari_shim_handle, (void*)match.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -58,7 +58,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
 
     public static Modifier Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b95e5ccf();
+        var handle = NativeMethods.TablePtr->C5.hs_create_b95e5ccf();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,7 +69,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
 
     public static Modifier Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.AppendLoot match)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2e89a455((void*)match.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_2e89a455((void*)match.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -80,7 +80,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
 
     public static Modifier Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.Modifier arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6be6b0f5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_6be6b0f5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -91,7 +91,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_9e64c70d((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_9e64c70d((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
@@ -101,7 +101,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b1311683((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b1311683((void*)__hosihikari_shim_handle);
     }
 
 
@@ -111,7 +111,7 @@ public sealed unsafe partial class Modifier : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_54a02774((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_54a02774((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

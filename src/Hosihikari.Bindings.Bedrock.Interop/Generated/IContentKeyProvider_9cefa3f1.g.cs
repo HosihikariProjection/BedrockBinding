@@ -41,23 +41,23 @@ public sealed unsafe partial class IContentKeyProvider : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_df279f0a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_df279f0a((void*)__hosihikari_shim_handle);
     }
 
     public string _getAlternateContentKey(global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_74b0af23((void*)__hosihikari_shim_handle, (void*)contentIdentity.Handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_74b0af23((void*)__hosihikari_shim_handle, (void*)contentIdentity.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool _requireEncryptedReads()
     {
-        return NativeMethods.TablePtr->C1.hs_method_2cd77764((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_2cd77764((void*)__hosihikari_shim_handle) != 0;
     }
 
     public static IContentKeyProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentKeyProvider arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_74655fdb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_74655fdb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,24 +68,24 @@ public sealed unsafe partial class IContentKeyProvider : global::System.IDisposa
 
     public void clearTempContentKeys()
     {
-        NativeMethods.TablePtr->C1.hs_method_50a12390((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_50a12390((void*)__hosihikari_shim_handle);
     }
 
     public string getAlternateContentKey(global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_50277ffb((void*)__hosihikari_shim_handle, (void*)contentIdentity.Handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_50277ffb((void*)__hosihikari_shim_handle, (void*)contentIdentity.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getContentKey(global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_030df325((void*)__hosihikari_shim_handle, (void*)contentIdentity.Handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_030df325((void*)__hosihikari_shim_handle, (void*)contentIdentity.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool requireEncryptedReads()
     {
-        return NativeMethods.TablePtr->C1.hs_method_054901f5((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_054901f5((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: map key type 'ContentIdentity' is not supported.", false)]
@@ -99,7 +99,7 @@ public sealed unsafe partial class IContentKeyProvider : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_9cefa3f1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9cefa3f1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

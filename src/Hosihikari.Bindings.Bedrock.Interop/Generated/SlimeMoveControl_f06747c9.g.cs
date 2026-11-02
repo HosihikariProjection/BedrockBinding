@@ -40,7 +40,7 @@ public sealed unsafe partial class SlimeMoveControl : global::System.IDisposable
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C3.hs_method_7737def7((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C4.hs_method_7737def7((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class SlimeMoveControl : global::System.IDisposable
 
     public static SlimeMoveControl Create(global::Hosihikari.Bindings.Bedrock.Interop.SlimeMoveControl arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_376f4623((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_376f4623((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,12 +61,12 @@ public sealed unsafe partial class SlimeMoveControl : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mJumpDelayTicks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_63a7588a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_63a7588a((void*)__hosihikari_shim_handle);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C3.hs_method_38a23600((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C4.hs_method_38a23600((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class SlimeMoveControl : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f06747c9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_f06747c9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,92 +40,92 @@ public sealed unsafe partial class PlayerListManager : global::System.IDisposabl
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_469a658b((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_469a658b((void*)__hosihikari_shim_handle);
     }
 
     public void _onAnyGameplayUsersRemoved()
     {
-        NativeMethods.TablePtr->C2.hs_method_53c1af7e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_53c1af7e((void*)__hosihikari_shim_handle);
     }
 
     public void _onGameplayUserAdded(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_4f7127b7((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_4f7127b7((void*)__hosihikari_shim_handle, (void*)entity.Handle);
     }
 
     public void _onGameplayUserRemoved(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_d137947e((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_d137947e((void*)__hosihikari_shim_handle, (void*)entity.Handle);
     }
 
     public void initializeWithGameplayUserManagerOnServer(global::Hosihikari.Bindings.Bedrock.Interop.IGameplayUserManagerConnector gameplayUserManagerConnector)
     {
-        NativeMethods.TablePtr->C2.hs_method_ead66867((void*)__hosihikari_shim_handle, (void*)gameplayUserManagerConnector.Handle);
+        NativeMethods.TablePtr->C3.hs_method_ead66867((void*)__hosihikari_shim_handle, (void*)gameplayUserManagerConnector.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnAnyGameplayUsersRemovedSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dd9f826b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dd9f826b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnGameplayUserAddedSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d120ac10((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d120ac10((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnGameplayUserRemovedSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fc5b2986((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fc5b2986((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnPlayerListEntryAdded_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_438f8d93((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_438f8d93((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnPlayerListEntryRemoved_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6a0471f4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6a0471f4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPacketSender_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_da2ed335((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_da2ed335((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingPlayerListRemovePacket_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9b3f60ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9b3f60ef((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerList_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c84dcc38((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c84dcc38((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerLocationReceiver_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_681e334b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_681e334b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerLocationSender_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_925fde63((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_925fde63((void*)__hosihikari_shim_handle);
     }
 
     public void removeByUUID(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid)
     {
-        NativeMethods.TablePtr->C2.hs_method_da031f65((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
+        NativeMethods.TablePtr->C3.hs_method_da031f65((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<PlayerLocationReceiver>' is not a known bindable declaration.", false)]
@@ -138,7 +138,7 @@ public sealed unsafe partial class PlayerListManager : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry? tryGetPlayerEntry(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b4f45c27((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b4f45c27((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry((nint)__hs_handle, false) : null;
     }
 
@@ -149,7 +149,7 @@ public sealed unsafe partial class PlayerListManager : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0fc58e79((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0fc58e79((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

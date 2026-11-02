@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemRegistryComplexAlias : global::System.IDi
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_3de171b1((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_3de171b1((void*)__hosihikari_shim_handle);
     }
 
     public static ItemRegistryComplexAlias Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryComplexAlias arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_423f2b61((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_423f2b61((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,20 +56,20 @@ public sealed unsafe partial class ItemRegistryComplexAlias : global::System.IDi
 
     public bool allowCommands
     {
-        get => NativeMethods.TablePtr->C1.hs_get_48195419((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_48195419((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_48195419((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_48195419((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCallback_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_82530d85((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_82530d85((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSplitNames_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_54c90779((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_54c90779((void*)__hosihikari_shim_handle);
     }
 
 
@@ -79,7 +79,7 @@ public sealed unsafe partial class ItemRegistryComplexAlias : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_eb398b57((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_eb398b57((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

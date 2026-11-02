@@ -41,19 +41,19 @@ public sealed unsafe partial class SkeletonHorseTrapGoal : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d10fc0c0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d10fc0c0((void*)__hosihikari_shim_handle);
     }
 
     public int mRequiredControlFlags
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e811ffc6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e811ffc6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_e811ffc6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_e811ffc6((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort mTypeId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_8b106db5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_8b106db5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_8b106db5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_8b106db5((void*)__hosihikari_shim_handle, value);
     }
 
     public string _appendDebugInfo(string debugInfo)
@@ -71,24 +71,24 @@ public sealed unsafe partial class SkeletonHorseTrapGoal : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(debugInfo, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C3.hs_method_829aa583((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_view = NativeMethods.TablePtr->C4.hs_method_829aa583((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
 
     public bool _canUse()
     {
-        return NativeMethods.TablePtr->C3.hs_method_1ce34fe1((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_1ce34fe1((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void _start()
     {
-        NativeMethods.TablePtr->C3.hs_method_338962e4((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_338962e4((void*)__hosihikari_shim_handle);
     }
 
     public void _tick()
     {
-        NativeMethods.TablePtr->C3.hs_method_c4df0ed4((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_c4df0ed4((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -97,7 +97,7 @@ public sealed unsafe partial class SkeletonHorseTrapGoal : global::System.IDispo
 
     public static SkeletonHorseTrapGoal Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d8ba3bb6();
+        var handle = NativeMethods.TablePtr->C4.hs_create_d8ba3bb6();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -108,7 +108,7 @@ public sealed unsafe partial class SkeletonHorseTrapGoal : global::System.IDispo
 
     public static SkeletonHorseTrapGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SkeletonHorseTrapGoal arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2997901b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_2997901b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -132,47 +132,47 @@ public sealed unsafe partial class SkeletonHorseTrapGoal : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(debugInfo, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C3.hs_method_81ec8c5e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_view = NativeMethods.TablePtr->C4.hs_method_81ec8c5e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
 
     public bool canUse()
     {
-        return NativeMethods.TablePtr->C3.hs_method_d4aeae4a((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_d4aeae4a((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHorse_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_12ddeb6a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_12ddeb6a((void*)__hosihikari_shim_handle);
     }
 
     public int mTrapLifeTicks
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f3731458((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_f3731458((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f3731458((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f3731458((void*)__hosihikari_shim_handle, value);
     }
 
     public float mTriggerDistance
     {
-        get => NativeMethods.TablePtr->C3.hs_get_41fb40fc((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_41fb40fc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_41fb40fc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_41fb40fc((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SkeletonHorseTrapGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SkeletonHorseTrapGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SkeletonHorseTrapGoal((nint)NativeMethods.TablePtr->C3.hs_method_300a6c5c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SkeletonHorseTrapGoal((nint)NativeMethods.TablePtr->C4.hs_method_300a6c5c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void start()
     {
-        NativeMethods.TablePtr->C3.hs_method_5f196718((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_5f196718((void*)__hosihikari_shim_handle);
     }
 
     public void tick()
     {
-        NativeMethods.TablePtr->C3.hs_method_ed131862((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_ed131862((void*)__hosihikari_shim_handle);
     }
 
 
@@ -182,7 +182,7 @@ public sealed unsafe partial class SkeletonHorseTrapGoal : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b8d6ab3c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b8d6ab3c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -46,36 +46,36 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
     {
         fixed (int* __hs_vectorData3 = arg3)
         {
-            NativeMethods.TablePtr->C3.hs_method_c2f3fd0a((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg4.Handle, __hs_vectorData3, (nuint)(arg3?.Length ?? 0));
+            NativeMethods.TablePtr->C4.hs_method_c2f3fd0a((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg4.Handle, __hs_vectorData3, (nuint)(arg3?.Length ?? 0));
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemActor? _spawnItem(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack inst, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int throwTime)
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_61dec4ae((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)inst.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, throwTime);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_61dec4ae((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)inst.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, throwTime);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemActor((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Mob? _spawnMob(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool naturalSpawn, bool surface, bool fromSpawner)
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_636bc5c9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, naturalSpawn, surface, fromSpawner);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_636bc5c9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, naturalSpawn, surface, fromSpawner);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Mob((nint)__hs_handle, false) : null;
     }
 
     public void _spawnMobsForChunkGeneration(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.Biome arg1, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg3)
     {
-        NativeMethods.TablePtr->C3.hs_method_c9416087((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg3.Handle);
+        NativeMethods.TablePtr->C4.hs_method_c9416087((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg3.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? _spawnProjectile(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction)
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_29f391d0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)position.Handle, (void*)direction.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_29f391d0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)position.Handle, (void*)direction.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
     public static Spawner Create(global::Hosihikari.Bindings.Bedrock.Interop.Spawner arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3e732e40((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_3e732e40((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -90,89 +90,89 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
 
     public static bool findNextSpawnBlockUnder(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte? materialToSpawnIn, byte spawnBlockRequirements)
     {
-        return NativeMethods.TablePtr->C3.hs_method_fe5dd91c((void*)region.Handle, (void*)pos.Handle, materialToSpawnIn ?? default(byte), spawnBlockRequirements, materialToSpawnIn.HasValue) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_fe5dd91c((void*)region.Handle, (void*)pos.Handle, materialToSpawnIn ?? default(byte), spawnBlockRequirements, materialToSpawnIn.HasValue) != 0;
     }
 
     public nint getEntityTypeCache()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_dc60974a((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_dc60974a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry? getSpawnGroupRegistry()
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_db311ff4((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_db311ff4((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry((nint)__hs_handle, false) : null;
     }
 
     public nint getSpawnPlacements()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8edb0f9c((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_8edb0f9c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup? getSpawnRules()
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_11b80481((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_11b80481((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup? getSpawnRulesMutable()
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a922f999((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a922f999((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings getSpawnSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings((nint)NativeMethods.TablePtr->C3.hs_method_ae9637ad((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings((nint)NativeMethods.TablePtr->C4.hs_method_ae9637ad((void*)__hosihikari_shim_handle), false);
     }
 
     public uint getSpawnableTickedMobCountPrevious()
     {
-        return NativeMethods.TablePtr->C3.hs_method_4e6892d0((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_4e6892d0((void*)__hosihikari_shim_handle);
     }
 
     public void incrementSpawnableTickedMob()
     {
-        NativeMethods.TablePtr->C3.hs_method_329b789f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_329b789f((void*)__hosihikari_shim_handle);
     }
 
     public void initializeServerSide(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager rpm, global::Hosihikari.Bindings.Bedrock.Interop.IWorldRegistriesProvider registries)
     {
-        NativeMethods.TablePtr->C3.hs_method_370580f1((void*)__hosihikari_shim_handle, (void*)rpm.Handle, (void*)registries.Handle);
+        NativeMethods.TablePtr->C4.hs_method_370580f1((void*)__hosihikari_shim_handle, (void*)rpm.Handle, (void*)registries.Handle);
     }
 
     public static bool isSpawnPositionOk(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules rules, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool validateDistToPlayer)
     {
-        return NativeMethods.TablePtr->C3.hs_method_510692a4((void*)rules.Handle, (void*)region.Handle, (void*)pos.Handle, validateDistToPlayer) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_510692a4((void*)rules.Handle, (void*)region.Handle, (void*)pos.Handle, validateDistToPlayer) != 0;
     }
 
     public void postProcessSpawnMobs(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, int xo, int zo, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        NativeMethods.TablePtr->C3.hs_method_c5b79865((void*)__hosihikari_shim_handle, (void*)region.Handle, xo, zo, (void*)random.Handle);
+        NativeMethods.TablePtr->C4.hs_method_c5b79865((void*)__hosihikari_shim_handle, (void*)region.Handle, xo, zo, (void*)random.Handle);
     }
 
     public void setSpawnSettings(global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings spawnSettings)
     {
-        NativeMethods.TablePtr->C3.hs_method_326f89de((void*)__hosihikari_shim_handle, (void*)spawnSettings.Handle);
+        NativeMethods.TablePtr->C4.hs_method_326f89de((void*)__hosihikari_shim_handle, (void*)spawnSettings.Handle);
     }
 
     public void spawnForChunk(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData arg1, global::Hosihikari.Bindings.Bedrock.Interop.br.spawn.State arg2, int[] arg3, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg4)
     {
         fixed (int* __hs_vectorData3 = arg3)
         {
-            NativeMethods.TablePtr->C3.hs_method_37c2c6e5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg4.Handle, __hs_vectorData3, (nuint)(arg3?.Length ?? 0));
+            NativeMethods.TablePtr->C4.hs_method_37c2c6e5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg4.Handle, __hs_vectorData3, (nuint)(arg3?.Length ?? 0));
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemActor? spawnItem(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack inst, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int throwTime)
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a168a6f3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)inst.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, throwTime);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_a168a6f3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)inst.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, throwTime);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemActor((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Mob? spawnMob(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool naturalSpawn, bool surface, bool fromSpawner)
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_023d357b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, naturalSpawn, surface, fromSpawner);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_023d357b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)pos.Handle, naturalSpawn, surface, fromSpawner);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Mob((nint)__hs_handle, false) : null;
     }
 
@@ -182,23 +182,23 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
 
     public void spawnMobsForChunkGeneration(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.Biome arg1, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos arg2, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg3)
     {
-        NativeMethods.TablePtr->C3.hs_method_9976fca5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg3.Handle);
+        NativeMethods.TablePtr->C4.hs_method_9976fca5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, (void*)arg3.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawnProjectile(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Actor? spawner, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 direction)
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_fd489869((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)position.Handle, (void*)direction.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fd489869((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)(spawner?.Handle ?? 0), (void*)position.Handle, (void*)direction.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkVolumeData levelChunkVolumeData, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)
     {
-        NativeMethods.TablePtr->C3.hs_method_477e6206((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)levelChunkVolumeData.Handle, (void*)chunkPos.Handle);
+        NativeMethods.TablePtr->C4.hs_method_477e6206((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)levelChunkVolumeData.Handle, (void*)chunkPos.Handle);
     }
 
     public void tickMobCount()
     {
-        NativeMethods.TablePtr->C3.hs_method_715ebfa1((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_715ebfa1((void*)__hosihikari_shim_handle);
     }
 
 
@@ -208,7 +208,7 @@ public sealed unsafe partial class Spawner : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f6c57bb7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_f6c57bb7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

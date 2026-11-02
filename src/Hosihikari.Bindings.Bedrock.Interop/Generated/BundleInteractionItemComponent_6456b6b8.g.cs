@@ -40,19 +40,19 @@ public sealed unsafe partial class BundleInteractionItemComponent : global::Syst
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_a9025e4d();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_a9025e4d();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_d5271589((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_d5271589((void*)ctx.Handle);
     }
 
     public int mNumViewableSlots
     {
-        get => NativeMethods.TablePtr->C3.hs_get_36c91e6f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_36c91e6f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_36c91e6f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_36c91e6f((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -61,7 +61,7 @@ public sealed unsafe partial class BundleInteractionItemComponent : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_6456b6b8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_6456b6b8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

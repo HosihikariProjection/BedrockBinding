@@ -40,7 +40,7 @@ public sealed unsafe partial class IPlayerData : global::System.IDisposable
 
     public static IPlayerData Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_889c8a89((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_889c8a89((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class IPlayerData : global::System.IDisposable
 
     public bool isAbilityEnabled(sbyte ability)
     {
-        return NativeMethods.TablePtr->C2.hs_method_47723007((void*)__hosihikari_shim_handle, ability) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_47723007((void*)__hosihikari_shim_handle, ability) != 0;
     }
 
     public bool isExternalPlayerCommunicationAllowed()
     {
-        return NativeMethods.TablePtr->C2.hs_method_0eb8b372((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_0eb8b372((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isOperator()
     {
-        return NativeMethods.TablePtr->C2.hs_method_bf81c8d2((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_bf81c8d2((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isTeacher()
     {
-        return NativeMethods.TablePtr->C2.hs_method_c6ac67e4((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_c6ac67e4((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class IPlayerData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0bacc545((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0bacc545((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

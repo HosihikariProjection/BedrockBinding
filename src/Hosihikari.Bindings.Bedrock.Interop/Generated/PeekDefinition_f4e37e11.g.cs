@@ -40,7 +40,7 @@ public sealed unsafe partial class PeekDefinition : global::System.IDisposable
 
     public static PeekDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_cae2c36d();
+        var handle = NativeMethods.TablePtr->C3.hs_create_cae2c36d();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PeekDefinition : global::System.IDisposable
 
     public static PeekDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.PeekDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f1ca17ad((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_f1ca17ad((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,35 +62,35 @@ public sealed unsafe partial class PeekDefinition : global::System.IDisposable
 
     public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
     {
-        NativeMethods.TablePtr->C2.hs_method_df1b45f0(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C3.hs_method_df1b45f0(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_407c3f5d((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_407c3f5d((void*)__hosihikari_shim_handle, (void*)entity.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk24872a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_eefbd209((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_eefbd209((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk60915a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_876bc643((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_876bc643((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka8083b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4dabe0e8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4dabe0e8((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PeekDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PeekDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PeekDefinition((nint)NativeMethods.TablePtr->C2.hs_method_7560be4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PeekDefinition((nint)NativeMethods.TablePtr->C3.hs_method_7560be4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -99,7 +99,7 @@ public sealed unsafe partial class PeekDefinition : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f4e37e11((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f4e37e11((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

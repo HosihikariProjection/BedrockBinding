@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerRespawnRandomizer : global::System.IDis
 
     public static PlayerRespawnRandomizer Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerRespawnRandomizer arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_bbe11eb6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_bbe11eb6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,49 +52,49 @@ public sealed unsafe partial class PlayerRespawnRandomizer : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mPrimaryOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c50b6cbe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c50b6cbe((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPrimaryRandomizer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_06e923a5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_06e923a5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPrimaryScale_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_063497a3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_063497a3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRandom_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_12b678ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_12b678ef((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSecondaryRandomizer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_43f89936((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_43f89936((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnCenter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5df7a962((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5df7a962((void*)__hosihikari_shim_handle);
     }
 
     public uint mSpawnRadius
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c9622f05((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c9622f05((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c9622f05((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c9622f05((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mSquaredRadius
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9981fb0a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_9981fb0a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9981fb0a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_9981fb0a((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class PlayerRespawnRandomizer : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_ccab04b9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ccab04b9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,11 +40,11 @@ public sealed unsafe partial class IslandOperationNode
 
     public void __fillArea(nint operationNodeData, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d origin, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d size)
     {
-        NativeMethods.TablePtr->C1.hs_method_696f4675((void*)__hosihikari_shim_handle, (void*)operationNodeData, (void*)origin.Handle, (void*)size.Handle);
+        NativeMethods.TablePtr->C2.hs_method_696f4675((void*)__hosihikari_shim_handle, (void*)operationNodeData, (void*)origin.Handle, (void*)size.Handle);
     }
 
     public void _fillArea(nint operationNodeData, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d origin, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d size)
     {
-        NativeMethods.TablePtr->C1.hs_method_bffdb176((void*)__hosihikari_shim_handle, (void*)operationNodeData, (void*)origin.Handle, (void*)size.Handle);
+        NativeMethods.TablePtr->C2.hs_method_bffdb176((void*)__hosihikari_shim_handle, (void*)operationNodeData, (void*)origin.Handle, (void*)size.Handle);
     }
 }

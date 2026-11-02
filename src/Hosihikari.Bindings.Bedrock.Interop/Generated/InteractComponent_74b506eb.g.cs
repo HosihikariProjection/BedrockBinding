@@ -40,7 +40,7 @@ public sealed unsafe partial class InteractComponent : global::System.IDisposabl
 
     public static InteractComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.InteractComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_9069b9ac((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_9069b9ac((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,29 +51,29 @@ public sealed unsafe partial class InteractComponent : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Interaction _runInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, nint desc, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C1.hs_method_970cbe3e((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)desc, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_970cbe3e((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)desc, (void*)player.Handle));
     }
 
     public static void _trySendEquipmentSlot(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, int equipmentSlot)
     {
-        NativeMethods.TablePtr->C1.hs_method_86ef6818((void*)owner.Handle, equipmentSlot);
+        NativeMethods.TablePtr->C2.hs_method_86ef6818((void*)owner.Handle, equipmentSlot);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C1.hs_method_e20f98d6((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_e20f98d6((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle));
     }
 
     public short mCooldownCounter
     {
-        get => NativeMethods.TablePtr->C1.hs_get_8744c2ef((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8744c2ef((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_8744c2ef((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_8744c2ef((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInteractions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_13cdef57((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_13cdef57((void*)__hosihikari_shim_handle);
     }
 
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class InteractComponent : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_74b506eb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_74b506eb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

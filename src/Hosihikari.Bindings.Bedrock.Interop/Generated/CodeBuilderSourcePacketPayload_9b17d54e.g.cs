@@ -40,19 +40,19 @@ public sealed unsafe partial class CodeBuilderSourcePacketPayload
 
     public byte mCategory
     {
-        get => NativeMethods.TablePtr->C0.hs_get_551526d7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_551526d7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_551526d7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_551526d7((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mCodeStatus
     {
-        get => NativeMethods.TablePtr->C0.hs_get_15958c14((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_15958c14((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_15958c14((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_15958c14((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mOperation
     {
-        get => NativeMethods.TablePtr->C0.hs_get_68e14d2c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_68e14d2c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_68e14d2c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_68e14d2c((void*)__hosihikari_shim_handle, value);
     }
 }

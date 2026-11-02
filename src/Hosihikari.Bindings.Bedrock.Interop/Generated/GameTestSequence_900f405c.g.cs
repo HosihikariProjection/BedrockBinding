@@ -40,7 +40,7 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
 
     public static GameTestSequence Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c7805ffc();
+        var handle = NativeMethods.TablePtr->C5.hs_create_c7805ffc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
 
     public static GameTestSequence Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_304c4be3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_304c4be3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,24 +71,24 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk10d998_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f18e11b1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f18e11b1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8825e0_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ecd53330((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ecd53330((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb23583_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9dbcbdfe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_9dbcbdfe((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence((nint)NativeMethods.TablePtr->C4.hs_method_2919694e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestSequence((nint)NativeMethods.TablePtr->C5.hs_method_2919694e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::optional<gametest::GameTestError>' is not supported.", false)]
@@ -105,12 +105,12 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
 
     public void thenFail(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError error)
     {
-        NativeMethods.TablePtr->C4.hs_method_ac421595((void*)__hosihikari_shim_handle, (void*)error.Handle);
+        NativeMethods.TablePtr->C5.hs_method_ac421595((void*)__hosihikari_shim_handle, (void*)error.Handle);
     }
 
     public void thenSucceed()
     {
-        NativeMethods.TablePtr->C4.hs_method_083382dc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_083382dc((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::optional<gametest::GameTestError>' is not supported.", false)]
@@ -123,7 +123,7 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
 
     public bool tickAndFailIfNotComplete(int currentTick)
     {
-        return NativeMethods.TablePtr->C4.hs_method_b6553adb((void*)__hosihikari_shim_handle, currentTick) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_b6553adb((void*)__hosihikari_shim_handle, currentTick) != 0;
     }
 
     public void Dispose()
@@ -132,7 +132,7 @@ public sealed unsafe partial class GameTestSequence : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_900f405c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_900f405c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

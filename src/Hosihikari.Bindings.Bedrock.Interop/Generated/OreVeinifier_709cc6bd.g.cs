@@ -40,12 +40,12 @@ public sealed unsafe partial class OreVeinifier : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifierNoises noiseSource)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_e84a6a81((void*)__hosihikari_shim_handle, (void*)noiseSource.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_e84a6a81((void*)__hosihikari_shim_handle, (void*)noiseSource.Handle);
     }
 
     public static OreVeinifier Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_55ef6af7();
+        var handle = NativeMethods.TablePtr->C3.hs_create_55ef6af7();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class OreVeinifier : global::System.IDisposable
 
     public static OreVeinifier Create(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6031bcc0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6031bcc0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,7 +67,7 @@ public sealed unsafe partial class OreVeinifier : global::System.IDisposable
 
     public static OreVeinifier Create(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifierNoises noiseSource)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_22111c9a((void*)noiseSource.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_22111c9a((void*)noiseSource.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,60 +79,60 @@ public sealed unsafe partial class OreVeinifier : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mCopperVein_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6cff8852((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6cff8852((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mIronVein_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0b421d69((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0b421d69((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoiseSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_00ad9d4d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_00ad9d4d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeinNoiseA_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dd94f0be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dd94f0be((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeinNoiseB_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_131d2e13((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_131d2e13((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeinNoiseInterpolatorA_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0509ccb5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0509ccb5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeinNoiseInterpolatorB_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_af54670e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_af54670e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeininessNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d196de22((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d196de22((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeininessNoiseInterpolator_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b77d4e88((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b77d4e88((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier((nint)NativeMethods.TablePtr->C2.hs_method_f9c3bdf8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifier((nint)NativeMethods.TablePtr->C3.hs_method_f9c3bdf8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -142,7 +142,7 @@ public sealed unsafe partial class OreVeinifier : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_709cc6bd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_709cc6bd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

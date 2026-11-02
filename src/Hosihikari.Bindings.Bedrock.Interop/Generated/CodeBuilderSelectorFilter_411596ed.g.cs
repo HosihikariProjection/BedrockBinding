@@ -40,7 +40,7 @@ public sealed unsafe partial class CodeBuilderSelectorFilter : global::System.ID
 
     public static CodeBuilderSelectorFilter Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilderSelectorFilter arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f5b3a70f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f5b3a70f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class CodeBuilderSelectorFilter : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mPropertyName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_a94da3f8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a94da3f8((void*)__hosihikari_shim_handle);
     }
 
     public byte mStatus
     {
-        get => NativeMethods.TablePtr->C0.hs_get_656985ac((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_656985ac((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_656985ac((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_656985ac((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class CodeBuilderSelectorFilter : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_411596ed((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_411596ed((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

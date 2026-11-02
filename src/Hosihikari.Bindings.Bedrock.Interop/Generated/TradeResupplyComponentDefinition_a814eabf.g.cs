@@ -40,7 +40,7 @@ public sealed unsafe partial class TradeResupplyComponentDefinition : global::Sy
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_c14a4509();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_c14a4509();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -50,7 +50,7 @@ public sealed unsafe partial class TradeResupplyComponentDefinition : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a814eabf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_a814eabf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

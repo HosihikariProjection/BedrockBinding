@@ -40,14 +40,14 @@ public sealed unsafe partial class PlayerInputModeComponent : global::System.IDi
 
     public uint mInputMode
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1ab9eb57((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_1ab9eb57((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1ab9eb57((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1ab9eb57((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mPlayMode
     {
-        get => NativeMethods.TablePtr->C2.hs_get_f9671a4f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_f9671a4f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f9671a4f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f9671a4f((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class PlayerInputModeComponent : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a502e369((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a502e369((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

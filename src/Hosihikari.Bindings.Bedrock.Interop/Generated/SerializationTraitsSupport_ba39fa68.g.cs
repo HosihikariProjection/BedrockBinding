@@ -40,7 +40,7 @@ public sealed unsafe partial class SerializationTraitsSupport : global::System.I
 
     public static SerializationTraitsSupport Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializationTraitsSupport arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_db35b457((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_db35b457((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class SerializationTraitsSupport : global::System.I
 
     public byte mSerializationTraits
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4c01023b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_4c01023b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_4c01023b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_4c01023b((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mSerializationTraitsOverride
     {
-        get => NativeMethods.TablePtr->C4.hs_get_45173185((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_45173185((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_45173185((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_45173185((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class SerializationTraitsSupport : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ba39fa68((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_ba39fa68((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

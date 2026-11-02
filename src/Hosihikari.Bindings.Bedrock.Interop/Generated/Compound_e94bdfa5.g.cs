@@ -40,12 +40,12 @@ public sealed unsafe partial class Compound : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_5d606d04((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_5d606d04((void*)__hosihikari_shim_handle);
     }
 
     public static Compound Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.BlockDescriptor_Nested.Compound arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c7444ef4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_c7444ef4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class Compound : global::System.IDisposable
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_62077c63((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_62077c63((void*)ctx.Handle);
     }
 
     public void fromString(string str)
@@ -74,26 +74,26 @@ public sealed unsafe partial class Compound : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(str, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C3.hs_method_aa9db64a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C4.hs_method_aa9db64a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public int mInt
     {
-        get => NativeMethods.TablePtr->C3.hs_get_9a8c018f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_9a8c018f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_9a8c018f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_9a8c018f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mString_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_19540d6b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_19540d6b((void*)__hosihikari_shim_handle);
     }
 
     public int mType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_4db6448f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_4db6448f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_4db6448f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_4db6448f((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -103,7 +103,7 @@ public sealed unsafe partial class Compound : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e94bdfa5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e94bdfa5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

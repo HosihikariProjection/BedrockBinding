@@ -40,7 +40,7 @@ public sealed unsafe partial class IReplayStatePolicy : global::System.IDisposab
 
     public static IReplayStatePolicy Create(global::Hosihikari.Bindings.Bedrock.Interop.IReplayStatePolicy arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_556ecbc0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_556ecbc0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,17 +51,17 @@ public sealed unsafe partial class IReplayStatePolicy : global::System.IDisposab
 
     public bool isReplayNeeded(byte result)
     {
-        return NativeMethods.TablePtr->C1.hs_method_5a0f07e8((void*)__hosihikari_shim_handle, result) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_5a0f07e8((void*)__hosihikari_shim_handle, result) != 0;
     }
 
     public void notifyOfExternalCorrection(ulong frame)
     {
-        NativeMethods.TablePtr->C1.hs_method_df4e85e1((void*)__hosihikari_shim_handle, frame);
+        NativeMethods.TablePtr->C2.hs_method_df4e85e1((void*)__hosihikari_shim_handle, frame);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket arg1, ulong arg2, byte arg3, bool arg4)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)NativeMethods.TablePtr->C1.hs_method_d5425b62((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3, arg4));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)NativeMethods.TablePtr->C2.hs_method_d5425b62((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3, arg4));
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class IReplayStatePolicy : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_14aeb264((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_14aeb264((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

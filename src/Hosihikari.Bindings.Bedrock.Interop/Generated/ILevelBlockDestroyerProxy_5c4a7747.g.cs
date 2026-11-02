@@ -40,7 +40,7 @@ public sealed unsafe partial class ILevelBlockDestroyerProxy : global::System.ID
 
     public static ILevelBlockDestroyerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelBlockDestroyerProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2f844604((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2f844604((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class ILevelBlockDestroyerProxy : global::System.ID
 
     public void dropResources(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actorContext)
     {
-        NativeMethods.TablePtr->C1.hs_method_dcedbed0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)(actorContext?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_dcedbed0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)(actorContext?.Handle ?? 0));
     }
 
     public void sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager levelEventManager, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        NativeMethods.TablePtr->C1.hs_method_cb4f9707((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
+        NativeMethods.TablePtr->C2.hs_method_cb4f9707((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class ILevelBlockDestroyerProxy : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_5c4a7747((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_5c4a7747((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

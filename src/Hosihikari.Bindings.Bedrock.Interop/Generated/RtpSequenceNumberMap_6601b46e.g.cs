@@ -40,12 +40,12 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
 
     public nint _ctor(ulong max_entries)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_fd163647((void*)__hosihikari_shim_handle, max_entries);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_fd163647((void*)__hosihikari_shim_handle, max_entries);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_b0b78131((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_b0b78131((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::RtpSequenceNumberMap::Info' is not supported.", false)]
@@ -54,12 +54,12 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
 
     public void InsertPacket(ushort sequence_number, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info info)
     {
-        NativeMethods.TablePtr->C4.hs_method_49dea792((void*)__hosihikari_shim_handle, sequence_number, (void*)info.Handle);
+        NativeMethods.TablePtr->C5.hs_method_49dea792((void*)__hosihikari_shim_handle, sequence_number, (void*)info.Handle);
     }
 
     public static RtpSequenceNumberMap Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4bebb97b();
+        var handle = NativeMethods.TablePtr->C5.hs_create_4bebb97b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +70,7 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
 
     public static RtpSequenceNumberMap Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0a9299c1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_0a9299c1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,7 +81,7 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
 
     public static RtpSequenceNumberMap Create(ulong max_entries)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_94335cd2(max_entries);
+        var handle = NativeMethods.TablePtr->C5.hs_create_94335cd2(max_entries);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -93,18 +93,18 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk76a293_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f444bf46((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f444bf46((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd49feb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_481d0eae((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_481d0eae((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap((nint)NativeMethods.TablePtr->C4.hs_method_2916ebd5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap((nint)NativeMethods.TablePtr->C5.hs_method_2916ebd5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -114,7 +114,7 @@ public sealed unsafe partial class RtpSequenceNumberMap : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6601b46e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6601b46e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

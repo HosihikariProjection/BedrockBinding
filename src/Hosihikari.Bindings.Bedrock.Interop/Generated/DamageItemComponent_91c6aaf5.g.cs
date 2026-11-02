@@ -40,24 +40,24 @@ public sealed unsafe partial class DamageItemComponent : global::System.IDisposa
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_d4df405c();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_d4df405c();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_6dbbd65e((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_6dbbd65e((void*)ctx.Handle);
     }
 
     public short mDamage
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a8a98ddb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a8a98ddb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a8a98ddb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a8a98ddb((void*)__hosihikari_shim_handle, value);
     }
 
     public static void upgrade(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.DamageItemComponent? oldComp, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_0.DamageItemComponent? newComp)
     {
-        NativeMethods.TablePtr->C3.hs_method_99861c5a((void*)(oldComp?.Handle ?? 0), (void*)(newComp?.Handle ?? 0), oldComp is not null, newComp is not null);
+        NativeMethods.TablePtr->C4.hs_method_99861c5a((void*)(oldComp?.Handle ?? 0), (void*)(newComp?.Handle ?? 0), oldComp is not null, newComp is not null);
     }
 
     public void Dispose()
@@ -66,7 +66,7 @@ public sealed unsafe partial class DamageItemComponent : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_91c6aaf5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_91c6aaf5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

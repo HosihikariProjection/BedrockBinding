@@ -53,7 +53,7 @@ public sealed unsafe partial class move_only_function_void__const_Json__Value___
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_61127d12((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_61127d12((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

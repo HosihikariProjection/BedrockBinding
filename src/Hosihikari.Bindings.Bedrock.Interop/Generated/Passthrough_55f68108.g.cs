@@ -40,7 +40,7 @@ public sealed unsafe partial class Passthrough : global::System.IDisposable
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_1aac0a3a((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_1aac0a3a((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
@@ -53,7 +53,7 @@ public sealed unsafe partial class Passthrough : global::System.IDisposable
 
     public static Passthrough Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.Passthrough arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_57bdb0c1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_57bdb0c1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class Passthrough : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_db9a33a1((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_db9a33a1((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
@@ -78,7 +78,7 @@ public sealed unsafe partial class Passthrough : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_55f68108((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_55f68108((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

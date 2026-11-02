@@ -40,7 +40,7 @@ public sealed unsafe partial class BlockCulling : global::System.IDisposable
 
     public static BlockCulling Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_60.BlockCulling arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0731e557((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_0731e557((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,19 +51,19 @@ public sealed unsafe partial class BlockCulling : global::System.IDisposable
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_70501c59((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_70501c59((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2920dcc0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2920dcc0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRules_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fda1d738((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_fda1d738((void*)__hosihikari_shim_handle);
     }
 
 
@@ -73,7 +73,7 @@ public sealed unsafe partial class BlockCulling : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d599ab43((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_d599ab43((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

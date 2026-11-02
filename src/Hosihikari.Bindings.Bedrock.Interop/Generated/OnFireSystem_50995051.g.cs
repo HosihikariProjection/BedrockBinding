@@ -40,7 +40,7 @@ public sealed unsafe partial class OnFireSystem : global::System.IDisposable
 
     public static OnFireSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.OnFireSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ef2a5f98((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ef2a5f98((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class OnFireSystem : global::System.IDisposable
 
     public static void _setOnFireImpl(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int seconds, bool isInWaterOrRain, int fireProtectionLevels)
     {
-        NativeMethods.TablePtr->C2.hs_method_03ec34e1((void*)actor.Handle, seconds, isInWaterOrRain, fireProtectionLevels);
+        NativeMethods.TablePtr->C3.hs_method_03ec34e1((void*)actor.Handle, seconds, isInWaterOrRain, fireProtectionLevels);
     }
 
     public static void setOnFire(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int seconds)
     {
-        NativeMethods.TablePtr->C2.hs_method_5c8e2658((void*)actor.Handle, seconds);
+        NativeMethods.TablePtr->C3.hs_method_5c8e2658((void*)actor.Handle, seconds);
     }
 
     public static void setOnFireNoEffects(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int seconds)
     {
-        NativeMethods.TablePtr->C2.hs_method_88feb3a9((void*)actor.Handle, seconds);
+        NativeMethods.TablePtr->C3.hs_method_88feb3a9((void*)actor.Handle, seconds);
     }
 
     public static void stopFire(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        NativeMethods.TablePtr->C2.hs_method_39a38c5f((void*)actor.Handle);
+        NativeMethods.TablePtr->C3.hs_method_39a38c5f((void*)actor.Handle);
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class OnFireSystem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_50995051((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_50995051((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

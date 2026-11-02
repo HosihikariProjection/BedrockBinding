@@ -40,32 +40,32 @@ public sealed unsafe partial class AudioSourceInterface : global::System.IDispos
 
     public void _AddSink(nint sink)
     {
-        NativeMethods.TablePtr->C4.hs_method_bfb959a1((void*)__hosihikari_shim_handle, (void*)sink);
+        NativeMethods.TablePtr->C5.hs_method_bfb959a1((void*)__hosihikari_shim_handle, (void*)sink);
     }
 
     public void _RegisterAudioObserver(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface_Nested.AudioObserver? observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_3140c7cc((void*)__hosihikari_shim_handle, (void*)(observer?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_3140c7cc((void*)__hosihikari_shim_handle, (void*)(observer?.Handle ?? 0));
     }
 
     public void _RemoveSink(nint sink)
     {
-        NativeMethods.TablePtr->C4.hs_method_3788d7af((void*)__hosihikari_shim_handle, (void*)sink);
+        NativeMethods.TablePtr->C5.hs_method_3788d7af((void*)__hosihikari_shim_handle, (void*)sink);
     }
 
     public void _SetVolume(double volume)
     {
-        NativeMethods.TablePtr->C4.hs_method_9e00cbcf((void*)__hosihikari_shim_handle, volume);
+        NativeMethods.TablePtr->C5.hs_method_9e00cbcf((void*)__hosihikari_shim_handle, volume);
     }
 
     public void _UnregisterAudioObserver(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface_Nested.AudioObserver? observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_a0a0f350((void*)__hosihikari_shim_handle, (void*)(observer?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_a0a0f350((void*)__hosihikari_shim_handle, (void*)(observer?.Handle ?? 0));
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_af6e02b6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_af6e02b6((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'const webrtc::AudioOptions' requires --link-carrier or --virtual-dispatch.", false)]
@@ -74,12 +74,12 @@ public sealed unsafe partial class AudioSourceInterface : global::System.IDispos
 
     public void AddSink(nint sink)
     {
-        NativeMethods.TablePtr->C4.hs_method_e43d8f35((void*)__hosihikari_shim_handle, (void*)sink);
+        NativeMethods.TablePtr->C5.hs_method_e43d8f35((void*)__hosihikari_shim_handle, (void*)sink);
     }
 
     public static AudioSourceInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c5bf8563((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_c5bf8563((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -90,22 +90,22 @@ public sealed unsafe partial class AudioSourceInterface : global::System.IDispos
 
     public void RegisterAudioObserver(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface_Nested.AudioObserver? observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_a144fb71((void*)__hosihikari_shim_handle, (void*)(observer?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_a144fb71((void*)__hosihikari_shim_handle, (void*)(observer?.Handle ?? 0));
     }
 
     public void RemoveSink(nint sink)
     {
-        NativeMethods.TablePtr->C4.hs_method_ad2e4d8a((void*)__hosihikari_shim_handle, (void*)sink);
+        NativeMethods.TablePtr->C5.hs_method_ad2e4d8a((void*)__hosihikari_shim_handle, (void*)sink);
     }
 
     public void SetVolume(double volume)
     {
-        NativeMethods.TablePtr->C4.hs_method_03ecd644((void*)__hosihikari_shim_handle, volume);
+        NativeMethods.TablePtr->C5.hs_method_03ecd644((void*)__hosihikari_shim_handle, volume);
     }
 
     public void UnregisterAudioObserver(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface_Nested.AudioObserver? observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_646554b4((void*)__hosihikari_shim_handle, (void*)(observer?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_646554b4((void*)__hosihikari_shim_handle, (void*)(observer?.Handle ?? 0));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'const webrtc::AudioOptions' requires --link-carrier or --virtual-dispatch.", false)]
@@ -119,7 +119,7 @@ public sealed unsafe partial class AudioSourceInterface : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c570e19d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_c570e19d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

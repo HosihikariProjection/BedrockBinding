@@ -40,7 +40,7 @@ public sealed unsafe partial class BlockCommandData : global::System.IDisposable
 
     public static BlockCommandData Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload_Nested.BlockCommandData arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_38b68d00((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_38b68d00((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class BlockCommandData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_dfb54bd8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_dfb54bd8((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsConditional
     {
-        get => NativeMethods.TablePtr->C0.hs_get_1b569756((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_1b569756((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_1b569756((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_1b569756((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort mMode
     {
-        get => NativeMethods.TablePtr->C0.hs_get_aa035dd1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_aa035dd1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_aa035dd1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_aa035dd1((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mRedstoneMode
     {
-        get => NativeMethods.TablePtr->C0.hs_get_8e2a3d31((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_8e2a3d31((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_8e2a3d31((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_8e2a3d31((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class BlockCommandData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_b2b6dc7c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_b2b6dc7c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

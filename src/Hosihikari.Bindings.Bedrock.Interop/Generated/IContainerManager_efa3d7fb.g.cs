@@ -40,7 +40,7 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
 
     public static IContainerManager Create(global::Hosihikari.Bindings.Bedrock.Interop.IContainerManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_962d1dd9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_962d1dd9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
 
     public void broadcastChanges()
     {
-        NativeMethods.TablePtr->C1.hs_method_f334cd1b((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_f334cd1b((void*)__hosihikari_shim_handle);
     }
 
     public sbyte getContainerId()
     {
-        return NativeMethods.TablePtr->C1.hs_method_0747ebbb((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_0747ebbb((void*)__hosihikari_shim_handle);
     }
 
     public sbyte getContainerType()
     {
-        return NativeMethods.TablePtr->C1.hs_method_8a83abae((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_8a83abae((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getFullContainerSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName name)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_0cdcbf0c((void*)__hosihikari_shim_handle, slot, (void*)name.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_0cdcbf0c((void*)__hosihikari_shim_handle, slot, (void*)name.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.", false)]
@@ -75,7 +75,7 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_fee45252((void*)__hosihikari_shim_handle, slot), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_fee45252((void*)__hosihikari_shim_handle, slot), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -84,32 +84,32 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
 
     public void serverInitItemStackIds()
     {
-        NativeMethods.TablePtr->C1.hs_method_97c1c9ec((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_97c1c9ec((void*)__hosihikari_shim_handle);
     }
 
     public void setContainerId(sbyte id)
     {
-        NativeMethods.TablePtr->C1.hs_method_d660590a((void*)__hosihikari_shim_handle, id);
+        NativeMethods.TablePtr->C2.hs_method_d660590a((void*)__hosihikari_shim_handle, id);
     }
 
     public void setContainerType(sbyte type)
     {
-        NativeMethods.TablePtr->C1.hs_method_ca7b683f((void*)__hosihikari_shim_handle, type);
+        NativeMethods.TablePtr->C2.hs_method_ca7b683f((void*)__hosihikari_shim_handle, type);
     }
 
     public void setData(int id, int value)
     {
-        NativeMethods.TablePtr->C1.hs_method_6c633b2b((void*)__hosihikari_shim_handle, id, value);
+        NativeMethods.TablePtr->C2.hs_method_6c633b2b((void*)__hosihikari_shim_handle, id, value);
     }
 
     public void setFullContainerSlot(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arg2, bool arg3)
     {
-        NativeMethods.TablePtr->C1.hs_method_5fcefa57((void*)__hosihikari_shim_handle, arg0, (void*)arg1.Handle, (void*)arg2.Handle, arg3);
+        NativeMethods.TablePtr->C2.hs_method_5fcefa57((void*)__hosihikari_shim_handle, arg0, (void*)arg1.Handle, (void*)arg2.Handle, arg3);
     }
 
     public void setSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool fromNetwork)
     {
-        NativeMethods.TablePtr->C1.hs_method_b519b246((void*)__hosihikari_shim_handle, slot, (void*)item.Handle, fromNetwork);
+        NativeMethods.TablePtr->C2.hs_method_b519b246((void*)__hosihikari_shim_handle, slot, (void*)item.Handle, fromNetwork);
     }
 
 
@@ -119,7 +119,7 @@ public sealed unsafe partial class IContainerManager : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_efa3d7fb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_efa3d7fb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

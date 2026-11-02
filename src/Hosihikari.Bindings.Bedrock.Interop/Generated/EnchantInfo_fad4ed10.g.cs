@@ -40,7 +40,7 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
 
     public static EnchantInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.SpecificEnchantFunction_Nested.EnchantInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6f7a063c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_6f7a063c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
 
     public byte enchantment
     {
-        get => NativeMethods.TablePtr->C3.hs_get_aaadd513((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_aaadd513((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_aaadd513((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_aaadd513((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint levelRange_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a7c48e32((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a7c48e32((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class EnchantInfo : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_fad4ed10((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_fad4ed10((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

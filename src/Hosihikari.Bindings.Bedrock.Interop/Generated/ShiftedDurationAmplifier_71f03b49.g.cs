@@ -40,12 +40,12 @@ public sealed unsafe partial class ShiftedDurationAmplifier : global::System.IDi
 
     public int _getTickInterval(int amplification)
     {
-        return NativeMethods.TablePtr->C3.hs_method_909d728d((void*)__hosihikari_shim_handle, amplification);
+        return NativeMethods.TablePtr->C4.hs_method_909d728d((void*)__hosihikari_shim_handle, amplification);
     }
 
     public bool _shouldBuff(int remainingDuration, int amplification)
     {
-        return NativeMethods.TablePtr->C3.hs_method_7787dfb5((void*)__hosihikari_shim_handle, remainingDuration, amplification) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_7787dfb5((void*)__hosihikari_shim_handle, remainingDuration, amplification) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class ShiftedDurationAmplifier : global::System.IDi
 
     public static ShiftedDurationAmplifier Create(global::Hosihikari.Bindings.Bedrock.Interop.ShiftedDurationAmplifier arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_bab4dd1c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_bab4dd1c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,18 +65,18 @@ public sealed unsafe partial class ShiftedDurationAmplifier : global::System.IDi
 
     public int getTickInterval(int amplification)
     {
-        return NativeMethods.TablePtr->C3.hs_method_5f100486((void*)__hosihikari_shim_handle, amplification);
+        return NativeMethods.TablePtr->C4.hs_method_5f100486((void*)__hosihikari_shim_handle, amplification);
     }
 
     public int mShiftedValue
     {
-        get => NativeMethods.TablePtr->C3.hs_get_210fc8bd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_210fc8bd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_210fc8bd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_210fc8bd((void*)__hosihikari_shim_handle, value);
     }
 
     public bool shouldBuff(int remainingDuration, int amplification)
     {
-        return NativeMethods.TablePtr->C3.hs_method_dc3a870a((void*)__hosihikari_shim_handle, remainingDuration, amplification) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_dc3a870a((void*)__hosihikari_shim_handle, remainingDuration, amplification) != 0;
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class ShiftedDurationAmplifier : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_71f03b49((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_71f03b49((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

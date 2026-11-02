@@ -44,7 +44,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public bool _AddIceCandidate(nint ice_candidate)
     {
-        return NativeMethods.TablePtr->C4.hs_method_f0dea81b((void*)__hosihikari_shim_handle, (void*)ice_candidate) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_f0dea81b((void*)__hosihikari_shim_handle, (void*)ice_candidate) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::IceCandidate' has no generated wrapper.", false)]
@@ -66,13 +66,13 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(mid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C4.hs_method_45a323f1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)candidate);
+            NativeMethods.TablePtr->C5.hs_method_45a323f1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)candidate);
         }
     }
 
     public bool _AddStream(nint local_stream)
     {
-        return NativeMethods.TablePtr->C4.hs_method_b7c7b2b4((void*)__hosihikari_shim_handle, (void*)local_stream) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_b7c7b2b4((void*)__hosihikari_shim_handle, (void*)local_stream) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::RTCErrorOr<webrtc::scoped_refptr<webrtc::RtpSenderInterface>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -105,17 +105,17 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _ClearStatsCache()
     {
-        NativeMethods.TablePtr->C4.hs_method_acc3c042((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_acc3c042((void*)__hosihikari_shim_handle);
     }
 
     public void _Close()
     {
-        NativeMethods.TablePtr->C4.hs_method_a64b0cea((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_a64b0cea((void*)__hosihikari_shim_handle);
     }
 
     public void _CreateAnswer(nint observer, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCOfferAnswerOptions options)
     {
-        NativeMethods.TablePtr->C4.hs_method_4ffbf56d((void*)__hosihikari_shim_handle, (void*)observer, (void*)options.Handle);
+        NativeMethods.TablePtr->C5.hs_method_4ffbf56d((void*)__hosihikari_shim_handle, (void*)observer, (void*)options.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::RTCErrorOr<webrtc::scoped_refptr<webrtc::DataChannelInterface>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -137,13 +137,13 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(mid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_0c5ade44((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_0c5ade44((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public void _CreateOffer(nint observer, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCOfferAnswerOptions options)
     {
-        NativeMethods.TablePtr->C4.hs_method_9b910275((void*)__hosihikari_shim_handle, (void*)observer, (void*)options.Handle);
+        NativeMethods.TablePtr->C5.hs_method_9b910275((void*)__hosihikari_shim_handle, (void*)observer, (void*)options.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::RtpSenderInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -152,7 +152,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _DestroyDataChannelTransport(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError error)
     {
-        NativeMethods.TablePtr->C4.hs_method_566389f4((void*)__hosihikari_shim_handle, (void*)error.Handle);
+        NativeMethods.TablePtr->C5.hs_method_566389f4((void*)__hosihikari_shim_handle, (void*)error.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'webrtc::AudioDeviceModule::Stats' is not supported.", false)]
@@ -161,17 +161,17 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats _GetCallStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_8a5ca2b6((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)NativeMethods.TablePtr->C5.hs_method_8a5ca2b6((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration _GetConfiguration()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)NativeMethods.TablePtr->C4.hs_method_ac34ecd7((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)NativeMethods.TablePtr->C5.hs_method_ac34ecd7((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions _GetCryptoOptions()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C4.hs_method_96307c03((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C5.hs_method_96307c03((void*)__hosihikari_shim_handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'webrtc::DataChannelStats' is not supported.", false)]
@@ -193,13 +193,13 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(transport_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_d79a81ba((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)certificate) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_d79a81ba((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)certificate) != 0;
         }
     }
 
     public nint _GetNetworkController()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_cb847d6f((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_cb847d6f((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'webrtc::CandidateStats' is not supported.", false)]
@@ -217,7 +217,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
     public int? _GetSctpSslRole_n()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_fa9a07da((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_fa9a07da((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
@@ -244,18 +244,18 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(content_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_db2370ab((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)role) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_db2370ab((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)role) != 0;
         }
     }
 
     public bool _GetStats(nint observer, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaStreamTrackInterface? track, int level)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ac60b16f((void*)__hosihikari_shim_handle, (void*)observer, (void*)(track?.Handle ?? 0), level) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_ac60b16f((void*)__hosihikari_shim_handle, (void*)observer, (void*)(track?.Handle ?? 0), level) != 0;
     }
 
     public void _GetStats(nint callback)
     {
-        NativeMethods.TablePtr->C4.hs_method_63380f69((void*)__hosihikari_shim_handle, (void*)callback);
+        NativeMethods.TablePtr->C5.hs_method_63380f69((void*)__hosihikari_shim_handle, (void*)callback);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::RtpReceiverInterface>' is not a known bindable declaration.", false)]
@@ -293,18 +293,18 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(content_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_d80195ba((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_d80195ba((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public bool _IsClosed()
     {
-        return NativeMethods.TablePtr->C4.hs_method_a6aefbf0((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_a6aefbf0((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _IsUnifiedPlan()
     {
-        return NativeMethods.TablePtr->C4.hs_method_95f141fc((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_95f141fc((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -326,23 +326,23 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(content_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_0ba82140((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_0ba82140((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public void _NoteDataAddedEvent()
     {
-        NativeMethods.TablePtr->C4.hs_method_cf6f61b4((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_cf6f61b4((void*)__hosihikari_shim_handle);
     }
 
     public void _NoteUsageEvent(int @event)
     {
-        NativeMethods.TablePtr->C4.hs_method_ae87c315((void*)__hosihikari_shim_handle, @event);
+        NativeMethods.TablePtr->C5.hs_method_ae87c315((void*)__hosihikari_shim_handle, @event);
     }
 
     public void _OnSctpDataChannelStateChanged(int channel_id, int state)
     {
-        NativeMethods.TablePtr->C4.hs_method_7c3d855f((void*)__hosihikari_shim_handle, channel_id, state);
+        NativeMethods.TablePtr->C5.hs_method_7c3d855f((void*)__hosihikari_shim_handle, channel_id, state);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::DtlsTransport>' is not a known bindable declaration.", false)]
@@ -351,12 +351,12 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _ReconfigureBandwidthEstimation(nint settings)
     {
-        NativeMethods.TablePtr->C4.hs_method_8b824d0b((void*)__hosihikari_shim_handle, (void*)settings);
+        NativeMethods.TablePtr->C5.hs_method_8b824d0b((void*)__hosihikari_shim_handle, (void*)settings);
     }
 
     public bool _RemoveIceCandidate(nint candidate)
     {
-        return NativeMethods.TablePtr->C4.hs_method_3dbd4e56((void*)__hosihikari_shim_handle, (void*)candidate) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_3dbd4e56((void*)__hosihikari_shim_handle, (void*)candidate) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::Candidate' is not supported.", false)]
@@ -365,7 +365,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _RemoveStream(nint local_stream)
     {
-        NativeMethods.TablePtr->C4.hs_method_b835c3a3((void*)__hosihikari_shim_handle, (void*)local_stream);
+        NativeMethods.TablePtr->C5.hs_method_b835c3a3((void*)__hosihikari_shim_handle, (void*)local_stream);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::RtpSenderInterface>' is not a known bindable declaration.", false)]
@@ -374,12 +374,12 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _ReportSdpBundleUsage(nint remote_description)
     {
-        NativeMethods.TablePtr->C4.hs_method_7c2eb8d6((void*)__hosihikari_shim_handle, (void*)remote_description);
+        NativeMethods.TablePtr->C5.hs_method_7c2eb8d6((void*)__hosihikari_shim_handle, (void*)remote_description);
     }
 
     public void _RestartIce()
     {
-        NativeMethods.TablePtr->C4.hs_method_e5bc75ff((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_e5bc75ff((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::PeerConnectionObserver *) &&>' is not supported.", false)]
@@ -388,22 +388,22 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _SetAudioPlayout(bool playout)
     {
-        NativeMethods.TablePtr->C4.hs_method_18c11a81((void*)__hosihikari_shim_handle, playout);
+        NativeMethods.TablePtr->C5.hs_method_18c11a81((void*)__hosihikari_shim_handle, playout);
     }
 
     public void _SetAudioRecording(bool recording)
     {
-        NativeMethods.TablePtr->C4.hs_method_a0c9adbe((void*)__hosihikari_shim_handle, recording);
+        NativeMethods.TablePtr->C5.hs_method_a0c9adbe((void*)__hosihikari_shim_handle, recording);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError _SetBitrate(nint bitrate)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_4e678e04((void*)__hosihikari_shim_handle, (void*)bitrate));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_4e678e04((void*)__hosihikari_shim_handle, (void*)bitrate));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError _SetConfiguration(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration configuration)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_89dba21e((void*)__hosihikari_shim_handle, (void*)configuration.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_89dba21e((void*)__hosihikari_shim_handle, (void*)configuration.Handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::DataChannelEventObserverInterface' has no generated wrapper.", false)]
@@ -412,7 +412,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _SetIceConnectionState(int new_state)
     {
-        NativeMethods.TablePtr->C4.hs_method_76ff564a((void*)__hosihikari_shim_handle, new_state);
+        NativeMethods.TablePtr->C5.hs_method_76ff564a((void*)__hosihikari_shim_handle, new_state);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::SessionDescriptionInterface' has no generated wrapper.", false)]
@@ -421,12 +421,12 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _SetLocalDescription_3ce8db65(nint observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_3ce8db65((void*)__hosihikari_shim_handle, (void*)observer);
+        NativeMethods.TablePtr->C5.hs_method_3ce8db65((void*)__hosihikari_shim_handle, (void*)observer);
     }
 
     public void _SetLocalDescription_d019a24c(nint observer, nint desc_ptr)
     {
-        NativeMethods.TablePtr->C4.hs_method_d019a24c((void*)__hosihikari_shim_handle, (void*)observer, (void*)desc_ptr);
+        NativeMethods.TablePtr->C5.hs_method_d019a24c((void*)__hosihikari_shim_handle, (void*)observer, (void*)desc_ptr);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::SetLocalDescriptionObserverInterface>' is not a known bindable declaration.", false)]
@@ -439,17 +439,17 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void _SetRemoteDescription_eea88fdd(nint observer, nint desc_ptr)
     {
-        NativeMethods.TablePtr->C4.hs_method_eea88fdd((void*)__hosihikari_shim_handle, (void*)observer, (void*)desc_ptr);
+        NativeMethods.TablePtr->C5.hs_method_eea88fdd((void*)__hosihikari_shim_handle, (void*)observer, (void*)desc_ptr);
     }
 
     public bool _ShouldFireNegotiationNeededEvent(uint event_id)
     {
-        return NativeMethods.TablePtr->C4.hs_method_d66e7703((void*)__hosihikari_shim_handle, event_id) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_d66e7703((void*)__hosihikari_shim_handle, event_id) != 0;
     }
 
     public bool _SrtpRequired()
     {
-        return NativeMethods.TablePtr->C4.hs_method_68de1f1b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_68de1f1b((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::RtcEventLogOutput' has no generated wrapper.", false)]
@@ -462,35 +462,35 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError _StartSctpTransport(nint options)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_bc246c86((void*)__hosihikari_shim_handle, (void*)options));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_bc246c86((void*)__hosihikari_shim_handle, (void*)options));
     }
 
     public void _StopRtcEventLog()
     {
-        NativeMethods.TablePtr->C4.hs_method_e23a979c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_e23a979c((void*)__hosihikari_shim_handle);
     }
 
     public bool _ValidateBundleSettings(nint desc, nint bundle_groups_by_mid)
     {
-        return NativeMethods.TablePtr->C4.hs_method_d4182a0b((void*)__hosihikari_shim_handle, (void*)desc, (void*)bundle_groups_by_mid) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_d4182a0b((void*)__hosihikari_shim_handle, (void*)desc, (void*)bundle_groups_by_mid) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call? _call_ptr()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f01b679e((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_f01b679e((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call((nint)__hs_handle, false) : null;
     }
 
     public bool? _can_trickle_ice_candidates()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_252c6f71((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_252c6f71((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value != 0 : (bool?)null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration? _configuration()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5e862920((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_5e862920((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)__hs_handle, false) : null;
     }
 
@@ -500,57 +500,57 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public nint _current_local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_2a0fd648((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_2a0fd648((void*)__hosihikari_shim_handle);
     }
 
     public nint _current_remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_b221d19b((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_b221d19b((void*)__hosihikari_shim_handle);
     }
 
     public nint _data_channel_controller()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_46f914ff((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_46f914ff((void*)__hosihikari_shim_handle);
     }
 
     public bool _dtls_enabled()
     {
-        return NativeMethods.TablePtr->C4.hs_method_bc516b97((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_bc516b97((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_eaaf1c25((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_eaaf1c25((void*)__hosihikari_shim_handle);
     }
 
     public int _ice_connection_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_22c1452b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_22c1452b((void*)__hosihikari_shim_handle);
     }
 
     public int _ice_connection_state_internal()
     {
-        return NativeMethods.TablePtr->C4.hs_method_8eb14b21((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_8eb14b21((void*)__hosihikari_shim_handle);
     }
 
     public int _ice_gathering_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_0c2edefa((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_0c2edefa((void*)__hosihikari_shim_handle);
     }
 
     public bool _initial_offerer()
     {
-        return NativeMethods.TablePtr->C4.hs_method_61a0f954((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_61a0f954((void*)__hosihikari_shim_handle) != 0;
     }
 
     public nint _legacy_stats()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1f621523((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_1f621523((void*)__hosihikari_shim_handle);
     }
 
     public nint _local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_28e36297((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_28e36297((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::StreamCollectionInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -559,48 +559,48 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public nint _message_handler()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_23397687((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_23397687((void*)__hosihikari_shim_handle);
     }
 
     public nint _network_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3915fb79((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_3915fb79((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options? _options()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e727f3fe((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_e727f3fe((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)__hs_handle, false) : null;
     }
 
     public nint _payload_type_picker()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_dc5a2ccf((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_dc5a2ccf((void*)__hosihikari_shim_handle);
     }
 
     public int _peer_connection_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_35e002b1((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_35e002b1((void*)__hosihikari_shim_handle);
     }
 
     public nint _pending_local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_fe6039fa((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_fe6039fa((void*)__hosihikari_shim_handle);
     }
 
     public nint _pending_remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1ac28379((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_1ac28379((void*)__hosihikari_shim_handle);
     }
 
     public nint _port_allocator()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_97d5c134((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_97d5c134((void*)__hosihikari_shim_handle);
     }
 
     public nint _remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_0f9c1df5((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_0f9c1df5((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::StreamCollectionInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -609,64 +609,64 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public nint _rtp_manager_432bef81()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_432bef81((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_432bef81((void*)__hosihikari_shim_handle);
     }
 
     public nint _rtp_manager_4950b97b()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_4950b97b((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_4950b97b((void*)__hosihikari_shim_handle);
     }
 
     public string? _sctp_mid()
     {
         var __hs_hasValue = false;
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_ad9728d9((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_ad9728d9((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
     }
 
     public string? _sctp_transport_name()
     {
         var __hs_hasValue = false;
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_2f724e73((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_2f724e73((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
     }
 
     public string _session_id()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_f2020f87((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_f2020f87((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public int _signaling_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_8122939c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_8122939c((void*)__hosihikari_shim_handle);
     }
 
     public nint _signaling_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d51661ff((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_d51661ff((void*)__hosihikari_shim_handle);
     }
 
     public int _standardized_ice_connection_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_2918dcea((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_2918dcea((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController? _transport_controller_n()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1f5fa4dc((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_1f5fa4dc((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController? _transport_controller_s()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_705a9be0((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_705a9be0((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false) : null;
     }
 
     public nint _trials()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_9f082dfa((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_9f082dfa((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -683,7 +683,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public nint _worker_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_79a012a8((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_79a012a8((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::Resource>' is not a known bindable declaration.", false)]
@@ -692,7 +692,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public bool AddIceCandidate(nint ice_candidate)
     {
-        return NativeMethods.TablePtr->C4.hs_method_52dbaf4e((void*)__hosihikari_shim_handle, (void*)ice_candidate) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_52dbaf4e((void*)__hosihikari_shim_handle, (void*)ice_candidate) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::IceCandidate' has no generated wrapper.", false)]
@@ -714,13 +714,13 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(mid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C4.hs_method_7fcd524f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)candidate);
+            NativeMethods.TablePtr->C5.hs_method_7fcd524f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)candidate);
         }
     }
 
     public bool AddStream(nint local_stream)
     {
-        return NativeMethods.TablePtr->C4.hs_method_e33d375a((void*)__hosihikari_shim_handle, (void*)local_stream) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_e33d375a((void*)__hosihikari_shim_handle, (void*)local_stream) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::RTCErrorOr<webrtc::scoped_refptr<webrtc::RtpSenderInterface>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -757,17 +757,17 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public bool CanAttemptDtlsStunPiggybacking()
     {
-        return NativeMethods.TablePtr->C4.hs_method_c7c97147((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_c7c97147((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void ClearStatsCache()
     {
-        NativeMethods.TablePtr->C4.hs_method_1e1a9ca2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_1e1a9ca2((void*)__hosihikari_shim_handle);
     }
 
     public void Close()
     {
-        NativeMethods.TablePtr->C4.hs_method_5cd8944e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_5cd8944e((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::PeerConnection>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -776,7 +776,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void CreateAnswer(nint observer, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCOfferAnswerOptions options)
     {
-        NativeMethods.TablePtr->C4.hs_method_e26ab68e((void*)__hosihikari_shim_handle, (void*)observer, (void*)options.Handle);
+        NativeMethods.TablePtr->C5.hs_method_e26ab68e((void*)__hosihikari_shim_handle, (void*)observer, (void*)options.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::RTCErrorOr<webrtc::scoped_refptr<webrtc::DataChannelInterface>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -798,13 +798,13 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(mid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_0fb18273((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_0fb18273((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public void CreateOffer(nint observer, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCOfferAnswerOptions options)
     {
-        NativeMethods.TablePtr->C4.hs_method_6da1039d((void*)__hosihikari_shim_handle, (void*)observer, (void*)options.Handle);
+        NativeMethods.TablePtr->C5.hs_method_6da1039d((void*)__hosihikari_shim_handle, (void*)observer, (void*)options.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::RtpSenderInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -813,7 +813,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void DestroyDataChannelTransport(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError error)
     {
-        NativeMethods.TablePtr->C4.hs_method_28bd5f83((void*)__hosihikari_shim_handle, (void*)error.Handle);
+        NativeMethods.TablePtr->C5.hs_method_28bd5f83((void*)__hosihikari_shim_handle, (void*)error.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::RtpTransceiverProxyWithInternal<webrtc::RtpTransceiver>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -826,17 +826,17 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats GetCallStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_06a7e84a((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)NativeMethods.TablePtr->C5.hs_method_06a7e84a((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration GetConfiguration()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)NativeMethods.TablePtr->C4.hs_method_f2cc68ea((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)NativeMethods.TablePtr->C5.hs_method_f2cc68ea((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions GetCryptoOptions()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C4.hs_method_a1f02cd9((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C5.hs_method_a1f02cd9((void*)__hosihikari_shim_handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'webrtc::DataChannelStats' is not supported.", false)]
@@ -858,13 +858,13 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(transport_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_dbebfd42((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)certificate) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_dbebfd42((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)certificate) != 0;
         }
     }
 
     public nint GetNetworkController()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5934ba15((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_5934ba15((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'webrtc::CandidateStats' is not supported.", false)]
@@ -882,7 +882,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
     public int? GetSctpSslRole_n()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_c6bce298((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_c6bce298((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
@@ -909,18 +909,18 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(content_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_384bbb59((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)role) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_384bbb59((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)role) != 0;
         }
     }
 
     public bool GetStats(nint observer, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaStreamTrackInterface? track, int level)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6887e330((void*)__hosihikari_shim_handle, (void*)observer, (void*)(track?.Handle ?? 0), level) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_6887e330((void*)__hosihikari_shim_handle, (void*)observer, (void*)(track?.Handle ?? 0), level) != 0;
     }
 
     public void GetStats(nint callback)
     {
-        NativeMethods.TablePtr->C4.hs_method_c877e710((void*)__hosihikari_shim_handle, (void*)callback);
+        NativeMethods.TablePtr->C5.hs_method_c877e710((void*)__hosihikari_shim_handle, (void*)callback);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::RtpReceiverInterface>' is not a known bindable declaration.", false)]
@@ -958,7 +958,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(content_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_7a3c6215((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_7a3c6215((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
@@ -968,18 +968,18 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController? InitializeTransportController_n(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration configuration)
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b16b453c((void*)__hosihikari_shim_handle, (void*)configuration.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_b16b453c((void*)__hosihikari_shim_handle, (void*)configuration.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false) : null;
     }
 
     public bool IsClosed()
     {
-        return NativeMethods.TablePtr->C4.hs_method_904e0c3b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_904e0c3b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool IsUnifiedPlan()
     {
-        return NativeMethods.TablePtr->C4.hs_method_31a53a67((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_31a53a67((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -1001,28 +1001,28 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(content_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_9204fa41((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_9204fa41((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public void NoteDataAddedEvent()
     {
-        NativeMethods.TablePtr->C4.hs_method_89a02ee7((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_89a02ee7((void*)__hosihikari_shim_handle);
     }
 
     public void NoteUsageEvent(int @event)
     {
-        NativeMethods.TablePtr->C4.hs_method_e8dc7546((void*)__hosihikari_shim_handle, @event);
+        NativeMethods.TablePtr->C5.hs_method_e8dc7546((void*)__hosihikari_shim_handle, @event);
     }
 
     public void OnIceGatheringChange(int new_state)
     {
-        NativeMethods.TablePtr->C4.hs_method_806d7125((void*)__hosihikari_shim_handle, new_state);
+        NativeMethods.TablePtr->C5.hs_method_806d7125((void*)__hosihikari_shim_handle, new_state);
     }
 
     public void OnSctpDataChannelStateChanged(int channel_id, int state)
     {
-        NativeMethods.TablePtr->C4.hs_method_48fee404((void*)__hosihikari_shim_handle, channel_id, state);
+        NativeMethods.TablePtr->C5.hs_method_48fee404((void*)__hosihikari_shim_handle, channel_id, state);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::DtlsTransport>' is not a known bindable declaration.", false)]
@@ -1035,12 +1035,12 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void OnTransportControllerConnectionState(int state)
     {
-        NativeMethods.TablePtr->C4.hs_method_963ef277((void*)__hosihikari_shim_handle, state);
+        NativeMethods.TablePtr->C5.hs_method_963ef277((void*)__hosihikari_shim_handle, state);
     }
 
     public static PeerConnection Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_5943865f();
+        var handle = NativeMethods.TablePtr->C5.hs_create_5943865f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -1051,7 +1051,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public static PeerConnection Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c64707ab((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_c64707ab((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -1066,12 +1066,12 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void ReconfigureBandwidthEstimation(nint settings)
     {
-        NativeMethods.TablePtr->C4.hs_method_b23e3d2e((void*)__hosihikari_shim_handle, (void*)settings);
+        NativeMethods.TablePtr->C5.hs_method_b23e3d2e((void*)__hosihikari_shim_handle, (void*)settings);
     }
 
     public bool RemoveIceCandidate(nint candidate)
     {
-        return NativeMethods.TablePtr->C4.hs_method_a83a0d1b((void*)__hosihikari_shim_handle, (void*)candidate) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_a83a0d1b((void*)__hosihikari_shim_handle, (void*)candidate) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::Candidate' is not supported.", false)]
@@ -1080,7 +1080,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void RemoveStream(nint local_stream)
     {
-        NativeMethods.TablePtr->C4.hs_method_4af9ca36((void*)__hosihikari_shim_handle, (void*)local_stream);
+        NativeMethods.TablePtr->C5.hs_method_4af9ca36((void*)__hosihikari_shim_handle, (void*)local_stream);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::RtpSenderInterface>' is not a known bindable declaration.", false)]
@@ -1089,17 +1089,17 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void ReportFirstConnectUsageMetrics()
     {
-        NativeMethods.TablePtr->C4.hs_method_5fe96312((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_5fe96312((void*)__hosihikari_shim_handle);
     }
 
     public static void ReportNegotiatedCiphers(bool dtls_enabled, nint stats, nint media_types)
     {
-        NativeMethods.TablePtr->C4.hs_method_430dca8f(dtls_enabled, (void*)stats, (void*)media_types);
+        NativeMethods.TablePtr->C5.hs_method_430dca8f(dtls_enabled, (void*)stats, (void*)media_types);
     }
 
     public void ReportSdpBundleUsage(nint remote_description)
     {
-        NativeMethods.TablePtr->C4.hs_method_454c6760((void*)__hosihikari_shim_handle, (void*)remote_description);
+        NativeMethods.TablePtr->C5.hs_method_454c6760((void*)__hosihikari_shim_handle, (void*)remote_description);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::scoped_refptr<webrtc::RtpTransceiverProxyWithInternal<webrtc::RtpTransceiver>>' is not supported.", false)]
@@ -1108,7 +1108,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void RestartIce()
     {
-        NativeMethods.TablePtr->C4.hs_method_8952c707((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_8952c707((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::PeerConnectionObserver *) &&>' is not supported.", false)]
@@ -1117,22 +1117,22 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void SetAudioPlayout(bool playout)
     {
-        NativeMethods.TablePtr->C4.hs_method_5e8c6574((void*)__hosihikari_shim_handle, playout);
+        NativeMethods.TablePtr->C5.hs_method_5e8c6574((void*)__hosihikari_shim_handle, playout);
     }
 
     public void SetAudioRecording(bool recording)
     {
-        NativeMethods.TablePtr->C4.hs_method_41d741e0((void*)__hosihikari_shim_handle, recording);
+        NativeMethods.TablePtr->C5.hs_method_41d741e0((void*)__hosihikari_shim_handle, recording);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetBitrate(nint bitrate)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_251051c3((void*)__hosihikari_shim_handle, (void*)bitrate));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_251051c3((void*)__hosihikari_shim_handle, (void*)bitrate));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetConfiguration(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration configuration)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_d692ef9a((void*)__hosihikari_shim_handle, (void*)configuration.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_d692ef9a((void*)__hosihikari_shim_handle, (void*)configuration.Handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::DataChannelEventObserverInterface' has no generated wrapper.", false)]
@@ -1141,7 +1141,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void SetIceConnectionState(int new_state)
     {
-        NativeMethods.TablePtr->C4.hs_method_524c7097((void*)__hosihikari_shim_handle, new_state);
+        NativeMethods.TablePtr->C5.hs_method_524c7097((void*)__hosihikari_shim_handle, new_state);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::SessionDescriptionInterface' has no generated wrapper.", false)]
@@ -1150,12 +1150,12 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void SetLocalDescription_375c163e(nint observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_375c163e((void*)__hosihikari_shim_handle, (void*)observer);
+        NativeMethods.TablePtr->C5.hs_method_375c163e((void*)__hosihikari_shim_handle, (void*)observer);
     }
 
     public void SetLocalDescription_3af3b4db(nint observer, nint desc_ptr)
     {
-        NativeMethods.TablePtr->C4.hs_method_3af3b4db((void*)__hosihikari_shim_handle, (void*)observer, (void*)desc_ptr);
+        NativeMethods.TablePtr->C5.hs_method_3af3b4db((void*)__hosihikari_shim_handle, (void*)observer, (void*)desc_ptr);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::SetLocalDescriptionObserverInterface>' is not a known bindable declaration.", false)]
@@ -1168,7 +1168,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public void SetRemoteDescription_669452be(nint observer, nint desc_ptr)
     {
-        NativeMethods.TablePtr->C4.hs_method_669452be((void*)__hosihikari_shim_handle, (void*)observer, (void*)desc_ptr);
+        NativeMethods.TablePtr->C5.hs_method_669452be((void*)__hosihikari_shim_handle, (void*)observer, (void*)desc_ptr);
     }
 
     public void SetSctpTransportName(string sctp_transport_name)
@@ -1186,7 +1186,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(sctp_transport_name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C4.hs_method_8c5f9897((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C5.hs_method_8c5f9897((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -1206,19 +1206,19 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(mid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C4.hs_method_25729f8b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            var __hs_view = NativeMethods.TablePtr->C5.hs_method_25729f8b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
             return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
         }
     }
 
     public bool ShouldFireNegotiationNeededEvent(uint event_id)
     {
-        return NativeMethods.TablePtr->C4.hs_method_a01094a9((void*)__hosihikari_shim_handle, event_id) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_a01094a9((void*)__hosihikari_shim_handle, event_id) != 0;
     }
 
     public bool SrtpRequired()
     {
-        return NativeMethods.TablePtr->C4.hs_method_c9851526((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_c9851526((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::RtcEventLogOutput' has no generated wrapper.", false)]
@@ -1231,91 +1231,91 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError StartSctpTransport(nint options)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_28f0e6ff((void*)__hosihikari_shim_handle, (void*)options));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_28f0e6ff((void*)__hosihikari_shim_handle, (void*)options));
     }
 
     public void StopRtcEventLog()
     {
-        NativeMethods.TablePtr->C4.hs_method_8bfd1411((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_8bfd1411((void*)__hosihikari_shim_handle);
     }
 
     public void TeardownDataChannelTransport_n(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError error)
     {
-        NativeMethods.TablePtr->C4.hs_method_1326dc55((void*)__hosihikari_shim_handle, (void*)error.Handle);
+        NativeMethods.TablePtr->C5.hs_method_1326dc55((void*)__hosihikari_shim_handle, (void*)error.Handle);
     }
 
     public bool ValidateBundleSettings(nint desc, nint bundle_groups_by_mid)
     {
-        return NativeMethods.TablePtr->C4.hs_method_fc8971cc((void*)__hosihikari_shim_handle, (void*)desc, (void*)bundle_groups_by_mid) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_fc8971cc((void*)__hosihikari_shim_handle, (void*)desc, (void*)bundle_groups_by_mid) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call? call_ptr()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4535d68d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_4535d68d((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call((nint)__hs_handle, false) : null;
     }
 
     public bool? can_trickle_ice_candidates()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_80222227((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_80222227((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value != 0 : (bool?)null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration? configuration()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b4faaaa8((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_b4faaaa8((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.RTCConfiguration((nint)__hs_handle, false) : null;
     }
 
     public nint current_local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_956cc215((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_956cc215((void*)__hosihikari_shim_handle);
     }
 
     public nint current_remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_c7dfc578((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_c7dfc578((void*)__hosihikari_shim_handle);
     }
 
     public nint data_channel_controller()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_dccae967((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_dccae967((void*)__hosihikari_shim_handle);
     }
 
     public bool dtls_enabled()
     {
-        return NativeMethods.TablePtr->C4.hs_method_5785bb5f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_5785bb5f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int ice_connection_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_ce4f0883((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_ce4f0883((void*)__hosihikari_shim_handle);
     }
 
     public int ice_connection_state_internal()
     {
-        return NativeMethods.TablePtr->C4.hs_method_1e7f805b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_1e7f805b((void*)__hosihikari_shim_handle);
     }
 
     public int ice_gathering_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_c665c9d6((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_c665c9d6((void*)__hosihikari_shim_handle);
     }
 
     public bool initial_offerer()
     {
-        return NativeMethods.TablePtr->C4.hs_method_8ff82f22((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_8ff82f22((void*)__hosihikari_shim_handle) != 0;
     }
 
     public nint legacy_stats()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_cb3474ce((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_cb3474ce((void*)__hosihikari_shim_handle);
     }
 
     public nint local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_2fc71933((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_2fc71933((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::StreamCollectionInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -1325,286 +1325,286 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk187900_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a87666b8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a87666b8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk33130d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b10d82e5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b10d82e5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk33a97a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2fa5f2a5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2fa5f2a5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk351554_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6630ee9c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_6630ee9c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk396ba3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8186cf65((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_8186cf65((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3ef1df_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_099488b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_099488b6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk438159_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ed60103a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ed60103a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk43996c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4ca9d088((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_4ca9d088((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk46d428_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_67e0762d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_67e0762d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk471b7f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e51b71fa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e51b71fa((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4bedc5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_65c8957d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_65c8957d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5a676c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8bfff4bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_8bfff4bd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5eba9b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_66c1aeac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_66c1aeac((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk71e5e5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_dc4ae72d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_dc4ae72d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk74e9a5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8f0367a2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_8f0367a2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk754baf_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_cdae85c7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_cdae85c7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7682e5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1725e4a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_1725e4a0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8b7b48_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_72198a78((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_72198a78((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8c02af_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e3866d97((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e3866d97((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk93e1d2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_01638717((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_01638717((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk990d1e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_55a5f59b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_55a5f59b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9fe4a4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_71642bfd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_71642bfd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka29f89_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ccbf87a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ccbf87a0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka7df9e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_62f7e909((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_62f7e909((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka964f1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a245fb24((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a245fb24((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkaa09b8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_27a428ad((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_27a428ad((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb0461d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_010d702c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_010d702c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbb5b66_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_eec58659((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_eec58659((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbc5968_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1c085dd0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_1c085dd0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc0221b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6e664a07((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_6e664a07((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc7cd9b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f40708c3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f40708c3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkda7b0f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f4067441((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f4067441((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdc5ffe_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_32ecb7ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_32ecb7ef((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdd75c7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_419a2ced((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_419a2ced((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke39a9c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_54346196((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_54346196((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke7c5b7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c805067f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_c805067f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkee6753_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_645023f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_645023f5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkee79f3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0d35ec1e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0d35ec1e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkeeb554_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ceca9569((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ceca9569((void*)__hosihikari_shim_handle);
     }
 
     public nint message_handler()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_8f2f588e((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_8f2f588e((void*)__hosihikari_shim_handle);
     }
 
     public nint network_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3957f3eb((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_3957f3eb((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection((nint)NativeMethods.TablePtr->C4.hs_method_8404e384((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnection((nint)NativeMethods.TablePtr->C5.hs_method_8404e384((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options? options()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_13572845((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_13572845((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options((nint)__hs_handle, false) : null;
     }
 
     public nint payload_type_picker()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d590ad9f((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_d590ad9f((void*)__hosihikari_shim_handle);
     }
 
     public int peer_connection_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_f62b6520((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_f62b6520((void*)__hosihikari_shim_handle);
     }
 
     public nint pending_local_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_267d159a((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_267d159a((void*)__hosihikari_shim_handle);
     }
 
     public nint pending_remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_ab85a7a6((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_ab85a7a6((void*)__hosihikari_shim_handle);
     }
 
     public nint port_allocator()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_7a9a987c((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_7a9a987c((void*)__hosihikari_shim_handle);
     }
 
     public nint remote_description()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1582e424((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_1582e424((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::StreamCollectionInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -1613,69 +1613,69 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
 
     public nint rtp_manager_03561fda()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_03561fda((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_03561fda((void*)__hosihikari_shim_handle);
     }
 
     public nint rtp_manager_7a59f60d()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_7a59f60d((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_7a59f60d((void*)__hosihikari_shim_handle);
     }
 
     public string? sctp_mid()
     {
         var __hs_hasValue = false;
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_8aa858f1((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_8aa858f1((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
     }
 
     public string? sctp_transport_name()
     {
         var __hs_hasValue = false;
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_0edd2cc0((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_0edd2cc0((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
     }
 
     public string session_id()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_2a6941a8((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_2a6941a8((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public int signaling_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_20123cb2((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_20123cb2((void*)__hosihikari_shim_handle);
     }
 
     public nint signaling_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_9fbb5122((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_9fbb5122((void*)__hosihikari_shim_handle);
     }
 
     public int standardized_ice_connection_state()
     {
-        return NativeMethods.TablePtr->C4.hs_method_a0ae4030((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_a0ae4030((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController? transport_controller_n()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_3bb27c72((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_3bb27c72((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController? transport_controller_s()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f09e88e6((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_f09e88e6((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.JsepTransportController((nint)__hs_handle, false) : null;
     }
 
     public nint trials()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3a980475((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_3a980475((void*)__hosihikari_shim_handle);
     }
 
     public nint worker_thread()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_bbc9a822((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_bbc9a822((void*)__hosihikari_shim_handle);
     }
 
 
@@ -1685,7 +1685,7 @@ public sealed unsafe partial class PeerConnection : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e0ebb479((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_e0ebb479((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -44,7 +44,7 @@ public sealed unsafe partial class InsideWaterlilyBlockSystem : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d6e084f4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d6e084f4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

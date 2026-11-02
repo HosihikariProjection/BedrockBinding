@@ -40,17 +40,17 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
 
     public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? registry)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_80b10e9a((void*)__hosihikari_shim_handle, registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return (nint)NativeMethods.TablePtr->C2.hs_method_80b10e9a((void*)__hosihikari_shim_handle, registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_6c6678fe((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_6c6678fe((void*)__hosihikari_shim_handle);
     }
 
     public static ScopedItemRegistry Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f6c68bf6();
+        var handle = NativeMethods.TablePtr->C2.hs_create_f6c68bf6();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
 
     public static ScopedItemRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryManager_Nested.ScopedItemRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fe26f2ca((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_fe26f2ca((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,7 +72,7 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
 
     public static ScopedItemRegistry Create(global::Hosihikari.Bindings.Abi.SharedHandle? registry)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_634e8a6a(registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        var handle = NativeMethods.TablePtr->C2.hs_create_634e8a6a(registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -83,24 +83,24 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
 
     public void _reset()
     {
-        NativeMethods.TablePtr->C1.hs_method_9510e32c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_9510e32c((void*)__hosihikari_shim_handle);
     }
 
     public void construct(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef registryRef)
     {
-        NativeMethods.TablePtr->C1.hs_method_36f8244c((void*)__hosihikari_shim_handle, (void*)registryRef.Handle);
+        NativeMethods.TablePtr->C2.hs_method_36f8244c((void*)__hosihikari_shim_handle, (void*)registryRef.Handle);
     }
 
     public bool mIsSet
     {
-        get => NativeMethods.TablePtr->C1.hs_get_71581bea((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_71581bea((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_71581bea((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_71581bea((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreviousRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e8288937((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e8288937((void*)__hosihikari_shim_handle);
     }
 
 
@@ -110,7 +110,7 @@ public sealed unsafe partial class ScopedItemRegistry : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_fbf98677((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_fbf98677((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

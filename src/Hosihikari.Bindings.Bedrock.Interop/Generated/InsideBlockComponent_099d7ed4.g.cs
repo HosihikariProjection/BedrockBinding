@@ -40,7 +40,7 @@ public sealed unsafe partial class InsideBlockComponent : global::System.IDispos
 
     public static InsideBlockComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_95813655((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_95813655((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,13 +51,13 @@ public sealed unsafe partial class InsideBlockComponent : global::System.IDispos
 
     public nint mInsideBlock
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_52b1c901((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_52b1c901((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInsideBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1dabc69f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1dabc69f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -67,7 +67,7 @@ public sealed unsafe partial class InsideBlockComponent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_099d7ed4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_099d7ed4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

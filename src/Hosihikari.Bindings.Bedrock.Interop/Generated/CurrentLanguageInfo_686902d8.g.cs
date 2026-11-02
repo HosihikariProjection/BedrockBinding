@@ -40,7 +40,7 @@ public sealed unsafe partial class CurrentLanguageInfo : global::System.IDisposa
 
     public static CurrentLanguageInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.I18nImpl_Nested.CurrentLanguageInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_03c3bacd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_03c3bacd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class CurrentLanguageInfo : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mCurrentLanguage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_31510195((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_31510195((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCurrentPackMetaLanguage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_80b85c8c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_80b85c8c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class CurrentLanguageInfo : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_686902d8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_686902d8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

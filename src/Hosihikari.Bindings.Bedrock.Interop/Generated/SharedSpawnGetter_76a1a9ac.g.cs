@@ -40,7 +40,7 @@ public sealed unsafe partial class SharedSpawnGetter : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos _getSharedSpawnPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_704ffd96((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C4.hs_method_704ffd96((void*)__hosihikari_shim_handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class SharedSpawnGetter : global::System.IDisposabl
 
     public static SharedSpawnGetter Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedSpawnGetter arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_382ee9c1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_382ee9c1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,13 +60,13 @@ public sealed unsafe partial class SharedSpawnGetter : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSharedSpawnPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_901b3d0d((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C4.hs_method_901b3d0d((void*)__hosihikari_shim_handle), false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_39fc0a36((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_39fc0a36((void*)__hosihikari_shim_handle);
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class SharedSpawnGetter : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_76a1a9ac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_76a1a9ac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

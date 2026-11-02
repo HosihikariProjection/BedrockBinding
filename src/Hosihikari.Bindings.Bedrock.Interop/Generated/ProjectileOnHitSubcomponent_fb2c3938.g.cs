@@ -40,7 +40,7 @@ public sealed unsafe partial class ProjectileOnHitSubcomponent : global::System.
 
     public static ProjectileOnHitSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_060d30c0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_060d30c0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ProjectileOnHitSubcomponent : global::System.
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_5f8df62c((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_5f8df62c((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class ProjectileOnHitSubcomponent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_fb2c3938((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_fb2c3938((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -64,7 +64,7 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            NativeMethods.TablePtr->C4.hs_method_5d587acc((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(arg0?.Length ?? 0));
+            NativeMethods.TablePtr->C5.hs_method_5d587acc((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(arg0?.Length ?? 0));
         }
     }
 
@@ -74,7 +74,7 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats GetStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_b4a78b12((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C5.hs_method_b4a78b12((void*)__hosihikari_shim_handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::VideoEncoderConfig' is not a known bindable declaration.", false)]
@@ -91,27 +91,27 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
 
     public void SetSource(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceInterface_webrtc__VideoFrame_? arg0, nint arg1)
     {
-        NativeMethods.TablePtr->C4.hs_method_38dfc59b((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), (void*)arg1);
+        NativeMethods.TablePtr->C5.hs_method_38dfc59b((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), (void*)arg1);
     }
 
     public void SetStats(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream_Nested.Stats arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_b7455e5d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C5.hs_method_b7455e5d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void Start()
     {
-        NativeMethods.TablePtr->C4.hs_method_9510555a((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_9510555a((void*)__hosihikari_shim_handle);
     }
 
     public void Stop()
     {
-        NativeMethods.TablePtr->C4.hs_method_4f0346f6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_4f0346f6((void*)__hosihikari_shim_handle);
     }
 
     public static VideoSendStream Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e3fe86c7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_e3fe86c7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -122,7 +122,7 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
 
     public bool started()
     {
-        return NativeMethods.TablePtr->C4.hs_method_ad7cd80c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_ad7cd80c((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -132,7 +132,7 @@ public sealed unsafe partial class VideoSendStream : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f250365a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_f250365a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

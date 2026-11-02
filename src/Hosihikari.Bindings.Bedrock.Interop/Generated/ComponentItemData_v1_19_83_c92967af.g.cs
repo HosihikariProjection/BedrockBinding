@@ -40,7 +40,7 @@ public sealed unsafe partial class ComponentItemData_v1_19_83 : global::System.I
 
     public static ComponentItemData_v1_19_83 Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_19_83 arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_323ef1aa((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_323ef1aa((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,13 +51,13 @@ public sealed unsafe partial class ComponentItemData_v1_19_83 : global::System.I
 
     public static nint VERSION()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_53a167d6();
+        return (nint)NativeMethods.TablePtr->C1.hs_method_53a167d6();
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_0d380635((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0d380635((void*)__hosihikari_shim_handle);
     }
 
 
@@ -67,7 +67,7 @@ public sealed unsafe partial class ComponentItemData_v1_19_83 : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_c92967af((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_c92967af((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

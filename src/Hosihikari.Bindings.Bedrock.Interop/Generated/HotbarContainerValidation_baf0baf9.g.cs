@@ -40,22 +40,22 @@ public sealed unsafe partial class HotbarContainerValidation : global::System.ID
 
     public bool _canItemMoveToContainer(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_d2bf21fd((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_d2bf21fd((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public int _getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
     {
-        return NativeMethods.TablePtr->C1.hs_method_a1689950((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_a1689950((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
     }
 
     public bool _isItemAllowedToRemove(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7e91583d((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_7e91583d((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)item.Handle) != 0;
     }
 
     public static HotbarContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.HotbarContainerValidation arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_6454b03c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_6454b03c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,17 +66,17 @@ public sealed unsafe partial class HotbarContainerValidation : global::System.ID
 
     public bool canItemMoveToContainer(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_3b32b635((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_3b32b635((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public int getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
     {
-        return NativeMethods.TablePtr->C1.hs_method_b9109ad9((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_b9109ad9((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
     }
 
     public bool isItemAllowedToRemove(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_ae708c56((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_ae708c56((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)item.Handle) != 0;
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class HotbarContainerValidation : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_baf0baf9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_baf0baf9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

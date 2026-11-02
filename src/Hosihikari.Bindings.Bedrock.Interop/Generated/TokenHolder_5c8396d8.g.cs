@@ -40,7 +40,7 @@ public sealed unsafe partial class TokenHolder : global::System.IDisposable
 
     public static TokenHolder Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext_Nested.TokenHolder arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0a15d19f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_0a15d19f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,12 +52,12 @@ public sealed unsafe partial class TokenHolder : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mToken_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a2cc1b51((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a2cc1b51((void*)__hosihikari_shim_handle);
     }
 
     public string operator_basic_string_view()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_f540b871((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_f540b871((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class TokenHolder : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_5c8396d8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_5c8396d8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

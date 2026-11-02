@@ -40,7 +40,7 @@ public sealed unsafe partial class OnHurtActorTriggerItemComponent : global::Sys
 
     public static OnHurtActorTriggerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.OnHurtActorTriggerItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_45d5f441((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_45d5f441((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class OnHurtActorTriggerItemComponent : global::Sys
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnHurtActor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6ad99a36((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6ad99a36((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class OnHurtActorTriggerItemComponent : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_34170d5a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_34170d5a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

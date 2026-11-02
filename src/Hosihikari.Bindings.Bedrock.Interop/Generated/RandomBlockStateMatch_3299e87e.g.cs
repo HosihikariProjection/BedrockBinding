@@ -40,12 +40,12 @@ public sealed unsafe partial class RandomBlockStateMatch : global::System.IDispo
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_3734911c((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_3734911c((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public bool _test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ab09d70f((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_ab09d70f((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class RandomBlockStateMatch : global::System.IDispo
 
     public static RandomBlockStateMatch Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.RandomBlockStateMatch arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_42a7c5ac((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_42a7c5ac((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,23 +65,23 @@ public sealed unsafe partial class RandomBlockStateMatch : global::System.IDispo
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_96579650((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_96579650((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public nint mBlockState
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_83cb593c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_83cb593c((void*)__hosihikari_shim_handle);
     }
 
     public float mProbability
     {
-        get => NativeMethods.TablePtr->C4.hs_get_3019f77a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_3019f77a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_3019f77a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_3019f77a((void*)__hosihikari_shim_handle, value);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C4.hs_method_cd05e5cf((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_cd05e5cf((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
     }
 
 
@@ -91,7 +91,7 @@ public sealed unsafe partial class RandomBlockStateMatch : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3299e87e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_3299e87e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

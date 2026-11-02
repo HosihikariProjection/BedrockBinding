@@ -40,7 +40,7 @@ public sealed unsafe partial class FixedSpawnPositionData_DEPRECATED : global::S
 
     public static FixedSpawnPositionData_DEPRECATED Create(global::Hosihikari.Bindings.Bedrock.Interop.Player_Nested.FixedSpawnPositionData_DEPRECATED arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e37ed0d1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_e37ed0d1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class FixedSpawnPositionData_DEPRECATED : global::S
 
     public bool mIsAboveLeaves
     {
-        get => NativeMethods.TablePtr->C2.hs_get_79274446((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_79274446((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_79274446((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_79274446((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2f8b08b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2f8b08b6((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class FixedSpawnPositionData_DEPRECATED : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_396943f9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_396943f9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class InstantDespawnComponent : global::System.IDis
 
     public void onDespawn(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        NativeMethods.TablePtr->C1.hs_method_50cef5a9((void*)__hosihikari_shim_handle, (void*)actor.Handle);
+        NativeMethods.TablePtr->C2.hs_method_50cef5a9((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class InstantDespawnComponent : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_e4038eac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e4038eac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

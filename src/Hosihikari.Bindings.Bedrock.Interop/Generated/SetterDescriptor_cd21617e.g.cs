@@ -40,20 +40,20 @@ public sealed unsafe partial class SetterDescriptor : global::System.IDisposable
 
     public byte mAllowedAreas
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f18e6612((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f18e6612((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_f18e6612((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_f18e6612((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConstraint_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7b7530bc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_7b7530bc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPtr_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_447c270a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_447c270a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -63,7 +63,7 @@ public sealed unsafe partial class SetterDescriptor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cd21617e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_cd21617e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

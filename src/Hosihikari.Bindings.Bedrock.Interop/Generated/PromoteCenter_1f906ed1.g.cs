@@ -40,12 +40,12 @@ public sealed unsafe partial class PromoteCenter : global::System.IDisposable
 
     public nint mFrom
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b603d6d9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b603d6d9((void*)__hosihikari_shim_handle);
     }
 
     public nint mTo
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_164ed271((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_164ed271((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -54,7 +54,7 @@ public sealed unsafe partial class PromoteCenter : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_1f906ed1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_1f906ed1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

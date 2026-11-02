@@ -40,36 +40,36 @@ public sealed unsafe partial class OnFireComponent : global::System.IDisposable
 
     public static string LEGACY_FIRE_TAG()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_40883839();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_40883839();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static string ON_FIRE_TAG()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_02a3b564();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_02a3b564();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.Actor arg0, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        NativeMethods.TablePtr->C2.hs_method_97ade38b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)tag.Handle);
+        NativeMethods.TablePtr->C3.hs_method_97ade38b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)tag.Handle);
     }
 
     public static void convertFromLegacyData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag outTag)
     {
-        NativeMethods.TablePtr->C2.hs_method_49a649b5((void*)tag.Handle, (void*)outTag.Handle);
+        NativeMethods.TablePtr->C3.hs_method_49a649b5((void*)tag.Handle, (void*)outTag.Handle);
     }
 
     public bool mIgnitedThisTick
     {
-        get => NativeMethods.TablePtr->C2.hs_get_98991b31((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_98991b31((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_98991b31((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_98991b31((void*)__hosihikari_shim_handle, value);
     }
 
     public int mOnFireTicks
     {
-        get => NativeMethods.TablePtr->C2.hs_get_11e6b805((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_11e6b805((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_11e6b805((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_11e6b805((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -78,7 +78,7 @@ public sealed unsafe partial class OnFireComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_53b2748a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_53b2748a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

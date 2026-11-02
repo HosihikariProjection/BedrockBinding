@@ -53,18 +53,18 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(collectionName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_cac057c1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, collectionIndex);
+            return (nint)NativeMethods.TablePtr->C4.hs_method_cac057c1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, collectionIndex);
         }
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_67e42359((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_67e42359((void*)__hosihikari_shim_handle);
     }
 
     public static SlotData Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_cf5be92e();
+        var handle = NativeMethods.TablePtr->C4.hs_create_cf5be92e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +75,7 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
 
     public static SlotData Create(global::Hosihikari.Bindings.Bedrock.Interop.SlotData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_414ac33b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_414ac33b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,7 +99,7 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(collectionName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C3.hs_create_017052c2(__hs_stringData0, (nuint)__hs_stringByteCount0, collectionIndex);
+            var handle = NativeMethods.TablePtr->C4.hs_create_017052c2(__hs_stringData0, (nuint)__hs_stringByteCount0, collectionIndex);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -111,19 +111,19 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.SlotData UNKNOWN_LOCATION()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SlotData((nint)NativeMethods.TablePtr->C3.hs_method_04d32ed5(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SlotData((nint)NativeMethods.TablePtr->C4.hs_method_04d32ed5(), false);
     }
 
     public int mCollectionIndex
     {
-        get => NativeMethods.TablePtr->C3.hs_get_676101b7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_676101b7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_676101b7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_676101b7((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCollectionName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fa5ec07c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_fa5ec07c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -133,7 +133,7 @@ public sealed unsafe partial class SlotData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_40d03ff3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_40d03ff3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

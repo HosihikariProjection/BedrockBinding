@@ -40,17 +40,17 @@ public sealed unsafe partial class PlayerSuspendLevelStorageSaveToken : global::
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_fe543713((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_fe543713((void*)__hosihikari_shim_handle, (void*)entity.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_51c6e7de((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_51c6e7de((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerSuspendLevelStorageSaveToken Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d5666c10();
+        var handle = NativeMethods.TablePtr->C3.hs_create_d5666c10();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class PlayerSuspendLevelStorageSaveToken : global::
 
     public static PlayerSuspendLevelStorageSaveToken Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_794cce3f((void*)entity.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_794cce3f((void*)entity.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,7 +72,7 @@ public sealed unsafe partial class PlayerSuspendLevelStorageSaveToken : global::
 
     public static PlayerSuspendLevelStorageSaveToken Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSuspendLevelStorageSaveToken arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1bb548d6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_1bb548d6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,18 +84,18 @@ public sealed unsafe partial class PlayerSuspendLevelStorageSaveToken : global::
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1626c0_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ae28784((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6ae28784((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf58512_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a80bbdab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a80bbdab((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSuspendLevelStorageSaveToken operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSuspendLevelStorageSaveToken arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSuspendLevelStorageSaveToken((nint)NativeMethods.TablePtr->C2.hs_method_dc8a809f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSuspendLevelStorageSaveToken((nint)NativeMethods.TablePtr->C3.hs_method_dc8a809f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -105,7 +105,7 @@ public sealed unsafe partial class PlayerSuspendLevelStorageSaveToken : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_66e2a839((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_66e2a839((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

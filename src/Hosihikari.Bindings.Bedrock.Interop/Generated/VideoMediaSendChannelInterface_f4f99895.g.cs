@@ -40,7 +40,7 @@ public sealed unsafe partial class VideoMediaSendChannelInterface : global::Syst
 
     public void FillBitrateInfo(nint arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_8add5430((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C5.hs_method_8add5430((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public void GenerateSendKeyFrame(uint arg0, string[] arg1)
@@ -65,50 +65,50 @@ public sealed unsafe partial class VideoMediaSendChannelInterface : global::Syst
                 __hs_vectorData1[__hs_i1] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr1 + __hs_vectorOffset1, Size = (nuint)__hs_length1 };
                 __hs_vectorOffset1 += __hs_length1;
             }
-            NativeMethods.TablePtr->C4.hs_method_75cf2a59((void*)__hosihikari_shim_handle, arg0, __hs_vectorData1, (nuint)(arg1?.Length ?? 0));
+            NativeMethods.TablePtr->C5.hs_method_75cf2a59((void*)__hosihikari_shim_handle, arg0, __hs_vectorData1, (nuint)(arg1?.Length ?? 0));
         }
     }
 
     public bool GetStats(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_f7aee539((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_f7aee539((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     public bool SendCodecHasLntf()
     {
-        return NativeMethods.TablePtr->C4.hs_method_150ca75c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_150ca75c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int SendCodecRtcpMode()
     {
-        return NativeMethods.TablePtr->C4.hs_method_6959d3b4((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_6959d3b4((void*)__hosihikari_shim_handle);
     }
 
     public int? SendCodecRtxTime()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_1ebc61d5((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_1ebc61d5((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
     public bool SetSend(bool arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_d9da7e53((void*)__hosihikari_shim_handle, arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_d9da7e53((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
     public bool SetSenderParameters(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6b893151((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_6b893151((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     public bool SetVideoSend(uint arg0, nint arg1, global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSourceInterface_webrtc__VideoFrame_? arg2)
     {
-        return NativeMethods.TablePtr->C4.hs_method_58bd721f((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)(arg2?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_58bd721f((void*)__hosihikari_shim_handle, arg0, (void*)arg1, (void*)(arg2?.Handle ?? 0)) != 0;
     }
 
     public static VideoMediaSendChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_caac4edb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_caac4edb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -124,7 +124,7 @@ public sealed unsafe partial class VideoMediaSendChannelInterface : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f4f99895((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_f4f99895((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

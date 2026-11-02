@@ -40,84 +40,84 @@ public sealed unsafe partial class SmithingTableContainerManagerModel : global::
 
     public sbyte mContainerId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_5a9bc9e0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_5a9bc9e0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_5a9bc9e0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_5a9bc9e0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerRefresher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_240ab25d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_240ab25d((void*)__hosihikari_shim_handle);
     }
 
     public sbyte mContainerType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_99028632((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_99028632((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_99028632((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_99028632((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerTypeSubscribers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_91114073((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_91114073((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_62f4339b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_62f4339b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDynamicContainerTracker_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e53b5886((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e53b5886((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInformControllerOfDestructionCallbacks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e1b416b3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e1b416b3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastSlots_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_86009ba1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_86009ba1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnDynamicContainerChangePublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6c5816c8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6c5816c8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_954556c6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_954556c6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRegistryAccess_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c1df4584((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c1df4584((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScreenContext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_30168039((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_30168039((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext __postInit()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C3.hs_method_48503a5f((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C4.hs_method_48503a5f((void*)__hosihikari_shim_handle));
     }
 
     public void _broadcastChanges()
     {
-        NativeMethods.TablePtr->C3.hs_method_5cfcf487((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_5cfcf487((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.", false)]
@@ -126,22 +126,22 @@ public sealed unsafe partial class SmithingTableContainerManagerModel : global::
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack _getSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_1e9adeef((void*)__hosihikari_shim_handle, slot), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_1e9adeef((void*)__hosihikari_shim_handle, slot), false);
     }
 
     public bool _isValid(float pickRange)
     {
-        return NativeMethods.TablePtr->C3.hs_method_fd211b4e((void*)__hosihikari_shim_handle, pickRange) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_fd211b4e((void*)__hosihikari_shim_handle, pickRange) != 0;
     }
 
     public void _setData(int arg0, int arg1)
     {
-        NativeMethods.TablePtr->C3.hs_method_387b4a7e((void*)__hosihikari_shim_handle, arg0, arg1);
+        NativeMethods.TablePtr->C4.hs_method_387b4a7e((void*)__hosihikari_shim_handle, arg0, arg1);
     }
 
     public void _setSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool fromNetwork)
     {
-        NativeMethods.TablePtr->C3.hs_method_793037d0((void*)__hosihikari_shim_handle, slot, (void*)item.Handle, fromNetwork);
+        NativeMethods.TablePtr->C4.hs_method_793037d0((void*)__hosihikari_shim_handle, slot, (void*)item.Handle, fromNetwork);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -150,7 +150,7 @@ public sealed unsafe partial class SmithingTableContainerManagerModel : global::
 
     public static SmithingTableContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.SmithingTableContainerManagerModel arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_317fc44f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_317fc44f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -161,12 +161,12 @@ public sealed unsafe partial class SmithingTableContainerManagerModel : global::
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext _postInit()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C3.hs_method_1270bcde((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext((nint)NativeMethods.TablePtr->C4.hs_method_1270bcde((void*)__hosihikari_shim_handle));
     }
 
     public void broadcastChanges()
     {
-        NativeMethods.TablePtr->C3.hs_method_2c7cc61f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_2c7cc61f((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'ItemStack' is not supported.", false)]
@@ -175,28 +175,28 @@ public sealed unsafe partial class SmithingTableContainerManagerModel : global::
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_af984b73((void*)__hosihikari_shim_handle, slot), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C4.hs_method_af984b73((void*)__hosihikari_shim_handle, slot), false);
     }
 
     public bool isValid(float pickRange)
     {
-        return NativeMethods.TablePtr->C3.hs_method_53f2cca0((void*)__hosihikari_shim_handle, pickRange) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_53f2cca0((void*)__hosihikari_shim_handle, pickRange) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d6bc21ec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d6bc21ec((void*)__hosihikari_shim_handle);
     }
 
     public void setData(int arg0, int arg1)
     {
-        NativeMethods.TablePtr->C3.hs_method_2e7f846e((void*)__hosihikari_shim_handle, arg0, arg1);
+        NativeMethods.TablePtr->C4.hs_method_2e7f846e((void*)__hosihikari_shim_handle, arg0, arg1);
     }
 
     public void setSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool fromNetwork)
     {
-        NativeMethods.TablePtr->C3.hs_method_9d719a2d((void*)__hosihikari_shim_handle, slot, (void*)item.Handle, fromNetwork);
+        NativeMethods.TablePtr->C4.hs_method_9d719a2d((void*)__hosihikari_shim_handle, slot, (void*)item.Handle, fromNetwork);
     }
 
 
@@ -206,7 +206,7 @@ public sealed unsafe partial class SmithingTableContainerManagerModel : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4438d0ab((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_4438d0ab((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

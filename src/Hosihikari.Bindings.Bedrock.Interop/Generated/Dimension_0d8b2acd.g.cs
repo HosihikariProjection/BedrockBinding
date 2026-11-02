@@ -40,12 +40,12 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.DimensionDefinition.Dimension arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b59cd435((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_b59cd435((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public static Dimension Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7be5a48c();
+        var handle = NativeMethods.TablePtr->C4.hs_create_7be5a48c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
 
     public static Dimension Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.DimensionDefinition.Dimension arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4781d023((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_4781d023((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,13 +68,13 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5c19587b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5c19587b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b814d648((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b814d648((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -83,7 +83,7 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.DimensionDefinition.Dimension operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.DimensionDefinition.Dimension arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.DimensionDefinition.Dimension((nint)NativeMethods.TablePtr->C3.hs_method_00096ae5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.DimensionDefinition.Dimension((nint)NativeMethods.TablePtr->C4.hs_method_00096ae5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -93,7 +93,7 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0d8b2acd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_0d8b2acd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

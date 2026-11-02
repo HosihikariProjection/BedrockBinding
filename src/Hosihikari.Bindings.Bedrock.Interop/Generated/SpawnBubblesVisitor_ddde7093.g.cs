@@ -44,7 +44,7 @@ public sealed unsafe partial class SpawnBubblesVisitor : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ddde7093((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ddde7093((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

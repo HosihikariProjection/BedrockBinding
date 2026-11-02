@@ -40,7 +40,7 @@ public sealed unsafe partial class IDimensionManagerConnector : global::System.I
 
     public static IDimensionManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.IDimensionManagerConnector arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b160576f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b160576f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,7 +63,7 @@ public sealed unsafe partial class IDimensionManagerConnector : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c7e80426((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c7e80426((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

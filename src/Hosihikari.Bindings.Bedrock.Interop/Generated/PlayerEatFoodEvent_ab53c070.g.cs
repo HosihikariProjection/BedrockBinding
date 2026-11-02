@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerEatFoodEvent : global::System.IDisposab
 
     public static PlayerEatFoodEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerEatFoodEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4d20bc86((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4d20bc86((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class PlayerEatFoodEvent : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mFoodItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e4902fdb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e4902fdb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b8872f5c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b8872f5c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class PlayerEatFoodEvent : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_ab53c070((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ab53c070((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

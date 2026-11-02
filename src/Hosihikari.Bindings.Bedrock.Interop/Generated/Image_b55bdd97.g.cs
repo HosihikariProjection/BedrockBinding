@@ -40,7 +40,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
 
     public static Image Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b0926a4e();
+        var handle = NativeMethods.TablePtr->C5.hs_create_b0926a4e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
 
     public static Image Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.Image arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_43e86491((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_43e86491((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +70,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
 
     public static Image Create(uint w, uint h, uint format, byte usage)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_fb89ed27(w, h, format, usage);
+        var handle = NativeMethods.TablePtr->C5.hs_create_fb89ed27(w, h, format, usage);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,7 +81,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
 
     public static Image Create(uint w, uint h, uint d, uint format, byte usage)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ec52064f(w, h, d, format, usage);
+        var handle = NativeMethods.TablePtr->C5.hs_create_ec52064f(w, h, d, format, usage);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -92,64 +92,64 @@ public sealed unsafe partial class Image : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image clone()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)NativeMethods.TablePtr->C4.hs_method_8907b10c((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)NativeMethods.TablePtr->C5.hs_method_8907b10c((void*)__hosihikari_shim_handle));
     }
 
     public void copyRawImage(global::Hosihikari.Bindings.Bedrock.Interop.mce.Blob arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_2f896a7f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C5.hs_method_2f896a7f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public uint imageFormat
     {
-        get => NativeMethods.TablePtr->C4.hs_get_53b82650((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_53b82650((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_53b82650((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_53b82650((void*)__hosihikari_shim_handle, value);
     }
 
     public bool isEmpty()
     {
-        return NativeMethods.TablePtr->C4.hs_method_ebdd3749((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_ebdd3749((void*)__hosihikari_shim_handle) != 0;
     }
 
     public byte mAlphaUsage
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e28bd215((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e28bd215((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_e28bd215((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_e28bd215((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mDepth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e4c89378((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e4c89378((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_e4c89378((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_e4c89378((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mHeight
     {
-        get => NativeMethods.TablePtr->C4.hs_get_460ae483((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_460ae483((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_460ae483((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_460ae483((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mImageBytes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1411cc87((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_1411cc87((void*)__hosihikari_shim_handle);
     }
 
     public byte mUsage
     {
-        get => NativeMethods.TablePtr->C4.hs_get_969ae65b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_969ae65b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_969ae65b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_969ae65b((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mWidth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9247a852((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_9247a852((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_9247a852((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_9247a852((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Image operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.mce.Image arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)NativeMethods.TablePtr->C4.hs_method_a55d1dd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Image((nint)NativeMethods.TablePtr->C5.hs_method_a55d1dd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -158,17 +158,17 @@ public sealed unsafe partial class Image : global::System.IDisposable
 
     public void resizeImageBytesToFitImageDescription()
     {
-        NativeMethods.TablePtr->C4.hs_method_f510ac75((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_f510ac75((void*)__hosihikari_shim_handle);
     }
 
     public void setImageDescription(uint w, uint h, uint format, byte usage)
     {
-        NativeMethods.TablePtr->C4.hs_method_1b878d36((void*)__hosihikari_shim_handle, w, h, format, usage);
+        NativeMethods.TablePtr->C5.hs_method_1b878d36((void*)__hosihikari_shim_handle, w, h, format, usage);
     }
 
     public void setImageDescription(uint w, uint h, uint d, uint format, byte usage)
     {
-        NativeMethods.TablePtr->C4.hs_method_db4c37e8((void*)__hosihikari_shim_handle, w, h, d, format, usage);
+        NativeMethods.TablePtr->C5.hs_method_db4c37e8((void*)__hosihikari_shim_handle, w, h, d, format, usage);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -182,7 +182,7 @@ public sealed unsafe partial class Image : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b55bdd97((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_b55bdd97((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

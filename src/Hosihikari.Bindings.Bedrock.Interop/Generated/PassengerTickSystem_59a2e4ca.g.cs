@@ -44,7 +44,7 @@ public sealed unsafe partial class PassengerTickSystem : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_59a2e4ca((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_59a2e4ca((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

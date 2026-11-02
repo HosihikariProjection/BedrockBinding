@@ -40,7 +40,7 @@ public sealed unsafe partial class FreezeOnHitSubcomponentDefinition : global::S
 
     public string _getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_dcf2cfcd((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_dcf2cfcd((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -50,7 +50,7 @@ public sealed unsafe partial class FreezeOnHitSubcomponentDefinition : global::S
 
     public static FreezeOnHitSubcomponentDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.FreezeOnHitSubcomponentDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_24c76aa5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_24c76aa5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,32 +61,32 @@ public sealed unsafe partial class FreezeOnHitSubcomponentDefinition : global::S
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_7e4b00ac();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_7e4b00ac();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_838234e8((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_838234e8((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public byte mShape
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f8aab855((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_f8aab855((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f8aab855((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f8aab855((void*)__hosihikari_shim_handle, value);
     }
 
     public float mSize
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f6722dba((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_f6722dba((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f6722dba((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f6722dba((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mSnapToBlock
     {
-        get => NativeMethods.TablePtr->C3.hs_get_75463ad8((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_75463ad8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_75463ad8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_75463ad8((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -96,7 +96,7 @@ public sealed unsafe partial class FreezeOnHitSubcomponentDefinition : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_85f2f749((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_85f2f749((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

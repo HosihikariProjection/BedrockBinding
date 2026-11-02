@@ -44,12 +44,12 @@ public sealed unsafe partial class ParameterList : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_50d78528((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_50d78528((void*)__hosihikari_shim_handle);
     }
 
     public static ParameterList Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a89c17d0();
+        var handle = NativeMethods.TablePtr->C3.hs_create_a89c17d0();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +60,7 @@ public sealed unsafe partial class ParameterList : global::System.IDisposable
 
     public static ParameterList Create(global::Hosihikari.Bindings.Bedrock.Interop.ParameterList arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1fcc3bbd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_1fcc3bbd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,13 +76,13 @@ public sealed unsafe partial class ParameterList : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoiseTargets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_059ed0e6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_059ed0e6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTree_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_08fa3f72((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_08fa3f72((void*)__hosihikari_shim_handle);
     }
 
 
@@ -92,7 +92,7 @@ public sealed unsafe partial class ParameterList : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e9657e8f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e9657e8f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

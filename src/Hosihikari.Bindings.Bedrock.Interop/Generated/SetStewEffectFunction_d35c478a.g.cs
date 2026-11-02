@@ -41,22 +41,22 @@ public sealed unsafe partial class SetStewEffectFunction : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ec8defb0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ec8defb0((void*)__hosihikari_shim_handle);
     }
 
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C3.hs_method_12087778((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C4.hs_method_12087778((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public int _getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_bb4b9885((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_bb4b9885((void*)__hosihikari_shim_handle);
     }
 
     public static SetStewEffectFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetStewEffectFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4e07a95b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_4e07a95b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,18 +67,18 @@ public sealed unsafe partial class SetStewEffectFunction : global::System.IDispo
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C3.hs_method_cee89a6e((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C4.hs_method_cee89a6e((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_b147ebf1((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_b147ebf1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEffectIDs_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7b47f9a7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7b47f9a7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -88,7 +88,7 @@ public sealed unsafe partial class SetStewEffectFunction : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d35c478a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_d35c478a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

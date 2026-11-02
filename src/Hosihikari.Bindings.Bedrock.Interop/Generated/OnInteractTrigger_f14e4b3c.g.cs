@@ -41,19 +41,19 @@ public sealed unsafe partial class OnInteractTrigger : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mCondition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_35f83d84((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_35f83d84((void*)__hosihikari_shim_handle);
     }
 
     public short mTarget
     {
-        get => NativeMethods.TablePtr->C2.hs_get_bb866e33((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_bb866e33((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bb866e33((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_bb866e33((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_93d99338((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_93d99338((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -62,7 +62,7 @@ public sealed unsafe partial class OnInteractTrigger : global::System.IDisposabl
 
     public static OnInteractTrigger Create(global::Hosihikari.Bindings.Bedrock.Interop.OnInteractTrigger arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_aef643d5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_aef643d5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,7 +73,7 @@ public sealed unsafe partial class OnInteractTrigger : global::System.IDisposabl
 
     public void onEvent(nint eventData)
     {
-        NativeMethods.TablePtr->C2.hs_method_e3b4c51e((void*)__hosihikari_shim_handle, (void*)eventData);
+        NativeMethods.TablePtr->C3.hs_method_e3b4c51e((void*)__hosihikari_shim_handle, (void*)eventData);
     }
 
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class OnInteractTrigger : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f14e4b3c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f14e4b3c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

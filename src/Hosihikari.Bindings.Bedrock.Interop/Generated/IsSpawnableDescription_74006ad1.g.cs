@@ -40,12 +40,12 @@ public sealed unsafe partial class IsSpawnableDescription : global::System.IDisp
 
     public nint _getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_a57726a1((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_a57726a1((void*)__hosihikari_shim_handle);
     }
 
     public static IsSpawnableDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.IsSpawnableDescription arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_68e99943((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_68e99943((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,13 +56,13 @@ public sealed unsafe partial class IsSpawnableDescription : global::System.IDisp
 
     public nint getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_c60d1e7f((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_c60d1e7f((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsSpawnable
     {
-        get => NativeMethods.TablePtr->C1.hs_get_d32866cc((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_d32866cc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_d32866cc((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_d32866cc((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -72,7 +72,7 @@ public sealed unsafe partial class IsSpawnableDescription : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_74006ad1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_74006ad1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

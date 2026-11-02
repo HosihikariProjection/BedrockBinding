@@ -40,47 +40,47 @@ public sealed unsafe partial class ShareableComponent : global::System.IDisposab
 
     public static bool _canPickupItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack carriedItem, int maxAmount, bool singularPickupOnly)
     {
-        return NativeMethods.TablePtr->C3.hs_method_c0ac031b((void*)item.Handle, (void*)carriedItem.Handle, maxAmount, singularPickupOnly) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_c0ac031b((void*)item.Handle, (void*)carriedItem.Handle, maxAmount, singularPickupOnly) != 0;
     }
 
     public static bool _shouldReplaceItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack itemToReplace, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, global::Hosihikari.Bindings.Bedrock.Interop.ShareableDefinition shareable, bool canPickupAnyItem)
     {
-        return NativeMethods.TablePtr->C3.hs_method_350cefb1((void*)itemToReplace.Handle, (void*)newItem.Handle, (void*)shareable.Handle, canPickupAnyItem) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_350cefb1((void*)itemToReplace.Handle, (void*)newItem.Handle, (void*)shareable.Handle, canPickupAnyItem) != 0;
     }
 
     public static bool _useLegacySurplusRules(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
     {
-        return NativeMethods.TablePtr->C3.hs_method_7f6c2055((void*)level.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_7f6c2055((void*)level.Handle) != 0;
     }
 
     public int getCountToPickUp(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C3.hs_method_0449a484((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle);
+        return NativeMethods.TablePtr->C4.hs_method_0449a484((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle);
     }
 
     public int getSlotToSwap(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ItemActor itemActor)
     {
-        return NativeMethods.TablePtr->C3.hs_method_e2dbea6e((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)itemActor.Handle);
+        return NativeMethods.TablePtr->C4.hs_method_e2dbea6e((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)itemActor.Handle);
     }
 
     public int hasSurplus(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack resultStack, bool includeStackSizeofItem)
     {
-        return NativeMethods.TablePtr->C3.hs_method_5956380c((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle, (void*)resultStack.Handle, includeStackSizeofItem);
+        return NativeMethods.TablePtr->C4.hs_method_5956380c((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle, (void*)resultStack.Handle, includeStackSizeofItem);
     }
 
     public bool itemBelongsInInventory(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool canPickupToHandOrEquipment)
     {
-        return NativeMethods.TablePtr->C3.hs_method_fdc7e39b((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle, canPickupToHandOrEquipment) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_fdc7e39b((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle, canPickupToHandOrEquipment) != 0;
     }
 
     public int wantsMore(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C3.hs_method_7440e53a((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle);
+        return NativeMethods.TablePtr->C4.hs_method_7440e53a((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle);
     }
 
     public bool willPickup(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool canPickupAnyItem, bool canPickupToHandOrEquipment)
     {
-        return NativeMethods.TablePtr->C3.hs_method_d56bee7a((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle, canPickupAnyItem, canPickupToHandOrEquipment) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_d56bee7a((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle, canPickupAnyItem, canPickupToHandOrEquipment) != 0;
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class ShareableComponent : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_59228b59((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_59228b59((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

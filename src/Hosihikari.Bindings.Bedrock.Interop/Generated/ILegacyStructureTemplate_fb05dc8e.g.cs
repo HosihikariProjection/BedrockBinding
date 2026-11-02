@@ -40,7 +40,7 @@ public sealed unsafe partial class ILegacyStructureTemplate : global::System.IDi
 
     public static ILegacyStructureTemplate Create(global::Hosihikari.Bindings.Bedrock.Interop.ILegacyStructureTemplate arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_1818e08d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_1818e08d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class ILegacyStructureTemplate : global::System.IDi
 
     public void placeInWorld(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureSettings settings, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        NativeMethods.TablePtr->C1.hs_method_68145f33((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)settings.Handle, (void*)random.Handle);
+        NativeMethods.TablePtr->C2.hs_method_68145f33((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)settings.Handle, (void*)random.Handle);
     }
 
     public void Dispose()
@@ -64,7 +64,7 @@ public sealed unsafe partial class ILegacyStructureTemplate : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_fb05dc8e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_fb05dc8e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

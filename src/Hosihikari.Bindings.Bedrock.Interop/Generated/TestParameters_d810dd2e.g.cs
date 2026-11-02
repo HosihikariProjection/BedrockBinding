@@ -40,12 +40,12 @@ public sealed unsafe partial class TestParameters : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_29ef90d6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_29ef90d6((void*)__hosihikari_shim_handle);
     }
 
     public static TestParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.TestParameters arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_dd3d33a1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_dd3d33a1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,50 +56,50 @@ public sealed unsafe partial class TestParameters : global::System.IDisposable
 
     public int mMaxTestsPerBatch
     {
-        get => NativeMethods.TablePtr->C4.hs_get_988bc274((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_988bc274((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_988bc274((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_988bc274((void*)__hosihikari_shim_handle, value);
     }
 
     public int mRepeatCount
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f77cb1d0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f77cb1d0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_f77cb1d0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_f77cb1d0((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mRotation
     {
-        get => NativeMethods.TablePtr->C4.hs_get_345eafe4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_345eafe4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_345eafe4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_345eafe4((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mStopOnFailure
     {
-        get => NativeMethods.TablePtr->C4.hs_get_386417a5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_386417a5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_386417a5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_386417a5((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mStopOtherTestsOnFailure
     {
-        get => NativeMethods.TablePtr->C4.hs_get_88cedba3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_88cedba3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_88cedba3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_88cedba3((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTestPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_98ff450e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_98ff450e((void*)__hosihikari_shim_handle);
     }
 
     public int mTestsPerRow
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d924e7db((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d924e7db((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_d924e7db((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_d924e7db((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mtestFunctions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_49e8a2be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_49e8a2be((void*)__hosihikari_shim_handle);
     }
 
 
@@ -109,7 +109,7 @@ public sealed unsafe partial class TestParameters : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d810dd2e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_d810dd2e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

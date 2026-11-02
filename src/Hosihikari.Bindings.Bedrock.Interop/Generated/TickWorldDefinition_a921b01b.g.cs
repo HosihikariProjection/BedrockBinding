@@ -40,26 +40,26 @@ public sealed unsafe partial class TickWorldDefinition : global::System.IDisposa
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_f1600922();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_f1600922();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public float mDistanceToPlayers
     {
-        get => NativeMethods.TablePtr->C3.hs_get_9979cbf3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_9979cbf3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_9979cbf3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_9979cbf3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mNeverDespawn
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b2e9803e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_b2e9803e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_b2e9803e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_b2e9803e((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mRadius
     {
-        get => NativeMethods.TablePtr->C3.hs_get_6c38d111((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_6c38d111((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_6c38d111((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_6c38d111((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -68,7 +68,7 @@ public sealed unsafe partial class TickWorldDefinition : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a921b01b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_a921b01b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemLoadResult : global::System.IDisposable
 
     public static ItemLoadResult Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistry_Nested.ItemLoadResult arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f3ef2356((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_f3ef2356((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class ItemLoadResult : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mError_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8c4ec8e8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8c4ec8e8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLoadedItemAsset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e0127800((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e0127800((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class ItemLoadResult : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_0532cf2f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0532cf2f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

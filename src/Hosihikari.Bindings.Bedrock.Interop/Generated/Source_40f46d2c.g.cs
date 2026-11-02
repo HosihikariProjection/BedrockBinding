@@ -40,17 +40,17 @@ public sealed unsafe partial class Source : global::System.IDisposable
 
     public int GetAudioFrameWithInfo(int arg0, nint arg1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_c1ed41ab((void*)__hosihikari_shim_handle, arg0, (void*)arg1);
+        return NativeMethods.TablePtr->C5.hs_method_c1ed41ab((void*)__hosihikari_shim_handle, arg0, (void*)arg1);
     }
 
     public int PreferredSampleRate()
     {
-        return NativeMethods.TablePtr->C4.hs_method_11f609b6((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_11f609b6((void*)__hosihikari_shim_handle);
     }
 
     public static Source Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_178bdd88((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_178bdd88((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class Source : global::System.IDisposable
 
     public int Ssrc()
     {
-        return NativeMethods.TablePtr->C4.hs_method_13ca43a8((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_13ca43a8((void*)__hosihikari_shim_handle);
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class Source : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_40f46d2c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_40f46d2c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

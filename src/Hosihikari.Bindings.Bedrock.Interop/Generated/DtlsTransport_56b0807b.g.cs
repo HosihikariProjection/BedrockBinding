@@ -44,12 +44,12 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
 
     public void _RegisterObserver(nint observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_43a1e43c((void*)__hosihikari_shim_handle, (void*)observer);
+        NativeMethods.TablePtr->C5.hs_method_43a1e43c((void*)__hosihikari_shim_handle, (void*)observer);
     }
 
     public void _UnregisterObserver()
     {
-        NativeMethods.TablePtr->C4.hs_method_da763a82((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_da763a82((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::DtlsTransportInternal' has no generated wrapper.", false)]
@@ -58,7 +58,7 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_ae0ad28d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_ae0ad28d((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::IceTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -71,12 +71,12 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
 
     public void Clear()
     {
-        NativeMethods.TablePtr->C4.hs_method_ff1705a2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_ff1705a2((void*)__hosihikari_shim_handle);
     }
 
     public static DtlsTransport Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_61e2a767();
+        var handle = NativeMethods.TablePtr->C5.hs_create_61e2a767();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,7 +87,7 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
 
     public static DtlsTransport Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e416e5f4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_e416e5f4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -106,17 +106,17 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
 
     public void RegisterObserver(nint observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_c00b1bf7((void*)__hosihikari_shim_handle, (void*)observer);
+        NativeMethods.TablePtr->C5.hs_method_c00b1bf7((void*)__hosihikari_shim_handle, (void*)observer);
     }
 
     public void UnregisterObserver()
     {
-        NativeMethods.TablePtr->C4.hs_method_c4e3c6bc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_c4e3c6bc((void*)__hosihikari_shim_handle);
     }
 
     public void UpdateInformation()
     {
-        NativeMethods.TablePtr->C4.hs_method_90c02635((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_90c02635((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::IceTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -126,42 +126,42 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk35d5aa_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_03fcfe75((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_03fcfe75((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8ea1be_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e6dff363((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e6dff363((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk912461_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9bdb9528((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_9bdb9528((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka7df75_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7fcdfc95((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_7fcdfc95((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke0da3a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f5706b4a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f5706b4a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf33c20_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_be35111d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_be35111d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport((nint)NativeMethods.TablePtr->C4.hs_method_7a0c18b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransport((nint)NativeMethods.TablePtr->C5.hs_method_7a0c18b4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -175,7 +175,7 @@ public sealed unsafe partial class DtlsTransport : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_56b0807b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_56b0807b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

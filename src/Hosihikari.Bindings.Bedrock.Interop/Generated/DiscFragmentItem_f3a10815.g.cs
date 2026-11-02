@@ -65,6 +65,12 @@ public sealed unsafe partial class DiscFragmentItem : global::System.IDisposable
     }
 
 
+    public byte mAllowOffhand
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_09c63ea5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_09c63ea5((void*)__hosihikari_shim_handle, value);
+    }
+
     public bool mAnimatesInToolbar
     {
         get => NativeMethods.TablePtr->C1.hs_get_a52d32a0((void*)__hosihikari_shim_handle) != 0;
@@ -130,6 +136,18 @@ public sealed unsafe partial class DiscFragmentItem : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4ba4fcd3((void*)__hosihikari_shim_handle);
     }
 
+    public bool mExplodable
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_45eb5975((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_45eb5975((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mFireResistant
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_73793c41((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_73793c41((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mFoodComponentLegacy_Address
     {
@@ -160,6 +178,12 @@ public sealed unsafe partial class DiscFragmentItem : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_89dbf689((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mHandEquipped
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_f472fca9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_f472fca9((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mHoverTextColorFormat_Address
     {
@@ -184,6 +208,18 @@ public sealed unsafe partial class DiscFragmentItem : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_65755b7c((void*)__hosihikari_shim_handle, value);
     }
 
+    public bool mIgnoresPermissions
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_a7c3a50d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_a7c3a50d((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsGlint
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_8f3a0da4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_8f3a0da4((void*)__hosihikari_shim_handle, value);
+    }
+
     public byte mIsHiddenInCommands
     {
         get => NativeMethods.TablePtr->C1.hs_get_6f99a556((void*)__hosihikari_shim_handle);
@@ -194,6 +230,12 @@ public sealed unsafe partial class DiscFragmentItem : global::System.IDisposable
     {
         get => NativeMethods.TablePtr->C1.hs_get_5fb9a251((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C1.hs_set_5fb9a251((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mIsStackedByData
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_b529199a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_b529199a((void*)__hosihikari_shim_handle, value);
     }
 
     public int mItemParseVersion
@@ -250,10 +292,22 @@ public sealed unsafe partial class DiscFragmentItem : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_4b65760a((void*)__hosihikari_shim_handle);
     }
 
+    public bool mRequiresWorldBuilder
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_cd4569e4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_cd4569e4((void*)__hosihikari_shim_handle, value);
+    }
+
     // The native field type is not projected; this is the address of the field storage.
     public nint mSeedComponent_Address
     {
         get => (nint)NativeMethods.TablePtr->C1.hs_get_481e49fe((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mShouldDespawn
+    {
+        get => NativeMethods.TablePtr->C1.hs_get_7467a9d0((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_7467a9d0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.

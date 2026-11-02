@@ -41,13 +41,13 @@ public sealed unsafe partial class PacketGroupDefinition : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultAlgorithm_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_55046ea5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_55046ea5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPacketGroups_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_480679fc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_480679fc((void*)__hosihikari_shim_handle);
     }
 
 
@@ -57,7 +57,7 @@ public sealed unsafe partial class PacketGroupDefinition : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_685ce216((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_685ce216((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

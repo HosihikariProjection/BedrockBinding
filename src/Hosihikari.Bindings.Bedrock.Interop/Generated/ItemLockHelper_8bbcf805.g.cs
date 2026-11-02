@@ -40,32 +40,32 @@ public sealed unsafe partial class ItemLockHelper : global::System.IDisposable
 
     public static bool addKeepOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value data)
     {
-        return NativeMethods.TablePtr->C1.hs_method_2524fae8((void*)item.Handle, (void*)data.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_2524fae8((void*)item.Handle, (void*)data.Handle) != 0;
     }
 
     public static bool canMoveItemSlots(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_8b2119f6((void*)actor.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_8b2119f6((void*)actor.Handle, (void*)item.Handle) != 0;
     }
 
     public static bool isItemLocked(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_5418c9bf((void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_5418c9bf((void*)item.Handle) != 0;
     }
 
     public static void setItemLockMode(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, byte lockMode)
     {
-        NativeMethods.TablePtr->C1.hs_method_3f3104fe((void*)item.Handle, lockMode);
+        NativeMethods.TablePtr->C2.hs_method_3f3104fe((void*)item.Handle, lockMode);
     }
 
     public static bool shouldKeepOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_c67af6c4((void*)actor.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_c67af6c4((void*)actor.Handle, (void*)item.Handle) != 0;
     }
 
     public static bool shouldKeepOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_98457167((void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_98457167((void*)item.Handle) != 0;
     }
 
     public void Dispose()
@@ -74,7 +74,7 @@ public sealed unsafe partial class ItemLockHelper : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_8bbcf805((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_8bbcf805((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

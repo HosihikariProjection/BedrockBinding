@@ -44,7 +44,7 @@ public sealed unsafe partial class InsideBubbleColumnSystem : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_1cb35a9c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_1cb35a9c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

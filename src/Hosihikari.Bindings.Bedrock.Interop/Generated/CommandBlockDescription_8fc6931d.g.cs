@@ -40,17 +40,17 @@ public sealed unsafe partial class CommandBlockDescription : global::System.IDis
 
     public void _deserializeData(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams deserializeDataParams)
     {
-        NativeMethods.TablePtr->C0.hs_method_0b972ba8((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
+        NativeMethods.TablePtr->C1.hs_method_0b972ba8((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
     public nint _getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_4d1457bb((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_4d1457bb((void*)__hosihikari_shim_handle);
     }
 
     public static CommandBlockDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockDescription arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_9498cba2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_9498cba2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,30 +61,30 @@ public sealed unsafe partial class CommandBlockDescription : global::System.IDis
 
     public void deserializeData(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams deserializeDataParams)
     {
-        NativeMethods.TablePtr->C0.hs_method_2b09de43((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
+        NativeMethods.TablePtr->C1.hs_method_2b09de43((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
     public nint getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_4a42fa41((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_4a42fa41((void*)__hosihikari_shim_handle);
     }
 
     public int mCurrentTickCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_5cd50d7b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_5cd50d7b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_5cd50d7b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_5cd50d7b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mTicking
     {
-        get => NativeMethods.TablePtr->C0.hs_get_6dc23c40((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_6dc23c40((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_6dc23c40((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_6dc23c40((void*)__hosihikari_shim_handle, value);
     }
 
     public int mTicksPerCommand
     {
-        get => NativeMethods.TablePtr->C0.hs_get_860d6f18((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_860d6f18((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_860d6f18((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_860d6f18((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -94,7 +94,7 @@ public sealed unsafe partial class CommandBlockDescription : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_8fc6931d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_8fc6931d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

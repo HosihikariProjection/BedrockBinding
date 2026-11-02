@@ -40,7 +40,7 @@ public sealed unsafe partial class Rule : global::System.IDisposable
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_a5642545((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_a5642545((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class Rule : global::System.IDisposable
 
     public byte _type()
     {
-        return NativeMethods.TablePtr->C4.hs_method_c0970db6((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_c0970db6((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -58,7 +58,7 @@ public sealed unsafe partial class Rule : global::System.IDisposable
 
     public static Rule Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.Rule arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_483ab0ef((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_483ab0ef((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,13 +69,13 @@ public sealed unsafe partial class Rule : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_b5da90e7((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_b5da90e7((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRules_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_109b2804((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_109b2804((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
@@ -84,7 +84,7 @@ public sealed unsafe partial class Rule : global::System.IDisposable
 
     public byte type()
     {
-        return NativeMethods.TablePtr->C4.hs_method_edc38110((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_edc38110((void*)__hosihikari_shim_handle);
     }
 
 
@@ -94,7 +94,7 @@ public sealed unsafe partial class Rule : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b18dc953((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_b18dc953((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

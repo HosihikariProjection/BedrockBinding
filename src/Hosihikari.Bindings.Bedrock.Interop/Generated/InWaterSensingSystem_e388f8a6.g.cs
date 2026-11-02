@@ -48,7 +48,7 @@ public sealed unsafe partial class InWaterSensingSystem : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_e388f8a6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e388f8a6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,12 +40,12 @@ public sealed unsafe partial class OverworldNoises3d : global::System.IDisposabl
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_60113ce3((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_60113ce3((void*)__hosihikari_shim_handle);
     }
 
     public static OverworldNoises3d Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_dd024bfa();
+        var handle = NativeMethods.TablePtr->C3.hs_create_dd024bfa();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class OverworldNoises3d : global::System.IDisposabl
 
     public static OverworldNoises3d Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_46f7fe01((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_46f7fe01((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,12 +67,12 @@ public sealed unsafe partial class OverworldNoises3d : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry _computeBaseValueSetForCacheEntry(nint worldQuartPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry((nint)NativeMethods.TablePtr->C2.hs_method_7995f51f((void*)__hosihikari_shim_handle, (void*)worldQuartPos));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry((nint)NativeMethods.TablePtr->C3.hs_method_7995f51f((void*)__hosihikari_shim_handle, (void*)worldQuartPos));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry computeNoiseValues(nint worldQuartPos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry((nint)NativeMethods.TablePtr->C2.hs_method_701a9607((void*)__hosihikari_shim_handle, (void*)worldQuartPos));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry((nint)NativeMethods.TablePtr->C3.hs_method_701a9607((void*)__hosihikari_shim_handle, (void*)worldQuartPos));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'TerrainInfo' requires --link-carrier or --virtual-dispatch.", false)]
@@ -82,64 +82,64 @@ public sealed unsafe partial class OverworldNoises3d : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mContinentalnessNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5bd41e63((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5bd41e63((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mErosionNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ffa0d5eb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ffa0d5eb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHumidityNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_53b74895((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_53b74895((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJaggedNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_32ebf8a8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_32ebf8a8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOffsetNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_60ebf50e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_60ebf50e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTemperatureNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_772ec8ff((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_772ec8ff((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainShaper_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9074997a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9074997a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWeirdnessNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9c159c16((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9c159c16((void*)__hosihikari_shim_handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d make(global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory randomFactory)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d((nint)NativeMethods.TablePtr->C2.hs_method_282e1020((void*)randomFactory.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d((nint)NativeMethods.TablePtr->C3.hs_method_282e1020((void*)randomFactory.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d((nint)NativeMethods.TablePtr->C2.hs_method_0cdc4ebd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d((nint)NativeMethods.TablePtr->C3.hs_method_0cdc4ebd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint sample(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint((nint)NativeMethods.TablePtr->C2.hs_method_ed2ca240((void*)__hosihikari_shim_handle, (void*)position.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint((nint)NativeMethods.TablePtr->C3.hs_method_ed2ca240((void*)__hosihikari_shim_handle, (void*)position.Handle));
     }
 
 
@@ -149,7 +149,7 @@ public sealed unsafe partial class OverworldNoises3d : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c61593bf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c61593bf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

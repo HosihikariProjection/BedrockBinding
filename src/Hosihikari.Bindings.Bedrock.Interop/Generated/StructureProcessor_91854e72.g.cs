@@ -40,7 +40,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_e109ca12((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_e109ca12((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
@@ -53,7 +53,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
 
     public byte _type()
     {
-        return NativeMethods.TablePtr->C4.hs_method_7d2716c3((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_7d2716c3((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -78,7 +78,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
 
     public static StructureProcessor Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureProcessor arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4ddfb8af((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_4ddfb8af((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -89,7 +89,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_99de623c((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_99de623c((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
@@ -102,7 +102,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
 
     public byte type()
     {
-        return NativeMethods.TablePtr->C4.hs_method_03cd8d4c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_03cd8d4c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -112,7 +112,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_91854e72((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_91854e72((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

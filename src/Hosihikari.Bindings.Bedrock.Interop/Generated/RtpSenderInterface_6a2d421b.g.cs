@@ -56,7 +56,7 @@ public sealed unsafe partial class RtpSenderInterface : global::System.IDisposab
 
     public static RtpSenderInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSenderInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_549b6406((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_549b6406((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -83,12 +83,12 @@ public sealed unsafe partial class RtpSenderInterface : global::System.IDisposab
 
     public void SetObserver(nint a1)
     {
-        NativeMethods.TablePtr->C4.hs_method_6839eb00((void*)__hosihikari_shim_handle, (void*)a1);
+        NativeMethods.TablePtr->C5.hs_method_6839eb00((void*)__hosihikari_shim_handle, (void*)a1);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError SetParameters(nint a1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_735effdd((void*)__hosihikari_shim_handle, (void*)a1));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_735effdd((void*)__hosihikari_shim_handle, (void*)a1));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::RTCError) &&>' is not supported.", false)]
@@ -117,13 +117,13 @@ public sealed unsafe partial class RtpSenderInterface : global::System.IDisposab
                 __hs_vectorData0[__hs_i0] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr0 + __hs_vectorOffset0, Size = (nuint)__hs_length0 };
                 __hs_vectorOffset0 += __hs_length0;
             }
-            NativeMethods.TablePtr->C4.hs_method_30261ccc((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(a1?.Length ?? 0));
+            NativeMethods.TablePtr->C5.hs_method_30261ccc((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(a1?.Length ?? 0));
         }
     }
 
     public bool SetTrack(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaStreamTrackInterface? a1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_f4acf56a((void*)__hosihikari_shim_handle, (void*)(a1?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_f4acf56a((void*)__hosihikari_shim_handle, (void*)(a1?.Handle ?? 0)) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -132,7 +132,7 @@ public sealed unsafe partial class RtpSenderInterface : global::System.IDisposab
 
     public string id()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_bfc27833((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_bfc27833((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -142,17 +142,17 @@ public sealed unsafe partial class RtpSenderInterface : global::System.IDisposab
 
     public int media_type()
     {
-        return NativeMethods.TablePtr->C4.hs_method_db49c32f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_db49c32f((void*)__hosihikari_shim_handle);
     }
 
     public uint ssrc()
     {
-        return NativeMethods.TablePtr->C4.hs_method_0b5bc46b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_0b5bc46b((void*)__hosihikari_shim_handle);
     }
 
     public string[] stream_ids()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_9c5f79a2((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_9c5f79a2((void*)__hosihikari_shim_handle);
         var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -173,7 +173,7 @@ public sealed unsafe partial class RtpSenderInterface : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6a2d421b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_6a2d421b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

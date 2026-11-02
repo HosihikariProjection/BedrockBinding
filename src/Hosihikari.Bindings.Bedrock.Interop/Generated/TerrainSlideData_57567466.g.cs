@@ -41,42 +41,42 @@ public sealed unsafe partial class TerrainSlideData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk130d0e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2526ba7e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2526ba7e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk562272_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_28ee9854((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_28ee9854((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9daf0f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_696dc127((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_696dc127((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbf3dee_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d2bc74ea((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d2bc74ea((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc2c1ae_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fdad307b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fdad307b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc753fa_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9bd4e305((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9bd4e305((void*)__hosihikari_shim_handle);
     }
 
     public static TerrainSlideData Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest_Nested.TerrainSlideData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_810e4136((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_810e4136((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -91,7 +91,7 @@ public sealed unsafe partial class TerrainSlideData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_57567466((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_57567466((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

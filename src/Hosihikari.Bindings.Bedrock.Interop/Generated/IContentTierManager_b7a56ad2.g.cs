@@ -41,12 +41,12 @@ public sealed unsafe partial class IContentTierManager : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_cc842ac6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_cc842ac6((void*)__hosihikari_shim_handle);
     }
 
     public static IContentTierManager Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentTierManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fe7a5b74((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_fe7a5b74((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class IContentTierManager : global::System.IDisposa
 
     public bool shouldDeviceAllowAnimation()
     {
-        return NativeMethods.TablePtr->C1.hs_method_2754666d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_2754666d((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class IContentTierManager : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_b7a56ad2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b7a56ad2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

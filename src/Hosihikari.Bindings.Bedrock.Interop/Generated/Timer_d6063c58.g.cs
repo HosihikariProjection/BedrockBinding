@@ -41,18 +41,18 @@ public sealed unsafe partial class Timer : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3c6902_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dcc89a54((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dcc89a54((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk954db5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_db64bfca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_db64bfca((void*)__hosihikari_shim_handle);
     }
 
     public void _reset()
     {
-        NativeMethods.TablePtr->C2.hs_method_376f8978((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_376f8978((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -61,7 +61,7 @@ public sealed unsafe partial class Timer : global::System.IDisposable
 
     public static Timer Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_bd0ca745();
+        var handle = NativeMethods.TablePtr->C3.hs_create_bd0ca745();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,7 +72,7 @@ public sealed unsafe partial class Timer : global::System.IDisposable
 
     public static Timer Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Timer arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_705b10c6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_705b10c6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,23 +84,23 @@ public sealed unsafe partial class Timer : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5ef954_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5eb5bf2e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5eb5bf2e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk93228d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_56b33b4e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_56b33b4e((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Timer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Timer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Timer((nint)NativeMethods.TablePtr->C2.hs_method_a267c23b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Timer((nint)NativeMethods.TablePtr->C3.hs_method_a267c23b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void reset()
     {
-        NativeMethods.TablePtr->C2.hs_method_17819f7c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_17819f7c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -110,7 +110,7 @@ public sealed unsafe partial class Timer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d6063c58((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d6063c58((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

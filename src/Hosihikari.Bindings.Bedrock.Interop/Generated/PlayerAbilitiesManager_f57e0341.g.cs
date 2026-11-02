@@ -44,7 +44,7 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
 
     public static PlayerAbilitiesManager Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1de87603();
+        var handle = NativeMethods.TablePtr->C3.hs_create_1de87603();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
 
     public static PlayerAbilitiesManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a1e0cd47((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a1e0cd47((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,37 +70,37 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities? getPlayerAbilities(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID playerId)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_87781ac5((void*)__hosihikari_shim_handle, (void*)playerId.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_87781ac5((void*)__hosihikari_shim_handle, (void*)playerId.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAbilitiesData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e54ef6db((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e54ef6db((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameplayUserManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_968c4b2b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_968c4b2b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPacketSender_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_abe6aa5a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_abe6aa5a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerAbilitiesChanged_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_75835af0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_75835af0((void*)__hosihikari_shim_handle);
     }
 
     public void sendAllPlayerAbilities(global::Hosihikari.Bindings.Bedrock.Interop.Player playerReference)
     {
-        NativeMethods.TablePtr->C2.hs_method_e63bffc0((void*)__hosihikari_shim_handle, (void*)playerReference.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e63bffc0((void*)__hosihikari_shim_handle, (void*)playerReference.Handle);
     }
 
 
@@ -110,7 +110,7 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f57e0341((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f57e0341((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -44,12 +44,12 @@ public sealed unsafe partial class PlayerTickManager : global::System.IDisposabl
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_2a1f304c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_2a1f304c((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerTickManager Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_71699597();
+        var handle = NativeMethods.TablePtr->C3.hs_create_71699597();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,34 +65,34 @@ public sealed unsafe partial class PlayerTickManager : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b4292c8b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b4292c8b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameplayUserManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5da48df5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5da48df5((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsClientSide
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8f171eb6((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C3.hs_get_8f171eb6((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerTickProxy_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ca9f1ddd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ca9f1ddd((void*)__hosihikari_shim_handle);
     }
 
     public void processPlayerNetworking(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
     {
-        NativeMethods.TablePtr->C2.hs_method_a80839f9((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a80839f9((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
     {
-        NativeMethods.TablePtr->C2.hs_method_8c672a56((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
+        NativeMethods.TablePtr->C3.hs_method_8c672a56((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
     }
 
 
@@ -102,7 +102,7 @@ public sealed unsafe partial class PlayerTickManager : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_3d97d963((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_3d97d963((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

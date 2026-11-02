@@ -41,23 +41,23 @@ public sealed unsafe partial class Manager : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_42c0a53c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_42c0a53c((void*)__hosihikari_shim_handle);
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftApp minecraftApp)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_8560465b((void*)__hosihikari_shim_handle, (void*)minecraftApp.Handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_8560465b((void*)__hosihikari_shim_handle, (void*)minecraftApp.Handle);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _getAutomationClient()
     {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_764991e4((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_764991e4((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _getEventing()
     {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_df9d7a34((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_df9d7a34((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -67,7 +67,7 @@ public sealed unsafe partial class Manager : global::System.IDisposable
 
     public static Manager Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_cf2a4ee9();
+        var handle = NativeMethods.TablePtr->C1.hs_create_cf2a4ee9();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,7 +78,7 @@ public sealed unsafe partial class Manager : global::System.IDisposable
 
     public static Manager Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftApp minecraftApp)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_fe7c4097((void*)minecraftApp.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_fe7c4097((void*)minecraftApp.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -89,7 +89,7 @@ public sealed unsafe partial class Manager : global::System.IDisposable
 
     public static Manager Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.Manager arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_7a75d758((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_7a75d758((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -100,31 +100,31 @@ public sealed unsafe partial class Manager : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getAutomationClient()
     {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_9f6d59be((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_9f6d59be((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getEventing()
     {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_4691e3bf((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_4691e3bf((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5e1ae7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_dbacaeac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_dbacaeac((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk67ed09_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_1791132c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_1791132c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.Manager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.Manager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.Manager((nint)NativeMethods.TablePtr->C0.hs_method_604f6a77((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.Manager((nint)NativeMethods.TablePtr->C1.hs_method_604f6a77((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -134,7 +134,7 @@ public sealed unsafe partial class Manager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_109b6bf5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_109b6bf5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

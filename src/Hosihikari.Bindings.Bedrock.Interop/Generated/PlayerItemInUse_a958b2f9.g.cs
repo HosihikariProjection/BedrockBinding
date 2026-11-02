@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerItemInUse : global::System.IDisposable
 
     public static PlayerItemInUse Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerItemInUse arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_8fb68e26((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8fb68e26((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,25 +51,25 @@ public sealed unsafe partial class PlayerItemInUse : global::System.IDisposable
 
     public int getUsedDuration(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext owner)
     {
-        return NativeMethods.TablePtr->C2.hs_method_b7610f8a((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_b7610f8a((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_55952f8a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_55952f8a((void*)__hosihikari_shim_handle);
     }
 
     public bool mShouldEmitGameEvents
     {
-        get => NativeMethods.TablePtr->C2.hs_get_904d2e3d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_904d2e3d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_904d2e3d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_904d2e3d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSlot_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7269ccc0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7269ccc0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -79,7 +79,7 @@ public sealed unsafe partial class PlayerItemInUse : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a958b2f9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a958b2f9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

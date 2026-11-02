@@ -40,7 +40,7 @@ public sealed unsafe partial class StoredCommand : global::System.IDisposable
 
     public static StoredCommand Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_40fc1cad();
+        var handle = NativeMethods.TablePtr->C5.hs_create_40fc1cad();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class StoredCommand : global::System.IDisposable
 
     public static StoredCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.npc.StoredCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ff540b57((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_ff540b57((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,20 +62,20 @@ public sealed unsafe partial class StoredCommand : global::System.IDisposable
 
     public nint command
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e4b6c6e1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e4b6c6e1((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e4b6c6e1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_e4b6c6e1((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint rawCommand_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f2d16c62((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f2d16c62((void*)__hosihikari_shim_handle);
     }
 
     public int version
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d830720b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d830720b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_d830720b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_d830720b((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class StoredCommand : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_93df853f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_93df853f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,19 +40,19 @@ public sealed unsafe partial class FloatRange : global::System.IDisposable
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_490413c0((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_490413c0((void*)ctx.Handle);
     }
 
     public float mMax
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0acccdc7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_0acccdc7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0acccdc7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_0acccdc7((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMin
     {
-        get => NativeMethods.TablePtr->C3.hs_get_9a1e26ab((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_9a1e26ab((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_9a1e26ab((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_9a1e26ab((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -61,7 +61,7 @@ public sealed unsafe partial class FloatRange : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f0f3d354((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_f0f3d354((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

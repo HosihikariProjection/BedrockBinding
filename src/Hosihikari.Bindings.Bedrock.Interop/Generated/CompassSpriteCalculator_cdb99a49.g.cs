@@ -40,63 +40,63 @@ public sealed unsafe partial class CompassSpriteCalculator : global::System.IDis
 
     public static bool isInLastDeathDimension(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? region, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor)
     {
-        return NativeMethods.TablePtr->C0.hs_method_9fcc0110((void*)(region?.Handle ?? 0), (void*)(actor?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_9fcc0110((void*)(region?.Handle ?? 0), (void*)(actor?.Handle ?? 0)) != 0;
     }
 
     public static bool isInOverworldDimension(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? region, global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg1)
     {
-        return NativeMethods.TablePtr->C0.hs_method_3b3b9620((void*)(region?.Handle ?? 0), (void*)(arg1?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_3b3b9620((void*)(region?.Handle ?? 0), (void*)(arg1?.Handle ?? 0)) != 0;
     }
 
     public int mFrame
     {
-        get => NativeMethods.TablePtr->C0.hs_get_0b6d4e33((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_0b6d4e33((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_0b6d4e33((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_0b6d4e33((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mIsPointingAtTarget_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_0290d140((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0290d140((void*)__hosihikari_shim_handle);
     }
 
     public int mLastUpdatedAt
     {
-        get => NativeMethods.TablePtr->C0.hs_get_8bb700d2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_8bb700d2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_8bb700d2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_8bb700d2((void*)__hosihikari_shim_handle, value);
     }
 
     public float mRot
     {
-        get => NativeMethods.TablePtr->C0.hs_get_260000fe((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_260000fe((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_260000fe((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_260000fe((void*)__hosihikari_shim_handle, value);
     }
 
     public float mRotA
     {
-        get => NativeMethods.TablePtr->C0.hs_get_bf0332c8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_bf0332c8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_bf0332c8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_bf0332c8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetToPointTo_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_fd7dcee8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_fd7dcee8((void*)__hosihikari_shim_handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pointTowardsLastDeathLocation(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? region, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C0.hs_method_5442ee1d((void*)(region?.Handle ?? 0), (void*)(actor?.Handle ?? 0)));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_5442ee1d((void*)(region?.Handle ?? 0), (void*)(actor?.Handle ?? 0)));
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pointTowardsSpawnPoint(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? region, global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C0.hs_method_822d4cfe((void*)(region?.Handle ?? 0), (void*)(arg1?.Handle ?? 0)));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_822d4cfe((void*)(region?.Handle ?? 0), (void*)(arg1?.Handle ?? 0)));
     }
 
     public int updateFromPosition(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? region, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, float x, float z, float yRot, bool isZFlipped, bool instant)
     {
-        return NativeMethods.TablePtr->C0.hs_method_6e86b94b((void*)__hosihikari_shim_handle, (void*)(region?.Handle ?? 0), (void*)(actor?.Handle ?? 0), x, z, yRot, isZFlipped, instant);
+        return NativeMethods.TablePtr->C1.hs_method_6e86b94b((void*)__hosihikari_shim_handle, (void*)(region?.Handle ?? 0), (void*)(actor?.Handle ?? 0), x, z, yRot, isZFlipped, instant);
     }
 
     public void Dispose()
@@ -105,7 +105,7 @@ public sealed unsafe partial class CompassSpriteCalculator : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_cdb99a49((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_cdb99a49((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

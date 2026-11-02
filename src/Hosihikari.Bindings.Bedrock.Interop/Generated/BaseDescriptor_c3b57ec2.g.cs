@@ -44,18 +44,18 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry _getItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C1.hs_method_d77a4f53((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C2.hs_method_d77a4f53((void*)__hosihikari_shim_handle));
     }
 
     public string _getNameAndAux()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_062fae8c((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_062fae8c((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool _isValid()
     {
-        return NativeMethods.TablePtr->C1.hs_method_ec9d38f9((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_ec9d38f9((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ItemDescriptor::BaseDescriptor' has no accessible destructor.", false)]
@@ -64,28 +64,28 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
 
     public bool _sameItems(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.BaseDescriptor otherDescriptor, bool compareAux)
     {
-        return NativeMethods.TablePtr->C1.hs_method_0d1c1021((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_0d1c1021((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
     }
 
     public void _serialize(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val)
     {
-        NativeMethods.TablePtr->C1.hs_method_a50d9f45((void*)__hosihikari_shim_handle, (void*)val.Handle);
+        NativeMethods.TablePtr->C2.hs_method_a50d9f45((void*)__hosihikari_shim_handle, (void*)val.Handle);
     }
 
     public bool _shouldResolve()
     {
-        return NativeMethods.TablePtr->C1.hs_method_bab862a7((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_bab862a7((void*)__hosihikari_shim_handle) != 0;
     }
 
     public string _toString()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_c0e22f9b((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_c0e22f9b((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static BaseDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.BaseDescriptor arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_15045ed4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_15045ed4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -104,34 +104,34 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
 
     public string getFullName()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_82d2f47d((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_82d2f47d((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public ulong getHash()
     {
-        return NativeMethods.TablePtr->C1.hs_method_e58e571b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_e58e571b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry getItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C1.hs_method_d2f81ce6((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C2.hs_method_d2f81ce6((void*)__hosihikari_shim_handle));
     }
 
     public string getNameAndAux()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_0397b74c((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0397b74c((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public byte getType()
     {
-        return NativeMethods.TablePtr->C1.hs_method_001d2175((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_001d2175((void*)__hosihikari_shim_handle);
     }
 
     public bool isValid()
     {
-        return NativeMethods.TablePtr->C1.hs_method_1ce3a99d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_1ce3a99d((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ItemDescriptor::BaseDescriptor' has no accessible destructor.", false)]
@@ -140,12 +140,12 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
 
     public bool sameItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry otherItem, bool compareAux)
     {
-        return NativeMethods.TablePtr->C1.hs_method_f8d0c84b((void*)__hosihikari_shim_handle, (void*)otherItem.Handle, compareAux) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_f8d0c84b((void*)__hosihikari_shim_handle, (void*)otherItem.Handle, compareAux) != 0;
     }
 
     public bool sameItems(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.BaseDescriptor otherDescriptor, bool compareAux)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7a4ff202((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_7a4ff202((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'CompoundTag' is not supported.", false)]
@@ -154,17 +154,17 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C1.hs_method_a8dad77c((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C2.hs_method_a8dad77c((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val)
     {
-        NativeMethods.TablePtr->C1.hs_method_2e29c5a8((void*)__hosihikari_shim_handle, (void*)val.Handle);
+        NativeMethods.TablePtr->C2.hs_method_2e29c5a8((void*)__hosihikari_shim_handle, (void*)val.Handle);
     }
 
     public bool shouldResolve()
     {
-        return NativeMethods.TablePtr->C1.hs_method_2d18033f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_2d18033f((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::map<std::basic_string<char>, std::basic_string<char>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -173,7 +173,7 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
 
     public string toString()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_c13f72b6((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_c13f72b6((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -184,7 +184,7 @@ public sealed unsafe partial class BaseDescriptor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c3b57ec2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c3b57ec2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

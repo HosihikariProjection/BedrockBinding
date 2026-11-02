@@ -40,7 +40,7 @@ public sealed unsafe partial class SimplexNoise : global::System.IDisposable
 
     public static SimplexNoise Create(global::Hosihikari.Bindings.Bedrock.Interop.SimplexNoise arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d348de6a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_d348de6a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,24 +51,24 @@ public sealed unsafe partial class SimplexNoise : global::System.IDisposable
 
     public float _getValue(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 vin)
     {
-        return NativeMethods.TablePtr->C3.hs_method_68debed1((void*)__hosihikari_shim_handle, (void*)vin.Handle);
+        return NativeMethods.TablePtr->C4.hs_method_68debed1((void*)__hosihikari_shim_handle, (void*)vin.Handle);
     }
 
     public float _getValue(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 vin)
     {
-        return NativeMethods.TablePtr->C3.hs_method_c6eba7f3((void*)__hosihikari_shim_handle, (void*)vin.Handle);
+        return NativeMethods.TablePtr->C4.hs_method_c6eba7f3((void*)__hosihikari_shim_handle, (void*)vin.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoiseMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1f8a7769((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1f8a7769((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOrigin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_bbbf6774((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_bbbf6774((void*)__hosihikari_shim_handle);
     }
 
 
@@ -78,7 +78,7 @@ public sealed unsafe partial class SimplexNoise : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f16058e7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_f16058e7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class DimensionDocument : global::System.IDisposabl
 
     public static DimensionDocument Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.DimensionDefinition.DimensionDocument arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b1854e6a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b1854e6a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,18 +51,18 @@ public sealed unsafe partial class DimensionDocument : global::System.IDisposabl
 
     public static nint VERSION()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_38aa9b99();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_38aa9b99();
     }
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_97a1c2f1((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_97a1c2f1((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a3170cc1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a3170cc1((void*)__hosihikari_shim_handle);
     }
 
 
@@ -72,7 +72,7 @@ public sealed unsafe partial class DimensionDocument : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_426d842b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_426d842b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

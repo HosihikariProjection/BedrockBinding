@@ -40,7 +40,7 @@ public sealed unsafe partial class EnumMapping : global::System.IDisposable
 
     public static EnumMapping Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.BasicSchema_Nested.EnumMapping arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_95910010((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_95910010((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class EnumMapping : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mViews_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7198b7d7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_7198b7d7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class EnumMapping : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bac05951((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_bac05951((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

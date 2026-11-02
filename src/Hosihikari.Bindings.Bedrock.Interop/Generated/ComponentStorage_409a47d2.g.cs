@@ -40,12 +40,12 @@ public sealed unsafe partial class ComponentStorage : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_a8b0cc81((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_a8b0cc81((void*)__hosihikari_shim_handle);
     }
 
     public static ComponentStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ComponentStorage arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c339be32((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_c339be32((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,7 +69,7 @@ public sealed unsafe partial class ComponentStorage : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_4dde3f5b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C5.hs_method_4dde3f5b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
@@ -84,12 +84,12 @@ public sealed unsafe partial class ComponentStorage : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_cd8244d8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_cd8244d8((void*)__hosihikari_shim_handle);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ComponentStorage other)
     {
-        return NativeMethods.TablePtr->C4.hs_method_3859a5dc((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_3859a5dc((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
 
@@ -99,7 +99,7 @@ public sealed unsafe partial class ComponentStorage : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_409a47d2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_409a47d2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

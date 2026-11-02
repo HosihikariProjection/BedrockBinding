@@ -41,12 +41,12 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b04bf39b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b04bf39b((void*)__hosihikari_shim_handle);
     }
 
     public static SoundPlayerInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundPlayerInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_f8cdb7c3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_f8cdb7c3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,22 +57,22 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
 
     public void fade(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle, float duration, float targetVolume)
     {
-        NativeMethods.TablePtr->C3.hs_method_c43817d6((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, duration, targetVolume);
+        NativeMethods.TablePtr->C4.hs_method_c43817d6((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, duration, targetVolume);
     }
 
     public void fadeOut(ulong handle, float duration)
     {
-        NativeMethods.TablePtr->C3.hs_method_50854f7d((void*)__hosihikari_shim_handle, handle, duration);
+        NativeMethods.TablePtr->C4.hs_method_50854f7d((void*)__hosihikari_shim_handle, handle, duration);
     }
 
     public void fadeToStopMusic(float fadeSeconds)
     {
-        NativeMethods.TablePtr->C3.hs_method_f4f18ed5((void*)__hosihikari_shim_handle, fadeSeconds);
+        NativeMethods.TablePtr->C4.hs_method_f4f18ed5((void*)__hosihikari_shim_handle, fadeSeconds);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView getCurrentlyPlayingMusicPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)NativeMethods.TablePtr->C3.hs_method_1535ea04((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView((nint)NativeMethods.TablePtr->C4.hs_method_1535ea04((void*)__hosihikari_shim_handle));
     }
 
     public bool getItem(string eventName, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView soundPath, nint soundItem)
@@ -90,7 +90,7 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(eventName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C3.hs_method_f1373fb7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)soundPath.Handle, (void*)soundItem) != 0;
+            return NativeMethods.TablePtr->C4.hs_method_f1373fb7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)soundPath.Handle, (void*)soundItem) != 0;
         }
     }
 
@@ -110,19 +110,19 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C3.hs_method_e9a4d902((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            var __hs_view = NativeMethods.TablePtr->C4.hs_method_e9a4d902((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
             return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
         }
     }
 
     public bool isLoadingMusic()
     {
-        return NativeMethods.TablePtr->C3.hs_method_f8486ccd((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_f8486ccd((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isPlayingMusic(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView soundPath)
     {
-        return NativeMethods.TablePtr->C3.hs_method_4782c364((void*)__hosihikari_shim_handle, (void*)soundPath.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_4782c364((void*)__hosihikari_shim_handle, (void*)soundPath.Handle) != 0;
     }
 
     public bool isPlayingMusicEvent(string eventName)
@@ -140,38 +140,38 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(eventName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C3.hs_method_80b6c6e3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C4.hs_method_80b6c6e3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public bool isPlayingSound(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle)
     {
-        return NativeMethods.TablePtr->C3.hs_method_38c076ed((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_38c076ed((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle) != 0;
     }
 
     public bool isPlayingSound(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path soundName)
     {
-        return NativeMethods.TablePtr->C3.hs_method_4fe8322e((void*)__hosihikari_shim_handle, (void*)soundName.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_4fe8322e((void*)__hosihikari_shim_handle, (void*)soundName.Handle) != 0;
     }
 
     public bool isPlayingSound(ulong handle)
     {
-        return NativeMethods.TablePtr->C3.hs_method_1ee9d9d3((void*)__hosihikari_shim_handle, handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_1ee9d9d3((void*)__hosihikari_shim_handle, handle) != 0;
     }
 
     public void pause(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle, byte source)
     {
-        NativeMethods.TablePtr->C3.hs_method_af4a8e7c((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, source);
+        NativeMethods.TablePtr->C4.hs_method_af4a8e7c((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, source);
     }
 
     public void pauseAllPlayingSounds(byte source)
     {
-        NativeMethods.TablePtr->C3.hs_method_ce750602((void*)__hosihikari_shim_handle, source);
+        NativeMethods.TablePtr->C4.hs_method_ce750602((void*)__hosihikari_shim_handle, source);
     }
 
     public void pauseMusic(bool state)
     {
-        NativeMethods.TablePtr->C3.hs_method_f2d8b4bc((void*)__hosihikari_shim_handle, state);
+        NativeMethods.TablePtr->C4.hs_method_f2d8b4bc((void*)__hosihikari_shim_handle, state);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'PlaySoundOptions' is not a known bindable declaration.", false)]
@@ -201,7 +201,7 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(eventName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C3.hs_method_9ad90df5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, volume);
+            NativeMethods.TablePtr->C4.hs_method_9ad90df5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, volume);
         }
     }
 
@@ -220,7 +220,7 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(eventName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C3.hs_method_4754dc16((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, volume, (void*)playlistIndex);
+            NativeMethods.TablePtr->C4.hs_method_4754dc16((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, volume, (void*)playlistIndex);
         }
     }
 
@@ -239,7 +239,7 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C3.hs_method_2dd52c64((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, volume, pitch);
+            return NativeMethods.TablePtr->C4.hs_method_2dd52c64((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, volume, pitch);
         }
     }
 
@@ -249,37 +249,37 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
 
     public void resume(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle, byte source)
     {
-        NativeMethods.TablePtr->C3.hs_method_f02896cf((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, source);
+        NativeMethods.TablePtr->C4.hs_method_f02896cf((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, source);
     }
 
     public void resumeAllPreviouslyPlayingSounds(byte source)
     {
-        NativeMethods.TablePtr->C3.hs_method_bb026b5f((void*)__hosihikari_shim_handle, source);
+        NativeMethods.TablePtr->C4.hs_method_bb026b5f((void*)__hosihikari_shim_handle, source);
     }
 
     public void setMusicCommandVolumeMultiplier(float volumeMultiplier)
     {
-        NativeMethods.TablePtr->C3.hs_method_f2617638((void*)__hosihikari_shim_handle, volumeMultiplier);
+        NativeMethods.TablePtr->C4.hs_method_f2617638((void*)__hosihikari_shim_handle, volumeMultiplier);
     }
 
     public void setPitch(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle, float pitch)
     {
-        NativeMethods.TablePtr->C3.hs_method_1e9b2596((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, pitch);
+        NativeMethods.TablePtr->C4.hs_method_1e9b2596((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, pitch);
     }
 
     public void setPlaybackPosition(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle, float seconds)
     {
-        NativeMethods.TablePtr->C3.hs_method_48d76b06((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, seconds);
+        NativeMethods.TablePtr->C4.hs_method_48d76b06((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, seconds);
     }
 
     public void setVolume(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle, float volume)
     {
-        NativeMethods.TablePtr->C3.hs_method_9831fc5d((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, volume);
+        NativeMethods.TablePtr->C4.hs_method_9831fc5d((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle, volume);
     }
 
     public void stop(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle serverSoundHandle)
     {
-        NativeMethods.TablePtr->C3.hs_method_a58678f8((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle);
+        NativeMethods.TablePtr->C4.hs_method_a58678f8((void*)__hosihikari_shim_handle, (void*)serverSoundHandle.Handle);
     }
 
     public void stop(string name)
@@ -297,23 +297,23 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C3.hs_method_5d555501((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C4.hs_method_5d555501((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void stop(ulong handle)
     {
-        NativeMethods.TablePtr->C3.hs_method_2eba5a5d((void*)__hosihikari_shim_handle, handle);
+        NativeMethods.TablePtr->C4.hs_method_2eba5a5d((void*)__hosihikari_shim_handle, handle);
     }
 
     public void stopAllSounds()
     {
-        NativeMethods.TablePtr->C3.hs_method_7020e21e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_7020e21e((void*)__hosihikari_shim_handle);
     }
 
     public void stopMusic()
     {
-        NativeMethods.TablePtr->C3.hs_method_1723fc25((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_1723fc25((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'LoopingSoundAttributes' is not supported.", false)]
@@ -330,7 +330,7 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
 
     public void unregisterLoop(ulong handle, bool hard)
     {
-        NativeMethods.TablePtr->C3.hs_method_98d124a5((void*)__hosihikari_shim_handle, handle, hard);
+        NativeMethods.TablePtr->C4.hs_method_98d124a5((void*)__hosihikari_shim_handle, handle, hard);
     }
 
 
@@ -340,7 +340,7 @@ public sealed unsafe partial class SoundPlayerInterface : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_578dd53d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_578dd53d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

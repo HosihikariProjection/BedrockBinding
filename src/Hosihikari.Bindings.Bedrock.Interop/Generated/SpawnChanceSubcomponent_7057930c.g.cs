@@ -40,27 +40,27 @@ public sealed unsafe partial class SpawnChanceSubcomponent : global::System.IDis
 
     public void _doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent arg1)
     {
-        NativeMethods.TablePtr->C3.hs_method_684d42c0((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C4.hs_method_684d42c0((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
     }
 
     public nint _getName()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_a8610a1e((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_a8610a1e((void*)__hosihikari_shim_handle);
     }
 
     public void _initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)
     {
-        NativeMethods.TablePtr->C3.hs_method_dacdf9c2((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C4.hs_method_dacdf9c2((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
     public void _writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value component)
     {
-        NativeMethods.TablePtr->C3.hs_method_589ae651((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C4.hs_method_589ae651((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
     public static SpawnChanceSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnChanceSubcomponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_287da08e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_287da08e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,64 +71,64 @@ public sealed unsafe partial class SpawnChanceSubcomponent : global::System.IDis
 
     public void doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent arg1)
     {
-        NativeMethods.TablePtr->C3.hs_method_aa94efb0((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C4.hs_method_aa94efb0((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
     }
 
     public nint getName()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_631df9a4((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_631df9a4((void*)__hosihikari_shim_handle);
     }
 
     public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)
     {
-        NativeMethods.TablePtr->C3.hs_method_c8249dfb((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C4.hs_method_c8249dfb((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
     public float mFirstSpawnChance
     {
-        get => NativeMethods.TablePtr->C3.hs_get_3c3e0900((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_3c3e0900((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_3c3e0900((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_3c3e0900((void*)__hosihikari_shim_handle, value);
     }
 
     public int mFirstSpawnCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_00168038((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_00168038((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_00168038((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_00168038((void*)__hosihikari_shim_handle, value);
     }
 
     public float mSecondSpawnChance
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a13155ac((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a13155ac((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a13155ac((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a13155ac((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSecondSpawnCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_51a6cde5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_51a6cde5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_51a6cde5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_51a6cde5((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mSpawnBaby
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b8322634((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_b8322634((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_b8322634((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_b8322634((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_73a9dd7e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_73a9dd7e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnTriggers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_02fa1800((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_02fa1800((void*)__hosihikari_shim_handle);
     }
 
     public void writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value component)
     {
-        NativeMethods.TablePtr->C3.hs_method_8e005780((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C4.hs_method_8e005780((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
 
@@ -138,7 +138,7 @@ public sealed unsafe partial class SpawnChanceSubcomponent : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_7057930c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_7057930c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

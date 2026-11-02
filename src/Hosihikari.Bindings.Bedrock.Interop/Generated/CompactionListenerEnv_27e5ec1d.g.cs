@@ -44,7 +44,7 @@ public sealed unsafe partial class CompactionListenerEnv : global::System.IDispo
 
     public static CompactionListenerEnv Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f09ed1e0();
+        var handle = NativeMethods.TablePtr->C1.hs_create_f09ed1e0();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class CompactionListenerEnv : global::System.IDispo
 
     public static CompactionListenerEnv Create(global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_83b2818c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_83b2818c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,30 +71,30 @@ public sealed unsafe partial class CompactionListenerEnv : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk17bf1b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_da8a498e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_da8a498e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk203ab8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_f56b994a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f56b994a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk21aba1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_069367b0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_069367b0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk91de58_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d0a3eae9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d0a3eae9((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv((nint)NativeMethods.TablePtr->C0.hs_method_f219f597((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompactionListenerEnv((nint)NativeMethods.TablePtr->C1.hs_method_f219f597((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class CompactionListenerEnv : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_27e5ec1d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_27e5ec1d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

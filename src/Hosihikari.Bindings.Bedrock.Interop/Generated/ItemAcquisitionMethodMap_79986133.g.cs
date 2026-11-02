@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemAcquisitionMethodMap : global::System.IDi
 
     public static nint mMap()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_f8564d0e();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_f8564d0e();
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class ItemAcquisitionMethodMap : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_79986133((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_79986133((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

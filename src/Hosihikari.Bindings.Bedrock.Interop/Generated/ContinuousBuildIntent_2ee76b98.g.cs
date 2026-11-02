@@ -40,7 +40,7 @@ public sealed unsafe partial class ContinuousBuildIntent : global::System.IDispo
 
     public byte execute(global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer player, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        return NativeMethods.TablePtr->C4.hs_method_f780207a((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)region.Handle);
+        return NativeMethods.TablePtr->C5.hs_method_f780207a((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)region.Handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class ContinuousBuildIntent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2ee76b98((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_2ee76b98((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

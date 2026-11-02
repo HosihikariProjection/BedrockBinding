@@ -40,7 +40,7 @@ public sealed unsafe partial class PieceWeight : global::System.IDisposable
 
     public static PieceWeight Create(global::Hosihikari.Bindings.Bedrock.Interop.PieceWeight arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c519c19c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c519c19c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,38 +51,38 @@ public sealed unsafe partial class PieceWeight : global::System.IDisposable
 
     public bool allowInRow
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7cf1d518((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_7cf1d518((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7cf1d518((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_7cf1d518((void*)__hosihikari_shim_handle, value);
     }
 
     public int maxPlaceCount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b4e926e4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b4e926e4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b4e926e4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b4e926e4((void*)__hosihikari_shim_handle, value);
     }
 
     public int minDepth
     {
-        get => NativeMethods.TablePtr->C2.hs_get_90c7e69b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_90c7e69b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_90c7e69b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_90c7e69b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint pieceClass_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_260dc67a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_260dc67a((void*)__hosihikari_shim_handle);
     }
 
     public int placeCount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_bc5cbdef((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_bc5cbdef((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bc5cbdef((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_bc5cbdef((void*)__hosihikari_shim_handle, value);
     }
 
     public int weight
     {
-        get => NativeMethods.TablePtr->C2.hs_get_39c0e693((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_39c0e693((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_39c0e693((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_39c0e693((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -92,7 +92,7 @@ public sealed unsafe partial class PieceWeight : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e71cb60b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e71cb60b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class IDimensionFactory : global::System.IDisposabl
 
     public static IDimensionFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.IDimensionFactory arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_591e9a72((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_591e9a72((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,18 +64,18 @@ public sealed unsafe partial class IDimensionFactory : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(dimensionName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)NativeMethods.TablePtr->C1.hs_method_215522b6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)NativeMethods.TablePtr->C2.hs_method_215522b6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____ getDimensionOwnerPtrFactory()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____((nint)NativeMethods.TablePtr->C1.hs_method_3aa7adde((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____((nint)NativeMethods.TablePtr->C2.hs_method_3aa7adde((void*)__hosihikari_shim_handle), false);
     }
 
     public void initializeDimension(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        NativeMethods.TablePtr->C1.hs_method_771eaf03((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C2.hs_method_771eaf03((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class IDimensionFactory : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_5add19ad((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_5add19ad((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

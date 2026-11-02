@@ -40,52 +40,52 @@ public sealed unsafe partial class SharedAmplifiers : global::System.IDisposable
 
     public static nint ABSORPTION()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_068e778f();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_068e778f();
     }
 
     public static nint FATAL_POISON()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_059091d0();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_059091d0();
     }
 
     public static nint HARM()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_02c7502e();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_02c7502e();
     }
 
     public static nint HEAL()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_34e4201c();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_34e4201c();
     }
 
     public static nint HUNGER_DURATION()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_e415ccd1();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_e415ccd1();
     }
 
     public static nint HUNGER_VALUE()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_acd36a24();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_acd36a24();
     }
 
     public static nint POISON()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_118bd0c4();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_118bd0c4();
     }
 
     public static nint REGENERATION()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_4f344e7a();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_4f344e7a();
     }
 
     public static nint SATURATION()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d959b671();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_d959b671();
     }
 
     public static nint WITHER()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_f50121ee();
+        return (nint)NativeMethods.TablePtr->C4.hs_method_f50121ee();
     }
 
     public void Dispose()
@@ -94,7 +94,7 @@ public sealed unsafe partial class SharedAmplifiers : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e33302d7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e33302d7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,720 +41,720 @@ public sealed unsafe partial class Player : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mActionQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ab80765b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ab80765b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorDefinitionPtr_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_af52bb23((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_af52bb23((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorRendererId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c23de0fa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c23de0fa((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorRendererIdThatAnimationComponentWasInitializedWith_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_44707f99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_44707f99((void*)__hosihikari_shim_handle);
     }
 
     public bool mAdded
     {
-        get => NativeMethods.TablePtr->C2.hs_get_96db6c59((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_96db6c59((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_96db6c59((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_96db6c59((void*)__hosihikari_shim_handle, value);
     }
 
     public int mAffectedByWaterBottleTicksToEffect
     {
-        get => NativeMethods.TablePtr->C2.hs_get_104e83fc((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_104e83fc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_104e83fc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_104e83fc((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAlias_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c88da9fe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c88da9fe((void*)__hosihikari_shim_handle);
     }
 
     public bool mAlwaysFireImmune
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b2bf2eb8((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_b2bf2eb8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b2bf2eb8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_b2bf2eb8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAnimationComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_93be4346((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_93be4346((void*)__hosihikari_shim_handle);
     }
 
     public bool mBlocksBuilding
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e69a3a4e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_e69a3a4e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e69a3a4e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_e69a3a4e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBuiltInComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4e20c312((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4e20c312((void*)__hosihikari_shim_handle);
     }
 
     public bool mCanPickupItems
     {
-        get => NativeMethods.TablePtr->C2.hs_get_dd473a5c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_dd473a5c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_dd473a5c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_dd473a5c((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mCategories
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c8f2026b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c8f2026b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c8f2026b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c8f2026b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mChainedDamageEffects
     {
-        get => NativeMethods.TablePtr->C2.hs_get_59fcb288((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_59fcb288((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_59fcb288((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_59fcb288((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mChanged
     {
-        get => NativeMethods.TablePtr->C2.hs_get_55c6b66b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_55c6b66b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_55c6b66b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_55c6b66b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCurrentDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b8144580((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b8144580((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCustomInitEventName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dade3dfd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dade3dfd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefinitionList_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f1e647a7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f1e647a7((void*)__hosihikari_shim_handle);
     }
 
     public nint mDefinitions
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_21e231f4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_21e231f4((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_21e231f4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_21e231f4((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_99f314bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_99f314bd((void*)__hosihikari_shim_handle);
     }
 
     public bool mEffectsDirty
     {
-        get => NativeMethods.TablePtr->C2.hs_get_10c8349e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_10c8349e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_10c8349e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_10c8349e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityContext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8117a135((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8117a135((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_45375caf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_45375caf((void*)__hosihikari_shim_handle);
     }
 
     public bool mFilterLighting
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c47d520b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_c47d520b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c47d520b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c47d520b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilteredNameTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5b8312be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5b8312be((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFishingHookID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_69341dcc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_69341dcc((void*)__hosihikari_shim_handle);
     }
 
     public float mFlameFrameIncrementTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_50d0a86e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_50d0a86e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_50d0a86e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_50d0a86e((void*)__hosihikari_shim_handle, value);
     }
 
     public int mFlameTexFrameIndex
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7dffccf0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_7dffccf0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7dffccf0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7dffccf0((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mForceInitMethodToSpawnOnReload
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2722ba5e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_2722ba5e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2722ba5e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_2722ba5e((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mForcedLoading
     {
-        get => NativeMethods.TablePtr->C2.hs_get_42663a88((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_42663a88((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_42663a88((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_42663a88((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHasSetCanPickupItems
     {
-        get => NativeMethods.TablePtr->C2.hs_get_643fcb1b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_643fcb1b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_643fcb1b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_643fcb1b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHighlightedThisFrame
     {
-        get => NativeMethods.TablePtr->C2.hs_get_60ad7d7a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_60ad7d7a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_60ad7d7a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_60ad7d7a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHurtColor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_10491d48((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_10491d48((void*)__hosihikari_shim_handle);
     }
 
     public bool mIgnoreLighting
     {
-        get => NativeMethods.TablePtr->C2.hs_get_944068c5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_944068c5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_944068c5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_944068c5((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInLovePartner_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a901bd28((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a901bd28((void*)__hosihikari_shim_handle);
     }
 
     public bool mInheritRotationWhenRiding
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c74ad0b7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_c74ad0b7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c74ad0b7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c74ad0b7((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mInitMethod
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7751f18b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_7751f18b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7751f18b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7751f18b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInitParams_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_70704e79((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_70704e79((void*)__hosihikari_shim_handle);
     }
 
     public bool mInitialized
     {
-        get => NativeMethods.TablePtr->C2.hs_get_391b0bc9((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_391b0bc9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_391b0bc9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_391b0bc9((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInvulnerable
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6dffe555((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_6dffe555((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6dffe555((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_6dffe555((void*)__hosihikari_shim_handle, value);
     }
 
     public int mInvulnerableTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_30ed0414((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_30ed0414((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_30ed0414((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_30ed0414((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsPredictableProjectile
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1f4c7cc7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_1f4c7cc7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1f4c7cc7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_1f4c7cc7((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsRenderingInUI
     {
-        get => NativeMethods.TablePtr->C2.hs_get_74ce7218((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_74ce7218((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_74ce7218((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_74ce7218((void*)__hosihikari_shim_handle, value);
     }
 
     public int mLastHealth
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3bab1c94((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3bab1c94((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3bab1c94((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3bab1c94((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mLastHitBB
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_74a8e5ad((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_74a8e5ad((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_74a8e5ad((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_74a8e5ad((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public float mLastHurt
     {
-        get => NativeMethods.TablePtr->C2.hs_get_17a96597((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_17a96597((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_17a96597((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_17a96597((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastHurtByMobId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_19870d26((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_19870d26((void*)__hosihikari_shim_handle);
     }
 
     public int mLastHurtByMobTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_44a26041((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_44a26041((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_44a26041((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_44a26041((void*)__hosihikari_shim_handle, value);
     }
 
     public int mLastHurtByMobTimestamp
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a086506a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_a086506a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a086506a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a086506a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastHurtByPlayerId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ebc38273((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ebc38273((void*)__hosihikari_shim_handle);
     }
 
     public int mLastHurtByPlayerTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_704d3c31((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_704d3c31((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_704d3c31((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_704d3c31((void*)__hosihikari_shim_handle, value);
     }
 
     public int mLastHurtCause
     {
-        get => NativeMethods.TablePtr->C2.hs_get_050eb51b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_050eb51b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_050eb51b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_050eb51b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastHurtMobId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ece36278((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ece36278((void*)__hosihikari_shim_handle);
     }
 
     public int mLastHurtMobTimestamp
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5355c92d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_5355c92d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_5355c92d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_5355c92d((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mLastHurtTimestamp
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ab3f96ec((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ab3f96ec((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ab3f96ec((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ab3f96ec((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLeashRopeSystem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b2e35173((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b2e35173((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLegacyUniqueID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9d467b9c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9d467b9c((void*)__hosihikari_shim_handle);
     }
 
     public nint mLevel
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b01eacf6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b01eacf6((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b01eacf6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b01eacf6((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLoadedActorPropertyTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1f620f52((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1f620f52((void*)__hosihikari_shim_handle);
     }
 
     public bool mLoadedFromNBTThisFrame
     {
-        get => NativeMethods.TablePtr->C2.hs_get_926e7c5b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_926e7c5b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_926e7c5b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_926e7c5b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mLootDropped
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1fe31c4f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_1fe31c4f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1fe31c4f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_1fe31c4f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMolangVariables_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_707fb30e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_707fb30e((void*)__hosihikari_shim_handle);
     }
 
     public bool mMovedToLimbo
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4ad0b7e6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_4ad0b7e6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4ad0b7e6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_4ad0b7e6((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mMovedToUnloadedChunk
     {
-        get => NativeMethods.TablePtr->C2.hs_get_60a320a3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_60a320a3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_60a320a3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_60a320a3((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mNameTagHash
     {
-        get => NativeMethods.TablePtr->C2.hs_get_39f88449((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_39f88449((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_39f88449((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_39f88449((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNetworkData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8a2198fe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8a2198fe((void*)__hosihikari_shim_handle);
     }
 
     public bool mPersistingTrade
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e0211ae1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_e0211ae1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e0211ae1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_e0211ae1((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPersistingTradeOffers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_31abd8fb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_31abd8fb((void*)__hosihikari_shim_handle);
     }
 
     public int mPersistingTradeRiches
     {
-        get => NativeMethods.TablePtr->C2.hs_get_04ccf722((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_04ccf722((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_04ccf722((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_04ccf722((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreviousBoneMatrices_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4ef08e9b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4ef08e9b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreviousRenderTransform_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_992218f9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_992218f9((void*)__hosihikari_shim_handle);
     }
 
     public bool mProcessedOnChunkDiscard
     {
-        get => NativeMethods.TablePtr->C2.hs_get_78020642((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_78020642((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_78020642((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_78020642((void*)__hosihikari_shim_handle, value);
     }
 
     public float mPushThrough
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6c7ed132((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_6c7ed132((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6c7ed132((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_6c7ed132((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mRemoved
     {
-        get => NativeMethods.TablePtr->C2.hs_get_693bff09((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_693bff09((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_693bff09((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_693bff09((void*)__hosihikari_shim_handle, value);
     }
 
     public float mScale
     {
-        get => NativeMethods.TablePtr->C2.hs_get_217cd29d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_217cd29d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_217cd29d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_217cd29d((void*)__hosihikari_shim_handle, value);
     }
 
     public float mScalePrev
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5e1a517e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_5e1a517e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_5e1a517e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_5e1a517e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSentDelta_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b799538a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b799538a((void*)__hosihikari_shim_handle);
     }
 
     public float mShadowOffset
     {
-        get => NativeMethods.TablePtr->C2.hs_get_d770d7c3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_d770d7c3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d770d7c3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d770d7c3((void*)__hosihikari_shim_handle, value);
     }
 
     public int mShakeTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8d4d2e59((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8d4d2e59((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8d4d2e59((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8d4d2e59((void*)__hosihikari_shim_handle, value);
     }
 
     public float mSoundVolume
     {
-        get => NativeMethods.TablePtr->C2.hs_get_cb6ce9d9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_cb6ce9d9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_cb6ce9d9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_cb6ce9d9((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSpawnRulesEnum
     {
-        get => NativeMethods.TablePtr->C2.hs_get_04b8238d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_04b8238d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_04b8238d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_04b8238d((void*)__hosihikari_shim_handle, value);
     }
 
     public float mStepSoundPitch
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a1ba42de((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_a1ba42de((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a1ba42de((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a1ba42de((void*)__hosihikari_shim_handle, value);
     }
 
     public float mStepSoundVolume
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3f767a4c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3f767a4c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3f767a4c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3f767a4c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7768b081((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7768b081((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainInterlockData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4af76ba4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4af76ba4((void*)__hosihikari_shim_handle);
     }
 
     public int mTickCount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_845d5992((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_845d5992((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_845d5992((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_845d5992((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUIAnimationComponent_0c34a75e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3af97513((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3af97513((void*)__hosihikari_shim_handle);
     }
 
     public bool mUpdateEffects
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ca49c489((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_ca49c489((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ca49c489((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_ca49c489((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ce63cb28((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ce63cb28((void*)__hosihikari_shim_handle);
     }
 
     public bool mWasHurtLastTick
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3fc7428d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_3fc7428d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3fc7428d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_3fc7428d((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mWasHurtThisTick
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6b65a472((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_6b65a472((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6b65a472((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_6b65a472((void*)__hosihikari_shim_handle, value);
     }
 
     public float mAttackAnim
     {
-        get => NativeMethods.TablePtr->C2.hs_get_dfbbab40((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_dfbbab40((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_dfbbab40((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_dfbbab40((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoundOrigin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9d1aa84e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9d1aa84e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBuiltInMobComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ed2b4729((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ed2b4729((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCaravanHead_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3fbc9105((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3fbc9105((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCaravanTail_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_61849f5c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_61849f5c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClockSpriteCalc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3f0d4a3d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3f0d4a3d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCompassSpriteCalc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9f62eeba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9f62eeba((void*)__hosihikari_shim_handle);
     }
 
     public bool mCreateAiOnReload
     {
-        get => NativeMethods.TablePtr->C2.hs_get_953a9267((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_953a9267((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_953a9267((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_953a9267((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHasBoundOrigin
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ce113fe0((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_ce113fe0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ce113fe0((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_ce113fe0((void*)__hosihikari_shim_handle, value);
     }
 
     public float mHurtDir
     {
-        get => NativeMethods.TablePtr->C2.hs_get_26129b43((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_26129b43((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_26129b43((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_26129b43((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMovementComponentCurrentSpeed
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0e59fc09((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_0e59fc09((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0e59fc09((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0e59fc09((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mNaturallySpawned
     {
-        get => NativeMethods.TablePtr->C2.hs_get_81e6038a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_81e6038a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_81e6038a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_81e6038a((void*)__hosihikari_shim_handle, value);
     }
 
     public float mOAttackAnim
     {
-        get => NativeMethods.TablePtr->C2.hs_get_d3269f6b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_d3269f6b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d3269f6b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d3269f6b((void*)__hosihikari_shim_handle, value);
     }
 
     public float mOTilt
     {
-        get => NativeMethods.TablePtr->C2.hs_get_394982e0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_394982e0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_394982e0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_394982e0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecoveryCompassSpriteCalc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_abb2f99b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_abb2f99b((void*)__hosihikari_shim_handle);
     }
 
     public byte mSpawnMethod
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8c843d2a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8c843d2a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8c843d2a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8c843d2a((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mSurfaceMob
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ff0ef086((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_ff0ef086((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ff0ef086((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_ff0ef086((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSwingTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5cc334b3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_5cc334b3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_5cc334b3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_5cc334b3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mSwinging
     {
-        get => NativeMethods.TablePtr->C2.hs_get_68ed9710((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_68ed9710((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_68ed9710((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_68ed9710((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetCaptainId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6f7fe611((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6f7fe611((void*)__hosihikari_shim_handle);
     }
 
     public float mTilt
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b05bd43e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b05bd43e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b05bd43e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b05bd43e((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mWantsToBeJockey
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2fa0fef1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_2fa0fef1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2fa0fef1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_2fa0fef1((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? __createChunkSource(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource mainChunkSource)
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_078ef0a1((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_078ef0a1((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public void __fireDimensionChanged()
     {
-        NativeMethods.TablePtr->C2.hs_method_48c4a835((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_48c4a835((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult __hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_f4d0a3c7((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C3.hs_method_f4d0a3c7((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
     }
 
     public void __serverInitItemStackIds()
     {
-        NativeMethods.TablePtr->C2.hs_method_d1e28d33((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_d1e28d33((void*)__hosihikari_shim_handle);
     }
 
     public bool __shouldProvideFeedbackOnArmorSet(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a2ed842d((void*)__hosihikari_shim_handle, slot, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_a2ed842d((void*)__hosihikari_shim_handle, slot, (void*)item.Handle) != 0;
     }
 
     public bool __shouldProvideFeedbackOnHandContainerItemSet(byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_75382c7f((void*)__hosihikari_shim_handle, handSlot, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_75382c7f((void*)__hosihikari_shim_handle, handSlot, (void*)item.Handle) != 0;
     }
 
     public bool _add(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_242bd757((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_242bd757((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public void _addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag entityTag)
     {
-        NativeMethods.TablePtr->C2.hs_method_7d61106c((void*)__hosihikari_shim_handle, (void*)entityTag.Handle);
+        NativeMethods.TablePtr->C3.hs_method_7d61106c((void*)__hosihikari_shim_handle, (void*)entityTag.Handle);
     }
 
     public void _addChunksToQueue(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] chunkPostions)
@@ -768,88 +768,88 @@ public sealed unsafe partial class Player : global::System.IDisposable
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            NativeMethods.TablePtr->C2.hs_method_7846a8c0((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(chunkPostions?.Length ?? 0));
+            NativeMethods.TablePtr->C3.hs_method_7846a8c0((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(chunkPostions?.Length ?? 0));
         }
     }
 
     public void _addExperience(int xp)
     {
-        NativeMethods.TablePtr->C2.hs_method_5a764c5f((void*)__hosihikari_shim_handle, xp);
+        NativeMethods.TablePtr->C3.hs_method_5a764c5f((void*)__hosihikari_shim_handle, xp);
     }
 
     public void _addLevels(int levels)
     {
-        NativeMethods.TablePtr->C2.hs_method_27067885((void*)__hosihikari_shim_handle, levels);
+        NativeMethods.TablePtr->C3.hs_method_27067885((void*)__hosihikari_shim_handle, levels);
     }
 
     public void _aiStep()
     {
-        NativeMethods.TablePtr->C2.hs_method_0ea3a319((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_0ea3a319((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint cause)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_0fbf41f7((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C3.hs_method_0fbf41f7((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause));
     }
 
     public bool _canAddPassenger(global::Hosihikari.Bindings.Bedrock.Interop.Actor passenger)
     {
-        return NativeMethods.TablePtr->C2.hs_method_18850877((void*)__hosihikari_shim_handle, (void*)passenger.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_18850877((void*)__hosihikari_shim_handle, (void*)passenger.Handle) != 0;
     }
 
     public bool _canBePulledIntoVehicle()
     {
-        return NativeMethods.TablePtr->C2.hs_method_c135645f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_c135645f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _canChangeDimensionsUsingPortal()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7cf232ea((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_7cf232ea((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _canExistWhenDisallowMob()
     {
-        return NativeMethods.TablePtr->C2.hs_method_cb8f005c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_cb8f005c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _canInteractWithOtherEntitiesInGame()
     {
-        return NativeMethods.TablePtr->C2.hs_method_67810361((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_67810361((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _canObstructSpawningAndBlockPlacement()
     {
-        return NativeMethods.TablePtr->C2.hs_method_87127478((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_87127478((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _canStartSleepInBed()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b67869bb((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_b67869bb((void*)__hosihikari_shim_handle) != 0;
     }
 
     public float _causeFallDamageToActor(float distance, float multiplier, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        return NativeMethods.TablePtr->C2.hs_method_ae1cadf7((void*)__hosihikari_shim_handle, distance, multiplier, (void*)source.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_ae1cadf7((void*)__hosihikari_shim_handle, distance, multiplier, (void*)source.Handle);
     }
 
     public void _changeDimensionWithCredits(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_a3ee070f((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a3ee070f((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
     }
 
     public void _checkMovementStats(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 d)
     {
-        NativeMethods.TablePtr->C2.hs_method_b9bb4cca((void*)__hosihikari_shim_handle, (void*)d.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b9bb4cca((void*)__hosihikari_shim_handle, (void*)d.Handle);
     }
 
     public void _clearVanishEnchantedItemsOnDeath()
     {
-        NativeMethods.TablePtr->C2.hs_method_5c87de47((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_5c87de47((void*)__hosihikari_shim_handle);
     }
 
     public bool _consumeTotem()
     {
-        return NativeMethods.TablePtr->C2.hs_method_98bf384c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_98bf384c((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ISparseContainerSetListener' is not a known bindable declaration.", false)]
@@ -897,7 +897,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
             {
                 fixed (byte* __hs_stringData12 = __hs_stringBytes12)
                 {
-                    return (nint)NativeMethods.TablePtr->C2.hs_method_4c96c030((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)packetSender.Handle, playerGameType, isHostingPlayer, (void*)owner.Handle, subid, (void*)uuid.Handle, __hs_stringData7, (nuint)__hs_stringByteCount7, authType, (void*)authInfo.Handle, (void*)entityContext.Handle, __hs_stringData11, (nuint)__hs_stringByteCount11, __hs_stringData12, (nuint)__hs_stringByteCount12);
+                    return (nint)NativeMethods.TablePtr->C3.hs_method_4c96c030((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)packetSender.Handle, playerGameType, isHostingPlayer, (void*)owner.Handle, subid, (void*)uuid.Handle, __hs_stringData7, (nuint)__hs_stringByteCount7, authType, (void*)authInfo.Handle, (void*)entityContext.Handle, __hs_stringData11, (nuint)__hs_stringByteCount11, __hs_stringData12, (nuint)__hs_stringByteCount12);
                 }
             }
         }
@@ -905,22 +905,22 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public void _damageCarriedItemOnAttack(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, float damageDealtToTarget)
     {
-        NativeMethods.TablePtr->C2.hs_method_c5d400c4((void*)__hosihikari_shim_handle, (void*)target.Handle, damageDealtToTarget);
+        NativeMethods.TablePtr->C3.hs_method_c5d400c4((void*)__hosihikari_shim_handle, (void*)target.Handle, damageDealtToTarget);
     }
 
     public void _deleteContainerManager()
     {
-        NativeMethods.TablePtr->C2.hs_method_adaafd4c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_adaafd4c((void*)__hosihikari_shim_handle);
     }
 
     public void _destroyRegion()
     {
-        NativeMethods.TablePtr->C2.hs_method_79354a25((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_79354a25((void*)__hosihikari_shim_handle);
     }
 
     public void _die(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        NativeMethods.TablePtr->C2.hs_method_3469a6b9((void*)__hosihikari_shim_handle, (void*)source.Handle);
+        NativeMethods.TablePtr->C3.hs_method_3469a6b9((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
     public void _displayChatMessage(string author, string message, string? filteredMessage)
@@ -964,7 +964,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C2.hs_method_29860745((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, filteredMessage is not null);
+                    NativeMethods.TablePtr->C3.hs_method_29860745((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, filteredMessage is not null);
                 }
             }
         }
@@ -998,7 +998,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C2.hs_method_df2f9233((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, filteredMessage is not null);
+                NativeMethods.TablePtr->C3.hs_method_df2f9233((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, filteredMessage is not null);
             }
         }
     }
@@ -1031,7 +1031,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C2.hs_method_2b9e06d1((void*)__hosihikari_shim_handle, (void*)textObject.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C3.hs_method_2b9e06d1((void*)__hosihikari_shim_handle, (void*)textObject.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -1064,7 +1064,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C2.hs_method_0e8d2cef((void*)__hosihikari_shim_handle, (void*)resolvedTextObject.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C3.hs_method_0e8d2cef((void*)__hosihikari_shim_handle, (void*)resolvedTextObject.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -1110,7 +1110,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C2.hs_method_1d1a16fd((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C3.hs_method_1d1a16fd((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -1183,7 +1183,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
                     {
                         fixed (byte* __hs_stringData4 = __hs_stringBytes4)
                         {
-                            NativeMethods.TablePtr->C2.hs_method_6ff719b8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, filteredMessage is not null);
+                            NativeMethods.TablePtr->C3.hs_method_6ff719b8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, filteredMessage is not null);
                         }
                     }
                 }
@@ -1193,52 +1193,52 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public void _doEnterWaterSplashEffect()
     {
-        NativeMethods.TablePtr->C2.hs_method_05b0aa46((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_05b0aa46((void*)__hosihikari_shim_handle);
     }
 
     public void _doExitWaterSplashEffect()
     {
-        NativeMethods.TablePtr->C2.hs_method_c804b73f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_c804b73f((void*)__hosihikari_shim_handle);
     }
 
     public bool _drop(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool randomly)
     {
-        return NativeMethods.TablePtr->C2.hs_method_5082fa9f((void*)__hosihikari_shim_handle, (void*)item.Handle, randomly) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_5082fa9f((void*)__hosihikari_shim_handle, (void*)item.Handle, randomly) != 0;
     }
 
     public void _dropEquipmentOnDeath()
     {
-        NativeMethods.TablePtr->C2.hs_method_0c5c62fb((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_0c5c62fb((void*)__hosihikari_shim_handle);
     }
 
     public void _dropEquipmentOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        NativeMethods.TablePtr->C2.hs_method_4d18d0d8((void*)__hosihikari_shim_handle, (void*)source.Handle);
+        NativeMethods.TablePtr->C3.hs_method_4d18d0d8((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_6daa5950((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_6daa5950((void*)__hosihikari_shim_handle);
     }
 
     public void _emitCriticalHitParticles(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, int particleCount)
     {
-        NativeMethods.TablePtr->C2.hs_method_e712c558((void*)__hosihikari_shim_handle, (void*)target.Handle, particleCount);
+        NativeMethods.TablePtr->C3.hs_method_e712c558((void*)__hosihikari_shim_handle, (void*)target.Handle, particleCount);
     }
 
     public void _feed(int itemId)
     {
-        NativeMethods.TablePtr->C2.hs_method_52c8099d((void*)__hosihikari_shim_handle, itemId);
+        NativeMethods.TablePtr->C3.hs_method_52c8099d((void*)__hosihikari_shim_handle, itemId);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString _getActorRendererId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C2.hs_method_9ad42fb8((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_9ad42fb8((void*)__hosihikari_shim_handle), false);
     }
 
     public nint[] _getAllEquipment()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_ab676fae((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_ab676fae((void*)__hosihikari_shim_handle);
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<nint>() : new nint[checked((int)__hs_view.Size)];
         if (__hs_view.Size > 0)
         {
@@ -1249,7 +1249,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public nint[] _getAllHandEquipment()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_2e7e853e((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_2e7e853e((void*)__hosihikari_shim_handle);
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<nint>() : new nint[checked((int)__hs_view.Size)];
         if (__hs_view.Size > 0)
         {
@@ -1260,87 +1260,87 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent _getAnimationComponent()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent((nint)NativeMethods.TablePtr->C2.hs_method_b416ff76((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent((nint)NativeMethods.TablePtr->C3.hs_method_b416ff76((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack _getCarriedItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_aa66844d((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_aa66844d((void*)__hosihikari_shim_handle), false);
     }
 
     public byte _getCommandPermissionLevel()
     {
-        return NativeMethods.TablePtr->C2.hs_method_f15e3e60((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_f15e3e60((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString _getCurrentStructureFeature()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C2.hs_method_9e828b1b((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_9e828b1b((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack _getEquippedTotem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_427e7c42((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_427e7c42((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing? _getEventing()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_112f9c3d((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_112f9c3d((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 _getInterpolatedRidingOffset(float arg0, int arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_e8cf6d2d((void*)__hosihikari_shim_handle, arg0, arg1));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C3.hs_method_e8cf6d2d((void*)__hosihikari_shim_handle, arg0, arg1));
     }
 
     public int _getItemUseDuration()
     {
-        return NativeMethods.TablePtr->C2.hs_method_369a815f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_369a815f((void*)__hosihikari_shim_handle);
     }
 
     public float _getItemUseIntervalProgress()
     {
-        return NativeMethods.TablePtr->C2.hs_method_3e371ec6((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_3e371ec6((void*)__hosihikari_shim_handle);
     }
 
     public float _getItemUseStartupProgress()
     {
-        return NativeMethods.TablePtr->C2.hs_method_9af70d9f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_9af70d9f((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? _getLastDeathDimension()
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_40950939((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_40950939((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _getLastDeathPos()
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ecf63fea((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ecf63fea((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public float _getMapDecorationRotation()
     {
-        return NativeMethods.TablePtr->C2.hs_method_5110ce61((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_5110ce61((void*)__hosihikari_shim_handle);
     }
 
     public byte _getMaxChunkBuildRadius()
     {
-        return NativeMethods.TablePtr->C2.hs_method_f0288450((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_f0288450((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings _getMovementSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)NativeMethods.TablePtr->C2.hs_method_05f591e6((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)NativeMethods.TablePtr->C3.hs_method_05f591e6((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color _getNameTagTextColor()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C2.hs_method_9c96c233((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C3.hs_method_9c96c233((void*)__hosihikari_shim_handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'PlayerPartyInfo' is not supported.", false)]
@@ -1349,38 +1349,38 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public float _getShadowRadius()
     {
-        return NativeMethods.TablePtr->C2.hs_method_21d8fdb9((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_21d8fdb9((void*)__hosihikari_shim_handle);
     }
 
     public float _getSpeed()
     {
-        return NativeMethods.TablePtr->C2.hs_method_c6ddc151((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_c6ddc151((void*)__hosihikari_shim_handle);
     }
 
     public nint _getTickingOffsets()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_9af6a26b((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_9af6a26b((void*)__hosihikari_shim_handle);
     }
 
     public uint _getUserId()
     {
-        return NativeMethods.TablePtr->C2.hs_method_dce6a891((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_dce6a891((void*)__hosihikari_shim_handle);
     }
 
     public string _getXuid()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_92cf79fa((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_92cf79fa((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void _handleEntityEvent(byte id, int data)
     {
-        NativeMethods.TablePtr->C2.hs_method_9a0138ff((void*)__hosihikari_shim_handle, id, data);
+        NativeMethods.TablePtr->C3.hs_method_9a0138ff((void*)__hosihikari_shim_handle, id, data);
     }
 
     public bool _hasDiedBefore()
     {
-        return NativeMethods.TablePtr->C2.hs_method_98ecfe9d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_98ecfe9d((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BodyControl' has no accessible destructor.", false)]
@@ -1389,152 +1389,152 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public void _initHUDContainerManager()
     {
-        NativeMethods.TablePtr->C2.hs_method_8cdb7630((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_8cdb7630((void*)__hosihikari_shim_handle);
     }
 
     public void _initializeComponents(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
-        NativeMethods.TablePtr->C2.hs_method_215812c2((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
+        NativeMethods.TablePtr->C3.hs_method_215812c2((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
     public bool _isActorRelevant(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        return NativeMethods.TablePtr->C2.hs_method_b110c34d((void*)__hosihikari_shim_handle, (void*)actor.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_b110c34d((void*)__hosihikari_shim_handle, (void*)actor.Handle) != 0;
     }
 
     public bool _isAutoJumpEnabled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_743da51f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_743da51f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isBlocking()
     {
-        return NativeMethods.TablePtr->C2.hs_method_82ece6ac((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_82ece6ac((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isDamageBlocked(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        return NativeMethods.TablePtr->C2.hs_method_2d0f2cf1((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_2d0f2cf1((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
     }
 
     public bool _isFireImmune()
     {
-        return NativeMethods.TablePtr->C2.hs_method_d0e353b8((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_d0e353b8((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isImmobile()
     {
-        return NativeMethods.TablePtr->C2.hs_method_ac3f7929((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ac3f7929((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isInTrialMode()
     {
-        return NativeMethods.TablePtr->C2.hs_method_5154dcb3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_5154dcb3((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isInvulnerableTo(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        return NativeMethods.TablePtr->C2.hs_method_e4d8eab8((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e4d8eab8((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
     }
 
     public bool _isLoading()
     {
-        return NativeMethods.TablePtr->C2.hs_method_c8c889d8((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_c8c889d8((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isPlayerInitialized()
     {
-        return NativeMethods.TablePtr->C2.hs_method_4edcd60d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_4edcd60d((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isSilentObserver()
     {
-        return NativeMethods.TablePtr->C2.hs_method_15b004f6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_15b004f6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isSimulated()
     {
-        return NativeMethods.TablePtr->C2.hs_method_8b79b6b6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_8b79b6b6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isSleeping()
     {
-        return NativeMethods.TablePtr->C2.hs_method_bc22770b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_bc22770b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void _moveSpawnView(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 spawnPosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionType)
     {
-        NativeMethods.TablePtr->C2.hs_method_b99edb98((void*)__hosihikari_shim_handle, (void*)spawnPosition.Handle, (void*)dimensionType.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b99edb98((void*)__hosihikari_shim_handle, (void*)spawnPosition.Handle, (void*)dimensionType.Handle);
     }
 
     public void _moveView()
     {
-        NativeMethods.TablePtr->C2.hs_method_e83a8d56((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_e83a8d56((void*)__hosihikari_shim_handle);
     }
 
     public void _normalTick()
     {
-        NativeMethods.TablePtr->C2.hs_method_d6f0c158((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_d6f0c158((void*)__hosihikari_shim_handle);
     }
 
     public void _onLinkedSlotsChanged()
     {
-        NativeMethods.TablePtr->C2.hs_method_a13c0225((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_a13c0225((void*)__hosihikari_shim_handle);
     }
 
     public void _onMovePlayerPacketNormal(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 rot, float yHeadRot)
     {
-        NativeMethods.TablePtr->C2.hs_method_4dea8ce3((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)rot.Handle, yHeadRot);
+        NativeMethods.TablePtr->C3.hs_method_4dea8ce3((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)rot.Handle, yHeadRot);
     }
 
     public void _onSuspension()
     {
-        NativeMethods.TablePtr->C2.hs_method_6cda8d37((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_6cda8d37((void*)__hosihikari_shim_handle);
     }
 
     public void _onSynchedDataUpdate(int dataId)
     {
-        NativeMethods.TablePtr->C2.hs_method_cd37cf8d((void*)__hosihikari_shim_handle, dataId);
+        NativeMethods.TablePtr->C3.hs_method_cd37cf8d((void*)__hosihikari_shim_handle, dataId);
     }
 
     public void _openBook(int bookSlot, bool editable, int page, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? lectern)
     {
-        NativeMethods.TablePtr->C2.hs_method_40af9f6c((void*)__hosihikari_shim_handle, bookSlot, editable, page, (void*)(lectern?.Handle ?? 0));
+        NativeMethods.TablePtr->C3.hs_method_40af9f6c((void*)__hosihikari_shim_handle, bookSlot, editable, page, (void*)(lectern?.Handle ?? 0));
     }
 
     public void _openChalkboard(global::Hosihikari.Bindings.Bedrock.Interop.ChalkboardBlockActor chalkboard, bool showLockToggle)
     {
-        NativeMethods.TablePtr->C2.hs_method_27587e9d((void*)__hosihikari_shim_handle, (void*)chalkboard.Handle, showLockToggle);
+        NativeMethods.TablePtr->C3.hs_method_27587e9d((void*)__hosihikari_shim_handle, (void*)chalkboard.Handle, showLockToggle);
     }
 
     public void _openInventory()
     {
-        NativeMethods.TablePtr->C2.hs_method_2a082143((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_2a082143((void*)__hosihikari_shim_handle);
     }
 
     public void _openNpcInteractScreen(global::Hosihikari.Bindings.Abi.SharedHandle? npc)
     {
-        NativeMethods.TablePtr->C2.hs_method_433f30b8((void*)__hosihikari_shim_handle, npc?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C3.hs_method_433f30b8((void*)__hosihikari_shim_handle, npc?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void _openPortfolio()
     {
-        NativeMethods.TablePtr->C2.hs_method_5173dc5d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_5173dc5d((void*)__hosihikari_shim_handle);
     }
 
     public void _openSign(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, bool isFrontSide)
     {
-        NativeMethods.TablePtr->C2.hs_method_9d85dfcd((void*)__hosihikari_shim_handle, (void*)position.Handle, isFrontSide);
+        NativeMethods.TablePtr->C3.hs_method_9d85dfcd((void*)__hosihikari_shim_handle, (void*)position.Handle, isFrontSide);
     }
 
     public void _openTrading(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uniqueID, bool useNewScreen)
     {
-        NativeMethods.TablePtr->C2.hs_method_8ed76d06((void*)__hosihikari_shim_handle, (void*)uniqueID.Handle, useNewScreen);
+        NativeMethods.TablePtr->C3.hs_method_8ed76d06((void*)__hosihikari_shim_handle, (void*)uniqueID.Handle, useNewScreen);
     }
 
     public void _passengerTick()
     {
-        NativeMethods.TablePtr->C2.hs_method_958c1959((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_958c1959((void*)__hosihikari_shim_handle);
     }
 
     public void _playEmote(string pieceId, bool playChatMessage)
@@ -1552,73 +1552,73 @@ public sealed unsafe partial class Player : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(pieceId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_cd0f638f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, playChatMessage);
+            NativeMethods.TablePtr->C3.hs_method_cd0f638f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, playChatMessage);
         }
     }
 
     public void _prepareRegion(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource mainChunkSource)
     {
-        NativeMethods.TablePtr->C2.hs_method_f6ed8f8d((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle);
+        NativeMethods.TablePtr->C3.hs_method_f6ed8f8d((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle);
     }
 
     public void _readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
     {
-        NativeMethods.TablePtr->C2.hs_method_8e0a1459((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
+        NativeMethods.TablePtr->C3.hs_method_8e0a1459((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
     }
 
     public void _reloadHardcoded(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
-        NativeMethods.TablePtr->C2.hs_method_5b65f9bf((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
+        NativeMethods.TablePtr->C3.hs_method_5b65f9bf((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
     public void _remove()
     {
-        NativeMethods.TablePtr->C2.hs_method_885374e1((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_885374e1((void*)__hosihikari_shim_handle);
     }
 
     public void _requestMissingSubChunk(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos scp)
     {
-        NativeMethods.TablePtr->C2.hs_method_9d4246eb((void*)__hosihikari_shim_handle, (void*)scp.Handle);
+        NativeMethods.TablePtr->C3.hs_method_9d4246eb((void*)__hosihikari_shim_handle, (void*)scp.Handle);
     }
 
     public void _resetRot()
     {
-        NativeMethods.TablePtr->C2.hs_method_8154d382((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_8154d382((void*)__hosihikari_shim_handle);
     }
 
     public void _resetUserPos(byte resetRule)
     {
-        NativeMethods.TablePtr->C2.hs_method_62a11e93((void*)__hosihikari_shim_handle, resetRule);
+        NativeMethods.TablePtr->C3.hs_method_62a11e93((void*)__hosihikari_shim_handle, resetRule);
     }
 
     public void _respawn()
     {
-        NativeMethods.TablePtr->C2.hs_method_fd7940b2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_fd7940b2((void*)__hosihikari_shim_handle);
     }
 
     public void _sendInventory(bool shouldSelectSlot)
     {
-        NativeMethods.TablePtr->C2.hs_method_83bef8e7((void*)__hosihikari_shim_handle, shouldSelectSlot);
+        NativeMethods.TablePtr->C3.hs_method_83bef8e7((void*)__hosihikari_shim_handle, shouldSelectSlot);
     }
 
     public void _sendMotionPacketIfNeeded()
     {
-        NativeMethods.TablePtr->C2.hs_method_6dbf68b3((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_6dbf68b3((void*)__hosihikari_shim_handle);
     }
 
     public void _sendNetworkPacket(global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
-        NativeMethods.TablePtr->C2.hs_method_23555f15((void*)__hosihikari_shim_handle, (void*)packet.Handle);
+        NativeMethods.TablePtr->C3.hs_method_23555f15((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
     public void _setAbilities(global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities newAbilities)
     {
-        NativeMethods.TablePtr->C2.hs_method_a777a402((void*)__hosihikari_shim_handle, (void*)newAbilities.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a777a402((void*)__hosihikari_shim_handle, (void*)newAbilities.Handle);
     }
 
     public void _setArmor(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_88c651a9((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_88c651a9((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
     }
 
     public void _setBehaviorCommandStatus(string name, int status)
@@ -1636,88 +1636,88 @@ public sealed unsafe partial class Player : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_a4606e0a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, status);
+            NativeMethods.TablePtr->C3.hs_method_a4606e0a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, status);
         }
     }
 
     public void _setCarriedItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_961f67af((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_961f67af((void*)__hosihikari_shim_handle, (void*)item.Handle);
     }
 
     public void _setOffhandSlot(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_7686ff17((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_7686ff17((void*)__hosihikari_shim_handle, (void*)item.Handle);
     }
 
     public void _setPlayerGameType_42228b5e(int gameType)
     {
-        NativeMethods.TablePtr->C2.hs_method_42228b5e((void*)__hosihikari_shim_handle, gameType);
+        NativeMethods.TablePtr->C3.hs_method_42228b5e((void*)__hosihikari_shim_handle, gameType);
     }
 
     public void _setRemotePlayerTicked(bool ticked)
     {
-        NativeMethods.TablePtr->C2.hs_method_1f0c94ca((void*)__hosihikari_shim_handle, ticked);
+        NativeMethods.TablePtr->C3.hs_method_1f0c94ca((void*)__hosihikari_shim_handle, ticked);
     }
 
     public void _setSleeping(bool val)
     {
-        NativeMethods.TablePtr->C2.hs_method_0d0e6ee1((void*)__hosihikari_shim_handle, val);
+        NativeMethods.TablePtr->C3.hs_method_0d0e6ee1((void*)__hosihikari_shim_handle, val);
     }
 
     public void _setSpeed(float _speed)
     {
-        NativeMethods.TablePtr->C2.hs_method_5d324287((void*)__hosihikari_shim_handle, _speed);
+        NativeMethods.TablePtr->C3.hs_method_5d324287((void*)__hosihikari_shim_handle, _speed);
     }
 
     public bool _shouldDropDeathLoot()
     {
-        return NativeMethods.TablePtr->C2.hs_method_e1e98dff((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e1e98dff((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _startRiding(global::Hosihikari.Bindings.Bedrock.Interop.Actor vehicle, bool forceRiding)
     {
-        return NativeMethods.TablePtr->C2.hs_method_64eb2779((void*)__hosihikari_shim_handle, (void*)vehicle.Handle, forceRiding) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_64eb2779((void*)__hosihikari_shim_handle, (void*)vehicle.Handle, forceRiding) != 0;
     }
 
     public int _startSleepInBed(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos bedPos, bool setsRespawn, float sleepOffset)
     {
-        return NativeMethods.TablePtr->C2.hs_method_14937308((void*)__hosihikari_shim_handle, (void*)bedPos.Handle, setsRespawn, sleepOffset);
+        return NativeMethods.TablePtr->C3.hs_method_14937308((void*)__hosihikari_shim_handle, (void*)bedPos.Handle, setsRespawn, sleepOffset);
     }
 
     public void _startSwimming()
     {
-        NativeMethods.TablePtr->C2.hs_method_f9df22d4((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_f9df22d4((void*)__hosihikari_shim_handle);
     }
 
     public void _stopLoading()
     {
-        NativeMethods.TablePtr->C2.hs_method_0b1e27f2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_0b1e27f2((void*)__hosihikari_shim_handle);
     }
 
     public void _stopSleepInBed(bool forcefulWakeUp, bool updateLevelList)
     {
-        NativeMethods.TablePtr->C2.hs_method_b39fd5ec((void*)__hosihikari_shim_handle, forcefulWakeUp, updateLevelList);
+        NativeMethods.TablePtr->C3.hs_method_b39fd5ec((void*)__hosihikari_shim_handle, forcefulWakeUp, updateLevelList);
     }
 
     public void _stopSwimming()
     {
-        NativeMethods.TablePtr->C2.hs_method_dc8d6e27((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_dc8d6e27((void*)__hosihikari_shim_handle);
     }
 
     public void _suspendRegion()
     {
-        NativeMethods.TablePtr->C2.hs_method_137827bd((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_137827bd((void*)__hosihikari_shim_handle);
     }
 
     public void _teleportTo(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity)
     {
-        NativeMethods.TablePtr->C2.hs_method_dd367a23((void*)__hosihikari_shim_handle, (void*)pos.Handle, shouldStopRiding, cause, sourceEntityType, keepVelocity);
+        NativeMethods.TablePtr->C3.hs_method_dd367a23((void*)__hosihikari_shim_handle, (void*)pos.Handle, shouldStopRiding, cause, sourceEntityType, keepVelocity);
     }
 
     public void _tickWorld(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
     {
-        NativeMethods.TablePtr->C2.hs_method_57d73b9c((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
+        NativeMethods.TablePtr->C3.hs_method_57d73b9c((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Packet' has no accessible destructor.", false)]
@@ -1726,32 +1726,32 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public void _useItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, int itemUseMethod, bool consumeItem)
     {
-        NativeMethods.TablePtr->C2.hs_method_9ab2c40b((void*)__hosihikari_shim_handle, (void*)instance.Handle, itemUseMethod, consumeItem);
+        NativeMethods.TablePtr->C3.hs_method_9ab2c40b((void*)__hosihikari_shim_handle, (void*)instance.Handle, itemUseMethod, consumeItem);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute EXHAUSTION()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C2.hs_method_009242a7(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C3.hs_method_009242a7(), false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute EXPERIENCE()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C2.hs_method_f4101320(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C3.hs_method_f4101320(), false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute HUNGER()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C2.hs_method_3752ea03(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C3.hs_method_3752ea03(), false);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute LEVEL()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C2.hs_method_d101f358(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C3.hs_method_d101f358(), false);
     }
 
     public static Player Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b597b27f();
+        var handle = NativeMethods.TablePtr->C3.hs_create_b597b27f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -1801,7 +1801,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
             {
                 fixed (byte* __hs_stringData12 = __hs_stringBytes12)
                 {
-                    var handle = NativeMethods.TablePtr->C2.hs_create_c3a17325((void*)level.Handle, (void*)packetSender.Handle, playerGameType, isHostingPlayer, (void*)owner.Handle, subid, (void*)uuid.Handle, __hs_stringData7, (nuint)__hs_stringByteCount7, authType, (void*)authInfo.Handle, (void*)entityContext.Handle, __hs_stringData11, (nuint)__hs_stringByteCount11, __hs_stringData12, (nuint)__hs_stringByteCount12);
+                    var handle = NativeMethods.TablePtr->C3.hs_create_c3a17325((void*)level.Handle, (void*)packetSender.Handle, playerGameType, isHostingPlayer, (void*)owner.Handle, subid, (void*)uuid.Handle, __hs_stringData7, (nuint)__hs_stringByteCount7, authType, (void*)authInfo.Handle, (void*)entityContext.Handle, __hs_stringData11, (nuint)__hs_stringByteCount11, __hs_stringData12, (nuint)__hs_stringByteCount12);
                     if (handle == null)
                     {
                         throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -1815,7 +1815,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public static Player Create(global::Hosihikari.Bindings.Bedrock.Interop.Player arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2a3ac703((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_2a3ac703((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -1826,7 +1826,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute SATURATION()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C2.hs_method_3b06811a(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C3.hs_method_3b06811a(), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'gsl::not_null<BlockSource *>' is not supported.", false)]
@@ -1835,68 +1835,68 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _createChunkSource(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource mainChunkSource)
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_86049627((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_86049627((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public void _fireDimensionChanged()
     {
-        NativeMethods.TablePtr->C2.hs_method_e20f65f3((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_e20f65f3((void*)__hosihikari_shim_handle);
     }
 
     public void _handleCarriedItemInteractText()
     {
-        NativeMethods.TablePtr->C2.hs_method_569c8022((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_569c8022((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult _hurt(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage, nint hurtParameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_290c2746((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C3.hs_method_290c2746((void*)__hosihikari_shim_handle, (void*)source.Handle, damage, (void*)hurtParameters));
     }
 
     public bool _isChunkSourceLoaded(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 spawnPosition, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        return NativeMethods.TablePtr->C2.hs_method_7a2b5777((void*)__hosihikari_shim_handle, (void*)spawnPosition.Handle, (void*)region.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_7a2b5777((void*)__hosihikari_shim_handle, (void*)spawnPosition.Handle, (void*)region.Handle) != 0;
     }
 
     public void _serverInitItemStackIds()
     {
-        NativeMethods.TablePtr->C2.hs_method_6d3afd3c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_6d3afd3c((void*)__hosihikari_shim_handle);
     }
 
     public void _setPlayerGameType_0a6d06ed(int gameType)
     {
-        NativeMethods.TablePtr->C2.hs_method_0a6d06ed((void*)__hosihikari_shim_handle, gameType);
+        NativeMethods.TablePtr->C3.hs_method_0a6d06ed((void*)__hosihikari_shim_handle, gameType);
     }
 
     public bool _shouldProvideFeedbackOnArmorSet(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_799b0913((void*)__hosihikari_shim_handle, slot, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_799b0913((void*)__hosihikari_shim_handle, slot, (void*)item.Handle) != 0;
     }
 
     public bool _shouldProvideFeedbackOnHandContainerItemSet(byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_77ebda1e((void*)__hosihikari_shim_handle, handSlot, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_77ebda1e((void*)__hosihikari_shim_handle, handSlot, (void*)item.Handle) != 0;
     }
 
     public bool _validateSpawnPositionAvailability(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? blockSourceChunkCheck, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? AABBoffset)
     {
-        return NativeMethods.TablePtr->C2.hs_method_d336e3d5((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)(blockSourceChunkCheck?.Handle ?? 0), (void*)(AABBoffset?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_d336e3d5((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)(blockSourceChunkCheck?.Handle ?? 0), (void*)(AABBoffset?.Handle ?? 0)) != 0;
     }
 
     public bool add(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_fe852767((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_fe852767((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag entityTag)
     {
-        NativeMethods.TablePtr->C2.hs_method_e2b8210c((void*)__hosihikari_shim_handle, (void*)entityTag.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e2b8210c((void*)__hosihikari_shim_handle, (void*)entityTag.Handle);
     }
 
     public bool addAndRefresh(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_b69cca27((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_b69cca27((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public void addChunksToQueue(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] chunkPostions)
@@ -1910,153 +1910,153 @@ public sealed unsafe partial class Player : global::System.IDisposable
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            NativeMethods.TablePtr->C2.hs_method_f305d6b2((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(chunkPostions?.Length ?? 0));
+            NativeMethods.TablePtr->C3.hs_method_f305d6b2((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(chunkPostions?.Length ?? 0));
         }
     }
 
     public void addExperience(int xp)
     {
-        NativeMethods.TablePtr->C2.hs_method_8f0d4f88((void*)__hosihikari_shim_handle, xp);
+        NativeMethods.TablePtr->C3.hs_method_8f0d4f88((void*)__hosihikari_shim_handle, xp);
     }
 
     public void addLevels(int levels)
     {
-        NativeMethods.TablePtr->C2.hs_method_50e6cc31((void*)__hosihikari_shim_handle, levels);
+        NativeMethods.TablePtr->C3.hs_method_50e6cc31((void*)__hosihikari_shim_handle, levels);
     }
 
     public void aiStep()
     {
-        NativeMethods.TablePtr->C2.hs_method_3ac5e8f5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_3ac5e8f5((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint cause)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_f7886c55((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C3.hs_method_f7886c55((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint cause, global::Hosihikari.Bindings.Bedrock.Interop.Player_Nested.AttackParameters parameters)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C2.hs_method_0533227f((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause, (void*)parameters.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtResult((nint)NativeMethods.TablePtr->C3.hs_method_0533227f((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)cause, (void*)parameters.Handle));
     }
 
     public bool canAddPassenger(global::Hosihikari.Bindings.Bedrock.Interop.Actor passenger)
     {
-        return NativeMethods.TablePtr->C2.hs_method_fdf8500a((void*)__hosihikari_shim_handle, (void*)passenger.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_fdf8500a((void*)__hosihikari_shim_handle, (void*)passenger.Handle) != 0;
     }
 
     public bool canBePulledIntoVehicle()
     {
-        return NativeMethods.TablePtr->C2.hs_method_d7e49f62((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_d7e49f62((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canChangeDimensionsUsingPortal()
     {
-        return NativeMethods.TablePtr->C2.hs_method_ade3e37f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ade3e37f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canExistWhenDisallowMob()
     {
-        return NativeMethods.TablePtr->C2.hs_method_0752a87c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_0752a87c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canInteractWithOtherEntitiesInGame()
     {
-        return NativeMethods.TablePtr->C2.hs_method_875183d8((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_875183d8((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canJump()
     {
-        return NativeMethods.TablePtr->C2.hs_method_696c885e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_696c885e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canObstructSpawningAndBlockPlacement()
     {
-        return NativeMethods.TablePtr->C2.hs_method_ed628325((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ed628325((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canOpenContainerScreen()
     {
-        return NativeMethods.TablePtr->C2.hs_method_1c46f6cc((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_1c46f6cc((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canSleep()
     {
-        return NativeMethods.TablePtr->C2.hs_method_0e39e404((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_0e39e404((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canStackInOffhand(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_78ec6926((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_78ec6926((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public bool canStartSleepInBed()
     {
-        return NativeMethods.TablePtr->C2.hs_method_e9936c21((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e9936c21((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool canUseAbility(sbyte abilityIndex)
     {
-        return NativeMethods.TablePtr->C2.hs_method_b81eb5bf((void*)__hosihikari_shim_handle, abilityIndex) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_b81eb5bf((void*)__hosihikari_shim_handle, abilityIndex) != 0;
     }
 
     public bool canUseOperatorBlocks()
     {
-        return NativeMethods.TablePtr->C2.hs_method_3d4ced32((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_3d4ced32((void*)__hosihikari_shim_handle) != 0;
     }
 
     public float causeFallDamageToActor(float distance, float multiplier, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        return NativeMethods.TablePtr->C2.hs_method_18faebe1((void*)__hosihikari_shim_handle, distance, multiplier, (void*)source.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_18faebe1((void*)__hosihikari_shim_handle, distance, multiplier, (void*)source.Handle);
     }
 
     public void causeFoodExhaustion(float exhaustionAmount)
     {
-        NativeMethods.TablePtr->C2.hs_method_90c0e6aa((void*)__hosihikari_shim_handle, exhaustionAmount);
+        NativeMethods.TablePtr->C3.hs_method_90c0e6aa((void*)__hosihikari_shim_handle, exhaustionAmount);
     }
 
     public void changeDimensionWithCredits(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_5bf22030((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C3.hs_method_5bf22030((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
     }
 
     public bool checkBed(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? spawnBlockSource, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? positionToCheck)
     {
-        return NativeMethods.TablePtr->C2.hs_method_d39dac6f((void*)__hosihikari_shim_handle, (void*)(spawnBlockSource?.Handle ?? 0), (void*)(positionToCheck?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_d39dac6f((void*)__hosihikari_shim_handle, (void*)(spawnBlockSource?.Handle ?? 0), (void*)(positionToCheck?.Handle ?? 0)) != 0;
     }
 
     public void checkMovementStats(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 d)
     {
-        NativeMethods.TablePtr->C2.hs_method_1bf88cf2((void*)__hosihikari_shim_handle, (void*)d.Handle);
+        NativeMethods.TablePtr->C3.hs_method_1bf88cf2((void*)__hosihikari_shim_handle, (void*)d.Handle);
     }
 
     public static bool checkNeedAutoJump(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabbShape, global::Hosihikari.Bindings.Bedrock.Interop.ActorRotationComponent actorRotation, float movementSpeed, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVector, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeInterface? collisionShapeInterface, float inputMoveX, float inputMoveZ)
     {
-        return NativeMethods.TablePtr->C2.hs_method_0d1b7709((void*)region.Handle, (void*)aabbShape.Handle, (void*)actorRotation.Handle, movementSpeed, (void*)stateVector.Handle, (void*)(collisionShapeInterface?.Handle ?? 0), inputMoveX, inputMoveZ, collisionShapeInterface is not null) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_0d1b7709((void*)region.Handle, (void*)aabbShape.Handle, (void*)actorRotation.Handle, movementSpeed, (void*)stateVector.Handle, (void*)(collisionShapeInterface?.Handle ?? 0), inputMoveX, inputMoveZ, collisionShapeInterface is not null) != 0;
     }
 
     public bool checkNeedAutoJump(float inputMoveX, float inputMoveZ)
     {
-        return NativeMethods.TablePtr->C2.hs_method_ed293838((void*)__hosihikari_shim_handle, inputMoveX, inputMoveZ) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ed293838((void*)__hosihikari_shim_handle, inputMoveX, inputMoveZ) != 0;
     }
 
     public bool checkSpawnBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        return NativeMethods.TablePtr->C2.hs_method_7c6c134c((void*)__hosihikari_shim_handle, (void*)region.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_7c6c134c((void*)__hosihikari_shim_handle, (void*)region.Handle) != 0;
     }
 
     public void clearVanishEnchantedItemsOnDeath()
     {
-        NativeMethods.TablePtr->C2.hs_method_ee1ae04c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_ee1ae04c((void*)__hosihikari_shim_handle);
     }
 
     public void completeUsingItem()
     {
-        NativeMethods.TablePtr->C2.hs_method_692d2e62((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_692d2e62((void*)__hosihikari_shim_handle);
     }
 
     public bool consumeTotem()
     {
-        return NativeMethods.TablePtr->C2.hs_method_8acc8957((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_8acc8957((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ISparseContainerSetListener' is not a known bindable declaration.", false)]
@@ -2065,27 +2065,27 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public void damageCarriedItemOnAttack(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, float damageDealtToTarget)
     {
-        NativeMethods.TablePtr->C2.hs_method_3e08342e((void*)__hosihikari_shim_handle, (void*)target.Handle, damageDealtToTarget);
+        NativeMethods.TablePtr->C3.hs_method_3e08342e((void*)__hosihikari_shim_handle, (void*)target.Handle, damageDealtToTarget);
     }
 
     public void deleteContainerManager()
     {
-        NativeMethods.TablePtr->C2.hs_method_26b54e5f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_26b54e5f((void*)__hosihikari_shim_handle);
     }
 
     public void destroyEditorPlayer()
     {
-        NativeMethods.TablePtr->C2.hs_method_5622c878((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_5622c878((void*)__hosihikari_shim_handle);
     }
 
     public void destroyRegion()
     {
-        NativeMethods.TablePtr->C2.hs_method_a23c1e69((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_a23c1e69((void*)__hosihikari_shim_handle);
     }
 
     public void die(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        NativeMethods.TablePtr->C2.hs_method_ea17536e((void*)__hosihikari_shim_handle, (void*)source.Handle);
+        NativeMethods.TablePtr->C3.hs_method_ea17536e((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
     public void disconnect(string reason)
@@ -2103,7 +2103,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(reason, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_559491f4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C3.hs_method_559491f4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -2148,7 +2148,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C2.hs_method_d92d29cb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, filteredMessage is not null);
+                    NativeMethods.TablePtr->C3.hs_method_d92d29cb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, filteredMessage is not null);
                 }
             }
         }
@@ -2182,7 +2182,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         {
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                NativeMethods.TablePtr->C2.hs_method_6495f232((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, filteredMessage is not null);
+                NativeMethods.TablePtr->C3.hs_method_6495f232((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, filteredMessage is not null);
             }
         }
     }
@@ -2215,7 +2215,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C2.hs_method_dc33b5db((void*)__hosihikari_shim_handle, (void*)textObject.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C3.hs_method_dc33b5db((void*)__hosihikari_shim_handle, (void*)textObject.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -2248,7 +2248,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         {
             fixed (byte* __hs_stringData2 = __hs_stringBytes2)
             {
-                NativeMethods.TablePtr->C2.hs_method_72b9a80a((void*)__hosihikari_shim_handle, (void*)resolvedTextObject.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                NativeMethods.TablePtr->C3.hs_method_72b9a80a((void*)__hosihikari_shim_handle, (void*)resolvedTextObject.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
             }
         }
     }
@@ -2294,7 +2294,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
             {
                 fixed (byte* __hs_stringData2 = __hs_stringBytes2)
                 {
-                    NativeMethods.TablePtr->C2.hs_method_655d850f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
+                    NativeMethods.TablePtr->C3.hs_method_655d850f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
                 }
             }
         }
@@ -2367,7 +2367,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
                     {
                         fixed (byte* __hs_stringData4 = __hs_stringBytes4)
                         {
-                            NativeMethods.TablePtr->C2.hs_method_310fd0e7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, filteredMessage is not null);
+                            NativeMethods.TablePtr->C3.hs_method_310fd0e7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, filteredMessage is not null);
                         }
                     }
                 }
@@ -2377,87 +2377,87 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public void doEnterWaterSplashEffect()
     {
-        NativeMethods.TablePtr->C2.hs_method_ccfc11a0((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_ccfc11a0((void*)__hosihikari_shim_handle);
     }
 
     public void doExitWaterSplashEffect()
     {
-        NativeMethods.TablePtr->C2.hs_method_5b3dacb5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_5b3dacb5((void*)__hosihikari_shim_handle);
     }
 
     public bool drop(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool randomly)
     {
-        return NativeMethods.TablePtr->C2.hs_method_79e086ae((void*)__hosihikari_shim_handle, (void*)item.Handle, randomly) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_79e086ae((void*)__hosihikari_shim_handle, (void*)item.Handle, randomly) != 0;
     }
 
     public void dropEquipmentOnDeath()
     {
-        NativeMethods.TablePtr->C2.hs_method_fe9476b6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_fe9476b6((void*)__hosihikari_shim_handle);
     }
 
     public void dropEquipmentOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        NativeMethods.TablePtr->C2.hs_method_24360cfe((void*)__hosihikari_shim_handle, (void*)source.Handle);
+        NativeMethods.TablePtr->C3.hs_method_24360cfe((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
     public void eat(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance)
     {
-        NativeMethods.TablePtr->C2.hs_method_b4c95716((void*)__hosihikari_shim_handle, (void*)instance.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b4c95716((void*)__hosihikari_shim_handle, (void*)instance.Handle);
     }
 
     public void eat(int hungerValue, float saturationModifier)
     {
-        NativeMethods.TablePtr->C2.hs_method_65d050f8((void*)__hosihikari_shim_handle, hungerValue, saturationModifier);
+        NativeMethods.TablePtr->C3.hs_method_65d050f8((void*)__hosihikari_shim_handle, hungerValue, saturationModifier);
     }
 
     public void emitCriticalHitParticles(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, int particleCount)
     {
-        NativeMethods.TablePtr->C2.hs_method_f4347fc6((void*)__hosihikari_shim_handle, (void*)target.Handle, particleCount);
+        NativeMethods.TablePtr->C3.hs_method_f4347fc6((void*)__hosihikari_shim_handle, (void*)target.Handle, particleCount);
     }
 
     public bool equippedArmorItemCanBeMoved(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_ba99e6ad((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ba99e6ad((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public void feed(int itemId)
     {
-        NativeMethods.TablePtr->C2.hs_method_bc2ffd19((void*)__hosihikari_shim_handle, itemId);
+        NativeMethods.TablePtr->C3.hs_method_bc2ffd19((void*)__hosihikari_shim_handle, itemId);
     }
 
     public void fireDimensionChangedEvent(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromDimension, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType toDimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_5499f6eb((void*)__hosihikari_shim_handle, (void*)fromDimension.Handle, (void*)toDimension.Handle);
+        NativeMethods.TablePtr->C3.hs_method_5499f6eb((void*)__hosihikari_shim_handle, (void*)fromDimension.Handle, (void*)toDimension.Handle);
     }
 
     public void frameUpdate(nint frameUpdateContextBase)
     {
-        NativeMethods.TablePtr->C2.hs_method_82c0d73e((void*)__hosihikari_shim_handle, (void*)frameUpdateContextBase);
+        NativeMethods.TablePtr->C3.hs_method_82c0d73e((void*)__hosihikari_shim_handle, (void*)frameUpdateContextBase);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities getAbilities_f8073330()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)NativeMethods.TablePtr->C2.hs_method_f8073330((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)NativeMethods.TablePtr->C3.hs_method_f8073330((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities getAbilities_842aa693()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)NativeMethods.TablePtr->C2.hs_method_842aa693((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)NativeMethods.TablePtr->C3.hs_method_842aa693((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString getActorRendererId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C2.hs_method_00647450((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_00647450((void*)__hosihikari_shim_handle), false);
     }
 
     public nint getAgentIfAllowed(bool callerCanAccessOtherAgents, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID callerAgentID)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_d471f0a3((void*)__hosihikari_shim_handle, callerCanAccessOtherAgents, (void*)callerAgentID.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_d471f0a3((void*)__hosihikari_shim_handle, callerCanAccessOtherAgents, (void*)callerAgentID.Handle);
     }
 
     public nint[] getAllEquipment()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_6a1456dd((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_6a1456dd((void*)__hosihikari_shim_handle);
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<nint>() : new nint[checked((int)__hs_view.Size)];
         if (__hs_view.Size > 0)
         {
@@ -2468,7 +2468,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public nint[] getAllHandEquipment()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_3d434040((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_3d434040((void*)__hosihikari_shim_handle);
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<nint>() : new nint[checked((int)__hs_view.Size)];
         if (__hs_view.Size > 0)
         {
@@ -2479,204 +2479,204 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent getAnimationComponent()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent((nint)NativeMethods.TablePtr->C2.hs_method_97bafd21((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent((nint)NativeMethods.TablePtr->C3.hs_method_97bafd21((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier getAttackHitSound()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)NativeMethods.TablePtr->C2.hs_method_faccdd7b((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)NativeMethods.TablePtr->C3.hs_method_faccdd7b((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier getAttackMissSound()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)NativeMethods.TablePtr->C2.hs_method_e24d69b9((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier((nint)NativeMethods.TablePtr->C3.hs_method_e24d69b9((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getCarriedItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_24770a58((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_24770a58((void*)__hosihikari_shim_handle), false);
     }
 
     public string getChatDisplayName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_4acd612c((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_4acd612c((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public nint getClientSubId()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_40b127a7((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_40b127a7((void*)__hosihikari_shim_handle);
     }
 
     public byte getCommandPermissionLevel()
     {
-        return NativeMethods.TablePtr->C2.hs_method_1548732b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_1548732b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest? getConnectionRequest()
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_50f505f4((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_50f505f4((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ConnectionRequest((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getCurrentActiveShield()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_ead203e6((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_ead203e6((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.HashedString getCurrentStructureFeature()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C2.hs_method_1bb446d6((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_1bb446d6((void*)__hosihikari_shim_handle));
     }
 
     public static uint? getCustomHurtSound(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, int cause)
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C2.hs_method_0078bfe2((void*)mob.Handle, cause, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C3.hs_method_0078bfe2((void*)mob.Handle, cause, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (uint?)null;
     }
 
     public float getDestroyProgress(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return NativeMethods.TablePtr->C2.hs_method_5bf3565b((void*)__hosihikari_shim_handle, (void*)block.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_5bf3565b((void*)__hosihikari_shim_handle, (void*)block.Handle);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getEditorPlayer()
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_6631c27b((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_6631c27b((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.EnderChestContainer? getEnderChestContainer()
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6e321530((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6e321530((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EnderChestContainer((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getEquippedTotem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_b814bf83((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_b814bf83((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing? getEventing()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_77aa9109((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_77aa9109((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType getExpectedSpawnDimensionId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C2.hs_method_ec2d88be((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C3.hs_method_ec2d88be((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getExpectedSpawnPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C2.hs_method_54b0f3a6((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_54b0f3a6((void*)__hosihikari_shim_handle), false);
     }
 
     public string getIPAndPort()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_38532f44((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_38532f44((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getInteractText()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0c4f1ff0((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_0c4f1ff0((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getInterpolatedRidingOffset(float arg0, int arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_326c7e9c((void*)__hosihikari_shim_handle, arg0, arg1));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C3.hs_method_326c7e9c((void*)__hosihikari_shim_handle, arg0, arg1));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Inventory getInventory()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Inventory((nint)NativeMethods.TablePtr->C2.hs_method_acf3d65a((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Inventory((nint)NativeMethods.TablePtr->C3.hs_method_acf3d65a((void*)__hosihikari_shim_handle), false);
     }
 
     public int getItemCooldownLeft(global::Hosihikari.Bindings.Bedrock.Interop.HashedString category)
     {
-        return NativeMethods.TablePtr->C2.hs_method_bc7ef017((void*)__hosihikari_shim_handle, (void*)category.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_bc7ef017((void*)__hosihikari_shim_handle, (void*)category.Handle);
     }
 
     public int getItemCooldownLeft(ulong categoryHash)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a14af457((void*)__hosihikari_shim_handle, categoryHash);
+        return NativeMethods.TablePtr->C3.hs_method_a14af457((void*)__hosihikari_shim_handle, categoryHash);
     }
 
     public string getItemInteractText(global::Hosihikari.Bindings.Bedrock.Interop.Item item)
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_2da98439((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_2da98439((void*)__hosihikari_shim_handle, (void*)item.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public int getItemUseDuration()
     {
-        return NativeMethods.TablePtr->C2.hs_method_e7040885((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_e7040885((void*)__hosihikari_shim_handle);
     }
 
     public float getItemUseIntervalProgress()
     {
-        return NativeMethods.TablePtr->C2.hs_method_bf8d2fca((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_bf8d2fca((void*)__hosihikari_shim_handle);
     }
 
     public float getItemUseStartupProgress()
     {
-        return NativeMethods.TablePtr->C2.hs_method_d92c3c94((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_d92c3c94((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? getLastDeathDimension()
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_761079c5((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_761079c5((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)__hs_handle) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? getLastDeathPos()
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ccdc010c((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ccdc010c((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public string getLocaleCode()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_f06dac02((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_f06dac02((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public float getMapDecorationRotation()
     {
-        return NativeMethods.TablePtr->C2.hs_method_f9de6484((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_f9de6484((void*)__hosihikari_shim_handle);
     }
 
     public byte getMaxChunkBuildRadius()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b6259924((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_b6259924((void*)__hosihikari_shim_handle);
     }
 
     public int getMaxItemCooldownLeft()
     {
-        return NativeMethods.TablePtr->C2.hs_method_05809d6a((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_05809d6a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings getMovementSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)NativeMethods.TablePtr->C2.hs_method_8e48c17d((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)NativeMethods.TablePtr->C3.hs_method_8e48c17d((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.Color getNameTagTextColor()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C2.hs_method_2339452a((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C3.hs_method_2339452a((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier getNetworkIdentifier()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C2.hs_method_1d60adf5((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C3.hs_method_1d60adf5((void*)__hosihikari_shim_handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'NetworkPeer::NetworkStatus' is not supported.", false)]
@@ -2689,119 +2689,119 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB getPickupArea()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C2.hs_method_f46104c8((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C3.hs_method_f46104c8((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator getPlayerEventCoordinator()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator((nint)NativeMethods.TablePtr->C2.hs_method_d5576247((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerEventCoordinator((nint)NativeMethods.TablePtr->C3.hs_method_d5576247((void*)__hosihikari_shim_handle), false);
     }
 
     public int getPlayerGameType()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b9847457((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_b9847457((void*)__hosihikari_shim_handle);
     }
 
     public sbyte getPlayerPermissionLevel()
     {
-        return NativeMethods.TablePtr->C2.hs_method_afed7e25((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_afed7e25((void*)__hosihikari_shim_handle);
     }
 
     public int getPreviousLevelRequirement()
     {
-        return NativeMethods.TablePtr->C2.hs_method_0f423018((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_0f423018((void*)__hosihikari_shim_handle);
     }
 
     public string getRealName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_43139143((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_43139143((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getSelectedItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_dc7228c6((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_dc7228c6((void*)__hosihikari_shim_handle), false);
     }
 
     public int getSelectedItemSlot()
     {
-        return NativeMethods.TablePtr->C2.hs_method_97c6d87f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_97c6d87f((void*)__hosihikari_shim_handle);
     }
 
     public float getShadowRadius()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b65069c9((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_b65069c9((void*)__hosihikari_shim_handle);
     }
 
     public float getSleepRotation()
     {
-        return NativeMethods.TablePtr->C2.hs_method_ff180eba((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_ff180eba((void*)__hosihikari_shim_handle);
     }
 
     public float getSpeed()
     {
-        return NativeMethods.TablePtr->C2.hs_method_2535e007((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_2535e007((void*)__hosihikari_shim_handle);
     }
 
     public nint getTickingOffsets()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_4740ccce((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_4740ccce((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent getUserEntityIdentifier_8c183776()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent((nint)NativeMethods.TablePtr->C2.hs_method_8c183776((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent((nint)NativeMethods.TablePtr->C3.hs_method_8c183776((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent getUserEntityIdentifier_4b63d575()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent((nint)NativeMethods.TablePtr->C2.hs_method_4b63d575((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent((nint)NativeMethods.TablePtr->C3.hs_method_4b63d575((void*)__hosihikari_shim_handle), false);
     }
 
     public uint getUserId()
     {
-        return NativeMethods.TablePtr->C2.hs_method_009efca5((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_009efca5((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID getUuid()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C2.hs_method_b8dd04ca((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_b8dd04ca((void*)__hosihikari_shim_handle), false);
     }
 
     public int getXpEarnedAtCurrentLevel()
     {
-        return NativeMethods.TablePtr->C2.hs_method_501de749((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_501de749((void*)__hosihikari_shim_handle);
     }
 
     public static long getXpNeededForLevelRange(int startLevel, int endLevel)
     {
-        return NativeMethods.TablePtr->C2.hs_method_ea015adb(startLevel, endLevel);
+        return NativeMethods.TablePtr->C3.hs_method_ea015adb(startLevel, endLevel);
     }
 
     public int getXpNeededForNextLevel()
     {
-        return NativeMethods.TablePtr->C2.hs_method_9df82fd3((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_9df82fd3((void*)__hosihikari_shim_handle);
     }
 
     public string getXuid()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_d67cb6eb((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_d67cb6eb((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public void handleEntityEvent(byte id, int data)
     {
-        NativeMethods.TablePtr->C2.hs_method_4640741c((void*)__hosihikari_shim_handle, id, data);
+        NativeMethods.TablePtr->C3.hs_method_4640741c((void*)__hosihikari_shim_handle, id, data);
     }
 
     public bool hasDiedBefore()
     {
-        return NativeMethods.TablePtr->C2.hs_method_17df80ff((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_17df80ff((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool hasResource(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor resource)
     {
-        return NativeMethods.TablePtr->C2.hs_method_1f6ddb05((void*)__hosihikari_shim_handle, (void*)resource.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_1f6ddb05((void*)__hosihikari_shim_handle, (void*)resource.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BodyControl' has no accessible destructor.", false)]
@@ -2810,876 +2810,876 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public void initHUDContainerManager()
     {
-        NativeMethods.TablePtr->C2.hs_method_4b8e5ebc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_4b8e5ebc((void*)__hosihikari_shim_handle);
     }
 
     public void initializeComponents(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
-        NativeMethods.TablePtr->C2.hs_method_05005b7c((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
+        NativeMethods.TablePtr->C3.hs_method_05005b7c((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult interact(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C2.hs_method_618baa69((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)location.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C3.hs_method_618baa69((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)location.Handle));
     }
 
     public void inventoryChanged(global::Hosihikari.Bindings.Bedrock.Interop.Container arg0, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, bool forceBalanced)
     {
-        NativeMethods.TablePtr->C2.hs_method_2ef4130c((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)oldItem.Handle, (void*)newItem.Handle, forceBalanced);
+        NativeMethods.TablePtr->C3.hs_method_2ef4130c((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)oldItem.Handle, (void*)newItem.Handle, forceBalanced);
     }
 
     public bool isActorRelevant(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        return NativeMethods.TablePtr->C2.hs_method_6e20282c((void*)__hosihikari_shim_handle, (void*)actor.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_6e20282c((void*)__hosihikari_shim_handle, (void*)actor.Handle) != 0;
     }
 
     public bool isAutoJumpEnabled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_f6124b23((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_f6124b23((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isBlocking()
     {
-        return NativeMethods.TablePtr->C2.hs_method_13cac38d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_13cac38d((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isDamageBlocked(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        return NativeMethods.TablePtr->C2.hs_method_3809689a((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_3809689a((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
     }
 
     public bool isEditorPlayer()
     {
-        return NativeMethods.TablePtr->C2.hs_method_3ac2de16((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_3ac2de16((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isEquipmentHidden()
     {
-        return NativeMethods.TablePtr->C2.hs_method_bed21713((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_bed21713((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isExternalCommunicationAllowed()
     {
-        return NativeMethods.TablePtr->C2.hs_method_8ec7b7b1((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_8ec7b7b1((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isFireImmune()
     {
-        return NativeMethods.TablePtr->C2.hs_method_95050580((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_95050580((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isFlying()
     {
-        return NativeMethods.TablePtr->C2.hs_method_4977f07b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_4977f07b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isForcedRespawn()
     {
-        return NativeMethods.TablePtr->C2.hs_method_eef07c22((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_eef07c22((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isHungry()
     {
-        return NativeMethods.TablePtr->C2.hs_method_81c00852((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_81c00852((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isImmobile()
     {
-        return NativeMethods.TablePtr->C2.hs_method_c42f819b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_c42f819b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isInTrialMode()
     {
-        return NativeMethods.TablePtr->C2.hs_method_801a031f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_801a031f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isInvulnerableTo(global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        return NativeMethods.TablePtr->C2.hs_method_29bb68bc((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_29bb68bc((void*)__hosihikari_shim_handle, (void*)source.Handle) != 0;
     }
 
     public bool isItemOnCooldown(global::Hosihikari.Bindings.Bedrock.Interop.HashedString category)
     {
-        return NativeMethods.TablePtr->C2.hs_method_ef523906((void*)__hosihikari_shim_handle, (void*)category.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ef523906((void*)__hosihikari_shim_handle, (void*)category.Handle) != 0;
     }
 
     public bool isLoading()
     {
-        return NativeMethods.TablePtr->C2.hs_method_edfa1197((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_edfa1197((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isOperator()
     {
-        return NativeMethods.TablePtr->C2.hs_method_620c04d3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_620c04d3((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isPlayerInitialized()
     {
-        return NativeMethods.TablePtr->C2.hs_method_ce2a2692((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ce2a2692((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isSilentObserver()
     {
-        return NativeMethods.TablePtr->C2.hs_method_6b352c32((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_6b352c32((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isSimulated()
     {
-        return NativeMethods.TablePtr->C2.hs_method_38fff725((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_38fff725((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isSleeping()
     {
-        return NativeMethods.TablePtr->C2.hs_method_635fc63e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_635fc63e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isTeacher()
     {
-        return NativeMethods.TablePtr->C2.hs_method_9a4e5f3b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_9a4e5f3b((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlastFurnaceOptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b458e86d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b458e86d((void*)__hosihikari_shim_handle);
     }
 
     public bool mBlockRespawnUntilClientMessage
     {
-        get => NativeMethods.TablePtr->C2.hs_get_65312bfb((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_65312bfb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_65312bfb((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_65312bfb((void*)__hosihikari_shim_handle, value);
     }
 
     public long mBlockedUsingDamagedShieldTimeStamp
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9eeeec4e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_9eeeec4e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9eeeec4e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_9eeeec4e((void*)__hosihikari_shim_handle, value);
     }
 
     public long mBlockedUsingShieldTimeStamp
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ed6fccfd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ed6fccfd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ed6fccfd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ed6fccfd((void*)__hosihikari_shim_handle, value);
     }
 
     public int mBuildPlatform
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3b0502ad((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3b0502ad((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3b0502ad((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3b0502ad((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCachedSpawnData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_56a35397((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_56a35397((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCapePos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5479ad2e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5479ad2e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCapePosO_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2ffb1e67((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2ffb1e67((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChatMessagePrefix_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b846872e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b846872e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChatNamePrefix_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e213a5d5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e213a5d5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChatNameSuffix_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5a8f2bd2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5a8f2bd2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkPublisherView_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_515c0ef0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_515c0ef0((void*)__hosihikari_shim_handle);
     }
 
     public uint mChunkRadius
     {
-        get => NativeMethods.TablePtr->C2.hs_get_f9e0b8b2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_f9e0b8b2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f9e0b8b2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f9e0b8b2((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d05ddbb7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d05ddbb7((void*)__hosihikari_shim_handle);
     }
 
     public byte mClientId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0233251b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_0233251b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0233251b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0233251b((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mClientRandomId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e3ff688a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_e3ff688a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e3ff688a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e3ff688a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_88a645ae((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_88a645ae((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerManagerSubscribers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9783c9db((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9783c9db((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCreativeItemList_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ac125441((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ac125441((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCursorSelectedItemGroup_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_616af88a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_616af88a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDestroyProgressCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8f3496ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8f3496ef((void*)__hosihikari_shim_handle);
     }
 
     public bool mDestroyingBlock
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1ef967fa((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_1ef967fa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1ef967fa((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_1ef967fa((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDeviceId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ef3fca03((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ef3fca03((void*)__hosihikari_shim_handle);
     }
 
     public float mDistanceSinceTransformEvent
     {
-        get => NativeMethods.TablePtr->C2.hs_get_20c7e4e9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_20c7e4e9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_20c7e4e9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_20c7e4e9((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mElytraLoop
     {
-        get => NativeMethods.TablePtr->C2.hs_get_916d5c27((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_916d5c27((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_916d5c27((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_916d5c27((void*)__hosihikari_shim_handle, value);
     }
 
     public float mElytraVolume
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0316f886((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_0316f886((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0316f886((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0316f886((void*)__hosihikari_shim_handle, value);
     }
 
     public long mEmoteEasterEggEndTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_bb65863e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_bb65863e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bb65863e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_bb65863e((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mEmoteMessageCount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c526d8af((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c526d8af((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c526d8af((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c526d8af((void*)__hosihikari_shim_handle, value);
     }
 
     public int mEmoteTicks
     {
-        get => NativeMethods.TablePtr->C2.hs_get_673f05e4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_673f05e4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_673f05e4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_673f05e4((void*)__hosihikari_shim_handle, value);
     }
 
     public int mEnchantmentSeed
     {
-        get => NativeMethods.TablePtr->C2.hs_get_aa2a389d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_aa2a389d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_aa2a389d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_aa2a389d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnderChestInventory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_48f8fc2a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_48f8fc2a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFirstPersonAnimationComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_09e8ea2e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_09e8ea2e((void*)__hosihikari_shim_handle);
     }
 
     public bool mFlagClientForBAIReset
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2a0b589b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_2a0b589b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2a0b589b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_2a0b589b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFroglights_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fcef30bc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fcef30bc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFurnaceOptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_79e1204f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_79e1204f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameMode_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_04fdfa6c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_04fdfa6c((void*)__hosihikari_shim_handle);
     }
 
     public bool mHasFakeInventory
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c51272fc((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_c51272fc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c51272fc((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c51272fc((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHasSeenCredits
     {
-        get => NativeMethods.TablePtr->C2.hs_get_da06905f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_da06905f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_da06905f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_da06905f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHudContainerManagerModel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d8ca6378((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d8ca6378((void*)__hosihikari_shim_handle);
     }
 
     public bool mInteractDataDirty
     {
-        get => NativeMethods.TablePtr->C2.hs_get_51634502((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_51634502((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_51634502((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_51634502((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInteractTarget_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4adc7403((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4adc7403((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInteractTargetPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5c4fc875((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5c4fc875((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInventory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1471fa4e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1471fa4e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInventoryOptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_94686f00((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_94686f00((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsDeferredRenderingFirstPersonObjects
     {
-        get => NativeMethods.TablePtr->C2.hs_get_628d90d5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_628d90d5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_628d90d5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_628d90d5((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsHostingPlayer
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8d6b6bf3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_8d6b6bf3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8d6b6bf3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_8d6b6bf3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsInitialSpawnDone
     {
-        get => NativeMethods.TablePtr->C2.hs_get_be817a80((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_be817a80((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_be817a80((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_be817a80((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsRegionSuspended
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6f6d92a2((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_6f6d92a2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6f6d92a2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_6f6d92a2((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemInUse_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7b15e571((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7b15e571((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemStackNetManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_57714db7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_57714db7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastEmotePlayed_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dd32034d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dd32034d((void*)__hosihikari_shim_handle);
     }
 
     public int mLastHurtBy
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ca0f0c29((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ca0f0c29((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ca0f0c29((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ca0f0c29((void*)__hosihikari_shim_handle, value);
     }
 
     public int mLastLevelUpTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_106c8eaa((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_106c8eaa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_106c8eaa((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_106c8eaa((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mListeners_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8eb0b0ed((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8eb0b0ed((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMapAnimationComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ee99b41b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ee99b41b((void*)__hosihikari_shim_handle);
     }
 
     public int mMapIndex
     {
-        get => NativeMethods.TablePtr->C2.hs_get_be00d270((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_be00d270((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_be00d270((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_be00d270((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_45df1d4e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_45df1d4e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOceanBiomes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2ec3bf2b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2ec3bf2b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnScreenAnimationTextures_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c2a4ca2a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c2a4ca2a((void*)__hosihikari_shim_handle);
     }
 
     public int mOnScreenAnimationTicks
     {
-        get => NativeMethods.TablePtr->C2.hs_get_39ef9dab((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_39ef9dab((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_39ef9dab((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_39ef9dab((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPacketSender_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2ad6c61e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2ad6c61e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingLeftShoulderPassengerID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ea0effbb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ea0effbb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingRightShoulderPassengerID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_06348da5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_06348da5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingVehicleID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a8fef100((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a8fef100((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlatformId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_acb371e3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_acb371e3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlatformOfflineId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1637122f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1637122f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlatformOnlineId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ef381ba3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ef381ba3((void*)__hosihikari_shim_handle);
     }
 
     public bool mPlayerLevelChanged
     {
-        get => NativeMethods.TablePtr->C2.hs_get_76b8b6ec((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_76b8b6ec((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_76b8b6ec((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_76b8b6ec((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerRespawnPoint_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_cdaf029b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cdaf029b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerUIContainer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6171c829((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6171c829((void*)__hosihikari_shim_handle);
     }
 
     public bool mPositionLoadedFromSave
     {
-        get => NativeMethods.TablePtr->C2.hs_get_226b6ed1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_226b6ed1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_226b6ed1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_226b6ed1((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreDimensionTransferSpawnPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_eaaad78a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_eaaad78a((void*)__hosihikari_shim_handle);
     }
 
     public bool mPrevBlockedUsingDamagedShield
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0eab5b42((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_0eab5b42((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0eab5b42((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_0eab5b42((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mPrevBlockedUsingShield
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e9198345((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_e9198345((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e9198345((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_e9198345((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPreviousCarriedItem
     {
-        get => NativeMethods.TablePtr->C2.hs_get_d447aef2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_d447aef2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d447aef2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d447aef2((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreviousInteractEntity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_21123b05((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_21123b05((void*)__hosihikari_shim_handle);
     }
 
     public int mPreviousLevelRequirement
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3a26887f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3a26887f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3a26887f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3a26887f((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mRespawnChunkBuilderPolicyHandle
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3f75cf86((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3f75cf86((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3f75cf86((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3f75cf86((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRespawnMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_26ba960b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_26ba960b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRespawnOriginalDimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f2d69a37((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f2d69a37((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRespawnOriginalPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_66675cad((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_66675cad((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRespawnPositionCandidate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9355e6bb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9355e6bb((void*)__hosihikari_shim_handle);
     }
 
     public bool mRespawnReady
     {
-        get => NativeMethods.TablePtr->C2.hs_get_f049eddf((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_f049eddf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f049eddf((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_f049eddf((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRespawnStopwatch_Searching_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_31cf8026((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_31cf8026((void*)__hosihikari_shim_handle);
     }
 
     public bool mRespawningFromTheEnd
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0c9646e7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_0c9646e7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0c9646e7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_0c9646e7((void*)__hosihikari_shim_handle, value);
     }
 
     public int mScore
     {
-        get => NativeMethods.TablePtr->C2.hs_get_70e6ce04((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_70e6ce04((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_70e6ce04((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_70e6ce04((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSelfSignedId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d60eef04((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d60eef04((void*)__hosihikari_shim_handle);
     }
 
     public byte mSendPlayerOptionsFlags
     {
-        get => NativeMethods.TablePtr->C2.hs_get_06ff4c59((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_06ff4c59((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_06ff4c59((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_06ff4c59((void*)__hosihikari_shim_handle, value);
     }
 
     public float mServerBuildRatio
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5ffb649c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_5ffb649c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_5ffb649c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_5ffb649c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mServerId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_42fa25da((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_42fa25da((void*)__hosihikari_shim_handle);
     }
 
     public bool mShouldClientGenerateChunks
     {
-        get => NativeMethods.TablePtr->C2.hs_get_144d8d51((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_144d8d51((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_144d8d51((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_144d8d51((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSkin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_90ddb7d0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_90ddb7d0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSmokerOptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1c63aed5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1c63aed5((void*)__hosihikari_shim_handle);
     }
 
     public float mSneakHeight
     {
-        get => NativeMethods.TablePtr->C2.hs_get_078bccfe((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_078bccfe((void*)__hosihikari_shim_handle);
     }
 
     public float mSneakOffset
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ea7d73d0((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_ea7d73d0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnBlockSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_02638626((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_02638626((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnChunkSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ae95e770((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae95e770((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnFallbackPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1343aca8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1343aca8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnFallbackType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e5be252b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e5be252b((void*)__hosihikari_shim_handle);
     }
 
     public int mSpawnPositionSource
     {
-        get => NativeMethods.TablePtr->C2.hs_get_194454a2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_194454a2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_194454a2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_194454a2((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSpawnPositionState
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e5167302((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_e5167302((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e5167302((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e5167302((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnPositioningTestPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b7303dce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b7303dce((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnRandomizer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_42b0b099((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_42b0b099((void*)__hosihikari_shim_handle);
     }
 
     public long mStartedBlockingTimeStamp
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a258cd4f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_a258cd4f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a258cd4f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a258cd4f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTrackedBossIDs_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_510cc893((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_510cc893((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTransactionManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_50992124((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_50992124((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUIAnimationComponent_d47ab25a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f5f78f11((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f5f78f11((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUniqueName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ffeac1e5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ffeac1e5((void*)__hosihikari_shim_handle);
     }
 
     public bool mUpdateMobs
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1640a777((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_1640a777((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1640a777((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_1640a777((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUseMapAnimationComponent
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c044a48a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_c044a48a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c044a48a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c044a48a((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUsedPotion
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0d2968ac((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_0d2968ac((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0d2968ac((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_0d2968ac((void*)__hosihikari_shim_handle, value);
     }
 
     public void moveSpawnView(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 spawnPosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionType)
     {
-        NativeMethods.TablePtr->C2.hs_method_c154c601((void*)__hosihikari_shim_handle, (void*)spawnPosition.Handle, (void*)dimensionType.Handle);
+        NativeMethods.TablePtr->C3.hs_method_c154c601((void*)__hosihikari_shim_handle, (void*)spawnPosition.Handle, (void*)dimensionType.Handle);
     }
 
     public void moveView()
     {
-        NativeMethods.TablePtr->C2.hs_method_d2629471((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_d2629471((void*)__hosihikari_shim_handle);
     }
 
     public void normalTick()
     {
-        NativeMethods.TablePtr->C2.hs_method_4c843922((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_4c843922((void*)__hosihikari_shim_handle);
     }
 
     public void onLinkedSlotsChanged()
     {
-        NativeMethods.TablePtr->C2.hs_method_89bfa426((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_89bfa426((void*)__hosihikari_shim_handle);
     }
 
     public void onMovePlayerPacketNormal(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 rot, float yHeadRot)
     {
-        NativeMethods.TablePtr->C2.hs_method_ab35a0a0((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)rot.Handle, yHeadRot);
+        NativeMethods.TablePtr->C3.hs_method_ab35a0a0((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)rot.Handle, yHeadRot);
     }
 
     public void onSuspension()
     {
-        NativeMethods.TablePtr->C2.hs_method_b7e1bb1b((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_b7e1bb1b((void*)__hosihikari_shim_handle);
     }
 
     public void onSynchedDataUpdate(int dataId)
     {
-        NativeMethods.TablePtr->C2.hs_method_6754f69d((void*)__hosihikari_shim_handle, dataId);
+        NativeMethods.TablePtr->C3.hs_method_6754f69d((void*)__hosihikari_shim_handle, dataId);
     }
 
     public void openBook(int bookSlot, bool editable, int page, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? lectern)
     {
-        NativeMethods.TablePtr->C2.hs_method_7ef39ce2((void*)__hosihikari_shim_handle, bookSlot, editable, page, (void*)(lectern?.Handle ?? 0));
+        NativeMethods.TablePtr->C3.hs_method_7ef39ce2((void*)__hosihikari_shim_handle, bookSlot, editable, page, (void*)(lectern?.Handle ?? 0));
     }
 
     public void openChalkboard(global::Hosihikari.Bindings.Bedrock.Interop.ChalkboardBlockActor chalkboard, bool showLockToggle)
     {
-        NativeMethods.TablePtr->C2.hs_method_70d535f1((void*)__hosihikari_shim_handle, (void*)chalkboard.Handle, showLockToggle);
+        NativeMethods.TablePtr->C3.hs_method_70d535f1((void*)__hosihikari_shim_handle, (void*)chalkboard.Handle, showLockToggle);
     }
 
     public void openInventory()
     {
-        NativeMethods.TablePtr->C2.hs_method_9ddc7de9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_9ddc7de9((void*)__hosihikari_shim_handle);
     }
 
     public void openNpcInteractScreen(global::Hosihikari.Bindings.Abi.SharedHandle? npc)
     {
-        NativeMethods.TablePtr->C2.hs_method_efcb9370((void*)__hosihikari_shim_handle, npc?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C3.hs_method_efcb9370((void*)__hosihikari_shim_handle, npc?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void openPortfolio()
     {
-        NativeMethods.TablePtr->C2.hs_method_19fc6aaf((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_19fc6aaf((void*)__hosihikari_shim_handle);
     }
 
     public void openSign(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, bool isFrontSide)
     {
-        NativeMethods.TablePtr->C2.hs_method_9312fb56((void*)__hosihikari_shim_handle, (void*)position.Handle, isFrontSide);
+        NativeMethods.TablePtr->C3.hs_method_9312fb56((void*)__hosihikari_shim_handle, (void*)position.Handle, isFrontSide);
     }
 
     public void openTrading(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uniqueID, bool useNewScreen)
     {
-        NativeMethods.TablePtr->C2.hs_method_1a717e2b((void*)__hosihikari_shim_handle, (void*)uniqueID.Handle, useNewScreen);
+        NativeMethods.TablePtr->C3.hs_method_1a717e2b((void*)__hosihikari_shim_handle, (void*)uniqueID.Handle, useNewScreen);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Player operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Player arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)NativeMethods.TablePtr->C2.hs_method_65ff0552((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)NativeMethods.TablePtr->C3.hs_method_65ff0552((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void passengerTick()
     {
-        NativeMethods.TablePtr->C2.hs_method_d8c2432f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_d8c2432f((void*)__hosihikari_shim_handle);
     }
 
     public void playEmote(string pieceId, bool playChatMessage)
@@ -3697,73 +3697,73 @@ public sealed unsafe partial class Player : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(pieceId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_94ac3207((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, playChatMessage);
+            NativeMethods.TablePtr->C3.hs_method_94ac3207((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, playChatMessage);
         }
     }
 
     public void playPredictiveSynchronizedSound(uint type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, bool isGlobal)
     {
-        NativeMethods.TablePtr->C2.hs_method_3e35a99f((void*)__hosihikari_shim_handle, type, (void*)pos.Handle, data, isGlobal);
+        NativeMethods.TablePtr->C3.hs_method_3e35a99f((void*)__hosihikari_shim_handle, type, (void*)pos.Handle, data, isGlobal);
     }
 
     public void playPredictiveSynchronizedSound(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier soundEvent, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, bool isGlobal)
     {
-        NativeMethods.TablePtr->C2.hs_method_af3a0efa((void*)__hosihikari_shim_handle, (void*)soundEvent.Handle, (void*)pos.Handle, data, isGlobal);
+        NativeMethods.TablePtr->C3.hs_method_af3a0efa((void*)__hosihikari_shim_handle, (void*)soundEvent.Handle, (void*)pos.Handle, data, isGlobal);
     }
 
     public void prepareRegion(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource mainChunkSource)
     {
-        NativeMethods.TablePtr->C2.hs_method_f3f4fda7((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle);
+        NativeMethods.TablePtr->C3.hs_method_f3f4fda7((void*)__hosihikari_shim_handle, (void*)mainChunkSource.Handle);
     }
 
     public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
     {
-        NativeMethods.TablePtr->C2.hs_method_2f27a00f((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
+        NativeMethods.TablePtr->C3.hs_method_2f27a00f((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
     }
 
     public void refreshContainer(global::Hosihikari.Bindings.Bedrock.Interop.IContainerManager menu)
     {
-        NativeMethods.TablePtr->C2.hs_method_12ab23d2((void*)__hosihikari_shim_handle, (void*)menu.Handle);
+        NativeMethods.TablePtr->C3.hs_method_12ab23d2((void*)__hosihikari_shim_handle, (void*)menu.Handle);
     }
 
     public void releaseUsingItem()
     {
-        NativeMethods.TablePtr->C2.hs_method_ea2e8c82((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_ea2e8c82((void*)__hosihikari_shim_handle);
     }
 
     public void reloadHardcoded(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
-        NativeMethods.TablePtr->C2.hs_method_a7e80047((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a7e80047((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
     public void remove()
     {
-        NativeMethods.TablePtr->C2.hs_method_a820b55d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_a820b55d((void*)__hosihikari_shim_handle);
     }
 
     public void requestMissingSubChunk(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPos scp)
     {
-        NativeMethods.TablePtr->C2.hs_method_dfd73db6((void*)__hosihikari_shim_handle, (void*)scp.Handle);
+        NativeMethods.TablePtr->C3.hs_method_dfd73db6((void*)__hosihikari_shim_handle, (void*)scp.Handle);
     }
 
     public void resetPlayerLevel()
     {
-        NativeMethods.TablePtr->C2.hs_method_403f5883((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_403f5883((void*)__hosihikari_shim_handle);
     }
 
     public void resetRot()
     {
-        NativeMethods.TablePtr->C2.hs_method_5e50583d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_5e50583d((void*)__hosihikari_shim_handle);
     }
 
     public void resetUserPos(byte resetRule)
     {
-        NativeMethods.TablePtr->C2.hs_method_40fbd75e((void*)__hosihikari_shim_handle, resetRule);
+        NativeMethods.TablePtr->C3.hs_method_40fbd75e((void*)__hosihikari_shim_handle, resetRule);
     }
 
     public void respawn()
     {
-        NativeMethods.TablePtr->C2.hs_method_0258506c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_0258506c((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -3772,17 +3772,17 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public void sendEventPacket(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTelemetryEventPacket packet)
     {
-        NativeMethods.TablePtr->C2.hs_method_c195c120((void*)__hosihikari_shim_handle, (void*)packet.Handle);
+        NativeMethods.TablePtr->C3.hs_method_c195c120((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
     public void sendInventory(bool shouldSelectSlot)
     {
-        NativeMethods.TablePtr->C2.hs_method_7a3e730e((void*)__hosihikari_shim_handle, shouldSelectSlot);
+        NativeMethods.TablePtr->C3.hs_method_7a3e730e((void*)__hosihikari_shim_handle, shouldSelectSlot);
     }
 
     public void sendInventoryTransaction(global::Hosihikari.Bindings.Bedrock.Interop.InventoryTransaction transaction)
     {
-        NativeMethods.TablePtr->C2.hs_method_54a54149((void*)__hosihikari_shim_handle, (void*)transaction.Handle);
+        NativeMethods.TablePtr->C3.hs_method_54a54149((void*)__hosihikari_shim_handle, (void*)transaction.Handle);
     }
 
     public void sendMessage(string msg)
@@ -3800,38 +3800,38 @@ public sealed unsafe partial class Player : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(msg, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_1cb2edb3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C3.hs_method_1cb2edb3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void sendMotionPacketIfNeeded()
     {
-        NativeMethods.TablePtr->C2.hs_method_b857f8ad((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_b857f8ad((void*)__hosihikari_shim_handle);
     }
 
     public void sendNetworkPacket(global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
-        NativeMethods.TablePtr->C2.hs_method_4b556179((void*)__hosihikari_shim_handle, (void*)packet.Handle);
+        NativeMethods.TablePtr->C3.hs_method_4b556179((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
     public void setAbilities(global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities newAbilities)
     {
-        NativeMethods.TablePtr->C2.hs_method_e45eb017((void*)__hosihikari_shim_handle, (void*)newAbilities.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e45eb017((void*)__hosihikari_shim_handle, (void*)newAbilities.Handle);
     }
 
     public void setAbility(sbyte index, bool value)
     {
-        NativeMethods.TablePtr->C2.hs_method_7c214c9b((void*)__hosihikari_shim_handle, index, value);
+        NativeMethods.TablePtr->C3.hs_method_7c214c9b((void*)__hosihikari_shim_handle, index, value);
     }
 
     public void setAgent(nint agent)
     {
-        NativeMethods.TablePtr->C2.hs_method_a6d3981a((void*)__hosihikari_shim_handle, (void*)agent);
+        NativeMethods.TablePtr->C3.hs_method_a6d3981a((void*)__hosihikari_shim_handle, (void*)agent);
     }
 
     public void setArmor(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_e8c667b2((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e8c667b2((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
     }
 
     public void setBehaviorCommandStatus(string name, int status)
@@ -3849,33 +3849,33 @@ public sealed unsafe partial class Player : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_646135c4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, status);
+            NativeMethods.TablePtr->C3.hs_method_646135c4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, status);
         }
     }
 
     public void setCarriedItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_55711912((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_55711912((void*)__hosihikari_shim_handle, (void*)item.Handle);
     }
 
     public void setChunkRadius(uint chunkRadius)
     {
-        NativeMethods.TablePtr->C2.hs_method_2bf7a531((void*)__hosihikari_shim_handle, chunkRadius);
+        NativeMethods.TablePtr->C3.hs_method_2bf7a531((void*)__hosihikari_shim_handle, chunkRadius);
     }
 
     public void setCommandPermissions(byte permissions)
     {
-        NativeMethods.TablePtr->C2.hs_method_dffdb0a6((void*)__hosihikari_shim_handle, permissions);
+        NativeMethods.TablePtr->C3.hs_method_dffdb0a6((void*)__hosihikari_shim_handle, permissions);
     }
 
     public void setContainerData(global::Hosihikari.Bindings.Bedrock.Interop.IContainerManager menu, int id, int value)
     {
-        NativeMethods.TablePtr->C2.hs_method_ee9d5dfc((void*)__hosihikari_shim_handle, (void*)menu.Handle, id, value);
+        NativeMethods.TablePtr->C3.hs_method_ee9d5dfc((void*)__hosihikari_shim_handle, (void*)menu.Handle, id, value);
     }
 
     public void setContainerManagerModel(global::Hosihikari.Bindings.Abi.SharedHandle? manager)
     {
-        NativeMethods.TablePtr->C2.hs_method_118497ec((void*)__hosihikari_shim_handle, manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C3.hs_method_118497ec((void*)__hosihikari_shim_handle, manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void setName(string newName)
@@ -3893,168 +3893,168 @@ public sealed unsafe partial class Player : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(newName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_a536da71((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C3.hs_method_a536da71((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void setOffhandSlot(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_7e03ea4a((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_7e03ea4a((void*)__hosihikari_shim_handle, (void*)item.Handle);
     }
 
     public void setPlayerGameType(int gameType)
     {
-        NativeMethods.TablePtr->C2.hs_method_b08f8dfe((void*)__hosihikari_shim_handle, gameType);
+        NativeMethods.TablePtr->C3.hs_method_b08f8dfe((void*)__hosihikari_shim_handle, gameType);
     }
 
     public void setPlayerUIItem(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, bool forceBalance)
     {
-        NativeMethods.TablePtr->C2.hs_method_3ec404f8((void*)__hosihikari_shim_handle, slot, (void*)item.Handle, forceBalance);
+        NativeMethods.TablePtr->C3.hs_method_3ec404f8((void*)__hosihikari_shim_handle, slot, (void*)item.Handle, forceBalance);
     }
 
     public void setRemotePlayerTicked(bool ticked)
     {
-        NativeMethods.TablePtr->C2.hs_method_d814f04a((void*)__hosihikari_shim_handle, ticked);
+        NativeMethods.TablePtr->C3.hs_method_d814f04a((void*)__hosihikari_shim_handle, ticked);
     }
 
     public void setRespawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos inRespawnPosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_b12b7bc8((void*)__hosihikari_shim_handle, (void*)inRespawnPosition.Handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b12b7bc8((void*)__hosihikari_shim_handle, (void*)inRespawnPosition.Handle, (void*)dimension.Handle);
     }
 
     public void setRespawnPositionCandidate()
     {
-        NativeMethods.TablePtr->C2.hs_method_12173165((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_12173165((void*)__hosihikari_shim_handle);
     }
 
     public void setSelectedItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_a58d6ff6((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a58d6ff6((void*)__hosihikari_shim_handle, (void*)item.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack setSelectedSlot(int slot)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_3a5c3e98((void*)__hosihikari_shim_handle, slot), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_3a5c3e98((void*)__hosihikari_shim_handle, slot), false);
     }
 
     public void setSleeping(bool val)
     {
-        NativeMethods.TablePtr->C2.hs_method_a5ed284b((void*)__hosihikari_shim_handle, val);
+        NativeMethods.TablePtr->C3.hs_method_a5ed284b((void*)__hosihikari_shim_handle, val);
     }
 
     public bool setSpawnBlockRespawnPosition(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos spawnBlockPosition, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
     {
-        return NativeMethods.TablePtr->C2.hs_method_f813437e((void*)__hosihikari_shim_handle, (void*)spawnBlockPosition.Handle, (void*)dimension.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_f813437e((void*)__hosihikari_shim_handle, (void*)spawnBlockPosition.Handle, (void*)dimension.Handle) != 0;
     }
 
     public void setSpeed(float _speed)
     {
-        NativeMethods.TablePtr->C2.hs_method_ea58e23e((void*)__hosihikari_shim_handle, _speed);
+        NativeMethods.TablePtr->C3.hs_method_ea58e23e((void*)__hosihikari_shim_handle, _speed);
     }
 
     public bool setXpEarnedAtCurrentLevel(int xp)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a3d26a1b((void*)__hosihikari_shim_handle, xp) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_a3d26a1b((void*)__hosihikari_shim_handle, xp) != 0;
     }
 
     public bool shouldDropDeathLoot()
     {
-        return NativeMethods.TablePtr->C2.hs_method_6730ece0((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_6730ece0((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void slotChanged(global::Hosihikari.Bindings.Bedrock.Interop.IContainerManager menu, global::Hosihikari.Bindings.Bedrock.Interop.Container container, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, bool isResultSlot)
     {
-        NativeMethods.TablePtr->C2.hs_method_55905b02((void*)__hosihikari_shim_handle, (void*)menu.Handle, (void*)container.Handle, slot, (void*)oldItem.Handle, (void*)newItem.Handle, isResultSlot);
+        NativeMethods.TablePtr->C3.hs_method_55905b02((void*)__hosihikari_shim_handle, (void*)menu.Handle, (void*)container.Handle, slot, (void*)oldItem.Handle, (void*)newItem.Handle, isResultSlot);
     }
 
     public void startGliding()
     {
-        NativeMethods.TablePtr->C2.hs_method_1c926910((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_1c926910((void*)__hosihikari_shim_handle);
     }
 
     public void startItemCooldown(global::Hosihikari.Bindings.Bedrock.Interop.HashedString type, int tickDuration, bool updateClient)
     {
-        NativeMethods.TablePtr->C2.hs_method_e4c191ca((void*)__hosihikari_shim_handle, (void*)type.Handle, tickDuration, updateClient);
+        NativeMethods.TablePtr->C3.hs_method_e4c191ca((void*)__hosihikari_shim_handle, (void*)type.Handle, tickDuration, updateClient);
     }
 
     public void startItemCooldown(global::Hosihikari.Bindings.Bedrock.Interop.Item item, bool updateClient)
     {
-        NativeMethods.TablePtr->C2.hs_method_03233757((void*)__hosihikari_shim_handle, (void*)item.Handle, updateClient);
+        NativeMethods.TablePtr->C3.hs_method_03233757((void*)__hosihikari_shim_handle, (void*)item.Handle, updateClient);
     }
 
     public void startItemUseOn(byte face, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos buildBlockPos, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_708c1345((void*)__hosihikari_shim_handle, face, (void*)blockPos.Handle, (void*)buildBlockPos.Handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_708c1345((void*)__hosihikari_shim_handle, face, (void*)blockPos.Handle, (void*)buildBlockPos.Handle, (void*)item.Handle);
     }
 
     public bool startRiding(global::Hosihikari.Bindings.Bedrock.Interop.Actor vehicle, bool forceRiding)
     {
-        return NativeMethods.TablePtr->C2.hs_method_08fb3adb((void*)__hosihikari_shim_handle, (void*)vehicle.Handle, forceRiding) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_08fb3adb((void*)__hosihikari_shim_handle, (void*)vehicle.Handle, forceRiding) != 0;
     }
 
     public int startSleepInBed(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos bedPos, bool setsRespawn, float sleepOffset)
     {
-        return NativeMethods.TablePtr->C2.hs_method_dfd3d23e((void*)__hosihikari_shim_handle, (void*)bedPos.Handle, setsRespawn, sleepOffset);
+        return NativeMethods.TablePtr->C3.hs_method_dfd3d23e((void*)__hosihikari_shim_handle, (void*)bedPos.Handle, setsRespawn, sleepOffset);
     }
 
     public void startSwimming()
     {
-        NativeMethods.TablePtr->C2.hs_method_6a1059a1((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_6a1059a1((void*)__hosihikari_shim_handle);
     }
 
     public void startUsingItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, int duration)
     {
-        NativeMethods.TablePtr->C2.hs_method_486566a5((void*)__hosihikari_shim_handle, (void*)instance.Handle, duration);
+        NativeMethods.TablePtr->C3.hs_method_486566a5((void*)__hosihikari_shim_handle, (void*)instance.Handle, duration);
     }
 
     public void stopGliding()
     {
-        NativeMethods.TablePtr->C2.hs_method_6b7de2d5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_6b7de2d5((void*)__hosihikari_shim_handle);
     }
 
     public void stopItemUseOn(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C2.hs_method_a0c9b65a((void*)__hosihikari_shim_handle, (void*)blockPos.Handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a0c9b65a((void*)__hosihikari_shim_handle, (void*)blockPos.Handle, (void*)item.Handle);
     }
 
     public void stopLoading()
     {
-        NativeMethods.TablePtr->C2.hs_method_f95e5409((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_f95e5409((void*)__hosihikari_shim_handle);
     }
 
     public void stopSleepInBed(bool forcefulWakeUp, bool updateLevelList)
     {
-        NativeMethods.TablePtr->C2.hs_method_376a69ab((void*)__hosihikari_shim_handle, forcefulWakeUp, updateLevelList);
+        NativeMethods.TablePtr->C3.hs_method_376a69ab((void*)__hosihikari_shim_handle, forcefulWakeUp, updateLevelList);
     }
 
     public void stopSwimming()
     {
-        NativeMethods.TablePtr->C2.hs_method_d3328c95((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_d3328c95((void*)__hosihikari_shim_handle);
     }
 
     public void stopUsingItem()
     {
-        NativeMethods.TablePtr->C2.hs_method_2e036029((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_2e036029((void*)__hosihikari_shim_handle);
     }
 
     public void suspendRegion()
     {
-        NativeMethods.TablePtr->C2.hs_method_4982a224((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_4982a224((void*)__hosihikari_shim_handle);
     }
 
     public bool take(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int arg1, int favoredSlot)
     {
-        return NativeMethods.TablePtr->C2.hs_method_c5f193a1((void*)__hosihikari_shim_handle, (void*)actor.Handle, arg1, favoredSlot) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_c5f193a1((void*)__hosihikari_shim_handle, (void*)actor.Handle, arg1, favoredSlot) != 0;
     }
 
     public void teleportTo(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool shouldStopRiding, int cause, int sourceEntityType, bool keepVelocity)
     {
-        NativeMethods.TablePtr->C2.hs_method_3dc8a4fe((void*)__hosihikari_shim_handle, (void*)pos.Handle, shouldStopRiding, cause, sourceEntityType, keepVelocity);
+        NativeMethods.TablePtr->C3.hs_method_3dc8a4fe((void*)__hosihikari_shim_handle, (void*)pos.Handle, shouldStopRiding, cause, sourceEntityType, keepVelocity);
     }
 
     public void tickWorld(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
     {
-        NativeMethods.TablePtr->C2.hs_method_46d13e16((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
+        NativeMethods.TablePtr->C3.hs_method_46d13e16((void*)__hosihikari_shim_handle, (void*)currentTick.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Packet' has no accessible destructor.", false)]
@@ -4063,38 +4063,38 @@ public sealed unsafe partial class Player : global::System.IDisposable
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Player? tryGetFromEntity(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, bool includeRemoved)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f1932719((void*)entity.Handle, includeRemoved);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_f1932719((void*)entity.Handle, includeRemoved);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Player((nint)__hs_handle, false) : null;
     }
 
     public bool tryStartGliding()
     {
-        return NativeMethods.TablePtr->C2.hs_method_fa29621f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_fa29621f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void updateInventoryTransactions()
     {
-        NativeMethods.TablePtr->C2.hs_method_b28f710b((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_b28f710b((void*)__hosihikari_shim_handle);
     }
 
     public void updateSkin(global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef skin, int clientSubID)
     {
-        NativeMethods.TablePtr->C2.hs_method_99b962a4((void*)__hosihikari_shim_handle, (void*)skin.Handle, clientSubID);
+        NativeMethods.TablePtr->C3.hs_method_99b962a4((void*)__hosihikari_shim_handle, (void*)skin.Handle, clientSubID);
     }
 
     public void updateTouch()
     {
-        NativeMethods.TablePtr->C2.hs_method_eb30fe2f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_eb30fe2f((void*)__hosihikari_shim_handle);
     }
 
     public void useItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, int itemUseMethod, bool consumeItem)
     {
-        NativeMethods.TablePtr->C2.hs_method_1986149c((void*)__hosihikari_shim_handle, (void*)instance.Handle, itemUseMethod, consumeItem);
+        NativeMethods.TablePtr->C3.hs_method_1986149c((void*)__hosihikari_shim_handle, (void*)instance.Handle, itemUseMethod, consumeItem);
     }
 
     public void useSelectedItem(int itemUseMethod, bool consumeItem)
     {
-        NativeMethods.TablePtr->C2.hs_method_15557101((void*)__hosihikari_shim_handle, itemUseMethod, consumeItem);
+        NativeMethods.TablePtr->C3.hs_method_15557101((void*)__hosihikari_shim_handle, itemUseMethod, consumeItem);
     }
 
 
@@ -4104,7 +4104,7 @@ public sealed unsafe partial class Player : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_b55d65a0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b55d65a0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
 
     public static IconItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.IconItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_009bf2e5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_009bf2e5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,19 +51,19 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_0c5f0704();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_0c5f0704();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_ebae8730((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_ebae8730((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTexture_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_110bc8e1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_110bc8e1((void*)__hosihikari_shim_handle);
     }
 
 
@@ -73,7 +73,7 @@ public sealed unsafe partial class IconItemComponent : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c31fddb6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c31fddb6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

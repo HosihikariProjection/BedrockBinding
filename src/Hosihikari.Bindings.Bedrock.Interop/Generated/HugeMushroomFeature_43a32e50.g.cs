@@ -41,18 +41,18 @@ public sealed unsafe partial class HugeMushroomFeature : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlacerID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_6933b952((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6933b952((void*)__hosihikari_shim_handle);
     }
 
     public nint mTransaction
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_360188a3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_360188a3((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_360188a3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_360188a3((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        return NativeMethods.TablePtr->C1.hs_method_e13cc6e9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_e13cc6e9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -61,7 +61,7 @@ public sealed unsafe partial class HugeMushroomFeature : global::System.IDisposa
 
     public static HugeMushroomFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.HugeMushroomFeature arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_a5082468((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a5082468((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,36 +72,36 @@ public sealed unsafe partial class HugeMushroomFeature : global::System.IDisposa
 
     public static bool _canSurvive(global::Hosihikari.Bindings.Bedrock.Interop.Block belowBlock)
     {
-        return NativeMethods.TablePtr->C1.hs_method_33b6d582((void*)belowBlock.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_33b6d582((void*)belowBlock.Handle) != 0;
     }
 
     public int mForcedType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_47ed1f60((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_47ed1f60((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_47ed1f60((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_47ed1f60((void*)__hosihikari_shim_handle, value);
     }
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        return NativeMethods.TablePtr->C1.hs_method_7473438c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_7473438c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
     }
 
     public bool placeFixed(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int mushroomType, int height)
     {
-        return NativeMethods.TablePtr->C1.hs_method_5659cfc4((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, mushroomType, height) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_5659cfc4((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, mushroomType, height) != 0;
     }
 
 
     public bool mCanUseInternalFeature
     {
-        get => NativeMethods.TablePtr->C1.hs_get_840ed25b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_840ed25b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_840ed25b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_840ed25b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInternal
     {
-        get => NativeMethods.TablePtr->C1.hs_get_fda3bb47((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_fda3bb47((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_fda3bb47((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_fda3bb47((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -110,7 +110,7 @@ public sealed unsafe partial class HugeMushroomFeature : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_43a32e50((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_43a32e50((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

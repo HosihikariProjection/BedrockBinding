@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerArmorDamagePacketPayload : global::Syst
 
     public static PlayerArmorDamagePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerArmorDamagePacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9eaf68f0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9eaf68f0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class PlayerArmorDamagePacketPayload : global::Syst
     // The native field type is not projected; this is the address of the field storage.
     public nint mSlotAndDamagePairs_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_27c50710((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_27c50710((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class PlayerArmorDamagePacketPayload : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_4c1a3cb1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_4c1a3cb1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

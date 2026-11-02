@@ -40,7 +40,7 @@ public sealed unsafe partial class IScriptTelemetryLogger : global::System.IDisp
 
     public static IScriptTelemetryLogger Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptTelemetryLogger arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_792f569f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_792f569f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class IScriptTelemetryLogger : global::System.IDisp
 
     public void onDebuggerConnect(bool autoAttach, int retries)
     {
-        NativeMethods.TablePtr->C1.hs_method_c3777bca((void*)__hosihikari_shim_handle, autoAttach, retries);
+        NativeMethods.TablePtr->C2.hs_method_c3777bca((void*)__hosihikari_shim_handle, autoAttach, retries);
     }
 
     public void onDebuggerListen(bool autoAttach)
     {
-        NativeMethods.TablePtr->C1.hs_method_8204acd3((void*)__hosihikari_shim_handle, autoAttach);
+        NativeMethods.TablePtr->C2.hs_method_8204acd3((void*)__hosihikari_shim_handle, autoAttach);
     }
 
     public void onPluginDiscovery(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult pluginManagerResult)
     {
-        NativeMethods.TablePtr->C1.hs_method_a14555e5((void*)__hosihikari_shim_handle, (void*)pluginManagerResult.Handle);
+        NativeMethods.TablePtr->C2.hs_method_a14555e5((void*)__hosihikari_shim_handle, (void*)pluginManagerResult.Handle);
     }
 
     public void onPluginRun(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult pluginManagerResult)
     {
-        NativeMethods.TablePtr->C1.hs_method_2417af7c((void*)__hosihikari_shim_handle, (void*)pluginManagerResult.Handle);
+        NativeMethods.TablePtr->C2.hs_method_2417af7c((void*)__hosihikari_shim_handle, (void*)pluginManagerResult.Handle);
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class IScriptTelemetryLogger : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_9cdf9488((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9cdf9488((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

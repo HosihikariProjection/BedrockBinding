@@ -181,20 +181,20 @@ public sealed unsafe partial class HopperContainerManagerModel : global::System.
 
     public byte mBlockActorType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_f19a6b09((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_f19a6b09((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_f19a6b09((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_f19a6b09((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_196ffbc5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_196ffbc5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityUniqueID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_76fcc9e8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_76fcc9e8((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()

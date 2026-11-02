@@ -40,12 +40,12 @@ public sealed unsafe partial class ValidationSystem : global::System.IDisposable
 
     public void _tick(nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_2fed4266((void*)__hosihikari_shim_handle, (void*)context);
+        NativeMethods.TablePtr->C3.hs_method_2fed4266((void*)__hosihikari_shim_handle, (void*)context);
     }
 
     public static ValidationSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerValidation.ValidationSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c1cc3b66((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c1cc3b66((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,19 +69,19 @@ public sealed unsafe partial class ValidationSystem : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_d8badc85(__hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C3.hs_method_d8badc85(__hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_93067c9c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_93067c9c((void*)__hosihikari_shim_handle);
     }
 
     public void tick(nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_7388c20e((void*)__hosihikari_shim_handle, (void*)context);
+        NativeMethods.TablePtr->C3.hs_method_7388c20e((void*)__hosihikari_shim_handle, (void*)context);
     }
 
 
@@ -91,7 +91,7 @@ public sealed unsafe partial class ValidationSystem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0aa288df((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0aa288df((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

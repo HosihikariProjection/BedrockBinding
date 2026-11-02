@@ -40,12 +40,12 @@ public sealed unsafe partial class InternalTaskGroup : global::System.IDisposabl
 
     public int _getState()
     {
-        return NativeMethods.TablePtr->C1.hs_method_c18e1d3e((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_c18e1d3e((void*)__hosihikari_shim_handle);
     }
 
     public void _processCoroutines()
     {
-        NativeMethods.TablePtr->C1.hs_method_db3fc24e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_db3fc24e((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
@@ -58,22 +58,22 @@ public sealed unsafe partial class InternalTaskGroup : global::System.IDisposabl
 
     public void _requeueTask(global::Hosihikari.Bindings.Abi.SharedHandle? arg0, bool arg1)
     {
-        NativeMethods.TablePtr->C1.hs_method_4b500530((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), arg1);
+        NativeMethods.TablePtr->C2.hs_method_4b500530((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), arg1);
     }
 
     public void _taskComplete(global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase? arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_fd7d7da4((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_fd7d7da4((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public void _taskRegister(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_fdede225((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C2.hs_method_fdede225((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public static InternalTaskGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.InternalTaskGroup arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2b9ee290((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2b9ee290((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,12 +84,12 @@ public sealed unsafe partial class InternalTaskGroup : global::System.IDisposabl
 
     public int getState()
     {
-        return NativeMethods.TablePtr->C1.hs_method_f462f084((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_f462f084((void*)__hosihikari_shim_handle);
     }
 
     public void processCoroutines()
     {
-        NativeMethods.TablePtr->C1.hs_method_d3fb5ce8((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_d3fb5ce8((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
@@ -102,17 +102,17 @@ public sealed unsafe partial class InternalTaskGroup : global::System.IDisposabl
 
     public void requeueTask(global::Hosihikari.Bindings.Abi.SharedHandle? arg0, bool arg1)
     {
-        NativeMethods.TablePtr->C1.hs_method_b544acb0((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), arg1);
+        NativeMethods.TablePtr->C2.hs_method_b544acb0((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), arg1);
     }
 
     public void taskComplete(global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase? arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_3b8836f3((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_3b8836f3((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public void taskRegister(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_2057464d((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C2.hs_method_2057464d((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
 
@@ -122,7 +122,7 @@ public sealed unsafe partial class InternalTaskGroup : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_7744aed9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7744aed9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

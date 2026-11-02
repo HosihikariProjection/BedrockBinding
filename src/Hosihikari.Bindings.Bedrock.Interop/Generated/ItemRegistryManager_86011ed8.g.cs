@@ -40,12 +40,12 @@ public sealed unsafe partial class ItemRegistryManager : global::System.IDisposa
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef getItemRegistry()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef((nint)NativeMethods.TablePtr->C1.hs_method_eb6e2274());
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef((nint)NativeMethods.TablePtr->C2.hs_method_eb6e2274());
     }
 
     public static nint mThreadLocalRegistry()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_a2b7a5a2();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_a2b7a5a2();
     }
 
     public void Dispose()
@@ -54,7 +54,7 @@ public sealed unsafe partial class ItemRegistryManager : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_86011ed8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_86011ed8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class IntProviderType : global::System.IDisposable
 
     public static IntProviderType Create(global::Hosihikari.Bindings.Bedrock.Interop.IntProviderType arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_01f46f3d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_01f46f3d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,17 +51,17 @@ public sealed unsafe partial class IntProviderType : global::System.IDisposable
 
     public int maxValue()
     {
-        return NativeMethods.TablePtr->C1.hs_method_f2e55342((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_f2e55342((void*)__hosihikari_shim_handle);
     }
 
     public int minValue()
     {
-        return NativeMethods.TablePtr->C1.hs_method_ef62b4cc((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_ef62b4cc((void*)__hosihikari_shim_handle);
     }
 
     public int sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C1.hs_method_1b93afd0((void*)__hosihikari_shim_handle, (void*)random.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_1b93afd0((void*)__hosihikari_shim_handle, (void*)random.Handle);
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class IntProviderType : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_a6334d1f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a6334d1f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

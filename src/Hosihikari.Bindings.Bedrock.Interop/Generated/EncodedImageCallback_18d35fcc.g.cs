@@ -40,7 +40,7 @@ public sealed unsafe partial class EncodedImageCallback : global::System.IDispos
 
     public void _OnDroppedFrame(byte arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_d73a2518((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_d73a2518((void*)__hosihikari_shim_handle, arg0);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class EncodedImageCallback : global::System.IDispos
 
     public static EncodedImageCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1b3f03d6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_1b3f03d6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,12 +60,12 @@ public sealed unsafe partial class EncodedImageCallback : global::System.IDispos
 
     public void OnDroppedFrame(byte arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_bbe00f5d((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_bbe00f5d((void*)__hosihikari_shim_handle, arg0);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result OnEncodedImage(nint encoded_image, nint codec_specific_info)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)NativeMethods.TablePtr->C4.hs_method_4fdf4696((void*)__hosihikari_shim_handle, (void*)encoded_image, (void*)codec_specific_info));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.EncodedImageCallback_Nested.Result((nint)NativeMethods.TablePtr->C5.hs_method_4fdf4696((void*)__hosihikari_shim_handle, (void*)encoded_image, (void*)codec_specific_info));
     }
 
 
@@ -75,7 +75,7 @@ public sealed unsafe partial class EncodedImageCallback : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_18d35fcc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_18d35fcc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

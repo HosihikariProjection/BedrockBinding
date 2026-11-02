@@ -40,7 +40,7 @@ public sealed unsafe partial class SimpleRandom : global::System.IDisposable
 
     public void _consumeCount(uint count)
     {
-        NativeMethods.TablePtr->C3.hs_method_9daa2288((void*)__hosihikari_shim_handle, count);
+        NativeMethods.TablePtr->C4.hs_method_9daa2288((void*)__hosihikari_shim_handle, count);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IPositionalRandomFactory' has no accessible destructor.", false)]
@@ -49,37 +49,37 @@ public sealed unsafe partial class SimpleRandom : global::System.IDisposable
 
     public bool _nextBoolean()
     {
-        return NativeMethods.TablePtr->C3.hs_method_4042f370((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_4042f370((void*)__hosihikari_shim_handle) != 0;
     }
 
     public double _nextDouble()
     {
-        return NativeMethods.TablePtr->C3.hs_method_c733a106((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_c733a106((void*)__hosihikari_shim_handle);
     }
 
     public float _nextFloat()
     {
-        return NativeMethods.TablePtr->C3.hs_method_f96876f1((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_f96876f1((void*)__hosihikari_shim_handle);
     }
 
     public double _nextGaussianDouble()
     {
-        return NativeMethods.TablePtr->C3.hs_method_2076431e((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_2076431e((void*)__hosihikari_shim_handle);
     }
 
     public int _nextInt()
     {
-        return NativeMethods.TablePtr->C3.hs_method_e5f58cd2((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_e5f58cd2((void*)__hosihikari_shim_handle);
     }
 
     public int _nextInt(int bound)
     {
-        return NativeMethods.TablePtr->C3.hs_method_43d6b904((void*)__hosihikari_shim_handle, bound);
+        return NativeMethods.TablePtr->C4.hs_method_43d6b904((void*)__hosihikari_shim_handle, bound);
     }
 
     public long _nextLong()
     {
-        return NativeMethods.TablePtr->C3.hs_method_07d5955a((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_07d5955a((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -88,7 +88,7 @@ public sealed unsafe partial class SimpleRandom : global::System.IDisposable
 
     public static SimpleRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleRandom arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_07184d8d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_07184d8d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,7 +99,7 @@ public sealed unsafe partial class SimpleRandom : global::System.IDisposable
 
     public void consumeCount(uint count)
     {
-        NativeMethods.TablePtr->C3.hs_method_c6646ffc((void*)__hosihikari_shim_handle, count);
+        NativeMethods.TablePtr->C4.hs_method_c6646ffc((void*)__hosihikari_shim_handle, count);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IPositionalRandomFactory' has no accessible destructor.", false)]
@@ -109,48 +109,48 @@ public sealed unsafe partial class SimpleRandom : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mGaussianSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_add5c21e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_add5c21e((void*)__hosihikari_shim_handle);
     }
 
     public long mSeed
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a9aec606((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a9aec606((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a9aec606((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a9aec606((void*)__hosihikari_shim_handle, value);
     }
 
     public bool nextBoolean()
     {
-        return NativeMethods.TablePtr->C3.hs_method_938470ca((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_938470ca((void*)__hosihikari_shim_handle) != 0;
     }
 
     public double nextDouble()
     {
-        return NativeMethods.TablePtr->C3.hs_method_22a3bb85((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_22a3bb85((void*)__hosihikari_shim_handle);
     }
 
     public float nextFloat()
     {
-        return NativeMethods.TablePtr->C3.hs_method_b356d841((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_b356d841((void*)__hosihikari_shim_handle);
     }
 
     public double nextGaussianDouble()
     {
-        return NativeMethods.TablePtr->C3.hs_method_a5fddd96((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_a5fddd96((void*)__hosihikari_shim_handle);
     }
 
     public int nextInt()
     {
-        return NativeMethods.TablePtr->C3.hs_method_9929cf73((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_9929cf73((void*)__hosihikari_shim_handle);
     }
 
     public int nextInt(int bound)
     {
-        return NativeMethods.TablePtr->C3.hs_method_379cbe8e((void*)__hosihikari_shim_handle, bound);
+        return NativeMethods.TablePtr->C4.hs_method_379cbe8e((void*)__hosihikari_shim_handle, bound);
     }
 
     public long nextLong()
     {
-        return NativeMethods.TablePtr->C3.hs_method_d7243973((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_d7243973((void*)__hosihikari_shim_handle);
     }
 
 
@@ -160,7 +160,7 @@ public sealed unsafe partial class SimpleRandom : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_ed471be1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_ed471be1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class SkinIDDefinition : global::System.IDisposable
 
     public static SkinIDDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e589d394();
+        var handle = NativeMethods.TablePtr->C4.hs_create_e589d394();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class SkinIDDefinition : global::System.IDisposable
 
     public static SkinIDDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SkinIDDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d4b73193((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_d4b73193((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class SkinIDDefinition : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk567d00_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c030a9f6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c030a9f6((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SkinIDDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SkinIDDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SkinIDDefinition((nint)NativeMethods.TablePtr->C3.hs_method_98011ee5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SkinIDDefinition((nint)NativeMethods.TablePtr->C4.hs_method_98011ee5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class SkinIDDefinition : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bf31cef7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_bf31cef7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

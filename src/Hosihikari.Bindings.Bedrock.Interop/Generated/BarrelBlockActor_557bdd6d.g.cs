@@ -150,6 +150,12 @@ public sealed unsafe partial class BarrelBlockActor : global::System.IDisposable
         get => NativeMethods.TablePtr->C0.hs_get_661406dc((void*)__hosihikari_shim_handle);
     }
 
+    public bool mAlongX
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_e8b93438((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_e8b93438((void*)__hosihikari_shim_handle, value);
+    }
+
     public bool mAlwayCheckObstructionComponent
     {
         get => NativeMethods.TablePtr->C0.hs_get_2fc69307((void*)__hosihikari_shim_handle) != 0;
@@ -166,6 +172,18 @@ public sealed unsafe partial class BarrelBlockActor : global::System.IDisposable
     public nint mChestType_Address
     {
         get => (nint)NativeMethods.TablePtr->C0.hs_get_18cd7f32((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mConverted
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_f832c67d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_f832c67d((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mDeferredPairLoad
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_1b0687b2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_1b0687b2((void*)__hosihikari_shim_handle, value);
     }
 
     public int mDeferredPairX
@@ -232,6 +250,18 @@ public sealed unsafe partial class BarrelBlockActor : global::System.IDisposable
     {
         get => NativeMethods.TablePtr->C0.hs_get_bb37291e((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C0.hs_set_bb37291e((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mPairLead
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_c797c238((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_c797c238((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mPairingChanged
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_69e9df37((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_69e9df37((void*)__hosihikari_shim_handle, value);
     }
 
     public float mSpeed

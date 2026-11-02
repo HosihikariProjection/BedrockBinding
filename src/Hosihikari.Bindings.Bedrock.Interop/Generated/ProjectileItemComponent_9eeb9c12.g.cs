@@ -40,18 +40,18 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_339c2737((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_339c2737((void*)__hosihikari_shim_handle);
     }
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_238f0153();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_238f0153();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static ProjectileItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.ProjectileItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b38d25b8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b38d25b8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,19 +62,19 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_3a9567a6((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_3a9567a6((void*)ctx.Handle);
     }
 
     public float mMinimumCriticalPower
     {
-        get => NativeMethods.TablePtr->C3.hs_get_edfd5a09((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_edfd5a09((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_edfd5a09((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_edfd5a09((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mProjectileEntity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3ecb4cb7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3ecb4cb7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -84,7 +84,7 @@ public sealed unsafe partial class ProjectileItemComponent : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9eeb9c12((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9eeb9c12((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

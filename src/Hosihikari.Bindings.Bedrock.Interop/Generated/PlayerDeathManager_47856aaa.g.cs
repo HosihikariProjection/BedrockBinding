@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerDeathManager : global::System.IDisposab
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_9cfdc9ea((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_9cfdc9ea((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -58,24 +58,24 @@ public sealed unsafe partial class PlayerDeathManager : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnPlayerDeathPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1694e8db((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1694e8db((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPacketSender_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_13cc93ee((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_13cc93ee((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerDeathManagerProxy_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_932540c9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_932540c9((void*)__hosihikari_shim_handle);
     }
 
     public void playerDied(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        NativeMethods.TablePtr->C2.hs_method_33708026((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)source.Handle);
+        NativeMethods.TablePtr->C3.hs_method_33708026((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)source.Handle);
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class PlayerDeathManager : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_47856aaa((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_47856aaa((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

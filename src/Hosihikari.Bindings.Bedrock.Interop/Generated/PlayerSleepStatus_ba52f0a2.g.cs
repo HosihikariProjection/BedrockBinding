@@ -40,20 +40,20 @@ public sealed unsafe partial class PlayerSleepStatus : global::System.IDisposabl
 
     public bool mAbleToSleep
     {
-        get => NativeMethods.TablePtr->C2.hs_get_52eab335((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_52eab335((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_52eab335((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_52eab335((void*)__hosihikari_shim_handle, value);
     }
 
     public int mRequiredSleepingPlayerCount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a3341813((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_a3341813((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a3341813((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a3341813((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSleepingPlayerCount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_f20031a2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_f20031a2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f20031a2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f20031a2((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -62,7 +62,7 @@ public sealed unsafe partial class PlayerSleepStatus : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_ba52f0a2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ba52f0a2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

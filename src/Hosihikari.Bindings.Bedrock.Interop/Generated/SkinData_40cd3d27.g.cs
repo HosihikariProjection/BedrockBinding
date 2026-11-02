@@ -40,12 +40,12 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value skinDataJson)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_7d2838fe((void*)__hosihikari_shim_handle, (void*)skinDataJson.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_7d2838fe((void*)__hosihikari_shim_handle, (void*)skinDataJson.Handle);
     }
 
     public static SkinData Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_990da051();
+        var handle = NativeMethods.TablePtr->C4.hs_create_990da051();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
 
     public static SkinData Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value skinDataJson)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4231d7d4((void*)skinDataJson.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_4231d7d4((void*)skinDataJson.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,7 +67,7 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
 
     public static SkinData Create(global::Hosihikari.Bindings.Bedrock.Interop.SkinData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_cff2023b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_cff2023b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,19 +78,19 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
 
     public void applyToActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        NativeMethods.TablePtr->C3.hs_method_7a700b5a((void*)__hosihikari_shim_handle, (void*)actor.Handle);
+        NativeMethods.TablePtr->C4.hs_method_7a700b5a((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMarkVariant_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_270b171e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_270b171e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVariant_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6be63aa4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6be63aa4((void*)__hosihikari_shim_handle);
     }
 
 
@@ -100,7 +100,7 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_40cd3d27((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_40cd3d27((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

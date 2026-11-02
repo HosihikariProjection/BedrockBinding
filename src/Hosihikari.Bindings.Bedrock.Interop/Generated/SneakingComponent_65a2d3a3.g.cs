@@ -40,8 +40,8 @@ public sealed unsafe partial class SneakingComponent : global::System.IDisposabl
 
     public float mSneakingMovementFactor
     {
-        get => NativeMethods.TablePtr->C3.hs_get_91f2da92((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_91f2da92((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_91f2da92((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_91f2da92((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class SneakingComponent : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_65a2d3a3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_65a2d3a3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

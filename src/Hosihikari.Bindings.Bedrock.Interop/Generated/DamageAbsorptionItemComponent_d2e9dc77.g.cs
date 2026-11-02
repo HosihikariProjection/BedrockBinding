@@ -40,7 +40,7 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
 
     public static DamageAbsorptionItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_10.DamageAbsorptionItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_daf7db70((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_daf7db70((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,19 +51,19 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
 
     public static string NAME()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_824506be();
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_824506be();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_39537a97((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_39537a97((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAbsorbableDamageCauses_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2217ce4f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2217ce4f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -73,7 +73,7 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d2e9dc77((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_d2e9dc77((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

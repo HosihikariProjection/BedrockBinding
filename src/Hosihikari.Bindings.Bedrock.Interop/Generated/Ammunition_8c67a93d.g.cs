@@ -40,7 +40,7 @@ public sealed unsafe partial class Ammunition : global::System.IDisposable
 
     public static Ammunition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.ShooterItemComponent_Nested.Ammunition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_290df20f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_290df20f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class Ammunition : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f4e603ce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f4e603ce((void*)__hosihikari_shim_handle);
     }
 
     public bool mSearchInventory
     {
-        get => NativeMethods.TablePtr->C3.hs_get_97d66eaa((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_97d66eaa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_97d66eaa((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_97d66eaa((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUseInCreative
     {
-        get => NativeMethods.TablePtr->C3.hs_get_91b30edb((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_91b30edb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_91b30edb((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_91b30edb((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUseOffhand
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ea01fb20((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_ea01fb20((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ea01fb20((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_ea01fb20((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class Ammunition : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_8c67a93d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_8c67a93d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

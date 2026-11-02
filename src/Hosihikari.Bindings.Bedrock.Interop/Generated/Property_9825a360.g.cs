@@ -44,7 +44,7 @@ public sealed unsafe partial class Property : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_9825a360((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9825a360((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,22 +40,22 @@ public sealed unsafe partial class SharedController : global::System.IDisposable
 
     public bool _canChat(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_741cf5e1((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_741cf5e1((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool _canMessage(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_65212843((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_65212843((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool _canOpenChat(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_8e1557de((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_8e1557de((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool _canTell(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_0e640266((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_0e640266((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -64,28 +64,28 @@ public sealed unsafe partial class SharedController : global::System.IDisposable
 
     public bool canChat(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_ace1b6da((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ace1b6da((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool canMessage(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_aba4218e((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_aba4218e((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool canOpenChat(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_59077f5c((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_59077f5c((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool canTell(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_fec11dd3((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_fec11dd3((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mShared_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_cf70370f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cf70370f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -95,7 +95,7 @@ public sealed unsafe partial class SharedController : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_77eb928c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_77eb928c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,14 +40,14 @@ public sealed unsafe partial class CommandWildcardInt : global::System.IDisposab
 
     public bool mIsWildcard
     {
-        get => NativeMethods.TablePtr->C0.hs_get_861d304c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_861d304c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_861d304c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_861d304c((void*)__hosihikari_shim_handle, value);
     }
 
     public int mValue
     {
-        get => NativeMethods.TablePtr->C0.hs_get_7b6884f9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_7b6884f9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_7b6884f9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_7b6884f9((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class CommandWildcardInt : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_a89f3548((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_a89f3548((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

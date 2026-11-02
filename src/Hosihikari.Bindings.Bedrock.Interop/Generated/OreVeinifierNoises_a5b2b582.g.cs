@@ -40,7 +40,7 @@ public sealed unsafe partial class OreVeinifierNoises : global::System.IDisposab
 
     public static OreVeinifierNoises Create(global::Hosihikari.Bindings.Bedrock.Interop.OreVeinifierNoises arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_69cbe54b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_69cbe54b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,31 +52,31 @@ public sealed unsafe partial class OreVeinifierNoises : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mGapNoiseSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a60067f6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a60067f6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPositionalRandomFactory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b7938c3f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b7938c3f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeinNoiseSourceA_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_91d6cc14((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_91d6cc14((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeinNoiseSourceB_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_399d0af8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_399d0af8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVeininessNoiseSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9504b278((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9504b278((void*)__hosihikari_shim_handle);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class OreVeinifierNoises : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a5b2b582((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a5b2b582((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

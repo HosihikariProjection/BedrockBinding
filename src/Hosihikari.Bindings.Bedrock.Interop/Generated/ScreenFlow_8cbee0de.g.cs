@@ -44,12 +44,12 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
 
     public void PopulateEvent(nint @event, bool clear)
     {
-        NativeMethods.TablePtr->C3.hs_method_b3563355((void*)__hosihikari_shim_handle, (void*)@event, clear);
+        NativeMethods.TablePtr->C4.hs_method_b3563355((void*)__hosihikari_shim_handle, (void*)@event, clear);
     }
 
     public static ScreenFlow Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d50a64a0();
+        var handle = NativeMethods.TablePtr->C4.hs_create_d50a64a0();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +60,7 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
 
     public static ScreenFlow Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_86d04271((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_86d04271((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,48 +71,48 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
 
     public bool ShouldSendEvent()
     {
-        return NativeMethods.TablePtr->C3.hs_method_24ddeb73((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_24ddeb73((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk246e53_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_aae3acaf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_aae3acaf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk28e73f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2208f404((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2208f404((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5d55ec_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e21dfe9c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e21dfe9c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk639462_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_057cf87b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_057cf87b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7be49c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_915e98cb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_915e98cb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk890a72_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2c6d9f4b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2c6d9f4b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow((nint)NativeMethods.TablePtr->C3.hs_method_f7ecf5ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.ScreenFlow((nint)NativeMethods.TablePtr->C4.hs_method_f7ecf5ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -121,7 +121,7 @@ public sealed unsafe partial class ScreenFlow : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_8cbee0de((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_8cbee0de((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

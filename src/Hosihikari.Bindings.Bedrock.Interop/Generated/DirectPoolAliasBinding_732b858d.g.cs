@@ -40,7 +40,7 @@ public sealed unsafe partial class DirectPoolAliasBinding : global::System.IDisp
 
     public void _appendResolvedAliases(global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg0, global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding_Nested.PoolAliasLookup inOutResolvedAliases)
     {
-        NativeMethods.TablePtr->C2.hs_method_393b6053((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)inOutResolvedAliases.Handle);
+        NativeMethods.TablePtr->C3.hs_method_393b6053((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)inOutResolvedAliases.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -53,7 +53,7 @@ public sealed unsafe partial class DirectPoolAliasBinding : global::System.IDisp
 
     public static DirectPoolAliasBinding Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBindingInternal.DirectPoolAliasBinding arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_92c11494((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_92c11494((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class DirectPoolAliasBinding : global::System.IDisp
 
     public void appendResolvedAliases(global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg0, global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding_Nested.PoolAliasLookup inOutResolvedAliases)
     {
-        NativeMethods.TablePtr->C2.hs_method_f7f54291((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)inOutResolvedAliases.Handle);
+        NativeMethods.TablePtr->C3.hs_method_f7f54291((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)inOutResolvedAliases.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -74,13 +74,13 @@ public sealed unsafe partial class DirectPoolAliasBinding : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dea94b56((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dea94b56((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTarget_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_570e85a2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_570e85a2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -90,7 +90,7 @@ public sealed unsafe partial class DirectPoolAliasBinding : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_732b858d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_732b858d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

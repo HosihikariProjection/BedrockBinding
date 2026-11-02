@@ -40,7 +40,7 @@ public sealed unsafe partial class OnHitBlockTriggerItemComponent : global::Syst
 
     public static OnHitBlockTriggerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.OnHitBlockTriggerItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_27fc085b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_27fc085b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class OnHitBlockTriggerItemComponent : global::Syst
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnHitBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_92374a2f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_92374a2f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class OnHitBlockTriggerItemComponent : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_67435253((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_67435253((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

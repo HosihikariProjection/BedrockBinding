@@ -40,7 +40,7 @@ public sealed unsafe partial class ImprovedNoise : global::System.IDisposable
 
     public static ImprovedNoise Create(global::Hosihikari.Bindings.Bedrock.Interop.ImprovedNoise arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d289fb9f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d289fb9f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,24 +52,24 @@ public sealed unsafe partial class ImprovedNoise : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoiseMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9c69df18((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9c69df18((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOrigin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_080a2367((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_080a2367((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mYBlendingSettings_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_43061564((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_43061564((void*)__hosihikari_shim_handle);
     }
 
     public void readArea(nint buffer, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int xCount, int yCount, int zCount, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 s, float pow, int xStep, int yStep, int zStep)
     {
-        NativeMethods.TablePtr->C1.hs_method_8b062a9e((void*)__hosihikari_shim_handle, (void*)buffer, (void*)pos.Handle, xCount, yCount, zCount, (void*)s.Handle, pow, xStep, yStep, zStep);
+        NativeMethods.TablePtr->C2.hs_method_8b062a9e((void*)__hosihikari_shim_handle, (void*)buffer, (void*)pos.Handle, xCount, yCount, zCount, (void*)s.Handle, pow, xStep, yStep, zStep);
     }
 
 
@@ -79,7 +79,7 @@ public sealed unsafe partial class ImprovedNoise : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_b9eaaf75((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b9eaaf75((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

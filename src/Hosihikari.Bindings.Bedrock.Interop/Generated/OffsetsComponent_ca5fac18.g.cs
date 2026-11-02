@@ -40,7 +40,7 @@ public sealed unsafe partial class OffsetsComponent : global::System.IDisposable
 
     public static OffsetsComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.OffsetsComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4a8222e2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4a8222e2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,43 +52,43 @@ public sealed unsafe partial class OffsetsComponent : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBreathingOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_92781f7c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_92781f7c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDropOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_36dde317((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_36dde317((void*)__hosihikari_shim_handle);
     }
 
     public float mExplosionOffset
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7e94962a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_7e94962a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7e94962a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7e94962a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEyeOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d204bd16((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d204bd16((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHeadOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d3612bcf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d3612bcf((void*)__hosihikari_shim_handle);
     }
 
     public float mHeightOffset
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8f3fe818((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8f3fe818((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8f3fe818((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8f3fe818((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMouthOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4797685d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4797685d((void*)__hosihikari_shim_handle);
     }
 
 
@@ -98,7 +98,7 @@ public sealed unsafe partial class OffsetsComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_ca5fac18((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ca5fac18((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

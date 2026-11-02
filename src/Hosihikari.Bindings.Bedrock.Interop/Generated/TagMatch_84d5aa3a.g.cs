@@ -40,17 +40,17 @@ public sealed unsafe partial class TagMatch : global::System.IDisposable
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_ff7ba085((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_ff7ba085((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_87b89094((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_87b89094((void*)__hosihikari_shim_handle);
     }
 
     public bool _test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ae429867((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_ae429867((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -59,7 +59,7 @@ public sealed unsafe partial class TagMatch : global::System.IDisposable
 
     public static TagMatch Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.TagMatch arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_57bc24d9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_57bc24d9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +70,7 @@ public sealed unsafe partial class TagMatch : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_d43b7115((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_d43b7115((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.TagMatch from(string tag)
@@ -88,19 +88,19 @@ public sealed unsafe partial class TagMatch : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(tag, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.TagMatch((nint)NativeMethods.TablePtr->C4.hs_method_1b19e0f0(__hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.TagMatch((nint)NativeMethods.TablePtr->C5.hs_method_1b19e0f0(__hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0905a582((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0905a582((void*)__hosihikari_shim_handle);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_4f1b10a1((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_4f1b10a1((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)arg1.Handle) != 0;
     }
 
 
@@ -110,7 +110,7 @@ public sealed unsafe partial class TagMatch : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_84d5aa3a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_84d5aa3a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

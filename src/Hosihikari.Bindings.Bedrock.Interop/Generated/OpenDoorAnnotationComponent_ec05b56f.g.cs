@@ -40,7 +40,7 @@ public sealed unsafe partial class OpenDoorAnnotationComponent : global::System.
 
     public static OpenDoorAnnotationComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.OpenDoorAnnotationComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_34279abd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_34279abd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,28 +51,28 @@ public sealed unsafe partial class OpenDoorAnnotationComponent : global::System.
 
     public void _cleanUp(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C2.hs_method_338efd59((void*)__hosihikari_shim_handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C3.hs_method_338efd59((void*)__hosihikari_shim_handle, (void*)mob.Handle);
     }
 
     public void _tryToggleDoorState(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos doorPos)
     {
-        NativeMethods.TablePtr->C2.hs_method_e0f25f58((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)mob.Handle, (void*)doorPos.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e0f25f58((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)mob.Handle, (void*)doorPos.Handle);
     }
 
     public void checkPath(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C2.hs_method_e09d94b3((void*)__hosihikari_shim_handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e09d94b3((void*)__hosihikari_shim_handle, (void*)mob.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPassedDoorPositions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d058b7dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d058b7dc((void*)__hosihikari_shim_handle);
     }
 
     public void onComponentRemoved(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_2635f6cb((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_2635f6cb((void*)__hosihikari_shim_handle, (void*)entity.Handle);
     }
 
 
@@ -82,7 +82,7 @@ public sealed unsafe partial class OpenDoorAnnotationComponent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_ec05b56f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ec05b56f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

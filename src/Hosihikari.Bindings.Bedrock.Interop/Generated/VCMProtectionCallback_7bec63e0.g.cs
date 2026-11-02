@@ -40,7 +40,7 @@ public sealed unsafe partial class VCMProtectionCallback : global::System.IDispo
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_c3945204((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_c3945204((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,17 +49,17 @@ public sealed unsafe partial class VCMProtectionCallback : global::System.IDispo
 
     public int ProtectionRequest(nint delta_params, nint key_params, nint sent_video_rate_bps, nint sent_nack_rate_bps, nint sent_fec_rate_bps)
     {
-        return NativeMethods.TablePtr->C4.hs_method_aa58c6b4((void*)__hosihikari_shim_handle, (void*)delta_params, (void*)key_params, (void*)sent_video_rate_bps, (void*)sent_nack_rate_bps, (void*)sent_fec_rate_bps);
+        return NativeMethods.TablePtr->C5.hs_method_aa58c6b4((void*)__hosihikari_shim_handle, (void*)delta_params, (void*)key_params, (void*)sent_video_rate_bps, (void*)sent_nack_rate_bps, (void*)sent_fec_rate_bps);
     }
 
     public void SetRetransmissionMode(int retransmission_mode)
     {
-        NativeMethods.TablePtr->C4.hs_method_9833ea5f((void*)__hosihikari_shim_handle, retransmission_mode);
+        NativeMethods.TablePtr->C5.hs_method_9833ea5f((void*)__hosihikari_shim_handle, retransmission_mode);
     }
 
     public static VCMProtectionCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VCMProtectionCallback arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_5a5e1200((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_5a5e1200((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +75,7 @@ public sealed unsafe partial class VCMProtectionCallback : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_7bec63e0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_7bec63e0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

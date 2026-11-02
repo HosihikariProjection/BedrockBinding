@@ -15,7 +15,7 @@ This branch targets **BDS 1.26.51.1** through the headers of LeviLamina `ee049f1
 ## Current state
 
 - Interop: 9,146 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
-- Binding Shim: 142,026 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
+- Binding Shim: 154,354 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
 - Coverage: 12,080 declarations and 101,068 members bound for `win-x64-server`.
 - `scripts/headers-26.51.txt` lists the 5,199 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
 
@@ -28,6 +28,7 @@ The shim is emitted in `--symbol-dispatch --resolve-by-name` mode. Supported ABI
 - by-value results whose signature spelling omits defaulted template arguments resolve to the recorded specialization (`Bedrock::Result<T>` binds to `Bedrock::Result<T, std::error_code>`); `GameplayHandlerResult<T>` and the other template results are instantiated by the second frontend pass, so the call returns an owned wrapper with a working `Dispose`. A template is only used as a by-value result when its header proves the layout with a data member or a base record; an empty reconstructed shell is rejected instead of being sized at one byte;
 - `leveldb::Status` results come from the carrier's pinned leveldb 1.23 package, which `regenerate.ps1` passes to the frontend as an external root; enum template arguments (`Bedrock::Result<T, ActorValidationError>`) and record results with complete arguments (`StreamableAssetSource`) are instantiated by the same sizeof prelude;
 - virtual methods, including pure declarations, dispatch through the object's vftable at the slot recorded in the IR; a pure method has no implementation symbol, so its vtable slot is the only path, and a non-pure method keeps its symbol path but falls back to the same slot when that symbol is not exported (the leveldb and WebRTC overrides); `Bedrock::Result` specializations have no destructor symbols in 1.26.51.1, so `Dispose` releases the result buffer but not an error payload;
+- bitfields are read and written through their storage bits; bool, integer and enum bitfields project as scalar properties, and inherited flags appear on every derived class;
 - fields whose type is not projected expose the address of the field storage as a read-only `nint` named `<field>_Address`;
 - `optional_ref<T>` parameters and results with the presence flag;
 - `std::vector<T>` parameters and by-value results whose element is a scalar/enum, a string, a single-level pointer (surfacing as `nint[]`), or a trivially destructible record with a recorded layout; reference and pointer vector results remain borrowed handles;

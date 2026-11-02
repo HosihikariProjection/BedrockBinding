@@ -44,7 +44,7 @@ public sealed unsafe partial class SpawnGroupRegistry : global::System.IDisposab
 
     public static SpawnGroupRegistry Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_13c291f1();
+        var handle = NativeMethods.TablePtr->C4.hs_create_13c291f1();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class SpawnGroupRegistry : global::System.IDisposab
 
     public static SpawnGroupRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1edf1573((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_1edf1573((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -83,7 +83,7 @@ public sealed unsafe partial class SpawnGroupRegistry : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_bd65d473((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_bd65d473((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupData((nint)__hs_handle, false) : null;
         }
     }
@@ -91,24 +91,24 @@ public sealed unsafe partial class SpawnGroupRegistry : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mEventing_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4ca7ac7c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4ca7ac7c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnGroupLookupMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_09d5b0d9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_09d5b0d9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnGroupRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0bdc48e7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0bdc48e7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry((nint)NativeMethods.TablePtr->C3.hs_method_378afb3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupRegistry((nint)NativeMethods.TablePtr->C4.hs_method_378afb3f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -118,7 +118,7 @@ public sealed unsafe partial class SpawnGroupRegistry : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f272fd42((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_f272fd42((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

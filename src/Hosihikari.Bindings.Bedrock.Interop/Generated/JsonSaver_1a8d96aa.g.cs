@@ -40,24 +40,24 @@ public sealed unsafe partial class JsonSaver : global::System.IDisposable
 
     public nint mReflectionCtx
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_13e3a7dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_13e3a7dc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConfig_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f1618c16((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f1618c16((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSchema_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_56e52db5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_56e52db5((void*)__hosihikari_shim_handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_4f142050((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_4f142050((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -66,7 +66,7 @@ public sealed unsafe partial class JsonSaver : global::System.IDisposable
 
     public static JsonSaver Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.JsonSaver arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_882cd316((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_882cd316((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,20 +77,20 @@ public sealed unsafe partial class JsonSaver : global::System.IDisposable
 
     public bool mPretty
     {
-        get => NativeMethods.TablePtr->C4.hs_get_fdfa604a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_fdfa604a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_fdfa604a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_fdfa604a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPrettyWriter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a18f15ec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a18f15ec((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWriter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0da21e94((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0da21e94((void*)__hosihikari_shim_handle);
     }
 
 
@@ -100,7 +100,7 @@ public sealed unsafe partial class JsonSaver : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_1a8d96aa((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_1a8d96aa((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

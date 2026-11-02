@@ -40,32 +40,32 @@ public sealed unsafe partial class PlayerTickProxy : global::System.IDisposable
 
     public void _clearDimensionPlayerReplicationList(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_202b9b44((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C3.hs_method_202b9b44((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
     }
 
     public void _playerTick(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
     {
-        NativeMethods.TablePtr->C2.hs_method_faa36e79((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)currentTick.Handle);
+        NativeMethods.TablePtr->C3.hs_method_faa36e79((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)currentTick.Handle);
     }
 
     public void _postReplicationtick(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer serverPlayer, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
     {
-        NativeMethods.TablePtr->C2.hs_method_71711666((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, (void*)currentTick.Handle);
+        NativeMethods.TablePtr->C3.hs_method_71711666((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, (void*)currentTick.Handle);
     }
 
     public void _preReplicationTick(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer serverPlayer, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext userEntity)
     {
-        NativeMethods.TablePtr->C2.hs_method_ce644df2((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, (void*)currentTick.Handle, (void*)userEntity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_ce644df2((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, (void*)currentTick.Handle, (void*)userEntity.Handle);
     }
 
     public void _processDimensionPlayerReplication(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_0ff60c16((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C3.hs_method_0ff60c16((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
     }
 
     public static PlayerTickProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerTickProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_db6cbd9b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_db6cbd9b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,27 +76,27 @@ public sealed unsafe partial class PlayerTickProxy : global::System.IDisposable
 
     public void clearDimensionPlayerReplicationList(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_d0edfe9b((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C3.hs_method_d0edfe9b((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
     }
 
     public void playerTick(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
     {
-        NativeMethods.TablePtr->C2.hs_method_79bc0069((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)currentTick.Handle);
+        NativeMethods.TablePtr->C3.hs_method_79bc0069((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)currentTick.Handle);
     }
 
     public void postReplicationtick(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer serverPlayer, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick)
     {
-        NativeMethods.TablePtr->C2.hs_method_25657f4a((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, (void*)currentTick.Handle);
+        NativeMethods.TablePtr->C3.hs_method_25657f4a((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, (void*)currentTick.Handle);
     }
 
     public void preReplicationTick(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer serverPlayer, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext userEntity)
     {
-        NativeMethods.TablePtr->C2.hs_method_f4134eac((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, (void*)currentTick.Handle, (void*)userEntity.Handle);
+        NativeMethods.TablePtr->C3.hs_method_f4134eac((void*)__hosihikari_shim_handle, (void*)serverPlayer.Handle, (void*)currentTick.Handle, (void*)userEntity.Handle);
     }
 
     public void processDimensionPlayerReplication(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_a3eaaf8f((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a3eaaf8f((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
     }
 
 
@@ -106,7 +106,7 @@ public sealed unsafe partial class PlayerTickProxy : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5bea4726((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5bea4726((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

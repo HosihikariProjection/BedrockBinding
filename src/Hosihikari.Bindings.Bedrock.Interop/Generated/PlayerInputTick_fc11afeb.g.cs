@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_9ad48f27((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_9ad48f27((void*)__hosihikari_shim_handle, (void*)entity.Handle);
     }
 
     public static PlayerInputTick Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b837b199();
+        var handle = NativeMethods.TablePtr->C3.hs_create_b837b199();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
 
     public static PlayerInputTick Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_edc1b5ec((void*)entity.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_edc1b5ec((void*)entity.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,8 +67,8 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
 
     public ulong mValue
     {
-        get => NativeMethods.TablePtr->C2.hs_get_056ac0b0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_056ac0b0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_056ac0b0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_056ac0b0((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class PlayerInputTick : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_fc11afeb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_fc11afeb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

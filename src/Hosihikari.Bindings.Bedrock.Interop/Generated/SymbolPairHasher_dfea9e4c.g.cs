@@ -44,7 +44,7 @@ public sealed unsafe partial class SymbolPairHasher : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_dfea9e4c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_dfea9e4c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

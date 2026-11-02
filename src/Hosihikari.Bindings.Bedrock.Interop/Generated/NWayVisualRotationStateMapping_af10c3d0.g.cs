@@ -40,17 +40,17 @@ public sealed unsafe partial class NWayVisualRotationStateMapping : global::Syst
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.NWayVisualRotationStateMapping arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d5fd1185((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_d5fd1185((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_181a6c0a((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_181a6c0a((void*)__hosihikari_shim_handle);
     }
 
     public static NWayVisualRotationStateMapping Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d0d3ed14();
+        var handle = NativeMethods.TablePtr->C4.hs_create_d0d3ed14();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class NWayVisualRotationStateMapping : global::Syst
 
     public static NWayVisualRotationStateMapping Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.NWayVisualRotationStateMapping arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e4e006ed((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_e4e006ed((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,19 +73,19 @@ public sealed unsafe partial class NWayVisualRotationStateMapping : global::Syst
     // The native field type is not projected; this is the address of the field storage.
     public nint mXStateName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d5465956((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d5465956((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mYStateName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ef586aa3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ef586aa3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mZStateName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3173a842((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3173a842((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -94,12 +94,12 @@ public sealed unsafe partial class NWayVisualRotationStateMapping : global::Syst
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.NWayVisualRotationStateMapping operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.NWayVisualRotationStateMapping arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.NWayVisualRotationStateMapping((nint)NativeMethods.TablePtr->C3.hs_method_3436ca00((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.NWayVisualRotationStateMapping((nint)NativeMethods.TablePtr->C4.hs_method_3436ca00((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.NWayVisualRotationStateMapping arg0)
     {
-        return NativeMethods.TablePtr->C3.hs_method_80ea4400((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_80ea4400((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
     }
 
 
@@ -109,7 +109,7 @@ public sealed unsafe partial class NWayVisualRotationStateMapping : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_af10c3d0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_af10c3d0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
 
     public static SoundVolumeDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0fd9ec57();
+        var handle = NativeMethods.TablePtr->C4.hs_create_0fd9ec57();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
 
     public static SoundVolumeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_fbfebd10((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_fbfebd10((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,23 +62,23 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
 
     public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
     {
-        NativeMethods.TablePtr->C3.hs_method_f2ba7de3(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C4.hs_method_f2ba7de3(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        NativeMethods.TablePtr->C3.hs_method_103b1202((void*)__hosihikari_shim_handle, (void*)entity.Handle);
+        NativeMethods.TablePtr->C4.hs_method_103b1202((void*)__hosihikari_shim_handle, (void*)entity.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5ece06_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_93ead6b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_93ead6b6((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition((nint)NativeMethods.TablePtr->C3.hs_method_87e49141((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundVolumeDefinition((nint)NativeMethods.TablePtr->C4.hs_method_87e49141((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -87,7 +87,7 @@ public sealed unsafe partial class SoundVolumeDefinition : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_8daed5e9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_8daed5e9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

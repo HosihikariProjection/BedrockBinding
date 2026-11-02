@@ -40,7 +40,7 @@ public sealed unsafe partial class DefaultCompositeSchema : global::System.IDisp
 
     public static DefaultCompositeSchema Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.DefaultCompositeSchema arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a69ab7f3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_a69ab7f3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,12 +55,12 @@ public sealed unsafe partial class DefaultCompositeSchema : global::System.IDisp
 
     public byte findMinVariantPriorityLevel(nint ctx, nint type)
     {
-        return NativeMethods.TablePtr->C4.hs_method_af4d6fe1((void*)__hosihikari_shim_handle, (void*)ctx, (void*)type);
+        return NativeMethods.TablePtr->C5.hs_method_af4d6fe1((void*)__hosihikari_shim_handle, (void*)ctx, (void*)type);
     }
 
     public bool isGreedyCheck(nint ctx, nint type)
     {
-        return NativeMethods.TablePtr->C4.hs_method_919c6928((void*)__hosihikari_shim_handle, (void*)ctx, (void*)type) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_919c6928((void*)__hosihikari_shim_handle, (void*)ctx, (void*)type) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.", false)]
@@ -74,7 +74,7 @@ public sealed unsafe partial class DefaultCompositeSchema : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bddd9431((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_bddd9431((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

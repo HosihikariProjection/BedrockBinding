@@ -44,7 +44,7 @@ public sealed unsafe partial class Call : global::System.IDisposable
 
     public static Call Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9683f489((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_9683f489((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,25 +55,25 @@ public sealed unsafe partial class Call : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface? CreateAudioReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface_Nested.Config arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b901dab0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_b901dab0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream? CreateAudioSendStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4d981cdf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_4d981cdf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream? CreateFlexfecReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream_Nested.Config arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_223560fb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_223560fb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface? CreateVideoReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Config arg0)
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fb8629eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_fb8629eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface((nint)__hs_handle, false) : null;
     }
 
@@ -87,82 +87,82 @@ public sealed unsafe partial class Call : global::System.IDisposable
 
     public void DestroyAudioReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface? arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_5a4ffe8a((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_5a4ffe8a((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public void DestroyAudioSendStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream? arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_9c81ae1f((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_9c81ae1f((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public void DestroyFlexfecReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream? arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_69535f72((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_69535f72((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public void DestroyVideoReceiveStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface? arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_3b84ae6d((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_3b84ae6d((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public void DestroyVideoSendStream(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoSendStream? arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_4ced3044((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_4ced3044((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public int? FeedbackAccordingToRfc8888Count()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_2a77cc2d((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_2a77cc2d((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
     public int? FeedbackAccordingToTransportCcCount()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_d578034d((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C5.hs_method_d578034d((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (int?)null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester? GetPayloadTypeSuggester()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_6b8c8ff4((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_6b8c8ff4((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats GetStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_36bb4ca8((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Call_Nested.Stats((nint)NativeMethods.TablePtr->C5.hs_method_36bb4ca8((void*)__hosihikari_shim_handle));
     }
 
     public nint GetTransportControllerSend()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_2c7741b8((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_2c7741b8((void*)__hosihikari_shim_handle);
     }
 
     public void OnAudioTransportOverheadChanged(int arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_08899eb0((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_08899eb0((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void OnLocalSsrcUpdated(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface arg0, uint arg1)
     {
-        NativeMethods.TablePtr->C4.hs_method_b24aa376((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
+        NativeMethods.TablePtr->C5.hs_method_b24aa376((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
     }
 
     public void OnLocalSsrcUpdated(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream arg0, uint arg1)
     {
-        NativeMethods.TablePtr->C4.hs_method_b8f475b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
+        NativeMethods.TablePtr->C5.hs_method_b8f475b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
     }
 
     public void OnLocalSsrcUpdated(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface arg0, uint arg1)
     {
-        NativeMethods.TablePtr->C4.hs_method_e234a0a9((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
+        NativeMethods.TablePtr->C5.hs_method_e234a0a9((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
     }
 
     public void OnSentPacket(nint arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_597131aa((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C5.hs_method_597131aa((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public void OnUpdateSyncGroup(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioReceiveStreamInterface arg0, string arg1)
@@ -180,44 +180,44 @@ public sealed unsafe partial class Call : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(arg1, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C4.hs_method_2dea0845((void*)__hosihikari_shim_handle, (void*)arg0.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C5.hs_method_2dea0845((void*)__hosihikari_shim_handle, (void*)arg0.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public nint Receiver()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1c4204a4((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_1c4204a4((void*)__hosihikari_shim_handle);
     }
 
     public void SetClientBitratePreferences(nint arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_348bdf2b((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C5.hs_method_348bdf2b((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public void SetPayloadTypeSuggester(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PayloadTypeSuggester? arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_c31b3f33((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C5.hs_method_c31b3f33((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
     public void SetPreferredRtcpCcAckType(int arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_79dfa53c((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_79dfa53c((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void SignalChannelNetworkState(int arg0, int arg1)
     {
-        NativeMethods.TablePtr->C4.hs_method_5a5ba955((void*)__hosihikari_shim_handle, arg0, arg1);
+        NativeMethods.TablePtr->C5.hs_method_5a5ba955((void*)__hosihikari_shim_handle, arg0, arg1);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase? network_thread()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5b40e718((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_5b40e718((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase? worker_thread()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e9b5d5cc((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_e9b5d5cc((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase((nint)__hs_handle, false) : null;
     }
 
@@ -228,7 +228,7 @@ public sealed unsafe partial class Call : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_4f98359a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_4f98359a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

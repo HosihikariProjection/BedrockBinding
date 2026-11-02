@@ -40,7 +40,7 @@ public sealed unsafe partial class SemanticInfo : global::System.IDisposable
 
     public static SemanticInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.SemanticInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f343ceff((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f343ceff((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,31 +52,31 @@ public sealed unsafe partial class SemanticInfo : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mAlreadyCompletedSymbols_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_7e6d56cb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7e6d56cb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConstrainedParams_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_be4c45e2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_be4c45e2((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsValid
     {
-        get => NativeMethods.TablePtr->C0.hs_get_ec050da0((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_ec050da0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_ec050da0((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_ec050da0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSoftEnumEscapeCharExceptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_f2be1185((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f2be1185((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSoftEnumText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_a9035ce2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a9035ce2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class SemanticInfo : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_b2fce209((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_b2fce209((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

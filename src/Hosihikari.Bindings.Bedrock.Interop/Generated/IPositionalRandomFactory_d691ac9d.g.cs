@@ -40,7 +40,7 @@ public sealed unsafe partial class IPositionalRandomFactory : global::System.IDi
 
     public static IPositionalRandomFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.IPositionalRandomFactory arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_382f0d97((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_382f0d97((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class IPositionalRandomFactory : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d691ac9d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d691ac9d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class ShulkerPostAiStepSystem : global::System.IDis
 
     public static void _doShulkerPostAiStepSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ActorRotationComponent actorRotationComponent, global::Hosihikari.Bindings.Bedrock.Interop.MobBodyRotationComponent mobBodyRotationComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent)
     {
-        NativeMethods.TablePtr->C3.hs_method_92a2ae61((void*)arg0.Handle, (void*)actorRotationComponent.Handle, (void*)mobBodyRotationComponent.Handle, (void*)stateVectorComponent.Handle);
+        NativeMethods.TablePtr->C4.hs_method_92a2ae61((void*)arg0.Handle, (void*)actorRotationComponent.Handle, (void*)mobBodyRotationComponent.Handle, (void*)stateVectorComponent.Handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class ShulkerPostAiStepSystem : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_566e1c25((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_566e1c25((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

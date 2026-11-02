@@ -40,7 +40,7 @@ public sealed unsafe partial class NetworkBinderInterface : global::System.IDisp
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_3667e6d2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_3667e6d2((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,12 +49,12 @@ public sealed unsafe partial class NetworkBinderInterface : global::System.IDisp
 
     public int BindSocketToNetwork(int socket_fd, nint address)
     {
-        return NativeMethods.TablePtr->C4.hs_method_06497f10((void*)__hosihikari_shim_handle, socket_fd, (void*)address);
+        return NativeMethods.TablePtr->C5.hs_method_06497f10((void*)__hosihikari_shim_handle, socket_fd, (void*)address);
     }
 
     public static NetworkBinderInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.NetworkBinderInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_74fe12ae((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_74fe12ae((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +70,7 @@ public sealed unsafe partial class NetworkBinderInterface : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_94c14879((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_94c14879((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

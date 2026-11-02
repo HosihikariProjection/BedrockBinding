@@ -40,7 +40,7 @@ public sealed unsafe partial class OnUseOnTriggerItemComponent : global::System.
 
     public static OnUseOnTriggerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.OnUseOnTriggerItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7f7577d7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_7f7577d7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class OnUseOnTriggerItemComponent : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnUseOn_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_be695ba3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_be695ba3((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class OnUseOnTriggerItemComponent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f883b8db((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_f883b8db((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

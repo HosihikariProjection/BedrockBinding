@@ -40,7 +40,7 @@ public sealed unsafe partial class CameraAimAssistCommandPresetDefinition : glob
 
     public static CameraAimAssistCommandPresetDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_50.CameraAimAssistCommandPresetDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_af530015((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_af530015((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,36 +51,36 @@ public sealed unsafe partial class CameraAimAssistCommandPresetDefinition : glob
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_7488c382((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_7488c382((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAngle_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5e0e33c0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5e0e33c0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDistance_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1a3fb64b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1a3fb64b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPresetId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_dc793691((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_dc793691((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetMode_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_23f71253((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_23f71253((void*)__hosihikari_shim_handle);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_50.CameraAimAssistCommandPresetDefinition rhs)
     {
-        return NativeMethods.TablePtr->C3.hs_method_e8b49998((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_e8b49998((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
     }
 
 
@@ -90,7 +90,7 @@ public sealed unsafe partial class CameraAimAssistCommandPresetDefinition : glob
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_5c15a6db((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_5c15a6db((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

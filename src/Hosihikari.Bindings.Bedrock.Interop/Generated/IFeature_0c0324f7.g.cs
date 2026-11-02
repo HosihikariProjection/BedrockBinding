@@ -53,18 +53,18 @@ public sealed unsafe partial class IFeature : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(pass, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C1.hs_method_0f92a688((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C2.hs_method_0f92a688((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public void _upgradeFormat(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_677a147a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C2.hs_method_677a147a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public static IFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.IFeature arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_9e44c522((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_9e44c522((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +75,7 @@ public sealed unsafe partial class IFeature : global::System.IDisposable
 
     public static bool isExposedTo(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos candidatePos, global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor exposedTo)
     {
-        return NativeMethods.TablePtr->C1.hs_method_e69ae355((void*)target.Handle, (void*)candidatePos.Handle, (void*)exposedTo.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_e69ae355((void*)target.Handle, (void*)candidatePos.Handle, (void*)exposedTo.Handle) != 0;
     }
 
     public bool isValidPlacement(string pass)
@@ -93,32 +93,32 @@ public sealed unsafe partial class IFeature : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(pass, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C1.hs_method_54f201b9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C2.hs_method_54f201b9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public bool mCanUseInternalFeature
     {
-        get => NativeMethods.TablePtr->C1.hs_get_30f57960((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_30f57960((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_30f57960((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_30f57960((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInternal
     {
-        get => NativeMethods.TablePtr->C1.hs_get_5fc8fd61((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_5fc8fd61((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_5fc8fd61((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_5fc8fd61((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8180fe27((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_8180fe27((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
     public void upgradeFormat(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_a6e8d30a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C2.hs_method_a6e8d30a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
 
@@ -128,7 +128,7 @@ public sealed unsafe partial class IFeature : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_0c0324f7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0c0324f7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

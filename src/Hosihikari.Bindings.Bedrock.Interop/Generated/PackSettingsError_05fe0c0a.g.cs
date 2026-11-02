@@ -41,19 +41,19 @@ public sealed unsafe partial class PackSettingsError : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mErrorParameters_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e7d3dd2e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e7d3dd2e((void*)__hosihikari_shim_handle);
     }
 
     public int mErrorValue
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0d7fe5b3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_0d7fe5b3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0d7fe5b3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0d7fe5b3((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPackErrorType
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6b23c9a1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_6b23c9a1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6b23c9a1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_6b23c9a1((void*)__hosihikari_shim_handle, value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
@@ -62,7 +62,7 @@ public sealed unsafe partial class PackSettingsError : global::System.IDisposabl
 
     public string _getLocErrorMessage(global::Hosihikari.Bindings.Bedrock.Interop.I18n loc)
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_416adc02((void*)__hosihikari_shim_handle, (void*)loc.Handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_416adc02((void*)__hosihikari_shim_handle, (void*)loc.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class PackSettingsError : global::System.IDisposabl
 
     public static PackSettingsError Create(global::Hosihikari.Bindings.Bedrock.Interop.PackSettingsError arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b1f02304((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b1f02304((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -91,7 +91,7 @@ public sealed unsafe partial class PackSettingsError : global::System.IDisposabl
 
     public string getLocErrorMessage(global::Hosihikari.Bindings.Bedrock.Interop.I18n loc)
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_70515697((void*)__hosihikari_shim_handle, (void*)loc.Handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_70515697((void*)__hosihikari_shim_handle, (void*)loc.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -106,7 +106,7 @@ public sealed unsafe partial class PackSettingsError : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_05fe0c0a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_05fe0c0a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

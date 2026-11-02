@@ -40,7 +40,7 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
 
     public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_5873993d((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_5873993d((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_76029a50((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_76029a50((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -58,7 +58,7 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
 
     public static AppendLoot Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.AppendLoot arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1be40a83((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_1be40a83((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,7 +69,7 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_f64d74a3((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_f64d74a3((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
@@ -79,7 +79,7 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mLootTable_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c20cf5ec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_c20cf5ec((void*)__hosihikari_shim_handle);
     }
 
 
@@ -89,7 +89,7 @@ public sealed unsafe partial class AppendLoot : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f8210a2c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_f8210a2c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

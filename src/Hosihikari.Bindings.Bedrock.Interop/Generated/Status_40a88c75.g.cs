@@ -40,62 +40,62 @@ public sealed unsafe partial class Status : global::System.IDisposable
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Corruption(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_f403fdbc((void*)msg, (void*)msg2));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C5.hs_method_f403fdbc((void*)msg, (void*)msg2));
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status IOError(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_f29ee684((void*)msg, (void*)msg2));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C5.hs_method_f29ee684((void*)msg, (void*)msg2));
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status InvalidArgument(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_361cfac0((void*)msg, (void*)msg2));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C5.hs_method_361cfac0((void*)msg, (void*)msg2));
     }
 
     public bool IsCorruption()
     {
-        return NativeMethods.TablePtr->C4.hs_method_6c32bc63((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_6c32bc63((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool IsIOError()
     {
-        return NativeMethods.TablePtr->C4.hs_method_fe7e2230((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_fe7e2230((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool IsInvalidArgument()
     {
-        return NativeMethods.TablePtr->C4.hs_method_d3e3c243((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_d3e3c243((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool IsNotFound()
     {
-        return NativeMethods.TablePtr->C4.hs_method_fe10740d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_fe10740d((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool IsNotSupportedError()
     {
-        return NativeMethods.TablePtr->C4.hs_method_8ca41eaf((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_8ca41eaf((void*)__hosihikari_shim_handle) != 0;
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status NotFound(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_e2caef53((void*)msg, (void*)msg2));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C5.hs_method_e2caef53((void*)msg, (void*)msg2));
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status NotSupported(nint msg, nint msg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_cee7588b((void*)msg, (void*)msg2));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C5.hs_method_cee7588b((void*)msg, (void*)msg2));
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status OK()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_98f1bea2());
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C5.hs_method_98f1bea2());
     }
 
     public static Status Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b28ae7d8();
+        var handle = NativeMethods.TablePtr->C5.hs_create_b28ae7d8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -106,7 +106,7 @@ public sealed unsafe partial class Status : global::System.IDisposable
 
     public static Status Create(global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status rhs)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_277626ab((void*)rhs.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_277626ab((void*)rhs.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -121,18 +121,18 @@ public sealed unsafe partial class Status : global::System.IDisposable
 
     public string ToString()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_14e8578c((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_14e8578c((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool ok()
     {
-        return NativeMethods.TablePtr->C4.hs_method_edb2b52e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_edb2b52e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_9c889e6a((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C5.hs_method_9c889e6a((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -146,7 +146,7 @@ public sealed unsafe partial class Status : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_40a88c75((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_40a88c75((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

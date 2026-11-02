@@ -40,23 +40,23 @@ public sealed unsafe partial class SlimeMoveControlDescription : global::System.
 
     public float mMaxTurn
     {
-        get => NativeMethods.TablePtr->C3.hs_get_721dca31((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_721dca31((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_721dca31((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_721dca31((void*)__hosihikari_shim_handle, value);
     }
 
     public void _deserializeData(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams deserializeDataParams)
     {
-        NativeMethods.TablePtr->C3.hs_method_fa5cb8f0((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
+        NativeMethods.TablePtr->C4.hs_method_fa5cb8f0((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
     public nint _getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_970a1251((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_970a1251((void*)__hosihikari_shim_handle);
     }
 
     public static SlimeMoveControlDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.SlimeMoveControlDescription arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b7e222ca((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b7e222ca((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,18 +67,18 @@ public sealed unsafe partial class SlimeMoveControlDescription : global::System.
 
     public void deserializeData(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams deserializeDataParams)
     {
-        NativeMethods.TablePtr->C3.hs_method_ede7b438((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
+        NativeMethods.TablePtr->C4.hs_method_ede7b438((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
     }
 
     public nint getJsonName()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_24dce58e((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_24dce58e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJumpDelayTicks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ef302994((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ef302994((void*)__hosihikari_shim_handle);
     }
 
 
@@ -88,7 +88,7 @@ public sealed unsafe partial class SlimeMoveControlDescription : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9355cc14((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9355cc14((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

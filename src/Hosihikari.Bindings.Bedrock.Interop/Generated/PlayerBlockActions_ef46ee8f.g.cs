@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerBlockActions : global::System.IDisposab
 
     public static PlayerBlockActions Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerBlockActions arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_cad2e812((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_cad2e812((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,12 +56,12 @@ public sealed unsafe partial class PlayerBlockActions : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mActions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_56e02abc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_56e02abc((void*)__hosihikari_shim_handle);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.PlayerBlockActions other)
     {
-        return NativeMethods.TablePtr->C2.hs_method_fdd00e64((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_fdd00e64((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class PlayerBlockActions : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_ef46ee8f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ef46ee8f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

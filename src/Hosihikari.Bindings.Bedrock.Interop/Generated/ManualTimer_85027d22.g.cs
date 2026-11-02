@@ -44,7 +44,7 @@ public sealed unsafe partial class ManualTimer : global::System.IDisposable
 
     public static ManualTimer Create(global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler_Nested.ManualTimer arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_cc3990c3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_cc3990c3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,31 +55,31 @@ public sealed unsafe partial class ManualTimer : global::System.IDisposable
 
     public bool mHasAddedRecord
     {
-        get => NativeMethods.TablePtr->C1.hs_get_779466c0((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_779466c0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_779466c0((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_779466c0((void*)__hosihikari_shim_handle, value);
     }
 
 
     public nint mGroup
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_dda0671c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_dda0671c((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsClient
     {
-        get => NativeMethods.TablePtr->C1.hs_get_db36d9e5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_db36d9e5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_db36d9e5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_db36d9e5((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mName
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_795009ac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_795009ac((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStart_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_40a669bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_40a669bd((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -88,7 +88,7 @@ public sealed unsafe partial class ManualTimer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_85027d22((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_85027d22((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

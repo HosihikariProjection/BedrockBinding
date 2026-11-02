@@ -40,7 +40,7 @@ public sealed unsafe partial class SquidPreAiStepSystem : global::System.IDispos
 
     public static void _doSquidPreAiStepSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.LocalMoveVelocityComponent localMoveVelocityComponent)
     {
-        NativeMethods.TablePtr->C3.hs_method_8b81b8af((void*)arg0.Handle, (void*)localMoveVelocityComponent.Handle);
+        NativeMethods.TablePtr->C4.hs_method_8b81b8af((void*)arg0.Handle, (void*)localMoveVelocityComponent.Handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class SquidPreAiStepSystem : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_ffe98269((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_ffe98269((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

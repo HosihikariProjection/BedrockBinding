@@ -40,17 +40,17 @@ public sealed unsafe partial class PlaySoundResponse : global::System.IDisposabl
 
     public void _buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root, global::Hosihikari.Bindings.Bedrock.Interop.Factory_EventResponse_ factory)
     {
-        NativeMethods.TablePtr->C2.hs_method_c82f647c((void*)__hosihikari_shim_handle, root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
+        NativeMethods.TablePtr->C3.hs_method_c82f647c((void*)__hosihikari_shim_handle, root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
     }
 
     public void _executeAction(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
-        NativeMethods.TablePtr->C2.hs_method_6842b093((void*)__hosihikari_shim_handle, (void*)@params.Handle);
+        NativeMethods.TablePtr->C3.hs_method_6842b093((void*)__hosihikari_shim_handle, (void*)@params.Handle);
     }
 
     public string _getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_a283ef08((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_a283ef08((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -60,13 +60,13 @@ public sealed unsafe partial class PlaySoundResponse : global::System.IDisposabl
 
     public static string NameID()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_32acef9d();
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_32acef9d();
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public static PlaySoundResponse Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_560b0c3f();
+        var handle = NativeMethods.TablePtr->C3.hs_create_560b0c3f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,7 +77,7 @@ public sealed unsafe partial class PlaySoundResponse : global::System.IDisposabl
 
     public static PlaySoundResponse Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ac6584e2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ac6584e2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -88,35 +88,35 @@ public sealed unsafe partial class PlaySoundResponse : global::System.IDisposabl
 
     public void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root, global::Hosihikari.Bindings.Bedrock.Interop.Factory_EventResponse_ factory)
     {
-        NativeMethods.TablePtr->C2.hs_method_0c05cde1((void*)__hosihikari_shim_handle, root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
+        NativeMethods.TablePtr->C3.hs_method_0c05cde1((void*)__hosihikari_shim_handle, root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)factory.Handle);
     }
 
     public void executeAction(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams @params)
     {
-        NativeMethods.TablePtr->C2.hs_method_253017f0((void*)__hosihikari_shim_handle, (void*)@params.Handle);
+        NativeMethods.TablePtr->C3.hs_method_253017f0((void*)__hosihikari_shim_handle, (void*)@params.Handle);
     }
 
     public string getName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0d2cd06d((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_0d2cd06d((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb10826_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f8550057((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f8550057((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc886cc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7f1d6d08((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7f1d6d08((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse((nint)NativeMethods.TablePtr->C2.hs_method_d73fe3f2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundResponse((nint)NativeMethods.TablePtr->C3.hs_method_d73fe3f2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -126,7 +126,7 @@ public sealed unsafe partial class PlaySoundResponse : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6d6f7dd7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_6d6f7dd7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

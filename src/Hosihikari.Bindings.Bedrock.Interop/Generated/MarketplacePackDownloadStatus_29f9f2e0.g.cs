@@ -44,7 +44,7 @@ public sealed unsafe partial class MarketplacePackDownloadStatus : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_29f9f2e0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_29f9f2e0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

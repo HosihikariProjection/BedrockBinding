@@ -40,12 +40,12 @@ public sealed unsafe partial class BasicSerializerContext : global::System.IDisp
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_e273e987((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_e273e987((void*)__hosihikari_shim_handle);
     }
 
     public static BasicSerializerContext Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_50a985e7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_50a985e7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class BasicSerializerContext : global::System.IDisp
 
     public string _getContextString(uint index)
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_3eb79017((void*)__hosihikari_shim_handle, index);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_3eb79017((void*)__hosihikari_shim_handle, index);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class BasicSerializerContext : global::System.IDisp
 
     public string[] errors()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_a2643e0e((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C5.hs_method_a2643e0e((void*)__hosihikari_shim_handle);
         var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -78,32 +78,32 @@ public sealed unsafe partial class BasicSerializerContext : global::System.IDisp
 
     public byte mContextArea
     {
-        get => NativeMethods.TablePtr->C4.hs_get_679ed50f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_679ed50f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_679ed50f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_679ed50f((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mCurrentIndex
     {
-        get => NativeMethods.TablePtr->C4.hs_get_34e6ec8d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_34e6ec8d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_34e6ec8d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_34e6ec8d((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort mErrorCodes
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1f70bebb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1f70bebb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_1f70bebb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_1f70bebb((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLog_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_db684323((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_db684323((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5f32eafa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_5f32eafa((void*)__hosihikari_shim_handle);
     }
 
 
@@ -113,7 +113,7 @@ public sealed unsafe partial class BasicSerializerContext : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_97931f20((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_97931f20((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

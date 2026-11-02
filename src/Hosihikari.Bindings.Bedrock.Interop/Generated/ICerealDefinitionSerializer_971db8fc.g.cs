@@ -40,7 +40,7 @@ public sealed unsafe partial class ICerealDefinitionSerializer : global::System.
 
     public static ICerealDefinitionSerializer Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_7eb6054c();
+        var handle = NativeMethods.TablePtr->C2.hs_create_7eb6054c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ICerealDefinitionSerializer : global::System.
 
     public static ICerealDefinitionSerializer Create(global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_70794892((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_70794892((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,23 +63,23 @@ public sealed unsafe partial class ICerealDefinitionSerializer : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka5ad39_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_478e195b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_478e195b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer((nint)NativeMethods.TablePtr->C1.hs_method_d211e972((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ICerealDefinitionSerializer((nint)NativeMethods.TablePtr->C2.hs_method_d211e972((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? serializeDefinitionInstance(nint arg0, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion arg1, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx arg2)
     {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_15456ae8((void*)__hosihikari_shim_handle, (void*)arg0, (void*)arg1.Handle, (void*)arg2.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_15456ae8((void*)__hosihikari_shim_handle, (void*)arg0, (void*)arg1.Handle, (void*)arg2.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? serializeDefinitionInstance(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? arg0, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion arg1, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx arg2)
     {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_e10e24eb((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), (void*)arg1.Handle, (void*)arg2.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_e10e24eb((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0), (void*)arg1.Handle, (void*)arg2.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -90,7 +90,7 @@ public sealed unsafe partial class ICerealDefinitionSerializer : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_971db8fc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_971db8fc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,12 +41,12 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7b1a91f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7b1a91f5((void*)__hosihikari_shim_handle);
     }
 
     public static IWorldTemplateManager Create(global::Hosihikari.Bindings.Bedrock.Interop.IWorldTemplateManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fc9e8a0d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_fc9e8a0d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,12 +61,12 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
 
     public void deleteWorldTemplateAndFiles(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packIdentity)
     {
-        NativeMethods.TablePtr->C1.hs_method_8c4b3e8c((void*)__hosihikari_shim_handle, (void*)packIdentity.Handle);
+        NativeMethods.TablePtr->C2.hs_method_8c4b3e8c((void*)__hosihikari_shim_handle, (void*)packIdentity.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo? findInstalledWorldTemplate(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packIdentityToFind)
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_80ea0e20((void*)__hosihikari_shim_handle, (void*)packIdentityToFind.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_80ea0e20((void*)__hosihikari_shim_handle, (void*)packIdentityToFind.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)__hs_handle, false) : null;
     }
 
@@ -81,14 +81,14 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_38c1995f((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(packUUIDs?.Length ?? 0));
+            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_38c1995f((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(packUUIDs?.Length ?? 0));
             return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)__hs_handle, false) : null;
         }
     }
 
     public void flushResourceLoaderTasks()
     {
-        NativeMethods.TablePtr->C1.hs_method_33fe6913((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_33fe6913((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -97,32 +97,32 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
 
     public nint getLocalTemplates()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_dbb195fa((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_dbb195fa((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo getWorldTemplateAtIndex(int index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)NativeMethods.TablePtr->C1.hs_method_dc8c43de((void*)__hosihikari_shim_handle, index), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)NativeMethods.TablePtr->C2.hs_method_dc8c43de((void*)__hosihikari_shim_handle, index), false);
     }
 
     public ulong getWorldTemplateSize()
     {
-        return NativeMethods.TablePtr->C1.hs_method_fb52f704((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_fb52f704((void*)__hosihikari_shim_handle);
     }
 
     public bool isInitialized()
     {
-        return NativeMethods.TablePtr->C1.hs_method_5a04a7b3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_5a04a7b3((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isWorldTemplateInstalled(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid)
     {
-        return NativeMethods.TablePtr->C1.hs_method_05efdf6d((void*)__hosihikari_shim_handle, (void*)uuid.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_05efdf6d((void*)__hosihikari_shim_handle, (void*)uuid.Handle) != 0;
     }
 
     public void populateWorldTemplates()
     {
-        NativeMethods.TablePtr->C1.hs_method_faec9cec((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_faec9cec((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -136,7 +136,7 @@ public sealed unsafe partial class IWorldTemplateManager : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_807e8812((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_807e8812((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

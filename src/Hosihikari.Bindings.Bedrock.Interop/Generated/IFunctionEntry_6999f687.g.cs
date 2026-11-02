@@ -40,7 +40,7 @@ public sealed unsafe partial class IFunctionEntry : global::System.IDisposable
 
     public static IFunctionEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.IFunctionEntry arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fdb522ef((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_fdb522ef((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IFunctionEntry : global::System.IDisposable
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.FunctionManager functionManager, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, byte order)
     {
-        NativeMethods.TablePtr->C1.hs_method_2c72b160((void*)__hosihikari_shim_handle, (void*)functionManager.Handle, (void*)origin.Handle, order);
+        NativeMethods.TablePtr->C2.hs_method_2c72b160((void*)__hosihikari_shim_handle, (void*)functionManager.Handle, (void*)origin.Handle, order);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class IFunctionEntry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_6999f687((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6999f687((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

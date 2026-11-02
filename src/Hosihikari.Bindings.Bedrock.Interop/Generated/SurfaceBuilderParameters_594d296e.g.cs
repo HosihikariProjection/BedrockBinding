@@ -40,12 +40,12 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Biome biome, nint surfaceBuilderData)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_78432f88((void*)__hosihikari_shim_handle, (void*)biome.Handle, (void*)surfaceBuilderData);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_78432f88((void*)__hosihikari_shim_handle, (void*)biome.Handle, (void*)surfaceBuilderData);
     }
 
     public static SurfaceBuilderParameters Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d336cd93();
+        var handle = NativeMethods.TablePtr->C2.hs_create_d336cd93();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
 
     public static SurfaceBuilderParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.Biome biome, nint surfaceBuilderData)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ef6ae22a((void*)biome.Handle, (void*)surfaceBuilderData);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ef6ae22a((void*)biome.Handle, (void*)surfaceBuilderData);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,7 +67,7 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
 
     public static SurfaceBuilderParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.ISurfaceBuilder_Nested.SurfaceBuilderParameters arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_9c9bd3f8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_9c9bd3f8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,27 +79,27 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
     // The native field type is not projected; this is the address of the field storage.
     public nint mGetTemperatureCallback_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ac62e689((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ac62e689((void*)__hosihikari_shim_handle);
     }
 
     public nint mMountainAttributes
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_61191747((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_61191747((void*)__hosihikari_shim_handle);
     }
 
     public nint mSurfaceBuilder
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4e696847((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4e696847((void*)__hosihikari_shim_handle);
     }
 
     public nint mSurfaceBuilderData
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_40bac84f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_40bac84f((void*)__hosihikari_shim_handle);
     }
 
     public nint mSurfaceMaterialAdjustmentAttributes
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8479cbdd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8479cbdd((void*)__hosihikari_shim_handle);
     }
 
 
@@ -109,7 +109,7 @@ public sealed unsafe partial class SurfaceBuilderParameters : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_594d296e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_594d296e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

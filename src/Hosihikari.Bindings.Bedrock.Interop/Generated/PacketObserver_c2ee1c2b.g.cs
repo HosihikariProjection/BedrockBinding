@@ -41,7 +41,7 @@ public sealed unsafe partial class PacketObserver : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b0d64a52((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b0d64a52((void*)__hosihikari_shim_handle);
     }
 
     public void _dataReceivedFrom(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, string data)
@@ -59,7 +59,7 @@ public sealed unsafe partial class PacketObserver : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C2.hs_method_b4642012((void*)__hosihikari_shim_handle, (void*)source.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C3.hs_method_b4642012((void*)__hosihikari_shim_handle, (void*)source.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -78,23 +78,23 @@ public sealed unsafe partial class PacketObserver : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C2.hs_method_4b7ddec9((void*)__hosihikari_shim_handle, (void*)target.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C3.hs_method_4b7ddec9((void*)__hosihikari_shim_handle, (void*)target.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public void _packetReceivedFrom(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, uint size)
     {
-        NativeMethods.TablePtr->C2.hs_method_d7ac02db((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, size);
+        NativeMethods.TablePtr->C3.hs_method_d7ac02db((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, size);
     }
 
     public void _packetSentTo(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier target, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, uint size)
     {
-        NativeMethods.TablePtr->C2.hs_method_70e6a6a3((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)packet.Handle, size);
+        NativeMethods.TablePtr->C3.hs_method_70e6a6a3((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)packet.Handle, size);
     }
 
     public void _reset()
     {
-        NativeMethods.TablePtr->C2.hs_method_9649ffcc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_9649ffcc((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -103,7 +103,7 @@ public sealed unsafe partial class PacketObserver : global::System.IDisposable
 
     public static PacketObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketObserver arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_94068e9f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_94068e9f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -127,7 +127,7 @@ public sealed unsafe partial class PacketObserver : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C2.hs_method_0de6b7bf((void*)__hosihikari_shim_handle, (void*)source.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C3.hs_method_0de6b7bf((void*)__hosihikari_shim_handle, (void*)source.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -146,29 +146,29 @@ public sealed unsafe partial class PacketObserver : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C2.hs_method_32d39784((void*)__hosihikari_shim_handle, (void*)target.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C3.hs_method_32d39784((void*)__hosihikari_shim_handle, (void*)target.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mQueuedStatsInfo_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8278fa56((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8278fa56((void*)__hosihikari_shim_handle);
     }
 
     public void packetReceivedFrom(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, uint size)
     {
-        NativeMethods.TablePtr->C2.hs_method_c4a24500((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, size);
+        NativeMethods.TablePtr->C3.hs_method_c4a24500((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, size);
     }
 
     public void packetSentTo(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier target, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, uint size)
     {
-        NativeMethods.TablePtr->C2.hs_method_594d3c4a((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)packet.Handle, size);
+        NativeMethods.TablePtr->C3.hs_method_594d3c4a((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)packet.Handle, size);
     }
 
     public void reset()
     {
-        NativeMethods.TablePtr->C2.hs_method_8ee2e651((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_8ee2e651((void*)__hosihikari_shim_handle);
     }
 
 
@@ -178,7 +178,7 @@ public sealed unsafe partial class PacketObserver : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c2ee1c2b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c2ee1c2b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

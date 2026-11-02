@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemNotificationEvent : global::System.IDispo
 
     public static ItemNotificationEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemNotificationEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_91759bec((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_91759bec((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class ItemNotificationEvent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_66c02c4f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_66c02c4f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

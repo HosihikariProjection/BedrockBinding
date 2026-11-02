@@ -40,7 +40,7 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
 
     public nint _ctor(int type)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_663dae87((void*)__hosihikari_shim_handle, type);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_663dae87((void*)__hosihikari_shim_handle, type);
     }
 
     public nint _ctor(int type, string message)
@@ -58,23 +58,23 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_630fe180((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            return (nint)NativeMethods.TablePtr->C5.hs_method_630fe180((void*)__hosihikari_shim_handle, type, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_d22813e9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_d22813e9((void*)__hosihikari_shim_handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError OK()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_838bfe23());
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_838bfe23());
     }
 
     public static RTCError Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c2d6263e();
+        var handle = NativeMethods.TablePtr->C5.hs_create_c2d6263e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,7 +85,7 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
 
     public static RTCError Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ebe2fb86((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_ebe2fb86((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -96,7 +96,7 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
 
     public static RTCError Create(int type)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1bb215c2(type);
+        var handle = NativeMethods.TablePtr->C5.hs_create_1bb215c2(type);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -120,7 +120,7 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            var handle = NativeMethods.TablePtr->C4.hs_create_11ef21e6(type, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            var handle = NativeMethods.TablePtr->C5.hs_create_11ef21e6(type, __hs_stringData1, (nuint)__hs_stringByteCount1);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -133,35 +133,35 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7df56b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b166236c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b166236c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk86fbc8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2a1af206((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2a1af206((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc8df31_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c629c716((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_c629c716((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkda46f8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_26b230d4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_26b230d4((void*)__hosihikari_shim_handle);
     }
 
     public nint message()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_85340a5f((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_85340a5f((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C4.hs_method_7e11d4e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RTCError((nint)NativeMethods.TablePtr->C5.hs_method_7e11d4e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -183,7 +183,7 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C4.hs_method_e7c0af36((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C5.hs_method_e7c0af36((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -194,7 +194,7 @@ public sealed unsafe partial class RTCError : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e8773ad2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_e8773ad2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

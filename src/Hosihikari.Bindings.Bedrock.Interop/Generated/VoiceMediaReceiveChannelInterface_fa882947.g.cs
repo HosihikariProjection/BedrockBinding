@@ -52,17 +52,17 @@ public sealed unsafe partial class VoiceMediaReceiveChannelInterface : global::S
 
     public bool GetStats(nint arg0, bool arg1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_567f5c1d((void*)__hosihikari_shim_handle, (void*)arg0, arg1) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_567f5c1d((void*)__hosihikari_shim_handle, (void*)arg0, arg1) != 0;
     }
 
     public int RtcpMode()
     {
-        return NativeMethods.TablePtr->C4.hs_method_8e8b2231((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C5.hs_method_8e8b2231((void*)__hosihikari_shim_handle);
     }
 
     public bool SetDefaultOutputVolume(double arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_b4394084((void*)__hosihikari_shim_handle, arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_b4394084((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::AudioSinkInterface' has no generated wrapper.", false)]
@@ -71,12 +71,12 @@ public sealed unsafe partial class VoiceMediaReceiveChannelInterface : global::S
 
     public bool SetOutputVolume(uint arg0, double arg1)
     {
-        return NativeMethods.TablePtr->C4.hs_method_1ace5bcd((void*)__hosihikari_shim_handle, arg0, arg1) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_1ace5bcd((void*)__hosihikari_shim_handle, arg0, arg1) != 0;
     }
 
     public void SetPlayout(bool arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_8eca5273((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_8eca5273((void*)__hosihikari_shim_handle, arg0);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'webrtc::AudioSinkInterface' has no generated wrapper.", false)]
@@ -85,27 +85,27 @@ public sealed unsafe partial class VoiceMediaReceiveChannelInterface : global::S
 
     public void SetReceiveNackEnabled(bool arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_46a2e70d((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_46a2e70d((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void SetReceiveNonSenderRttEnabled(bool arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_5f8495c7((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_5f8495c7((void*)__hosihikari_shim_handle, arg0);
     }
 
     public bool SetReceiverParameters(nint arg0)
     {
-        return NativeMethods.TablePtr->C4.hs_method_092b3cb3((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_092b3cb3((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     public void SetRtcpMode(int arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_c26f5b6f((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C5.hs_method_c26f5b6f((void*)__hosihikari_shim_handle, arg0);
     }
 
     public static VoiceMediaReceiveChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceMediaReceiveChannelInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_fd274c6f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_fd274c6f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -121,7 +121,7 @@ public sealed unsafe partial class VoiceMediaReceiveChannelInterface : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_fa882947((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_fa882947((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

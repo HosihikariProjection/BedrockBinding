@@ -40,12 +40,12 @@ public sealed unsafe partial class PermissionsHandler : global::System.IDisposab
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_106370e9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_106370e9((void*)__hosihikari_shim_handle);
     }
 
     public static PermissionsHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.PermissionsHandler arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5234245f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_5234245f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,30 +56,30 @@ public sealed unsafe partial class PermissionsHandler : global::System.IDisposab
 
     public void addSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        NativeMethods.TablePtr->C2.hs_method_a615bd79((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+        NativeMethods.TablePtr->C3.hs_method_a615bd79((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
     public bool loadSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        return NativeMethods.TablePtr->C2.hs_method_d3266b3e((void*)__hosihikari_shim_handle, (void*)tag.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_d3266b3e((void*)__hosihikari_shim_handle, (void*)tag.Handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientPlayerPermissionsPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_472621cd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_472621cd((void*)__hosihikari_shim_handle);
     }
 
     public byte mCommandPermissions
     {
-        get => NativeMethods.TablePtr->C2.hs_get_d9d020e2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_d9d020e2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d9d020e2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d9d020e2((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mPlayerPermissions
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1a97871b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_1a97871b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1a97871b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1a97871b((void*)__hosihikari_shim_handle, value);
     }
 
     public static sbyte playerPermissionLevelFromString(string s)
@@ -97,13 +97,13 @@ public sealed unsafe partial class PermissionsHandler : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(s, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C2.hs_method_7e0de78a(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            return NativeMethods.TablePtr->C3.hs_method_7e0de78a(__hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public static string playerPermissionLevelToString(nint permission)
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_dc0cf691((void*)permission);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_dc0cf691((void*)permission);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -114,7 +114,7 @@ public sealed unsafe partial class PermissionsHandler : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_396dd70d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_396dd70d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

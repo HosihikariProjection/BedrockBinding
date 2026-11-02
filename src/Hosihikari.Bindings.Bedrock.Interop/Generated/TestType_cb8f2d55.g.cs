@@ -40,7 +40,7 @@ public sealed unsafe partial class TestType : global::System.IDisposable
 
     public static TestType Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.TestType arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_671d44e1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_671d44e1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class TestType : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_8523f600((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C5.hs_method_8523f600((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C4.hs_method_2088a887((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_2088a887((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class TestType : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cb8f2d55((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_cb8f2d55((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

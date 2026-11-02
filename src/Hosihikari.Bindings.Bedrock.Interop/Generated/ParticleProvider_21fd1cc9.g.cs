@@ -40,7 +40,7 @@ public sealed unsafe partial class ParticleProvider : global::System.IDisposable
 
     public void _addSprintParticleEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor mob, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        NativeMethods.TablePtr->C2.hs_method_f20914fb((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)region.Handle, (void*)random.Handle);
+        NativeMethods.TablePtr->C3.hs_method_f20914fb((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)region.Handle, (void*)random.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,43 +49,43 @@ public sealed unsafe partial class ParticleProvider : global::System.IDisposable
 
     public void addSprintParticleEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor mob, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        NativeMethods.TablePtr->C2.hs_method_6e528a94((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)region.Handle, (void*)random.Handle);
+        NativeMethods.TablePtr->C3.hs_method_6e528a94((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)region.Handle, (void*)random.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAddBiomeTintedParticleEffectPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8149e3ad((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8149e3ad((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAddBreakingItemParticleEffectPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a0ab9bef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a0ab9bef((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAddTerrainParticleEffectPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a4b11ad5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a4b11ad5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAddTerrainSlideEffectPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_93a3c15b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_93a3c15b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParticleSystemInterface_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1c196e7c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1c196e7c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSendServerLegacyParticlePublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_22481c38((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_22481c38((void*)__hosihikari_shim_handle);
     }
 
 
@@ -95,7 +95,7 @@ public sealed unsafe partial class ParticleProvider : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_21fd1cc9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_21fd1cc9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

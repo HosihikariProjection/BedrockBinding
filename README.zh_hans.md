@@ -15,7 +15,7 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 ## 当前状态
 
 - Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,146 个生成的 C# 文件。
-- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 142,026 个函数。
+- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 154,354 个函数。
 - 覆盖：`win-x64-server` 配置绑定 12,080 个声明与 101,068 个成员。
 - `scripts/headers-26.51.txt` 列出解析的 5,199 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
 
@@ -28,6 +28,7 @@ shim 以 `--symbol-dispatch --resolve-by-name` 模式发射。支持的 ABI：
 - 按值返回的签名省略默认模板实参时（如 `Bedrock::Result<T>`）会归一为已记录的特化 `Bedrock::Result<T, std::error_code>`；`GameplayHandlerResult<T>` 等模板返回由第二遍前端实例化，调用返回拥有型包装并可正常 `Dispose`。模板只有在头文件用数据成员或基类证明布局时才作为按值返回；重建的空壳会被拒绝，而不是按 1 字节定尺；
 - `leveldb::Status` 返回来自载体固定的 leveldb 1.23 包，`regenerate.ps1` 把它作为外部根传给前端；枚举模板实参（`Bedrock::Result<T, ActorValidationError>`）与实参完整的 record 返回（`StreamableAssetSource`）由同一份 sizeof 预置实例化；
 - 虚方法（含纯虚声明）按 IR 记录的槽位经对象 vftable 调用；纯虚方法没有实现符号，槽位是唯一路径；非纯虚方法优先走符号，符号未导出时回退到同一槽位（leveldb 与 WebRTC 的覆盖方法即是如此）；`Bedrock::Result` 特化在 1.26.51.1 中没有析构符号，`Dispose` 会释放结果缓冲，但不会释放错误载荷；
+- 位域按存储位读写：bool、整数与枚举位域投影为标量属性，继承来的标志会出现在每个派生类上；
 - 类型未投影的字段以只读 `nint` 暴露字段存储地址，属性名为 `<field>_Address`；
 - `optional_ref<T>` 参数与返回使用存在标志；
 - `std::vector<T>` 参数与按值返回，元素支持标量/枚举、字符串、单层指针（以 `nint[]` 传入），或 layout 已知且平凡析构的 record；引用与指针 vector 返回仍是借用句柄；

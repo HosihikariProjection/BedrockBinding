@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerInteractionSystem : global::System.IDis
 
     public static PlayerInteractionSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractionSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4f2e3dc9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4f2e3dc9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class PlayerInteractionSystem : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mInteractionMappings_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_94de1fc7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_94de1fc7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class PlayerInteractionSystem : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_340a4443((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_340a4443((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

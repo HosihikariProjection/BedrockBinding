@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerPreMobTravelComponent : global::System.
 
     public static PlayerPreMobTravelComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerPreMobTravelComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_970b3c7c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_970b3c7c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class PlayerPreMobTravelComponent : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9215e9a6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9215e9a6((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class PlayerPreMobTravelComponent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a42c7bd1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a42c7bd1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

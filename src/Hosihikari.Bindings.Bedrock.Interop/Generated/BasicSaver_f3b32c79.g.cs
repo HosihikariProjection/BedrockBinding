@@ -40,12 +40,12 @@ public sealed unsafe partial class BasicSaver : global::System.IDisposable
 
     public nint mReflectionCtx
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d5c7ae3f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_d5c7ae3f((void*)__hosihikari_shim_handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_a79fa71b((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_a79fa71b((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -54,7 +54,7 @@ public sealed unsafe partial class BasicSaver : global::System.IDisposable
 
     public static BasicSaver Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSaver arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f901b999((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_f901b999((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,13 +66,13 @@ public sealed unsafe partial class BasicSaver : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mConfig_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b657ef92((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b657ef92((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSchema_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_16658a98((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_16658a98((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'entt::meta_handle' is not a known bindable declaration.", false)]
@@ -86,7 +86,7 @@ public sealed unsafe partial class BasicSaver : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f3b32c79((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_f3b32c79((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

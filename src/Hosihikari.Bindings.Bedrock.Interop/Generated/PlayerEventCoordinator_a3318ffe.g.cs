@@ -41,43 +41,43 @@ public sealed unsafe partial class PlayerEventCoordinator : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mEventsToProcess_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_bb2c8bfe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bb2c8bfe((void*)__hosihikari_shim_handle);
     }
 
     public bool mHasPendingRegistrations
     {
-        get => NativeMethods.TablePtr->C2.hs_get_597c429c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_597c429c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_597c429c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_597c429c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mListeners_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4f5aeb55((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4f5aeb55((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingRegistrations_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_13fd09fd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_13fd09fd((void*)__hosihikari_shim_handle);
     }
 
     public uint mThreadCheckIndex
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6a0b7784((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_6a0b7784((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6a0b7784((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_6a0b7784((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mThreadId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_70c3fa33((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_70c3fa33((void*)__hosihikari_shim_handle);
     }
 
     public bool mThreadIdInitialized
     {
-        get => NativeMethods.TablePtr->C2.hs_get_d4e812b5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_d4e812b5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d4e812b5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_d4e812b5((void*)__hosihikari_shim_handle, value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -87,7 +87,7 @@ public sealed unsafe partial class PlayerEventCoordinator : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerGameplayHandler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9ac0306b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9ac0306b((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EventRef<MutablePlayerGameplayEvent<CoordinatorResult>>' is not a known bindable declaration.", false)]
@@ -96,7 +96,7 @@ public sealed unsafe partial class PlayerEventCoordinator : global::System.IDisp
 
     public void sendPlayerKineticDamageDealt(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID target, nint dealKinematicDamageComponent)
     {
-        NativeMethods.TablePtr->C2.hs_method_fe20befc((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)target.Handle, (void*)dealKinematicDamageComponent);
+        NativeMethods.TablePtr->C3.hs_method_fe20befc((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)target.Handle, (void*)dealKinematicDamageComponent);
     }
 
 
@@ -106,7 +106,7 @@ public sealed unsafe partial class PlayerEventCoordinator : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a3318ffe((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a3318ffe((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

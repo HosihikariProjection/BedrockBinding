@@ -40,17 +40,17 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_661164bd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_661164bd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_2a913c3d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_2a913c3d((void*)__hosihikari_shim_handle);
     }
 
     public static ActorDefinitionTrigger Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a3e2bbd1();
+        var handle = NativeMethods.TablePtr->C4.hs_create_a3e2bbd1();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
 
     public static ActorDefinitionTrigger Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c503455f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_c503455f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,35 +72,35 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_8864e352((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_8864e352((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0cc0016e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0cc0016e((void*)__hosihikari_shim_handle);
     }
 
     public short mTarget
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e74f5b60((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e74f5b60((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_e74f5b60((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_e74f5b60((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ec6d065a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ec6d065a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger((nint)NativeMethods.TablePtr->C3.hs_method_98c25108((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger((nint)NativeMethods.TablePtr->C4.hs_method_98c25108((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_120.ActorDefinitionTrigger arg0)
     {
-        return NativeMethods.TablePtr->C3.hs_method_bcb116e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_bcb116e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
     }
 
 
@@ -110,7 +110,7 @@ public sealed unsafe partial class ActorDefinitionTrigger : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_3867839b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_3867839b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

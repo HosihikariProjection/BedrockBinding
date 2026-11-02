@@ -40,17 +40,17 @@ public sealed unsafe partial class CameraPreset : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.CameraPreset arg0)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_089b53f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_089b53f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_ccab4f95((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_ccab4f95((void*)__hosihikari_shim_handle);
     }
 
     public static CameraPreset Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_77ba409b();
+        var handle = NativeMethods.TablePtr->C4.hs_create_77ba409b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class CameraPreset : global::System.IDisposable
 
     public static CameraPreset Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.CameraPreset arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2ece11f9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_2ece11f9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,139 +72,139 @@ public sealed unsafe partial class CameraPreset : global::System.IDisposable
 
     public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_d6500d2c((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_d6500d2c((void*)ctx.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAimAssist_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7daf70b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7daf70b6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCameraRotationSpeed_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_91ebf712((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_91ebf712((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContinueTargeting_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_aa651f2c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_aa651f2c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlScheme_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_95eff418((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_95eff418((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7ebf688b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7ebf688b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHorizontalRotationLimit_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f64d38a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f64d38a0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInheritFrom_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f4baf9f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f4baf9f5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mListener_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d43d813f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d43d813f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6357c2f4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6357c2f4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerEffects_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_90a9e996((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_90a9e996((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosX_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2a1c2c07((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2a1c2c07((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosY_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c2706b8d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c2706b8d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosZ_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6a4ccb35((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6a4ccb35((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRadius_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_817f0d36((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_817f0d36((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRotX_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_24fa61db((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_24fa61db((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRotY_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_066d0799((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_066d0799((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSnapToTarget_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b8563c4b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b8563c4b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTrackingRadius_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f8fd6a2b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f8fd6a2b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVerticalRotationLimit_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_53002272((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_53002272((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mViewOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_01eaec0a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_01eaec0a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mYawLimitMax_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c03941a9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c03941a9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mYawLimitMin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9c3d895a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9c3d895a((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -213,7 +213,7 @@ public sealed unsafe partial class CameraPreset : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.CameraPreset operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.CameraPreset arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.CameraPreset((nint)NativeMethods.TablePtr->C3.hs_method_25650d56((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.CameraPreset((nint)NativeMethods.TablePtr->C4.hs_method_25650d56((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -223,7 +223,7 @@ public sealed unsafe partial class CameraPreset : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f0c7f9ea((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_f0c7f9ea((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

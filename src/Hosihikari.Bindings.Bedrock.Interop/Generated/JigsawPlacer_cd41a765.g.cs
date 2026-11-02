@@ -40,7 +40,7 @@ public sealed unsafe partial class JigsawPlacer : global::System.IDisposable
 
     public static JigsawPlacer Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_29a44966();
+        var handle = NativeMethods.TablePtr->C5.hs_create_29a44966();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class JigsawPlacer : global::System.IDisposable
 
     public static JigsawPlacer Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ee011a87((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_ee011a87((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,66 +63,66 @@ public sealed unsafe partial class JigsawPlacer : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkAccessor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ccda3491((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_ccda3491((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExpansionCalc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_18efec2e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_18efec2e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExpansionEval_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1728af2a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_1728af2a((void*)__hosihikari_shim_handle);
     }
 
     public int mMaxDepth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_486582f6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_486582f6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_486582f6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_486582f6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPieces_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f7af5b8e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f7af5b8e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlacementSpaces_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_13e6264e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_13e6264e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlacingQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_445df9c4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_445df9c4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPoolAliasLookup_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a14d663a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a14d663a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPools_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e2fcb249((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e2fcb249((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRandom_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_04bc351a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_04bc351a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer((nint)NativeMethods.TablePtr->C4.hs_method_e0f40b66((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawPlacer((nint)NativeMethods.TablePtr->C5.hs_method_e0f40b66((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -132,7 +132,7 @@ public sealed unsafe partial class JigsawPlacer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cd41a765((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_cd41a765((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

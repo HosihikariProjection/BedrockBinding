@@ -40,7 +40,7 @@ public sealed unsafe partial class InsideColumnData : global::System.IDisposable
 
     public static InsideColumnData Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_6e154161();
+        var handle = NativeMethods.TablePtr->C2.hs_create_6e154161();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class InsideColumnData : global::System.IDisposable
 
     public static InsideColumnData Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.InsideColumnData arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_94bfc833((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_94bfc833((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class InsideColumnData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk38a401_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2ab97f20((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2ab97f20((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkada1bd_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d9794e4c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d9794e4c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.InsideColumnData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.InsideColumnData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.InsideColumnData((nint)NativeMethods.TablePtr->C1.hs_method_056b955f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.InsideColumnData((nint)NativeMethods.TablePtr->C2.hs_method_056b955f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class InsideColumnData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ef75c41e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ef75c41e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

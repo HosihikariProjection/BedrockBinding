@@ -40,12 +40,12 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Read(ulong offset, ulong n, nint result, nint scratch)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_3aae37c0((void*)__hosihikari_shim_handle, offset, n, (void*)result, (void*)scratch));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_3aae37c0((void*)__hosihikari_shim_handle, offset, n, (void*)result, (void*)scratch));
     }
 
     public static InMemoryRandomAccessFile Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_5fd03480();
+        var handle = NativeMethods.TablePtr->C2.hs_create_5fd03480();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
 
     public static InMemoryRandomAccessFile Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_dae8c97b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_dae8c97b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,18 +67,18 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Read(ulong offset, ulong n, nint result, nint scratch)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_d5b43e46((void*)__hosihikari_shim_handle, offset, n, (void*)result, (void*)scratch));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_d5b43e46((void*)__hosihikari_shim_handle, offset, n, (void*)result, (void*)scratch));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk59aba8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d87e1bf4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d87e1bf4((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile((nint)NativeMethods.TablePtr->C1.hs_method_f297abbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryRandomAccessFile((nint)NativeMethods.TablePtr->C2.hs_method_f297abbc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -88,7 +88,7 @@ public sealed unsafe partial class InMemoryRandomAccessFile : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_39ec818b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_39ec818b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

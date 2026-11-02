@@ -40,12 +40,12 @@ public sealed unsafe partial class DtlsTransportInterface : global::System.IDisp
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_ebf96ae5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_ebf96ae5((void*)__hosihikari_shim_handle);
     }
 
     public static DtlsTransportInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DtlsTransportInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_df49d3d6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_df49d3d6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,12 +60,12 @@ public sealed unsafe partial class DtlsTransportInterface : global::System.IDisp
 
     public void RegisterObserver(nint observer)
     {
-        NativeMethods.TablePtr->C4.hs_method_d712a0a8((void*)__hosihikari_shim_handle, (void*)observer);
+        NativeMethods.TablePtr->C5.hs_method_d712a0a8((void*)__hosihikari_shim_handle, (void*)observer);
     }
 
     public void UnregisterObserver()
     {
-        NativeMethods.TablePtr->C4.hs_method_001f282f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_001f282f((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::IceTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -79,7 +79,7 @@ public sealed unsafe partial class DtlsTransportInterface : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a3b4deee((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_a3b4deee((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

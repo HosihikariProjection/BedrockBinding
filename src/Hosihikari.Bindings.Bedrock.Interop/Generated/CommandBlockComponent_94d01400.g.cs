@@ -40,7 +40,7 @@ public sealed unsafe partial class CommandBlockComponent : global::System.IDispo
 
     public static CommandBlockComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_d8df094d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d8df094d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,30 +51,30 @@ public sealed unsafe partial class CommandBlockComponent : global::System.IDispo
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag entityTag)
     {
-        NativeMethods.TablePtr->C0.hs_method_d75cc92d((void*)__hosihikari_shim_handle, (void*)entityTag.Handle);
+        NativeMethods.TablePtr->C1.hs_method_d75cc92d((void*)__hosihikari_shim_handle, (void*)entityTag.Handle);
     }
 
     public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
     {
-        NativeMethods.TablePtr->C0.hs_method_96e3c259((void*)__hosihikari_shim_handle, (void*)owner.Handle);
+        NativeMethods.TablePtr->C1.hs_method_96e3c259((void*)__hosihikari_shim_handle, (void*)owner.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBaseCommandBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_b57304c6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b57304c6((void*)__hosihikari_shim_handle);
     }
 
     public int mCurrentTickCount
     {
-        get => NativeMethods.TablePtr->C0.hs_get_a1ce83e0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_a1ce83e0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_a1ce83e0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_a1ce83e0((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mTicking
     {
-        get => NativeMethods.TablePtr->C0.hs_get_78482218((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_78482218((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_78482218((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_78482218((void*)__hosihikari_shim_handle, value);
     }
 
     public void onCommandBlockUpdate(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, string command, bool trackOutput, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString name, int tickDelay, bool executeOnFirstTick)
@@ -92,13 +92,13 @@ public sealed unsafe partial class CommandBlockComponent : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(command, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C0.hs_method_ff7403ae((void*)__hosihikari_shim_handle, (void*)owner.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trackOutput, (void*)name.Handle, tickDelay, executeOnFirstTick);
+            NativeMethods.TablePtr->C1.hs_method_ff7403ae((void*)__hosihikari_shim_handle, (void*)owner.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trackOutput, (void*)name.Handle, tickDelay, executeOnFirstTick);
         }
     }
 
     public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag entityTag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
     {
-        NativeMethods.TablePtr->C0.hs_method_e9c9c484((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)entityTag.Handle, (void*)dataLoadHelper.Handle);
+        NativeMethods.TablePtr->C1.hs_method_e9c9c484((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)entityTag.Handle, (void*)dataLoadHelper.Handle);
     }
 
     public void setLastOutput(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, string lastOutput)
@@ -116,7 +116,7 @@ public sealed unsafe partial class CommandBlockComponent : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(lastOutput, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C0.hs_method_a29c8a5f((void*)__hosihikari_shim_handle, (void*)owner.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C1.hs_method_a29c8a5f((void*)__hosihikari_shim_handle, (void*)owner.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -127,7 +127,7 @@ public sealed unsafe partial class CommandBlockComponent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_94d01400((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_94d01400((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

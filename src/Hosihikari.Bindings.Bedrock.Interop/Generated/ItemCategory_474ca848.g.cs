@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemCategory : global::System.IDisposable
 
     public static void bindCreativeItemCategoryType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        NativeMethods.TablePtr->C3.hs_method_f73c483f((void*)ctx.Handle);
+        NativeMethods.TablePtr->C4.hs_method_f73c483f((void*)ctx.Handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class ItemCategory : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_474ca848((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_474ca848((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

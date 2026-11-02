@@ -40,12 +40,12 @@ public sealed unsafe partial class InsideBlockEventMap : global::System.IDisposa
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_3f24d70f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_3f24d70f((void*)__hosihikari_shim_handle);
     }
 
     public static InsideBlockEventMap Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBlockEventMap arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2703efdc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2703efdc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,49 +57,49 @@ public sealed unsafe partial class InsideBlockEventMap : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7dddd8b5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7dddd8b5((void*)__hosihikari_shim_handle);
     }
 
     public bool mCurrentlyInside
     {
-        get => NativeMethods.TablePtr->C1.hs_get_d8ef1b67((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_d8ef1b67((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_d8ef1b67((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_d8ef1b67((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIgnoreStates
     {
-        get => NativeMethods.TablePtr->C1.hs_get_340f6d76((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_340f6d76((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_340f6d76((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_340f6d76((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnEnteredBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d1062345((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d1062345((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnExitedBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3d770704((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3d770704((void*)__hosihikari_shim_handle);
     }
 
     public bool mWasInside
     {
-        get => NativeMethods.TablePtr->C1.hs_get_c348ec93((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_c348ec93((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_c348ec93((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_c348ec93((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mWatchEnter
     {
-        get => NativeMethods.TablePtr->C1.hs_get_b6d849f3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_b6d849f3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_b6d849f3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_b6d849f3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mWatchExit
     {
-        get => NativeMethods.TablePtr->C1.hs_get_2d6ab080((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_2d6ab080((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2d6ab080((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_2d6ab080((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -109,7 +109,7 @@ public sealed unsafe partial class InsideBlockEventMap : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_31b8d522((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_31b8d522((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

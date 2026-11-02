@@ -40,7 +40,7 @@ public sealed unsafe partial class ObserverInterface : global::System.IDisposabl
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_fa2d4943((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_fa2d4943((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -49,7 +49,7 @@ public sealed unsafe partial class ObserverInterface : global::System.IDisposabl
 
     public static ObserverInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ObserverInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_bfdeb090((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_bfdeb090((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +60,7 @@ public sealed unsafe partial class ObserverInterface : global::System.IDisposabl
 
     public void OnChanged()
     {
-        NativeMethods.TablePtr->C4.hs_method_a7f090c8((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_a7f090c8((void*)__hosihikari_shim_handle);
     }
 
 
@@ -70,7 +70,7 @@ public sealed unsafe partial class ObserverInterface : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ed28429e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_ed28429e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

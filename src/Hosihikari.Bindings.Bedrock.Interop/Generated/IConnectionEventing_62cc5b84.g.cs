@@ -40,7 +40,7 @@ public sealed unsafe partial class IConnectionEventing : global::System.IDisposa
 
     public static IConnectionEventing Create(global::Hosihikari.Bindings.Bedrock.Interop.IConnectionEventing arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_71e31cba((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_71e31cba((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IConnectionEventing : global::System.IDisposa
 
     public void fireEventOnSuccessfulClientLogin(global::Hosihikari.Bindings.Bedrock.Interop.Level? level)
     {
-        NativeMethods.TablePtr->C1.hs_method_0c366b1f((void*)__hosihikari_shim_handle, (void*)(level?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_0c366b1f((void*)__hosihikari_shim_handle, (void*)(level?.Handle ?? 0));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -65,7 +65,7 @@ public sealed unsafe partial class IConnectionEventing : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_62cc5b84((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_62cc5b84((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

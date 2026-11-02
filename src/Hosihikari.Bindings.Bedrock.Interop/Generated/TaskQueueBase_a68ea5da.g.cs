@@ -40,13 +40,13 @@ public sealed unsafe partial class TaskQueueBase : global::System.IDisposable
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase? Current()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d1b45e8d();
+        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_d1b45e8d();
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase((nint)__hs_handle, false) : null;
     }
 
     public void Delete()
     {
-        NativeMethods.TablePtr->C4.hs_method_e6a2529f((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_e6a2529f((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void () &&>' is not supported.", false)]
@@ -71,7 +71,7 @@ public sealed unsafe partial class TaskQueueBase : global::System.IDisposable
 
     public static TaskQueueBase Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_de109cd4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_de109cd4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,7 +87,7 @@ public sealed unsafe partial class TaskQueueBase : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a68ea5da((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_a68ea5da((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class DeleteFileEntry : global::System.IDisposable
 
     public static DeleteFileEntry Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_726792d7();
+        var handle = NativeMethods.TablePtr->C4.hs_create_726792d7();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class DeleteFileEntry : global::System.IDisposable
 
     public static DeleteFileEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv_Nested.DeleteFileEntry arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_386e8b0c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_386e8b0c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class DeleteFileEntry : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk67b7f6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e65445f7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e65445f7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka98c22_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_eb56cba8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_eb56cba8((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv_Nested.DeleteFileEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv_Nested.DeleteFileEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv_Nested.DeleteFileEntry((nint)NativeMethods.TablePtr->C3.hs_method_6e5fcf19((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotEnv_Nested.DeleteFileEntry((nint)NativeMethods.TablePtr->C4.hs_method_6e5fcf19((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class DeleteFileEntry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_1d568c52((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_1d568c52((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

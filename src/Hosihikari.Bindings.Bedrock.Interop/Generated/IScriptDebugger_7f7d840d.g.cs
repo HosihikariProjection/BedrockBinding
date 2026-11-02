@@ -53,28 +53,28 @@ public sealed unsafe partial class IScriptDebugger
         global::System.Text.Encoding.UTF8.GetBytes(host, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C1.hs_method_1f136135((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port) != 0;
+            return NativeMethods.TablePtr->C2.hs_method_1f136135((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port) != 0;
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings getSettings()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings((nint)NativeMethods.TablePtr->C1.hs_method_5c35bc3a((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerSettings((nint)NativeMethods.TablePtr->C2.hs_method_5c35bc3a((void*)__hosihikari_shim_handle), false);
     }
 
     public bool listen(ushort port)
     {
-        return NativeMethods.TablePtr->C1.hs_method_0c6e2d23((void*)__hosihikari_shim_handle, port) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_0c6e2d23((void*)__hosihikari_shim_handle, port) != 0;
     }
 
     public void startProfiler()
     {
-        NativeMethods.TablePtr->C1.hs_method_0002543d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_0002543d((void*)__hosihikari_shim_handle);
     }
 
     public void stop()
     {
-        NativeMethods.TablePtr->C1.hs_method_cee7cf8d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_cee7cf8d((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'Core::Path' is not supported.", false)]

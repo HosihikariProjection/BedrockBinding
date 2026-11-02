@@ -40,7 +40,7 @@ public sealed unsafe partial class OnActorEnterVolumeDefinition : global::System
 
     public static OnActorEnterVolumeDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b1fbc196();
+        var handle = NativeMethods.TablePtr->C3.hs_create_b1fbc196();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class OnActorEnterVolumeDefinition : global::System
 
     public static OnActorEnterVolumeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.OnActorEnterVolumeDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9d47829e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9d47829e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class OnActorEnterVolumeDefinition : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk62c333_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3223b717((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3223b717((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.OnActorEnterVolumeDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.OnActorEnterVolumeDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.OnActorEnterVolumeDefinition((nint)NativeMethods.TablePtr->C2.hs_method_1e14fa38((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.OnActorEnterVolumeDefinition((nint)NativeMethods.TablePtr->C3.hs_method_1e14fa38((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class OnActorEnterVolumeDefinition : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_60bbbecc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_60bbbecc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

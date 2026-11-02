@@ -40,27 +40,27 @@ public sealed unsafe partial class LocalRegistry : global::System.IDisposable
 
     public nint mAirBlock
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_76828c47((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_76828c47((void*)__hosihikari_shim_handle);
     }
 
     public nint mCrackedStoneBrick
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a7ba3ebc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a7ba3ebc((void*)__hosihikari_shim_handle);
     }
 
     public nint mInfestedStoneBrick
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a9cca324((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a9cca324((void*)__hosihikari_shim_handle);
     }
 
     public nint mMossyStoneBrick
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e90893fe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e90893fe((void*)__hosihikari_shim_handle);
     }
 
     public nint mStoneBrick
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_bb08886e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_bb08886e((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -69,7 +69,7 @@ public sealed unsafe partial class LocalRegistry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_46af6dab((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_46af6dab((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

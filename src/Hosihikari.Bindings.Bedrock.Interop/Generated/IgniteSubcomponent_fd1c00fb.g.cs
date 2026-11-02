@@ -40,27 +40,27 @@ public sealed unsafe partial class IgniteSubcomponent : global::System.IDisposab
 
     public void _doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent arg1)
     {
-        NativeMethods.TablePtr->C1.hs_method_27a03e1a((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C2.hs_method_27a03e1a((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
     }
 
     public nint _getName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_c3035a73((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_c3035a73((void*)__hosihikari_shim_handle);
     }
 
     public void _initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_99174d6c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C2.hs_method_99174d6c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_67ca9030((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C2.hs_method_67ca9030((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public static IgniteSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.IgniteSubcomponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_dfeba96f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_dfeba96f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,22 +71,22 @@ public sealed unsafe partial class IgniteSubcomponent : global::System.IDisposab
 
     public void doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent arg1)
     {
-        NativeMethods.TablePtr->C1.hs_method_dccd4f34((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C2.hs_method_dccd4f34((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
     }
 
     public nint getName()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_efb28ff7((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_efb28ff7((void*)__hosihikari_shim_handle);
     }
 
     public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_eae5fb1a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C2.hs_method_eae5fb1a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_47fd6abd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C2.hs_method_47fd6abd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
 
@@ -96,7 +96,7 @@ public sealed unsafe partial class IgniteSubcomponent : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_fd1c00fb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_fd1c00fb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

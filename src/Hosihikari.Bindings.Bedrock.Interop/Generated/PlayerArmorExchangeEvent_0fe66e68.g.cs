@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerArmorExchangeEvent : global::System.IDi
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_84ef4c7c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_84ef4c7c((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerArmorExchangeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerArmorExchangeEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a38262e4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a38262e4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,32 +56,32 @@ public sealed unsafe partial class PlayerArmorExchangeEvent : global::System.IDi
 
     public int mArmorSlot
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1df8ea4f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_1df8ea4f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1df8ea4f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1df8ea4f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_84be489d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_84be489d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOldItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6565e040((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6565e040((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f4916c6c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f4916c6c((void*)__hosihikari_shim_handle);
     }
 
     public int mTriggeredLocation
     {
-        get => NativeMethods.TablePtr->C2.hs_get_cbed8fe1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_cbed8fe1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_cbed8fe1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_cbed8fe1((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -91,7 +91,7 @@ public sealed unsafe partial class PlayerArmorExchangeEvent : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0fe66e68((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0fe66e68((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

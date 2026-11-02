@@ -40,42 +40,42 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Append(nint data)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_077fa0f8((void*)__hosihikari_shim_handle, (void*)data));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_077fa0f8((void*)__hosihikari_shim_handle, (void*)data));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Close()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_b28b4a30((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_b28b4a30((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Flush()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_f5c25adc((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_f5c25adc((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Sync()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_1d6a2e1c((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_1d6a2e1c((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Append(nint data)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_e6770b9c((void*)__hosihikari_shim_handle, (void*)data));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_e6770b9c((void*)__hosihikari_shim_handle, (void*)data));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Close()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_48d2bf71((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_48d2bf71((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Flush()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_16113c26((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_16113c26((void*)__hosihikari_shim_handle));
     }
 
     public static SnapshotWritableFile Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_bc083aa5();
+        var handle = NativeMethods.TablePtr->C4.hs_create_bc083aa5();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -86,7 +86,7 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
 
     public static SnapshotWritableFile Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_361b0fb0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_361b0fb0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -97,24 +97,24 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Sync()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C3.hs_method_7aff401b((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C4.hs_method_7aff401b((void*)__hosihikari_shim_handle));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3809e9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_54e2322e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_54e2322e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd25792_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4634fa3e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4634fa3e((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile((nint)NativeMethods.TablePtr->C3.hs_method_603d5326((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotWritableFile((nint)NativeMethods.TablePtr->C4.hs_method_603d5326((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -124,7 +124,7 @@ public sealed unsafe partial class SnapshotWritableFile : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c61c4d1a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c61c4d1a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

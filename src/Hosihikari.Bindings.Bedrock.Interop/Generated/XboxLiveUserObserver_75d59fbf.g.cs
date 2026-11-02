@@ -40,8 +40,8 @@ public sealed unsafe partial class XboxLiveUserObserver : global::System.IDispos
 
     public nint mpSubject
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_add98d1d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_add98d1d((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_add98d1d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_add98d1d((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void onXboxUserBlocked(string xuid)
@@ -59,7 +59,7 @@ public sealed unsafe partial class XboxLiveUserObserver : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C3.hs_method_8ab30983((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C4.hs_method_8ab30983((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -78,7 +78,7 @@ public sealed unsafe partial class XboxLiveUserObserver : global::System.IDispos
         global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C3.hs_method_d343d217((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C4.hs_method_d343d217((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -89,7 +89,7 @@ public sealed unsafe partial class XboxLiveUserObserver : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_75d59fbf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_75d59fbf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

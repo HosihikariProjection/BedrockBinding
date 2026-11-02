@@ -40,7 +40,7 @@ public sealed unsafe partial class BasicContextOwner : global::System.IDisposabl
 
     public nint mReflectionCtx
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e5e86c95((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e5e86c95((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class BasicContextOwner : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c32f846e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_c32f846e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,12 +40,12 @@ public sealed unsafe partial class PlaySoundReactionComponent : global::System.I
 
     public void __onEnd(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction owner, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C2.hs_method_190060e5((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C3.hs_method_190060e5((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
     }
 
     public static PlaySoundReactionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundReactionComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b8b011e4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b8b011e4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,13 +56,13 @@ public sealed unsafe partial class PlaySoundReactionComponent : global::System.I
 
     public void _onEnd(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction owner, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C2.hs_method_02ee7627((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C3.hs_method_02ee7627((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
     }
 
     public uint mSound
     {
-        get => NativeMethods.TablePtr->C2.hs_get_bd1c3efd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_bd1c3efd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bd1c3efd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_bd1c3efd((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -72,7 +72,7 @@ public sealed unsafe partial class PlaySoundReactionComponent : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e6e738bf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e6e738bf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

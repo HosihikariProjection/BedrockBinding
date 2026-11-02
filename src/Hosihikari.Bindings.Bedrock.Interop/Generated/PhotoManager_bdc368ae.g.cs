@@ -52,7 +52,7 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
 
     public static PhotoManager Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c0385a01();
+        var handle = NativeMethods.TablePtr->C3.hs_create_c0385a01();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,12 +67,12 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getPhotoStoragePath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C2.hs_method_b6545d60((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_b6545d60((void*)__hosihikari_shim_handle));
     }
 
     public void createPhotoStorage()
     {
-        NativeMethods.TablePtr->C2.hs_method_f4c4ed59((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_f4c4ed59((void*)__hosihikari_shim_handle);
     }
 
     public void createScreenshotsFolder(string levelId, global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform appPlatform)
@@ -90,7 +90,7 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(levelId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_12c9243b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)appPlatform.Handle);
+            NativeMethods.TablePtr->C3.hs_method_12c9243b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)appPlatform.Handle);
         }
     }
 
@@ -100,31 +100,31 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
 
     public bool mIsClientSide
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0ff0b5cb((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C3.hs_get_0ff0b5cb((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelStorage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2ab0ae99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2ab0ae99((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPhotoStorage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0c4b2239((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0c4b2239((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPictureTakenPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_635b1820((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_635b1820((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScreenshotsFolder_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3905f934((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3905f934((void*)__hosihikari_shim_handle);
     }
 
 
@@ -134,7 +134,7 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_bdc368ae((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_bdc368ae((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

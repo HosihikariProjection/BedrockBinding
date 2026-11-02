@@ -53,13 +53,13 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
         global::System.Text.Encoding.UTF8.GetBytes(objective, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return NativeMethods.TablePtr->C2.hs_method_12409c1e((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, score);
+            return NativeMethods.TablePtr->C3.hs_method_12409c1e((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, score);
         }
     }
 
     public static PlayerScoreboardEventListener Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardEventListener arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_dbc9918e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_dbc9918e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,13 +70,13 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SubscribedObjectives getPlayerSubscriptions(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubscribedObjectives((nint)NativeMethods.TablePtr->C2.hs_method_f2333362((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)player.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubscribedObjectives((nint)NativeMethods.TablePtr->C3.hs_method_f2333362((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)player.Handle), false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubscribedObjectives_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0bb2cb7a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0bb2cb7a((void*)__hosihikari_shim_handle);
     }
 
     public int onScoreChanged(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id, string objective, int score)
@@ -94,7 +94,7 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
         global::System.Text.Encoding.UTF8.GetBytes(objective, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return NativeMethods.TablePtr->C2.hs_method_c1a0c58c((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, score);
+            return NativeMethods.TablePtr->C3.hs_method_c1a0c58c((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, score);
         }
     }
 
@@ -105,7 +105,7 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0d8c9cff((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0d8c9cff((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;
