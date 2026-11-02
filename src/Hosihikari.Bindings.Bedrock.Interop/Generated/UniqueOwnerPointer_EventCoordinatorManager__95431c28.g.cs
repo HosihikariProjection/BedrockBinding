@@ -53,9 +53,16 @@ public sealed unsafe partial class UniqueOwnerPointer_EventCoordinatorManager_ :
     public static UniqueOwnerPointer_EventCoordinatorManager_ Create_3c63c2fe(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static UniqueOwnerPointer_EventCoordinatorManager_ Create_f3497457(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public static UniqueOwnerPointer_EventCoordinatorManager_ Create_f3497457()
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_f3497457();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new UniqueOwnerPointer_EventCoordinatorManager_((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static UniqueOwnerPointer_EventCoordinatorManager_ Create_022468e5(nint ptr) =>
@@ -101,21 +108,23 @@ public sealed unsafe partial class UniqueOwnerPointer_EventCoordinatorManager_ :
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign_d8af548b(nint arg0) =>
+    public nint operator_assign(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public nint operator_assign_bc621edb(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_EventCoordinatorManager_ operator_assign()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_EventCoordinatorManager_((nint)NativeMethods.TablePtr->C0.hs_method_bc621edb((void*)__hosihikari_shim_handle), false);
+    }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.UniqueOwnerPointer_EventCoordinatorManager_ other)
     {
         return NativeMethods.TablePtr->C0.hs_method_9e2facef((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public bool operator_equal(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public bool operator_equal()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_9b21e6c0((void*)__hosihikari_shim_handle) != 0;
+    }
 
     public void reset()
     {

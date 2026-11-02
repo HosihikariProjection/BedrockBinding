@@ -41,22 +41,22 @@ public sealed unsafe partial class SetBannerDetailsFunction : global::System.IDi
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d0d7a9da((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d0d7a9da((void*)__hosihikari_shim_handle);
     }
 
     public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_b1878579((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C4.hs_method_b1878579((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
     }
 
     public int _getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_5ed64955((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_5ed64955((void*)__hosihikari_shim_handle);
     }
 
     public static SetBannerDetailsFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBannerDetailsFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_982d5f70((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_982d5f70((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,30 +71,30 @@ public sealed unsafe partial class SetBannerDetailsFunction : global::System.IDi
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_5e968bf3((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C4.hs_method_5e968bf3((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
     }
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_0990a6ab((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_0990a6ab((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBannerPatterns_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3cc722be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3cc722be((void*)__hosihikari_shim_handle);
     }
 
     public int mBannerType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_58edeab3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_58edeab3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_58edeab3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_58edeab3((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mBaseColor
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a5fd3368((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a5fd3368((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a5fd3368((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a5fd3368((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class SetBannerDetailsFunction : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_577b1c78((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_577b1c78((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

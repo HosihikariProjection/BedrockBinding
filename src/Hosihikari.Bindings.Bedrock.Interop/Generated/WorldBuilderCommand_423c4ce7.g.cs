@@ -58,23 +58,23 @@ public sealed unsafe partial class WorldBuilderCommand : global::System.IDisposa
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2e0caadc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2e0caadc((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1d2b34ce((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1d2b34ce((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_1d2b34ce((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_1d2b34ce((void*)__hosihikari_shim_handle, value);
     }
 
     public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C4.hs_method_8a65a134((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C5.hs_method_8a65a134((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public static WorldBuilderCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldBuilderCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_5f0fc8c1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_5f0fc8c1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,12 +85,12 @@ public sealed unsafe partial class WorldBuilderCommand : global::System.IDisposa
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C4.hs_method_ad90c4a5((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C5.hs_method_ad90c4a5((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
     {
-        NativeMethods.TablePtr->C4.hs_method_8d3ccf34((void*)registry.Handle);
+        NativeMethods.TablePtr->C5.hs_method_8d3ccf34((void*)registry.Handle);
     }
 
 

@@ -60,9 +60,16 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
         return new NonOwnerPointer_const_cereal__ReflectionCtx_((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static NonOwnerPointer_const_cereal__ReflectionCtx_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public static NonOwnerPointer_const_cereal__ReflectionCtx_ Create_0ad59406()
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_0ad59406();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new NonOwnerPointer_const_cereal__ReflectionCtx_((nint)handle);
+    }
 
     public static NonOwnerPointer_const_cereal__ReflectionCtx_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx? p)
     {
@@ -114,9 +121,10 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx((nint)__hs_handle, false) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public bool operator_equal(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public bool operator_equal()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_b78a9bf0((void*)__hosihikari_shim_handle) != 0;
+    }
 
 
     public void Dispose()

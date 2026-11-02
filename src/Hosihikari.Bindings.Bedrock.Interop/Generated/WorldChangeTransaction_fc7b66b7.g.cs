@@ -40,17 +40,17 @@ public sealed unsafe partial class WorldChangeTransaction : global::System.IDisp
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1d12c4dd((void*)__hosihikari_shim_handle, (void*)target.Handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_1d12c4dd((void*)__hosihikari_shim_handle, (void*)target.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_d7983ad8((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C5.hs_method_d7983ad8((void*)__hosihikari_shim_handle);
     }
 
     public static WorldChangeTransaction Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_dab9da73();
+        var handle = NativeMethods.TablePtr->C5.hs_create_dab9da73();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class WorldChangeTransaction : global::System.IDisp
 
     public static WorldChangeTransaction Create(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9a34a0d1((void*)target.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_9a34a0d1((void*)target.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,7 +72,7 @@ public sealed unsafe partial class WorldChangeTransaction : global::System.IDisp
 
     public static WorldChangeTransaction Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_62927858((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_62927858((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,18 +84,18 @@ public sealed unsafe partial class WorldChangeTransaction : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e6787c1e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_e6787c1e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTarget_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a69fc63b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_a69fc63b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction((nint)NativeMethods.TablePtr->C4.hs_method_5fd31144((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldChangeTransaction((nint)NativeMethods.TablePtr->C5.hs_method_5fd31144((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -105,7 +105,7 @@ public sealed unsafe partial class WorldChangeTransaction : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_fc7b66b7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_fc7b66b7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

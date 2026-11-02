@@ -159,9 +159,16 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
     public static CompoundTagVariant Create_e54cc487(nint tagPairs) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'std::pair<const std::basic_string<char>, CompoundTagVariant>' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static CompoundTagVariant Create_410afd85(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public static CompoundTagVariant Create_410afd85()
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_410afd85();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new CompoundTagVariant((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::variant<EndTag, ByteTag, ShortTag, IntTag, Int64Tag, FloatTag, DoubleTag, ByteArrayTag, StringTag, ListTag, CompoundTag, IntArrayTag>' is not a known bindable declaration.", false)]
     public static CompoundTagVariant Create_dcf9391c(nint tag) =>

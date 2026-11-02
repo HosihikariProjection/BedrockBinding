@@ -44,7 +44,7 @@ public sealed unsafe partial class WorldGenMultiNoiseClimateAttributes : global:
 
     public static WorldGenMultiNoiseClimateAttributes Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldGenMultiNoiseClimateAttributes arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_832929c7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_832929c7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,32 +55,32 @@ public sealed unsafe partial class WorldGenMultiNoiseClimateAttributes : global:
 
     public float mAltitude
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a0f83696((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a0f83696((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_a0f83696((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_a0f83696((void*)__hosihikari_shim_handle, value);
     }
 
     public float mHumidity
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a65d5e3f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a65d5e3f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_a65d5e3f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_a65d5e3f((void*)__hosihikari_shim_handle, value);
     }
 
     public float mTemperature
     {
-        get => NativeMethods.TablePtr->C4.hs_get_39f0f40f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_39f0f40f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_39f0f40f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_39f0f40f((void*)__hosihikari_shim_handle, value);
     }
 
     public float mWeight
     {
-        get => NativeMethods.TablePtr->C4.hs_get_5e541c00((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_5e541c00((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_5e541c00((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_5e541c00((void*)__hosihikari_shim_handle, value);
     }
 
     public float mWeirdness
     {
-        get => NativeMethods.TablePtr->C4.hs_get_460739ec((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_460739ec((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_460739ec((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_460739ec((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -90,7 +90,7 @@ public sealed unsafe partial class WorldGenMultiNoiseClimateAttributes : global:
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3ccc8431((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_3ccc8431((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

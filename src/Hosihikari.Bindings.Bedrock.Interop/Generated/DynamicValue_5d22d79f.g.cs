@@ -147,9 +147,16 @@ public sealed unsafe partial class DynamicValue : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static DynamicValue Create_224b3641(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public static DynamicValue Create_224b3641()
+    {
+        var handle = NativeMethods.TablePtr->C5.hs_create_224b3641();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new DynamicValue((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::unordered_map<std::basic_string<char>, cereal::DynamicValue, cereal::util::internal::StringViewHash, std::equal_to<void>>' is not a known bindable declaration.", false)]
     public static DynamicValue Create_5dc0aa7d(nint value) =>

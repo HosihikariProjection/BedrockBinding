@@ -44,7 +44,7 @@ public sealed unsafe partial class SetActorLinkPacketSystem : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_5c26a4d3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_5c26a4d3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

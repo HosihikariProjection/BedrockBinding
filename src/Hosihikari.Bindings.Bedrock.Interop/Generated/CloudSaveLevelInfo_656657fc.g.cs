@@ -97,13 +97,13 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
     public bool mNeedsUpload
     {
         get => NativeMethods.TablePtr->C0.hs_get_9417b8be((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_9417b8be((void*)__hosihikari_shim_handle, value);
+        set => NativeMethods.TablePtr->C1.hs_set_9417b8be((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUserId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_80a5e047((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_80a5e047((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -112,7 +112,7 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo((nint)NativeMethods.TablePtr->C0.hs_method_f38a78d1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo((nint)NativeMethods.TablePtr->C1.hs_method_f38a78d1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 

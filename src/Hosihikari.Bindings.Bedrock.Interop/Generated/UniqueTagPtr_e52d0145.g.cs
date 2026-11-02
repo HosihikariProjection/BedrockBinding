@@ -90,9 +90,16 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
         return new UniqueTagPtr((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static UniqueTagPtr Create_52ce7fb7(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public static UniqueTagPtr Create_52ce7fb7()
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_52ce7fb7();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new UniqueTagPtr((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static UniqueTagPtr Create_44b98fe1(nint ptr) =>
@@ -288,9 +295,10 @@ public sealed unsafe partial class UniqueTagPtr : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C4.hs_method_16bfe6b5((void*)__hosihikari_shim_handle, (void*)r.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public nint operator_assign_e0872ef3(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr operator_assign()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C4.hs_method_e0872ef3((void*)__hosihikari_shim_handle), false);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint operator_assign_f605e224(nint r) =>

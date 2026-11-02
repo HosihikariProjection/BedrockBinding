@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__cb1ced85
+public sealed unsafe partial class function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__cb1ced85
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,7 +38,8 @@ public sealed partial class function_base_brstd__detail__function__DerivedType__
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public nint operator_assign_9e408f23(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__cb1ced85 operator_assign()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__cb1ced85((nint)NativeMethods.TablePtr->C5.hs_method_9e408f23((void*)__hosihikari_shim_handle), false);
+    }
 }

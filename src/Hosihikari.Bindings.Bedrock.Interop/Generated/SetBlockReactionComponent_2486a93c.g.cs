@@ -40,12 +40,12 @@ public sealed unsafe partial class SetBlockReactionComponent : global::System.ID
 
     public void __onEnd(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction owner, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C3.hs_method_fb32341d((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C4.hs_method_fb32341d((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
     }
 
     public static SetBlockReactionComponent Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_818b3279();
+        var handle = NativeMethods.TablePtr->C4.hs_create_818b3279();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class SetBlockReactionComponent : global::System.ID
 
     public static SetBlockReactionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_04d6256b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_04d6256b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,24 +67,24 @@ public sealed unsafe partial class SetBlockReactionComponent : global::System.ID
 
     public void _onEnd(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction owner, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C3.hs_method_9858ad79((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C4.hs_method_9858ad79((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_84b85d92((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_84b85d92((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1ba475c0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1ba475c0((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent((nint)NativeMethods.TablePtr->C3.hs_method_a96e82fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SetBlockReactionComponent((nint)NativeMethods.TablePtr->C4.hs_method_a96e82fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -94,7 +94,7 @@ public sealed unsafe partial class SetBlockReactionComponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2486a93c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_2486a93c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

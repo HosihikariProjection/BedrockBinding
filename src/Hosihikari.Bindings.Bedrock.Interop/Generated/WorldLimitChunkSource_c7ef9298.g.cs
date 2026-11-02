@@ -41,71 +41,71 @@ public sealed unsafe partial class WorldLimitChunkSource : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7fad4499((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_7fad4499((void*)__hosihikari_shim_handle);
     }
 
     public int mChunkSide
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ba8af47d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_ba8af47d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_ba8af47d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_ba8af47d((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mDimension
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_13eec8a3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_13eec8a3((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_13eec8a3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_13eec8a3((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public nint mLevel
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0e333d75((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_0e333d75((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0e333d75((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_0e333d75((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public nint mLevelChunkBuilderData
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6955ff69((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_6955ff69((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_6955ff69((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_6955ff69((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnLevelStorageAppSuspendSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_cca5b5bf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_cca5b5bf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnSaveSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5c3f0a27((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_5c3f0a27((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOwnedParent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_81d1e215((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_81d1e215((void*)__hosihikari_shim_handle);
     }
 
     public nint mParent
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d7f07420((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d7f07420((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_d7f07420((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_d7f07420((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mShuttingDown_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_29025e2c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_29025e2c((void*)__hosihikari_shim_handle);
     }
 
     public bool _canCreateViews()
     {
-        return NativeMethods.TablePtr->C4.hs_method_712cd5d7((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_712cd5d7((void*)__hosihikari_shim_handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _createNewChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, int lm, bool readOnly)
     {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_f3f8b3c6((void*)__hosihikari_shim_handle, (void*)cp.Handle, lm, readOnly);
+        var __hs_shared = NativeMethods.TablePtr->C5.hs_method_f3f8b3c6((void*)__hosihikari_shim_handle, (void*)cp.Handle, lm, readOnly);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -115,23 +115,23 @@ public sealed unsafe partial class WorldLimitChunkSource : global::System.IDispo
 
     public nint _getChunkMap()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_7836bd11((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_7836bd11((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _getExistingChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
     {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_4e63dbd8((void*)__hosihikari_shim_handle, (void*)cp.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C5.hs_method_4e63dbd8((void*)__hosihikari_shim_handle, (void*)cp.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public bool _isWithinWorldLimit(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
     {
-        return NativeMethods.TablePtr->C4.hs_method_8b6b6366((void*)__hosihikari_shim_handle, (void*)cp.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_8b6b6366((void*)__hosihikari_shim_handle, (void*)cp.Handle) != 0;
     }
 
     public static WorldLimitChunkSource Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1b8c18f1();
+        var handle = NativeMethods.TablePtr->C5.hs_create_1b8c18f1();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -146,35 +146,35 @@ public sealed unsafe partial class WorldLimitChunkSource : global::System.IDispo
 
     public bool canCreateViews()
     {
-        return NativeMethods.TablePtr->C4.hs_method_83e9dece((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_83e9dece((void*)__hosihikari_shim_handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? createNewChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, int lm, bool readOnly)
     {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_5bd2a03c((void*)__hosihikari_shim_handle, (void*)cp.Handle, lm, readOnly);
+        var __hs_shared = NativeMethods.TablePtr->C5.hs_method_5bd2a03c((void*)__hosihikari_shim_handle, (void*)cp.Handle, lm, readOnly);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public nint getChunkMap()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_60223bbd((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_60223bbd((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getExistingChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
     {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_36dd9c3e((void*)__hosihikari_shim_handle, (void*)cp.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C5.hs_method_36dd9c3e((void*)__hosihikari_shim_handle, (void*)cp.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public bool isWithinWorldLimit(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
     {
-        return NativeMethods.TablePtr->C4.hs_method_084a3698((void*)__hosihikari_shim_handle, (void*)cp.Handle) != 0;
+        return NativeMethods.TablePtr->C5.hs_method_084a3698((void*)__hosihikari_shim_handle, (void*)cp.Handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLimitArea_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2c11da3c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2c11da3c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -184,7 +184,7 @@ public sealed unsafe partial class WorldLimitChunkSource : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c7ef9298((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_c7ef9298((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

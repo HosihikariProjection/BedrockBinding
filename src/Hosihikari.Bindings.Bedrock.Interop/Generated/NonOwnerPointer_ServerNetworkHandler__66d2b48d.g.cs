@@ -60,9 +60,16 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
         return new NonOwnerPointer_ServerNetworkHandler_((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static NonOwnerPointer_ServerNetworkHandler_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public static NonOwnerPointer_ServerNetworkHandler_ Create_fa52e242()
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_fa52e242();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new NonOwnerPointer_ServerNetworkHandler_((nint)handle);
+    }
 
     public static NonOwnerPointer_ServerNetworkHandler_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler? p)
     {
@@ -115,9 +122,10 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler((nint)__hs_handle, false) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public bool operator_equal(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public bool operator_equal()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_d2d1e8e5((void*)__hosihikari_shim_handle) != 0;
+    }
 
 
     public void Dispose()

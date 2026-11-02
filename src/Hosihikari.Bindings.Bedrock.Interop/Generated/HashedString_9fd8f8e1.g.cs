@@ -197,9 +197,16 @@ public sealed unsafe partial class HashedString : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static HashedString Create_3e72da99(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public static HashedString Create()
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_3e72da99();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new HashedString((nint)handle);
+    }
 
     public static HashedString Create(ulong h, nint mStr)
     {

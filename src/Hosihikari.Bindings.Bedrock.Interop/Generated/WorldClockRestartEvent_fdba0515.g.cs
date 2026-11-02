@@ -40,7 +40,7 @@ public sealed unsafe partial class WorldClockRestartEvent : global::System.IDisp
 
     public static WorldClockRestartEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldClockRestartEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e5363927((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_e5363927((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class WorldClockRestartEvent : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mClock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_edddb8fc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_edddb8fc((void*)__hosihikari_shim_handle);
     }
 
     public int mNewTime
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f5a8ed5a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f5a8ed5a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_f5a8ed5a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_f5a8ed5a((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -67,7 +67,7 @@ public sealed unsafe partial class WorldClockRestartEvent : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_fdba0515((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_fdba0515((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

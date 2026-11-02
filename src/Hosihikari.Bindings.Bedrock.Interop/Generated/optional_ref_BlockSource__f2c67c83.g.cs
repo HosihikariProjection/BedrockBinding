@@ -148,13 +148,27 @@ public sealed unsafe partial class optional_ref_BlockSource_ : global::System.ID
         return new optional_ref_BlockSource_((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullopt_t' is not a known bindable declaration.", false)]
-    public static optional_ref_BlockSource_ Create_5c6d5c07(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullopt_t' is not a known bindable declaration.");
+    public static optional_ref_BlockSource_ Create_5c6d5c07()
+    {
+        var handle = NativeMethods.TablePtr->C5.hs_create_5c6d5c07();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static optional_ref_BlockSource_ Create_7873c69d(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+        return new optional_ref_BlockSource_((nint)handle);
+    }
+
+    public static optional_ref_BlockSource_ Create_7873c69d()
+    {
+        var handle = NativeMethods.TablePtr->C5.hs_create_7873c69d();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new optional_ref_BlockSource_((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: return type 'decltype(auto)' is not supported.", false)]
     public nint rbegin() =>

@@ -50,7 +50,7 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static WeakPtr_Item_ Create_e017d048(nint other) =>
+    public static WeakPtr_Item_ Create(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public static WeakPtr_Item_ Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakPtr_Item_ other)
@@ -64,9 +64,16 @@ public sealed unsafe partial class WeakPtr_Item_ : global::System.IDisposable
         return new WeakPtr_Item_((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.", false)]
-    public static WeakPtr_Item_ Create_88170740(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::nullptr_t' is not a known bindable declaration.");
+    public static WeakPtr_Item_ Create_88170740()
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_88170740();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new WeakPtr_Item_((nint)handle);
+    }
 
     public nint counter
     {
