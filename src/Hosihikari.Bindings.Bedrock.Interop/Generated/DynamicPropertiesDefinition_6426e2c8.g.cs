@@ -54,9 +54,46 @@ public sealed unsafe partial class DynamicPropertiesDefinition : global::System.
         return new DynamicPropertiesDefinition((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool _canMergeDefinitions(nint other, nint identifier, ulong sizeLimit, nint error) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool _canMergeDefinitions(global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertiesDefinition other, string identifier, ulong sizeLimit, ref string error)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(identifier);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes1);
+        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(error);
+        scoped global::System.Span<byte> __hs_stringBytes3;
+        if (__hs_stringByteCount3 <= 256)
+        {
+            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
+        }
+        else
+        {
+            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes3);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
+            {
+                try
+                {
+                    return NativeMethods.TablePtr->C1.hs_method_64a6b1c1((void*)__hosihikari_shim_handle, (void*)other.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, sizeLimit, __hs_stringData3, (nuint)__hs_stringByteCount3, &__hs_strOut0) != 0;
+                }
+                finally
+                {
+                    error = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+                }
+            }
+        }
+    }
 
     public int? defineProperty(string identifier, global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition definition)
     {

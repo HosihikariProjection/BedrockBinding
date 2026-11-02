@@ -40,7 +40,7 @@ public sealed unsafe partial class Duration : global::System.IDisposable
 
     public static Duration Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_623ad8ad();
+        var handle = NativeMethods.TablePtr->C5.hs_create_623ad8ad();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Duration : global::System.IDisposable
 
     public static Duration Create(global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_393301a2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_393301a2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class Duration : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk54c27b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_facf57cc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_facf57cc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5b0e7d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5d5ee02f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_5d5ee02f((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration((nint)NativeMethods.TablePtr->C4.hs_method_517ad40b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration((nint)NativeMethods.TablePtr->C5.hs_method_517ad40b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class Duration : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a7618f7d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_a7618f7d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

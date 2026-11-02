@@ -396,9 +396,32 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_72a633b8((void*)__hosihikari_shim_handle, count);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool addComponents(nint root, nint errorMsg) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool addComponents(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, ref string errorMsg)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(errorMsg);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(errorMsg, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C2.hs_method_6eee5b0a((void*)__hosihikari_shim_handle, (void*)root.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                errorMsg = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public void addCustomUserData(global::Hosihikari.Bindings.Bedrock.Interop.BlockActor blockEntity, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {

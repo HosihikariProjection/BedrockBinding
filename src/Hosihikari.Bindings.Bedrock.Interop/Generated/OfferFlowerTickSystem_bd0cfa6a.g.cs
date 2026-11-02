@@ -40,7 +40,7 @@ public sealed unsafe partial class OfferFlowerTickSystem : global::System.IDispo
 
     public static void _doOfferFlowerTickSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerTickComponent offerFlowerTickComponent)
     {
-        NativeMethods.TablePtr->C2.hs_method_49f023c3((void*)arg0.Handle, (void*)offerFlowerTickComponent.Handle);
+        NativeMethods.TablePtr->C3.hs_method_49f023c3((void*)arg0.Handle, (void*)offerFlowerTickComponent.Handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class OfferFlowerTickSystem : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_bd0cfa6a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_bd0cfa6a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

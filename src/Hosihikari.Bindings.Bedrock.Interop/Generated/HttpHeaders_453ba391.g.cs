@@ -60,9 +60,46 @@ public sealed unsafe partial class HttpHeaders : global::System.IDisposable
         return new HttpHeaders((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool getHeader(nint name, nint outValue) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool getHeader(string name, ref string outValue)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(outValue);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(outValue, __hs_stringBytes1);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+            {
+                try
+                {
+                    return NativeMethods.TablePtr->C2.hs_method_ddfcdc9b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0) != 0;
+                }
+                finally
+                {
+                    outValue = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+                }
+            }
+        }
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk283a8f_Address

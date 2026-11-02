@@ -103,9 +103,32 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         return NativeMethods.TablePtr->C1.hs_method_b7114ba4((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool _getAsset(nint packRelativePath, nint result, bool trustedContentOnly) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool _getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, ref string result, bool trustedContentOnly)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(result, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C1.hs_method_3a8e9d61((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                result = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public int _getStrategyType()
     {
@@ -192,9 +215,32 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public static bool _getContentIdentityFromEncryptedStream(nint stream, nint contentIdentity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public static bool _getContentIdentityFromEncryptedStream(ref string stream, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(stream);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(stream, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C1.hs_method_6761f5a6(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)contentIdentity.Handle, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                stream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public string _getContentsFile()
     {
@@ -247,9 +293,46 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public static bool _transformStream(nint stream, nint key, nint contentIdentity, nint mode, ulong offset) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public static bool _transformStream(ref string stream, string key, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity, byte mode, ulong offset)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(stream);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(stream, __hs_stringBytes0);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(key);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes1);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+            {
+                try
+                {
+                    return NativeMethods.TablePtr->C1.hs_method_93503169(__hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)contentIdentity.Handle, mode, offset, &__hs_strOut0) != 0;
+                }
+                finally
+                {
+                    stream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+                }
+            }
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'PackAccessStrategy' has no accessible destructor.", false)]
     public nint createSubPack(nint subPath) =>
@@ -260,9 +343,32 @@ public sealed unsafe partial class EncryptedFileAccessStrategy : global::System.
         return NativeMethods.TablePtr->C1.hs_method_db8f07e1((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool getAsset(nint packRelativePath, nint result, bool trustedContentOnly) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool getAsset(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path packRelativePath, ref string result, bool trustedContentOnly)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(result);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(result, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C1.hs_method_f1a1d59f((void*)__hosihikari_shim_handle, (void*)packRelativePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trustedContentOnly, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                result = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public int getStrategyType()
     {

@@ -95,9 +95,32 @@ public sealed unsafe partial class ResourcePack : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_0a2234d4((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool getResource(nint resourceName, nint resourceStream, int subpackIndex) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool getResource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path resourceName, ref string resourceStream, int subpackIndex)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C3.hs_method_7a5febde((void*)__hosihikari_shim_handle, (void*)resourceName.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, subpackIndex, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public bool hasResource(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path resourceName, int subpackIndex)
     {

@@ -40,7 +40,7 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
 
     public static PropertyBag Create(global::Hosihikari.Bindings.Bedrock.Interop.br.spawn.transform.PropertyBag arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3a2987ce((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_3a2987ce((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mKeys_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b3167e1c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_b3167e1c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_52a6133a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_52a6133a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_45cf624e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_45cf624e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

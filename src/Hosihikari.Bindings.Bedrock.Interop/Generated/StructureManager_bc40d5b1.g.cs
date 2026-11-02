@@ -194,9 +194,32 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public static bool _findResource(nint structurePath, nint pack, nint resourceStream) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public static bool _findResource(nint structurePath, global::Hosihikari.Bindings.Bedrock.Interop.PackInstance pack, ref string resourceStream)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(resourceStream);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(resourceStream, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C4.hs_method_4e77e0a6((void*)structurePath, (void*)pack.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                resourceStream = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public static void _removePlacementQueueItem(string dimensionPrefix, global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData structureAnimationData)
     {

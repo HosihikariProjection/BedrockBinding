@@ -15,14 +15,14 @@ This branch targets **BDS 1.26.51.1** through the headers of LeviLamina `ee049f1
 ## Current state
 
 - Interop: 9,146 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
-- Binding Shim: 154,354 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
+- Binding Shim: 154,443 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
 - Coverage: 12,080 declarations and 101,068 members bound for `win-x64-server`.
 - `scripts/headers-26.51.txt` lists the 5,199 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
 
 The shim is emitted in `--symbol-dispatch --resolve-by-name` mode. Supported ABI:
 
 - scalars and enum underlying types;
-- `std::string` / `std::string_view` values and const references; a mutable `std::string` reference on a void method is rewritten in place and returned as the call result, and a `std::string&&` argument is moved from a shim-owned temporary;
+- `std::string` / `std::string_view` values and const references; a mutable `std::string` reference is rewritten in place — a void method returns the text, and any other return keeps its value and reports the text through a `ref string` argument; a `std::string&&` argument is moved from a shim-owned temporary;
 - single-level `T*` / `T&` as `void*`;
 - by-value records: small `triviallyCopyable` records travel in integer registers, larger records use a stack temporary; a record that is not trivially copyable is built through its copy constructor (resolved by name) and released by the callee when its destructor is non-trivial, and a trivially destructible record without a recorded copy constructor is copied as bytes while still using the hidden-reference convention;
 - by-value results whose signature spelling omits defaulted template arguments resolve to the recorded specialization (`Bedrock::Result<T>` binds to `Bedrock::Result<T, std::error_code>`); `GameplayHandlerResult<T>` and the other template results are instantiated by the second frontend pass, so the call returns an owned wrapper with a working `Dispose`. A template is only used as a by-value result when its header proves the layout with a data member or a base record; an empty reconstructed shell is rejected instead of being sized at one byte;

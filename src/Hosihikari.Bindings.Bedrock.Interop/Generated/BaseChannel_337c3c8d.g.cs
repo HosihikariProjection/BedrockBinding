@@ -66,9 +66,32 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
     public void _SetFirstPacketSentCallback(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool _SetLocalContent(nint content, nint type, nint error_desc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool _SetLocalContent(nint content, int type, ref string error_desc)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C5.hs_method_42afeb90((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public int _SetOption(int type, int opt, int value)
     {
@@ -80,9 +103,32 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
         return NativeMethods.TablePtr->C5.hs_method_6d4de666((void*)__hosihikari_shim_handle, enabled) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool _SetRemoteContent(nint content, nint type, nint error_desc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool _SetRemoteContent(nint content, int type, ref string error_desc)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C5.hs_method_bf927dea((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public bool _SetRtpTransport(nint rtp_transport)
     {
@@ -249,13 +295,59 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
     public void SetFirstPacketSentCallback(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool SetLocalContent(nint content, nint type, nint error_desc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool SetLocalContent(nint content, int type, ref string error_desc)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C5.hs_method_29852aeb((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool SetLocalContent_w(nint content, nint type, nint error_desc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool SetLocalContent_w(nint content, int type, ref string error_desc)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C5.hs_method_0884223d((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public int SetOption(int type, int opt, int value)
     {
@@ -267,13 +359,59 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
         return NativeMethods.TablePtr->C5.hs_method_7c72dd24((void*)__hosihikari_shim_handle, enabled) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool SetRemoteContent(nint content, nint type, nint error_desc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool SetRemoteContent(nint content, int type, ref string error_desc)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C5.hs_method_19119d4c((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool SetRemoteContent_w(nint content, nint type, nint error_desc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool SetRemoteContent_w(nint content, int type, ref string error_desc)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C5.hs_method_2b81318d((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public bool SetRtpTransport(nint rtp_transport)
     {
@@ -295,9 +433,32 @@ public sealed unsafe partial class BaseChannel : global::System.IDisposable
         NativeMethods.TablePtr->C5.hs_method_7782d19b((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool UpdateRemoteStreams_w(nint content, nint type, nint error_desc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool UpdateRemoteStreams_w(nint content, int type, ref string error_desc)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C5.hs_method_a4bcff80((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public nint local_streams()
     {

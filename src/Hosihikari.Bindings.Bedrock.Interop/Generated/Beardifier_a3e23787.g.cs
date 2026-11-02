@@ -40,7 +40,7 @@ public sealed unsafe partial class Beardifier : global::System.IDisposable
 
     public static Beardifier Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Beardifier arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a9cb0e76((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_a9cb0e76((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,24 +51,24 @@ public sealed unsafe partial class Beardifier : global::System.IDisposable
 
     public double compute(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        return NativeMethods.TablePtr->C4.hs_method_50faf197((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        return NativeMethods.TablePtr->C5.hs_method_50faf197((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Beardifier forStructuresInChunk(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureCache structureCache, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Beardifier((nint)NativeMethods.TablePtr->C4.hs_method_4b01b411((void*)structureCache.Handle, (void*)pos.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Beardifier((nint)NativeMethods.TablePtr->C5.hs_method_4b01b411((void*)structureCache.Handle, (void*)pos.Handle));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJunctions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_454f51bb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_454f51bb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPieces_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5d80d42e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_5d80d42e((void*)__hosihikari_shim_handle);
     }
 
 
@@ -78,7 +78,7 @@ public sealed unsafe partial class Beardifier : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a3e23787((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_a3e23787((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

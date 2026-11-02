@@ -149,9 +149,32 @@ public sealed unsafe partial class ExpressionNode : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_7cb3e452((void*)__hosihikari_shim_handle, sideEffectsReturnZero);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool getTreeString(nint dest, bool sideEffectsReturnZero) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool getTreeString(ref string dest, bool sideEffectsReturnZero)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(dest);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(dest, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C2.hs_method_d766030b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, sideEffectsReturnZero, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                dest = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public bool isValid()
     {

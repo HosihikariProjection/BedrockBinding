@@ -712,39 +712,39 @@ public sealed unsafe partial class ZombieVillager : global::System.IDisposable
 
     public bool mWantsToBeJockey
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0745a0ec((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_0745a0ec((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_0745a0ec((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_0745a0ec((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastHurtByMobId_1e3ea7c9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_976664e0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_976664e0((void*)__hosihikari_shim_handle);
     }
 
     public void _addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        NativeMethods.TablePtr->C4.hs_method_b3836f96((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+        NativeMethods.TablePtr->C5.hs_method_b3836f96((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_01216a51((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        return (nint)NativeMethods.TablePtr->C5.hs_method_01216a51((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
     }
 
     public void _handleEntityEvent(byte id, int data)
     {
-        NativeMethods.TablePtr->C4.hs_method_d048c6bb((void*)__hosihikari_shim_handle, id, data);
+        NativeMethods.TablePtr->C5.hs_method_d048c6bb((void*)__hosihikari_shim_handle, id, data);
     }
 
     public void _readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
     {
-        NativeMethods.TablePtr->C4.hs_method_1cbba175((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
+        NativeMethods.TablePtr->C5.hs_method_1cbba175((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
     }
 
     public void _reloadHardcoded(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
-        NativeMethods.TablePtr->C4.hs_method_08bb9b2d((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
+        NativeMethods.TablePtr->C5.hs_method_08bb9b2d((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
@@ -753,7 +753,7 @@ public sealed unsafe partial class ZombieVillager : global::System.IDisposable
 
     public static ZombieVillager Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f84c79a0();
+        var handle = NativeMethods.TablePtr->C5.hs_create_f84c79a0();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -764,7 +764,7 @@ public sealed unsafe partial class ZombieVillager : global::System.IDisposable
 
     public static ZombieVillager Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0fb01e4a((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
+        var handle = NativeMethods.TablePtr->C5.hs_create_0fb01e4a((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -775,34 +775,34 @@ public sealed unsafe partial class ZombieVillager : global::System.IDisposable
 
     public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        NativeMethods.TablePtr->C4.hs_method_20735a9c((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+        NativeMethods.TablePtr->C5.hs_method_20735a9c((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
     public void handleEntityEvent(byte id, int data)
     {
-        NativeMethods.TablePtr->C4.hs_method_5f48ab2a((void*)__hosihikari_shim_handle, id, data);
+        NativeMethods.TablePtr->C5.hs_method_5f48ab2a((void*)__hosihikari_shim_handle, id, data);
     }
 
     public bool mSpawnedFromVillage
     {
-        get => NativeMethods.TablePtr->C4.hs_get_88bc298c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_88bc298c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_88bc298c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C5.hs_set_88bc298c((void*)__hosihikari_shim_handle, value);
     }
 
     public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
     {
-        NativeMethods.TablePtr->C4.hs_method_59496fdc((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
+        NativeMethods.TablePtr->C5.hs_method_59496fdc((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
     }
 
     public void reloadHardcoded(byte method, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList @params)
     {
-        NativeMethods.TablePtr->C4.hs_method_dc92ca11((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
+        NativeMethods.TablePtr->C5.hs_method_dc92ca11((void*)__hosihikari_shim_handle, method, (void*)@params.Handle);
     }
 
     public int villagerConversionTime
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1518ee90((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1518ee90((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_1518ee90((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_1518ee90((void*)__hosihikari_shim_handle, value);
     }
 
 

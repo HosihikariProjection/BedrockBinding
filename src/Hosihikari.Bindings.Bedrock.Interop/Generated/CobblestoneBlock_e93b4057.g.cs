@@ -107,24 +107,24 @@ public sealed unsafe partial class CobblestoneBlock : global::System.IDisposable
     public bool mCanSlide
     {
         get => NativeMethods.TablePtr->C0.hs_get_3fd32237((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_3fd32237((void*)__hosihikari_shim_handle, value);
+        set => NativeMethods.TablePtr->C1.hs_set_3fd32237((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientPredictionOverrides_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_3b6c733f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3b6c733f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_c36d9d33((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c36d9d33((void*)__hosihikari_shim_handle);
     }
 
     public byte mCreativeCategory
     {
-        get => NativeMethods.TablePtr->C0.hs_get_3d8c268a((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C1.hs_get_3d8c268a((void*)__hosihikari_shim_handle);
         set => NativeMethods.TablePtr->C1.hs_set_3d8c268a((void*)__hosihikari_shim_handle, value);
     }
 

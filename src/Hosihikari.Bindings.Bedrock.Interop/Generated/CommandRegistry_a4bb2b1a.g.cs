@@ -265,9 +265,32 @@ public sealed unsafe partial class CommandRegistry : global::System.IDisposable
     public nint buildRules(nint signature, nint overloads, ulong firstParam) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'gsl::not_null<CommandRegistry::Overload *>' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool buildSelector(nint args, nint output, nint error) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool buildSelector(global::Hosihikari.Bindings.Bedrock.Interop.ActorSelectorArgs args, global::Hosihikari.Bindings.Bedrock.Interop.CommandSelectorBase? output, ref string error)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            try
+            {
+                return NativeMethods.TablePtr->C1.hs_method_4c8131d7((void*)__hosihikari_shim_handle, (void*)args.Handle, (void*)(output?.Handle ?? 0), __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+            }
+            finally
+            {
+                error = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+            }
+        }
+    }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseToken? collapse(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseToken parent, global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol symbol)
     {
@@ -707,25 +730,245 @@ public sealed unsafe partial class CommandRegistry : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_2d6c72a7((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)command.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool parseSelector(nint args, nint token, nint origin, int version, nint error, nint errorParams) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool parseSelector(global::Hosihikari.Bindings.Bedrock.Interop.ActorSelectorArgs args, global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseToken token, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int version, ref string error, string[] errorParams)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(error);
+        scoped global::System.Span<byte> __hs_stringBytes4;
+        if (__hs_stringByteCount4 <= 256)
+        {
+            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
+        }
+        else
+        {
+            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes4);
+        var __hs_vectorItems5 = errorParams ?? global::System.Array.Empty<string>();
+        var __hs_vectorCount5 = __hs_vectorItems5.Length;
+        var __hs_vectorByteTotal5 = 0;
+        for (var __hs_i5 = 0; __hs_i5 < __hs_vectorCount5; __hs_i5++) { __hs_vectorByteTotal5 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems5[__hs_i5] ?? string.Empty); }
+        scoped global::System.Span<byte> __hs_vectorArena5;
+        if (__hs_vectorByteTotal5 <= 1024) { __hs_vectorArena5 = stackalloc byte[__hs_vectorByteTotal5 == 0 ? 1 : __hs_vectorByteTotal5]; } else { __hs_vectorArena5 = new byte[__hs_vectorByteTotal5]; }
+        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews5;
+        if (__hs_vectorCount5 <= 64) { __hs_vectorViews5 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount5 == 0 ? 1 : __hs_vectorCount5]; } else { __hs_vectorViews5 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount5]; }
+        fixed (byte* __hs_vectorArenaPtr5 = __hs_vectorArena5)
+        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData5 = __hs_vectorViews5)
+        {
+            var __hs_vectorOffset5 = 0;
+            for (var __hs_i5 = 0; __hs_i5 < __hs_vectorCount5; __hs_i5++)
+            {
+                var __hs_item5 = __hs_vectorItems5[__hs_i5] ?? string.Empty;
+                var __hs_length5 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item5);
+                global::System.Text.Encoding.UTF8.GetBytes(__hs_item5, __hs_vectorArena5.Slice(__hs_vectorOffset5, __hs_length5));
+                __hs_vectorData5[__hs_i5] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr5 + __hs_vectorOffset5, Size = (nuint)__hs_length5 };
+                __hs_vectorOffset5 += __hs_length5;
+            }
+            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
+            {
+                try
+                {
+                    return NativeMethods.TablePtr->C1.hs_method_cca2826f((void*)__hosihikari_shim_handle, (void*)args.Handle, (void*)token.Handle, (void*)origin.Handle, version, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_vectorData5, (nuint)(errorParams?.Length ?? 0), &__hs_strOut0) != 0;
+                }
+                finally
+                {
+                    error = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+                }
+            }
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public bool parseSelector(nint output, nint token, nint origin, int version, nint error, nint errorParams, bool wildcard) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public bool parseSelector(global::Hosihikari.Bindings.Bedrock.Interop.CommandSelectorBase? output, global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseToken token, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int version, ref string error, string[] errorParams, bool wildcard)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(error);
+        scoped global::System.Span<byte> __hs_stringBytes4;
+        if (__hs_stringByteCount4 <= 256)
+        {
+            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
+        }
+        else
+        {
+            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes4);
+        var __hs_vectorItems5 = errorParams ?? global::System.Array.Empty<string>();
+        var __hs_vectorCount5 = __hs_vectorItems5.Length;
+        var __hs_vectorByteTotal5 = 0;
+        for (var __hs_i5 = 0; __hs_i5 < __hs_vectorCount5; __hs_i5++) { __hs_vectorByteTotal5 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems5[__hs_i5] ?? string.Empty); }
+        scoped global::System.Span<byte> __hs_vectorArena5;
+        if (__hs_vectorByteTotal5 <= 1024) { __hs_vectorArena5 = stackalloc byte[__hs_vectorByteTotal5 == 0 ? 1 : __hs_vectorByteTotal5]; } else { __hs_vectorArena5 = new byte[__hs_vectorByteTotal5]; }
+        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews5;
+        if (__hs_vectorCount5 <= 64) { __hs_vectorViews5 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount5 == 0 ? 1 : __hs_vectorCount5]; } else { __hs_vectorViews5 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount5]; }
+        fixed (byte* __hs_vectorArenaPtr5 = __hs_vectorArena5)
+        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData5 = __hs_vectorViews5)
+        {
+            var __hs_vectorOffset5 = 0;
+            for (var __hs_i5 = 0; __hs_i5 < __hs_vectorCount5; __hs_i5++)
+            {
+                var __hs_item5 = __hs_vectorItems5[__hs_i5] ?? string.Empty;
+                var __hs_length5 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item5);
+                global::System.Text.Encoding.UTF8.GetBytes(__hs_item5, __hs_vectorArena5.Slice(__hs_vectorOffset5, __hs_length5));
+                __hs_vectorData5[__hs_i5] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr5 + __hs_vectorOffset5, Size = (nuint)__hs_length5 };
+                __hs_vectorOffset5 += __hs_length5;
+            }
+            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
+            {
+                try
+                {
+                    return NativeMethods.TablePtr->C1.hs_method_80d0905c((void*)__hosihikari_shim_handle, (void*)(output?.Handle ?? 0), (void*)token.Handle, (void*)origin.Handle, version, __hs_stringData4, (nuint)__hs_stringByteCount4, wildcard, __hs_vectorData5, (nuint)(errorParams?.Length ?? 0), &__hs_strOut0) != 0;
+                }
+                finally
+                {
+                    error = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+                }
+            }
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public static bool readFloat(nint value, nint token, nint error, nint errorParams) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public static bool readFloat(nint value, global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseToken token, ref string error, string[] errorParams)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes2);
+        var __hs_vectorItems3 = errorParams ?? global::System.Array.Empty<string>();
+        var __hs_vectorCount3 = __hs_vectorItems3.Length;
+        var __hs_vectorByteTotal3 = 0;
+        for (var __hs_i3 = 0; __hs_i3 < __hs_vectorCount3; __hs_i3++) { __hs_vectorByteTotal3 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems3[__hs_i3] ?? string.Empty); }
+        scoped global::System.Span<byte> __hs_vectorArena3;
+        if (__hs_vectorByteTotal3 <= 1024) { __hs_vectorArena3 = stackalloc byte[__hs_vectorByteTotal3 == 0 ? 1 : __hs_vectorByteTotal3]; } else { __hs_vectorArena3 = new byte[__hs_vectorByteTotal3]; }
+        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews3;
+        if (__hs_vectorCount3 <= 64) { __hs_vectorViews3 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount3 == 0 ? 1 : __hs_vectorCount3]; } else { __hs_vectorViews3 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount3]; }
+        fixed (byte* __hs_vectorArenaPtr3 = __hs_vectorArena3)
+        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData3 = __hs_vectorViews3)
+        {
+            var __hs_vectorOffset3 = 0;
+            for (var __hs_i3 = 0; __hs_i3 < __hs_vectorCount3; __hs_i3++)
+            {
+                var __hs_item3 = __hs_vectorItems3[__hs_i3] ?? string.Empty;
+                var __hs_length3 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item3);
+                global::System.Text.Encoding.UTF8.GetBytes(__hs_item3, __hs_vectorArena3.Slice(__hs_vectorOffset3, __hs_length3));
+                __hs_vectorData3[__hs_i3] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr3 + __hs_vectorOffset3, Size = (nuint)__hs_length3 };
+                __hs_vectorOffset3 += __hs_length3;
+            }
+            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+            {
+                try
+                {
+                    return NativeMethods.TablePtr->C1.hs_method_dcf06a03((void*)value, (void*)token.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_vectorData3, (nuint)(errorParams?.Length ?? 0), &__hs_strOut0) != 0;
+                }
+                finally
+                {
+                    error = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+                }
+            }
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public static bool readInt(nint value, nint token, nint error, nint errorParams) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public static bool readInt(nint value, global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseToken token, ref string error, string[] errorParams)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes2);
+        var __hs_vectorItems3 = errorParams ?? global::System.Array.Empty<string>();
+        var __hs_vectorCount3 = __hs_vectorItems3.Length;
+        var __hs_vectorByteTotal3 = 0;
+        for (var __hs_i3 = 0; __hs_i3 < __hs_vectorCount3; __hs_i3++) { __hs_vectorByteTotal3 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems3[__hs_i3] ?? string.Empty); }
+        scoped global::System.Span<byte> __hs_vectorArena3;
+        if (__hs_vectorByteTotal3 <= 1024) { __hs_vectorArena3 = stackalloc byte[__hs_vectorByteTotal3 == 0 ? 1 : __hs_vectorByteTotal3]; } else { __hs_vectorArena3 = new byte[__hs_vectorByteTotal3]; }
+        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews3;
+        if (__hs_vectorCount3 <= 64) { __hs_vectorViews3 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount3 == 0 ? 1 : __hs_vectorCount3]; } else { __hs_vectorViews3 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount3]; }
+        fixed (byte* __hs_vectorArenaPtr3 = __hs_vectorArena3)
+        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData3 = __hs_vectorViews3)
+        {
+            var __hs_vectorOffset3 = 0;
+            for (var __hs_i3 = 0; __hs_i3 < __hs_vectorCount3; __hs_i3++)
+            {
+                var __hs_item3 = __hs_vectorItems3[__hs_i3] ?? string.Empty;
+                var __hs_length3 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item3);
+                global::System.Text.Encoding.UTF8.GetBytes(__hs_item3, __hs_vectorArena3.Slice(__hs_vectorOffset3, __hs_length3));
+                __hs_vectorData3[__hs_i3] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr3 + __hs_vectorOffset3, Size = (nuint)__hs_length3 };
+                __hs_vectorOffset3 += __hs_length3;
+            }
+            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+            {
+                try
+                {
+                    return NativeMethods.TablePtr->C1.hs_method_54dd532a((void*)value, (void*)token.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_vectorData3, (nuint)(errorParams?.Length ?? 0), &__hs_strOut0) != 0;
+                }
+                finally
+                {
+                    error = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+                }
+            }
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: a mutable string reference requires a void return.", false)]
-    public static bool readRelativeCoordinate(nint relative, nint offset, nint token, bool readIntegerAsCentered, nint error, nint errorParams) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: a mutable string reference requires a void return.");
+    public static bool readRelativeCoordinate(nint relative, nint offset, global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseToken token, bool readIntegerAsCentered, ref string error, string[] errorParams)
+    {
+        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
+        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(error);
+        scoped global::System.Span<byte> __hs_stringBytes4;
+        if (__hs_stringByteCount4 <= 256)
+        {
+            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
+        }
+        else
+        {
+            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes4);
+        var __hs_vectorItems5 = errorParams ?? global::System.Array.Empty<string>();
+        var __hs_vectorCount5 = __hs_vectorItems5.Length;
+        var __hs_vectorByteTotal5 = 0;
+        for (var __hs_i5 = 0; __hs_i5 < __hs_vectorCount5; __hs_i5++) { __hs_vectorByteTotal5 += global::System.Text.Encoding.UTF8.GetByteCount(__hs_vectorItems5[__hs_i5] ?? string.Empty); }
+        scoped global::System.Span<byte> __hs_vectorArena5;
+        if (__hs_vectorByteTotal5 <= 1024) { __hs_vectorArena5 = stackalloc byte[__hs_vectorByteTotal5 == 0 ? 1 : __hs_vectorByteTotal5]; } else { __hs_vectorArena5 = new byte[__hs_vectorByteTotal5]; }
+        scoped global::System.Span<global::Hosihikari.Bindings.Abi.StringView> __hs_vectorViews5;
+        if (__hs_vectorCount5 <= 64) { __hs_vectorViews5 = stackalloc global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount5 == 0 ? 1 : __hs_vectorCount5]; } else { __hs_vectorViews5 = new global::Hosihikari.Bindings.Abi.StringView[__hs_vectorCount5]; }
+        fixed (byte* __hs_vectorArenaPtr5 = __hs_vectorArena5)
+        fixed (global::Hosihikari.Bindings.Abi.StringView* __hs_vectorData5 = __hs_vectorViews5)
+        {
+            var __hs_vectorOffset5 = 0;
+            for (var __hs_i5 = 0; __hs_i5 < __hs_vectorCount5; __hs_i5++)
+            {
+                var __hs_item5 = __hs_vectorItems5[__hs_i5] ?? string.Empty;
+                var __hs_length5 = global::System.Text.Encoding.UTF8.GetByteCount(__hs_item5);
+                global::System.Text.Encoding.UTF8.GetBytes(__hs_item5, __hs_vectorArena5.Slice(__hs_vectorOffset5, __hs_length5));
+                __hs_vectorData5[__hs_i5] = new global::Hosihikari.Bindings.Abi.StringView { Data = __hs_vectorArenaPtr5 + __hs_vectorOffset5, Size = (nuint)__hs_length5 };
+                __hs_vectorOffset5 += __hs_length5;
+            }
+            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
+            {
+                try
+                {
+                    return NativeMethods.TablePtr->C1.hs_method_0ff6dc5c((void*)relative, (void*)offset, (void*)token.Handle, readIntegerAsCentered, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_vectorData5, (nuint)(errorParams?.Length ?? 0), &__hs_strOut0) != 0;
+                }
+                finally
+                {
+                    error = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
+                }
+            }
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: multiple mutable string references are not supported.", false)]
     public static bool readString(nint value, nint token, nint error, nint errorParams) =>

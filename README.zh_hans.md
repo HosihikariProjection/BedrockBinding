@@ -15,14 +15,14 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 ## 当前状态
 
 - Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,146 个生成的 C# 文件。
-- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 154,354 个函数。
+- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 154,443 个函数。
 - 覆盖：`win-x64-server` 配置绑定 12,080 个声明与 101,068 个成员。
 - `scripts/headers-26.51.txt` 列出解析的 5,199 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
 
 shim 以 `--symbol-dispatch --resolve-by-name` 模式发射。支持的 ABI：
 
 - 标量与枚举底层类型；
-- `std::string` / `std::string_view` 的值与 const 引用；void 方法上的可变 `std::string` 引用会被原地改写并作为调用结果返回，`std::string&&` 实参由垫片持有的临时对象 `std::move` 传入；
+- `std::string` / `std::string_view` 的值与 const 引用；可变 `std::string` 引用会被原地改写——void 方法把文本作为返回值，其它方法保留自身返回值并通过 `ref string` 参数回报；`std::string&&` 实参由垫片持有的临时对象 `std::move` 传入；
 - 单层 `T*` / `T&`，以 `void*` 传递；
 - 按值 record：小的 `triviallyCopyable` record 走整数寄存器，较大 record 走栈上临时区；非 triviallyCopyable 的 record 通过按名解析的拷贝构造函数构造实参，析构非平凡时由被调方释放；无拷贝构造记录的平凡析构 record 按字节复制，但仍使用隐藏引用；
 - 按值返回的签名省略默认模板实参时（如 `Bedrock::Result<T>`）会归一为已记录的特化 `Bedrock::Result<T, std::error_code>`；`GameplayHandlerResult<T>` 等模板返回由第二遍前端实例化，调用返回拥有型包装并可正常 `Dispose`。模板只有在头文件用数据成员或基类证明布局时才作为按值返回；重建的空壳会被拒绝，而不是按 1 字节定尺；
