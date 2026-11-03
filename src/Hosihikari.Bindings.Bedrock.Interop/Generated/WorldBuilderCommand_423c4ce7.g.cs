@@ -40,20 +40,20 @@ public sealed unsafe partial class WorldBuilderCommand : global::System.IDisposa
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c8011c31((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_c8011c31((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_c8011c31((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_c8011c31((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5c5692c8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_5c5692c8((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C4.hs_get_dd27536c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_dd27536c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C5.hs_get_dd27536c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C5.hs_set_dd27536c((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
@@ -100,7 +100,7 @@ public sealed unsafe partial class WorldBuilderCommand : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_423c4ce7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C5.hs_destroy_423c4ce7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -49,13 +49,14 @@ public sealed unsafe partial class IWorldConverter : global::System.IDisposable
         return new IWorldConverter((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<FileArchiver::ProgressReporter>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<std::shared_ptr<FileArchiver::InterventionPublishers>>' is not a known bindable declaration.", false)]
     public void enqueueConvertExportingWorldTasks(nint exportData, nint progress, nint prevTaskHandle, nint interventionPublishers, nint exportSetting) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<FileArchiver::ProgressReporter>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<std::shared_ptr<FileArchiver::InterventionPublishers>>' is not a known bindable declaration.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<FileArchiver::ProgressReporter>>' is not a known bindable declaration.", false)]
-    public void enqueueConvertImportingWorldTasks(nint sharedResult, nint progress, nint prevTaskHandle) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<FileArchiver::ProgressReporter>>' is not a known bindable declaration.");
+    public void enqueueConvertImportingWorldTasks(global::Hosihikari.Bindings.Abi.SharedHandle? sharedResult, global::Hosihikari.Bindings.Abi.SharedHandle? progress, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ prevTaskHandle)
+    {
+        NativeMethods.TablePtr->C1.hs_method_fb33384b((void*)__hosihikari_shim_handle, sharedResult?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), progress?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)prevTaskHandle.Handle);
+    }
 
     public bool prepareEditorProjectForSaveSnapshot(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ generatedLevelDataFile)
     {

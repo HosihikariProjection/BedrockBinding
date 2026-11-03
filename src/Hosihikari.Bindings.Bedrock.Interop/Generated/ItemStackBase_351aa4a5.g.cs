@@ -127,6 +127,17 @@ public sealed unsafe partial class ItemStackBase : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase_Nested.ComparisonOptions((nint)NativeMethods.TablePtr->C2.hs_method_e9d04c3d(), false);
     }
 
+    public static ItemStackBase Create()
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_3742976e();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ItemStackBase((nint)handle);
+    }
+
     public static ItemStackBase Create(global::Hosihikari.Bindings.Bedrock.Interop.Block block, int count, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _userData)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_0345132c((void*)block.Handle, count, (void*)(_userData?.Handle ?? 0));

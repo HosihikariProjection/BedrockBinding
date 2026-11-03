@@ -1000,9 +1000,9 @@ public sealed unsafe partial class Dimension : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_b499f2d7((void*)__hosihikari_shim_handle, (void*)loadPos.Handle);
     }
 
-    public void unregisterDisplayEntity(global::Hosihikari.Bindings.Bedrock.Interop.WeakRef_EntityContext_ entityRef)
+    public void unregisterDisplayEntity(global::Hosihikari.Bindings.Abi.SharedHandle? entityRef)
     {
-        NativeMethods.TablePtr->C1.hs_method_137d1255((void*)__hosihikari_shim_handle, (void*)entityRef.Handle);
+        NativeMethods.TablePtr->C1.hs_method_137d1255((void*)__hosihikari_shim_handle, entityRef?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void updatePoiBlockStateChange(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block removed, global::Hosihikari.Bindings.Bedrock.Interop.Block placed)

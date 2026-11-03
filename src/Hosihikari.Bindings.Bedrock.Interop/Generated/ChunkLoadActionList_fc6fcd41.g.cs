@@ -81,9 +81,24 @@ public sealed unsafe partial class ChunkLoadActionList : global::System.IDisposa
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public void _loadRequests(nint storage, nint loader, nint dimensionPrefix, nint elementReg, nint type, nint unknownBlockTypeRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public void _loadRequests(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage storage, global::Hosihikari.Bindings.Bedrock.Interop.ICommandOriginLoader loader, string dimensionPrefix, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureElementRegistry elementReg, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType type, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockTypeRegistry)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(dimensionPrefix);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(dimensionPrefix, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            NativeMethods.TablePtr->C0.hs_method_c075df77((void*)__hosihikari_shim_handle, (void*)storage.Handle, (void*)loader.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)elementReg.Handle, (void*)type.Handle, unknownBlockTypeRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        }
+    }
 
     public void _saveRequest(global::Hosihikari.Bindings.Bedrock.Interop.ChunkLoadedRequest request, string dimensionPrefix, byte chunkRequestListType, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
     {
@@ -112,9 +127,24 @@ public sealed unsafe partial class ChunkLoadActionList : global::System.IDisposa
     public void _updateTickingList(nint serverLevel, nint dimension, nint chunksLoadedCheckFunction) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public void loadRequests(nint storage, nint loader, nint dimensionPrefix, nint type, nint elementReg, nint unknownBlockTypeRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public void loadRequests(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage storage, global::Hosihikari.Bindings.Bedrock.Interop.ICommandOriginLoader loader, string dimensionPrefix, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType type, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureElementRegistry elementReg, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockTypeRegistry)
+    {
+        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(dimensionPrefix);
+        scoped global::System.Span<byte> __hs_stringBytes2;
+        if (__hs_stringByteCount2 <= 256)
+        {
+            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
+        }
+        else
+        {
+            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(dimensionPrefix, __hs_stringBytes2);
+        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
+        {
+            NativeMethods.TablePtr->C0.hs_method_fa2d29e8((void*)__hosihikari_shim_handle, (void*)storage.Handle, (void*)loader.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)type.Handle, (void*)elementReg.Handle, unknownBlockTypeRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        }
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkLoadedRequests_Address

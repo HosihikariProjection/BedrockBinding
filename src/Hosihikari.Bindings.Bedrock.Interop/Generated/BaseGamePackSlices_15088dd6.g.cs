@@ -64,9 +64,9 @@ public sealed unsafe partial class BaseGamePackSlices : global::System.IDisposab
     public void addFromVersions(nint baseGameVersions, nint resourcePackRepository, nint packId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
-    public void applyPackSlices(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, nint resourcePackRepository, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack packStack)
+    public void applyPackSlices(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Abi.SharedHandle? resourcePackRepository, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack packStack)
     {
-        NativeMethods.TablePtr->C0.hs_method_1ecec4f3((void*)__hosihikari_shim_handle, (void*)baseGameVersion.Handle, (void*)resourcePackRepository, (void*)packStack.Handle);
+        NativeMethods.TablePtr->C0.hs_method_1ecec4f3((void*)__hosihikari_shim_handle, (void*)baseGameVersion.Handle, resourcePackRepository?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)packStack.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

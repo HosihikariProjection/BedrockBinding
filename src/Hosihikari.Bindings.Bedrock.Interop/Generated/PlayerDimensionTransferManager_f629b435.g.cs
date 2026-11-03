@@ -38,9 +38,9 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<DimensionManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _ctor(nint playerLimboActorManager, nint playerDimensionTransferer, nint dimensionManager, nint gameplayUserManager, nint entityRegistry, nint levelCrashDumpManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<DimensionManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void _dtor()
     {
@@ -69,9 +69,9 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         return new PlayerDimensionTransferManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<DimensionManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static PlayerDimensionTransferManager Create(nint playerLimboActorManager, nint playerDimensionTransferer, nint dimensionManager, nint gameplayUserManager, nint entityRegistry, nint levelCrashDumpManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<DimensionManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public bool _isPlayerSuspended(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {

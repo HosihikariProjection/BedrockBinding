@@ -104,9 +104,9 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_9b68678f((void*)__hosihikari_shim_handle, (void*)source.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<MinecraftServiceKeyManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: map key type 'PackIdVersion' is not supported.", false)]
     public nint _ctor(nint gameCallbacks, nint level, nint serverJoinInfo, nint serveTelemetryData, nint network, nint serverKeys, nint minecraftServiceKeys, nint serverLocator, nint packetSender, nint allowList, nint editorAllowList, nint permissionsFile, nint hostPublicKey, int maxChunkRadius, int maxNumPlayers, nint commandHandler, nint app, nint packIdToContentKey, nint scheduler, nint textFilteringProcessor, nint gameTest, nint appConfigs, nint networkServerConfig, nint packSettingsCache, nint dependencies) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<MinecraftServiceKeyManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'PackIdVersion' is not supported.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameSpecificNetEventCallback? _getGameSpecificNetEventCallback()
     {
@@ -744,9 +744,9 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         return new ServerNetworkHandler((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<MinecraftServiceKeyManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: map key type 'PackIdVersion' is not supported.", false)]
     public static ServerNetworkHandler Create(nint gameCallbacks, nint level, nint serverJoinInfo, nint serveTelemetryData, nint network, nint serverKeys, nint minecraftServiceKeys, nint serverLocator, nint packetSender, nint allowList, nint editorAllowList, nint permissionsFile, nint hostPublicKey, int maxChunkRadius, int maxNumPlayers, nint commandHandler, nint app, nint packIdToContentKey, nint scheduler, nint textFilteringProcessor, nint gameTest, nint appConfigs, nint networkServerConfig, nint packSettingsCache, nint dependencies) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<MinecraftServiceKeyManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'PackIdVersion' is not supported.");
 
     public static ServerNetworkHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkHandler arg0)
     {

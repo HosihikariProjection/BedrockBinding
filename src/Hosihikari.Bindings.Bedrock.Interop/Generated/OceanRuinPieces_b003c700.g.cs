@@ -38,9 +38,9 @@ public sealed unsafe partial class OceanRuinPieces : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
     public static void _addPiece(nint structureManager, nint position, nint rotation, nint pieces, nint random, nint configuration, nint isLarge, nint baseIntegrity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
 
     [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.", false)]
     public static nint bigRuinsBrick() =>

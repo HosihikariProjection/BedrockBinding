@@ -70,9 +70,9 @@ public sealed unsafe partial class ResourcePackStack : global::System.IDisposabl
     public static void _populateDependencies(nint packStack, nint packInstance, nint repo, bool isDependent, nint levelId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
-    public void add(global::Hosihikari.Bindings.Bedrock.Interop.PackInstance packInstance, nint repo, bool isDependent)
+    public void add(global::Hosihikari.Bindings.Bedrock.Interop.PackInstance packInstance, global::Hosihikari.Bindings.Abi.SharedHandle? repo, bool isDependent)
     {
-        NativeMethods.TablePtr->C3.hs_method_2b964419((void*)__hosihikari_shim_handle, (void*)packInstance.Handle, (void*)repo, isDependent);
+        NativeMethods.TablePtr->C3.hs_method_2b964419((void*)__hosihikari_shim_handle, (void*)packInstance.Handle, repo?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isDependent);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ResourcePackStack' has no accessible destructor.", false)]

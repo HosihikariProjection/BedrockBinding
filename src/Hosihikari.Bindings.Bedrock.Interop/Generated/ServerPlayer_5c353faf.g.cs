@@ -1990,9 +1990,10 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_6ff4618f((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Editor::IEditorManager>' is not a known bindable declaration.", false)]
-    public void createEditorPlayer(nint editorManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Editor::IEditorManager>' is not a known bindable declaration.");
+    public void createEditorPlayer(global::Hosihikari.Bindings.Abi.SharedHandle? editorManager)
+    {
+        NativeMethods.TablePtr->C3.hs_method_87294ab5((void*)__hosihikari_shim_handle, editorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void destroyEditorPlayer()
     {

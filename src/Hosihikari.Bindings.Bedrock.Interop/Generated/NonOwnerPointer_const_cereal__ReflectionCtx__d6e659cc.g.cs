@@ -49,9 +49,9 @@ public sealed unsafe partial class NonOwnerPointer_const_cereal__ReflectionCtx_ 
         return new NonOwnerPointer_const_cereal__ReflectionCtx_((nint)handle);
     }
 
-    public static NonOwnerPointer_const_cereal__ReflectionCtx_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_const_cereal__ReflectionCtx_ arg0)
+    public static NonOwnerPointer_const_cereal__ReflectionCtx_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_ecb8d78b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_ecb8d78b(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

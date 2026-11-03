@@ -53,21 +53,38 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         NativeMethods.TablePtr->C4.hs_method_c545382f((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public nint _ctor_08e4c822(nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_08e4c822((void*)__hosihikari_shim_handle, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor_1111c486(nint other) =>
+    public nint _ctor(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public nint _ctor_ad4242ec(nint temp, nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate temp, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_ad4242ec((void*)__hosihikari_shim_handle, (void*)temp.Handle, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public nint _ctor_0adcaafa(nint name, nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public nint _ctor(string name, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return (nint)NativeMethods.TablePtr->C4.hs_method_0adcaafa((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        }
+    }
 
     public void _dtor()
     {
@@ -122,12 +139,19 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         return new StructureTemplate((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public static StructureTemplate Create_b8c0b3b1(nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public static StructureTemplate Create(global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_b8c0b3b1(unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new StructureTemplate((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static StructureTemplate Create_7e75bd9b(nint other) =>
+    public static StructureTemplate Create(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
     public static StructureTemplate Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate arg0)
@@ -141,13 +165,41 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         return new StructureTemplate((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public static StructureTemplate Create_14191f9b(nint temp, nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public static StructureTemplate Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate temp, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_14191f9b((void*)temp.Handle, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public static StructureTemplate Create_1e5f8282(nint name, nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+        return new StructureTemplate((nint)handle);
+    }
+
+    public static StructureTemplate Create(string name, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            var handle = NativeMethods.TablePtr->C4.hs_create_1e5f8282(__hs_stringData0, (nuint)__hs_stringByteCount0, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+            if (handle == null)
+            {
+                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+            }
+
+            return new StructureTemplate((nint)handle);
+        }
+    }
 
     public bool _allowReadActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
@@ -363,9 +415,11 @@ public sealed unsafe partial class StructureTemplate : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public static nint tryGetBlockAtPos(nint pos, nint structureTemplateData, nint blockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetBlockAtPos(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateData structureTemplateData, global::Hosihikari.Bindings.Abi.SharedHandle? blockRegistry)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_457c8114((void*)pos.Handle, (void*)structureTemplateData.Handle, blockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+    }
 
 
     public void Dispose()

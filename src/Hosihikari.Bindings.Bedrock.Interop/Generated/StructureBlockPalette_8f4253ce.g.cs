@@ -54,9 +54,10 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
         return new StructureBlockPalette((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public nint getBlock(nint blockPalette, ulong paletteId, nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, ulong paletteId, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_889d08e7((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, paletteId, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)), false);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData? getBlockPositionData(ulong blockIndex)
     {
@@ -76,9 +77,11 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C4.hs_get_b4c3c2bd((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public nint tryGetBlock(ulong paletteId, nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetBlock(ulong paletteId, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_104000ff((void*)__hosihikari_shim_handle, paletteId, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
+    }
 
 
     public void Dispose()

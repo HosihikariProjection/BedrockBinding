@@ -38,9 +38,9 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' is not a known bindable declaration.", false)]
     public nint _ctor(nint descriptorString, nint serverScheduler, nint config, nint @delegate, nint serializationRegistry, nint contentEncoder) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' is not a known bindable declaration.");
 
     public static ScriptNetHttpClient Create()
     {
@@ -64,9 +64,9 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
         return new ScriptNetHttpClient((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' is not a known bindable declaration.", false)]
     public static ScriptNetHttpClient Create(nint descriptorString, nint serverScheduler, nint config, nint @delegate, nint serializationRegistry, nint contentEncoder) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' is not a known bindable declaration.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
     {

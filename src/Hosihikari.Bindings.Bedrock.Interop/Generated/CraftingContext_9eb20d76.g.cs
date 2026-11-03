@@ -38,9 +38,10 @@ public sealed unsafe partial class CraftingContext : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ILevel>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint level) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ILevel>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? level)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_36530232((void*)__hosihikari_shim_handle, level?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void _dtor()
     {
@@ -58,9 +59,16 @@ public sealed unsafe partial class CraftingContext : global::System.IDisposable
         return new CraftingContext((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ILevel>>' is not a known bindable declaration.", false)]
-    public static CraftingContext Create(nint level) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ILevel>>' is not a known bindable declaration.");
+    public static CraftingContext Create(global::Hosihikari.Bindings.Abi.SharedHandle? level)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_d7802167(level?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new CraftingContext((nint)handle);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPimpl_Address

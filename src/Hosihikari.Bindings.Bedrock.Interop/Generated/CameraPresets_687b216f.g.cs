@@ -65,9 +65,24 @@ public sealed unsafe partial class CameraPresets : global::System.IDisposable
         return new CameraPresets((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public nint _parseAndLoadCameraPreset(nint fileData, nint molangVersion, nint ctx, nint validator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.PuvLoadData.LoadResultWithTiming _parseAndLoadCameraPreset(string fileData, short molangVersion, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Abi.SharedHandle? validator)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fileData);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(fileData, __hs_stringBytes0);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            return new global::Hosihikari.Bindings.Bedrock.Interop.PuvLoadData.LoadResultWithTiming((nint)NativeMethods.TablePtr->C0.hs_method_e41a9d27((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, molangVersion, (void*)ctx.Handle, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)));
+        }
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public void _storeCameraList(nint list) =>
@@ -116,9 +131,10 @@ public sealed unsafe partial class CameraPresets : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public void loadPresets(nint resourcePackManager, nint experiments, nint validator, nint eventing) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public void loadPresets(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Abi.SharedHandle? validator, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
+    {
+        NativeMethods.TablePtr->C0.hs_method_8cabfeff((void*)__hosihikari_shim_handle, (void*)resourcePackManager.Handle, (void*)experiments.Handle, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)eventing.Handle);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLists_Address

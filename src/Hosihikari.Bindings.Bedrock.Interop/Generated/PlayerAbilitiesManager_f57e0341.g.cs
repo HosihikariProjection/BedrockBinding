@@ -38,9 +38,10 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint gameplayUserManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? gameplayUserManager)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_14d01c33((void*)__hosihikari_shim_handle, gameplayUserManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public static PlayerAbilitiesManager Create()
     {
@@ -64,9 +65,16 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
         return new PlayerAbilitiesManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.", false)]
-    public static PlayerAbilitiesManager Create(nint gameplayUserManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.");
+    public static PlayerAbilitiesManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? gameplayUserManager)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_e6dd45c1(gameplayUserManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PlayerAbilitiesManager((nint)handle);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities? getPlayerAbilities(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID playerId)
     {

@@ -62,13 +62,13 @@ public sealed unsafe partial class BiomeManager : global::System.IDisposable
     public static BiomeManager Create(nint biomes, nint automaticFeatureRules) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.", false)]
     public void _initializeServerBiomeRegistry(nint worldRegistries, nint levelSeed, nint levelStorage, nint linkedAssetValidator, nint biomeIdToResolvedData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.", false)]
     public void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(nint worldRegistries, nint resourcePackManager, nint levelSeed, nint levelStorage, nint linkedAssetValidator, nint biomeIdToResolvedData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAutomaticFeatureRules_Address

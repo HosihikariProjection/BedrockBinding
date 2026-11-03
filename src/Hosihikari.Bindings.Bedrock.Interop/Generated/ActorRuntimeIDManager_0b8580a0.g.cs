@@ -38,9 +38,10 @@ public sealed unsafe partial class ActorRuntimeIDManager : global::System.IDispo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint gameplayUserManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? gameplayUserManager)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_f34f2703((void*)__hosihikari_shim_handle, gameplayUserManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public static ActorRuntimeIDManager Create()
     {
@@ -64,9 +65,16 @@ public sealed unsafe partial class ActorRuntimeIDManager : global::System.IDispo
         return new ActorRuntimeIDManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.", false)]
-    public static ActorRuntimeIDManager Create(nint gameplayUserManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.");
+    public static ActorRuntimeIDManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? gameplayUserManager)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_2b5d3c6d(gameplayUserManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ActorRuntimeIDManager((nint)handle);
+    }
 
     public void _addEntity(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {

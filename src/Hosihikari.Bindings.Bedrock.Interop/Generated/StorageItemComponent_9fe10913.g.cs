@@ -146,9 +146,10 @@ public sealed unsafe partial class StorageItemComponent : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.StorageItemComponent((nint)NativeMethods.TablePtr->C4.hs_method_aa139cc8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'WeakRef<IDynamicContainerSerialization>' is not a known bindable declaration.", false)]
-    public void setContainerRegistryHandlers(nint containerSerialization, nint containerAccess, nint containerTracker) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'WeakRef<IDynamicContainerSerialization>' is not a known bindable declaration.");
+    public void setContainerRegistryHandlers(global::Hosihikari.Bindings.Abi.SharedHandle? containerSerialization, global::Hosihikari.Bindings.Abi.SharedHandle? containerAccess, global::Hosihikari.Bindings.Abi.SharedHandle? containerTracker)
+    {
+        NativeMethods.TablePtr->C4.hs_method_e5aa893e((void*)__hosihikari_shim_handle, containerSerialization?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), containerAccess?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), containerTracker?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public static void use(nint result, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {

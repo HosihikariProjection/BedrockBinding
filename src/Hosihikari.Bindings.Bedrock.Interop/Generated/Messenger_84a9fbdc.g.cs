@@ -117,9 +117,10 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<CodeBuilder::IClient>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint codeBuilderClient) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<CodeBuilder::IClient>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? codeBuilderClient)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_d15e2225((void*)__hosihikari_shim_handle, codeBuilderClient?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void _endOfDay(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
     {
@@ -350,9 +351,16 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         return new Messenger((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<CodeBuilder::IClient>' is not a known bindable declaration.", false)]
-    public static Messenger Create(nint codeBuilderClient) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<CodeBuilder::IClient>' is not a known bindable declaration.");
+    public static Messenger Create(global::Hosihikari.Bindings.Abi.SharedHandle? codeBuilderClient)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_128ffa5f(codeBuilderClient?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Messenger((nint)handle);
+    }
 
     public void blockBroken(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int method, int variantData, ushort auxType)
     {

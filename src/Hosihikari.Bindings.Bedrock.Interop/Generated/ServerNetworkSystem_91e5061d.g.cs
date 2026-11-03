@@ -218,9 +218,9 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
         set => NativeMethods.TablePtr->C3.hs_set_ca52d17e((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetworkDebugManager>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'PacketGroupDefinition::PacketGroupBuilder' is abstract or not copy-constructible.", false)]
     public nint _ctor(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController, nint httpLibraryToken) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetworkDebugManager>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'PacketGroupDefinition::PacketGroupBuilder' is abstract or not copy-constructible.");
 
     public static ServerNetworkSystem Create()
     {
@@ -233,9 +233,9 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
         return new ServerNetworkSystem((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetworkDebugManager>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'PacketGroupDefinition::PacketGroupBuilder' is abstract or not copy-constructible.", false)]
     public static ServerNetworkSystem Create(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController, nint httpLibraryToken) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetworkDebugManager>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'PacketGroupDefinition::PacketGroupBuilder' is abstract or not copy-constructible.");
 
     public static ServerNetworkSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkSystem arg0)
     {

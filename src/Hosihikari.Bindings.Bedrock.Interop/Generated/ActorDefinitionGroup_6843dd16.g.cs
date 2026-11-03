@@ -38,9 +38,10 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint level, nint resourcePackManager, nint eventing, nint experiments, nint linkedAssetValidator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Abi.SharedHandle? linkedAssetValidator)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_e31d4078((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)resourcePackManager.Handle, (void*)eventing.Handle, (void*)experiments.Handle, linkedAssetValidator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public static ActorDefinitionGroup Create()
     {
@@ -53,9 +54,16 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         return new ActorDefinitionGroup((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public static ActorDefinitionGroup Create(nint level, nint resourcePackManager, nint eventing, nint experiments, nint linkedAssetValidator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public static ActorDefinitionGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Abi.SharedHandle? linkedAssetValidator)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_246332ca((void*)level.Handle, (void*)resourcePackManager.Handle, (void*)eventing.Handle, (void*)experiments.Handle, linkedAssetValidator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ActorDefinitionGroup((nint)handle);
+    }
 
     public static ActorDefinitionGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup arg0)
     {

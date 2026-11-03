@@ -38,9 +38,9 @@ public sealed unsafe partial class PlayerTickManager : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<DimensionManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _ctor(nint dimensionManager, nint gameplayUserManager, nint playerTickProxy, bool isClientSide) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<DimensionManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void _dtor()
     {
@@ -58,9 +58,9 @@ public sealed unsafe partial class PlayerTickManager : global::System.IDisposabl
         return new PlayerTickManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<DimensionManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static PlayerTickManager Create(nint dimensionManager, nint gameplayUserManager, nint playerTickProxy, bool isClientSide) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<DimensionManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionManager_Address

@@ -42,9 +42,9 @@ public sealed unsafe partial class DirectoryPackWithEncryptionAccessStrategy : g
     public nint _createSubPack(nint subPath) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'PackAccessStrategy' has no accessible destructor.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation packLocation, global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation encryptedContentLocation, nint keyProvider, global::Hosihikari.Bindings.Bedrock.Interop.IFileAccess fileAccess, nint io)
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation packLocation, global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation encryptedContentLocation, global::Hosihikari.Bindings.Abi.SharedHandle? keyProvider, global::Hosihikari.Bindings.Bedrock.Interop.IFileAccess fileAccess, nint io)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_ab9a1130((void*)__hosihikari_shim_handle, (void*)packLocation.Handle, (void*)encryptedContentLocation.Handle, (void*)keyProvider, (void*)fileAccess.Handle, (void*)io);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_ab9a1130((void*)__hosihikari_shim_handle, (void*)packLocation.Handle, (void*)encryptedContentLocation.Handle, keyProvider?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)fileAccess.Handle, (void*)io);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -161,9 +161,9 @@ public sealed unsafe partial class DirectoryPackWithEncryptionAccessStrategy : g
         return new DirectoryPackWithEncryptionAccessStrategy((nint)handle);
     }
 
-    public static DirectoryPackWithEncryptionAccessStrategy Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation packLocation, global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation encryptedContentLocation, nint keyProvider, global::Hosihikari.Bindings.Bedrock.Interop.IFileAccess fileAccess, nint io)
+    public static DirectoryPackWithEncryptionAccessStrategy Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation packLocation, global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation encryptedContentLocation, global::Hosihikari.Bindings.Abi.SharedHandle? keyProvider, global::Hosihikari.Bindings.Bedrock.Interop.IFileAccess fileAccess, nint io)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_5aa3b3a8((void*)packLocation.Handle, (void*)encryptedContentLocation.Handle, (void*)keyProvider, (void*)fileAccess.Handle, (void*)io);
+        var handle = NativeMethods.TablePtr->C1.hs_create_5aa3b3a8((void*)packLocation.Handle, (void*)encryptedContentLocation.Handle, keyProvider?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)fileAccess.Handle, (void*)io);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

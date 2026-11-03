@@ -38,9 +38,9 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IPacketObserver>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _ctor(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController, nint identityPublicKey) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IPacketObserver>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public static NetworkConnection Create()
     {
@@ -64,9 +64,9 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
         return new NetworkConnection((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IPacketObserver>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static NetworkConnection Create(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController, nint identityPublicKey) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IPacketObserver>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBatchedPeer_Address

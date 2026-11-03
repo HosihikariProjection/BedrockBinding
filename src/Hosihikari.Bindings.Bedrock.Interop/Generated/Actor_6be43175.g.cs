@@ -1081,6 +1081,11 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_fac4b441((void*)__hosihikari_shim_handle) != 0;
     }
 
+    public bool canFly()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_7101b187((void*)__hosihikari_shim_handle) != 0;
+    }
+
     public bool canInteractWithOtherEntitiesInGame()
     {
         return NativeMethods.TablePtr->C0.hs_method_1b878e6f((void*)__hosihikari_shim_handle) != 0;
@@ -3278,9 +3283,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_a1128a26((void*)__hosihikari_shim_handle, isDead);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'WeakRef<Dimension>' is not a known bindable declaration.", false)]
-    public void setDimension(nint weakDimension) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'WeakRef<Dimension>' is not a known bindable declaration.");
+    public void setDimension(global::Hosihikari.Bindings.Abi.SharedHandle? weakDimension)
+    {
+        NativeMethods.TablePtr->C0.hs_method_280ceb2e((void*)__hosihikari_shim_handle, weakDimension?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void setEquippedSlot(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {

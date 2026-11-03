@@ -38,85 +38,58 @@ public sealed unsafe partial class DebugSpatialPacketModifiers : global::System.
         return __hs_handle;
     }
 
-    public static DebugSpatialPacketModifiers Create()
+    public ulong mCurrentSentMotionPredictionHintsPackets
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2423eb20();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DebugSpatialPacketModifiers((nint)handle);
+        get => NativeMethods.TablePtr->C4.hs_get_a4a22936((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a4a22936((void*)__hosihikari_shim_handle, value);
     }
 
-    public static DebugSpatialPacketModifiers Create(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers arg0)
+    public ulong mCurrentSentSpatialPackets
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8635c4be((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DebugSpatialPacketModifiers((nint)handle);
+        get => NativeMethods.TablePtr->C4.hs_get_75a3cdbc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_75a3cdbc((void*)__hosihikari_shim_handle, value);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk2c6ac9_Address
+    public ulong mExpectedSentSpatialPackets
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1b7cd0c5((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C4.hs_get_74434dd8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_74434dd8((void*)__hosihikari_shim_handle, value);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk529cf2_Address
+    public ulong mOverrideScoreValue
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_eda80d41((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C4.hs_get_c90f0834((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_c90f0834((void*)__hosihikari_shim_handle, value);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk70a9cd_Address
+    public ulong mOverridemMaxDroppedTicks
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_375485e4((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C4.hs_get_4bcea041((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_4bcea041((void*)__hosihikari_shim_handle, value);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk70f911_Address
+    public float mOverridemMaxOptimizedDistance
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3ec3684b((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C4.hs_get_2ad2517e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_2ad2517e((void*)__hosihikari_shim_handle, value);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk92dc7e_Address
+    public bool mOverridemUseMotionPredictionHints
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1060dceb((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C4.hs_get_fd377a67((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_fd377a67((void*)__hosihikari_shim_handle, value);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnka07cd9_Address
+    public bool mUseScoreOverride
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bef3fa10((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C4.hs_get_3ff27bc3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_3ff27bc3((void*)__hosihikari_shim_handle, value);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkcde04f_Address
+    public bool mUseValueOverrides
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1a6dd5db((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnke0a99e_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e1320140((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnke12a67_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a552480e((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers((nint)NativeMethods.TablePtr->C4.hs_method_7bc17b97((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        get => NativeMethods.TablePtr->C4.hs_get_bd2d50c4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_bd2d50c4((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()

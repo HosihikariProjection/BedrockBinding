@@ -44,9 +44,9 @@ public sealed unsafe partial class FileArchiver : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a99c3eb6((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const IContentKeyProvider>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _ctor(nint scheduler, nint levelListCache, nint levelStorageSource, nint pathManager, nint resourcePackRepository, bool isEditorModeEnabled, nint worldConverter, nint keyProvider, nint levelDbEnv, nint displayMessageFunction) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const IContentKeyProvider>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _generateFilePickerSettings(int[] types, string arg1)
     {
@@ -106,9 +106,9 @@ public sealed unsafe partial class FileArchiver : global::System.IDisposable
         return new FileArchiver((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const IContentKeyProvider>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static FileArchiver Create(nint scheduler, nint levelListCache, nint levelStorageSource, nint pathManager, nint resourcePackRepository, bool isEditorModeEnabled, nint worldConverter, nint keyProvider, nint levelDbEnv, nint displayMessageFunction) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const IContentKeyProvider>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public static FileArchiver Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver arg0)
     {

@@ -38,9 +38,10 @@ public sealed unsafe partial class DBStoragePerformanceTelemetry : global::Syste
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorageEventing>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint eventing) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorageEventing>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? eventing)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_f55e884a((void*)__hosihikari_shim_handle, eventing?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public static DBStoragePerformanceTelemetry Create()
     {
@@ -53,9 +54,16 @@ public sealed unsafe partial class DBStoragePerformanceTelemetry : global::Syste
         return new DBStoragePerformanceTelemetry((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorageEventing>' is not a known bindable declaration.", false)]
-    public static DBStoragePerformanceTelemetry Create(nint eventing) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorageEventing>' is not a known bindable declaration.");
+    public static DBStoragePerformanceTelemetry Create(global::Hosihikari.Bindings.Abi.SharedHandle? eventing)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_3cf542c3(eventing?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new DBStoragePerformanceTelemetry((nint)handle);
+    }
 
     public static DBStoragePerformanceTelemetry Create(global::Hosihikari.Bindings.Bedrock.Interop.DBStoragePerformanceTelemetry arg0)
     {

@@ -40,17 +40,17 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo arg0)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_c5599d71((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_c5599d71((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C0.hs_method_6eedae75((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_6eedae75((void*)__hosihikari_shim_handle);
     }
 
     public static CloudSaveLevelInfo Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_6c6d2374();
+        var handle = NativeMethods.TablePtr->C1.hs_create_6c6d2374();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
 
     public static CloudSaveLevelInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.CloudSaveLevelInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_d2fdecab((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d2fdecab((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,30 +73,30 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mCTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_f852c8c0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f852c8c0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDriveItemId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_0c35f3e7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0c35f3e7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFileName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d2eeab47((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d2eeab47((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastUpdated_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_9146463a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_9146463a((void*)__hosihikari_shim_handle);
     }
 
     public bool mNeedsUpload
     {
-        get => NativeMethods.TablePtr->C0.hs_get_9417b8be((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C1.hs_get_9417b8be((void*)__hosihikari_shim_handle) != 0;
         set => NativeMethods.TablePtr->C1.hs_set_9417b8be((void*)__hosihikari_shim_handle, value);
     }
 
@@ -122,7 +122,7 @@ public sealed unsafe partial class CloudSaveLevelInfo : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_656657fc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_656657fc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

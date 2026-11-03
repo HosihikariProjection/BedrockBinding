@@ -105,9 +105,10 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_b87bd9cd((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.", false)]
-    public nint reloadAndApply(nint userManager, nint opCommandPermissionLevel) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<GameplayUserManager>>' is not a known bindable declaration.");
+    public int reloadAndApply(global::Hosihikari.Bindings.Abi.SharedHandle? userManager, byte opCommandPermissionLevel)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_dc68e118((void*)__hosihikari_shim_handle, userManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), opCommandPermissionLevel);
+    }
 
 
     public void Dispose()

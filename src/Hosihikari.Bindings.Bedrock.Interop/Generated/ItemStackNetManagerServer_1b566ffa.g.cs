@@ -197,13 +197,14 @@ public sealed unsafe partial class ItemStackNetManagerServer : global::System.ID
     public nint getRequestId() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'TypedClientNetId<ItemStackRequestIdTag, int>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<TextFilteringProcessor>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void handleRequest(nint request, nint textFilteringProcessor) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<TextFilteringProcessor>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<TextFilteringProcessor>' is not a known bindable declaration.", false)]
-    public void handleRequestBatch(nint requestBatch, nint textFilteringProcessor) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<TextFilteringProcessor>' is not a known bindable declaration.");
+    public void handleRequestBatch(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestBatch requestBatch, global::Hosihikari.Bindings.Abi.SharedHandle? textFilteringProcessor)
+    {
+        NativeMethods.TablePtr->C2.hs_method_4837ae18((void*)__hosihikari_shim_handle, (void*)requestBatch.Handle, textFilteringProcessor?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnContainerScreenCloseCB_Address

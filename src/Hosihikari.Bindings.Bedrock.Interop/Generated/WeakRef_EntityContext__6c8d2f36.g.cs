@@ -53,9 +53,9 @@ public sealed unsafe partial class WeakRef_EntityContext_ : global::System.IDisp
         return new WeakRef_EntityContext_((nint)handle);
     }
 
-    public static WeakRef_EntityContext_ Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakRef_EntityContext_ arg0)
+    public static WeakRef_EntityContext_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a8fc75d9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_a8fc75d9(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

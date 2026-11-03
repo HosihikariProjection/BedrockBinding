@@ -49,9 +49,9 @@ public sealed unsafe partial class IEventListener : global::System.IDisposable
         return new IEventListener((nint)handle);
     }
 
-    public void recordEvent(nint @event, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_AppPlatform_ appPlatform)
+    public void recordEvent(nint @event, global::Hosihikari.Bindings.Abi.SharedHandle? appPlatform)
     {
-        NativeMethods.TablePtr->C4.hs_method_b5b30cb9((void*)__hosihikari_shim_handle, (void*)@event, (void*)appPlatform.Handle);
+        NativeMethods.TablePtr->C4.hs_method_b5b30cb9((void*)__hosihikari_shim_handle, (void*)@event, appPlatform?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void sendEvents(bool forceSend)

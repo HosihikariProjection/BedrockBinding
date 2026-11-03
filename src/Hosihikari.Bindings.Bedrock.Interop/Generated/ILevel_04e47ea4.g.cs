@@ -2186,9 +2186,10 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_f62cbf75((void*)__hosihikari_shim_handle, multiplayerGame);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetEventCallback>' is not a known bindable declaration.", false)]
-    public void setNetEventCallback(nint val) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetEventCallback>' is not a known bindable declaration.");
+    public void setNetEventCallback(global::Hosihikari.Bindings.Abi.SharedHandle? val)
+    {
+        NativeMethods.TablePtr->C2.hs_method_47e26e72((void*)__hosihikari_shim_handle, val?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void setPlatformBroadcastIntent(int broadcastMode)
     {

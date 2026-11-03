@@ -38,9 +38,9 @@ public sealed unsafe partial class ServerAudioContentRegistry : global::System.I
         return __hs_handle;
     }
 
-    public nint _ctor(nint serverSoundDefinitionRegistry)
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? serverSoundDefinitionRegistry)
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d7420fa3((void*)__hosihikari_shim_handle, (void*)serverSoundDefinitionRegistry);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_d7420fa3((void*)__hosihikari_shim_handle, serverSoundDefinitionRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public static ServerAudioContentRegistry Create()
@@ -65,9 +65,9 @@ public sealed unsafe partial class ServerAudioContentRegistry : global::System.I
         return new ServerAudioContentRegistry((nint)handle);
     }
 
-    public static ServerAudioContentRegistry Create(nint serverSoundDefinitionRegistry)
+    public static ServerAudioContentRegistry Create(global::Hosihikari.Bindings.Abi.SharedHandle? serverSoundDefinitionRegistry)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a3d62da4((void*)serverSoundDefinitionRegistry);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a3d62da4(serverSoundDefinitionRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

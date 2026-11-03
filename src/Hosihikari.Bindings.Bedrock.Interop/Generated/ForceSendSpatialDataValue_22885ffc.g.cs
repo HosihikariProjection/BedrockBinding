@@ -2,22 +2,22 @@
 #nullable enable
 #pragma warning disable CS0618
 
-namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock.EnumSet_BlockClientPredictionOverrides__7__Nested;
+namespace Hosihikari.Bindings.Bedrock.Interop;
 
-public sealed unsafe partial class iterator : global::System.IDisposable
+public sealed unsafe partial class ForceSendSpatialDataValue : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
 
-    public iterator(nint handle) : this(handle, true) { }
+    public ForceSendSpatialDataValue(nint handle) : this(handle, true) { }
 
-    internal iterator(nint handle, bool ownsHandle)
+    internal ForceSendSpatialDataValue(nint handle, bool ownsHandle)
     {
         __hosihikari_shim_handle = handle;
         _ownsHandle = ownsHandle;
     }
 
-    public static iterator Borrow(nint handle) => new iterator(handle, false);
+    public static ForceSendSpatialDataValue Borrow(nint handle) => new ForceSendSpatialDataValue(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
 
@@ -38,26 +38,21 @@ public sealed unsafe partial class iterator : global::System.IDisposable
         return __hs_handle;
     }
 
-    public ulong index_
+    public static ForceSendSpatialDataValue Create(global::Hosihikari.Bindings.Bedrock.Interop.ForceSendSpatialDataValue arg0)
     {
-        get => NativeMethods.TablePtr->C0.hs_get_9b5656c6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_9b5656c6((void*)__hosihikari_shim_handle, value);
-    }
-
-    public static iterator Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.EnumSet_BlockClientPredictionOverrides__7_ set, ulong index)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_370fdea9((void*)set.Handle, index);
+        var handle = NativeMethods.TablePtr->C1.hs_create_6e78e0b3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
         }
 
-        return new iterator((nint)handle);
+        return new ForceSendSpatialDataValue((nint)handle);
     }
 
-    public nint set_
+    public uint mValue
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_acfed3f8((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C1.hs_get_21026f65((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_21026f65((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -66,7 +61,7 @@ public sealed unsafe partial class iterator : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_56158c36((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_22885ffc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,49 +38,22 @@ public sealed unsafe partial class DebugSendRateModifiers : global::System.IDisp
         return __hs_handle;
     }
 
-    public static DebugSendRateModifiers Create()
+    public bool mDrawDebugLines
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ed86b3a3();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DebugSendRateModifiers((nint)handle);
+        get => NativeMethods.TablePtr->C4.hs_get_9085aa0b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_9085aa0b((void*)__hosihikari_shim_handle, value);
     }
 
-    public static DebugSendRateModifiers Create(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSendRateModifiers arg0)
+    public int mDropPacketChance
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a573a263((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DebugSendRateModifiers((nint)handle);
+        get => NativeMethods.TablePtr->C4.hs_get_7333136f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_7333136f((void*)__hosihikari_shim_handle, value);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk2a008d_Address
+    public int mSendEveryNPackets
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_06af9de7((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk3652fb_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_96957dbe((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkd1ec5e_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a5a3ea20((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSendRateModifiers operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSendRateModifiers arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSendRateModifiers((nint)NativeMethods.TablePtr->C4.hs_method_548a7d51((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        get => NativeMethods.TablePtr->C4.hs_get_019e82dc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_019e82dc((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()

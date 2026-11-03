@@ -137,9 +137,9 @@ public sealed unsafe partial class LevelListCache : global::System.IDisposable
     public nint _createLevelStorageObserver() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LevelStorageObserver' has no accessible destructor.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const AppPlatform>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _ctor(nint levelStorageSource, nint appPlatform, nint checkIsSafeToFlushCache, nint checkIsCloudSyncAvailable) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const AppPlatform>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void _deleteLevel(string levelId)
     {
@@ -544,9 +544,9 @@ public sealed unsafe partial class LevelListCache : global::System.IDisposable
         return new LevelListCache((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const AppPlatform>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static LevelListCache Create(nint levelStorageSource, nint appPlatform, nint checkIsSafeToFlushCache, nint checkIsCloudSyncAvailable) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<const AppPlatform>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public static LevelListCache Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelListCache arg0)
     {

@@ -137,9 +137,9 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<AppPlatform>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'Core::ZipUtils::IZipUtility' has no generated wrapper.", false)]
     public nint _ctor(nint appPlatform, nint taskGroup, nint fileUploader, nint zipUtility, nint previousUpload, nint resourcePackPathCache) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<AppPlatform>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'Core::ZipUtils::IZipUtility' has no generated wrapper.");
 
     public void _uploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex)
     {
@@ -182,9 +182,9 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
         return new ResourcePackFileUploadManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<AppPlatform>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'Core::ZipUtils::IZipUtility' has no generated wrapper.", false)]
     public static ResourcePackFileUploadManager Create(nint appPlatform, nint taskGroup, nint fileUploader, nint zipUtility, nint previousUpload, nint resourcePackPathCache) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<AppPlatform>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'Core::ZipUtils::IZipUtility' has no generated wrapper.");
 
     public void _addZipPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ resourceZipPath)
     {

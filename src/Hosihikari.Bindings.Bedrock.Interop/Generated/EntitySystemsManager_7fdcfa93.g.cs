@@ -38,9 +38,9 @@ public sealed unsafe partial class EntitySystemsManager : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(bool isClientSide, byte subClientId, nint entityRegistry, nint pauseManager)
+    public nint _ctor(bool isClientSide, byte subClientId, global::Hosihikari.Bindings.Abi.SharedHandle? entityRegistry, global::Hosihikari.Bindings.Abi.SharedHandle? pauseManager)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_40d3e81c((void*)__hosihikari_shim_handle, isClientSide, subClientId, (void*)entityRegistry, (void*)pauseManager);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_40d3e81c((void*)__hosihikari_shim_handle, isClientSide, subClientId, entityRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), pauseManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public static EntitySystemsManager Create()
@@ -54,9 +54,9 @@ public sealed unsafe partial class EntitySystemsManager : global::System.IDispos
         return new EntitySystemsManager((nint)handle);
     }
 
-    public static EntitySystemsManager Create(bool isClientSide, byte subClientId, nint entityRegistry, nint pauseManager)
+    public static EntitySystemsManager Create(bool isClientSide, byte subClientId, global::Hosihikari.Bindings.Abi.SharedHandle? entityRegistry, global::Hosihikari.Bindings.Abi.SharedHandle? pauseManager)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ae0e9ac8(isClientSide, subClientId, (void*)entityRegistry, (void*)pauseManager);
+        var handle = NativeMethods.TablePtr->C1.hs_create_ae0e9ac8(isClientSide, subClientId, entityRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), pauseManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

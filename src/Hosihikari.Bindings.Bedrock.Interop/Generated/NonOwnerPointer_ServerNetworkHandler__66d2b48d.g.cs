@@ -49,9 +49,9 @@ public sealed unsafe partial class NonOwnerPointer_ServerNetworkHandler_ : globa
         return new NonOwnerPointer_ServerNetworkHandler_((nint)handle);
     }
 
-    public static NonOwnerPointer_ServerNetworkHandler_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_ServerNetworkHandler_ arg0)
+    public static NonOwnerPointer_ServerNetworkHandler_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_3de55fcf((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_3de55fcf(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

@@ -53,9 +53,9 @@ public sealed unsafe partial class BlockCustomComponentsComponent : global::Syst
     public nint _gatherComponentsToExecute() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'BlockCustomComponentsComponent::ExecutableComponent' is not supported.");
 
-    public void finalize(nint registry, nint parameterCache)
+    public void finalize(global::Hosihikari.Bindings.Abi.SharedHandle? registry, nint parameterCache)
     {
-        NativeMethods.TablePtr->C0.hs_method_e0a27858((void*)__hosihikari_shim_handle, (void*)registry, (void*)parameterCache);
+        NativeMethods.TablePtr->C0.hs_method_e0a27858((void*)__hosihikari_shim_handle, registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)parameterCache);
     }
 
     public bool hasRegisteredEventHandler(ushort eventType, global::Hosihikari.Bindings.Bedrock.Interop.BlockType baseBlock)

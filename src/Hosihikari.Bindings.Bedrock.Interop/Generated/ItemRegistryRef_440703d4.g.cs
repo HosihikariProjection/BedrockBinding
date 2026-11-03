@@ -59,9 +59,10 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.TagUpdateToken((nint)NativeMethods.TablePtr->C2.hs_method_b55122dc((void*)__hosihikari_shim_handle));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public void buildServerRegistry(nint experiments, nint baseGameVersion, nint educationOptions, nint rpm, nint validator, nint eventing) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public void buildServerRegistry(global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.IEducationOptions educationOptions, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? rpm, global::Hosihikari.Bindings.Abi.SharedHandle? validator, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
+    {
+        NativeMethods.TablePtr->C2.hs_method_5d022206((void*)__hosihikari_shim_handle, (void*)experiments.Handle, (void*)baseGameVersion.Handle, (void*)educationOptions.Handle, (void*)(rpm?.Handle ?? 0), validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)eventing.Handle);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_const_cereal__ReflectionCtx_ cerealContext()
     {
@@ -109,9 +110,9 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C2.hs_method_1af9ba20((void*)__hosihikari_shim_handle));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void initCreativeItemsServer(nint blockDefinitionGroup, nint experiment, nint resourcePackManager, nint validator, nint eventing, nint educationOptions, nint registerCallback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public bool isComplexAlias(global::Hosihikari.Bindings.Bedrock.Interop.HashedString oldName)
     {
@@ -222,9 +223,10 @@ public sealed unsafe partial class ItemRegistryRef : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_0e360b18((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'WeakRef<IDynamicContainerSerialization>' is not a known bindable declaration.", false)]
-    public void onLevelInit(nint containerSerialization, nint containerAccess, nint containerTracker) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'WeakRef<IDynamicContainerSerialization>' is not a known bindable declaration.");
+    public void onLevelInit(global::Hosihikari.Bindings.Abi.SharedHandle? containerSerialization, global::Hosihikari.Bindings.Abi.SharedHandle? containerAccess, global::Hosihikari.Bindings.Abi.SharedHandle? containerTracker)
+    {
+        NativeMethods.TablePtr->C2.hs_method_5b0fb0e4((void*)__hosihikari_shim_handle, containerSerialization?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), containerAccess?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), containerTracker?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void registerAlias(global::Hosihikari.Bindings.Bedrock.Interop.HashedString alias, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion fromVersion)
     {

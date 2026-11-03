@@ -38,9 +38,9 @@ public sealed unsafe partial class LevelLooseFileStorage : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path levelDirectory, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity, nint keyProvider)
+    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path levelDirectory, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity, global::Hosihikari.Bindings.Abi.SharedHandle? keyProvider)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_3ad86e69((void*)__hosihikari_shim_handle, (void*)levelDirectory.Handle, (void*)contentIdentity.Handle, (void*)keyProvider);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_3ad86e69((void*)__hosihikari_shim_handle, (void*)levelDirectory.Handle, (void*)contentIdentity.Handle, keyProvider?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public static LevelLooseFileStorage Create()
@@ -54,9 +54,9 @@ public sealed unsafe partial class LevelLooseFileStorage : global::System.IDispo
         return new LevelLooseFileStorage((nint)handle);
     }
 
-    public static LevelLooseFileStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path levelDirectory, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity, nint keyProvider)
+    public static LevelLooseFileStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path levelDirectory, global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity, global::Hosihikari.Bindings.Abi.SharedHandle? keyProvider)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5a473a79((void*)levelDirectory.Handle, (void*)contentIdentity.Handle, (void*)keyProvider);
+        var handle = NativeMethods.TablePtr->C2.hs_create_5a473a79((void*)levelDirectory.Handle, (void*)contentIdentity.Handle, keyProvider?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

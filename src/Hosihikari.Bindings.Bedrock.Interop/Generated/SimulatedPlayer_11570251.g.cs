@@ -1677,13 +1677,73 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_b504d318((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>>' is not a known bindable declaration.", false)]
-    public static nint create(nint name, nint spawnPos, nint dimensionId, nint serverNetworkHandler, nint xuid, nint idOverride) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>>' is not a known bindable declaration.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer? create(string name, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 spawnPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionId, global::Hosihikari.Bindings.Abi.SharedHandle? serverNetworkHandler, string xuid, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? idOverride)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(xuid);
+        scoped global::System.Span<byte> __hs_stringBytes4;
+        if (__hs_stringByteCount4 <= 256)
+        {
+            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
+        }
+        else
+        {
+            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes4);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
+            {
+                var __hs_handle = NativeMethods.TablePtr->C4.hs_method_83722044(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnPos.Handle, (void*)dimensionId.Handle, serverNetworkHandler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), __hs_stringData4, (nuint)__hs_stringByteCount4, (void*)(idOverride?.Handle ?? 0), idOverride is not null);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer((nint)__hs_handle, false) : null;
+            }
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>>' is not a known bindable declaration.", false)]
-    public static nint create(nint name, nint spawnPos, nint spawnPosDelta, nint spawnRotation, bool spawnLoadedFromSave, nint dimensionId, nint serverNetworkHandler, nint xuid, nint idOverride) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>>' is not a known bindable declaration.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer? create(string name, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 spawnPos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 spawnPosDelta, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 spawnRotation, bool spawnLoadedFromSave, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionId, global::Hosihikari.Bindings.Abi.SharedHandle? serverNetworkHandler, string xuid, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID? idOverride)
+    {
+        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
+        scoped global::System.Span<byte> __hs_stringBytes0;
+        if (__hs_stringByteCount0 <= 256)
+        {
+            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
+        }
+        else
+        {
+            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
+        var __hs_stringByteCount7 = global::System.Text.Encoding.UTF8.GetByteCount(xuid);
+        scoped global::System.Span<byte> __hs_stringBytes7;
+        if (__hs_stringByteCount7 <= 256)
+        {
+            __hs_stringBytes7 = stackalloc byte[__hs_stringByteCount7 == 0 ? 1 : __hs_stringByteCount7];
+        }
+        else
+        {
+            __hs_stringBytes7 = new byte[__hs_stringByteCount7];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes7);
+        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
+        {
+            fixed (byte* __hs_stringData7 = __hs_stringBytes7)
+            {
+                var __hs_handle = NativeMethods.TablePtr->C4.hs_method_13917e07(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnPos.Handle, (void*)spawnPosDelta.Handle, (void*)spawnRotation.Handle, spawnLoadedFromSave, (void*)dimensionId.Handle, serverNetworkHandler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), __hs_stringData7, (nuint)__hs_stringByteCount7, (void*)(idOverride?.Handle ?? 0), idOverride is not null);
+                return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer((nint)__hs_handle, false) : null;
+            }
+        }
+    }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer? create(string name, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimId, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 rotation)
     {
@@ -1808,9 +1868,10 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_17613950((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<gametest::BaseGameTestHelper>' is not a known bindable declaration.", false)]
-    public void setGameTestHelper(nint gameTestHelper) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<gametest::BaseGameTestHelper>' is not a known bindable declaration.");
+    public void setGameTestHelper(global::Hosihikari.Bindings.Abi.SharedHandle? gameTestHelper)
+    {
+        NativeMethods.TablePtr->C4.hs_method_8e1820ac((void*)__hosihikari_shim_handle, gameTestHelper?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public bool simulateAttack()
     {
@@ -2004,6 +2065,11 @@ public sealed unsafe partial class SimulatedPlayer : global::System.IDisposable
     public bool simulateUseItem()
     {
         return NativeMethods.TablePtr->C4.hs_method_8db3d9da((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public bool simulateUseItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_ecdadd4b((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public bool simulateUseItemInSlot(int slot)

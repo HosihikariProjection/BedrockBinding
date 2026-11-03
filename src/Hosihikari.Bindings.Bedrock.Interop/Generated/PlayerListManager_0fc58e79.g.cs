@@ -128,13 +128,15 @@ public sealed unsafe partial class PlayerListManager : global::System.IDisposabl
         NativeMethods.TablePtr->C3.hs_method_da031f65((void*)__hosihikari_shim_handle, (void*)uuid.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<PlayerLocationReceiver>' is not a known bindable declaration.", false)]
-    public void setPlayerLocationReceiver(nint playerLocationReceiver) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<PlayerLocationReceiver>' is not a known bindable declaration.");
+    public void setPlayerLocationReceiver(global::Hosihikari.Bindings.Abi.SharedHandle? playerLocationReceiver)
+    {
+        NativeMethods.TablePtr->C3.hs_method_2e5d3ad1((void*)__hosihikari_shim_handle, playerLocationReceiver?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<PlayerLocationSender>' is not a known bindable declaration.", false)]
-    public void setPlayerLocationSender(nint playerLocationSender) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<PlayerLocationSender>' is not a known bindable declaration.");
+    public void setPlayerLocationSender(global::Hosihikari.Bindings.Abi.SharedHandle? playerLocationSender)
+    {
+        NativeMethods.TablePtr->C3.hs_method_3114fab6((void*)__hosihikari_shim_handle, playerLocationSender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerListEntry? tryGetPlayerEntry(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid)
     {

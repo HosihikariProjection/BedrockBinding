@@ -369,9 +369,9 @@ public sealed unsafe partial class SignBlockActor : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_ab10298b((void*)__hosihikari_shim_handle, (void*)region.Handle);
     }
 
-    public void requestToSendOpenSignPacket(global::Hosihikari.Bindings.Bedrock.Interop.WeakRef_EntityContext_ entityRef, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, bool isFrontSide)
+    public void requestToSendOpenSignPacket(global::Hosihikari.Bindings.Abi.SharedHandle? entityRef, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, bool isFrontSide)
     {
-        NativeMethods.TablePtr->C4.hs_method_5ff62ddf((void*)__hosihikari_shim_handle, (void*)entityRef.Handle, (void*)position.Handle, isFrontSide);
+        NativeMethods.TablePtr->C4.hs_method_5ff62ddf((void*)__hosihikari_shim_handle, entityRef?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)position.Handle, isFrontSide);
     }
 
     public bool save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, nint saveContext)

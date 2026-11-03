@@ -911,9 +911,9 @@ public sealed unsafe partial class LevelData : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_81ef81a4((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
-    public void setWorldClockRegistry(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_const_WorldClockRegistry_ registry)
+    public void setWorldClockRegistry(global::Hosihikari.Bindings.Abi.SharedHandle? registry)
     {
-        NativeMethods.TablePtr->C2.hs_method_3c257d31((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_3c257d31((void*)__hosihikari_shim_handle, registry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void setWorldTemplateOptionLocked(bool isLocked)

@@ -456,9 +456,10 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_d9988114((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle, (void*)levelStorage.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.", false)]
-    public void setUnknownBlockRegistry(nint unknownBlockRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<IUnknownBlockTypeRegistry>' is not a known bindable declaration.");
+    public void setUnknownBlockRegistry(global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
+    {
+        NativeMethods.TablePtr->C4.hs_method_91b0f491((void*)__hosihikari_shim_handle, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {

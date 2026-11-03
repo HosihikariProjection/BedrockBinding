@@ -38,9 +38,10 @@ public sealed unsafe partial class AutonomousActorManager : global::System.IDisp
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ActorManager>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint entityRegistry, nint actorManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ActorManager>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? entityRegistry, global::Hosihikari.Bindings.Abi.SharedHandle? actorManager)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_23afc476((void*)__hosihikari_shim_handle, entityRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void _dtor()
     {
@@ -69,9 +70,16 @@ public sealed unsafe partial class AutonomousActorManager : global::System.IDisp
         return new AutonomousActorManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ActorManager>>' is not a known bindable declaration.", false)]
-    public static AutonomousActorManager Create(nint entityRegistry, nint actorManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ActorManager>>' is not a known bindable declaration.");
+    public static AutonomousActorManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? entityRegistry, global::Hosihikari.Bindings.Abi.SharedHandle? actorManager)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_92d9eb8f(entityRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new AutonomousActorManager((nint)handle);
+    }
 
     public void _onChunkDiscarded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
     {

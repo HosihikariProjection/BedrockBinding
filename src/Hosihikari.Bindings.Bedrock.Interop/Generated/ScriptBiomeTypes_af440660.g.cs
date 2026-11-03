@@ -54,9 +54,10 @@ public sealed unsafe partial class ScriptBiomeTypes : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_a8d788cd((void*)__hosihikari_shim_handle, (void*)scope.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<BiomeRegistry>' is not a known bindable declaration.", false)]
-    public static nint bind(nint biomeRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<BiomeRegistry>' is not a known bindable declaration.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind(global::Hosihikari.Bindings.Abi.SharedHandle? biomeRegistry)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_5077ebc2(biomeRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)));
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBiomeRegistry_Address

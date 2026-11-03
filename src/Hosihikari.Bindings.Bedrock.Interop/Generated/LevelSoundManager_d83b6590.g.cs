@@ -44,9 +44,10 @@ public sealed unsafe partial class LevelSoundManager : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_cd147448((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<SoundPlayerInterface>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint soundPlayer, bool isClientSide, nint levelEventCoordinator, nint packetSender, bool isServerAuthSoundEnabled) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<SoundPlayerInterface>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? soundPlayer, bool isClientSide, global::Hosihikari.Bindings.Abi.SharedHandle? levelEventCoordinator, global::Hosihikari.Bindings.Abi.SharedHandle? packetSender, bool isServerAuthSoundEnabled)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_77fbc60a((void*)__hosihikari_shim_handle, soundPlayer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isClientSide, levelEventCoordinator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), packetSender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isServerAuthSoundEnabled);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint _getOnLevelSoundEventConnector() =>
@@ -90,9 +91,16 @@ public sealed unsafe partial class LevelSoundManager : global::System.IDisposabl
         return new LevelSoundManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<SoundPlayerInterface>>' is not a known bindable declaration.", false)]
-    public static LevelSoundManager Create(nint soundPlayer, bool isClientSide, nint levelEventCoordinator, nint packetSender, bool isServerAuthSoundEnabled) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<SoundPlayerInterface>>' is not a known bindable declaration.");
+    public static LevelSoundManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? soundPlayer, bool isClientSide, global::Hosihikari.Bindings.Abi.SharedHandle? levelEventCoordinator, global::Hosihikari.Bindings.Abi.SharedHandle? packetSender, bool isServerAuthSoundEnabled)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_145c4181(soundPlayer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isClientSide, levelEventCoordinator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), packetSender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isServerAuthSoundEnabled);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new LevelSoundManager((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::variant<LevelSoundManager::QueuedSoundSendPacket, LevelSoundManager::QueuedSoundBroadcastPacket, LevelSoundManager::QueuedSoundBroadcastUserIdPacket, LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket>' is not a known bindable declaration.", false)]
     public void _queueSoundPacket(nint packet) =>

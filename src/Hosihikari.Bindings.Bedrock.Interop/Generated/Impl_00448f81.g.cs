@@ -50,9 +50,10 @@ public sealed unsafe partial class Impl : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4f5c517f((void*)__hosihikari_shim_handle);
     }
 
-    public int mID
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mID_Address
     {
-        get => NativeMethods.TablePtr->C3.hs_get_388099ae((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_388099ae((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

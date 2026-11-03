@@ -38,9 +38,10 @@ public sealed unsafe partial class FeatureRegistry : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint validator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? validator)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_cda2bf1c((void*)__hosihikari_shim_handle, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public static string AFTER_SKY_PASS()
     {
@@ -101,9 +102,16 @@ public sealed unsafe partial class FeatureRegistry : global::System.IDisposable
         return new FeatureRegistry((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public static FeatureRegistry Create(nint validator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public static FeatureRegistry Create(global::Hosihikari.Bindings.Abi.SharedHandle? validator)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_7485efb2(validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new FeatureRegistry((nint)handle);
+    }
 
     public static FeatureRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry arg0)
     {

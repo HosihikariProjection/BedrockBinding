@@ -48,9 +48,10 @@ public sealed unsafe partial class VanillaItems : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_1dba984d((void*)ctx.Handle, (void*)itemRegistry.Handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle, (void*)educationOptions.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public static void serverInitCreativeItemsCallback(nint itemRegistry, nint blockDefinitionGroup, nint creativeItemRegistry, nint worldVersion, nint experiments, nint resourcePackManager, nint ctx, nint validator, nint eventing, nint educationOptions) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public static void serverInitCreativeItemsCallback(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef itemRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BlockDefinitionGroup blockDefinitionGroup, global::Hosihikari.Bindings.Bedrock.Interop.CreativeItemRegistry? creativeItemRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion worldVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Abi.SharedHandle? validator, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing, global::Hosihikari.Bindings.Bedrock.Interop.IEducationOptions educationOptions)
+    {
+        NativeMethods.TablePtr->C4.hs_method_209c4ec0((void*)itemRegistry.Handle, (void*)blockDefinitionGroup.Handle, (void*)(creativeItemRegistry?.Handle ?? 0), (void*)worldVersion.Handle, (void*)experiments.Handle, (void*)resourcePackManager.Handle, (void*)ctx.Handle, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)eventing.Handle, (void*)educationOptions.Handle);
+    }
 
     public void Dispose()
     {

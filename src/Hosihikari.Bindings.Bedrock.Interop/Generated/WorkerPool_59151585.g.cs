@@ -104,52 +104,52 @@ public sealed unsafe partial class WorkerPool : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingWorkQueueLock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0349225c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_0349225c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPerfInfo_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1615a53f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_1615a53f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPoolPriority_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f50f8828((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_f50f8828((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSuspendLock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_fe6ecc47((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_fe6ecc47((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTaskQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_aa8fa158((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_aa8fa158((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWorkers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2e95e5a1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_2e95e5a1((void*)__hosihikari_shim_handle);
     }
 
     public void queue(global::Hosihikari.Bindings.Abi.SharedHandle? task, bool queueImmediate)
     {
-        NativeMethods.TablePtr->C4.hs_method_6a645c48((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), queueImmediate);
+        NativeMethods.TablePtr->C5.hs_method_6a645c48((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), queueImmediate);
     }
 
     public static nint sAllPools()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_720790ba();
+        return (nint)NativeMethods.TablePtr->C5.hs_method_720790ba();
     }
 
     public static nint sAllPoolsMutex()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_cf2a3157();
+        return (nint)NativeMethods.TablePtr->C5.hs_method_cf2a3157();
     }
 
 

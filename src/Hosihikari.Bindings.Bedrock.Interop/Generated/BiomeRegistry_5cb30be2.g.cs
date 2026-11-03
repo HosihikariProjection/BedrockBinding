@@ -147,9 +147,9 @@ public sealed unsafe partial class BiomeRegistry : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_1171a9bf((void*)__hosihikari_shim_handle, (void*)levelStorageManagerConnector.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.", false)]
     public void loadAllBiomeDocuments(nint loader, nint ctx, nint linkedAssetValidator, nint baseGameVersion, nint biomeJsonDocumentGlue, nint biomeIdToResolvedData, nint activeExperiments, nint eventing) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.");
 
     public void loadBiomeData(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
     {

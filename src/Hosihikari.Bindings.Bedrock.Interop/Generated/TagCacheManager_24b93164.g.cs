@@ -38,9 +38,9 @@ public sealed unsafe partial class TagCacheManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<CommandManager>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _ctor(nint commandManager, nint deregisterTagsFromActorProxy) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<CommandManager>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public static TagCacheManager Create()
     {
@@ -53,9 +53,9 @@ public sealed unsafe partial class TagCacheManager : global::System.IDisposable
         return new TagCacheManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<CommandManager>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static TagCacheManager Create(nint commandManager, nint deregisterTagsFromActorProxy) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<CommandManager>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public static TagCacheManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TagCacheManager arg0)
     {

@@ -58,9 +58,9 @@ public sealed unsafe partial class ServerInstanceEventListener : global::System.
         return NativeMethods.TablePtr->C3.hs_method_6bddce6d((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)level.Handle);
     }
 
-    public int _onServerMinecraftInitialized(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance instance, nint minecraft)
+    public int _onServerMinecraftInitialized(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance instance, global::Hosihikari.Bindings.Abi.SharedHandle? minecraft)
     {
-        return NativeMethods.TablePtr->C3.hs_method_1cb9153e((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)minecraft);
+        return NativeMethods.TablePtr->C3.hs_method_1cb9153e((void*)__hosihikari_shim_handle, (void*)instance.Handle, minecraft?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public int _onServerResume(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance instance)
@@ -129,9 +129,9 @@ public sealed unsafe partial class ServerInstanceEventListener : global::System.
         return NativeMethods.TablePtr->C3.hs_method_973a45bd((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)level.Handle);
     }
 
-    public int onServerMinecraftInitialized(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance instance, nint minecraft)
+    public int onServerMinecraftInitialized(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance instance, global::Hosihikari.Bindings.Abi.SharedHandle? minecraft)
     {
-        return NativeMethods.TablePtr->C3.hs_method_6fea89fd((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)minecraft);
+        return NativeMethods.TablePtr->C3.hs_method_6fea89fd((void*)__hosihikari_shim_handle, (void*)instance.Handle, minecraft?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public int onServerResume(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance instance)

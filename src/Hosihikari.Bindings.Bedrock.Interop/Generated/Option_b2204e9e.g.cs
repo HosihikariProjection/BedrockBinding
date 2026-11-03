@@ -38,38 +38,9 @@ public sealed unsafe partial class Option : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(int id, int ownerType, int resetFlags, string captionId, string saveTag, int optionType, global::Hosihikari.Bindings.Bedrock.Interop.GameVersion version)
-    {
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(captionId);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(captionId, __hs_stringBytes3);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(saveTag);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(saveTag, __hs_stringBytes4);
-        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-        {
-            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-            {
-                return (nint)NativeMethods.TablePtr->C3.hs_method_ab4d66bc((void*)__hosihikari_shim_handle, id, ownerType, resetFlags, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, optionType, (void*)version.Handle);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OptionID' is not a known bindable declaration.", false)]
+    public nint _ctor(nint id, nint ownerType, nint resetFlags, nint captionId, nint saveTag, nint optionType, nint version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OptionID' is not a known bindable declaration.");
 
     public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value valueJson)
     {
@@ -96,44 +67,9 @@ public sealed unsafe partial class Option : global::System.IDisposable
         return new Option((nint)handle);
     }
 
-    public static Option Create(int id, int ownerType, int resetFlags, string captionId, string saveTag, int optionType, global::Hosihikari.Bindings.Bedrock.Interop.GameVersion version)
-    {
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(captionId);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(captionId, __hs_stringBytes3);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(saveTag);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(saveTag, __hs_stringBytes4);
-        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-        {
-            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-            {
-                var handle = NativeMethods.TablePtr->C3.hs_create_99cfaf95(id, ownerType, resetFlags, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, optionType, (void*)version.Handle);
-                if (handle == null)
-                {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-                }
-
-                return new Option((nint)handle);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OptionID' is not a known bindable declaration.", false)]
+    public static Option Create(nint id, nint ownerType, nint resetFlags, nint captionId, nint saveTag, nint optionType, nint version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OptionID' is not a known bindable declaration.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public void _updatePropertyVector(nint propertyVector, nint value) =>

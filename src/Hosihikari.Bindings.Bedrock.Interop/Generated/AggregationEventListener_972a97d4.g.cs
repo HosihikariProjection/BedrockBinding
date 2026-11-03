@@ -63,9 +63,9 @@ public sealed unsafe partial class AggregationEventListener : global::System.IDi
         NativeMethods.TablePtr->C4.hs_method_75c19e7b((void*)__hosihikari_shim_handle);
     }
 
-    public void _recordEvent(nint @event, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_AppPlatform_ appPlatform)
+    public void _recordEvent(nint @event, global::Hosihikari.Bindings.Abi.SharedHandle? appPlatform)
     {
-        NativeMethods.TablePtr->C4.hs_method_975d74de((void*)__hosihikari_shim_handle, (void*)@event, (void*)appPlatform.Handle);
+        NativeMethods.TablePtr->C4.hs_method_975d74de((void*)__hosihikari_shim_handle, (void*)@event, appPlatform?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void _sendEvents(bool forceSend)
@@ -234,9 +234,9 @@ public sealed unsafe partial class AggregationEventListener : global::System.IDi
         return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.AggregationEventListener((nint)NativeMethods.TablePtr->C4.hs_method_d7dcb791((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void recordEvent(nint @event, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_AppPlatform_ appPlatform)
+    public void recordEvent(nint @event, global::Hosihikari.Bindings.Abi.SharedHandle? appPlatform)
     {
-        NativeMethods.TablePtr->C4.hs_method_cd9916f0((void*)__hosihikari_shim_handle, (void*)@event, (void*)appPlatform.Handle);
+        NativeMethods.TablePtr->C4.hs_method_cd9916f0((void*)__hosihikari_shim_handle, (void*)@event, appPlatform?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void sendEvent(nint @event)

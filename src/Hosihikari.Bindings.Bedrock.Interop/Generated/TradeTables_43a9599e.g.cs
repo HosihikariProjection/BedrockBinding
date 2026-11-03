@@ -49,9 +49,10 @@ public sealed unsafe partial class TradeTables : global::System.IDisposable
         return new TradeTables((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.", false)]
-    public nint _parseAndStoreTradeTable(nint level, nint resourceLoader, nint tradeTablePath, bool usingUpcomingCreatorFeaturesExperiment, nint validator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LinkedAssetValidator>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.TradeTables_Nested.TradeTableLoadData _parseAndStoreTradeTable(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? resourceLoader, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path tradeTablePath, bool usingUpcomingCreatorFeaturesExperiment, global::Hosihikari.Bindings.Abi.SharedHandle? validator)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TradeTables_Nested.TradeTableLoadData((nint)NativeMethods.TablePtr->C4.hs_method_360dc4cf((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)(resourceLoader?.Handle ?? 0), (void*)tradeTablePath.Handle, usingUpcomingCreatorFeaturesExperiment, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)));
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TradeTable? fetchTable(string path)
     {

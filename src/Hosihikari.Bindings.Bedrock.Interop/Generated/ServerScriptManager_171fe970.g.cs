@@ -38,9 +38,9 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'AsyncJoinRegistrar' has no generated wrapper.", false)]
     public nint _ctor(nint settings, nint serverLevel, nint packSettingsCache, nint serverScheduler, nint commands, nint eventing, nint itemRegistry, nint server, nint registry, nint localProfilerControlBroker, nint asyncJoinRegistrar, nint diagnostics) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'AsyncJoinRegistrar' has no generated wrapper.");
 
     public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.LevelStartLeaveGameEvent levelStartLeaveGameEvent)
     {
@@ -73,9 +73,9 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
         return new ServerScriptManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'AsyncJoinRegistrar' has no generated wrapper.", false)]
     public static ServerScriptManager Create(nint settings, nint serverLevel, nint packSettingsCache, nint serverScheduler, nint commands, nint eventing, nint itemRegistry, nint server, nint registry, nint localProfilerControlBroker, nint asyncJoinRegistrar, nint diagnostics) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'AsyncJoinRegistrar' has no generated wrapper.");
 
     public static ServerScriptManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager arg0)
     {

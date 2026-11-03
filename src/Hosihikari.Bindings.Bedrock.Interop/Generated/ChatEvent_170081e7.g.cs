@@ -38,9 +38,9 @@ public sealed unsafe partial class ChatEvent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.WeakRef_EntityContext_ sender, global::Hosihikari.Bindings.Bedrock.Interop.TextPacket packet)
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? sender, global::Hosihikari.Bindings.Bedrock.Interop.TextPacket packet)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_bb499c98((void*)__hosihikari_shim_handle, (void*)sender.Handle, (void*)packet.Handle);
+        return (nint)NativeMethods.TablePtr->C0.hs_method_bb499c98((void*)__hosihikari_shim_handle, sender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)packet.Handle);
     }
 
     public void _dtor()
@@ -59,9 +59,9 @@ public sealed unsafe partial class ChatEvent : global::System.IDisposable
         return new ChatEvent((nint)handle);
     }
 
-    public static ChatEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakRef_EntityContext_ sender, global::Hosihikari.Bindings.Bedrock.Interop.TextPacket packet)
+    public static ChatEvent Create(global::Hosihikari.Bindings.Abi.SharedHandle? sender, global::Hosihikari.Bindings.Bedrock.Interop.TextPacket packet)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_fe87014f((void*)sender.Handle, (void*)packet.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_fe87014f(sender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)packet.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

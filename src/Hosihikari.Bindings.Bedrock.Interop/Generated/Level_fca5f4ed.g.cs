@@ -2169,9 +2169,10 @@ public sealed unsafe partial class Level : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_8923945a((void*)__hosihikari_shim_handle, multiplayerGame);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetEventCallback>' is not a known bindable declaration.", false)]
-    public void _setNetEventCallback(nint val) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetEventCallback>' is not a known bindable declaration.");
+    public void _setNetEventCallback(global::Hosihikari.Bindings.Abi.SharedHandle? val)
+    {
+        NativeMethods.TablePtr->C2.hs_method_96233a5b((void*)__hosihikari_shim_handle, val?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void _setPlatformBroadcastIntent(int broadcastMode)
     {
@@ -5383,9 +5384,10 @@ public sealed unsafe partial class Level : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_53426f46((void*)__hosihikari_shim_handle, multiplayerGame);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetEventCallback>' is not a known bindable declaration.", false)]
-    public void setNetEventCallback(nint val) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<NetEventCallback>' is not a known bindable declaration.");
+    public void setNetEventCallback(global::Hosihikari.Bindings.Abi.SharedHandle? val)
+    {
+        NativeMethods.TablePtr->C2.hs_method_67c701d9((void*)__hosihikari_shim_handle, val?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void setPerformanceTelemetryPeriodicCallback(nint callback) =>

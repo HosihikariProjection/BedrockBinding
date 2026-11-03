@@ -38,9 +38,10 @@ public sealed unsafe partial class ScriptServerSecrets : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ScriptPackConfigurationManager>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint packConfigManager, nint contextConfig) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ScriptPackConfigurationManager>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? packConfigManager, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig contextConfig)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_b8df8901((void*)__hosihikari_shim_handle, packConfigManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)contextConfig.Handle);
+    }
 
     public static ScriptServerSecrets Create()
     {
@@ -53,9 +54,16 @@ public sealed unsafe partial class ScriptServerSecrets : global::System.IDisposa
         return new ScriptServerSecrets((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ScriptPackConfigurationManager>' is not a known bindable declaration.", false)]
-    public static ScriptServerSecrets Create(nint packConfigManager, nint contextConfig) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<ScriptPackConfigurationManager>' is not a known bindable declaration.");
+    public static ScriptServerSecrets Create(global::Hosihikari.Bindings.Abi.SharedHandle? packConfigManager, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig contextConfig)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_95ca3de0(packConfigManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)contextConfig.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptServerSecrets((nint)handle);
+    }
 
     public static ScriptServerSecrets Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerSecrets arg0)
     {

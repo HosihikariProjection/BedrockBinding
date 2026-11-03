@@ -38,9 +38,10 @@ public sealed unsafe partial class ActorFactory : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<Level>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint level, nint experiments) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<Level>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? level, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_11cbe3d4((void*)__hosihikari_shim_handle, level?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)experiments.Handle);
+    }
 
     public static ActorFactory Create()
     {
@@ -53,9 +54,16 @@ public sealed unsafe partial class ActorFactory : global::System.IDisposable
         return new ActorFactory((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<Level>>' is not a known bindable declaration.", false)]
-    public static ActorFactory Create(nint level, nint experiments) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<Level>>' is not a known bindable declaration.");
+    public static ActorFactory Create(global::Hosihikari.Bindings.Abi.SharedHandle? level, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_9a888fe0(level?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)experiments.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ActorFactory((nint)handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void _buildSummonableActorList(nint experiments, nint callback) =>

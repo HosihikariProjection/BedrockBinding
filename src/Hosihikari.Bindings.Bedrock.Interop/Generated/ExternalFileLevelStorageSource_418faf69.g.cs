@@ -99,9 +99,9 @@ public sealed unsafe partial class ExternalFileLevelStorageSource : global::Syst
     public nint _createLevelStorage(nint scheduler, nint levelId, nint contentIdentity, nint keyProvider, nint writeFlushInterval, nint levelDbEnv, nint levelStorageEventing, bool jigsawPersistenceToggle) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::UniqueOwnerPointer<LevelStorage>' requires --link-carrier or --virtual-dispatch.");
 
-    public nint _ctor(nint pathManager, nint saveTransactionManager)
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? pathManager, global::Hosihikari.Bindings.Abi.SharedHandle? saveTransactionManager)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_55469da9((void*)__hosihikari_shim_handle, (void*)pathManager, (void*)saveTransactionManager);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_55469da9((void*)__hosihikari_shim_handle, pathManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), saveTransactionManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public void _deleteLevel(string levelId)
@@ -322,9 +322,9 @@ public sealed unsafe partial class ExternalFileLevelStorageSource : global::Syst
         return new ExternalFileLevelStorageSource((nint)handle);
     }
 
-    public static ExternalFileLevelStorageSource Create(nint pathManager, nint saveTransactionManager)
+    public static ExternalFileLevelStorageSource Create(global::Hosihikari.Bindings.Abi.SharedHandle? pathManager, global::Hosihikari.Bindings.Abi.SharedHandle? saveTransactionManager)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_9f365673((void*)pathManager, (void*)saveTransactionManager);
+        var handle = NativeMethods.TablePtr->C1.hs_create_9f365673(pathManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), saveTransactionManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

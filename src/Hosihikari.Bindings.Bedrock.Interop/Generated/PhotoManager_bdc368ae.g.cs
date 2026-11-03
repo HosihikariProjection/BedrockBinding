@@ -38,9 +38,10 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint levelStorage, bool isClientSide) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, bool isClientSide)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_d8abf665((void*)__hosihikari_shim_handle, levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isClientSide);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint _getPictureTakenConnector() =>
@@ -61,9 +62,16 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
         return new PhotoManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.", false)]
-    public static PhotoManager Create(nint levelStorage, bool isClientSide) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.");
+    public static PhotoManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, bool isClientSide)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_6b385f8b(levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isClientSide);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PhotoManager((nint)handle);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getPhotoStoragePath()
     {

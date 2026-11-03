@@ -38,9 +38,10 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IStructureTemplateManager>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint manager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IStructureTemplateManager>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? manager)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_d4d68175((void*)__hosihikari_shim_handle, manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox _getBoundingBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation)
     {
@@ -92,9 +93,16 @@ public sealed unsafe partial class EmptyPoolElement : global::System.IDisposable
         return new EmptyPoolElement((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IStructureTemplateManager>>' is not a known bindable declaration.", false)]
-    public static EmptyPoolElement Create(nint manager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IStructureTemplateManager>>' is not a known bindable declaration.");
+    public static EmptyPoolElement Create(global::Hosihikari.Bindings.Abi.SharedHandle? manager)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_7aa334c3(manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new EmptyPoolElement((nint)handle);
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox getBoundingBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, byte rotation)
     {

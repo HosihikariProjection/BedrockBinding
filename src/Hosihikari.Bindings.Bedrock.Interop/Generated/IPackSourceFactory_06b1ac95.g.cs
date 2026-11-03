@@ -78,9 +78,9 @@ public sealed unsafe partial class IPackSourceFactory : global::System.IDisposab
         return new global::Hosihikari.Bindings.Bedrock.Interop.WorldHistoryPackSource((nint)NativeMethods.TablePtr->C2.hs_method_18e6da02((void*)__hosihikari_shim_handle, (void*)pathToWorld.Handle, packType), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource createWorldTemplatePackSource(nint worldTemplateManager, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID worldTemplateId, sbyte packType, byte packOrigin)
+    public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource createWorldTemplatePackSource(global::Hosihikari.Bindings.Abi.SharedHandle? worldTemplateManager, global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID worldTemplateId, sbyte packType, byte packOrigin)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource((nint)NativeMethods.TablePtr->C2.hs_method_d4c6be6a((void*)__hosihikari_shim_handle, (void*)worldTemplateManager, (void*)worldTemplateId.Handle, packType, packOrigin), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackSource((nint)NativeMethods.TablePtr->C2.hs_method_d4c6be6a((void*)__hosihikari_shim_handle, worldTemplateManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)worldTemplateId.Handle, packType, packOrigin), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'WorldTemplateCollectionView' has no generated wrapper.", false)]

@@ -38,9 +38,10 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint levelStorage, nint limitPolicy) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, global::Hosihikari.Bindings.Bedrock.Interop.TickingAreaLimitPolicy limitPolicy)
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_85a93247((void*)__hosihikari_shim_handle, levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)limitPolicy.Handle);
+    }
 
     public static TickingAreasManager Create()
     {
@@ -53,9 +54,16 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
         return new TickingAreasManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.", false)]
-    public static TickingAreasManager Create(nint levelStorage, nint limitPolicy) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<LevelStorage>' is not a known bindable declaration.");
+    public static TickingAreasManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, global::Hosihikari.Bindings.Bedrock.Interop.TickingAreaLimitPolicy limitPolicy)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_0d86dcdb(levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)limitPolicy.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new TickingAreasManager((nint)handle);
+    }
 
     public static TickingAreasManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreasManager arg0)
     {

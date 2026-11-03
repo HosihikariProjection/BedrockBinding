@@ -38,9 +38,10 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IFileAccess>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint fileAccess) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IFileAccess>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? fileAccess)
+    {
+        return (nint)NativeMethods.TablePtr->C5.hs_method_ff855ea4((void*)__hosihikari_shim_handle, fileAccess?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public static ZlibFileAccessWrapper Create()
     {
@@ -64,9 +65,16 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
         return new ZlibFileAccessWrapper((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IFileAccess>>' is not a known bindable declaration.", false)]
-    public static ZlibFileAccessWrapper Create(nint fileAccess) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IFileAccess>>' is not a known bindable declaration.");
+    public static ZlibFileAccessWrapper Create(global::Hosihikari.Bindings.Abi.SharedHandle? fileAccess)
+    {
+        var handle = NativeMethods.TablePtr->C5.hs_create_9d7ab2d5(fileAccess?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ZlibFileAccessWrapper((nint)handle);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbd0b0f_Address

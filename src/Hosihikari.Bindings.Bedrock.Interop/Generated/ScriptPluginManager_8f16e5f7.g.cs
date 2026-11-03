@@ -84,9 +84,10 @@ public sealed unsafe partial class ScriptPluginManager : global::System.IDisposa
     public void _collectScriptingStats(nint serverLevel, nint allScriptingStats) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::reference_wrapper<ServerLevel>' is not a known bindable declaration.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerLevel>>' is not a known bindable declaration.", false)]
-    public void _collectSubscriberCountStats(nint serverLevel, nint locator, nint subscriberStats) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerLevel>>' is not a known bindable declaration.");
+    public void _collectSubscriberCountStats(global::Hosihikari.Bindings.Abi.SharedHandle? serverLevel, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.DependencyLocator? locator, nint subscriberStats)
+    {
+        NativeMethods.TablePtr->C3.hs_method_4868855b((void*)__hosihikari_shim_handle, serverLevel?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(locator?.Handle ?? 0), (void*)subscriberStats);
+    }
 
     public void _disableHandleCounter()
     {

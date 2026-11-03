@@ -38,9 +38,10 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IDimensionFactory>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint dimensionFactory) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IDimensionFactory>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? dimensionFactory)
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_237b8c40((void*)__hosihikari_shim_handle, dimensionFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint _getOnNewDimensionCreatedConnector() =>
@@ -61,9 +62,16 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         return new DimensionManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IDimensionFactory>>' is not a known bindable declaration.", false)]
-    public static DimensionManager Create(nint dimensionFactory) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IDimensionFactory>>' is not a known bindable declaration.");
+    public static DimensionManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? dimensionFactory)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_fb5f6d09(dimensionFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new DimensionManager((nint)handle);
+    }
 
     public void _registerCustomDimensionWithFactory(string name, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType type)
     {

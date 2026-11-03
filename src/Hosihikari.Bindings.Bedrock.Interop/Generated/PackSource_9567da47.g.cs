@@ -126,14 +126,14 @@ public sealed unsafe partial class PackSource : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_d4cce557((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport load(global::Hosihikari.Bindings.Bedrock.Interop.IPackManifestFactory manifestFactory, nint keyProvider)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport load(global::Hosihikari.Bindings.Bedrock.Interop.IPackManifestFactory manifestFactory, global::Hosihikari.Bindings.Abi.SharedHandle? keyProvider)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport((nint)NativeMethods.TablePtr->C3.hs_method_020aaadf((void*)__hosihikari_shim_handle, (void*)manifestFactory.Handle, (void*)keyProvider));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceReport((nint)NativeMethods.TablePtr->C3.hs_method_020aaadf((void*)__hosihikari_shim_handle, (void*)manifestFactory.Handle, keyProvider?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult loadImmediate(global::Hosihikari.Bindings.Bedrock.Interop.IPackManifestFactory manifestFactory, nint keyProvider)
+    public global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult loadImmediate(global::Hosihikari.Bindings.Bedrock.Interop.IPackManifestFactory manifestFactory, global::Hosihikari.Bindings.Abi.SharedHandle? keyProvider)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult((nint)NativeMethods.TablePtr->C3.hs_method_c27584e5((void*)__hosihikari_shim_handle, (void*)manifestFactory.Handle, (void*)keyProvider));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackSourceLoadResult((nint)NativeMethods.TablePtr->C3.hs_method_c27584e5((void*)__hosihikari_shim_handle, (void*)manifestFactory.Handle, keyProvider?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)));
     }
 
     // The native field type is not projected; this is the address of the field storage.

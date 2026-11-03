@@ -69,16 +69,17 @@ public sealed unsafe partial class GameModuleServer : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_207f29a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>>' is not a known bindable declaration.", false)]
-    public void configureServerNetworkHandler(nint server, nint handler) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<ServerNetworkHandler>>' is not a known bindable declaration.");
-
-    public void init(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance server, nint level)
+    public void configureServerNetworkHandler(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance server, global::Hosihikari.Bindings.Abi.SharedHandle? handler)
     {
-        NativeMethods.TablePtr->C1.hs_method_eed74cd1((void*)__hosihikari_shim_handle, (void*)server.Handle, (void*)level);
+        NativeMethods.TablePtr->C1.hs_method_e67b0b5d((void*)__hosihikari_shim_handle, (void*)server.Handle, handler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
-    public void initializeBehaviorStack(global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, nint repo, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack stack, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, bool includeEditorPacks, string? worldId)
+    public void init(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance server, global::Hosihikari.Bindings.Abi.SharedHandle? level)
+    {
+        NativeMethods.TablePtr->C1.hs_method_eed74cd1((void*)__hosihikari_shim_handle, (void*)server.Handle, level?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
+
+    public void initializeBehaviorStack(global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Abi.SharedHandle? repo, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack stack, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, bool includeEditorPacks, string? worldId)
     {
         var __hs_stringByteCount5 = global::System.Text.Encoding.UTF8.GetByteCount(worldId ?? string.Empty);
         scoped global::System.Span<byte> __hs_stringBytes5;
@@ -93,7 +94,7 @@ public sealed unsafe partial class GameModuleServer : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(worldId ?? string.Empty, __hs_stringBytes5);
         fixed (byte* __hs_stringData5 = __hs_stringBytes5)
         {
-            NativeMethods.TablePtr->C1.hs_method_3f7f0885((void*)__hosihikari_shim_handle, (void*)experiments.Handle, (void*)repo, (void*)stack.Handle, (void*)baseGameVersion.Handle, includeEditorPacks, __hs_stringData5, (nuint)__hs_stringByteCount5, worldId is not null);
+            NativeMethods.TablePtr->C1.hs_method_3f7f0885((void*)__hosihikari_shim_handle, (void*)experiments.Handle, repo?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)stack.Handle, (void*)baseGameVersion.Handle, includeEditorPacks, __hs_stringData5, (nuint)__hs_stringByteCount5, worldId is not null);
         }
     }
 

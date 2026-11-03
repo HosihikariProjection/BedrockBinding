@@ -38,9 +38,9 @@ public sealed unsafe partial class PlayerDimensionTransferer : global::System.ID
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<PortalForcer>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public nint _ctor(nint playerDimensionTransferProxy, bool isClientSide, nint portalForcer, nint sharedSpawnGetter, nint levelStorage, nint loadingScreenIdManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<PortalForcer>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public bool _doRespawnIfReady(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest, nint addLimboActorHelper)
     {
@@ -154,9 +154,9 @@ public sealed unsafe partial class PlayerDimensionTransferer : global::System.ID
         return new PlayerDimensionTransferer((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<PortalForcer>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static PlayerDimensionTransferer Create(nint playerDimensionTransferProxy, bool isClientSide, nint portalForcer, nint sharedSpawnGetter, nint levelStorage, nint loadingScreenIdManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<PortalForcer>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public void _finalizeDimensionChange(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest)
     {

@@ -38,9 +38,10 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<LevelStorage>>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint levelStorage, nint actorManager, nint actorFactory) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<LevelStorage>>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, global::Hosihikari.Bindings.Abi.SharedHandle? actorManager, global::Hosihikari.Bindings.Abi.SharedHandle? actorFactory)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_145dc524((void*)__hosihikari_shim_handle, levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void _dtor()
     {
@@ -69,9 +70,16 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
         return new PlayerLimboActorManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<LevelStorage>>' is not a known bindable declaration.", false)]
-    public static PlayerLimboActorManager Create(nint levelStorage, nint actorManager, nint actorFactory) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<LevelStorage>>' is not a known bindable declaration.");
+    public static PlayerLimboActorManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, global::Hosihikari.Bindings.Abi.SharedHandle? actorManager, global::Hosihikari.Bindings.Abi.SharedHandle? actorFactory)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_935a253e(levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PlayerLimboActorManager((nint)handle);
+    }
 
     public void clearOwnedEntityLimboForPlayer(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID playerId)
     {

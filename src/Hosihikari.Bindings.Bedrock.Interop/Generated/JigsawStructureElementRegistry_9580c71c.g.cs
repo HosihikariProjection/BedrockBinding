@@ -85,9 +85,10 @@ public sealed unsafe partial class JigsawStructureElementRegistry : global::Syst
     public nint registerElement(nint name, nint element) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IStructureTemplateManager>>' is not a known bindable declaration.", false)]
-    public nint registerEmptyElement(nint manager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IStructureTemplateManager>>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement registerEmptyElement(global::Hosihikari.Bindings.Abi.SharedHandle? manager)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement((nint)NativeMethods.TablePtr->C2.hs_method_a87f17c6((void*)__hosihikari_shim_handle, manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)), false);
+    }
 
 
     public void Dispose()

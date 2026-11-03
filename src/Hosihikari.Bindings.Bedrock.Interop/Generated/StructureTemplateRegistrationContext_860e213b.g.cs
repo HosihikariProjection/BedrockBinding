@@ -65,9 +65,9 @@ public sealed unsafe partial class StructureTemplateRegistrationContext : global
         return new StructureTemplateRegistrationContext((nint)handle);
     }
 
-    public static StructureTemplateRegistrationContext Create(nint manager, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureElementRegistry structureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry featureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
+    public static StructureTemplateRegistrationContext Create(global::Hosihikari.Bindings.Abi.SharedHandle? manager, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureElementRegistry structureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry featureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a491ce0e((void*)manager, (void*)structureRegistry.Handle, (void*)featureRegistry.Handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_a491ce0e(manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)structureRegistry.Handle, (void*)featureRegistry.Handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

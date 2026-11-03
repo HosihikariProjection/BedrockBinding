@@ -38,9 +38,10 @@ public sealed unsafe partial class StructurePools : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.", false)]
-    public static void bootstrap(nint structureManager, nint featureRegistry, nint jigsawStructureRegistry, nint baseGameVersion, nint experiments) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.");
+    public static void bootstrap(global::Hosihikari.Bindings.Abi.SharedHandle? structureManager, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry featureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry jigsawStructureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
+    {
+        NativeMethods.TablePtr->C5.hs_method_9c5dac84(structureManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)featureRegistry.Handle, (void*)jigsawStructureRegistry.Handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle);
+    }
 
     public void Dispose()
     {

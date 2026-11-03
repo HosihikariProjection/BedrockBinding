@@ -38,9 +38,9 @@ public sealed unsafe partial class OwnerPtr_Dimension_ : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static OwnerPtr_Dimension_ Create(global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_ arg0)
+    public static OwnerPtr_Dimension_ Create_36030ea6(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_36030ea6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_36030ea6(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

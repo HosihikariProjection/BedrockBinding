@@ -38,9 +38,10 @@ public sealed unsafe partial class VanillaAncientCityJigsawStructures : global::
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IStructureTemplateManager>>' is not a known bindable declaration.", false)]
-    public static void initialize(nint manager, nint featureRegistry, nint registry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<IStructureTemplateManager>>' is not a known bindable declaration.");
+    public static void initialize(global::Hosihikari.Bindings.Abi.SharedHandle? manager, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry featureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry registry)
+    {
+        NativeMethods.TablePtr->C4.hs_method_189952a4(manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)featureRegistry.Handle, (void*)registry.Handle);
+    }
 
     public void Dispose()
     {

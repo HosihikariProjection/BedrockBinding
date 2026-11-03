@@ -43,9 +43,9 @@ public sealed unsafe partial class ScriptStructureTemplate : global::System.IDis
         return (nint)NativeMethods.TablePtr->C3.hs_method_5c027124((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::WeakTypedObjectHandle<ScriptModuleMinecraft::ScriptStructureManager>' is not a known bindable declaration.", false)]
     public nint _ctor(nint id, nint structureManager, nint scope, nint scriptStructureManager, nint levelStorage) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::WeakTypedObjectHandle<ScriptModuleMinecraft::ScriptStructureManager>' is not a known bindable declaration.");
 
     public void _dtor()
     {
@@ -84,9 +84,9 @@ public sealed unsafe partial class ScriptStructureTemplate : global::System.IDis
         return new ScriptStructureTemplate((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::WeakTypedObjectHandle<ScriptModuleMinecraft::ScriptStructureManager>' is not a known bindable declaration.", false)]
     public static ScriptStructureTemplate Create(nint id, nint structureManager, nint scope, nint scriptStructureManager, nint levelStorage) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::WeakTypedObjectHandle<ScriptModuleMinecraft::ScriptStructureManager>' is not a known bindable declaration.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InvalidArgumentError _createBoundsError(int index, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos size)
     {

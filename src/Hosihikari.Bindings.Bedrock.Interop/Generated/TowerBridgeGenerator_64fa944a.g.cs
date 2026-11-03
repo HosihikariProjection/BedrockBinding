@@ -38,9 +38,9 @@ public sealed unsafe partial class TowerBridgeGenerator : global::System.IDispos
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<EndCityPieces::SectionGenerator>' is not supported.", false)]
     public bool _generate(nint structureManager, nint generators, int genDepth, nint parent, nint offset, nint pieces, nint random) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<EndCityPieces::SectionGenerator>' is not supported.");
 
     public static TowerBridgeGenerator Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityPieces_Nested.TowerBridgeGenerator arg0)
     {
@@ -53,9 +53,9 @@ public sealed unsafe partial class TowerBridgeGenerator : global::System.IDispos
         return new TowerBridgeGenerator((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<EndCityPieces::SectionGenerator>' is not supported.", false)]
     public bool generate(nint structureManager, nint generators, int genDepth, nint parent, nint offset, nint pieces, nint random) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<Bedrock::NonOwnerPointer<StructureManager>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<EndCityPieces::SectionGenerator>' is not supported.");
 
     public bool mShipCreated
     {

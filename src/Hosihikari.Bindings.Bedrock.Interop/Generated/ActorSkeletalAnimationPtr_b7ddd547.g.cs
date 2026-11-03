@@ -38,9 +38,9 @@ public sealed unsafe partial class ActorSkeletalAnimationPtr : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(nint animationGroup, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? animationGroup, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
     {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_3d4c3b96((void*)__hosihikari_shim_handle, (void*)animationGroup, (void*)name.Handle);
+        return (nint)NativeMethods.TablePtr->C0.hs_method_3d4c3b96((void*)__hosihikari_shim_handle, animationGroup?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)name.Handle);
     }
 
     public void _dtor()
@@ -70,9 +70,9 @@ public sealed unsafe partial class ActorSkeletalAnimationPtr : global::System.ID
         return new ActorSkeletalAnimationPtr((nint)handle);
     }
 
-    public static ActorSkeletalAnimationPtr Create(nint animationGroup, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
+    public static ActorSkeletalAnimationPtr Create(global::Hosihikari.Bindings.Abi.SharedHandle? animationGroup, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f27cb033((void*)animationGroup, (void*)name.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_f27cb033(animationGroup?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)name.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

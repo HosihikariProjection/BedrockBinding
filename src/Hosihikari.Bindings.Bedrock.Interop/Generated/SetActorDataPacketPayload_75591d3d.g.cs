@@ -84,25 +84,25 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b9588213((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b9588213((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackedItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_07cbb308((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_07cbb308((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSynchedProperties_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cf7021b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_cf7021b6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTick_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_024749ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_024749ba((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -111,7 +111,7 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload((nint)NativeMethods.TablePtr->C3.hs_method_18c1d708((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload((nint)NativeMethods.TablePtr->C4.hs_method_18c1d708((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 

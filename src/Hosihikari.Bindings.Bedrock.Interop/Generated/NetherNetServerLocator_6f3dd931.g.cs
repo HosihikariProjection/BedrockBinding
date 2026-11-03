@@ -48,9 +48,10 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         NativeMethods.TablePtr->C2.hs_method_47b6a42e((void*)__hosihikari_shim_handle, (void*)futureIP.Handle, port);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Bedrock::Http::DispatcherInterface>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint connector, nint appPlatform, nint dispatcher, nint signalingService) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Bedrock::Http::DispatcherInterface>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? connector, global::Hosihikari.Bindings.Abi.SharedHandle? appPlatform, global::Hosihikari.Bindings.Abi.SharedHandle? dispatcher, global::Hosihikari.Bindings.Abi.SharedHandle? signalingService)
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_cbca2428((void*)__hosihikari_shim_handle, connector?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), appPlatform?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), dispatcher?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), signalingService?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'PingedCompatibleServer' is not supported.", false)]
     public nint _getServerList() =>
@@ -136,9 +137,16 @@ public sealed unsafe partial class NetherNetServerLocator : global::System.IDisp
         return new NetherNetServerLocator((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Bedrock::Http::DispatcherInterface>' is not a known bindable declaration.", false)]
-    public static NetherNetServerLocator Create(nint connector, nint appPlatform, nint dispatcher, nint signalingService) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Bedrock::Http::DispatcherInterface>' is not a known bindable declaration.");
+    public static NetherNetServerLocator Create(global::Hosihikari.Bindings.Abi.SharedHandle? connector, global::Hosihikari.Bindings.Abi.SharedHandle? appPlatform, global::Hosihikari.Bindings.Abi.SharedHandle? dispatcher, global::Hosihikari.Bindings.Abi.SharedHandle? signalingService)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_d098d6d1(connector?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), appPlatform?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), dispatcher?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), signalingService?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new NetherNetServerLocator((nint)handle);
+    }
 
     public void _cacheDiscoveryResponseData()
     {

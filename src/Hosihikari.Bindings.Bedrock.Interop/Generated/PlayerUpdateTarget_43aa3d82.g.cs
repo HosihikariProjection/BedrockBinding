@@ -38,17 +38,6 @@ public sealed unsafe partial class PlayerUpdateTarget : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static PlayerUpdateTarget Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_80e89d57();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PlayerUpdateTarget((nint)handle);
-    }
-
     public static PlayerUpdateTarget Create(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.PlayerUpdateTarget arg0)
     {
         var handle = NativeMethods.TablePtr->C4.hs_create_6fe58d6a((void*)arg0.Handle);
@@ -61,21 +50,17 @@ public sealed unsafe partial class PlayerUpdateTarget : global::System.IDisposab
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk6dc1e3_Address
+    public nint mNetworkIdentifierWithSubId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3c8fbd28((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0b474fa4((void*)__hosihikari_shim_handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnke8aaa8_Address
+    public ulong mTicks
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_43a666d3((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C4.hs_get_2a8ea634((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_2a8ea634((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.PlayerUpdateTarget operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.PlayerUpdateTarget arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.PlayerUpdateTarget((nint)NativeMethods.TablePtr->C4.hs_method_fca984bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
 
     public void Dispose()
     {

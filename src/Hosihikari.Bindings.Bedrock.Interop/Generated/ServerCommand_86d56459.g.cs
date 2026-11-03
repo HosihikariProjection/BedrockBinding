@@ -78,7 +78,7 @@ public sealed unsafe partial class ServerCommand : global::System.IDisposable
         return new ServerCommand((nint)handle);
     }
 
-    public static void kickPlayerDueToFlooding(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.NonOwnerPointer_ServerNetworkHandler_ serverNetworkHandler, global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing, string message)
+    public static void kickPlayerDueToFlooding(global::Hosihikari.Bindings.Abi.SharedHandle? serverNetworkHandler, global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing, string message)
     {
         var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(message);
         scoped global::System.Span<byte> __hs_stringBytes3;
@@ -93,7 +93,7 @@ public sealed unsafe partial class ServerCommand : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes3);
         fixed (byte* __hs_stringData3 = __hs_stringBytes3)
         {
-            NativeMethods.TablePtr->C3.hs_method_6a1c2437((void*)serverNetworkHandler.Handle, (void*)(player?.Handle ?? 0), (void*)eventing.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3);
+            NativeMethods.TablePtr->C3.hs_method_6a1c2437(serverNetworkHandler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(player?.Handle ?? 0), (void*)eventing.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3);
         }
     }
 

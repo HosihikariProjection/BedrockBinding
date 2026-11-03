@@ -38,9 +38,10 @@ public sealed unsafe partial class ScriptMinecraftNetModuleFactory : global::Sys
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint serverScheduler, nint packConfigManager, nint level, nint webSocketFactory) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.");
+    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? serverScheduler, global::Hosihikari.Bindings.Abi.SharedHandle? packConfigManager, global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel? level, global::Hosihikari.Bindings.Abi.SharedHandle? webSocketFactory)
+    {
+        return (nint)NativeMethods.TablePtr->C3.hs_method_b0a9f6e2((void*)__hosihikari_shim_handle, serverScheduler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), packConfigManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(level?.Handle ?? 0), webSocketFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID ModuleUUID()
     {
@@ -58,9 +59,16 @@ public sealed unsafe partial class ScriptMinecraftNetModuleFactory : global::Sys
         return new ScriptMinecraftNetModuleFactory((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.", false)]
-    public static ScriptMinecraftNetModuleFactory Create(nint serverScheduler, nint packConfigManager, nint level, nint webSocketFactory) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::NonOwnerPointer<Scheduler>' is not a known bindable declaration.");
+    public static ScriptMinecraftNetModuleFactory Create(global::Hosihikari.Bindings.Abi.SharedHandle? serverScheduler, global::Hosihikari.Bindings.Abi.SharedHandle? packConfigManager, global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel? level, global::Hosihikari.Bindings.Abi.SharedHandle? webSocketFactory)
+    {
+        var handle = NativeMethods.TablePtr->C3.hs_create_4ea646b3(serverScheduler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), packConfigManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(level?.Handle ?? 0), webSocketFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ScriptMinecraftNetModuleFactory((nint)handle);
+    }
 
     public static ScriptMinecraftNetModuleFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory arg0)
     {

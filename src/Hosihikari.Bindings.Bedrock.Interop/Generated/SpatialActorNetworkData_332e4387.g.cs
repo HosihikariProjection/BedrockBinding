@@ -67,51 +67,51 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
         return __hs_hasValue ? __hs_value : (ulong?)null;
     }
 
+    public bool mAutoSend
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_9de5dfa2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_9de5dfa2((void*)__hosihikari_shim_handle, value);
+    }
+
     public static global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers mDebugSpatialPacketModifiers()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers((nint)NativeMethods.TablePtr->C4.hs_method_593746aa(), false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk3d576d_Address
+    public nint mEntity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5317536f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e46fed57((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mHasInitializedLastSent
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_e9bbdf59((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_e9bbdf59((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk4f87d7_Address
+    public nint mLastForceSendSpatialDataValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7de91446((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_71572971((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk5ce137_Address
+    public nint mLastReceivedMoveData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_06e19d14((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a3bb9aaf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk61c3eb_Address
+    public nint mLastSentMoveData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9498ad00((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_97195df2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk662955_Address
+    public nint mLastSpatialUpdateTicks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0cb089f2((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkec90d2_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_cfe5a2f1((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkf6f1aa_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9afbb540((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6d3822ff((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData arg0)
@@ -128,6 +128,7 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
     {
         NativeMethods.TablePtr->C4.hs_method_4ed11cb4((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)rot.Handle, yHeadRot);
     }
+
 
     public void Dispose()
     {
