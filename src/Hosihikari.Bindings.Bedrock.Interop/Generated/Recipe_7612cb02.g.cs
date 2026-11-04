@@ -87,9 +87,9 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_671f6e3b((void*)__hosihikari_shim_handle, (void*)lhs.Handle, (void*)rhs.Handle, (void*)(rhsTag?.Handle ?? 0)) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Recipe Create()
     {
@@ -122,10 +122,9 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_98d821b4((void*)__hosihikari_shim_handle, (void*)craftSlots.Handle, (void*)craftingContext.Handle);
     }
 
-    public int countQuantityOfIngredient(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance ingredient)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_858e60c8((void*)__hosihikari_shim_handle, (void*)ingredient.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int countQuantityOfIngredient(nint ingredient) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getCraftingSize()
     {
@@ -157,10 +156,9 @@ public sealed unsafe partial class Recipe : global::System.IDisposable
         return NativeMethods.TablePtr->C3.hs_method_fa02eeb7((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static bool isAnyAuxValue(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor ii)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_ba3b53b5((void*)ii.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool isAnyAuxValue(nint ii) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool isMultiRecipe()
     {

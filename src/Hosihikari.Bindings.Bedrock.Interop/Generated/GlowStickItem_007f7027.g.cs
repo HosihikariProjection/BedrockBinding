@@ -49,29 +49,25 @@ public sealed unsafe partial class GlowStickItem : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_2757b998((void*)__hosihikari_shim_handle, value);
     }
 
-    public string _buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData)
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_0a66aace((void*)__hosihikari_shim_handle, (void*)itemDescriptor.Handle, (void*)(userData?.Handle ?? 0));
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _buildDescriptionId(nint itemDescriptor, nint userData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Brightness _getLightEmission(int auxValue)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Brightness((nint)NativeMethods.TablePtr->C1.hs_method_9ab342e1((void*)__hosihikari_shim_handle, auxValue));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getLightEmission(int auxValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isValidAuxValue(int auxValue)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_9542bf44((void*)__hosihikari_shim_handle, auxValue) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValidAuxValue(int auxValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'const ItemColor (&)[]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint COLORS() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'const ItemColor (&)[]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public string buildDescriptionId(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? userData)
     {

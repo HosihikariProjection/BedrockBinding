@@ -38,41 +38,31 @@ public sealed unsafe partial class StringCompressor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_e3662ef4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void RemoveReference()
-    {
-        NativeMethods.TablePtr->C3.hs_method_311301a4();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void RemoveReference() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static StringCompressor Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_16d27fb0();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StringCompressor((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static StringCompressor Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint huffmanEncodingTrees_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fdbe83a5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fdbe83a5((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint instance() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint referenceCount()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_e5e9a34a();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint referenceCount() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -80,7 +70,7 @@ public sealed unsafe partial class StringCompressor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9ae79705((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9ae79705((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -60,15 +60,13 @@ public sealed unsafe partial class EquipItemDefinition : global::System.IDisposa
         return new EquipItemDefinition((nint)handle);
     }
 
-    public void addExcludeItemByName(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor)
-    {
-        NativeMethods.TablePtr->C1.hs_method_64f554a9((void*)__hosihikari_shim_handle, (void*)itemDescriptor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addExcludeItemByName(nint itemDescriptor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C1.hs_method_ca8ad2b9(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk282f0a_Address

@@ -78,10 +78,9 @@ public sealed unsafe partial class BlockPosTrackerComponent : global::System.IDi
         set => NativeMethods.TablePtr->C0.hs_set_3e69368b((void*)__hosihikari_shim_handle, value);
     }
 
-    public void onRemove(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C0.hs_method_97e9f15e((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onRemove(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

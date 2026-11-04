@@ -38,22 +38,17 @@ public sealed unsafe partial class CanyonFeature : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool __carve(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume blocks, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource localBiomeSource, nint canyonConfig, global::Hosihikari.Bindings.Bedrock.Interop.Random arg3, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startPos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float horizontalRadius, float verticalRadius, float[] widthRandomization, global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext context, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
-    {
-        fixed (float* __hs_vectorData15 = widthRandomization)
-        {
-            return NativeMethods.TablePtr->C0.hs_method_a8ff7ab6((void*)__hosihikari_shim_handle, (void*)blocks.Handle, (void*)localBiomeSource.Handle, (void*)canyonConfig, (void*)arg3.Handle, (void*)pos.Handle, (void*)startPos.Handle, (void*)originalStartPos.Handle, x0, x1, y0, y1, z0, z1, horizontalRadius, verticalRadius, (void*)context.Handle, (void*)biomeRegistry.Handle, __hs_vectorData15, (nuint)(widthRandomization?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __carve(nint blocks, nint localBiomeSource, nint canyonConfig, nint arg3, nint pos, nint startPos, nint originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float horizontalRadius, float verticalRadius, nint widthRandomization, nint context, nint biomeRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool __isDiggable(global::Hosihikari.Bindings.Bedrock.Interop.BlockType block)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_20c27fdb((void*)__hosihikari_shim_handle, (void*)block.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __isDiggable(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CanyonFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.CanyonFeature arg0)
     {
@@ -66,10 +61,9 @@ public sealed unsafe partial class CanyonFeature : global::System.IDisposable
         return new CanyonFeature((nint)handle);
     }
 
-    public void _addFeature(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume blocks, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource localBiomeSource, nint canyonConfig, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random, int chunkX, int chunkZ, global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext context, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
-    {
-        NativeMethods.TablePtr->C0.hs_method_05780846((void*)__hosihikari_shim_handle, (void*)blocks.Handle, (void*)localBiomeSource.Handle, (void*)canyonConfig, (void*)pos.Handle, (void*)random.Handle, chunkX, chunkZ, (void*)context.Handle, (void*)biomeRegistry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _addFeature(nint blocks, nint localBiomeSource, nint canyonConfig, nint pos, nint random, int chunkX, int chunkZ, nint context, nint biomeRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _carve(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume blocks, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource localBiomeSource, nint canyonConfig, global::Hosihikari.Bindings.Bedrock.Interop.Random arg3, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startPos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float horizontalRadius, float verticalRadius, float[] widthRandomization, global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext context, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
     {
@@ -84,10 +78,9 @@ public sealed unsafe partial class CanyonFeature : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_9f6544a7((void*)__hosihikari_shim_handle, (void*)block.Handle) != 0;
     }
 
-    public void apply(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume blocks, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource localBiomeSource, nint canyonConfig, global::Hosihikari.Bindings.Bedrock.Interop.Random random, uint levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext context, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
-    {
-        NativeMethods.TablePtr->C0.hs_method_265df291((void*)__hosihikari_shim_handle, (void*)blocks.Handle, (void*)pos.Handle, (void*)localBiomeSource.Handle, (void*)canyonConfig, (void*)random.Handle, levelSeed, (void*)context.Handle, (void*)biomeRegistry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void apply(nint blocks, nint pos, nint localBiomeSource, nint canyonConfig, nint random, uint levelSeed, nint context, nint biomeRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAllowMegaCanyons
     {

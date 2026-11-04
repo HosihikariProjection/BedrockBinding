@@ -49,20 +49,18 @@ public sealed unsafe partial class DamageSensorComponent : global::System.IDispo
         return new DamageSensorComponent((nint)handle);
     }
 
-    public static void _fillParameters(global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList inOutParameters, global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Actor? sender, global::Hosihikari.Bindings.Bedrock.Interop.Actor? damager)
-    {
-        NativeMethods.TablePtr->C1.hs_method_92407566((void*)inOutParameters.Handle, (void*)owner.Handle, (void*)(sender?.Handle ?? 0), (void*)(damager?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _fillParameters(nint inOutParameters, nint owner, nint sender, nint damager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte _recordDamageAndCheckIfDealt(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Actor? sender, nint cause, global::Hosihikari.Bindings.Bedrock.Interop.Actor? damager, float amount, float preDamageHealth, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList parameters, bool willTrigger)
     {
         return NativeMethods.TablePtr->C1.hs_method_9800d3de((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)(sender?.Handle ?? 0), (void*)cause, (void*)(damager?.Handle ?? 0), amount, preDamageHealth, (void*)parameters.Handle, willTrigger);
     }
 
-    public float getAdjustedDamage(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float amount)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_21d5e813((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)source.Handle, amount);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float getAdjustedDamage(nint owner, nint source, float amount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mDamageAmount
     {
@@ -88,10 +86,9 @@ public sealed unsafe partial class DamageSensorComponent : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C1.hs_get_742dc8ea((void*)__hosihikari_shim_handle);
     }
 
-    public byte recordBlockDamageAndCheckIfDealt(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, int cause, float amount, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos standingOnPos)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_a209d920((void*)__hosihikari_shim_handle, (void*)owner.Handle, cause, amount, (void*)standingOnPos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint recordBlockDamageAndCheckIfDealt(nint owner, nint cause, float amount, nint standingOnPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte recordGenericDamageAndCheckIfDealt(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float amount, float preDamageHealth, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterList parameters, bool willTrigger)
     {

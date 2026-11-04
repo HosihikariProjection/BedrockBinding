@@ -38,15 +38,13 @@ public sealed unsafe partial class ServerConfigurationJoinInfo : global::System.
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.ServerConfigurationJoinInfo arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_7e6989a1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_d13222cc((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerConfigurationJoinInfo Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ServerConfigurationJoinInfo : global::System.
         return new ServerConfigurationJoinInfo((nint)handle);
     }
 
-    public static ServerConfigurationJoinInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.ServerConfigurationJoinInfo arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b9b59c23((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ServerConfigurationJoinInfo((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ServerConfigurationJoinInfo Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2be4db_Address
@@ -88,10 +79,9 @@ public sealed unsafe partial class ServerConfigurationJoinInfo : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_8bd15964((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.ServerConfigurationJoinInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.ServerConfigurationJoinInfo arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.ServerConfigurationJoinInfo((nint)NativeMethods.TablePtr->C3.hs_method_4c4a47ca((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

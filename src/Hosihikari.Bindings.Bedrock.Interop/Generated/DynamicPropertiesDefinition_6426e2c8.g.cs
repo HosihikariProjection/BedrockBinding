@@ -38,10 +38,9 @@ public sealed unsafe partial class DynamicPropertiesDefinition : global::System.
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_cf33313c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DynamicPropertiesDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertiesDefinition arg0)
     {
@@ -54,67 +53,13 @@ public sealed unsafe partial class DynamicPropertiesDefinition : global::System.
         return new DynamicPropertiesDefinition((nint)handle);
     }
 
-    public bool _canMergeDefinitions(global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertiesDefinition other, string identifier, ulong sizeLimit, ref string error)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(identifier);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes1);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(error);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes3);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                try
-                {
-                    return NativeMethods.TablePtr->C1.hs_method_64a6b1c1((void*)__hosihikari_shim_handle, (void*)other.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, sizeLimit, __hs_stringData3, (nuint)__hs_stringByteCount3, &__hs_strOut0) != 0;
-                }
-                finally
-                {
-                    error = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canMergeDefinitions(nint other, nint identifier, ulong sizeLimit, nint error) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int? defineProperty(string identifier, global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition definition)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(identifier);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_value = NativeMethods.TablePtr->C1.hs_method_554b3412((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)definition.Handle, &__hs_hasValue);
-            return __hs_hasValue ? __hs_value : (int?)null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint defineProperty(nint identifier, nint definition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mCost
     {
@@ -128,46 +73,13 @@ public sealed unsafe partial class DynamicPropertiesDefinition : global::System.
         get => (nint)NativeMethods.TablePtr->C1.hs_get_57d341a1((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition? tryGetPropertyDefinition(string identifier)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(identifier);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8120c192((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertyDefinition((nint)__hs_handle, false) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint tryGetPropertyDefinition(nint identifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string? tryMergeDefinitions(global::Hosihikari.Bindings.Bedrock.Interop.DynamicPropertiesDefinition other, string identifier, ulong sizeLimit)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(identifier);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            var __hs_view = NativeMethods.TablePtr->C1.hs_method_6b3c2bd7((void*)__hosihikari_shim_handle, (void*)other.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, sizeLimit, &__hs_hasValue);
-            return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint tryMergeDefinitions(nint other, nint identifier, ulong sizeLimit) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

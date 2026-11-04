@@ -38,15 +38,13 @@ public sealed unsafe partial class SystemTickDelegate : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _breakBlock(global::Hosihikari.Bindings.Bedrock.Interop.FallingBlockActor fallingBlock)
-    {
-        NativeMethods.TablePtr->C1.hs_method_4c448bc5((void*)__hosihikari_shim_handle, (void*)fallingBlock.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _breakBlock(nint fallingBlock) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onLand(global::Hosihikari.Bindings.Bedrock.Interop.FallingBlock block, global::Hosihikari.Bindings.Bedrock.Interop.IBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        NativeMethods.TablePtr->C1.hs_method_3e6582e2((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)region.Handle, (void*)pos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onLand(nint block, nint region, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SystemTickDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.FallingBlockSystemOnLand.SystemTickDelegate arg0)
     {

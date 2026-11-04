@@ -44,13 +44,13 @@ public sealed unsafe partial class RecordItemComponent : global::System.IDisposa
         set => NativeMethods.TablePtr->C3.hs_set_8e31ea66((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::Beta::RecordItemComponent' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint component) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::Beta::RecordItemComponent' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RecordItemComponent Create()
     {
@@ -63,9 +63,9 @@ public sealed unsafe partial class RecordItemComponent : global::System.IDisposa
         return new RecordItemComponent((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::Beta::RecordItemComponent' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static RecordItemComponent Create(nint component) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::Beta::RecordItemComponent' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RecordItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RecordItemComponent arg0)
     {
@@ -78,20 +78,17 @@ public sealed unsafe partial class RecordItemComponent : global::System.IDisposa
         return new RecordItemComponent((nint)handle);
     }
 
-    public void appendFormattedHovertext(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString hovertext)
-    {
-        NativeMethods.TablePtr->C3.hs_method_8d5947f0((void*)__hosihikari_shim_handle, (void*)hovertext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void appendFormattedHovertext(nint hovertext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string getRecordDescription()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_253edddc((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getRecordDescription() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mComparatorSignal
     {

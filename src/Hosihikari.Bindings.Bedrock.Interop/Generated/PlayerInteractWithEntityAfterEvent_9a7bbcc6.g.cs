@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerInteractWithEntityAfterEvent : global::
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_d3d8cf05((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_d3d8cf05((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerInteractWithEntityAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractWithEntityAfterEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b0a09ff1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b0a09ff1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,25 +57,25 @@ public sealed unsafe partial class PlayerInteractWithEntityAfterEvent : global::
     // The native field type is not projected; this is the address of the field storage.
     public nint mAfterItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_58814791((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_58814791((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBeforeItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1ee9b206((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1ee9b206((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_76bcc323((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_76bcc323((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetEntity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6cd833c8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6cd833c8((void*)__hosihikari_shim_handle);
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class PlayerInteractWithEntityAfterEvent : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9a7bbcc6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9a7bbcc6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

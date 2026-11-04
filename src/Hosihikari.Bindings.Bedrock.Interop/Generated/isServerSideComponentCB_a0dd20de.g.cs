@@ -44,7 +44,7 @@ public sealed unsafe partial class isServerSideComponentCB : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_a0dd20de((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_a0dd20de((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

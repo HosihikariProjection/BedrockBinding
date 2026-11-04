@@ -41,43 +41,43 @@ public sealed unsafe partial class Iterator_true_ : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint iter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_751e7e74((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_751e7e74((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Tag operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)NativeMethods.TablePtr->C1.hs_method_06b54b29((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)NativeMethods.TablePtr->C0.hs_method_06b54b29((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ operator_operator___7ba97c9b()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C1.hs_method_7ba97c9b((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C0.hs_method_7ba97c9b((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ operator_operator___b035f811(int arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C1.hs_method_b035f811((void*)__hosihikari_shim_handle, arg0));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C0.hs_method_b035f811((void*)__hosihikari_shim_handle, arg0));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ operator_operator___ed3742c3()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C1.hs_method_ed3742c3((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C0.hs_method_ed3742c3((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ operator_operator___bbd9e3f4(int arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C1.hs_method_bbd9e3f4((void*)__hosihikari_shim_handle, arg0));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C0.hs_method_bbd9e3f4((void*)__hosihikari_shim_handle, arg0));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Tag? operator_operator___e0e27f3c()
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_e0e27f3c((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e0e27f3c((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)__hs_handle, false) : null;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ r)
     {
-        return NativeMethods.TablePtr->C1.hs_method_b2786015((void*)__hosihikari_shim_handle, (void*)r.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_b2786015((void*)__hosihikari_shim_handle, (void*)r.Handle) != 0;
     }
 
     public void Dispose()
@@ -86,7 +86,7 @@ public sealed unsafe partial class Iterator_true_ : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_0222e5ef((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_0222e5ef((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

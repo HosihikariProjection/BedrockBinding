@@ -38,9 +38,9 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint descriptorString, nint serverScheduler, nint config, nint @delegate, nint serializationRegistry, nint contentEncoder) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptNetHttpClient Create()
     {
@@ -64,14 +64,13 @@ public sealed unsafe partial class ScriptNetHttpClient : global::System.IDisposa
         return new ScriptNetHttpClient((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ScriptNetHttpClient Create(nint descriptorString, nint serverScheduler, nint config, nint @delegate, nint serializationRegistry, nint contentEncoder) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ScriptModuleMinecraftNet::ScriptNetModuleConfig' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_685718c1());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5f1385_Address

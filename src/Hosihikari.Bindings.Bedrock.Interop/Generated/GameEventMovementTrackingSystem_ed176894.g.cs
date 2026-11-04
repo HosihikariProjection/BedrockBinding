@@ -38,10 +38,9 @@ public sealed unsafe partial class GameEventMovementTrackingSystem : global::Sys
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_6f4f8140((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameEventMovementTrackingSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.GameEventMovementTrackingSystem arg0)
     {
@@ -54,9 +53,9 @@ public sealed unsafe partial class GameEventMovementTrackingSystem : global::Sys
         return new GameEventMovementTrackingSystem((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const RailMovementComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _tickGameEventMovementTrackingComponent(nint actorOwnerComponent, nint gameEventMovementTrackingComponent, nint railMovementComponent) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const RailMovementComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {

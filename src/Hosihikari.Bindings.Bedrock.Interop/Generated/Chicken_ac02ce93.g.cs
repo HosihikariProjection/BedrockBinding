@@ -584,10 +584,9 @@ public sealed unsafe partial class Chicken : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_1a2d2258((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_b7560497((void*)__hosihikari_shim_handle, (void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint definitions, nint definitionName, nint entityContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Chicken Create()
     {
@@ -600,16 +599,9 @@ public sealed unsafe partial class Chicken : global::System.IDisposable
         return new Chicken((nint)handle);
     }
 
-    public static Chicken Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup? definitions, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier definitionName, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entityContext)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_05653cc0((void*)(definitions?.Handle ?? 0), (void*)definitionName.Handle, (void*)entityContext.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Chicken((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Chicken Create(nint definitions, nint definitionName, nint entityContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public float mAttackAnim

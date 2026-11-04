@@ -38,81 +38,13 @@ public sealed unsafe partial class AnimateEntityPacketPayload : global::System.I
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID[] runtimeIds, string animation, string nextState, float blendOutTime, string stopExpression, short stopExpressionVersion, string controller)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(animation);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(animation, __hs_stringBytes1);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(nextState);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nextState, __hs_stringBytes2);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(stopExpression);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(stopExpression, __hs_stringBytes4);
-        var __hs_stringByteCount6 = global::System.Text.Encoding.UTF8.GetByteCount(controller);
-        scoped global::System.Span<byte> __hs_stringBytes6;
-        if (__hs_stringByteCount6 <= 256)
-        {
-            __hs_stringBytes6 = stackalloc byte[__hs_stringByteCount6 == 0 ? 1 : __hs_stringByteCount6];
-        }
-        else
-        {
-            __hs_stringBytes6 = new byte[__hs_stringByteCount6];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(controller, __hs_stringBytes6);
-        var __hs_vectorItems0 = runtimeIds;
-        var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
-        for (var __hs_i0 = 0; __hs_i0 < __hs_vectorHandles0.Length; __hs_i0++)
-        {
-            __hs_vectorHandles0[__hs_i0] = __hs_vectorItems0![__hs_i0]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
-        {
-            var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-                {
-                    fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-                    {
-                        fixed (byte* __hs_stringData6 = __hs_stringBytes6)
-                        {
-                            return (nint)NativeMethods.TablePtr->C0.hs_method_29a9f270((void*)__hosihikari_shim_handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, blendOutTime, __hs_stringData4, (nuint)__hs_stringByteCount4, stopExpressionVersion, __hs_stringData6, (nuint)__hs_stringByteCount6, __hs_vectorData0, (nuint)(runtimeIds?.Length ?? 0));
-                        }
-                    }
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint runtimeIds, nint animation, nint nextState, float blendOutTime, nint stopExpression, nint stopExpressionVersion, nint controller) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_957e403b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AnimateEntityPacketPayload Create()
     {
@@ -136,82 +68,9 @@ public sealed unsafe partial class AnimateEntityPacketPayload : global::System.I
         return new AnimateEntityPacketPayload((nint)handle);
     }
 
-    public static AnimateEntityPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID[] runtimeIds, string animation, string nextState, float blendOutTime, string stopExpression, short stopExpressionVersion, string controller)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(animation);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(animation, __hs_stringBytes1);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(nextState);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(nextState, __hs_stringBytes2);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(stopExpression);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(stopExpression, __hs_stringBytes4);
-        var __hs_stringByteCount6 = global::System.Text.Encoding.UTF8.GetByteCount(controller);
-        scoped global::System.Span<byte> __hs_stringBytes6;
-        if (__hs_stringByteCount6 <= 256)
-        {
-            __hs_stringBytes6 = stackalloc byte[__hs_stringByteCount6 == 0 ? 1 : __hs_stringByteCount6];
-        }
-        else
-        {
-            __hs_stringBytes6 = new byte[__hs_stringByteCount6];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(controller, __hs_stringBytes6);
-        var __hs_vectorItems0 = runtimeIds;
-        var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
-        for (var __hs_i0 = 0; __hs_i0 < __hs_vectorHandles0.Length; __hs_i0++)
-        {
-            __hs_vectorHandles0[__hs_i0] = __hs_vectorItems0![__hs_i0]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
-        {
-            var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-                {
-                    fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-                    {
-                        fixed (byte* __hs_stringData6 = __hs_stringBytes6)
-                        {
-                            var handle = NativeMethods.TablePtr->C0.hs_create_336f185e(__hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, blendOutTime, __hs_stringData4, (nuint)__hs_stringByteCount4, stopExpressionVersion, __hs_stringData6, (nuint)__hs_stringByteCount6, __hs_vectorData0, (nuint)(runtimeIds?.Length ?? 0));
-                            if (handle == null)
-                            {
-                                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-                            }
-
-                            return new AnimateEntityPacketPayload((nint)handle);
-                        }
-                    }
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AnimateEntityPacketPayload Create(nint runtimeIds, nint animation, nint nextState, float blendOutTime, nint stopExpression, nint stopExpressionVersion, nint controller) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAnimation_Address

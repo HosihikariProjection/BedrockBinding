@@ -38,21 +38,13 @@ public sealed unsafe partial class ScriptItemEnchantmentUnknownIdError : global:
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_49bab2fb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptItemEnchantmentUnknownIdError Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_9687a485();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptItemEnchantmentUnknownIdError((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptItemEnchantmentUnknownIdError Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptItemEnchantmentUnknownIdError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentUnknownIdError arg0)
     {
@@ -65,10 +57,9 @@ public sealed unsafe partial class ScriptItemEnchantmentUnknownIdError : global:
         return new ScriptItemEnchantmentUnknownIdError((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ErrorBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ErrorBinding((nint)NativeMethods.TablePtr->C3.hs_method_068996b2());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

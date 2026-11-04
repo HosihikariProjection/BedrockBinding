@@ -62,10 +62,9 @@ public sealed unsafe partial class SeaPickleFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_ffb6bb33((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_7234f469((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint pos, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SeaPickleFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.SeaPickleFeature arg0)
     {

@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptWorldAfterEventsDeferredEventListener
         return __hs_handle;
     }
 
-    public void _onFlushWorldAfterEvents(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_effb8254((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onFlushWorldAfterEvents(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void onFlushWorldAfterEvents(nint deferredTracker)
     {

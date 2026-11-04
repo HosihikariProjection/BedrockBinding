@@ -40,35 +40,33 @@ public sealed unsafe partial class OnUseOn : global::System.IDisposable
 
     public uint mSubscriberCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0242f74b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_0242f74b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_0242f74b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_0242f74b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubscriptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f1a12354((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f1a12354((void*)__hosihikari_shim_handle);
     }
 
     public nint mOwner
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7f92bccc((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_7f92bccc((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7f92bccc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_7f92bccc((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _buildNetworkTag(nint ctx) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _initializeFromNetwork(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_84ae7c02((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _initializeFromNetwork(nint tag, nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isNetworkComponent()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_41cf504c((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isNetworkComponent() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
     public nint buildNetworkTag(nint ctx) =>
@@ -76,18 +74,18 @@ public sealed unsafe partial class OnUseOn : global::System.IDisposable
 
     public bool initializeFromNetwork(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
     {
-        return NativeMethods.TablePtr->C3.hs_method_d9fdee53((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_d9fdee53((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)ctx.Handle) != 0;
     }
 
     public bool isNetworkComponent()
     {
-        return NativeMethods.TablePtr->C3.hs_method_83d16683((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_83d16683((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mAutoSucceedOnClient
     {
-        get => NativeMethods.TablePtr->C3.hs_get_58279e4e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_58279e4e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_58279e4e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_58279e4e((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -97,7 +95,7 @@ public sealed unsafe partial class OnUseOn : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f7607b8b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f7607b8b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

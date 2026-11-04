@@ -56,16 +56,13 @@ public sealed unsafe partial class FilterTestBiome : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2e6a418b((void*)__hosihikari_shim_handle);
     }
 
-    public bool _evaluate(nint context)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_d20ccdfe((void*)__hosihikari_shim_handle, (void*)context) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _evaluate(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _getName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_7d26c9b5((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FilterTestBiome Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterTestBiome arg0)
     {

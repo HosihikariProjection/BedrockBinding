@@ -49,42 +49,13 @@ public sealed unsafe partial class ChunkTickOffsetManager : global::System.IDisp
         return new ChunkTickOffsetManager((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] getSortedPositionsFromClientOffsets(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] centers, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[] offsets)
-    {
-        var __hs_vectorItems0 = centers;
-        var __hs_vectorHandles0 = new nint[__hs_vectorItems0?.Length ?? 0];
-        for (var __hs_i0 = 0; __hs_i0 < __hs_vectorHandles0.Length; __hs_i0++)
-        {
-            __hs_vectorHandles0[__hs_i0] = __hs_vectorItems0![__hs_i0]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
-        {
-            var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            var __hs_vectorItems1 = offsets;
-            var __hs_vectorHandles1 = new nint[__hs_vectorItems1?.Length ?? 0];
-            for (var __hs_i1 = 0; __hs_i1 < __hs_vectorHandles1.Length; __hs_i1++)
-            {
-                __hs_vectorHandles1[__hs_i1] = __hs_vectorItems1![__hs_i1]?.Handle ?? 0;
-            }
-            fixed (nint* __hs_vectorHandleData1 = __hs_vectorHandles1)
-            {
-                var __hs_vectorData1 = (void**)__hs_vectorHandleData1;
-                var __hs_view = NativeMethods.TablePtr->C0.hs_method_62a99e5a(__hs_vectorData0, (nuint)(centers?.Length ?? 0), __hs_vectorData1, (nuint)(offsets?.Length ?? 0));
-                var __hs_items = (void**)__hs_view.Data;
-                var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos>() : new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos[checked((int)__hs_view.Size)];
-                for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-                {
-                    __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos((nint)__hs_items[__hs_i]);
-                }
-                return __hs_result;
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getSortedPositionsFromClientOffsets(nint centers, nint offsets) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initialize(uint serverTickRange)
-    {
-        NativeMethods.TablePtr->C0.hs_method_d106d9c0((void*)__hosihikari_shim_handle, serverTickRange);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initialize(uint serverTickRange) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientTickingChunksOffset_Address
@@ -98,10 +69,9 @@ public sealed unsafe partial class ChunkTickOffsetManager : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_8bd816bb((void*)__hosihikari_shim_handle);
     }
 
-    public void shuffleTickingOffsets(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        NativeMethods.TablePtr->C0.hs_method_767624e3((void*)__hosihikari_shim_handle, (void*)random.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void shuffleTickingOffsets(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

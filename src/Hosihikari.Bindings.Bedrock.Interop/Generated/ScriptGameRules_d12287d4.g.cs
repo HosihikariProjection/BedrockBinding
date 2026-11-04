@@ -49,15 +49,13 @@ public sealed unsafe partial class ScriptGameRules : global::System.IDisposable
         return new ScriptGameRules((nint)handle);
     }
 
-    public static void bind(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBindingBuilder moduleBuilder, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b2834172((void*)moduleBuilder.Handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bind(nint moduleBuilder, nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding bindPlayerWaypointsModeEnum()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.EnumBinding((nint)NativeMethods.TablePtr->C3.hs_method_3bda2ff4());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bindPlayerWaypointsModeEnum() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevel_Address

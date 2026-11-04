@@ -38,34 +38,29 @@ public sealed unsafe partial class MaterialReducerInputValidation : global::Syst
         return __hs_handle;
     }
 
-    public bool _canDestroy(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_3b85f2ca((void*)__hosihikari_shim_handle, (void*)screenContext.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canDestroy(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getAllowedAddCount(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase arg1)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_db544253((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getAllowedAddCount(nint arg0, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getAvailableSetCount(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_d3c1e800((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getAvailableSetCount(int slot, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getContainerOffset(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_83630bb2((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerOffset(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_8e4dab32((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isItemAllowedInSlot(nint screenContext, nint slot, nint item, nint amount, bool arg4) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MaterialReducerInputValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.MaterialReducerInputValidation arg0)
     {
@@ -98,10 +93,9 @@ public sealed unsafe partial class MaterialReducerInputValidation : global::Syst
         return NativeMethods.TablePtr->C2.hs_method_00fdb698((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
     }
 
-    public bool isItemAllowed(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_881a3539((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isItemAllowed(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
     {

@@ -40,13 +40,12 @@ public sealed unsafe partial class ItemRegistryManager : global::System.IDisposa
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef getItemRegistry()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef((nint)NativeMethods.TablePtr->C2.hs_method_eb6e2274());
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef((nint)NativeMethods.TablePtr->C1.hs_method_eb6e2274());
     }
 
-    public static nint mThreadLocalRegistry()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_a2b7a5a2();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mThreadLocalRegistry() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -54,7 +53,7 @@ public sealed unsafe partial class ItemRegistryManager : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_86011ed8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_86011ed8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

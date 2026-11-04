@@ -40,7 +40,7 @@ public sealed unsafe partial class ComponentNetRelevancyRegistry : global::Syste
 
     public static ComponentNetRelevancyRegistry Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_daad5c21();
+        var handle = NativeMethods.TablePtr->C0.hs_create_daad5c21();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ComponentNetRelevancyRegistry : global::Syste
 
     public static ComponentNetRelevancyRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fc2e8c0e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_fc2e8c0e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,17 @@ public sealed unsafe partial class ComponentNetRelevancyRegistry : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf6cbf4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8316d670((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8316d670((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry((nint)NativeMethods.TablePtr->C1.hs_method_ca25e053((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ComponentNetRelevancyRegistry((nint)NativeMethods.TablePtr->C0.hs_method_ca25e053((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool serializeComponentDefinitionsForClient(global::Hosihikari.Bindings.Bedrock.Interop.DefinitionInstanceGroup definitionGroup, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_94d20861((void*)__hosihikari_shim_handle, (void*)definitionGroup.Handle, (void*)tag.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool serializeComponentDefinitionsForClient(nint definitionGroup, nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -82,7 +81,7 @@ public sealed unsafe partial class ComponentNetRelevancyRegistry : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_2b9f5cbe((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_2b9f5cbe((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

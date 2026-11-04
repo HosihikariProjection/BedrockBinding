@@ -49,14 +49,13 @@ public sealed unsafe partial class BehaviorFactory : global::System.IDisposable
         return new BehaviorFactory((nint)handle);
     }
 
-    public void _initNodes()
-    {
-        NativeMethods.TablePtr->C0.hs_method_dbde82c7((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initNodes() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BehaviorDefinition' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint loadNodeDefinition(nint name, nint root, nint ptr) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'BehaviorDefinition' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFactoryPairs_Address
@@ -64,9 +63,9 @@ public sealed unsafe partial class BehaviorFactory : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_711fede9((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<BehaviorDefinition>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerNodePair(nint id, nint definitionCreator, nint nodeCreator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<BehaviorDefinition>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

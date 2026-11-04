@@ -86,29 +86,25 @@ public sealed unsafe partial class ServerMapDataManager : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ac9d9967((void*)__hosihikari_shim_handle);
     }
 
-    public void __copyAndLockMap(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID originalMapUuid, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID newMapUuid)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b3e56945((void*)__hosihikari_shim_handle, (void*)originalMapUuid.Handle, (void*)newMapUuid.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __copyAndLockMap(nint originalMapUuid, nint newMapUuid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData _createMapSavedData(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uuid)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData((nint)NativeMethods.TablePtr->C3.hs_method_1aff5f53((void*)__hosihikari_shim_handle, (void*)uuid.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _createMapSavedData(nint uuid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getOnCreateMapSavedDataConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _registerOnGameplayUserAddedSubscription(global::Hosihikari.Bindings.Bedrock.Interop.IGameplayUserManagerConnector gameplayUserManagerConnector)
-    {
-        NativeMethods.TablePtr->C3.hs_method_ed9a0018((void*)__hosihikari_shim_handle, (void*)gameplayUserManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _registerOnGameplayUserAddedSubscription(nint gameplayUserManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _requestMapInfo(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uuid, bool forceUpdate)
-    {
-        NativeMethods.TablePtr->C3.hs_method_41929740((void*)__hosihikari_shim_handle, (void*)uuid.Handle, forceUpdate);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _requestMapInfo(nint uuid, bool forceUpdate) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerMapDataManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerMapDataManager arg0)
     {
@@ -126,10 +122,9 @@ public sealed unsafe partial class ServerMapDataManager : global::System.IDispos
         NativeMethods.TablePtr->C3.hs_method_a22e33a4((void*)__hosihikari_shim_handle, (void*)originalMapUuid.Handle, (void*)newMapUuid.Handle);
     }
 
-    public void _onGameplayUserAdded(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C3.hs_method_a600c65b((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onGameplayUserAdded(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData createMapSavedData(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID uuid)
     {

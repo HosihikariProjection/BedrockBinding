@@ -38,14 +38,13 @@ public sealed unsafe partial class Input : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger _getErrors()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)NativeMethods.TablePtr->C3.hs_method_dafa90cf((void*)__hosihikari_shim_handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getErrors() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Input Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ee64e4a5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ee64e4a5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,17 +55,17 @@ public sealed unsafe partial class Input : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data data()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data((nint)NativeMethods.TablePtr->C3.hs_method_52ccd1bc((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input_Nested.Data((nint)NativeMethods.TablePtr->C2.hs_method_52ccd1bc((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger getErrors()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)NativeMethods.TablePtr->C3.hs_method_c94ef929((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger((nint)NativeMethods.TablePtr->C2.hs_method_c94ef929((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)NativeMethods.TablePtr->C3.hs_method_97e78f3c((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SemVersion((nint)NativeMethods.TablePtr->C2.hs_method_97e78f3c((void*)__hosihikari_shim_handle));
     }
 
 
@@ -76,7 +75,7 @@ public sealed unsafe partial class Input : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_dcfa129d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_dcfa129d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

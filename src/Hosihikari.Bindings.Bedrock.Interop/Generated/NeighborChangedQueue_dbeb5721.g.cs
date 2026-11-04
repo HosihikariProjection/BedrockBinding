@@ -60,22 +60,17 @@ public sealed unsafe partial class NeighborChangedQueue : global::System.IDispos
         return new NeighborChangedQueue((nint)handle);
     }
 
-    public bool appendRestoredRecord(global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue_Nested.Record record)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_662e6b0f((void*)__hosihikari_shim_handle, (void*)record.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool appendRestoredRecord(nint record) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C2.hs_method_eee44afe((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void load(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue_Nested.Record? loadRecordPayload(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos notifiedPos)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b9f439bf((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)notifiedPos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue_Nested.Record((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint loadRecordPayload(nint tag, nint notifiedPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1a779f_Address
@@ -101,45 +96,34 @@ public sealed unsafe partial class NeighborChangedQueue : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_f2f4ead9((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue((nint)NativeMethods.TablePtr->C2.hs_method_c799f390((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void recordChange(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick, global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos notifiedPos, global::Hosihikari.Bindings.Bedrock.Interop.Block listenerPermutation, nint change)
-    {
-        NativeMethods.TablePtr->C2.hs_method_cdb73e3d((void*)__hosihikari_shim_handle, (void*)currentTick.Handle, (void*)notifiedPos.Handle, (void*)listenerPermutation.Handle, (void*)change);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void recordChange(nint currentTick, nint notifiedPos, nint listenerPermutation, nint change) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C2.hs_method_58ec455e((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void save(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint saveRecordPayload(nint record) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        NativeMethods.TablePtr->C2.hs_method_05ffe5a3((void*)__hosihikari_shim_handle, (void*)region.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void sendEvents(nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue_Nested.Record[] takeFront(ulong maxCount)
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_c7729d4e((void*)__hosihikari_shim_handle, maxCount);
-        var __hs_items = (void**)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue_Nested.Record>() : new global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue_Nested.Record[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.NeighborChangedQueue_Nested.Record((nint)__hs_items[__hs_i]);
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint takeFront(ulong maxCount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

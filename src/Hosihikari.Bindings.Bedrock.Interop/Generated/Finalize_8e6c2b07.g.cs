@@ -38,15 +38,13 @@ public sealed unsafe partial class Finalize : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.Finalize arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_c7a45a12((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_2def1b13((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Finalize Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class Finalize : global::System.IDisposable
         return new Finalize((nint)handle);
     }
 
-    public static Finalize Create(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.Finalize arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_ed81e7a7((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Finalize((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Finalize Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAuthor_Address
@@ -93,10 +84,9 @@ public sealed unsafe partial class Finalize : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.Finalize((nint)NativeMethods.TablePtr->C0.hs_method_54deb799((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.Finalize arg0)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_82763f32((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

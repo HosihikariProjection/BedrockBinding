@@ -38,20 +38,17 @@ public sealed unsafe partial class INpcDialogueData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public string _getRawDialogueText()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0b12d933((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getRawDialogueText() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isRemoteFire()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_e0e3fbcc((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isRemoteFire() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static INpcDialogueData Create(global::Hosihikari.Bindings.Bedrock.Interop.INpcDialogueData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_002e496d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_002e496d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,66 +59,66 @@ public sealed unsafe partial class INpcDialogueData : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.npc.ActionContainer? getActionsContainer_f7489271()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f7489271((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f7489271((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.npc.ActionContainer((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.npc.ActionContainer? getActionsContainer_daa87fce()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_daa87fce((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_daa87fce((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.npc.ActionContainer((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getActor_dc81db47()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dc81db47((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_dc81db47((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? getActor_2e0f5510()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2e0f5510((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2e0f5510((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID getActorUniqueID()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C2.hs_method_06af70bc((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C1.hs_method_06af70bc((void*)__hosihikari_shim_handle));
     }
 
     public string getDialogueText()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_be57a9a9((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_be57a9a9((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getNameRawText()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_d9b2d2e1((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_d9b2d2e1((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getNameText()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_1d30460f((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_1d30460f((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getRawDialogueText()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_ff69727e((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_ff69727e((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getSceneName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_a683990f((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_a683990f((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool isRemoteFire()
     {
-        return NativeMethods.TablePtr->C2.hs_method_5c51c936((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_5c51c936((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -131,7 +128,7 @@ public sealed unsafe partial class INpcDialogueData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_9491eb2d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_9491eb2d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

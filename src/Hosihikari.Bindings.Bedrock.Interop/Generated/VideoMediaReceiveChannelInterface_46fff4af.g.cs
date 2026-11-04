@@ -40,12 +40,12 @@ public sealed unsafe partial class VideoMediaReceiveChannelInterface : global::S
 
     public bool AddDefaultRecvStreamForTesting(nint arg0)
     {
-        return NativeMethods.TablePtr->C5.hs_method_6cc6f06a((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_6cc6f06a((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     public void ClearRecordableEncodedFrameCallback(uint arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_0985a073((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C4.hs_method_0985a073((void*)__hosihikari_shim_handle, arg0);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::RtpParameters' requires --link-carrier or --virtual-dispatch.", false)]
@@ -62,32 +62,32 @@ public sealed unsafe partial class VideoMediaReceiveChannelInterface : global::S
 
     public bool GetStats(nint arg0)
     {
-        return NativeMethods.TablePtr->C5.hs_method_ff58e13d((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_ff58e13d((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     public void RequestRecvKeyFrame(uint arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_a05ad396((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C4.hs_method_a05ad396((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void SetDefaultSink(nint arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_92d1df08((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C4.hs_method_92d1df08((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public void SetReceive(bool arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_728dbae5((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C4.hs_method_728dbae5((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void SetReceiverFeedbackParameters(bool arg0, bool arg1, int arg2, int? arg3)
     {
-        NativeMethods.TablePtr->C5.hs_method_5c2e8248((void*)__hosihikari_shim_handle, arg0, arg1, arg2, arg3 ?? default(int), arg3.HasValue);
+        NativeMethods.TablePtr->C4.hs_method_5c2e8248((void*)__hosihikari_shim_handle, arg0, arg1, arg2, arg3 ?? default(int), arg3.HasValue);
     }
 
     public bool SetReceiverParameters(nint arg0)
     {
-        return NativeMethods.TablePtr->C5.hs_method_25854922((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_25854922((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -96,12 +96,12 @@ public sealed unsafe partial class VideoMediaReceiveChannelInterface : global::S
 
     public bool SetSink(uint arg0, nint arg1)
     {
-        return NativeMethods.TablePtr->C5.hs_method_b99c36e7((void*)__hosihikari_shim_handle, arg0, (void*)arg1) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_b99c36e7((void*)__hosihikari_shim_handle, arg0, (void*)arg1) != 0;
     }
 
     public static VideoMediaReceiveChannelInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_31ea9c41((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_31ea9c41((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -117,7 +117,7 @@ public sealed unsafe partial class VideoMediaReceiveChannelInterface : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_46fff4af((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_46fff4af((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

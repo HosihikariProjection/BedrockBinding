@@ -40,12 +40,12 @@ public sealed unsafe partial class Signature : global::System.IDisposable
 
     public nint mGroup
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_98f60c24((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_98f60c24((void*)__hosihikari_shim_handle);
     }
 
     public nint mName
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d323584a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d323584a((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -54,7 +54,7 @@ public sealed unsafe partial class Signature : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_3b99fefa((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_3b99fefa((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

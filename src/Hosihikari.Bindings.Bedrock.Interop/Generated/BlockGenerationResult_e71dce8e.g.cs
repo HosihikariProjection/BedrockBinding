@@ -40,12 +40,12 @@ public sealed unsafe partial class BlockGenerationResult : global::System.IDispo
 
     public nint block
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f8b54485((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f8b54485((void*)__hosihikari_shim_handle);
     }
 
     public bool shouldTickUpdate
     {
-        get => NativeMethods.TablePtr->C3.hs_get_36213f73((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C2.hs_get_36213f73((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void Dispose()
@@ -54,7 +54,7 @@ public sealed unsafe partial class BlockGenerationResult : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e71dce8e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e71dce8e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

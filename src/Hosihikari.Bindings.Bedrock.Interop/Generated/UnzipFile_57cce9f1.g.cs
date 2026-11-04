@@ -59,9 +59,9 @@ public sealed unsafe partial class UnzipFile : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_49344f2f((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Core::UnzipFile' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint create(nint fileAccess, nint zipPath, nint library) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Core::UnzipFile' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public string getCurrentFileName()
     {

@@ -38,30 +38,25 @@ public sealed unsafe partial class TrailComponentDefinition : global::System.IDi
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_a87def6c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_3b45a382((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3 DEFAULT_SPAWN_OFFSET()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C4.hs_method_121860fc(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DEFAULT_SPAWN_OFFSET() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_fd64e704();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TrailComponentDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_718c09d0();
+        var handle = NativeMethods.TablePtr->C3.hs_create_718c09d0();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,71 +65,62 @@ public sealed unsafe partial class TrailComponentDefinition : global::System.IDi
         return new TrailComponentDefinition((nint)handle);
     }
 
-    public static TrailComponentDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8a4a7bd9((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static TrailComponentDefinition Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new TrailComponentDefinition((nint)handle);
-    }
-
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_18d7d410((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlocksToReplace_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_777a69c5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_777a69c5((void*)__hosihikari_shim_handle);
     }
 
     public bool mForceReplaceMatchedBlocks
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9d2b5069((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_9d2b5069((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9d2b5069((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_9d2b5069((void*)__hosihikari_shim_handle, value);
     }
 
     public int mRadius
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e1429f5a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e1429f5a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e1429f5a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e1429f5a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReplacementBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f2029873((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f2029873((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnCondition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a8485830((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a8485830((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0c0dca22((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0c0dca22((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition((nint)NativeMethods.TablePtr->C4.hs_method_86b1b194((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition((nint)NativeMethods.TablePtr->C3.hs_method_86b1b194((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TrailComponentDefinition arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_18cf6af6((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -143,7 +129,7 @@ public sealed unsafe partial class TrailComponentDefinition : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_47a0ab83((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_47a0ab83((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

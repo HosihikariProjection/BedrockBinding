@@ -38,9 +38,9 @@ public sealed unsafe partial class RuntimeLightingManager : global::System.IDisp
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RuntimeLightingManager Create()
     {
@@ -64,19 +64,17 @@ public sealed unsafe partial class RuntimeLightingManager : global::System.IDisp
         return new RuntimeLightingManager((nint)handle);
     }
 
-    public void _getListOfChunksWithPlayerDistance()
-    {
-        NativeMethods.TablePtr->C3.hs_method_2561c807((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _getListOfChunksWithPlayerDistance() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _relightChunks(nint timeLimit) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _removeProcessedSubchunks()
-    {
-        NativeMethods.TablePtr->C3.hs_method_c576f6f6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _removeProcessedSubchunks() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimension_Address
@@ -119,10 +117,9 @@ public sealed unsafe partial class RuntimeLightingManager : global::System.IDisp
         return new global::Hosihikari.Bindings.Bedrock.Interop.RuntimeLightingManager((nint)NativeMethods.TablePtr->C3.hs_method_8c1a2e7c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void updateBlockLight(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, global::Hosihikari.Bindings.Bedrock.Interop.Brightness oldBrightness, global::Hosihikari.Bindings.Bedrock.Interop.Brightness newBrightness, global::Hosihikari.Bindings.Bedrock.Interop.Brightness oldAbsorption, global::Hosihikari.Bindings.Bedrock.Interop.Brightness newAbsorption, bool isSkyLight)
-    {
-        NativeMethods.TablePtr->C3.hs_method_eb443510((void*)__hosihikari_shim_handle, (void*)blockPos.Handle, (void*)oldBrightness.Handle, (void*)newBrightness.Handle, (void*)oldAbsorption.Handle, (void*)newAbsorption.Handle, isSkyLight);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void updateBlockLight(nint blockPos, nint oldBrightness, nint newBrightness, nint oldAbsorption, nint newAbsorption, bool isSkyLight) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

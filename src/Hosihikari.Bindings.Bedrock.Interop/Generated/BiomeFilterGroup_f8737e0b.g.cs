@@ -38,15 +38,13 @@ public sealed unsafe partial class BiomeFilterGroup : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? __createSubgroup(byte type)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_6054b7c2((void*)__hosihikari_shim_handle, type);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __createSubgroup(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BiomeFilterGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeFilterGroup arg0)
     {
@@ -65,10 +63,9 @@ public sealed unsafe partial class BiomeFilterGroup : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public void finalizeParsedValue(global::Hosihikari.Bindings.Bedrock.Interop.IWorldRegistriesProvider registries)
-    {
-        NativeMethods.TablePtr->C0.hs_method_54d2f0b7((void*)__hosihikari_shim_handle, (void*)registries.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void finalizeParsedValue(nint registries) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

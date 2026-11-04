@@ -40,26 +40,26 @@ public sealed unsafe partial class YBlendingBugSettings : global::System.IDispos
 
     public bool alwaysUseYZeroFor2DBlending
     {
-        get => NativeMethods.TablePtr->C5.hs_get_f12b8605((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_f12b8605((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f12b8605((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_f12b8605((void*)__hosihikari_shim_handle, value);
     }
 
     public bool emulateBug
     {
-        get => NativeMethods.TablePtr->C5.hs_get_273bcac2((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_273bcac2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_273bcac2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_273bcac2((void*)__hosihikari_shim_handle, value);
     }
 
     public bool extraBlendAtOldWorldgenStart
     {
-        get => NativeMethods.TablePtr->C5.hs_get_10e1dd2d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_10e1dd2d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_10e1dd2d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_10e1dd2d((void*)__hosihikari_shim_handle, value);
     }
 
     public float oldWorldgenStartYInputPos
     {
-        get => NativeMethods.TablePtr->C5.hs_get_8c02045b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_8c02045b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_8c02045b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_8c02045b((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -68,7 +68,7 @@ public sealed unsafe partial class YBlendingBugSettings : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_09e9ecd1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_09e9ecd1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

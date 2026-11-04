@@ -44,24 +44,21 @@ public sealed unsafe partial class LegacyOnDigTriggerItemComponent : global::Sys
         set => NativeMethods.TablePtr->C2.hs_set_d634fd3b((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public void __initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
-    {
-        NativeMethods.TablePtr->C2.hs_method_71dca6e7((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __initializeComponent(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.DiggerItemComponent diggerComponentData)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_82c53169((void*)__hosihikari_shim_handle, (void*)diggerComponentData.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint diggerComponentData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _handleVersionBasedInitialization(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion originalJsonVersion)
-    {
-        NativeMethods.TablePtr->C2.hs_method_490df0e9((void*)__hosihikari_shim_handle, (void*)originalJsonVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _handleVersionBasedInitialization(nint originalJsonVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyOnDigTriggerItemComponent Create()
     {
@@ -85,16 +82,9 @@ public sealed unsafe partial class LegacyOnDigTriggerItemComponent : global::Sys
         return new LegacyOnDigTriggerItemComponent((nint)handle);
     }
 
-    public static LegacyOnDigTriggerItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.DiggerItemComponent diggerComponentData)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_83784a29((void*)diggerComponentData.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LegacyOnDigTriggerItemComponent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LegacyOnDigTriggerItemComponent Create(nint diggerComponentData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
     {

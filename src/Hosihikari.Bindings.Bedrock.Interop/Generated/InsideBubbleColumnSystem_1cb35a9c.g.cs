@@ -38,10 +38,9 @@ public sealed unsafe partial class InsideBubbleColumnSystem : global::System.IDi
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSpawnBubbleColumnParticlesSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_85e56371());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSpawnBubbleColumnParticlesSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class InsideBubbleColumnSystem : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_1cb35a9c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_1cb35a9c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

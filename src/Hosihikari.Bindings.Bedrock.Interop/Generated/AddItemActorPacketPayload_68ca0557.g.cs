@@ -38,15 +38,13 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemActor itemEntity)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_b2bcfab9((void*)__hosihikari_shim_handle, (void*)itemEntity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint itemEntity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_6224c3fb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AddItemActorPacketPayload Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
         return new AddItemActorPacketPayload((nint)handle);
     }
 
-    public static AddItemActorPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemActor itemEntity)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_74ebbdd1((void*)itemEntity.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new AddItemActorPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AddItemActorPacketPayload Create(nint itemEntity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AddItemActorPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload arg0)
     {
@@ -123,9 +114,9 @@ public sealed unsafe partial class AddItemActorPacketPayload : global::System.ID
         get => (nint)NativeMethods.TablePtr->C0.hs_get_38ffcb63((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AddItemActorPacketPayload arg0)
     {

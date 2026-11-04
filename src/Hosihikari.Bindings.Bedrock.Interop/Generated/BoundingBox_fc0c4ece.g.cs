@@ -85,10 +85,9 @@ public sealed unsafe partial class BoundingBox : global::System.IDisposable
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
-    public void applyTransformation(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pivot, byte rotationXZ, bool mirrorX, bool mirrorZ)
-    {
-        NativeMethods.TablePtr->C0.hs_method_65aafa9b((void*)__hosihikari_shim_handle, (void*)pivot.Handle, rotationXZ, mirrorX, mirrorZ);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void applyTransformation(nint pivot, nint rotationXZ, bool mirrorX, bool mirrorZ) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool contains(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos a)
     {

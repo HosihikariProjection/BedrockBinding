@@ -38,70 +38,67 @@ public sealed unsafe partial class PlayerInventory : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _containerContentChanged(int slot)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b68405fb((void*)__hosihikari_shim_handle, slot);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _containerContentChanged(int slot) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _containerSizeChanged(int size)
-    {
-        NativeMethods.TablePtr->C3.hs_method_30b178f6((void*)__hosihikari_shim_handle, size);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _containerSizeChanged(int size) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void clearVanishEnchantedItemsOnDeath()
-    {
-        NativeMethods.TablePtr->C3.hs_method_980a1f1e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clearVanishEnchantedItemsOnDeath() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void containerContentChanged(int slot)
     {
-        NativeMethods.TablePtr->C3.hs_method_f2303481((void*)__hosihikari_shim_handle, slot);
+        NativeMethods.TablePtr->C2.hs_method_f2303481((void*)__hosihikari_shim_handle, slot);
     }
 
     public void containerSizeChanged(int size)
     {
-        NativeMethods.TablePtr->C3.hs_method_e635e69f((void*)__hosihikari_shim_handle, size);
+        NativeMethods.TablePtr->C2.hs_method_e635e69f((void*)__hosihikari_shim_handle, size);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComplexItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_37587381((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_37587381((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHudContainerManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_db900d10((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_db900d10((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInfiniteItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6b07d067((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6b07d067((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInventory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_59afc7c0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_59afc7c0((void*)__hosihikari_shim_handle);
     }
 
     public int mSelected
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e2193efa((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e2193efa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e2193efa((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e2193efa((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mSelectedContainerId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_903856f9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_903856f9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_903856f9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_903856f9((void*)__hosihikari_shim_handle, value);
     }
 
     public bool selectSlot(int slot, sbyte containerId)
     {
-        return NativeMethods.TablePtr->C3.hs_method_26dc5ca5((void*)__hosihikari_shim_handle, slot, containerId) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_26dc5ca5((void*)__hosihikari_shim_handle, slot, containerId) != 0;
     }
 
 
@@ -111,7 +108,7 @@ public sealed unsafe partial class PlayerInventory : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_25cf3427((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_25cf3427((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

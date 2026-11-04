@@ -38,14 +38,13 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? gameplayUserManager)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_14d01c33((void*)__hosihikari_shim_handle, gameplayUserManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint gameplayUserManager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayerAbilitiesManager Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1de87603();
+        var handle = NativeMethods.TablePtr->C2.hs_create_1de87603();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
 
     public static PlayerAbilitiesManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerAbilitiesManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a1e0cd47((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a1e0cd47((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,51 +64,41 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
         return new PlayerAbilitiesManager((nint)handle);
     }
 
-    public static PlayerAbilitiesManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? gameplayUserManager)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e6dd45c1(gameplayUserManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PlayerAbilitiesManager Create(nint gameplayUserManager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new PlayerAbilitiesManager((nint)handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities? getPlayerAbilities(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID playerId)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_87781ac5((void*)__hosihikari_shim_handle, (void*)playerId.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LayeredAbilities((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getPlayerAbilities(nint playerId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAbilitiesData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e54ef6db((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e54ef6db((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameplayUserManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_968c4b2b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_968c4b2b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPacketSender_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_abe6aa5a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_abe6aa5a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerAbilitiesChanged_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_75835af0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_75835af0((void*)__hosihikari_shim_handle);
     }
 
-    public void sendAllPlayerAbilities(global::Hosihikari.Bindings.Bedrock.Interop.Player playerReference)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e63bffc0((void*)__hosihikari_shim_handle, (void*)playerReference.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void sendAllPlayerAbilities(nint playerReference) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -118,7 +107,7 @@ public sealed unsafe partial class PlayerAbilitiesManager : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f57e0341((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f57e0341((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

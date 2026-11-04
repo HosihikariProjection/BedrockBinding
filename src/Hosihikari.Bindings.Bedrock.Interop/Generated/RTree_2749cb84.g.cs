@@ -40,7 +40,7 @@ public sealed unsafe partial class RTree : global::System.IDisposable
 
     public static RTree Create(global::Hosihikari.Bindings.Bedrock.Interop.RTree arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3364f58c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_3364f58c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,18 +49,18 @@ public sealed unsafe partial class RTree : global::System.IDisposable
         return new RTree((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint build(nint children) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint create(nint biomes) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRoot_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_907a76e5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_907a76e5((void*)__hosihikari_shim_handle);
     }
 
 
@@ -70,7 +70,7 @@ public sealed unsafe partial class RTree : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2749cb84((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2749cb84((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

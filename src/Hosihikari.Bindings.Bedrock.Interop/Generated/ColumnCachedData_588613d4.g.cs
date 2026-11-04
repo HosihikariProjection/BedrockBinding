@@ -40,14 +40,14 @@ public sealed unsafe partial class ColumnCachedData : global::System.IDisposable
 
     public int grassColor
     {
-        get => NativeMethods.TablePtr->C1.hs_get_dc65d7e3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_dc65d7e3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_dc65d7e3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_dc65d7e3((void*)__hosihikari_shim_handle, value);
     }
 
     public int waterColor
     {
-        get => NativeMethods.TablePtr->C1.hs_get_03f20fee((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_03f20fee((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_03f20fee((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_03f20fee((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class ColumnCachedData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_588613d4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_588613d4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

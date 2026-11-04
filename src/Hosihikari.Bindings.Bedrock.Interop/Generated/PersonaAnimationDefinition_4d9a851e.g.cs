@@ -40,7 +40,7 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
 
     public static PersonaAnimationDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_aa6e5e64();
+        var handle = NativeMethods.TablePtr->C2.hs_create_aa6e5e64();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
 
     public static PersonaAnimationDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8a75aa20((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8a75aa20((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk580557_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_db4a57bb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_db4a57bb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb767c6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_03c6ff58((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_03c6ff58((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition((nint)NativeMethods.TablePtr->C3.hs_method_437e8fd3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PersonaAnimationDefinition((nint)NativeMethods.TablePtr->C2.hs_method_437e8fd3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class PersonaAnimationDefinition : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4d9a851e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4d9a851e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

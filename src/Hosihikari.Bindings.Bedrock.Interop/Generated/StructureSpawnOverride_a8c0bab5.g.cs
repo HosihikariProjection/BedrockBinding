@@ -40,7 +40,7 @@ public sealed unsafe partial class StructureSpawnOverride : global::System.IDisp
 
     public static StructureSpawnOverride Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSpawnOverride arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_59ca62f5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_59ca62f5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class StructureSpawnOverride : global::System.IDisp
 
     public byte mBoundingBox
     {
-        get => NativeMethods.TablePtr->C5.hs_get_8a5ec433((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_8a5ec433((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_8a5ec433((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_8a5ec433((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnOverrides_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_0ae2daf0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0ae2daf0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class StructureSpawnOverride : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_a8c0bab5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_a8c0bab5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

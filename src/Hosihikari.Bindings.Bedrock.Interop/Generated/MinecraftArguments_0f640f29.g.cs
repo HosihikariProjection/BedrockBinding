@@ -60,13 +60,13 @@ public sealed unsafe partial class MinecraftArguments : global::System.IDisposab
         return new MinecraftArguments((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::Resources::CategoryFileMapping' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createResourcePackManager(nint filePathManager, nint contentTierManager, nint categoryFileMapping, nint mergeStrategyFactory) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::Resources::CategoryFileMapping' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'brstd::move_only_function<std::unique_ptr<ServerNetworkHandler> (MinecraftArguments::CreateServerNetworkHandlerArgs &&)>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint createServerNetworkHandlerFactory(nint args) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'brstd::move_only_function<std::unique_ptr<ServerNetworkHandler> (MinecraftArguments::CreateServerNetworkHandlerArgs &&)>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte mClientSubId
     {

@@ -38,10 +38,9 @@ public sealed unsafe partial class BroadcastInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8205c6a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BroadcastInfo Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class BroadcastInfo : global::System.IDisposable
         return new BroadcastInfo((nint)handle);
     }
 
-    public static BroadcastInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_dffcb2c4((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BroadcastInfo((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BroadcastInfo Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk13b806_Address
@@ -113,9 +105,9 @@ public sealed unsafe partial class BroadcastInfo : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4469ac0b((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager_Nested.BroadcastInfo arg0)
     {

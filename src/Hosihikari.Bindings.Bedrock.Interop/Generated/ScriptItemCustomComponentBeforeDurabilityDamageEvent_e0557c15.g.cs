@@ -38,15 +38,13 @@ public sealed unsafe partial class ScriptItemCustomComponentBeforeDurabilityDama
         return __hs_handle;
     }
 
-    public bool _shouldCancel()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_68fd7e08((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _shouldCancel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _updateEngineEvent(nint durabilityDamage, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg2, global::Hosihikari.Bindings.Bedrock.Interop.Mob arg3)
-    {
-        NativeMethods.TablePtr->C3.hs_method_d35d0093((void*)__hosihikari_shim_handle, (void*)durabilityDamage, (void*)item.Handle, (void*)arg2.Handle, (void*)arg3.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _updateEngineEvent(nint durabilityDamage, nint item, nint arg2, nint arg3) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptItemCustomComponentBeforeDurabilityDamageEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemCustomComponentBeforeDurabilityDamageEvent arg0)
     {
@@ -59,10 +57,9 @@ public sealed unsafe partial class ScriptItemCustomComponentBeforeDurabilityDama
         return new ScriptItemCustomComponentBeforeDurabilityDamageEvent((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_e6bf2500());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttackingEntity_Address

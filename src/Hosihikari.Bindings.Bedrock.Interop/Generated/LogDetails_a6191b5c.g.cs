@@ -108,86 +108,25 @@ public sealed unsafe partial class LogDetails : global::System.IDisposable
         }
     }
 
-    public void _log(int _area, uint _priority, nint _function, int line, int _messageId, string message)
-    {
-        var __hs_stringByteCount5 = global::System.Text.Encoding.UTF8.GetByteCount(message);
-        scoped global::System.Span<byte> __hs_stringBytes5;
-        if (__hs_stringByteCount5 <= 256)
-        {
-            __hs_stringBytes5 = stackalloc byte[__hs_stringByteCount5 == 0 ? 1 : __hs_stringByteCount5];
-        }
-        else
-        {
-            __hs_stringBytes5 = new byte[__hs_stringByteCount5];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes5);
-        fixed (byte* __hs_stringData5 = __hs_stringBytes5)
-        {
-            NativeMethods.TablePtr->C0.hs_method_5a046d4b((void*)__hosihikari_shim_handle, _area, _priority, (void*)_function, line, _messageId, __hs_stringData5, (nuint)__hs_stringByteCount5);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _log(nint _area, uint _priority, nint _function, int line, int _messageId, nint message) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _logToFile(string debugEvent)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(debugEvent);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(debugEvent, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C0.hs_method_e045087c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _logToFile(nint debugEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _openLogFile()
-    {
-        NativeMethods.TablePtr->C0.hs_method_2056a9bf((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _openLogFile() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void closeLog()
-    {
-        NativeMethods.TablePtr->C0.hs_method_453542f9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void closeLog() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void createLog(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path _logFilePath, string _logFileName, string _debugLogTimestamp, bool createLogFile, nint _settings, double _logCycleInS)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(_logFileName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(_logFileName, __hs_stringBytes1);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(_debugLogTimestamp);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(_debugLogTimestamp, __hs_stringBytes2);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-            {
-                NativeMethods.TablePtr->C0.hs_method_640c23da((void*)__hosihikari_shim_handle, (void*)_logFilePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, createLogFile, (void*)_settings, _logCycleInS);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void createLog(nint _logFilePath, nint _logFileName, nint _debugLogTimestamp, bool createLogFile, nint _settings, nint _logCycleInS) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk13ee41_Address
@@ -350,24 +289,9 @@ public sealed unsafe partial class LogDetails : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BedrockLog.LogDetails((nint)NativeMethods.TablePtr->C0.hs_method_9ad0d422((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void updateLogSetting(string setting, bool newValue)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(setting);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(setting, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C0.hs_method_80ca7b7b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, newValue);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void updateLogSetting(nint setting, bool newValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

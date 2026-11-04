@@ -54,45 +54,37 @@ public sealed unsafe partial class MolangVariable : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_4beb2799(nameHash, (void*)name, allowSpecialCharacters);
     }
 
-    public static void _resetToLowWaterMark()
-    {
-        NativeMethods.TablePtr->C2.hs_method_98750986();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _resetToLowWaterMark() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _updateLowWaterMark()
-    {
-        NativeMethods.TablePtr->C2.hs_method_df99a4ab();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _updateLowWaterMark() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ushort getVariableIndex(ulong nameHash)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_5cab2aac(nameHash);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getVariableIndex(ulong nameHash) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initVariableMaps()
-    {
-        NativeMethods.TablePtr->C2.hs_method_8de87268();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initVariableMaps() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mHasInitializedVariableMaps()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_57d340a2();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mHasInitializedVariableMaps() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mHasSetWatermark()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_5305a352();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mHasSetWatermark() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mIndexToVariableNameMap()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_ec45faf9();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mIndexToVariableNameMap() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mIndexToVariableNameMap_LowWaterMark()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_3283d1eb();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mIndexToVariableNameMap_LowWaterMark() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPublicValue_Address
@@ -112,13 +104,13 @@ public sealed unsafe partial class MolangVariable : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_9b0aaf49((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint mVariableNameToIndexMap() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the return type needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint mVariableNameToIndexMap_LowWaterMark() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the return type needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

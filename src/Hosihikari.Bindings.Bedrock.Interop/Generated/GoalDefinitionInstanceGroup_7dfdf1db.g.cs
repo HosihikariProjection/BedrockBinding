@@ -60,20 +60,17 @@ public sealed unsafe partial class GoalDefinitionInstanceGroup : global::System.
         return new GoalDefinitionInstanceGroup((nint)handle);
     }
 
-    public void add(nint id, global::Hosihikari.Bindings.Abi.SharedHandle? definition)
-    {
-        NativeMethods.TablePtr->C1.hs_method_b2d1355a((void*)__hosihikari_shim_handle, (void*)id, definition?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void add(nint id, nint definition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void combine(global::Hosihikari.Bindings.Bedrock.Interop.GoalDefinitionInstanceGroup other)
-    {
-        NativeMethods.TablePtr->C1.hs_method_40c26f13((void*)__hosihikari_shim_handle, (void*)other.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void combine(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool contains(global::Hosihikari.Bindings.Bedrock.Interop.GoalDefinitionInstanceGroup other)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_346ef74e((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool contains(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk756c08_Address
@@ -92,15 +89,13 @@ public sealed unsafe partial class GoalDefinitionInstanceGroup : global::System.
         return new global::Hosihikari.Bindings.Bedrock.Interop.GoalDefinitionInstanceGroup((nint)NativeMethods.TablePtr->C1.hs_method_fc4bacb7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool overlaps(global::Hosihikari.Bindings.Bedrock.Interop.GoalDefinitionInstanceGroup other)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_9b93920a((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool overlaps(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void remove(nint id, global::Hosihikari.Bindings.Abi.SharedHandle? definition)
-    {
-        NativeMethods.TablePtr->C1.hs_method_2d2e0d80((void*)__hosihikari_shim_handle, (void*)id, definition?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void remove(nint id, nint definition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

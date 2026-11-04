@@ -38,9 +38,9 @@ public sealed unsafe partial class FancyTreeCanopy : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _placeCanopy(nint target, nint pos, nint trunkSize, nint arg3, nint arg4, nint treeParams, int arg6, nint arg7) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FancyTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.FancyTreeCanopy arg0)
     {
@@ -53,12 +53,9 @@ public sealed unsafe partial class FancyTreeCanopy : global::System.IDisposable
         return new FancyTreeCanopy((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _fillLayer(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block leavesBlock, int radius, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_dd22c253((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)leavesBlock.Handle, radius, (void*)treeParams.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _fillLayer(nint target, nint pos, nint leavesBlock, int radius, nint treeParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mHeight
     {

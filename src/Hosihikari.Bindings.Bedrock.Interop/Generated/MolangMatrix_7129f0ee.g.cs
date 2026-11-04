@@ -38,10 +38,9 @@ public sealed unsafe partial class MolangMatrix : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.MolangMatrix getDefaultErrorValue()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangMatrix((nint)NativeMethods.TablePtr->C2.hs_method_88eebd6a(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getDefaultErrorValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMatrix_Address

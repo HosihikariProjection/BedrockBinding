@@ -40,12 +40,12 @@ public sealed unsafe partial class ChunkGeneratorStructureState : global::System
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C5.hs_method_28d9f3f7((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_28d9f3f7((void*)__hosihikari_shim_handle);
     }
 
     public static ChunkGeneratorStructureState Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_7346b301((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_7346b301((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,38 +60,35 @@ public sealed unsafe partial class ChunkGeneratorStructureState : global::System
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState createNormal(long levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSetRegistry allStructures)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState((nint)NativeMethods.TablePtr->C5.hs_method_eb982308(levelSeed, (void*)biomeSource.Handle, (void*)allStructures.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.ChunkGeneratorStructureState((nint)NativeMethods.TablePtr->C4.hs_method_eb982308(levelSeed, (void*)biomeSource.Handle, (void*)allStructures.Handle));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? findNearestStructureFeature(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.HashedString feature, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, bool mustBeInNewChunks, int searchRadiusCells)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_919bd5e1((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)feature.Handle, (void*)origin.Handle, (void*)biomeSource.Handle, mustBeInNewChunks, searchRadiusCells, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint findNearestStructureFeature(nint dimension, nint feature, nint origin, nint biomeSource, bool mustBeInNewChunks, int searchRadiusCells) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public long mLevelSeed
     {
-        get => NativeMethods.TablePtr->C5.hs_get_7ffd4803((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_7ffd4803((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_7ffd4803((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_7ffd4803((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mMaxStructureCount
     {
-        get => NativeMethods.TablePtr->C5.hs_get_c9ea2708((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_c9ea2708((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_c9ea2708((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_c9ea2708((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPossibleStructures_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_44ff80be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_44ff80be((void*)__hosihikari_shim_handle);
     }
 
     public long mRingsSeed
     {
-        get => NativeMethods.TablePtr->C5.hs_get_fcf9e5ce((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_fcf9e5ce((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_fcf9e5ce((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_fcf9e5ce((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -101,7 +98,7 @@ public sealed unsafe partial class ChunkGeneratorStructureState : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_166c48a1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_166c48a1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -44,10 +44,9 @@ public sealed unsafe partial class UnknownBlockTypeRegistry : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C4.hs_get_f26f462d((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block _getUnknownBlock(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag serId)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_6a2814ef((void*)__hosihikari_shim_handle, (void*)serId.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getUnknownBlock(nint serId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UnknownBlockTypeRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.UnknownBlockTypeRegistry arg0)
     {

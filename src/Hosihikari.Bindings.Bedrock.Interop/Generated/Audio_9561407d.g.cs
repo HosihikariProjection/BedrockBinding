@@ -40,7 +40,7 @@ public sealed unsafe partial class Audio : global::System.IDisposable
 
     public static Audio Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_0a2fb339();
+        var handle = NativeMethods.TablePtr->C4.hs_create_0a2fb339();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Audio : global::System.IDisposable
 
     public static Audio Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Audio arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_97d04697((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_97d04697((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class Audio : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkab5fdc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_7557a1c2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7557a1c2((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Audio operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Audio arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Audio((nint)NativeMethods.TablePtr->C5.hs_method_ab2fed6a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Audio((nint)NativeMethods.TablePtr->C4.hs_method_ab2fed6a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class Audio : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_9561407d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9561407d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

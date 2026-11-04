@@ -38,167 +38,142 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
         return __hs_handle;
     }
 
-    public int _AttachmentId()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_3b05b684((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _AttachmentId() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::FrameDecryptorInterface>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _GetFrameDecryptor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::FrameDecryptorInterface>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::RtpParameters' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _GetParameters() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::RtpParameters' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'webrtc::RtpSource' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _GetSources() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'webrtc::RtpSource' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _NotifyFirstPacketReceived()
-    {
-        NativeMethods.TablePtr->C5.hs_method_59e9fc87((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _NotifyFirstPacketReceived() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _OnChanged()
-    {
-        NativeMethods.TablePtr->C5.hs_method_2cfc812e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _OnChanged() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _OnSetVolume(double volume)
-    {
-        NativeMethods.TablePtr->C5.hs_method_32926478((void*)__hosihikari_shim_handle, volume);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _OnSetVolume(double volume) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::FrameDecryptorInterface>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _SetFrameDecryptor(nint frame_decryptor) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::FrameDecryptorInterface>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::FrameTransformerInterface>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _SetFrameTransformer(nint frame_transformer) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::FrameTransformerInterface>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _SetJitterBufferMinimumDelay(double? delay_seconds)
-    {
-        NativeMethods.TablePtr->C5.hs_method_36902c28((void*)__hosihikari_shim_handle, delay_seconds ?? default(double), delay_seconds.HasValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _SetJitterBufferMinimumDelay(nint delay_seconds) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _SetMediaChannel(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveChannelInterface? media_channel)
-    {
-        NativeMethods.TablePtr->C5.hs_method_72988fcf((void*)__hosihikari_shim_handle, (void*)(media_channel?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _SetMediaChannel(nint media_channel) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _SetObserver(nint observer)
-    {
-        NativeMethods.TablePtr->C5.hs_method_dea5b622((void*)__hosihikari_shim_handle, (void*)observer);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _SetObserver(nint observer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _SetStreams(nint streams) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _SetupMediaChannel(uint ssrc)
-    {
-        NativeMethods.TablePtr->C5.hs_method_de9caaad((void*)__hosihikari_shim_handle, ssrc);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _SetupMediaChannel(uint ssrc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _SetupUnsignaledMediaChannel()
-    {
-        NativeMethods.TablePtr->C5.hs_method_dbeaae48((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _SetupUnsignaledMediaChannel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _Stop()
-    {
-        NativeMethods.TablePtr->C5.hs_method_c3d3975f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _Stop() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor_43d42125(nint worker_thread, nint receiver_id, nint streams, bool is_unified_plan, nint voice_channel) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor_4a851c47(nint worker_thread, nint receiver_id, nint stream_ids, bool is_unified_plan, nint voice_channel) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _dtls_transport() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_db905189((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _id()
-    {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_043c3ea9((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _id() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _media_type()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_313d6ec9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _media_type() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _set_stream_ids(nint stream_ids) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _set_transport(nint dtls_transport) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public uint? _ssrc()
-    {
-        var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C5.hs_method_190f72df((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue ? __hs_value : (uint?)null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ssrc() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string[] _stream_ids()
-    {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_6bde5565((void*)__hosihikari_shim_handle);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _stream_ids() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _streams() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::MediaStreamTrackInterface>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _track() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::MediaStreamTrackInterface>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForAudioObserver() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForFrameTransformerHost() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForObserverInterface() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForRefCountInterface() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int AttachmentId()
     {
-        return NativeMethods.TablePtr->C5.hs_method_2ac36ee7((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_2ac36ee7((void*)__hosihikari_shim_handle);
     }
 
     public static AudioRtpReceiver Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_c5a67a6e();
+        var handle = NativeMethods.TablePtr->C4.hs_create_c5a67a6e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -209,7 +184,7 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
 
     public static AudioRtpReceiver Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_90c2fc6f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_90c2fc6f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -218,13 +193,13 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
         return new AudioRtpReceiver((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static AudioRtpReceiver Create_917c4c65(nint worker_thread, nint receiver_id, nint streams, bool is_unified_plan, nint voice_channel) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static AudioRtpReceiver Create_676d1dfb(nint worker_thread, nint receiver_id, nint stream_ids, bool is_unified_plan, nint voice_channel) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::FrameDecryptorInterface>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint GetFrameDecryptor() =>
@@ -240,28 +215,26 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
 
     public void NotifyFirstPacketReceived()
     {
-        NativeMethods.TablePtr->C5.hs_method_71c160c6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_71c160c6((void*)__hosihikari_shim_handle);
     }
 
     public void OnChanged()
     {
-        NativeMethods.TablePtr->C5.hs_method_b61a50c0((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_b61a50c0((void*)__hosihikari_shim_handle);
     }
 
     public void OnSetVolume(double volume)
     {
-        NativeMethods.TablePtr->C5.hs_method_65ebd925((void*)__hosihikari_shim_handle, volume);
+        NativeMethods.TablePtr->C4.hs_method_65ebd925((void*)__hosihikari_shim_handle, volume);
     }
 
-    public void Reconfigure(bool track_enabled)
-    {
-        NativeMethods.TablePtr->C5.hs_method_e6669d0b((void*)__hosihikari_shim_handle, track_enabled);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Reconfigure(bool track_enabled) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void RestartMediaChannel(uint? ssrc)
-    {
-        NativeMethods.TablePtr->C5.hs_method_04ecee04((void*)__hosihikari_shim_handle, ssrc ?? default(uint), ssrc.HasValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void RestartMediaChannel(nint ssrc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::FrameDecryptorInterface>' is not a known bindable declaration.", false)]
     public void SetFrameDecryptor(nint frame_decryptor) =>
@@ -273,23 +246,22 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
 
     public void SetJitterBufferMinimumDelay(double? delay_seconds)
     {
-        NativeMethods.TablePtr->C5.hs_method_1bb03b60((void*)__hosihikari_shim_handle, delay_seconds ?? default(double), delay_seconds.HasValue);
+        NativeMethods.TablePtr->C4.hs_method_1bb03b60((void*)__hosihikari_shim_handle, delay_seconds ?? default(double), delay_seconds.HasValue);
     }
 
     public void SetMediaChannel(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveChannelInterface? media_channel)
     {
-        NativeMethods.TablePtr->C5.hs_method_dcaef5a1((void*)__hosihikari_shim_handle, (void*)(media_channel?.Handle ?? 0));
+        NativeMethods.TablePtr->C4.hs_method_dcaef5a1((void*)__hosihikari_shim_handle, (void*)(media_channel?.Handle ?? 0));
     }
 
     public void SetObserver(nint observer)
     {
-        NativeMethods.TablePtr->C5.hs_method_7919626d((void*)__hosihikari_shim_handle, (void*)observer);
+        NativeMethods.TablePtr->C4.hs_method_7919626d((void*)__hosihikari_shim_handle, (void*)observer);
     }
 
-    public void SetOutputVolume_w(double volume)
-    {
-        NativeMethods.TablePtr->C5.hs_method_8d432521((void*)__hosihikari_shim_handle, volume);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void SetOutputVolume_w(double volume) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'webrtc::scoped_refptr<webrtc::MediaStreamInterface>' is not supported.", false)]
     public void SetStreams(nint streams) =>
@@ -297,17 +269,17 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
 
     public void SetupMediaChannel(uint ssrc)
     {
-        NativeMethods.TablePtr->C5.hs_method_ccc2312f((void*)__hosihikari_shim_handle, ssrc);
+        NativeMethods.TablePtr->C4.hs_method_ccc2312f((void*)__hosihikari_shim_handle, ssrc);
     }
 
     public void SetupUnsignaledMediaChannel()
     {
-        NativeMethods.TablePtr->C5.hs_method_d940ae42((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_d940ae42((void*)__hosihikari_shim_handle);
     }
 
     public void Stop()
     {
-        NativeMethods.TablePtr->C5.hs_method_53f7ebd4((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_53f7ebd4((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -316,126 +288,126 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
 
     public string id()
     {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_cb918aef((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_cb918aef((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk11ae2e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_bc5b2a75((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_bc5b2a75((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk14aa39_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b0d65fe6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b0d65fe6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk184b1d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_43341966((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_43341966((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk20684a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_33b1affd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_33b1affd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk295e5b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_961efd5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_961efd5d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk32eabd_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_a0b0ed9d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a0b0ed9d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk32ec3f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_ac6aeeb0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ac6aeeb0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk36d93d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e114eb17((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e114eb17((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk40ee5a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_6082e629((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6082e629((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5908ad_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_59d8f75f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_59d8f75f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5c7f82_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_72a39a27((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_72a39a27((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6a1869_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b5fd7632((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b5fd7632((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk85ffda_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9bf66f63((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9bf66f63((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9e29a4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_f083d7b8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f083d7b8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka0a6ee_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_ca43dedd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ca43dedd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka13ce8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_5579ff91((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5579ff91((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd4a6b4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b29c6917((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b29c6917((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke945c6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_62550317((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_62550317((void*)__hosihikari_shim_handle);
     }
 
     public int media_type()
     {
-        return NativeMethods.TablePtr->C5.hs_method_0a83748d((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_0a83748d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver((nint)NativeMethods.TablePtr->C5.hs_method_0e6fde3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioRtpReceiver((nint)NativeMethods.TablePtr->C4.hs_method_0e6fde3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
@@ -449,13 +421,13 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
     public uint? ssrc()
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C5.hs_method_76aa31cf((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C4.hs_method_76aa31cf((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (uint?)null;
     }
 
     public string[] stream_ids()
     {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_017e57d4((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_017e57d4((void*)__hosihikari_shim_handle);
         var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -480,7 +452,7 @@ public sealed unsafe partial class AudioRtpReceiver : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_63bf85a5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_63bf85a5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

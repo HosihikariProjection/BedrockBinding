@@ -40,7 +40,7 @@ public sealed unsafe partial class PacketViolationDetectedTelemetryData : global
 
     public static PacketViolationDetectedTelemetryData Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c34232e5();
+        var handle = NativeMethods.TablePtr->C2.hs_create_c34232e5();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PacketViolationDetectedTelemetryData : global
 
     public static PacketViolationDetectedTelemetryData Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_126c5935((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_126c5935((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,50 +60,47 @@ public sealed unsafe partial class PacketViolationDetectedTelemetryData : global
         return new PacketViolationDetectedTelemetryData((nint)handle);
     }
 
-    public void WriteEventData(nint @event)
-    {
-        NativeMethods.TablePtr->C3.hs_method_d61e93ef((void*)__hosihikari_shim_handle, (void*)@event);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void WriteEventData(nint @event) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string mEventName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_5b4def9c();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mEventName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk38d1a1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_38b9787b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_38b9787b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk42dcb4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_60ea365a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_60ea365a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6ab08a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f0983f4c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f0983f4c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkec8fe0_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_97bb6eb2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_97bb6eb2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfa3960_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_daa5f365((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_daa5f365((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData((nint)NativeMethods.TablePtr->C3.hs_method_84669da6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationDetectedTelemetryData((nint)NativeMethods.TablePtr->C2.hs_method_84669da6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -112,7 +109,7 @@ public sealed unsafe partial class PacketViolationDetectedTelemetryData : global
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_8d4520f1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_8d4520f1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

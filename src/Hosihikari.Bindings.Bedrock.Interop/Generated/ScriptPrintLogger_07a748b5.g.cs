@@ -38,77 +38,29 @@ public sealed unsafe partial class ScriptPrintLogger : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public void _onError(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, string message)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C3.hs_method_4d0d5c91((void*)__hosihikari_shim_handle, (void*)arg0.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onError(nint arg0, nint message) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onException(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.BaseError error, nint arg2)
-    {
-        NativeMethods.TablePtr->C3.hs_method_58a50e74((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)error.Handle, (void*)arg2);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onException(nint arg0, nint error, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onInfo(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, string message)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C3.hs_method_5e7eaf04((void*)__hosihikari_shim_handle, (void*)arg0.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onInfo(nint arg0, nint message) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onPromiseRejection(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.BaseError error, nint arg2, bool isHandled)
-    {
-        NativeMethods.TablePtr->C3.hs_method_8bb7b426((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)error.Handle, (void*)arg2, isHandled);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onPromiseRejection(nint arg0, nint error, nint arg2, bool isHandled) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onWarn(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, string message)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C3.hs_method_36eb7963((void*)__hosihikari_shim_handle, (void*)arg0.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onWarn(nint arg0, nint message) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _shouldPrintException(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.BaseError arg1, nint errorAny)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_7147ec3a((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)errorAny) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _shouldPrintException(nint arg0, nint arg1, nint errorAny) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptPrintLogger Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPrintLogger arg0)
     {

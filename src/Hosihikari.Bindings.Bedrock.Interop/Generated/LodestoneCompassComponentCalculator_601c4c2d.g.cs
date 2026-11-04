@@ -38,10 +38,9 @@ public sealed unsafe partial class LodestoneCompassComponentCalculator : global:
         return __hs_handle;
     }
 
-    public static nint COOLDOWN_TIME_SECONDS()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_8669eda4();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint COOLDOWN_TIME_SECONDS() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LodestoneCompassComponentCalculator Create()
     {

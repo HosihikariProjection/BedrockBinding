@@ -43,10 +43,9 @@ public sealed unsafe partial class ScriptBlockGameplayHandler
         return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_ed4fa922((void*)__hosihikari_shim_handle, (void*)eventData.Handle));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ _handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent explosionStartedEvent)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_6ceb4e6e((void*)__hosihikari_shim_handle, (void*)explosionStartedEvent.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _handleEvent(nint explosionStartedEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ _handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.BlockTryPlaceByPlayerEvent eventData)
     {

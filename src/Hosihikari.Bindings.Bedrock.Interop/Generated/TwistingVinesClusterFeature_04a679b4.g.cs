@@ -62,10 +62,9 @@ public sealed unsafe partial class TwistingVinesClusterFeature : global::System.
         set => NativeMethods.TablePtr->C4.hs_set_264100db((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_b155f838((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint pos, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TwistingVinesClusterFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.TwistingVinesClusterFeature arg0)
     {

@@ -62,10 +62,9 @@ public sealed unsafe partial class ProgressReporter : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_db86420d((void*)__hosihikari_shim_handle);
     }
 
-    public void _clear()
-    {
-        NativeMethods.TablePtr->C1.hs_method_04a04ef6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _clear() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ProgressReporter Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.ProgressReporter arg0)
     {
@@ -101,24 +100,9 @@ public sealed unsafe partial class ProgressReporter : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a83b4dd9((void*)__hosihikari_shim_handle);
     }
 
-    public void setProgressMessage(string message)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(message);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_5099d094((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setProgressMessage(nint message) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -49,10 +49,9 @@ public sealed unsafe partial class GeneDefinition : global::System.IDisposable
         return new GeneDefinition((nint)handle);
     }
 
-    public void addGeneticVariant(global::Hosihikari.Bindings.Bedrock.Interop.GeneticVariant geneticVariant)
-    {
-        NativeMethods.TablePtr->C1.hs_method_4f9eabd4((void*)__hosihikari_shim_handle, (void*)geneticVariant.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addGeneticVariant(nint geneticVariant) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAlleleRange_Address

@@ -40,12 +40,12 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
 
     public nint _ctor(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_9f857c45((void*)__hosihikari_shim_handle, id, slot, (void*)item.Handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_9f857c45((void*)__hosihikari_shim_handle, id, slot, (void*)item.Handle);
     }
 
     public nint _ctor(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName fullContainerName, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack storageItem)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_6fffa2b3((void*)__hosihikari_shim_handle, id, slot, (void*)item.Handle, (void*)fullContainerName.Handle, (void*)storageItem.Handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_6fffa2b3((void*)__hosihikari_shim_handle, id, slot, (void*)item.Handle, (void*)fullContainerName.Handle, (void*)storageItem.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -54,12 +54,12 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_709459ed((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_709459ed((void*)__hosihikari_shim_handle);
     }
 
     public static InventorySlotPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4ee28f0a();
+        var handle = NativeMethods.TablePtr->C1.hs_create_4ee28f0a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +70,7 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
 
     public static InventorySlotPacketPayload Create(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e2b27470(id, slot, (void*)item.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_e2b27470(id, slot, (void*)item.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,7 +81,7 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
 
     public static InventorySlotPacketPayload Create(sbyte id, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName fullContainerName, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack storageItem)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d23ccb08(id, slot, (void*)item.Handle, (void*)fullContainerName.Handle, (void*)storageItem.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d23ccb08(id, slot, (void*)item.Handle, (void*)fullContainerName.Handle, (void*)storageItem.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -96,7 +96,7 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
 
     public static InventorySlotPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2399265b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_2399265b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -108,36 +108,36 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
     // The native field type is not projected; this is the address of the field storage.
     public nint mFullContainerName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ab1e64e5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_ab1e64e5((void*)__hosihikari_shim_handle);
     }
 
     public sbyte mInventoryId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_acbb8d50((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_acbb8d50((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_acbb8d50((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_acbb8d50((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c9cd6c34((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c9cd6c34((void*)__hosihikari_shim_handle);
     }
 
     public uint mSlot
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a9d6162a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_a9d6162a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_a9d6162a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_a9d6162a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStorageItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_646b905d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_646b905d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload((nint)NativeMethods.TablePtr->C2.hs_method_2e195742((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InventorySlotPacketPayload((nint)NativeMethods.TablePtr->C1.hs_method_2e195742((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -147,7 +147,7 @@ public sealed unsafe partial class InventorySlotPacketPayload : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d8713254((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_d8713254((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

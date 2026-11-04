@@ -38,29 +38,25 @@ public sealed unsafe partial class IEducationOptions : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public bool _isBaseCodeBuilderEnabled()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_88abf666((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isBaseCodeBuilderEnabled() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isChemistryEnabled()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_f253f04e((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isChemistryEnabled() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isEditionCompatible(uint eduOffer)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_4a1afbee((void*)__hosihikari_shim_handle, eduOffer) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isEditionCompatible(nint eduOffer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isEducationEditionLevel()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_a0770544((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isEducationEditionLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IEducationOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.IEducationOptions arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_baa8bfd4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_baa8bfd4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,52 +67,52 @@ public sealed unsafe partial class IEducationOptions : global::System.IDisposabl
 
     public bool educationFeaturesEnabled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_c536eab5((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_c536eab5((void*)__hosihikari_shim_handle) != 0;
     }
 
     public uint getEducationEditionOffer()
     {
-        return NativeMethods.TablePtr->C2.hs_method_625893bb((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_625893bb((void*)__hosihikari_shim_handle);
     }
 
     public bool isBaseCodeBuilderEnabled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b12591a7((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_b12591a7((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isChemistryEnabled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_eee48f55((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_eee48f55((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isCodeBuilderEnabled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_dfe6b0df((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_dfe6b0df((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isEditionCompatible(uint eduOffer)
     {
-        return NativeMethods.TablePtr->C2.hs_method_f76c9820((void*)__hosihikari_shim_handle, eduOffer) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_f76c9820((void*)__hosihikari_shim_handle, eduOffer) != 0;
     }
 
     public bool isEducationEditionLevel()
     {
-        return NativeMethods.TablePtr->C2.hs_method_8b9849be((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_8b9849be((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void setCodeBuilderEnabled(bool codeBuilderEnabled)
     {
-        NativeMethods.TablePtr->C2.hs_method_679bf810((void*)__hosihikari_shim_handle, codeBuilderEnabled);
+        NativeMethods.TablePtr->C1.hs_method_679bf810((void*)__hosihikari_shim_handle, codeBuilderEnabled);
     }
 
     public void setEducationEditionOffer(uint eduOffer)
     {
-        NativeMethods.TablePtr->C2.hs_method_f2277a91((void*)__hosihikari_shim_handle, eduOffer);
+        NativeMethods.TablePtr->C1.hs_method_f2277a91((void*)__hosihikari_shim_handle, eduOffer);
     }
 
     public void setEducationFeaturesEnabled(bool educationEnabled)
     {
-        NativeMethods.TablePtr->C2.hs_method_b8983dc4((void*)__hosihikari_shim_handle, educationEnabled);
+        NativeMethods.TablePtr->C1.hs_method_b8983dc4((void*)__hosihikari_shim_handle, educationEnabled);
     }
 
 
@@ -126,7 +122,7 @@ public sealed unsafe partial class IEducationOptions : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_84866a72((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_84866a72((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

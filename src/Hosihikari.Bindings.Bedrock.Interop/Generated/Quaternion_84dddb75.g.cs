@@ -40,7 +40,7 @@ public sealed unsafe partial class Quaternion : global::System.IDisposable
 
     public static Quaternion Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_83f5c2f4();
+        var handle = NativeMethods.TablePtr->C2.hs_create_83f5c2f4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Quaternion : global::System.IDisposable
 
     public static Quaternion Create(global::Hosihikari.Bindings.Bedrock.Interop.Quaternion arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a6f82b3e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a6f82b3e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class Quaternion : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc27771_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_aa547c89((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_aa547c89((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Quaternion operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Quaternion arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Quaternion((nint)NativeMethods.TablePtr->C3.hs_method_fb481f85((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Quaternion((nint)NativeMethods.TablePtr->C2.hs_method_fb481f85((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class Quaternion : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_84dddb75((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_84dddb75((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

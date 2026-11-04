@@ -38,10 +38,9 @@ public sealed unsafe partial class EntityNetId : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_EntityNetId__std__error_code_ deserialize(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_EntityNetId__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_4217ca69((void*)stream.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint deserialize(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mRawId
     {

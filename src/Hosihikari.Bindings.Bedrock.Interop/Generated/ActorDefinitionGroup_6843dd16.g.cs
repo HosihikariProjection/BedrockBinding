@@ -38,10 +38,9 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Abi.SharedHandle? linkedAssetValidator)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_e31d4078((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)resourcePackManager.Handle, (void*)eventing.Handle, (void*)experiments.Handle, linkedAssetValidator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint level, nint resourcePackManager, nint eventing, nint experiments, nint linkedAssetValidator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorDefinitionGroup Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         return new ActorDefinitionGroup((nint)handle);
     }
 
-    public static ActorDefinitionGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Abi.SharedHandle? linkedAssetValidator)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_246332ca((void*)level.Handle, (void*)resourcePackManager.Handle, (void*)eventing.Handle, (void*)experiments.Handle, linkedAssetValidator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorDefinitionGroup((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ActorDefinitionGroup Create(nint level, nint resourcePackManager, nint eventing, nint experiments, nint linkedAssetValidator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorDefinitionGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup arg0)
     {
@@ -76,41 +68,17 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         return new ActorDefinitionGroup((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup_Nested.LoadActorResult _loadActorDefinition(global::Hosihikari.Bindings.Bedrock.Interop.Level level, nint packLoadContext, string relativeResourceFilepath, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, nint definitions, uint logArea)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(relativeResourceFilepath);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(relativeResourceFilepath, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup_Nested.LoadActorResult((nint)NativeMethods.TablePtr->C0.hs_method_c1ad98ff((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)packLoadContext, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)root.Handle, (void*)definitions, logArea));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _loadActorDefinition(nint level, nint packLoadContext, nint relativeResourceFilepath, nint root, nint definitions, nint logArea) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _setupCommonResourceDefinitionMap(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinition def, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        NativeMethods.TablePtr->C0.hs_method_9a435f99((void*)def.Handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _setupCommonResourceDefinitionMap(nint def, nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string[] buildActorEventList()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_4c0cfe50((void*)__hosihikari_shim_handle);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint buildActorEventList() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mComponentFactory
     {
@@ -190,38 +158,9 @@ public sealed unsafe partial class ActorDefinitionGroup : global::System.IDispos
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr tryGetDefinitionGroup(string @base, string definitionId)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(@base);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(@base, __hs_stringBytes0);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(definitionId);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(definitionId, __hs_stringBytes1);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionPtr((nint)NativeMethods.TablePtr->C0.hs_method_a7a52a8a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1));
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint tryGetDefinitionGroup(nint @base, nint definitionId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

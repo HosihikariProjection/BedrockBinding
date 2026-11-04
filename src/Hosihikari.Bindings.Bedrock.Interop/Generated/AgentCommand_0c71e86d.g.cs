@@ -38,10 +38,9 @@ public sealed unsafe partial class AgentCommand : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C0.hs_method_5079d5c7((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AgentCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommand arg0)
     {
@@ -143,10 +142,9 @@ public sealed unsafe partial class AgentCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_3216d8b8((void*)__hosihikari_shim_handle, value);
     }
 
-    public void reportSuccess(bool success, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C0.hs_method_6c68263d((void*)__hosihikari_shim_handle, success, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void reportSuccess(bool success, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
     {

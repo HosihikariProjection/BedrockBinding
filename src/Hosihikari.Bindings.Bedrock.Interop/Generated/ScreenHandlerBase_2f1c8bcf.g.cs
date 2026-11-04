@@ -38,20 +38,17 @@ public sealed unsafe partial class ScreenHandlerBase : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public byte _endRequest()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_c2f83851((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _endRequest() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _endRequestBatch()
-    {
-        NativeMethods.TablePtr->C3.hs_method_9fc38857((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _endRequestBatch() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _postRequest(bool wasSuccess)
-    {
-        NativeMethods.TablePtr->C3.hs_method_46686806((void*)__hosihikari_shim_handle, wasSuccess);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _postRequest(nint wasSuccess) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScreenHandlerBase Create()
     {

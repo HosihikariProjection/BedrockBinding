@@ -38,9 +38,9 @@ public sealed unsafe partial class JigsawAssembler : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'br::worldgen::GenerationStub' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint construct(nint context, nint worldGenContext, nint startPool, nint startJigsawName, int maxDepth, nint startPos, nint heightmapProjection, nint maxDistanceFromCenter, nint dimensionPadding, nint poolAliasLookup, nint expansion, nint liquidSettings) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'br::worldgen::GenerationStub' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -48,7 +48,7 @@ public sealed unsafe partial class JigsawAssembler : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_9eaa7a52((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9eaa7a52((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

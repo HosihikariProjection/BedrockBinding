@@ -38,10 +38,9 @@ public sealed unsafe partial class BaseAttributeMap : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_d674d81e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BaseAttributeMap Create()
     {
@@ -54,61 +53,46 @@ public sealed unsafe partial class BaseAttributeMap : global::System.IDisposable
         return new BaseAttributeMap((nint)handle);
     }
 
-    public static BaseAttributeMap Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_fc5dc037((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BaseAttributeMap Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new BaseAttributeMap((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DIFF_ATTRIBUTES_SIZE() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string DIFF_ATTRIBUTES_SIZE()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_ffb07953();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DIFF_DIRTY_ATTRIBUTES() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string DIFF_DIRTY_ATTRIBUTES()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_1f49dfd0();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DIFF_DIRTY_ATTRIBUTES_SIZE() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string DIFF_DIRTY_ATTRIBUTES_SIZE()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_ec04ccca();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
-
-    public static string DIFF_NO_ATTRIBUTES()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_ecd1fcb1();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DIFF_NO_ATTRIBUTES() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _onAttributeModified(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance attributeInstance)
     {
         NativeMethods.TablePtr->C0.hs_method_de58ca73((void*)__hosihikari_shim_handle, (void*)attributeInstance.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'AttributeInstanceConstRef' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getInstance(nint attribute) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceConstRef' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'AttributeInstanceConstRef' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getInstance(uint idValue) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceConstRef' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getMutableInstance_a8c1fa14(nint attribute) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getMutableInstance_6ba4f860(nint name) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'MutableAttributeWithContext' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getMutableInstanceWithContext(nint attribute) =>
@@ -126,10 +110,9 @@ public sealed unsafe partial class BaseAttributeMap : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_d3c98ba2((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance mInvalidInstance()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance((nint)NativeMethods.TablePtr->C0.hs_method_f85005e1(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mInvalidInstance() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnAttributeModified_Address
@@ -142,9 +125,9 @@ public sealed unsafe partial class BaseAttributeMap : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap((nint)NativeMethods.TablePtr->C0.hs_method_51d0cc2c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint registerAttribute(nint baseAttribute) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'AttributeInstanceRef' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool setCurrentValue(global::Hosihikari.Bindings.Bedrock.Interop.Attribute attribute, float value)
     {
@@ -166,9 +149,9 @@ public sealed unsafe partial class BaseAttributeMap : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_8ffae6fc((void*)__hosihikari_shim_handle, (void*)attribute.Handle, value) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AttributeInstanceRef' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void updateAttribute(nint attributeData, nint attributeRef, nint context) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AttributeInstanceRef' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,97 +38,45 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _applyEffects(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration durationTicks, int amplification)
-    {
-        NativeMethods.TablePtr->C2.hs_method_dc6857fa((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)durationTicks.Handle, amplification);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyEffects(nint target, nint durationTicks, int amplification) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _applyInstantaneousEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor? source, global::Hosihikari.Bindings.Bedrock.Interop.Actor? owner, global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, int amplification, float scale)
-    {
-        NativeMethods.TablePtr->C2.hs_method_b4d955a9((void*)__hosihikari_shim_handle, (void*)(source?.Handle ?? 0), (void*)(owner?.Handle ?? 0), (void*)(target?.Handle ?? 0), amplification, scale);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyInstantaneousEffect(nint source, nint owner, nint target, int amplification, float scale) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(uint id, string resourceName, string locName, bool isHarmful, int color, int icon, string iconName, bool drawParticles)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceName, __hs_stringBytes1);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(locName);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(locName, __hs_stringBytes2);
-        var __hs_stringByteCount6 = global::System.Text.Encoding.UTF8.GetByteCount(iconName);
-        scoped global::System.Span<byte> __hs_stringBytes6;
-        if (__hs_stringByteCount6 <= 256)
-        {
-            __hs_stringBytes6 = stackalloc byte[__hs_stringByteCount6 == 0 ? 1 : __hs_stringByteCount6];
-        }
-        else
-        {
-            __hs_stringBytes6 = new byte[__hs_stringByteCount6];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(iconName, __hs_stringBytes6);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-            {
-                fixed (byte* __hs_stringData6 = __hs_stringBytes6)
-                {
-                    return (nint)NativeMethods.TablePtr->C2.hs_method_022749b9((void*)__hosihikari_shim_handle, id, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, isHarmful, color, icon, __hs_stringData6, (nuint)__hs_stringByteCount6, drawParticles);
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(uint id, nint resourceName, nint locName, bool isHarmful, int color, int icon, nint iconName, bool drawParticles) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public float _getAttributeModifierValue(int amplifier, global::Hosihikari.Bindings.Bedrock.Interop.AttributeModifier modifier)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_46416e22((void*)__hosihikari_shim_handle, amplifier, (void*)modifier.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getAttributeModifierValue(int amplifier, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isInstantaneous()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_69e9ddb1((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isInstantaneous() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onActorDied(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, int amplifier)
-    {
-        NativeMethods.TablePtr->C2.hs_method_adbf9d67((void*)__hosihikari_shim_handle, (void*)target.Handle, amplifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onActorDied(nint target, int amplifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onActorHurt(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, int amplifier, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, float damage)
-    {
-        NativeMethods.TablePtr->C2.hs_method_5225da84((void*)__hosihikari_shim_handle, (void*)target.Handle, amplifier, (void*)source.Handle, damage);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onActorHurt(nint target, int amplifier, nint source, float damage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onEffectExpired(global::Hosihikari.Bindings.Bedrock.Interop.Actor target)
-    {
-        NativeMethods.TablePtr->C2.hs_method_6c66c869((void*)__hosihikari_shim_handle, (void*)target.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onEffectExpired(nint target) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _removeEffects(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap attributeMapToRemoveFrom)
-    {
-        NativeMethods.TablePtr->C2.hs_method_2fd656ea((void*)__hosihikari_shim_handle, (void*)attributeMapToRemoveFrom.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _removeEffects(nint attributeMapToRemoveFrom) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color DEFAULT_COLOR()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C2.hs_method_c62821ab(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DEFAULT_COLOR() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MobEffect Create()
     {
@@ -152,78 +100,25 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         return new MobEffect((nint)handle);
     }
 
-    public static MobEffect Create(uint id, string resourceName, string locName, bool isHarmful, int color, int icon, string iconName, bool drawParticles)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(resourceName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourceName, __hs_stringBytes1);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(locName);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(locName, __hs_stringBytes2);
-        var __hs_stringByteCount6 = global::System.Text.Encoding.UTF8.GetByteCount(iconName);
-        scoped global::System.Span<byte> __hs_stringBytes6;
-        if (__hs_stringByteCount6 <= 256)
-        {
-            __hs_stringBytes6 = stackalloc byte[__hs_stringByteCount6 == 0 ? 1 : __hs_stringByteCount6];
-        }
-        else
-        {
-            __hs_stringBytes6 = new byte[__hs_stringByteCount6];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(iconName, __hs_stringBytes6);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-            {
-                fixed (byte* __hs_stringData6 = __hs_stringBytes6)
-                {
-                    var handle = NativeMethods.TablePtr->C2.hs_create_1ad3a4ec(id, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, isHarmful, color, icon, __hs_stringData6, (nuint)__hs_stringByteCount6, drawParticles);
-                    if (handle == null)
-                    {
-                        throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-                    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MobEffect Create(uint id, nint resourceName, nint locName, bool isHarmful, int color, int icon, nint iconName, bool drawParticles) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-                    return new MobEffect((nint)handle);
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _createTemporalBuff(nint baseBuff, nint duration, int amplification) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TemporalAttributeBuff _createTemporalBuff(global::Hosihikari.Bindings.Bedrock.Interop.AttributeBuff baseBuff, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration duration, int amplification)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TemporalAttributeBuff((nint)NativeMethods.TablePtr->C2.hs_method_c5b457fb((void*)__hosihikari_shim_handle, (void*)baseBuff.Handle, (void*)duration.Handle, amplification));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setParticleEffectIds(nint particleEffectId, nint particleEffectAmbientId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setParticleEffectIds(nint particleEffectId, nint particleEffectAmbientId)
-    {
-        NativeMethods.TablePtr->C2.hs_method_3b762ab0((void*)__hosihikari_shim_handle, (void*)particleEffectId, (void*)particleEffectAmbientId);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addAttributeBuff(nint attribute, nint buff) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addAttributeBuff(global::Hosihikari.Bindings.Bedrock.Interop.Attribute attribute, global::Hosihikari.Bindings.Abi.SharedHandle? buff)
-    {
-        NativeMethods.TablePtr->C2.hs_method_a7ef046b((void*)__hosihikari_shim_handle, (void*)attribute.Handle, buff?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
-
-    public void addAttributeModifier(global::Hosihikari.Bindings.Bedrock.Interop.Attribute attribute, global::Hosihikari.Bindings.Abi.SharedHandle? modifier)
-    {
-        NativeMethods.TablePtr->C2.hs_method_33c4221b((void*)__hosihikari_shim_handle, (void*)attribute.Handle, modifier?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addAttributeModifier(nint attribute, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void applyEffects(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration durationTicks, int amplification)
     {
@@ -235,10 +130,9 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_fc996206((void*)__hosihikari_shim_handle, (void*)(source?.Handle ?? 0), (void*)(owner?.Handle ?? 0), (void*)(target?.Handle ?? 0), amplification, scale);
     }
 
-    public void applyModsAndBuffs(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap attributeMapToRemoveFrom, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration durationTicks, int amplification)
-    {
-        NativeMethods.TablePtr->C2.hs_method_378f3d13((void*)__hosihikari_shim_handle, (void*)attributeMapToRemoveFrom.Handle, (void*)durationTicks.Handle, amplification);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void applyModsAndBuffs(nint attributeMapToRemoveFrom, nint durationTicks, int amplification) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float getAttributeModifierValue(int amplifier, global::Hosihikari.Bindings.Bedrock.Interop.AttributeModifier modifier)
     {
@@ -265,16 +159,13 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         }
     }
 
-    public static string getNameById(uint effectId)
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_20dc673d(effectId);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getNameById(uint effectId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initEffects(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
-    {
-        NativeMethods.TablePtr->C2.hs_method_b7e67fd6((void*)baseGameVersion.Handle, (void*)experiments.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initEffects(nint baseGameVersion, nint experiments) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool isInstantaneous()
     {
@@ -419,10 +310,9 @@ public sealed unsafe partial class MobEffect : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_4e237902((void*)__hosihikari_shim_handle, (void*)attributeMapToRemoveFrom.Handle);
     }
 
-    public void updateModsAndBuffs(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap attributeMapToRemoveFrom, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration durationTicks, int amplification)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f0c085b4((void*)__hosihikari_shim_handle, (void*)attributeMapToRemoveFrom.Handle, (void*)durationTicks.Handle, amplification);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void updateModsAndBuffs(nint attributeMapToRemoveFrom, nint durationTicks, int amplification) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

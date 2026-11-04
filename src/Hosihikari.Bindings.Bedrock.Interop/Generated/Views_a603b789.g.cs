@@ -38,14 +38,13 @@ public sealed unsafe partial class Views : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(nint c)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d0d39f41((void*)__hosihikari_shim_handle, (void*)c);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint c) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Views Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7f1b150f();
+        var handle = NativeMethods.TablePtr->C2.hs_create_7f1b150f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,20 +53,13 @@ public sealed unsafe partial class Views : global::System.IDisposable
         return new Views((nint)handle);
     }
 
-    public static Views Create(nint c)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3c7935ec((void*)c);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Views((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Views Create(nint c) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Views Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayJumpSoundSystemImpl_Nested.Views arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ce782c8f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ce782c8f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,19 +71,19 @@ public sealed unsafe partial class Views : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c4f4ebdd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c4f4ebdd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReadAndFilter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c0c96f3a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c0c96f3a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSoundQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b691c218((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b691c218((void*)__hosihikari_shim_handle);
     }
 
 
@@ -101,7 +93,7 @@ public sealed unsafe partial class Views : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a603b789((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a603b789((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,17 +40,17 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
 
     public ulong _numBytesLeft()
     {
-        return NativeMethods.TablePtr->C4.hs_method_f13cb1b4((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_f13cb1b4((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _readBytesResult(nint data, ulong bytes)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_57713712((void*)__hosihikari_shim_handle, (void*)data, bytes));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_57713712((void*)__hosihikari_shim_handle, (void*)data, bytes));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the class stores borrowed strings but the constructor has no string parameter.", false)]
     public static StringByteInput Create(nint arg0) =>
@@ -71,7 +71,7 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(sv, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C4.hs_create_d3d076ec(__hs_stringData0, (nuint)__hs_stringByteCount0, offset);
+            var handle = NativeMethods.TablePtr->C3.hs_create_d3d076ec(__hs_stringData0, (nuint)__hs_stringByteCount0, offset);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,23 +84,23 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBuffer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_39915c7d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_39915c7d((void*)__hosihikari_shim_handle);
     }
 
     public ulong mIdx
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9aa91c6e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_9aa91c6e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9aa91c6e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_9aa91c6e((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong numBytesLeft()
     {
-        return NativeMethods.TablePtr->C4.hs_method_d7f0e456((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_d7f0e456((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ readBytesResult(nint data, ulong bytes)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_abedd66e((void*)__hosihikari_shim_handle, (void*)data, bytes));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_abedd66e((void*)__hosihikari_shim_handle, (void*)data, bytes));
     }
 
 
@@ -110,7 +110,7 @@ public sealed unsafe partial class StringByteInput : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_38a9e07c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_38a9e07c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

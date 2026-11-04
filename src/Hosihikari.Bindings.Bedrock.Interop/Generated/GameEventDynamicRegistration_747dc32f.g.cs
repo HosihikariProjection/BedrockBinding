@@ -38,10 +38,9 @@ public sealed unsafe partial class GameEventDynamicRegistration : global::System
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? listener)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_3c8e2ff5((void*)__hosihikari_shim_handle, listener?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint listener) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameEventDynamicRegistration Create()
     {
@@ -65,21 +64,13 @@ public sealed unsafe partial class GameEventDynamicRegistration : global::System
         return new GameEventDynamicRegistration((nint)handle);
     }
 
-    public static GameEventDynamicRegistration Create(global::Hosihikari.Bindings.Abi.SharedHandle? listener)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e3780c2b(listener?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static GameEventDynamicRegistration Create(nint listener) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new GameEventDynamicRegistration((nint)handle);
-    }
-
-    public void _onActorChangedChunk(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos toChunkPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType toDimensionId)
-    {
-        NativeMethods.TablePtr->C1.hs_method_40bbe1d8((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)toChunkPos.Handle, (void*)toDimensionId.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onActorChangedChunk(nint region, nint toChunkPos, nint toDimensionId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mListener_Address
@@ -99,10 +90,9 @@ public sealed unsafe partial class GameEventDynamicRegistration : global::System
         get => (nint)NativeMethods.TablePtr->C1.hs_get_fd7d926d((void*)__hosihikari_shim_handle);
     }
 
-    public void onActorRemoved()
-    {
-        NativeMethods.TablePtr->C1.hs_method_193f9b24((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onActorRemoved() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

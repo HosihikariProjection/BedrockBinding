@@ -49,10 +49,9 @@ public sealed unsafe partial class ServerLocatorBar : global::System.IDisposable
         return new ServerLocatorBar((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerLocatorBar_Nested.GroupStrongHandle createGroupHandle()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerLocatorBar_Nested.GroupStrongHandle((nint)NativeMethods.TablePtr->C3.hs_method_eb4f98a8((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint createGroupHandle() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWaypointGroups_Address
@@ -60,10 +59,9 @@ public sealed unsafe partial class ServerLocatorBar : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d7feabbc((void*)__hosihikari_shim_handle);
     }
 
-    public void update(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
-    {
-        NativeMethods.TablePtr->C3.hs_method_30955baf((void*)__hosihikari_shim_handle, (void*)player.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void update(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -41,38 +41,36 @@ public sealed unsafe partial class SimpleFloatFilterTest : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk20eb73_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f2fbeed0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f2fbeed0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4242cc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1a30ba5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1a30ba5d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk995088_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6c512466((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6c512466((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value __serializeValue()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_f4586370((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __serializeValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getValue() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_474c5f6d((void*)__hosihikari_shim_handle, (void*)definition.Handle, (void*)inputs.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _setup(nint definition, nint inputs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SimpleFloatFilterTest Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1c976a47();
+        var handle = NativeMethods.TablePtr->C3.hs_create_1c976a47();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -83,7 +81,7 @@ public sealed unsafe partial class SimpleFloatFilterTest : global::System.IDispo
 
     public static SimpleFloatFilterTest Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleFloatFilterTest arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_794fdade((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_794fdade((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -94,7 +92,7 @@ public sealed unsafe partial class SimpleFloatFilterTest : global::System.IDispo
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _serializeValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_b7bb2f30((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_b7bb2f30((void*)__hosihikari_shim_handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
@@ -104,17 +102,17 @@ public sealed unsafe partial class SimpleFloatFilterTest : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk835451_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bf8b6cf4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bf8b6cf4((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SimpleFloatFilterTest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SimpleFloatFilterTest arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SimpleFloatFilterTest((nint)NativeMethods.TablePtr->C4.hs_method_a4f424e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SimpleFloatFilterTest((nint)NativeMethods.TablePtr->C3.hs_method_a4f424e9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public bool setup(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition definition, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)
     {
-        return NativeMethods.TablePtr->C4.hs_method_34762aaf((void*)__hosihikari_shim_handle, (void*)definition.Handle, (void*)inputs.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_34762aaf((void*)__hosihikari_shim_handle, (void*)definition.Handle, (void*)inputs.Handle) != 0;
     }
 
 
@@ -124,7 +122,7 @@ public sealed unsafe partial class SimpleFloatFilterTest : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_8302bdf2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_8302bdf2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

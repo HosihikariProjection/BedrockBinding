@@ -41,23 +41,22 @@ public sealed unsafe partial class ShootBowDefinition : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7c429f87((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7c429f87((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTreeDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0b6aef19((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0b6aef19((void*)__hosihikari_shim_handle);
     }
 
-    public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
-    {
-        NativeMethods.TablePtr->C4.hs_method_4dfbf8a3((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _load(nint value, nint factory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ShootBowDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ShootBowDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_048d7a81((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_048d7a81((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,19 +67,19 @@ public sealed unsafe partial class ShootBowDefinition : global::System.IDisposab
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
     {
-        NativeMethods.TablePtr->C4.hs_method_abaa013f((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
+        NativeMethods.TablePtr->C3.hs_method_abaa013f((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
     }
 
     public int mNumOfShots
     {
-        get => NativeMethods.TablePtr->C4.hs_get_51163ae9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_51163ae9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_51163ae9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_51163ae9((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNumOfShotsId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1cd17e03((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1cd17e03((void*)__hosihikari_shim_handle);
     }
 
 
@@ -90,7 +89,7 @@ public sealed unsafe partial class ShootBowDefinition : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_8656736c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_8656736c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class LerpedInterval : global::System.IDisposable
 
     public static LerpedInterval Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6493c622();
+        var handle = NativeMethods.TablePtr->C2.hs_create_6493c622();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class LerpedInterval : global::System.IDisposable
 
     public static LerpedInterval Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_f4c705ae((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_f4c705ae((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,30 +63,30 @@ public sealed unsafe partial class LerpedInterval : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk250c8c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c0aa82de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c0aa82de((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk32a0c2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9a099a98((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9a099a98((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk83704d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9a892253((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9a892253((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkebc783_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_81e3932f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_81e3932f((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval((nint)NativeMethods.TablePtr->C3.hs_method_b7320aad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.RuntimePredictionData_Nested.LerpedInterval((nint)NativeMethods.TablePtr->C2.hs_method_b7320aad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -95,7 +95,7 @@ public sealed unsafe partial class LerpedInterval : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b78d55e8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b78d55e8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class AddOceanTemperatureOperationNode
         return __hs_handle;
     }
 
-    public void __fillArea(nint operationNodeData, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d origin, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d size)
-    {
-        NativeMethods.TablePtr->C0.hs_method_ac46c51c((void*)__hosihikari_shim_handle, (void*)operationNodeData, (void*)origin.Handle, (void*)size.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __fillArea(nint operationNodeData, nint origin, nint size) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _fillArea(nint operationNodeData, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d origin, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d size)
     {

@@ -48,9 +48,9 @@ public sealed unsafe partial class DimensionBrightnessRamp : global::System.IDis
         return NativeMethods.TablePtr->C1.hs_method_e84a1df1((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DimensionBrightnessRamp Create(global::Hosihikari.Bindings.Bedrock.Interop.DimensionBrightnessRamp arg0)
     {

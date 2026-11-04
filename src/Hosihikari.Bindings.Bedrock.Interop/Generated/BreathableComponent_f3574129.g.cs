@@ -38,10 +38,9 @@ public sealed unsafe partial class BreathableComponent : global::System.IDisposa
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_a49b6a93((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BreathableComponent Create()
     {
@@ -65,10 +64,9 @@ public sealed unsafe partial class BreathableComponent : global::System.IDisposa
         return new BreathableComponent((nint)handle);
     }
 
-    public bool canBreathe(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_a2658ea8((void*)__hosihikari_shim_handle, (void*)owner.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool canBreathe(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mAirRegenPerTick
     {
@@ -148,19 +146,18 @@ public sealed unsafe partial class BreathableComponent : global::System.IDisposa
         set => NativeMethods.TablePtr->C0.hs_set_94b3ff94((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent((nint)NativeMethods.TablePtr->C0.hs_method_b225b491((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void updateBreathableState(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a584e321((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void updateBreathableState(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,15 +38,13 @@ public sealed unsafe partial class ScriptActorRemoveAfterEvent : global::System.
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorRemoveAfterEvent arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_44ae6133((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? actorRemoveEvent, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope arg1)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_333e45c8((void*)__hosihikari_shim_handle, actorRemoveEvent?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint actorRemoveEvent, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptActorRemoveAfterEvent Create()
     {
@@ -59,32 +57,17 @@ public sealed unsafe partial class ScriptActorRemoveAfterEvent : global::System.
         return new ScriptActorRemoveAfterEvent((nint)handle);
     }
 
-    public static ScriptActorRemoveAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorRemoveAfterEvent arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c006c657((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptActorRemoveAfterEvent Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ScriptActorRemoveAfterEvent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptActorRemoveAfterEvent Create(nint actorRemoveEvent, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ScriptActorRemoveAfterEvent Create(global::Hosihikari.Bindings.Abi.SharedHandle? actorRemoveEvent, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope arg1)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a7e08dee(actorRemoveEvent?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)arg1.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptActorRemoveAfterEvent((nint)handle);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_87fc1bbd());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRemovedActorId_Address
@@ -98,9 +81,9 @@ public sealed unsafe partial class ScriptActorRemoveAfterEvent : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_3a338547((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorRemoveAfterEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptActorRemoveAfterEvent arg0)
     {

@@ -38,14 +38,13 @@ public sealed unsafe partial class ActorDimensionTransferManager : global::Syste
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint actorDimensionTransferer, nint dimensionManager, nint portalForcer) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_a7ee3e35((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorDimensionTransferManager Create()
     {
@@ -58,9 +57,9 @@ public sealed unsafe partial class ActorDimensionTransferManager : global::Syste
         return new ActorDimensionTransferManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ActorDimensionTransferManager Create(nint actorDimensionTransferer, nint dimensionManager, nint portalForcer) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void actorChangeDimension(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint actorDimensionTransferRequest)
     {

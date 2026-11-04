@@ -155,24 +155,21 @@ public sealed unsafe partial class ContextUserData : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextUserData((nint)NativeMethods.TablePtr->C3.hs_method_d94f2b68((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ParseContextData peekParseContext()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ParseContextData((nint)NativeMethods.TablePtr->C3.hs_method_d57ba5b1((void*)__hosihikari_shim_handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint peekParseContext() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void popParseContext()
-    {
-        NativeMethods.TablePtr->C3.hs_method_03ba8c74((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void popParseContext() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::variant<std::basic_string_view<char>, unsigned int>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void pushParseContext(nint context, nint type, nint arg, nint argumentDetails, nint propertyBinding) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::variant<std::basic_string_view<char>, unsigned int>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void resetParseContextUntilVariant(bool removeVariant)
-    {
-        NativeMethods.TablePtr->C3.hs_method_6ff9c6c2((void*)__hosihikari_shim_handle, removeVariant);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void resetParseContextUntilVariant(bool removeVariant) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

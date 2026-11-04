@@ -40,7 +40,7 @@ public sealed unsafe partial class ReceiveStreamRtpConfig : global::System.IDisp
 
     public static ReceiveStreamRtpConfig Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_9acfbc12();
+        var handle = NativeMethods.TablePtr->C4.hs_create_9acfbc12();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ReceiveStreamRtpConfig : global::System.IDisp
 
     public static ReceiveStreamRtpConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ReceiveStreamInterface_Nested.ReceiveStreamRtpConfig arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_4a42df89((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_4a42df89((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class ReceiveStreamRtpConfig : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1a727b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_95852875((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_95852875((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9febdf_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_6ffde971((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6ffde971((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ReceiveStreamInterface_Nested.ReceiveStreamRtpConfig operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ReceiveStreamInterface_Nested.ReceiveStreamRtpConfig arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ReceiveStreamInterface_Nested.ReceiveStreamRtpConfig((nint)NativeMethods.TablePtr->C5.hs_method_481778fc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.ReceiveStreamInterface_Nested.ReceiveStreamRtpConfig((nint)NativeMethods.TablePtr->C4.hs_method_481778fc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class ReceiveStreamRtpConfig : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_6f64f76e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_6f64f76e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

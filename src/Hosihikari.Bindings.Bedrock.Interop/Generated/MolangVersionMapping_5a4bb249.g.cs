@@ -38,10 +38,9 @@ public sealed unsafe partial class MolangVersionMapping : global::System.IDispos
         return __hs_handle;
     }
 
-    public static short getVersion(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion semVersion)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_cc942609((void*)semVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getVersion(nint semVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

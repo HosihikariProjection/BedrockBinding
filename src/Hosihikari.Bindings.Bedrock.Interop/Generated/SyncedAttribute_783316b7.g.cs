@@ -40,7 +40,7 @@ public sealed unsafe partial class SyncedAttribute : global::System.IDisposable
 
     public static SyncedAttribute Create(global::Hosihikari.Bindings.Bedrock.Interop.SyncedAttribute arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_01bc7637((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_01bc7637((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,26 +51,26 @@ public sealed unsafe partial class SyncedAttribute : global::System.IDisposable
 
     public float mCurrentValue
     {
-        get => NativeMethods.TablePtr->C4.hs_get_836b4c46((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_836b4c46((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_836b4c46((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_836b4c46((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMaxValue
     {
-        get => NativeMethods.TablePtr->C4.hs_get_414eb60b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_414eb60b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_414eb60b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_414eb60b((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMinValue
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ee895c85((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_ee895c85((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ee895c85((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ee895c85((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7adc627a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7adc627a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class SyncedAttribute : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_783316b7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_783316b7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

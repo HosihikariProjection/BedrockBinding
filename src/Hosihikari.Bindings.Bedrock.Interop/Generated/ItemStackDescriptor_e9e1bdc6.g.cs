@@ -41,19 +41,19 @@ public sealed unsafe partial class ItemStackDescriptor : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mImpl_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_98ebf616((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_98ebf616((void*)__hosihikari_shim_handle);
     }
 
     public ushort mStackSize
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5b3c7bc8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_5b3c7bc8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_5b3c7bc8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_5b3c7bc8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUserData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b0ca3ecb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b0ca3ecb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -63,7 +63,7 @@ public sealed unsafe partial class ItemStackDescriptor : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e9e1bdc6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e9e1bdc6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

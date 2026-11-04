@@ -38,10 +38,9 @@ public sealed unsafe partial class SaveSurroundingChunksSystem : global::System.
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b6fccaed((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SaveSurroundingChunksSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.SaveSurroundingChunksSystem arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class SaveSurroundingChunksSystem : global::System.
         return new SaveSurroundingChunksSystem((nint)handle);
     }
 
-    public static void _tickSaveSurroundingChunks(global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent)
-    {
-        NativeMethods.TablePtr->C3.hs_method_c653de1a((void*)actorOwnerComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _tickSaveSurroundingChunks(nint actorOwnerComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {

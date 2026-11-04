@@ -40,24 +40,21 @@ public sealed unsafe partial class ItemStackRequestActionCraftBase : global::Sys
 
     public byte mActionType
     {
-        get => NativeMethods.TablePtr->C2.hs_get_40940a4c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_40940a4c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_40940a4c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_40940a4c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase? _getCraftAction()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_143c5237((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getCraftAction() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _postLoadItems_DEPRECATEDASKTYLAING(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, bool isClientSide)
-    {
-        NativeMethods.TablePtr->C2.hs_method_afd51b70((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _postLoadItems_DEPRECATEDASKTYLAING(nint blockPalette, bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemStackRequestActionCraftBase Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c1887cdb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_c1887cdb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,29 +65,29 @@ public sealed unsafe partial class ItemStackRequestActionCraftBase : global::Sys
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_5a687d1e((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_5a687d1e((void*)__hosihikari_shim_handle, (void*)stream.Handle));
     }
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C2.hs_method_b12b39c7((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C1.hs_method_b12b39c7((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase? getCraftAction()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c779b296((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c779b296((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase((nint)__hs_handle, false) : null;
     }
 
     public byte mNumCrafts
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5a9de10c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_5a9de10c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_5a9de10c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_5a9de10c((void*)__hosihikari_shim_handle, value);
     }
 
     public void postLoadItems_DEPRECATEDASKTYLAING(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, bool isClientSide)
     {
-        NativeMethods.TablePtr->C2.hs_method_0d93f809((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
+        NativeMethods.TablePtr->C1.hs_method_0d93f809((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
     }
 
 
@@ -100,7 +97,7 @@ public sealed unsafe partial class ItemStackRequestActionCraftBase : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0009f6d0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_0009f6d0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

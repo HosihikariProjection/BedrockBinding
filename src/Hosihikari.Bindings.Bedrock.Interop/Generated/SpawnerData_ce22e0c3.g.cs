@@ -40,13 +40,13 @@ public sealed unsafe partial class SpawnerData : global::System.IDisposable
 
     public int mRandomWeight
     {
-        get => NativeMethods.TablePtr->C5.hs_get_5efcb457((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_5efcb457((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_5efcb457((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_5efcb457((void*)__hosihikari_shim_handle, value);
     }
 
     public static SpawnerData Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.SpawnerData arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_e5ee2292((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_e5ee2292((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -58,68 +58,53 @@ public sealed unsafe partial class SpawnerData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint brightness_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b15b0cd4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b15b0cd4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint entity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_5e9f203f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5e9f203f((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.SpawnerData make(string id, short probabilityWeight, short minCount, short maxCount)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(id);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(id, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.SpawnerData((nint)NativeMethods.TablePtr->C5.hs_method_74b59893(__hs_stringData0, (nuint)__hs_stringByteCount0, probabilityWeight, minCount, maxCount));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint make(nint id, short probabilityWeight, short minCount, short maxCount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public short maxCount
     {
-        get => NativeMethods.TablePtr->C5.hs_get_d8adc5d8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_d8adc5d8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_d8adc5d8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_d8adc5d8((void*)__hosihikari_shim_handle, value);
     }
 
     public short minCount
     {
-        get => NativeMethods.TablePtr->C5.hs_get_db0236dd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_db0236dd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_db0236dd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_db0236dd((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint population_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_2982a67f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2982a67f((void*)__hosihikari_shim_handle);
     }
 
     public sbyte surface
     {
-        get => NativeMethods.TablePtr->C5.hs_get_dd96f5e8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_dd96f5e8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_dd96f5e8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_dd96f5e8((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte underground
     {
-        get => NativeMethods.TablePtr->C5.hs_get_60fca01b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_60fca01b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_60fca01b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_60fca01b((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte underwater
     {
-        get => NativeMethods.TablePtr->C5.hs_get_0848d3e4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_0848d3e4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0848d3e4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_0848d3e4((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -129,7 +114,7 @@ public sealed unsafe partial class SpawnerData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_ce22e0c3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_ce22e0c3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class NodeData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_34bc7427((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the class stores borrowed strings but the constructor has no string parameter.", false)]
     public static NodeData Create() =>
@@ -53,31 +52,31 @@ public sealed unsafe partial class NodeData : global::System.IDisposable
 
     public bool mChangesName
     {
-        get => NativeMethods.TablePtr->C1.hs_get_c2a1785a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_c2a1785a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_c2a1785a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_c2a1785a((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsNameLiteral
     {
-        get => NativeMethods.TablePtr->C1.hs_get_33148abb((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_33148abb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_33148abb((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_33148abb((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_92f004af((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_92f004af((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUpdater_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4744a35c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_4744a35c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder_Nested.NodeData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder_Nested.NodeData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder_Nested.NodeData((nint)NativeMethods.TablePtr->C1.hs_method_8dcdd5c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder_Nested.NodeData((nint)NativeMethods.TablePtr->C0.hs_method_8dcdd5c4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -87,7 +86,7 @@ public sealed unsafe partial class NodeData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_6f37f615((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_6f37f615((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

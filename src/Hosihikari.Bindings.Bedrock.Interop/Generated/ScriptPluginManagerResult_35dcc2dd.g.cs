@@ -60,15 +60,13 @@ public sealed unsafe partial class ScriptPluginManagerResult : global::System.ID
         return new ScriptPluginManagerResult((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginResult getOrCreatePluginResults(global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion packId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleDescriptor descriptor)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginResult((nint)NativeMethods.TablePtr->C3.hs_method_6f74f5d8((void*)__hosihikari_shim_handle, (void*)packId.Handle, (void*)descriptor.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getOrCreatePluginResults(nint packId, nint descriptor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void logMessages()
-    {
-        NativeMethods.TablePtr->C3.hs_method_0a43f3d3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void logMessages() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2bc955_Address

@@ -38,23 +38,21 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
         return __hs_handle;
     }
 
-    public ulong _numBytesLeft()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_8bedf6b5((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong _numBytesLeft() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _readBytesResult(nint data, ulong bytes)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_75612550((void*)__hosihikari_shim_handle, (void*)data, bytes));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _readBytesResult(nint data, ulong bytes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RakDataInput Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_63d5110e();
+        var handle = NativeMethods.TablePtr->C2.hs_create_63d5110e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,7 +63,7 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
 
     public static RakDataInput Create(global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ee7a44e4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ee7a44e4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,22 +75,22 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBitStream_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0619557d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0619557d((void*)__hosihikari_shim_handle);
     }
 
     public ulong numBytesLeft()
     {
-        return NativeMethods.TablePtr->C3.hs_method_d7eb45af((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_d7eb45af((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput((nint)NativeMethods.TablePtr->C3.hs_method_3e20525b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakDataInput((nint)NativeMethods.TablePtr->C2.hs_method_3e20525b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ readBytesResult(nint data, ulong bytes)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C3.hs_method_38f4fb68((void*)__hosihikari_shim_handle, (void*)data, bytes));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_38f4fb68((void*)__hosihikari_shim_handle, (void*)data, bytes));
     }
 
 
@@ -102,7 +100,7 @@ public sealed unsafe partial class RakDataInput : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_6036f0d1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6036f0d1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

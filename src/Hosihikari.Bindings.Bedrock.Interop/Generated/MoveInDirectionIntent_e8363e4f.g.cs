@@ -40,7 +40,7 @@ public sealed unsafe partial class MoveInDirectionIntent : global::System.IDispo
 
     public static MoveInDirectionIntent Create(global::Hosihikari.Bindings.Bedrock.Interop.sim.MoveInDirectionIntent arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_35a485f1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_35a485f1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class MoveInDirectionIntent : global::System.IDispo
 
     public bool mAbsoluteSpace
     {
-        get => NativeMethods.TablePtr->C5.hs_get_1907c55f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_1907c55f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_1907c55f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_1907c55f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTarget_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b67e17bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b67e17bd((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class MoveInDirectionIntent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_e8363e4f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e8363e4f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

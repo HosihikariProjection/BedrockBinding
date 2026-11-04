@@ -40,7 +40,7 @@ public sealed unsafe partial class HeightmapData : global::System.IDisposable
 
     public static HeightmapData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_19402288();
+        var handle = NativeMethods.TablePtr->C3.hs_create_19402288();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class HeightmapData : global::System.IDisposable
 
     public static HeightmapData Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.HeightmapData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9e1dd212((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9e1dd212((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,26 +62,26 @@ public sealed unsafe partial class HeightmapData : global::System.IDisposable
 
     public byte mHeightMapType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_afa8e065((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_afa8e065((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_afa8e065((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_afa8e065((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mRenderHeightMapType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d871a870((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d871a870((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d871a870((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d871a870((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubchunkHeightMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0ef2715e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0ef2715e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubchunkRenderHeightMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ad9ce38a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ad9ce38a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -91,7 +91,7 @@ public sealed unsafe partial class HeightmapData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9514630a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9514630a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

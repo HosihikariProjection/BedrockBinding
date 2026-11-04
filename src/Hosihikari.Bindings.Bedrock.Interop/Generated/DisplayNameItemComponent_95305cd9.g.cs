@@ -40,7 +40,7 @@ public sealed unsafe partial class DisplayNameItemComponent : global::System.IDi
 
     public static DisplayNameItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.DisplayNameItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b7952309((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b7952309((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,21 +49,18 @@ public sealed unsafe partial class DisplayNameItemComponent : global::System.IDi
         return new DisplayNameItemComponent((nint)handle);
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_aa415c91();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_55bca57f((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ad7db4b5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ad7db4b5((void*)__hosihikari_shim_handle);
     }
 
 
@@ -73,7 +70,7 @@ public sealed unsafe partial class DisplayNameItemComponent : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_95305cd9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_95305cd9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

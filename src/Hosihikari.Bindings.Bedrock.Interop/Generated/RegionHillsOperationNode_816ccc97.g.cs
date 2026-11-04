@@ -38,18 +38,17 @@ public sealed unsafe partial class RegionHillsOperationNode : global::System.IDi
         return __hs_handle;
     }
 
-    public void __fillArea(nint operationNodeData, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d origin, global::Hosihikari.Bindings.Bedrock.Interop.Pos2d size, int pw)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b8312d9f((void*)__hosihikari_shim_handle, (void*)operationNodeData, (void*)origin.Handle, (void*)size.Handle, pw);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __fillArea(nint operationNodeData, nint origin, nint size, int pw) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::tuple<Pos2d, Pos2d>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint __getAreaRead(nint origin, nint size) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::tuple<Pos2d, Pos2d>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RegionHillsOperationNode Create()
     {

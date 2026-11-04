@@ -49,39 +49,21 @@ public sealed unsafe partial class BreedableDefinition : global::System.IDisposa
         return new BreedableDefinition((nint)handle);
     }
 
-    public void addBreedItem(nint breedItem)
-    {
-        NativeMethods.TablePtr->C0.hs_method_3a4eb674((void*)__hosihikari_shim_handle, (void*)breedItem);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addBreedItem(nint breedItem) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addBreedItemByName(string itemName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(itemName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(itemName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C0.hs_method_b1047a47((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addBreedItemByName(nint itemName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addEnvironmentRequirement(global::Hosihikari.Bindings.Bedrock.Interop.EnvironmentRequirement envReq)
-    {
-        NativeMethods.TablePtr->C0.hs_method_4cd24305((void*)__hosihikari_shim_handle, (void*)envReq.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addEnvironmentRequirement(nint envReq) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C0.hs_method_47b22db8(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAllowSitting
     {

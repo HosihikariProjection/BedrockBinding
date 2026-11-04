@@ -38,15 +38,13 @@ public sealed unsafe partial class ContextScopeListener : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _onPostLifetimeScopeDestroy(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry arg0)
-    {
-        NativeMethods.TablePtr->C3.hs_method_7302058e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onPostLifetimeScopeDestroy(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onPreLifetimeScopeDestroy(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry registry)
-    {
-        NativeMethods.TablePtr->C3.hs_method_a3760eea((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onPreLifetimeScopeDestroy(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ContextScopeListener Create()
     {

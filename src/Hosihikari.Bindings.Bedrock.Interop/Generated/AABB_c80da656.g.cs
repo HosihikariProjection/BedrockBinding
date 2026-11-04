@@ -38,10 +38,9 @@ public sealed unsafe partial class AABB : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 min, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 max)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_44749f32((void*)__hosihikari_shim_handle, (void*)min.Handle, (void*)max.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint min, nint max) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AABB Create()
     {
@@ -90,20 +89,18 @@ public sealed unsafe partial class AABB : global::System.IDisposable
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: anonymous fields are not projected.");
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.AABB BLOCK_SHAPE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_6d4841b0(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint BLOCK_SHAPE() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.AABB BOX_AT_ORIGIN_WITH_NO_VOLUME()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_21c615b4(), false);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.AABB aroundRadius(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 point, float radius)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_9832622e((void*)point.Handle, radius));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint aroundRadius(nint point, float radius) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 center()
     {
@@ -115,14 +112,13 @@ public sealed unsafe partial class AABB : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABBHitResult((nint)NativeMethods.TablePtr->C0.hs_method_e34dc2fa((void*)__hosihikari_shim_handle, (void*)a.Handle, (void*)b.Handle));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'ClipCollideResult' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint clipCollide(nint stationary, nint moving, nint velocity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'ClipCollideResult' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB cloneAndFloor(float offsetMin, float offsetMax)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_005ba3c3((void*)__hosihikari_shim_handle, offsetMin, offsetMax));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint cloneAndFloor(float offsetMin, float offsetMax) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB cloneAndGrow(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 distance)
     {
@@ -134,20 +130,17 @@ public sealed unsafe partial class AABB : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_86ebe622((void*)__hosihikari_shim_handle, radius));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB cloneAndShrink(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 offset)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_ee9a8d01((void*)__hosihikari_shim_handle, (void*)offset.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint cloneAndShrink(nint offset) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB cloneAndTransformByMatrix(global::Hosihikari.Bindings.Bedrock.Interop.Matrix transform)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_753cc28b((void*)__hosihikari_shim_handle, (void*)transform.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint cloneAndTransformByMatrix(nint transform) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AABB cloneAndTranslate(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 offset)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AABB((nint)NativeMethods.TablePtr->C0.hs_method_7d9cf2f6((void*)__hosihikari_shim_handle, (void*)offset.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint cloneAndTranslate(nint offset) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool contains(global::Hosihikari.Bindings.Bedrock.Interop.AABB a)
     {
@@ -164,20 +157,18 @@ public sealed unsafe partial class AABB : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_6797eb6d((void*)__hosihikari_shim_handle, (void*)aabb.Handle);
     }
 
-    public bool intersectSegment(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 segmentBegin, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 segmentEnd, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 intersectPoint, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 intersectNorm)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_43fe9788((void*)__hosihikari_shim_handle, (void*)segmentBegin.Handle, (void*)segmentEnd.Handle, (void*)intersectPoint.Handle, (void*)intersectNorm.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool intersectSegment(nint segmentBegin, nint segmentEnd, nint intersectPoint, nint intersectNorm) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool intersects(global::Hosihikari.Bindings.Bedrock.Interop.AABB c)
     {
         return NativeMethods.TablePtr->C0.hs_method_11454d6a((void*)__hosihikari_shim_handle, (void*)c.Handle) != 0;
     }
 
-    public bool intersects(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 segmentBegin, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 segmentEnd)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_5af9bb25((void*)__hosihikari_shim_handle, (void*)segmentBegin.Handle, (void*)segmentEnd.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool intersects(nint segmentBegin, nint segmentEnd) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.AABB merge(global::Hosihikari.Bindings.Bedrock.Interop.AABB a)
     {

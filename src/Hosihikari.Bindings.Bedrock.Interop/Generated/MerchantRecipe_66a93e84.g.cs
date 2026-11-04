@@ -97,20 +97,17 @@ public sealed unsafe partial class MerchantRecipe : global::System.IDisposable
         return new MerchantRecipe((nint)handle);
     }
 
-    public void calculateDemandPrices(int minorPositiveGossip, int majorPositiveGossip, int nearbyCuredDiscount, int heroEffectAmplifier, bool hasHeroOfTheVillage, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f34adbb9((void*)__hosihikari_shim_handle, minorPositiveGossip, majorPositiveGossip, nearbyCuredDiscount, heroEffectAmplifier, hasHeroOfTheVillage, (void*)baseGameVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void calculateDemandPrices(int minorPositiveGossip, int majorPositiveGossip, int nearbyCuredDiscount, int heroEffectAmplifier, bool hasHeroOfTheVillage, nint baseGameVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isSame(global::Hosihikari.Bindings.Bedrock.Interop.MerchantRecipe lhs)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_7d43f0f7((void*)__hosihikari_shim_handle, (void*)lhs.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isSame(nint lhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount)
-    {
-        NativeMethods.TablePtr->C2.hs_method_531d0245((void*)__hosihikari_shim_handle, lowTierDiscount, highTierDiscount);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void legacyCalculateDemandPrices(int lowTierDiscount, int highTierDiscount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBuyA_Address

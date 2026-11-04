@@ -49,21 +49,17 @@ public sealed unsafe partial class ScriptPlayerInputPermissions : global::System
         return new ScriptPlayerInputPermissions((nint)handle);
     }
 
-    public static void _makeCategoryPropertyBinding(nint classBuilder, byte category)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3e473404((void*)classBuilder, category);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _makeCategoryPropertyBinding(nint classBuilder, nint category) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ClientInputLockComponent? _tryGetClientInputLockComponent()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c837c2e0((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ClientInputLockComponent((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _tryGetClientInputLockComponent() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_0a1aa4c4());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address

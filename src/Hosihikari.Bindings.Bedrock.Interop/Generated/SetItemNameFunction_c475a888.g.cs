@@ -41,30 +41,28 @@ public sealed unsafe partial class SetItemNameFunction : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d5896d63((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d5896d63((void*)__hosihikari_shim_handle);
     }
 
-    public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
-    {
-        NativeMethods.TablePtr->C4.hs_method_0fb31b94((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyPreVersion(nint item, nint arg1, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<LootItemCondition>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint predicates, nint name) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<LootItemCondition>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getFunctionType()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_996789f1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getFunctionType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SetItemNameFunction Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_44b80abc();
+        var handle = NativeMethods.TablePtr->C3.hs_create_44b80abc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +73,7 @@ public sealed unsafe partial class SetItemNameFunction : global::System.IDisposa
 
     public static SetItemNameFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetItemNameFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f6344fd9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_f6344fd9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,28 +82,28 @@ public sealed unsafe partial class SetItemNameFunction : global::System.IDisposa
         return new SetItemNameFunction((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<LootItemCondition>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static SetItemNameFunction Create(nint predicates, nint name) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<LootItemCondition>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C4.hs_method_7c9771f5((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C3.hs_method_7c9771f5((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint deserialize(nint @object, nint predicates) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C4.hs_method_465fe4d4((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_465fe4d4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0cf04901((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0cf04901((void*)__hosihikari_shim_handle);
     }
 
 
@@ -115,7 +113,7 @@ public sealed unsafe partial class SetItemNameFunction : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c475a888((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c475a888((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

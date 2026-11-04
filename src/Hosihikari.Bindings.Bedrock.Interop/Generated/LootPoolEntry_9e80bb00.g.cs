@@ -38,10 +38,9 @@ public sealed unsafe partial class LootPoolEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint START_VERSIONING_VERSION()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_49dc8403();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint START_VERSIONING_VERSION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public bool _createItem(nint output, nint random, nint context) =>

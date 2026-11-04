@@ -38,23 +38,21 @@ public sealed unsafe partial class DetailedGeometry : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_a6e033c1(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.DetailedGeometry arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_20faa65a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_20faa65a(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_02b9794d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DetailedGeometry Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_52772d3a();
+        var handle = NativeMethods.TablePtr->C3.hs_create_52772d3a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,76 +61,67 @@ public sealed unsafe partial class DetailedGeometry : global::System.IDisposable
         return new DetailedGeometry((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static DetailedGeometry Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DetailedGeometry Create_ff5227cb(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static DetailedGeometry Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.DetailedGeometry arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_146e3759((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DetailedGeometry((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DetailedGeometry Create_146e3759(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoneVisibilities_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0e488772((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0e488772((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCullingLayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9286d8a8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9286d8a8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCullingName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e1c76711((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e1c76711((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCullingShapeName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b436303a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b436303a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGeometryName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2ea64361((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2ea64361((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNWayVisualRotation_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_609ccd72((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_609ccd72((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUVsLocked_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_dbaf571a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dbaf571a((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_eefb7531(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.DetailedGeometry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.DetailedGeometry arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.DetailedGeometry((nint)NativeMethods.TablePtr->C4.hs_method_0bdba193((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_0bdba193(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_20.BlockDefinition.GeometryComponent_Nested.DetailedGeometry arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_5105f6a9((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -141,7 +130,7 @@ public sealed unsafe partial class DetailedGeometry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f5c5a3a6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f5c5a3a6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

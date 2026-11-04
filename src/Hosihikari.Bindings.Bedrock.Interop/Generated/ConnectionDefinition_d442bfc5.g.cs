@@ -40,50 +40,50 @@ public sealed unsafe partial class ConnectionDefinition : global::System.IDispos
 
     public bool allowUnconnectedPongs
     {
-        get => NativeMethods.TablePtr->C1.hs_get_5cb8ca07((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_5cb8ca07((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_5cb8ca07((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_5cb8ca07((void*)__hosihikari_shim_handle, value);
     }
 
     public bool disableTrickleIce
     {
-        get => NativeMethods.TablePtr->C1.hs_get_1c294393((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_1c294393((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_1c294393((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_1c294393((void*)__hosihikari_shim_handle, value);
     }
 
     public int fallback
     {
-        get => NativeMethods.TablePtr->C1.hs_get_6b7fefe9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_6b7fefe9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_6b7fefe9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_6b7fefe9((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort ipv4Port
     {
-        get => NativeMethods.TablePtr->C1.hs_get_d3a87fb3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_d3a87fb3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_d3a87fb3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_d3a87fb3((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort ipv6Port
     {
-        get => NativeMethods.TablePtr->C1.hs_get_0260b89c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_0260b89c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_0260b89c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_0260b89c((void*)__hosihikari_shim_handle, value);
     }
 
     public bool isServerVisibleToLanDiscovery
     {
-        get => NativeMethods.TablePtr->C1.hs_get_2eb60cc4((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_2eb60cc4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_2eb60cc4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_2eb60cc4((void*)__hosihikari_shim_handle, value);
     }
 
     public int maxNumConnections
     {
-        get => NativeMethods.TablePtr->C1.hs_get_ae5dd279((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_ae5dd279((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_ae5dd279((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_ae5dd279((void*)__hosihikari_shim_handle, value);
     }
 
     public int maxNumPlayers
     {
-        get => NativeMethods.TablePtr->C1.hs_get_91489afe((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_91489afe((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_91489afe((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_91489afe((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -92,7 +92,7 @@ public sealed unsafe partial class ConnectionDefinition : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d442bfc5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_d442bfc5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

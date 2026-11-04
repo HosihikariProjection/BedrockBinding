@@ -139,24 +139,22 @@ public sealed unsafe partial class DispenserBlockActor : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d2b3a9d6((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BlockActorDataPacket' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint __getUpdatePacket(nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'BlockActorDataPacket' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __onUpdatePacket(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag data, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        NativeMethods.TablePtr->C1.hs_method_57622217((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)region.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __onUpdatePacket(nint data, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
         return (nint)NativeMethods.TablePtr->C1.hs_method_d6ccfc9a((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte type)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_3c475d0c((void*)__hosihikari_shim_handle, (void*)pos.Handle, type);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint pos, nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainer_b9028822()
     {
@@ -180,16 +178,13 @@ public sealed unsafe partial class DispenserBlockActor : global::System.IDisposa
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_0c441134((void*)__hosihikari_shim_handle, slot), false);
     }
 
-    public int _getMaxStackSize()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_9786e822((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxStackSize() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _getName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_b2ce19b5((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _isTypeOrDerived(byte type)
     {
@@ -252,16 +247,9 @@ public sealed unsafe partial class DispenserBlockActor : global::System.IDisposa
         return new DispenserBlockActor((nint)handle);
     }
 
-    public static DispenserBlockActor Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte type)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_467bf72f((void*)pos.Handle, type);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DispenserBlockActor((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DispenserBlockActor Create(nint pos, nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BlockActorDataPacket' has no accessible destructor.", false)]
     public nint _getUpdatePacket(nint region) =>

@@ -74,45 +74,29 @@ public sealed unsafe partial class ServerEventCoordinatorManager : global::Syste
         get => (nint)NativeMethods.TablePtr->C3.hs_get_997f495d((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_4ed5ffd4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getLevelEventCoordinator()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_23de2453((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getLevelEventCoordinator() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getServerLevelEventCoordinator()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_60568921((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getServerLevelEventCoordinator() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getServerNetworkEventCoordinator()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_4a0f5058((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getServerNetworkEventCoordinator() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getServerPlayerEventCoordinator()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_2ae06f94((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getServerPlayerEventCoordinator() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ServerEventCoordinatorManager Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_258ada27();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ServerEventCoordinatorManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ServerEventCoordinatorManager Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getLevelEventCoordinator()
     {

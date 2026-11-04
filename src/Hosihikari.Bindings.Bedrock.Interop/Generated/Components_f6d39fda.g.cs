@@ -38,10 +38,9 @@ public sealed unsafe partial class Components : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_be0ead55((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Components Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentGroupDescription_Nested.Components arg0)
     {
@@ -54,30 +53,13 @@ public sealed unsafe partial class Components : global::System.IDisposable
         return new Components((nint)handle);
     }
 
-    public void _setCustomComponent(string compName, global::Hosihikari.Bindings.Abi.SharedHandle? compData, bool overridePlayerInteract, bool overridePlayerPlacing)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(compName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(compName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C0.hs_method_066201e3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, compData?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), overridePlayerInteract, overridePlayerPlacing);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setCustomComponent(nint compName, nint compData, bool overridePlayerInteract, bool overridePlayerPlacing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? getCustomComponent(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext context)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_34ac89f2((void*)__hosihikari_shim_handle, (void*)context.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getCustomComponent(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMap_Address

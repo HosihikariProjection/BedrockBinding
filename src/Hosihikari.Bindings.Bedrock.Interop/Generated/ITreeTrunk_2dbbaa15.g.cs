@@ -40,7 +40,7 @@ public sealed unsafe partial class ITreeTrunk : global::System.IDisposable
 
     public static ITreeTrunk Create(global::Hosihikari.Bindings.Bedrock.Interop.ITreeTrunk arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4d899c3c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_4d899c3c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,13 +51,13 @@ public sealed unsafe partial class ITreeTrunk : global::System.IDisposable
 
     public int getTreeHeight(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        return NativeMethods.TablePtr->C2.hs_method_172ff566((void*)__hosihikari_shim_handle, (void*)random.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_172ff566((void*)__hosihikari_shim_handle, (void*)random.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? placeTrunk(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random, int treeHeight, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy? canopy)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a7f64ee2((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)random.Handle, treeHeight, (void*)renderParams.Handle, (void*)treeParams.Handle, (void*)(canopy?.Handle ?? 0), &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_a7f64ee2((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)random.Handle, treeHeight, (void*)renderParams.Handle, (void*)treeParams.Handle, (void*)(canopy?.Handle ?? 0), &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class ITreeTrunk : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_2dbbaa15((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_2dbbaa15((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,18 +38,17 @@ public sealed unsafe partial class OceanMixerOperationNode : global::System.IDis
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OperationGraphResult<BiomeTemperatureCategory>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void __fillArea(nint operationNodeData, nint origin, nint size, int pw, nint oceanData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OperationGraphResult<BiomeTemperatureCategory>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::tuple<Pos2d, Pos2d>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint __getAreaRead(nint origin, nint size) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::tuple<Pos2d, Pos2d>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(uint seedMixup, global::Hosihikari.Bindings.Abi.SharedHandle? biomeLayer, global::Hosihikari.Bindings.Abi.SharedHandle? oceanLayer, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.Biome genericShallowOcean, global::Hosihikari.Bindings.Bedrock.Interop.Biome genericDeepOcean)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_41a77c54((void*)__hosihikari_shim_handle, seedMixup, biomeLayer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), oceanLayer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)registry.Handle, (void*)genericShallowOcean.Handle, (void*)genericDeepOcean.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(uint seedMixup, nint biomeLayer, nint oceanLayer, nint registry, nint genericShallowOcean, nint genericDeepOcean) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static OceanMixerOperationNode Create()
     {
@@ -73,16 +72,9 @@ public sealed unsafe partial class OceanMixerOperationNode : global::System.IDis
         return new OceanMixerOperationNode((nint)handle);
     }
 
-    public static OceanMixerOperationNode Create(uint seedMixup, global::Hosihikari.Bindings.Abi.SharedHandle? biomeLayer, global::Hosihikari.Bindings.Abi.SharedHandle? oceanLayer, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.Biome genericShallowOcean, global::Hosihikari.Bindings.Bedrock.Interop.Biome genericDeepOcean)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_02aa9a99(seedMixup, biomeLayer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), oceanLayer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)registry.Handle, (void*)genericShallowOcean.Handle, (void*)genericDeepOcean.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new OceanMixerOperationNode((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static OceanMixerOperationNode Create(uint seedMixup, nint biomeLayer, nint oceanLayer, nint registry, nint genericShallowOcean, nint genericDeepOcean) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OperationGraphResult<BiomeTemperatureCategory>' is not a known bindable declaration.", false)]
     public void _fillArea(nint operationNodeData, nint origin, nint size, int pw, nint oceanData) =>

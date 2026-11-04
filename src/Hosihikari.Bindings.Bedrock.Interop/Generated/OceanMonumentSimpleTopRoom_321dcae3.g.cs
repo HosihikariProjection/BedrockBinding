@@ -40,29 +40,27 @@ public sealed unsafe partial class OceanMonumentSimpleTopRoom : global::System.I
 
     public bool mDoFill
     {
-        get => NativeMethods.TablePtr->C3.hs_get_d8011bad((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_d8011bad((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_d8011bad((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_d8011bad((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRoomDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_60a13be6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_60a13be6((void*)__hosihikari_shim_handle);
     }
 
-    public int _getType()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_f9ff7b82((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_802f5ea8((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _postProcess(nint region, nint random, nint chunkBB) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static OceanMonumentSimpleTopRoom Create(global::Hosihikari.Bindings.Bedrock.Interop.OceanMonumentSimpleTopRoom arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_26c529fa((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_26c529fa((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,37 +71,37 @@ public sealed unsafe partial class OceanMonumentSimpleTopRoom : global::System.I
 
     public int getType()
     {
-        return NativeMethods.TablePtr->C3.hs_method_201d1397((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_201d1397((void*)__hosihikari_shim_handle);
     }
 
     public bool postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C3.hs_method_9cb9a012((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_9cb9a012((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
     }
 
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoundingBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5dce125c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5dce125c((void*)__hosihikari_shim_handle);
     }
 
     public int mGenDepth
     {
-        get => NativeMethods.TablePtr->C3.hs_get_dcbc867c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_dcbc867c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_dcbc867c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_dcbc867c((void*)__hosihikari_shim_handle, value);
     }
 
     public int mOrientation
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b036c3d9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_b036c3d9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_b036c3d9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_b036c3d9((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainAdjustmentToken_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_27ab0bcb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_27ab0bcb((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -112,7 +110,7 @@ public sealed unsafe partial class OceanMonumentSimpleTopRoom : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_321dcae3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_321dcae3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

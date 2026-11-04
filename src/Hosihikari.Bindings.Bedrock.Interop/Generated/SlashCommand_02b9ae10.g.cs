@@ -84,9 +84,9 @@ public sealed unsafe partial class SlashCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_35dad4ce((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LegacyTelemetryEventPacketPayload_Nested.SlashCommand operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTelemetryEventPacketPayload_Nested.SlashCommand arg0)
     {

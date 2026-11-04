@@ -38,14 +38,13 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_f53264a2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static OwnedContainer Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerOwner_Nested.OwnedContainer arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fe2bcf7c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_fe2bcf7c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,7 +56,7 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerModel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d4975c25((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_d4975c25((void*)__hosihikari_shim_handle);
     }
 
 
@@ -67,7 +66,7 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_47ddc28a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_47ddc28a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

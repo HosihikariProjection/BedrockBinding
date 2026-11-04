@@ -40,20 +40,20 @@ public sealed unsafe partial class DebugSendRateModifiers : global::System.IDisp
 
     public bool mDrawDebugLines
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9085aa0b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_9085aa0b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9085aa0b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_9085aa0b((void*)__hosihikari_shim_handle, value);
     }
 
     public int mDropPacketChance
     {
-        get => NativeMethods.TablePtr->C4.hs_get_7333136f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_7333136f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7333136f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7333136f((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSendEveryNPackets
     {
-        get => NativeMethods.TablePtr->C4.hs_get_019e82dc((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_019e82dc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_019e82dc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_019e82dc((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -62,7 +62,7 @@ public sealed unsafe partial class DebugSendRateModifiers : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c8d8bd64((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c8d8bd64((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

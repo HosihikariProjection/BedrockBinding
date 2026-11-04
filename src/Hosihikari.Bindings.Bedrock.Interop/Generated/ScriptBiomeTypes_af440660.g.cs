@@ -49,15 +49,13 @@ public sealed unsafe partial class ScriptBiomeTypes : global::System.IDisposable
         return new ScriptBiomeTypes((nint)handle);
     }
 
-    public void _generateAllBiomeTypeHandles(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
-    {
-        NativeMethods.TablePtr->C3.hs_method_a8d788cd((void*)__hosihikari_shim_handle, (void*)scope.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _generateAllBiomeTypeHandles(nint scope) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind(global::Hosihikari.Bindings.Abi.SharedHandle? biomeRegistry)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_5077ebc2(biomeRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind(nint biomeRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBiomeRegistry_Address

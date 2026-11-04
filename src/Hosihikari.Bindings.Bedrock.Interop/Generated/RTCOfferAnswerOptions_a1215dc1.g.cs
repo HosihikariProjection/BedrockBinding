@@ -40,50 +40,50 @@ public sealed unsafe partial class RTCOfferAnswerOptions : global::System.IDispo
 
     public bool ice_restart
     {
-        get => NativeMethods.TablePtr->C5.hs_get_0ed37557((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_0ed37557((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0ed37557((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_0ed37557((void*)__hosihikari_shim_handle, value);
     }
 
     public int num_simulcast_layers
     {
-        get => NativeMethods.TablePtr->C5.hs_get_e0825d4b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_e0825d4b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_e0825d4b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_e0825d4b((void*)__hosihikari_shim_handle, value);
     }
 
     public int offer_to_receive_audio
     {
-        get => NativeMethods.TablePtr->C5.hs_get_7a7ff6d3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_7a7ff6d3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_7a7ff6d3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_7a7ff6d3((void*)__hosihikari_shim_handle, value);
     }
 
     public int offer_to_receive_video
     {
-        get => NativeMethods.TablePtr->C5.hs_get_58f14759((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_58f14759((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_58f14759((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_58f14759((void*)__hosihikari_shim_handle, value);
     }
 
     public bool raw_packetization_for_video
     {
-        get => NativeMethods.TablePtr->C5.hs_get_9de5f074((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_9de5f074((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_9de5f074((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_9de5f074((void*)__hosihikari_shim_handle, value);
     }
 
     public bool use_obsolete_sctp_sdp
     {
-        get => NativeMethods.TablePtr->C5.hs_get_48594689((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_48594689((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_48594689((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_48594689((void*)__hosihikari_shim_handle, value);
     }
 
     public bool use_rtp_mux
     {
-        get => NativeMethods.TablePtr->C5.hs_get_b8ca4932((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_b8ca4932((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_b8ca4932((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_b8ca4932((void*)__hosihikari_shim_handle, value);
     }
 
     public bool voice_activity_detection
     {
-        get => NativeMethods.TablePtr->C5.hs_get_030e0eef((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_030e0eef((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_030e0eef((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_030e0eef((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -92,7 +92,7 @@ public sealed unsafe partial class RTCOfferAnswerOptions : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_a1215dc1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_a1215dc1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

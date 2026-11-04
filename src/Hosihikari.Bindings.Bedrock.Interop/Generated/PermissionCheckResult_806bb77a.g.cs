@@ -40,7 +40,7 @@ public sealed unsafe partial class PermissionCheckResult : global::System.IDispo
 
     public static PermissionCheckResult Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_cacd5434();
+        var handle = NativeMethods.TablePtr->C3.hs_create_cacd5434();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PermissionCheckResult : global::System.IDispo
 
     public static PermissionCheckResult Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8abc189d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8abc189d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class PermissionCheckResult : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk20e2dd_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_dc0ac926((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dc0ac926((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult((nint)NativeMethods.TablePtr->C4.hs_method_e1fce843((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.PermissionCheckResult((nint)NativeMethods.TablePtr->C3.hs_method_e1fce843((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class PermissionCheckResult : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_806bb77a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_806bb77a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

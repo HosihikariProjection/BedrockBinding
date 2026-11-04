@@ -38,15 +38,13 @@ public sealed unsafe partial class BaseBlockLocationIterator : global::System.ID
         return __hs_handle;
     }
 
-    public void __begin()
-    {
-        NativeMethods.TablePtr->C0.hs_method_1967b91b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __begin() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __end()
-    {
-        NativeMethods.TablePtr->C0.hs_method_216c43de((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __end() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BaseBlockLocationIterator Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseBlockLocationIterator arg0)
     {

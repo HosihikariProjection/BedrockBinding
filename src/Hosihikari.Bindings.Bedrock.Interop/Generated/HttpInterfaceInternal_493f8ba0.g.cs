@@ -38,10 +38,9 @@ public sealed unsafe partial class HttpInterfaceInternal : global::System.IDispo
         return __hs_handle;
     }
 
-    public void _send(nint arg0, global::Hosihikari.Bindings.Bedrock.Interop.XAsyncBlock? arg1, global::Hosihikari.Bindings.Bedrock.Interop.HC_PERFORM_ENV? arg2)
-    {
-        NativeMethods.TablePtr->C0.hs_method_bba07641((void*)__hosihikari_shim_handle, (void*)arg0, (void*)(arg1?.Handle ?? 0), (void*)(arg2?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _send(nint arg0, nint arg1, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HttpInterfaceInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.HttpInterfaceInternal arg0)
     {

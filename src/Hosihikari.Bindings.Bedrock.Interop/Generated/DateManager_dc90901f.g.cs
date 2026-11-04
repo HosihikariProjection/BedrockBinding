@@ -44,9 +44,9 @@ public sealed unsafe partial class DateManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_c7f00049((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DateManager Create(global::Hosihikari.Bindings.Bedrock.Interop.DateManager arg0)
     {
@@ -64,26 +64,21 @@ public sealed unsafe partial class DateManager : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_1abe26e5((void*)__hosihikari_shim_handle);
     }
 
-    public static int _parseTime(nint str, ulong len, nint hours, nint minutes, nint seconds)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_77ca7e9d((void*)str, len, (void*)hours, (void*)minutes, (void*)seconds);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int _parseTime(nint str, nint len, nint hours, nint minutes, nint seconds) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int _parseTimeZone(nint str, ulong len, nint type, nint hours, nint minutes)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ae1e196a((void*)str, len, (void*)type, (void*)hours, (void*)minutes);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int _parseTimeZone(nint str, nint len, nint type, nint hours, nint minutes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string getCurrentTimestampFileName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_81853420();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getCurrentTimestampFileName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static long getRealTime()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_86545dd7();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static long getRealTime() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1c37a7_Address
@@ -126,66 +121,33 @@ public sealed unsafe partial class DateManager : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.DateManager((nint)NativeMethods.TablePtr->C1.hs_method_f027b6a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_long_long__std__error_code_ parseImfFixdate(string dateHeader)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(dateHeader);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dateHeader, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_long_long__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_264e565d(__hs_stringData0, (nuint)__hs_stringByteCount0));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint parseImfFixdate(nint dateHeader) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Result<std::chrono::duration<long long>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint parseNetTimeSpan(nint str) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Result<std::chrono::duration<long long>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool toEpochTime(string strTime, nint result, nint resultType, nint resultTimeZoneMinutes)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(strTime);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(strTime, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C1.hs_method_e1b9336f(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)result, (void*)resultType, (void*)resultTimeZoneMinutes) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool toEpochTime(nint strTime, nint result, nint resultType, nint resultTimeZoneMinutes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static long toEpochTime(nint dateTime, int inputType)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_b5601dfd((void*)dateTime, inputType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static long toEpochTime(nint dateTime, nint inputType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'std::locale' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint toString(nint time, nint format, nint locale) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'std::locale' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string toString_DateTime(nint time, int outputType)
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_9cbb4e27((void*)time, outputType);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint toString_DateTime(nint time, nint outputType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint toString_NetTimeSpan(nint value) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,19 +38,17 @@ public sealed unsafe partial class MobEffectChangeDescription : global::System.I
         return __hs_handle;
     }
 
-    public void _deserializeData(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams deserializeDataParams)
-    {
-        NativeMethods.TablePtr->C2.hs_method_b853abb9((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deserializeData(nint deserializeDataParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _getJsonName()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_1e1bf375((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getJsonName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MobEffectChangeDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.MobEffectChangeDescription arg0)
     {

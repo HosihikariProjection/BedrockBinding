@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptLiveEventsUtilitiesModuleFactory : glob
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID ModuleUUID()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_99de9fba(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ModuleUUID() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptLiveEventsUtilitiesModuleFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptLiveEventsUtilitiesModuleFactory arg0)
     {

@@ -38,25 +38,21 @@ public sealed unsafe partial class ReplayStateComponent : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_c53ac208((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte _applyCorrection(global::Hosihikari.Bindings.Abi.SharedHandle? correction, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, ulong destinationTimestamp, bool addInput)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_df3d0a43((void*)__hosihikari_shim_handle, correction?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)actor.Handle, destinationTimestamp, addInput);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _applyCorrection(nint correction, nint actor, ulong destinationTimestamp, bool addInput) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int applyFrameCorrection(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Abi.SharedHandle? correction, ulong frame)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_0c4f2c93((void*)__hosihikari_shim_handle, (void*)actor.Handle, correction?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), frame);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint applyFrameCorrection(nint actor, nint correction, ulong frame) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void clearHistory()
-    {
-        NativeMethods.TablePtr->C3.hs_method_f8072eef((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clearHistory() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mCurrentTick
     {

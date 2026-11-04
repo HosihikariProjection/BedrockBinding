@@ -40,32 +40,32 @@ public sealed unsafe partial class JigsawJunction : global::System.IDisposable
 
     public int mDeltaY
     {
-        get => NativeMethods.TablePtr->C5.hs_get_3e19809c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_3e19809c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_3e19809c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_3e19809c((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mDestProjection
     {
-        get => NativeMethods.TablePtr->C5.hs_get_72a5f75b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_72a5f75b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_72a5f75b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_72a5f75b((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSourceGroundY
     {
-        get => NativeMethods.TablePtr->C5.hs_get_fc267242((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_fc267242((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_fc267242((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_fc267242((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSourceX
     {
-        get => NativeMethods.TablePtr->C5.hs_get_f6dc5b4d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_f6dc5b4d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f6dc5b4d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f6dc5b4d((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSourceZ
     {
-        get => NativeMethods.TablePtr->C5.hs_get_555b30e8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_555b30e8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_555b30e8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_555b30e8((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -74,7 +74,7 @@ public sealed unsafe partial class JigsawJunction : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_77cabf11((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_77cabf11((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

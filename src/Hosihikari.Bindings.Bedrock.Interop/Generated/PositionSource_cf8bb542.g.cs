@@ -55,10 +55,9 @@ public sealed unsafe partial class PositionSource : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ff3b7386((void*)__hosihikari_shim_handle);
     }
 
-    public void serializeTo(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C1.hs_method_15e3c585((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void serializeTo(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

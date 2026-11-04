@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemGameplayHandler : global::System.IDisposa
 
     public static ItemGameplayHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemGameplayHandler arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1448ce8c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_1448ce8c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class ItemGameplayHandler : global::System.IDisposa
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutableItemGameplayEvent_CoordinatorResult_ @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C2.hs_method_47a3c93d((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C1.hs_method_47a3c93d((void*)__hosihikari_shim_handle, (void*)@event.Handle));
     }
 
     public int handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemGameplayEvent_void_ arg0)
     {
-        return NativeMethods.TablePtr->C2.hs_method_37a2cb2c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_37a2cb2c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class ItemGameplayHandler : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f4c30e66((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_f4c30e66((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

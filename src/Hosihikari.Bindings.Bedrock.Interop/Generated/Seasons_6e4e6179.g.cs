@@ -77,15 +77,13 @@ public sealed unsafe partial class Seasons : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Seasons((nint)NativeMethods.TablePtr->C3.hs_method_2d3951c0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void postProcess(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)
-    {
-        NativeMethods.TablePtr->C3.hs_method_5c92f94c((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle, (void*)region.Handle, (void*)chunkPos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void postProcess(nint levelChunk, nint region, nint chunkPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tick()
-    {
-        NativeMethods.TablePtr->C3.hs_method_53bdec67((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

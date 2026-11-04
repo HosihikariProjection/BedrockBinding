@@ -40,12 +40,12 @@ public sealed unsafe partial class AudioMixer : global::System.IDisposable
 
     public bool AddSource(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source? arg0)
     {
-        return NativeMethods.TablePtr->C5.hs_method_031f1662((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_031f1662((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0)) != 0;
     }
 
     public static AudioMixer Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_3c8e4b33((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_3c8e4b33((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,12 +56,12 @@ public sealed unsafe partial class AudioMixer : global::System.IDisposable
 
     public void Mix(ulong arg0, nint arg1)
     {
-        NativeMethods.TablePtr->C5.hs_method_5c8364c9((void*)__hosihikari_shim_handle, arg0, (void*)arg1);
+        NativeMethods.TablePtr->C4.hs_method_5c8364c9((void*)__hosihikari_shim_handle, arg0, (void*)arg1);
     }
 
     public void RemoveSource(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioMixer_Nested.Source? arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_a3b5f246((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
+        NativeMethods.TablePtr->C4.hs_method_a3b5f246((void*)__hosihikari_shim_handle, (void*)(arg0?.Handle ?? 0));
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class AudioMixer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_a90be175((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_a90be175((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

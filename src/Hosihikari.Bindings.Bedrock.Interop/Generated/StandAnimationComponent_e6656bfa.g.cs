@@ -40,14 +40,14 @@ public sealed unsafe partial class StandAnimationComponent : global::System.IDis
 
     public float mStandAnim
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4cb67771((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_4cb67771((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4cb67771((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4cb67771((void*)__hosihikari_shim_handle, value);
     }
 
     public float mStandAnimO
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c30fe4de((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_c30fe4de((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c30fe4de((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c30fe4de((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class StandAnimationComponent : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e6656bfa((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e6656bfa((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

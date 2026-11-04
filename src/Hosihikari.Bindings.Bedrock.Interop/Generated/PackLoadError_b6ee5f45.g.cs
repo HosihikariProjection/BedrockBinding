@@ -41,36 +41,36 @@ public sealed unsafe partial class PackLoadError : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mErrorParameters_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c89e09c3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c89e09c3((void*)__hosihikari_shim_handle);
     }
 
     public int mErrorValue
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a1af3f1d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a1af3f1d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a1af3f1d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a1af3f1d((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPackErrorType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_5f889393((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_5f889393((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_5f889393((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_5f889393((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getEventErrorMessageMap() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the return type needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getLocErrorMessageMap() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the return type needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PackLoadError Create(global::Hosihikari.Bindings.Bedrock.Interop.PackLoadError arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_5ef9dd18((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_5ef9dd18((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -94,7 +94,7 @@ public sealed unsafe partial class PackLoadError : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b6ee5f45((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b6ee5f45((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,14 +40,14 @@ public sealed unsafe partial class SyncedPlayerMovementSettings : global::System
 
     public bool ServerAuthBlockBreaking
     {
-        get => NativeMethods.TablePtr->C4.hs_get_609f6c04((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_609f6c04((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_609f6c04((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_609f6c04((void*)__hosihikari_shim_handle, value);
     }
 
     public int mRewindHistorySize
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ef60b4ff((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_ef60b4ff((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ef60b4ff((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ef60b4ff((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class SyncedPlayerMovementSettings : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a91eb7ef((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a91eb7ef((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

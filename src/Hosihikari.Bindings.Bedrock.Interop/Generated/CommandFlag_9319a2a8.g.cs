@@ -40,7 +40,7 @@ public sealed unsafe partial class CommandFlag : global::System.IDisposable
 
     public static CommandFlag Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8597f4af();
+        var handle = NativeMethods.TablePtr->C0.hs_create_8597f4af();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class CommandFlag : global::System.IDisposable
 
     public static CommandFlag Create(ushort value)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_7590a310(value);
+        var handle = NativeMethods.TablePtr->C0.hs_create_7590a310(value);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,33 +62,33 @@ public sealed unsafe partial class CommandFlag : global::System.IDisposable
 
     public bool operator_not_equal(global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag rhs)
     {
-        return NativeMethods.TablePtr->C1.hs_method_2abd3abc((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_2abd3abc((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag rhs)
     {
-        return NativeMethods.TablePtr->C1.hs_method_b3beb9e1((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_b3beb9e1((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag operator_operator__(ushort rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)NativeMethods.TablePtr->C1.hs_method_9cc710d1((void*)__hosihikari_shim_handle, rhs), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)NativeMethods.TablePtr->C0.hs_method_9cc710d1((void*)__hosihikari_shim_handle, rhs), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag operator_operator__(global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)NativeMethods.TablePtr->C1.hs_method_233b19b4((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)NativeMethods.TablePtr->C0.hs_method_233b19b4((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag remove(ushort rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)NativeMethods.TablePtr->C1.hs_method_3e59d480((void*)__hosihikari_shim_handle, rhs), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandFlag((nint)NativeMethods.TablePtr->C0.hs_method_3e59d480((void*)__hosihikari_shim_handle, rhs), false);
     }
 
     public ushort value
     {
-        get => NativeMethods.TablePtr->C1.hs_get_a7d73052((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_a7d73052((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_a7d73052((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_a7d73052((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -97,7 +97,7 @@ public sealed unsafe partial class CommandFlag : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_9319a2a8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_9319a2a8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

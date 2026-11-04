@@ -38,10 +38,9 @@ public sealed unsafe partial class ActorSpawnRuleGroup : global::System.IDisposa
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.IWorldRegistriesProvider registries, nint spawnPlacements, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, nint linkedAssetValidator, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_4bda669e((void*)__hosihikari_shim_handle, (void*)resourcePackManager.Handle, (void*)registries.Handle, (void*)spawnPlacements, (void*)ctx.Handle, (void*)linkedAssetValidator, (void*)experiments.Handle, (void*)eventing.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint resourcePackManager, nint registries, nint spawnPlacements, nint ctx, nint linkedAssetValidator, nint experiments, nint eventing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorSpawnRuleGroup Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class ActorSpawnRuleGroup : global::System.IDisposa
         return new ActorSpawnRuleGroup((nint)handle);
     }
 
-    public static ActorSpawnRuleGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.IWorldRegistriesProvider registries, nint spawnPlacements, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, nint linkedAssetValidator, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_3c23e21c((void*)resourcePackManager.Handle, (void*)registries.Handle, (void*)spawnPlacements, (void*)ctx.Handle, (void*)linkedAssetValidator, (void*)experiments.Handle, (void*)eventing.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorSpawnRuleGroup((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ActorSpawnRuleGroup Create(nint resourcePackManager, nint registries, nint spawnPlacements, nint ctx, nint linkedAssetValidator, nint experiments, nint eventing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorSpawnRuleGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup arg0)
     {
@@ -81,24 +73,9 @@ public sealed unsafe partial class ActorSpawnRuleGroup : global::System.IDisposa
         return NativeMethods.TablePtr->C0.hs_method_ddb2a1b1((void*)__hosihikari_shim_handle, (void*)id.Handle);
     }
 
-    public int getDelayEnd(string id)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(id);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(id, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C0.hs_method_d484de81((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int getDelayEnd(nint id) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCategoryLookup_Address
@@ -123,10 +100,9 @@ public sealed unsafe partial class ActorSpawnRuleGroup : global::System.IDisposa
         return new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleGroup((nint)NativeMethods.TablePtr->C0.hs_method_8b3b623b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void resetDelayEnd(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules spawnRules, ulong age, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        NativeMethods.TablePtr->C0.hs_method_991e7784((void*)__hosihikari_shim_handle, (void*)spawnRules.Handle, age, (void*)random.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void resetDelayEnd(nint spawnRules, ulong age, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

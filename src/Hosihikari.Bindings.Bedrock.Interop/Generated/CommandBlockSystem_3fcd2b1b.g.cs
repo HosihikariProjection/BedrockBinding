@@ -38,14 +38,13 @@ public sealed unsafe partial class CommandBlockSystem : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f3c61710((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CommandBlockSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_653169f6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_653169f6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,14 +53,13 @@ public sealed unsafe partial class CommandBlockSystem : global::System.IDisposab
         return new CommandBlockSystem((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_259d086b());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_3e1f4b96((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C0.hs_method_3e1f4b96((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -71,7 +69,7 @@ public sealed unsafe partial class CommandBlockSystem : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_3fcd2b1b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_3fcd2b1b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

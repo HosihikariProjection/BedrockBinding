@@ -40,31 +40,31 @@ public sealed unsafe partial class ProjectileHitState
 
     public bool mDamageOrEffectsApplied
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c6d1f0d6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_c6d1f0d6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_c6d1f0d6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_c6d1f0d6((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mDelayedHandlingNeeded
     {
-        get => NativeMethods.TablePtr->C3.hs_get_9f2b6b06((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_9f2b6b06((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_9f2b6b06((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_9f2b6b06((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mDestroyOnHit
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e2b5dab6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_e2b5dab6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e2b5dab6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_e2b5dab6((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mDestroyOnHitRequiresDamage
     {
-        get => NativeMethods.TablePtr->C3.hs_get_56a3379f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_56a3379f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_56a3379f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_56a3379f((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsTargetInvulnerable
     {
-        get => NativeMethods.TablePtr->C3.hs_get_6c6fef96((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_6c6fef96((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_6c6fef96((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_6c6fef96((void*)__hosihikari_shim_handle, value);
     }
 }

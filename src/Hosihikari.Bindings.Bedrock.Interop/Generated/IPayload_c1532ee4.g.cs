@@ -38,10 +38,9 @@ public sealed unsafe partial class IPayload : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny _runOn(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId arg0, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.NativeRuntime arg1, byte? arg2)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)NativeMethods.TablePtr->C3.hs_method_f65f31f3((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2 ?? default(byte), arg2.HasValue));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _runOn(nint arg0, nint arg1, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPayload arg0)
     {

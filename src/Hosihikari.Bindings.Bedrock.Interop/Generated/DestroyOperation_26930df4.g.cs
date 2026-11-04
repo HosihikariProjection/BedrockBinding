@@ -40,34 +40,31 @@ public sealed unsafe partial class DestroyOperation : global::System.IDisposable
 
     public bool mErrored
     {
-        get => NativeMethods.TablePtr->C3.hs_get_692e1a9f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_692e1a9f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_692e1a9f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_692e1a9f((void*)__hosihikari_shim_handle, value);
     }
 
     public int mInternalState
     {
-        get => NativeMethods.TablePtr->C3.hs_get_16447fda((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_16447fda((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_16447fda((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_16447fda((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool __init(global::Hosihikari.Bindings.Abi.SharedHandle? databasePtr, global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.TrackingRecord record)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_58abc7a2((void*)__hosihikari_shim_handle, databasePtr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)record.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __init(nint databasePtr, nint record) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool __tick(global::Hosihikari.Bindings.Abi.SharedHandle? arg0, global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.TrackingRecord arg1)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_7f8c75cb((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)arg1.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __tick(nint arg0, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _getDescription()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d3dfaab2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getDescription() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DestroyOperation Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.DestroyOperation arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c0d32a2c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_c0d32a2c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,23 +75,23 @@ public sealed unsafe partial class DestroyOperation : global::System.IDisposable
 
     public bool _init(global::Hosihikari.Bindings.Abi.SharedHandle? databasePtr, global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.TrackingRecord record)
     {
-        return NativeMethods.TablePtr->C3.hs_method_2fe57003((void*)__hosihikari_shim_handle, databasePtr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)record.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_2fe57003((void*)__hosihikari_shim_handle, databasePtr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)record.Handle) != 0;
     }
 
     public bool _tick(global::Hosihikari.Bindings.Abi.SharedHandle? arg0, global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.TrackingRecord arg1)
     {
-        return NativeMethods.TablePtr->C3.hs_method_c55e89a3((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)arg1.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_c55e89a3((void*)__hosihikari_shim_handle, arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)arg1.Handle) != 0;
     }
 
     public nint getDescription()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_7dde7067((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_7dde7067((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStorageTaskHandle_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e56d954b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e56d954b((void*)__hosihikari_shim_handle);
     }
 
 
@@ -104,7 +101,7 @@ public sealed unsafe partial class DestroyOperation : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_26930df4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_26930df4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

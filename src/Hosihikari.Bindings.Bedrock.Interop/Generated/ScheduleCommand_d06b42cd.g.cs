@@ -67,10 +67,9 @@ public sealed unsafe partial class ScheduleCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_7ceaf265((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C3.hs_method_a138d148((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScheduleCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ScheduleCommand arg0)
     {
@@ -83,10 +82,9 @@ public sealed unsafe partial class ScheduleCommand : global::System.IDisposable
         return new ScheduleCommand((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScheduleCommand_Nested.FunctionInfo _tryGetFunction(global::Hosihikari.Bindings.Bedrock.Interop.FunctionManager functionManager, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScheduleCommand_Nested.FunctionInfo((nint)NativeMethods.TablePtr->C3.hs_method_ff58671f((void*)__hosihikari_shim_handle, (void*)functionManager.Handle, (void*)output.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _tryGetFunction(nint functionManager, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {

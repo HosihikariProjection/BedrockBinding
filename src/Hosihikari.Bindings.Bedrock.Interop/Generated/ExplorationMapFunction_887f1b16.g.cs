@@ -38,15 +38,13 @@ public sealed unsafe partial class ExplorationMapFunction : global::System.IDisp
         return __hs_handle;
     }
 
-    public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d1d4ea93((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyPreVersion(nint item, nint arg1, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getFunctionType()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_05bf7526((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getFunctionType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ExplorationMapFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplorationMapFunction arg0)
     {

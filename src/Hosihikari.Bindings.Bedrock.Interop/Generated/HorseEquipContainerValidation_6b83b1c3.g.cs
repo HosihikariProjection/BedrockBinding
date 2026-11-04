@@ -38,38 +38,33 @@ public sealed unsafe partial class HorseEquipContainerValidation : global::Syste
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_e00df962((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getAllowedAddCount(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase arg1)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_8074ed54((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getAllowedAddCount(nint arg0, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getAvailableSetCount(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_700f2190((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getAvailableSetCount(int slot, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_0fe1bfed((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerSize(nint screenContext, nint container) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_742c8c1b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isItemAllowedInSlot(nint arg0, nint slot, nint item, nint amount, bool arg4) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HorseEquipContainerValidation Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c624bf99();
+        var handle = NativeMethods.TablePtr->C1.hs_create_c624bf99();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,20 +73,13 @@ public sealed unsafe partial class HorseEquipContainerValidation : global::Syste
         return new HorseEquipContainerValidation((nint)handle);
     }
 
-    public static HorseEquipContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_0a56e8d9((void*)screenContext.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new HorseEquipContainerValidation((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static HorseEquipContainerValidation Create(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HorseEquipContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.HorseEquipContainerValidation arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_92eaf64e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_92eaf64e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -102,34 +90,34 @@ public sealed unsafe partial class HorseEquipContainerValidation : global::Syste
 
     public int getAllowedAddCount(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase arg1)
     {
-        return NativeMethods.TablePtr->C2.hs_method_4010a39b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_4010a39b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
     }
 
     public int getAvailableSetCount(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_67a29322((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_67a29322((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
     }
 
     public int getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
     {
-        return NativeMethods.TablePtr->C2.hs_method_0c357e15((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_0c357e15((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
     }
 
     public bool isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
     {
-        return NativeMethods.TablePtr->C2.hs_method_1dfe0cc6((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_1dfe0cc6((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mArmorAllowedItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_cb9e4dde((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_cb9e4dde((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSaddleAllowedItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_48cb85ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_48cb85ba((void*)__hosihikari_shim_handle);
     }
 
 
@@ -139,7 +127,7 @@ public sealed unsafe partial class HorseEquipContainerValidation : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6b83b1c3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_6b83b1c3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

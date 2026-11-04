@@ -38,9 +38,9 @@ public sealed unsafe partial class LegacyBlockInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'FlatteningUtils::BlockNameRefAuxVariant' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(int legacyId_, nint legacyFullName_, nint legacyRawName_, byte maxAuxValue_, nint newBlockNameAuxVariants_, int startVariant) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'FlatteningUtils::BlockNameRefAuxVariant' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyBlockInfo Create()
     {
@@ -64,9 +64,9 @@ public sealed unsafe partial class LegacyBlockInfo : global::System.IDisposable
         return new LegacyBlockInfo((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'FlatteningUtils::BlockNameRefAuxVariant' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static LegacyBlockInfo Create(int legacyId_, nint legacyFullName_, nint legacyRawName_, byte maxAuxValue_, nint newBlockNameAuxVariants_, int startVariant) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'FlatteningUtils::BlockNameRefAuxVariant' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyFullName_Address

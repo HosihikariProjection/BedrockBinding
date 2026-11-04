@@ -38,10 +38,9 @@ public sealed unsafe partial class EditorTickFilterSystem : global::System.IDisp
         return __hs_handle;
     }
 
-    public static void _addPauseTickNeeded(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.ActorTickNeededComponent arg1, nint modifier)
-    {
-        NativeMethods.TablePtr->C1.hs_method_85ea5890((void*)entity.Handle, (void*)arg1.Handle, (void*)modifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _addPauseTickNeeded(nint entity, nint arg1, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

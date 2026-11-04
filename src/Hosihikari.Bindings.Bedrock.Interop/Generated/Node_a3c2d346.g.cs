@@ -40,7 +40,7 @@ public sealed unsafe partial class Node : global::System.IDisposable
 
     public static Node Create(global::Hosihikari.Bindings.Bedrock.Interop.RTree_Nested.Node arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d8943e91((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d8943e91((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,42 +49,41 @@ public sealed unsafe partial class Node : global::System.IDisposable
         return new Node((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint branch(nint children) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBiome_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d8ae85d7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d8ae85d7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChildren_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_216424d3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_216424d3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParameterSpace_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d2c77ffd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d2c77ffd((void*)__hosihikari_shim_handle);
     }
 
     public long mTotalMagnitude
     {
-        get => NativeMethods.TablePtr->C3.hs_get_5e69a289((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_5e69a289((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_5e69a289((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_5e69a289((void*)__hosihikari_shim_handle, value);
     }
 
-    public void search(global::Hosihikari.Bindings.Bedrock.Interop.ClimateUtils.TargetSpace target, nint closestLeaf)
-    {
-        NativeMethods.TablePtr->C3.hs_method_37edcfa6((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)closestLeaf);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void search(nint target, nint closestLeaf) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void sort(nint children, int dimension, bool absolute) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -93,7 +92,7 @@ public sealed unsafe partial class Node : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a3c2d346((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a3c2d346((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

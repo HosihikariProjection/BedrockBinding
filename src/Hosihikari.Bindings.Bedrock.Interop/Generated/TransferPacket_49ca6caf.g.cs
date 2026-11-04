@@ -89,10 +89,9 @@ public sealed unsafe partial class TransferPacket : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_97528244((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.TransferPacketPayload payload)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_abfd9e85((void*)__hosihikari_shim_handle, (void*)payload.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint payload) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _disallowBatching()
     {
@@ -146,9 +145,9 @@ public sealed unsafe partial class TransferPacket : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
@@ -176,16 +175,9 @@ public sealed unsafe partial class TransferPacket : global::System.IDisposable
         return new TransferPacket((nint)handle);
     }
 
-    public static TransferPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.TransferPacketPayload payload)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c0725f43((void*)payload.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TransferPacket((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static TransferPacket Create(nint payload) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TransferPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.TransferPacket arg0)
     {

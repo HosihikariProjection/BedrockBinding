@@ -67,10 +67,9 @@ public sealed unsafe partial class LocateCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_4da45a64((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C2.hs_method_97a1c16c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LocateCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.LocateCommand arg0)
     {
@@ -106,10 +105,9 @@ public sealed unsafe partial class LocateCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_03ac60f3((void*)__hosihikari_shim_handle, value);
     }
 
-    public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        NativeMethods.TablePtr->C2.hs_method_104e7412((void*)registry.Handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void setup(nint registry, nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool useNewChunksOnly
     {

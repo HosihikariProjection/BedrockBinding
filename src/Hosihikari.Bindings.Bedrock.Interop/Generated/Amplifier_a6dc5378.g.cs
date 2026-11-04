@@ -38,20 +38,17 @@ public sealed unsafe partial class Amplifier : global::System.IDisposable
         return __hs_handle;
     }
 
-    public float _getAmount(int amplification, float scale)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_229da6d8((void*)__hosihikari_shim_handle, amplification, scale);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getAmount(int amplification, float scale) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getTickInterval(int amplification)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_c87d53ec((void*)__hosihikari_shim_handle, amplification);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getTickInterval(int amplification) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _shouldBuff(int remainingDuration, int amplification)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_6b72634e((void*)__hosihikari_shim_handle, remainingDuration, amplification) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _shouldBuff(int remainingDuration, int amplification) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Amplifier Create(global::Hosihikari.Bindings.Bedrock.Interop.Amplifier arg0)
     {

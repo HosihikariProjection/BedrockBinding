@@ -38,10 +38,9 @@ public sealed unsafe partial class GameRule : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_e306df6d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public nint _ctor(nint arg0) =>
@@ -71,40 +70,18 @@ public sealed unsafe partial class GameRule : global::System.IDisposable
         }
     }
 
-    public nint _ctor(string name, bool value, bool shouldSave, bool allowInCommand, bool requiresCheats, bool canBeModifiedByPlayer)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_ea98f5f3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, value, shouldSave, allowInCommand, requiresCheats, canBeModifiedByPlayer);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint name, bool value, bool shouldSave, bool allowInCommand, bool requiresCheats, bool canBeModifiedByPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
         NativeMethods.TablePtr->C1.hs_method_35fe4ebe((void*)__hosihikari_shim_handle);
     }
 
-    public static GameRule Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_1dd7c27f();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GameRule((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static GameRule Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public static GameRule Create(nint arg0) =>
@@ -146,35 +123,13 @@ public sealed unsafe partial class GameRule : global::System.IDisposable
         }
     }
 
-    public static GameRule Create(string name, bool value, bool shouldSave, bool allowInCommand, bool requiresCheats, bool canBeModifiedByPlayer)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C1.hs_create_92cc24d5(__hs_stringData0, (nuint)__hs_stringByteCount0, value, shouldSave, allowInCommand, requiresCheats, canBeModifiedByPlayer);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static GameRule Create(nint name, bool value, bool shouldSave, bool allowInCommand, bool requiresCheats, bool canBeModifiedByPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-            return new GameRule((nint)handle);
-        }
-    }
-
-    public bool _set(nint v, nint pValidated, global::Hosihikari.Bindings.Bedrock.Interop.GameRule_Nested.ValidationError? errorOutput)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_4827be25((void*)__hosihikari_shim_handle, (void*)v, (void*)pValidated, (void*)(errorOutput?.Handle ?? 0)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _set(nint v, nint pValidated, nint errorOutput) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAllowUseInCommand
     {
@@ -272,38 +227,21 @@ public sealed unsafe partial class GameRule : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_413ea7a8((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_0cb5c083(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameRule operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.GameRule arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameRule((nint)NativeMethods.TablePtr->C1.hs_method_ce014506((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_ce014506(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.GameRule other)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_a1857ed8((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.GameRule setName(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.GameRule((nint)NativeMethods.TablePtr->C1.hs_method_a09ffd33((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint setName(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

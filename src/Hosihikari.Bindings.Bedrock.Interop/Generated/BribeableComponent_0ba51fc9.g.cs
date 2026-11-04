@@ -38,20 +38,17 @@ public sealed unsafe partial class BribeableComponent : global::System.IDisposab
         return __hs_handle;
     }
 
-    public bool _canBribe(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_56e92ee7((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canBribe(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool clientBribeCheck(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_ae2660ba((void*)__hosihikari_shim_handle, (void*)owner.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool clientBribeCheck(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C0.hs_method_b051838b((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getInteraction(nint owner, nint player, nint handSlot) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mBribeCooldown
     {
@@ -76,10 +73,9 @@ public sealed unsafe partial class BribeableComponent : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C0.hs_get_4a8ac16e((void*)__hosihikari_shim_handle);
     }
 
-    public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
-    {
-        NativeMethods.TablePtr->C0.hs_method_00aab243((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)tag.Handle, (void*)dataLoadHelper.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void readAdditionalSaveData(nint owner, nint tag, nint dataLoadHelper) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

@@ -40,7 +40,7 @@ public sealed unsafe partial class CraftRecipeOptionalActionData : global::Syste
 
     public static CraftRecipeOptionalActionData Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.CraftRecipeOptionalActionData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2a627ff9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_2a627ff9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class CraftRecipeOptionalActionData : global::Syste
 
     public int mFilteredStringIndex
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2862c6c8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_2862c6c8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_2862c6c8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_2862c6c8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecipeNetId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_023129b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_023129b6((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class CraftRecipeOptionalActionData : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_eedfb592((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_eedfb592((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

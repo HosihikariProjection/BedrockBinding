@@ -38,20 +38,19 @@ public sealed unsafe partial class PlayerScoreboardId : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId INVALID()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId((nint)NativeMethods.TablePtr->C3.hs_method_a2d0bd6e(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint INVALID() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public long mActorUniqueId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ba0275b9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_ba0275b9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_ba0275b9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_ba0275b9((void*)__hosihikari_shim_handle, value);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardId rhs)
     {
-        return NativeMethods.TablePtr->C3.hs_method_ae881a45((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_ae881a45((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
     }
 
     public void Dispose()
@@ -60,7 +59,7 @@ public sealed unsafe partial class PlayerScoreboardId : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_85f8cdac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_85f8cdac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

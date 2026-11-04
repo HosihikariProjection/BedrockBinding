@@ -44,22 +44,17 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_2ae248a3((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_4a813557((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _fetchClosestVillage(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, int maxDistFromVillageBounds, uint searchRadius)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_6feab9e8((void*)__hosihikari_shim_handle, (void*)position.Handle, maxDistFromVillageBounds, searchRadius);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _fetchClosestVillage(nint position, int maxDistFromVillageBounds, uint searchRadius) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getVillageByID(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID villageID)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_f6024e53((void*)__hosihikari_shim_handle, (void*)villageID.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getVillageByID(nint villageID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VillageManager Create()
     {
@@ -72,16 +67,9 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
         return new VillageManager((nint)handle);
     }
 
-    public static VillageManager Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_408142a9((void*)dimension.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new VillageManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static VillageManager Create(nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VillageManager Create(global::Hosihikari.Bindings.Bedrock.Interop.VillageManager arg0)
     {
@@ -94,30 +82,25 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
         return new VillageManager((nint)handle);
     }
 
-    public void _assignPOIOnly(global::Hosihikari.Bindings.Abi.SharedHandle? pi)
-    {
-        NativeMethods.TablePtr->C4.hs_method_0458fe55((void*)__hosihikari_shim_handle, pi?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _assignPOIOnly(nint pi) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _loadPOIBlueprints()
-    {
-        NativeMethods.TablePtr->C4.hs_method_ffe0c738((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _loadPOIBlueprints() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _processNextUnclusteredPOIQuery()
-    {
-        NativeMethods.TablePtr->C4.hs_method_13715f1d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _processNextUnclusteredPOIQuery() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _removeEligibleVillages()
-    {
-        NativeMethods.TablePtr->C4.hs_method_08b5ba2a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _removeEligibleVillages() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _saveAllVillages(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
-    {
-        NativeMethods.TablePtr->C4.hs_method_8e228fb6((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _saveAllVillages(nint levelStorage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _tryAssignPOIOrCreateVillage(global::Hosihikari.Bindings.Abi.SharedHandle? pi)
     {
@@ -130,11 +113,9 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? fetchClosestVillageMostSuitableForDweller(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, int maxDistFromVillageBounds, uint searchRadius)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_82e66ed0((void*)__hosihikari_shim_handle, (void*)position.Handle, maxDistFromVillageBounds, searchRadius);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint fetchClosestVillageMostSuitableForDweller(nint position, int maxDistFromVillageBounds, uint searchRadius) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getClosestVillageWithRaid(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
@@ -148,15 +129,13 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public void initializeWithLevelStorageManagerConnector(global::Hosihikari.Bindings.Bedrock.Interop.ILevelStorageManagerConnector levelStorageManagerConnector)
-    {
-        NativeMethods.TablePtr->C4.hs_method_16bef584((void*)__hosihikari_shim_handle, (void*)levelStorageManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initializeWithLevelStorageManagerConnector(nint levelStorageManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isValidPOIType(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_74401827((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isValidPOIType(nint pos, nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClusteredPOIs_Address
@@ -247,20 +226,17 @@ public sealed unsafe partial class VillageManager : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.VillageManager((nint)NativeMethods.TablePtr->C4.hs_method_85127e18((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void submitFindPOIQuery(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorID)
-    {
-        NativeMethods.TablePtr->C4.hs_method_eb08aefb((void*)__hosihikari_shim_handle, (void*)actorID.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void submitFindPOIQuery(nint actorID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Tick tick)
-    {
-        NativeMethods.TablePtr->C4.hs_method_a65eefa3((void*)__hosihikari_shim_handle, (void*)tick.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick(nint tick) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tickVillages(global::Hosihikari.Bindings.Bedrock.Interop.Tick tick, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 position, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5a64f311((void*)__hosihikari_shim_handle, (void*)tick.Handle, (void*)position.Handle, (void*)region.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tickVillages(nint tick, nint position, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

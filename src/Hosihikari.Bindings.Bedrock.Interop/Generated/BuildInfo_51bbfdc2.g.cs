@@ -40,17 +40,17 @@ public sealed unsafe partial class BuildInfo : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Common.BuildInfo arg0)
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_1c78d575((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return (nint)NativeMethods.TablePtr->C0.hs_method_1c78d575((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_89666bba((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C0.hs_method_89666bba((void*)__hosihikari_shim_handle);
     }
 
     public static BuildInfo Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f4b0dc54();
+        var handle = NativeMethods.TablePtr->C0.hs_create_f4b0dc54();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class BuildInfo : global::System.IDisposable
 
     public static BuildInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Common.BuildInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_39291d54((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_39291d54((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,42 +73,42 @@ public sealed unsafe partial class BuildInfo : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBranchId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4ba1e133((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_4ba1e133((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBuildId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_caf7cee7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_caf7cee7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCommitId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d9a8c9a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_d9a8c9a0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlavor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3737a4ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_3737a4ba((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_fa3b6fe0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_fa3b6fe0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMergeBaseSha_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_faddc377((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_faddc377((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Common.BuildInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Common.BuildInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Common.BuildInfo((nint)NativeMethods.TablePtr->C1.hs_method_d5fcc185((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Common.BuildInfo((nint)NativeMethods.TablePtr->C0.hs_method_d5fcc185((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -118,7 +118,7 @@ public sealed unsafe partial class BuildInfo : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_51bbfdc2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_51bbfdc2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

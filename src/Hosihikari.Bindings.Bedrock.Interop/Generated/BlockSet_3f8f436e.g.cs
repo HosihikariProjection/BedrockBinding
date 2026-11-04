@@ -40,7 +40,7 @@ public sealed unsafe partial class BlockSet : global::System.IDisposable
 
     public static BlockSet Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.PreferredPathComponentDefinition_Nested.BlockSet arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a7da0edc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a7da0edc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class BlockSet : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockDescriptors_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_39a02f33((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_39a02f33((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCost_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ab5e95d1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ab5e95d1((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class BlockSet : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3f8f436e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_3f8f436e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

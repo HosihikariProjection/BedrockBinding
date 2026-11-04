@@ -40,7 +40,7 @@ public sealed unsafe partial class ILevelCrashDumpManager : global::System.IDisp
 
     public static ILevelCrashDumpManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelCrashDumpManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4f10c277((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_4f10c277((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ILevelCrashDumpManager : global::System.IDisp
 
     public void setCrashDumpLogStringID(ushort crashDumpLogStringID)
     {
-        NativeMethods.TablePtr->C2.hs_method_5a55768c((void*)__hosihikari_shim_handle, crashDumpLogStringID);
+        NativeMethods.TablePtr->C1.hs_method_5a55768c((void*)__hosihikari_shim_handle, crashDumpLogStringID);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class ILevelCrashDumpManager : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e4e791f6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e4e791f6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

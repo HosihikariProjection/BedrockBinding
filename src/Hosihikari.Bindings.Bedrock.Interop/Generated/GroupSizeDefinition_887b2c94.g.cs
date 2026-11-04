@@ -60,10 +60,9 @@ public sealed unsafe partial class GroupSizeDefinition : global::System.IDisposa
         return new GroupSizeDefinition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C1.hs_method_b77e096b(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka73a42_Address

@@ -49,16 +49,13 @@ public sealed unsafe partial class BlockStateCommandParam : global::System.IDisp
         return new BlockStateCommandParam((nint)handle);
     }
 
-    public bool _createCompoundTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_712697b9((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)output.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _createCompoundTag(nint tag, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockState? getBlockState(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_aa5d9e9d((void*)__hosihikari_shim_handle, (void*)block.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockState((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getBlockState(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockState_Address

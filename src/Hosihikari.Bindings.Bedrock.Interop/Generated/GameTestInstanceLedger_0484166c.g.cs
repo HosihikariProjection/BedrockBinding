@@ -38,20 +38,17 @@ public sealed unsafe partial class GameTestInstanceLedger : global::System.IDisp
         return __hs_handle;
     }
 
-    public void _onTestStructureLoaded(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance testInstance)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f077a647((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestStructureLoaded(nint testInstance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string GAME_TEST_INSTANCE_PREFIX()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_dd678cee();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint GAME_TEST_INSTANCE_PREFIX() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameTestInstanceLedger Create()
     {
@@ -75,10 +72,9 @@ public sealed unsafe partial class GameTestInstanceLedger : global::System.IDisp
         return new GameTestInstanceLedger((nint)handle);
     }
 
-    public void clear(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
-    {
-        NativeMethods.TablePtr->C1.hs_method_5de08569((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clear(nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk275e5b_Address

@@ -38,10 +38,9 @@ public sealed unsafe partial class EventingRequestSystem : global::System.IDispo
         return __hs_handle;
     }
 
-    public static void _eventingRequestSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.EventingRequestQueueComponent eventingRequestQueueComponent, global::Hosihikari.Bindings.Bedrock.Interop.LevelComponent levelComponent)
-    {
-        NativeMethods.TablePtr->C1.hs_method_cde04d42((void*)arg0.Handle, (void*)eventingRequestQueueComponent.Handle, (void*)levelComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _eventingRequestSystem(nint arg0, nint eventingRequestQueueComponent, nint levelComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

@@ -38,42 +38,25 @@ public sealed unsafe partial class Stopwatch : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _print(string prepend)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(prepend);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(prepend, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_5e69f951((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _print(nint prepend) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public double _stop()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_277739e0((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public double _stop() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public double _stopContinue()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_17615d02((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public double _stopContinue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Stopwatch Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_eae1dfd3();
+        var handle = NativeMethods.TablePtr->C3.hs_create_eae1dfd3();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,7 +67,7 @@ public sealed unsafe partial class Stopwatch : global::System.IDisposable
 
     public static Stopwatch Create(global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f6797ce6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_f6797ce6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -96,36 +79,36 @@ public sealed unsafe partial class Stopwatch : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk81e7ba_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_51f90a16((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_51f90a16((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka98630_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f065054c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f065054c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkacd501_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_06632072((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_06632072((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc4d592_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3d007eb0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3d007eb0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkec6ec1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_778a374b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_778a374b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch((nint)NativeMethods.TablePtr->C4.hs_method_c274c909((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Stopwatch((nint)NativeMethods.TablePtr->C3.hs_method_c274c909((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void print(string prepend)
@@ -143,18 +126,18 @@ public sealed unsafe partial class Stopwatch : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(prepend, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C4.hs_method_0965b8eb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C3.hs_method_0965b8eb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public double stop()
     {
-        return NativeMethods.TablePtr->C4.hs_method_0f885693((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_0f885693((void*)__hosihikari_shim_handle);
     }
 
     public double stopContinue()
     {
-        return NativeMethods.TablePtr->C4.hs_method_b9fd1b91((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_b9fd1b91((void*)__hosihikari_shim_handle);
     }
 
 
@@ -164,7 +147,7 @@ public sealed unsafe partial class Stopwatch : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d49e4c5b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d49e4c5b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

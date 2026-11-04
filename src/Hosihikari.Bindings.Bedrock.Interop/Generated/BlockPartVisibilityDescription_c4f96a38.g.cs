@@ -55,11 +55,9 @@ public sealed unsafe partial class BlockPartVisibilityDescription : global::Syst
         return new BlockPartVisibilityDescription((nint)handle);
     }
 
-    public static string NameID()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_bc648b8a();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NameID() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public string getName()
     {

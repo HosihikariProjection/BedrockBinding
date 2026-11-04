@@ -38,23 +38,21 @@ public sealed unsafe partial class Pack : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint loc, nint manifest, nint accessStrategy, nint subpacks, nint metadata, nint isBaseGameOverride) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_3a45c110((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ EDUCATION_METADATA_FILE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_450bd491(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint EDUCATION_METADATA_FILE() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Pack Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8a7f2bef();
+        var handle = NativeMethods.TablePtr->C2.hs_create_8a7f2bef();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,67 +61,67 @@ public sealed unsafe partial class Pack : global::System.IDisposable
         return new Pack((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static Pack Create(nint loc, nint manifest, nint accessStrategy, nint subpacks, nint metadata, nint isBaseGameOverride) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Pack' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createPack(nint io, nint fileLocation, nint type, nint origin, nint manifestFactory, nint keyProvider, nint report, nint zipSubDir) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Pack' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'PackMetadata' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createPackMetadata(nint type, nint manifest, nint accessStrategy, nint report) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'PackMetadata' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAccessStrategy_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b81ef798((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b81ef798((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDependenciesUpgrade_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a570440a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a570440a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mIsBaseGameOverride_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2768442c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2768442c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mManifest_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_47c22945((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_47c22945((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMetadata_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f6e6057d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f6e6057d((void*)__hosihikari_shim_handle);
     }
 
     public byte mRevision
     {
-        get => NativeMethods.TablePtr->C3.hs_get_479864a0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_479864a0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_479864a0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_479864a0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubpackInfoStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7aa7990f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7aa7990f((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void move(nint pack) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'std::vector<PackIdVersion>' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void upgradeLegacyDependencies(nint upgrade) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'std::vector<PackIdVersion>' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -132,7 +130,7 @@ public sealed unsafe partial class Pack : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_5c5be4c0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_5c5be4c0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

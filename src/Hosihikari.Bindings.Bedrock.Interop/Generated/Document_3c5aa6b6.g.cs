@@ -40,7 +40,7 @@ public sealed unsafe partial class Document : global::System.IDisposable
 
     public static Document Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.PackSettingsDefinition.Document arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_01f7cb32((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_01f7cb32((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,26 +49,22 @@ public sealed unsafe partial class Document : global::System.IDisposable
         return new Document((nint)handle);
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_15ef425c();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint VERSION()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_be880b3d();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint VERSION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_71d31296((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSettingsList_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_384805e7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_384805e7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -78,7 +74,7 @@ public sealed unsafe partial class Document : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3c5aa6b6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_3c5aa6b6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

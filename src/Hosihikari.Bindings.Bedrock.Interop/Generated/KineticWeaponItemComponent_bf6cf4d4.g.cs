@@ -40,7 +40,7 @@ public sealed unsafe partial class KineticWeaponItemComponent : global::System.I
 
     public static KineticWeaponItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.KineticWeaponItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6da4d0d5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6da4d0d5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,75 +49,71 @@ public sealed unsafe partial class KineticWeaponItemComponent : global::System.I
         return new KineticWeaponItemComponent((nint)handle);
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_7d22b6c3();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5532227c((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCreativeReach_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_53f7b811((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_53f7b811((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDamageConditions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b1b1f430((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b1b1f430((void*)__hosihikari_shim_handle);
     }
 
     public float mDamageModifier
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8aefe7e4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_8aefe7e4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8aefe7e4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8aefe7e4((void*)__hosihikari_shim_handle, value);
     }
 
     public float mDamageMultiplier
     {
-        get => NativeMethods.TablePtr->C4.hs_get_be845a64((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_be845a64((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_be845a64((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_be845a64((void*)__hosihikari_shim_handle, value);
     }
 
     public short mDelay
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9f964c48((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_9f964c48((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9f964c48((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_9f964c48((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDismountConditions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3cbd70f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3cbd70f5((void*)__hosihikari_shim_handle);
     }
 
     public float mHitboxMargin
     {
-        get => NativeMethods.TablePtr->C4.hs_get_80f9ad59((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_80f9ad59((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_80f9ad59((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_80f9ad59((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mKnockbackConditions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_56efbe99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_56efbe99((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReach_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0fc142c3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0fc142c3((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.KineticWeaponItemComponent arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_ad99aac2((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -126,7 +122,7 @@ public sealed unsafe partial class KineticWeaponItemComponent : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bf6cf4d4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_bf6cf4d4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

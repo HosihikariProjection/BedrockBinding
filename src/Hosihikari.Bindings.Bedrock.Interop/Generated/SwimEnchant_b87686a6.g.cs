@@ -40,81 +40,77 @@ public sealed unsafe partial class SwimEnchant : global::System.IDisposable
 
     public int mCompatibility
     {
-        get => NativeMethods.TablePtr->C4.hs_get_5581ee44((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_5581ee44((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_df9b02dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_df9b02dc((void*)__hosihikari_shim_handle);
     }
 
     public byte mEnchantType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_5fc2093b((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_5fc2093b((void*)__hosihikari_shim_handle);
     }
 
     public int mFrequency
     {
-        get => NativeMethods.TablePtr->C4.hs_get_53540733((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_53540733((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsAvailableInVillagerTrading
     {
-        get => NativeMethods.TablePtr->C4.hs_get_49926844((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C3.hs_get_49926844((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mIsDisabled
     {
-        get => NativeMethods.TablePtr->C4.hs_get_13cc99ae((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_13cc99ae((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_13cc99ae((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_13cc99ae((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPrimarySlots
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d887a630((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_d887a630((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScriptStringId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d55a49c7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d55a49c7((void*)__hosihikari_shim_handle);
     }
 
     public int mSecondarySlots
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1b20fe35((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_1b20fe35((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStringId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7d64d5a3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7d64d5a3((void*)__hosihikari_shim_handle);
     }
 
-    public bool __isValidEnchantmentTypeForCategory(byte type)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_dea8c0f4((void*)__hosihikari_shim_handle, type) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __isValidEnchantmentTypeForCategory(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_8fa12c94((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxLevel()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_f3ca8317((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_fa33a3fe((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SwimEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.SwimEnchant arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0c2213bc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_0c2213bc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -123,29 +119,28 @@ public sealed unsafe partial class SwimEnchant : global::System.IDisposable
         return new SwimEnchant((nint)handle);
     }
 
-    public static nint VALID_ENCHANTMENTS()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_e66416c6();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint VALID_ENCHANTMENTS() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _isValidEnchantmentTypeForCategory(byte type)
     {
-        return NativeMethods.TablePtr->C4.hs_method_4afbab75((void*)__hosihikari_shim_handle, type) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_4afbab75((void*)__hosihikari_shim_handle, type) != 0;
     }
 
     public int getMaxCost(int level)
     {
-        return NativeMethods.TablePtr->C4.hs_method_4fc13642((void*)__hosihikari_shim_handle, level);
+        return NativeMethods.TablePtr->C3.hs_method_4fc13642((void*)__hosihikari_shim_handle, level);
     }
 
     public int getMaxLevel()
     {
-        return NativeMethods.TablePtr->C4.hs_method_24a4f9ce((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_24a4f9ce((void*)__hosihikari_shim_handle);
     }
 
     public int getMinCost(int level)
     {
-        return NativeMethods.TablePtr->C4.hs_method_d2606580((void*)__hosihikari_shim_handle, level);
+        return NativeMethods.TablePtr->C3.hs_method_d2606580((void*)__hosihikari_shim_handle, level);
     }
 
 
@@ -155,7 +150,7 @@ public sealed unsafe partial class SwimEnchant : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b87686a6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b87686a6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

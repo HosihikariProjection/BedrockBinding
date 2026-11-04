@@ -38,10 +38,9 @@ public sealed unsafe partial class AppPlatformNetworkSettings : global::System.I
         return __hs_handle;
     }
 
-    public bool _requiresNetworkOutageMessaging()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_dd877d54((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _requiresNetworkOutageMessaging() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AppPlatformNetworkSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatformNetworkSettings arg0)
     {

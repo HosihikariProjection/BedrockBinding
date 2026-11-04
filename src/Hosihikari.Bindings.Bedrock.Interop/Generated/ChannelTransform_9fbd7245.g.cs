@@ -38,10 +38,9 @@ public sealed unsafe partial class ChannelTransform : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode expression, int axisIndex)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_fbe91474((void*)__hosihikari_shim_handle, (void*)expression.Handle, axisIndex);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint expression, int axisIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ChannelTransform Create()
     {
@@ -65,21 +64,13 @@ public sealed unsafe partial class ChannelTransform : global::System.IDisposable
         return new ChannelTransform((nint)handle);
     }
 
-    public static ChannelTransform Create(global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode expression, int axisIndex)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_1b99c5b9((void*)expression.Handle, axisIndex);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ChannelTransform Create(nint expression, int axisIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ChannelTransform((nint)handle);
-    }
-
-    public void animate(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams, global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientation destBoneOrientation, float scale, int boneTransformType)
-    {
-        NativeMethods.TablePtr->C0.hs_method_f9895dab((void*)__hosihikari_shim_handle, (void*)renderParams.Handle, (void*)destBoneOrientation.Handle, scale, boneTransformType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void animate(nint renderParams, nint destBoneOrientation, float scale, nint boneTransformType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAxis_Address

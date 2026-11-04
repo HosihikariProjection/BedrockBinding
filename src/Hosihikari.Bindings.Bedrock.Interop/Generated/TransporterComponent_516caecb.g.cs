@@ -134,40 +134,33 @@ public sealed unsafe partial class TransporterComponent : global::System.IDispos
         set => NativeMethods.TablePtr->C4.hs_set_0c62db46((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _addSource(global::Hosihikari.Bindings.Bedrock.Interop.CircuitSceneGraph graph, global::Hosihikari.Bindings.Bedrock.Interop.CircuitTrackingInfo info, nint dampening, nint bDirectlyPowered)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_9d03992a((void*)__hosihikari_shim_handle, (void*)graph.Handle, (void*)info.Handle, (void*)dampening, (void*)bDirectlyPowered) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _addSource(nint graph, nint info, nint dampening, nint bDirectlyPowered) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _allowConnection(global::Hosihikari.Bindings.Bedrock.Interop.CircuitSceneGraph graph, global::Hosihikari.Bindings.Bedrock.Interop.CircuitTrackingInfo info, nint directlyPowered)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_6947428e((void*)__hosihikari_shim_handle, (void*)graph.Handle, (void*)info.Handle, (void*)directlyPowered) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _allowConnection(nint graph, nint info, nint directlyPowered) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _cacheValues(global::Hosihikari.Bindings.Bedrock.Interop.CircuitSystem system, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f7718563((void*)__hosihikari_shim_handle, (void*)system.Handle, (void*)pos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _cacheValues(nint system, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _canConsumerPower()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_a185e2cf((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canConsumerPower() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _evaluate(global::Hosihikari.Bindings.Bedrock.Interop.CircuitSystem system, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_24936a58((void*)__hosihikari_shim_handle, (void*)system.Handle, (void*)pos.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _evaluate(nint system, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong _getCircuitComponentType()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_64adef88((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getCircuitComponentType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte _getLogicExecutionFlags()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_930a6509((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getLogicExecutionFlags() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TransporterComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TransporterComponent arg0)
     {
@@ -215,10 +208,9 @@ public sealed unsafe partial class TransporterComponent : global::System.IDispos
         return NativeMethods.TablePtr->C4.hs_method_67d31de1((void*)__hosihikari_shim_handle);
     }
 
-    public static bool isDotOrDirectLine(global::Hosihikari.Bindings.Bedrock.Interop.CircuitSceneGraph graph, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos nearestPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos deltaIn)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_90595889((void*)graph.Handle, (void*)nearestPos.Handle, (void*)deltaIn.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool isDotOrDirectLine(nint graph, nint nearestPos, nint deltaIn) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mCircuitComponentType_d16f6be0
     {

@@ -49,10 +49,9 @@ public sealed unsafe partial class LevelChunkMetaData : global::System.IDisposab
         return new LevelChunkMetaData((nint)handle);
     }
 
-    public void _recomputeHash()
-    {
-        NativeMethods.TablePtr->C2.hs_method_dbc436cd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _recomputeHash() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mCurrentHash
     {

@@ -60,10 +60,9 @@ public sealed unsafe partial class DefinitionInstanceGroup : global::System.IDis
         return new DefinitionInstanceGroup((nint)handle);
     }
 
-    public void combine(global::Hosihikari.Bindings.Bedrock.Interop.DefinitionInstanceGroup other)
-    {
-        NativeMethods.TablePtr->C1.hs_method_13e5a259((void*)__hosihikari_shim_handle, (void*)other.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void combine(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4e28b4_Address
@@ -76,10 +75,9 @@ public sealed unsafe partial class DefinitionInstanceGroup : global::System.IDis
         return new global::Hosihikari.Bindings.Bedrock.Interop.DefinitionInstanceGroup((nint)NativeMethods.TablePtr->C1.hs_method_fe54d581((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void subtract(global::Hosihikari.Bindings.Bedrock.Interop.DefinitionInstanceGroup other)
-    {
-        NativeMethods.TablePtr->C1.hs_method_63caf777((void*)__hosihikari_shim_handle, (void*)other.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void subtract(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

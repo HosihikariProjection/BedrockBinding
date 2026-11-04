@@ -44,24 +44,21 @@ public sealed unsafe partial class ScreenHandlerLabTable : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c745930f((void*)__hosihikari_shim_handle);
     }
 
-    public byte _endRequest()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_0014cba1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _endRequest() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte _handleAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestAction requestAction)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_fe0745ce((void*)__hosihikari_shim_handle, (void*)requestAction.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _handleAction(nint requestAction) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _postRequest(bool wasSuccess)
-    {
-        NativeMethods.TablePtr->C3.hs_method_6362e1ad((void*)__hosihikari_shim_handle, wasSuccess);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _postRequest(nint wasSuccess) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScreenHandlerLabTable Create()
     {

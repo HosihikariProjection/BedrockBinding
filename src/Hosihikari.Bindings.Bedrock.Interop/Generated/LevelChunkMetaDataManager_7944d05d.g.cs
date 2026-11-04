@@ -49,59 +49,25 @@ public sealed unsafe partial class LevelChunkMetaDataManager : global::System.ID
         return new LevelChunkMetaDataManager((nint)handle);
     }
 
-    public void _consolidateLevelChunkMetaData(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d46e5197((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _consolidateLevelChunkMetaData(nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onNewDimensionCreated(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
-    {
-        NativeMethods.TablePtr->C2.hs_method_82e00ea6((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onNewDimensionCreated(nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void inferInitialMetaDataAfterDeserialization(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64 generationSeed, int generatorType, string dimensionName, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionId, global::Hosihikari.Bindings.Bedrock.Interop.DimensionHeightRange dimensionHeightRange, nint levelChunkMetaDataBaseGameVersionWrapper, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkMetaData metaData)
-    {
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(dimensionName);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dimensionName, __hs_stringBytes3);
-        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-        {
-            NativeMethods.TablePtr->C2.hs_method_63759f88((void*)lc.Handle, (void*)generationSeed.Handle, generatorType, __hs_stringData3, (nuint)__hs_stringByteCount3, (void*)dimensionId.Handle, (void*)dimensionHeightRange.Handle, (void*)levelChunkMetaDataBaseGameVersionWrapper, (void*)metaData.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void inferInitialMetaDataAfterDeserialization(nint lc, nint generationSeed, nint generatorType, nint dimensionName, nint dimensionId, nint dimensionHeightRange, nint levelChunkMetaDataBaseGameVersionWrapper, nint metaData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void inferTargetMetaData(nint levelChunkMetaDataBaseGameVersionWrapper, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionID, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkMetaData metaData)
-    {
-        NativeMethods.TablePtr->C2.hs_method_95ab411f((void*)levelChunkMetaDataBaseGameVersionWrapper, (void*)dimensionID.Handle, (void*)metaData.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void inferTargetMetaData(nint levelChunkMetaDataBaseGameVersionWrapper, nint dimensionID, nint metaData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Abi.SharedHandle? initializeLevelChunkMetaData(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionId, string dimensionName, global::Hosihikari.Bindings.Bedrock.Interop.DimensionHeightRange dimensionHeightRange, bool use3DBiomeMaps, global::Hosihikari.Bindings.Bedrock.Interop.LevelSeed64 levelSeed, int generatorType, nint levelChunkMetaDataBaseGameVersionWrapper)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(dimensionName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dimensionName, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            var __hs_shared = NativeMethods.TablePtr->C2.hs_method_2f98ac74((void*)dimensionId.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)dimensionHeightRange.Handle, use3DBiomeMaps, (void*)levelSeed.Handle, generatorType, (void*)levelChunkMetaDataBaseGameVersionWrapper);
-            return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint initializeLevelChunkMetaData(nint dimensionId, nint dimensionName, nint dimensionHeightRange, bool use3DBiomeMaps, nint levelSeed, nint generatorType, nint levelChunkMetaDataBaseGameVersionWrapper) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelChunkMetaDataDictionary_Address
@@ -121,25 +87,21 @@ public sealed unsafe partial class LevelChunkMetaDataManager : global::System.ID
         get => (nint)NativeMethods.TablePtr->C2.hs_get_290047ab((void*)__hosihikari_shim_handle);
     }
 
-    public void registerForLevelChunkEvents(global::Hosihikari.Bindings.Bedrock.Interop.ILevelChunkEventManagerConnector levelChunkEventManagerConnector)
-    {
-        NativeMethods.TablePtr->C2.hs_method_4d0bf418((void*)__hosihikari_shim_handle, (void*)levelChunkEventManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerForLevelChunkEvents(nint levelChunkEventManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void registerOnNewDimensionCreated(global::Hosihikari.Bindings.Bedrock.Interop.IDimensionManagerConnector dimensionManagerConnector)
-    {
-        NativeMethods.TablePtr->C2.hs_method_795273d4((void*)__hosihikari_shim_handle, (void*)dimensionManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerOnNewDimensionCreated(nint dimensionManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tick()
-    {
-        NativeMethods.TablePtr->C2.hs_method_b1909af6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void updateLevelChunkMetaDataForSaving(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, nint levelChunkMetaDataBaseGameVersionWrapper, global::Hosihikari.Bindings.Bedrock.Interop.DimensionHeightRange dimensionHeightRange)
-    {
-        NativeMethods.TablePtr->C2.hs_method_64dc6b02((void*)__hosihikari_shim_handle, (void*)lc.Handle, (void*)levelChunkMetaDataBaseGameVersionWrapper, (void*)dimensionHeightRange.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void updateLevelChunkMetaDataForSaving(nint lc, nint levelChunkMetaDataBaseGameVersionWrapper, nint dimensionHeightRange) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

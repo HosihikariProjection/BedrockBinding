@@ -40,8 +40,8 @@ public sealed unsafe partial class type_id_ref : global::System.IDisposable
 
     public nint ptr
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_198c6952((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_198c6952((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_198c6952((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_198c6952((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class type_id_ref : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_feec98bb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_feec98bb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

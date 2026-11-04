@@ -38,15 +38,13 @@ public sealed unsafe partial class ScriptPackConfiguration : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_27a2f3a8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_388b1531((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptPackConfiguration Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ScriptPackConfiguration : global::System.IDis
         return new ScriptPackConfiguration((nint)handle);
     }
 
-    public static ScriptPackConfiguration Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPackConfiguration arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1f1d4201((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptPackConfiguration((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptPackConfiguration Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackPermisions_Address

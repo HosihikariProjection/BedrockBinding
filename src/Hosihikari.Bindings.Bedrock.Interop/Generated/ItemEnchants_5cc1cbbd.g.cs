@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemEnchants : global::System.IDisposable
 
     public static ItemEnchants Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchants arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_474744f4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_474744f4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,19 +49,17 @@ public sealed unsafe partial class ItemEnchants : global::System.IDisposable
         return new ItemEnchants((nint)handle);
     }
 
-    public void _fromList(global::Hosihikari.Bindings.Bedrock.Interop.ListTag tag)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f1a68da6((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _fromList(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ListTag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _toList() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ListTag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int addEnchants(global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchants enchants, bool allowNonVanilla)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_c20f36ed((void*)__hosihikari_shim_handle, (void*)enchants.Handle, allowNonVanilla);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int addEnchants(nint enchants, bool allowNonVanilla) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'EnchantResult' requires --link-carrier or --virtual-dispatch.", false)]
     public nint canEnchant(nint enchant, bool allowNonVanilla) =>
@@ -69,7 +67,7 @@ public sealed unsafe partial class ItemEnchants : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.EnchantmentInstance[] getAllEnchants()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_6aaa494f((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_6aaa494f((void*)__hosihikari_shim_handle);
         var __hs_items = (void**)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.EnchantmentInstance>() : new global::Hosihikari.Bindings.Bedrock.Interop.EnchantmentInstance[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -83,39 +81,29 @@ public sealed unsafe partial class ItemEnchants : global::System.IDisposable
     public nint getEnchantInstances() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::array<std::vector<EnchantmentInstance>, 3>' requires --link-carrier or --virtual-dispatch.");
 
-    public string[] getEnchantNames()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_d785dbd3((void*)__hosihikari_shim_handle);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getEnchantNames() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int getTotalValue(bool bookModifier)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_55c1f728((void*)__hosihikari_shim_handle, bookModifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int getTotalValue(bool bookModifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemEnchants_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8b87b3e1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8b87b3e1((void*)__hosihikari_shim_handle);
     }
 
     public int mSlot
     {
-        get => NativeMethods.TablePtr->C2.hs_get_eaae2f3c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_eaae2f3c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_eaae2f3c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_eaae2f3c((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchants rhs)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_1dab9056((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint rhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::array<std::vector<EnchantmentInstance>, 3>' is not a known bindable declaration.", false)]
     public void setEnchantInstances(nint enchants) =>
@@ -128,7 +116,7 @@ public sealed unsafe partial class ItemEnchants : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5cc1cbbd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_5cc1cbbd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

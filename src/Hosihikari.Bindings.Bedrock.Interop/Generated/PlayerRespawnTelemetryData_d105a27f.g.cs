@@ -38,51 +38,48 @@ public sealed unsafe partial class PlayerRespawnTelemetryData : global::System.I
         return __hs_handle;
     }
 
-    public void WriteEventData(nint @event)
-    {
-        NativeMethods.TablePtr->C3.hs_method_45b8cd88((void*)__hosihikari_shim_handle, (void*)@event);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void WriteEventData(nint @event) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mChangedDimension
     {
-        get => NativeMethods.TablePtr->C3.hs_get_6215ef0b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_6215ef0b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_6215ef0b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_6215ef0b((void*)__hosihikari_shim_handle, value);
     }
 
-    public static string mEventName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_095097ec();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mEventName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public double mJumpDistance
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f33c527e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_f33c527e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_f33c527e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_f33c527e((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mLongJumpCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_bc412cf6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_bc412cf6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_bc412cf6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_bc412cf6((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mPositionSourceType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a3454d9a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a3454d9a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a3454d9a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a3454d9a((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mSearchTimeMS
     {
-        get => NativeMethods.TablePtr->C3.hs_get_eae5cc46((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_eae5cc46((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_eae5cc46((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_eae5cc46((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mShortJumpCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ffe96b67((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_ffe96b67((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_ffe96b67((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_ffe96b67((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -91,7 +88,7 @@ public sealed unsafe partial class PlayerRespawnTelemetryData : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d105a27f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d105a27f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

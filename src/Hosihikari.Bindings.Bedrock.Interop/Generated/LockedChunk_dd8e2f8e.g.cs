@@ -40,7 +40,7 @@ public sealed unsafe partial class LockedChunk : global::System.IDisposable
 
     public static LockedChunk Create(global::Hosihikari.Bindings.Bedrock.Interop.PostprocessingManager_Nested.LockedChunk arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_54e583c4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_54e583c4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class LockedChunk : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunk_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_825d682a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_825d682a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkLock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_467730fd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_467730fd((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class LockedChunk : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_dd8e2f8e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_dd8e2f8e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,20 +38,20 @@ public sealed unsafe partial class StructureIntegrityProcessor : global::System.
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint generateFlagsForIndices(int startIndex, int endIndex) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float mIntegrity
     {
-        get => NativeMethods.TablePtr->C4.hs_get_db82b107((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_db82b107((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_db82b107((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_db82b107((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mStartSeed
     {
-        get => NativeMethods.TablePtr->C4.hs_get_cd7be3e9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_cd7be3e9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_cd7be3e9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_cd7be3e9((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -60,7 +60,7 @@ public sealed unsafe partial class StructureIntegrityProcessor : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_dd7314c6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_dd7314c6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

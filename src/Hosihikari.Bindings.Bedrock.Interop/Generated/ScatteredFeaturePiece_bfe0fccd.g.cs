@@ -38,10 +38,9 @@ public sealed unsafe partial class ScatteredFeaturePiece : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(int west, int floor, int north, int width, int height, int depth)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_19be23e1((void*)__hosihikari_shim_handle, west, floor, north, width, height, depth);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(int west, int floor, int north, int width, int height, int depth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScatteredFeaturePiece Create()
     {
@@ -65,16 +64,9 @@ public sealed unsafe partial class ScatteredFeaturePiece : global::System.IDispo
         return new ScatteredFeaturePiece((nint)handle);
     }
 
-    public static ScatteredFeaturePiece Create(int west, int floor, int north, int width, int height, int depth)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_780d92fc(west, floor, north, width, height, depth);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScatteredFeaturePiece((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScatteredFeaturePiece Create(int west, int floor, int north, int width, int height, int depth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mDepth
     {
@@ -106,10 +98,9 @@ public sealed unsafe partial class ScatteredFeaturePiece : global::System.IDispo
         set => NativeMethods.TablePtr->C3.hs_set_2cf752fd((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool updateAverageGroundHeight(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, int offset)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_a8231551((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, offset) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool updateAverageGroundHeight(nint region, nint chunkBB, int offset) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

@@ -41,29 +41,28 @@ public sealed unsafe partial class InverterDefinition : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4589a111((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_4589a111((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTreeDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b74fdfaf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b74fdfaf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChild_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4b8e4fe6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_4b8e4fe6((void*)__hosihikari_shim_handle);
     }
 
-    public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
-    {
-        NativeMethods.TablePtr->C2.hs_method_2652cc18((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _load(nint value, nint factory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
     {
-        NativeMethods.TablePtr->C2.hs_method_75a6252e((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
+        NativeMethods.TablePtr->C1.hs_method_75a6252e((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
     }
 
 
@@ -73,7 +72,7 @@ public sealed unsafe partial class InverterDefinition : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_bc9a66cd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_bc9a66cd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

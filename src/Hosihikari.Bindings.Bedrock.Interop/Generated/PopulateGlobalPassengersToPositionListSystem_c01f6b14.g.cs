@@ -38,15 +38,13 @@ public sealed unsafe partial class PopulateGlobalPassengersToPositionListSystem 
         return __hs_handle;
     }
 
-    public static bool _populateList(nint rootVehicles, nint vehicles, nint flaggedPassengers, nint passengers, global::Hosihikari.Bindings.Bedrock.Interop.PassengersToPositionComponent destination)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_fae71f21((void*)rootVehicles, (void*)vehicles, (void*)flaggedPassengers, (void*)passengers, (void*)destination.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _populateList(nint rootVehicles, nint vehicles, nint flaggedPassengers, nint passengers, nint destination) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _removeRequestsFromBrokenLinks(nint vehicles, nint flaggedPassengers, nint passengers, nint modifier)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e667b73a((void*)vehicles, (void*)flaggedPassengers, (void*)passengers, (void*)modifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _removeRequestsFromBrokenLinks(nint vehicles, nint flaggedPassengers, nint passengers, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -54,7 +52,7 @@ public sealed unsafe partial class PopulateGlobalPassengersToPositionListSystem 
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c01f6b14((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c01f6b14((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

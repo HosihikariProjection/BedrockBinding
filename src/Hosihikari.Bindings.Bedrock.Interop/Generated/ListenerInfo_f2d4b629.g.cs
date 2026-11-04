@@ -49,10 +49,9 @@ public sealed unsafe partial class ListenerInfo : global::System.IDisposable
         return new ListenerInfo((nint)handle);
     }
 
-    public static nint SQRT_FLT_MAX()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_85febce0();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SQRT_FLT_MAX() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCallback_Address

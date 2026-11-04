@@ -40,7 +40,7 @@ public sealed unsafe partial class RecordGroup : global::System.IDisposable
 
     public static RecordGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler_Nested.RecordGroup arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_fc16be38((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_fc16be38((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,33 +52,18 @@ public sealed unsafe partial class RecordGroup : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecords_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7ee666de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7ee666de((void*)__hosihikari_shim_handle);
     }
 
     public int mSortType
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8eecc3e0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8eecc3e0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_8eecc3e0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_8eecc3e0((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler_Nested.RecordGroup_Nested.FullStackRecord operator_index(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler_Nested.RecordGroup_Nested.FullStackRecord((nint)NativeMethods.TablePtr->C2.hs_method_2332f8a3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_index(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -87,7 +72,7 @@ public sealed unsafe partial class RecordGroup : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_7ef92897((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_7ef92897((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,19 +38,17 @@ public sealed unsafe partial class JumpFromGroundSystem : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity)
-    {
-        NativeMethods.TablePtr->C2.hs_method_ffeba5ea((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _singleTick(nint context, nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(nint context)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d66ae68d((void*)__hosihikari_shim_handle, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static JumpFromGroundSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.MobJumpFromGroundSystemImpl.JumpFromGroundSystem arg0)
     {

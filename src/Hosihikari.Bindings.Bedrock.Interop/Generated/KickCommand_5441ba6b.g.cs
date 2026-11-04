@@ -40,41 +40,40 @@ public sealed unsafe partial class KickCommand : global::System.IDisposable
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e1e3425d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_e1e3425d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_e1e3425d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_e1e3425d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_bf4e55d8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_bf4e55d8((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8062fdbe((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8062fdbe((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_8062fdbe((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_8062fdbe((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_aebdbd41((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_aebdbd41((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C2.hs_get_d51fd6fa((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_d51fd6fa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_d51fd6fa((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_d51fd6fa((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C2.hs_method_7fd7ec12((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static KickCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.KickCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2ddb3171((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_2ddb3171((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -83,97 +82,38 @@ public sealed unsafe partial class KickCommand : global::System.IDisposable
         return new KickCommand((nint)handle);
     }
 
-    public bool _canKickPlayerOrGenerateFailureOutput(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, global::Hosihikari.Bindings.Bedrock.Interop.Level? level)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_69c3c0df((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)output.Handle, (void*)(level?.Handle ?? 0)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canKickPlayerOrGenerateFailureOutput(nint player, nint output, nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _generateSuccessOutput(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, string playerNameTag, string reason)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(playerNameTag);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(playerNameTag, __hs_stringBytes1);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(reason);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(reason, __hs_stringBytes2);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-            {
-                NativeMethods.TablePtr->C2.hs_method_71c20839((void*)output.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _generateSuccessOutput(nint output, nint playerNameTag, nint reason) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _kickPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Minecraft? game, global::Hosihikari.Bindings.Bedrock.Interop.Player matchingPlayer, string message, string? filteredMessage)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(message);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes2);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(filteredMessage ?? string.Empty);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(filteredMessage ?? string.Empty, __hs_stringBytes3);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                NativeMethods.TablePtr->C2.hs_method_5705590f((void*)(game?.Handle ?? 0), (void*)matchingPlayer.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, filteredMessage is not null);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _kickPlayer(nint game, nint matchingPlayer, nint message, nint filteredMessage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C2.hs_method_2056bb3c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C1.hs_method_2056bb3c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_01b4e277((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_01b4e277((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d2227b60((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d2227b60((void*)__hosihikari_shim_handle);
     }
 
     public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
     {
-        NativeMethods.TablePtr->C2.hs_method_920a09bd((void*)registry.Handle);
+        NativeMethods.TablePtr->C1.hs_method_920a09bd((void*)registry.Handle);
     }
 
 
@@ -183,7 +123,7 @@ public sealed unsafe partial class KickCommand : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5441ba6b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_5441ba6b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

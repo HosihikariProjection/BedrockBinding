@@ -62,10 +62,9 @@ public sealed unsafe partial class AmbientSoundComponent : global::System.IDispo
         set => NativeMethods.TablePtr->C0.hs_set_09454848((void*)__hosihikari_shim_handle, value);
     }
 
-    public static void setAmbientSoundRemainingTime(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, float seconds)
-    {
-        NativeMethods.TablePtr->C0.hs_method_64c9a32b((void*)owner.Handle, seconds);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void setAmbientSoundRemainingTime(nint owner, float seconds) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

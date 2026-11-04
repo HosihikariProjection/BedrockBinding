@@ -40,7 +40,7 @@ public sealed unsafe partial class DetectionRule : global::System.IDisposable
 
     public static DetectionRule Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_0.DetectionRule arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_26175b77((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_26175b77((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,39 +49,38 @@ public sealed unsafe partial class DetectionRule : global::System.IDisposable
         return new DetectionRule((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_dd2d812a((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mCanContainLiquid
     {
-        get => NativeMethods.TablePtr->C4.hs_get_12f66f96((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_12f66f96((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_12f66f96((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_12f66f96((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mClipAgainstCollider
     {
-        get => NativeMethods.TablePtr->C4.hs_get_b7e0ad20((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_b7e0ad20((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b7e0ad20((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_b7e0ad20((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mLiquidType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_57403e15((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_57403e15((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_57403e15((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_57403e15((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mOnLiquidTouches
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1040089c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1040089c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1040089c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1040089c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStopsFlowDirections_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_667d361e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_667d361e((void*)__hosihikari_shim_handle);
     }
 
 
@@ -91,7 +90,7 @@ public sealed unsafe partial class DetectionRule : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cd7264f2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_cd7264f2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

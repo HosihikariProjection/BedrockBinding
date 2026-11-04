@@ -38,13 +38,13 @@ public sealed unsafe partial class EndCityPieces : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'EndCityPieces::EndCityPiece' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _createPiece(nint structureManager, nint parent, nint offset, nint templateName, nint rotation, bool overwrite) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'EndCityPieces::EndCityPiece' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<EndCityPieces::SectionGenerator>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static bool _recursiveChildren(nint structureManager, nint generators, nint type, int newGenDepth, nint parent, nint offset, nint pieces, nint random) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<EndCityPieces::SectionGenerator>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

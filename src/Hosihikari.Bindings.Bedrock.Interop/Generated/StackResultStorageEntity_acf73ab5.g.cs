@@ -40,12 +40,12 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity weakStorage)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_4025f5be((void*)__hosihikari_shim_handle, (void*)weakStorage.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_4025f5be((void*)__hosihikari_shim_handle, (void*)weakStorage.Handle);
     }
 
     public static StackResultStorageEntity Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c4231779();
+        var handle = NativeMethods.TablePtr->C3.hs_create_c4231779();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
 
     public static StackResultStorageEntity Create(global::Hosihikari.Bindings.Bedrock.Interop.StackResultStorageEntity arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a8b12d38((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a8b12d38((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,7 +67,7 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
 
     public static StackResultStorageEntity Create(global::Hosihikari.Bindings.Bedrock.Interop.WeakStorageEntity weakStorage)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_500f5ff7((void*)weakStorage.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_500f5ff7((void*)weakStorage.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -82,7 +82,7 @@ public sealed unsafe partial class StackResultStorageEntity : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_acf73ab5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_acf73ab5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

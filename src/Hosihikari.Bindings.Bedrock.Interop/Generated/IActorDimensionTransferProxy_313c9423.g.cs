@@ -40,7 +40,7 @@ public sealed unsafe partial class IActorDimensionTransferProxy : global::System
 
     public static IActorDimensionTransferProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.IActorDimensionTransferProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_95f97f40((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_95f97f40((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IActorDimensionTransferProxy : global::System
 
     public void removeActorFromLevelChunk(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        NativeMethods.TablePtr->C2.hs_method_04420c90((void*)__hosihikari_shim_handle, (void*)actor.Handle);
+        NativeMethods.TablePtr->C1.hs_method_04420c90((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -60,7 +60,7 @@ public sealed unsafe partial class IActorDimensionTransferProxy : global::System
 
     public void transferTickingArea(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        NativeMethods.TablePtr->C2.hs_method_cf540241((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)dimension.Handle);
+        NativeMethods.TablePtr->C1.hs_method_cf540241((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)dimension.Handle);
     }
 
 
@@ -70,7 +70,7 @@ public sealed unsafe partial class IActorDimensionTransferProxy : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_313c9423((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_313c9423((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

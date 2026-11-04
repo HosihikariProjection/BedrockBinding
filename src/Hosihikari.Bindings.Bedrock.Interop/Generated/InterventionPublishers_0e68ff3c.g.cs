@@ -38,21 +38,13 @@ public sealed unsafe partial class InterventionPublishers : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_c9d1d35c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static InterventionPublishers Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_81997ec2();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new InterventionPublishers((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static InterventionPublishers Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static InterventionPublishers Create(global::Hosihikari.Bindings.Bedrock.Interop.FileArchiver_Nested.InterventionPublishers arg0)
     {

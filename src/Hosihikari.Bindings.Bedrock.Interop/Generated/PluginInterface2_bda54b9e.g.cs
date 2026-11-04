@@ -40,77 +40,77 @@ public sealed unsafe partial class PluginInterface2 : global::System.IDisposable
 
     public void OnAck(uint arg0, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress arg1, uint arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_ed57f60e((void*)__hosihikari_shim_handle, arg0, (void*)arg1.Handle, arg2);
+        NativeMethods.TablePtr->C2.hs_method_ed57f60e((void*)__hosihikari_shim_handle, arg0, (void*)arg1.Handle, arg2);
     }
 
     public void OnAttach()
     {
-        NativeMethods.TablePtr->C3.hs_method_d8616a99((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_d8616a99((void*)__hosihikari_shim_handle);
     }
 
     public void OnClosedConnection(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress arg0, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID arg1, int arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_959daaf1((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2);
+        NativeMethods.TablePtr->C2.hs_method_959daaf1((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2);
     }
 
     public void OnDetach()
     {
-        NativeMethods.TablePtr->C3.hs_method_62793f84((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_62793f84((void*)__hosihikari_shim_handle);
     }
 
     public void OnDirectSocketReceive(nint arg0, uint arg1, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_f831b8ce((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C2.hs_method_f831b8ce((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle);
     }
 
     public void OnDirectSocketSend(nint arg0, uint arg1, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_397908e8((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C2.hs_method_397908e8((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle);
     }
 
     public void OnFailedConnectionAttempt(nint arg0, int arg1)
     {
-        NativeMethods.TablePtr->C3.hs_method_0a041965((void*)__hosihikari_shim_handle, (void*)arg0, arg1);
+        NativeMethods.TablePtr->C2.hs_method_0a041965((void*)__hosihikari_shim_handle, (void*)arg0, arg1);
     }
 
     public void OnInternalPacket(nint arg0, uint arg1, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress arg2, uint arg3, int arg4)
     {
-        NativeMethods.TablePtr->C3.hs_method_10e117f2((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle, arg3, arg4);
+        NativeMethods.TablePtr->C2.hs_method_10e117f2((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle, arg3, arg4);
     }
 
     public void OnNewConnection(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress arg0, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID arg1, bool arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_83f2d268((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2);
+        NativeMethods.TablePtr->C2.hs_method_83f2d268((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2);
     }
 
     public void OnPushBackPacket(nint arg0, uint arg1, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress arg2)
     {
-        NativeMethods.TablePtr->C3.hs_method_03fe72d7((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C2.hs_method_03fe72d7((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle);
     }
 
     public void OnRakPeerShutdown()
     {
-        NativeMethods.TablePtr->C3.hs_method_043d26e4((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_043d26e4((void*)__hosihikari_shim_handle);
     }
 
     public void OnRakPeerStartup()
     {
-        NativeMethods.TablePtr->C3.hs_method_ee810a04((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_ee810a04((void*)__hosihikari_shim_handle);
     }
 
     public int OnReceive(nint arg0)
     {
-        return NativeMethods.TablePtr->C3.hs_method_a6b70521((void*)__hosihikari_shim_handle, (void*)arg0);
+        return NativeMethods.TablePtr->C2.hs_method_a6b70521((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public void OnReliabilityLayerNotification(nint arg0, uint arg1, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress arg2, bool arg3)
     {
-        NativeMethods.TablePtr->C3.hs_method_484a4551((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle, arg3);
+        NativeMethods.TablePtr->C2.hs_method_484a4551((void*)__hosihikari_shim_handle, (void*)arg0, arg1, (void*)arg2.Handle, arg3);
     }
 
     public static PluginInterface2 Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b9cb0b4a();
+        var handle = NativeMethods.TablePtr->C2.hs_create_b9cb0b4a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -121,7 +121,7 @@ public sealed unsafe partial class PluginInterface2 : global::System.IDisposable
 
     public static PluginInterface2 Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2 arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_cf4930b7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_cf4930b7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -132,29 +132,29 @@ public sealed unsafe partial class PluginInterface2 : global::System.IDisposable
 
     public void Update()
     {
-        NativeMethods.TablePtr->C3.hs_method_38fb2da6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_38fb2da6((void*)__hosihikari_shim_handle);
     }
 
     public bool UsesReliabilityLayer()
     {
-        return NativeMethods.TablePtr->C3.hs_method_a1d8c0e0((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_a1d8c0e0((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk57d580_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6ac93fc8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ac93fc8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd5879f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_07a1b644((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_07a1b644((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2 operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2 arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2((nint)NativeMethods.TablePtr->C3.hs_method_db8853d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.PluginInterface2((nint)NativeMethods.TablePtr->C2.hs_method_db8853d7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -164,7 +164,7 @@ public sealed unsafe partial class PluginInterface2 : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bda54b9e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bda54b9e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

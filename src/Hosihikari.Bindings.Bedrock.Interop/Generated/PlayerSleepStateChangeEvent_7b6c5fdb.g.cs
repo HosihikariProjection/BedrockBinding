@@ -40,8 +40,8 @@ public sealed unsafe partial class PlayerSleepStateChangeEvent : global::System.
 
     public bool mIsSleeping
     {
-        get => NativeMethods.TablePtr->C3.hs_get_80d870ed((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_80d870ed((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_80d870ed((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_80d870ed((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class PlayerSleepStateChangeEvent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_7b6c5fdb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7b6c5fdb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

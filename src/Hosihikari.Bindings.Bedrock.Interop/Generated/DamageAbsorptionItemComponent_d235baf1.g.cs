@@ -38,22 +38,17 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_10.DamageAbsorptionItemComponent data)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_a0ffca2d((void*)__hosihikari_shim_handle, (void*)data.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_a0ffca2d(nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(int[] absorbableDamageCauses)
-    {
-        fixed (int* __hs_vectorData0 = absorbableDamageCauses)
-        {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_d198d839((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(absorbableDamageCauses?.Length ?? 0));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_d198d839(nint absorbableDamageCauses) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DamageAbsorptionItemComponent Create()
     {
@@ -66,16 +61,9 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
         return new DamageAbsorptionItemComponent((nint)handle);
     }
 
-    public static DamageAbsorptionItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_10.DamageAbsorptionItemComponent data)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_74638b4a((void*)data.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DamageAbsorptionItemComponent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DamageAbsorptionItemComponent Create_74638b4a(nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DamageAbsorptionItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.DamageAbsorptionItemComponent arg0)
     {
@@ -88,19 +76,9 @@ public sealed unsafe partial class DamageAbsorptionItemComponent : global::Syste
         return new DamageAbsorptionItemComponent((nint)handle);
     }
 
-    public static DamageAbsorptionItemComponent Create(int[] absorbableDamageCauses)
-    {
-        fixed (int* __hs_vectorData0 = absorbableDamageCauses)
-        {
-            var handle = NativeMethods.TablePtr->C1.hs_create_cb77ed17(__hs_vectorData0, (nuint)(absorbableDamageCauses?.Length ?? 0));
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new DamageAbsorptionItemComponent((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DamageAbsorptionItemComponent Create_cb77ed17(nint absorbableDamageCauses) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAbsorbAllDamageCauses
     {

@@ -43,25 +43,21 @@ public sealed unsafe partial class ChunkBuildOrderPolicy : global::System.IDispo
         return NativeMethods.TablePtr->C0.hs_method_fdbf6078((void*)__hosihikari_shim_handle, (void*)cp.Handle);
     }
 
-    public uint _registerForUpdates()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_5df6a1b6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public uint _registerForUpdates() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setPlayerInfluence(uint handle, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos playerPosition, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 playerMovementDirection)
-    {
-        NativeMethods.TablePtr->C0.hs_method_f4387465((void*)__hosihikari_shim_handle, handle, (void*)playerPosition.Handle, (void*)playerMovementDirection.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setPlayerInfluence(uint handle, nint playerPosition, nint playerMovementDirection) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setTickingAreaInfluence(uint handle, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos tickingAreaPosition, int sizeX, int sizeZ, bool isCircle, bool preload)
-    {
-        NativeMethods.TablePtr->C0.hs_method_9a0689f9((void*)__hosihikari_shim_handle, handle, (void*)tickingAreaPosition.Handle, sizeX, sizeZ, isCircle, preload);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setTickingAreaInfluence(uint handle, nint tickingAreaPosition, int sizeX, int sizeZ, bool isCircle, bool preload) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _unregisterForUpdates(uint handle)
-    {
-        NativeMethods.TablePtr->C0.hs_method_6793da84((void*)__hosihikari_shim_handle, handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _unregisterForUpdates(uint handle) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _updateInfluences()
     {

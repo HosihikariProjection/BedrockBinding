@@ -38,164 +38,121 @@ public sealed unsafe partial class VanillaBlockUpdater : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static void addBaseUpdater(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_a6869d21((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addBaseUpdater(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addRailUpdater_1_14_0(string railName, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(railName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(railName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_45664061(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)context.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addRailUpdater_1_14_0(nint railName, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_10_0(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5fb66292((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_10_0(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_12_0(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_716473ff((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_12_0(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_13_0(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_21b9c234((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_13_0(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_14_0(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_bb2edb49((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_14_0(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_15_0(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_7628a8be((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_15_0(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_16_0(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_73447419((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_16_0(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_16_210(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_df8e0a53((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_16_210(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_18_10(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5c518824((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_18_10(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_19_70(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_312fd427((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_19_70(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_19_80(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_4d642501((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_19_80(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_0(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_57d3bb51((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_0(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_10(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_8d45fd89((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_10(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_20(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1fa884f2((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_20(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_30(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_57209845((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_30(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_40(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_40ae1b02((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_40(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_50(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_16bf43d6((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_50(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_60(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_41165ed7((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_60(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_70(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_2c757f4e((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_70(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_20_80(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_01c6a218((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_20_80(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_21_0(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5f7d4f45((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_21_0(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_21_10(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_a094ed28((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_21_10(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_21_20(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_db73e42e((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_21_20(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_21_30(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_3dee3edb((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_21_30(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addUpdaters_1_21_60(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_d35e99be((void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addUpdaters_1_21_60(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext get()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterContext((nint)NativeMethods.TablePtr->C4.hs_method_029b6eae(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint get() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initialize()
-    {
-        NativeMethods.TablePtr->C4.hs_method_c9463c87();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initialize() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mContext()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_f8a36a30();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mContext() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

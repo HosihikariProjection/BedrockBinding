@@ -40,7 +40,7 @@ public sealed unsafe partial class ITickDeltaTimeManagerProxy : global::System.I
 
     public static ITickDeltaTimeManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.ITickDeltaTimeManagerProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6924c283((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_6924c283((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class ITickDeltaTimeManagerProxy : global::System.I
 
     public double calculateDeltaTimeAndReset()
     {
-        return NativeMethods.TablePtr->C2.hs_method_88ecadf1((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_88ecadf1((void*)__hosihikari_shim_handle);
     }
 
     public void start()
     {
-        NativeMethods.TablePtr->C2.hs_method_5e2c3407((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_5e2c3407((void*)__hosihikari_shim_handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class ITickDeltaTimeManagerProxy : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_9e968a6f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_9e968a6f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

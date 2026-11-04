@@ -38,10 +38,9 @@ public sealed unsafe partial class QueueItem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_db6a6bca((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static QueueItem Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class QueueItem : global::System.IDisposable
         return new QueueItem((nint)handle);
     }
 
-    public static QueueItem Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentComponents.Actions.QueueItem arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_9d50a067((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new QueueItem((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static QueueItem Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk919642_Address

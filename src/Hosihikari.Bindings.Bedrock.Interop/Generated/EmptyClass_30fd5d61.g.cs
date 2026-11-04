@@ -40,7 +40,7 @@ public sealed unsafe partial class EmptyClass : global::System.IDisposable
 
     public static EmptyClass Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6a095946();
+        var handle = NativeMethods.TablePtr->C1.hs_create_6a095946();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class EmptyClass : global::System.IDisposable
 
     public static EmptyClass Create(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b07d1457((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_b07d1457((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class EmptyClass : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk221ded_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_188f91b7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_188f91b7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass((nint)NativeMethods.TablePtr->C2.hs_method_5b436184((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonUtil.EmptyClass((nint)NativeMethods.TablePtr->C1.hs_method_5b436184((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class EmptyClass : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_30fd5d61((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_30fd5d61((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

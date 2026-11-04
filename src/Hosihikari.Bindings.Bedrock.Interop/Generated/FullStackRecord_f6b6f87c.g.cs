@@ -40,7 +40,7 @@ public sealed unsafe partial class FullStackRecord : global::System.IDisposable
 
     public static FullStackRecord Create(global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler_Nested.RecordGroup_Nested.FullStackRecord arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d93352ae((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d93352ae((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,26 +51,26 @@ public sealed unsafe partial class FullStackRecord : global::System.IDisposable
 
     public bool bUseAverageTracker
     {
-        get => NativeMethods.TablePtr->C2.hs_get_018dcd91((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_018dcd91((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_018dcd91((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_018dcd91((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClient_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1d4c3a27((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_1d4c3a27((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2ffd230e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2ffd230e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mServer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_29296c41((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_29296c41((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class FullStackRecord : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f6b6f87c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_f6b6f87c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

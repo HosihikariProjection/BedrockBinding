@@ -40,7 +40,7 @@ public sealed unsafe partial class Client : global::System.IDisposable
 
     public static Client Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b9553891();
+        var handle = NativeMethods.TablePtr->C0.hs_create_b9553891();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Client : global::System.IDisposable
 
     public static Client Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3b124754((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_3b124754((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class Client : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5c5185_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f79efc1f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_f79efc1f((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client((nint)NativeMethods.TablePtr->C1.hs_method_50151fb2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.Client((nint)NativeMethods.TablePtr->C0.hs_method_50151fb2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class Client : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_24034877((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_24034877((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

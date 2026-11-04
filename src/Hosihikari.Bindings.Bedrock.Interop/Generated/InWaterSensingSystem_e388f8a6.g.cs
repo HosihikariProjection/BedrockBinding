@@ -38,9 +38,9 @@ public sealed unsafe partial class InWaterSensingSystem : global::System.IDispos
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const FallingBlockFlagComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void doInWaterSensing(nint entity, nint updateWaterStateRequestComponent, nint fallDistanceComponent, nint fallingBlockFlagComponent, nint passengerComponent, nint wasInWaterComponent, nint modifier, nint boatVehicle) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const FallingBlockFlagComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -48,7 +48,7 @@ public sealed unsafe partial class InWaterSensingSystem : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e388f8a6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e388f8a6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

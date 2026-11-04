@@ -44,7 +44,7 @@ public sealed unsafe partial class CommutativeGroupTag : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_c377b9f0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c377b9f0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

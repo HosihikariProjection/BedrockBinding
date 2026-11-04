@@ -43,14 +43,13 @@ public sealed unsafe partial class MobArmorEquipmentPacketPayload : global::Syst
         return (nint)NativeMethods.TablePtr->C2.hs_method_703de110((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_f5f22c5d(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Actor e)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_8f8af586((void*)__hosihikari_shim_handle, (void*)e.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_8f8af586(nint e) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
@@ -68,20 +67,13 @@ public sealed unsafe partial class MobArmorEquipmentPacketPayload : global::Syst
         return new MobArmorEquipmentPacketPayload((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static MobArmorEquipmentPacketPayload Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MobArmorEquipmentPacketPayload Create_1a439028(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobArmorEquipmentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor e)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_909c50cf((void*)e.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MobArmorEquipmentPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MobArmorEquipmentPacketPayload Create_909c50cf(nint e) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MobArmorEquipmentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.MobArmorEquipmentPacketPayload arg0)
     {

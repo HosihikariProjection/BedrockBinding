@@ -44,51 +44,21 @@ public sealed unsafe partial class NetworkStatistics : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_60a89a63((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor_e1e3b01f(nint network, nint type, nint getRakNetStatsReading, nint networkDebugManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor_2ff555c4(nint server, nint type, nint getRakNetStatsReading, nint networkDebugManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dataReceivedFrom(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, string data)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(data);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C2.hs_method_3c14e028((void*)__hosihikari_shim_handle, (void*)source.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dataReceivedFrom(nint source, nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dataSentTo(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier target, string data)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(data);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C2.hs_method_104fba0f((void*)__hosihikari_shim_handle, (void*)target.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dataSentTo(nint target, nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _packetReceivedFrom(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, uint size)
     {
@@ -100,10 +70,9 @@ public sealed unsafe partial class NetworkStatistics : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_1024f327((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)packet.Handle, size);
     }
 
-    public void _reset()
-    {
-        NativeMethods.TablePtr->C2.hs_method_d7ab0010((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _reset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NetworkStatistics Create()
     {
@@ -116,13 +85,13 @@ public sealed unsafe partial class NetworkStatistics : global::System.IDisposabl
         return new NetworkStatistics((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static NetworkStatistics Create_24bdb8dc(nint network, nint type, nint getRakNetStatsReading, nint networkDebugManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static NetworkStatistics Create_109cca45(nint server, nint type, nint getRakNetStatsReading, nint networkDebugManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void dataReceivedFrom(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, string data)
     {
@@ -162,9 +131,9 @@ public sealed unsafe partial class NetworkStatistics : global::System.IDisposabl
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: map value type 'PacketObserver::PacketStats' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getAndResetDebuggerStats() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'PacketObserver::PacketStats' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCSVFile_Address

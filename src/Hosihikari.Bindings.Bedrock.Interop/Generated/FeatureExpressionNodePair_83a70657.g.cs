@@ -40,7 +40,7 @@ public sealed unsafe partial class FeatureExpressionNodePair : global::System.ID
 
     public static FeatureExpressionNodePair Create(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalListFeature_Nested.FeatureExpressionNodePair arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f9d88dbd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_f9d88dbd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class FeatureExpressionNodePair : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mExpressionNode_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3e500f3d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_3e500f3d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFeatureReference_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4f701836((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_4f701836((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class FeatureExpressionNodePair : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_83a70657((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_83a70657((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

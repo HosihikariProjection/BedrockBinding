@@ -40,7 +40,7 @@ public sealed unsafe partial class AddComponents : global::System.IDisposable
 
     public static AddComponents Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TransformationComponentDefinition_Nested.AddComponents arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e94b5954((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_e94b5954((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,12 @@ public sealed unsafe partial class AddComponents : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponentGroups_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9c9a37fc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9c9a37fc((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TransformationComponentDefinition_Nested.AddComponents arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_205de10e((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -67,7 +66,7 @@ public sealed unsafe partial class AddComponents : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9a923867((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9a923867((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class ThreadData : global::System.IDisposable
 
     public static ThreadData Create(global::Hosihikari.Bindings.Bedrock.Interop.TheEndGenerator_Nested.ThreadData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_733aaa62((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_733aaa62((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class ThreadData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint blockBuffer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_17c0187f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_17c0187f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class ThreadData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f6f3c5f7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f6f3c5f7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

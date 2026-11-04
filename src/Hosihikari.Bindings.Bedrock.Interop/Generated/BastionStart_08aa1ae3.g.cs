@@ -38,16 +38,13 @@ public sealed unsafe partial class BastionStart : global::System.IDisposable
         return __hs_handle;
     }
 
-    public string _getStructureName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_2a13c643((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getStructureName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isValid()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_afc5c4e4((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValid() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BastionStart Create(global::Hosihikari.Bindings.Bedrock.Interop.BastionStart arg0)
     {

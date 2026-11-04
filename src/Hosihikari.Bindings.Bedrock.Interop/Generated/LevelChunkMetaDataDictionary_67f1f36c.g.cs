@@ -49,20 +49,17 @@ public sealed unsafe partial class LevelChunkMetaDataDictionary : global::System
         return new LevelChunkMetaDataDictionary((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _registerMetaData(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkMetaData candidateMetaData)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_9ae6e429((void*)__hosihikari_shim_handle, (void*)candidateMetaData.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _registerMetaData(nint candidateMetaData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void checkAndSerialize(nint postSerializeWriteCallback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void deserialize(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput stream)
-    {
-        NativeMethods.TablePtr->C2.hs_method_4baf1264((void*)__hosihikari_shim_handle, (void*)stream.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void deserialize(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDictionary_Address

@@ -38,27 +38,25 @@ public sealed unsafe partial class Option : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OptionID' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint id, nint ownerType, nint resetFlags, nint captionId, nint saveTag, nint optionType, nint version) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OptionID' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value valueJson)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b39f2314((void*)__hosihikari_shim_handle, (void*)valueJson.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _load_b39f2314(nint valueJson) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _load(nint propertyMap)
-    {
-        NativeMethods.TablePtr->C3.hs_method_7cc042ec((void*)__hosihikari_shim_handle, (void*)propertyMap);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _load_7cc042ec(nint propertyMap) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Option Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_65283b96();
+        var handle = NativeMethods.TablePtr->C2.hs_create_65283b96();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,17 +65,17 @@ public sealed unsafe partial class Option : global::System.IDisposable
         return new Option((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OptionID' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static Option Create(nint id, nint ownerType, nint resetFlags, nint captionId, nint saveTag, nint optionType, nint version) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OptionID' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _updatePropertyVector(nint propertyVector, nint value) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value valueJson)
     {
-        NativeMethods.TablePtr->C3.hs_method_2b091a71((void*)__hosihikari_shim_handle, (void*)valueJson.Handle);
+        NativeMethods.TablePtr->C2.hs_method_2b091a71((void*)__hosihikari_shim_handle, (void*)valueJson.Handle);
     }
 
     public void load(string valueString)
@@ -95,43 +93,28 @@ public sealed unsafe partial class Option : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(valueString, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C3.hs_method_1c45628d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C2.hs_method_1c45628d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public void load(nint propertyMap)
     {
-        NativeMethods.TablePtr->C3.hs_method_0bf80b02((void*)__hosihikari_shim_handle, (void*)propertyMap);
+        NativeMethods.TablePtr->C2.hs_method_0bf80b02((void*)__hosihikari_shim_handle, (void*)propertyMap);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mImpl_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e786a14e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e786a14e((void*)__hosihikari_shim_handle);
     }
 
-    public static bool read(string valueString, nint output)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(valueString);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(valueString, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C3.hs_method_d78721ff(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)output) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool read(nint valueString, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint registerLock(nint isModifiableCondition) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public void save(nint propertyVector) =>
@@ -144,7 +127,7 @@ public sealed unsafe partial class Option : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b2204e9e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b2204e9e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

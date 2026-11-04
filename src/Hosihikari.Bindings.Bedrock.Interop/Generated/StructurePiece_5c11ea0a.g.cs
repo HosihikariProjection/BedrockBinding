@@ -44,66 +44,65 @@ public sealed unsafe partial class StructurePiece : global::System.IDisposable
 
     public void _addHardcodedSpawnAreas(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
-        NativeMethods.TablePtr->C4.hs_method_b6470752((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b6470752((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
     public bool _canBeReplaced(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C4.hs_method_2585331b((void*)__hosihikari_shim_handle, (void*)region.Handle, x, y, z, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_2585331b((void*)__hosihikari_shim_handle, (void*)region.Handle, x, y, z, (void*)chunkBB.Handle) != 0;
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_8ff96c70((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_8ff96c70((void*)__hosihikari_shim_handle);
     }
 
     public void _generateBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, int x0, int y0, int z0, int x1, int y1, int z1, global::Hosihikari.Bindings.Bedrock.Interop.Block edgeBlock, global::Hosihikari.Bindings.Bedrock.Interop.Block fillBlock, bool skipAir)
     {
-        NativeMethods.TablePtr->C4.hs_method_caf9fd0b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, x0, y0, z0, x1, y1, z1, (void*)edgeBlock.Handle, (void*)fillBlock.Handle, skipAir);
+        NativeMethods.TablePtr->C3.hs_method_caf9fd0b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, x0, y0, z0, x1, y1, z1, (void*)edgeBlock.Handle, (void*)fillBlock.Handle, skipAir);
     }
 
     public int _getType()
     {
-        return NativeMethods.TablePtr->C4.hs_method_15340d67((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_15340d67((void*)__hosihikari_shim_handle);
     }
 
     public int _getWorldX(int x, int z)
     {
-        return NativeMethods.TablePtr->C4.hs_method_12f4e76f((void*)__hosihikari_shim_handle, x, z);
+        return NativeMethods.TablePtr->C3.hs_method_12f4e76f((void*)__hosihikari_shim_handle, x, z);
     }
 
     public int _getWorldZ(int x, int z)
     {
-        return NativeMethods.TablePtr->C4.hs_method_e61fa48f((void*)__hosihikari_shim_handle, x, z);
+        return NativeMethods.TablePtr->C3.hs_method_e61fa48f((void*)__hosihikari_shim_handle, x, z);
     }
 
     public bool _isInInvalidLocation(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C4.hs_method_756436c6((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_756436c6((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle) != 0;
     }
 
-    public void _moveBoundingBox(int dx, int dy, int dz)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f1d54d8b((void*)__hosihikari_shim_handle, dx, dy, dz);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _moveBoundingBox(int dx, int dy, int dz) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _placeBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        NativeMethods.TablePtr->C4.hs_method_98a35636((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)block.Handle, x, y, z, (void*)chunkBB.Handle);
+        NativeMethods.TablePtr->C3.hs_method_98a35636((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)block.Handle, x, y, z, (void*)chunkBB.Handle);
     }
 
     public void _postProcessMobsAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        NativeMethods.TablePtr->C4.hs_method_c2814cbb((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle);
+        NativeMethods.TablePtr->C3.hs_method_c2814cbb((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StructurePiece Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePiece arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_22bf541a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_22bf541a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -118,116 +117,109 @@ public sealed unsafe partial class StructurePiece : global::System.IDisposable
 
     public void addHardcodedSpawnAreas(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
-        NativeMethods.TablePtr->C4.hs_method_9c86c5e4((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C3.hs_method_9c86c5e4((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
     public bool canBeReplaced(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C4.hs_method_8acb447d((void*)__hosihikari_shim_handle, (void*)region.Handle, x, y, z, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_8acb447d((void*)__hosihikari_shim_handle, (void*)region.Handle, x, y, z, (void*)chunkBB.Handle) != 0;
     }
 
-    public void generateBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, int x0, int y0, int z0, int x1, int y1, int z1, bool skipAir, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BlockSelector selector)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f5b1dabe((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, x0, y0, z0, x1, y1, z1, skipAir, (void*)random.Handle, (void*)selector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void generateBox(nint region, nint chunkBB, int x0, int y0, int z0, int x1, int y1, int z1, bool skipAir, nint random, nint selector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void generateBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, int x0, int y0, int z0, int x1, int y1, int z1, global::Hosihikari.Bindings.Bedrock.Interop.Block edgeBlock, global::Hosihikari.Bindings.Bedrock.Interop.Block fillBlock, bool skipAir)
     {
-        NativeMethods.TablePtr->C4.hs_method_8e9aac48((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, x0, y0, z0, x1, y1, z1, (void*)edgeBlock.Handle, (void*)fillBlock.Handle, skipAir);
+        NativeMethods.TablePtr->C3.hs_method_8e9aac48((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, x0, y0, z0, x1, y1, z1, (void*)edgeBlock.Handle, (void*)fillBlock.Handle, skipAir);
     }
 
-    public void generateMaybeBox(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, global::Hosihikari.Bindings.Bedrock.Interop.Random random, float probability, int x0, int y0, int z0, int x1, int y1, int z1, global::Hosihikari.Bindings.Bedrock.Interop.Block edgeBlock, global::Hosihikari.Bindings.Bedrock.Interop.Block fillBlock, bool skipAir, bool excludeSky)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f4c5703e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, (void*)random.Handle, probability, x0, y0, z0, x1, y1, z1, (void*)edgeBlock.Handle, (void*)fillBlock.Handle, skipAir, excludeSky);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void generateMaybeBox(nint region, nint chunkBB, nint random, float probability, int x0, int y0, int z0, int x1, int y1, int z1, nint edgeBlock, nint fillBlock, bool skipAir, bool excludeSky) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void generateUpperHalfSphere(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, int x0, int y0, int z0, int x1, int y1, int z1, global::Hosihikari.Bindings.Bedrock.Interop.Block fillBlock, bool skipAir)
-    {
-        NativeMethods.TablePtr->C4.hs_method_33b5b584((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, x0, y0, z0, x1, y1, z1, (void*)fillBlock.Handle, skipAir);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void generateUpperHalfSphere(nint region, nint chunkBB, int x0, int y0, int z0, int x1, int y1, int z1, nint fillBlock, bool skipAir) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_d59fbaca((void*)__hosihikari_shim_handle, (void*)region.Handle, x, y, z, (void*)chunkBB.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getBlock(nint region, int x, int y, int z, nint chunkBB) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ushort getOrientationData(global::Hosihikari.Bindings.Bedrock.Interop.Block? block, ushort data)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_9efc531a((void*)__hosihikari_shim_handle, (void*)(block?.Handle ?? 0), data);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ushort getOrientationData(nint block, ushort data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getType()
     {
-        return NativeMethods.TablePtr->C4.hs_method_7613991f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_7613991f((void*)__hosihikari_shim_handle);
     }
 
     public int getWorldX(int x, int z)
     {
-        return NativeMethods.TablePtr->C4.hs_method_75a0672a((void*)__hosihikari_shim_handle, x, z);
+        return NativeMethods.TablePtr->C3.hs_method_75a0672a((void*)__hosihikari_shim_handle, x, z);
     }
 
     public int getWorldZ(int x, int z)
     {
-        return NativeMethods.TablePtr->C4.hs_method_1207ff39((void*)__hosihikari_shim_handle, x, z);
+        return NativeMethods.TablePtr->C3.hs_method_1207ff39((void*)__hosihikari_shim_handle, x, z);
     }
 
     public bool isInInvalidLocation(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C4.hs_method_feeb87f9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_feeb87f9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle) != 0;
     }
 
-    public bool isReplaceableBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_4220974b((void*)__hosihikari_shim_handle, (void*)block.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isReplaceableBlock(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoundingBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bcc965f4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bcc965f4((void*)__hosihikari_shim_handle);
     }
 
     public int mGenDepth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a6cea36e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a6cea36e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a6cea36e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a6cea36e((void*)__hosihikari_shim_handle, value);
     }
 
     public int mOrientation
     {
-        get => NativeMethods.TablePtr->C4.hs_get_6f7f8cba((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_6f7f8cba((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6f7f8cba((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_6f7f8cba((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainAdjustmentToken_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d090b704((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d090b704((void*)__hosihikari_shim_handle);
     }
 
-    public void maybeGenerateBlockIfNotFloating(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, global::Hosihikari.Bindings.Bedrock.Interop.Random random, float probability, int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C4.hs_method_d39bab0e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)chunkBB.Handle, (void*)random.Handle, probability, x, y, z, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void maybeGenerateBlockIfNotFloating(nint region, nint chunkBB, nint random, float probability, int x, int y, int z, nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void moveBoundingBox(int dx, int dy, int dz)
     {
-        NativeMethods.TablePtr->C4.hs_method_566cb704((void*)__hosihikari_shim_handle, dx, dy, dz);
+        NativeMethods.TablePtr->C3.hs_method_566cb704((void*)__hosihikari_shim_handle, dx, dy, dz);
     }
 
     public void placeBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        NativeMethods.TablePtr->C4.hs_method_7a1b9fdf((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)block.Handle, x, y, z, (void*)chunkBB.Handle);
+        NativeMethods.TablePtr->C3.hs_method_7a1b9fdf((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)block.Handle, x, y, z, (void*)chunkBB.Handle);
     }
 
     public bool postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C4.hs_method_c19e1650((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_c19e1650((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
     }
 
     public void postProcessMobsAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        NativeMethods.TablePtr->C4.hs_method_e1b7c5ce((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e1b7c5ce((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle);
     }
 
 
@@ -237,7 +229,7 @@ public sealed unsafe partial class StructurePiece : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_5c11ea0a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5c11ea0a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

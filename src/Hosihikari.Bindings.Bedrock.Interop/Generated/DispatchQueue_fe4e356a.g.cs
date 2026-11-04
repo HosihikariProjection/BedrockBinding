@@ -44,9 +44,9 @@ public sealed unsafe partial class DispatchQueue : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_f9bcfd38((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::Http::Response>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _send(nint request) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::Http::Response>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DispatchQueue Create()
     {
@@ -70,10 +70,9 @@ public sealed unsafe partial class DispatchQueue : global::System.IDisposable
         return new DispatchQueue((nint)handle);
     }
 
-    public void _handlePendingRequest()
-    {
-        NativeMethods.TablePtr->C0.hs_method_f5537b84((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _handlePendingRequest() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk122c3e_Address

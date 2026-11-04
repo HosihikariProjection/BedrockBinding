@@ -38,10 +38,9 @@ public sealed unsafe partial class MapInfoRequestPacketPayload : global::System.
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID mapId, global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData map)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_241800aa((void*)__hosihikari_shim_handle, (void*)mapId.Handle, (void*)map.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint mapId, nint map) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MapInfoRequestPacketPayload Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class MapInfoRequestPacketPayload : global::System.
         return new MapInfoRequestPacketPayload((nint)handle);
     }
 
-    public static MapInfoRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID mapId, global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData map)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b1001bf4((void*)mapId.Handle, (void*)map.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MapInfoRequestPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MapInfoRequestPacketPayload Create(nint mapId, nint map) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MapInfoRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.MapInfoRequestPacketPayload arg0)
     {

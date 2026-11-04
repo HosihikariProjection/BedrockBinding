@@ -40,19 +40,19 @@ public sealed unsafe partial class SubChunkPosOffset
 
     public sbyte mX
     {
-        get => NativeMethods.TablePtr->C4.hs_get_fabec5e4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_fabec5e4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_fabec5e4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_fabec5e4((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mY
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e22677ff((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e22677ff((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e22677ff((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e22677ff((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mZ
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1f33be11((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1f33be11((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1f33be11((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1f33be11((void*)__hosihikari_shim_handle, value);
     }
 }

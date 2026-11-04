@@ -38,9 +38,9 @@ public sealed unsafe partial class TowerGenerator : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<EndCityPieces::SectionGenerator>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _generate(nint structureManager, nint generators, int genDepth, nint parent, nint offset, nint pieces, nint random) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<EndCityPieces::SectionGenerator>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TowerGenerator Create(global::Hosihikari.Bindings.Bedrock.Interop.EndCityPieces_Nested.TowerGenerator arg0)
     {

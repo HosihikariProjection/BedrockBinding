@@ -41,12 +41,12 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fcfaa41f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_fcfaa41f((void*)__hosihikari_shim_handle);
     }
 
     public static ImguiProfiler Create(global::Hosihikari.Bindings.Bedrock.Interop.ImguiProfiler arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_efdd3588((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_efdd3588((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,69 +55,37 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
         return new ImguiProfiler((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void addRecord(nint record) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TimeAccumulator getTimeAccumulator(string group, string name, bool isClientSide)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(group);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(group, __hs_stringBytes0);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                return new global::Hosihikari.Bindings.Bedrock.Interop.TimeAccumulator((nint)NativeMethods.TablePtr->C2.hs_method_af1f27e8((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, isClientSide));
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getTimeAccumulator(nint group, nint name, bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecordGroupMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_aa03a649((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_aa03a649((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecordGroups_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a6b481f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a6b481f5((void*)__hosihikari_shim_handle);
     }
 
-    public static nint sPendingRecords()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_fc96cd05();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sPendingRecords() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint sProduceRecords()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_67687011();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sProduceRecords() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint sRecordMutex()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_ffb61cab();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sRecordMutex() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -126,7 +94,7 @@ public sealed unsafe partial class ImguiProfiler : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d95f2ccd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_d95f2ccd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

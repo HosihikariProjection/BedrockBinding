@@ -38,10 +38,9 @@ public sealed unsafe partial class RemovePassengersTooLargeForVehicleSystem : gl
         return __hs_handle;
     }
 
-    public static void _removePassengersTooLargeForVehicle(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext strictEntityContext, global::Hosihikari.Bindings.Bedrock.Interop.PassengerComponent passengerComponent, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabbShapeComponent, nint vehicleView, nint modifier)
-    {
-        NativeMethods.TablePtr->C3.hs_method_16f03004((void*)strictEntityContext.Handle, (void*)passengerComponent.Handle, (void*)aabbShapeComponent.Handle, (void*)vehicleView, (void*)modifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _removePassengersTooLargeForVehicle(nint strictEntityContext, nint passengerComponent, nint aabbShapeComponent, nint vehicleView, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

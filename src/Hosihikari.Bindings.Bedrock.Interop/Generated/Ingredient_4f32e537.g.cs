@@ -40,14 +40,14 @@ public sealed unsafe partial class Ingredient : global::System.IDisposable
 
     public int mData
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a29e2cd0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a29e2cd0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a29e2cd0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a29e2cd0((void*)__hosihikari_shim_handle, value);
     }
 
     public int mItemId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e599c186((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e599c186((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e599c186((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e599c186((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class Ingredient : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4f32e537((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4f32e537((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

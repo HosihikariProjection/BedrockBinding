@@ -38,14 +38,13 @@ public sealed unsafe partial class AngryComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_342bf0db(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_7be9ef9d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_7be9ef9d(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AngryComponent Create()
     {
@@ -58,30 +57,21 @@ public sealed unsafe partial class AngryComponent : global::System.IDisposable
         return new AngryComponent((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static AngryComponent Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AngryComponent Create_416c6dca(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static AngryComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f9bc34ac((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AngryComponent Create_f9bc34ac(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new AngryComponent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool canGetAngry(nint owner, nint testMob, nint target, bool allowInvulnerable, bool mustSee) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool canGetAngry(global::Hosihikari.Bindings.Bedrock.Interop.Mob owner, global::Hosihikari.Bindings.Bedrock.Interop.Mob? testMob, global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, bool allowInvulnerable, bool mustSee)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_3d612348((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)(testMob?.Handle ?? 0), (void*)(target?.Handle ?? 0), allowInvulnerable, mustSee) != 0;
-    }
-
-    public uint getAngrySound(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_203a3b59((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getAngrySound(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mBroadcastAnger
     {
@@ -148,15 +138,13 @@ public sealed unsafe partial class AngryComponent : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.AngryComponent((nint)NativeMethods.TablePtr->C0.hs_method_77f80716((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void restartTimer(global::Hosihikari.Bindings.Bedrock.Interop.Mob owner)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e988c68d((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void restartTimer(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setNextSoundEventTick(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C0.hs_method_0adb58f1((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setNextSoundEventTick(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

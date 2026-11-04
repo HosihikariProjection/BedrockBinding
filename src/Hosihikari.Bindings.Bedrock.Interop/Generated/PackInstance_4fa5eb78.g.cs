@@ -38,9 +38,9 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<std::shared_ptr<ResourcePack>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint pack, nint subpackName, bool isDependent, nint packSettings) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<std::shared_ptr<ResourcePack>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<std::shared_ptr<ResourcePack>>' is not a known bindable declaration.", false)]
     public nint _ctor(nint pack, int subpackIndex, bool isDependent, nint packSettings) =>
@@ -48,12 +48,12 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_76ce4039((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_76ce4039((void*)__hosihikari_shim_handle);
     }
 
     public static PackInstance Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_f85fe3af();
+        var handle = NativeMethods.TablePtr->C2.hs_create_f85fe3af();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
 
     public static PackInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.PackInstance arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_5c393eae((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_5c393eae((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,9 +73,9 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
         return new PackInstance((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<std::shared_ptr<ResourcePack>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static PackInstance Create(nint pack, nint subpackName, bool isDependent, nint packSettings) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<std::shared_ptr<ResourcePack>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'gsl::not_null<std::shared_ptr<ResourcePack>>' is not a known bindable declaration.", false)]
     public static PackInstance Create(nint pack, int subpackIndex, bool isDependent, nint packSettings) =>
@@ -99,7 +99,7 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
         {
             try
             {
-                return NativeMethods.TablePtr->C3.hs_method_83c5d683((void*)__hosihikari_shim_handle, (void*)resourceName.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C2.hs_method_83c5d683((void*)__hosihikari_shim_handle, (void*)resourceName.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -111,37 +111,37 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mPack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_010d9db3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_010d9db3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackReport_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a204cd5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a204cd5d((void*)__hosihikari_shim_handle);
     }
 
     public nint mPackSettings
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_409b0f58((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_409b0f58((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_409b0f58((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_409b0f58((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public byte mRevision
     {
-        get => NativeMethods.TablePtr->C3.hs_get_153e065a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_153e065a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_153e065a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_153e065a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStats_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_20316773((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_20316773((void*)__hosihikari_shim_handle);
     }
 
     public int mSubpackIndex
     {
-        get => NativeMethods.TablePtr->C3.hs_get_7daae3d1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_7daae3d1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_7daae3d1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_7daae3d1((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -151,7 +151,7 @@ public sealed unsafe partial class PackInstance : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4fa5eb78((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4fa5eb78((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

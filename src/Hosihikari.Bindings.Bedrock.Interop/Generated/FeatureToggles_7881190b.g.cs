@@ -44,19 +44,17 @@ public sealed unsafe partial class FeatureToggles : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d3a099a2((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform appPlatform)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_f01357c2((void*)__hosihikari_shim_handle, (void*)appPlatform.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint appPlatform) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_a94eb06b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FeatureToggles Create()
     {
@@ -69,16 +67,9 @@ public sealed unsafe partial class FeatureToggles : global::System.IDisposable
         return new FeatureToggles((nint)handle);
     }
 
-    public static FeatureToggles Create(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform appPlatform)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_416c063f((void*)appPlatform.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FeatureToggles((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FeatureToggles Create(nint appPlatform) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FeatureToggles Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureToggles arg0)
     {
@@ -91,28 +82,25 @@ public sealed unsafe partial class FeatureToggles : global::System.IDisposable
         return new FeatureToggles((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getLockIfInGameOrOptionExpectationsNotMetLockCallback(nint expectedDisabledOptions, nint expectedEnabledOptions) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _initialize(global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform appPlatform)
-    {
-        NativeMethods.TablePtr->C1.hs_method_5c5b62ce((void*)__hosihikari_shim_handle, (void*)appPlatform.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initialize(nint appPlatform) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _registerFeature(nint tabID, nint featureID, nint locName, nint saveName, bool defaultValue, nint dependencyFeatureID, nint setup, nint @lock) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _registerFeatures()
-    {
-        NativeMethods.TablePtr->C1.hs_method_d873968e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _registerFeatures() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isEnabled(int featureID)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_cef0c247((void*)__hosihikari_shim_handle, featureID) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isEnabled(nint featureID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFeatures_Address

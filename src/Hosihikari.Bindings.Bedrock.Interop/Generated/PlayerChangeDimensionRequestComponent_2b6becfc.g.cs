@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerChangeDimensionRequestComponent : globa
 
     public static PlayerChangeDimensionRequestComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerChangeDimensionRequestComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_31923a0d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_31923a0d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class PlayerChangeDimensionRequestComponent : globa
     // The native field type is not projected; this is the address of the field storage.
     public nint mRequest_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cb37d3a4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_cb37d3a4((void*)__hosihikari_shim_handle);
     }
 
     public byte mState
     {
-        get => NativeMethods.TablePtr->C3.hs_get_14901e7d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_14901e7d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_14901e7d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_14901e7d((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class PlayerChangeDimensionRequestComponent : globa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2b6becfc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2b6becfc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class NatHolePuncherFunctor : global::System.IDispo
 
     public static NatHolePuncherFunctor Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a79f0752();
+        var handle = NativeMethods.TablePtr->C2.hs_create_a79f0752();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class NatHolePuncherFunctor : global::System.IDispo
 
     public static NatHolePuncherFunctor Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.NatHolePuncherFunctor arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2cdaeeae((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2cdaeeae((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class NatHolePuncherFunctor : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4e485b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_11107504((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_11107504((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.NatHolePuncherFunctor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.NatHolePuncherFunctor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.NatHolePuncherFunctor((nint)NativeMethods.TablePtr->C3.hs_method_2608be4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetServerLocator_Nested.NatHolePuncherFunctor((nint)NativeMethods.TablePtr->C2.hs_method_2608be4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class NatHolePuncherFunctor : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f5eff3a3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f5eff3a3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

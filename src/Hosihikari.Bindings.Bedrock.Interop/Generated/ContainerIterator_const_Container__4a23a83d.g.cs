@@ -40,7 +40,7 @@ public sealed unsafe partial class ContainerIterator_const_Container_ : global::
 
     public static ContainerIterator_const_Container_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Container? container, int position)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d0369132((void*)(container?.Handle ?? 0), position);
+        var handle = NativeMethods.TablePtr->C0.hs_create_d0369132((void*)(container?.Handle ?? 0), position);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,42 +51,42 @@ public sealed unsafe partial class ContainerIterator_const_Container_ : global::
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_425e8bdb((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_425e8bdb((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_ operator_add(long n)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C1.hs_method_2b94d62f((void*)__hosihikari_shim_handle, n));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C0.hs_method_2b94d62f((void*)__hosihikari_shim_handle, n));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_ operator_operator___5c59fdd5()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C1.hs_method_5c59fdd5((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C0.hs_method_5c59fdd5((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_ operator_operator___1579ea61(long n)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C1.hs_method_1579ea61((void*)__hosihikari_shim_handle, n), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C0.hs_method_1579ea61((void*)__hosihikari_shim_handle, n), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_ operator_subtract(long n)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C1.hs_method_7acb4c02((void*)__hosihikari_shim_handle, n));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C0.hs_method_7acb4c02((void*)__hosihikari_shim_handle, n));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_ operator_operator___e1226a10()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C1.hs_method_e1226a10((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C0.hs_method_e1226a10((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_ operator_operator___113de9ce(long n)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C1.hs_method_113de9ce((void*)__hosihikari_shim_handle, n), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_((nint)NativeMethods.TablePtr->C0.hs_method_113de9ce((void*)__hosihikari_shim_handle, n), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? operator_operator___3bf3665b()
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3bf3665b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_3bf3665b((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)__hs_handle, false) : null;
     }
 
@@ -96,12 +96,12 @@ public sealed unsafe partial class ContainerIterator_const_Container_ : global::
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.ContainerIterator_const_Container_ other)
     {
-        return NativeMethods.TablePtr->C1.hs_method_1f235799((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_1f235799((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack operator_index(long n)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C1.hs_method_0c40372e((void*)__hosihikari_shim_handle, n), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C0.hs_method_0c40372e((void*)__hosihikari_shim_handle, n), false);
     }
 
     public void Dispose()
@@ -110,7 +110,7 @@ public sealed unsafe partial class ContainerIterator_const_Container_ : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_4a23a83d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_4a23a83d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

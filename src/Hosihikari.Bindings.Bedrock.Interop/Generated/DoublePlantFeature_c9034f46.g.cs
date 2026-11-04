@@ -38,10 +38,9 @@ public sealed unsafe partial class DoublePlantFeature : global::System.IDisposab
         return __hs_handle;
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_699922c7((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint pos, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DoublePlantFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.DoublePlantFeature arg0)
     {
@@ -59,10 +58,9 @@ public sealed unsafe partial class DoublePlantFeature : global::System.IDisposab
         return NativeMethods.TablePtr->C1.hs_method_7082aa34((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
     }
 
-    public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.HashedString plantType)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ef57e841((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle, (void*)plantType.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool place(nint region, nint pos, nint random, nint plantType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

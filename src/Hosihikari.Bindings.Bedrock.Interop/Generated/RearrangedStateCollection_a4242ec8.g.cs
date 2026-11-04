@@ -44,18 +44,13 @@ public sealed unsafe partial class RearrangedStateCollection : global::System.ID
         get => (nint)NativeMethods.TablePtr->C0.hs_get_5c3603b8((void*)__hosihikari_shim_handle);
     }
 
-    public int? _getState(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int blockData)
-    {
-        var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C0.hs_method_89d4467e((void*)__hosihikari_shim_handle, (void*)blockType.Handle, blockData, &__hs_hasValue);
-        return __hs_hasValue ? __hs_value : (int?)null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getState(nint blockType, int blockData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block? _setState(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int blockData, int stateData)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_4c0e8689((void*)__hosihikari_shim_handle, (void*)blockType.Handle, blockData, stateData);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _setState(nint blockType, int blockData, int stateData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RearrangedStateCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockType_Nested.RearrangedStateCollection arg0)
     {
@@ -68,9 +63,9 @@ public sealed unsafe partial class RearrangedStateCollection : global::System.ID
         return new RearrangedStateCollection((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::optional<int>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void add(nint blockType, nint stateRef, nint getter, nint setter, nint removedSupportVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::optional<int>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int? getState(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int blockData)
     {

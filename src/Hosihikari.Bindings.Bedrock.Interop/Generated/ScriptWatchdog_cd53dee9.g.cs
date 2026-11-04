@@ -38,16 +38,13 @@ public sealed unsafe partial class ScriptWatchdog : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_152440cd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string SCRIPT_WATCHDOG_JOB_QUEUE_PHASE_NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_6cc10086();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SCRIPT_WATCHDOG_JOB_QUEUE_PHASE_NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptWatchdog Create()
     {
@@ -71,10 +68,9 @@ public sealed unsafe partial class ScriptWatchdog : global::System.IDisposable
         return new ScriptWatchdog((nint)handle);
     }
 
-    public void disableTimingWarnings(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, bool disabled)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e19b7227((void*)__hosihikari_shim_handle, (void*)contextId.Handle, disabled);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void disableTimingWarnings(nint contextId, bool disabled) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7150c1_Address
@@ -106,10 +102,9 @@ public sealed unsafe partial class ScriptWatchdog : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_5bbdb933((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptWatchdog operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptWatchdog arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptWatchdog((nint)NativeMethods.TablePtr->C3.hs_method_95899337((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -40,28 +40,13 @@ public sealed unsafe partial class MultiplayerServiceObserver : global::System.I
 
     public nint mpSubject
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_670dc114((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_670dc114((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_670dc114((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_670dc114((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public void _onUserDisconnectedBecauseConcurrentLogin(string arg0)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(arg0);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_25ffb0f1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onUserDisconnectedBecauseConcurrentLogin(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void onInvalidPlayerJoinedLobby(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid, string xuid)
     {
@@ -78,18 +63,18 @@ public sealed unsafe partial class MultiplayerServiceObserver : global::System.I
         global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C4.hs_method_75784c13((void*)__hosihikari_shim_handle, (void*)uuid.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C3.hs_method_75784c13((void*)__hosihikari_shim_handle, (void*)uuid.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public void onPlayerJoinedLobby(nint player, global::Hosihikari.Bindings.Bedrock.Interop.Social.Nonce nonce)
     {
-        NativeMethods.TablePtr->C4.hs_method_4e341633((void*)__hosihikari_shim_handle, (void*)player, (void*)nonce.Handle);
+        NativeMethods.TablePtr->C3.hs_method_4e341633((void*)__hosihikari_shim_handle, (void*)player, (void*)nonce.Handle);
     }
 
     public void onPlayerLeftLobby(nint arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_9052448d((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C3.hs_method_9052448d((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public void onUserDisconnectedBecauseConcurrentLogin(string arg0)
@@ -107,7 +92,7 @@ public sealed unsafe partial class MultiplayerServiceObserver : global::System.I
         global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C4.hs_method_c8970c13((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C3.hs_method_c8970c13((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -118,7 +103,7 @@ public sealed unsafe partial class MultiplayerServiceObserver : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e776bc6a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e776bc6a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

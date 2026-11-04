@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerDestroyBlockEvent : global::System.IDis
 
     public static PlayerDestroyBlockEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDestroyBlockEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1c844059((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_1c844059((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class PlayerDestroyBlockEvent : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b131b367((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b131b367((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_84d6c800((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_84d6c800((void*)__hosihikari_shim_handle);
     }
 
     public byte mFace
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e4acbbfa((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e4acbbfa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e4acbbfa((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e4acbbfa((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8c71fcd1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8c71fcd1((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class PlayerDestroyBlockEvent : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c9e65303((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c9e65303((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

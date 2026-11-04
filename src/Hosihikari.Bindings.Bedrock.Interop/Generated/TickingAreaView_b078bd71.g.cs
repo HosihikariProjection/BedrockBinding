@@ -40,12 +40,12 @@ public sealed unsafe partial class TickingAreaView : global::System.IDisposable
 
     public bool _checkInitialLoadDone(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentLevelTick)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ecfc5d97((void*)__hosihikari_shim_handle, (void*)currentLevelTick.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ecfc5d97((void*)__hosihikari_shim_handle, (void*)currentLevelTick.Handle) != 0;
     }
 
     public bool _checkLoadedChunkNeighborsDone(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, bool useDoneLoading)
     {
-        return NativeMethods.TablePtr->C4.hs_method_51d48dd5((void*)__hosihikari_shim_handle, (void*)region.Handle, useDoneLoading) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_51d48dd5((void*)__hosihikari_shim_handle, (void*)region.Handle, useDoneLoading) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ChunkViewSource' has no accessible destructor.", false)]
@@ -54,62 +54,62 @@ public sealed unsafe partial class TickingAreaView : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource parent)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_03f54c4e((void*)__hosihikari_shim_handle, (void*)parent.Handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_03f54c4e((void*)__hosihikari_shim_handle, (void*)parent.Handle);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _getAvailableChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
     {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_d4fbb257((void*)__hosihikari_shim_handle, (void*)cp.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_d4fbb257((void*)__hosihikari_shim_handle, (void*)cp.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bounds _getBoundsCopy()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bounds((nint)NativeMethods.TablePtr->C4.hs_method_23ad22c2((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bounds((nint)NativeMethods.TablePtr->C3.hs_method_23ad22c2((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType _getDimensionId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C4.hs_method_beaee1e7((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C3.hs_method_beaee1e7((void*)__hosihikari_shim_handle));
     }
 
     public void _init(global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds, bool isCircle)
     {
-        NativeMethods.TablePtr->C4.hs_method_44bda6b0((void*)__hosihikari_shim_handle, (void*)bounds.Handle, isCircle);
+        NativeMethods.TablePtr->C3.hs_method_44bda6b0((void*)__hosihikari_shim_handle, (void*)bounds.Handle, isCircle);
     }
 
     public bool _isCircle()
     {
-        return NativeMethods.TablePtr->C4.hs_method_cc1c80ec((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_cc1c80ec((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _isDoneLoading()
     {
-        return NativeMethods.TablePtr->C4.hs_method_6cf69ba3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_6cf69ba3((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void _move(global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds)
     {
-        NativeMethods.TablePtr->C4.hs_method_6a354596((void*)__hosihikari_shim_handle, (void*)bounds.Handle);
+        NativeMethods.TablePtr->C3.hs_method_6a354596((void*)__hosihikari_shim_handle, (void*)bounds.Handle);
     }
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, bool preload, bool randomize)
     {
-        NativeMethods.TablePtr->C4.hs_method_aafe36b0((void*)__hosihikari_shim_handle, (void*)currentTick.Handle, (void*)region.Handle, preload, randomize);
+        NativeMethods.TablePtr->C3.hs_method_aafe36b0((void*)__hosihikari_shim_handle, (void*)currentTick.Handle, (void*)region.Handle, preload, randomize);
     }
 
     public void _tickSeasons(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        NativeMethods.TablePtr->C4.hs_method_2e517056((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle);
+        NativeMethods.TablePtr->C3.hs_method_2e517056((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TickingAreaView Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_19162b1d();
+        var handle = NativeMethods.TablePtr->C3.hs_create_19162b1d();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -120,7 +120,7 @@ public sealed unsafe partial class TickingAreaView : global::System.IDisposable
 
     public static TickingAreaView Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource parent)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_aa7c427f((void*)parent.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_aa7c427f((void*)parent.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -131,7 +131,7 @@ public sealed unsafe partial class TickingAreaView : global::System.IDisposable
 
     public static TickingAreaView Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreaView arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9ef76a04((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9ef76a04((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -140,19 +140,18 @@ public sealed unsafe partial class TickingAreaView : global::System.IDisposable
         return new TickingAreaView((nint)handle);
     }
 
-    public bool _tickChunk(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, nint registry)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_256edade((void*)__hosihikari_shim_handle, (void*)currentTick.Handle, (void*)region.Handle, (void*)level.Handle, (void*)cp.Handle, (void*)registry) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _tickChunk(nint currentTick, nint region, nint level, nint cp, nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool checkInitialLoadDone(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentLevelTick)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ec171909((void*)__hosihikari_shim_handle, (void*)currentLevelTick.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ec171909((void*)__hosihikari_shim_handle, (void*)currentLevelTick.Handle) != 0;
     }
 
     public bool checkLoadedChunkNeighborsDone(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, bool useDoneLoading)
     {
-        return NativeMethods.TablePtr->C4.hs_method_8d5ec084((void*)__hosihikari_shim_handle, (void*)region.Handle, useDoneLoading) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_8d5ec084((void*)__hosihikari_shim_handle, (void*)region.Handle, useDoneLoading) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ChunkViewSource' has no accessible destructor.", false)]
@@ -161,72 +160,72 @@ public sealed unsafe partial class TickingAreaView : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getAvailableChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
     {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_f6fc7392((void*)__hosihikari_shim_handle, (void*)cp.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_f6fc7392((void*)__hosihikari_shim_handle, (void*)cp.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bounds getBoundsCopy()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bounds((nint)NativeMethods.TablePtr->C4.hs_method_feb06c79((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bounds((nint)NativeMethods.TablePtr->C3.hs_method_feb06c79((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType getDimensionId()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C4.hs_method_8c58f34b((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.DimensionType((nint)NativeMethods.TablePtr->C3.hs_method_8c58f34b((void*)__hosihikari_shim_handle));
     }
 
     public void init(global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds, bool isCircle)
     {
-        NativeMethods.TablePtr->C4.hs_method_8494fa35((void*)__hosihikari_shim_handle, (void*)bounds.Handle, isCircle);
+        NativeMethods.TablePtr->C3.hs_method_8494fa35((void*)__hosihikari_shim_handle, (void*)bounds.Handle, isCircle);
     }
 
     public bool isCircle()
     {
-        return NativeMethods.TablePtr->C4.hs_method_e914688b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e914688b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isDoneLoading()
     {
-        return NativeMethods.TablePtr->C4.hs_method_317cd1ae((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_317cd1ae((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mDoneLoading
     {
-        get => NativeMethods.TablePtr->C4.hs_get_86127c3b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_86127c3b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_86127c3b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_86127c3b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInfluenceDirty
     {
-        get => NativeMethods.TablePtr->C4.hs_get_af5f48c6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_af5f48c6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_af5f48c6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_af5f48c6((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mPolicyHandle
     {
-        get => NativeMethods.TablePtr->C4.hs_get_cb4a59e1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_cb4a59e1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_cb4a59e1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_cb4a59e1((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTickingArea_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_90a57838((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_90a57838((void*)__hosihikari_shim_handle);
     }
 
     public void move(global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds)
     {
-        NativeMethods.TablePtr->C4.hs_method_ec535aef((void*)__hosihikari_shim_handle, (void*)bounds.Handle);
+        NativeMethods.TablePtr->C3.hs_method_ec535aef((void*)__hosihikari_shim_handle, (void*)bounds.Handle);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, bool preload, bool randomize)
     {
-        NativeMethods.TablePtr->C4.hs_method_ee104e23((void*)__hosihikari_shim_handle, (void*)currentTick.Handle, (void*)region.Handle, preload, randomize);
+        NativeMethods.TablePtr->C3.hs_method_ee104e23((void*)__hosihikari_shim_handle, (void*)currentTick.Handle, (void*)region.Handle, preload, randomize);
     }
 
     public void tickSeasons(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {
-        NativeMethods.TablePtr->C4.hs_method_d91a2efb((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle);
+        NativeMethods.TablePtr->C3.hs_method_d91a2efb((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle);
     }
 
 
@@ -236,7 +235,7 @@ public sealed unsafe partial class TickingAreaView : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b078bd71((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b078bd71((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

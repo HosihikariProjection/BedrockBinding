@@ -40,7 +40,7 @@ public sealed unsafe partial class CharacterEncoding : global::System.IDisposabl
 
     public static CharacterEncoding Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0cc71e99();
+        var handle = NativeMethods.TablePtr->C2.hs_create_0cc71e99();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class CharacterEncoding : global::System.IDisposabl
 
     public static CharacterEncoding Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_5a92aa1d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_5a92aa1d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class CharacterEncoding : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk85bf63_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_896c8993((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_896c8993((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb5d9ec_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_dcfe35b0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_dcfe35b0((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding((nint)NativeMethods.TablePtr->C3.hs_method_4c285358((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree_Nested.CharacterEncoding((nint)NativeMethods.TablePtr->C2.hs_method_4c285358((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class CharacterEncoding : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_eb59483c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_eb59483c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,29 +38,25 @@ public sealed unsafe partial class SculkSensorVibrationConfig : global::System.I
         return __hs_handle;
     }
 
-    public bool _canReceiveOnlyIfAdjacentChunksAreTicking()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_2aba528f((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canReceiveOnlyIfAdjacentChunksAreTicking() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onSerializableDataChanged(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        NativeMethods.TablePtr->C3.hs_method_887f733d((void*)__hosihikari_shim_handle, (void*)region.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onSerializableDataChanged(nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onSignalReceive(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg1, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent, global::Hosihikari.Bindings.Bedrock.Interop.Actor? source, float distance, uint listenerRange, global::Hosihikari.Bindings.Bedrock.Interop.Actor? arg6)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3a1a0bfe((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)arg1.Handle, (void*)gameEvent.Handle, (void*)(source?.Handle ?? 0), distance, listenerRange, (void*)(arg6?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onSignalReceive(nint region, nint arg1, nint gameEvent, nint source, float distance, uint listenerRange, nint arg6) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _shouldListen(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent, nint gameEventContext)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_ae113eb8((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)gameEvent.Handle, (void*)gameEventContext) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _shouldListen(nint region, nint gameEvent, nint gameEventContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SculkSensorVibrationConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkSensorVibrationConfig arg0)
     {

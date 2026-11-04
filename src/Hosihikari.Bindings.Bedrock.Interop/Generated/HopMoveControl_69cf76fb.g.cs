@@ -38,23 +38,21 @@ public sealed unsafe partial class HopMoveControl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _setWantedPosition(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, float speed)
-    {
-        NativeMethods.TablePtr->C2.hs_method_4a43274d((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle, (void*)pos.Handle, speed);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setWantedPosition(nint parent, nint mob, nint pos, float speed) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C2.hs_method_76ad4b8c((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint parent, nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HopMoveControl Create(global::Hosihikari.Bindings.Bedrock.Interop.HopMoveControl arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_42dda83a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_42dda83a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,18 +63,18 @@ public sealed unsafe partial class HopMoveControl : global::System.IDisposable
 
     public int mJumpDelayTicks
     {
-        get => NativeMethods.TablePtr->C2.hs_get_83eff21b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_83eff21b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_83eff21b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_83eff21b((void*)__hosihikari_shim_handle, value);
     }
 
     public void setWantedPosition(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, float speed)
     {
-        NativeMethods.TablePtr->C2.hs_method_1a7a25fd((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle, (void*)pos.Handle, speed);
+        NativeMethods.TablePtr->C1.hs_method_1a7a25fd((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle, (void*)pos.Handle, speed);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C2.hs_method_c537e858((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C1.hs_method_c537e858((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
 
@@ -86,7 +84,7 @@ public sealed unsafe partial class HopMoveControl : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_69cf76fb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_69cf76fb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

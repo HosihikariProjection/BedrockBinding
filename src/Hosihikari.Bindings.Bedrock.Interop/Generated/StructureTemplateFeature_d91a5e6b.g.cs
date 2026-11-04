@@ -40,26 +40,23 @@ public sealed unsafe partial class StructureTemplateFeature : global::System.IDi
 
     public bool mCanUseInternalFeature
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8ace326d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_8ace326d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8ace326d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_8ace326d((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInternal
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ec01f337((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_ec01f337((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ec01f337((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_ec01f337((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_53932721((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _place(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StructureTemplateFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateFeature arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_804483b1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_804483b1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,44 +67,44 @@ public sealed unsafe partial class StructureTemplateFeature : global::System.IDi
 
     public int mAdjustmentRadius
     {
-        get => NativeMethods.TablePtr->C4.hs_get_68f42fec((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_68f42fec((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_68f42fec((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_68f42fec((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConstraints_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_405b1581((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_405b1581((void*)__hosihikari_shim_handle);
     }
 
     public byte mFaceDirection
     {
-        get => NativeMethods.TablePtr->C4.hs_get_186f4cf5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_186f4cf5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_186f4cf5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_186f4cf5((void*)__hosihikari_shim_handle, value);
     }
 
     public int mGroundLevel
     {
-        get => NativeMethods.TablePtr->C4.hs_get_b34d47fb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_b34d47fb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b34d47fb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b34d47fb((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mRotateAroundCenter
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1b3bb217((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_1b3bb217((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1b3bb217((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_1b3bb217((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mStructure
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0d683538((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_0d683538((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0d683538((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0d683538((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_cc52e112((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_cc52e112((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
@@ -118,7 +115,7 @@ public sealed unsafe partial class StructureTemplateFeature : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d91a5e6b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d91a5e6b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

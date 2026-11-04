@@ -38,10 +38,9 @@ public sealed unsafe partial class AddPage : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.AddPage arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_bbd2117d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AddPage Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class AddPage : global::System.IDisposable
         return new AddPage((nint)handle);
     }
 
-    public static AddPage Create(global::Hosihikari.Bindings.Bedrock.Interop.BookEditAction.AddPage arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_8168f358((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new AddPage((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AddPage Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mPageIndex
     {

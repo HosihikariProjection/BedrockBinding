@@ -38,14 +38,13 @@ public sealed unsafe partial class Duration : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _reset()
-    {
-        NativeMethods.TablePtr->C3.hs_method_f9fc6eee((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _reset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Duration Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1aa6fa74();
+        var handle = NativeMethods.TablePtr->C2.hs_create_1aa6fa74();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class Duration : global::System.IDisposable
 
     public static Duration Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Duration arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_534e352b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_534e352b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,23 +67,23 @@ public sealed unsafe partial class Duration : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3c6902_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4f75858a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4f75858a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk954db5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_474910b8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_474910b8((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Duration operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Duration arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Duration((nint)NativeMethods.TablePtr->C3.hs_method_baa1ef1a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTracker_Nested.Duration((nint)NativeMethods.TablePtr->C2.hs_method_baa1ef1a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void reset()
     {
-        NativeMethods.TablePtr->C3.hs_method_9b49a4f2((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_9b49a4f2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -94,7 +93,7 @@ public sealed unsafe partial class Duration : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_850c73e8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_850c73e8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

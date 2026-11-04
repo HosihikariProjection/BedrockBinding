@@ -38,90 +38,64 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_9972731f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_b71d53bf((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_ea7f3885((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CryptoOptions Create()
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_2f2e8030();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CryptoOptions Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new CryptoOptions((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CryptoOptions Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static CryptoOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions arg0)
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_66359f8a((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CryptoOptions((nint)handle);
-    }
-
-    public int[] GetSupportedDtlsSrtpCryptoSuites()
-    {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_19746c80((void*)__hosihikari_shim_handle);
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<int>() : new int[checked((int)__hs_view.Size)];
-        if (__hs_view.Size > 0)
-        {
-            new global::System.ReadOnlySpan<int>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint GetSupportedDtlsSrtpCryptoSuites() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk364cb9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_f35d73c8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f35d73c8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3ce9db_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_434f8fcc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_434f8fcc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk86fac7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_bce1316b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_bce1316b((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_not_equal(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions other)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_92838721((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_not_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C5.hs_method_3711f42d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions((nint)NativeMethods.TablePtr->C4.hs_method_3711f42d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.CryptoOptions other)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_78fdf39d((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -130,7 +104,7 @@ public sealed unsafe partial class CryptoOptions : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_33f66245((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_33f66245((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

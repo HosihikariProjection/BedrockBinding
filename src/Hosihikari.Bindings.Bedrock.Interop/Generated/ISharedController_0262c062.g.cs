@@ -40,7 +40,7 @@ public sealed unsafe partial class ISharedController : global::System.IDisposabl
 
     public static ISharedController Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.ISharedController arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_069e4569((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_069e4569((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class ISharedController : global::System.IDisposabl
 
     public bool canChat(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C3.hs_method_c2dbb3c8((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_c2dbb3c8((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool canMessage(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C3.hs_method_1566d906((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_1566d906((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool canOpenChat(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C3.hs_method_7cb7cd28((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_7cb7cd28((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool canTell(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.IPlayerData player)
     {
-        return NativeMethods.TablePtr->C3.hs_method_fe0a2c3b((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_fe0a2c3b((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class ISharedController : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0262c062((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0262c062((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

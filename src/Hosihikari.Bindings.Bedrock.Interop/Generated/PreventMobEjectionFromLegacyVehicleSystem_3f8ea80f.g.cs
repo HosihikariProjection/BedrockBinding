@@ -38,10 +38,9 @@ public sealed unsafe partial class PreventMobEjectionFromLegacyVehicleSystem : g
         return __hs_handle;
     }
 
-    public static void _preventEjectionIfNeeded(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext strictEntityContext, global::Hosihikari.Bindings.Bedrock.Interop.PassengerComponent passengerComponent, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabbShapeComponent, nint vehicleView, nint modifier)
-    {
-        NativeMethods.TablePtr->C3.hs_method_02d1c063((void*)strictEntityContext.Handle, (void*)passengerComponent.Handle, (void*)aabbShapeComponent.Handle, (void*)vehicleView, (void*)modifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _preventEjectionIfNeeded(nint strictEntityContext, nint passengerComponent, nint aabbShapeComponent, nint vehicleView, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class PreventMobEjectionFromLegacyVehicleSystem : g
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_3f8ea80f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_3f8ea80f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

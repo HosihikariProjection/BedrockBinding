@@ -38,15 +38,13 @@ public sealed unsafe partial class StorageAreaState : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView storageAreaRootPath)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_5047252e((void*)__hosihikari_shim_handle, (void*)storageAreaRootPath.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint storageAreaRootPath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_d7039468((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StorageAreaState Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class StorageAreaState : global::System.IDisposable
         return new StorageAreaState((nint)handle);
     }
 
-    public static StorageAreaState Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView storageAreaRootPath)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_4b793f64((void*)storageAreaRootPath.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new StorageAreaState((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static StorageAreaState Create(nint storageAreaRootPath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StorageAreaState Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaState arg0)
     {
@@ -81,15 +72,13 @@ public sealed unsafe partial class StorageAreaState : global::System.IDisposable
         return new StorageAreaState((nint)handle);
     }
 
-    public void addListener(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaStateListener? l)
-    {
-        NativeMethods.TablePtr->C1.hs_method_98e1d5f1((void*)__hosihikari_shim_handle, (void*)(l?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addListener(nint l) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void checkUserStorage(global::Hosihikari.Bindings.Abi.SharedHandle? fileStorageArea, ulong freeSpace, ulong usedSpace, ulong totalCapacity, bool canExtendSize)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a6893ff1((void*)__hosihikari_shim_handle, fileStorageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), freeSpace, usedSpace, totalCapacity, canExtendSize);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void checkUserStorage(nint fileStorageArea, ulong freeSpace, ulong usedSpace, ulong totalCapacity, bool canExtendSize) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3f48e4_Address

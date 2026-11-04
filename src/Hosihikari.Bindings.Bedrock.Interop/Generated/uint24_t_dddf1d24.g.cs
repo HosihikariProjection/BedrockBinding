@@ -40,8 +40,8 @@ public sealed unsafe partial class uint24_t : global::System.IDisposable
 
     public uint val
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2ae16986((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2ae16986((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2ae16986((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2ae16986((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class uint24_t : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_dddf1d24((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_dddf1d24((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

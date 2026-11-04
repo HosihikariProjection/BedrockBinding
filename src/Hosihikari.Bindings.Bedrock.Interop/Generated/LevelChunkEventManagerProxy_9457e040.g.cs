@@ -38,40 +38,34 @@ public sealed unsafe partial class LevelChunkEventManagerProxy : global::System.
         return __hs_handle;
     }
 
-    public int _getClosestPlayerDistanceSquared(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_8d89b61d((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getClosestPlayerDistanceSquared(nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isOwnedByTickingThread(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_f449927a((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isOwnedByTickingThread(nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isReadOnly(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_9d76168e((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isReadOnly(nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTickingStarted(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        NativeMethods.TablePtr->C2.hs_method_9f207b18((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTickingStarted(nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTickingStopped(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        NativeMethods.TablePtr->C2.hs_method_7b9c1f5f((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTickingStopped(nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _setOnChunkLoadedCalled(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
     {
         return NativeMethods.TablePtr->C2.hs_method_a0faf9e8((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle) != 0;
     }
 
-    public void _setupRedstoneCircuit(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource chunkSource, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d6e61c40((void*)__hosihikari_shim_handle, (void*)chunkSource.Handle, (void*)levelChunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setupRedstoneCircuit(nint chunkSource, nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LevelChunkEventManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkEventManagerProxy arg0)
     {

@@ -40,7 +40,7 @@ public sealed unsafe partial class IceServer : global::System.IDisposable
 
     public static IceServer Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionInterface_Nested.IceServer arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_7a1b9b1e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_7a1b9b1e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,49 +52,49 @@ public sealed unsafe partial class IceServer : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint hostname_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_7d56eb42((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7d56eb42((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint password_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_c37ef81b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c37ef81b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint tls_alpn_protocols_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_cfb58d96((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_cfb58d96((void*)__hosihikari_shim_handle);
     }
 
     public int tls_cert_policy
     {
-        get => NativeMethods.TablePtr->C5.hs_get_f93e2e36((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_f93e2e36((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f93e2e36((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f93e2e36((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint tls_elliptic_curves_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_c698e425((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c698e425((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint uri_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_c960d438((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c960d438((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint urls_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_84fcd57e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_84fcd57e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint username_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_354dae2d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_354dae2d((void*)__hosihikari_shim_handle);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class IceServer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_0cadf4b3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_0cadf4b3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

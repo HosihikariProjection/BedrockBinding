@@ -38,15 +38,13 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         return __hs_handle;
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_75a4332b();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RepairableItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.RepairableItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f3598d24((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_f3598d24((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,15 +53,14 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         return new RepairableItemComponent((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_735882fe((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRepairItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1b47b810((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1b47b810((void*)__hosihikari_shim_handle);
     }
 
 
@@ -73,7 +70,7 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6f0e56a9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_6f0e56a9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

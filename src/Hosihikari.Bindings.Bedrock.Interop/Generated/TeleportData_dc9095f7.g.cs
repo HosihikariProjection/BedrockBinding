@@ -40,7 +40,7 @@ public sealed unsafe partial class TeleportData : global::System.IDisposable
 
     public static TeleportData Create(global::Hosihikari.Bindings.Bedrock.Interop.TeleportData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_118029d8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_118029d8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,26 +51,26 @@ public sealed unsafe partial class TeleportData : global::System.IDisposable
 
     public int mCause
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1b4ce602((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1b4ce602((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1b4ce602((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1b4ce602((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDestination_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ffb82fbf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ffb82fbf((void*)__hosihikari_shim_handle);
     }
 
     public int mEntityType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8e1a063c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_8e1a063c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8e1a063c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8e1a063c((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mShouldStopRiding
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4aa72c6d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_4aa72c6d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4aa72c6d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_4aa72c6d((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class TeleportData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_dc9095f7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_dc9095f7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

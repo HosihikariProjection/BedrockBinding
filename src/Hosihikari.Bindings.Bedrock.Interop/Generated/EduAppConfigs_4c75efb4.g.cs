@@ -96,15 +96,13 @@ public sealed unsafe partial class EduAppConfigs : global::System.IDisposable
         return new EduAppConfigs((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion EduOreUIResourcePack()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)NativeMethods.TablePtr->C1.hs_method_73471ebf(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint EduOreUIResourcePack() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion EduResourcePack()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackIdVersion((nint)NativeMethods.TablePtr->C1.hs_method_515c948e(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint EduResourcePack() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IContentAccessibilityProvider' has no accessible destructor.", false)]
     public nint createContentAccessibility() =>

@@ -60,10 +60,9 @@ public sealed unsafe partial class DatagramHeaderFormat : global::System.IDispos
         return new DatagramHeaderFormat((nint)handle);
     }
 
-    public void Serialize(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BitStream? b)
-    {
-        NativeMethods.TablePtr->C1.hs_method_eb935c67((void*)__hosihikari_shim_handle, (void*)(b?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Serialize(nint b) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1d0296_Address

@@ -49,25 +49,21 @@ public sealed unsafe partial class RideableComponent : global::System.IDisposabl
         return new RideableComponent((nint)handle);
     }
 
-    public bool allowInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_c6ec3b9c((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool allowInteraction(nint owner, nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool canAddPassenger(global::Hosihikari.Bindings.Bedrock.Interop.Actor vehicle, global::Hosihikari.Bindings.Bedrock.Interop.Actor passenger)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_2d8d7796((void*)__hosihikari_shim_handle, (void*)vehicle.Handle, (void*)passenger.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool canAddPassenger(nint vehicle, nint passenger) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool getFirstAvailableSeatPosition(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Actor potentialPassenger, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 result)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_14e7d300((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)potentialPassenger.Handle, (void*)result.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool getFirstAvailableSeatPosition(nint owner, nint potentialPassenger, nint result) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte arg2)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_4e3e2a67((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, arg2));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getInteraction(nint owner, nint player, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mData_Address

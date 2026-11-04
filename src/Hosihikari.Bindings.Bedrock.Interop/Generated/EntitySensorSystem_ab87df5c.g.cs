@@ -38,10 +38,9 @@ public sealed unsafe partial class EntitySensorSystem : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static void _tickEntitySensorComponent(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, global::Hosihikari.Bindings.Bedrock.Interop.EntitySensorComponent entitySensorComponent, global::Hosihikari.Bindings.Bedrock.Interop.CurrentTickComponent currentTickComponent)
-    {
-        NativeMethods.TablePtr->C1.hs_method_85f60484((void*)arg0.Handle, (void*)actorOwnerComponent.Handle, (void*)entitySensorComponent.Handle, (void*)currentTickComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _tickEntitySensorComponent(nint arg0, nint actorOwnerComponent, nint entitySensorComponent, nint currentTickComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

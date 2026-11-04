@@ -38,19 +38,17 @@ public sealed unsafe partial class CerealUpgraderBase : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_84486e6e((void*)__hosihikari_shim_handle, (void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_7650ded7((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CerealUpgraderBase Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3d26c394();
+        var handle = NativeMethods.TablePtr->C2.hs_create_3d26c394();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +59,7 @@ public sealed unsafe partial class CerealUpgraderBase : global::System.IDisposab
 
     public static CerealUpgraderBase Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.CerealUpgraderBase arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_9e327e42((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_9e327e42((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,40 +68,33 @@ public sealed unsafe partial class CerealUpgraderBase : global::System.IDisposab
         return new CerealUpgraderBase((nint)handle);
     }
 
-    public static CerealUpgraderBase Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b55bfb13((void*)ctx.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CerealUpgraderBase Create(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new CerealUpgraderBase((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void bindCallback(nint cb, nint source, nint destination) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk52983c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_dbd07ae7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_dbd07ae7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcce99d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3fdc5dd7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3fdc5dd7((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void move(nint source, nint destination) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.CerealUpgraderBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.CerealUpgraderBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.CerealUpgraderBase((nint)NativeMethods.TablePtr->C3.hs_method_9462a0cd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.CerealUpgraderBase((nint)NativeMethods.TablePtr->C2.hs_method_9462a0cd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -113,7 +104,7 @@ public sealed unsafe partial class CerealUpgraderBase : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bb41cb09((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bb41cb09((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

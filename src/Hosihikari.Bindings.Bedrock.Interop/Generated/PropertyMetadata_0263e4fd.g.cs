@@ -40,7 +40,7 @@ public sealed unsafe partial class PropertyMetadata : global::System.IDisposable
 
     public static PropertyMetadata Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyMetadata arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0375513f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_0375513f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,32 +51,32 @@ public sealed unsafe partial class PropertyMetadata : global::System.IDisposable
 
     public bool mClientSync
     {
-        get => NativeMethods.TablePtr->C3.hs_get_fbaeb6f8((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_fbaeb6f8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_fbaeb6f8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_fbaeb6f8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a4b14aaa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a4b14aaa((void*)__hosihikari_shim_handle);
     }
 
     public ulong mOverallIndex
     {
-        get => NativeMethods.TablePtr->C3.hs_get_62138cac((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_62138cac((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_62138cac((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_62138cac((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2d427b10((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2d427b10((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2d427b10((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2d427b10((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mTypeArrayIndex
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e6cff162((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e6cff162((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e6cff162((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e6cff162((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class PropertyMetadata : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0263e4fd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0263e4fd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

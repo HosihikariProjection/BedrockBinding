@@ -38,10 +38,9 @@ public sealed unsafe partial class ActorMovementTickFilterSystem : global::Syste
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo addInterpolationNeededComponent(bool isClientSide)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C0.hs_method_f2440a77(isClientSide));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint addInterpolationNeededComponent(bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

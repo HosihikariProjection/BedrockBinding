@@ -40,7 +40,7 @@ public sealed unsafe partial class ParseTable : global::System.IDisposable
 
     public static ParseTable Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseTable arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_feb3b4f5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_feb3b4f5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,31 +52,31 @@ public sealed unsafe partial class ParseTable : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint buildDuration_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f66c7bf2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_f66c7bf2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint first_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_69c13db1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_69c13db1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint follow_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_949bc8bf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_949bc8bf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint nullableSymbols_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2993f53a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_2993f53a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint predict_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_58f505a2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_58f505a2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class ParseTable : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f73f6e16((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_f73f6e16((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

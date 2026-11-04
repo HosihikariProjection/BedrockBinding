@@ -38,15 +38,13 @@ public sealed unsafe partial class HistoryItem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public string _toString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_49b1669a((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _toString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HistoryItem Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8e02df8f();
+        var handle = NativeMethods.TablePtr->C2.hs_create_8e02df8f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,7 +55,7 @@ public sealed unsafe partial class HistoryItem : global::System.IDisposable
 
     public static HistoryItem Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryItem arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_f6ee513d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_f6ee513d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,65 +66,65 @@ public sealed unsafe partial class HistoryItem : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getPos()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C3.hs_method_67e75829((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_67e75829((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 getRot()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C3.hs_method_afc9afe4((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C2.hs_method_afc9afe4((void*)__hosihikari_shim_handle), false);
     }
 
     public float getYHeadRot()
     {
-        return NativeMethods.TablePtr->C3.hs_method_9bf1a908((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_9bf1a908((void*)__hosihikari_shim_handle);
     }
 
     public bool isAddedActorItem()
     {
-        return NativeMethods.TablePtr->C3.hs_method_ad930d0c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_ad930d0c((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isMotionHintItem()
     {
-        return NativeMethods.TablePtr->C3.hs_method_fe365d4b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_fe365d4b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isOnGround()
     {
-        return NativeMethods.TablePtr->C3.hs_method_db06d315((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_db06d315((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isValidStartItem()
     {
-        return NativeMethods.TablePtr->C3.hs_method_e647e41c((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_e647e41c((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk67f84b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6a260780((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6a260780((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6b77a7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_26c6ca53((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_26c6ca53((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke37de6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b79c89fb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b79c89fb((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryItem operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryItem arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryItem((nint)NativeMethods.TablePtr->C3.hs_method_7feb4d1c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryItem((nint)NativeMethods.TablePtr->C2.hs_method_7feb4d1c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public string toString()
     {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_12b25377((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_12b25377((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -137,7 +135,7 @@ public sealed unsafe partial class HistoryItem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_7b46a9f0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7b46a9f0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

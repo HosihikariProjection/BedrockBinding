@@ -40,7 +40,7 @@ public sealed unsafe partial class IGameTestFunctionRunResult : global::System.I
 
     public static IGameTestFunctionRunResult Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.IGameTestFunctionRunResult arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_884e9dce((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_884e9dce((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class IGameTestFunctionRunResult : global::System.I
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? getError()
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_4359d6b1((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_4359d6b1((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
     }
 
     public bool isComplete()
     {
-        return NativeMethods.TablePtr->C5.hs_method_db64c5b4((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_db64c5b4((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class IGameTestFunctionRunResult : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_a1fc7c41((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_a1fc7c41((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,13 +38,13 @@ public sealed unsafe partial class GameTestBatch : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestFunction>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint name, nint testFunctions, nint beforeBatchFunction, nint afterBatchFunction) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestFunction>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameTestBatch Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_469f59c6();
+        var handle = NativeMethods.TablePtr->C4.hs_create_469f59c6();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class GameTestBatch : global::System.IDisposable
 
     public static GameTestBatch Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestBatch arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_d78f5553((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_d78f5553((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,32 +64,32 @@ public sealed unsafe partial class GameTestBatch : global::System.IDisposable
         return new GameTestBatch((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestFunction>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static GameTestBatch Create(nint name, nint testFunctions, nint beforeBatchFunction, nint afterBatchFunction) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestFunction>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAfterBatchFunction_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_a09c7924((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a09c7924((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBeforeBatchFunction_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_7a30b3d4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7a30b3d4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_19249f0f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_19249f0f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTestFunctions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_8c19b673((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8c19b673((void*)__hosihikari_shim_handle);
     }
 
 
@@ -99,7 +99,7 @@ public sealed unsafe partial class GameTestBatch : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_f3b91b1b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_f3b91b1b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

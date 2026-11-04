@@ -38,20 +38,17 @@ public sealed unsafe partial class GroundTravelTypeSystem : global::System.IDisp
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion FRICTION_FIX_VERSION()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C1.hs_method_5e2760da(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint FRICTION_FIX_VERSION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static float calcMoveRelativeSpeed(global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, float speed, bool hasSoulSpeedEnchant, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion version)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_41706897((void*)region.Handle, (void*)pos.Handle, (void*)aabb.Handle, speed, hasSoulSpeedEnchant, (void*)version.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static float calcMoveRelativeSpeed(nint region, nint pos, nint aabb, float speed, bool hasSoulSpeedEnchant, nint version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo create(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion version)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_16bdafdc((void*)version.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint create(nint version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

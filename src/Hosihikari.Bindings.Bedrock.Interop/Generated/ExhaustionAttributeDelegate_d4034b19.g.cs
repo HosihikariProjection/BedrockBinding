@@ -49,9 +49,9 @@ public sealed unsafe partial class ExhaustionAttributeDelegate : global::System.
         NativeMethods.TablePtr->C1.hs_method_a5fc5bcb((void*)__hosihikari_shim_handle, (void*)mutableInstance.Handle, (void*)context);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ExhaustionAttributeDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.ExhaustionAttributeDelegate arg0)
     {

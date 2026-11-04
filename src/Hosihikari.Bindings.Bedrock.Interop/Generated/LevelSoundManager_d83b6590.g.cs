@@ -44,30 +44,29 @@ public sealed unsafe partial class LevelSoundManager : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_cd147448((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? soundPlayer, bool isClientSide, global::Hosihikari.Bindings.Abi.SharedHandle? levelEventCoordinator, global::Hosihikari.Bindings.Abi.SharedHandle? packetSender, bool isServerAuthSoundEnabled)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_77fbc60a((void*)__hosihikari_shim_handle, soundPlayer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isClientSide, levelEventCoordinator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), packetSender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isServerAuthSoundEnabled);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint soundPlayer, bool isClientSide, nint levelEventCoordinator, nint packetSender, bool isServerAuthSoundEnabled) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getOnLevelSoundEventConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getOnLevelSoundEventWithVolumeAndPitchConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getOnStopAllLevelSoundsEventConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getOnStopLevelSoundEventConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getOnStopMusicEventConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LevelSoundManager Create()
     {
@@ -91,39 +90,29 @@ public sealed unsafe partial class LevelSoundManager : global::System.IDisposabl
         return new LevelSoundManager((nint)handle);
     }
 
-    public static LevelSoundManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? soundPlayer, bool isClientSide, global::Hosihikari.Bindings.Abi.SharedHandle? levelEventCoordinator, global::Hosihikari.Bindings.Abi.SharedHandle? packetSender, bool isServerAuthSoundEnabled)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_145c4181(soundPlayer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isClientSide, levelEventCoordinator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), packetSender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isServerAuthSoundEnabled);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LevelSoundManager Create(nint soundPlayer, bool isClientSide, nint levelEventCoordinator, nint packetSender, bool isServerAuthSoundEnabled) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new LevelSoundManager((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::variant<LevelSoundManager::QueuedSoundSendPacket, LevelSoundManager::QueuedSoundBroadcastPacket, LevelSoundManager::QueuedSoundBroadcastUserIdPacket, LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _queueSoundPacket(nint packet) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::variant<LevelSoundManager::QueuedSoundSendPacket, LevelSoundManager::QueuedSoundBroadcastPacket, LevelSoundManager::QueuedSoundBroadcastUserIdPacket, LevelSoundManager::QueuedSoundBroadcastMultipleUserIdsPacket>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _stopBroadcastsForPlayer(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId player, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? dimension)
-    {
-        NativeMethods.TablePtr->C2.hs_method_e62726a0((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)(dimension?.Handle ?? 0), dimension is not null);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _stopBroadcastsForPlayer(nint player, nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void broadcastSoundEvent(global::Hosihikari.Bindings.Bedrock.Interop.IDimension dimension, uint type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, nint actorSoundIdentifier, bool isGlobal, global::Hosihikari.Bindings.Bedrock.Interop.Player? primaryLocalPlayer, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? fireAtPosition)
-    {
-        NativeMethods.TablePtr->C2.hs_method_24b39238((void*)__hosihikari_shim_handle, (void*)dimension.Handle, type, (void*)pos.Handle, data, (void*)actorSoundIdentifier, isGlobal, (void*)(primaryLocalPlayer?.Handle ?? 0), (void*)(fireAtPosition?.Handle ?? 0), fireAtPosition is not null);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void broadcastSoundEvent_24b39238(nint dimension, nint type, nint pos, int data, nint actorSoundIdentifier, bool isGlobal, nint primaryLocalPlayer, nint fireAtPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void broadcastSoundEvent(global::Hosihikari.Bindings.Bedrock.Interop.IDimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier soundEvent, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, nint actorSoundIdentifier, bool isGlobal, global::Hosihikari.Bindings.Bedrock.Interop.Player? primaryLocalPlayer, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? fireAtPosition)
-    {
-        NativeMethods.TablePtr->C2.hs_method_8584f99f((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)soundEvent.Handle, (void*)pos.Handle, data, (void*)actorSoundIdentifier, isGlobal, (void*)(primaryLocalPlayer?.Handle ?? 0), (void*)(fireAtPosition?.Handle ?? 0), fireAtPosition is not null);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void broadcastSoundEvent_8584f99f(nint dimension, nint soundEvent, nint pos, int data, nint actorSoundIdentifier, bool isGlobal, nint primaryLocalPlayer, nint fireAtPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'BroadcastOptions' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint createServerSoundInstance(nint soundEventName, int loopCount, nint recipient, nint broadcast) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'BroadcastOptions' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint getOnLevelSoundEventConnector() =>
@@ -265,39 +254,33 @@ public sealed unsafe partial class LevelSoundManager : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C2.hs_get_9a263132((void*)__hosihikari_shim_handle);
     }
 
-    public void onViewRegionMoved(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, uint radius, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
-    {
-        NativeMethods.TablePtr->C2.hs_method_5278227e((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)position.Handle, radius, (void*)dimension.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onViewRegionMoved(nint player, nint position, uint radius, nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void playPredictiveSynchronizedSound(global::Hosihikari.Bindings.Bedrock.Interop.IDimension dimension, uint type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.Player? targetPlayer, int data, nint actorSoundIdentifier, bool isGlobal, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? fireAtPosition)
-    {
-        NativeMethods.TablePtr->C2.hs_method_c328e85c((void*)__hosihikari_shim_handle, (void*)dimension.Handle, type, (void*)pos.Handle, (void*)(targetPlayer?.Handle ?? 0), data, (void*)actorSoundIdentifier, isGlobal, (void*)(fireAtPosition?.Handle ?? 0), fireAtPosition is not null);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void playPredictiveSynchronizedSound_c328e85c(nint dimension, nint type, nint pos, nint targetPlayer, int data, nint actorSoundIdentifier, bool isGlobal, nint fireAtPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void playPredictiveSynchronizedSound(global::Hosihikari.Bindings.Bedrock.Interop.IDimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier soundEvent, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.Player? targetPlayer, int data, nint actorSoundIdentifier, bool isGlobal, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? fireAtPosition)
-    {
-        NativeMethods.TablePtr->C2.hs_method_eedcfcfa((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)soundEvent.Handle, (void*)pos.Handle, (void*)(targetPlayer?.Handle ?? 0), data, (void*)actorSoundIdentifier, isGlobal, (void*)(fireAtPosition?.Handle ?? 0), fireAtPosition is not null);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void playPredictiveSynchronizedSound_eedcfcfa(nint dimension, nint soundEvent, nint pos, nint targetPlayer, int data, nint actorSoundIdentifier, bool isGlobal, nint fireAtPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void playSynchronizedSound_DEPRECATED(global::Hosihikari.Bindings.Bedrock.Interop.IDimension dimension, uint type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.Player? primaryLocalPlayer, int data, nint actorSoundIdentifier, bool isGlobal, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? fireAtPosition)
-    {
-        NativeMethods.TablePtr->C2.hs_method_4befe436((void*)__hosihikari_shim_handle, (void*)dimension.Handle, type, (void*)pos.Handle, (void*)(primaryLocalPlayer?.Handle ?? 0), data, (void*)actorSoundIdentifier, isGlobal, (void*)(fireAtPosition?.Handle ?? 0), fireAtPosition is not null);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void playSynchronizedSound_DEPRECATED(nint dimension, nint type, nint pos, nint primaryLocalPlayer, int data, nint actorSoundIdentifier, bool isGlobal, nint fireAtPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerPauseManagerCallback(nint connector) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void subscribeToPlayerConnectionEvents(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerConnectionConnector connector)
-    {
-        NativeMethods.TablePtr->C2.hs_method_c5d3a498((void*)__hosihikari_shim_handle, (void*)connector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void subscribeToPlayerConnectionEvents(nint connector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void subscribeToPlayerDimensionTransfers(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerDimensionTransferConnector connector)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d902d012((void*)__hosihikari_shim_handle, (void*)connector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void subscribeToPlayerDimensionTransfers(nint connector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

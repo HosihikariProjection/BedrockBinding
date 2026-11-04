@@ -38,79 +38,65 @@ public sealed unsafe partial class ItemTagDescriptor : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ItemDescriptor::BaseDescriptor' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _clone() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ItemDescriptor::BaseDescriptor' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _forEachItemUntil(nint func) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _getFullName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_b903afcc((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getFullName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong _getHash()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_0d8098f1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong _getHash() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry _getItem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C2.hs_method_89b36e9f((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getItem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte _getType()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_f899264b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _sameItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry otherItem, bool arg1)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_36120ff9((void*)__hosihikari_shim_handle, (void*)otherItem.Handle, arg1) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _sameItem(nint otherItem, bool arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _sameItems(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.BaseDescriptor otherDescriptor, bool compareAux)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_9692d675((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _sameItems(nint otherDescriptor, bool compareAux) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? _save()
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_3af57858((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _save() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
-    {
-        NativeMethods.TablePtr->C2.hs_method_3d8c6659((void*)__hosihikari_shim_handle, (void*)stream.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _serialize_3d8c6659(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _serialize(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val)
-    {
-        NativeMethods.TablePtr->C2.hs_method_212de047((void*)__hosihikari_shim_handle, (void*)val.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _serialize_212de047(nint val) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::map<std::basic_string<char>, std::basic_string<char>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _toMap() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::map<std::basic_string<char>, std::basic_string<char>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _toString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_76e52206((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _toString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemTagDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemTagDescriptor arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5a1bc500((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_5a1bc500((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -129,56 +115,56 @@ public sealed unsafe partial class ItemTagDescriptor : global::System.IDisposabl
 
     public string getFullName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_c4693717((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_c4693717((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public ulong getHash()
     {
-        return NativeMethods.TablePtr->C2.hs_method_91aaaa5b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_91aaaa5b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry getItem()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C2.hs_method_2eebe696((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry((nint)NativeMethods.TablePtr->C1.hs_method_2eebe696((void*)__hosihikari_shim_handle));
     }
 
     public byte getType()
     {
-        return NativeMethods.TablePtr->C2.hs_method_a75b1f3c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_a75b1f3c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7c8d817e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7c8d817e((void*)__hosihikari_shim_handle);
     }
 
     public bool sameItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.ItemEntry otherItem, bool arg1)
     {
-        return NativeMethods.TablePtr->C2.hs_method_e1a38dda((void*)__hosihikari_shim_handle, (void*)otherItem.Handle, arg1) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_e1a38dda((void*)__hosihikari_shim_handle, (void*)otherItem.Handle, arg1) != 0;
     }
 
     public bool sameItems(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor_Nested.BaseDescriptor otherDescriptor, bool compareAux)
     {
-        return NativeMethods.TablePtr->C2.hs_method_b7f494be((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_b7f494be((void*)__hosihikari_shim_handle, (void*)otherDescriptor.Handle, compareAux) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? save()
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_1c5e589c((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_1c5e589c((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)__hs_handle) : null;
     }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C2.hs_method_7354ca71((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C1.hs_method_7354ca71((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val)
     {
-        NativeMethods.TablePtr->C2.hs_method_bd1ecfc5((void*)__hosihikari_shim_handle, (void*)val.Handle);
+        NativeMethods.TablePtr->C1.hs_method_bd1ecfc5((void*)__hosihikari_shim_handle, (void*)val.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::map<std::basic_string<char>, std::basic_string<char>>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -187,7 +173,7 @@ public sealed unsafe partial class ItemTagDescriptor : global::System.IDisposabl
 
     public string toString()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_96fb2603((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_96fb2603((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -198,7 +184,7 @@ public sealed unsafe partial class ItemTagDescriptor : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_7c1d9652((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_7c1d9652((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

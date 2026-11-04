@@ -38,20 +38,18 @@ public sealed unsafe partial class NullLogger : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _Logv(nint format, nint ap)
-    {
-        NativeMethods.TablePtr->C2.hs_method_43edf6bc((void*)__hosihikari_shim_handle, (void*)format, (void*)ap);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _Logv(nint format, nint ap) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Logv(nint format, nint ap)
     {
         NativeMethods.TablePtr->C2.hs_method_8ce83988((void*)__hosihikari_shim_handle, (void*)format, (void*)ap);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.NullLogger instance()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NullLogger((nint)NativeMethods.TablePtr->C2.hs_method_02445b71(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint instance() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,30 +38,13 @@ public sealed unsafe partial class ResultLogger : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void log(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.LogLevel logLevel, int logArea, string error, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.CallStack callStack)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            NativeMethods.TablePtr->C0.hs_method_c27b6149((void*)logLevel.Handle, logArea, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)callStack.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void log(nint logLevel, nint logArea, nint error, nint callStack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string noContextString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_b60ab093();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint noContextString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

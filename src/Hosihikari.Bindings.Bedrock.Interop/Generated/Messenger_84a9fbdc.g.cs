@@ -41,308 +41,148 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8df412ad((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8df412ad((void*)__hosihikari_shim_handle);
     }
 
-    public void _blockBroken(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int method, int variantData, ushort auxType)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e2287933((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, method, variantData, auxType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _blockBroken(nint player, nint block, int method, int variantData, ushort auxType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _blockPlaced(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Block block, bool underWater, ushort auxType)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d0203ae1((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, underWater, auxType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _blockPlaced(nint player, nint block, bool underWater, ushort auxType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _blockPlacedByCommand(global::Hosihikari.Bindings.Bedrock.Interop.Block block, ushort auxType, int numberOfBlocksPlaced)
-    {
-        NativeMethods.TablePtr->C1.hs_method_33359732((void*)__hosihikari_shim_handle, (void*)block.Handle, auxType, numberOfBlocksPlaced);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _blockPlacedByCommand(nint block, ushort auxType, int numberOfBlocksPlaced) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _cameraUsed(bool isSelfie)
-    {
-        NativeMethods.TablePtr->C1.hs_method_995980f2((void*)__hosihikari_shim_handle, isSelfie);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _cameraUsed(bool isSelfie) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _chunkChanged(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
-    {
-        NativeMethods.TablePtr->C1.hs_method_727e70e4((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _chunkChanged(nint chunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _chunkLoaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
-    {
-        NativeMethods.TablePtr->C1.hs_method_9af185f0((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _chunkLoaded(nint chunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _chunkUnloaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
-    {
-        NativeMethods.TablePtr->C1.hs_method_6e99b423((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _chunkUnloaded(nint chunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _codeBuilderRuntimeAction(string action)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(action);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(action, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_1c830c26((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _codeBuilderRuntimeAction(nint action) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _codeBuilderScoreChanged(string objective, int score)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(objective);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(objective, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_e83c5372((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, score);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _codeBuilderScoreChanged(nint objective, nint score) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? codeBuilderClient)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_d15e2225((void*)__hosihikari_shim_handle, codeBuilderClient?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint codeBuilderClient) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _endOfDay(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
-    {
-        NativeMethods.TablePtr->C1.hs_method_000bb4a3((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _endOfDay(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _entitySpawned(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int mobType, uint spawnMethod)
-    {
-        NativeMethods.TablePtr->C1.hs_method_edf18900((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), mobType, spawnMethod);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _entitySpawned(nint player, int mobType, uint spawnMethod) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _itemAcquired(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item, int arg2, uint amountAcquired, int acquisitionMethod)
-    {
-        NativeMethods.TablePtr->C1.hs_method_be2eeba6((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, arg2, amountAcquired, acquisitionMethod);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _itemAcquired(nint player, nint item, int arg2, uint amountAcquired, int acquisitionMethod) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _itemCrafted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, bool craftingTable, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, bool recipeBook, bool hadSearchString, bool craftedAutomatically, int startingTabId, int endingTabId, int numTabsChanged, bool filterOn, bool recipeBookShown)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a245ab11((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), craftingTable, (void*)item.Handle, recipeBook, hadSearchString, craftedAutomatically, startingTabId, endingTabId, numTabsChanged, filterOn, recipeBookShown);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _itemCrafted(nint player, bool craftingTable, nint item, bool recipeBook, bool hadSearchString, bool craftedAutomatically, int startingTabId, int endingTabId, int numTabsChanged, bool filterOn, bool recipeBookShown) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _itemDropped(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
-    {
-        NativeMethods.TablePtr->C1.hs_method_218f9f71((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _itemDropped(nint player, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _itemEquipped(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, int slot)
-    {
-        NativeMethods.TablePtr->C1.hs_method_2edeb241((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, slot);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _itemEquipped(nint player, nint item, int slot) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _itemInteracted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, int method)
-    {
-        NativeMethods.TablePtr->C1.hs_method_8d32b90d((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, method);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _itemInteracted(nint player, nint item, int method) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _itemSmelted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor lastFuelItem)
-    {
-        NativeMethods.TablePtr->C1.hs_method_c5e2d6bb((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, (void*)lastFuelItem.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _itemSmelted(nint player, nint item, nint lastFuelItem) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _itemUsed(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item, int useMethod)
-    {
-        NativeMethods.TablePtr->C1.hs_method_c92ef3bf((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, useMethod);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _itemUsed(nint player, nint item, int useMethod) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _mobInteracted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int legacyInteractedEntityType, int interactionType, int interactedEntityVariant, byte interactedEntityColor)
-    {
-        NativeMethods.TablePtr->C1.hs_method_19186986((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), legacyInteractedEntityType, interactionType, interactedEntityVariant, interactedEntityColor);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _mobInteracted(nint player, int legacyInteractedEntityType, int interactionType, int interactedEntityVariant, byte interactedEntityColor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _mobKilled(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Actor? entKiller, global::Hosihikari.Bindings.Bedrock.Interop.Mob mobKilled, uint method, string arg4, int traderTier)
-    {
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(arg4);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(arg4, __hs_stringBytes4);
-        fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-        {
-            NativeMethods.TablePtr->C1.hs_method_a6c321d1((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)(entKiller?.Handle ?? 0), (void*)mobKilled.Handle, method, __hs_stringData4, (nuint)__hs_stringByteCount4, traderTier);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _mobKilled(nint player, nint entKiller, nint mobKilled, uint method, nint arg4, int traderTier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onAgentAction(int actionType, string requestId, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value result)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(requestId);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(requestId, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C1.hs_method_d102e2f9((void*)__hosihikari_shim_handle, actionType, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)result.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onAgentAction(nint actionType, nint requestId, nint result) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C1.hs_method_90a6c079((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onCommand(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _piglinBarter(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, string itemUsed, bool wasTargetingBarteringPlayer)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(itemUsed);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(itemUsed, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C1.hs_method_6860f758((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), __hs_stringData1, (nuint)__hs_stringByteCount1, wasTargetingBarteringPlayer);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _piglinBarter(nint player, nint itemUsed, bool wasTargetingBarteringPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _playerBounced(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int bounceHeight, int auxType)
-    {
-        NativeMethods.TablePtr->C1.hs_method_cf56eb5d((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, bounceHeight, auxType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _playerBounced(nint player, nint block, int bounceHeight, int auxType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _playerDied(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int killerId, int killerVariant, int reason, bool inRaid)
-    {
-        NativeMethods.TablePtr->C1.hs_method_3cd8913c((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), killerId, killerVariant, reason, inRaid);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _playerDied(nint player, int killerId, int killerVariant, int reason, bool inRaid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _playerJoined(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
-    {
-        NativeMethods.TablePtr->C1.hs_method_5117d3ec((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _playerJoined(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _playerLeave(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a4e497e7((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _playerLeave(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _playerMessage(string fromName, string toName, string message, string messageType)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fromName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(fromName, __hs_stringBytes0);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(toName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(toName, __hs_stringBytes1);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(message);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes2);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(messageType);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(messageType, __hs_stringBytes3);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-                {
-                    fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-                    {
-                        NativeMethods.TablePtr->C1.hs_method_78adcd11((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
-                    }
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _playerMessage(nint fromName, nint toName, nint message, nint messageType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _playerTeleported(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, float metersTravelled, int cause, int sourceType)
-    {
-        NativeMethods.TablePtr->C1.hs_method_5adaa808((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), metersTravelled, cause, sourceType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _playerTeleported(nint player, float metersTravelled, int cause, int sourceType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _playerTransform(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
-    {
-        NativeMethods.TablePtr->C1.hs_method_3021d382((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _playerTransform(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _playerTravelled(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome)
-    {
-        NativeMethods.TablePtr->C1.hs_method_85ef86ec((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), metersTravelledSinceLastEvent, travelMethodType, newBiome);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _playerTravelled(nint player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _targetBlockHit(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int redstoneLevel)
-    {
-        NativeMethods.TablePtr->C1.hs_method_4c203b98((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), redstoneLevel);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _targetBlockHit(nint player, nint redstoneLevel) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tradeCompleted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Actor? trader, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemA, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemB, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance tradedFor, int traderEmeraldCount)
-    {
-        NativeMethods.TablePtr->C1.hs_method_210d4305((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)(trader?.Handle ?? 0), (void*)itemA.Handle, (void*)itemB.Handle, (void*)tradedFor.Handle, traderEmeraldCount);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tradeCompleted(nint player, nint trader, nint itemA, nint itemB, nint tradedFor, int traderEmeraldCount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Messenger Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_bccde317();
+        var handle = NativeMethods.TablePtr->C0.hs_create_bccde317();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -351,50 +191,43 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         return new Messenger((nint)handle);
     }
 
-    public static Messenger Create(global::Hosihikari.Bindings.Abi.SharedHandle? codeBuilderClient)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_128ffa5f(codeBuilderClient?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Messenger((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Messenger Create(nint codeBuilderClient) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void blockBroken(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int method, int variantData, ushort auxType)
     {
-        NativeMethods.TablePtr->C1.hs_method_97849edf((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, method, variantData, auxType);
+        NativeMethods.TablePtr->C0.hs_method_97849edf((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, method, variantData, auxType);
     }
 
     public void blockPlaced(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Block block, bool underWater, ushort auxType)
     {
-        NativeMethods.TablePtr->C1.hs_method_90f14725((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, underWater, auxType);
+        NativeMethods.TablePtr->C0.hs_method_90f14725((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, underWater, auxType);
     }
 
     public void blockPlacedByCommand(global::Hosihikari.Bindings.Bedrock.Interop.Block block, ushort auxType, int numberOfBlocksPlaced)
     {
-        NativeMethods.TablePtr->C1.hs_method_22f646fc((void*)__hosihikari_shim_handle, (void*)block.Handle, auxType, numberOfBlocksPlaced);
+        NativeMethods.TablePtr->C0.hs_method_22f646fc((void*)__hosihikari_shim_handle, (void*)block.Handle, auxType, numberOfBlocksPlaced);
     }
 
     public void cameraUsed(bool isSelfie)
     {
-        NativeMethods.TablePtr->C1.hs_method_d5ec90b8((void*)__hosihikari_shim_handle, isSelfie);
+        NativeMethods.TablePtr->C0.hs_method_d5ec90b8((void*)__hosihikari_shim_handle, isSelfie);
     }
 
     public void chunkChanged(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
-        NativeMethods.TablePtr->C1.hs_method_b258416f((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C0.hs_method_b258416f((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
     public void chunkLoaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
-        NativeMethods.TablePtr->C1.hs_method_ddca4bef((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C0.hs_method_ddca4bef((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
     public void chunkUnloaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
     {
-        NativeMethods.TablePtr->C1.hs_method_bc853800((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C0.hs_method_bc853800((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
     }
 
     public void codeBuilderRuntimeAction(string action)
@@ -412,7 +245,7 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(action, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_33723af0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C0.hs_method_33723af0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
@@ -431,64 +264,64 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(objective, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C1.hs_method_bdf4ff04((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, score);
+            NativeMethods.TablePtr->C0.hs_method_bdf4ff04((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, score);
         }
     }
 
     public void endOfDay(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
     {
-        NativeMethods.TablePtr->C1.hs_method_d02c4cdb((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
+        NativeMethods.TablePtr->C0.hs_method_d02c4cdb((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
     }
 
     public void entitySpawned(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int mobType, uint spawnMethod)
     {
-        NativeMethods.TablePtr->C1.hs_method_0c723125((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), mobType, spawnMethod);
+        NativeMethods.TablePtr->C0.hs_method_0c723125((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), mobType, spawnMethod);
     }
 
     public void itemAcquired(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item, int arg2, uint amountAcquired, int acquisitionMethod)
     {
-        NativeMethods.TablePtr->C1.hs_method_15abce4b((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, arg2, amountAcquired, acquisitionMethod);
+        NativeMethods.TablePtr->C0.hs_method_15abce4b((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, arg2, amountAcquired, acquisitionMethod);
     }
 
     public void itemCrafted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, bool craftingTable, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, bool recipeBook, bool hadSearchString, bool craftedAutomatically, int startingTabId, int endingTabId, int numTabsChanged, bool filterOn, bool recipeBookShown)
     {
-        NativeMethods.TablePtr->C1.hs_method_7ef7a97d((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), craftingTable, (void*)item.Handle, recipeBook, hadSearchString, craftedAutomatically, startingTabId, endingTabId, numTabsChanged, filterOn, recipeBookShown);
+        NativeMethods.TablePtr->C0.hs_method_7ef7a97d((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), craftingTable, (void*)item.Handle, recipeBook, hadSearchString, craftedAutomatically, startingTabId, endingTabId, numTabsChanged, filterOn, recipeBookShown);
     }
 
     public void itemDropped(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
     {
-        NativeMethods.TablePtr->C1.hs_method_67e6b85c((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle);
+        NativeMethods.TablePtr->C0.hs_method_67e6b85c((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle);
     }
 
     public void itemEquipped(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, int slot)
     {
-        NativeMethods.TablePtr->C1.hs_method_b752eaee((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, slot);
+        NativeMethods.TablePtr->C0.hs_method_b752eaee((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, slot);
     }
 
     public void itemInteracted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, int method)
     {
-        NativeMethods.TablePtr->C1.hs_method_bd5c0d30((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, method);
+        NativeMethods.TablePtr->C0.hs_method_bd5c0d30((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, method);
     }
 
     public void itemSmelted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor lastFuelItem)
     {
-        NativeMethods.TablePtr->C1.hs_method_305cc602((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, (void*)lastFuelItem.Handle);
+        NativeMethods.TablePtr->C0.hs_method_305cc602((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, (void*)lastFuelItem.Handle);
     }
 
     public void itemUsed(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item, int useMethod)
     {
-        NativeMethods.TablePtr->C1.hs_method_19da89cf((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, useMethod);
+        NativeMethods.TablePtr->C0.hs_method_19da89cf((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)item.Handle, useMethod);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCodeBuilderClient_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d5c4821d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_d5c4821d((void*)__hosihikari_shim_handle);
     }
 
     public void mobInteracted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int legacyInteractedEntityType, int interactionType, int interactedEntityVariant, byte interactedEntityColor)
     {
-        NativeMethods.TablePtr->C1.hs_method_03541376((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), legacyInteractedEntityType, interactionType, interactedEntityVariant, interactedEntityColor);
+        NativeMethods.TablePtr->C0.hs_method_03541376((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), legacyInteractedEntityType, interactionType, interactedEntityVariant, interactedEntityColor);
     }
 
     public void mobKilled(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Actor? entKiller, global::Hosihikari.Bindings.Bedrock.Interop.Mob mobKilled, uint method, string arg4, int traderTier)
@@ -506,7 +339,7 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(arg4, __hs_stringBytes4);
         fixed (byte* __hs_stringData4 = __hs_stringBytes4)
         {
-            NativeMethods.TablePtr->C1.hs_method_4a8e6b16((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)(entKiller?.Handle ?? 0), (void*)mobKilled.Handle, method, __hs_stringData4, (nuint)__hs_stringByteCount4, traderTier);
+            NativeMethods.TablePtr->C0.hs_method_4a8e6b16((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)(entKiller?.Handle ?? 0), (void*)mobKilled.Handle, method, __hs_stringData4, (nuint)__hs_stringByteCount4, traderTier);
         }
     }
 
@@ -525,13 +358,13 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(requestId, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_219fe920((void*)__hosihikari_shim_handle, actionType, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)result.Handle);
+            NativeMethods.TablePtr->C0.hs_method_219fe920((void*)__hosihikari_shim_handle, actionType, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)result.Handle);
         }
     }
 
     public void onCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C1.hs_method_03aeecf5((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C0.hs_method_03aeecf5((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public void piglinBarter(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, string itemUsed, bool wasTargetingBarteringPlayer)
@@ -549,28 +382,28 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(itemUsed, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C1.hs_method_928e9bec((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), __hs_stringData1, (nuint)__hs_stringByteCount1, wasTargetingBarteringPlayer);
+            NativeMethods.TablePtr->C0.hs_method_928e9bec((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), __hs_stringData1, (nuint)__hs_stringByteCount1, wasTargetingBarteringPlayer);
         }
     }
 
     public void playerBounced(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int bounceHeight, int auxType)
     {
-        NativeMethods.TablePtr->C1.hs_method_97a8c854((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, bounceHeight, auxType);
+        NativeMethods.TablePtr->C0.hs_method_97a8c854((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)block.Handle, bounceHeight, auxType);
     }
 
     public void playerDied(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int killerId, int killerVariant, int reason, bool inRaid)
     {
-        NativeMethods.TablePtr->C1.hs_method_68682b95((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), killerId, killerVariant, reason, inRaid);
+        NativeMethods.TablePtr->C0.hs_method_68682b95((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), killerId, killerVariant, reason, inRaid);
     }
 
     public void playerJoined(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
     {
-        NativeMethods.TablePtr->C1.hs_method_b24c52bb((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
+        NativeMethods.TablePtr->C0.hs_method_b24c52bb((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
     }
 
     public void playerLeave(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
     {
-        NativeMethods.TablePtr->C1.hs_method_9a6fa56c((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
+        NativeMethods.TablePtr->C0.hs_method_9a6fa56c((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
     }
 
     public void playerMessage(string fromName, string toName, string message, string messageType)
@@ -627,7 +460,7 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
                 {
                     fixed (byte* __hs_stringData3 = __hs_stringBytes3)
                     {
-                        NativeMethods.TablePtr->C1.hs_method_00ed34cb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
+                        NativeMethods.TablePtr->C0.hs_method_00ed34cb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
                     }
                 }
             }
@@ -636,34 +469,34 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
 
     public void playerTeleported(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, float metersTravelled, int cause, int sourceType)
     {
-        NativeMethods.TablePtr->C1.hs_method_d041cd9b((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), metersTravelled, cause, sourceType);
+        NativeMethods.TablePtr->C0.hs_method_d041cd9b((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), metersTravelled, cause, sourceType);
     }
 
     public void playerTransform(global::Hosihikari.Bindings.Bedrock.Interop.Player? player)
     {
-        NativeMethods.TablePtr->C1.hs_method_c01e497f((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
+        NativeMethods.TablePtr->C0.hs_method_c01e497f((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0));
     }
 
     public void playerTravelled(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, float metersTravelledSinceLastEvent, int travelMethodType, int newBiome)
     {
-        NativeMethods.TablePtr->C1.hs_method_e83028ac((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), metersTravelledSinceLastEvent, travelMethodType, newBiome);
+        NativeMethods.TablePtr->C0.hs_method_e83028ac((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), metersTravelledSinceLastEvent, travelMethodType, newBiome);
     }
 
     public void targetBlockHit(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int redstoneLevel)
     {
-        NativeMethods.TablePtr->C1.hs_method_22d858d1((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), redstoneLevel);
+        NativeMethods.TablePtr->C0.hs_method_22d858d1((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), redstoneLevel);
     }
 
     public void tradeCompleted(global::Hosihikari.Bindings.Bedrock.Interop.Player? player, global::Hosihikari.Bindings.Bedrock.Interop.Actor? trader, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemA, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemB, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance tradedFor, int traderEmeraldCount)
     {
-        NativeMethods.TablePtr->C1.hs_method_0d30871a((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)(trader?.Handle ?? 0), (void*)itemA.Handle, (void*)itemB.Handle, (void*)tradedFor.Handle, traderEmeraldCount);
+        NativeMethods.TablePtr->C0.hs_method_0d30871a((void*)__hosihikari_shim_handle, (void*)(player?.Handle ?? 0), (void*)(trader?.Handle ?? 0), (void*)itemA.Handle, (void*)itemB.Handle, (void*)tradedFor.Handle, traderEmeraldCount);
     }
 
 
     public nint mpSubject
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8ff008cb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8ff008cb((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8ff008cb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_8ff008cb((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void Dispose()
@@ -672,7 +505,7 @@ public sealed unsafe partial class Messenger : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_84a9fbdc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_84a9fbdc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

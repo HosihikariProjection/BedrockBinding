@@ -40,7 +40,7 @@ public sealed unsafe partial class ContainerScreenContext : global::System.IDisp
 
     public static ContainerScreenContext Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_63e3fd51((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_63e3fd51((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,24 +52,24 @@ public sealed unsafe partial class ContainerScreenContext : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mOwner_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_c558182f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_c558182f((void*)__hosihikari_shim_handle);
     }
 
     public nint mPlayer
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e7c136d5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_e7c136d5((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_e7c136d5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_e7c136d5((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public sbyte mScreenContainerType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_349cf827((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_349cf827((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_349cf827((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_349cf827((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor? tryGetBlockActor()
     {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f398b899((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_f398b899((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)__hs_handle, false) : null;
     }
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class ContainerScreenContext : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c650ff32((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_c650ff32((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

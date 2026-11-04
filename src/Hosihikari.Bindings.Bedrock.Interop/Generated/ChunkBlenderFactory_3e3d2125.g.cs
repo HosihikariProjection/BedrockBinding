@@ -49,11 +49,9 @@ public sealed unsafe partial class ChunkBlenderFactory : global::System.IDisposa
         return new ChunkBlenderFactory((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? getOrCreateChunkBlender(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos lcPosition)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_1725cdd1((void*)__hosihikari_shim_handle, (void*)lcPosition.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getOrCreateChunkBlender(nint lcPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttenuatorCache_Address

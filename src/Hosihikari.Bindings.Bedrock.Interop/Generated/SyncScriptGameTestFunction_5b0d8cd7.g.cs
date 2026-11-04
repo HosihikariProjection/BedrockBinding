@@ -44,17 +44,17 @@ public sealed unsafe partial class SyncScriptGameTestFunction : global::System.I
         get => (nint)NativeMethods.TablePtr->C3.hs_get_59068cdb((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: parameter type 'Scripting::Closure<void (Scripting::TypedObjectHandle<ScriptModuleGameTest::ScriptGameTestHelper>)>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint scope, nint functionHandle, nint testName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'Scripting::Closure<void (Scripting::TypedObjectHandle<ScriptModuleGameTest::ScriptGameTestHelper>)>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'gametest::IGameTestFunctionRunResult' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _run(nint arg0, nint fnContext) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'gametest::IGameTestFunctionRunResult' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SyncScriptGameTestFunction Create()
     {
@@ -67,9 +67,9 @@ public sealed unsafe partial class SyncScriptGameTestFunction : global::System.I
         return new SyncScriptGameTestFunction((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: parameter type 'Scripting::Closure<void (Scripting::TypedObjectHandle<ScriptModuleGameTest::ScriptGameTestHelper>)>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static SyncScriptGameTestFunction Create(nint scope, nint functionHandle, nint testName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'Scripting::Closure<void (Scripting::TypedObjectHandle<ScriptModuleGameTest::ScriptGameTestHelper>)>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SyncScriptGameTestFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.SyncScriptGameTestFunction arg0)
     {

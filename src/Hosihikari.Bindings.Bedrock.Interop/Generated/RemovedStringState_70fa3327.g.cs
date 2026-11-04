@@ -44,20 +44,17 @@ public sealed unsafe partial class RemovedStringState : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ab6e5929((void*)__hosihikari_shim_handle);
     }
 
-    public void _addValue(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C1.hs_method_168d9266((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _addValue(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _match(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder builder, ulong index)
-    {
-        NativeMethods.TablePtr->C1.hs_method_c8fff38c((void*)__hosihikari_shim_handle, (void*)builder.Handle, index);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _match(nint builder, ulong index) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong _valueCount()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_4a970833((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong _valueCount() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RemovedStringState Create(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.RemovedStringState arg0)
     {

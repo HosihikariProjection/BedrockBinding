@@ -40,7 +40,7 @@ public sealed unsafe partial class ContainerOpenPacketPayload : global::System.I
 
     public static ContainerOpenPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerOpenPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_2447c0ab((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_2447c0ab((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,26 +51,26 @@ public sealed unsafe partial class ContainerOpenPacketPayload : global::System.I
 
     public sbyte mContainerId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_29eb81e8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_29eb81e8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_29eb81e8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_29eb81e8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityUniqueID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b61274f7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_b61274f7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9af203cf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_9af203cf((void*)__hosihikari_shim_handle);
     }
 
     public sbyte mType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_4ead8f47((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_4ead8f47((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_4ead8f47((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_4ead8f47((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class ContainerOpenPacketPayload : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_3016322d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_3016322d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

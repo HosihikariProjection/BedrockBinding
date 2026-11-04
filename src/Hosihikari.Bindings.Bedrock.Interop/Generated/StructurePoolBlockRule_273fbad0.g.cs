@@ -40,7 +40,7 @@ public sealed unsafe partial class StructurePoolBlockRule : global::System.IDisp
 
     public static StructurePoolBlockRule Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockRule arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8f642902((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8f642902((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,24 +52,24 @@ public sealed unsafe partial class StructurePoolBlockRule : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mPositionPredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_082f2872((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_082f2872((void*)__hosihikari_shim_handle);
     }
 
     public nint mResultBlock
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_740a6832((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_740a6832((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSourcePredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0975f16d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0975f16d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetPredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2b5911b4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2b5911b4((void*)__hosihikari_shim_handle);
     }
 
 
@@ -79,7 +79,7 @@ public sealed unsafe partial class StructurePoolBlockRule : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_273fbad0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_273fbad0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -101,18 +101,16 @@ public sealed unsafe partial class CommandData : global::System.IDisposable
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
+    public nint operator_assign_516b67ac(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.CommandData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.CommandData arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.CommandData((nint)NativeMethods.TablePtr->C0.hs_method_ab8242b3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_ab8242b3(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.CommandData other)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_77dd07d6((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint overloads_Address

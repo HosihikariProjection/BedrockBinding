@@ -38,9 +38,9 @@ public sealed unsafe partial class Client : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint primaryRequest, nint primaryPlayerInfo) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Client Create()
     {
@@ -53,14 +53,13 @@ public sealed unsafe partial class Client : global::System.IDisposable
         return new Client((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static Client Create(nint primaryRequest, nint primaryPlayerInfo) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addSubClientPlayerInfo(byte subClientId, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo playerInfo)
-    {
-        NativeMethods.TablePtr->C3.hs_method_14d3a7cb((void*)__hosihikari_shim_handle, subClientId, (void*)playerInfo.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addSubClientPlayerInfo(nint subClientId, nint playerInfo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientInfoPartyId_Address

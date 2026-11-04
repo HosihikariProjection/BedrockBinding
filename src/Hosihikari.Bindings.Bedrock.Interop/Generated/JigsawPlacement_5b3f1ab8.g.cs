@@ -38,13 +38,13 @@ public sealed unsafe partial class JigsawPlacement : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(ulong maxDepth, ulong globalContextSize, nint pieceList, nint factory, nint random, nint pools, nint dimension) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static JigsawPlacement Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a919d50a();
+        var handle = NativeMethods.TablePtr->C1.hs_create_a919d50a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class JigsawPlacement : global::System.IDisposable
 
     public static JigsawPlacement Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ac714a80((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_ac714a80((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,112 +64,95 @@ public sealed unsafe partial class JigsawPlacement : global::System.IDisposable
         return new JigsawPlacement((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static JigsawPlacement Create(ulong maxDepth, ulong globalContextSize, nint pieceList, nint factory, nint random, nint pools, nint dimension) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _addPiece(global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece sourcePiece, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, nint rotation, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos refPos, ulong contextDepth, global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding_Nested.PoolAliasLookup poolAliasLookup)
-    {
-        NativeMethods.TablePtr->C2.hs_method_36d318b8((void*)__hosihikari_shim_handle, (void*)sourcePiece.Handle, (void*)position.Handle, (void*)rotation, (void*)refPos.Handle, contextDepth, (void*)poolAliasLookup.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _addPiece(nint sourcePiece, nint position, nint rotation, nint refPos, ulong contextDepth, nint poolAliasLookup) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _tryPlacingPiece(global::Hosihikari.Bindings.Bedrock.Interop.PoolElementStructurePiece sourcePiece, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox sourceBB, global::Hosihikari.Bindings.Bedrock.Interop.JigsawBlockInfo sourceJigsaw, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos attachPos, global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplatePool? targetPool, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos refPos, ulong contextDepth, global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding_Nested.PoolAliasLookup poolAliasLookup)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_0798e948((void*)__hosihikari_shim_handle, (void*)sourcePiece.Handle, (void*)sourceBB.Handle, (void*)sourceJigsaw.Handle, (void*)attachPos.Handle, (void*)(targetPool?.Handle ?? 0), (void*)refPos.Handle, contextDepth, (void*)poolAliasLookup.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _tryPlacingPiece(nint sourcePiece, nint sourceBB, nint sourceJigsaw, nint attachPos, nint targetPool, nint refPos, ulong contextDepth, nint poolAliasLookup) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addPieces(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement initialElement, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos startPosition, nint rotation, string startAnchorName, global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding_Nested.PoolAliasLookup poolAliasLookup)
-    {
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(startAnchorName);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(startAnchorName, __hs_stringBytes3);
-        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-        {
-            NativeMethods.TablePtr->C2.hs_method_8b7a7418((void*)__hosihikari_shim_handle, (void*)initialElement.Handle, (void*)startPosition.Handle, (void*)rotation, __hs_stringData3, (nuint)__hs_stringByteCount3, (void*)poolAliasLookup.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addPieces(nint initialElement, nint startPosition, nint rotation, nint startAnchorName, nint poolAliasLookup) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockBuffer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_385bc60c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_385bc60c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockBufferBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_61f8504e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_61f8504e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkHeightCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_18257bc7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_18257bc7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContextStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_71b06f78((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_71b06f78((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8f299ec7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8f299ec7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFactory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e5d312dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_e5d312dc((void*)__hosihikari_shim_handle);
     }
 
     public int mGlobalContextSize
     {
-        get => NativeMethods.TablePtr->C2.hs_get_21014441((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C1.hs_get_21014441((void*)__hosihikari_shim_handle);
     }
 
     public int mMaxDepth
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a8df98a6((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C1.hs_get_a8df98a6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPieceList_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a5d7038b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a5d7038b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlacingQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fda0660d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_fda0660d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPools_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_cd6a413d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_cd6a413d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRandom_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9461c4b7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_9461c4b7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement((nint)NativeMethods.TablePtr->C2.hs_method_5fa4e3e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.JigsawPlacement((nint)NativeMethods.TablePtr->C1.hs_method_5fa4e3e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -179,7 +162,7 @@ public sealed unsafe partial class JigsawPlacement : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5b3f1ab8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_5b3f1ab8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,15 +38,13 @@ public sealed unsafe partial class LevelBlockDestroyerProxy : global::System.IDi
         return __hs_handle;
     }
 
-    public void _dropResources(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actorContext)
-    {
-        NativeMethods.TablePtr->C2.hs_method_bd0b02e7((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, (void*)(actorContext?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dropResources(nint region, nint pos, nint block, nint actorContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendEvents(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager levelEventManager, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte destroySound)
-    {
-        NativeMethods.TablePtr->C2.hs_method_430d9acd((void*)__hosihikari_shim_handle, (void*)levelEventManager.Handle, (void*)region.Handle, (void*)pos.Handle, (void*)block.Handle, destroySound);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendEvents(nint levelEventManager, nint region, nint pos, nint block, nint destroySound) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LevelBlockDestroyerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelBlockDestroyerProxy arg0)
     {

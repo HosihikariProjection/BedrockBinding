@@ -49,15 +49,13 @@ public sealed unsafe partial class LeashableDefinition : global::System.IDisposa
         return new LeashableDefinition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C2.hs_method_08745b34(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent component)
-    {
-        NativeMethods.TablePtr->C2.hs_method_61fe9860((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initialize(nint entity, nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mCanBeCut
     {
@@ -101,10 +99,9 @@ public sealed unsafe partial class LeashableDefinition : global::System.IDisposa
         set => NativeMethods.TablePtr->C2.hs_set_0e43669b((void*)__hosihikari_shim_handle, value);
     }
 
-    public void uninitialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.LeashableComponent arg1)
-    {
-        NativeMethods.TablePtr->C2.hs_method_118fbe39((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void uninitialize(nint entity, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

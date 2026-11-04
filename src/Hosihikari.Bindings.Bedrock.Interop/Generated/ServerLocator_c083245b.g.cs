@@ -50,26 +50,21 @@ public sealed unsafe partial class ServerLocator : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_4530ba36((void*)__hosihikari_shim_handle);
     }
 
-    public void __onDisable()
-    {
-        NativeMethods.TablePtr->C3.hs_method_fc0a2a71((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __onDisable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __onEnable()
-    {
-        NativeMethods.TablePtr->C3.hs_method_7b5e3fa5((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __onEnable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription _acquireHttpProbePermission()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription((nint)NativeMethods.TablePtr->C3.hs_method_8249667a((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _acquireHttpProbePermission() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getTransportEndpointCache()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_50eb034a((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getTransportEndpointCache() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerLocator Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerLocator arg0)
     {

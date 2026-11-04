@@ -38,50 +38,41 @@ public sealed unsafe partial class SharedBuffs : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint ABSORPTION()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_6a8dafbb();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ABSORPTION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint FATAL_POISON()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_3c6b260a();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint FATAL_POISON() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint FOOD_POSIONING()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_8502124c();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint FOOD_POSIONING() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint HARM()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_b2582893();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint HARM() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint HEAL()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_71277347();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint HEAL() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint POISON()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_a406f867();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint POISON() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint REGENERATION()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_e2cd8e68();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint REGENERATION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint SATURATION()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_9b5f4bb4();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SATURATION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint WITHER()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_7252c200();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint WITHER() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -89,7 +80,7 @@ public sealed unsafe partial class SharedBuffs : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e0abc92c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e0abc92c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

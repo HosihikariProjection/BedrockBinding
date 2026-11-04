@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptPropertyTargetSelectorOption : global::
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPropertyTargetSelectorOption arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_5cb3ea54((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptPropertyTargetSelectorOption Create()
     {
@@ -54,21 +53,13 @@ public sealed unsafe partial class ScriptPropertyTargetSelectorOption : global::
         return new ScriptPropertyTargetSelectorOption((nint)handle);
     }
 
-    public static ScriptPropertyTargetSelectorOption Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPropertyTargetSelectorOption arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6d8c2ece((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptPropertyTargetSelectorOption Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ScriptPropertyTargetSelectorOption((nint)handle);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InterfaceBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InterfaceBinding((nint)NativeMethods.TablePtr->C3.hs_method_7db550ad());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExclude_Address
@@ -88,10 +79,9 @@ public sealed unsafe partial class ScriptPropertyTargetSelectorOption : global::
         get => (nint)NativeMethods.TablePtr->C3.hs_get_7130edce((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPropertyTargetSelectorOption operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPropertyTargetSelectorOption arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptPropertyTargetSelectorOption((nint)NativeMethods.TablePtr->C3.hs_method_701aea6e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

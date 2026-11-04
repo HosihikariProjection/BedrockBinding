@@ -65,9 +65,9 @@ public sealed unsafe partial class Subscription : global::System.IDisposable
         return new Subscription((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint conn) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Subscription arg0)
     {

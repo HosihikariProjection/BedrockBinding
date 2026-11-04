@@ -156,10 +156,9 @@ public sealed unsafe partial class WeavingMobEffect : global::System.IDisposable
         NativeMethods.TablePtr->C4.hs_method_266b38c8((void*)__hosihikari_shim_handle, (void*)target.Handle, amplifier);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3 COBWEB_SLOWDOWN_OVERRIDE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C4.hs_method_c1a2d6d5(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint COBWEB_SLOWDOWN_OVERRIDE() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WeavingMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.WeavingMobEffect arg0)
     {

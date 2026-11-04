@@ -56,24 +56,21 @@ public sealed unsafe partial class ActorEventCoordinator : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_2be2c278((void*)__hosihikari_shim_handle);
     }
 
-    public void registerWithActorManagerEvents(global::Hosihikari.Bindings.Bedrock.Interop.IActorManagerConnector actorManagerConnector)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a96fc7ba((void*)__hosihikari_shim_handle, (void*)actorManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerWithActorManagerEvents(nint actorManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void registerWithGameplayUserManagerEvents(global::Hosihikari.Bindings.Bedrock.Interop.IGameplayUserManagerConnector gameplayUserManagerConnector)
-    {
-        NativeMethods.TablePtr->C0.hs_method_fbd71c64((void*)__hosihikari_shim_handle, (void*)gameplayUserManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerWithGameplayUserManagerEvents(nint gameplayUserManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EventRef<MutableActorGameplayEvent<CoordinatorResult>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint sendEvent_c76a7173(nint @event) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EventRef<MutableActorGameplayEvent<CoordinatorResult>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void sendEvent_81fbe4ba(nint @event)
-    {
-        NativeMethods.TablePtr->C0.hs_method_81fbe4ba((void*)__hosihikari_shim_handle, (void*)@event);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void sendEvent_81fbe4ba(nint @event) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

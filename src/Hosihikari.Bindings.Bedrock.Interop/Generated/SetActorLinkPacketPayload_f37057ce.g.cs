@@ -40,7 +40,7 @@ public sealed unsafe partial class SetActorLinkPacketPayload : global::System.ID
 
     public static SetActorLinkPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetActorLinkPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_da041f8b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_da041f8b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class SetActorLinkPacketPayload : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mLink_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d8628660((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d8628660((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class SetActorLinkPacketPayload : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f37057ce((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f37057ce((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

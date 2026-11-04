@@ -40,7 +40,7 @@ public sealed unsafe partial class TintMapColor : global::System.IDisposable
 
     public static TintMapColor Create(global::Hosihikari.Bindings.Bedrock.Interop.TintMapColor arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b2f71566((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b2f71566((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,12 @@ public sealed unsafe partial class TintMapColor : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint colors_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_380b0de6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_380b0de6((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.TintMapColor rhs)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_c77a3495((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint rhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -67,7 +66,7 @@ public sealed unsafe partial class TintMapColor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d656d077((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d656d077((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

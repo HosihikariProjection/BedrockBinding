@@ -40,7 +40,7 @@ public sealed unsafe partial class ShooterComponent : global::System.IDisposable
 
     public static ShooterComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6ac4b0ad((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6ac4b0ad((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,51 +49,49 @@ public sealed unsafe partial class ShooterComponent : global::System.IDisposable
         return new ShooterComponent((nint)handle);
     }
 
-    public void _shootProjectile(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorDef, int auxVal)
-    {
-        NativeMethods.TablePtr->C4.hs_method_3c507a3e((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)actorDef.Handle, auxVal);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _shootProjectile(nint owner, nint actorDef, int auxVal) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultActorDef_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5e95b580((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5e95b580((void*)__hosihikari_shim_handle);
     }
 
     public int mDefaultAuxValue
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2b4d9380((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2b4d9380((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2b4d9380((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2b4d9380((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mMagicAttacks
     {
-        get => NativeMethods.TablePtr->C4.hs_get_3e70b452((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_3e70b452((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3e70b452((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_3e70b452((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mShooterProjectileData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_742640e6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_742640e6((void*)__hosihikari_shim_handle);
     }
 
     public uint mSoundEvent
     {
-        get => NativeMethods.TablePtr->C4.hs_get_61ed18ea((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_61ed18ea((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_61ed18ea((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_61ed18ea((void*)__hosihikari_shim_handle, value);
     }
 
     public float mThrowPower
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f9c5a05a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f9c5a05a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f9c5a05a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f9c5a05a((void*)__hosihikari_shim_handle, value);
     }
 
-    public void onShoot(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C4.hs_method_fdd25b89((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onShoot(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -102,7 +100,7 @@ public sealed unsafe partial class ShooterComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f72925c5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f72925c5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

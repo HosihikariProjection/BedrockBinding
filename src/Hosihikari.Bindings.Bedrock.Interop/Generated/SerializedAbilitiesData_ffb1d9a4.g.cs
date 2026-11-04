@@ -48,10 +48,9 @@ public sealed unsafe partial class SerializedAbilitiesData : global::System.IDis
         NativeMethods.TablePtr->C3.hs_method_3ae9e532((void*)__hosihikari_shim_handle);
     }
 
-    public static nint ABILITIES_LAYER_MAP()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_9bef68bb();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ABILITIES_LAYER_MAP() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SerializedAbilitiesData Create()
     {

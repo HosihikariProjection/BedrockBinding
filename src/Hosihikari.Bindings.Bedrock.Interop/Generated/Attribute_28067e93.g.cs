@@ -38,10 +38,9 @@ public sealed unsafe partial class Attribute : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, sbyte redefMode, bool isSyncable)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_8f279b95((void*)__hosihikari_shim_handle, (void*)name.Handle, redefMode, isSyncable);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint name, nint redefMode, bool isSyncable) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Attribute Create()
     {
@@ -65,21 +64,13 @@ public sealed unsafe partial class Attribute : global::System.IDisposable
         return new Attribute((nint)handle);
     }
 
-    public static Attribute Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, sbyte redefMode, bool isSyncable)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_87e5155c((void*)name.Handle, redefMode, isSyncable);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Attribute Create(nint name, nint redefMode, bool isSyncable) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new Attribute((nint)handle);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Attribute getByName(global::Hosihikari.Bindings.Bedrock.Interop.HashedString attribute)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C0.hs_method_7c82a337((void*)attribute.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getByName(nint attribute) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mIDValue
     {

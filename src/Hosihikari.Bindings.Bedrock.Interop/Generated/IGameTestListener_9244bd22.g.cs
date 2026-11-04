@@ -38,39 +38,33 @@ public sealed unsafe partial class IGameTestListener : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public void _onTestFailed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance testInstance)
-    {
-        NativeMethods.TablePtr->C5.hs_method_5646c2b5((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestFailed(nint testInstance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTestPassed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance testInstance)
-    {
-        NativeMethods.TablePtr->C5.hs_method_98e26d26((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestPassed(nint testInstance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTestRetryFinished(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
-    {
-        NativeMethods.TablePtr->C5.hs_method_19d9d5c3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestRetryFinished(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTestRetryStarted(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
-    {
-        NativeMethods.TablePtr->C5.hs_method_1dd62af7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestRetryStarted(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTestStarted(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
-    {
-        NativeMethods.TablePtr->C5.hs_method_f25d1fca((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestStarted(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTestStructureLoaded(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance test)
-    {
-        NativeMethods.TablePtr->C5.hs_method_f18bdbd2((void*)__hosihikari_shim_handle, (void*)test.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestStructureLoaded(nint test) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IGameTestListener Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.IGameTestListener arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_876ba4d7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_876ba4d7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,32 +75,32 @@ public sealed unsafe partial class IGameTestListener : global::System.IDisposabl
 
     public void onTestFailed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance testInstance)
     {
-        NativeMethods.TablePtr->C5.hs_method_7c9f4d78((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
+        NativeMethods.TablePtr->C4.hs_method_7c9f4d78((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
     }
 
     public void onTestPassed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance testInstance)
     {
-        NativeMethods.TablePtr->C5.hs_method_905af8b5((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
+        NativeMethods.TablePtr->C4.hs_method_905af8b5((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
     }
 
     public void onTestRetryFinished(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_f4c7564e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C4.hs_method_f4c7564e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void onTestRetryStarted(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_c0a442fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C4.hs_method_c0a442fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void onTestStarted(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_bc348f4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C4.hs_method_bc348f4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void onTestStructureLoaded(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance test)
     {
-        NativeMethods.TablePtr->C5.hs_method_4abf7819((void*)__hosihikari_shim_handle, (void*)test.Handle);
+        NativeMethods.TablePtr->C4.hs_method_4abf7819((void*)__hosihikari_shim_handle, (void*)test.Handle);
     }
 
 
@@ -116,7 +110,7 @@ public sealed unsafe partial class IGameTestListener : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_9244bd22((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9244bd22((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

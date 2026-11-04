@@ -38,51 +38,49 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
-    {
-        NativeMethods.TablePtr->C5.hs_method_e109ca12((void*)__hosihikari_shim_handle, (void*)hash.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _appendMetadataKey(nint hash) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _finalize(nint region, nint pos, nint structurePos, nint originalBlocks, nint processedBlocks, nint settings) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'br::worldgen::StructureBlockInfo' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _process(nint arg0, nint arg1, nint arg2, nint arg3, nint processedBlockInfo, nint arg5) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'br::worldgen::StructureBlockInfo' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte _type()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_7d2716c3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _type() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint BlockIgnore(nint blocks) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint Capped(nint @delegate, nint limit) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint Protected_3478c03e(nint tag) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint Protected_e07eb25a(nint tag) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint Rule(nint rules) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<br::worldgen::StructureProcessor>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StructureProcessor Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureProcessor arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_4ddfb8af((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_4ddfb8af((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -93,13 +91,12 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C5.hs_method_99de623c((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C4.hs_method_99de623c((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
-    public static void bootstrap()
-    {
-        NativeMethods.TablePtr->C5.hs_method_e54fe944();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bootstrap() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
     public nint finalize(nint region, nint pos, nint structurePos, nint originalBlocks, nint processedBlocks, nint settings) =>
@@ -111,7 +108,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
 
     public byte type()
     {
-        return NativeMethods.TablePtr->C5.hs_method_03cd8d4c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_03cd8d4c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -121,7 +118,7 @@ public sealed unsafe partial class StructureProcessor : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_91854e72((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_91854e72((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

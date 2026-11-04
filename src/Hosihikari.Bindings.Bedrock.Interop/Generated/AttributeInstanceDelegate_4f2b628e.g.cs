@@ -38,36 +38,29 @@ public sealed unsafe partial class AttributeInstanceDelegate : global::System.ID
         return __hs_handle;
     }
 
-    public float? _change(float oldValue, float newValue, global::Hosihikari.Bindings.Bedrock.Interop.AttributeBuff buff)
-    {
-        var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C0.hs_method_9faa170c((void*)__hosihikari_shim_handle, oldValue, newValue, (void*)buff.Handle, &__hs_hasValue);
-        return __hs_hasValue ? __hs_value : (float?)null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _change(float oldValue, float newValue, nint buff) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public float _getBuffValueWithModifiers(global::Hosihikari.Bindings.Bedrock.Interop.AttributeBuff buff)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_790df2af((void*)__hosihikari_shim_handle, (void*)buff.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getBuffValueWithModifiers(nint buff) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _notify(long type, nint context)
-    {
-        NativeMethods.TablePtr->C0.hs_method_1318dfb0((void*)__hosihikari_shim_handle, type, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _notify(long type, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance mutableInstance, nint context)
-    {
-        NativeMethods.TablePtr->C0.hs_method_d244c49b((void*)__hosihikari_shim_handle, (void*)mutableInstance.Handle, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint mutableInstance, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _willChange(float oldValue, float newValue, global::Hosihikari.Bindings.Bedrock.Interop.AttributeBuff buff)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_4b175da4((void*)__hosihikari_shim_handle, oldValue, newValue, (void*)buff.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _willChange(float oldValue, float newValue, nint buff) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AttributeInstanceDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstanceDelegate arg0)
     {

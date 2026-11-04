@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockComponentGroupDescription : global::Syst
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_a9a2a2ec((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockComponentGroupDescription Create()
     {
@@ -103,10 +102,9 @@ public sealed unsafe partial class BlockComponentGroupDescription : global::Syst
         get => (nint)NativeMethods.TablePtr->C0.hs_get_ed085a7b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentGroupDescription operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentGroupDescription arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentGroupDescription((nint)NativeMethods.TablePtr->C0.hs_method_a5256921((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

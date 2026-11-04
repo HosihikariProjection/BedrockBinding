@@ -38,10 +38,9 @@ public sealed unsafe partial class ClientPlayerRewindSystem : global::System.IDi
         return __hs_handle;
     }
 
-    public static void applyHistoryChangesToLiveEntity(global::Hosihikari.Bindings.Bedrock.Interop.ReplayStateTrackerComponent postSimulationState, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext liveData)
-    {
-        NativeMethods.TablePtr->C0.hs_method_1bfcf454((void*)postSimulationState.Handle, (void*)liveData.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void applyHistoryChangesToLiveEntity(nint postSimulationState, nint liveData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

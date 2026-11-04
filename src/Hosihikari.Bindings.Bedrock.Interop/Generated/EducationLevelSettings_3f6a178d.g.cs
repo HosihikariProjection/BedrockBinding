@@ -38,21 +38,17 @@ public sealed unsafe partial class EducationLevelSettings : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EducationLevelSettings arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_22808326((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_94f3a840((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string DEFAULT_BORDER_PATH()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_7ba792f5();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DEFAULT_BORDER_PATH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EducationLevelSettings Create()
     {
@@ -65,16 +61,9 @@ public sealed unsafe partial class EducationLevelSettings : global::System.IDisp
         return new EducationLevelSettings((nint)handle);
     }
 
-    public static EducationLevelSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.EducationLevelSettings arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c82a6b86((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EducationLevelSettings((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static EducationLevelSettings Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint agentCapabilities_Address
@@ -112,9 +101,9 @@ public sealed unsafe partial class EducationLevelSettings : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_ee0d255e((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getCommandOverrideFunctor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variants and callable wrappers are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint hiddenCommands_Address
@@ -122,12 +111,9 @@ public sealed unsafe partial class EducationLevelSettings : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f5e562fb((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.EducationLevelSettings? load(global::Hosihikari.Bindings.Bedrock.Interop.LevelLooseFileStorage storage)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_46d3eac1((void*)storage.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EducationLevelSettings((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint load(nint storage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint localSettings_Address
@@ -135,10 +121,9 @@ public sealed unsafe partial class EducationLevelSettings : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_87cb5a7b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EducationLevelSettings operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EducationLevelSettings arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EducationLevelSettings((nint)NativeMethods.TablePtr->C1.hs_method_8e098d8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint postProcessFilter_Address

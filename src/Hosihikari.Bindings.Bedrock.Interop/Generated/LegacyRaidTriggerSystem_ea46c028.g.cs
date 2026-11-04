@@ -38,10 +38,9 @@ public sealed unsafe partial class LegacyRaidTriggerSystem : global::System.IDis
         return __hs_handle;
     }
 
-    public static void _doRaidTriggerSystem(global::Hosihikari.Bindings.Bedrock.Interop.DimensionTypeComponent dimensionTypeComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, global::Hosihikari.Bindings.Bedrock.Interop.VillageManagerComponent villageManagerComponent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_5cbe83a1((void*)dimensionTypeComponent.Handle, (void*)stateVectorComponent.Handle, (void*)actorOwnerComponent.Handle, (void*)villageManagerComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doRaidTriggerSystem(nint dimensionTypeComponent, nint stateVectorComponent, nint actorOwnerComponent, nint villageManagerComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

@@ -40,8 +40,8 @@ public sealed unsafe partial class TickingAreasLoadStatusPacketPayload : global:
 
     public bool mWaitingForPreload
     {
-        get => NativeMethods.TablePtr->C4.hs_get_14e846e7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_14e846e7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_14e846e7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_14e846e7((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class TickingAreasLoadStatusPacketPayload : global:
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b5031793((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b5031793((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

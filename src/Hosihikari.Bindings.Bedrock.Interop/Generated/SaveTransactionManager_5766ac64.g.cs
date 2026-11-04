@@ -44,13 +44,13 @@ public sealed unsafe partial class SaveTransactionManager : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C3.hs_get_5e750a73((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint workerPool, nint scheduler, nint showIconFunction) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SaveTransactionManager Create()
     {
@@ -63,9 +63,9 @@ public sealed unsafe partial class SaveTransactionManager : global::System.IDisp
         return new SaveTransactionManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static SaveTransactionManager Create(nint workerPool, nint scheduler, nint showIconFunction) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SaveTransactionManager Create(global::Hosihikari.Bindings.Bedrock.Interop.SaveTransactionManager arg0)
     {
@@ -78,15 +78,13 @@ public sealed unsafe partial class SaveTransactionManager : global::System.IDisp
         return new SaveTransactionManager((nint)handle);
     }
 
-    public void _hideGlobalSaveIcon()
-    {
-        NativeMethods.TablePtr->C3.hs_method_d1e8d15d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _hideGlobalSaveIcon() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _showGlobalSaveIcon()
-    {
-        NativeMethods.TablePtr->C3.hs_method_f2f86c3f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _showGlobalSaveIcon() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk54446c_Address

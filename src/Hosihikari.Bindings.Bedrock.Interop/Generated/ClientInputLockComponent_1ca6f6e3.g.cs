@@ -61,10 +61,9 @@ public sealed unsafe partial class ClientInputLockComponent : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C0.hs_get_acfc81a2((void*)__hosihikari_shim_handle);
     }
 
-    public void setLockCategory(byte category, bool state)
-    {
-        NativeMethods.TablePtr->C0.hs_method_fd79d607((void*)__hosihikari_shim_handle, category, state);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setLockCategory(nint category, bool state) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

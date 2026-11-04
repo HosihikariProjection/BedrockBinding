@@ -38,14 +38,13 @@ public sealed unsafe partial class PropertyGroupManager : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_3d5f01b9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PropertyGroupManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyGroupManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_78a73df5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_78a73df5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,26 +53,23 @@ public sealed unsafe partial class PropertyGroupManager : global::System.IDispos
         return new PropertyGroupManager((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag getActorPropertyDataTag(global::Hosihikari.Bindings.Bedrock.Interop.HashedString actorCanonicalName)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag((nint)NativeMethods.TablePtr->C3.hs_method_d8837881((void*)__hosihikari_shim_handle, (void*)actorCanonicalName.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getActorPropertyDataTag(nint actorCanonicalName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPropertyGroups_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8006ad9d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8006ad9d((void*)__hosihikari_shim_handle);
     }
 
-    public void registerGroup(global::Hosihikari.Bindings.Bedrock.Interop.HashedString id, global::Hosihikari.Bindings.Abi.SharedHandle? group)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f5894285((void*)__hosihikari_shim_handle, (void*)id.Handle, group?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerGroup(nint id, nint group) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tryInitPropertiesOnActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C3.hs_method_ce071038((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tryInitPropertiesOnActor(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -82,7 +78,7 @@ public sealed unsafe partial class PropertyGroupManager : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_59966eaa((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_59966eaa((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

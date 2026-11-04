@@ -40,7 +40,7 @@ public sealed unsafe partial class Element : global::System.IDisposable
 
     public static Element Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceMaterialAdjustmentAttributes_Nested.Element arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_34723a3c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_34723a3c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,37 +52,37 @@ public sealed unsafe partial class Element : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mAdjustedMaterials_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_47e0918c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_47e0918c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHeightMax_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_224c1316((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_224c1316((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHeightMin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4e7d4228((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4e7d4228((void*)__hosihikari_shim_handle);
     }
 
     public float mNoiseFreqScale
     {
-        get => NativeMethods.TablePtr->C4.hs_get_81f9dab5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_81f9dab5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_81f9dab5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_81f9dab5((void*)__hosihikari_shim_handle, value);
     }
 
     public float mNoiseLowerBound
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a4e4b95d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a4e4b95d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a4e4b95d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a4e4b95d((void*)__hosihikari_shim_handle, value);
     }
 
     public float mNoiseUpperBound
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1373e918((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1373e918((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1373e918((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1373e918((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -92,7 +92,7 @@ public sealed unsafe partial class Element : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_0aa576b9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0aa576b9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,25 +38,21 @@ public sealed unsafe partial class DensityEnchant : global::System.IDisposable
         return __hs_handle;
     }
 
-    public float _getDamageBonus(int level, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_8d6c7619((void*)__hosihikari_shim_handle, level, (void*)arg1.Handle, (void*)attacker.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getDamageBonus(int level, nint arg1, nint attacker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_efb84d7b((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxLevel()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_c046990c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1bda6cd5((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DensityEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.DensityEnchant arg0)
     {

@@ -38,14 +38,13 @@ public sealed unsafe partial class BeardKernel : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'std::array<float, 13824>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createBeardKernel() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'std::array<float, 13824>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static float getContribution(int dx, int dy, int dz)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_0083dae0(dx, dy, dz);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static float getContribution(int dx, int dy, int dz) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

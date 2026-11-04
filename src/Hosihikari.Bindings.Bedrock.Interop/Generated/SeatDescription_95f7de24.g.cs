@@ -38,10 +38,9 @@ public sealed unsafe partial class SeatDescription : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.SeatDescription EMPTY()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SeatDescription((nint)NativeMethods.TablePtr->C3.hs_method_267377f2(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint EMPTY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SeatDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.SeatDescription arg0)
     {
@@ -108,10 +107,9 @@ public sealed unsafe partial class SeatDescription : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_eba37bfb((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SeatDescription seat)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_21bed981((void*)__hosihikari_shim_handle, (void*)seat.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint seat) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

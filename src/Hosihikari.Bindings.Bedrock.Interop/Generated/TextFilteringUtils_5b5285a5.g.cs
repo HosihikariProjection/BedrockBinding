@@ -38,17 +38,13 @@ public sealed unsafe partial class TextFilteringUtils : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static bool checkIfTextProcessorIsUnhealthyAndSendChat(int[] events, global::Hosihikari.Bindings.Bedrock.Interop.PacketSender? packetSender, global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, nint subClientId)
-    {
-        fixed (int* __hs_vectorData0 = events)
-        {
-            return NativeMethods.TablePtr->C4.hs_method_72f9818f((void*)(packetSender?.Handle ?? 0), (void*)source.Handle, (void*)subClientId, __hs_vectorData0, (nuint)(events?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool checkIfTextProcessorIsUnhealthyAndSendChat(nint events, nint packetSender, nint source, nint subClientId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Safety::TextFilterResult>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint processMessagesWithClientsideDebugTimingsAsync(nint player, nint taskGroup, nint textFilteringProcessor, nint processOrigin, nint messages) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Safety::TextFilterResult>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -56,7 +52,7 @@ public sealed unsafe partial class TextFilteringUtils : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_5b5285a5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5b5285a5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

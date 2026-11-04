@@ -40,7 +40,7 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
 
     public static SpatialActorNetworkData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8ef26394();
+        var handle = NativeMethods.TablePtr->C3.hs_create_8ef26394();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
 
     public static SpatialActorNetworkData Create(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a8e50246((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a8e50246((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,70 +63,70 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
     public ulong? _getOptimizationUpdateInterval(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C4.hs_method_9816ec36((void*)__hosihikari_shim_handle, (void*)player.Handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C3.hs_method_9816ec36((void*)__hosihikari_shim_handle, (void*)player.Handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value : (ulong?)null;
     }
 
     public bool mAutoSend
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9de5dfa2((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_9de5dfa2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9de5dfa2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_9de5dfa2((void*)__hosihikari_shim_handle, value);
     }
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers mDebugSpatialPacketModifiers()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers((nint)NativeMethods.TablePtr->C4.hs_method_593746aa(), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.DebugSpatialPacketModifiers((nint)NativeMethods.TablePtr->C3.hs_method_593746aa(), false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e46fed57((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e46fed57((void*)__hosihikari_shim_handle);
     }
 
     public bool mHasInitializedLastSent
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e9bbdf59((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_e9bbdf59((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e9bbdf59((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_e9bbdf59((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastForceSendSpatialDataValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_71572971((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_71572971((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastReceivedMoveData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a3bb9aaf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a3bb9aaf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastSentMoveData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_97195df2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_97195df2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastSpatialUpdateTicks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6d3822ff((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6d3822ff((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData((nint)NativeMethods.TablePtr->C4.hs_method_f5db510d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData((nint)NativeMethods.TablePtr->C3.hs_method_f5db510d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void sendUpdate(bool forceMove, bool forceMoveLocalEntity, bool forceAbsoluteMovement, bool forceCompletion)
     {
-        NativeMethods.TablePtr->C4.hs_method_429b9516((void*)__hosihikari_shim_handle, forceMove, forceMoveLocalEntity, forceAbsoluteMovement, forceCompletion);
+        NativeMethods.TablePtr->C3.hs_method_429b9516((void*)__hosihikari_shim_handle, forceMove, forceMoveLocalEntity, forceAbsoluteMovement, forceCompletion);
     }
 
     public void teleportEntity(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec2 rot, float yHeadRot)
     {
-        NativeMethods.TablePtr->C4.hs_method_4ed11cb4((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)rot.Handle, yHeadRot);
+        NativeMethods.TablePtr->C3.hs_method_4ed11cb4((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)rot.Handle, yHeadRot);
     }
 
 
@@ -136,7 +136,7 @@ public sealed unsafe partial class SpatialActorNetworkData : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_332e4387((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_332e4387((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

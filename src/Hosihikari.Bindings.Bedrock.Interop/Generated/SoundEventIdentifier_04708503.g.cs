@@ -38,14 +38,13 @@ public sealed unsafe partial class SoundEventIdentifier : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_06e00a6b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SoundEventIdentifier Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a9ba3bb2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a9ba3bb2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,15 +53,14 @@ public sealed unsafe partial class SoundEventIdentifier : global::System.IDispos
         return new SoundEventIdentifier((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_6c6189f8((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c3d957ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c3d957ef((void*)__hosihikari_shim_handle);
     }
 
 
@@ -72,7 +70,7 @@ public sealed unsafe partial class SoundEventIdentifier : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_04708503((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_04708503((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

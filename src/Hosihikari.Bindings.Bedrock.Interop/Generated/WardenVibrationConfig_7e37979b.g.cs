@@ -38,29 +38,25 @@ public sealed unsafe partial class WardenVibrationConfig : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, ushort signalThrottlingTicks)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_921bb895((void*)__hosihikari_shim_handle, (void*)actor.Handle, signalThrottlingTicks);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint actor, ushort signalThrottlingTicks) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isValidVibration(global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_edf8fefb((void*)__hosihikari_shim_handle, (void*)gameEvent.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValidVibration(nint gameEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onSignalReceive(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos vibrationSourcePos, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent arg2, global::Hosihikari.Bindings.Bedrock.Interop.Actor? vibrationSource, float arg4, uint arg5, global::Hosihikari.Bindings.Bedrock.Interop.Actor? projectileOwner)
-    {
-        NativeMethods.TablePtr->C4.hs_method_4cabc9a4((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)vibrationSourcePos.Handle, (void*)arg2.Handle, (void*)(vibrationSource?.Handle ?? 0), arg4, arg5, (void*)(projectileOwner?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onSignalReceive(nint region, nint vibrationSourcePos, nint arg2, nint vibrationSource, float arg4, uint arg5, nint projectileOwner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _shouldListen(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent arg1, nint gameEventContext)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_f2ff2ab8((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)arg1.Handle, (void*)gameEventContext) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _shouldListen(nint region, nint arg1, nint gameEventContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WardenVibrationConfig Create()
     {
@@ -73,16 +69,9 @@ public sealed unsafe partial class WardenVibrationConfig : global::System.IDispo
         return new WardenVibrationConfig((nint)handle);
     }
 
-    public static WardenVibrationConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, ushort signalThrottlingTicks)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d0e3ed25((void*)actor.Handle, signalThrottlingTicks);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new WardenVibrationConfig((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static WardenVibrationConfig Create(nint actor, ushort signalThrottlingTicks) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WardenVibrationConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.WardenVibrationConfig arg0)
     {

@@ -38,10 +38,9 @@ public sealed unsafe partial class GiveableTrigger : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_d8bcc358((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GiveableTrigger Create(global::Hosihikari.Bindings.Bedrock.Interop.GiveableTrigger arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class GiveableTrigger : global::System.IDisposable
         return new GiveableTrigger((nint)handle);
     }
 
-    public void addItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor)
-    {
-        NativeMethods.TablePtr->C1.hs_method_2a957b27((void*)__hosihikari_shim_handle, (void*)itemDescriptor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addItem(nint itemDescriptor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float mCooldown
     {

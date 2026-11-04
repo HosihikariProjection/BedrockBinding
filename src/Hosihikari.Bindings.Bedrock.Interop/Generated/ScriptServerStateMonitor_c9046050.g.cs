@@ -38,34 +38,29 @@ public sealed unsafe partial class ScriptServerStateMonitor : global::System.IDi
         return __hs_handle;
     }
 
-    public void __onReload()
-    {
-        NativeMethods.TablePtr->C3.hs_method_158c6276((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __onReload() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __onScriptInitializationComplete()
-    {
-        NativeMethods.TablePtr->C3.hs_method_a713aa08((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __onScriptInitializationComplete() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __onScriptModuleStartupComplete()
-    {
-        NativeMethods.TablePtr->C3.hs_method_da6bcb67((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __onScriptModuleStartupComplete() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManagerEvents events)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ded5cc41((void*)__hosihikari_shim_handle, (void*)events.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint events) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_4f351971((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptServerStateMonitor Create()
     {
@@ -78,16 +73,9 @@ public sealed unsafe partial class ScriptServerStateMonitor : global::System.IDi
         return new ScriptServerStateMonitor((nint)handle);
     }
 
-    public static ScriptServerStateMonitor Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManagerEvents events)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d32915ea((void*)events.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptServerStateMonitor((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptServerStateMonitor Create(nint events) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptServerStateMonitor Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptServerStateMonitor arg0)
     {

@@ -38,10 +38,9 @@ public sealed unsafe partial class MolangContextVariable : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString value)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_272c351d((void*)__hosihikari_shim_handle, (void*)value.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MolangContextVariable Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class MolangContextVariable : global::System.IDispo
         return new MolangContextVariable((nint)handle);
     }
 
-    public static MolangContextVariable Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString value)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_980891da((void*)value.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MolangContextVariable((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MolangContextVariable Create(nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ushort mMolangVariableIndex
     {

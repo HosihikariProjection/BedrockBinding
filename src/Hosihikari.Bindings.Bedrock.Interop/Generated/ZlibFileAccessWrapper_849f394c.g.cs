@@ -38,14 +38,13 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? fileAccess)
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_ff855ea4((void*)__hosihikari_shim_handle, fileAccess?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint fileAccess) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ZlibFileAccessWrapper Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_725a4653();
+        var handle = NativeMethods.TablePtr->C4.hs_create_725a4653();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
 
     public static ZlibFileAccessWrapper Create(global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_3f9a9bad((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_3f9a9bad((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,32 +64,25 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
         return new ZlibFileAccessWrapper((nint)handle);
     }
 
-    public static ZlibFileAccessWrapper Create(global::Hosihikari.Bindings.Abi.SharedHandle? fileAccess)
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_9d7ab2d5(fileAccess?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ZlibFileAccessWrapper((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ZlibFileAccessWrapper Create(nint fileAccess) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbd0b0f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3be9e968((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3be9e968((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkeadeee_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_7ff732e7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7ff732e7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper((nint)NativeMethods.TablePtr->C5.hs_method_a033b03c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ZlibFileAccessWrapper((nint)NativeMethods.TablePtr->C4.hs_method_a033b03c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -99,7 +91,7 @@ public sealed unsafe partial class ZlibFileAccessWrapper : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_849f394c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_849f394c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

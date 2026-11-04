@@ -38,15 +38,13 @@ public sealed unsafe partial class FallingBlockNormalTickSystem : global::System
         return __hs_handle;
     }
 
-    public static void _doFallingBlockNormalTickSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, global::Hosihikari.Bindings.Bedrock.Interop.ITickDelegate onLand)
-    {
-        NativeMethods.TablePtr->C1.hs_method_5da309cb((void*)arg0.Handle, (void*)actorOwnerComponent.Handle, (void*)onLand.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doFallingBlockNormalTickSystem(nint arg0, nint actorOwnerComponent, nint onLand) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_6350744c());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

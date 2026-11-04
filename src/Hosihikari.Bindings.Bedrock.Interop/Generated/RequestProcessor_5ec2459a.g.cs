@@ -60,76 +60,17 @@ public sealed unsafe partial class RequestProcessor : global::System.IDisposable
         return new RequestProcessor((nint)handle);
     }
 
-    public void _encodeAndSendRequest(uint requestId, global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient_Nested.RequestProcessor_Nested.PreparedRequest request, string serializedBody, string serializableContentType, int? contentEncoding)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(serializedBody);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(serializedBody, __hs_stringBytes2);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(serializableContentType);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(serializableContentType, __hs_stringBytes3);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                NativeMethods.TablePtr->C3.hs_method_10b08852((void*)__hosihikari_shim_handle, requestId, (void*)request.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, contentEncoding ?? default(int), contentEncoding.HasValue);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _encodeAndSendRequest(uint requestId, nint request, nint serializedBody, nint serializableContentType, nint contentEncoding) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendRequest(uint requestId, global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient_Nested.RequestProcessor_Nested.PreparedRequest request, string serializedBody, string serializableContentType, int? contentEncoding)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(serializedBody);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(serializedBody, __hs_stringBytes2);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(serializableContentType);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(serializableContentType, __hs_stringBytes3);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                NativeMethods.TablePtr->C3.hs_method_2ea7f183((void*)__hosihikari_shim_handle, requestId, (void*)request.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, contentEncoding ?? default(int), contentEncoding.HasValue);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendRequest(uint requestId, nint request, nint serializedBody, nint serializableContentType, nint contentEncoding) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void cleanUp()
-    {
-        NativeMethods.TablePtr->C3.hs_method_1374ee7f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void cleanUp() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3ae71d_Address
@@ -178,9 +119,9 @@ public sealed unsafe partial class RequestProcessor : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetHttpClient_Nested.RequestProcessor((nint)NativeMethods.TablePtr->C3.hs_method_e77ce8e8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Promise<Scripting::StrongTypedObjectHandle<ScriptModuleMinecraftNet::ScriptNetResponse>, Scripting::Error, ScriptModuleMinecraftNet::ScriptRequestBodyTooLargeError, ScriptModuleMinecraftNet::ScriptInternalHttpRequestError, ScriptModuleMinecraftNet::ScriptHttpRequestLimitExceededError, ScriptModuleMinecraftNet::ScriptTLSOnlyError, ScriptModuleMinecraftNet::ScriptMalformedUriError, ScriptModuleMinecraftNet::ScriptUriNotAllowedError>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint process(nint arg0, nint factory, nint requestHandle) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Promise<Scripting::StrongTypedObjectHandle<ScriptModuleMinecraftNet::ScriptNetResponse>, Scripting::Error, ScriptModuleMinecraftNet::ScriptRequestBodyTooLargeError, ScriptModuleMinecraftNet::ScriptInternalHttpRequestError, ScriptModuleMinecraftNet::ScriptHttpRequestLimitExceededError, ScriptModuleMinecraftNet::ScriptTLSOnlyError, ScriptModuleMinecraftNet::ScriptMalformedUriError, ScriptModuleMinecraftNet::ScriptUriNotAllowedError>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,19 +38,17 @@ public sealed unsafe partial class BackgroundTaskBase : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.IBackgroundTaskOwner? group, nint startInfo, bool isAsync)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_7b891daa((void*)__hosihikari_shim_handle, (void*)(group?.Handle ?? 0), (void*)startInfo, isAsync);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint group, nint startInfo, bool isAsync) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_c33a17cb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BackgroundTaskBase Create()
     {
@@ -74,16 +72,9 @@ public sealed unsafe partial class BackgroundTaskBase : global::System.IDisposab
         return new BackgroundTaskBase((nint)handle);
     }
 
-    public static BackgroundTaskBase Create(global::Hosihikari.Bindings.Bedrock.Interop.IBackgroundTaskOwner? group, nint startInfo, bool isAsync)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_60641e5e((void*)(group?.Handle ?? 0), (void*)startInfo, isAsync);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BackgroundTaskBase((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BackgroundTaskBase Create(nint group, nint startInfo, bool isAsync) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void cancel()
     {

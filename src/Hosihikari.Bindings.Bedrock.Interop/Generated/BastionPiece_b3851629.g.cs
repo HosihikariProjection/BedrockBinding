@@ -38,25 +38,21 @@ public sealed unsafe partial class BastionPiece : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: map key type 'ChunkPos' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public int _generateHeightAtPosition(nint pos, nint dim, nint box, nint chunkHeightCache) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'ChunkPos' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block _getBeardStabilizeBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block foundationBlock)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C0.hs_method_f1bbfdc9((void*)__hosihikari_shim_handle, (void*)foundationBlock.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getBeardStabilizeBlock(nint foundationBlock) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block? _getSupportBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block aboveBlock)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6356e932((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)aboveBlock.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getSupportBlock(nint region, nint pos, nint aboveBlock) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getTerrainAdjustmentEffect()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_fc460c4a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getTerrainAdjustmentEffect() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BastionPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.BastionPiece arg0)
     {
@@ -69,9 +65,9 @@ public sealed unsafe partial class BastionPiece : global::System.IDisposable
         return new BastionPiece((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void addPieces(nint position, nint pieces, nint random, nint pools, nint dimension) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: map key type 'ChunkPos' is not supported.", false)]
     public int generateHeightAtPosition(nint pos, nint dim, nint box, nint chunkHeightCache) =>

@@ -61,7 +61,7 @@ public sealed unsafe partial class copyable_function_std__unique_ptr_Command____
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_04ad7849((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_04ad7849((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

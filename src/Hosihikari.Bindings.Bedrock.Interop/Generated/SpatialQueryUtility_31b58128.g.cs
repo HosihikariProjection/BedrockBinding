@@ -38,19 +38,17 @@ public sealed unsafe partial class SpatialQueryUtility : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static bool forEachBlockInAABB(nint region, nint aabb, float grow, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void testForCollidableMobs(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext except, global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher fetcher, global::Hosihikari.Bindings.Bedrock.Interop.AABB actorAABB, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, nint view, nint fallingBlockView, global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes collisionShapes)
-    {
-        NativeMethods.TablePtr->C4.hs_method_7b0ff334((void*)except.Handle, (void*)fetcher.Handle, (void*)actorAABB.Handle, (void*)intersectTestBox.Handle, (void*)view, (void*)fallingBlockView, (void*)collisionShapes.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void testForCollidableMobs(nint except, nint fetcher, nint actorAABB, nint intersectTestBox, nint view, nint fallingBlockView, nint collisionShapes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void testForEntityStacking(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext except, global::Hosihikari.Bindings.Bedrock.Interop.LocalSpatialEntityFetcher component, global::Hosihikari.Bindings.Bedrock.Interop.AABB intersectTestBox, nint view, global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes collisionShapes)
-    {
-        NativeMethods.TablePtr->C4.hs_method_749fc5fb((void*)except.Handle, (void*)component.Handle, (void*)intersectTestBox.Handle, (void*)view, (void*)collisionShapes.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void testForEntityStacking(nint except, nint component, nint intersectTestBox, nint view, nint collisionShapes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -58,7 +56,7 @@ public sealed unsafe partial class SpatialQueryUtility : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_31b58128((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_31b58128((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

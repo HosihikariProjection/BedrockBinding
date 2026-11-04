@@ -79,10 +79,9 @@ public sealed unsafe partial class BarterComponent : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_127642a2((void*)__hosihikari_shim_handle);
     }
 
-    public void onBarterItemPickedUp(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorUniqueID, short barterItemId)
-    {
-        NativeMethods.TablePtr->C0.hs_method_c00ecbaf((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)actorUniqueID.Handle, barterItemId);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onBarterItemPickedUp(nint owner, nint actorUniqueID, short barterItemId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

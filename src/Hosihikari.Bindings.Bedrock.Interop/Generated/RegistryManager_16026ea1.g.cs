@@ -60,9 +60,9 @@ public sealed unsafe partial class RegistryManager : global::System.IDisposable
         return new RegistryManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Scripting::LifetimeRegistry' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint createLifetimeRegistry() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Scripting::LifetimeRegistry' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk15b833_Address

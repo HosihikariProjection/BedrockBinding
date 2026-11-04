@@ -301,20 +301,17 @@ public sealed unsafe partial class RangedWeaponItem : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_3c1a4d59((void*)__hosihikari_shim_handle, value);
     }
 
-    public int _getAnimationFrameFor(global::Hosihikari.Bindings.Bedrock.Interop.Mob? holder, bool asItemEntity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? item, bool shouldAnimate)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_88f44cfd((void*)__hosihikari_shim_handle, (void*)(holder?.Handle ?? 0), asItemEntity, (void*)(item?.Handle ?? 0), shouldAnimate);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getAnimationFrameFor(nint holder, bool asItemEntity, nint item, bool shouldAnimate) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getEnchantValue()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_14405650((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getEnchantValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _hurtActor(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Mob attacker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3680764f((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)actor.Handle, (void*)attacker.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _hurtActor(nint item, nint actor, nint attacker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _releaseUsing(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Player? player, int durationLeft)
     {
@@ -326,9 +323,9 @@ public sealed unsafe partial class RangedWeaponItem : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C3.hs_method_77be6d2c((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getAnimationFrameFor(global::Hosihikari.Bindings.Bedrock.Interop.Mob? holder, bool asItemEntity, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack? item, bool shouldAnimate)
     {

@@ -38,13 +38,13 @@ public sealed unsafe partial class SoftEnum : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint name, nint values) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SoftEnum Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d174ac2c();
+        var handle = NativeMethods.TablePtr->C0.hs_create_d174ac2c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class SoftEnum : global::System.IDisposable
 
     public static SoftEnum Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.SoftEnum arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_92ffd350((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_92ffd350((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,20 +64,20 @@ public sealed unsafe partial class SoftEnum : global::System.IDisposable
         return new SoftEnum((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static SoftEnum Create(nint name, nint values) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0ad228e6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_0ad228e6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ba16f044((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_ba16f044((void*)__hosihikari_shim_handle);
     }
 
 
@@ -87,7 +87,7 @@ public sealed unsafe partial class SoftEnum : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_e027c20c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_e027c20c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

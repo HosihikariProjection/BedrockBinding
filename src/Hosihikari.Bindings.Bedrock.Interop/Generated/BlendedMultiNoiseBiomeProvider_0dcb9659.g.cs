@@ -38,10 +38,9 @@ public sealed unsafe partial class BlendedMultiNoiseBiomeProvider : global::Syst
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d overworldNoises, global::Hosihikari.Bindings.Bedrock.Interop.ParameterList parameterList, global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlenderFactory attenuatorFactory, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_9656d784((void*)__hosihikari_shim_handle, (void*)overworldNoises.Handle, (void*)parameterList.Handle, (void*)attenuatorFactory.Handle, (void*)biomeRegistry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint overworldNoises, nint parameterList, nint attenuatorFactory, nint biomeRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlendedMultiNoiseBiomeProvider Create()
     {
@@ -65,16 +64,9 @@ public sealed unsafe partial class BlendedMultiNoiseBiomeProvider : global::Syst
         return new BlendedMultiNoiseBiomeProvider((nint)handle);
     }
 
-    public static BlendedMultiNoiseBiomeProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldNoises3d overworldNoises, global::Hosihikari.Bindings.Bedrock.Interop.ParameterList parameterList, global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlenderFactory attenuatorFactory, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_5600c936((void*)overworldNoises.Handle, (void*)parameterList.Handle, (void*)attenuatorFactory.Handle, (void*)biomeRegistry.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BlendedMultiNoiseBiomeProvider((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BlendedMultiNoiseBiomeProvider Create(nint overworldNoises, nint parameterList, nint attenuatorFactory, nint biomeRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttenuationFactory_Address
@@ -105,17 +97,13 @@ public sealed unsafe partial class BlendedMultiNoiseBiomeProvider : global::Syst
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlendedMultiNoiseBiomeProvider((nint)NativeMethods.TablePtr->C0.hs_method_901574e7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Biome? tryGetBiome(nint getBiomeOptions)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6abbfbbb((void*)__hosihikari_shim_handle, (void*)getBiomeOptions);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint tryGetBiome(nint getBiomeOptions) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Biome? tryGetBiome(nint getBiomeOptions, global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache_Nested.CacheEntry xzCacheEntry, global::Hosihikari.Bindings.Bedrock.Interop.RTree_Nested.Hint? hint)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1a862077((void*)__hosihikari_shim_handle, (void*)getBiomeOptions, (void*)xzCacheEntry.Handle, (void*)(hint?.Handle ?? 0));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint tryGetBiome(nint getBiomeOptions, nint xzCacheEntry, nint hint) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

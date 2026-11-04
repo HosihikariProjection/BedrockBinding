@@ -40,20 +40,20 @@ public sealed unsafe partial class OceanRuinConfiguration : global::System.IDisp
 
     public float mClusterProbability
     {
-        get => NativeMethods.TablePtr->C3.hs_get_fb592c9e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_fb592c9e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_fb592c9e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_fb592c9e((void*)__hosihikari_shim_handle, value);
     }
 
     public float mLargeProbability
     {
-        get => NativeMethods.TablePtr->C3.hs_get_21e6e605((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_21e6e605((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_21e6e605((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_21e6e605((void*)__hosihikari_shim_handle, value);
     }
 
     public int mType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_84158160((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_84158160((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_84158160((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_84158160((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -62,7 +62,7 @@ public sealed unsafe partial class OceanRuinConfiguration : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bcadab1f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bcadab1f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -104,61 +104,17 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
         set => NativeMethods.TablePtr->C3.hs_set_ce4ed6cc((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _archiveAndUploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex, string realmsGuid)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(uploadId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(uploadId, __hs_stringBytes0);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(realmsGuid);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(realmsGuid, __hs_stringBytes3);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                NativeMethods.TablePtr->C3.hs_method_36cb7dba((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)path.Handle, slotIndex, __hs_stringData3, (nuint)__hs_stringByteCount3);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _archiveAndUploadFileToRealmStorage(nint uploadId, nint path, nint slotIndex, nint realmsGuid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'Core::ZipUtils::IZipUtility' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint appPlatform, nint taskGroup, nint fileUploader, nint zipUtility, nint previousUpload, nint resourcePackPathCache) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'Core::ZipUtils::IZipUtility' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _uploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(uploadId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(uploadId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C3.hs_method_5798f1cc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)path.Handle, slotIndex);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _uploadFileToRealmStorage(nint uploadId, nint path, nint slotIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ResourcePackFileUploadManager Create()
     {
@@ -182,14 +138,13 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
         return new ResourcePackFileUploadManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'Core::ZipUtils::IZipUtility' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ResourcePackFileUploadManager Create(nint appPlatform, nint taskGroup, nint fileUploader, nint zipUtility, nint previousUpload, nint resourcePackPathCache) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'Core::ZipUtils::IZipUtility' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _addZipPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ resourceZipPath)
-    {
-        NativeMethods.TablePtr->C3.hs_method_8030dca9((void*)__hosihikari_shim_handle, (void*)resourceZipPath.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _addZipPath(nint resourceZipPath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void archiveAndUploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex, string realmsGuid)
     {
@@ -278,24 +233,9 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_ uploadResourcePack(string resourcePackName, global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation resourceLocation, bool isZipped, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ relativePathWithinZip, bool isPremium, sbyte packType)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(resourcePackName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(resourcePackName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.Async_void_((nint)NativeMethods.TablePtr->C3.hs_method_b34d0a06((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)resourceLocation.Handle, isZipped, (void*)relativePathWithinZip.Handle, isPremium, packType));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint uploadResourcePack(nint resourcePackName, nint resourceLocation, bool isZipped, nint relativePathWithinZip, bool isPremium, nint packType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

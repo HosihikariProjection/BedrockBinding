@@ -40,7 +40,7 @@ public sealed unsafe partial class IFileWriteAccess : global::System.IDisposable
 
     public static IFileWriteAccess Create(global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_62a544da((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_62a544da((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IFileWriteAccess : global::System.IDisposable
 
     public ulong fwrite(nint buffer, ulong size, ulong count, nint file)
     {
-        return NativeMethods.TablePtr->C2.hs_method_909ae2bd((void*)__hosihikari_shim_handle, (void*)buffer, size, count, (void*)file);
+        return NativeMethods.TablePtr->C1.hs_method_909ae2bd((void*)__hosihikari_shim_handle, (void*)buffer, size, count, (void*)file);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class IFileWriteAccess : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_fc470e3c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_fc470e3c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

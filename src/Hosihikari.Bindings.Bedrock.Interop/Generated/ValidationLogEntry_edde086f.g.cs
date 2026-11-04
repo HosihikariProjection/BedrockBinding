@@ -38,14 +38,13 @@ public sealed unsafe partial class ValidationLogEntry : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_5d4e5e86((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ValidationLogEntry Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_13d3a6e9();
+        var handle = NativeMethods.TablePtr->C2.hs_create_13d3a6e9();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class ValidationLogEntry : global::System.IDisposab
 
     public static ValidationLogEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8fb95ee7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8fb95ee7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,18 +67,18 @@ public sealed unsafe partial class ValidationLogEntry : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb040ef_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_20e76b81((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_20e76b81((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfab5d3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2a0b270e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2a0b270e((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry((nint)NativeMethods.TablePtr->C3.hs_method_979841f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry((nint)NativeMethods.TablePtr->C2.hs_method_979841f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -89,7 +88,7 @@ public sealed unsafe partial class ValidationLogEntry : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_edde086f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_edde086f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

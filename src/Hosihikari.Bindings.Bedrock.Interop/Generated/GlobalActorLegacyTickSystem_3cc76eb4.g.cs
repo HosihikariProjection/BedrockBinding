@@ -38,10 +38,9 @@ public sealed unsafe partial class GlobalActorLegacyTickSystem : global::System.
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f96a8803((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GlobalActorLegacyTickSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.GlobalActorLegacyTickSystem arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class GlobalActorLegacyTickSystem : global::System.
         return new GlobalActorLegacyTickSystem((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_08234296());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {

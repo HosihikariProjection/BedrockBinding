@@ -49,20 +49,17 @@ public sealed unsafe partial class DamageSensorDefinition : global::System.IDisp
         return new DamageSensorDefinition((nint)handle);
     }
 
-    public void addDamageSensorTrigger(global::Hosihikari.Bindings.Bedrock.Interop.DamageSensorTrigger trigger)
-    {
-        NativeMethods.TablePtr->C1.hs_method_b944b134((void*)__hosihikari_shim_handle, (void*)trigger.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addDamageSensorTrigger(nint trigger) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C1.hs_method_df1a210c(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.DamageSensorComponent component)
-    {
-        NativeMethods.TablePtr->C1.hs_method_8f93516c((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initialize(nint entity, nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTriggers_Address
@@ -70,10 +67,9 @@ public sealed unsafe partial class DamageSensorDefinition : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_24c6a664((void*)__hosihikari_shim_handle);
     }
 
-    public void uninitialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.DamageSensorComponent component)
-    {
-        NativeMethods.TablePtr->C1.hs_method_ab70bf17((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void uninitialize(nint entity, nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

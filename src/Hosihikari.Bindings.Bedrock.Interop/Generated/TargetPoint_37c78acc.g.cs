@@ -38,14 +38,13 @@ public sealed unsafe partial class TargetPoint : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1c13227d((void*)__hosihikari_shim_handle, temperature, humidity, continentalness, erosion, depth, weirdness);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TargetPoint Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_aa69ed16();
+        var handle = NativeMethods.TablePtr->C3.hs_create_aa69ed16();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class TargetPoint : global::System.IDisposable
 
     public static TargetPoint Create(global::Hosihikari.Bindings.Bedrock.Interop.TargetPoint arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e9a1972c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_e9a1972c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,51 +64,44 @@ public sealed unsafe partial class TargetPoint : global::System.IDisposable
         return new TargetPoint((nint)handle);
     }
 
-    public static TargetPoint Create(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_068674dd(temperature, humidity, continentalness, erosion, depth, weirdness);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TargetPoint((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static TargetPoint Create(float temperature, float humidity, float continentalness, float erosion, float depth, float weirdness) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public long mContinentalness
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1c30fd93((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_1c30fd93((void*)__hosihikari_shim_handle);
     }
 
     public long mDepth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_88159e4c((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_88159e4c((void*)__hosihikari_shim_handle);
     }
 
     public long mErosion
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4df27376((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_4df27376((void*)__hosihikari_shim_handle);
     }
 
     public long mHumidity
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4e9aaba9((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_4e9aaba9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetSpace_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_89d6ec60((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_89d6ec60((void*)__hosihikari_shim_handle);
     }
 
     public long mTemperature
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f5d78168((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_f5d78168((void*)__hosihikari_shim_handle);
     }
 
     public long mWeirdness
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9281f675((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_9281f675((void*)__hosihikari_shim_handle);
     }
 
 
@@ -119,7 +111,7 @@ public sealed unsafe partial class TargetPoint : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_37c78acc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_37c78acc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

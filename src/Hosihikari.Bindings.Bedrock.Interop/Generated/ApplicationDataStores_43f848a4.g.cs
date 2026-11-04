@@ -38,22 +38,17 @@ public sealed unsafe partial class ApplicationDataStores : global::System.IDispo
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getDataStore_ef8e0283(int which)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_ef8e0283((void*)__hosihikari_shim_handle, which);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getDataStore_ef8e0283(nint which) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getDataStore_d51a0741(int which)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_d51a0741((void*)__hosihikari_shim_handle, which);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getDataStore_d51a0741(nint which) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _init()
-    {
-        NativeMethods.TablePtr->C0.hs_method_bae5167f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _init() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ApplicationDataStores Create()
     {
@@ -77,10 +72,9 @@ public sealed unsafe partial class ApplicationDataStores : global::System.IDispo
         return new ApplicationDataStores((nint)handle);
     }
 
-    public void _initDataStore(int which)
-    {
-        NativeMethods.TablePtr->C0.hs_method_08b3b38f((void*)__hosihikari_shim_handle, which);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initDataStore(nint which) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getDataStore_3caab93c(int which)
     {

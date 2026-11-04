@@ -38,25 +38,17 @@ public sealed unsafe partial class EncryptedZipTransforms : global::System.IDisp
         return __hs_handle;
     }
 
-    public bool _readTransform(byte[] stream)
-    {
-        fixed (byte* __hs_vectorData0 = stream)
-        {
-            return NativeMethods.TablePtr->C1.hs_method_be0efe45((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(stream?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _readTransform(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _writeTransform(byte[] stream)
-    {
-        fixed (byte* __hs_vectorData0 = stream)
-        {
-            return NativeMethods.TablePtr->C1.hs_method_500fd92d((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(stream?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _writeTransform(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EncryptedZipTransforms Create()
     {

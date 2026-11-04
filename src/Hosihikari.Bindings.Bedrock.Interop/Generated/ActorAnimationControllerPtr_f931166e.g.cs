@@ -38,15 +38,13 @@ public sealed unsafe partial class ActorAnimationControllerPtr : global::System.
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerGroup group, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_4bd2d950((void*)__hosihikari_shim_handle, (void*)group.Handle, (void*)name.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint group, nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_a3db1f8e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorAnimationControllerPtr Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ActorAnimationControllerPtr : global::System.
         return new ActorAnimationControllerPtr((nint)handle);
     }
 
-    public static ActorAnimationControllerPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerGroup group, global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_2cac0eb9((void*)group.Handle, (void*)name.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorAnimationControllerPtr((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ActorAnimationControllerPtr Create(nint group, nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorAnimationControllerPtr Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerPtr arg0)
     {
@@ -81,10 +72,9 @@ public sealed unsafe partial class ActorAnimationControllerPtr : global::System.
         return new ActorAnimationControllerPtr((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerPtr NONE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerPtr((nint)NativeMethods.TablePtr->C0.hs_method_915c814c(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NONE() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorAnimationControllerInfoPtr_Address

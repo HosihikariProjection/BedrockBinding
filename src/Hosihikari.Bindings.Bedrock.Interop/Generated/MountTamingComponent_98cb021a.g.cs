@@ -38,10 +38,9 @@ public sealed unsafe partial class MountTamingComponent : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_d8abb628((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MountTamingComponent Create()
     {
@@ -65,15 +64,13 @@ public sealed unsafe partial class MountTamingComponent : global::System.IDispos
         return new MountTamingComponent((nint)handle);
     }
 
-    public void becomeTame(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, bool tamingParticles)
-    {
-        NativeMethods.TablePtr->C2.hs_method_695a8644((void*)__hosihikari_shim_handle, (void*)owner.Handle, tamingParticles);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void becomeTame(nint owner, bool tamingParticles) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_ba9ed481((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getInteraction(nint owner, nint player, nint handSlot) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAutoRejectItems_Address
@@ -117,10 +114,9 @@ public sealed unsafe partial class MountTamingComponent : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_d77f354e((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MountTamingComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MountTamingComponent arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MountTamingComponent((nint)NativeMethods.TablePtr->C2.hs_method_9ea9c077((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tameToPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, bool tamingParticles)
     {

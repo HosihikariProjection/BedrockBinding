@@ -38,15 +38,13 @@ public sealed unsafe partial class SetPreviousPosRotSystem : global::System.IDis
         return __hs_handle;
     }
 
-    public static void _setPreviousPosRot(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorRotationComponent actorRotationComponent, nint modifier)
-    {
-        NativeMethods.TablePtr->C4.hs_method_e0e18cf6((void*)entity.Handle, (void*)stateVectorComponent.Handle, (void*)actorRotationComponent.Handle, (void*)modifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _setPreviousPosRot(nint entity, nint stateVectorComponent, nint actorRotationComponent, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _setPreviousPosRotSystem(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C4.hs_method_7768abd1((void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _setPreviousPosRotSystem(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -54,7 +52,7 @@ public sealed unsafe partial class SetPreviousPosRotSystem : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bdc002fd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_bdc002fd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

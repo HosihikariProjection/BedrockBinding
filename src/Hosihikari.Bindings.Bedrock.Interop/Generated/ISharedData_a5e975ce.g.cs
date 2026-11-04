@@ -40,7 +40,7 @@ public sealed unsafe partial class ISharedData : global::System.IDisposable
 
     public static ISharedData Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.ISharedData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_68de4351((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_68de4351((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,13 +51,13 @@ public sealed unsafe partial class ISharedData : global::System.IDisposable
 
     public byte getChatRestrictionLevel()
     {
-        return NativeMethods.TablePtr->C3.hs_method_8a341770((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_8a341770((void*)__hosihikari_shim_handle);
     }
 
     public bool? isGameRuleEnabled(global::Hosihikari.Bindings.Bedrock.Interop.GameRuleId arg0)
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C3.hs_method_9a305fed((void*)__hosihikari_shim_handle, (void*)arg0.Handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C2.hs_method_9a305fed((void*)__hosihikari_shim_handle, (void*)arg0.Handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value != 0 : (bool?)null;
     }
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class ISharedData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a5e975ce((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a5e975ce((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -44,10 +44,9 @@ public sealed unsafe partial class ScreenHandlerHUD : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_884b0a80((void*)__hosihikari_shim_handle);
     }
 
-    public byte _handleAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestAction requestAction)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_ed2e5862((void*)__hosihikari_shim_handle, (void*)requestAction.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _handleAction(nint requestAction) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScreenHandlerHUD Create(global::Hosihikari.Bindings.Bedrock.Interop.ScreenHandlerHUD arg0)
     {

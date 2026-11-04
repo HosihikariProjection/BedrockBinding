@@ -49,26 +49,21 @@ public sealed unsafe partial class TrimPatternRegistry : global::System.IDisposa
         return new TrimPatternRegistry((nint)handle);
     }
 
-    public bool doesPatternExist(global::Hosihikari.Bindings.Bedrock.Interop.HashedString patternId)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_a2b5ca76((void*)__hosihikari_shim_handle, (void*)patternId.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool doesPatternExist(nint patternId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'TrimPattern' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getAllEntries() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'TrimPattern' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString? getPatternIdByItem(global::Hosihikari.Bindings.Bedrock.Interop.HashedString itemId)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_8ada6f66((void*)__hosihikari_shim_handle, (void*)itemId.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getPatternIdByItem(nint itemId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initializeServer(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef itemRegistry)
-    {
-        NativeMethods.TablePtr->C4.hs_method_c354458a((void*)__hosihikari_shim_handle, (void*)itemRegistry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initializeServer(nint itemRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPatternIdToTemplateItemMap_Address

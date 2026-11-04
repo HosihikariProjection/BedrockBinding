@@ -40,7 +40,7 @@ public sealed unsafe partial class CommonResourceDefinitionMap : global::System.
 
     public static CommonResourceDefinitionMap Create(global::Hosihikari.Bindings.Bedrock.Interop.CommonResourceDefinitionMap arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0f3273b5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_0f3273b5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,54 +49,51 @@ public sealed unsafe partial class CommonResourceDefinitionMap : global::System.
         return new CommonResourceDefinitionMap((nint)handle);
     }
 
-    public nint getAnimateScriptArray()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_58c02c4b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getAnimateScriptArray() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorAnimateScriptArray_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5c4c89fd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_5c4c89fd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorAnimationControllerMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2e0a4b76((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_2e0a4b76((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorAnimationMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7fda5d9d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_7fda5d9d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mQueryableGeometryBoneNames_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3aa95b5c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_3aa95b5c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVariableSettings_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_029e4d07((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_029e4d07((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void mergeActorAnimateScriptArray(nint actorAnimateScriptArray) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void mergeAnimation(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, global::Hosihikari.Bindings.Bedrock.Interop.ActorSkeletalAnimationPtr animationPtr)
-    {
-        NativeMethods.TablePtr->C1.hs_method_22872e16((void*)__hosihikari_shim_handle, (void*)name.Handle, (void*)animationPtr.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void mergeAnimation(nint name, nint animationPtr) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void mergeAnimationController(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerPtr animationControllerPtr)
-    {
-        NativeMethods.TablePtr->C1.hs_method_9a91c312((void*)__hosihikari_shim_handle, (void*)name.Handle, (void*)animationControllerPtr.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void mergeAnimationController(nint name, nint animationControllerPtr) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -105,7 +102,7 @@ public sealed unsafe partial class CommonResourceDefinitionMap : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f7abedcd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_f7abedcd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

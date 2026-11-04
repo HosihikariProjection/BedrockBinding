@@ -38,25 +38,13 @@ public sealed unsafe partial class UpdateAttributesPacketPayload : global::Syste
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID id, global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap map, global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstanceHandle[] dirtyData, global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputTick tick)
-    {
-        var __hs_vectorItems2 = dirtyData;
-        var __hs_vectorHandles2 = new nint[__hs_vectorItems2?.Length ?? 0];
-        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorHandles2.Length; __hs_i2++)
-        {
-            __hs_vectorHandles2[__hs_i2] = __hs_vectorItems2![__hs_i2]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData2 = __hs_vectorHandles2)
-        {
-            var __hs_vectorData2 = (void**)__hs_vectorHandleData2;
-            return (nint)NativeMethods.TablePtr->C4.hs_method_556e9431((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)map.Handle, (void*)tick.Handle, __hs_vectorData2, (nuint)(dirtyData?.Length ?? 0));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint id, nint map, nint dirtyData, nint tick) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_a71061ec((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UpdateAttributesPacketPayload Create()
     {
@@ -69,26 +57,9 @@ public sealed unsafe partial class UpdateAttributesPacketPayload : global::Syste
         return new UpdateAttributesPacketPayload((nint)handle);
     }
 
-    public static UpdateAttributesPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID id, global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap map, global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstanceHandle[] dirtyData, global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputTick tick)
-    {
-        var __hs_vectorItems2 = dirtyData;
-        var __hs_vectorHandles2 = new nint[__hs_vectorItems2?.Length ?? 0];
-        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorHandles2.Length; __hs_i2++)
-        {
-            __hs_vectorHandles2[__hs_i2] = __hs_vectorItems2![__hs_i2]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData2 = __hs_vectorHandles2)
-        {
-            var __hs_vectorData2 = (void**)__hs_vectorHandleData2;
-            var handle = NativeMethods.TablePtr->C4.hs_create_1df49331((void*)id.Handle, (void*)map.Handle, (void*)tick.Handle, __hs_vectorData2, (nuint)(dirtyData?.Length ?? 0));
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new UpdateAttributesPacketPayload((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static UpdateAttributesPacketPayload Create(nint id, nint map, nint dirtyData, nint tick) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UpdateAttributesPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateAttributesPacketPayload arg0)
     {

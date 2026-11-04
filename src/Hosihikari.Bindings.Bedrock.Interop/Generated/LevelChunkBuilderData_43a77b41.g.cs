@@ -38,26 +38,17 @@ public sealed unsafe partial class LevelChunkBuilderData : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_d2d71dcd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_eb31fc07((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelChunkBuilderData Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_56d04220();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LevelChunkBuilderData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LevelChunkBuilderData Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LevelChunkBuilderData Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBuilderData arg0)
     {
@@ -70,10 +61,9 @@ public sealed unsafe partial class LevelChunkBuilderData : global::System.IDispo
         return new LevelChunkBuilderData((nint)handle);
     }
 
-    public void enqueueChunkForProcessing(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, byte state)
-    {
-        NativeMethods.TablePtr->C2.hs_method_a139f246((void*)__hosihikari_shim_handle, (void*)pos.Handle, state);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void enqueueChunkForProcessing(nint pos, nint state) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkGenerationGridMap_Address

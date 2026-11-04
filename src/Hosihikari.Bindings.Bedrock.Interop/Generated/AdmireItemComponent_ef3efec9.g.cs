@@ -73,15 +73,13 @@ public sealed unsafe partial class AdmireItemComponent : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C0.hs_get_fe4abd44((void*)__hosihikari_shim_handle);
     }
 
-    public void onAdmireItemPickedUp(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Actor? itemOwner)
-    {
-        NativeMethods.TablePtr->C0.hs_method_43ae3ec4((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)item.Handle, (void*)(itemOwner?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onAdmireItemPickedUp(nint owner, nint item, nint itemOwner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void stopAdmiring()
-    {
-        NativeMethods.TablePtr->C0.hs_method_d7f78d6f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void stopAdmiring() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

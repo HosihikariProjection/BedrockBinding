@@ -38,43 +38,13 @@ public sealed unsafe partial class FilterParamDefinition : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(int type, int requirement, string description, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput def, global::Hosihikari.Bindings.Bedrock.Interop.FilterStringMap stringMap)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(description);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(description, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_e3d34eb8((void*)__hosihikari_shim_handle, type, requirement, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)def.Handle, (void*)stringMap.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint type, nint requirement, nint description, nint def, nint stringMap) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(int type, int requirement, string description, byte opt, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput def, global::Hosihikari.Bindings.Bedrock.Interop.FilterStringMap stringMap)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(description);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(description, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            return (nint)NativeMethods.TablePtr->C1.hs_method_a3d8c9c1((void*)__hosihikari_shim_handle, type, requirement, __hs_stringData2, (nuint)__hs_stringByteCount2, opt, (void*)def.Handle, (void*)stringMap.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint type, nint requirement, nint description, nint opt, nint def, nint stringMap) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FilterParamDefinition Create()
     {
@@ -87,55 +57,13 @@ public sealed unsafe partial class FilterParamDefinition : global::System.IDispo
         return new FilterParamDefinition((nint)handle);
     }
 
-    public static FilterParamDefinition Create(int type, int requirement, string description, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput def, global::Hosihikari.Bindings.Bedrock.Interop.FilterStringMap stringMap)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(description);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(description, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            var handle = NativeMethods.TablePtr->C1.hs_create_b385b617(type, requirement, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)def.Handle, (void*)stringMap.Handle);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FilterParamDefinition Create(nint type, nint requirement, nint description, nint def, nint stringMap) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-            return new FilterParamDefinition((nint)handle);
-        }
-    }
-
-    public static FilterParamDefinition Create(int type, int requirement, string description, byte opt, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput def, global::Hosihikari.Bindings.Bedrock.Interop.FilterStringMap stringMap)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(description);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(description, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            var handle = NativeMethods.TablePtr->C1.hs_create_59d2965b(type, requirement, __hs_stringData2, (nuint)__hs_stringByteCount2, opt, (void*)def.Handle, (void*)stringMap.Handle);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new FilterParamDefinition((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FilterParamDefinition Create(nint type, nint requirement, nint description, nint opt, nint def, nint stringMap) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FilterParamDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterParamDefinition arg0)
     {

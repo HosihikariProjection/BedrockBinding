@@ -41,25 +41,25 @@ public sealed unsafe partial class PrioritizedGoal : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mGoal_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0f23c1a6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0f23c1a6((void*)__hosihikari_shim_handle);
     }
 
     public int mPriority
     {
-        get => NativeMethods.TablePtr->C3.hs_get_267aa8aa((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_267aa8aa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_267aa8aa((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_267aa8aa((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mToStart
     {
-        get => NativeMethods.TablePtr->C3.hs_get_6883655e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_6883655e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_6883655e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_6883655e((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUsed
     {
-        get => NativeMethods.TablePtr->C3.hs_get_42e8ca76((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_42e8ca76((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_42e8ca76((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_42e8ca76((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -69,7 +69,7 @@ public sealed unsafe partial class PrioritizedGoal : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_fc3bf0fd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_fc3bf0fd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

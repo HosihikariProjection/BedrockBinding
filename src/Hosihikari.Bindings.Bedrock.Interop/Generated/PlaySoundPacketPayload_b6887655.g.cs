@@ -40,7 +40,7 @@ public sealed unsafe partial class PlaySoundPacketPayload : global::System.IDisp
 
     public static PlaySoundPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaySoundPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c7e0126c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_c7e0126c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,50 +51,50 @@ public sealed unsafe partial class PlaySoundPacketPayload : global::System.IDisp
 
     public bool mBypassListenerRangeCheck
     {
-        get => NativeMethods.TablePtr->C3.hs_get_55efb251((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_55efb251((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_55efb251((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_55efb251((void*)__hosihikari_shim_handle, value);
     }
 
     public int mLoopCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ff33852c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_ff33852c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_ff33852c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_ff33852c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4794bf82((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4794bf82((void*)__hosihikari_shim_handle);
     }
 
     public float mPitch
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e75c5f7e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e75c5f7e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e75c5f7e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e75c5f7e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlaybackPositionSeconds_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cb07db01((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_cb07db01((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_bc92547d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_bc92547d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mServerSoundHandle_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_447dbfd5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_447dbfd5((void*)__hosihikari_shim_handle);
     }
 
     public float mVolume
     {
-        get => NativeMethods.TablePtr->C3.hs_get_1aafe48c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_1aafe48c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_1aafe48c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_1aafe48c((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class PlaySoundPacketPayload : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b6887655((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b6887655((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

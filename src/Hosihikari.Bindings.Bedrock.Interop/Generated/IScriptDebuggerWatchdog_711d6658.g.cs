@@ -40,7 +40,7 @@ public sealed unsafe partial class IScriptDebuggerWatchdog : global::System.IDis
 
     public static IScriptDebuggerWatchdog Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptDebuggerWatchdog arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a2d4e888((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_a2d4e888((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class IScriptDebuggerWatchdog : global::System.IDis
 
     public bool listenTimeoutExpired()
     {
-        return NativeMethods.TablePtr->C2.hs_method_5510064e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_5510064e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool requireClose()
     {
-        return NativeMethods.TablePtr->C2.hs_method_cade79be((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_cade79be((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -70,7 +70,7 @@ public sealed unsafe partial class IScriptDebuggerWatchdog : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_711d6658((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_711d6658((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

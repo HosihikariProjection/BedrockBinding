@@ -38,24 +38,21 @@ public sealed unsafe partial class BlockActorLevelListener : global::System.IDis
         return __hs_handle;
     }
 
-    public void _onChunkLoaded(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
-    {
-        NativeMethods.TablePtr->C0.hs_method_55150902((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)lc.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onChunkLoaded(nint source, nint lc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onChunkUnloaded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
-    {
-        NativeMethods.TablePtr->C0.hs_method_715d46d6((void*)__hosihikari_shim_handle, (void*)lc.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onChunkUnloaded(nint lc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onSubChunkLoaded(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e2ee3a0d((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)lc.Handle, absoluteSubChunkIndex, subChunkVisibilityChanged);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onSubChunkLoaded(nint arg0, nint lc, short absoluteSubChunkIndex, bool subChunkVisibilityChanged) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockActorLevelListener Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockActorLevelListener arg0)
     {

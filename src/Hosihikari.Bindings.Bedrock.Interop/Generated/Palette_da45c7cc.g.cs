@@ -38,10 +38,9 @@ public sealed unsafe partial class Palette : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.Color WHITE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.Color((nint)NativeMethods.TablePtr->C3.hs_method_41c2beed(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint WHITE() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class Palette : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_da45c7cc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_da45c7cc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

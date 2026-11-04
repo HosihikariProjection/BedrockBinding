@@ -68,10 +68,9 @@ public sealed unsafe partial class ScriptExplosionStartedBeforeEvent : global::S
         get => (nint)NativeMethods.TablePtr->C3.hs_get_5eb2c0cf((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent eventData, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_636e905f((void*)__hosihikari_shim_handle, (void*)eventData.Handle, (void*)scope.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint eventData, nint scope) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptExplosionStartedBeforeEvent Create()
     {
@@ -84,16 +83,9 @@ public sealed unsafe partial class ScriptExplosionStartedBeforeEvent : global::S
         return new ScriptExplosionStartedBeforeEvent((nint)handle);
     }
 
-    public static ScriptExplosionStartedBeforeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent eventData, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0533566c((void*)eventData.Handle, (void*)scope.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptExplosionStartedBeforeEvent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptExplosionStartedBeforeEvent Create(nint eventData, nint scope) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptExplosionStartedBeforeEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptExplosionStartedBeforeEvent arg0)
     {
@@ -106,15 +98,13 @@ public sealed unsafe partial class ScriptExplosionStartedBeforeEvent : global::S
         return new ScriptExplosionStartedBeforeEvent((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_2d6258c3());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void copyTo(global::Hosihikari.Bindings.Bedrock.Interop.ExplosionStartedEvent explosionStartedEvent)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b14fe439((void*)__hosihikari_shim_handle, (void*)explosionStartedEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void copyTo(nint explosionStartedEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mCancel
     {

@@ -38,10 +38,9 @@ public sealed unsafe partial class DeltaFeature : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos centerPos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ac606077((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)centerPos.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint centerPos, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DeltaFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.DeltaFeature arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class DeltaFeature : global::System.IDisposable
         return new DeltaFeature((nint)handle);
     }
 
-    public bool _isValidPlacement(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos cursor)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_2d8af01e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)cursor.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValidPlacement(nint region, nint cursor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos centerPos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {

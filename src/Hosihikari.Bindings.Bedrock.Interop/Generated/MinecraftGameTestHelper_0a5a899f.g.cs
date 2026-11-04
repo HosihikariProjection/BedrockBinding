@@ -44,447 +44,257 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C2.hs_get_dc87d498((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f7696913((void*)__hosihikari_shim_handle, (void*)blockType.Handle, (void*)pos.Handle, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertBlockPresent(nint blockType, nint pos, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int x, int y, int z, bool isPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_224d1da3((void*)__hosihikari_shim_handle, (void*)blockType.Handle, x, y, z, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertBlockPresent(nint blockType, int x, int y, int z, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _assertBlockState(nint blockPos, nint predicate) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertCanReachLocation(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool expectedReach)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_300449a0((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)pos.Handle, expectedReach, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertCanReachLocation(nint mob, nint pos, bool expectedReach) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertContainerContains(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_a43b4a2a((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)pos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertContainerContains(nint item, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertContainerEmpty(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2ad7d66e((void*)__hosihikari_shim_handle, (void*)pos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertContainerEmpty(nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityHasArmor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, int armorSlot, string armorName, int dataValue, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool hasArmor)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(armorName);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(armorName, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_ede65d5d((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, armorSlot, __hs_stringData2, (nuint)__hs_stringByteCount2, dataValue, (void*)pos.Handle, hasArmor, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityHasArmor(nint actorIdentifier, nint armorSlot, nint armorName, int dataValue, nint pos, bool hasArmor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityHasComponent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, string componentName, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool hasComponent)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(componentName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(componentName, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_35d87d85((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)pos.Handle, hasComponent, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityHasComponent(nint actorIdentifier, nint componentName, nint pos, bool hasComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityInstancePresent(global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, bool expectedPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e5453753((void*)__hosihikari_shim_handle, (void*)(actor?.Handle ?? 0), expectedPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityInstancePresent(nint actor, bool expectedPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityInstancePresent(global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool expectedPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_c6b0309d((void*)__hosihikari_shim_handle, (void*)(actor?.Handle ?? 0), (void*)pos.Handle, expectedPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityInstancePresent(nint actor, nint pos, bool expectedPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, bool isPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f9eafbdf((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityPresent(nint actorIdentifier, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_40bdfb38((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, (void*)pos.Handle, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityPresent(nint actorIdentifier, nint pos, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, float distance, bool isPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4ca2c86b((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, (void*)pos.Handle, distance, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityPresent_4ca2c86b(nint actorIdentifier, nint pos, nint distance, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, int x, int y, int z, bool isPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e895a2d7((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, x, y, z, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityPresent(nint actorIdentifier, int x, int y, int z, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _assertEntityState(nint pos, nint actorIdentifier, nint dataPredicate) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityTouching(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool isTouching)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_34e8b4cd((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, (void*)pos.Handle, isTouching, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityTouching(nint actorIdentifier, nint pos, bool isTouching) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertIsWaterlogged(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool expectedWaterlogged)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_83dc32c7((void*)__hosihikari_shim_handle, (void*)pos.Handle, expectedWaterlogged, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertIsWaterlogged(nint pos, bool expectedWaterlogged) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertItemEntityCountIs(global::Hosihikari.Bindings.Bedrock.Interop.Item itemType, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, float searchDistance, int expectedCount)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_15b11a11((void*)__hosihikari_shim_handle, (void*)itemType.Handle, (void*)pos.Handle, searchDistance, expectedCount, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertItemEntityCountIs(nint itemType, nint pos, float searchDistance, int expectedCount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertItemEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.Item item, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, float searchDistance, bool isPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_223b9ade((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)pos.Handle, searchDistance, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertItemEntityPresent(nint item, nint pos, float searchDistance, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertItemEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.Item item, int x, int y, int z, float searchDistance, bool isPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4533bd2f((void*)__hosihikari_shim_handle, (void*)item.Handle, x, y, z, searchDistance, isPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertItemEntityPresent(nint item, int x, int y, int z, float searchDistance, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertRedstonePower(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int expectedPower)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_260387de((void*)__hosihikari_shim_handle, (void*)pos.Handle, expectedPower, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertRedstonePower(nint pos, int expectedPower) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool dropResources)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_4114d6b5((void*)__hosihikari_shim_handle, (void*)pos.Handle, dropResources, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _destroyBlock(nint pos, bool dropResources) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getBlockSource(nint blockSourceResult) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Dimension *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getDimension() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Dimension *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, ScriptModuleGameTest::ScriptGameTestConnectivity>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getFenceConnectivity(nint relativePos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, ScriptModuleGameTest::ScriptGameTestConnectivity>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _killAllEntities()
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f6c34e50((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _killAllEntities() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _onPlayerJump(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, int jumpAmount)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_fdb2ea83((void*)__hosihikari_shim_handle, (void*)mob.Handle, jumpAmount, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onPlayerJump(nint mob, int jumpAmount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _pressButton(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos buttonPos)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_04c50ff9((void*)__hosihikari_shim_handle, (void*)buttonPos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _pressButton(nint buttonPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _pressButton(int x, int y, int z)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b48e531e((void*)__hosihikari_shim_handle, x, y, z, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _pressButton(int x, int y, int z) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _print(string text)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(text);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(text, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d1111d2c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _print(nint text) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _pullLever(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos leverPos)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_abbe01da((void*)__hosihikari_shim_handle, (void*)leverPos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _pullLever(nint leverPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _pullLever(int x, int y, int z)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dc1127b5((void*)__hosihikari_shim_handle, x, y, z, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _pullLever(int x, int y, int z) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _pulseRedstone(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int duration)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_390c8a5b((void*)__hosihikari_shim_handle, (void*)pos.Handle, duration, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _pulseRedstone(nint pos, int duration) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, BlockPos>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _relativePosition_88ba215b(nint worldPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, BlockPos>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Vec3>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _relativePosition_b7048b08(nint worldPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Vec3>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _removeSimulatedPlayer(global::Hosihikari.Bindings.Bedrock.Interop.SimulatedPlayer simulatedPlayer)
-    {
-        NativeMethods.TablePtr->C2.hs_method_7656dea3((void*)__hosihikari_shim_handle, (void*)simulatedPlayer.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _removeSimulatedPlayer(nint simulatedPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _setBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int updateFlags)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_60e7dce2((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle, updateFlags, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _setBlock(nint pos, nint block, int updateFlags) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _setBlock(int x, int y, int z, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int updateFlags)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b119c393((void*)__hosihikari_shim_handle, x, y, z, (void*)block.Handle, updateFlags, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _setBlock(int x, int y, int z, nint block, int updateFlags) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setDayTime(int time)
-    {
-        NativeMethods.TablePtr->C2.hs_method_41b51226((void*)__hosihikari_shim_handle, time);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setDayTime(int time) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _setFluidContainer(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int _fluidType)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9fe49637((void*)__hosihikari_shim_handle, (void*)pos.Handle, _fluidType, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _setFluidContainer(nint pos, int _fluidType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setNight()
-    {
-        NativeMethods.TablePtr->C2.hs_method_cf924dd6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setNight() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _setTntFuse(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int fuseLength)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_dcde97b9((void*)__hosihikari_shim_handle, (void*)actor.Handle, fuseLength, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _setTntFuse(nint actor, int fuseLength) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _spawn_92922309(nint actorIdentifier, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _spawn_87145c14(nint actorIdentifier, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _spawn(nint actorIdentifier, int x, int y, int z) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _spawnItem(nint itemType, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, SimulatedPlayer *>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint _spawnSimulatedPlayer(nint name, nint pos, nint gameMode) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, SimulatedPlayer *>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _spawnWithoutBehaviors_6e23057e(nint actorIdentifier, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _spawnWithoutBehaviors_6cbdbea6(nint actorIdentifier, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Actor *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _spreadFromFaceTowardDirection(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int fromFace, int direction)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_d68ca8fd((void*)__hosihikari_shim_handle, (void*)pos.Handle, fromFace, direction, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _spreadFromFaceTowardDirection(nint pos, nint fromFace, nint direction) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _succeedWhenBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isPresent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_41a5a0c8((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)pos.Handle, isPresent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _succeedWhenBlockPresent_41a5a0c8(nint block, nint pos, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _succeedWhenBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.Block block, int x, int y, int z, bool isPresent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_43996dbb((void*)__hosihikari_shim_handle, (void*)block.Handle, x, y, z, isPresent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _succeedWhenBlockPresent(nint block, int x, int y, int z, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _succeedWhenBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.BlockType block, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, bool isPresent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f64d43cf((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)position.Handle, isPresent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _succeedWhenBlockPresent_f64d43cf(nint block, nint position, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _succeedWhenEntityData(nint pos, nint actorIdentifier, nint dataPredicate) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _succeedWhenEntityHasComponent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, string componentName, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool hasComponent)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(componentName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(componentName, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C2.hs_method_09406965((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)pos.Handle, hasComponent);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _succeedWhenEntityHasComponent(nint actorIdentifier, nint componentName, nint pos, bool hasComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _succeedWhenEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isPresent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_e40f25c3((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, (void*)pos.Handle, isPresent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _succeedWhenEntityPresent(nint actorIdentifier, nint pos, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _succeedWhenEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, int x, int y, int z, bool isPresent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_4b785491((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, x, y, z, isPresent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _succeedWhenEntityPresent(nint actorIdentifier, int x, int y, int z, bool isPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _triggerInternalBlockEvent(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, string @event, float[] parameters)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(@event);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(@event, __hs_stringBytes1);
-        fixed (float* __hs_vectorData2 = parameters)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                var __hs_handle = NativeMethods.TablePtr->C2.hs_method_7b0edc61((void*)__hosihikari_shim_handle, (void*)pos.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(parameters?.Length ?? 0), &__hs_hasValue);
-                return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _triggerInternalBlockEvent(nint pos, nint @event, nint parameters) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _walkTo(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, float speedModifier)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_df52e2b4((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)pos.Handle, speedModifier, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _walkTo_df52e2b4(nint mob, nint pos, float speedModifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _walkTo(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, float speedModifier)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e8b2befd((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)pos.Handle, speedModifier, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _walkTo_e8b2befd(nint mob, nint pos, float speedModifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, BlockPos>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _worldPosition_806613d5(nint relativePos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, BlockPos>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Vec3>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _worldPosition_9708f0b9(nint relativePos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<gametest::GameTestError, Vec3>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MinecraftGameTestHelper Create()
     {
@@ -508,31 +318,21 @@ public sealed unsafe partial class MinecraftGameTestHelper : global::System.IDis
         return new MinecraftGameTestHelper((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityInstancePresent(global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, global::Hosihikari.Bindings.Bedrock.Interop.AABB searchBounds, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos relativeTestPosition, bool expectedPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_042b75c5((void*)__hosihikari_shim_handle, (void*)(actor?.Handle ?? 0), (void*)searchBounds.Handle, (void*)relativeTestPosition.Handle, expectedPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityInstancePresent(nint actor, nint searchBounds, nint relativeTestPosition, bool expectedPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _assertEntityPresent(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.AABB searchBounds, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool expectedPresent)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_989aee8c((void*)__hosihikari_shim_handle, (void*)actorIdentifier.Handle, (void*)searchBounds.Handle, (void*)pos.Handle, expectedPresent, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _assertEntityPresent_989aee8c(nint actorIdentifier, nint searchBounds, nint pos, bool expectedPresent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getItemEntityCount(global::Hosihikari.Bindings.Bedrock.Interop.Item item, global::Hosihikari.Bindings.Bedrock.Interop.AABB searchBounds)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_097ffd10((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)searchBounds.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getItemEntityCount(nint item, nint searchBounds) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _getStructureBlockMissingError()
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_6a80d9a0((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getStructureBlockMissingError() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? assertBlockPresent(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isPresent)
     {

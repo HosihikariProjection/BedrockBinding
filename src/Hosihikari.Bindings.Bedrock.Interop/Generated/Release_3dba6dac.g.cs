@@ -38,14 +38,13 @@ public sealed unsafe partial class Release : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'Scripting::RemovedInMajorVersion' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint comparison_, nint version_, nint exclusiveMajorVersionLimit_) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'Scripting::RemovedInMajorVersion' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_ad6f1905((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Release Create()
     {
@@ -58,9 +57,9 @@ public sealed unsafe partial class Release : global::System.IDisposable
         return new Release((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'Scripting::RemovedInMajorVersion' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static Release Create(nint comparison_, nint version_, nint exclusiveMajorVersionLimit_) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'Scripting::RemovedInMajorVersion' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Release Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Release arg0)
     {

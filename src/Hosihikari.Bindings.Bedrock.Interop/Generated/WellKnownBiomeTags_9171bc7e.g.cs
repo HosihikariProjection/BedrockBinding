@@ -38,15 +38,13 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(nint tagRegistry)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_331a1466((void*)__hosihikari_shim_handle, (void*)tagRegistry);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint tagRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString BIRCH_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_02bf8c09(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint BIRCH_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint BIRCH_TAG_ID_Address
@@ -54,10 +52,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_906e4697((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString COLD_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_76c73e17(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint COLD_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint COLD_TAG_ID_Address
@@ -65,10 +62,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_a5c1ba1c((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString DEEP_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_e7a31525(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DEEP_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint DEEP_TAG_ID_Address
@@ -76,10 +72,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_a4391e25((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString DESERT_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_0430f878(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DESERT_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint DESERT_TAG_ID_Address
@@ -87,10 +82,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_905a1b48((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString EXTREME_HILLS_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_1b5056e3(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint EXTREME_HILLS_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint EXTREME_HILLS_TAG_ID_Address
@@ -98,10 +92,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6c2ab11d((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString FAST_FISHING_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_2e808946(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint FAST_FISHING_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint FAST_FISHING_TAG_ID_Address
@@ -109,10 +102,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_4c5c6083((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString FLOWER_FOREST_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_907312e1(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint FLOWER_FOREST_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint FLOWER_FOREST_TAG_ID_Address
@@ -120,10 +112,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_97c7129c((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString FOREST_GEN_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_1704e391(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint FOREST_GEN_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint FOREST_GEN_TAG_ID_Address
@@ -131,10 +122,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_565ba408((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString FOREST_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_1f522573(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint FOREST_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint FOREST_TAG_ID_Address
@@ -142,10 +132,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_1f7dc412((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString FROZEN_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_28522f87(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint FROZEN_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint FROZEN_TAG_ID_Address
@@ -153,10 +142,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_c479457f((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString HIGH_SEAS_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_98be0aff(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint HIGH_SEAS_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint HIGH_SEAS_TAG_ID_Address
@@ -164,10 +152,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_15cab210((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString HILLS_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_04b3ff43(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint HILLS_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint HILLS_TAG_ID_Address
@@ -175,10 +162,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_97839d4a((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString ICE_PLAINS_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_2f367391(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ICE_PLAINS_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint ICE_PLAINS_TAG_ID_Address
@@ -186,10 +172,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_207e0a2a((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString ICE_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_9efcc32a(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ICE_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint ICE_TAG_ID_Address
@@ -197,10 +182,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_1b20c056((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString JUNGLE_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_50fbcf79(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint JUNGLE_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint JUNGLE_TAG_ID_Address
@@ -208,10 +192,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_c642869f((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString MEADOW_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_4fea04e2(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MEADOW_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint MEADOW_TAG_ID_Address
@@ -219,10 +202,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_f9e1890a((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString MESA_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_9ed340e6(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MESA_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint MESA_TAG_ID_Address
@@ -230,10 +212,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_2b2e8c3a((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString MOUNTAIN_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_5c899bde(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MOUNTAIN_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint MOUNTAIN_TAG_ID_Address
@@ -241,10 +222,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_46fa94d4((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString MUTATED_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_32fd9627(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MUTATED_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint MUTATED_TAG_ID_Address
@@ -252,10 +232,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_275a1e46((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString NO_LEGACY_WORLDGEN_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_d605fe26(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NO_LEGACY_WORLDGEN_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint NO_LEGACY_WORLDGEN_TAG_ID_Address
@@ -263,10 +242,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_7a863ffa((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString OCEAN_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_440d372b(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint OCEAN_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint OCEAN_TAG_ID_Address
@@ -274,10 +252,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_ce91cd7f((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString OVERWORLD_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_3039291a(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint OVERWORLD_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint OVERWORLD_TAG_ID_Address
@@ -285,10 +262,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_017d8d3c((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString PALE_GARDEN_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_1c766ea4(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint PALE_GARDEN_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint PALE_GARDEN_TAG_ID_Address
@@ -296,10 +272,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_286d0d40((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString PLAINS_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_21a24e31(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint PLAINS_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint PLAINS_TAG_ID_Address
@@ -307,10 +282,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_09d89920((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString RARE_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_876dffe4(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RARE_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint RARE_TAG_ID_Address
@@ -318,10 +292,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_dcfcb601((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString SLIME_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_6b37ed1d(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SLIME_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint SLIME_TAG_ID_Address
@@ -329,10 +302,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_c2fb9410((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString SURFACE_MINESHAFT_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_ba6b8836(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SURFACE_MINESHAFT_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint SURFACE_MINESHAFT_TAG_ID_Address
@@ -340,10 +312,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_59ca85d2((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString SWAMP_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_49041c16(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SWAMP_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint SWAMP_TAG_ID_Address
@@ -351,10 +322,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_5014cf9c((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString SWAMP_WATER_HUGE_MUSHROOM_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_393814d7(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SWAMP_WATER_HUGE_MUSHROOM_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint SWAMP_WATER_HUGE_MUSHROOM_TAG_ID_Address
@@ -362,10 +332,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_b4a94982((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString TAIGA_TAG_HASH()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C4.hs_method_2493bf81(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint TAIGA_TAG_HASH() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint TAIGA_TAG_ID_Address
@@ -384,16 +353,9 @@ public sealed unsafe partial class WellKnownBiomeTags : global::System.IDisposab
         return new WellKnownBiomeTags((nint)handle);
     }
 
-    public static WellKnownBiomeTags Create(nint tagRegistry)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_818a0faa((void*)tagRegistry);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new WellKnownBiomeTags((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static WellKnownBiomeTags Create(nint tagRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WellKnownBiomeTags Create(global::Hosihikari.Bindings.Bedrock.Interop.WellKnownBiomeTags arg0)
     {

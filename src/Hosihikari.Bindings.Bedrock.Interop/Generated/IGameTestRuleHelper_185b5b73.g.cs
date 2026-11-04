@@ -40,7 +40,7 @@ public sealed unsafe partial class IGameTestRuleHelper : global::System.IDisposa
 
     public static IGameTestRuleHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.IGameTestRuleHelper arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_92082adc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_92082adc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,17 +51,17 @@ public sealed unsafe partial class IGameTestRuleHelper : global::System.IDisposa
 
     public void addRuleToClear(int ruleID)
     {
-        NativeMethods.TablePtr->C5.hs_method_4c4e9d1e((void*)__hosihikari_shim_handle, ruleID);
+        NativeMethods.TablePtr->C4.hs_method_4c4e9d1e((void*)__hosihikari_shim_handle, ruleID);
     }
 
     public void clearRules()
     {
-        NativeMethods.TablePtr->C5.hs_method_c04f8dc5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_c04f8dc5((void*)__hosihikari_shim_handle);
     }
 
     public void restoreRules()
     {
-        NativeMethods.TablePtr->C5.hs_method_e93116eb((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_e93116eb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class IGameTestRuleHelper : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_185b5b73((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_185b5b73((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

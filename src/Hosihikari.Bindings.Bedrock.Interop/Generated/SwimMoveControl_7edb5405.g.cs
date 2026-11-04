@@ -38,19 +38,17 @@ public sealed unsafe partial class SwimMoveControl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
-    {
-        NativeMethods.TablePtr->C4.hs_method_124a9ab1((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initializeInternal(nint mob, nint description) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f91a0b85((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint parent, nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SwimMoveControl Create(global::Hosihikari.Bindings.Bedrock.Interop.SwimMoveControl arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4d8b77a8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4d8b77a8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,12 +59,12 @@ public sealed unsafe partial class SwimMoveControl : global::System.IDisposable
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.MoveControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C4.hs_method_83cd57f0((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C3.hs_method_83cd57f0((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.MoveControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C4.hs_method_3ecd895e((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C3.hs_method_3ecd895e((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
 
@@ -76,7 +74,7 @@ public sealed unsafe partial class SwimMoveControl : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_7edb5405((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_7edb5405((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

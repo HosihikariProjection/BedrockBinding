@@ -38,10 +38,9 @@ public sealed unsafe partial class NBStartPiece : global::System.IDisposable
         return __hs_handle;
     }
 
-    public int _getType()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_39f07df4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NBStartPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.NBStartPiece arg0)
     {

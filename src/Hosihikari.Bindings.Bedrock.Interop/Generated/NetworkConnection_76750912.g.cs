@@ -38,9 +38,9 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController, nint identityPublicKey) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NetworkConnection Create()
     {
@@ -64,9 +64,9 @@ public sealed unsafe partial class NetworkConnection : global::System.IDisposabl
         return new NetworkConnection((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static NetworkConnection Create(nint id, nint peer, bool isSafeAndFast, nint packetObserver, nint mainThread, bool isRawRecordingEnabled, nint settings, nint packetSecurityController, nint identityPublicKey) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBatchedPeer_Address

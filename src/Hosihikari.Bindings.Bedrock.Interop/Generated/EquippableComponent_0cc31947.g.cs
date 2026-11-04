@@ -60,14 +60,13 @@ public sealed unsafe partial class EquippableComponent : global::System.IDisposa
         return new EquippableComponent((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.UpdateEquipPacket createDataPacket(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, sbyte containerID)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UpdateEquipPacket((nint)NativeMethods.TablePtr->C1.hs_method_c24d20d7((void*)__hosihikari_shim_handle, (void*)owner.Handle, containerID));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint createDataPacket(nint owner, nint containerID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint createTag(nint owner) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSlots_Address
@@ -75,14 +74,13 @@ public sealed unsafe partial class EquippableComponent : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_36917a2f((void*)__hosihikari_shim_handle);
     }
 
-    public bool onItemChanged(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, ulong slotIdx, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_83cf6d86((void*)__hosihikari_shim_handle, (void*)owner.Handle, slotIdx, (void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool onItemChanged(nint owner, ulong slotIdx, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EquippableComponent arg0)
     {

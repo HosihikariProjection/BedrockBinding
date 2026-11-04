@@ -40,7 +40,7 @@ public sealed unsafe partial class IActorDimensionTransferer : global::System.ID
 
     public static IActorDimensionTransferer Create(global::Hosihikari.Bindings.Bedrock.Interop.IActorDimensionTransferer arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_edf9b0c2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_edf9b0c2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,17 +51,17 @@ public sealed unsafe partial class IActorDimensionTransferer : global::System.ID
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 findTargetPositionAndSetPosition(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, nint actorDimensionTransferRequest, global::Hosihikari.Bindings.Bedrock.Interop.IDimension toDimension, global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer portalForcer)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_dedeca99((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)actorDimensionTransferRequest, (void*)toDimension.Handle, (void*)portalForcer.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C1.hs_method_dedeca99((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)actorDimensionTransferRequest, (void*)toDimension.Handle, (void*)portalForcer.Handle));
     }
 
     public void setupActorForTransfer(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
     {
-        NativeMethods.TablePtr->C2.hs_method_3c66ccc9((void*)__hosihikari_shim_handle, (void*)actor.Handle);
+        NativeMethods.TablePtr->C1.hs_method_3c66ccc9((void*)__hosihikari_shim_handle, (void*)actor.Handle);
     }
 
     public void transferActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Dimension toDimension, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 targetPosition)
     {
-        NativeMethods.TablePtr->C2.hs_method_f5215dba((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)toDimension.Handle, (void*)targetPosition.Handle);
+        NativeMethods.TablePtr->C1.hs_method_f5215dba((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)toDimension.Handle, (void*)targetPosition.Handle);
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class IActorDimensionTransferer : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e627e8a5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e627e8a5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

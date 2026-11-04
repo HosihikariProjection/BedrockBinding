@@ -50,35 +50,25 @@ public sealed unsafe partial class LibHttpClientImpl : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c09acbec((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_28e8ca16((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _initialize()
-    {
-        NativeMethods.TablePtr->C0.hs_method_764a9860((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initialize() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::Http::Response>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint _send(nint request) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::Http::Response>' requires --link-carrier or --virtual-dispatch.");
 
-    public void _shutdown()
-    {
-        NativeMethods.TablePtr->C0.hs_method_5ac105f5((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _shutdown() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LibHttpClientImpl Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_b0830128();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LibHttpClientImpl((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LibHttpClientImpl Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LibHttpClientImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientImpl arg0)
     {
@@ -91,22 +81,21 @@ public sealed unsafe partial class LibHttpClientImpl : global::System.IDisposabl
         return new LibHttpClientImpl((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<Bedrock::Http::Internal::IResponseBody>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getResponseBody(nint call) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<std::shared_ptr<Bedrock::Http::Internal::IResponseBody>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _logRequestUrl(nint callHandle)
-    {
-        NativeMethods.TablePtr->C0.hs_method_8a61aff5((void*)__hosihikari_shim_handle, (void*)callHandle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _logRequestUrl(nint callHandle) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'long' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _requestBodyRead(nint call, ulong arg1, ulong bytesAvailable, nint arg3, nint destination, nint bytesWritten) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'long' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'long' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _responseBodyWrite(nint call, nint source, ulong bytesAvailable, nint arg3) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'long' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void initialize()
     {
@@ -137,10 +126,9 @@ public sealed unsafe partial class LibHttpClientImpl : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_02c29b5e((void*)__hosihikari_shim_handle);
     }
 
-    public static nint sWeakThisMutex()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_b5bc6c86();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sWeakThisMutex() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::Http::Response>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint send(nint request) =>

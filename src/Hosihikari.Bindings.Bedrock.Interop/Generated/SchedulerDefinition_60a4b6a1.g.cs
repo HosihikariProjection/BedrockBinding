@@ -49,10 +49,9 @@ public sealed unsafe partial class SchedulerDefinition : global::System.IDisposa
         return new SchedulerDefinition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C3.hs_method_053ac9b6(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mMaxDelayTicks
     {
@@ -72,15 +71,13 @@ public sealed unsafe partial class SchedulerDefinition : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a6bf8be1((void*)__hosihikari_shim_handle);
     }
 
-    public void setMaxDelayTicks(nint seconds)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3b6fdaac((void*)__hosihikari_shim_handle, (void*)seconds);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setMaxDelayTicks(nint seconds) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setMinDelayTicks(nint seconds)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b66e5072((void*)__hosihikari_shim_handle, (void*)seconds);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setMinDelayTicks(nint seconds) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

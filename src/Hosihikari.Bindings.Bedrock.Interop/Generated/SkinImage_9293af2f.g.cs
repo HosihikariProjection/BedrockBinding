@@ -40,7 +40,7 @@ public sealed unsafe partial class SkinImage : global::System.IDisposable
 
     public static SkinImage Create(global::Hosihikari.Bindings.Bedrock.Interop.SkinImage arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_311336f8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_311336f8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,44 +52,44 @@ public sealed unsafe partial class SkinImage : global::System.IDisposable
 
     public uint imageFormat
     {
-        get => NativeMethods.TablePtr->C4.hs_get_46de91bb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_46de91bb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_46de91bb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_46de91bb((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mAlphaUsage
     {
-        get => NativeMethods.TablePtr->C4.hs_get_51610070((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_51610070((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_51610070((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_51610070((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mDepth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_25426e93((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_25426e93((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_25426e93((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_25426e93((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mHeight
     {
-        get => NativeMethods.TablePtr->C4.hs_get_94ca138c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_94ca138c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_94ca138c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_94ca138c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mImageBytes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_fe019bdc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fe019bdc((void*)__hosihikari_shim_handle);
     }
 
     public byte mUsage
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d1ef4158((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d1ef4158((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d1ef4158((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d1ef4158((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mWidth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_36cdb3e1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_36cdb3e1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_36cdb3e1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_36cdb3e1((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -98,7 +98,7 @@ public sealed unsafe partial class SkinImage : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9293af2f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9293af2f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

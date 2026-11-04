@@ -38,10 +38,9 @@ public sealed unsafe partial class CoralFeature : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_19f1e620((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint pos, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CoralFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.CoralFeature arg0)
     {
@@ -54,28 +53,25 @@ public sealed unsafe partial class CoralFeature : global::System.IDisposable
         return new CoralFeature((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::pair<BlockPos, unsigned char>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _buildPlantArm(nint region, nint random, nint pos, nint block, nint topDec, nint sideDec, byte direction, bool notTall) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::pair<BlockPos, unsigned char>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool _canOverwrite(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int color)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ca165b4f((void*)region.Handle, (void*)pos.Handle, color) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _canOverwrite(nint region, nint pos, int color) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int _getColor(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_4d88a5c9((void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int _getColor(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::pair<BlockPos, unsigned char>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _placeCoral(nint region, nint pos, nint random, nint topDec, nint sideDec, int color) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::pair<BlockPos, unsigned char>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _starFormation(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block? block, float chance, int iteration, bool negateChance)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d8c909a9((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)pos.Handle, (void*)(block?.Handle ?? 0), chance, iteration, negateChance);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _starFormation(nint region, nint random, nint pos, nint block, float chance, int iteration, bool negateChance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {

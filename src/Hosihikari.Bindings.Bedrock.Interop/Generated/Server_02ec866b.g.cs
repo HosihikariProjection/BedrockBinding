@@ -38,30 +38,25 @@ public sealed unsafe partial class Server : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void cycleDisplayItemFromLootTable(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultConfig config, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultSharedData sharedData)
-    {
-        NativeMethods.TablePtr->C4.hs_method_fc2f327d((void*)region.Handle, (void*)config.Handle, (void*)sharedData.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void cycleDisplayItemFromLootTable(nint region, nint config, nint sharedData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void onTransitionBetweenStates(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultConfig config, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultSharedData sharedData, byte oldState, byte newState)
-    {
-        NativeMethods.TablePtr->C4.hs_method_d25a4ffe((void*)region.Handle, (void*)pos.Handle, (void*)config.Handle, (void*)sharedData.Handle, oldState, newState);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void onTransitionBetweenStates(nint region, nint pos, nint config, nint sharedData, nint oldState, nint newState) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void playInsertFailSound(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultServerData serverData, uint sound)
-    {
-        NativeMethods.TablePtr->C4.hs_method_b470f46d((void*)region.Handle, (void*)pos.Handle, (void*)serverData.Handle, sound);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void playInsertFailSound(nint region, nint pos, nint serverData, nint sound) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void tryInsertKey(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultConfig config, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultSharedData sharedData, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultServerData serverData)
-    {
-        NativeMethods.TablePtr->C4.hs_method_8db8fa5d((void*)region.Handle, (void*)player.Handle, (void*)pos.Handle, handSlot, (void*)config.Handle, (void*)sharedData.Handle, (void*)serverData.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void tryInsertKey(nint region, nint player, nint pos, nint handSlot, nint config, nint sharedData, nint serverData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void updateConnectedPlayersWithinRange(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultServerData serverData, global::Hosihikari.Bindings.Bedrock.Interop.VaultBlockActor_Nested.VaultSharedData sharedData, float range)
-    {
-        NativeMethods.TablePtr->C4.hs_method_b7e756f6((void*)region.Handle, (void*)pos.Handle, (void*)serverData.Handle, (void*)sharedData.Handle, range);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void updateConnectedPlayersWithinRange(nint region, nint pos, nint serverData, nint sharedData, float range) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

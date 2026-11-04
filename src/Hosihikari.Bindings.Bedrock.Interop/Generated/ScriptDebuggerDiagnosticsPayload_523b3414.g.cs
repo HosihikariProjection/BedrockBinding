@@ -50,14 +50,13 @@ public sealed unsafe partial class ScriptDebuggerDiagnosticsPayload : global::Sy
         set => NativeMethods.TablePtr->C3.hs_set_8bd937ed((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_e74a5831((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptDebuggerDiagnosticsPayload Create()
     {
@@ -70,21 +69,13 @@ public sealed unsafe partial class ScriptDebuggerDiagnosticsPayload : global::Sy
         return new ScriptDebuggerDiagnosticsPayload((nint)handle);
     }
 
-    public static ScriptDebuggerDiagnosticsPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2d7e2b9d((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptDebuggerDiagnosticsPayload Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ScriptDebuggerDiagnosticsPayload((nint)handle);
-    }
-
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C3.hs_method_9ba5ffbc((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ScriptDebuggerMessages.ScriptDebuggerDiagnosticsPayload arg0)
     {

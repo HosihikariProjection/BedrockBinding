@@ -38,10 +38,9 @@ public sealed unsafe partial class CraftHandleNonImplemented_DEPRECATEDASKTYLAIN
         return __hs_handle;
     }
 
-    public byte __handleCraftAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase arg0)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1f0165a1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __handleCraftAction(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CraftHandleNonImplemented_DEPRECATEDASKTYLAING Create(global::Hosihikari.Bindings.Bedrock.Interop.CraftHandleNonImplemented_DEPRECATEDASKTYLAING arg0)
     {

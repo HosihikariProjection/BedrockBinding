@@ -40,19 +40,19 @@ public sealed unsafe partial class Token : global::System.IDisposable
 
     public uint length
     {
-        get => NativeMethods.TablePtr->C1.hs_get_a48d5491((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_a48d5491((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_a48d5491((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_a48d5491((void*)__hosihikari_shim_handle, value);
     }
 
     public nint text
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1cc8b741((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_1cc8b741((void*)__hosihikari_shim_handle);
     }
 
     public int type
     {
-        get => NativeMethods.TablePtr->C1.hs_get_94448620((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_94448620((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_94448620((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_94448620((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -61,7 +61,7 @@ public sealed unsafe partial class Token : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_606521be((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_606521be((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

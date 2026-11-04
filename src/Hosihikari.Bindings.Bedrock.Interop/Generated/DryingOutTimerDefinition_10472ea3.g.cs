@@ -38,14 +38,13 @@ public sealed unsafe partial class DryingOutTimerDefinition : global::System.IDi
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_1f094854((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DryingOutTimerDefinition Create()
     {
@@ -58,9 +57,9 @@ public sealed unsafe partial class DryingOutTimerDefinition : global::System.IDi
         return new DryingOutTimerDefinition((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static DryingOutTimerDefinition Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DryingOutTimerDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.DryingOutTimerComponent_Nested.DryingOutTimerDefinition arg0)
     {
@@ -73,15 +72,13 @@ public sealed unsafe partial class DryingOutTimerDefinition : global::System.IDi
         return new DryingOutTimerDefinition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e56d3916(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.DryingOutTimerComponent dryingOutComponent)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f981e3f7((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)dryingOutComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initialize(nint entity, nint dryingOutComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnFullyDriedOut_Address
@@ -113,10 +110,9 @@ public sealed unsafe partial class DryingOutTimerDefinition : global::System.IDi
         set => NativeMethods.TablePtr->C1.hs_set_75e36820((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DryingOutTimerComponent_Nested.DryingOutTimerDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DryingOutTimerComponent_Nested.DryingOutTimerDefinition arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DryingOutTimerComponent_Nested.DryingOutTimerDefinition((nint)NativeMethods.TablePtr->C1.hs_method_866b66c6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

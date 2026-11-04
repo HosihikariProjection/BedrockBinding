@@ -38,52 +38,45 @@ public sealed unsafe partial class ActorAnimationControllerPlayer : global::Syst
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::vector<BoneOrientation>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _applyToPose(nint applyContext, nint renderParams, nint destBoneOrientationsMap, float blendWeight) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'std::vector<BoneOrientation>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: map key type 'HashedString' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _bindParticleEffects(nint actorParticleEffectMap) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'HashedString' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: map key type 'HashedString' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _bindSoundEffects(nint actorSoundEffectMap) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'HashedString' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString friendlyName, global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerPtr animationControllerPtr, global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent animationComponent, global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode blendExpression, nint animationControllerNameStack)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_502f96ef((void*)__hosihikari_shim_handle, (void*)friendlyName.Handle, (void*)animationControllerPtr.Handle, (void*)animationComponent.Handle, (void*)blendExpression.Handle, (void*)animationControllerNameStack);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint friendlyName, nint animationControllerPtr, nint animationComponent, nint blendExpression, nint animationControllerNameStack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _findAnimation(global::Hosihikari.Bindings.Bedrock.Interop.HashedString friendlyName)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_fe5285bc((void*)__hosihikari_shim_handle, (void*)friendlyName.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _findAnimation(nint friendlyName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getAnimationType()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_21425e4e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getAnimationType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.HashedString _getRawName()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C0.hs_method_6c51ba0c((void*)__hosihikari_shim_handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getRawName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _hasAnimationFinished()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_9de2cb28((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _hasAnimationFinished() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _resetAnimation()
-    {
-        NativeMethods.TablePtr->C0.hs_method_04148597((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _resetAnimation() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _visit(nint dispatcher) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorAnimationControllerPlayer Create()
     {
@@ -107,16 +100,9 @@ public sealed unsafe partial class ActorAnimationControllerPlayer : global::Syst
         return new ActorAnimationControllerPlayer((nint)handle);
     }
 
-    public static ActorAnimationControllerPlayer Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString friendlyName, global::Hosihikari.Bindings.Bedrock.Interop.ActorAnimationControllerPtr animationControllerPtr, global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent animationComponent, global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode blendExpression, nint animationControllerNameStack)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_3f2cf6e6((void*)friendlyName.Handle, (void*)animationControllerPtr.Handle, (void*)animationComponent.Handle, (void*)blendExpression.Handle, (void*)animationControllerNameStack);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorAnimationControllerPlayer((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ActorAnimationControllerPlayer Create(nint friendlyName, nint animationControllerPtr, nint animationComponent, nint blendExpression, nint animationControllerNameStack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::vector<BoneOrientation>' is not supported.", false)]
     public void applyToPose(nint applyContext, nint renderParams, nint destBoneOrientationsMap, float blendWeight) =>
@@ -130,9 +116,9 @@ public sealed unsafe partial class ActorAnimationControllerPlayer : global::Syst
     public void bindSoundEffects(nint actorSoundEffectMap) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'HashedString' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::vector<BoneOrientation>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void blendViaShortestPath(nint destBoneOrientationsMap, nint blendOutBoneOrientationsMap, nint blendInBoneOrientationsMap, float blendInWeight, float blendWeight) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'std::vector<BoneOrientation>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? findAnimation(global::Hosihikari.Bindings.Bedrock.Interop.HashedString friendlyName)
     {

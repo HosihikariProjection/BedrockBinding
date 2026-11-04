@@ -38,14 +38,13 @@ public sealed unsafe partial class SlimePreNormalTickSystem : global::System.IDi
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _doSlimePreNormalTickSystem(nint context, nint actorOwnerComponent, nint onGround, nint mod) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_d6e53f61());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -53,7 +52,7 @@ public sealed unsafe partial class SlimePreNormalTickSystem : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_5f6545ef((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5f6545ef((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

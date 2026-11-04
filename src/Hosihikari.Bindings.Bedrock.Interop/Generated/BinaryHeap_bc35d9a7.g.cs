@@ -38,10 +38,9 @@ public sealed unsafe partial class BinaryHeap : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_ff6b031a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BinaryHeap Create(global::Hosihikari.Bindings.Bedrock.Interop.BinaryHeap arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class BinaryHeap : global::System.IDisposable
         return new BinaryHeap((nint)handle);
     }
 
-    public void changeCost(global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode? node, float newCost)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a1aa80fe((void*)__hosihikari_shim_handle, (void*)(node?.Handle ?? 0), newCost);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void changeCost(nint node, float newCost) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint heap_Address
@@ -65,11 +63,9 @@ public sealed unsafe partial class BinaryHeap : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_5a6b0c52((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode? insert(global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode? node)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_c97eb395((void*)__hosihikari_shim_handle, (void*)(node?.Handle ?? 0));
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PathfinderNode((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint insert(nint node) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int sizeVar
     {

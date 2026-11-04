@@ -67,10 +67,9 @@ public sealed unsafe partial class BlockShapeComponentData : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C0.hs_get_8e03cc08((void*)__hosihikari_shim_handle);
     }
 
-    public static void transformAABBs(global::Hosihikari.Bindings.Bedrock.Interop.BlockShapeComponentData data, global::Hosihikari.Bindings.Bedrock.Interop.Matrix transform)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e16d80fc((void*)data.Handle, (void*)transform.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void transformAABBs(nint data, nint transform) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

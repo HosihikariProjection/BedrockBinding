@@ -38,11 +38,9 @@ public sealed unsafe partial class BuriedTreasureStart : global::System.IDisposa
         return __hs_handle;
     }
 
-    public string _getStructureName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_1e31f0b9((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getStructureName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BuriedTreasureStart Create(global::Hosihikari.Bindings.Bedrock.Interop.BuriedTreasureStart arg0)
     {

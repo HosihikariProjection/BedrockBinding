@@ -38,10 +38,9 @@ public sealed unsafe partial class Matrix : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Matrix IDENTITY()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)NativeMethods.TablePtr->C2.hs_method_e1e64204(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint IDENTITY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Matrix Create()
     {
@@ -71,10 +70,9 @@ public sealed unsafe partial class Matrix : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_7852a8ae((void*)__hosihikari_shim_handle);
     }
 
-    public void rotateXYZ(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 rotation)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d469467a((void*)__hosihikari_shim_handle, (void*)rotation.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void rotateXYZ(nint rotation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

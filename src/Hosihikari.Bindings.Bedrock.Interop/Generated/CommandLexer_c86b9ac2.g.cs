@@ -49,29 +49,28 @@ public sealed unsafe partial class CommandLexer : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mInput_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3e577833((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_3e577833((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsCodeBuilderEnabled
     {
-        get => NativeMethods.TablePtr->C1.hs_get_15fe9619((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C0.hs_get_15fe9619((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mToken_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8f700434((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8f700434((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandLexer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandLexer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandLexer((nint)NativeMethods.TablePtr->C1.hs_method_bbd49f89((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandLexer((nint)NativeMethods.TablePtr->C0.hs_method_bbd49f89((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void step()
-    {
-        NativeMethods.TablePtr->C1.hs_method_b7d72753((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void step() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -80,7 +79,7 @@ public sealed unsafe partial class CommandLexer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c86b9ac2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_c86b9ac2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

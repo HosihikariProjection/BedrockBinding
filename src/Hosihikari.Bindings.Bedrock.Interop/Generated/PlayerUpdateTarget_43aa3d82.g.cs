@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerUpdateTarget : global::System.IDisposab
 
     public static PlayerUpdateTarget Create(global::Hosihikari.Bindings.Bedrock.Interop.SpatialActorNetworkData_Nested.PlayerUpdateTarget arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6fe58d6a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6fe58d6a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class PlayerUpdateTarget : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mNetworkIdentifierWithSubId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0b474fa4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0b474fa4((void*)__hosihikari_shim_handle);
     }
 
     public ulong mTicks
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2a8ea634((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2a8ea634((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2a8ea634((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2a8ea634((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class PlayerUpdateTarget : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_43aa3d82((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_43aa3d82((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

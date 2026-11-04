@@ -40,12 +40,12 @@ public sealed unsafe partial class PlayerTitleRawCommandEvent : global::System.I
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_f9d632c4((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_f9d632c4((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerTitleRawCommandEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerTitleRawCommandEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c7c46665((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_c7c46665((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,25 +57,25 @@ public sealed unsafe partial class PlayerTitleRawCommandEvent : global::System.I
     // The native field type is not projected; this is the address of the field storage.
     public nint mMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4e33b860((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4e33b860((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSender_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_debc6681((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_debc6681((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8867156f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8867156f((void*)__hosihikari_shim_handle);
     }
 
     public int mTitleType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c21c469d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_c21c469d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_c21c469d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_c21c469d((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class PlayerTitleRawCommandEvent : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_32fd6ee9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_32fd6ee9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

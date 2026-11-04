@@ -38,38 +38,9 @@ public sealed unsafe partial class ResourcePackDataInfoPacketPayload : global::S
         return __hs_handle;
     }
 
-    public nint _ctor(string name, uint chunkSize, int nbChunk, ulong fileSize, string fileHash, bool isPremium, sbyte packType)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(fileHash);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(fileHash, __hs_stringBytes4);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-            {
-                return (nint)NativeMethods.TablePtr->C3.hs_method_018dfcc0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, chunkSize, nbChunk, fileSize, __hs_stringData4, (nuint)__hs_stringByteCount4, isPremium, packType);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint name, uint chunkSize, int nbChunk, ulong fileSize, nint fileHash, bool isPremium, nint packType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ResourcePackDataInfoPacketPayload Create()
     {
@@ -93,44 +64,9 @@ public sealed unsafe partial class ResourcePackDataInfoPacketPayload : global::S
         return new ResourcePackDataInfoPacketPayload((nint)handle);
     }
 
-    public static ResourcePackDataInfoPacketPayload Create(string name, uint chunkSize, int nbChunk, ulong fileSize, string fileHash, bool isPremium, sbyte packType)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(fileHash);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(fileHash, __hs_stringBytes4);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-            {
-                var handle = NativeMethods.TablePtr->C3.hs_create_69cdf4a6(__hs_stringData0, (nuint)__hs_stringByteCount0, chunkSize, nbChunk, fileSize, __hs_stringData4, (nuint)__hs_stringByteCount4, isPremium, packType);
-                if (handle == null)
-                {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-                }
-
-                return new ResourcePackDataInfoPacketPayload((nint)handle);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ResourcePackDataInfoPacketPayload Create(nint name, uint chunkSize, int nbChunk, ulong fileSize, nint fileHash, bool isPremium, nint packType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mChunkSize
     {

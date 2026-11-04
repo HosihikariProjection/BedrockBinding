@@ -38,10 +38,9 @@ public sealed unsafe partial class StartGlidingActionSystem : global::System.IDi
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem(bool isClientSide)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_db912f1f(isClientSide));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem(bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class StartGlidingActionSystem : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_84000c03((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_84000c03((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

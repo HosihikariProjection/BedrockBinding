@@ -78,10 +78,9 @@ public sealed unsafe partial class UpdateSubChunkBlocksChangedInfo : global::Sys
     public static UpdateSubChunkBlocksChangedInfo Create(nint blocksChanged, nint extraBlocksChanged) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
-    public void add(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, uint layer, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int updateFlags, global::Hosihikari.Bindings.Bedrock.Interop.ActorBlockSyncMessage? syncMsg)
-    {
-        NativeMethods.TablePtr->C4.hs_method_db83d114((void*)__hosihikari_shim_handle, (void*)pos.Handle, layer, (void*)block.Handle, updateFlags, (void*)(syncMsg?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void add(nint pos, uint layer, nint block, int updateFlags, nint syncMsg) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExtras_Address

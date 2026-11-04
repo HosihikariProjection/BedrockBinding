@@ -41,22 +41,20 @@ public sealed unsafe partial class SetArmorTrimFunction : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7fb83ea3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7fb83ea3((void*)__hosihikari_shim_handle);
     }
 
-    public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_2a78b163((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyPreVersion(nint item, nint arg1, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getFunctionType()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_7e13864b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getFunctionType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SetArmorTrimFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetArmorTrimFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_80acdd73((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_80acdd73((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,24 +65,24 @@ public sealed unsafe partial class SetArmorTrimFunction : global::System.IDispos
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C4.hs_method_15aca424((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C3.hs_method_15aca424((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
     }
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C4.hs_method_af020e6d((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_af020e6d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMaterial_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c9196d7d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c9196d7d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPattern_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_87b918cb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_87b918cb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -94,7 +92,7 @@ public sealed unsafe partial class SetArmorTrimFunction : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c24ae107((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c24ae107((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

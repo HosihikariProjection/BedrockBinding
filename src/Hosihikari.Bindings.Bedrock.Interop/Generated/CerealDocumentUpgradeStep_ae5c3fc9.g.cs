@@ -60,10 +60,9 @@ public sealed unsafe partial class CerealDocumentUpgradeStep : global::System.ID
         return new CerealDocumentUpgradeStep((nint)handle);
     }
 
-    public bool apply(nint document, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion documentVersion)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_0296bc5a((void*)__hosihikari_shim_handle, (void*)document, (void*)documentVersion.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool apply(nint document, nint documentVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd390b2_Address

@@ -40,96 +40,89 @@ public sealed unsafe partial class ProtectionEnchant : global::System.IDisposabl
 
     public int mCompatibility
     {
-        get => NativeMethods.TablePtr->C3.hs_get_218315fe((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_218315fe((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8718b968((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8718b968((void*)__hosihikari_shim_handle);
     }
 
     public byte mEnchantType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_7b549467((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_7b549467((void*)__hosihikari_shim_handle);
     }
 
     public int mFrequency
     {
-        get => NativeMethods.TablePtr->C3.hs_get_240f7948((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_240f7948((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsAvailableInVillagerTrading
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c4d3fc5d((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C2.hs_get_c4d3fc5d((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mIsDisabled
     {
-        get => NativeMethods.TablePtr->C3.hs_get_33aab758((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_33aab758((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_33aab758((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_33aab758((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPrimarySlots
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e1c47253((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_e1c47253((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScriptStringId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_122acb8b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_122acb8b((void*)__hosihikari_shim_handle);
     }
 
     public int mSecondarySlots
     {
-        get => NativeMethods.TablePtr->C3.hs_get_095c15c1((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_095c15c1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStringId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3dc5359e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3dc5359e((void*)__hosihikari_shim_handle);
     }
 
-    public bool __isValidEnchantmentTypeForCategory(byte type)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_c9c37c98((void*)__hosihikari_shim_handle, type) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __isValidEnchantmentTypeForCategory(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _doPostHurt(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, int level)
-    {
-        NativeMethods.TablePtr->C3.hs_method_6f305eae((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)victim.Handle, (void*)attacker.Handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doPostHurt(nint item, nint victim, nint attacker, int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getDamageProtection(int level, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_84aa7b97((void*)__hosihikari_shim_handle, level, (void*)source.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getDamageProtection(int level, nint source) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_e967d00c((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxLevel()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_3758553a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_bb7a23a6((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isProtectionEnchant()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_51f84f66((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isProtectionEnchant() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ProtectionEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.ProtectionEnchant arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d2434277((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d2434277((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -138,44 +131,43 @@ public sealed unsafe partial class ProtectionEnchant : global::System.IDisposabl
         return new ProtectionEnchant((nint)handle);
     }
 
-    public static nint VALID_ENCHANTMENTS()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ffbc02b7();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint VALID_ENCHANTMENTS() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _isValidEnchantmentTypeForCategory(byte type)
     {
-        return NativeMethods.TablePtr->C3.hs_method_d34f8825((void*)__hosihikari_shim_handle, type) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_d34f8825((void*)__hosihikari_shim_handle, type) != 0;
     }
 
     public void doPostHurt(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance item, global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, int level)
     {
-        NativeMethods.TablePtr->C3.hs_method_9be137d7((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)victim.Handle, (void*)attacker.Handle, level);
+        NativeMethods.TablePtr->C2.hs_method_9be137d7((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)victim.Handle, (void*)attacker.Handle, level);
     }
 
     public int getDamageProtection(int level, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {
-        return NativeMethods.TablePtr->C3.hs_method_b3888458((void*)__hosihikari_shim_handle, level, (void*)source.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_b3888458((void*)__hosihikari_shim_handle, level, (void*)source.Handle);
     }
 
     public int getMaxCost(int level)
     {
-        return NativeMethods.TablePtr->C3.hs_method_d5ac0306((void*)__hosihikari_shim_handle, level);
+        return NativeMethods.TablePtr->C2.hs_method_d5ac0306((void*)__hosihikari_shim_handle, level);
     }
 
     public int getMaxLevel()
     {
-        return NativeMethods.TablePtr->C3.hs_method_5cfb87e9((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_5cfb87e9((void*)__hosihikari_shim_handle);
     }
 
     public int getMinCost(int level)
     {
-        return NativeMethods.TablePtr->C3.hs_method_12cc613d((void*)__hosihikari_shim_handle, level);
+        return NativeMethods.TablePtr->C2.hs_method_12cc613d((void*)__hosihikari_shim_handle, level);
     }
 
     public bool isProtectionEnchant()
     {
-        return NativeMethods.TablePtr->C3.hs_method_e3e906b6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_e3e906b6((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -185,7 +177,7 @@ public sealed unsafe partial class ProtectionEnchant : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_85472516((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_85472516((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

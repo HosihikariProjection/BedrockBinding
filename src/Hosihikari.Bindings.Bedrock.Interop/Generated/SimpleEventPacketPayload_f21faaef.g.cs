@@ -40,8 +40,8 @@ public sealed unsafe partial class SimpleEventPacketPayload : global::System.IDi
 
     public ushort mSubtype
     {
-        get => NativeMethods.TablePtr->C4.hs_get_135b0dee((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_135b0dee((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_135b0dee((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_135b0dee((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class SimpleEventPacketPayload : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f21faaef((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f21faaef((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,29 +38,25 @@ public sealed unsafe partial class TextObjectText : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _asJsonValue()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_7ed9b9db((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _asJsonValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _asString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_8ed1bab0((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _asString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _resolve(nint resolveData)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_8ad6f6e8((void*)__hosihikari_shim_handle, (void*)resolveData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _resolve(nint resolveData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TextObjectText Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_945403d5();
+        var handle = NativeMethods.TablePtr->C3.hs_create_945403d5();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,7 +67,7 @@ public sealed unsafe partial class TextObjectText : global::System.IDisposable
 
     public static TextObjectText Create(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectText arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4617f966((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4617f966((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -82,48 +78,33 @@ public sealed unsafe partial class TextObjectText : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value asJsonValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_0eed8e05((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_0eed8e05((void*)__hosihikari_shim_handle));
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Json.Value asJsonValue(string textField)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(textField);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(textField, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_67e24255(__hs_stringData0, (nuint)__hs_stringByteCount0));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint asJsonValue(nint textField) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public string asString()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_767acae0((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_767acae0((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7d5a70_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_167a7592((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_167a7592((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TextObjectText operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectText arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectText((nint)NativeMethods.TablePtr->C4.hs_method_9af9377b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectText((nint)NativeMethods.TablePtr->C3.hs_method_9af9377b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value resolve(nint resolveData)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_5e94d6e4((void*)__hosihikari_shim_handle, (void*)resolveData));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_5e94d6e4((void*)__hosihikari_shim_handle, (void*)resolveData));
     }
 
 
@@ -133,7 +114,7 @@ public sealed unsafe partial class TextObjectText : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_caaa09f8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_caaa09f8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

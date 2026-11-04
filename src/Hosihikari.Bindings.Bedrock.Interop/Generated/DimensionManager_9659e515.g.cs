@@ -38,18 +38,17 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? dimensionFactory)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_237b8c40((void*)__hosihikari_shim_handle, dimensionFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint dimensionFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getOnNewDimensionCreatedConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getOnReadyForCustomDimensionRegistrationConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DimensionManager Create()
     {
@@ -62,16 +61,9 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         return new DimensionManager((nint)handle);
     }
 
-    public static DimensionManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? dimensionFactory)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fb5f6d09(dimensionFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DimensionManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DimensionManager Create(nint dimensionFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _registerCustomDimensionWithFactory(string name, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType type)
     {
@@ -111,13 +103,13 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         }
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void forEachDimension_7e7159a2(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void forEachDimension_165436d1(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getDimension(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionType)
     {
@@ -125,11 +117,9 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public string getDimensionIdentifier(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType type)
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_5bd6e3c5((void*)__hosihikari_shim_handle, (void*)type.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getDimensionIdentifier(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint getOnNewDimensionCreatedConnector() =>
@@ -213,15 +203,13 @@ public sealed unsafe partial class DimensionManager : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_fb209d33((void*)__hosihikari_shim_handle);
     }
 
-    public void serverInitialize(global::Hosihikari.Bindings.Bedrock.Interop.ILevelStorageManagerConnector levelStorageManagerConnector, global::Hosihikari.Bindings.Bedrock.Interop.DimensionDefinitionGroup jsonDefinitionGroup)
-    {
-        NativeMethods.TablePtr->C1.hs_method_0f00cf5c((void*)__hosihikari_shim_handle, (void*)levelStorageManagerConnector.Handle, (void*)jsonDefinitionGroup.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void serverInitialize(nint levelStorageManagerConnector, nint jsonDefinitionGroup) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void serverSaveDimensionNameIdStoreTable(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
-    {
-        NativeMethods.TablePtr->C1.hs_method_89996618((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void serverSaveDimensionNameIdStoreTable(nint levelStorage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? tryGetDimensionType(string identifier)
     {

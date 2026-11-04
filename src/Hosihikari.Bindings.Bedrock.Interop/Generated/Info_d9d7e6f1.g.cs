@@ -40,7 +40,7 @@ public sealed unsafe partial class Info : global::System.IDisposable
 
     public static Info Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_38ff303c();
+        var handle = NativeMethods.TablePtr->C4.hs_create_38ff303c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Info : global::System.IDisposable
 
     public static Info Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_68321453((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_68321453((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,24 +63,24 @@ public sealed unsafe partial class Info : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk35db5e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_91c3c082((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_91c3c082((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk644b32_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_394704b0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_394704b0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkab38fb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_95bddd32((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_95bddd32((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info((nint)NativeMethods.TablePtr->C5.hs_method_ddb2929a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpSequenceNumberMap_Nested.Info((nint)NativeMethods.TablePtr->C4.hs_method_ddb2929a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class Info : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_d9d7e6f1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_d9d7e6f1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

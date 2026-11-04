@@ -38,24 +38,9 @@ public sealed unsafe partial class TropicalFishInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(int color, int color2, int variant, int markVariant, string name)
-    {
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes4);
-        fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_9a5be6e5((void*)__hosihikari_shim_handle, color, color2, variant, markVariant, __hs_stringData4, (nuint)__hs_stringByteCount4);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(int color, int color2, int variant, int markVariant, nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TropicalFishInfo Create()
     {
@@ -79,30 +64,9 @@ public sealed unsafe partial class TropicalFishInfo : global::System.IDisposable
         return new TropicalFishInfo((nint)handle);
     }
 
-    public static TropicalFishInfo Create(int color, int color2, int variant, int markVariant, string name)
-    {
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes4);
-        fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_b5f62752(color, color2, variant, markVariant, __hs_stringData4, (nuint)__hs_stringByteCount4);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new TropicalFishInfo((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static TropicalFishInfo Create(int color, int color2, int variant, int markVariant, nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mColor
     {

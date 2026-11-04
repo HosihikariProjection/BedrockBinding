@@ -44,18 +44,13 @@ public sealed unsafe partial class RemovedStateCollection : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_f9cafcf5((void*)__hosihikari_shim_handle);
     }
 
-    public int? _getState(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int arg1)
-    {
-        var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C0.hs_method_a6c67140((void*)__hosihikari_shim_handle, (void*)blockType.Handle, arg1, &__hs_hasValue);
-        return __hs_hasValue ? __hs_value : (int?)null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getState(nint blockType, int arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block? _setState(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int blockData, int stateData)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_8d3afe96((void*)__hosihikari_shim_handle, (void*)blockType.Handle, blockData, stateData);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _setState(nint blockType, int blockData, int stateData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RemovedStateCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockType_Nested.RemovedStateCollection arg0)
     {
@@ -68,9 +63,9 @@ public sealed unsafe partial class RemovedStateCollection : global::System.IDisp
         return new RemovedStateCollection((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void add(nint stateRef, nint splitBlocks, nint removedSupportVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int? getState(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int arg1)
     {

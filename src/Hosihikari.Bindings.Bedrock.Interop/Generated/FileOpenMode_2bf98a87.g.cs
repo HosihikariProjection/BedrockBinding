@@ -38,10 +38,9 @@ public sealed unsafe partial class FileOpenMode : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(int openMode)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_e2a9cc4a((void*)__hosihikari_shim_handle, openMode);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(int openMode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FileOpenMode Create()
     {
@@ -65,21 +64,13 @@ public sealed unsafe partial class FileOpenMode : global::System.IDisposable
         return new FileOpenMode((nint)handle);
     }
 
-    public static FileOpenMode Create(int openMode)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_83046001(openMode);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FileOpenMode Create(int openMode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new FileOpenMode((nint)handle);
-    }
-
-    public nint cModeWide()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_0c013d23((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint cModeWide() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mUnk379bb9
     {

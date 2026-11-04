@@ -40,14 +40,14 @@ public sealed unsafe partial class CraftCreativeActionData : global::System.IDis
 
     public uint mCreativeItemNetId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7ac8c93c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_7ac8c93c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_7ac8c93c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_7ac8c93c((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mNumCrafts
     {
-        get => NativeMethods.TablePtr->C2.hs_get_02fcbaf2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_02fcbaf2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_02fcbaf2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_02fcbaf2((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class CraftCreativeActionData : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c67b20e0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_c67b20e0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

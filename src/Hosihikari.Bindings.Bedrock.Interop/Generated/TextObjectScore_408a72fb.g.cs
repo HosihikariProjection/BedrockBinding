@@ -38,43 +38,33 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _asJsonValue()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_cdc73c74((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _asJsonValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _asString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_1371aa6c((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _asString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value _resolve(nint resolveData)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_d082d871((void*)__hosihikari_shim_handle, (void*)resolveData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _resolve(nint resolveData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_SCORE_KEY()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_fd4a9d25();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_SCORE_KEY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_SCORE_NAME_KEY()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_bf80535d();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_SCORE_NAME_KEY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_SCORE_OBJECTIVE_KEY()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_b11d2fe9();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_SCORE_OBJECTIVE_KEY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TextObjectScore Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_668a1145();
+        var handle = NativeMethods.TablePtr->C3.hs_create_668a1145();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,7 +75,7 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
 
     public static TextObjectScore Create(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_5b921914((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_5b921914((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -96,35 +86,35 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value asJsonValue()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_4bbc7fe6((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_4bbc7fe6((void*)__hosihikari_shim_handle));
     }
 
     public string asString()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_444609a7((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_444609a7((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk51729d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ecdaecd8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ecdaecd8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk92b5cb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2bcec254((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2bcec254((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore((nint)NativeMethods.TablePtr->C4.hs_method_82095862((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectScore((nint)NativeMethods.TablePtr->C3.hs_method_82095862((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value resolve(nint resolveData)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C4.hs_method_c57a372b((void*)__hosihikari_shim_handle, (void*)resolveData));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_c57a372b((void*)__hosihikari_shim_handle, (void*)resolveData));
     }
 
 
@@ -134,7 +124,7 @@ public sealed unsafe partial class TextObjectScore : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_408a72fb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_408a72fb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

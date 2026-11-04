@@ -40,7 +40,7 @@ public sealed unsafe partial class LoadResultWithTiming : global::System.IDispos
 
     public static LoadResultWithTiming Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c3c24b43();
+        var handle = NativeMethods.TablePtr->C2.hs_create_c3c24b43();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class LoadResultWithTiming : global::System.IDispos
 
     public static LoadResultWithTiming Create(global::Hosihikari.Bindings.Bedrock.Interop.PuvLoadData.LoadResultWithTiming arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e2ec584d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e2ec584d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,30 +63,30 @@ public sealed unsafe partial class LoadResultWithTiming : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk28aaf7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fc42d667((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fc42d667((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk429a99_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f606e213((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f606e213((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk597bf6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5292465c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5292465c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdd7cad_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4defaf59((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4defaf59((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PuvLoadData.LoadResultWithTiming operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PuvLoadData.LoadResultWithTiming arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PuvLoadData.LoadResultWithTiming((nint)NativeMethods.TablePtr->C3.hs_method_af57fdcf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PuvLoadData.LoadResultWithTiming((nint)NativeMethods.TablePtr->C2.hs_method_af57fdcf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -95,7 +95,7 @@ public sealed unsafe partial class LoadResultWithTiming : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bf2f8718((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bf2f8718((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

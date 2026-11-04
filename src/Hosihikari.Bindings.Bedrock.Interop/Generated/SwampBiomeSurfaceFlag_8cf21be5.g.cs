@@ -38,13 +38,13 @@ public sealed unsafe partial class SwampBiomeSurfaceFlag : global::System.IDispo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SwampBiomeSurfaceFlag Create(global::Hosihikari.Bindings.Bedrock.Interop.SwampBiomeSurfaceFlag arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_35ae341e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_35ae341e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,8 +55,8 @@ public sealed unsafe partial class SwampBiomeSurfaceFlag : global::System.IDispo
 
     public int mMaxPuddleDepthBelowSeaLevel
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e46746ef((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e46746ef((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e46746ef((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e46746ef((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class SwampBiomeSurfaceFlag : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_8cf21be5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_8cf21be5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

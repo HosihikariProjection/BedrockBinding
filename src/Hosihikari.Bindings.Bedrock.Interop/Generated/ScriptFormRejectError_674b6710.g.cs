@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptFormRejectError : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(int reason)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_85fbcd2e((void*)__hosihikari_shim_handle, reason);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint reason) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptFormRejectError Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class ScriptFormRejectError : global::System.IDispo
         return new ScriptFormRejectError((nint)handle);
     }
 
-    public static ScriptFormRejectError Create(int reason)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_23d36d38(reason);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptFormRejectError((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptFormRejectError Create(nint reason) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptFormRejectError Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftServerUI.ScriptFormRejectError arg0)
     {
@@ -76,10 +68,9 @@ public sealed unsafe partial class ScriptFormRejectError : global::System.IDispo
         return new ScriptFormRejectError((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ErrorBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ErrorBinding((nint)NativeMethods.TablePtr->C3.hs_method_8ac294d6());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6a5531_Address

@@ -110,15 +110,13 @@ public sealed unsafe partial class ServerLevelEventCoordinator : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_6ec2c4ff((void*)__hosihikari_shim_handle);
     }
 
-    public void _onGameplayUserAdded(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f53fc34d((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onGameplayUserAdded(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onGameplayUserRemoved(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b095e70b((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onGameplayUserRemoved(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnGameplayUserAddedSubscriptionServer_Address
@@ -132,10 +130,9 @@ public sealed unsafe partial class ServerLevelEventCoordinator : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d2082d66((void*)__hosihikari_shim_handle);
     }
 
-    public void registerWithGameplayUserManagerOnServer(global::Hosihikari.Bindings.Bedrock.Interop.IGameplayUserManagerConnector gameplayUserManagerConnector)
-    {
-        NativeMethods.TablePtr->C3.hs_method_36eda1a8((void*)__hosihikari_shim_handle, (void*)gameplayUserManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerWithGameplayUserManagerOnServer(nint gameplayUserManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

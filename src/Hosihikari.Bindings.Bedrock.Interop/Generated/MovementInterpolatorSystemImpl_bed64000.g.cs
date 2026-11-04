@@ -38,14 +38,13 @@ public sealed unsafe partial class MovementInterpolatorSystemImpl : global::Syst
         return __hs_handle;
     }
 
-    public static void _onGroundPostTick(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.MovementInterpolatorComponent movementInterpolatorComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d7c87aaf((void*)arg0.Handle, (void*)movementInterpolatorComponent.Handle, (void*)stateVectorComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _onGroundPostTick(nint arg0, nint movementInterpolatorComponent, nint stateVectorComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::tuple<Vec2, Vec2>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _tickRotation(nint movementInterpolatorComponent, nint actorCurrentRotation, nint actorPreviousRotation) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::tuple<Vec2, Vec2>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

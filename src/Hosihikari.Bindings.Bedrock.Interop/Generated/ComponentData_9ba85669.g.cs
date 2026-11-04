@@ -38,19 +38,17 @@ public sealed unsafe partial class ComponentData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_e33ce78a((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_4cd846b5((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ComponentData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d44dbfbf();
+        var handle = NativeMethods.TablePtr->C3.hs_create_d44dbfbf();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,32 +57,25 @@ public sealed unsafe partial class ComponentData : global::System.IDisposable
         return new ComponentData((nint)handle);
     }
 
-    public static ComponentData Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_90ce8de7((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ComponentData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ComponentData Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint data_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_082e3a2d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_082e3a2d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint name_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d6cad353((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d6cad353((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData((nint)NativeMethods.TablePtr->C4.hs_method_b9f79f15((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent_Nested.ComponentData((nint)NativeMethods.TablePtr->C3.hs_method_b9f79f15((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -94,7 +85,7 @@ public sealed unsafe partial class ComponentData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9ba85669((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9ba85669((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

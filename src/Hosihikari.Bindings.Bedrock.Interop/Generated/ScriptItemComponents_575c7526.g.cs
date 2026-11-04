@@ -49,10 +49,9 @@ public sealed unsafe partial class ScriptItemComponents : global::System.IDispos
         return new ScriptItemComponents((nint)handle);
     }
 
-    public void bind(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBindingBuilder moduleBuilder, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version scriptingVersion, global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptComponentTypeEnumBuilder componentTypeEnumBuilder)
-    {
-        NativeMethods.TablePtr->C3.hs_method_fc306da5((void*)__hosihikari_shim_handle, (void*)moduleBuilder.Handle, (void*)scriptingVersion.Handle, (void*)componentTypeEnumBuilder.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void bind(nint moduleBuilder, nint scriptingVersion, nint componentTypeEnumBuilder) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCustomComponentReader_Address
@@ -66,24 +65,9 @@ public sealed unsafe partial class ScriptItemComponents : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_1e580142((void*)__hosihikari_shim_handle);
     }
 
-    public nint tryGetFactory(string componentName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(componentName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(componentName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_a590fa09((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint tryGetFactory(nint componentName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -41,17 +41,16 @@ public sealed unsafe partial class IPacketObserver : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8708464e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8708464e((void*)__hosihikari_shim_handle);
     }
 
-    public void _onObserveeDestroyed()
-    {
-        NativeMethods.TablePtr->C2.hs_method_66523a46((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onObserveeDestroyed() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IPacketObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.IPacketObserver arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2fd3c62f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_2fd3c62f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +74,7 @@ public sealed unsafe partial class IPacketObserver : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C2.hs_method_aa7f6da8((void*)__hosihikari_shim_handle, (void*)source.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C1.hs_method_aa7f6da8((void*)__hosihikari_shim_handle, (void*)source.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -94,23 +93,23 @@ public sealed unsafe partial class IPacketObserver : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C2.hs_method_850cefbb((void*)__hosihikari_shim_handle, (void*)target.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C1.hs_method_850cefbb((void*)__hosihikari_shim_handle, (void*)target.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public void onObserveeDestroyed()
     {
-        NativeMethods.TablePtr->C2.hs_method_60853113((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_60853113((void*)__hosihikari_shim_handle);
     }
 
     public void packetReceivedFrom(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, uint size)
     {
-        NativeMethods.TablePtr->C2.hs_method_11202e8f((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, size);
+        NativeMethods.TablePtr->C1.hs_method_11202e8f((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)packet.Handle, size);
     }
 
     public void packetSentTo(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier target, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, uint size)
     {
-        NativeMethods.TablePtr->C2.hs_method_a30f23b1((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)packet.Handle, size);
+        NativeMethods.TablePtr->C1.hs_method_a30f23b1((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)packet.Handle, size);
     }
 
 
@@ -120,7 +119,7 @@ public sealed unsafe partial class IPacketObserver : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_79b2a784((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_79b2a784((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

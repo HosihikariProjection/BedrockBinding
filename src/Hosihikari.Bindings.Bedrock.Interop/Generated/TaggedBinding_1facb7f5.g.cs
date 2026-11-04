@@ -60,10 +60,9 @@ public sealed unsafe partial class TaggedBinding : global::System.IDisposable
         return new TaggedBinding((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding beta()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding((nint)NativeMethods.TablePtr->C3.hs_method_f87ab8fa((void*)__hosihikari_shim_handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint beta() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1ec4ac_Address
@@ -71,19 +70,18 @@ public sealed unsafe partial class TaggedBinding : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_2b3b0f35((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding onlyStable()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding((nint)NativeMethods.TablePtr->C3.hs_method_b1eb2416((void*)__hosihikari_shim_handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint onlyStable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.TaggedBinding((nint)NativeMethods.TablePtr->C3.hs_method_9a26601c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'Scripting::RemovedInMajorVersion' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint release(nint inclusiveLowerVersion, nint exclusiveMajorVersionLimit) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'Scripting::RemovedInMajorVersion' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

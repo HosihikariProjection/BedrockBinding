@@ -38,33 +38,29 @@ public sealed unsafe partial class RakString : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: variadic methods are not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint format) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variadic methods are not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void Allocate(ulong len)
-    {
-        NativeMethods.TablePtr->C3.hs_method_d3a49caf((void*)__hosihikari_shim_handle, len);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Allocate(ulong len) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void Assign(nint str, nint ap)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e845b32e((void*)__hosihikari_shim_handle, (void*)str, (void*)ap);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Assign(nint str, nint ap) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool Deserialize(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BitStream? bs)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_3cdd187a((void*)__hosihikari_shim_handle, (void*)(bs?.Handle ?? 0)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool Deserialize(nint bs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void Free()
-    {
-        NativeMethods.TablePtr->C3.hs_method_e64b9c43((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Free() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RakString Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_dbe32930();
+        var handle = NativeMethods.TablePtr->C2.hs_create_dbe32930();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +71,7 @@ public sealed unsafe partial class RakString : global::System.IDisposable
 
     public static RakString Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_77e2f0f2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_77e2f0f2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,29 +80,27 @@ public sealed unsafe partial class RakString : global::System.IDisposable
         return new RakString((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: variadic constructors are not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static RakString Create(nint format) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variadic constructors are not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString_Nested.SharedString emptyString()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString_Nested.SharedString((nint)NativeMethods.TablePtr->C3.hs_method_e02922e3(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint emptyString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint freeList()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_f89d2372();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint freeList() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk886291_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e97fa077((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e97fa077((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString((nint)NativeMethods.TablePtr->C3.hs_method_39748394((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString((nint)NativeMethods.TablePtr->C2.hs_method_39748394((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -115,7 +109,7 @@ public sealed unsafe partial class RakString : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_325ac50f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_325ac50f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -67,10 +67,9 @@ public sealed unsafe partial class BoostItem : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_67a01d23((void*)__hosihikari_shim_handle);
     }
 
-    public void setReplacementItemDescriptor(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor replacementItemDescriptor)
-    {
-        NativeMethods.TablePtr->C0.hs_method_be9a895c((void*)__hosihikari_shim_handle, (void*)replacementItemDescriptor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setReplacementItemDescriptor(nint replacementItemDescriptor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

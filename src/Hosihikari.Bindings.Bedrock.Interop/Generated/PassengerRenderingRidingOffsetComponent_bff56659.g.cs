@@ -40,7 +40,7 @@ public sealed unsafe partial class PassengerRenderingRidingOffsetComponent : glo
 
     public static PassengerRenderingRidingOffsetComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PassengerRenderingRidingOffsetComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ab4618e1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ab4618e1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class PassengerRenderingRidingOffsetComponent : glo
     // The native field type is not projected; this is the address of the field storage.
     public nint mInterpolationPair_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7653b0a4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7653b0a4((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class PassengerRenderingRidingOffsetComponent : glo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bff56659((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bff56659((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

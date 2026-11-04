@@ -38,10 +38,9 @@ public sealed unsafe partial class ApplyJumpModifierSystem : global::System.IDis
         return __hs_handle;
     }
 
-    public static void tickApplyJumpModifierSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.TriggerJumpRequestComponent triggerJumpRequestComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorRotationComponent actorRotationComponent, global::Hosihikari.Bindings.Bedrock.Interop.MovementAttributesComponent attributesComponent, global::Hosihikari.Bindings.Bedrock.Interop.MobEffectsComponent mobEffectsComponent, global::Hosihikari.Bindings.Bedrock.Interop.MobTravelComponent mobTravelComponent, global::Hosihikari.Bindings.Bedrock.Interop.JumpPendingScaleComponent jumpPendingScaleComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b3d73e11((void*)arg0.Handle, (void*)triggerJumpRequestComponent.Handle, (void*)actorRotationComponent.Handle, (void*)attributesComponent.Handle, (void*)mobEffectsComponent.Handle, (void*)mobTravelComponent.Handle, (void*)jumpPendingScaleComponent.Handle, (void*)stateVectorComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void tickApplyJumpModifierSystem(nint arg0, nint triggerJumpRequestComponent, nint actorRotationComponent, nint attributesComponent, nint mobEffectsComponent, nint mobTravelComponent, nint jumpPendingScaleComponent, nint stateVectorComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

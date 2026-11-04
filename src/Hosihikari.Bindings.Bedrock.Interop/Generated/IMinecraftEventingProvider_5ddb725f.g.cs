@@ -40,7 +40,7 @@ public sealed unsafe partial class IMinecraftEventingProvider : global::System.I
 
     public static IMinecraftEventingProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventingProvider arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d77181d6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d77181d6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class IMinecraftEventingProvider : global::System.I
 
     public nint getPurchaseEventing()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_b11a7d2e((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_b11a7d2e((void*)__hosihikari_shim_handle);
     }
 
     public nint getWorldLoadPerformanceEventing()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_08162866((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_08162866((void*)__hosihikari_shim_handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class IMinecraftEventingProvider : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5ddb725f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_5ddb725f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

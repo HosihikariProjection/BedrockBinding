@@ -40,14 +40,14 @@ public sealed unsafe partial class PropertySyncIntEntry : global::System.IDispos
 
     public int mData
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c444631d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_c444631d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_c444631d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_c444631d((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mPropertyIndex
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2e0c32c2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2e0c32c2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2e0c32c2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2e0c32c2((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class PropertySyncIntEntry : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_3284162c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_3284162c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

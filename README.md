@@ -15,9 +15,10 @@ This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `v26.60.
 
 ## Current state
 
-- Interop: 9,222 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
-- Binding Shim: 155,635 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
-- Coverage: 12,150 declarations and 101,789 members bound for `win-x64-server`.
+- Interop: 9,184 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
+- Binding Shim: 133,615 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
+- Coverage: 12,138 declarations and 101,794 members bound for `win-x64-server`.
+- Members the carrier annotates `MCNAPI` (known but not exported) are reasoned stubs: against the pinned runtime data, 2 of 27,673 such names resolve, while 3,871 of the 4,183 `MCAPI` names do.
 - `scripts/headers-26.60.txt` lists the 5,169 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
 
 The shim is emitted in `--symbol-dispatch --resolve-by-name` mode. Supported ABI:

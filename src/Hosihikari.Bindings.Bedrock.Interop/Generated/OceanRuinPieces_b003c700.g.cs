@@ -38,33 +38,33 @@ public sealed unsafe partial class OceanRuinPieces : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _addPiece(nint structureManager, nint position, nint rotation, nint pieces, nint random, nint configuration, nint isLarge, nint baseIntegrity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint bigRuinsBrick() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint bigRuinsCracked() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint bigRuinsMossy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[4]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint ruinsBrick() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint ruinsCracked() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint ruinsMossy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'std::basic_string_view<char> (&)[9]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -72,7 +72,7 @@ public sealed unsafe partial class OceanRuinPieces : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b003c700((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b003c700((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

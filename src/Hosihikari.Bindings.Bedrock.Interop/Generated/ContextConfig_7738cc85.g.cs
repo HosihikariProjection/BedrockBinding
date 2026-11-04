@@ -38,19 +38,17 @@ public sealed unsafe partial class ContextConfig : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_905ea81e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'Scripting::ContextMolangVersion' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint runtimeName_, nint manifestUUID_, nint moduleDescriptor_, nint capabilities_, nint runtimeConditions_, nint dependencyResolutionBehavior_, nint molangVersion_, nint commandVersion_, nint baseGameVersion_) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'Scripting::ContextMolangVersion' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_907d6322((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ContextConfig Create()
     {
@@ -63,20 +61,13 @@ public sealed unsafe partial class ContextConfig : global::System.IDisposable
         return new ContextConfig((nint)handle);
     }
 
-    public static ContextConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3c8e85af((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ContextConfig Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ContextConfig((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'Scripting::ContextMolangVersion' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ContextConfig Create(nint runtimeName_, nint manifestUUID_, nint moduleDescriptor_, nint capabilities_, nint runtimeConditions_, nint dependencyResolutionBehavior_, nint molangVersion_, nint commandVersion_, nint baseGameVersion_) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'Scripting::ContextMolangVersion' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3c790a_Address
@@ -138,14 +129,13 @@ public sealed unsafe partial class ContextConfig : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_a213d1f9((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_f7a8795a(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig((nint)NativeMethods.TablePtr->C3.hs_method_aca52e2c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_aca52e2c(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

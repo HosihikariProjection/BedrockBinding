@@ -38,45 +38,38 @@ public sealed unsafe partial class ItemLockHelper : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static bool _parseItemLockMode(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value data)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_0dfa48cf((void*)item.Handle, (void*)data.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _parseItemLockMode(nint item, nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool addItemLockMode(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value data)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_1cf2baea((void*)item.Handle, (void*)data.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool addItemLockMode(nint item, nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool addKeepOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value data)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_2524fae8((void*)item.Handle, (void*)data.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool addKeepOnDeath(nint item, nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool canMoveItemSlots(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_8b2119f6((void*)actor.Handle, (void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool canMoveItemSlots(nint actor, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static bool isItemLocked(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C2.hs_method_5418c9bf((void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_5418c9bf((void*)item.Handle) != 0;
     }
 
-    public static void setItemLockMode(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, byte lockMode)
-    {
-        NativeMethods.TablePtr->C2.hs_method_3f3104fe((void*)item.Handle, lockMode);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void setItemLockMode(nint item, nint lockMode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool shouldKeepOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_c67af6c4((void*)actor.Handle, (void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool shouldKeepOnDeath(nint actor, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool shouldKeepOnDeath(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_98457167((void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool shouldKeepOnDeath(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -84,7 +77,7 @@ public sealed unsafe partial class ItemLockHelper : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_8bbcf805((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_8bbcf805((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

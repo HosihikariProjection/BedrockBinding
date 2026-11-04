@@ -38,14 +38,13 @@ public sealed unsafe partial class DiscardSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _tick(nint executionContext)
-    {
-        NativeMethods.TablePtr->C0.hs_method_bb2b8d10((void*)__hosihikari_shim_handle, (void*)executionContext);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint executionContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DiscardSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientRewind.DiscardSystem arg0)
     {
@@ -69,10 +68,9 @@ public sealed unsafe partial class DiscardSystem : global::System.IDisposable
         NativeMethods.TablePtr->C0.hs_method_d007cefe((void*)__hosihikari_shim_handle, (void*)executionContext);
     }
 
-    public static void tickEntity(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.ReplayStateTrackerComponent tracker, nint tracked)
-    {
-        NativeMethods.TablePtr->C0.hs_method_40bd7286((void*)entity.Handle, (void*)tracker.Handle, (void*)tracked);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void tickEntity(nint entity, nint tracker, nint tracked) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

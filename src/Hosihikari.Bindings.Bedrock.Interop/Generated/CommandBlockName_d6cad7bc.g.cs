@@ -40,29 +40,29 @@ public sealed unsafe partial class CommandBlockName : global::System.IDisposable
 
     public string getBlockName()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_e7ba0bfa((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_e7ba0bfa((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getDescriptionId()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_fd75391f((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_fd75391f((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public ulong mBlockNameHash
     {
-        get => NativeMethods.TablePtr->C1.hs_get_72b4ecbb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_72b4ecbb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_72b4ecbb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_72b4ecbb((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint resolveBlock(nint states, nint output) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult resolveBlock(int data)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult((nint)NativeMethods.TablePtr->C1.hs_method_36e6caf8((void*)__hosihikari_shim_handle, data));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult((nint)NativeMethods.TablePtr->C0.hs_method_36e6caf8((void*)__hosihikari_shim_handle, data));
     }
 
     public void Dispose()
@@ -71,7 +71,7 @@ public sealed unsafe partial class CommandBlockName : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d6cad7bc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_d6cad7bc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

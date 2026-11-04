@@ -38,19 +38,17 @@ public sealed unsafe partial class ModuleData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory_Nested.ModuleData arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8b9739a2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::optional<Scripting::ModuleBinding>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint _alias, nint _version, nint _moduleCreatorFn, nint _dependencies, bool _importRestricted) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::optional<Scripting::ModuleBinding>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_bb9e70d7((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ModuleData Create()
     {
@@ -63,20 +61,13 @@ public sealed unsafe partial class ModuleData : global::System.IDisposable
         return new ModuleData((nint)handle);
     }
 
-    public static ModuleData Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GenericModuleBindingFactory_Nested.ModuleData arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_27c389ec((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ModuleData Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ModuleData((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::optional<Scripting::ModuleBinding>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ModuleData Create(nint _alias, nint _version, nint _moduleCreatorFn, nint _dependencies, bool _importRestricted) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::optional<Scripting::ModuleBinding>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk339eb2_Address

@@ -38,15 +38,13 @@ public sealed unsafe partial class ScriptAsyncJobCoordinator : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManagerEvents events)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b9b925cd((void*)__hosihikari_shim_handle, (void*)events.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint events) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_dc629ab0((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptAsyncJobCoordinator Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ScriptAsyncJobCoordinator : global::System.ID
         return new ScriptAsyncJobCoordinator((nint)handle);
     }
 
-    public static ScriptAsyncJobCoordinator Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManagerEvents events)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ee285999((void*)events.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptAsyncJobCoordinator((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptAsyncJobCoordinator Create(nint events) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptAsyncJobCoordinator Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator arg0)
     {
@@ -81,9 +72,9 @@ public sealed unsafe partial class ScriptAsyncJobCoordinator : global::System.ID
         return new ScriptAsyncJobCoordinator((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public uint addGenerator(nint generator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1652bf_Address
@@ -114,14 +105,13 @@ public sealed unsafe partial class ScriptAsyncJobCoordinator : global::System.ID
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptAsyncJobCoordinator((nint)NativeMethods.TablePtr->C3.hs_method_40545ac2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void process(nint timeSlice, nint stats) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void removeGenerator(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId originatingContextId, uint generatorId)
-    {
-        NativeMethods.TablePtr->C3.hs_method_ec0d6289((void*)__hosihikari_shim_handle, (void*)originatingContextId.Handle, generatorId);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeGenerator(nint originatingContextId, uint generatorId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

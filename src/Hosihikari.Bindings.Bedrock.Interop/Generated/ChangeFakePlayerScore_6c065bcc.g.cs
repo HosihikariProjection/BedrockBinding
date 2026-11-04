@@ -94,10 +94,9 @@ public sealed unsafe partial class ChangeFakePlayerScore : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore((nint)NativeMethods.TablePtr->C0.hs_method_8db75d33((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.ChangeFakePlayerScore arg0)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_69713635((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

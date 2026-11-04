@@ -38,18 +38,17 @@ public sealed unsafe partial class StructureTemplateDataResponsePacketPayload : 
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateDataResponsePacketPayload other)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_6bbfdfbe((void*)__hosihikari_shim_handle, (void*)other.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint structureName, nint structureTag, nint type) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StructureTemplateDataResponsePacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_61ee4103();
+        var handle = NativeMethods.TablePtr->C3.hs_create_61ee4103();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -58,43 +57,35 @@ public sealed unsafe partial class StructureTemplateDataResponsePacketPayload : 
         return new StructureTemplateDataResponsePacketPayload((nint)handle);
     }
 
-    public static StructureTemplateDataResponsePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateDataResponsePacketPayload other)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2d4d4338((void*)other.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static StructureTemplateDataResponsePacketPayload Create(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new StructureTemplateDataResponsePacketPayload((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static StructureTemplateDataResponsePacketPayload Create(nint structureName, nint structureTag, nint type) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte mResponseType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_db7aae96((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_db7aae96((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_db7aae96((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_db7aae96((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_964f392c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_964f392c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4c65ea05((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4c65ea05((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateDataResponsePacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateDataResponsePacketPayload other)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateDataResponsePacketPayload((nint)NativeMethods.TablePtr->C4.hs_method_1ad29222((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -103,7 +94,7 @@ public sealed unsafe partial class StructureTemplateDataResponsePacketPayload : 
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2fd147c1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_2fd147c1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

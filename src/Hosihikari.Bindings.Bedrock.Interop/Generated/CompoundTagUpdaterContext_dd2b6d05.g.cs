@@ -41,13 +41,12 @@ public sealed unsafe partial class CompoundTagUpdaterContext : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mImpl_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_18b46872((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_18b46872((void*)__hosihikari_shim_handle);
     }
 
-    public int update(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, uint version)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_fda28358((void*)__hosihikari_shim_handle, (void*)tag.Handle, version);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint update(nint tag, uint version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -56,7 +55,7 @@ public sealed unsafe partial class CompoundTagUpdaterContext : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_dd2b6d05((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_dd2b6d05((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

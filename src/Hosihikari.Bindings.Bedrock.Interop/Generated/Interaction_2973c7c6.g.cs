@@ -40,7 +40,7 @@ public sealed unsafe partial class Interaction : global::System.IDisposable
 
     public static Interaction Create(global::Hosihikari.Bindings.Bedrock.Interop.Interaction arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9dcf706e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_9dcf706e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,26 +49,26 @@ public sealed unsafe partial class Interaction : global::System.IDisposable
         return new Interaction((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint Success(nint interactText, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCallback_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a1757845((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a1757845((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInteractText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_550946e7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_550946e7((void*)__hosihikari_shim_handle);
     }
 
     public bool mSwing
     {
-        get => NativeMethods.TablePtr->C2.hs_get_751c2048((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_751c2048((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_751c2048((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_751c2048((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -78,7 +78,7 @@ public sealed unsafe partial class Interaction : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_2973c7c6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_2973c7c6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class PublisherWrapper : global::System.IDisposable
 
     public static PublisherWrapper Create(global::Hosihikari.Bindings.Bedrock.Interop.Container_Nested.PublisherWrapper arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d5b6bfaa((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_d5b6bfaa((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class PublisherWrapper : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f34d6573((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_f34d6573((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class PublisherWrapper : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_924fad3f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_924fad3f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

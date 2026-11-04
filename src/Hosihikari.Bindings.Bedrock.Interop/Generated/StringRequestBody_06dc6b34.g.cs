@@ -50,16 +50,9 @@ public sealed unsafe partial class StringRequestBody : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_01eafdfb((void*)__hosihikari_shim_handle);
     }
 
-    public byte[] _getLoggableData()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_1d0c0a0e((void*)__hosihikari_shim_handle);
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<byte>() : new byte[checked((int)__hs_view.Size)];
-        if (__hs_view.Size > 0)
-        {
-            new global::System.ReadOnlySpan<byte>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getLoggableData() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StringRequestBody Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.StringRequestBody arg0)
     {
@@ -72,25 +65,9 @@ public sealed unsafe partial class StringRequestBody : global::System.IDisposabl
         return new StringRequestBody((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Abi.SharedHandle? create(string data)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(data);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_shared = NativeMethods.TablePtr->C0.hs_method_dbdd707f(__hs_stringData0, (nuint)__hs_stringByteCount0);
-            return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint create(nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte[] getLoggableData()
     {

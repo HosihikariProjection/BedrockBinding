@@ -38,10 +38,9 @@ public sealed unsafe partial class InstantDespawnComponent : global::System.IDis
         return __hs_handle;
     }
 
-    public void onDespawn(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C2.hs_method_50cef5a9((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onDespawn(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class InstantDespawnComponent : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e4038eac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e4038eac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

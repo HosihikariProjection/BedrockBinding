@@ -38,22 +38,21 @@ public sealed unsafe partial class Passthrough : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
-    {
-        NativeMethods.TablePtr->C5.hs_method_1aac0a3a((void*)__hosihikari_shim_handle, (void*)hash.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _appendMetadataKey(nint hash) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _apply(nint arg0, nint existingTag) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Passthrough Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockEntity.Passthrough arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_57bdb0c1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_57bdb0c1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +63,7 @@ public sealed unsafe partial class Passthrough : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C5.hs_method_db9a33a1((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C4.hs_method_db9a33a1((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
@@ -78,7 +77,7 @@ public sealed unsafe partial class Passthrough : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_55f68108((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_55f68108((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

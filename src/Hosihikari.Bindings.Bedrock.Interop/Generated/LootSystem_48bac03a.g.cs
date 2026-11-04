@@ -38,15 +38,13 @@ public sealed unsafe partial class LootSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _registerEvents(nint eventDispatcher)
-    {
-        NativeMethods.TablePtr->C2.hs_method_e5e61535((void*)__hosihikari_shim_handle, (void*)eventDispatcher);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _registerEvents(nint eventDispatcher) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry arg0)
-    {
-        NativeMethods.TablePtr->C2.hs_method_37a5c24b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LootSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.LootSystem arg0)
     {

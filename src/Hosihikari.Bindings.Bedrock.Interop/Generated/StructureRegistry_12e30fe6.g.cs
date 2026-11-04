@@ -40,7 +40,7 @@ public sealed unsafe partial class StructureRegistry : global::System.IDisposabl
 
     public static StructureRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_abcf3876((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_abcf3876((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class StructureRegistry : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_shared = NativeMethods.TablePtr->C5.hs_method_8a6bfae2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_shared = NativeMethods.TablePtr->C4.hs_method_8a6bfae2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
         }
     }
@@ -72,49 +72,34 @@ public sealed unsafe partial class StructureRegistry : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnStructurePlaced_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_ec58bc9b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ec58bc9b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnStructurePlacedMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3821a330((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3821a330((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnStructurePlacedNames_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_014ebeaa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_014ebeaa((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructures_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e89ec2de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e89ec2de((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint record(nint name, nint cb) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public uint reserveOnPlaced(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C5.hs_method_c87ff491((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint reserveOnPlaced(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -123,7 +108,7 @@ public sealed unsafe partial class StructureRegistry : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_12e30fe6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_12e30fe6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

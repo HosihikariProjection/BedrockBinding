@@ -38,39 +38,38 @@ public sealed unsafe partial class InventoryTransactionItemGroup : global::Syste
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ItemStack getItemInstance()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemStack((nint)NativeMethods.TablePtr->C2.hs_method_923d173b((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getItemInstance() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mCount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_5d9d2b94((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_5d9d2b94((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_5d9d2b94((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_5d9d2b94((void*)__hosihikari_shim_handle, value);
     }
 
     public int mItemAux
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1c86259f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_1c86259f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_1c86259f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_1c86259f((void*)__hosihikari_shim_handle, value);
     }
 
     public int mItemId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9982586f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_9982586f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_9982586f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_9982586f((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mOverflow
     {
-        get => NativeMethods.TablePtr->C2.hs_get_dc3a352b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_dc3a352b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_dc3a352b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_dc3a352b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b2d642a4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b2d642a4((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +79,7 @@ public sealed unsafe partial class InventoryTransactionItemGroup : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0a85e6af((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_0a85e6af((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

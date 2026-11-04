@@ -60,10 +60,9 @@ public sealed unsafe partial class ServerPlayerLoader : global::System.IDisposab
         return new ServerPlayerLoader((nint)handle);
     }
 
-    public bool loadNewPlayer(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer newPlayer, bool isXboxLive)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_52da4dfa((void*)__hosihikari_shim_handle, (void*)newPlayer.Handle, isXboxLive) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool loadNewPlayer(nint newPlayer, bool isXboxLive) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc3e923_Address

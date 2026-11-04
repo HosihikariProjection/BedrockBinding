@@ -38,15 +38,13 @@ public sealed unsafe partial class BrewingStandFuelContainerValidation : global:
         return __hs_handle;
     }
 
-    public int _getContainerOffset(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_dbe10837((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerOffset(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, int arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg3, bool arg4)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_16dc424d((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1, (void*)item.Handle, arg3, arg4) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isItemAllowedInSlot(nint arg0, nint arg1, nint item, nint arg3, bool arg4) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BrewingStandFuelContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.BrewingStandFuelContainerValidation arg0)
     {

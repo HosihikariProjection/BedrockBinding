@@ -62,10 +62,9 @@ public sealed unsafe partial class WaterlilyFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_8ca3b1c4((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random arg2)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_fe08f61c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, (void*)arg2.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint pos, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WaterlilyFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.WaterlilyFeature arg0)
     {

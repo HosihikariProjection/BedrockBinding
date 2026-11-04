@@ -38,18 +38,17 @@ public sealed unsafe partial class DeferredScriptCommand : global::System.IDispo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'ScriptCommandOutput' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint scriptCommandOutput, nint commandContext, nint scope, nint promise) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'ScriptCommandOutput' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands commands)
-    {
-        NativeMethods.TablePtr->C1.hs_method_4b633048((void*)__hosihikari_shim_handle, (void*)commands.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint commands) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DeferredScriptCommand Create()
     {
@@ -62,9 +61,9 @@ public sealed unsafe partial class DeferredScriptCommand : global::System.IDispo
         return new DeferredScriptCommand((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'ScriptCommandOutput' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static DeferredScriptCommand Create(nint scriptCommandOutput, nint commandContext, nint scope, nint promise) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'ScriptCommandOutput' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands commands)
     {

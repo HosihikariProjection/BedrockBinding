@@ -44,10 +44,9 @@ public sealed unsafe partial class ListTagIntAdder : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_aa503feb((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ListTagIntAdder operator_call(int i)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ListTagIntAdder((nint)NativeMethods.TablePtr->C2.hs_method_58b90e59((void*)__hosihikari_shim_handle, i), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_call(int i) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

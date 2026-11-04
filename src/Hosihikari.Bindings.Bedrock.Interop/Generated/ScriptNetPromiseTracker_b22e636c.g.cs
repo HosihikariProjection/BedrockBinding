@@ -83,10 +83,9 @@ public sealed unsafe partial class ScriptNetPromiseTracker : global::System.IDis
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraftNet.ScriptNetPromiseTracker((nint)NativeMethods.TablePtr->C3.hs_method_25a74e5e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public uint track(nint promise, nint requestHandle)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_8ee16728((void*)__hosihikari_shim_handle, (void*)promise, (void*)requestHandle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public uint track(nint promise, nint requestHandle) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

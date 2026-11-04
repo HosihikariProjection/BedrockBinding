@@ -38,20 +38,17 @@ public sealed unsafe partial class StringConversions : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public static int toUtf8(nint src, int srcLen, nint dest, int max)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_eb8302c0((void*)src, srcLen, (void*)dest, max);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int toUtf8(nint src, int srcLen, nint dest, int max) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string toUtf8(nint src, int srcLen)
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_ee5d037e((void*)src, srcLen);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint toUtf8(nint src, int srcLen) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::basic_string<wchar_t>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint toWide(nint src, int srcLen) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::basic_string<wchar_t>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

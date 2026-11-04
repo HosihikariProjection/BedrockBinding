@@ -41,13 +41,12 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ec90c414((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ec90c414((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager packManager)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_4bdc695c((void*)__hosihikari_shim_handle, (void*)packManager.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint packManager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate _getOrCreate(string structureName)
     {
@@ -64,63 +63,29 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)NativeMethods.TablePtr->C4.hs_method_7b598279((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)NativeMethods.TablePtr->C3.hs_method_7b598279((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _getOrCreateJigsawStructureMetadata(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement structurePoolElement)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_a6acacae((void*)__hosihikari_shim_handle, (void*)structurePoolElement.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getOrCreateJigsawStructureMetadata(nint structurePoolElement) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate _getOrCreateLegacy(string structureName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(structureName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate((nint)NativeMethods.TablePtr->C4.hs_method_f8aabc48((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getOrCreateLegacy(nint structureName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate? _getStructure(string structureName)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(structureName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_e39863d5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)__hs_handle, false) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getStructure(nint structureName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _readStructure(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structureTemplate)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_26c68469((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _readStructure(nint structureTemplate) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StructureManager Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_08e844f3();
+        var handle = NativeMethods.TablePtr->C3.hs_create_08e844f3();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -129,108 +94,25 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         return new StructureManager((nint)handle);
     }
 
-    public static StructureManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager packManager)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_5791fcf9((void*)packManager.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static StructureManager Create(nint packManager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new StructureManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _createAndLoadStructure(nint structureName, nint packManager, nint levelStorage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate? _createAndLoadStructure(string structureName, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? packManager, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage? levelStorage)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(structureName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5ae15709((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)(packManager?.Handle ?? 0), (void*)(levelStorage?.Handle ?? 0));
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)__hs_handle, false) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _createLevelStorageId(nint dimensionPrefix, nint saveId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _createLevelStorageId(string dimensionPrefix, string saveId)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(dimensionPrefix);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dimensionPrefix, __hs_stringBytes0);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(saveId);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(saveId, __hs_stringBytes1);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                var __hs_view = NativeMethods.TablePtr->C4.hs_method_0a59f01d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
-                return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _removePlacementQueueItem(nint dimensionPrefix, nint structureAnimationData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _removePlacementQueueItem(string dimensionPrefix, global::Hosihikari.Bindings.Bedrock.Interop.StructureAnimationData structureAnimationData)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(dimensionPrefix);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dimensionPrefix, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_8b2264e2(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)structureAnimationData.Handle);
-        }
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate cloneStructure(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structureTemplate, string structureName)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(structureName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)NativeMethods.TablePtr->C4.hs_method_b2c5dd1a((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1), false);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint cloneStructure(nint structureTemplate, nint structureName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte deleteStructure(string structureName, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
     {
@@ -247,7 +129,7 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C4.hs_method_971855f7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)levelStorage.Handle);
+            return NativeMethods.TablePtr->C3.hs_method_971855f7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)levelStorage.Handle);
         }
     }
 
@@ -266,13 +148,13 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)NativeMethods.TablePtr->C4.hs_method_e4588134((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)NativeMethods.TablePtr->C3.hs_method_e4588134((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getOrCreateJigsawStructureMetadata(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement structurePoolElement)
     {
-        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_1a67363f((void*)__hosihikari_shim_handle, (void*)structurePoolElement.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_1a67363f((void*)__hosihikari_shim_handle, (void*)structurePoolElement.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -291,21 +173,13 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate((nint)NativeMethods.TablePtr->C4.hs_method_7177b378((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.LegacyStructureTemplate((nint)NativeMethods.TablePtr->C3.hs_method_7177b378((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
-    public string[] getPackStructureNames(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID packUUID)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_e75fbd63((void*)__hosihikari_shim_handle, (void*)packUUID.Handle);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getPackStructureNames(nint packUUID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate? getStructure(string structureName)
     {
@@ -322,153 +196,124 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(structureName, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_9c7f4d14((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_9c7f4d14((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate((nint)__hs_handle, false) : null;
         }
     }
 
-    public string[] getStructureNames(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage, bool includeUnremovable)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_362c87cd((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle, includeUnremovable);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getStructureNames(nint levelStorage, bool includeUnremovable) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Core::PathBuffer<Core::BasicStackString<char, 1024>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint getStructurePath(nint structureFullName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Core::PathBuffer<Core::BasicStackString<char, 1024>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Core::PathBuffer<Core::BasicStackString<char, 1024>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint getStructurePath(nint structureNamespace, nint structureName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Core::PathBuffer<Core::BasicStackString<char, 1024>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void importStructureFromTemplate(string name, global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate temp)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_4631dd5c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)temp.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void importStructureFromTemplate(nint name, nint temp) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool load(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structureTemplate, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? packManager, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage? levelStorage)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_a6691bcb((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle, (void*)(packManager?.Handle ?? 0), (void*)(levelStorage?.Handle ?? 0)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool load(nint structureTemplate, nint packManager, nint levelStorage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void loadMetadataRegistries()
-    {
-        NativeMethods.TablePtr->C4.hs_method_f10ddefd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void loadMetadataRegistries() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void loadPlacementQueue(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage storage, global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
-    {
-        NativeMethods.TablePtr->C4.hs_method_eb99b201((void*)__hosihikari_shim_handle, (void*)storage.Handle, (void*)level.Handle, (void*)dimension.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void loadPlacementQueue(nint storage, nint level, nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCerealContext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_df33c878((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_df33c878((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLegacyStructureRepository_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_10094122((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_10094122((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMetadataRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_802a9308((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_802a9308((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMetadataRegistryMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_eb40f566((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_eb40f566((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_923db166((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_923db166((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRepositoryMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ea639b17((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ea639b17((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructurePlacementQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ef0307ac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ef0307ac((void*)__hosihikari_shim_handle);
     }
 
     public uint mStructurePlacementSaveCounter
     {
-        get => NativeMethods.TablePtr->C4.hs_get_b53f62ff((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_b53f62ff((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b53f62ff((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b53f62ff((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureRepository_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_dea6fc0f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dea6fc0f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnknownBlockRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4e77ae3a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4e77ae3a((void*)__hosihikari_shim_handle);
     }
 
     public bool readStructure(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structureTemplate)
     {
-        return NativeMethods.TablePtr->C4.hs_method_e96c553d((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e96c553d((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle) != 0;
     }
 
-    public void reset()
-    {
-        NativeMethods.TablePtr->C4.hs_method_96860bf4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void reset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void saveToLevel(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structureTemplate, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
     {
-        NativeMethods.TablePtr->C4.hs_method_d9988114((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle, (void*)levelStorage.Handle);
+        NativeMethods.TablePtr->C3.hs_method_d9988114((void*)__hosihikari_shim_handle, (void*)structureTemplate.Handle, (void*)levelStorage.Handle);
     }
 
-    public void setUnknownBlockRegistry(global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
-    {
-        NativeMethods.TablePtr->C4.hs_method_91b0f491((void*)__hosihikari_shim_handle, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setUnknownBlockRegistry(nint unknownBlockRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
-    {
-        NativeMethods.TablePtr->C4.hs_method_63da4dfa((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick(nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint tryPlaceStructureInWorld(nint cmdArea, nint level, nint dimension, nint bounds, nint loadPosition, nint settings, nint structureTemplate, nint structureAnimationData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -477,7 +322,7 @@ public sealed unsafe partial class StructureManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bc40d5b1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_bc40d5b1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

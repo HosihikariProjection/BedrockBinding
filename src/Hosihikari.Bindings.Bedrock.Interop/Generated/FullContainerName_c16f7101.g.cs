@@ -61,11 +61,9 @@ public sealed unsafe partial class FullContainerName : global::System.IDisposabl
         set => NativeMethods.TablePtr->C1.hs_set_c46dd282((void*)__hosihikari_shim_handle, value);
     }
 
-    public string toString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_3d5f1e44((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

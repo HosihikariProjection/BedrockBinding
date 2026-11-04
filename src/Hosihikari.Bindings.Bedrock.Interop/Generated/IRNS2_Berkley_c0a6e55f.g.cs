@@ -40,12 +40,12 @@ public sealed unsafe partial class IRNS2_Berkley : global::System.IDisposable
 
     public int Bind(nint bindParameters, nint file, uint line)
     {
-        return NativeMethods.TablePtr->C3.hs_method_0ab60e51((void*)__hosihikari_shim_handle, (void*)bindParameters, (void*)file, line);
+        return NativeMethods.TablePtr->C2.hs_method_0ab60e51((void*)__hosihikari_shim_handle, (void*)bindParameters, (void*)file, line);
     }
 
     public static IRNS2_Berkley Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.IRNS2_Berkley arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4ea9bcf8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_4ea9bcf8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -58,31 +58,31 @@ public sealed unsafe partial class IRNS2_Berkley : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk164a1f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b2bfebdb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b2bfebdb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk45c154_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4b2af142((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4b2af142((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk71ae1a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4940445a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4940445a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk923992_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_79260694((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_79260694((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf42590_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4fecf851((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4fecf851((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -91,7 +91,7 @@ public sealed unsafe partial class IRNS2_Berkley : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c0a6e55f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c0a6e55f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

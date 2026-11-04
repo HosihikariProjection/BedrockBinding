@@ -55,15 +55,13 @@ public sealed unsafe partial class ChunkRecyclerTelemetryData : global::System.I
         return new ChunkRecyclerTelemetryData((nint)handle);
     }
 
-    public void _reset()
-    {
-        NativeMethods.TablePtr->C0.hs_method_8c66d245((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _reset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void endLevel(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        NativeMethods.TablePtr->C0.hs_method_237cbf4f((void*)__hosihikari_shim_handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void endLevel(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mActiveOverworldChunksSum
     {
@@ -167,20 +165,17 @@ public sealed unsafe partial class ChunkRecyclerTelemetryData : global::System.I
         get => (nint)NativeMethods.TablePtr->C0.hs_get_7953a89d((void*)__hosihikari_shim_handle);
     }
 
-    public void recordChunkDeleted(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e3130dd9((void*)__hosihikari_shim_handle, (void*)lc.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void recordChunkDeleted(nint lc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void startLevel(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        NativeMethods.TablePtr->C0.hs_method_df66e6ed((void*)__hosihikari_shim_handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void startLevel(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tickLevel(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        NativeMethods.TablePtr->C0.hs_method_594924e0((void*)__hosihikari_shim_handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tickLevel(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

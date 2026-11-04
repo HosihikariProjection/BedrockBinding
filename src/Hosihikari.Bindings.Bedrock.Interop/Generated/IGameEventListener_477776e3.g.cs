@@ -38,14 +38,13 @@ public sealed unsafe partial class IGameEventListener : global::System.IDisposab
         return __hs_handle;
     }
 
-    public int _getDeliveryMode()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_983ee78e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getDeliveryMode() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IGameEventListener Create(global::Hosihikari.Bindings.Bedrock.Interop.IGameEventListener arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_7159d0ca((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_7159d0ca((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,22 +55,22 @@ public sealed unsafe partial class IGameEventListener : global::System.IDisposab
 
     public int getDeliveryMode()
     {
-        return NativeMethods.TablePtr->C2.hs_method_f844bdd5((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_f844bdd5((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource getPositionSource()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)NativeMethods.TablePtr->C2.hs_method_9f3abc04((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameEvents.PositionSource((nint)NativeMethods.TablePtr->C1.hs_method_9f3abc04((void*)__hosihikari_shim_handle), false);
     }
 
     public uint getRange()
     {
-        return NativeMethods.TablePtr->C2.hs_method_ab2ce275((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_ab2ce275((void*)__hosihikari_shim_handle);
     }
 
     public void handleGameEvent(global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent, nint gameEventContext, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C2.hs_method_c19a2c55((void*)__hosihikari_shim_handle, (void*)gameEvent.Handle, (void*)gameEventContext, (void*)region.Handle);
+        NativeMethods.TablePtr->C1.hs_method_c19a2c55((void*)__hosihikari_shim_handle, (void*)gameEvent.Handle, (void*)gameEventContext, (void*)region.Handle);
     }
 
 
@@ -81,7 +80,7 @@ public sealed unsafe partial class IGameEventListener : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_477776e3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_477776e3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

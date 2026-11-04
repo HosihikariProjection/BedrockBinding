@@ -38,10 +38,9 @@ public sealed unsafe partial class ActorDefinitionDiffList : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup definitions)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_eed5b3bb((void*)__hosihikari_shim_handle, (void*)definitions.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint definitions) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorDefinitionDiffList Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class ActorDefinitionDiffList : global::System.IDis
         return new ActorDefinitionDiffList((nint)handle);
     }
 
-    public static ActorDefinitionDiffList Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup definitions)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_baa03bc3((void*)definitions.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorDefinitionDiffList((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ActorDefinitionDiffList Create(nint definitions) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorDefinitionDiffList Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList arg0)
     {
@@ -76,42 +68,25 @@ public sealed unsafe partial class ActorDefinitionDiffList : global::System.IDis
         return new ActorDefinitionDiffList((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ActorDefinitionDescriptor' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getDescriptionFrom(ulong start, ulong end) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ActorDefinitionDescriptor' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _updateStack()
-    {
-        NativeMethods.TablePtr->C0.hs_method_a04a9136((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _updateStack() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addDefinition(string def)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(def);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(def, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C0.hs_method_42aedc8e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addDefinition(nint def) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addPendingPropertyChange(ulong overallPropertyIndex, nint value) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void clearChangedDescription()
-    {
-        NativeMethods.TablePtr->C0.hs_method_b2b874b2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clearChangedDescription() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAddedDefinitionGroup_Address
@@ -178,24 +153,9 @@ public sealed unsafe partial class ActorDefinitionDiffList : global::System.IDis
         return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDiffList((nint)NativeMethods.TablePtr->C0.hs_method_4a411a52((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void removeDefinition(string def)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(def);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(def, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C0.hs_method_0b40bead((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeDefinition(nint def) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

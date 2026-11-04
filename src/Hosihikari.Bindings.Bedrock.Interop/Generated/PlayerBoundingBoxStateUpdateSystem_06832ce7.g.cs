@@ -38,29 +38,28 @@ public sealed unsafe partial class PlayerBoundingBoxStateUpdateSystem : global::
         return __hs_handle;
     }
 
-    public void _tick(nint strictContext)
-    {
-        NativeMethods.TablePtr->C3.hs_method_55b50b4e((void*)__hosihikari_shim_handle, (void*)strictContext);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint strictContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mViews_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7441acd0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7441acd0((void*)__hosihikari_shim_handle);
     }
 
     public void tick(nint strictContext)
     {
-        NativeMethods.TablePtr->C3.hs_method_9abc4895((void*)__hosihikari_shim_handle, (void*)strictContext);
+        NativeMethods.TablePtr->C2.hs_method_9abc4895((void*)__hosihikari_shim_handle, (void*)strictContext);
     }
 
     public static void tickPlayerBoundingBoxStateUpdateSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabb, global::Hosihikari.Bindings.Bedrock.Interop.PlayerInputRequestComponent request, float sneakHeight, global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews collisionViews, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
     {
-        NativeMethods.TablePtr->C3.hs_method_e22a26cc((void*)context.Handle, (void*)aabb.Handle, (void*)request.Handle, sneakHeight, (void*)collisionViews.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C2.hs_method_e22a26cc((void*)context.Handle, (void*)aabb.Handle, (void*)request.Handle, sneakHeight, (void*)collisionViews.Handle, (void*)region.Handle);
     }
 
 
@@ -70,7 +69,7 @@ public sealed unsafe partial class PlayerBoundingBoxStateUpdateSystem : global::
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_06832ce7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_06832ce7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

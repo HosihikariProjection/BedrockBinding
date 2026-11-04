@@ -44,7 +44,7 @@ public sealed unsafe partial class UpdateFromDefinition : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d4895f48((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d4895f48((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

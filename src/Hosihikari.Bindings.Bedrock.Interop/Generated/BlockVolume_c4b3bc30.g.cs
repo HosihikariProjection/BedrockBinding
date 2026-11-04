@@ -53,15 +53,13 @@ public sealed unsafe partial class BlockVolume : global::System.IDisposable
     public nint computeHeightMap() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'std::vector<short>' is not a known bindable declaration.");
 
-    public short findHighestNonAirBlock()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_178bed03((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public short findHighestNonAirBlock() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public short getAboveTopSolidBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos start, bool dimensionShowsSky, bool includeWater, bool includeLeaves)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_67f3cf64((void*)__hosihikari_shim_handle, (void*)start.Handle, dimensionShowsSky, includeWater, includeLeaves);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public short getAboveTopSolidBlock(nint start, bool dimensionShowsSky, bool includeWater, bool includeLeaves) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlocks_Address

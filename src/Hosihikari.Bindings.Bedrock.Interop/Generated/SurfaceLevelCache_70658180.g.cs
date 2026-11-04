@@ -38,26 +38,25 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DividedPos2d<4>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint startPos, nint preliminarySurfaceProvider, ulong bufferSizeXZ) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DividedPos2d<4>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_0987fff4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DividedPos2d<4>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getPreliminarySurfaceLevel(nint worldQuartPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DividedPos2d<4>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SurfaceLevelCache Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_dac60e02();
+        var handle = NativeMethods.TablePtr->C3.hs_create_dac60e02();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,13 +65,13 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
         return new SurfaceLevelCache((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DividedPos2d<4>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static SurfaceLevelCache Create(nint startPos, nint preliminarySurfaceProvider, ulong bufferSizeXZ) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DividedPos2d<4>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SurfaceLevelCache Create(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_063174fc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_063174fc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,31 +86,31 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
 
     public ulong mBufferSizeXZ
     {
-        get => NativeMethods.TablePtr->C4.hs_get_725222b1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_725222b1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_725222b1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_725222b1((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMinPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8466b91e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8466b91e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreliminarySurfaceProvider_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c36d924c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c36d924c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSurfaceLevelBuffer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_133b4a8a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_133b4a8a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache((nint)NativeMethods.TablePtr->C4.hs_method_3442d142((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SurfaceLevelCache((nint)NativeMethods.TablePtr->C3.hs_method_3442d142((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -121,7 +120,7 @@ public sealed unsafe partial class SurfaceLevelCache : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_70658180((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_70658180((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

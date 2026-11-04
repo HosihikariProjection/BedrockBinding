@@ -40,7 +40,7 @@ public sealed unsafe partial class RailActivatorDefinition : global::System.IDis
 
     public static RailActivatorDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.RailActivatorDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_64dd587e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_64dd587e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,51 +49,50 @@ public sealed unsafe partial class RailActivatorDefinition : global::System.IDis
         return new RailActivatorDefinition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C3.hs_method_1c54f688(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mCheckBlockTypes
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2aca6e32((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_2aca6e32((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2aca6e32((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_2aca6e32((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mEjectOnActivate
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ea2325b9((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_ea2325b9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_ea2325b9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_ea2325b9((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mEjectOnDeactivate
     {
-        get => NativeMethods.TablePtr->C3.hs_get_42997eaf((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_42997eaf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_42997eaf((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_42997eaf((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnActivate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cb1f47a4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_cb1f47a4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnDeactivate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a0a73cc0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a0a73cc0((void*)__hosihikari_shim_handle);
     }
 
     public bool mTickCommandBlockOnActivate
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2c05d19b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_2c05d19b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2c05d19b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_2c05d19b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mTickCommandBlockOnDeactivate
     {
-        get => NativeMethods.TablePtr->C3.hs_get_4b4d1425((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_4b4d1425((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_4b4d1425((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_4b4d1425((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -103,7 +102,7 @@ public sealed unsafe partial class RailActivatorDefinition : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4c6e2c0c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4c6e2c0c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

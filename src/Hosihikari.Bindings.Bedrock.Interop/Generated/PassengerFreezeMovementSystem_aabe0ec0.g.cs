@@ -38,10 +38,9 @@ public sealed unsafe partial class PassengerFreezeMovementSystem : global::Syste
         return __hs_handle;
     }
 
-    public static void _freezeMovement(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVector)
-    {
-        NativeMethods.TablePtr->C3.hs_method_c8d0b0af((void*)arg0.Handle, (void*)stateVector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _freezeMovement(nint arg0, nint stateVector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class PassengerFreezeMovementSystem : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_aabe0ec0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_aabe0ec0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

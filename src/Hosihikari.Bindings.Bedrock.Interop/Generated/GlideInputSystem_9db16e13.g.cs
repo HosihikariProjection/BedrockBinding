@@ -38,10 +38,9 @@ public sealed unsafe partial class GlideInputSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void doGlideInputSystem(global::Hosihikari.Bindings.Bedrock.Interop.MovementAbilitiesComponent abilitiesComponent, global::Hosihikari.Bindings.Bedrock.Interop.MoveInputComponent moveInputComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorDataFlagComponent synchedActorDataComponent, global::Hosihikari.Bindings.Bedrock.Interop.FallFlyTicksComponent fallFlyTicksComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent)
-    {
-        NativeMethods.TablePtr->C1.hs_method_2e5d8355((void*)abilitiesComponent.Handle, (void*)moveInputComponent.Handle, (void*)synchedActorDataComponent.Handle, (void*)fallFlyTicksComponent.Handle, (void*)stateVectorComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void doGlideInputSystem(nint abilitiesComponent, nint moveInputComponent, nint synchedActorDataComponent, nint fallFlyTicksComponent, nint stateVectorComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

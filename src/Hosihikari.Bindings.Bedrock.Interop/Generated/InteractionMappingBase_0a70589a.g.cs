@@ -40,7 +40,7 @@ public sealed unsafe partial class InteractionMappingBase : global::System.IDisp
 
     public static InteractionMappingBase Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerInteractionSystem_Nested.InteractionMappingBase arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_10ceefac((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_10ceefac((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class InteractionMappingBase : global::System.IDisp
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor arg0, global::Hosihikari.Bindings.Bedrock.Interop.Player arg1, byte arg2)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C3.hs_method_67b50953((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_67b50953((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2));
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class InteractionMappingBase : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0a70589a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0a70589a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,44 +38,43 @@ public sealed unsafe partial class PlayerStorageIds : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_1939c411((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint GuestId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7ff1d5c9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7ff1d5c9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint MsaId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_62450b93((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_62450b93((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint PlatformId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2017f4fd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2017f4fd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint PlatformOfflineId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c1efc5b3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c1efc5b3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint PlatformOnlineId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1de0439c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1de0439c((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerStorageIds Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerStorageIds arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_08fbef0d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_08fbef0d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,13 +86,13 @@ public sealed unsafe partial class PlayerStorageIds : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint RandomClientId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9dc77ba0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9dc77ba0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint SelfSignedId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0397ab9f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0397ab9f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -103,7 +102,7 @@ public sealed unsafe partial class PlayerStorageIds : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_67314eae((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_67314eae((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

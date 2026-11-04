@@ -38,10 +38,9 @@ public sealed unsafe partial class FeedItem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_811873d6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FeedItem Create(global::Hosihikari.Bindings.Bedrock.Interop.FeedItem arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class FeedItem : global::System.IDisposable
         return new FeedItem((nint)handle);
     }
 
-    public void addEffect(global::Hosihikari.Bindings.Bedrock.Interop.FeedItem_Nested.Effect effect)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f67fc07f((void*)__hosihikari_shim_handle, (void*)effect.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addEffect(nint effect) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEffects_Address

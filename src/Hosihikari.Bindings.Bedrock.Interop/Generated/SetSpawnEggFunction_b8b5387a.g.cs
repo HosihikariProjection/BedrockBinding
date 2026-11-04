@@ -41,27 +41,24 @@ public sealed unsafe partial class SetSpawnEggFunction : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b1eae3bf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b1eae3bf((void*)__hosihikari_shim_handle);
     }
 
-    public void _apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_65a8e36a((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _apply26U6(nint item, nint random, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_9d12e8c8((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyPreVersion(nint item, nint arg1, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getFunctionType()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_069743fc((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getFunctionType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SetSpawnEggFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetSpawnEggFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d89c27da((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_d89c27da((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,27 +69,27 @@ public sealed unsafe partial class SetSpawnEggFunction : global::System.IDisposa
 
     public void apply26U6(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C4.hs_method_09bbad9b((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C3.hs_method_09bbad9b((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
     {
-        NativeMethods.TablePtr->C4.hs_method_b790e273((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b790e273((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)context.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint deserialize(nint @object, nint predicates) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C4.hs_method_6b160937((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_6b160937((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ef752b0b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ef752b0b((void*)__hosihikari_shim_handle);
     }
 
 
@@ -102,7 +99,7 @@ public sealed unsafe partial class SetSpawnEggFunction : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b8b5387a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b8b5387a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

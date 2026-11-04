@@ -38,28 +38,25 @@ public sealed unsafe partial class IntProvider : global::System.IDisposable
         return __hs_handle;
     }
 
-    public int _maxValue()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_599f77d9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _maxValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _minValue()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_4d37a9bb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _minValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_3d90c44b((void*)__hosihikari_shim_handle, (void*)random.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _sample(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IntProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.IntProvider arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_64da070e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_64da070e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,22 +68,22 @@ public sealed unsafe partial class IntProvider : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mProvider_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_21c5d44e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_21c5d44e((void*)__hosihikari_shim_handle);
     }
 
     public int maxValue()
     {
-        return NativeMethods.TablePtr->C2.hs_method_937a6285((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_937a6285((void*)__hosihikari_shim_handle);
     }
 
     public int minValue()
     {
-        return NativeMethods.TablePtr->C2.hs_method_801d7090((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_801d7090((void*)__hosihikari_shim_handle);
     }
 
     public int sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C2.hs_method_2784762a((void*)__hosihikari_shim_handle, (void*)random.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_2784762a((void*)__hosihikari_shim_handle, (void*)random.Handle);
     }
 
 
@@ -96,7 +93,7 @@ public sealed unsafe partial class IntProvider : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f241774e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_f241774e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

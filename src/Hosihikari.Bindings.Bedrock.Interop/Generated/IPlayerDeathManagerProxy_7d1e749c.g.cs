@@ -40,7 +40,7 @@ public sealed unsafe partial class IPlayerDeathManagerProxy : global::System.IDi
 
     public static IPlayerDeathManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.IPlayerDeathManagerProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_916913e5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_916913e5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,18 +51,18 @@ public sealed unsafe partial class IPlayerDeathManagerProxy : global::System.IDi
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? fetchActor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorUniqueID)
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_99287f2f((void*)__hosihikari_shim_handle, (void*)actorUniqueID.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_99287f2f((void*)__hosihikari_shim_handle, (void*)actorUniqueID.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
     public void onWorldOwnerHasDied()
     {
-        NativeMethods.TablePtr->C2.hs_method_9face91d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_9face91d((void*)__hosihikari_shim_handle);
     }
 
     public bool shouldShowDeathMessages()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b5614c7d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_b5614c7d((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -72,7 +72,7 @@ public sealed unsafe partial class IPlayerDeathManagerProxy : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_7d1e749c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_7d1e749c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

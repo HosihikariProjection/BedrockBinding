@@ -38,10 +38,9 @@ public sealed unsafe partial class AsyncQueueResult : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void __cancel()
-    {
-        NativeMethods.TablePtr->C0.hs_method_ea6a45b1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __cancel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AsyncQueueResult Create()
     {

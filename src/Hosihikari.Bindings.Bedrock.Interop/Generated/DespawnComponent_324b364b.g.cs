@@ -38,30 +38,25 @@ public sealed unsafe partial class DespawnComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool _canDespawn(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.DespawnComponent_Nested.IWorldAccessor worldAccessor, global::Hosihikari.Bindings.Bedrock.Interop.DespawnDefinition definition)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_33f77f4d((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)worldAccessor.Handle, (void*)definition.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canDespawn(nint actor, nint worldAccessor, nint definition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _instantRulesPrescribeDespawn(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.DespawnDefinition definition, global::Hosihikari.Bindings.Bedrock.Interop.DespawnComponent_Nested.IWorldAccessor worldAccessor)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_b90d6951((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)definition.Handle, (void*)worldAccessor.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _instantRulesPrescribeDespawn(nint actor, nint definition, nint worldAccessor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _softRulesPrescribeDespawn(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.DespawnDefinition definition, global::Hosihikari.Bindings.Bedrock.Interop.DespawnComponent_Nested.IWorldAccessor worldAccessor)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_35118a16((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)definition.Handle, (void*)worldAccessor.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _softRulesPrescribeDespawn(nint actor, nint definition, nint worldAccessor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void onDespawn(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d7e2962e((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onDespawn(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C1.hs_method_028c242c((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

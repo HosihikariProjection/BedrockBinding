@@ -38,19 +38,17 @@ public sealed unsafe partial class ExitVehicleSystemImpl : global::System.IDispo
         return __hs_handle;
     }
 
-    public void _singleTick(nint executionContext, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
-    {
-        NativeMethods.TablePtr->C1.hs_method_669dbb46((void*)__hosihikari_shim_handle, (void*)executionContext, (void*)entityContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _singleTick(nint executionContext, nint entityContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(nint executionContext)
-    {
-        NativeMethods.TablePtr->C1.hs_method_4e67df85((void*)__hosihikari_shim_handle, (void*)executionContext);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint executionContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ExitVehicleSystemImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.ExitVehicleSystemImpl arg0)
     {
@@ -63,9 +61,9 @@ public sealed unsafe partial class ExitVehicleSystemImpl : global::System.IDispo
         return new ExitVehicleSystemImpl((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const ExitFromPassengerFlagComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _tickExitVehicle(nint entity, nint passenger, nint aabb, nint svc, nint offsetsComponent, nint actorDataSeatOffset, nint rotation, nint exitFromPassengerFlag, nint actorIsBeingDestroyedFlag, nint ejectedByActivatorRailFlagComponent, nint baseGameVersion, nint vehicleView, nint modifier, bool isClientSide, nint collisionViews, nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const ExitFromPassengerFlagComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mIsClient
     {

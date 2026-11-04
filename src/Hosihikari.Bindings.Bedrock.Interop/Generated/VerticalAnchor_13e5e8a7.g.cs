@@ -41,20 +41,18 @@ public sealed unsafe partial class VerticalAnchor : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mHandler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_8dae00e1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8dae00e1((void*)__hosihikari_shim_handle);
     }
 
     public int mValue
     {
-        get => NativeMethods.TablePtr->C5.hs_get_a8a4e2da((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_a8a4e2da((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a8a4e2da((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a8a4e2da((void*)__hosihikari_shim_handle, value);
     }
 
-    public string toString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_d0e9568c((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -62,7 +60,7 @@ public sealed unsafe partial class VerticalAnchor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_13e5e8a7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_13e5e8a7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

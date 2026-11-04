@@ -38,10 +38,9 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool __workerPoolIsAsync()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_5191b59f((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __workerPoolIsAsync() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool workers, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler context, string name)
     {
@@ -58,51 +57,45 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_192d7ca2((void*)__hosihikari_shim_handle, (void*)workers.Handle, (void*)context.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            return (nint)NativeMethods.TablePtr->C3.hs_method_192d7ca2((void*)__hosihikari_shim_handle, (void*)workers.Handle, (void*)context.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
         }
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_f1054a4c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getState()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_5d0a984f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getState() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _processCoroutines()
-    {
-        NativeMethods.TablePtr->C4.hs_method_34b3fbb8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _processCoroutines() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _queueSync_DEPRECATED(nint startInfo, nint task) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _queue_DEPRECATED(nint startInfo, nint task, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _requeueTask(global::Hosihikari.Bindings.Abi.SharedHandle? task, bool queueImmediate)
-    {
-        NativeMethods.TablePtr->C4.hs_method_3c0b7afe((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), queueImmediate);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _requeueTask(nint task, bool queueImmediate) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _taskComplete(global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase? task)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f5349c3e((void*)__hosihikari_shim_handle, (void*)(task?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _taskComplete(nint task) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _taskRegister(global::Hosihikari.Bindings.Abi.SharedHandle? task)
-    {
-        NativeMethods.TablePtr->C4.hs_method_b7cc33f0((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _taskRegister(nint task) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TaskGroup Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_998ee4a7();
+        var handle = NativeMethods.TablePtr->C3.hs_create_998ee4a7();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -126,7 +119,7 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes2);
         fixed (byte* __hs_stringData2 = __hs_stringBytes2)
         {
-            var handle = NativeMethods.TablePtr->C4.hs_create_79af4f8d((void*)workers.Handle, (void*)context.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
+            var handle = NativeMethods.TablePtr->C3.hs_create_79af4f8d((void*)workers.Handle, (void*)context.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -138,7 +131,7 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
 
     public static TaskGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.TaskGroup arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e7ab74b8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_e7ab74b8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -147,129 +140,128 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
         return new TaskGroup((nint)handle);
     }
 
-    public void _doWorkUntil(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.SharedAsync_void_ task, nint workStarted)
-    {
-        NativeMethods.TablePtr->C4.hs_method_bad86ec3((void*)__hosihikari_shim_handle, (void*)task.Handle, (void*)workStarted);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doWorkUntil(nint task, nint workStarted) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _forAllTasks(nint @lock, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _queueInternal(global::Hosihikari.Bindings.Abi.SharedHandle? bgtask)
     {
-        NativeMethods.TablePtr->C4.hs_method_41c48110((void*)__hosihikari_shim_handle, bgtask?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C3.hs_method_41c48110((void*)__hosihikari_shim_handle, bgtask?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
     public bool _workerPoolIsAsync()
     {
-        return NativeMethods.TablePtr->C4.hs_method_73db959e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_73db959e((void*)__hosihikari_shim_handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void flush(nint waitFn) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.IBackgroundTaskOwner? getCurrentTaskGroup()
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_01aca6c9();
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_01aca6c9();
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IBackgroundTaskOwner((nint)__hs_handle, false) : null;
     }
 
     public int getState()
     {
-        return NativeMethods.TablePtr->C4.hs_method_ad0fcba0((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_ad0fcba0((void*)__hosihikari_shim_handle);
     }
 
     public bool isEmpty()
     {
-        return NativeMethods.TablePtr->C4.hs_method_035d375e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_035d375e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mCheckOwnerThread
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0349d1ef((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_0349d1ef((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0349d1ef((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_0349d1ef((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnumCurr_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7bfa8751((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7bfa8751((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnumNext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f1de4cf4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f1de4cf4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae2a76b1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae2a76b1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c2eb29c1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c2eb29c1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mResumeTaskHandle_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7f2b78a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7f2b78a0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mResumeTaskMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ede4fb22((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ede4fb22((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScheduler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_06f7abd3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_06f7abd3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mState_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f3729e76((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f3729e76((void*)__hosihikari_shim_handle);
     }
 
     public ulong mTaskCount
     {
-        get => NativeMethods.TablePtr->C4.hs_get_baca6b2a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_baca6b2a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_baca6b2a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_baca6b2a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTasks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_30de2531((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_30de2531((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWorkers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_20a630ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_20a630ba((void*)__hosihikari_shim_handle);
     }
 
     public void processCoroutines()
     {
-        NativeMethods.TablePtr->C4.hs_method_817ee9a9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_817ee9a9((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint queueChildSync_DEPRECATED(nint startInfo, nint task) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint queueChild_DEPRECATED(nint startInfo, nint task, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
     public nint queueSync_DEPRECATED(nint startInfo, nint task) =>
@@ -281,22 +273,21 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
 
     public void requeueTask(global::Hosihikari.Bindings.Abi.SharedHandle? task, bool queueImmediate)
     {
-        NativeMethods.TablePtr->C4.hs_method_a6f55e84((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), queueImmediate);
+        NativeMethods.TablePtr->C3.hs_method_a6f55e84((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), queueImmediate);
     }
 
-    public void resume()
-    {
-        NativeMethods.TablePtr->C4.hs_method_39c6de1e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void resume() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void taskComplete(global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase? task)
     {
-        NativeMethods.TablePtr->C4.hs_method_4371da41((void*)__hosihikari_shim_handle, (void*)(task?.Handle ?? 0));
+        NativeMethods.TablePtr->C3.hs_method_4371da41((void*)__hosihikari_shim_handle, (void*)(task?.Handle ?? 0));
     }
 
     public void taskRegister(global::Hosihikari.Bindings.Abi.SharedHandle? task)
     {
-        NativeMethods.TablePtr->C4.hs_method_dd6239d5((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C3.hs_method_dd6239d5((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
 
@@ -306,7 +297,7 @@ public sealed unsafe partial class TaskGroup : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_bedb7886((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_bedb7886((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -49,10 +49,9 @@ public sealed unsafe partial class BlockComponentDirectData : global::System.IDi
         return new BlockComponentDirectData((nint)handle);
     }
 
-    public void _finalizeInit(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e26800a6((void*)__hosihikari_shim_handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _finalizeInit(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mBlockCollisionBoxComponent
     {

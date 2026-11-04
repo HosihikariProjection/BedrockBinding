@@ -38,29 +38,25 @@ public sealed unsafe partial class StickInGroundSubcomponent : global::System.ID
         return __hs_handle;
     }
 
-    public void _doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent component)
-    {
-        NativeMethods.TablePtr->C4.hs_method_8d8ef8a3((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doOnHitEffect(nint owner, nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _getName()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_a89f0c31((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)
-    {
-        NativeMethods.TablePtr->C4.hs_method_4d419a63((void*)__hosihikari_shim_handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initFromDefinition(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value component)
-    {
-        NativeMethods.TablePtr->C4.hs_method_77b935cc((void*)__hosihikari_shim_handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _writetoJSON(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StickInGroundSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.StickInGroundSubcomponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c50cd68b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c50cd68b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,28 +67,28 @@ public sealed unsafe partial class StickInGroundSubcomponent : global::System.ID
 
     public void doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent component)
     {
-        NativeMethods.TablePtr->C4.hs_method_b5a4d986((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b5a4d986((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
     }
 
     public nint getName()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_df78c1d2((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_df78c1d2((void*)__hosihikari_shim_handle);
     }
 
     public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)
     {
-        NativeMethods.TablePtr->C4.hs_method_b3a99f76((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C3.hs_method_b3a99f76((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
     public int mShakeTime
     {
-        get => NativeMethods.TablePtr->C4.hs_get_301e69e1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_301e69e1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_301e69e1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_301e69e1((void*)__hosihikari_shim_handle, value);
     }
 
     public void writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value component)
     {
-        NativeMethods.TablePtr->C4.hs_method_cf96728e((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C3.hs_method_cf96728e((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
 
@@ -102,7 +98,7 @@ public sealed unsafe partial class StickInGroundSubcomponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_539d964f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_539d964f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,13 +38,13 @@ public sealed unsafe partial class StringByteOutput : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _writeBytes(nint data, ulong bytes)
     {
-        NativeMethods.TablePtr->C4.hs_method_5941244c((void*)__hosihikari_shim_handle, (void*)data, bytes);
+        NativeMethods.TablePtr->C3.hs_method_5941244c((void*)__hosihikari_shim_handle, (void*)data, bytes);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the class stores borrowed strings but the constructor has no string parameter.", false)]
@@ -62,17 +62,17 @@ public sealed unsafe partial class StringByteOutput : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBuffer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f328835c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f328835c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput((nint)NativeMethods.TablePtr->C4.hs_method_3a4cf29d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StringByteOutput((nint)NativeMethods.TablePtr->C3.hs_method_3a4cf29d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void writeBytes(nint data, ulong bytes)
     {
-        NativeMethods.TablePtr->C4.hs_method_1a6b782c((void*)__hosihikari_shim_handle, (void*)data, bytes);
+        NativeMethods.TablePtr->C3.hs_method_1a6b782c((void*)__hosihikari_shim_handle, (void*)data, bytes);
     }
 
 
@@ -82,7 +82,7 @@ public sealed unsafe partial class StringByteOutput : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ae451fd5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ae451fd5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

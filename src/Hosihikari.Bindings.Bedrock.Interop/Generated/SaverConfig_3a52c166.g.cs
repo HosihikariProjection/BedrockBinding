@@ -40,14 +40,14 @@ public sealed unsafe partial class SaverConfig : global::System.IDisposable
 
     public bool mSkipDefaultFields
     {
-        get => NativeMethods.TablePtr->C5.hs_get_460bf124((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_460bf124((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_460bf124((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_460bf124((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mWriteDeprecatedFields
     {
-        get => NativeMethods.TablePtr->C5.hs_get_43cb75c1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_43cb75c1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_43cb75c1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_43cb75c1((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class SaverConfig : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_3a52c166((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_3a52c166((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

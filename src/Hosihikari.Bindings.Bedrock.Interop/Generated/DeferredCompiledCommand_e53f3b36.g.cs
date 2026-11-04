@@ -38,14 +38,13 @@ public sealed unsafe partial class DeferredCompiledCommand : global::System.IDis
         return __hs_handle;
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands arg0)
-    {
-        NativeMethods.TablePtr->C1.hs_method_6ec5e401((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands arg0)
     {

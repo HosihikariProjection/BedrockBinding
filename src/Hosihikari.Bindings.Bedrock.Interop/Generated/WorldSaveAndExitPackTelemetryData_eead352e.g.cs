@@ -38,14 +38,13 @@ public sealed unsafe partial class WorldSaveAndExitPackTelemetryData : global::S
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_29327191((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WorldSaveAndExitPackTelemetryData Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_98242c45();
+        var handle = NativeMethods.TablePtr->C4.hs_create_98242c45();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class WorldSaveAndExitPackTelemetryData : global::S
 
     public static WorldSaveAndExitPackTelemetryData Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_8623c799((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_8623c799((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,66 +67,66 @@ public sealed unsafe partial class WorldSaveAndExitPackTelemetryData : global::S
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6582b4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_4b5bb36a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4b5bb36a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6a2feb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b71a2d3e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b71a2d3e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7cdcb7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b7b95659((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b7b95659((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9f4afd_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_cd9d3ad2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_cd9d3ad2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka2c5b1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_24b4459d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_24b4459d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka702ee_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_63593641((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_63593641((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkda8e73_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_2a696ed2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2a696ed2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkea68ce_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3c2811fe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3c2811fe((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkeb2c98_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_a49e2566((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a49e2566((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf9d3a8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e4622603((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e4622603((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData((nint)NativeMethods.TablePtr->C5.hs_method_731c0c21((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldSaveAndExitPackTelemetryData((nint)NativeMethods.TablePtr->C4.hs_method_731c0c21((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -137,7 +136,7 @@ public sealed unsafe partial class WorldSaveAndExitPackTelemetryData : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_eead352e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_eead352e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

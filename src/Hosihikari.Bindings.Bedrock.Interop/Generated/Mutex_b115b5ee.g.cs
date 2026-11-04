@@ -38,14 +38,13 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_81f10cd6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Mutex Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_707027dd();
+        var handle = NativeMethods.TablePtr->C4.hs_create_707027dd();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
 
     public static Mutex Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_5f8c25a9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_5f8c25a9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,12 +67,12 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk269f64_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_48848e06((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_48848e06((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex((nint)NativeMethods.TablePtr->C5.hs_method_af792af5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Mutex((nint)NativeMethods.TablePtr->C4.hs_method_af792af5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -83,7 +82,7 @@ public sealed unsafe partial class Mutex : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_b115b5ee((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b115b5ee((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -61,7 +61,7 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
 
     public static SetActorDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID id, global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataEntityWrapper entityData, global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent? propertyComponent, ulong tick, bool packAll)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_669d990a((void*)id.Handle, (void*)entityData.Handle, (void*)(propertyComponent?.Handle ?? 0), tick, packAll);
+        var handle = NativeMethods.TablePtr->C3.hs_create_669d990a((void*)id.Handle, (void*)entityData.Handle, (void*)(propertyComponent?.Handle ?? 0), tick, packAll);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,7 +72,7 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
 
     public static SetActorDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ecd5b7dd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ecd5b7dd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,34 +84,34 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b9588213((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b9588213((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackedItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_07cbb308((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_07cbb308((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSynchedProperties_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_cf7021b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cf7021b6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTick_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_024749ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_024749ba((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload((nint)NativeMethods.TablePtr->C4.hs_method_18c1d708((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload((nint)NativeMethods.TablePtr->C3.hs_method_18c1d708((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 

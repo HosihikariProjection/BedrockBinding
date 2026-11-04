@@ -67,10 +67,9 @@ public sealed unsafe partial class EffectCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_8b3b7340((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e8792cf1((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EffectCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.EffectCommand arg0)
     {
@@ -83,20 +82,17 @@ public sealed unsafe partial class EffectCommand : global::System.IDisposable
         return new EffectCommand((nint)handle);
     }
 
-    public void _add(nint targets, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration duration)
-    {
-        NativeMethods.TablePtr->C1.hs_method_56d033c7((void*)__hosihikari_shim_handle, (void*)targets, (void*)output.Handle, (void*)duration.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _add(nint targets, nint output, nint duration) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _clearAllEffects(nint targets, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f76764b1((void*)targets, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _clearAllEffects(nint targets, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _clearEffect(nint targets, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, global::Hosihikari.Bindings.Bedrock.Interop.MobEffect effect, bool throwsErrorOnNoEffect)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a11ca281((void*)__hosihikari_shim_handle, (void*)targets, (void*)output.Handle, (void*)effect.Handle, throwsErrorOnNoEffect);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _clearEffect(nint targets, nint output, nint effect, bool throwsErrorOnNoEffect) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {

@@ -49,10 +49,9 @@ public sealed unsafe partial class SimpleGrid : global::System.IDisposable
         return new SimpleGrid((nint)handle);
     }
 
-    public bool edgesTo(int x, int y, int ifValue)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_3f170511((void*)__hosihikari_shim_handle, x, y, ifValue) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool edgesTo(int x, int y, int ifValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGrid_Address

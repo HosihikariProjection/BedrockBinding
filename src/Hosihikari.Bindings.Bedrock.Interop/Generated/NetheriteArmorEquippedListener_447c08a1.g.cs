@@ -38,14 +38,13 @@ public sealed unsafe partial class NetheriteArmorEquippedListener : global::Syst
         return __hs_handle;
     }
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorEquippedArmorEvent actorEquippedArmorEvent)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_28f83918((void*)__hosihikari_shim_handle, (void*)actorEquippedArmorEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent(nint actorEquippedArmorEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NetheriteArmorEquippedListener Create(global::Hosihikari.Bindings.Bedrock.Interop.NetheriteArmorEquippedListener arg0)
     {

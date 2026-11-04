@@ -49,9 +49,9 @@ public sealed unsafe partial class ActorFilterGroup : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_2dfa8671((void*)__hosihikari_shim_handle, (void*)jsonVal.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorFilterGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup arg0)
     {
@@ -64,24 +64,9 @@ public sealed unsafe partial class ActorFilterGroup : global::System.IDisposable
         return new ActorFilterGroup((nint)handle);
     }
 
-    public bool _addLegacyFilter(string name, global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping legacy, global::Hosihikari.Bindings.Bedrock.Interop.FilterInput filterInput)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C0.hs_method_3ae8e7ec((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)legacy.Handle, (void*)filterInput.Handle) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _addLegacyFilter(nint name, nint legacy, nint filterInput) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _createSubgroup(byte type)
     {
@@ -89,77 +74,30 @@ public sealed unsafe partial class ActorFilterGroup : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public bool _parseMemberCollectionJSONCpp(byte collectionType, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonVal)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_a8019547((void*)__hosihikari_shim_handle, collectionType, (void*)jsonVal.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _parseMemberCollectionJSONCpp(nint collectionType, nint jsonVal) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _parseObjectJSONCpp(string name, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonVal)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C0.hs_method_cf163300((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)jsonVal.Handle) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _parseObjectJSONCpp(nint name, nint jsonVal) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _processLegacyArray(string name, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonVal, global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping legacy)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C0.hs_method_860ac823((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)jsonVal.Handle, (void*)legacy.Handle) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _processLegacyArray(nint name, nint jsonVal, nint legacy) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _processLegacyMember(string name, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonVal, global::Hosihikari.Bindings.Bedrock.Interop.ActorFilterGroup_Nested.LegacyMapping legacy)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C0.hs_method_a1387db3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)jsonVal.Handle, (void*)legacy.Handle) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _processLegacyMember(nint name, nint jsonVal, nint legacy) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool evaluateActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor e, global::Hosihikari.Bindings.Bedrock.Interop.VariantParameterListConst @params)
     {
         return NativeMethods.TablePtr->C0.hs_method_5f81948e((void*)__hosihikari_shim_handle, (void*)e.Handle, (void*)@params.Handle) != 0;
     }
 
-    public static void initialize()
-    {
-        NativeMethods.TablePtr->C0.hs_method_2b0b3d78();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initialize() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonVal)
     {

@@ -40,7 +40,7 @@ public sealed unsafe partial class SuspectTrackingComponent : global::System.IDi
 
     public static SuspectTrackingComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SuspectTrackingComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_fbd29a9b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_fbd29a9b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class SuspectTrackingComponent : global::System.IDi
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastSuspicionTick_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_09b4ee1f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_09b4ee1f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSuspiciousPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5232d8d6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5232d8d6((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class SuspectTrackingComponent : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f47aca82((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f47aca82((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

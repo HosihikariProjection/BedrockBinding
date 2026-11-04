@@ -38,24 +38,9 @@ public sealed unsafe partial class VersionedActorDamageCause : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(string name, int cause, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version version, byte? deprecatedMajorVersion)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_078713f3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, cause, (void*)version.Handle, deprecatedMajorVersion ?? default(byte), deprecatedMajorVersion.HasValue);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint name, nint cause, nint version, nint deprecatedMajorVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VersionedActorDamageCause Create()
     {
@@ -79,35 +64,13 @@ public sealed unsafe partial class VersionedActorDamageCause : global::System.ID
         return new VersionedActorDamageCause((nint)handle);
     }
 
-    public static VersionedActorDamageCause Create(string name, int cause, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version version, byte? deprecatedMajorVersion)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_5756177e(__hs_stringData0, (nuint)__hs_stringByteCount0, cause, (void*)version.Handle, deprecatedMajorVersion ?? default(byte), deprecatedMajorVersion.HasValue);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static VersionedActorDamageCause Create(nint name, nint cause, nint version, nint deprecatedMajorVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-            return new VersionedActorDamageCause((nint)handle);
-        }
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version getVersion()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version((nint)NativeMethods.TablePtr->C4.hs_method_d1eb6e85((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getVersion() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mCause
     {

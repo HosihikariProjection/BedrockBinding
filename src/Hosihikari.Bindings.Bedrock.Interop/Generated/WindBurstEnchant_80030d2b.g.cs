@@ -92,40 +92,33 @@ public sealed unsafe partial class WindBurstEnchant : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_52f1197f((void*)__hosihikari_shim_handle);
     }
 
-    public void _doPostItemHurtActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, int enchantLevel)
-    {
-        NativeMethods.TablePtr->C4.hs_method_90b4ef0d((void*)__hosihikari_shim_handle, (void*)attacker.Handle, (void*)victim.Handle, enchantLevel);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doPostItemHurtActor(nint attacker, nint victim, int enchantLevel) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public float _getDamageBonus(int arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg2)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_25c89298((void*)__hosihikari_shim_handle, arg0, (void*)arg1.Handle, (void*)arg2.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getDamageBonus(int arg0, nint arg1, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_7ed321aa((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxLevel()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_21c3c3aa((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_532debff((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isDiscoverable()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_c803be92((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isDiscoverable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isTreasureOnly()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_3363718c((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isTreasureOnly() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WindBurstEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.WindBurstEnchant arg0)
     {

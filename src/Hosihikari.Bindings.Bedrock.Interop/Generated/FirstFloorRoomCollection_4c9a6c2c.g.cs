@@ -38,47 +38,33 @@ public sealed unsafe partial class FirstFloorRoomCollection : global::System.IDi
         return __hs_handle;
     }
 
-    public string _get1x1(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_d79b986a((void*)__hosihikari_shim_handle, (void*)random.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _get1x1(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _get1x1Secret(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_e094bf9d((void*)__hosihikari_shim_handle, (void*)random.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _get1x1Secret(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _get1x2FrontEntrance(global::Hosihikari.Bindings.Bedrock.Interop.Random random, bool isStairsRoom)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_f935178d((void*)__hosihikari_shim_handle, (void*)random.Handle, isStairsRoom);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _get1x2FrontEntrance(nint random, bool isStairsRoom) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _get1x2Secret(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_096779fc((void*)__hosihikari_shim_handle, (void*)random.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _get1x2Secret(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _get1x2SideEntrance(global::Hosihikari.Bindings.Bedrock.Interop.Random random, bool isStairsRoom)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_7acb96b5((void*)__hosihikari_shim_handle, (void*)random.Handle, isStairsRoom);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _get1x2SideEntrance(nint random, bool isStairsRoom) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _get2x2(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_7d1591db((void*)__hosihikari_shim_handle, (void*)random.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _get2x2(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _get2x2Secret(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_273cc6c4((void*)__hosihikari_shim_handle, (void*)random.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _get2x2Secret(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FirstFloorRoomCollection Create(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.FirstFloorRoomCollection arg0)
     {

@@ -38,14 +38,13 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value skinDataJson)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_7d2838fe((void*)__hosihikari_shim_handle, (void*)skinDataJson.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint skinDataJson) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SkinData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_990da051();
+        var handle = NativeMethods.TablePtr->C3.hs_create_990da051();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,20 +53,13 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
         return new SkinData((nint)handle);
     }
 
-    public static SkinData Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value skinDataJson)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4231d7d4((void*)skinDataJson.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SkinData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static SkinData Create(nint skinDataJson) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SkinData Create(global::Hosihikari.Bindings.Bedrock.Interop.SkinData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_cff2023b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_cff2023b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,21 +68,20 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
         return new SkinData((nint)handle);
     }
 
-    public void applyToActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C4.hs_method_7a700b5a((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void applyToActor(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMarkVariant_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_270b171e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_270b171e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVariant_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6be63aa4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6be63aa4((void*)__hosihikari_shim_handle);
     }
 
 
@@ -100,7 +91,7 @@ public sealed unsafe partial class SkinData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_40cd3d27((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_40cd3d27((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

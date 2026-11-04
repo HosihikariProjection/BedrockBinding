@@ -60,14 +60,13 @@ public sealed unsafe partial class BaseGamePackSlices : global::System.IDisposab
         return new BaseGamePackSlices((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addFromVersions(nint baseGameVersions, nint resourcePackRepository, nint packId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void applyPackSlices(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Abi.SharedHandle? resourcePackRepository, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack packStack)
-    {
-        NativeMethods.TablePtr->C0.hs_method_1ecec4f3((void*)__hosihikari_shim_handle, (void*)baseGameVersion.Handle, resourcePackRepository?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)packStack.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void applyPackSlices(nint baseGameVersion, nint resourcePackRepository, nint packStack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbc0bb2_Address

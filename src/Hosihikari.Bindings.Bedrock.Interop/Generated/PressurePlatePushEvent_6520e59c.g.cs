@@ -40,7 +40,7 @@ public sealed unsafe partial class PressurePlatePushEvent : global::System.IDisp
 
     public static PressurePlatePushEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PressurePlatePushEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_40c062d8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_40c062d8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,29 +52,29 @@ public sealed unsafe partial class PressurePlatePushEvent : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockSourceHandle_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_04942760((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_04942760((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPressurePlateBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5859c651((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5859c651((void*)__hosihikari_shim_handle);
     }
 
     public int mPreviousRedstonePower
     {
-        get => NativeMethods.TablePtr->C3.hs_get_1bb3d79d((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_1bb3d79d((void*)__hosihikari_shim_handle);
     }
 
     public int mRedstonePower
     {
-        get => NativeMethods.TablePtr->C3.hs_get_171c8ea0((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_171c8ea0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4450f35e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4450f35e((void*)__hosihikari_shim_handle);
     }
 
 
@@ -84,7 +84,7 @@ public sealed unsafe partial class PressurePlatePushEvent : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_6520e59c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6520e59c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

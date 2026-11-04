@@ -40,14 +40,14 @@ public sealed unsafe partial class BranchSize : global::System.IDisposable
 
     public int sizeX
     {
-        get => NativeMethods.TablePtr->C2.hs_get_76fda23e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_76fda23e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_76fda23e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_76fda23e((void*)__hosihikari_shim_handle, value);
     }
 
     public int sizeZ
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2ec22075((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_2ec22075((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_2ec22075((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_2ec22075((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class BranchSize : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d7607a98((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_d7607a98((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

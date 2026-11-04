@@ -41,22 +41,20 @@ public sealed unsafe partial class ContentLogEndPoint : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5ff30fb7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_5ff30fb7((void*)__hosihikari_shim_handle);
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_a65cc5da((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _log(nint arg0)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f859dc36((void*)__hosihikari_shim_handle, (void*)arg0);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _log(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ContentLogEndPoint Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3fd9bab8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_3fd9bab8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,28 +63,27 @@ public sealed unsafe partial class ContentLogEndPoint : global::System.IDisposab
         return new ContentLogEndPoint((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _register(nint id) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _unregister()
-    {
-        NativeMethods.TablePtr->C1.hs_method_726c1e64((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _unregister() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void log(uint area, uint level, nint message)
     {
-        NativeMethods.TablePtr->C1.hs_method_868b3815((void*)__hosihikari_shim_handle, area, level, (void*)message);
+        NativeMethods.TablePtr->C0.hs_method_868b3815((void*)__hosihikari_shim_handle, area, level, (void*)message);
     }
 
     public void log(nint arg0)
     {
-        NativeMethods.TablePtr->C1.hs_method_d0c60e89((void*)__hosihikari_shim_handle, (void*)arg0);
+        NativeMethods.TablePtr->C0.hs_method_d0c60e89((void*)__hosihikari_shim_handle, (void*)arg0);
     }
 
     public bool logOnlyOnce()
     {
-        return NativeMethods.TablePtr->C1.hs_method_f81e7b36((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_f81e7b36((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -96,7 +93,7 @@ public sealed unsafe partial class ContentLogEndPoint : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_e7efd29a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_e7efd29a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,12 +41,12 @@ public sealed unsafe partial class PacketSender : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_62a6c715((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_62a6c715((void*)__hosihikari_shim_handle);
     }
 
     public static PacketSender Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketSender arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7d152e43((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_7d152e43((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,43 +61,43 @@ public sealed unsafe partial class PacketSender : global::System.IDisposable
 
     public bool isInitialized()
     {
-        return NativeMethods.TablePtr->C3.hs_method_87ac4a03((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_87ac4a03((void*)__hosihikari_shim_handle) != 0;
     }
 
     public byte mSubId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b5df139b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_b5df139b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_b5df139b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_b5df139b((void*)__hosihikari_shim_handle, value);
     }
 
     public void send(global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
-        NativeMethods.TablePtr->C3.hs_method_0a895c65((void*)__hosihikari_shim_handle, (void*)packet.Handle);
+        NativeMethods.TablePtr->C2.hs_method_0a895c65((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
     public void sendBroadcast(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier exceptId, byte exceptSubid, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
-        NativeMethods.TablePtr->C3.hs_method_c489cf1b((void*)__hosihikari_shim_handle, (void*)exceptId.Handle, exceptSubid, (void*)packet.Handle);
+        NativeMethods.TablePtr->C2.hs_method_c489cf1b((void*)__hosihikari_shim_handle, (void*)exceptId.Handle, exceptSubid, (void*)packet.Handle);
     }
 
     public void sendBroadcast(global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
-        NativeMethods.TablePtr->C3.hs_method_670ce8fa((void*)__hosihikari_shim_handle, (void*)packet.Handle);
+        NativeMethods.TablePtr->C2.hs_method_670ce8fa((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
     public void sendTo(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, byte subid, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
-        NativeMethods.TablePtr->C3.hs_method_6bb7bc27((void*)__hosihikari_shim_handle, (void*)id.Handle, subid, (void*)packet.Handle);
+        NativeMethods.TablePtr->C2.hs_method_6bb7bc27((void*)__hosihikari_shim_handle, (void*)id.Handle, subid, (void*)packet.Handle);
     }
 
     public void sendToClient(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, byte recipientSubId)
     {
-        NativeMethods.TablePtr->C3.hs_method_d53cfaab((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)packet.Handle, recipientSubId);
+        NativeMethods.TablePtr->C2.hs_method_d53cfaab((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)packet.Handle, recipientSubId);
     }
 
     public void sendToClient(global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent? userIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
-        NativeMethods.TablePtr->C3.hs_method_121bf035((void*)__hosihikari_shim_handle, (void*)(userIdentifier?.Handle ?? 0), (void*)packet.Handle);
+        NativeMethods.TablePtr->C2.hs_method_121bf035((void*)__hosihikari_shim_handle, (void*)(userIdentifier?.Handle ?? 0), (void*)packet.Handle);
     }
 
     public void sendToClients(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId[] ids, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
@@ -111,13 +111,13 @@ public sealed unsafe partial class PacketSender : global::System.IDisposable
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            NativeMethods.TablePtr->C3.hs_method_801e3048((void*)__hosihikari_shim_handle, (void*)packet.Handle, __hs_vectorData0, (nuint)(ids?.Length ?? 0));
+            NativeMethods.TablePtr->C2.hs_method_801e3048((void*)__hosihikari_shim_handle, (void*)packet.Handle, __hs_vectorData0, (nuint)(ids?.Length ?? 0));
         }
     }
 
     public void sendToServer(global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
-        NativeMethods.TablePtr->C3.hs_method_3c82d587((void*)__hosihikari_shim_handle, (void*)packet.Handle);
+        NativeMethods.TablePtr->C2.hs_method_3c82d587((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
 
@@ -127,7 +127,7 @@ public sealed unsafe partial class PacketSender : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0238d02b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0238d02b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

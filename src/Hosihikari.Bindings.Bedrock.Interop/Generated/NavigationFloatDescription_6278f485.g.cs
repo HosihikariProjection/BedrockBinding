@@ -164,10 +164,9 @@ public sealed unsafe partial class NavigationFloatDescription : global::System.I
         set => NativeMethods.TablePtr->C2.hs_set_a7a29e48((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _getJsonName()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_999d2069((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getJsonName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NavigationFloatDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.NavigationFloatDescription arg0)
     {

@@ -38,15 +38,13 @@ public sealed unsafe partial class AbsorptionMobEffect : global::System.IDisposa
         return __hs_handle;
     }
 
-    public void _applyEffects(global::Hosihikari.Bindings.Bedrock.Interop.Actor target, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration durationTicks, int amplification)
-    {
-        NativeMethods.TablePtr->C0.hs_method_24df678d((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)durationTicks.Handle, amplification);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyEffects(nint target, nint durationTicks, int amplification) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _removeEffects(global::Hosihikari.Bindings.Bedrock.Interop.BaseAttributeMap attributeMapToRemoveFrom)
-    {
-        NativeMethods.TablePtr->C0.hs_method_48ade19d((void*)__hosihikari_shim_handle, (void*)attributeMapToRemoveFrom.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _removeEffects(nint attributeMapToRemoveFrom) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AbsorptionMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.AbsorptionMobEffect arg0)
     {

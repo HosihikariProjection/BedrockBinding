@@ -38,10 +38,9 @@ public sealed unsafe partial class GetAttachPositionViews : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(nint c)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_b3ca37d9((void*)__hosihikari_shim_handle, (void*)c);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint c) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GetAttachPositionViews Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class GetAttachPositionViews : global::System.IDisp
         return new GetAttachPositionViews((nint)handle);
     }
 
-    public static GetAttachPositionViews Create(nint c)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_dbcb9e4a((void*)c);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GetAttachPositionViews((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static GetAttachPositionViews Create(nint c) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GetAttachPositionViews Create(global::Hosihikari.Bindings.Bedrock.Interop.GetAttachPositionViews arg0)
     {

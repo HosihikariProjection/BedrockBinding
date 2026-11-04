@@ -49,10 +49,9 @@ public sealed unsafe partial class ChunkKey : global::System.IDisposable
         return new ChunkKey((nint)handle);
     }
 
-    public ulong hashCode()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_39a9d2c4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong hashCode() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint id_Address

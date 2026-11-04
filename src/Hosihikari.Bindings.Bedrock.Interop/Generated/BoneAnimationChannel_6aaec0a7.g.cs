@@ -49,10 +49,9 @@ public sealed unsafe partial class BoneAnimationChannel : global::System.IDispos
         return new BoneAnimationChannel((nint)handle);
     }
 
-    public void animate(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams, global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientation destBoneOrientation, float scale, nint boneAnimationChannelPlayer)
-    {
-        NativeMethods.TablePtr->C0.hs_method_28212048((void*)__hosihikari_shim_handle, (void*)renderParams.Handle, (void*)destBoneOrientation.Handle, scale, (void*)boneAnimationChannelPlayer);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void animate(nint renderParams, nint destBoneOrientation, float scale, nint boneAnimationChannelPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mBoneTransformType
     {

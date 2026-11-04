@@ -38,16 +38,13 @@ public sealed unsafe partial class MinecraftGameTestBatchRunner : global::System
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? __createGameTestInstance(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction function)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_72c173c5((void*)__hosihikari_shim_handle, (void*)function.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __createGameTestInstance(nint function) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __runTest(global::Hosihikari.Bindings.Abi.SharedHandle? test, global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker ticker)
-    {
-        NativeMethods.TablePtr->C2.hs_method_b41d0b03((void*)__hosihikari_shim_handle, test?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)ticker.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __runTest(nint test, nint ticker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MinecraftGameTestBatchRunner Create()
     {

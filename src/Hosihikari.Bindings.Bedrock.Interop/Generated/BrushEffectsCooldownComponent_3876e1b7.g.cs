@@ -49,10 +49,9 @@ public sealed unsafe partial class BrushEffectsCooldownComponent : global::Syste
         return new BrushEffectsCooldownComponent((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ExpiringTick EXPIRED_TICK()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ExpiringTick((nint)NativeMethods.TablePtr->C0.hs_method_4285a8ff(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint EXPIRED_TICK() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCooldown_Address

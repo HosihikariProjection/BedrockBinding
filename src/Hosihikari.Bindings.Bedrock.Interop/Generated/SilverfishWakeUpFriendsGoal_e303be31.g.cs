@@ -41,58 +41,40 @@ public sealed unsafe partial class SilverfishWakeUpFriendsGoal : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7f6c5b36((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7f6c5b36((void*)__hosihikari_shim_handle);
     }
 
     public int mRequiredControlFlags
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c2b6421e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_c2b6421e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c2b6421e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c2b6421e((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort mTypeId
     {
-        get => NativeMethods.TablePtr->C4.hs_get_81201dae((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_81201dae((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_81201dae((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_81201dae((void*)__hosihikari_shim_handle, value);
     }
 
-    public string _appendDebugInfo(string str)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(str);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(str, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_view = NativeMethods.TablePtr->C4.hs_method_33f845ae((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _appendDebugInfo(nint str) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _canUse()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_dc98b84b((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canUse() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick()
-    {
-        NativeMethods.TablePtr->C4.hs_method_69436cca((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SilverfishWakeUpFriendsGoal Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_7f0f9d6c();
+        var handle = NativeMethods.TablePtr->C3.hs_create_7f0f9d6c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -103,7 +85,7 @@ public sealed unsafe partial class SilverfishWakeUpFriendsGoal : global::System.
 
     public static SilverfishWakeUpFriendsGoal Create(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a5346828((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a5346828((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -127,36 +109,36 @@ public sealed unsafe partial class SilverfishWakeUpFriendsGoal : global::System.
         global::System.Text.Encoding.UTF8.GetBytes(str, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C4.hs_method_b1c01b63((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_view = NativeMethods.TablePtr->C3.hs_method_b1c01b63((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
 
     public bool canUse()
     {
-        return NativeMethods.TablePtr->C4.hs_method_f576333e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_f576333e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int mLookForFriends
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2f03cb33((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2f03cb33((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2f03cb33((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2f03cb33((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSilverfish_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_03839d40((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_03839d40((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal((nint)NativeMethods.TablePtr->C4.hs_method_9b958339((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SilverfishWakeUpFriendsGoal((nint)NativeMethods.TablePtr->C3.hs_method_9b958339((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void tick()
     {
-        NativeMethods.TablePtr->C4.hs_method_0497d499((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_0497d499((void*)__hosihikari_shim_handle);
     }
 
 
@@ -166,7 +148,7 @@ public sealed unsafe partial class SilverfishWakeUpFriendsGoal : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e303be31((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e303be31((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

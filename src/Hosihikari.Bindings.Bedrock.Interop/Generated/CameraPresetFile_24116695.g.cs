@@ -40,7 +40,7 @@ public sealed unsafe partial class CameraPresetFile : global::System.IDisposable
 
     public static CameraPresetFile Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.CameraPresetFile arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9e926dc3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9e926dc3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,26 +49,24 @@ public sealed unsafe partial class CameraPresetFile : global::System.IDisposable
         return new CameraPresetFile((nint)handle);
     }
 
-    public static nint VERSION()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_74cbda41();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint VERSION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_20279807((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2fb4b058((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2fb4b058((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_80624de7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_80624de7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -78,7 +76,7 @@ public sealed unsafe partial class CameraPresetFile : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_24116695((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_24116695((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

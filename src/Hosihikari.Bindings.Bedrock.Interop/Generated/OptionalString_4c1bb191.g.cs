@@ -40,12 +40,12 @@ public sealed unsafe partial class OptionalString : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_91bd782b((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_91bd782b((void*)__hosihikari_shim_handle);
     }
 
     public static OptionalString Create(global::Hosihikari.Bindings.Bedrock.Interop.OptionalString arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_99e20e32((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_99e20e32((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,13 +57,13 @@ public sealed unsafe partial class OptionalString : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint @string_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f788af7f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f788af7f((void*)__hosihikari_shim_handle);
     }
 
     public bool valid
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e94e8555((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_e94e8555((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e94e8555((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_e94e8555((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -73,7 +73,7 @@ public sealed unsafe partial class OptionalString : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4c1bb191((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4c1bb191((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

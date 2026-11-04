@@ -38,15 +38,13 @@ public sealed unsafe partial class ChatEvent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? sender, global::Hosihikari.Bindings.Bedrock.Interop.TextPacket packet)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_bb499c98((void*)__hosihikari_shim_handle, sender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)packet.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint sender, nint packet) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_7b5ad8d1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ChatEvent Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ChatEvent : global::System.IDisposable
         return new ChatEvent((nint)handle);
     }
 
-    public static ChatEvent Create(global::Hosihikari.Bindings.Abi.SharedHandle? sender, global::Hosihikari.Bindings.Bedrock.Interop.TextPacket packet)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_fe87014f(sender?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)packet.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ChatEvent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ChatEvent Create(nint sender, nint packet) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ChatEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ChatEvent arg0)
     {

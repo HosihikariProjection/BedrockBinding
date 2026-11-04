@@ -40,7 +40,7 @@ public sealed unsafe partial class NamePair : global::System.IDisposable
 
     public static NamePair Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1831ecb9();
+        var handle = NativeMethods.TablePtr->C3.hs_create_1831ecb9();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class NamePair : global::System.IDisposable
 
     public static NamePair Create(global::Hosihikari.Bindings.Bedrock.Interop.TextureSetHelpers.NamePair arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_181b6522((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_181b6522((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class NamePair : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk92c4f0_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1d729137((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1d729137((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcce0f1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6462ae42((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6462ae42((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TextureSetHelpers.NamePair operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextureSetHelpers.NamePair arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TextureSetHelpers.NamePair((nint)NativeMethods.TablePtr->C4.hs_method_b182489a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TextureSetHelpers.NamePair((nint)NativeMethods.TablePtr->C3.hs_method_b182489a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class NamePair : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_315567fc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_315567fc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

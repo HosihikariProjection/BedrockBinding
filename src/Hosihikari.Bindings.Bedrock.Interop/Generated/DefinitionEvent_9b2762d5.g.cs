@@ -70,18 +70,17 @@ public sealed unsafe partial class DefinitionEvent : global::System.IDisposable
         return new DefinitionEvent((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void evaluateEvent(nint @params, nint modifications) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent fromSharedType(nint definitionEvent)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent((nint)NativeMethods.TablePtr->C1.hs_method_0a437f44((void*)__hosihikari_shim_handle, (void*)definitionEvent), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint fromSharedType(nint definitionEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getSharedType() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'SharedTypes::v1_26_20::BlockDefinition::DeprecatedDefinitionEvent' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChildren_Address
@@ -119,10 +118,9 @@ public sealed unsafe partial class DefinitionEvent : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_33673e9a((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent((nint)NativeMethods.TablePtr->C1.hs_method_4cd61a8b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

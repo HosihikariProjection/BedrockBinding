@@ -38,15 +38,13 @@ public sealed unsafe partial class BreakBlocksComponent : global::System.IDispos
         return __hs_handle;
     }
 
-    public void breakNearbyBlocks(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C0.hs_method_644e8f8e((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void breakNearbyBlocks(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool isBreakable(global::Hosihikari.Bindings.Bedrock.Interop.BreakBlocksDescription? description, global::Hosihikari.Bindings.Bedrock.Interop.BlockType block)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_7d3eeb22((void*)(description?.Handle ?? 0), (void*)block.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool isBreakable(nint description, nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

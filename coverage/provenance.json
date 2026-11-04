@@ -2,7 +2,7 @@
     "generator":  "Hosihikari.Bindings.Generator 0.3.0 (IR 1.6.0)",
     "irVersion":  "1.6.0",
     "irManifestSha256":  "sha256:3a9d0e0ebcd2fe99c944bdc9e413ea0cd81236daeff4172406ff3e36b97d7f6d",
-    "coverageManifestSha256":  "sha256:3b5a176118079ac8372485602e42227a971beb2a30b12a447620fc9211421a21",
+    "coverageManifestSha256":  "sha256:1508f693981a307d47e990f3ba2353e94f99d77ec6458df7597097f5e8caaf05",
     "carrier":  "LeviLamina 072b9ffe0e9d9e0ec846f11d294880e892fe7770 (BDS 1.26.60.6)",
     "carrierCommit":  "072b9ffe0e9d9e0ec846f11d294880e892fe7770",
     "headers":  5169,
@@ -14,5 +14,5 @@
     "resolution":  "pl_resolve_symbol",
     "targetModule":  "bedrock_server",
     "tableVersion":  1,
-    "functions":  155734
+    "functions":  133615
 }

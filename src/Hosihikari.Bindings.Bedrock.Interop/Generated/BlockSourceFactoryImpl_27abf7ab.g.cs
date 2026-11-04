@@ -60,10 +60,9 @@ public sealed unsafe partial class BlockSourceFactoryImpl : global::System.IDisp
         return new BlockSourceFactoryImpl((nint)handle);
     }
 
-    public void _createOrUpdate(global::Hosihikari.Bindings.Bedrock.Interop.MockableOwnedBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType type)
-    {
-        NativeMethods.TablePtr->C0.hs_method_3a135d67((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)type.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _createOrUpdate(nint region, nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkef957b_Address

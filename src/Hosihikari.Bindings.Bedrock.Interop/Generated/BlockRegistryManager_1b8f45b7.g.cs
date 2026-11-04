@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockRegistryManager : global::System.IDispos
         return __hs_handle;
     }
 
-    public static nint mClientIdRegistryMap()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_732aafb3();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mClientIdRegistryMap() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

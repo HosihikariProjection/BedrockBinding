@@ -38,13 +38,13 @@ public sealed unsafe partial class ComponentItemDataLoader : global::System.IDis
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint bedrockLoadContext, nint packLoadInfo, nint ctx, nint validatorFn) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ComponentItemDataLoader Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b9969174();
+        var handle = NativeMethods.TablePtr->C0.hs_create_b9969174();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -53,13 +53,13 @@ public sealed unsafe partial class ComponentItemDataLoader : global::System.IDis
         return new ComponentItemDataLoader((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ComponentItemDataLoader Create(nint bedrockLoadContext, nint packLoadInfo, nint ctx, nint validatorFn) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ComponentItemDataLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemDataLoader arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_361bcf4f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_361bcf4f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,32 +68,32 @@ public sealed unsafe partial class ComponentItemDataLoader : global::System.IDis
         return new ComponentItemDataLoader((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Puv::LoadResult<ComponentItemDataAll_Latest>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint load(nint input, nint documentVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Puv::LoadResult<ComponentItemDataAll_Latest>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCtx_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0e40cfff((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_0e40cfff((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLoader_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_fed601a8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_fed601a8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackLoadInfo_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e88e6002((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_e88e6002((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValidatorFn_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_84868b90((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_84868b90((void*)__hosihikari_shim_handle);
     }
 
 
@@ -103,7 +103,7 @@ public sealed unsafe partial class ComponentItemDataLoader : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_606088d7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_606088d7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,15 +38,13 @@ public sealed unsafe partial class ScriptChunkValidator : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(nint chunkPositions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_cae0085f((void*)__hosihikari_shim_handle, (void*)chunkPositions, (void*)region.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint chunkPositions, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_4872095d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptChunkValidator Create()
     {
@@ -70,16 +68,9 @@ public sealed unsafe partial class ScriptChunkValidator : global::System.IDispos
         return new ScriptChunkValidator((nint)handle);
     }
 
-    public static ScriptChunkValidator Create(nint chunkPositions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_35f3df8d((void*)chunkPositions, (void*)region.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptChunkValidator((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptChunkValidator Create(nint chunkPositions, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkPositions_Address

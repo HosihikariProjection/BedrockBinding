@@ -38,20 +38,17 @@ public sealed unsafe partial class RemovedIntState : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _addValue(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C1.hs_method_de99da77((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _addValue(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _match(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagUpdaterNodeBuilder builder, ulong index)
-    {
-        NativeMethods.TablePtr->C1.hs_method_13fdf011((void*)__hosihikari_shim_handle, (void*)builder.Handle, index);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _match(nint builder, ulong index) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong _valueCount()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_6425fa92((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong _valueCount() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RemovedIntState Create(global::Hosihikari.Bindings.Bedrock.Interop.FlatteningUtils.RemovedIntState arg0)
     {

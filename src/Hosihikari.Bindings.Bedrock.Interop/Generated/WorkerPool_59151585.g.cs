@@ -55,10 +55,9 @@ public sealed unsafe partial class WorkerPool : global::System.IDisposable
         return new WorkerPool((nint)handle);
     }
 
-    public static void _registerPool(global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool pool)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1de525ca((void*)pool.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _registerPool(nint pool) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAsync
     {
@@ -92,65 +91,62 @@ public sealed unsafe partial class WorkerPool : global::System.IDisposable
     public nint mOwnerScheduler
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6dfcf207((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_6dfcf207((void*)__hosihikari_shim_handle, (void*)value);
+        set => NativeMethods.TablePtr->C4.hs_set_6dfcf207((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingWorkQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9deb5bc0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9deb5bc0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingWorkQueueLock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_0349225c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0349225c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPerfInfo_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_1615a53f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1615a53f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPoolPriority_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_f50f8828((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f50f8828((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSuspendLock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_fe6ecc47((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_fe6ecc47((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTaskQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_aa8fa158((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_aa8fa158((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWorkers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_2e95e5a1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2e95e5a1((void*)__hosihikari_shim_handle);
     }
 
-    public void queue(global::Hosihikari.Bindings.Abi.SharedHandle? task, bool queueImmediate)
-    {
-        NativeMethods.TablePtr->C5.hs_method_6a645c48((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), queueImmediate);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void queue(nint task, bool queueImmediate) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint sAllPools()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_720790ba();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sAllPools() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint sAllPoolsMutex()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_cf2a3157();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sAllPoolsMutex() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

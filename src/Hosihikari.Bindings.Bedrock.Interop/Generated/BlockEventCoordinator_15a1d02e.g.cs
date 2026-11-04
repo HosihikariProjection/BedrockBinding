@@ -48,10 +48,9 @@ public sealed unsafe partial class BlockEventCoordinator : global::System.IDispo
     public nint sendEvent_09e165dd(nint @event) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EventRef<MutableBlockGameplayEvent<CoordinatorResult>>' is not a known bindable declaration.");
 
-    public int sendEvent_31fe02e3(nint @event)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_31fe02e3((void*)__hosihikari_shim_handle, (void*)@event);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint sendEvent_31fe02e3(nint @event) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

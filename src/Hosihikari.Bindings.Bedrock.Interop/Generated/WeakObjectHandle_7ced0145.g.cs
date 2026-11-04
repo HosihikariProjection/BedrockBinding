@@ -77,10 +77,9 @@ public sealed unsafe partial class WeakObjectHandle : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakObjectHandle((nint)NativeMethods.TablePtr->C3.hs_method_5d87162f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool valid()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_d928f8c6((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool valid() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

@@ -67,10 +67,9 @@ public sealed unsafe partial class GameRuleCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_5f0d16e4((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d7bf0287((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameRuleCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.GameRuleCommand arg0)
     {
@@ -83,24 +82,9 @@ public sealed unsafe partial class GameRuleCommand : global::System.IDisposable
         return new GameRuleCommand((nint)handle);
     }
 
-    public static void createJsonIndex(string ruleName, global::Hosihikari.Bindings.Bedrock.Interop.GameRule rule, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value json, nint value)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(ruleName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(ruleName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_de0008f9(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)rule.Handle, (void*)json.Handle, (void*)value);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void createJsonIndex(nint ruleName, nint rule, nint json, nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {

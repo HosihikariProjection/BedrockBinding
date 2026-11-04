@@ -38,14 +38,13 @@ public sealed unsafe partial class ImitateMobSoundsComponent : global::System.ID
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint imitateMobMap() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the return type needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool imitateNearbyMobs(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_64d17ef9((void*)actor.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool imitateNearbyMobs(nint actor, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -53,7 +52,7 @@ public sealed unsafe partial class ImitateMobSoundsComponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_82259457((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_82259457((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,14 +38,13 @@ public sealed unsafe partial class GeneratorIteratorAny : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IRuntime? runtime, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope, nint generatorIteratorHandle, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IObjectInspector? inspector)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_6f17a80f((void*)__hosihikari_shim_handle, (void*)(runtime?.Handle ?? 0), (void*)contextId.Handle, (void*)scope.Handle, (void*)generatorIteratorHandle, (void*)(inspector?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint runtime, nint contextId, nint scope, nint generatorIteratorHandle, nint inspector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GeneratorIteratorAny Create()
     {
@@ -58,16 +57,9 @@ public sealed unsafe partial class GeneratorIteratorAny : global::System.IDispos
         return new GeneratorIteratorAny((nint)handle);
     }
 
-    public static GeneratorIteratorAny Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IRuntime? runtime, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope, nint generatorIteratorHandle, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IObjectInspector? inspector)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a3210c95((void*)(runtime?.Handle ?? 0), (void*)contextId.Handle, (void*)scope.Handle, (void*)generatorIteratorHandle, (void*)(inspector?.Handle ?? 0));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GeneratorIteratorAny((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static GeneratorIteratorAny Create(nint runtime, nint contextId, nint scope, nint generatorIteratorHandle, nint inspector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GeneratorIteratorAny Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny arg0)
     {
@@ -92,9 +84,9 @@ public sealed unsafe partial class GeneratorIteratorAny : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C3.hs_get_8c317eb1((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint rhs) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.GeneratorIteratorAny arg0)
     {

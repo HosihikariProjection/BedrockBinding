@@ -38,20 +38,17 @@ public sealed unsafe partial class DeserializeDataSettings : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataSettings arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_1b12ec0f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion formatVersion, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, bool isBaseGamePack)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_6423ea30((void*)__hosihikari_shim_handle, (void*)formatVersion.Handle, (void*)minEngineVersion.Handle, isBaseGamePack);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint formatVersion, nint minEngineVersion, bool isBaseGamePack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_5b6bd8d1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DeserializeDataSettings Create()
     {
@@ -64,27 +61,13 @@ public sealed unsafe partial class DeserializeDataSettings : global::System.IDis
         return new DeserializeDataSettings((nint)handle);
     }
 
-    public static DeserializeDataSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataSettings arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_4bc6e950((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DeserializeDataSettings Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new DeserializeDataSettings((nint)handle);
-    }
-
-    public static DeserializeDataSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion formatVersion, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, bool isBaseGamePack)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_77d29cd6((void*)formatVersion.Handle, (void*)minEngineVersion.Handle, isBaseGamePack);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DeserializeDataSettings((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DeserializeDataSettings Create(nint formatVersion, nint minEngineVersion, bool isBaseGamePack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk31758d_Address

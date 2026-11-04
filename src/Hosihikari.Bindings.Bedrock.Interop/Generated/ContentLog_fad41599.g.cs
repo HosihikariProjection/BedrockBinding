@@ -41,32 +41,24 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e0ffdaf4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_e0ffdaf4((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_9df8abfa((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ContentLog Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0ca4828d();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ContentLog((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ContentLog Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ContentLog Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_6997c9d4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_6997c9d4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,9 +67,9 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
         return new ContentLog((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _writeToLog(bool logOnlyOnce, nint area, nint level, nint args) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: variadic methods are not supported.", false)]
     public void log(bool logOnlyOnce, nint level, nint area) =>
@@ -85,42 +77,41 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
 
     public bool mEnabled
     {
-        get => NativeMethods.TablePtr->C1.hs_get_2c9f2783((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_2c9f2783((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_2c9f2783((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_2c9f2783((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEndPoints_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_adffd776((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_adffd776((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEndpointMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_62f390c7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_62f390c7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnceOnlyMessages_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d0db3405((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_d0db3405((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScopeHandler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_eeb538e2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_eeb538e2((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerEndPoint(nint id, nint endPoint) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void unregisterEndPoint(global::Hosihikari.Bindings.Bedrock.Interop.ContentLogEndPoint? endPoint)
-    {
-        NativeMethods.TablePtr->C1.hs_method_594ac6f5((void*)__hosihikari_shim_handle, (void*)(endPoint?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void unregisterEndPoint(nint endPoint) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -129,7 +120,7 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_fad41599((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_fad41599((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

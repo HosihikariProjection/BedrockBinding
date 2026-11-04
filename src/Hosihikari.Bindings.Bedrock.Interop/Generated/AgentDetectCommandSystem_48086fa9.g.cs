@@ -38,10 +38,9 @@ public sealed unsafe partial class AgentDetectCommandSystem : global::System.IDi
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C0.hs_method_52ac32b2((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AgentDetectCommandSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentDetectCommandSystem arg0)
     {
@@ -54,15 +53,13 @@ public sealed unsafe partial class AgentDetectCommandSystem : global::System.IDi
         return new AgentDetectCommandSystem((nint)handle);
     }
 
-    public static void initializeObstacle(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, nint detectComponent)
-    {
-        NativeMethods.TablePtr->C0.hs_method_984173f4((void*)entity.Handle, (void*)detectComponent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initializeObstacle(nint entity, nint detectComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initializeRedstone(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, nint detectComponent)
-    {
-        NativeMethods.TablePtr->C0.hs_method_c70f7cd2((void*)entity.Handle, (void*)detectComponent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initializeRedstone(nint entity, nint detectComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {

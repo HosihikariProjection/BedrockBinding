@@ -38,37 +38,29 @@ public sealed unsafe partial class VanillaBlockStateTransformUtils : global::Sys
         return __hs_handle;
     }
 
-    public static int _mirror(int direction, byte mirror)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_4270b3b8(direction, mirror);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _mirror(nint direction, nint mirror) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int _rotate(int direction, byte rotation)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_2ce4b672(direction, rotation);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _rotate(nint direction, nint rotation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool hasTransformableConnectionStates(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_a55320ce((void*)block.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool hasTransformableConnectionStates(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool hasTransformableWallStates(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_93243c56((void*)block.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool hasTransformableWallStates(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Block? transformBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block, int targetDirection)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_1dd2a794((void*)block.Handle, targetDirection);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint transformBlock_1dd2a794(nint block, nint targetDirection) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Block? transformBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte targetDirection)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_5542ccee((void*)block.Handle, targetDirection);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint transformBlock_5542ccee(nint block, nint targetDirection) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Block? transformBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte rotation, byte mirror)
     {
@@ -76,17 +68,13 @@ public sealed unsafe partial class VanillaBlockStateTransformUtils : global::Sys
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Block? transformConnectionStates(global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte rotation, byte mirror)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_035b34a3((void*)block.Handle, rotation, mirror);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint transformConnectionStates(nint block, nint rotation, nint mirror) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Block? transformWallConnectionTypes(global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte rotation, byte mirror)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_424cb858((void*)block.Handle, rotation, mirror);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint transformWallConnectionTypes(nint block, nint rotation, nint mirror) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

@@ -38,47 +38,32 @@ public sealed unsafe partial class RandomPos : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? generateRandomPos(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, int xzDist, int yDist, int yOffset, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? dir, bool canFly, bool canSwim, global::Hosihikari.Bindings.Bedrock.Interop.IntRange hoverHeight, int tries, byte blockTest)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_c9a44945((void*)random.Handle, (void*)mob.Handle, xzDist, yDist, yOffset, (void*)(dir?.Handle ?? 0), canFly, canSwim, (void*)hoverHeight.Handle, tries, blockTest, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint generateRandomPos(nint random, nint mob, int xzDist, int yDist, int yOffset, nint dir, bool canFly, bool canSwim, nint hoverHeight, int tries, nint blockTest) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? generateRandomSpawnPos(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 inPos, int numAttempts, int xzDist, int yDist, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? dir)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_770baf8d((void*)region.Handle, (void*)random.Handle, (void*)inPos.Handle, numAttempts, xzDist, yDist, (void*)(dir?.Handle ?? 0), &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint generateRandomSpawnPos(nint region, nint random, nint inPos, int numAttempts, int xzDist, int yDist, nint dir) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPos(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, int xzDist, int yDist, int tries, byte blockTest)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_86f37670((void*)mob.Handle, xzDist, yDist, tries, blockTest, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getPos(nint mob, int xzDist, int yDist, int tries, nint blockTest) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPosAvoid(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, int xzDist, int yDist, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 avoidPos, byte blockTest, int tries)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_67a2f31e((void*)mob.Handle, xzDist, yDist, (void*)avoidPos.Handle, blockTest, tries, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_67a2f31e((void*)mob.Handle, xzDist, yDist, (void*)avoidPos.Handle, blockTest, tries, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPosInDirection(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, int xzDist, int yDist, int yOffset, bool canFly, bool canSwim, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? direction, global::Hosihikari.Bindings.Bedrock.Interop.IntRange hoverHeight, int tries, byte blockTest)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_67428cda((void*)mob.Handle, xzDist, yDist, yOffset, canFly, canSwim, (void*)(direction?.Handle ?? 0), (void*)hoverHeight.Handle, tries, blockTest, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getPosInDirection(nint mob, int xzDist, int yDist, int yOffset, bool canFly, bool canSwim, nint direction, nint hoverHeight, int tries, nint blockTest) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPosTowards(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, int xzDist, int yDist, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 towardsPos)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_39327843((void*)mob.Handle, xzDist, yDist, (void*)towardsPos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getPosTowards(nint mob, int xzDist, int yDist, nint towardsPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -86,7 +71,7 @@ public sealed unsafe partial class RandomPos : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_62d88e75((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_62d88e75((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

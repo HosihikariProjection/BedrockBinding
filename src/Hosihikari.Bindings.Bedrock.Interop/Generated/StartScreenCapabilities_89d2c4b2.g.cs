@@ -38,13 +38,13 @@ public sealed unsafe partial class StartScreenCapabilities : global::System.IDis
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StartScreenCapabilities Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8f4908f7();
+        var handle = NativeMethods.TablePtr->C3.hs_create_8f4908f7();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class StartScreenCapabilities : global::System.IDis
 
     public static StartScreenCapabilities Create(global::Hosihikari.Bindings.Bedrock.Interop.StartScreenCapabilities arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_55dd9200((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_55dd9200((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,48 +67,48 @@ public sealed unsafe partial class StartScreenCapabilities : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk297420_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7f713802((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7f713802((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk359aaa_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7005de40((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7005de40((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk363f55_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_31bbc891((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_31bbc891((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7f7d50_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_50125627((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_50125627((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkabaaeb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9d82ddb4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9d82ddb4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkead217_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae2d2541((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae2d2541((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfb08d9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_62551edf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_62551edf((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StartScreenCapabilities operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StartScreenCapabilities arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StartScreenCapabilities((nint)NativeMethods.TablePtr->C4.hs_method_b01bfc1e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StartScreenCapabilities((nint)NativeMethods.TablePtr->C3.hs_method_b01bfc1e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -118,7 +118,7 @@ public sealed unsafe partial class StartScreenCapabilities : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_89d2c4b2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_89d2c4b2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

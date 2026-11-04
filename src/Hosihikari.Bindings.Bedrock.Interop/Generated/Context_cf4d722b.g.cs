@@ -40,12 +40,12 @@ public sealed unsafe partial class Context : global::System.IDisposable
 
     public void ClearTxErrorCounter()
     {
-        NativeMethods.TablePtr->C5.hs_method_3839258e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_3839258e((void*)__hosihikari_shim_handle);
     }
 
     public static Context Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.Context arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_0479f340((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_0479f340((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +56,7 @@ public sealed unsafe partial class Context : global::System.IDisposable
 
     public bool HasTooManyTxErrors()
     {
-        return NativeMethods.TablePtr->C5.hs_method_7f5310a0((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_7f5310a0((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool IncrementTxErrorCounter(string reason)
@@ -74,38 +74,38 @@ public sealed unsafe partial class Context : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(reason, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C5.hs_method_b0f53485((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C4.hs_method_b0f53485((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
     public void ObserveRTT(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta rtt)
     {
-        NativeMethods.TablePtr->C5.hs_method_c3abf97d((void*)__hosihikari_shim_handle, (void*)rtt.Handle);
+        NativeMethods.TablePtr->C4.hs_method_c3abf97d((void*)__hosihikari_shim_handle, (void*)rtt.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder PacketBuilder()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)NativeMethods.TablePtr->C5.hs_method_746f50d5((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)NativeMethods.TablePtr->C4.hs_method_746f50d5((void*)__hosihikari_shim_handle));
     }
 
     public void Send(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder builder)
     {
-        NativeMethods.TablePtr->C5.hs_method_7647849e((void*)__hosihikari_shim_handle, (void*)builder.Handle);
+        NativeMethods.TablePtr->C4.hs_method_7647849e((void*)__hosihikari_shim_handle, (void*)builder.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks callbacks()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks((nint)NativeMethods.TablePtr->C5.hs_method_d58d9ffc((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks((nint)NativeMethods.TablePtr->C4.hs_method_d58d9ffc((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta current_rto()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta((nint)NativeMethods.TablePtr->C5.hs_method_f0d68a29((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TimeDelta((nint)NativeMethods.TablePtr->C4.hs_method_f0d68a29((void*)__hosihikari_shim_handle));
     }
 
     public bool is_connection_established()
     {
-        return NativeMethods.TablePtr->C5.hs_method_4f754dea((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_4f754dea((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::StrongAlias<dcsctp::TSNTag, unsigned int>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -123,7 +123,7 @@ public sealed unsafe partial class Context : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_cf4d722b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_cf4d722b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

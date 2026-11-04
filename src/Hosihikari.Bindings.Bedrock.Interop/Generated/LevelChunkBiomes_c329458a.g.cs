@@ -60,10 +60,9 @@ public sealed unsafe partial class LevelChunkBiomes : global::System.IDisposable
         return new LevelChunkBiomes((nint)handle);
     }
 
-    public void fetchBiomes(nint output)
-    {
-        NativeMethods.TablePtr->C2.hs_method_7938693a((void*)__hosihikari_shim_handle, (void*)output);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void fetchBiomes(nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint m2DBiomes_Address
@@ -89,44 +88,39 @@ public sealed unsafe partial class LevelChunkBiomes : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_6fa48486((void*)__hosihikari_shim_handle);
     }
 
-    public void makeUniformBiomes(global::Hosihikari.Bindings.Bedrock.Interop.Biome biome)
-    {
-        NativeMethods.TablePtr->C2.hs_method_714935f9((void*)__hosihikari_shim_handle, (void*)biome.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void makeUniformBiomes(nint biome) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBiomes((nint)NativeMethods.TablePtr->C2.hs_method_5280a2fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void pruneBiomesSubChunk3D(ushort subChunkIndex, int pruneType)
-    {
-        NativeMethods.TablePtr->C2.hs_method_b893e119((void*)__hosihikari_shim_handle, subChunkIndex, pruneType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void pruneBiomesSubChunk3D(ushort subChunkIndex, nint pruneType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void rebuildMissingBiomeSubChunks(ushort numSubChunksToCreate, ushort dimensionSubchunkHeight, nint @lock)
-    {
-        NativeMethods.TablePtr->C2.hs_method_86d7eaf4((void*)__hosihikari_shim_handle, numSubChunksToCreate, dimensionSubchunkHeight, (void*)@lock);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void rebuildMissingBiomeSubChunks(ushort numSubChunksToCreate, ushort dimensionSubchunkHeight, nint @lock) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void setBiomeFromVolume(nint volume, ushort dimensionNumSubChunks)
     {
         NativeMethods.TablePtr->C2.hs_method_ee810ad1((void*)__hosihikari_shim_handle, (void*)volume, dimensionNumSubChunks);
     }
 
-    public void setBiomeInSubChunk3D(global::Hosihikari.Bindings.Bedrock.Interop.Biome biome, ushort subChunkIndex, ushort storageIndex, ushort dimensionSubchunkHeight, nint writeLock, bool allowRebuildingAdditionalSubChunk)
-    {
-        NativeMethods.TablePtr->C2.hs_method_43a5bd7a((void*)__hosihikari_shim_handle, (void*)biome.Handle, subChunkIndex, storageIndex, dimensionSubchunkHeight, (void*)writeLock, allowRebuildingAdditionalSubChunk);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setBiomeInSubChunk3D(nint biome, ushort subChunkIndex, ushort storageIndex, ushort dimensionSubchunkHeight, nint writeLock, bool allowRebuildingAdditionalSubChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<SubChunkStorage<Biome>>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void setBiomeStorages(nint biomes, ushort biomeStackSize) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<SubChunkStorage<Biome>>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setBiomeSubChunk3D(global::Hosihikari.Bindings.Bedrock.Interop.Biome biome, ushort subChunkIndex, ushort dimensionSubchunkHeight, bool allowRebuildingAdditionalSubChunk)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d7b02d93((void*)__hosihikari_shim_handle, (void*)biome.Handle, subChunkIndex, dimensionSubchunkHeight, allowRebuildingAdditionalSubChunk);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setBiomeSubChunk3D(nint biome, ushort subChunkIndex, ushort dimensionSubchunkHeight, bool allowRebuildingAdditionalSubChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

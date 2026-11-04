@@ -44,7 +44,7 @@ public sealed unsafe partial class IBlockComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_327d34e1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_327d34e1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

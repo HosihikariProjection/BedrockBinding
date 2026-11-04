@@ -40,7 +40,7 @@ public sealed unsafe partial class ISecureStorageKeySystem : global::System.IDis
 
     public static ISecureStorageKeySystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ISecureStorageKeySystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_0454ac92((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_0454ac92((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class ISecureStorageKeySystem : global::System.IDis
         global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey((nint)NativeMethods.TablePtr->C2.hs_method_38421a36((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.SecureStorageKey((nint)NativeMethods.TablePtr->C1.hs_method_38421a36((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class ISecureStorageKeySystem : global::System.IDis
         global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_885e094c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)arg1.Handle);
+            NativeMethods.TablePtr->C1.hs_method_885e094c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)arg1.Handle);
         }
     }
 
@@ -94,7 +94,7 @@ public sealed unsafe partial class ISecureStorageKeySystem : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0c656409((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_0c656409((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

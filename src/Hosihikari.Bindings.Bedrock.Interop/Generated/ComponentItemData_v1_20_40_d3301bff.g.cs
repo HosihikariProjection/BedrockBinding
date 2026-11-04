@@ -40,7 +40,7 @@ public sealed unsafe partial class ComponentItemData_v1_20_40 : global::System.I
 
     public static ComponentItemData_v1_20_40 Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemData_v1_20_40 arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_85730946((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_85730946((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,33 +49,31 @@ public sealed unsafe partial class ComponentItemData_v1_20_40 : global::System.I
         return new ComponentItemData_v1_20_40((nint)handle);
     }
 
-    public static nint VERSION()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_d9e3bfb7();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint VERSION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDeprecatedItemComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8279a85f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8279a85f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7d0113ea((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_7d0113ea((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_454b80de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_454b80de((void*)__hosihikari_shim_handle);
     }
 
-    public static void upgrade(nint upgrader)
-    {
-        NativeMethods.TablePtr->C1.hs_method_9b78d70e((void*)upgrader);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void upgrade(nint upgrader) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -84,7 +82,7 @@ public sealed unsafe partial class ComponentItemData_v1_20_40 : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d3301bff((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_d3301bff((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

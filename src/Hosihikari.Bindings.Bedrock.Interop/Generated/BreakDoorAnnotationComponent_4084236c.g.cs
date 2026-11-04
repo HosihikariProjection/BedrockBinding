@@ -49,20 +49,17 @@ public sealed unsafe partial class BreakDoorAnnotationComponent : global::System
         return new BreakDoorAnnotationComponent((nint)handle);
     }
 
-    public void _cleanUp(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C0.hs_method_01e98d01((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _cleanUp(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool canMobBreakDoor(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Path path)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_8922d94a((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)path.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool canMobBreakDoor(nint mob, nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void clearProgress(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C0.hs_method_f4b5ed3a((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clearProgress(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mBreakTicks
     {
@@ -100,15 +97,13 @@ public sealed unsafe partial class BreakDoorAnnotationComponent : global::System
         get => (nint)NativeMethods.TablePtr->C0.hs_get_fcaff944((void*)__hosihikari_shim_handle);
     }
 
-    public void obstructionCheck(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C0.hs_method_41a903e9((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void obstructionCheck(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void onComponentRemoved(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a5e32654((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onComponentRemoved(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -41,16 +41,16 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_c2550edd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_c2550edd((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CommandsRegistryConfiguration Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandsRegistryConfiguration arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_efcbb2a0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_efcbb2a0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,37 +59,20 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
         return new CommandsRegistryConfiguration((nint)handle);
     }
 
-    public byte? getCommandPermissionLevel(string command)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(command);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(command, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_value = NativeMethods.TablePtr->C1.hs_method_d6c41ab7((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
-            return __hs_hasValue ? __hs_value : (byte?)null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getCommandPermissionLevel(nint command) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCommandPermissionLevels_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_191565de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_191565de((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultCommandPermissionLevel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3d5cb674((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_3d5cb674((void*)__hosihikari_shim_handle);
     }
 
 
@@ -99,7 +82,7 @@ public sealed unsafe partial class CommandsRegistryConfiguration : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_df3bdcb7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_df3bdcb7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

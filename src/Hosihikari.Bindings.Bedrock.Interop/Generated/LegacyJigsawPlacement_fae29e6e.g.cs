@@ -68,17 +68,17 @@ public sealed unsafe partial class LegacyJigsawPlacement : global::System.IDispo
     public static LegacyJigsawPlacement Create(int maxDepth, nint factory) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<PoolElementStructurePiece>' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _addPiece(nint pieces, nint sourcePiece, nint random, nint position, nint rotation, nint pools, nint dimension, nint box, nint refPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
     public bool _tryPlacingPiece(nint pieces, nint sourcePiece, nint random, nint sourceJigsaw, nint sourceBB, nint sourceInternalBBs, nint attachPos, nint targetPool, nint pools, nint dimension, nint box, nint refPos) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addPieces(nint pieces, nint initialElement, nint random, nint position, nint rotation, nint pools, nint dimension) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<StructurePiece>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkHeightCache_Address

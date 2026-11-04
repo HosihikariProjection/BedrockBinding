@@ -40,7 +40,7 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
 
     public static RakWebSocketDataFrameParser Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_11610498();
+        var handle = NativeMethods.TablePtr->C2.hs_create_11610498();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
 
     public static RakWebSocketDataFrameParser Create(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_25365321((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_25365321((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,59 +60,43 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
         return new RakWebSocketDataFrameParser((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _failReadFrame(string error, ushort code)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(error);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(error, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_shared = NativeMethods.TablePtr->C3.hs_method_8f504941((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, code);
-            return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _failReadFrame(nint error, nint code) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk435c68_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_bdd15516((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_bdd15516((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk860b01_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_03b6d637((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_03b6d637((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9b171a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5da8931c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5da8931c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc8951a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_26401720((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_26401720((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf9f17c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_42eb2331((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_42eb2331((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser((nint)NativeMethods.TablePtr->C3.hs_method_3ccc4784((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser((nint)NativeMethods.TablePtr->C2.hs_method_3ccc4784((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -121,7 +105,7 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_113047e2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_113047e2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,23 +41,22 @@ public sealed unsafe partial class SubtreeDefinition : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3985382c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3985382c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTreeDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e2b90ba2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e2b90ba2((void*)__hosihikari_shim_handle);
     }
 
-    public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value node, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5c270f1e((void*)__hosihikari_shim_handle, (void*)node.Handle, (void*)factory.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _load(nint node, nint factory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SubtreeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SubtreeDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9551be21((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9551be21((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,19 +67,19 @@ public sealed unsafe partial class SubtreeDefinition : global::System.IDisposabl
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value node, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
     {
-        NativeMethods.TablePtr->C4.hs_method_aa017cfa((void*)__hosihikari_shim_handle, (void*)node.Handle, (void*)factory.Handle);
+        NativeMethods.TablePtr->C3.hs_method_aa017cfa((void*)__hosihikari_shim_handle, (void*)node.Handle, (void*)factory.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBehaviorDataItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7930ac60((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7930ac60((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubtreeId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_43e459a2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_43e459a2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -90,7 +89,7 @@ public sealed unsafe partial class SubtreeDefinition : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_66d1ff4c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_66d1ff4c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

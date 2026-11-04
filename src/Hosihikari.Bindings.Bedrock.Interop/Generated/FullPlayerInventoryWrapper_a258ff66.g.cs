@@ -38,29 +38,25 @@ public sealed unsafe partial class FullPlayerInventoryWrapper : global::System.I
         return __hs_handle;
     }
 
-    public int _clearSimpleContainerItem(global::Hosihikari.Bindings.Bedrock.Interop.SimpleContainer container, sbyte containerId, int slot)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_b91ee2d9((void*)__hosihikari_shim_handle, (void*)container.Handle, containerId, slot);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _clearSimpleContainerItem(nint container, nint containerId, int slot) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _removeCursorItem()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_2da50cfd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _removeCursorItem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _removeSimpleContainerItem(global::Hosihikari.Bindings.Bedrock.Interop.SimpleContainer container, sbyte containerId, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack sourceItem, bool requireExactAux, int maxCount)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_e0e648e2((void*)__hosihikari_shim_handle, (void*)container.Handle, containerId, slot, (void*)sourceItem.Handle, requireExactAux, maxCount);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _removeSimpleContainerItem(nint container, nint containerId, int slot, nint sourceItem, bool requireExactAux, int maxCount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int clearAllItems()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_c9d375fb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int clearAllItems() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public int getItemCount(nint comparator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mArmorInventory_Address
@@ -92,9 +88,9 @@ public sealed unsafe partial class FullPlayerInventoryWrapper : global::System.I
         set => NativeMethods.TablePtr->C1.hs_set_ea893833((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public int removeResource(nint sourceItem, nint comparator, bool requireExactAux, int maxCount) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

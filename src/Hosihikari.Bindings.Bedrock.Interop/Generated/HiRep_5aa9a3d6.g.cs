@@ -40,7 +40,7 @@ public sealed unsafe partial class HiRep : global::System.IDisposable
 
     public static HiRep Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_1afbdbf6();
+        var handle = NativeMethods.TablePtr->C4.hs_create_1afbdbf6();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class HiRep : global::System.IDisposable
 
     public static HiRep Create(global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration_Nested.HiRep arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_e88baea2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_e88baea2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class HiRep : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk74edca_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_4ea64ec6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4ea64ec6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb9c0f8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b289e62d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b289e62d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration_Nested.HiRep operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration_Nested.HiRep arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration_Nested.HiRep((nint)NativeMethods.TablePtr->C5.hs_method_262ec5cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.absl.Duration_Nested.HiRep((nint)NativeMethods.TablePtr->C4.hs_method_262ec5cb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class HiRep : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_5aa9a3d6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_5aa9a3d6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

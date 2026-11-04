@@ -44,10 +44,9 @@ public sealed unsafe partial class WalkState : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_f5cdbfe0((void*)__hosihikari_shim_handle);
     }
 
-    public void _tick()
-    {
-        NativeMethods.TablePtr->C4.hs_method_f9d38fb1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WalkState Create(global::Hosihikari.Bindings.Bedrock.Interop.WalkState arg0)
     {

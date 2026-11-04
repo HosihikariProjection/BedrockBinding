@@ -40,7 +40,7 @@ public sealed unsafe partial class RemoveEntry : global::System.IDisposable
 
     public static RemoveEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerListPacketPayload_Nested.RemoveEntry arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d422ceb4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d422ceb4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class RemoveEntry : global::System.IDisposable
 
     public byte mAction
     {
-        get => NativeMethods.TablePtr->C3.hs_get_62a4142f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_62a4142f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_62a4142f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_62a4142f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUUID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d7b3a026((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d7b3a026((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class RemoveEntry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b13b3933((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b13b3933((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

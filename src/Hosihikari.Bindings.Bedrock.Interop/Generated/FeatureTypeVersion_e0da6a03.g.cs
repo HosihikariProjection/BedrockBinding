@@ -38,10 +38,9 @@ public sealed unsafe partial class FeatureTypeVersion : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(int version, bool isInternal)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_fbb5898f((void*)__hosihikari_shim_handle, version, isInternal);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint version, bool isInternal) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FeatureTypeVersion Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class FeatureTypeVersion : global::System.IDisposab
         return new FeatureTypeVersion((nint)handle);
     }
 
-    public static FeatureTypeVersion Create(int version, bool isInternal)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e45a8768(version, isInternal);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FeatureTypeVersion((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FeatureTypeVersion Create(nint version, bool isInternal) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FeatureTypeVersion Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureTypeVersion arg0)
     {

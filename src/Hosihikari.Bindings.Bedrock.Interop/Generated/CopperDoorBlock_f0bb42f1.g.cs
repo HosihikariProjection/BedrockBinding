@@ -385,14 +385,13 @@ public sealed unsafe partial class CopperDoorBlock : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_0b16d36d((void*)__hosihikari_shim_handle);
     }
 
-    public void __useDoor(nint eventData)
-    {
-        NativeMethods.TablePtr->C1.hs_method_41fe47cc((void*)__hosihikari_shim_handle, (void*)eventData);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __useDoor(nint eventData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _useDoor(nint eventData)
     {

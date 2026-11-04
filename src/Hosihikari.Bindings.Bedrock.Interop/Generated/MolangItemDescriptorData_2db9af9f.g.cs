@@ -40,7 +40,7 @@ public sealed unsafe partial class MolangItemDescriptorData : global::System.IDi
 
     public static MolangItemDescriptorData Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.MolangItemDescriptorData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3ce32ad2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_3ce32ad2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class MolangItemDescriptorData : global::System.IDi
 
     public short mMolangVersion
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3e1bc26b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3e1bc26b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_3e1bc26b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_3e1bc26b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTagExpression_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9f83579c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_9f83579c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class MolangItemDescriptorData : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_2db9af9f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_2db9af9f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

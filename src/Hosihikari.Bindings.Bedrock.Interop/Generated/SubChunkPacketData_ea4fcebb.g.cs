@@ -40,7 +40,7 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
 
     public static SubChunkPacketData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f943735f();
+        var handle = NativeMethods.TablePtr->C3.hs_create_f943735f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
 
     public static SubChunkPacketData Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_cd54848a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_cd54848a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,7 +62,7 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
 
     public static SubChunkPacketData Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPosOffset pos, byte requestResult)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_761193ff((void*)pos.Handle, requestResult);
+        var handle = NativeMethods.TablePtr->C3.hs_create_761193ff((void*)pos.Handle, requestResult);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -74,42 +74,41 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlobId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_15632a4b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_15632a4b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHeightMapData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d239eab1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d239eab1((void*)__hosihikari_shim_handle);
     }
 
     public byte mResult
     {
-        get => NativeMethods.TablePtr->C4.hs_get_cacb973a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_cacb973a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_cacb973a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_cacb973a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSerializedSubChunk_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1969174a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1969174a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubChunkPosOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a637987a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a637987a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData rhs)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData((nint)NativeMethods.TablePtr->C4.hs_method_f9441d89((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData((nint)NativeMethods.TablePtr->C3.hs_method_f9441d89((void*)__hosihikari_shim_handle, (void*)rhs.Handle), false);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkPacketPayload_Nested.SubChunkPacketData arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_83a79f53((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -118,7 +117,7 @@ public sealed unsafe partial class SubChunkPacketData : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ea4fcebb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ea4fcebb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

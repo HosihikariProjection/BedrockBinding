@@ -38,10 +38,9 @@ public sealed unsafe partial class CrashDumpEventData : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(ushort tag0, ushort tag1)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_9b9cb05d((void*)__hosihikari_shim_handle, tag0, tag1);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint tag0, nint tag1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CrashDumpEventData Create()
     {
@@ -54,20 +53,13 @@ public sealed unsafe partial class CrashDumpEventData : global::System.IDisposab
         return new CrashDumpEventData((nint)handle);
     }
 
-    public static CrashDumpEventData Create(ushort tag0, ushort tag1)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_37f33cd9(tag0, tag1);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CrashDumpEventData Create(nint tag0, nint tag1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new CrashDumpEventData((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'const CrashDumpFormatEntryImpl (&)[4]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint kFormat() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'const CrashDumpFormatEntryImpl (&)[4]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mEventThreadId
     {

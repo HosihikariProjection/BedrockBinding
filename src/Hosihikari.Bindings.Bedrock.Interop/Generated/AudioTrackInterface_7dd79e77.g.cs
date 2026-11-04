@@ -38,28 +38,26 @@ public sealed unsafe partial class AudioTrackInterface : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::AudioProcessorInterface>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _GetAudioProcessor() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::AudioProcessorInterface>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _GetSignalLevel(nint a1)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_47095495((void*)__hosihikari_shim_handle, (void*)a1) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _GetSignalLevel(nint a1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_0db1231d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void AddSink(nint a1)
     {
-        NativeMethods.TablePtr->C5.hs_method_e30de8a7((void*)__hosihikari_shim_handle, (void*)a1);
+        NativeMethods.TablePtr->C4.hs_method_e30de8a7((void*)__hosihikari_shim_handle, (void*)a1);
     }
 
     public static AudioTrackInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioTrackInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_04b6c4fd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_04b6c4fd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -74,18 +72,18 @@ public sealed unsafe partial class AudioTrackInterface : global::System.IDisposa
 
     public bool GetSignalLevel(nint a1)
     {
-        return NativeMethods.TablePtr->C5.hs_method_bd3a7f0b((void*)__hosihikari_shim_handle, (void*)a1) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_bd3a7f0b((void*)__hosihikari_shim_handle, (void*)a1) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface? GetSource()
     {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_20dff959((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_20dff959((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface((nint)__hs_handle, false) : null;
     }
 
     public void RemoveSink(nint a1)
     {
-        NativeMethods.TablePtr->C5.hs_method_1d8c5d46((void*)__hosihikari_shim_handle, (void*)a1);
+        NativeMethods.TablePtr->C4.hs_method_1d8c5d46((void*)__hosihikari_shim_handle, (void*)a1);
     }
 
 
@@ -95,7 +93,7 @@ public sealed unsafe partial class AudioTrackInterface : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_7dd79e77((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_7dd79e77((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,19 +38,17 @@ public sealed unsafe partial class PetSleepWithOwnerState : global::System.IDisp
         return __hs_handle;
     }
 
-    public void _start()
-    {
-        NativeMethods.TablePtr->C3.hs_method_ef2c9c34((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _start() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _stop()
-    {
-        NativeMethods.TablePtr->C3.hs_method_d8d23a1a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _stop() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PetSleepWithOwnerState Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_af2f835c();
+        var handle = NativeMethods.TablePtr->C2.hs_create_af2f835c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +59,7 @@ public sealed unsafe partial class PetSleepWithOwnerState : global::System.IDisp
 
     public static PetSleepWithOwnerState Create(global::Hosihikari.Bindings.Bedrock.Interop.PetSleepWithOwnerState arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d34d9791((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d34d9791((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,35 +68,34 @@ public sealed unsafe partial class PetSleepWithOwnerState : global::System.IDisp
         return new PetSleepWithOwnerState((nint)handle);
     }
 
-    public void dampenSpeed()
-    {
-        NativeMethods.TablePtr->C3.hs_method_9005d24a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void dampenSpeed() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGoal_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4ff58d81((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4ff58d81((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PetSleepWithOwnerState operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PetSleepWithOwnerState arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PetSleepWithOwnerState((nint)NativeMethods.TablePtr->C3.hs_method_703eb07d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PetSleepWithOwnerState((nint)NativeMethods.TablePtr->C2.hs_method_703eb07d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void start()
     {
-        NativeMethods.TablePtr->C3.hs_method_5b696980((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_5b696980((void*)__hosihikari_shim_handle);
     }
 
     public void stop()
     {
-        NativeMethods.TablePtr->C3.hs_method_58d091e8((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_58d091e8((void*)__hosihikari_shim_handle);
     }
 
     public void tick()
     {
-        NativeMethods.TablePtr->C3.hs_method_753b9791((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_753b9791((void*)__hosihikari_shim_handle);
     }
 
 
@@ -108,7 +105,7 @@ public sealed unsafe partial class PetSleepWithOwnerState : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9b25136c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9b25136c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

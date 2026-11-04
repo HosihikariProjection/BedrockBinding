@@ -41,290 +41,230 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk10a28a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_bb6d88d0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_bb6d88d0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk117f8c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_5e54b716((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5e54b716((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk16a138_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_d443a9de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d443a9de((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk21901e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_c2d45d44((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c2d45d44((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk345786_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_a41e2749((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a41e2749((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk35c471_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3428ad73((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3428ad73((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk382937_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_1fd3a633((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1fd3a633((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3de49a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_5be35d37((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5be35d37((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5c7572_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_68f346e5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_68f346e5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6a591e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_985e9213((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_985e9213((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7306cf_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_136c7433((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_136c7433((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8a4672_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_8b30d7db((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8b30d7db((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8c71db_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_98a4d8d1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_98a4d8d1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8da9d2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3cc3f3ec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3cc3f3ec((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk908d87_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_33030e3c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_33030e3c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk94a9ba_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_7feb4c68((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7feb4c68((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk94ad59_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_cd233ac7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_cd233ac7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka3ed7b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_f0dca433((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f0dca433((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkaea4ec_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e9fd67e9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e9fd67e9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb2a9f1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_d0ed408a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d0ed408a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb9f3f2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_debb5844((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_debb5844((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbc057e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_57e50645((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_57e50645((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbe9cc1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_cf681a1b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_cf681a1b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc323d3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e84ade83((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e84ade83((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdf42f6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_dedb3c2d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_dedb3c2d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke0e696_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b5d7a63c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b5d7a63c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf8395f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9043a629((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9043a629((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel? _AsVideoChannel()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_bd9cb599((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _AsVideoChannel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel? _AsVoiceChannel()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_1e27165b((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _AsVoiceChannel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _SetLocalContent_w(nint content, int type, ref string error_desc)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            try
-            {
-                return NativeMethods.TablePtr->C5.hs_method_a05bdc57((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
-            }
-            finally
-            {
-                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _SetLocalContent_w(nint content, nint type, nint error_desc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _SetRemoteContent_w(nint content, int type, ref string error_desc)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(error_desc);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(error_desc, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            try
-            {
-                return NativeMethods.TablePtr->C5.hs_method_26583350((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
-            }
-            finally
-            {
-                error_desc = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _SetRemoteContent_w(nint content, nint type, nint error_desc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _UpdateMediaSendRecvState_w()
-    {
-        NativeMethods.TablePtr->C5.hs_method_13e26093((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _UpdateMediaSendRecvState_w() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint worker_thread, nint network_thread, nint signaling_thread, nint media_send_channel, nint media_receive_channel, nint mid, bool srtp_required, nint crypto_options, nint ssrc_generator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? _media_receive_channel()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_58257507((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _media_receive_channel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface? _media_send_channel()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_4ceb4249((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _media_send_channel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _media_type()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_1faf61ee((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _media_type() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForChannelInterface() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForMediaChannelNetworkInterface() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForRtpPacketSinkInterface() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? _video_media_receive_channel()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_19d23ceb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _video_media_receive_channel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface? _video_media_send_channel()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_066c14b5((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _video_media_send_channel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel? AsVideoChannel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_95fc0fc8((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_95fc0fc8((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel? AsVoiceChannel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_fd511c6b((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_fd511c6b((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VoiceChannel((nint)__hs_handle, false) : null;
     }
 
@@ -346,7 +286,7 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
         {
             try
             {
-                return NativeMethods.TablePtr->C5.hs_method_2afded5f((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C4.hs_method_2afded5f((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -373,7 +313,7 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
         {
             try
             {
-                return NativeMethods.TablePtr->C5.hs_method_29ba74f8((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
+                return NativeMethods.TablePtr->C4.hs_method_29ba74f8((void*)__hosihikari_shim_handle, (void*)content, type, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
             }
             finally
             {
@@ -384,12 +324,12 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
 
     public void UpdateMediaSendRecvState_w()
     {
-        NativeMethods.TablePtr->C5.hs_method_ebcf1d37((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_ebcf1d37((void*)__hosihikari_shim_handle);
     }
 
     public static VideoChannel Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_4174d596();
+        var handle = NativeMethods.TablePtr->C4.hs_create_4174d596();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -400,7 +340,7 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
 
     public static VideoChannel Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_a0f1cdb4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_a0f1cdb4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -409,53 +349,53 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
         return new VideoChannel((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static VideoChannel Create(nint worker_thread, nint network_thread, nint signaling_thread, nint media_send_channel, nint media_receive_channel, nint mid, bool srtp_required, nint crypto_options, nint ssrc_generator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1c577d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_5f80b16b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5f80b16b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf336ba_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9a319fce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9a319fce((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? media_receive_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_f7f4648f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_f7f4648f((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface? media_send_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_d6ac3480((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d6ac3480((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public int media_type()
     {
-        return NativeMethods.TablePtr->C5.hs_method_fd329e11((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_fd329e11((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)NativeMethods.TablePtr->C5.hs_method_f230f16e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoChannel((nint)NativeMethods.TablePtr->C4.hs_method_f230f16e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface? video_media_receive_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_d69ec244((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_d69ec244((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaReceiveChannelInterface((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface? video_media_send_channel()
     {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_da9dad41((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_da9dad41((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoMediaSendChannelInterface((nint)__hs_handle, false) : null;
     }
 
@@ -466,7 +406,7 @@ public sealed unsafe partial class VideoChannel : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_480e3a91((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_480e3a91((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

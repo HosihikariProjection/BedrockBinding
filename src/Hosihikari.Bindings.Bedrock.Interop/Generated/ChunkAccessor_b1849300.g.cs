@@ -40,17 +40,17 @@ public sealed unsafe partial class ChunkAccessor : global::System.IDisposable
 
     public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource)
     {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_397741e3((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)biomeSource.Handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_397741e3((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)biomeSource.Handle);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C5.hs_method_2717e017((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_2717e017((void*)__hosihikari_shim_handle);
     }
 
     public static ChunkAccessor Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_41a0b6d9();
+        var handle = NativeMethods.TablePtr->C4.hs_create_41a0b6d9();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class ChunkAccessor : global::System.IDisposable
 
     public static ChunkAccessor Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_d3166bd8((void*)dimension.Handle, (void*)biomeSource.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_d3166bd8((void*)dimension.Handle, (void*)biomeSource.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,37 +72,37 @@ public sealed unsafe partial class ChunkAccessor : global::System.IDisposable
 
     public int getFirstFreeHeight(int x, int z, byte heightmapProjection)
     {
-        return NativeMethods.TablePtr->C5.hs_method_a006382e((void*)__hosihikari_shim_handle, x, z, heightmapProjection);
+        return NativeMethods.TablePtr->C4.hs_method_a006382e((void*)__hosihikari_shim_handle, x, z, heightmapProjection);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBiomeSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_88f294c4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_88f294c4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_33a92a73((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_33a92a73((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkHeightCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9f4f4942((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9f4f4942((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mColumnBiomeCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_8f864365((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8f864365((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_84fc1d93((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_84fc1d93((void*)__hosihikari_shim_handle);
     }
 
 
@@ -112,7 +112,7 @@ public sealed unsafe partial class ChunkAccessor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_b1849300((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b1849300((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

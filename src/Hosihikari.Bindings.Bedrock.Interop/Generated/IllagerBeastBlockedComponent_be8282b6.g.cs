@@ -38,10 +38,9 @@ public sealed unsafe partial class IllagerBeastBlockedComponent : global::System
         return __hs_handle;
     }
 
-    public void onBlocked(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source, global::Hosihikari.Bindings.Bedrock.Interop.Actor blocker)
-    {
-        NativeMethods.TablePtr->C2.hs_method_4a29e8d6((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)source.Handle, (void*)blocker.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onBlocked(nint owner, nint source, nint blocker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class IllagerBeastBlockedComponent : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_be8282b6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_be8282b6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

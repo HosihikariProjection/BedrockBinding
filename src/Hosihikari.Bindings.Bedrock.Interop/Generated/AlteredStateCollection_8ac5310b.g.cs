@@ -49,10 +49,9 @@ public sealed unsafe partial class AlteredStateCollection : global::System.IDisp
         return new AlteredStateCollection((nint)handle);
     }
 
-    public static bool _checkVersioningRequirements(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion removedSupportVersion)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_2d3803db((void*)removedSupportVersion.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _checkVersioningRequirements(nint removedSupportVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int? getState(global::Hosihikari.Bindings.Bedrock.Interop.BlockType blockType, int blockData)
     {

@@ -101,9 +101,9 @@ public sealed unsafe partial class ResourceLoadTaskGroup : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLoadManager_Nested.ResourceLoadTaskGroup((nint)NativeMethods.TablePtr->C3.hs_method_a1f62bc7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint queue(nint threadedCallback, nint mainThreadCallback, uint taskPriority) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

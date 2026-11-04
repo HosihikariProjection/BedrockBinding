@@ -40,7 +40,7 @@ public sealed unsafe partial class StructureTemplateDataRequestPacketPayload : g
 
     public static StructureTemplateDataRequestPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d36394d6();
+        var handle = NativeMethods.TablePtr->C3.hs_create_d36394d6();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class StructureTemplateDataRequestPacketPayload : g
 
     public static StructureTemplateDataRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplateDataRequestPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_7ecc6b2c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_7ecc6b2c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,26 +62,26 @@ public sealed unsafe partial class StructureTemplateDataRequestPacketPayload : g
 
     public byte mRequestOperation
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d21b8e6e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d21b8e6e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d21b8e6e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d21b8e6e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2b023f93((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2b023f93((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_283a1bc1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_283a1bc1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureSettings_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a486201e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a486201e((void*)__hosihikari_shim_handle);
     }
 
 
@@ -91,7 +91,7 @@ public sealed unsafe partial class StructureTemplateDataRequestPacketPayload : g
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_8c2997b9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_8c2997b9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

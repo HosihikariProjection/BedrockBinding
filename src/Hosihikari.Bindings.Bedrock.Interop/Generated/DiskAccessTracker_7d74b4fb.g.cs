@@ -38,9 +38,9 @@ public sealed unsafe partial class DiskAccessTracker : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint diagnostics) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DiskAccessTracker Create()
     {
@@ -64,19 +64,17 @@ public sealed unsafe partial class DiskAccessTracker : global::System.IDisposabl
         return new DiskAccessTracker((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static DiskAccessTracker Create(nint diagnostics) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _addNewWriteOperation(ulong amount, int writeOperation, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
-    {
-        NativeMethods.TablePtr->C1.hs_method_13b12e91((void*)__hosihikari_shim_handle, amount, writeOperation, (void*)path.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _addNewWriteOperation(ulong amount, nint writeOperation, nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addIgnoredPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
-    {
-        NativeMethods.TablePtr->C1.hs_method_ef9c3ae1((void*)__hosihikari_shim_handle, (void*)path.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addIgnoredPath(nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk164044_Address

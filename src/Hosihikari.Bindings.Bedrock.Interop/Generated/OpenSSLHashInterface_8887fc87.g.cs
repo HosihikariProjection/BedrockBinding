@@ -38,29 +38,25 @@ public sealed unsafe partial class OpenSSLHashInterface : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _final(nint result)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e8be6927((void*)__hosihikari_shim_handle, (void*)result);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _final(nint result) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _reset()
-    {
-        NativeMethods.TablePtr->C1.hs_method_365be53f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _reset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong _resultSize()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_7919e3e9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong _resultSize() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _update(nint data, uint size)
-    {
-        NativeMethods.TablePtr->C1.hs_method_6a8bca6b((void*)__hosihikari_shim_handle, (void*)data, size);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _update(nint data, uint size) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static OpenSSLHashInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Hash.OpenSSLHashInterface arg0)
     {

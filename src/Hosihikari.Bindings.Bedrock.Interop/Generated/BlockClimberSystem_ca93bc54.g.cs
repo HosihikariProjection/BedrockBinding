@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockClimberSystem : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static bool canBlockBeAscendedByJumping(global::Hosihikari.Bindings.Bedrock.Interop.BlockType block, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, bool canStandOnPowderSnow, bool isPlayer)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_bef319a5((void*)block.Handle, (void*)region.Handle, (void*)blockPos.Handle, canStandOnPowderSnow, isPlayer) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool canBlockBeAscendedByJumping(nint block, nint region, nint blockPos, bool canStandOnPowderSnow, bool isPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

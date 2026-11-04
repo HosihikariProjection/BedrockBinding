@@ -38,32 +38,29 @@ public sealed unsafe partial class WallClimberPathNavigation : global::System.ID
         return __hs_handle;
     }
 
-    public bool _canUpdatePath(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_87066c13((void*)__hosihikari_shim_handle, (void*)mob.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canUpdatePath(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _createPath_877bd553(nint parent, nint mob, nint target) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _createPath_583c512f(nint parent, nint mob, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Path' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _moveTo(global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.Actor target, float speed)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_d1eef2d2((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle, (void*)target.Handle, speed) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _moveTo(nint parent, nint mob, nint target, float speed) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.NavigationComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C4.hs_method_36232a62((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint parent, nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WallClimberPathNavigation Create(global::Hosihikari.Bindings.Bedrock.Interop.WallClimberPathNavigation arg0)
     {
@@ -76,10 +73,9 @@ public sealed unsafe partial class WallClimberPathNavigation : global::System.ID
         return new WallClimberPathNavigation((nint)handle);
     }
 
-    public bool _isInsideBorderBlock(global::Hosihikari.Bindings.Bedrock.Interop.AABB aabb, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, float grow)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_b5f137dd((void*)__hosihikari_shim_handle, (void*)aabb.Handle, (void*)region.Handle, grow) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isInsideBorderBlock(nint aabb, nint region, float grow) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool canUpdatePath(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {

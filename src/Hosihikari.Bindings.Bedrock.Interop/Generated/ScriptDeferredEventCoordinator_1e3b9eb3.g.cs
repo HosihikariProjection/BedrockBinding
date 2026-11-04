@@ -38,44 +38,37 @@ public sealed unsafe partial class ScriptDeferredEventCoordinator : global::Syst
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendFlushBlockCustomComponentAfterEvents(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_1c289a7b((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendFlushBlockCustomComponentAfterEvents(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendFlushEditorDataStoreAfterEvents(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_64633cd8((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendFlushEditorDataStoreAfterEvents(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendFlushEditorExtensionContextAfterEvents(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_eb6ec9b2((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendFlushEditorExtensionContextAfterEvents(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendFlushEditorProjectAfterEvents(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_a9c1bea1((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendFlushEditorProjectAfterEvents(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendFlushItemCustomComponentAfterEvents(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_8769aa33((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendFlushItemCustomComponentAfterEvents(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendFlushSystemAfterEvents(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_63af2993((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendFlushSystemAfterEvents(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _sendFlushWorldAfterEvents(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_2138bf45((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendFlushWorldAfterEvents(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlushCoroutinePublisher_Address
@@ -83,15 +76,13 @@ public sealed unsafe partial class ScriptDeferredEventCoordinator : global::Syst
         get => (nint)NativeMethods.TablePtr->C3.hs_get_8ed03a6e((void*)__hosihikari_shim_handle);
     }
 
-    public static nint sEventExecutionOrder()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_c6ef71dc();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sEventExecutionOrder() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void sendAllDeferredEvents()
-    {
-        NativeMethods.TablePtr->C3.hs_method_4638326a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void sendAllDeferredEvents() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,9 +38,9 @@ public sealed unsafe partial class PublisherBase : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PublisherBase Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.PublisherBase arg0)
     {
@@ -53,10 +53,9 @@ public sealed unsafe partial class PublisherBase : global::System.IDisposable
         return new PublisherBase((nint)handle);
     }
 
-    public void _insertConnection(global::Hosihikari.Bindings.Abi.SharedHandle? body, int at, int? group)
-    {
-        NativeMethods.TablePtr->C0.hs_method_7786b9bb((void*)__hosihikari_shim_handle, body?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), at, group ?? default(int), group.HasValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _insertConnection(nint body, nint at, nint group) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mSubscriberCount
     {

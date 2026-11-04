@@ -43,11 +43,9 @@ public sealed unsafe partial class SemVersion : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C3.hs_method_2077ece0((void*)__hosihikari_shim_handle, (void*)other);
     }
 
-    public static string SemVerRegexStr()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_989f3ffc();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SemVerRegexStr() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SemVersion Create()
     {
@@ -82,34 +80,17 @@ public sealed unsafe partial class SemVersion : global::System.IDisposable
         return new SemVersion((nint)handle);
     }
 
-    public static int fromJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value json, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion output, int parseOption)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_8bb07664((void*)json.Handle, (void*)output.Handle, parseOption);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint fromJson(nint json, nint output, nint parseOption) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int fromJsonArray(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonArray, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion output)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_05e59727((void*)jsonArray.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint fromJsonArray(nint jsonArray, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int fromString(string src, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion output, int parseOption)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(src);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(src, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C3.hs_method_a2bcfb2a(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)output.Handle, parseOption);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint fromString(nint src, nint output, nint parseOption) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public bool mAnyVersion

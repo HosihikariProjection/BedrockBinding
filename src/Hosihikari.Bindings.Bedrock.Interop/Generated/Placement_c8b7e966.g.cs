@@ -38,19 +38,17 @@ public sealed unsafe partial class Placement : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Placement arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_26718a15((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_b7bd7047((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Placement Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_7e26635f();
+        var handle = NativeMethods.TablePtr->C3.hs_create_7e26635f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,49 +57,41 @@ public sealed unsafe partial class Placement : global::System.IDisposable
         return new Placement((nint)handle);
     }
 
-    public static Placement Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Placement arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0972d4e5((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Placement((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Placement Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntitySpawnPredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9c6c2ccd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9c6c2ccd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHeightmap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7738c3bc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7738c3bc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mObstructionPredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1694d530((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1694d530((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_76d62cde((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_76d62cde((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_549fedd5(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Placement operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Placement arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.Spawn.Placement((nint)NativeMethods.TablePtr->C4.hs_method_1e524b7e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_1e524b7e(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -110,7 +100,7 @@ public sealed unsafe partial class Placement : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c8b7e966((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c8b7e966((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

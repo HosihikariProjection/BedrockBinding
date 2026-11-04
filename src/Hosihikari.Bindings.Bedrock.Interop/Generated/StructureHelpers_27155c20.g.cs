@@ -53,77 +53,41 @@ public sealed unsafe partial class StructureHelpers : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(lootTable, __hs_stringBytes8);
         fixed (byte* __hs_stringData8 = __hs_stringBytes8)
         {
-            return NativeMethods.TablePtr->C4.hs_method_126aede2((void*)piece.Handle, (void*)region.Handle, (void*)chunkBB.Handle, (void*)random.Handle, x, y, z, direction, __hs_stringData8, (nuint)__hs_stringByteCount8) != 0;
+            return NativeMethods.TablePtr->C3.hs_method_126aede2((void*)piece.Handle, (void*)region.Handle, (void*)chunkBB.Handle, (void*)random.Handle, x, y, z, direction, __hs_stringData8, (nuint)__hs_stringByteCount8) != 0;
         }
     }
 
-    public static bool createDispenser(global::Hosihikari.Bindings.Bedrock.Interop.StructurePiece piece, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, global::Hosihikari.Bindings.Bedrock.Interop.Random random, int x, int y, int z, int facing, string lootTable)
-    {
-        var __hs_stringByteCount8 = global::System.Text.Encoding.UTF8.GetByteCount(lootTable);
-        scoped global::System.Span<byte> __hs_stringBytes8;
-        if (__hs_stringByteCount8 <= 256)
-        {
-            __hs_stringBytes8 = stackalloc byte[__hs_stringByteCount8 == 0 ? 1 : __hs_stringByteCount8];
-        }
-        else
-        {
-            __hs_stringBytes8 = new byte[__hs_stringByteCount8];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(lootTable, __hs_stringBytes8);
-        fixed (byte* __hs_stringData8 = __hs_stringBytes8)
-        {
-            return NativeMethods.TablePtr->C4.hs_method_3da9ec3a((void*)piece.Handle, (void*)region.Handle, (void*)chunkBB.Handle, (void*)random.Handle, x, y, z, facing, __hs_stringData8, (nuint)__hs_stringByteCount8) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool createDispenser(nint piece, nint region, nint chunkBB, nint random, int x, int y, int z, int facing, nint lootTable) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool createMinecartChest(global::Hosihikari.Bindings.Bedrock.Interop.StructurePiece piece, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB, global::Hosihikari.Bindings.Bedrock.Interop.Random random, int x, int y, int z, int direction, string lootTable)
-    {
-        var __hs_stringByteCount8 = global::System.Text.Encoding.UTF8.GetByteCount(lootTable);
-        scoped global::System.Span<byte> __hs_stringBytes8;
-        if (__hs_stringByteCount8 <= 256)
-        {
-            __hs_stringBytes8 = stackalloc byte[__hs_stringByteCount8 == 0 ? 1 : __hs_stringByteCount8];
-        }
-        else
-        {
-            __hs_stringBytes8 = new byte[__hs_stringByteCount8];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(lootTable, __hs_stringBytes8);
-        fixed (byte* __hs_stringData8 = __hs_stringBytes8)
-        {
-            return NativeMethods.TablePtr->C4.hs_method_2b5b86fb((void*)piece.Handle, (void*)region.Handle, (void*)chunkBB.Handle, (void*)random.Handle, x, y, z, direction, __hs_stringData8, (nuint)__hs_stringByteCount8) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool createMinecartChest(nint piece, nint region, nint chunkBB, nint random, int x, int y, int z, int direction, nint lootTable) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void fillColumnDown(global::Hosihikari.Bindings.Bedrock.Interop.StructurePiece piece, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int x, int startY, int z, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1221c83d((void*)piece.Handle, (void*)region.Handle, (void*)block.Handle, x, startY, z, (void*)chunkBB.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void fillColumnDown(nint piece, nint region, nint block, int x, int startY, int z, nint chunkBB) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int getDirectionRotation(int structureOrientation, ushort inOrientation)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_3effd453(structureOrientation, inOrientation);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int getDirectionRotation(int structureOrientation, ushort inOrientation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int getDoorRotation(int structureOrientation, ushort inOrientation)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_688bb407(structureOrientation, inOrientation);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int getDoorRotation(int structureOrientation, ushort inOrientation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int getFacingDirectionRotation(int structureOrientation, ushort inOrientation)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_4c80156e(structureOrientation, inOrientation);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int getFacingDirectionRotation(int structureOrientation, ushort inOrientation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int getTorchRotation(int structureOrientation, ushort torchOrientation)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_5dcb0a60(structureOrientation, torchOrientation);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int getTorchRotation(int structureOrientation, ushort torchOrientation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int getWeirdoDirectionRotation(int structureOrientation, ushort inOrientation)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_60c5358c(structureOrientation, inOrientation);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int getWeirdoDirectionRotation(int structureOrientation, ushort inOrientation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -131,7 +95,7 @@ public sealed unsafe partial class StructureHelpers : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_27155c20((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_27155c20((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

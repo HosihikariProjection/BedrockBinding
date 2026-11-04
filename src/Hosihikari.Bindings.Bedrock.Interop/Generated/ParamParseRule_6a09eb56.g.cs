@@ -40,7 +40,7 @@ public sealed unsafe partial class ParamParseRule : global::System.IDisposable
 
     public static ParamParseRule Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParamParseRule arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8f40de05((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_8f40de05((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class ParamParseRule : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint parse_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_59ab0508((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_59ab0508((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint symbol_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b3520e77((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_b3520e77((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class ParamParseRule : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_6a09eb56((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_6a09eb56((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

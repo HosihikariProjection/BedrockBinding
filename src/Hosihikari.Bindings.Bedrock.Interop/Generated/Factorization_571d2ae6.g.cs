@@ -40,7 +40,7 @@ public sealed unsafe partial class Factorization : global::System.IDisposable
 
     public static Factorization Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Factorization arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_a106d185((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_a106d185((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class Factorization : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint commandSymbol_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_41c5f931((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_41c5f931((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class Factorization : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_571d2ae6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_571d2ae6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -50,16 +50,13 @@ public sealed unsafe partial class ScatterFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_805e4062((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4ec3da7f((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _place(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScatterFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.ScatterFeature arg0)
     {
@@ -72,60 +69,49 @@ public sealed unsafe partial class ScatterFeature : global::System.IDisposable
         return new ScatterFeature((nint)handle);
     }
 
-    public void addCoordinateEvaluationOrder(nint scatterParamsData, nint coordinateEvaluationOrder)
-    {
-        NativeMethods.TablePtr->C3.hs_method_786ae906((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)coordinateEvaluationOrder);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCoordinateEvaluationOrder(nint scatterParamsData, nint coordinateEvaluationOrder) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addCoordinateRangeDataX(nint scatterParamsData, nint coordinateRangeData)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b672e84a((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)coordinateRangeData);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCoordinateRangeDataX(nint scatterParamsData, nint coordinateRangeData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addCoordinateRangeDataXExpression(nint scatterParamsData, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode expressionNode)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e6a929aa((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)expressionNode.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCoordinateRangeDataXExpression(nint scatterParamsData, nint expressionNode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addCoordinateRangeDataY(nint scatterParamsData, nint coordinateRangeData)
-    {
-        NativeMethods.TablePtr->C3.hs_method_5fa56561((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)coordinateRangeData);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCoordinateRangeDataY(nint scatterParamsData, nint coordinateRangeData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addCoordinateRangeDataYExpression(nint scatterParamsData, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode expressionNode)
-    {
-        NativeMethods.TablePtr->C3.hs_method_cb91d24a((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)expressionNode.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCoordinateRangeDataYExpression(nint scatterParamsData, nint expressionNode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addCoordinateRangeDataZ(nint scatterParamsData, nint coordinateRangeData)
-    {
-        NativeMethods.TablePtr->C3.hs_method_dca6a4fd((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)coordinateRangeData);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCoordinateRangeDataZ(nint scatterParamsData, nint coordinateRangeData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addCoordinateRangeDataZExpression(nint scatterParamsData, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode expressionNode)
-    {
-        NativeMethods.TablePtr->C3.hs_method_2962939c((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)expressionNode.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCoordinateRangeDataZExpression(nint scatterParamsData, nint expressionNode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addIterations(nint scatterParamsData, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode iterations)
-    {
-        NativeMethods.TablePtr->C3.hs_method_6367394e((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)iterations.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addIterations(nint scatterParamsData, nint iterations) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addScatterChance(nint scatterParamsData, nint scatterChance)
-    {
-        NativeMethods.TablePtr->C3.hs_method_13f0da90((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)scatterChance);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addScatterChance(nint scatterParamsData, nint scatterChance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addScatterChanceExpression(nint scatterParamsData, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode scatterChance)
-    {
-        NativeMethods.TablePtr->C3.hs_method_08dce48e((void*)__hosihikari_shim_handle, (void*)scatterParamsData, (void*)scatterChance.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addScatterChanceExpression(nint scatterParamsData, nint scatterChance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addScatterParams(global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams scatterParams)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f21d17f2((void*)__hosihikari_shim_handle, (void*)scatterParams.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addScatterParams(nint scatterParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFeatureToScatter_Address

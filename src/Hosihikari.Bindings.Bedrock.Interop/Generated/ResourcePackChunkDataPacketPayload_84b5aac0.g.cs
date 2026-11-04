@@ -38,9 +38,9 @@ public sealed unsafe partial class ResourcePackChunkDataPacketPayload : global::
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint name, int chunkID, ulong byteOffset, nint data) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ResourcePackChunkDataPacketPayload Create()
     {
@@ -64,9 +64,9 @@ public sealed unsafe partial class ResourcePackChunkDataPacketPayload : global::
         return new ResourcePackChunkDataPacketPayload((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ResourcePackChunkDataPacketPayload Create(nint name, int chunkID, ulong byteOffset, nint data) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mByteOffset
     {

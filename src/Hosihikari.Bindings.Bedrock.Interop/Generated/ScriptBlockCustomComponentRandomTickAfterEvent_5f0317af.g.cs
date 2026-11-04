@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptBlockCustomComponentRandomTickAfterEven
         return __hs_handle;
     }
 
-    public nint _ctor(nint eventData, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_bf551952((void*)__hosihikari_shim_handle, (void*)eventData, (void*)scope.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint eventData, nint scope) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptBlockCustomComponentRandomTickAfterEvent Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class ScriptBlockCustomComponentRandomTickAfterEven
         return new ScriptBlockCustomComponentRandomTickAfterEvent((nint)handle);
     }
 
-    public static ScriptBlockCustomComponentRandomTickAfterEvent Create(nint eventData, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.WeakLifetimeScope scope)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_68befe14((void*)eventData, (void*)scope.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptBlockCustomComponentRandomTickAfterEvent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptBlockCustomComponentRandomTickAfterEvent Create(nint eventData, nint scope) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptBlockCustomComponentRandomTickAfterEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptBlockCustomComponentRandomTickAfterEvent arg0)
     {
@@ -76,10 +68,9 @@ public sealed unsafe partial class ScriptBlockCustomComponentRandomTickAfterEven
         return new ScriptBlockCustomComponentRandomTickAfterEvent((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_1eb99667());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

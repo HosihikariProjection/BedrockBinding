@@ -80,20 +80,17 @@ public sealed unsafe partial class CraftHandlerTrade : global::System.IDisposabl
         set => NativeMethods.TablePtr->C1.hs_set_4749464e((void*)__hosihikari_shim_handle, value);
     }
 
-    public byte __handleCraftAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase requestAction)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_99e05378((void*)__hosihikari_shim_handle, (void*)requestAction.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __handleCraftAction(nint requestAction) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __postCraftRequest(bool wasSuccess)
-    {
-        NativeMethods.TablePtr->C1.hs_method_439e8bc8((void*)__hosihikari_shim_handle, wasSuccess);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __postCraftRequest(nint wasSuccess) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte _handleConsumedItem(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName openContainerNetId, byte slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack consumedItem)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_09f85c26((void*)__hosihikari_shim_handle, (void*)openContainerNetId.Handle, slot, (void*)consumedItem.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _handleConsumedItem(nint openContainerNetId, nint slot, nint consumedItem) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CraftHandlerTrade Create()
     {
@@ -127,10 +124,9 @@ public sealed unsafe partial class CraftHandlerTrade : global::System.IDisposabl
         return NativeMethods.TablePtr->C1.hs_method_60d0edff((void*)__hosihikari_shim_handle, (void*)tradeRecipeNetId, numCrafts);
     }
 
-    public byte _initTrade2Consumes()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_6a49dfe8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _initTrade2Consumes() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _postCraftRequest(bool wasSuccess)
     {

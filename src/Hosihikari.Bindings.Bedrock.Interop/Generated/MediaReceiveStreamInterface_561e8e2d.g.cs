@@ -44,7 +44,7 @@ public sealed unsafe partial class MediaReceiveStreamInterface : global::System.
 
     public static MediaReceiveStreamInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaReceiveStreamInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_96df91b6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_96df91b6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,17 +63,17 @@ public sealed unsafe partial class MediaReceiveStreamInterface : global::System.
 
     public void SetRtcpMode(int arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_522c8195((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C4.hs_method_522c8195((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void Start()
     {
-        NativeMethods.TablePtr->C5.hs_method_bcdbf43e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_bcdbf43e((void*)__hosihikari_shim_handle);
     }
 
     public void Stop()
     {
-        NativeMethods.TablePtr->C5.hs_method_72c061b6((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_72c061b6((void*)__hosihikari_shim_handle);
     }
 
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class MediaReceiveStreamInterface : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_561e8e2d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_561e8e2d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

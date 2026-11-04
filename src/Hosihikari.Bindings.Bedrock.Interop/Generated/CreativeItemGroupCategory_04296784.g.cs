@@ -55,23 +55,17 @@ public sealed unsafe partial class CreativeItemGroupCategory : global::System.ID
         return new CreativeItemGroupCategory((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo? addAnonymousGroup()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9d4e8968((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint addAnonymousGroup() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo? addChildGroup(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance icon)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_17e4e405((void*)__hosihikari_shim_handle, (void*)name.Handle, (void*)icon.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint addChildGroup(nint name, nint icon) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo? getChildGroup(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_3a5e7486((void*)__hosihikari_shim_handle, (void*)name.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getChildGroup(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte mCategory
     {

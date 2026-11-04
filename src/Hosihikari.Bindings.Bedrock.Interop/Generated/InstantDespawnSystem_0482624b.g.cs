@@ -38,14 +38,13 @@ public sealed unsafe partial class InstantDespawnSystem : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f601cb9a((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static InstantDespawnSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.InstantDespawnSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f732805f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f732805f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,14 +53,13 @@ public sealed unsafe partial class InstantDespawnSystem : global::System.IDispos
         return new InstantDespawnSystem((nint)handle);
     }
 
-    public static void _tickComponent(global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, global::Hosihikari.Bindings.Bedrock.Interop.InstantDespawnComponent instantDespawnComponent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_bf00147e((void*)actorOwnerComponent.Handle, (void*)instantDespawnComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _tickComponent(nint actorOwnerComponent, nint instantDespawnComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C2.hs_method_b1296e9c((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C1.hs_method_b1296e9c((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -71,7 +69,7 @@ public sealed unsafe partial class InstantDespawnSystem : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0482624b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_0482624b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

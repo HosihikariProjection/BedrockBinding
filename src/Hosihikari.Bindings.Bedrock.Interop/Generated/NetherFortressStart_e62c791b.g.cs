@@ -38,16 +38,13 @@ public sealed unsafe partial class NetherFortressStart : global::System.IDisposa
         return __hs_handle;
     }
 
-    public string _getStructureName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0b230310((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getStructureName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _requiresNeighborAwareBlockUpgrade()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_5cabcf4c((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _requiresNeighborAwareBlockUpgrade() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NetherFortressStart Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFortressStart arg0)
     {

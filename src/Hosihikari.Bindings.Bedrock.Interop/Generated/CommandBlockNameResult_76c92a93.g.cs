@@ -38,18 +38,18 @@ public sealed unsafe partial class CommandBlockNameResult : global::System.IDisp
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint originalName, nint block, bool isComplexAlias, nint statesToCompare) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C1.hs_method_b3651adb((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C0.hs_method_b3651adb((void*)__hosihikari_shim_handle);
     }
 
     public static CommandBlockNameResult Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ebc3b542();
+        var handle = NativeMethods.TablePtr->C0.hs_create_ebc3b542();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +60,7 @@ public sealed unsafe partial class CommandBlockNameResult : global::System.IDisp
 
     public static CommandBlockNameResult Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockNameResult arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_5fc84902((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_5fc84902((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,42 +69,41 @@ public sealed unsafe partial class CommandBlockNameResult : global::System.IDisp
         return new CommandBlockNameResult((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static CommandBlockNameResult Create(nint originalName, nint block, bool isComplexAlias, nint statesToCompare) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value vector parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isSameBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block rhs, bool onlyCompareBlockType, bool compareWithComplexAlias)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_d2394206((void*)__hosihikari_shim_handle, (void*)rhs.Handle, onlyCompareBlockType, compareWithComplexAlias) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isSameBlock(nint rhs, bool onlyCompareBlockType, bool compareWithComplexAlias) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mBlock
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4a74ab30((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_4a74ab30((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComplexAliasPostSplitBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ceee0ca9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_ceee0ca9((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsComplexAlias
     {
-        get => NativeMethods.TablePtr->C1.hs_get_dadfdc64((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_dadfdc64((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_dadfdc64((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_dadfdc64((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mResult
     {
-        get => NativeMethods.TablePtr->C1.hs_get_da315866((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_da315866((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_da315866((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_da315866((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStatesToCompare_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_6a6c2bbd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_6a6c2bbd((void*)__hosihikari_shim_handle);
     }
 
 
@@ -114,7 +113,7 @@ public sealed unsafe partial class CommandBlockNameResult : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_76c92a93((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_76c92a93((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

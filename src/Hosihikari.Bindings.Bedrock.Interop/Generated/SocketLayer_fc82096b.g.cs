@@ -38,15 +38,13 @@ public sealed unsafe partial class SocketLayer : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void GetMyAdapters(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.NetworkAdapter? adapters)
-    {
-        NativeMethods.TablePtr->C3.hs_method_7bc8c916((void*)(adapters?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void GetMyAdapters(nint adapters) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString GetSubNetForSocketAndIp(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString inIpString)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString((nint)NativeMethods.TablePtr->C3.hs_method_f38a562a((void*)inIpString.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint GetSubNetForSocketAndIp(nint inIpString) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -54,7 +52,7 @@ public sealed unsafe partial class SocketLayer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_fc82096b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_fc82096b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

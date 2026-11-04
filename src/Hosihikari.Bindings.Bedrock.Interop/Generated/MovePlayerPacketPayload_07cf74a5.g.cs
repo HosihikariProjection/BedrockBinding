@@ -38,15 +38,13 @@ public sealed unsafe partial class MovePlayerPacketPayload : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte resetPosition, int cause, int sourceEntityType)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_e9881340((void*)__hosihikari_shim_handle, (void*)player.Handle, resetPosition, cause, sourceEntityType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint player, nint resetPosition, int cause, int sourceEntityType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_de331ce6((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)pos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint player, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MovePlayerPacketPayload Create()
     {
@@ -70,27 +68,13 @@ public sealed unsafe partial class MovePlayerPacketPayload : global::System.IDis
         return new MovePlayerPacketPayload((nint)handle);
     }
 
-    public static MovePlayerPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte resetPosition, int cause, int sourceEntityType)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3770b943((void*)player.Handle, resetPosition, cause, sourceEntityType);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MovePlayerPacketPayload Create(nint player, nint resetPosition, int cause, int sourceEntityType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new MovePlayerPacketPayload((nint)handle);
-    }
-
-    public static MovePlayerPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_97e848db((void*)player.Handle, (void*)pos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MovePlayerPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MovePlayerPacketPayload Create(nint player, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mOnGround
     {

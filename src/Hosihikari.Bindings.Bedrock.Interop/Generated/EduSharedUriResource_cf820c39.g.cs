@@ -38,15 +38,13 @@ public sealed unsafe partial class EduSharedUriResource : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_1508de21((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_25ba09dd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EduSharedUriResource Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class EduSharedUriResource : global::System.IDispos
         return new EduSharedUriResource((nint)handle);
     }
 
-    public static EduSharedUriResource Create(global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0b79f664((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EduSharedUriResource((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static EduSharedUriResource Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint buttonName_Address
@@ -76,10 +67,9 @@ public sealed unsafe partial class EduSharedUriResource : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_c66fec19((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource fromTag(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource((nint)NativeMethods.TablePtr->C1.hs_method_ca8e4e41((void*)tag.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint fromTag(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint linkUri_Address
@@ -87,18 +77,18 @@ public sealed unsafe partial class EduSharedUriResource : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_35261478((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.EduSharedUriResource((nint)NativeMethods.TablePtr->C1.hs_method_a6bfbcd0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint toTag(nint resource) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -56,19 +56,17 @@ public sealed unsafe partial class HealthAttributeDelegate : global::System.IDis
         return NativeMethods.TablePtr->C1.hs_method_4f75fa76((void*)__hosihikari_shim_handle, (void*)buff.Handle);
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance mutableInstance, nint context)
-    {
-        NativeMethods.TablePtr->C1.hs_method_8d6b1770((void*)__hosihikari_shim_handle, (void*)mutableInstance.Handle, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint mutableInstance, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _willChange(float oldValue, float newValue, global::Hosihikari.Bindings.Bedrock.Interop.AttributeBuff buff)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_feacb8d8((void*)__hosihikari_shim_handle, oldValue, newValue, (void*)buff.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _willChange(float oldValue, float newValue, nint buff) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HealthAttributeDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.HealthAttributeDelegate arg0)
     {

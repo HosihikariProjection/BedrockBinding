@@ -40,7 +40,7 @@ public sealed unsafe partial class PostDelayedTaskTraits : global::System.IDispo
 
     public static PostDelayedTaskTraits Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_d787e6a1();
+        var handle = NativeMethods.TablePtr->C4.hs_create_d787e6a1();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PostDelayedTaskTraits : global::System.IDispo
 
     public static PostDelayedTaskTraits Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.PostDelayedTaskTraits arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_954821e6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_954821e6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +63,12 @@ public sealed unsafe partial class PostDelayedTaskTraits : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk38e36a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_0e09119e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0e09119e((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.PostDelayedTaskTraits operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.PostDelayedTaskTraits arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.PostDelayedTaskTraits((nint)NativeMethods.TablePtr->C5.hs_method_86579601((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.PostDelayedTaskTraits((nint)NativeMethods.TablePtr->C4.hs_method_86579601((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class PostDelayedTaskTraits : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_80e21b2e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_80e21b2e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

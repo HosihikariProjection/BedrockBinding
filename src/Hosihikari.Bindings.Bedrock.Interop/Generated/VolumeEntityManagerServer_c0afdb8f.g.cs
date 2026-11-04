@@ -90,14 +90,13 @@ public sealed unsafe partial class VolumeEntityManagerServer : global::System.ID
         return new VolumeEntityManagerServer((nint)handle);
     }
 
-    public void _sendVolumeToClient(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent userIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.PacketSender packetSender)
-    {
-        NativeMethods.TablePtr->C4.hs_method_764ac6c4((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)userIdentifier.Handle, (void*)source.Handle, (void*)packetSender.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendVolumeToClient(nint entity, nint userIdentifier, nint source, nint packetSender) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'WeakRef<EntityContext>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getAllVolumesOverlappingChunkPosition(nint pos, nint chunkDimension) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'WeakRef<EntityContext>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3d4c19_Address
@@ -116,10 +115,9 @@ public sealed unsafe partial class VolumeEntityManagerServer : global::System.ID
         return new global::Hosihikari.Bindings.Bedrock.Interop.VolumeEntityManagerServer((nint)NativeMethods.TablePtr->C4.hs_method_db09b42b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void sendAllVolumesToClient(global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent userIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.PacketSender packetSender)
-    {
-        NativeMethods.TablePtr->C4.hs_method_79fb9e09((void*)__hosihikari_shim_handle, (void*)userIdentifier.Handle, (void*)source.Handle, (void*)packetSender.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void sendAllVolumesToClient(nint userIdentifier, nint source, nint packetSender) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

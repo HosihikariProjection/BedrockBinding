@@ -40,7 +40,7 @@ public sealed unsafe partial class SlotDropChancesComponent : global::System.IDi
 
     public static SlotDropChancesComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SlotDropChancesComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c4773aa2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c4773aa2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,33 +49,31 @@ public sealed unsafe partial class SlotDropChancesComponent : global::System.IDi
         return new SlotDropChancesComponent((nint)handle);
     }
 
-    public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C4.hs_method_a344ac53((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addAdditionalSaveData(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float mDefaultChance
     {
-        get => NativeMethods.TablePtr->C4.hs_get_bd52687e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_bd52687e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bd52687e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_bd52687e((void*)__hosihikari_shim_handle, value);
     }
 
     public float mDefaultChanceForInvalidSlots
     {
-        get => NativeMethods.TablePtr->C4.hs_get_115bf5a6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_115bf5a6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_115bf5a6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_115bf5a6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDropChances_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c9ea1a3b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c9ea1a3b((void*)__hosihikari_shim_handle);
     }
 
-    public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C4.hs_method_d8ad0d9d((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void readAdditionalSaveData(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -84,7 +82,7 @@ public sealed unsafe partial class SlotDropChancesComponent : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d591bd67((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d591bd67((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

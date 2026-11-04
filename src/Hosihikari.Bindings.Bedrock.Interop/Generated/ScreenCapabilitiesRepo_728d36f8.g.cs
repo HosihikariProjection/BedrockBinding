@@ -60,9 +60,9 @@ public sealed unsafe partial class ScreenCapabilitiesRepo : global::System.IDisp
         return new ScreenCapabilitiesRepo((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IScreenCapabilities' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint get(nint screenName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'IScreenCapabilities' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1c510f_Address

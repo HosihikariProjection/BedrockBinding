@@ -67,9 +67,9 @@ public sealed unsafe partial class BiomeComponentFactory : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_4882fc7b((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerBiomeDefinitionSerializers(nint serializeToData, nint applyFromData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

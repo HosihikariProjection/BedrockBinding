@@ -38,10 +38,9 @@ public sealed unsafe partial class MossStoneSelector : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block _next(global::Hosihikari.Bindings.Bedrock.Interop.Random random, int arg1, int arg2, int arg3, bool arg4)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C2.hs_method_d8c7102a((void*)__hosihikari_shim_handle, (void*)random.Handle, arg1, arg2, arg3, arg4), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _next(nint random, int arg1, int arg2, int arg3, bool arg4) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MossStoneSelector Create(global::Hosihikari.Bindings.Bedrock.Interop.MossStoneSelector arg0)
     {

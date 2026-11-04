@@ -67,10 +67,9 @@ public sealed unsafe partial class TransferServerCommand : global::System.IDispo
         set => NativeMethods.TablePtr->C4.hs_set_57ca95b1((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C4.hs_method_928785f6((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TransferServerCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.TransferServerCommand arg0)
     {

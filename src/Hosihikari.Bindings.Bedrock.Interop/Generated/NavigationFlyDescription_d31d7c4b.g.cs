@@ -164,10 +164,9 @@ public sealed unsafe partial class NavigationFlyDescription : global::System.IDi
         set => NativeMethods.TablePtr->C2.hs_set_0b702e21((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _getJsonName()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_c314bd31((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getJsonName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NavigationFlyDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.NavigationFlyDescription arg0)
     {

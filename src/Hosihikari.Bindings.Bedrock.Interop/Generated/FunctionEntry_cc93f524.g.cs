@@ -38,10 +38,9 @@ public sealed unsafe partial class FunctionEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.FunctionManager functionManager, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, byte order)
-    {
-        NativeMethods.TablePtr->C1.hs_method_948e1f85((void*)__hosihikari_shim_handle, (void*)functionManager.Handle, (void*)origin.Handle, order);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint functionManager, nint origin, nint order) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FunctionEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.FunctionEntry arg0)
     {

@@ -74,10 +74,9 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C3.hs_get_252b0f89((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader_Nested.ConstructorKey arg0, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs args)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_85d6a30b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)args.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0, nint args) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ResourcePackManager Create()
     {
@@ -90,47 +89,35 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
         return new ResourcePackManager((nint)handle);
     }
 
-    public static ResourcePackManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader_Nested.ConstructorKey arg0, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs args)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1f99f56f((void*)arg0.Handle, (void*)args.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ResourcePackManager Create(nint arg0, nint args) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ResourcePackManager((nint)handle);
-    }
-
-    public void _calculateMinEngineVersionFromFullStack()
-    {
-        NativeMethods.TablePtr->C3.hs_method_6c480ce9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _calculateMinEngineVersionFromFullStack() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _composeFullStack()
     {
         NativeMethods.TablePtr->C3.hs_method_358d6daf((void*)__hosihikari_shim_handle);
     }
 
-    public void _updateLanguageSubpacks()
-    {
-        NativeMethods.TablePtr->C3.hs_method_43521c55((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _updateLanguageSubpacks() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void clearStack(int stackType)
-    {
-        NativeMethods.TablePtr->C3.hs_method_0ddeda30((void*)__hosihikari_shim_handle, stackType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clearStack(nint stackType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int composeFullStack(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack output, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack globalStack, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack levelStack)
     {
         return NativeMethods.TablePtr->C3.hs_method_dab10bb7((void*)__hosihikari_shim_handle, (void*)output.Handle, (void*)globalStack.Handle, (void*)levelStack.Handle);
     }
 
-    public static global::Hosihikari.Bindings.Abi.SharedHandle? create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs args)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_8f72f5be((void*)args.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint create(nint args) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void iteratePacks(nint pred) =>
@@ -220,9 +207,9 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
         set => NativeMethods.TablePtr->C3.hs_set_e6d56e18((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void removeIf(nint pred) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public bool setStack(nint stack, nint stackType) =>

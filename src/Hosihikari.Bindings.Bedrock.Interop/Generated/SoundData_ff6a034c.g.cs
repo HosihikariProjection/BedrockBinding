@@ -40,7 +40,7 @@ public sealed unsafe partial class SoundData : global::System.IDisposable
 
     public static SoundData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_db28598f();
+        var handle = NativeMethods.TablePtr->C3.hs_create_db28598f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class SoundData : global::System.IDisposable
 
     public static SoundData Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_5b43b877((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_5b43b877((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class SoundData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdd15c3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6c4b6052((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6c4b6052((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkff6589_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_cdff0ab5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cdff0ab5((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData((nint)NativeMethods.TablePtr->C4.hs_method_9b8cbe50((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.SoundData((nint)NativeMethods.TablePtr->C3.hs_method_9b8cbe50((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class SoundData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ff6a034c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ff6a034c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -60,64 +60,37 @@ public sealed unsafe partial class FlatFileSystemImpl : global::System.IDisposab
         return new FlatFileSystemImpl((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult _findFileOrDirectoryEntry(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView manifestPath, bool skipDeleted)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSearchResult((nint)NativeMethods.TablePtr->C1.hs_method_27259f5d((void*)__hosihikari_shim_handle, (void*)filePath.Handle, (void*)manifestPath.Handle, skipDeleted));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _findFileOrDirectoryEntry(nint filePath, nint manifestPath, bool skipDeleted) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _getSeekPositionAndSize(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView manifestPath, nint seekPositionOut, nint fileSizeOut)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_1210cd52((void*)__hosihikari_shim_handle, (void*)filePath.Handle, (void*)manifestPath.Handle, (void*)seekPositionOut, (void*)fileSizeOut));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getSeekPositionAndSize(nint filePath, nint manifestPath, nint seekPositionOut, nint fileSizeOut) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result copyFlatFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView sourceDirectoryPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView targetDirectoryPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath[] excludedDirectories, global::Hosihikari.Bindings.Bedrock.Interop.Core.ExcludedPath[] excludedFiles)
-    {
-        var __hs_vectorItems2 = excludedDirectories;
-        var __hs_vectorHandles2 = new nint[__hs_vectorItems2?.Length ?? 0];
-        for (var __hs_i2 = 0; __hs_i2 < __hs_vectorHandles2.Length; __hs_i2++)
-        {
-            __hs_vectorHandles2[__hs_i2] = __hs_vectorItems2![__hs_i2]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData2 = __hs_vectorHandles2)
-        {
-            var __hs_vectorData2 = (void**)__hs_vectorHandleData2;
-            var __hs_vectorItems3 = excludedFiles;
-            var __hs_vectorHandles3 = new nint[__hs_vectorItems3?.Length ?? 0];
-            for (var __hs_i3 = 0; __hs_i3 < __hs_vectorHandles3.Length; __hs_i3++)
-            {
-                __hs_vectorHandles3[__hs_i3] = __hs_vectorItems3![__hs_i3]?.Handle ?? 0;
-            }
-            fixed (nint* __hs_vectorHandleData3 = __hs_vectorHandles3)
-            {
-                var __hs_vectorData3 = (void**)__hs_vectorHandleData3;
-                return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_8d94b734((void*)__hosihikari_shim_handle, (void*)sourceDirectoryPath.Handle, (void*)targetDirectoryPath.Handle, __hs_vectorData2, (nuint)(excludedDirectories?.Length ?? 0), __hs_vectorData3, (nuint)(excludedFiles?.Length ?? 0)));
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint copyFlatFile(nint sourceDirectoryPath, nint targetDirectoryPath, nint excludedDirectories, nint excludedFiles) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result createFlatFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView sourceDirectoryPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView targetDirectoryPath)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_73292d69((void*)__hosihikari_shim_handle, (void*)sourceDirectoryPath.Handle, (void*)targetDirectoryPath.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint createFlatFile(nint sourceDirectoryPath, nint targetDirectoryPath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result deleteFileOrDirectory(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView fileOrDirectoryPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView manifestPath, bool directoryDeleteEnabled, bool deleteRecursively)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_80ce7704((void*)__hosihikari_shim_handle, (void*)fileOrDirectoryPath.Handle, (void*)manifestPath.Handle, directoryDeleteEnabled, deleteRecursively));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint deleteFileOrDirectory(nint fileOrDirectoryPath, nint manifestPath, bool directoryDeleteEnabled, bool deleteRecursively) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool fileOrDirectoryExists(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView manifestPath)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_67059bbd((void*)__hosihikari_shim_handle, (void*)path.Handle, (void*)manifestPath.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool fileOrDirectoryExists(nint path, nint manifestPath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isDirectoryPathAFlatFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView directoryPath)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_c2f9e35f((void*)__hosihikari_shim_handle, (void*)directoryPath.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isDirectoryPathAFlatFile(nint directoryPath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'Core::Result' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint iterateOverDirectory(nint directoryPath, nint manifestPath, nint flags, nint callbackFunction) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'Core::Result' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke799e3_Address
@@ -131,20 +104,18 @@ public sealed unsafe partial class FlatFileSystemImpl : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_aa1a221b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result openFlatFile(nint fileOut, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView manifestPath, global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode openMode, int fileBufferingMode)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_7e165dc0((void*)__hosihikari_shim_handle, (void*)fileOut, (void*)filePath.Handle, (void*)manifestPath.Handle, (void*)openMode.Handle, fileBufferingMode));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint openFlatFile(nint fileOut, nint filePath, nint manifestPath, nint openMode, nint fileBufferingMode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSystemImpl operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSystemImpl arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileSystemImpl((nint)NativeMethods.TablePtr->C1.hs_method_7322d8e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool shouldAccessFlatFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ manifestFilePath, bool shouldIncludeParentDir)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_9a905415((void*)__hosihikari_shim_handle, (void*)path.Handle, (void*)manifestFilePath.Handle, shouldIncludeParentDir) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool shouldAccessFlatFile(nint path, nint manifestFilePath, bool shouldIncludeParentDir) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

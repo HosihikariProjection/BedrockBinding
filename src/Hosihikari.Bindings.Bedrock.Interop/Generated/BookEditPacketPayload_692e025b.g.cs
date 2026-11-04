@@ -49,10 +49,9 @@ public sealed unsafe partial class BookEditPacketPayload : global::System.IDispo
         return new BookEditPacketPayload((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PageContent getPage()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PageContent((nint)NativeMethods.TablePtr->C0.hs_method_d5904536((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getPage() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mBookSlot
     {

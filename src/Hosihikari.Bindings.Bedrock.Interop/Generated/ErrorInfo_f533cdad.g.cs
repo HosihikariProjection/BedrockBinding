@@ -38,14 +38,13 @@ public sealed unsafe partial class ErrorInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_06bccd1b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ErrorInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.Reader_Nested.ErrorInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f065acd3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f065acd3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,19 +55,19 @@ public sealed unsafe partial class ErrorInfo : global::System.IDisposable
 
     public nint extra_
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_188e7135((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_188e7135((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint message__Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f2ded093((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f2ded093((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint token__Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e6723cf7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_e6723cf7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -78,7 +77,7 @@ public sealed unsafe partial class ErrorInfo : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f533cdad((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_f533cdad((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

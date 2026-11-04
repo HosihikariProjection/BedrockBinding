@@ -44,12 +44,12 @@ public sealed unsafe partial class InventoryContentPacketPayload : global::Syste
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C2.hs_method_1b20d573((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_1b20d573((void*)__hosihikari_shim_handle);
     }
 
     public static InventoryContentPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_387ced4a();
+        var handle = NativeMethods.TablePtr->C1.hs_create_387ced4a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class InventoryContentPacketPayload : global::Syste
 
     public static InventoryContentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContentPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c7ada27f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_c7ada27f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,25 +76,25 @@ public sealed unsafe partial class InventoryContentPacketPayload : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mFullContainerName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_15e4557f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_15e4557f((void*)__hosihikari_shim_handle);
     }
 
     public sbyte mInventoryId
     {
-        get => NativeMethods.TablePtr->C2.hs_get_cfc304df((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_cfc304df((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_cfc304df((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_cfc304df((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSlots_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_18ebf0f3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_18ebf0f3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStorageItem_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_eda86cd4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_eda86cd4((void*)__hosihikari_shim_handle);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class InventoryContentPacketPayload : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_ab993278((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_ab993278((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

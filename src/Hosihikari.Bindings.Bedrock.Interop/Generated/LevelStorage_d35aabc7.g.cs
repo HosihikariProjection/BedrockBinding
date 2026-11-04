@@ -38,61 +38,25 @@ public sealed unsafe partial class LevelStorage : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool _clonePlayerData(string fromKey, string toKey, bool isEditorPlayer)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(fromKey);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(fromKey, __hs_stringBytes0);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(toKey);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(toKey, __hs_stringBytes1);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                return NativeMethods.TablePtr->C2.hs_method_afeb9f9d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1, isEditorPlayer) != 0;
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _clonePlayerData(nint fromKey, nint toKey, bool isEditorPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _corruptLevel()
-    {
-        NativeMethods.TablePtr->C2.hs_method_710f51d4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _corruptLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string LEGACY_CONSOLE_PLAYER_PREFIX()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0dadd7ac();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint LEGACY_CONSOLE_PLAYER_PREFIX() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string LOCAL_PLAYER_EDITOR_TAG()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0a2209fc();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint LOCAL_PLAYER_EDITOR_TAG() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string LOCAL_PLAYER_TAG()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_a820e012();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint LOCAL_PLAYER_TAG() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LevelStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage arg0)
     {
@@ -240,11 +204,9 @@ public sealed unsafe partial class LevelStorage : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)NativeMethods.TablePtr->C2.hs_method_31baca31((void*)__hosihikari_shim_handle));
     }
 
-    public string getServerId(global::Hosihikari.Bindings.Bedrock.Interop.Player client, bool isXboxLive)
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_858221ae((void*)__hosihikari_shim_handle, (void*)client.Handle, isXboxLive);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getServerId(nint client, bool isXboxLive) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult getState()
     {
@@ -295,17 +257,9 @@ public sealed unsafe partial class LevelStorage : global::System.IDisposable
         return NativeMethods.TablePtr->C2.hs_method_93baa3b0((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public string[] loadAllPlayerIDs(bool includeLocalPlayer)
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_337e2e86((void*)__hosihikari_shim_handle, includeLocalPlayer);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint loadAllPlayerIDs(bool includeLocalPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool loadData(string key, ref string buffer, uint category)
     {

@@ -38,45 +38,37 @@ public sealed unsafe partial class VanillaBiomes : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void initBiomeComponentGlue(global::Hosihikari.Bindings.Bedrock.Interop.BiomeJsonDocumentGlue biomeJsonDocumentGlue)
-    {
-        NativeMethods.TablePtr->C4.hs_method_45625c3f((void*)biomeJsonDocumentGlue.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initBiomeComponentGlue(nint biomeJsonDocumentGlue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initBiomeDimensionComponent(global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry registry)
-    {
-        NativeMethods.TablePtr->C4.hs_method_eb5c7c56((void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initBiomeDimensionComponent(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initBiomes(global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings spawnSettings, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
-    {
-        NativeMethods.TablePtr->C4.hs_method_3ab5685d((void*)registry.Handle, (void*)spawnSettings.Handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initBiomes(nint registry, nint spawnSettings, nint baseGameVersion, nint experiments) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initDefaultWorldGenComponents(global::Hosihikari.Bindings.Bedrock.Interop.IWorldRegistriesProvider registries)
-    {
-        NativeMethods.TablePtr->C4.hs_method_72d983b0((void*)registries.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initDefaultWorldGenComponents(nint registries) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initSurfaceBuilders(global::Hosihikari.Bindings.Bedrock.Interop.SurfaceBuilderRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
-    {
-        NativeMethods.TablePtr->C4.hs_method_bb1a7a1e((void*)registry.Handle, (void*)baseGameVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initSurfaceBuilders(nint registry, nint baseGameVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initVanillaBiomeTypeComponent(global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry registry)
-    {
-        NativeMethods.TablePtr->C4.hs_method_c455a24f((void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initVanillaBiomeTypeComponent(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mPlayerValidSpawns()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_f1cef866();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPlayerValidSpawns() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mSpawnBiomeType()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_fcc36cb6();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mSpawnBiomeType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

@@ -38,15 +38,13 @@ public sealed unsafe partial class ExperimentStorage : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ExperimentStorage arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_8865f8b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_2f18c4d1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ExperimentStorage Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ExperimentStorage : global::System.IDisposabl
         return new ExperimentStorage((nint)handle);
     }
 
-    public static ExperimentStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.ExperimentStorage arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_daebbc78((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ExperimentStorage((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ExperimentStorage Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDeprecatedData_Address
@@ -88,9 +79,9 @@ public sealed unsafe partial class ExperimentStorage : global::System.IDisposabl
         set => NativeMethods.TablePtr->C1.hs_set_949ebfad((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ExperimentStorage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExperimentStorage arg0)
     {

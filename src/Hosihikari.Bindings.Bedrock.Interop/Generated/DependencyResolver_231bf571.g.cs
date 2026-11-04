@@ -60,13 +60,13 @@ public sealed unsafe partial class DependencyResolver : global::System.IDisposab
         return new DependencyResolver((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'Scripting::ModuleDescriptor' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getDependencyChain(nint firstRequest, nint originalRequestorUUID, nint versionRequestTable) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'Scripting::ModuleDescriptor' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: map key type 'Scripting::VersionRequestKey' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _resolveDependencyRequests(nint versionRequestTable) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'Scripting::VersionRequestKey' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcb02eb_Address

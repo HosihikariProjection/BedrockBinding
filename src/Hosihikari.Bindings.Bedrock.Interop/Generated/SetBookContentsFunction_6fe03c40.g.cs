@@ -41,22 +41,20 @@ public sealed unsafe partial class SetBookContentsFunction : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_fb873f0e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fb873f0e((void*)__hosihikari_shim_handle);
     }
 
-    public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
-    {
-        NativeMethods.TablePtr->C4.hs_method_fe71f2c6((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyPreVersion(nint item, nint arg1, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getFunctionType()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_9eae40e7((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getFunctionType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SetBookContentsFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SetBookContentsFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_7b36f535((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_7b36f535((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,34 +65,34 @@ public sealed unsafe partial class SetBookContentsFunction : global::System.IDis
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random arg1, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C4.hs_method_9d0fb76a((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C3.hs_method_9d0fb76a((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint deserialize(nint @object, nint predicates) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C4.hs_method_1eda0d3e((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_1eda0d3e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAuthor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ced28171((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ced28171((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPages_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e31a5606((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e31a5606((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTitle_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_174a873d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_174a873d((void*)__hosihikari_shim_handle);
     }
 
 
@@ -104,7 +102,7 @@ public sealed unsafe partial class SetBookContentsFunction : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6fe03c40((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_6fe03c40((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

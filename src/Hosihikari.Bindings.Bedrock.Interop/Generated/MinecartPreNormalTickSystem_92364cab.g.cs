@@ -38,15 +38,13 @@ public sealed unsafe partial class MinecartPreNormalTickSystem : global::System.
         return __hs_handle;
     }
 
-    public static void _doMinecartPreNormalTickSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, nint mod)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d51396f4((void*)context.Handle, (void*)actorOwnerComponent.Handle, (void*)mod);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doMinecartPreNormalTickSystem(nint context, nint actorOwnerComponent, nint mod) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_163ce355());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

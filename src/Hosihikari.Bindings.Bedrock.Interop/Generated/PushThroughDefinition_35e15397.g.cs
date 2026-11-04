@@ -40,7 +40,7 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
 
     public static PushThroughDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_f3d21606();
+        var handle = NativeMethods.TablePtr->C2.hs_create_f3d21606();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
 
     public static PushThroughDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_55f04446((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_55f04446((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,25 +60,23 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
         return new PushThroughDefinition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C3.hs_method_aa9ee927(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f50e0a38((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initialize(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk22d1ab_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_58c47340((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_58c47340((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition((nint)NativeMethods.TablePtr->C3.hs_method_9ca927eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PushThroughDefinition((nint)NativeMethods.TablePtr->C2.hs_method_9ca927eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -87,7 +85,7 @@ public sealed unsafe partial class PushThroughDefinition : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_35e15397((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_35e15397((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

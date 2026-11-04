@@ -44,19 +44,17 @@ public sealed unsafe partial class RenderOffsetsItemComponent : global::System.I
         set => NativeMethods.TablePtr->C3.hs_set_28efc38d((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.ItemTransforms Main_Hand_Defaults()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.ItemTransforms((nint)NativeMethods.TablePtr->C3.hs_method_a231cbd7(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint Main_Hand_Defaults() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.ItemTransforms Off_Hand_Defaults()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.ItemTransforms((nint)NativeMethods.TablePtr->C3.hs_method_c26f9bf8(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint Off_Hand_Defaults() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RenderOffsetsItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RenderOffsetsItemComponent arg0)
     {
@@ -69,14 +67,13 @@ public sealed unsafe partial class RenderOffsetsItemComponent : global::System.I
         return new RenderOffsetsItemComponent((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Matrix _getDisplayTransform(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.ItemTransforms mainHand, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.RenderOffsetsItemComponent_Nested.ItemTransforms offhand, uint type)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Matrix((nint)NativeMethods.TablePtr->C3.hs_method_9de73c5d((void*)mainHand.Handle, (void*)offhand.Handle, type));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _getDisplayTransform(nint mainHand, nint offhand, nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMainHand_Address

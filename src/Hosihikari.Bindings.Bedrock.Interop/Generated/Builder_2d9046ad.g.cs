@@ -38,34 +38,25 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::StrongAlias<dcsctp::VerificationTagTag, unsigned int>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint verification_tag, nint options) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::StrongAlias<dcsctp::VerificationTagTag, unsigned int>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_591f09ab((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder Add(nint chunk)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)NativeMethods.TablePtr->C5.hs_method_017ec619((void*)__hosihikari_shim_handle, (void*)chunk), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint Add(nint chunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte[] Build(bool write_checksum)
-    {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_70789ead((void*)__hosihikari_shim_handle, write_checksum);
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<byte>() : new byte[checked((int)__hs_view.Size)];
-        if (__hs_view.Size > 0)
-        {
-            new global::System.ReadOnlySpan<byte>(__hs_view.Data, checked((int)__hs_view.Size)).CopyTo(__hs_result);
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint Build(bool write_checksum) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Builder Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_bd321d1a();
+        var handle = NativeMethods.TablePtr->C4.hs_create_bd321d1a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,7 +67,7 @@ public sealed unsafe partial class Builder : global::System.IDisposable
 
     public static Builder Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_2a786428((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_2a786428((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,48 +76,47 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         return new Builder((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::StrongAlias<dcsctp::VerificationTagTag, unsigned int>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static Builder Create(nint verification_tag, nint options) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::StrongAlias<dcsctp::VerificationTagTag, unsigned int>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong bytes_remaining()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_d40c46b9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong bytes_remaining() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk16be9c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_f9b26251((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f9b26251((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk24297c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b1556b50((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b1556b50((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5b8bbd_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_616f1020((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_616f1020((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk925f93_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_8149503b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8149503b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke33d9e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b72f0bcf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b72f0bcf((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)NativeMethods.TablePtr->C5.hs_method_ba3d4261((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket_Nested.Builder((nint)NativeMethods.TablePtr->C4.hs_method_ba3d4261((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -136,7 +126,7 @@ public sealed unsafe partial class Builder : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_2d9046ad((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_2d9046ad((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

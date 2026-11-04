@@ -38,35 +38,29 @@ public sealed unsafe partial class SharedModifiers : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint DAMAGE_BOOST()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_783b472d();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DAMAGE_BOOST() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint HEALTH_BOOST()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d2708fa3();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint HEALTH_BOOST() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint MOVEMENT_SLOWDOWN()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_fd13bac5();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MOVEMENT_SLOWDOWN() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint MOVEMENT_SPEED()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_0310f9c2();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MOVEMENT_SPEED() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint SPRINTING_BOOST()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_78a9d0fc();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SPRINTING_BOOST() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint WEAKNESS()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_38fb6799();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint WEAKNESS() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -74,7 +68,7 @@ public sealed unsafe partial class SharedModifiers : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_443fb593((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_443fb593((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

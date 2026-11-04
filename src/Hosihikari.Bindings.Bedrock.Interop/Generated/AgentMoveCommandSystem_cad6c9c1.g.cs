@@ -38,10 +38,9 @@ public sealed unsafe partial class AgentMoveCommandSystem : global::System.IDisp
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C0.hs_method_9175aaea((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AgentMoveCommandSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentMoveCommandSystem arg0)
     {
@@ -54,25 +53,22 @@ public sealed unsafe partial class AgentMoveCommandSystem : global::System.IDisp
         return new AgentMoveCommandSystem((nint)handle);
     }
 
-    public static void cleanUp(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext agent, float cooldownTime)
-    {
-        NativeMethods.TablePtr->C0.hs_method_66e24b33((void*)agent.Handle, cooldownTime);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void cleanUp(nint agent, float cooldownTime) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, nint details, nint moveComp)
-    {
-        NativeMethods.TablePtr->C0.hs_method_6d2b8970((void*)entity.Handle, (void*)details, (void*)moveComp);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initialize(nint entity, nint details, nint moveComp) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
         NativeMethods.TablePtr->C0.hs_method_358e45b6((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
-    public static void tickMove(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, nint details, nint moveComp)
-    {
-        NativeMethods.TablePtr->C0.hs_method_1a7c8baa((void*)entity.Handle, (void*)details, (void*)moveComp);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void tickMove(nint entity, nint details, nint moveComp) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

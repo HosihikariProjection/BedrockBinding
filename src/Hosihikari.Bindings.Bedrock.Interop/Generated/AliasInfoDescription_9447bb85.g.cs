@@ -38,10 +38,9 @@ public sealed unsafe partial class AliasInfoDescription : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_73ebc6fb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AliasInfoDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.AliasInfoDescription arg0)
     {

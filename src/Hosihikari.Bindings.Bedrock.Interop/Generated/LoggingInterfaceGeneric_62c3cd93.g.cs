@@ -38,15 +38,13 @@ public sealed unsafe partial class LoggingInterfaceGeneric : global::System.IDis
         return __hs_handle;
     }
 
-    public ulong _threadId()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_9acac12e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong _threadId() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _writeToDebugger(nint area, uint level, nint message)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b6880789((void*)__hosihikari_shim_handle, (void*)area, level, (void*)message);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _writeToDebugger(nint area, nint level, nint message) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LoggingInterfaceGeneric Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LoggingInterfaceGeneric arg0)
     {

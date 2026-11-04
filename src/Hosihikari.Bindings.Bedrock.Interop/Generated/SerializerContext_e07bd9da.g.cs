@@ -40,37 +40,37 @@ public sealed unsafe partial class SerializerContext : global::System.IDisposabl
 
     public byte mContextArea
     {
-        get => NativeMethods.TablePtr->C5.hs_get_07c96840((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_07c96840((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_07c96840((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_07c96840((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mCurrentIndex
     {
-        get => NativeMethods.TablePtr->C5.hs_get_8fe2f38c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_8fe2f38c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_8fe2f38c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_8fe2f38c((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort mErrorCodes
     {
-        get => NativeMethods.TablePtr->C5.hs_get_2f4e15bf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_2f4e15bf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_2f4e15bf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_2f4e15bf((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLog_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_f738a74e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f738a74e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_dc2da599((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_dc2da599((void*)__hosihikari_shim_handle);
     }
 
     public static SerializerContext Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_3ee0e6dd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_3ee0e6dd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,42 +79,37 @@ public sealed unsafe partial class SerializerContext : global::System.IDisposabl
         return new SerializerContext((nint)handle);
     }
 
-    public void clearGenerations(uint from, uint to, ushort filter)
-    {
-        NativeMethods.TablePtr->C5.hs_method_b4c758c2((void*)__hosihikari_shim_handle, from, to, filter);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clearGenerations(uint from, uint to, nint filter) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void log(ushort res, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString msg)
-    {
-        NativeMethods.TablePtr->C5.hs_method_07a61d4a((void*)__hosihikari_shim_handle, res, (void*)msg.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void log(nint res, nint msg) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mGeneration
     {
-        get => NativeMethods.TablePtr->C5.hs_get_3292674b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_3292674b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_3292674b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_3292674b((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mLastError
     {
-        get => NativeMethods.TablePtr->C5.hs_get_00dba4b5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_00dba4b5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_00dba4b5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_00dba4b5((void*)__hosihikari_shim_handle, value);
     }
 
-    public void popContext()
-    {
-        NativeMethods.TablePtr->C5.hs_method_2d411af3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void popContext() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext pushContext(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString propertyName, uint? propertyId)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext((nint)NativeMethods.TablePtr->C5.hs_method_5b329dae((void*)__hosihikari_shim_handle, (void*)propertyName.Handle, propertyId ?? default(uint), propertyId.HasValue), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint pushContext(nint propertyName, nint propertyId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext pushContext(uint containerIndex)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext((nint)NativeMethods.TablePtr->C5.hs_method_80bda479((void*)__hosihikari_shim_handle, containerIndex), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint pushContext(uint containerIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -123,7 +118,7 @@ public sealed unsafe partial class SerializerContext : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_e07bd9da((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e07bd9da((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

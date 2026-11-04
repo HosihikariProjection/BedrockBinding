@@ -38,20 +38,17 @@ public sealed unsafe partial class ActorDefinitionEventLoader : global::System.I
         return __hs_handle;
     }
 
-    public static void _loadCollection(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEvent defEvent, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value collection, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, global::Hosihikari.Bindings.Bedrock.Interop.ActorEventResponseFactory? responseFactory)
-    {
-        NativeMethods.TablePtr->C0.hs_method_05c58dd8((void*)defEvent.Handle, (void*)collection.Handle, (void*)minEngineVersion.Handle, (void*)(responseFactory?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _loadCollection(nint defEvent, nint collection, nint minEngineVersion, nint responseFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEvent _loadEvent(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, global::Hosihikari.Bindings.Bedrock.Interop.ActorEventResponseFactory? responseFactory)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEvent((nint)NativeMethods.TablePtr->C0.hs_method_41513d2d((void*)root.Handle, (void*)minEngineVersion.Handle, (void*)(responseFactory?.Handle ?? 0)));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _loadEvent(nint root, nint minEngineVersion, nint responseFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEvent loadEvent(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion formatVersion, global::Hosihikari.Bindings.Bedrock.Interop.ActorEventResponseFactory? responseFactory)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEvent((nint)NativeMethods.TablePtr->C0.hs_method_cfd8d915((void*)root.Handle, (void*)minEngineVersion.Handle, (void*)formatVersion.Handle, (void*)(responseFactory?.Handle ?? 0)));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint loadEvent(nint root, nint minEngineVersion, nint formatVersion, nint responseFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

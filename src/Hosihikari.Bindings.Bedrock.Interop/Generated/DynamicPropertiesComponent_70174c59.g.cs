@@ -49,10 +49,9 @@ public sealed unsafe partial class DynamicPropertiesComponent : global::System.I
         return new DynamicPropertiesComponent((nint)handle);
     }
 
-    public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.ILevel level)
-    {
-        NativeMethods.TablePtr->C1.hs_method_1d084df2((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addAdditionalSaveData(nint tag, nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDynamicProperties_Address

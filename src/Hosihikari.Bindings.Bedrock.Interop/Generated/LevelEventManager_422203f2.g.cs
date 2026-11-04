@@ -38,13 +38,13 @@ public sealed unsafe partial class LevelEventManager : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getLevelEventCompoundTagConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getLevelEventDataConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LevelEventManager Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelEventManager arg0)
     {
@@ -57,20 +57,17 @@ public sealed unsafe partial class LevelEventManager : global::System.IDisposabl
         return new LevelEventManager((nint)handle);
     }
 
-    public void broadcastLevelEvent(short type, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent? userIdentifierToExclude)
-    {
-        NativeMethods.TablePtr->C2.hs_method_112b8397((void*)__hosihikari_shim_handle, type, (void*)tag.Handle, (void*)(userIdentifierToExclude?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void broadcastLevelEvent(nint type, nint tag, nint userIdentifierToExclude) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void broadcastLevelEvent(short type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, global::Hosihikari.Bindings.Bedrock.Interop.UserEntityIdentifierComponent? userIdentifierToExclude)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d5bfe682((void*)__hosihikari_shim_handle, type, (void*)pos.Handle, data, (void*)(userIdentifierToExclude?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void broadcastLevelEvent(nint type, nint pos, int data, nint userIdentifierToExclude) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void broadcastLocalEvent(global::Hosihikari.Bindings.Bedrock.Interop.IDimension dimension, short type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d9111146((void*)__hosihikari_shim_handle, (void*)dimension.Handle, type, (void*)pos.Handle, data);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void broadcastLocalEvent(nint dimension, nint type, nint pos, int data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint getLevelEventCompoundTagConnector() =>

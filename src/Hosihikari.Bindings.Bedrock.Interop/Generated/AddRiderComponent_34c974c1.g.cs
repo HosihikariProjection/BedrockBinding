@@ -55,10 +55,9 @@ public sealed unsafe partial class AddRiderComponent : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_e22d718a((void*)__hosihikari_shim_handle);
     }
 
-    public void reloadComponent(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a6c98f04((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void reloadComponent(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

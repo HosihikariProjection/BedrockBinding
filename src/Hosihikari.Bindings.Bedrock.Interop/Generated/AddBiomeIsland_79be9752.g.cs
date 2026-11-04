@@ -40,7 +40,7 @@ public sealed unsafe partial class AddBiomeIsland : global::System.IDisposable
 
     public static AddBiomeIsland Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_303d352a();
+        var handle = NativeMethods.TablePtr->C2.hs_create_303d352a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class AddBiomeIsland : global::System.IDisposable
 
     public static AddBiomeIsland Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.AddBiomeIsland arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1302fb37((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_1302fb37((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,18 +62,18 @@ public sealed unsafe partial class AddBiomeIsland : global::System.IDisposable
 
     public nint mDefaultIsland
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cdcd755a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_cdcd755a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mShallowOceanBiomes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5597b730((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5597b730((void*)__hosihikari_shim_handle);
     }
 
     public nint mSpecialIsland
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4a26fb05((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4a26fb05((void*)__hosihikari_shim_handle);
     }
 
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class AddBiomeIsland : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_79be9752((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_79be9752((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class GoalSelectorSystem : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_9112d28f((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GoalSelectorSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.GoalSelectorSystem arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class GoalSelectorSystem : global::System.IDisposab
         return new GoalSelectorSystem((nint)handle);
     }
 
-    public static void _tickGoalSelectorComponent(global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e394cbae((void*)actorOwnerComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _tickGoalSelectorComponent(nint actorOwnerComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {

@@ -38,28 +38,25 @@ public sealed unsafe partial class ConstantInt : global::System.IDisposable
         return __hs_handle;
     }
 
-    public int _maxValue()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_80b3f1da((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _maxValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _minValue()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ba1c8fb6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _minValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg0)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1624be83((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _sample(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ConstantInt Create(global::Hosihikari.Bindings.Bedrock.Interop.ConstantInt arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e2386588((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_e2386588((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,23 +67,23 @@ public sealed unsafe partial class ConstantInt : global::System.IDisposable
 
     public int mConstant
     {
-        get => NativeMethods.TablePtr->C1.hs_get_6b6ba1cb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_6b6ba1cb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_6b6ba1cb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_6b6ba1cb((void*)__hosihikari_shim_handle, value);
     }
 
     public int maxValue()
     {
-        return NativeMethods.TablePtr->C1.hs_method_1b228839((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C0.hs_method_1b228839((void*)__hosihikari_shim_handle);
     }
 
     public int minValue()
     {
-        return NativeMethods.TablePtr->C1.hs_method_687b15bf((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C0.hs_method_687b15bf((void*)__hosihikari_shim_handle);
     }
 
     public int sample(global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg0)
     {
-        return NativeMethods.TablePtr->C1.hs_method_06f518a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return NativeMethods.TablePtr->C0.hs_method_06f518a3((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
 
@@ -96,7 +93,7 @@ public sealed unsafe partial class ConstantInt : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_6a72d412((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_6a72d412((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

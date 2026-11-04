@@ -38,14 +38,13 @@ public sealed unsafe partial class RtpReceiverInterface : global::System.IDispos
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::FrameTransformerInterface>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _SetDepacketizerToDecoderFrameTransformer(nint frame_transformer) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::scoped_refptr<webrtc::FrameTransformerInterface>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _SetParameters(nint arg0)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_bec5ab95((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _SetParameters(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::FrameDecryptorInterface>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint GetFrameDecryptor() =>
@@ -61,7 +60,7 @@ public sealed unsafe partial class RtpReceiverInterface : global::System.IDispos
 
     public static RtpReceiverInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.RtpReceiverInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_6741c8e5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_6741c8e5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,17 +83,17 @@ public sealed unsafe partial class RtpReceiverInterface : global::System.IDispos
 
     public void SetJitterBufferMinimumDelay(double? a1)
     {
-        NativeMethods.TablePtr->C5.hs_method_824c9dfd((void*)__hosihikari_shim_handle, a1 ?? default(double), a1.HasValue);
+        NativeMethods.TablePtr->C4.hs_method_824c9dfd((void*)__hosihikari_shim_handle, a1 ?? default(double), a1.HasValue);
     }
 
     public void SetObserver(nint a1)
     {
-        NativeMethods.TablePtr->C5.hs_method_f75ba38c((void*)__hosihikari_shim_handle, (void*)a1);
+        NativeMethods.TablePtr->C4.hs_method_f75ba38c((void*)__hosihikari_shim_handle, (void*)a1);
     }
 
     public bool SetParameters(nint arg0)
     {
-        return NativeMethods.TablePtr->C5.hs_method_b166c42a((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_b166c42a((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::DtlsTransportInterface>' requires --link-carrier or --virtual-dispatch.", false)]
@@ -103,18 +102,18 @@ public sealed unsafe partial class RtpReceiverInterface : global::System.IDispos
 
     public string id()
     {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_823f5407((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_823f5407((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public int media_type()
     {
-        return NativeMethods.TablePtr->C5.hs_method_c2ee4c77((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_c2ee4c77((void*)__hosihikari_shim_handle);
     }
 
     public string[] stream_ids()
     {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_9413d7bf((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_9413d7bf((void*)__hosihikari_shim_handle);
         var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -139,7 +138,7 @@ public sealed unsafe partial class RtpReceiverInterface : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_cd0699b8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_cd0699b8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

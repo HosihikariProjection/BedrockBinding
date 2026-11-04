@@ -62,10 +62,9 @@ public sealed unsafe partial class UpgradeTo12020 : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_f2ed7951((void*)__hosihikari_shim_handle);
     }
 
-    public bool _previousSchema(nint component)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_4d26b9d0((void*)__hosihikari_shim_handle, (void*)component) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _previousSchema(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UpgradeTo12020 Create(global::Hosihikari.Bindings.Bedrock.Interop.WearableItemComponentVersioning.UpgradeTo12020 arg0)
     {

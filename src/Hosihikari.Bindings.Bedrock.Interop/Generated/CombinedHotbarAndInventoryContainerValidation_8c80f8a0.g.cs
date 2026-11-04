@@ -38,24 +38,21 @@ public sealed unsafe partial class CombinedHotbarAndInventoryContainerValidation
         return __hs_handle;
     }
 
-    public bool _canItemMoveToContainer(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_94702ad9((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canItemMoveToContainer(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_f1acbd7d((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerSize(nint screenContext, nint container) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isItemAllowedToRemove(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_14b10b3a((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isItemAllowedToRemove(nint screenContext, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CombinedHotbarAndInventoryContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.CombinedHotbarAndInventoryContainerValidation arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_731a6349((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_731a6349((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,17 +63,17 @@ public sealed unsafe partial class CombinedHotbarAndInventoryContainerValidation
 
     public bool canItemMoveToContainer(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_32cb298b((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_32cb298b((void*)__hosihikari_shim_handle, (void*)item.Handle) != 0;
     }
 
     public int getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
     {
-        return NativeMethods.TablePtr->C1.hs_method_a41f70b9((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
+        return NativeMethods.TablePtr->C0.hs_method_a41f70b9((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
     }
 
     public bool isItemAllowedToRemove(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item)
     {
-        return NativeMethods.TablePtr->C1.hs_method_a3f63c68((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_a3f63c68((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)item.Handle) != 0;
     }
 
 
@@ -86,7 +83,7 @@ public sealed unsafe partial class CombinedHotbarAndInventoryContainerValidation
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_8c80f8a0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_8c80f8a0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

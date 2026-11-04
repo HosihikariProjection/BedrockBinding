@@ -38,19 +38,17 @@ public sealed unsafe partial class AnimationScriptsDescription : global::System.
         return __hs_handle;
     }
 
-    public void _deserializeData(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams nonConstDeserializeDataParams)
-    {
-        NativeMethods.TablePtr->C0.hs_method_dd0ac50d((void*)__hosihikari_shim_handle, (void*)nonConstDeserializeDataParams.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deserializeData(nint nonConstDeserializeDataParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _getJsonName()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_e947e20c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getJsonName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AnimationScriptsDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.AnimationScriptsDescription arg0)
     {

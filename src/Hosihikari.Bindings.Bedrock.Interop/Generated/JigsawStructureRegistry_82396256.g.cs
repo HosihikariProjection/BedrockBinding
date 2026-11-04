@@ -38,83 +38,73 @@ public sealed unsafe partial class JigsawStructureRegistry : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_1d197932((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_b43aeddf((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static JigsawStructureRegistry Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2344bb5f();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static JigsawStructureRegistry Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new JigsawStructureRegistry((nint)handle);
-    }
-
-    public void initialize(nint structureSpawnRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.IWorldRegistriesProvider registries)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d18165f6((void*)__hosihikari_shim_handle, (void*)structureSpawnRegistry, (void*)baseGameVersion.Handle, (void*)registries.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initialize(nint structureSpawnRegistry, nint baseGameVersion, nint registries) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawActorRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3b33bcc3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3b33bcc3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawBlockRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0412c727((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0412c727((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawBlockTagRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5f990aac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_5f990aac((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawElementRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a694b647((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a694b647((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawPoolLookupMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_762088e7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_762088e7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawStructureData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_75c17d27((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_75c17d27((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6da0a21b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_6da0a21b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureSetRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3d0b44ca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3d0b44ca((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerPool(nint pool) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -123,7 +113,7 @@ public sealed unsafe partial class JigsawStructureRegistry : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_82396256((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_82396256((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

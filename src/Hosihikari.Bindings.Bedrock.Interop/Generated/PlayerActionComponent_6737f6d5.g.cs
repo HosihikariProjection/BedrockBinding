@@ -38,18 +38,17 @@ public sealed unsafe partial class PlayerActionComponent : global::System.IDispo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_7bd439d3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayerActionComponent Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b2832f30();
+        var handle = NativeMethods.TablePtr->C2.hs_create_b2832f30();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -58,13 +57,13 @@ public sealed unsafe partial class PlayerActionComponent : global::System.IDispo
         return new PlayerActionComponent((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static PlayerActionComponent Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayerActionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4c8b5acd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_4c8b5acd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,40 +75,40 @@ public sealed unsafe partial class PlayerActionComponent : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemStackRequest_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_21de3cd2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_21de3cd2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemUseTransaction_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_13436c5f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_13436c5f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerActions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4b27dd8a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4b27dd8a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerBlockActions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7e28d6fe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7e28d6fe((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreSimulationRotation_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_03911752((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_03911752((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent((nint)NativeMethods.TablePtr->C3.hs_method_98fde0f3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerActionComponent((nint)NativeMethods.TablePtr->C2.hs_method_98fde0f3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -119,7 +118,7 @@ public sealed unsafe partial class PlayerActionComponent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_6737f6d5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6737f6d5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

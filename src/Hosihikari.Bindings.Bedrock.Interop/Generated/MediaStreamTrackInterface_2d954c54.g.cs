@@ -40,7 +40,7 @@ public sealed unsafe partial class MediaStreamTrackInterface : global::System.ID
 
     public static MediaStreamTrackInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaStreamTrackInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_c84c713c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_c84c713c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,37 +51,37 @@ public sealed unsafe partial class MediaStreamTrackInterface : global::System.ID
 
     public bool enabled()
     {
-        return NativeMethods.TablePtr->C5.hs_method_3c3730d6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_3c3730d6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public string id()
     {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_54316cc7((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_54316cc7((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint kAudioKind() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint kVideoKind() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public string kind()
     {
-        var __hs_view = NativeMethods.TablePtr->C5.hs_method_fcc93977((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_fcc93977((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool set_enabled(bool a1)
     {
-        return NativeMethods.TablePtr->C5.hs_method_2cb7459f((void*)__hosihikari_shim_handle, a1) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_2cb7459f((void*)__hosihikari_shim_handle, a1) != 0;
     }
 
     public int state()
     {
-        return NativeMethods.TablePtr->C5.hs_method_379a0a4a((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_379a0a4a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -91,7 +91,7 @@ public sealed unsafe partial class MediaStreamTrackInterface : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_2d954c54((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_2d954c54((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

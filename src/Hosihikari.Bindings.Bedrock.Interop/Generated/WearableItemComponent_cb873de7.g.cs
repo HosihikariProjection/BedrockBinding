@@ -38,22 +38,20 @@ public sealed unsafe partial class WearableItemComponent : global::System.IDispo
         return __hs_handle;
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_b1a46686();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mProtection
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4f0eb177((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_4f0eb177((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4f0eb177((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4f0eb177((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSlot
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a9addbdb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a9addbdb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a9addbdb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a9addbdb((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -62,7 +60,7 @@ public sealed unsafe partial class WearableItemComponent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cb873de7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_cb873de7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

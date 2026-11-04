@@ -40,14 +40,14 @@ public sealed unsafe partial class Population : global::System.IDisposable
 
     public short surface
     {
-        get => NativeMethods.TablePtr->C5.hs_get_dbfde877((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_dbfde877((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_dbfde877((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_dbfde877((void*)__hosihikari_shim_handle, value);
     }
 
     public short underground
     {
-        get => NativeMethods.TablePtr->C5.hs_get_845b7cb3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_845b7cb3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_845b7cb3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_845b7cb3((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class Population : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_01111478((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_01111478((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

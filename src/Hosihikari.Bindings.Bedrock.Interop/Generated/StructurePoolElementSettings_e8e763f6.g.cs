@@ -40,35 +40,35 @@ public sealed unsafe partial class StructurePoolElementSettings : global::System
 
     public nint mActorRules
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ac91e6ce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ac91e6ce((void*)__hosihikari_shim_handle);
     }
 
     public nint mBlockRules
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ec1eacd1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ec1eacd1((void*)__hosihikari_shim_handle);
     }
 
     public nint mBlockTagRules
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_aa473a28((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_aa473a28((void*)__hosihikari_shim_handle);
     }
 
     public byte mPostProcessSettings
     {
-        get => NativeMethods.TablePtr->C4.hs_get_50c3e5c8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_50c3e5c8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_50c3e5c8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_50c3e5c8((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mProjection
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c81395e2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_c81395e2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c81395e2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c81395e2((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mReloadActorLootTables
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8505b2e8((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_8505b2e8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8505b2e8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_8505b2e8((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -77,7 +77,7 @@ public sealed unsafe partial class StructurePoolElementSettings : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e8e763f6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e8e763f6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -61,10 +61,9 @@ public sealed unsafe partial class BiomeStringList : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_a7be6ac6((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_BiomeStringList__std__error_code_ read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_BiomeStringList__std__error_code_((nint)NativeMethods.TablePtr->C0.hs_method_9ee1cd2f((void*)stream.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint read(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

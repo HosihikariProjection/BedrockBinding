@@ -38,25 +38,21 @@ public sealed unsafe partial class ActorDefinitionEventSubcomponent : global::Sy
         return __hs_handle;
     }
 
-    public void _doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent arg1)
-    {
-        NativeMethods.TablePtr->C0.hs_method_ef630c56((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doOnHitEffect(nint owner, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _getName()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_38e07b4a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b44c601a((void*)__hosihikari_shim_handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initFromDefinition(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value component)
-    {
-        NativeMethods.TablePtr->C0.hs_method_aec7f4dc((void*)__hosihikari_shim_handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _writetoJSON(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorDefinitionEventSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionEventSubcomponent arg0)
     {

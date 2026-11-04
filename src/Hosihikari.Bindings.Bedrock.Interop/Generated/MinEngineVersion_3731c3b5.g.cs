@@ -38,10 +38,9 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_14175cd3((void*)__hosihikari_shim_handle, (void*)version.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MinEngineVersion Create()
     {
@@ -65,21 +64,13 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
         return new MinEngineVersion((nint)handle);
     }
 
-    public static MinEngineVersion Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion version)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_fe492013((void*)version.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MinEngineVersion Create(nint version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new MinEngineVersion((nint)handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value createJsonValue()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C2.hs_method_a1410a1a((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint createJsonValue() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion fromString(string @string)
     {
@@ -118,10 +109,9 @@ public sealed unsafe partial class MinEngineVersion : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_06e3a278((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion rhs)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_be28ec59((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint rhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

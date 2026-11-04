@@ -50,9 +50,9 @@ public sealed unsafe partial class DecoratorDefinition : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_0533538a((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BehaviorDefinition' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _decoratorLoadChildBehavior(nint value, nint factory, nint ptr) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'BehaviorDefinition' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChild_Address

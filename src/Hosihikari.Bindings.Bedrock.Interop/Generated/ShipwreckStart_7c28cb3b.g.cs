@@ -38,15 +38,13 @@ public sealed unsafe partial class ShipwreckStart : global::System.IDisposable
         return __hs_handle;
     }
 
-    public string _getStructureName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_585baf55((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getStructureName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ShipwreckStart Create(global::Hosihikari.Bindings.Bedrock.Interop.ShipwreckStart arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a527b5d9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_a527b5d9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,7 +55,7 @@ public sealed unsafe partial class ShipwreckStart : global::System.IDisposable
 
     public string getStructureName()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_dd3105bb((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_dd3105bb((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -65,31 +63,31 @@ public sealed unsafe partial class ShipwreckStart : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint boundingBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_56fa4e49((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_56fa4e49((void*)__hosihikari_shim_handle);
     }
 
     public int chunkX
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4ed029e8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_4ed029e8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4ed029e8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4ed029e8((void*)__hosihikari_shim_handle, value);
     }
 
     public int chunkZ
     {
-        get => NativeMethods.TablePtr->C4.hs_get_72232a5d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_72232a5d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_72232a5d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_72232a5d((void*)__hosihikari_shim_handle, value);
     }
 
     public int maxYSpawnOffset
     {
-        get => NativeMethods.TablePtr->C4.hs_get_acd6bac8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_acd6bac8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_acd6bac8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_acd6bac8((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint pieces_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bc924262((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bc924262((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -98,7 +96,7 @@ public sealed unsafe partial class ShipwreckStart : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_7c28cb3b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_7c28cb3b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

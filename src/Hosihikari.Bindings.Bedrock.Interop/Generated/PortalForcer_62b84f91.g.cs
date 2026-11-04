@@ -38,39 +38,33 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ee003e6d((void*)__hosihikari_shim_handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _deserialize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C3.hs_method_4b55ec33((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deserialize(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _serialize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e8b555f8((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _serialize(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion((nint)NativeMethods.TablePtr->C3.hs_method_d3f88b2c(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MIN_PORTAL_REPLACE_BLOCK_FIX_VERSION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string PORTAL_FILE_ID()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_b0edb06f();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint PORTAL_FILE_ID() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PortalForcer Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d05fbdbc();
+        var handle = NativeMethods.TablePtr->C2.hs_create_d05fbdbc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,20 +73,13 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
         return new PortalForcer((nint)handle);
     }
 
-    public static PortalForcer Create(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_657b86f8((void*)level.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PortalForcer((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PortalForcer Create(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PortalForcer Create(global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_daff5cfe((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_daff5cfe((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -101,72 +88,66 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
         return new PortalForcer((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PortalRecord? _findPortal(global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionId, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos centerBlockPos, int radius, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos targetBlockPos)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_a02c7209((void*)__hosihikari_shim_handle, (void*)dimensionId.Handle, (void*)centerBlockPos.Handle, radius, (void*)targetBlockPos.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PortalRecord((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _findPortal(nint dimensionId, nint centerBlockPos, int radius, nint targetBlockPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void deserialize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        NativeMethods.TablePtr->C3.hs_method_fa7ecb7b((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+        NativeMethods.TablePtr->C2.hs_method_fa7ecb7b((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
-    public void force(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.DimensionTransitionComponent portalEntranceComponent)
-    {
-        NativeMethods.TablePtr->C3.hs_method_cba7826e((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)portalEntranceComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void force(nint entity, nint portalEntranceComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8772c5e5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8772c5e5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPortalRecords_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9b133ac5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9b133ac5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRandom_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_471943dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_471943dc((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer((nint)NativeMethods.TablePtr->C3.hs_method_e24be56b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PortalForcer((nint)NativeMethods.TablePtr->C2.hs_method_e24be56b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void removeMisalignedPortalRecords(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.PortalShape referenceShape, global::Hosihikari.Bindings.Bedrock.Interop.PortalRecord referenceRecord)
-    {
-        NativeMethods.TablePtr->C3.hs_method_91fa990e((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)referenceShape.Handle, (void*)referenceRecord.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeMisalignedPortalRecords(nint region, nint referenceShape, nint referenceRecord) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void removePortalRecord(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource source, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        NativeMethods.TablePtr->C3.hs_method_8d6b23a0((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)pos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removePortalRecord(nint source, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        NativeMethods.TablePtr->C3.hs_method_fb37a4f1((void*)__hosihikari_shim_handle, (void*)tag.Handle);
+        NativeMethods.TablePtr->C2.hs_method_fb37a4f1((void*)__hosihikari_shim_handle, (void*)tag.Handle);
     }
 
 
     public bool mDirty
     {
-        get => NativeMethods.TablePtr->C3.hs_get_eaa98f68((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_eaa98f68((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_eaa98f68((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_eaa98f68((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_46b1800a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_46b1800a((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -175,7 +156,7 @@ public sealed unsafe partial class PortalForcer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_62b84f91((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_62b84f91((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

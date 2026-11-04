@@ -67,10 +67,9 @@ public sealed unsafe partial class WSServerCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C4.hs_set_a25c7cdd((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f5f61644((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WSServerCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.WSServerCommand arg0)
     {

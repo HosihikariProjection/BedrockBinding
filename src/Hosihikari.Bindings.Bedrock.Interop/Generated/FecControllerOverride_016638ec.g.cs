@@ -40,7 +40,7 @@ public sealed unsafe partial class FecControllerOverride : global::System.IDispo
 
     public static FecControllerOverride Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FecControllerOverride arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_c87b3445((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_c87b3445((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class FecControllerOverride : global::System.IDispo
 
     public void SetFecAllowed(bool fec_allowed)
     {
-        NativeMethods.TablePtr->C5.hs_method_50c38b4e((void*)__hosihikari_shim_handle, fec_allowed);
+        NativeMethods.TablePtr->C4.hs_method_50c38b4e((void*)__hosihikari_shim_handle, fec_allowed);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class FecControllerOverride : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_016638ec((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_016638ec((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

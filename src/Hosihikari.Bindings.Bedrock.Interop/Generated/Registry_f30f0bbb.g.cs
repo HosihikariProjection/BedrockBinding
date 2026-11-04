@@ -49,15 +49,13 @@ public sealed unsafe partial class Registry : global::System.IDisposable
         return new Registry((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif_Nested.Registry get()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif_Nested.Registry((nint)NativeMethods.TablePtr->C2.hs_method_7385dfe3(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint get() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void init(global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f9a75b36((void*)__hosihikari_shim_handle, (void*)baseGameVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void init(nint baseGameVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMotifs_Address

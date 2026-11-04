@@ -40,7 +40,7 @@ public sealed unsafe partial class JigsawSpace : global::System.IDisposable
 
     public static JigsawSpace Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.JigsawSpace arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_7af45aef((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_7af45aef((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class JigsawSpace : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mChildrensSpace_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_d7dd338e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d7dd338e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMySpace_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_caf37343((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_caf37343((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class JigsawSpace : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_1a7af2ac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_1a7af2ac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class OperationBase : global::System.IDisposable
 
     public static OperationBase Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.OperationBase arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6023b242((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_6023b242((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class OperationBase : global::System.IDisposable
 
     public nint getDescription()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_961f0dd2((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_961f0dd2((void*)__hosihikari_shim_handle);
     }
 
     public bool isAsync()
     {
-        return NativeMethods.TablePtr->C3.hs_method_57686ef4((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_57686ef4((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isComplete()
     {
-        return NativeMethods.TablePtr->C3.hs_method_eb0ea82b((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_eb0ea82b((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool tick(global::Hosihikari.Bindings.Abi.SharedHandle? databasePtr, global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.TrackingRecord record)
     {
-        return NativeMethods.TablePtr->C3.hs_method_33097dbe((void*)__hosihikari_shim_handle, databasePtr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)record.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_33097dbe((void*)__hosihikari_shim_handle, databasePtr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)record.Handle) != 0;
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class OperationBase : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e78e55ac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e78e55ac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

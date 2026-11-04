@@ -38,28 +38,13 @@ public sealed unsafe partial class SnapshotFilenameAndLength : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(string filename, ulong filesize)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(filename);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(filename, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_9a3406ee((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, filesize);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint filename, ulong filesize) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SnapshotFilenameAndLength Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6efdd89b();
+        var handle = NativeMethods.TablePtr->C3.hs_create_6efdd89b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +55,7 @@ public sealed unsafe partial class SnapshotFilenameAndLength : global::System.ID
 
     public static SnapshotFilenameAndLength Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_aa7bd58d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_aa7bd58d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,46 +64,25 @@ public sealed unsafe partial class SnapshotFilenameAndLength : global::System.ID
         return new SnapshotFilenameAndLength((nint)handle);
     }
 
-    public static SnapshotFilenameAndLength Create(string filename, ulong filesize)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(filename);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(filename, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_aa50cb1b(__hs_stringData0, (nuint)__hs_stringByteCount0, filesize);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new SnapshotFilenameAndLength((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static SnapshotFilenameAndLength Create(nint filename, ulong filesize) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2eae88_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c0cb90b3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c0cb90b3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb4503f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_da7eda21((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_da7eda21((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength((nint)NativeMethods.TablePtr->C4.hs_method_17659b77((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SnapshotFilenameAndLength((nint)NativeMethods.TablePtr->C3.hs_method_17659b77((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -127,7 +91,7 @@ public sealed unsafe partial class SnapshotFilenameAndLength : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2f7af61e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_2f7af61e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

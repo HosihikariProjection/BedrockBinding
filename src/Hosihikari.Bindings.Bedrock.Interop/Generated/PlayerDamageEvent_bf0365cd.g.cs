@@ -41,13 +41,13 @@ public sealed unsafe partial class PlayerDamageEvent : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mDamageSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b96716f4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b96716f4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4bcb3d39((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4bcb3d39((void*)__hosihikari_shim_handle);
     }
 
 
@@ -57,7 +57,7 @@ public sealed unsafe partial class PlayerDamageEvent : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bf0365cd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bf0365cd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class StructurePlacement : global::System.IDisposab
 
     public static StructurePlacement Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructurePlacement arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_484e4486((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_484e4486((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,26 +51,26 @@ public sealed unsafe partial class StructurePlacement : global::System.IDisposab
 
     public float mFrequency
     {
-        get => NativeMethods.TablePtr->C5.hs_get_bb307153((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_bb307153((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_bb307153((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_bb307153((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReducer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e8d946e9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e8d946e9((void*)__hosihikari_shim_handle);
     }
 
     public int mSalt
     {
-        get => NativeMethods.TablePtr->C5.hs_get_2b68c6a0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_2b68c6a0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_2b68c6a0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_2b68c6a0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9c817a1a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9c817a1a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class StructurePlacement : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_cd776026((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_cd776026((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

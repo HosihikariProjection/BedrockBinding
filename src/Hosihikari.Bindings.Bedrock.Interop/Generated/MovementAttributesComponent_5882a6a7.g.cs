@@ -103,10 +103,9 @@ public sealed unsafe partial class MovementAttributesComponent : global::System.
         get => (nint)NativeMethods.TablePtr->C2.hs_get_529d2b15((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.MovementAttributesComponent other)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_6172c852((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

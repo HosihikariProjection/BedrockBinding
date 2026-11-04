@@ -47,8 +47,8 @@ public sealed unsafe partial class LightPair : global::System.IDisposable
 
     public byte raw
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ecbeed75((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_ecbeed75((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ecbeed75((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ecbeed75((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -57,7 +57,7 @@ public sealed unsafe partial class LightPair : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d5602ac9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d5602ac9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

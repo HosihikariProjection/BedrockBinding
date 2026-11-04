@@ -38,35 +38,29 @@ public sealed unsafe partial class PersonaColors : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint mHairColors()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_def8152c();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mHairColors() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mIrisColors()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_68a29835();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mIrisColors() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mMouthColors()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_c6d4c9c5();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mMouthColors() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mPremiumColors()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_3d9237bd();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPremiumColors() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mScleraColors()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_45912b3b();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mScleraColors() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mSkinColors()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_d12c0986();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mSkinColors() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -74,7 +68,7 @@ public sealed unsafe partial class PersonaColors : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_cb36a6ac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_cb36a6ac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -98,127 +98,106 @@ public sealed unsafe partial class DBChunkStorage : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_000e9a30((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? __tryGetOrLoadStructureInstanceAt(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Structure structure)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_ffdc6037((void*)__hosihikari_shim_handle, (void*)cp.Handle, (void*)structure.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __tryGetOrLoadStructureInstanceAt(nint cp, nint structure) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::unique_ptr<LevelChunk, LevelChunkFinalDeleter>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _acquireDiscarded(nint ptr) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::unique_ptr<LevelChunk, LevelChunkFinalDeleter>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _checkAndReplaceChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource neighborhood, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d6e4df2a((void*)__hosihikari_shim_handle, (void*)neighborhood.Handle, (void*)lc.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _checkAndReplaceChunk(nint neighborhood, nint lc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _chunkPosNeedsBlending(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_974d6367((void*)__hosihikari_shim_handle, (void*)cp.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _chunkPosNeedsBlending(nint cp) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _decorationPostProcessChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource neighborhood)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ee6f4285((void*)__hosihikari_shim_handle, (void*)neighborhood.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _decorationPostProcessChunk(nint neighborhood) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::unordered_set<ChunkPos>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _deleteAllChunkData(nint excludedChunks, nint completionCallback, nint metadata) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::unordered_set<ChunkPos>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::unordered_set<ChunkPos>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _deleteStoredChunkData(nint chunksToDelete, nint completionCallback, nint metadata) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::unordered_set<ChunkPos>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _deserializeActorStorageToLevelChunk(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        NativeMethods.TablePtr->C1.hs_method_fe163a6b((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deserializeActorStorageToLevelChunk(nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _flushPendingDiscardedChunkWrites()
-    {
-        NativeMethods.TablePtr->C1.hs_method_6ab03ca7((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _flushPendingDiscardedChunkWrites() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _flushThreadBatch()
-    {
-        NativeMethods.TablePtr->C1.hs_method_4f4cbc24((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _flushThreadBatch() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _hintDiscardBatchBegin()
-    {
-        NativeMethods.TablePtr->C1.hs_method_c10135cb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _hintDiscardBatchBegin() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _hintDiscardBatchEnd()
-    {
-        NativeMethods.TablePtr->C1.hs_method_d988cb23((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _hintDiscardBatchEnd() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isChunkKnown(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_a43e70a1((void*)__hosihikari_shim_handle, (void*)chunkPos.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isChunkKnown(nint chunkPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isChunkSaved(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_adf94d5e((void*)__hosihikari_shim_handle, (void*)chunkPos.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isChunkSaved(nint chunkPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isShutdownDone()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_846a225c((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isShutdownDone() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _loadChunk(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, bool forceImmediateReplacementDataLoad)
     {
         NativeMethods.TablePtr->C1.hs_method_b363aa33((void*)__hosihikari_shim_handle, (void*)lc.Handle, forceImmediateReplacementDataLoad);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _loadLevelChunkMetaDataDictionary()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_c697fe6a((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _loadLevelChunkMetaDataDictionary() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _neighborAwareChunkUpgrade(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk, global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource neighborhood)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f0892e35((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle, (void*)neighborhood.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _neighborAwareChunkUpgrade(nint levelChunk, nint neighborhood) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _saveLiveChunk(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_87499b96((void*)__hosihikari_shim_handle, (void*)lc.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _saveLiveChunk(nint lc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _shutdown()
-    {
-        NativeMethods.TablePtr->C1.hs_method_b53e41ba((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _shutdown() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _structurePostProcessChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource neighborhood)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_8528a367((void*)__hosihikari_shim_handle, (void*)neighborhood.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _structurePostProcessChunk(nint neighborhood) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'BlendingDataProvider' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _tryGetBlendingDataProvider() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'BlendingDataProvider' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _verifyChunkNeedsNeighborAwareUpgrade(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_07f61a73((void*)__hosihikari_shim_handle, (void*)lc.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _verifyChunkNeedsNeighborAwareUpgrade(nint lc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _writeEntityChunkTransfer(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a47ff9e8((void*)__hosihikari_shim_handle, (void*)lc.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _writeEntityChunkTransfer(nint lc) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'ActorUnloadedChunkTransferEntry' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _writeEntityChunkTransfersToUnloadedChunk(nint chunkKey, nint transfers) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'ActorUnloadedChunkTransferEntry' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DBChunkStorage Create()
     {
@@ -242,94 +221,49 @@ public sealed unsafe partial class DBChunkStorage : global::System.IDisposable
         return new DBChunkStorage((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<bool, std::shared_ptr<BlendingData>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _cacheSeamlessChunkBlendingData(nint chunkPos, bool isCompleted, nint blendingData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<bool, std::shared_ptr<BlendingData>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _deleteChunkEntityData(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorageKey key, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch batch)
-    {
-        NativeMethods.TablePtr->C1.hs_method_655c0f48((void*)__hosihikari_shim_handle, (void*)key.Handle, (void*)batch.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deleteChunkEntityData(nint key, nint batch) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string[] _deserializeChunkActorStorageKeys(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput digestStream)
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_03f10a77((void*)digestStream.Handle);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _deserializeChunkActorStorageKeys(nint digestStream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _deserializeIndependentActorStorage(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, string storageKeyDigestBuffer)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(storageKeyDigestBuffer);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(storageKeyDigestBuffer, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C1.hs_method_b958a98a((void*)__hosihikari_shim_handle, (void*)lc.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deserializeIndependentActorStorage(nint lc, nint storageKeyDigestBuffer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk_Nested.Neighbors _getChunkNeighbors(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos lc, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimensionType)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk_Nested.Neighbors((nint)NativeMethods.TablePtr->C1.hs_method_ee811e65((void*)__hosihikari_shim_handle, (void*)lc.Handle, (void*)dimensionType.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getChunkNeighbors(nint lc, nint dimensionType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _hasChunk(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorageKey key)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_3009720e((void*)__hosihikari_shim_handle, (void*)key.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _hasChunk(nint key) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _hasChunkUncached(global::Hosihikari.Bindings.Bedrock.Interop.DBChunkStorageKey key)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_d8584cca((void*)__hosihikari_shim_handle, (void*)key.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _hasChunkUncached(nint key) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _loadChunkFromDB(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk generatedChunk, global::Hosihikari.Bindings.Bedrock.Interop.ChunkViewSource neighborhood)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_7942125c((void*)__hosihikari_shim_handle, (void*)lc.Handle, (void*)generatedChunk.Handle, (void*)neighborhood.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _loadChunkFromDB(nint lc, nint generatedChunk, nint neighborhood) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'PersistentBlendData' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _saveBlendData(nint batch, nint prefix, nint buffer, nint data) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'PersistentBlendData' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _serializeChunk(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch batch, bool markEntitiesProcesedOnChunkDiscard)
-    {
-        NativeMethods.TablePtr->C1.hs_method_c95a531d((void*)__hosihikari_shim_handle, (void*)lc.Handle, (void*)batch.Handle, markEntitiesProcesedOnChunkDiscard);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _serializeChunk(nint lc, nint batch, nint markEntitiesProcesedOnChunkDiscard) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _serializeEntities(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch batch, string buffer, bool markEntitiesProcesedOnChunkDiscard)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(buffer);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(buffer, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            var __hs_view = NativeMethods.TablePtr->C1.hs_method_fa96c7f1((void*)__hosihikari_shim_handle, (void*)lc.Handle, (void*)batch.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, markEntitiesProcesedOnChunkDiscard);
-            return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _serializeEntities(nint lc, nint batch, nint buffer, bool markEntitiesProcesedOnChunkDiscard) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _tryGetOrLoadStructureInstanceAt(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos cp, global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.Structure structure)
     {
@@ -337,33 +271,17 @@ public sealed unsafe partial class DBChunkStorage : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: mutable string_view references are not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _upgradeActorStorage(nint chunkKey, nint legacyActorData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: mutable string_view references are not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _writeActorDigest(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorageWriteBatch batch, global::Hosihikari.Bindings.Bedrock.Interop.ChunkKey chunkKey, string digestBuffer)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(digestBuffer);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(digestBuffer, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            NativeMethods.TablePtr->C1.hs_method_14503e8f((void*)batch.Handle, (void*)chunkKey.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _writeActorDigest(nint batch, nint chunkKey, nint digestBuffer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _writeDiscardChunksBatch()
-    {
-        NativeMethods.TablePtr->C1.hs_method_a91b6a55((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _writeDiscardChunksBatch() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::unique_ptr<LevelChunk, LevelChunkFinalDeleter>' is not a known bindable declaration.", false)]
     public void acquireDiscarded(nint ptr) =>
@@ -397,9 +315,9 @@ public sealed unsafe partial class DBChunkStorage : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_a3a01bf0((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint deserializeActorStorageToString(bool hasActorDigestVersionTag, nint storageKeyDigestBuffer, nint loadDataCallback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void flushPendingDiscardedChunkWrites()
     {

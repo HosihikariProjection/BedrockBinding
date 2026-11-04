@@ -40,7 +40,7 @@ public sealed unsafe partial class PredictedMovementValues : global::System.IDis
 
     public static PredictedMovementValues Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8116fab0();
+        var handle = NativeMethods.TablePtr->C2.hs_create_8116fab0();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PredictedMovementValues : global::System.IDis
 
     public static PredictedMovementValues Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_00fb41d5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_00fb41d5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class PredictedMovementValues : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2ed6f8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_86bb81b7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_86bb81b7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka87f83_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0366b8dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0366b8dc((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues((nint)NativeMethods.TablePtr->C3.hs_method_5874dd26((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementValues((nint)NativeMethods.TablePtr->C2.hs_method_5874dd26((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class PredictedMovementValues : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_065b4fd2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_065b4fd2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

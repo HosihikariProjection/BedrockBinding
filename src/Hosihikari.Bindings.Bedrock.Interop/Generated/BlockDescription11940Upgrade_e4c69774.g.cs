@@ -38,15 +38,13 @@ public sealed unsafe partial class BlockDescription11940Upgrade : global::System
         return __hs_handle;
     }
 
-    public bool _previousSchema(nint arg0)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_664e4beb((void*)__hosihikari_shim_handle, (void*)arg0) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _previousSchema(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _upgradeToNext(nint document, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg1)
-    {
-        NativeMethods.TablePtr->C0.hs_method_73ddffc1((void*)__hosihikari_shim_handle, (void*)document, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _upgradeToNext(nint document, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockDescription11940Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptionVersioning.BlockDescription11940Upgrade arg0)
     {

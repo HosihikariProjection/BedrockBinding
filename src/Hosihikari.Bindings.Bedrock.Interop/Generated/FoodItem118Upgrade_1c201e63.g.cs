@@ -62,15 +62,13 @@ public sealed unsafe partial class FoodItem118Upgrade : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_04f14a6b((void*)__hosihikari_shim_handle);
     }
 
-    public bool _previousSchema(nint component)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_705e9949((void*)__hosihikari_shim_handle, (void*)component) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _previousSchema(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _upgradeToNext(nint document, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg1)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a96c26aa((void*)__hosihikari_shim_handle, (void*)document, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _upgradeToNext(nint document, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FoodItem118Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.FoodItemVersioning.FoodItem118Upgrade arg0)
     {

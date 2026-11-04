@@ -38,14 +38,13 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _writeBytes(nint data, ulong bytes)
-    {
-        NativeMethods.TablePtr->C3.hs_method_09ffdb55((void*)__hosihikari_shim_handle, (void*)data, bytes);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _writeBytes(nint data, ulong bytes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RakDataOutput Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_47536142();
+        var handle = NativeMethods.TablePtr->C2.hs_create_47536142();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
 
     public static RakDataOutput Create(global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_5c9cba87((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_5c9cba87((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,17 +67,17 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBitStream_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_65599815((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_65599815((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput((nint)NativeMethods.TablePtr->C3.hs_method_4c8831db((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakDataOutput((nint)NativeMethods.TablePtr->C2.hs_method_4c8831db((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void writeBytes(nint data, ulong bytes)
     {
-        NativeMethods.TablePtr->C3.hs_method_41b89c30((void*)__hosihikari_shim_handle, (void*)data, bytes);
+        NativeMethods.TablePtr->C2.hs_method_41b89c30((void*)__hosihikari_shim_handle, (void*)data, bytes);
     }
 
 
@@ -88,7 +87,7 @@ public sealed unsafe partial class RakDataOutput : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_559c6741((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_559c6741((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

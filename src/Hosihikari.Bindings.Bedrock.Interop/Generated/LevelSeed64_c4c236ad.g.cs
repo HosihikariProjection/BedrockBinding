@@ -44,11 +44,9 @@ public sealed unsafe partial class LevelSeed64 : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_773c3f24((void*)__hosihikari_shim_handle, value);
     }
 
-    public string toUiString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_62fa895a((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toUiString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

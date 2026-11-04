@@ -40,8 +40,8 @@ public sealed unsafe partial class OnScreenTextureAnimationPacketPayload : globa
 
     public uint mEffectID
     {
-        get => NativeMethods.TablePtr->C3.hs_get_bdf7eaf2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_bdf7eaf2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_bdf7eaf2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_bdf7eaf2((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class OnScreenTextureAnimationPacketPayload : globa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_689fa83c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_689fa83c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

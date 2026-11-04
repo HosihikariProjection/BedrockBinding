@@ -38,19 +38,17 @@ public sealed unsafe partial class LockGuard : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? mutex)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_6340a120((void*)__hosihikari_shim_handle, mutex?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint mutex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_7b54c284((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LockGuard Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d980aa77();
+        var handle = NativeMethods.TablePtr->C1.hs_create_d980aa77();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +59,7 @@ public sealed unsafe partial class LockGuard : global::System.IDisposable
 
     public static LockGuard Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef_Nested.LockGuard arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_8e360b17((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_8e360b17((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,21 +68,14 @@ public sealed unsafe partial class LockGuard : global::System.IDisposable
         return new LockGuard((nint)handle);
     }
 
-    public static LockGuard Create(global::Hosihikari.Bindings.Abi.SharedHandle? mutex)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a50631b9(mutex?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LockGuard((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LockGuard Create(nint mutex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_420126c9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_420126c9((void*)__hosihikari_shim_handle);
     }
 
 
@@ -94,7 +85,7 @@ public sealed unsafe partial class LockGuard : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c488e777((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_c488e777((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

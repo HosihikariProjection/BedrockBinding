@@ -38,10 +38,9 @@ public sealed unsafe partial class ActorHistory : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_88dd67d3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorHistory Create()
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class ActorHistory : global::System.IDisposable
         return new ActorHistory((nint)handle);
     }
 
-    public void addCorrectionToFrame(global::Hosihikari.Bindings.Abi.SharedHandle? correction, ulong frame)
-    {
-        NativeMethods.TablePtr->C0.hs_method_848a446f((void*)__hosihikari_shim_handle, correction?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), frame);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCorrectionToFrame(nint correction, ulong frame) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mHistoryWindow
     {

@@ -38,18 +38,17 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint playerLimboActorManager, nint playerDimensionTransferer, nint dimensionManager, nint gameplayUserManager, nint entityRegistry, nint levelCrashDumpManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_c2c117e2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayerDimensionTransferManager Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_25c2f60c();
+        var handle = NativeMethods.TablePtr->C2.hs_create_25c2f60c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +59,7 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
 
     public static PlayerDimensionTransferManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDimensionTransferManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_dd88e61b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_dd88e61b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,81 +68,76 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         return new PlayerDimensionTransferManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static PlayerDimensionTransferManager Create(nint playerLimboActorManager, nint playerDimensionTransferer, nint dimensionManager, nint gameplayUserManager, nint entityRegistry, nint levelCrashDumpManager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isPlayerSuspended(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_d7ef6816((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isPlayerSuspended(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onGameplayUserRemoved(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C3.hs_method_99915e33((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onGameplayUserRemoved(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _playerChangeDimension(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.ChangeDimensionRequest changeRequest)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_cb5bb5dd((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)changeRequest.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _playerChangeDimension(nint player, nint changeRequest) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void handleChangeDimensionRequests()
-    {
-        NativeMethods.TablePtr->C3.hs_method_d832481e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void handleChangeDimensionRequests() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isAnyPlayerChangingDimension()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_2ac90faa((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isAnyPlayerChangingDimension() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d7452c2a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d7452c2a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d99d3c99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d99d3c99((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameplayUserManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_de95315a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_de95315a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelCrashDumpManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_87cef43a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_87cef43a((void*)__hosihikari_shim_handle);
     }
 
     public bool mLevelFinishedInitializing
     {
-        get => NativeMethods.TablePtr->C3.hs_get_3b06578b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_3b06578b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_3b06578b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_3b06578b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnGameplayUserRemoved_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2006dbec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2006dbec((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerDimensionTransferer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ac8d69a8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ac8d69a8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerLimboActorManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2c816814((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2c816814((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -157,7 +151,7 @@ public sealed unsafe partial class PlayerDimensionTransferManager : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f629b435((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f629b435((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

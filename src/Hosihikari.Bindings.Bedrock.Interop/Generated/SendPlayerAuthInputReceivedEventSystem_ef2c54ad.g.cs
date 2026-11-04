@@ -38,10 +38,9 @@ public sealed unsafe partial class SendPlayerAuthInputReceivedEventSystem : glob
         return __hs_handle;
     }
 
-    public static void _doSendPlayerAuthInputReceivedEvent(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, nint playerComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent)
-    {
-        NativeMethods.TablePtr->C3.hs_method_32d05849((void*)arg0.Handle, (void*)playerComponent, (void*)actorOwnerComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doSendPlayerAuthInputReceivedEvent(nint arg0, nint playerComponent, nint actorOwnerComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

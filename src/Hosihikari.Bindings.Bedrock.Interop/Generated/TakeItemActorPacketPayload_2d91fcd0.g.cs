@@ -40,7 +40,7 @@ public sealed unsafe partial class TakeItemActorPacketPayload : global::System.I
 
     public static TakeItemActorPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.TakeItemActorPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8cb9a187((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8cb9a187((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class TakeItemActorPacketPayload : global::System.I
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_908c1962((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_908c1962((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_971e459d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_971e459d((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class TakeItemActorPacketPayload : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2d91fcd0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_2d91fcd0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

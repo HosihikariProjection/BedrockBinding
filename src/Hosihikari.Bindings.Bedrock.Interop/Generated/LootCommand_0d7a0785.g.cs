@@ -67,10 +67,9 @@ public sealed unsafe partial class LootCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_177aead1((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C2.hs_method_fffbd0bb((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LootCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.LootCommand arg0)
     {
@@ -83,14 +82,13 @@ public sealed unsafe partial class LootCommand : global::System.IDisposable
         return new LootCommand((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Util::ReplacementResults' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _outputError(nint output, nint errorDetails, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Util::ReplacementResults' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _outputSuccess(global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, int numItemsDropped)
-    {
-        NativeMethods.TablePtr->C2.hs_method_dde4dd2c((void*)output.Handle, numItemsDropped);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _outputSuccess(nint output, int numItemsDropped) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {

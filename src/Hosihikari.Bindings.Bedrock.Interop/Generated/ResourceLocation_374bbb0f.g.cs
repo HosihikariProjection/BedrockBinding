@@ -97,10 +97,9 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         return new ResourceLocation((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getFullPath()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_0d8dcc2a((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getFullPath() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mFileSystem
     {
@@ -131,10 +130,9 @@ public sealed unsafe partial class ResourceLocation : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ResourceLocation((nint)NativeMethods.TablePtr->C3.hs_method_01d36abc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void setRelativePath(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ path)
-    {
-        NativeMethods.TablePtr->C3.hs_method_c60cb0b7((void*)__hosihikari_shim_handle, (void*)path.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setRelativePath(nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

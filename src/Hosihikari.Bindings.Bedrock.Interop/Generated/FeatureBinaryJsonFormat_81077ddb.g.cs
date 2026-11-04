@@ -38,15 +38,13 @@ public sealed unsafe partial class FeatureBinaryJsonFormat : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry_Nested.FeatureBinaryJsonFormat arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_d7f768f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_54ef5fbd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FeatureBinaryJsonFormat Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class FeatureBinaryJsonFormat : global::System.IDis
         return new FeatureBinaryJsonFormat((nint)handle);
     }
 
-    public static FeatureBinaryJsonFormat Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry_Nested.FeatureBinaryJsonFormat arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_260fa53e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FeatureBinaryJsonFormat((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FeatureBinaryJsonFormat Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint binaryJsonOutput_Address
@@ -82,9 +73,9 @@ public sealed unsafe partial class FeatureBinaryJsonFormat : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_77fbd4f1((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry_Nested.FeatureBinaryJsonFormat operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry_Nested.FeatureBinaryJsonFormat arg0)
     {

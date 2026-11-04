@@ -38,10 +38,9 @@ public sealed unsafe partial class FileStorageAreaFetcher : global::System.IDisp
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result _getStorageAreaForPath(global::Hosihikari.Bindings.Abi.SharedHandle? fileStorageArea, global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C1.hs_method_f0d91f39((void*)__hosihikari_shim_handle, fileStorageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)path.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getStorageAreaForPath(nint fileStorageArea, nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FileStorageAreaFetcher Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageAreaFetcher arg0)
     {

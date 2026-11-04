@@ -379,10 +379,9 @@ public sealed unsafe partial class RotatedPillarInfestedBlock : global::System.I
         get => (nint)NativeMethods.TablePtr->C3.hs_get_d9062a74((void*)__hosihikari_shim_handle);
     }
 
-    public void _spawnAfterBreak(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Block arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ResourceDropsContext resourceDropsContext)
-    {
-        NativeMethods.TablePtr->C3.hs_method_27b793b1((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)arg1.Handle, (void*)pos.Handle, (void*)resourceDropsContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _spawnAfterBreak(nint region, nint arg1, nint pos, nint resourceDropsContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void spawnAfterBreak(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Block arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.ResourceDropsContext resourceDropsContext)
     {

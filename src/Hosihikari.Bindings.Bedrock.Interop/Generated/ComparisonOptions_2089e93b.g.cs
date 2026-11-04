@@ -40,19 +40,19 @@ public sealed unsafe partial class ComparisonOptions
 
     public bool mCompareAux
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c355a546((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_c355a546((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_c355a546((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_c355a546((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCompareDamage
     {
-        get => NativeMethods.TablePtr->C2.hs_get_bf2dd4b1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_bf2dd4b1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_bf2dd4b1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_bf2dd4b1((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCompareRelevantUserData
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0be29446((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_0be29446((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_0be29446((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_0be29446((void*)__hosihikari_shim_handle, value);
     }
 }

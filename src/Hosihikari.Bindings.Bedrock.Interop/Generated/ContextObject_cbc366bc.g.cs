@@ -38,9 +38,9 @@ public sealed unsafe partial class ContextObject : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'Scripting::ScriptObjectFactory' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint contextId, nint jsContext, nint scope, nint bindings, nint factory, nint inspector, nint printer, nint loader, nint arg8, nint contextConfig) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'Scripting::ScriptObjectFactory' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ContextObject Create()
     {
@@ -53,9 +53,9 @@ public sealed unsafe partial class ContextObject : global::System.IDisposable
         return new ContextObject((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'Scripting::ScriptObjectFactory' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ContextObject Create(nint contextId, nint jsContext, nint scope, nint bindings, nint factory, nint inspector, nint printer, nint loader, nint arg8, nint contextConfig) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'Scripting::ScriptObjectFactory' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ContextObject Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject arg0)
     {
@@ -68,94 +68,45 @@ public sealed unsafe partial class ContextObject : global::System.IDisposable
         return new ContextObject((nint)handle);
     }
 
-    public static void _bindClass(nint ctx, nint jsModuleDef, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextUserData contextData, nint registeredClass)
-    {
-        NativeMethods.TablePtr->C3.hs_method_d522cbf9((void*)ctx, (void*)jsModuleDef, (void*)contextData.Handle, (void*)registeredClass);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _bindClass(nint ctx, nint jsModuleDef, nint contextData, nint registeredClass) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _bindError(nint ctx, nint moduleDef, nint registeredError)
-    {
-        NativeMethods.TablePtr->C3.hs_method_fc798f4e((void*)ctx, (void*)moduleDef, (void*)registeredError);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _bindError(nint ctx, nint moduleDef, nint registeredError) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Scripting::AnyAndJSValue' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _createConstant(nint ctx, nint contextData, nint target, nint constantCreator) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Scripting::AnyAndJSValue' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.JSValue _createConstructor(nint ctx, nint jsModuleDef, global::Hosihikari.Bindings.Bedrock.Interop.JSValue jsValue, string name, uint jsClassId)
-    {
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes3);
-        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.JSValue((nint)NativeMethods.TablePtr->C3.hs_method_15bf562f((void*)ctx, (void*)jsModuleDef, (void*)jsValue.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3, jsClassId));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _createConstructor(nint ctx, nint jsModuleDef, nint jsValue, nint name, uint jsClassId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Scripting::AnyAndJSValue' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _createEnumReverseConstant(nint ctx, nint contextData, nint enumObj, nint enumBinding, nint constantBinding) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Scripting::AnyAndJSValue' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _createFunction(nint ctx, global::Hosihikari.Bindings.Bedrock.Interop.JSValue jsValue, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.FunctionBinding functionBinding, global::Hosihikari.Bindings.Bedrock.Interop.JSValue jsCtorVal, string className)
-    {
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(className);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(className, __hs_stringBytes4);
-        fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-        {
-            NativeMethods.TablePtr->C3.hs_method_6a6185d0((void*)ctx, (void*)jsValue.Handle, (void*)functionBinding.Handle, (void*)jsCtorVal.Handle, __hs_stringData4, (nuint)__hs_stringByteCount4);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _createFunction(nint ctx, nint jsValue, nint functionBinding, nint jsCtorVal, nint className) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _createProperty(nint ctx, global::Hosihikari.Bindings.Bedrock.Interop.JSValue jsPrototype, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.PropertyBinding propertyBinding, string className)
-    {
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(className);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(className, __hs_stringBytes3);
-        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-        {
-            NativeMethods.TablePtr->C3.hs_method_cded7a96((void*)ctx, (void*)jsPrototype.Handle, (void*)propertyBinding.Handle, __hs_stringData3, (nuint)__hs_stringByteCount3);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _createProperty(nint ctx, nint jsPrototype, nint propertyBinding, nint className) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int _moduleInitializer(nint ctx, nint jsModuleDef)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_ddccaffd((void*)ctx, (void*)jsModuleDef);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int _moduleInitializer(nint ctx, nint jsModuleDef) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _resolvePromise(global::Hosihikari.Bindings.Bedrock.Interop.JSValue jsResolutionFunc, nint arg)
-    {
-        NativeMethods.TablePtr->C3.hs_method_5b38bd4d((void*)__hosihikari_shim_handle, (void*)jsResolutionFunc.Handle, (void*)arg);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _resolvePromise(nint jsResolutionFunc, nint arg) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::ClosureType>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint call(nint closureHandle, nint args, uint argc, nint expectedReturnType) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Scripting::TypedObjectHandle<Scripting::ClosureType>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk182a63_Address
@@ -240,10 +191,9 @@ public sealed unsafe partial class ContextObject : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.QuickJS.ContextObject((nint)NativeMethods.TablePtr->C3.hs_method_b2617111((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void processUnhandledPromiseRejection()
-    {
-        NativeMethods.TablePtr->C3.hs_method_8e5f10d8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void processUnhandledPromiseRejection() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

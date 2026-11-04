@@ -41,26 +41,25 @@ public sealed unsafe partial class ItemDescriptorCount : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mImpl_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_83bfca25((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_83bfca25((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_ef757f15((void*)__hosihikari_shim_handle, (void*)stream.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C2.hs_method_607a38fa((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C1.hs_method_607a38fa((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemDescriptorCount Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_8ba1d6af();
+        var handle = NativeMethods.TablePtr->C1.hs_create_8ba1d6af();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,26 +68,19 @@ public sealed unsafe partial class ItemDescriptorCount : global::System.IDisposa
         return new ItemDescriptorCount((nint)handle);
     }
 
-    public static ItemDescriptorCount Create(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_651b139e((void*)stream.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ItemDescriptorCount((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ItemDescriptorCount Create(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ushort mStackSize
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3698e744((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3698e744((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_3698e744((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_3698e744((void*)__hosihikari_shim_handle, value);
     }
 
     public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C2.hs_method_31fff1e1((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C1.hs_method_31fff1e1((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
 
@@ -98,7 +90,7 @@ public sealed unsafe partial class ItemDescriptorCount : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a78af62f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_a78af62f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

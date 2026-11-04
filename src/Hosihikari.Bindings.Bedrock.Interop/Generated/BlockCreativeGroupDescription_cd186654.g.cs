@@ -44,11 +44,9 @@ public sealed unsafe partial class BlockCreativeGroupDescription : global::Syste
         set => NativeMethods.TablePtr->C0.hs_set_5610215b((void*)__hosihikari_shim_handle, value);
     }
 
-    public string _getName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_1fe75b94((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockCreativeGroupDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCreativeGroupDescription arg0)
     {
@@ -61,11 +59,9 @@ public sealed unsafe partial class BlockCreativeGroupDescription : global::Syste
         return new BlockCreativeGroupDescription((nint)handle);
     }
 
-    public static string NameID()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_848935d9();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NameID() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public string getName()
     {

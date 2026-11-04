@@ -49,15 +49,13 @@ public sealed unsafe partial class AttributeCollection : global::System.IDisposa
         return new AttributeCollection((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Attribute getAttribute(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Attribute((nint)NativeMethods.TablePtr->C0.hs_method_ad5a04b5((void*)__hosihikari_shim_handle, (void*)name.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getAttribute(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool hasAttribute(global::Hosihikari.Bindings.Bedrock.Interop.HashedString name)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_ae26c883((void*)name.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool hasAttribute(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttributesMap_Address

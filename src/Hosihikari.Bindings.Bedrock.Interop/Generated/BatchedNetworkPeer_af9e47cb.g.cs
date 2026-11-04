@@ -65,19 +65,17 @@ public sealed unsafe partial class BatchedNetworkPeer : global::System.IDisposab
         }
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? peer, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler scheduler)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_fc45b43a((void*)__hosihikari_shim_handle, peer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)scheduler.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint peer, nint scheduler) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void _flush(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus _getNetworkStatus()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)NativeMethods.TablePtr->C0.hs_method_07a4a39e((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getNetworkStatus() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _sendPacket(string data, int reliability, int compressible)
     {
@@ -98,10 +96,9 @@ public sealed unsafe partial class BatchedNetworkPeer : global::System.IDisposab
         }
     }
 
-    public void _update()
-    {
-        NativeMethods.TablePtr->C0.hs_method_39c0c420((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _update() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BatchedNetworkPeer Create()
     {
@@ -114,16 +111,9 @@ public sealed unsafe partial class BatchedNetworkPeer : global::System.IDisposab
         return new BatchedNetworkPeer((nint)handle);
     }
 
-    public static BatchedNetworkPeer Create(global::Hosihikari.Bindings.Abi.SharedHandle? peer, global::Hosihikari.Bindings.Bedrock.Interop.Scheduler scheduler)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_5bd4ee80(peer?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)scheduler.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BatchedNetworkPeer((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BatchedNetworkPeer Create(nint peer, nint scheduler) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int _receivePacket(ref string outData, global::Hosihikari.Bindings.Abi.SharedHandle? timepointPtr)
     {

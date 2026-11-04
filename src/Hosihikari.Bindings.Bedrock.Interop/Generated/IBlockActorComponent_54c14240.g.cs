@@ -40,7 +40,7 @@ public sealed unsafe partial class IBlockActorComponent : global::System.IDispos
 
     public static IBlockActorComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.IBlockActorComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_7c4574a6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_7c4574a6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class IBlockActorComponent : global::System.IDispos
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag parentTag, global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, short version)
     {
-        NativeMethods.TablePtr->C2.hs_method_7cec33d1((void*)__hosihikari_shim_handle, (void*)parentTag.Handle, (void*)level.Handle, version);
+        NativeMethods.TablePtr->C1.hs_method_7cec33d1((void*)__hosihikari_shim_handle, (void*)parentTag.Handle, (void*)level.Handle, version);
     }
 
     public void save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag parentTag, nint saveContext)
     {
-        NativeMethods.TablePtr->C2.hs_method_54a1fc44((void*)__hosihikari_shim_handle, (void*)parentTag.Handle, (void*)saveContext);
+        NativeMethods.TablePtr->C1.hs_method_54a1fc44((void*)__hosihikari_shim_handle, (void*)parentTag.Handle, (void*)saveContext);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class IBlockActorComponent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_54c14240((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_54c14240((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

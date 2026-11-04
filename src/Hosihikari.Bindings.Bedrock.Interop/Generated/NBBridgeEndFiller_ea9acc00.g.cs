@@ -38,15 +38,13 @@ public sealed unsafe partial class NBBridgeEndFiller : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public int _getType()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_ebcec5b8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_9045fe5d((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _postProcess(nint region, nint random, nint chunkBB) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NBBridgeEndFiller Create(global::Hosihikari.Bindings.Bedrock.Interop.NBBridgeEndFiller arg0)
     {
@@ -59,9 +57,9 @@ public sealed unsafe partial class NBBridgeEndFiller : global::System.IDisposabl
         return new NBBridgeEndFiller((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'NetherFortressPiece' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createPiece(nint pieces, nint random, int footX, int footY, int footZ, int direction, int genDepth) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'NetherFortressPiece' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getType()
     {

@@ -38,12 +38,9 @@ public sealed unsafe partial class SpawnFinder : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? findStandupPosition(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos requestedPosition, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_962153c5((void*)requestedPosition.Handle, (void*)region.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint findStandupPosition(nint requestedPosition, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -51,7 +48,7 @@ public sealed unsafe partial class SpawnFinder : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_94d993d9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_94d993d9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

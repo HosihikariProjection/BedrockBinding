@@ -38,10 +38,9 @@ public sealed unsafe partial class RemovePassengersWithoutSeatSystem : global::S
         return __hs_handle;
     }
 
-    public static void removePassengersWithoutSeat(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.RideableComponent rideableComponent, global::Hosihikari.Bindings.Bedrock.Interop.VehicleComponent vehicleComponent, nint modifier)
-    {
-        NativeMethods.TablePtr->C3.hs_method_cd052ed9((void*)arg0.Handle, (void*)rideableComponent.Handle, (void*)vehicleComponent.Handle, (void*)modifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void removePassengersWithoutSeat(nint arg0, nint rideableComponent, nint vehicleComponent, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

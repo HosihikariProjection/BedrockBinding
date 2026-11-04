@@ -40,14 +40,14 @@ public sealed unsafe partial class SwimAmountComponent : global::System.IDisposa
 
     public float mSwimAmount
     {
-        get => NativeMethods.TablePtr->C4.hs_get_3c54c944((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_3c54c944((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3c54c944((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3c54c944((void*)__hosihikari_shim_handle, value);
     }
 
     public float mSwimAmountPrev
     {
-        get => NativeMethods.TablePtr->C4.hs_get_63df3cc3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_63df3cc3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_63df3cc3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_63df3cc3((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class SwimAmountComponent : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_8900dc84((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_8900dc84((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

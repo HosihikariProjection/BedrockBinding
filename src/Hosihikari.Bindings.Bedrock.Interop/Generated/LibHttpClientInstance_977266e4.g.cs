@@ -95,10 +95,9 @@ public sealed unsafe partial class LibHttpClientInstance : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Http.LibHttpClientInstance((nint)NativeMethods.TablePtr->C0.hs_method_3a0f8a0a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public static nint sMutex()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_45df6c02();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sMutex() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

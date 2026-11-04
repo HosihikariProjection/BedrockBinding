@@ -40,7 +40,7 @@ public sealed unsafe partial class IScriptPluginSource : global::System.IDisposa
 
     public static IScriptPluginSource Create(global::Hosihikari.Bindings.Bedrock.Interop.IScriptPluginSource arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d0706be6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d0706be6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class IScriptPluginSource : global::System.IDisposa
         global::System.Text.Encoding.UTF8.GetBytes(extension, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C2.hs_method_fce06bf9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_view = NativeMethods.TablePtr->C1.hs_method_fce06bf9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
             var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
             for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -77,7 +77,7 @@ public sealed unsafe partial class IScriptPluginSource : global::System.IDisposa
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PackManifest getManifest()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackManifest((nint)NativeMethods.TablePtr->C2.hs_method_82fdff86((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackManifest((nint)NativeMethods.TablePtr->C1.hs_method_82fdff86((void*)__hosihikari_shim_handle), false);
     }
 
     public string? loadScript(string path)
@@ -96,7 +96,7 @@ public sealed unsafe partial class IScriptPluginSource : global::System.IDisposa
         global::System.Text.Encoding.UTF8.GetBytes(path, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C2.hs_method_4c97d9a3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
+            var __hs_view = NativeMethods.TablePtr->C1.hs_method_4c97d9a3((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
             return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
         }
     }
@@ -116,7 +116,7 @@ public sealed unsafe partial class IScriptPluginSource : global::System.IDisposa
         global::System.Text.Encoding.UTF8.GetBytes(path, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var __hs_view = NativeMethods.TablePtr->C2.hs_method_226d3d60((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            var __hs_view = NativeMethods.TablePtr->C1.hs_method_226d3d60((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
             return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
         }
     }
@@ -128,7 +128,7 @@ public sealed unsafe partial class IScriptPluginSource : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_39103c32((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_39103c32((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

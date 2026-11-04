@@ -40,7 +40,7 @@ public sealed unsafe partial class PathSwapper : global::System.IDisposable
 
     public static PathSwapper Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6580e105();
+        var handle = NativeMethods.TablePtr->C2.hs_create_6580e105();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class PathSwapper : global::System.IDisposable
 
     public static PathSwapper Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.PathSwapper arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a3dabd0c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a3dabd0c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,29 +63,29 @@ public sealed unsafe partial class PathSwapper : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb0d597_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_41715a5c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_41715a5c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb4921f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f6114601((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f6114601((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb6ad25_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_689dc4ff((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_689dc4ff((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.PathSwapper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.PathSwapper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.PathSwapper((nint)NativeMethods.TablePtr->C3.hs_method_8e214be1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.PathSwapper((nint)NativeMethods.TablePtr->C2.hs_method_8e214be1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Bedrock::small_vector<Puv::internal::PathElement, 1>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void swap(nint temp) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Bedrock::small_vector<Puv::internal::PathElement, 1>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -93,7 +93,7 @@ public sealed unsafe partial class PathSwapper : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_20fae4d2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_20fae4d2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

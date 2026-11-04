@@ -38,10 +38,9 @@ public sealed unsafe partial class GameCallbacks : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _onBeforeSimTick()
-    {
-        NativeMethods.TablePtr->C1.hs_method_11fce027((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onBeforeSimTick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameCallbacks Create(global::Hosihikari.Bindings.Bedrock.Interop.GameCallbacks arg0)
     {

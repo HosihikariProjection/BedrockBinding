@@ -38,24 +38,22 @@ public sealed unsafe partial class ServerCorrectionPolicy : global::System.IDisp
         return __hs_handle;
     }
 
-    public bool _isReplayNeeded(byte arg0)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_4f1e912c((void*)__hosihikari_shim_handle, arg0) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isReplayNeeded(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _notifyOfExternalCorrection(ulong frame)
-    {
-        NativeMethods.TablePtr->C3.hs_method_602de3bd((void*)__hosihikari_shim_handle, frame);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _notifyOfExternalCorrection(ulong frame) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection _shouldCorrectMovement(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthInputPacket packet, ulong frame, byte currentCounter, bool isStrictMovement)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.MovementCorrection((nint)NativeMethods.TablePtr->C3.hs_method_181652e8((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)packet.Handle, frame, currentCounter, isStrictMovement));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerCorrectionPolicy Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerCorrectionPolicy arg0)
     {

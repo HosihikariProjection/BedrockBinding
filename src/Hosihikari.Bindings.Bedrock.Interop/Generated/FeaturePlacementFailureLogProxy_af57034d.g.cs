@@ -38,10 +38,9 @@ public sealed unsafe partial class FeaturePlacementFailureLogProxy : global::Sys
         return __hs_handle;
     }
 
-    public void logFailure(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString source, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.StaticOptimizedString message)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e8c54daf((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)message.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void logFailure(nint source, nint message) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mLogger
     {

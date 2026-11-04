@@ -38,13 +38,13 @@ public sealed unsafe partial class LegacyItemTriggerHandler : global::System.IDi
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: map value type 'DefinitionEvent' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _executeTrigger(nint eventHandlers, nint item, nint trigger, nint @params) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'DefinitionEvent' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyItemTriggerHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyItemTriggerHandler arg0)
     {
@@ -57,9 +57,9 @@ public sealed unsafe partial class LegacyItemTriggerHandler : global::System.IDi
         return new LegacyItemTriggerHandler((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: map value type 'DefinitionEvent' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _executeEvent(nint eventHandlers, nint item, nint name, nint eventStack, nint @params) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'DefinitionEvent' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: map value type 'DefinitionEvent' is not supported.", false)]
     public bool executeTrigger(nint eventHandlers, nint item, nint trigger, nint @params) =>

@@ -40,7 +40,7 @@ public sealed unsafe partial class JigsawStructureBlockInfo : global::System.IDi
 
     public static JigsawStructureBlockInfo Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2e501d1b();
+        var handle = NativeMethods.TablePtr->C1.hs_create_2e501d1b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class JigsawStructureBlockInfo : global::System.IDi
 
     public static JigsawStructureBlockInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2f68fb78((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_2f68fb78((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,24 +63,24 @@ public sealed unsafe partial class JigsawStructureBlockInfo : global::System.IDi
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_aa1f4af2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_aa1f4af2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_095dfc6d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_095dfc6d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3dbe4abd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3dbe4abd((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo((nint)NativeMethods.TablePtr->C2.hs_method_c300b40b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockInfo((nint)NativeMethods.TablePtr->C1.hs_method_c300b40b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -90,7 +90,7 @@ public sealed unsafe partial class JigsawStructureBlockInfo : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_8407bfea((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_8407bfea((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

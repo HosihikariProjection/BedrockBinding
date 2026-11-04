@@ -38,25 +38,22 @@ public sealed unsafe partial class SpawnChecks : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static bool canSpawnNaturally(global::Hosihikari.Bindings.Bedrock.Interop.ILevel level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_bff98097((void*)level.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool canSpawnNaturally(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static bool canSpawnPigZombieFromPortal(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C4.hs_method_96de9a8e((void*)dimension.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_96de9a8e((void*)dimension.Handle, (void*)random.Handle) != 0;
     }
 
-    public static bool canSpawnSkeletonTrap(global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_9ddc413c((void*)level.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool canSpawnSkeletonTrap(nint level, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool canSpawnWanderingTrader(global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_81405b85((void*)level.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool canSpawnWanderingTrader(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -64,7 +61,7 @@ public sealed unsafe partial class SpawnChecks : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_42776f68((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_42776f68((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -44,7 +44,7 @@ public sealed unsafe partial class PendingRemovePassengersSystem : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_23f06f1a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_23f06f1a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

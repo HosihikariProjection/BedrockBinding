@@ -38,10 +38,9 @@ public sealed unsafe partial class AttackDamageMobEffect : global::System.IDispo
         return __hs_handle;
     }
 
-    public float _getAttributeModifierValue(int amplifier, global::Hosihikari.Bindings.Bedrock.Interop.AttributeModifier modifier)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_ce8ed605((void*)__hosihikari_shim_handle, amplifier, (void*)modifier.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getAttributeModifierValue(int amplifier, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AttackDamageMobEffect Create(global::Hosihikari.Bindings.Bedrock.Interop.AttackDamageMobEffect arg0)
     {

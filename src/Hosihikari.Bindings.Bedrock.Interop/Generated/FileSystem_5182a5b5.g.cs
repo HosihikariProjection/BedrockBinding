@@ -248,10 +248,9 @@ public sealed unsafe partial class FileSystem : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_59b96f4c((void*)__hosihikari_shim_handle, (void*)fileOrDirectoryName.Handle) != 0;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem get()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FileSystem((nint)NativeMethods.TablePtr->C1.hs_method_086f6616(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint get() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
     public nint getDirectoryFiles(nint files, nint path) =>

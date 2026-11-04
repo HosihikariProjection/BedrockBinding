@@ -49,10 +49,9 @@ public sealed unsafe partial class TickDataSet : global::System.IDisposable
         return new TickDataSet((nint)handle);
     }
 
-    public void _pruneQueueForMemory()
-    {
-        NativeMethods.TablePtr->C0.hs_method_75d59937((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _pruneQueueForMemory() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

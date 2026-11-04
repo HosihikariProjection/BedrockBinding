@@ -38,68 +38,65 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'dcsctp::Timeout' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _CreateTimeout() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'dcsctp::Timeout' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'dcsctp::Timeout' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _CreateTimeout(nint precision) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'dcsctp::Timeout' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _NotifyOutgoingMessageBufferEmpty()
-    {
-        NativeMethods.TablePtr->C5.hs_method_b8698505((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _NotifyOutgoingMessageBufferEmpty() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::Timestamp' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _Now() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::Timestamp' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::StrongAlias<dcsctp::StreamIDTag, unsigned short>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _OnBufferedAmountLow(nint stream_id) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::StrongAlias<dcsctp::StreamIDTag, unsigned short>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'dcsctp::LifecycleId' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _OnLifecycleEnd(nint lifecycle_id) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'dcsctp::LifecycleId' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'dcsctp::LifecycleId' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _OnLifecycleMessageDelivered(nint lifecycle_id) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'dcsctp::LifecycleId' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'dcsctp::LifecycleId' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _OnLifecycleMessageExpired(nint lifecycle_id, bool maybe_delivered) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'dcsctp::LifecycleId' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'dcsctp::LifecycleId' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _OnLifecycleMessageFullySent(nint lifecycle_id) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'dcsctp::LifecycleId' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _OnMessageReady()
-    {
-        NativeMethods.TablePtr->C5.hs_method_e4a0bb83((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _OnMessageReady() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _OnTotalBufferedAmountLow()
-    {
-        NativeMethods.TablePtr->C5.hs_method_3708f771((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _OnTotalBufferedAmountLow() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _SendPacket(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _SendPacketWithStatus(nint data) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'dcsctp::TimeMs' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _TimeMillis() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'dcsctp::TimeMs' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'dcsctp::Timeout' is not a known bindable declaration.", false)]
     public nint CreateTimeout() =>
@@ -111,7 +108,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public static DcSctpSocketCallbacks Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.DcSctpSocketCallbacks arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_b0eb2ec7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b0eb2ec7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -122,12 +119,12 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public uint GetRandomInt(uint low, uint high)
     {
-        return NativeMethods.TablePtr->C5.hs_method_fa685527((void*)__hosihikari_shim_handle, low, high);
+        return NativeMethods.TablePtr->C4.hs_method_fa685527((void*)__hosihikari_shim_handle, low, high);
     }
 
     public void NotifyOutgoingMessageBufferEmpty()
     {
-        NativeMethods.TablePtr->C5.hs_method_3391adfa((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_3391adfa((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::Timestamp' requires --link-carrier or --virtual-dispatch.", false)]
@@ -149,7 +146,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C5.hs_method_ca9d5ed2((void*)__hosihikari_shim_handle, error, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C4.hs_method_ca9d5ed2((void*)__hosihikari_shim_handle, error, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -159,17 +156,17 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public void OnClosed()
     {
-        NativeMethods.TablePtr->C5.hs_method_bfb1ba59((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_bfb1ba59((void*)__hosihikari_shim_handle);
     }
 
     public void OnConnected()
     {
-        NativeMethods.TablePtr->C5.hs_method_59be00a7((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_59be00a7((void*)__hosihikari_shim_handle);
     }
 
     public void OnConnectionRestarted()
     {
-        NativeMethods.TablePtr->C5.hs_method_12f7b320((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_12f7b320((void*)__hosihikari_shim_handle);
     }
 
     public void OnError(int error, string message)
@@ -187,7 +184,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
         global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            NativeMethods.TablePtr->C5.hs_method_9540f418((void*)__hosihikari_shim_handle, error, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            NativeMethods.TablePtr->C4.hs_method_9540f418((void*)__hosihikari_shim_handle, error, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
@@ -213,7 +210,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public void OnMessageReady()
     {
-        NativeMethods.TablePtr->C5.hs_method_d6c2f770((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_d6c2f770((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'dcsctp::DcSctpMessage' is not a known bindable declaration.", false)]
@@ -230,7 +227,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
 
     public void OnTotalBufferedAmountLow()
     {
-        NativeMethods.TablePtr->C5.hs_method_c9dbd9fc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_c9dbd9fc((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
@@ -252,7 +249,7 @@ public sealed unsafe partial class DcSctpSocketCallbacks : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_98c410f9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_98c410f9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

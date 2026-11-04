@@ -38,10 +38,9 @@ public sealed unsafe partial class BurstReactionComponent : global::System.IDisp
         return __hs_handle;
     }
 
-    public void __onEnd(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction owner, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        NativeMethods.TablePtr->C0.hs_method_25b9e6d6((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __onEnd(nint owner, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BurstReactionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BurstReactionComponent arg0)
     {

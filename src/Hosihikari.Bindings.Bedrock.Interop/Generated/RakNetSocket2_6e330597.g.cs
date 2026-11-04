@@ -40,7 +40,7 @@ public sealed unsafe partial class RakNetSocket2 : global::System.IDisposable
 
     public static RakNetSocket2 Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b63baa8f();
+        var handle = NativeMethods.TablePtr->C2.hs_create_b63baa8f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RakNetSocket2 : global::System.IDisposable
 
     public static RakNetSocket2 Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2 arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2d1babfa((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2d1babfa((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,47 +62,47 @@ public sealed unsafe partial class RakNetSocket2 : global::System.IDisposable
 
     public int Send(nint sendParameters, nint file, uint line)
     {
-        return NativeMethods.TablePtr->C3.hs_method_a658f639((void*)__hosihikari_shim_handle, (void*)sendParameters, (void*)file, line);
+        return NativeMethods.TablePtr->C2.hs_method_a658f639((void*)__hosihikari_shim_handle, (void*)sendParameters, (void*)file, line);
     }
 
     public void SetMulticastInterface(int interfaceIndex)
     {
-        NativeMethods.TablePtr->C3.hs_method_c7fb62c7((void*)__hosihikari_shim_handle, interfaceIndex);
+        NativeMethods.TablePtr->C2.hs_method_c7fb62c7((void*)__hosihikari_shim_handle, interfaceIndex);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk164a1f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b3f7d159((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b3f7d159((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk45c154_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_59376159((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_59376159((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk71ae1a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3c7d5111((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3c7d5111((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk923992_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_46be48ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_46be48ba((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf42590_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_50151cf7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_50151cf7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2 operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2 arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2((nint)NativeMethods.TablePtr->C3.hs_method_84e676ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetSocket2((nint)NativeMethods.TablePtr->C2.hs_method_84e676ee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -112,7 +112,7 @@ public sealed unsafe partial class RakNetSocket2 : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_6e330597((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6e330597((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

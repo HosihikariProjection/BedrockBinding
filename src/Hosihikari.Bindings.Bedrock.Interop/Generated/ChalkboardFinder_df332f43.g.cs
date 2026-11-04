@@ -38,10 +38,9 @@ public sealed unsafe partial class ChalkboardFinder : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool confirmedBroken(global::Hosihikari.Bindings.Bedrock.Interop.ChalkboardBlockActor compare, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_0ae3731a((void*)__hosihikari_shim_handle, (void*)compare.Handle, (void*)region.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool confirmedBroken(nint compare, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mBoard
     {

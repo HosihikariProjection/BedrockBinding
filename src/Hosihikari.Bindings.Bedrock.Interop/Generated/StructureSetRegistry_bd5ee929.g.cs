@@ -40,7 +40,7 @@ public sealed unsafe partial class StructureSetRegistry : global::System.IDispos
 
     public static StructureSetRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSetRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_2c8158e8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_2c8158e8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,27 +52,12 @@ public sealed unsafe partial class StructureSetRegistry : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureSets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_25f3801f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_25f3801f((void*)__hosihikari_shim_handle);
     }
 
-    public void record(string key, global::Hosihikari.Bindings.Abi.SharedHandle? set)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(key);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C5.hs_method_f8010eff((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, set?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void record(nint key, nint set) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -81,7 +66,7 @@ public sealed unsafe partial class StructureSetRegistry : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_bd5ee929((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_bd5ee929((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

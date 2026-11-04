@@ -38,10 +38,9 @@ public sealed unsafe partial class PeerConnectionFactoryInterface : global::Syst
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_bb4eda96((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::scoped_refptr<webrtc::AudioSourceInterface>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint CreateAudioSource(nint options) =>
@@ -73,7 +72,7 @@ public sealed unsafe partial class PeerConnectionFactoryInterface : global::Syst
 
     public static PeerConnectionFactoryInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_de278c41((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_de278c41((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,17 +83,17 @@ public sealed unsafe partial class PeerConnectionFactoryInterface : global::Syst
 
     public void SetOptions(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PeerConnectionFactoryInterface_Nested.Options options)
     {
-        NativeMethods.TablePtr->C5.hs_method_166c44c7((void*)__hosihikari_shim_handle, (void*)options.Handle);
+        NativeMethods.TablePtr->C4.hs_method_166c44c7((void*)__hosihikari_shim_handle, (void*)options.Handle);
     }
 
     public bool StartAecDump(nint file, long max_size_bytes)
     {
-        return NativeMethods.TablePtr->C5.hs_method_0fdf9404((void*)__hosihikari_shim_handle, (void*)file, max_size_bytes) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_0fdf9404((void*)__hosihikari_shim_handle, (void*)file, max_size_bytes) != 0;
     }
 
     public void StopAecDump()
     {
-        NativeMethods.TablePtr->C5.hs_method_3109dbc5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_3109dbc5((void*)__hosihikari_shim_handle);
     }
 
 
@@ -104,7 +103,7 @@ public sealed unsafe partial class PeerConnectionFactoryInterface : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_b7443839((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b7443839((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

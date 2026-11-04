@@ -38,10 +38,9 @@ public sealed unsafe partial class PillagerOutpostPieces : global::System.IDispo
         return __hs_handle;
     }
 
-    public static nint MSC_FEATURES()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_c85ec949();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MSC_FEATURES() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class PillagerOutpostPieces : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a1f194ff((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a1f194ff((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

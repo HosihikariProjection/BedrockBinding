@@ -38,10 +38,9 @@ public sealed unsafe partial class VersionRequestedBy : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version version_, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version originalVersion, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleDescriptor by_, bool supported_, bool missing_, bool explicitRequest_, bool promotion_)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_38171abe((void*)__hosihikari_shim_handle, (void*)version_.Handle, (void*)originalVersion.Handle, (void*)by_.Handle, supported_, missing_, explicitRequest_, promotion_);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint version_, nint originalVersion, nint by_, bool supported_, bool missing_, bool explicitRequest_, bool promotion_) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VersionRequestedBy Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class VersionRequestedBy : global::System.IDisposab
         return new VersionRequestedBy((nint)handle);
     }
 
-    public static VersionRequestedBy Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version version_, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version originalVersion, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleDescriptor by_, bool supported_, bool missing_, bool explicitRequest_, bool promotion_)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_13ceb4dc((void*)version_.Handle, (void*)originalVersion.Handle, (void*)by_.Handle, supported_, missing_, explicitRequest_, promotion_);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new VersionRequestedBy((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static VersionRequestedBy Create(nint version_, nint originalVersion, nint by_, bool supported_, bool missing_, bool explicitRequest_, bool promotion_) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VersionRequestedBy Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.VersionRequestedBy arg0)
     {

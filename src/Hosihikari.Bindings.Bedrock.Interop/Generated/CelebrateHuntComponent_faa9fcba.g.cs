@@ -49,10 +49,9 @@ public sealed unsafe partial class CelebrateHuntComponent : global::System.IDisp
         return new CelebrateHuntComponent((nint)handle);
     }
 
-    public uint getCelebrateSound(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_a847fadf((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getCelebrateSound(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCelebrateUntil_Address
@@ -72,10 +71,9 @@ public sealed unsafe partial class CelebrateHuntComponent : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_2f657dd2((void*)__hosihikari_shim_handle);
     }
 
-    public void setNextSoundEventTick(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C0.hs_method_520671e1((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setNextSoundEventTick(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

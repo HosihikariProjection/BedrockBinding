@@ -85,10 +85,9 @@ public sealed unsafe partial class CraftHandlerGrindstone : global::System.IDisp
         return NativeMethods.TablePtr->C1.hs_method_6e80a00e((void*)__hosihikari_shim_handle, (void*)requestAction.Handle);
     }
 
-    public void __postCraftRequest(bool wasSuccess)
-    {
-        NativeMethods.TablePtr->C1.hs_method_94b4df5d((void*)__hosihikari_shim_handle, wasSuccess);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __postCraftRequest(nint wasSuccess) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CraftHandlerGrindstone Create()
     {
@@ -117,9 +116,9 @@ public sealed unsafe partial class CraftHandlerGrindstone : global::System.IDisp
         return NativeMethods.TablePtr->C1.hs_method_bd7c0505((void*)stack.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _getResultItemWithNoEnchants(nint result, nint inputItems, nint onlyHasCurses) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte _handleCraftAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase requestAction)
     {
@@ -131,14 +130,13 @@ public sealed unsafe partial class CraftHandlerGrindstone : global::System.IDisp
         NativeMethods.TablePtr->C1.hs_method_802fb8b8((void*)__hosihikari_shim_handle, wasSuccess);
     }
 
-    public bool _resolveNetIdAndValidate(byte containerNetId, byte slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackNetIdVariant netId)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_10452243((void*)__hosihikari_shim_handle, containerNetId, slot, (void*)netId.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _resolveNetIdAndValidate(nint containerNetId, byte slot, nint netId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<ItemStack, ItemStackNetIdVariant>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint getResultItem(nint input, nint additional) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<ItemStack, ItemStackNetIdVariant>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExperienceAmount_Address

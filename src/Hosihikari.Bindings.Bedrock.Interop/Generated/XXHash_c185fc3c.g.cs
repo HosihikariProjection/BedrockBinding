@@ -60,20 +60,17 @@ public sealed unsafe partial class XXHash : global::System.IDisposable
         return new XXHash((nint)handle);
     }
 
-    public static ulong _hash64Impl(nint input, ulong len, ulong seed)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_d1da73e0((void*)input, len, seed);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ulong _hash64Impl(nint input, ulong len, ulong seed) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _updateImpl(nint input, ulong length)
-    {
-        NativeMethods.TablePtr->C4.hs_method_22fa822b((void*)__hosihikari_shim_handle, (void*)input, length);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _updateImpl(nint input, ulong length) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong digest()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_c14c63ca((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong digest() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc97579_Address

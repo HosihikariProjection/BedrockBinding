@@ -93,9 +93,9 @@ public sealed unsafe partial class BlockItem : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_00abb99e((void*)__hosihikari_shim_handle, auxValue) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockItem Create()
     {
@@ -138,10 +138,9 @@ public sealed unsafe partial class BlockItem : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_8f87e9fe((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)face, (void*)pos.Handle) != 0;
     }
 
-    public void _displayHeightLimitErrorMessages(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int y, bool displayClientSideOnly)
-    {
-        NativeMethods.TablePtr->C0.hs_method_63cd14c5((void*)__hosihikari_shim_handle, (void*)actor.Handle, y, displayClientSideOnly);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _displayHeightLimitErrorMessages(nint actor, int y, bool displayClientSideOnly) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult _useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 clickPos)
     {

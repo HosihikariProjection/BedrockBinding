@@ -38,27 +38,26 @@ public sealed unsafe partial class KineticEffectConditions : global::System.IDis
         return __hs_handle;
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_0b26c9c6((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public short mMaxDuration
     {
-        get => NativeMethods.TablePtr->C4.hs_get_23e99b81((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_23e99b81((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_23e99b81((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_23e99b81((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMinRelativeSpeed
     {
-        get => NativeMethods.TablePtr->C4.hs_get_bfcb5b7c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_bfcb5b7c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bfcb5b7c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_bfcb5b7c((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMinSpeed
     {
-        get => NativeMethods.TablePtr->C4.hs_get_28191a8b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_28191a8b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_28191a8b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_28191a8b((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -67,7 +66,7 @@ public sealed unsafe partial class KineticEffectConditions : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_df608624((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_df608624((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

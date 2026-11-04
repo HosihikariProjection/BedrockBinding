@@ -44,38 +44,21 @@ public sealed unsafe partial class NpcI18nObserver : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_bc7928c7((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public void _onLanguageChanged(string code, bool languageSystemInitializing)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(code);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(code, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C2.hs_method_5ad97ca9((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, languageSystemInitializing);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onLanguageChanged(nint code, bool languageSystemInitializing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onLanguageKeywordsLoadedFromPack(global::Hosihikari.Bindings.Bedrock.Interop.PackManifest manifest)
-    {
-        NativeMethods.TablePtr->C2.hs_method_673a3010((void*)__hosihikari_shim_handle, (void*)manifest.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onLanguageKeywordsLoadedFromPack(nint manifest) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onLanguagesLoaded()
-    {
-        NativeMethods.TablePtr->C2.hs_method_375355ae((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onLanguagesLoaded() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NpcI18nObserver Create()
     {
@@ -99,10 +82,9 @@ public sealed unsafe partial class NpcI18nObserver : global::System.IDisposable
         return new NpcI18nObserver((nint)handle);
     }
 
-    public void _loadNpcData()
-    {
-        NativeMethods.TablePtr->C2.hs_method_5a77df32((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _loadNpcData() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActor_Address

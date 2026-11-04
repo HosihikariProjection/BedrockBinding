@@ -38,10 +38,9 @@ public sealed unsafe partial class StandingVehiclePostPositionPassengerSystem : 
         return __hs_handle;
     }
 
-    public static void _impl(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PassengerComponent passengerComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorSetPositionRequestComponent setPositionRequest, nint horseView)
-    {
-        NativeMethods.TablePtr->C4.hs_method_2364d3eb((void*)arg0.Handle, (void*)passengerComponent.Handle, (void*)setPositionRequest.Handle, (void*)horseView);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _impl(nint arg0, nint passengerComponent, nint setPositionRequest, nint horseView) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class StandingVehiclePostPositionPassengerSystem : 
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_06503a2d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_06503a2d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

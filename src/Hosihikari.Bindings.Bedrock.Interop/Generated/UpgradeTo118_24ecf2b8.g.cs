@@ -62,15 +62,13 @@ public sealed unsafe partial class UpgradeTo118 : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_0f428404((void*)__hosihikari_shim_handle);
     }
 
-    public bool _previousSchema(nint component)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_d485a993((void*)__hosihikari_shim_handle, (void*)component) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _previousSchema(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _upgradeToNext(nint document, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg1)
-    {
-        NativeMethods.TablePtr->C3.hs_method_4eef48bf((void*)__hosihikari_shim_handle, (void*)document, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _upgradeToNext(nint document, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UpgradeTo118 Create(global::Hosihikari.Bindings.Bedrock.Interop.RepairableItemComponentVersioning.UpgradeTo118 arg0)
     {
@@ -83,10 +81,9 @@ public sealed unsafe partial class UpgradeTo118 : global::System.IDisposable
         return new UpgradeTo118((nint)handle);
     }
 
-    public static bool checkRepairItemEntrySchema(nint value)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_df01f816((void*)value) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool checkRepairItemEntrySchema(nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool previousSchema(nint component)
     {

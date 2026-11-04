@@ -40,8 +40,8 @@ public sealed unsafe partial class TickingQueueData : global::System.IDisposable
 
     public int mTickDelay
     {
-        get => NativeMethods.TablePtr->C4.hs_get_b2c67241((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_b2c67241((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b2c67241((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b2c67241((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class TickingQueueData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_92727db6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_92727db6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

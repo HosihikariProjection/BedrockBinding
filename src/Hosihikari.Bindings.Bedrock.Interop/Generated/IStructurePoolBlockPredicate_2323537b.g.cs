@@ -38,20 +38,17 @@ public sealed unsafe partial class IStructurePoolBlockPredicate : global::System
         return __hs_handle;
     }
 
-    public bool _finalize(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_6d9b5d11((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _finalize(nint region, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _validate()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_b0494cbc((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _validate() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IStructurePoolBlockPredicate Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructurePoolBlockPredicate arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6e777da2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_6e777da2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,32 +59,32 @@ public sealed unsafe partial class IStructurePoolBlockPredicate : global::System
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C2.hs_method_77974112((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C1.hs_method_77974112((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public bool finalize(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C2.hs_method_6bc2d81a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_6bc2d81a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle) != 0;
     }
 
     public int getType()
     {
-        return NativeMethods.TablePtr->C2.hs_method_d005f88d((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_d005f88d((void*)__hosihikari_shim_handle);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C2.hs_method_e3052ef3((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_e3052ef3((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos worldPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos refPos, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C2.hs_method_5a19c6e3((void*)__hosihikari_shim_handle, (void*)worldPos.Handle, (void*)refPos.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_5a19c6e3((void*)__hosihikari_shim_handle, (void*)worldPos.Handle, (void*)refPos.Handle, (void*)random.Handle) != 0;
     }
 
     public string validate()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_409f466a((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_409f466a((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -98,7 +95,7 @@ public sealed unsafe partial class IStructurePoolBlockPredicate : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_2323537b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_2323537b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,14 +40,14 @@ public sealed unsafe partial class CompletedUsingItemPacketPayload : global::Sys
 
     public short mItemId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_2c50780a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_2c50780a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_2c50780a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_2c50780a((void*)__hosihikari_shim_handle, value);
     }
 
     public int mItemUseMethod
     {
-        get => NativeMethods.TablePtr->C1.hs_get_1a4e7383((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_1a4e7383((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_1a4e7383((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_1a4e7383((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class CompletedUsingItemPacketPayload : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_693e02bb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_693e02bb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

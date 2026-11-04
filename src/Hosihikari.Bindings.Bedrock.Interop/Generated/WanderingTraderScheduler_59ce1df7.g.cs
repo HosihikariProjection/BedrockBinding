@@ -38,10 +38,9 @@ public sealed unsafe partial class WanderingTraderScheduler : global::System.IDi
         return __hs_handle;
     }
 
-    public static nint CHANCE_TO_SPAWN_PER_DAY()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_896ce39e();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint CHANCE_TO_SPAWN_PER_DAY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WanderingTraderScheduler Create()
     {
@@ -65,12 +64,9 @@ public sealed unsafe partial class WanderingTraderScheduler : global::System.IDi
         return new WanderingTraderScheduler((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _findValidSpawnPosUnder(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ec24bc5e((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)region.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _findValidSpawnPosUnder(nint pos, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mDaysSinceLastSpawn
     {
@@ -107,15 +103,13 @@ public sealed unsafe partial class WanderingTraderScheduler : global::System.IDi
         return new global::Hosihikari.Bindings.Bedrock.Interop.WanderingTraderScheduler((nint)NativeMethods.TablePtr->C4.hs_method_352eed6a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void tick()
-    {
-        NativeMethods.TablePtr->C4.hs_method_9afdafc3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void writeSaveData()
-    {
-        NativeMethods.TablePtr->C4.hs_method_de26b2bb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void writeSaveData() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

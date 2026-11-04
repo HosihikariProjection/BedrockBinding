@@ -40,7 +40,7 @@ public sealed unsafe partial class AudioSendStream : global::System.IDisposable
 
     public static AudioSendStream Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_fefe72f2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_fefe72f2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,17 +51,17 @@ public sealed unsafe partial class AudioSendStream : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config GetConfig()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config((nint)NativeMethods.TablePtr->C5.hs_method_fb10b3ef((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config((nint)NativeMethods.TablePtr->C4.hs_method_fb10b3ef((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats GetStats()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C5.hs_method_25b79029((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_25b79029((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats GetStats(bool arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C5.hs_method_14cd0b66((void*)__hosihikari_shim_handle, arg0));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Stats((nint)NativeMethods.TablePtr->C4.hs_method_14cd0b66((void*)__hosihikari_shim_handle, arg0));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: parameter type 'absl::AnyInvocable<void (webrtc::RTCError) &&>' is not supported.", false)]
@@ -70,22 +70,22 @@ public sealed unsafe partial class AudioSendStream : global::System.IDisposable
 
     public bool SendTelephoneEvent(int arg0, int arg1, int arg2, int arg3)
     {
-        return NativeMethods.TablePtr->C5.hs_method_e66e8715((void*)__hosihikari_shim_handle, arg0, arg1, arg2, arg3) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_e66e8715((void*)__hosihikari_shim_handle, arg0, arg1, arg2, arg3) != 0;
     }
 
     public void SetMuted(bool arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_2b9393eb((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C4.hs_method_2b9393eb((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void Start()
     {
-        NativeMethods.TablePtr->C5.hs_method_e212911a((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_e212911a((void*)__hosihikari_shim_handle);
     }
 
     public void Stop()
     {
-        NativeMethods.TablePtr->C5.hs_method_c7b3ea18((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_c7b3ea18((void*)__hosihikari_shim_handle);
     }
 
 
@@ -95,7 +95,7 @@ public sealed unsafe partial class AudioSendStream : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_8aec4ab0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_8aec4ab0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

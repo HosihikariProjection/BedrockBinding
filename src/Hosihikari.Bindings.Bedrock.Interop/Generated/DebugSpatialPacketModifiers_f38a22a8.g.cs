@@ -40,56 +40,56 @@ public sealed unsafe partial class DebugSpatialPacketModifiers : global::System.
 
     public ulong mCurrentSentMotionPredictionHintsPackets
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a4a22936((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a4a22936((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a4a22936((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a4a22936((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mCurrentSentSpatialPackets
     {
-        get => NativeMethods.TablePtr->C4.hs_get_75a3cdbc((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_75a3cdbc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_75a3cdbc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_75a3cdbc((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mExpectedSentSpatialPackets
     {
-        get => NativeMethods.TablePtr->C4.hs_get_74434dd8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_74434dd8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_74434dd8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_74434dd8((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mOverrideScoreValue
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c90f0834((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_c90f0834((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c90f0834((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c90f0834((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mOverridemMaxDroppedTicks
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4bcea041((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_4bcea041((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4bcea041((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4bcea041((void*)__hosihikari_shim_handle, value);
     }
 
     public float mOverridemMaxOptimizedDistance
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2ad2517e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2ad2517e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2ad2517e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2ad2517e((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mOverridemUseMotionPredictionHints
     {
-        get => NativeMethods.TablePtr->C4.hs_get_fd377a67((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_fd377a67((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_fd377a67((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_fd377a67((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUseScoreOverride
     {
-        get => NativeMethods.TablePtr->C4.hs_get_3ff27bc3((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_3ff27bc3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3ff27bc3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_3ff27bc3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUseValueOverrides
     {
-        get => NativeMethods.TablePtr->C4.hs_get_bd2d50c4((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_bd2d50c4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bd2d50c4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_bd2d50c4((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -98,7 +98,7 @@ public sealed unsafe partial class DebugSpatialPacketModifiers : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f38a22a8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f38a22a8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

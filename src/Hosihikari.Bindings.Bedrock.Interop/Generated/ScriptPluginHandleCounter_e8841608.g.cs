@@ -38,20 +38,17 @@ public sealed unsafe partial class ScriptPluginHandleCounter : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPlugin plugin)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_2b8e6c02((void*)__hosihikari_shim_handle, (void*)plugin.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint plugin) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onDestroyObject(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry arg0, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle arg1, nint type, uint size)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e16ff711((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)type, size);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onDestroyObject(nint arg0, nint arg1, nint type, uint size) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onMakeObject(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.LifetimeRegistry arg0, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ObjectHandle arg1, nint type, uint size)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f29cb63a((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)type, size);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onMakeObject(nint arg0, nint arg1, nint type, uint size) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptPluginHandleCounter Create()
     {
@@ -64,16 +61,9 @@ public sealed unsafe partial class ScriptPluginHandleCounter : global::System.ID
         return new ScriptPluginHandleCounter((nint)handle);
     }
 
-    public static ScriptPluginHandleCounter Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPlugin plugin)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0eff2b50((void*)plugin.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptPluginHandleCounter((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptPluginHandleCounter Create(nint plugin) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptPluginHandleCounter Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter arg0)
     {
@@ -86,11 +76,9 @@ public sealed unsafe partial class ScriptPluginHandleCounter : global::System.ID
         return new ScriptPluginHandleCounter((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats? _getOrMakeStats(nint type)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_32525217((void*)__hosihikari_shim_handle, (void*)type);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginHandleCounter_Nested.TypeStats((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getOrMakeStats(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb0d518_Address

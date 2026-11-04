@@ -73,7 +73,7 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
             }
             fixed (byte* __hs_stringData1 = __hs_stringBytes1)
             {
-                var handle = NativeMethods.TablePtr->C4.hs_create_15291218(type, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(@params?.Length ?? 0));
+                var handle = NativeMethods.TablePtr->C3.hs_create_15291218(type, __hs_stringData1, (nuint)__hs_stringByteCount1, __hs_vectorData2, (nuint)(@params?.Length ?? 0));
                 if (handle == null)
                 {
                     throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -86,7 +86,7 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
 
     public static MessageAndParams Create(global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.MessageAndParams arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ab56ee8d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ab56ee8d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -98,25 +98,24 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_514afbf6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_514afbf6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParams_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_604881e3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_604881e3((void*)__hosihikari_shim_handle);
     }
 
     public byte mType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a454411d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a454411d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a454411d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a454411d((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.TextPacketPayload_Nested.MessageAndParams other)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_e2829698((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -125,7 +124,7 @@ public sealed unsafe partial class MessageAndParams : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_62a3c636((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_62a3c636((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

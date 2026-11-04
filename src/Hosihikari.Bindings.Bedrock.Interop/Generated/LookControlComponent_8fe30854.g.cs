@@ -86,10 +86,9 @@ public sealed unsafe partial class LookControlComponent : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_ab5ac126((void*)__hosihikari_shim_handle, value);
     }
 
-    public void setLookAtPosition(global::Hosihikari.Bindings.Bedrock.Interop.Actor? target, float yMax, float xMax)
-    {
-        NativeMethods.TablePtr->C2.hs_method_cd41834b((void*)__hosihikari_shim_handle, (void*)(target?.Handle ?? 0), yMax, xMax);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setLookAtPosition(nint target, float yMax, float xMax) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

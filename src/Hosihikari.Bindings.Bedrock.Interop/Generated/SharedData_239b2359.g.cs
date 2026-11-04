@@ -38,25 +38,21 @@ public sealed unsafe partial class SharedData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public byte _getChatRestrictionLevel()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_c241922c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getChatRestrictionLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool? _isGameRuleEnabled(global::Hosihikari.Bindings.Bedrock.Interop.GameRuleId rule)
-    {
-        var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C3.hs_method_de711d7d((void*)__hosihikari_shim_handle, (void*)rule.Handle, &__hs_hasValue);
-        return __hs_hasValue ? __hs_value != 0 : (bool?)null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _isGameRuleEnabled(nint rule) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SharedData Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_829f840e();
+        var handle = NativeMethods.TablePtr->C2.hs_create_829f840e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,7 +63,7 @@ public sealed unsafe partial class SharedData : global::System.IDisposable
 
     public static SharedData Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a8c6509f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_a8c6509f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,25 +74,25 @@ public sealed unsafe partial class SharedData : global::System.IDisposable
 
     public byte getChatRestrictionLevel()
     {
-        return NativeMethods.TablePtr->C3.hs_method_23893863((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C2.hs_method_23893863((void*)__hosihikari_shim_handle);
     }
 
     public bool? isGameRuleEnabled(global::Hosihikari.Bindings.Bedrock.Interop.GameRuleId rule)
     {
         var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C3.hs_method_be40527f((void*)__hosihikari_shim_handle, (void*)rule.Handle, &__hs_hasValue);
+        var __hs_value = NativeMethods.TablePtr->C2.hs_method_be40527f((void*)__hosihikari_shim_handle, (void*)rule.Handle, &__hs_hasValue);
         return __hs_hasValue ? __hs_value != 0 : (bool?)null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d9533fa7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d9533fa7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData((nint)NativeMethods.TablePtr->C3.hs_method_078d9549((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerCapabilities.SharedData((nint)NativeMethods.TablePtr->C2.hs_method_078d9549((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -106,7 +102,7 @@ public sealed unsafe partial class SharedData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_239b2359((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_239b2359((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

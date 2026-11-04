@@ -67,10 +67,9 @@ public sealed unsafe partial class Ability : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b2a3f476((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_not_equal(global::Hosihikari.Bindings.Bedrock.Interop.Ability rhs)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_d9504ad1((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_not_equal(nint rhs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

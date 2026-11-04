@@ -38,10 +38,9 @@ public sealed unsafe partial class HeartbeatServerSystem : global::System.IDispo
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_4cfb443b((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HeartbeatServerSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.HeartbeatServerSystem arg0)
     {

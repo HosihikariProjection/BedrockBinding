@@ -38,29 +38,26 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'AsyncJoinRegistrar' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint settings, nint serverLevel, nint packSettingsCache, nint serverScheduler, nint commands, nint eventing, nint itemRegistry, nint server, nint registry, nint localProfilerControlBroker, nint asyncJoinRegistrar, nint diagnostics) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'AsyncJoinRegistrar' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.LevelStartLeaveGameEvent levelStartLeaveGameEvent)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_321b4077((void*)__hosihikari_shim_handle, (void*)levelStartLeaveGameEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent_321b4077(nint levelStartLeaveGameEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstanceRequestResourceReload reloadEvent)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_ef3ef598((void*)__hosihikari_shim_handle, (void*)reloadEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent_ef3ef598(nint reloadEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int _onServerThreadStarted(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance instance)
     {
         return NativeMethods.TablePtr->C3.hs_method_e9b8844c((void*)__hosihikari_shim_handle, (void*)instance.Handle);
     }
 
-    public int _onServerUpdateEnd(global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance instance)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_c871bb56((void*)__hosihikari_shim_handle, (void*)instance.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onServerUpdateEnd(nint instance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerScriptManager Create()
     {
@@ -73,9 +70,9 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
         return new ServerScriptManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'AsyncJoinRegistrar' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ServerScriptManager Create(nint settings, nint serverLevel, nint packSettingsCache, nint serverScheduler, nint commands, nint eventing, nint itemRegistry, nint server, nint registry, nint localProfilerControlBroker, nint asyncJoinRegistrar, nint diagnostics) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'AsyncJoinRegistrar' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerScriptManager Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager arg0)
     {
@@ -88,24 +85,21 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
         return new ServerScriptManager((nint)handle);
     }
 
-    public void _checkForSystemPackErrors(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult result)
-    {
-        NativeMethods.TablePtr->C3.hs_method_cbe878a6((void*)__hosihikari_shim_handle, (void*)result.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _checkForSystemPackErrors(nint result) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _loadPlugins(global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel serverLevel, bool fromReload)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b1dae1da((void*)__hosihikari_shim_handle, (void*)serverLevel.Handle, fromReload);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _loadPlugins(nint serverLevel, bool fromReload) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _runPlugins(byte exeGroup, global::Hosihikari.Bindings.Bedrock.Interop.ServerInstance serverInstance)
-    {
-        NativeMethods.TablePtr->C3.hs_method_5f0543ca((void*)__hosihikari_shim_handle, exeGroup, (void*)serverInstance.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _runPlugins(nint exeGroup, nint serverInstance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addModuleFilter(nint moduleFilter) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAsyncJobCoordinator_Address
@@ -354,10 +348,9 @@ public sealed unsafe partial class ServerScriptManager : global::System.IDisposa
         return new global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager((nint)NativeMethods.TablePtr->C3.hs_method_5e52db65((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void setBlockCustomComponentCerealContext(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C3.hs_method_5df68da4((void*)__hosihikari_shim_handle, (void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setBlockCustomComponentCerealContext(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

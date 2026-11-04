@@ -44,10 +44,9 @@ public sealed unsafe partial class Neighbors : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_69134014((void*)__hosihikari_shim_handle, value);
     }
 
-    public static nint sOffsetMap()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_b5c44e93();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sOffsetMap() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

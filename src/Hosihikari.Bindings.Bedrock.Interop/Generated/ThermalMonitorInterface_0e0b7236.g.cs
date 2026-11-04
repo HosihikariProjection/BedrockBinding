@@ -40,7 +40,7 @@ public sealed unsafe partial class ThermalMonitorInterface : global::System.IDis
 
     public static ThermalMonitorInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.ThermalMonitorInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d92ac067((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_d92ac067((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,17 +51,17 @@ public sealed unsafe partial class ThermalMonitorInterface : global::System.IDis
 
     public int getThermalState()
     {
-        return NativeMethods.TablePtr->C4.hs_method_b5b32e78((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_b5b32e78((void*)__hosihikari_shim_handle);
     }
 
     public float getThermalValueCelsius()
     {
-        return NativeMethods.TablePtr->C4.hs_method_65da7299((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_65da7299((void*)__hosihikari_shim_handle);
     }
 
     public bool isLowBatteryModeEnabled()
     {
-        return NativeMethods.TablePtr->C4.hs_method_e751b1d3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e751b1d3((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class ThermalMonitorInterface : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_0e0b7236((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0e0b7236((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

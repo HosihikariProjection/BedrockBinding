@@ -44,7 +44,7 @@ public sealed unsafe partial class EventResponseBase : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_0f964c6b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0f964c6b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

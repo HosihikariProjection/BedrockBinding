@@ -74,12 +74,9 @@ public sealed unsafe partial class VanillaTreeFeature : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C4.hs_get_c9e2a064((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_83fea30c((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _place(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VanillaTreeFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaTreeFeature arg0)
     {
@@ -92,13 +89,13 @@ public sealed unsafe partial class VanillaTreeFeature : global::System.IDisposab
         return new VanillaTreeFeature((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'ITreeCanopyWrapper &' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _buildVanillaCanopyVariants(nint schemaNode, nint canopyAccessor) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'ITreeCanopyWrapper &' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'ITreeTrunkWrapper &' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _buildVanillaTrunkVariants(nint schemaNode, nint trunkAccessor) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'ITreeTrunkWrapper &' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
     {

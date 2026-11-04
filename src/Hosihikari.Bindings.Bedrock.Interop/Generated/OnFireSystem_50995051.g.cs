@@ -40,7 +40,7 @@ public sealed unsafe partial class OnFireSystem : global::System.IDisposable
 
     public static OnFireSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.OnFireSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ef2a5f98((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ef2a5f98((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,25 +49,23 @@ public sealed unsafe partial class OnFireSystem : global::System.IDisposable
         return new OnFireSystem((nint)handle);
     }
 
-    public static void _setOnFireImpl(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int seconds, bool isInWaterOrRain, int fireProtectionLevels)
-    {
-        NativeMethods.TablePtr->C3.hs_method_03ec34e1((void*)actor.Handle, seconds, isInWaterOrRain, fireProtectionLevels);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _setOnFireImpl(nint actor, int seconds, bool isInWaterOrRain, int fireProtectionLevels) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static void setOnFire(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int seconds)
     {
-        NativeMethods.TablePtr->C3.hs_method_5c8e2658((void*)actor.Handle, seconds);
+        NativeMethods.TablePtr->C2.hs_method_5c8e2658((void*)actor.Handle, seconds);
     }
 
     public static void setOnFireNoEffects(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, int seconds)
     {
-        NativeMethods.TablePtr->C3.hs_method_88feb3a9((void*)actor.Handle, seconds);
+        NativeMethods.TablePtr->C2.hs_method_88feb3a9((void*)actor.Handle, seconds);
     }
 
-    public static void stopFire(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C3.hs_method_39a38c5f((void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void stopFire(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -76,7 +74,7 @@ public sealed unsafe partial class OnFireSystem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_50995051((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_50995051((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

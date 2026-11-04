@@ -38,10 +38,9 @@ public sealed unsafe partial class GameTestClearTask : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox bounds)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_493ad617((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)bounds.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint dimension, nint bounds) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameTestClearTask Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class GameTestClearTask : global::System.IDisposabl
         return new GameTestClearTask((nint)handle);
     }
 
-    public static GameTestClearTask Create(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox bounds)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_5ac7d4eb((void*)dimension.Handle, (void*)bounds.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GameTestClearTask((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static GameTestClearTask Create(nint dimension, nint bounds) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameTestClearTask Create(global::Hosihikari.Bindings.Bedrock.Interop.GameTestClearTask arg0)
     {

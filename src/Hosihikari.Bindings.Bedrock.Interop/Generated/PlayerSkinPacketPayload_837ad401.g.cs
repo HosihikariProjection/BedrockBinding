@@ -38,52 +38,22 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_a4b9aeb6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid, global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef skin, string newSkinName, string oldSkinName)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(newSkinName);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(newSkinName, __hs_stringBytes2);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(oldSkinName);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(oldSkinName, __hs_stringBytes3);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                return (nint)NativeMethods.TablePtr->C3.hs_method_ead27389((void*)__hosihikari_shim_handle, (void*)uuid.Handle, (void*)skin.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint uuid, nint skin, nint newSkinName, nint oldSkinName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_df402df9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_df402df9((void*)__hosihikari_shim_handle);
     }
 
     public static PlayerSkinPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_69f01af8();
+        var handle = NativeMethods.TablePtr->C2.hs_create_69f01af8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -92,83 +62,41 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
         return new PlayerSkinPacketPayload((nint)handle);
     }
 
-    public static PlayerSkinPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_f8c3eb59((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PlayerSkinPacketPayload Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new PlayerSkinPacketPayload((nint)handle);
-    }
-
-    public static PlayerSkinPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID uuid, global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef skin, string newSkinName, string oldSkinName)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(newSkinName);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(newSkinName, __hs_stringBytes2);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(oldSkinName);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(oldSkinName, __hs_stringBytes3);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                var handle = NativeMethods.TablePtr->C3.hs_create_152e7e21((void*)uuid.Handle, (void*)skin.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3);
-                if (handle == null)
-                {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-                }
-
-                return new PlayerSkinPacketPayload((nint)handle);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PlayerSkinPacketPayload Create(nint uuid, nint skin, nint newSkinName, nint oldSkinName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLocalizedNewSkinName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3306ea1c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3306ea1c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLocalizedOldSkinName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8bae8f5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8bae8f5d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSkin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_56b8f9ff((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_56b8f9ff((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUUID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_de05adec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_de05adec((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload((nint)NativeMethods.TablePtr->C3.hs_method_b012fd4d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerSkinPacketPayload((nint)NativeMethods.TablePtr->C2.hs_method_b012fd4d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -178,7 +106,7 @@ public sealed unsafe partial class PlayerSkinPacketPayload : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_837ad401((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_837ad401((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

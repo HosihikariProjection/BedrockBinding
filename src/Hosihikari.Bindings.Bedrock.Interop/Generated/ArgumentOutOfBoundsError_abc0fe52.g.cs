@@ -38,24 +38,9 @@ public sealed unsafe partial class ArgumentOutOfBoundsError : global::System.IDi
         return __hs_handle;
     }
 
-    public nint _ctor(string propertyName, int index_, double? value_, double? minValue_, double? maxValue_)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(propertyName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(propertyName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_9836538b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, index_, value_ ?? default(double), minValue_ ?? default(double), maxValue_ ?? default(double), value_.HasValue, minValue_.HasValue, maxValue_.HasValue);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint propertyName, int index_, nint value_, nint minValue_, nint maxValue_) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ArgumentOutOfBoundsError Create()
     {
@@ -79,30 +64,9 @@ public sealed unsafe partial class ArgumentOutOfBoundsError : global::System.IDi
         return new ArgumentOutOfBoundsError((nint)handle);
     }
 
-    public static ArgumentOutOfBoundsError Create(string propertyName, int index_, double? value_, double? minValue_, double? maxValue_)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(propertyName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(propertyName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C3.hs_create_90e2eeae(__hs_stringData0, (nuint)__hs_stringByteCount0, index_, value_ ?? default(double), minValue_ ?? default(double), maxValue_ ?? default(double), value_.HasValue, minValue_.HasValue, maxValue_.HasValue);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new ArgumentOutOfBoundsError((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ArgumentOutOfBoundsError Create(nint propertyName, int index_, nint value_, nint minValue_, nint maxValue_) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk34f2c4_Address

@@ -125,10 +125,9 @@ public sealed unsafe partial class ActivationArguments : global::System.IDisposa
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ActivationArguments((nint)NativeMethods.TablePtr->C0.hs_method_a304aed8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void preParseArguments()
-    {
-        NativeMethods.TablePtr->C0.hs_method_ab0d4d4b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void preParseArguments() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

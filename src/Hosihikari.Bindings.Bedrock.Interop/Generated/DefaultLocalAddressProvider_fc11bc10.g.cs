@@ -40,7 +40,7 @@ public sealed unsafe partial class DefaultLocalAddressProvider : global::System.
 
     public static DefaultLocalAddressProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.DefaultLocalAddressProvider arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_5c32ae09((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_5c32ae09((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class DefaultLocalAddressProvider : global::System.
 
     public bool GetDefaultLocalAddress(int family, nint ipaddr)
     {
-        return NativeMethods.TablePtr->C5.hs_method_d230ff96((void*)__hosihikari_shim_handle, family, (void*)ipaddr) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_d230ff96((void*)__hosihikari_shim_handle, family, (void*)ipaddr) != 0;
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class DefaultLocalAddressProvider : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_fc11bc10((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_fc11bc10((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

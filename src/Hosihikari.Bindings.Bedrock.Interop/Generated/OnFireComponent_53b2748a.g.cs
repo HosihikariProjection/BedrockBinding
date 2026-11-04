@@ -38,38 +38,32 @@ public sealed unsafe partial class OnFireComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static string LEGACY_FIRE_TAG()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_40883839();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint LEGACY_FIRE_TAG() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string ON_FIRE_TAG()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_02a3b564();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ON_FIRE_TAG() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.Actor arg0, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C3.hs_method_97ade38b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addAdditionalSaveData(nint arg0, nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void convertFromLegacyData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag outTag)
-    {
-        NativeMethods.TablePtr->C3.hs_method_49a649b5((void*)tag.Handle, (void*)outTag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void convertFromLegacyData(nint tag, nint outTag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mIgnitedThisTick
     {
-        get => NativeMethods.TablePtr->C3.hs_get_98991b31((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_98991b31((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_98991b31((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_98991b31((void*)__hosihikari_shim_handle, value);
     }
 
     public int mOnFireTicks
     {
-        get => NativeMethods.TablePtr->C3.hs_get_11e6b805((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_11e6b805((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_11e6b805((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_11e6b805((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -78,7 +72,7 @@ public sealed unsafe partial class OnFireComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_53b2748a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_53b2748a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

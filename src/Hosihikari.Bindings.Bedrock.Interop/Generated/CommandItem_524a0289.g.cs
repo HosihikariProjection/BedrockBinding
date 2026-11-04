@@ -48,14 +48,14 @@ public sealed unsafe partial class CommandItem : global::System.IDisposable
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance? createInstance(int count, int aux, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, bool requireExactAux)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_aa268d85((void*)__hosihikari_shim_handle, count, aux, (void*)output.Handle, requireExactAux, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_aa268d85((void*)__hosihikari_shim_handle, count, aux, (void*)output.Handle, requireExactAux, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)__hs_handle) : null;
     }
 
     public ulong mVersionId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_8a9ad8c0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8a9ad8c0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_8a9ad8c0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_8a9ad8c0((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -64,7 +64,7 @@ public sealed unsafe partial class CommandItem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_524a0289((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_524a0289((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

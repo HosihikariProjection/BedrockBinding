@@ -38,15 +38,13 @@ public sealed unsafe partial class ActorSpawnRuleData : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleData arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_1c386ee7((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_f4199659((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorSpawnRuleData Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ActorSpawnRuleData : global::System.IDisposab
         return new ActorSpawnRuleData((nint)handle);
     }
 
-    public static ActorSpawnRuleData Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleData arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_a13f2d8e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ActorSpawnRuleData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ActorSpawnRuleData Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFormatVersion_Address
@@ -94,14 +85,13 @@ public sealed unsafe partial class ActorSpawnRuleData : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C0.hs_get_293aa92c((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_ec7e87dd(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleData arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ActorSpawnRuleData((nint)NativeMethods.TablePtr->C0.hs_method_74ce6687((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_74ce6687(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

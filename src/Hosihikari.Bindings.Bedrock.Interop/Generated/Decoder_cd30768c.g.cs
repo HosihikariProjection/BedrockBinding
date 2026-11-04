@@ -40,7 +40,7 @@ public sealed unsafe partial class Decoder : global::System.IDisposable
 
     public static Decoder Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_ac029343();
+        var handle = NativeMethods.TablePtr->C4.hs_create_ac029343();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Decoder : global::System.IDisposable
 
     public static Decoder Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Decoder arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_d97aaf9f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_d97aaf9f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class Decoder : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk212524_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_baed3b2b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_baed3b2b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd50438_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_0bec62b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0bec62b6((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Decoder operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Decoder arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Decoder((nint)NativeMethods.TablePtr->C5.hs_method_0414bec2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.Decoder((nint)NativeMethods.TablePtr->C4.hs_method_0414bec2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class Decoder : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_cd30768c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_cd30768c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

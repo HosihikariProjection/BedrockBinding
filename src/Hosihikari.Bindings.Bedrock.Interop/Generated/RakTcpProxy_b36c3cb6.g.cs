@@ -38,73 +38,49 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _close(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress address)
-    {
-        NativeMethods.TablePtr->C3.hs_method_4fe6414f((void*)__hosihikari_shim_handle, (void*)address.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _close(nint address) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress _connect(string host, ushort port)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(host);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(host, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_083aeb76((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _connect(nint host, ushort port) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _deallocatePacket(nint packet)
-    {
-        NativeMethods.TablePtr->C3.hs_method_7aec1744((void*)__hosihikari_shim_handle, (void*)packet);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deallocatePacket(nint packet) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress _nextCompletedConnectionAttempt()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_8c832726((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _nextCompletedConnectionAttempt() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress _nextFailedConnectionAttempt()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_9f61d5e2((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _nextFailedConnectionAttempt() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress _nextLostConnection()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_682896f1((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _nextLostConnection() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _nextPacket()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_00c420e5((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _nextPacket() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _packetsAvailable()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_36d3c85d((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _packetsAvailable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _send(nint data, uint length, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress address)
-    {
-        NativeMethods.TablePtr->C3.hs_method_7f01f917((void*)__hosihikari_shim_handle, (void*)data, length, (void*)address.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _send(nint data, uint length, nint address) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _start(ushort port, ushort maxIncomming, ushort maxOutgoing)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_b7ff63f7((void*)__hosihikari_shim_handle, port, maxIncomming, maxOutgoing) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _start(ushort port, ushort maxIncomming, ushort maxOutgoing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RakTcpProxy Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1cbe7a37();
+        var handle = NativeMethods.TablePtr->C2.hs_create_1cbe7a37();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -115,7 +91,7 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
 
     public static RakTcpProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8fd61b86((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8fd61b86((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -126,7 +102,7 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
 
     public void close(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress address)
     {
-        NativeMethods.TablePtr->C3.hs_method_068a00b6((void*)__hosihikari_shim_handle, (void*)address.Handle);
+        NativeMethods.TablePtr->C2.hs_method_068a00b6((void*)__hosihikari_shim_handle, (void*)address.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress connect(string host, ushort port)
@@ -144,59 +120,59 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(host, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_c3854b5d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C2.hs_method_c3854b5d((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port));
         }
     }
 
     public void deallocatePacket(nint packet)
     {
-        NativeMethods.TablePtr->C3.hs_method_92d4bcea((void*)__hosihikari_shim_handle, (void*)packet);
+        NativeMethods.TablePtr->C2.hs_method_92d4bcea((void*)__hosihikari_shim_handle, (void*)packet);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk30bf73_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c3c3120a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c3c3120a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextCompletedConnectionAttempt()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_4c777a18((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C2.hs_method_4c777a18((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextFailedConnectionAttempt()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_6da5176e((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C2.hs_method_6da5176e((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextLostConnection()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_d6d655eb((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C2.hs_method_d6d655eb((void*)__hosihikari_shim_handle));
     }
 
     public nint nextPacket()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b027be37((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_b027be37((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy((nint)NativeMethods.TablePtr->C3.hs_method_e5ce5a97((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakTcpProxy((nint)NativeMethods.TablePtr->C2.hs_method_e5ce5a97((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public bool packetsAvailable()
     {
-        return NativeMethods.TablePtr->C3.hs_method_8ed605c0((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_8ed605c0((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void send(nint data, uint length, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress address)
     {
-        NativeMethods.TablePtr->C3.hs_method_7bd92d5b((void*)__hosihikari_shim_handle, (void*)data, length, (void*)address.Handle);
+        NativeMethods.TablePtr->C2.hs_method_7bd92d5b((void*)__hosihikari_shim_handle, (void*)data, length, (void*)address.Handle);
     }
 
     public bool start(ushort port, ushort maxIncomming, ushort maxOutgoing)
     {
-        return NativeMethods.TablePtr->C3.hs_method_a3140267((void*)__hosihikari_shim_handle, port, maxIncomming, maxOutgoing) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_a3140267((void*)__hosihikari_shim_handle, port, maxIncomming, maxOutgoing) != 0;
     }
 
 
@@ -206,7 +182,7 @@ public sealed unsafe partial class RakTcpProxy : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b36c3cb6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b36c3cb6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

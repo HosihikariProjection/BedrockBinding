@@ -40,7 +40,7 @@ public sealed unsafe partial class PortalRecord : global::System.IDisposable
 
     public static PortalRecord Create(global::Hosihikari.Bindings.Bedrock.Interop.PortalRecord arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8863d1af((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8863d1af((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class PortalRecord : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBaseBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_56865603((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_56865603((void*)__hosihikari_shim_handle);
     }
 
     public sbyte mSpan
     {
-        get => NativeMethods.TablePtr->C3.hs_get_4f206ac8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_4f206ac8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_4f206ac8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_4f206ac8((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mXInc
     {
-        get => NativeMethods.TablePtr->C3.hs_get_734fa763((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_734fa763((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_734fa763((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_734fa763((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mZInc
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e895a16d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e895a16d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e895a16d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e895a16d((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class PortalRecord : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0ea5dc69((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0ea5dc69((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

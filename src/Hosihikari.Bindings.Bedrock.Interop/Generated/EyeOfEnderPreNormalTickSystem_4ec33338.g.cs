@@ -38,15 +38,13 @@ public sealed unsafe partial class EyeOfEnderPreNormalTickSystem : global::Syste
         return __hs_handle;
     }
 
-    public static void _doEyeOfEnderPreNormalTickSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent)
-    {
-        NativeMethods.TablePtr->C1.hs_method_6685fdb2((void*)arg0.Handle, (void*)actorOwnerComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doEyeOfEnderPreNormalTickSystem(nint arg0, nint actorOwnerComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C1.hs_method_57224d4e());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

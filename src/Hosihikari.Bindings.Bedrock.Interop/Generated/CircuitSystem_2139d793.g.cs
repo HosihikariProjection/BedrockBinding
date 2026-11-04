@@ -49,19 +49,18 @@ public sealed unsafe partial class CircuitSystem : global::System.IDisposable
         return new CircuitSystem((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint createComponent(nint pos, byte direction, nint newComponent) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void evaluate(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource? region)
     {
         NativeMethods.TablePtr->C0.hs_method_e08823e9((void*)__hosihikari_shim_handle, (void*)(region?.Handle ?? 0));
     }
 
-    public bool isConnectionAllowed(global::Hosihikari.Bindings.Bedrock.Interop.BaseCircuitComponent component, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos componentPos, byte connectionDirection, bool directlyPowered, bool speculativeConnection)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_a74cdb72((void*)__hosihikari_shim_handle, (void*)component.Handle, (void*)componentPos.Handle, connectionDirection, directlyPowered, speculativeConnection) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isConnectionAllowed(nint component, nint componentPos, byte connectionDirection, bool directlyPowered, bool speculativeConnection) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAddedLevelChunk_Address

@@ -38,19 +38,17 @@ public sealed unsafe partial class SmithingTableTemplateContainerValidation : gl
         return __hs_handle;
     }
 
-    public int _getContainerOffset(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_39ad93a7((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerOffset(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg3, bool arg4)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_d519bf0b((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, arg1, (void*)item.Handle, arg3, arg4) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isItemAllowedInSlot(nint screenContext, nint arg1, nint item, nint arg3, bool arg4) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SmithingTableTemplateContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.SmithingTableTemplateContainerValidation arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_605d2ab4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_605d2ab4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,12 +59,12 @@ public sealed unsafe partial class SmithingTableTemplateContainerValidation : gl
 
     public int getContainerOffset(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
     {
-        return NativeMethods.TablePtr->C4.hs_method_1ceda96b((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_1ceda96b((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
     }
 
     public bool isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg3, bool arg4)
     {
-        return NativeMethods.TablePtr->C4.hs_method_3c2d253b((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, arg1, (void*)item.Handle, arg3, arg4) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_3c2d253b((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, arg1, (void*)item.Handle, arg3, arg4) != 0;
     }
 
 
@@ -76,7 +74,7 @@ public sealed unsafe partial class SmithingTableTemplateContainerValidation : gl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e3e3bf16((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e3e3bf16((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

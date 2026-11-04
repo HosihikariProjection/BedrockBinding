@@ -49,29 +49,25 @@ public sealed unsafe partial class FeatureTerrainAdjustments : global::System.ID
         return new FeatureTerrainAdjustments((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _insertDescriptions(nint intersectingChunks, nint modifyFn) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.FeatureTerrainAdjustments_Nested.Descriptions at(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FeatureTerrainAdjustments_Nested.Descriptions((nint)NativeMethods.TablePtr->C1.hs_method_627f2366((void*)__hosihikari_shim_handle, (void*)chunkPos.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint at(nint chunkPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static float calculateContribution(global::Hosihikari.Bindings.Bedrock.Interop.FeatureTerrainAdjustments_Nested.Descriptions descriptions, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos currentPos, float noiseValue)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ad06d910((void*)descriptions.Handle, (void*)currentPos.Handle, noiseValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static float calculateContribution(nint descriptions, nint currentPos, float noiseValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void garbageCollectDescriptions()
-    {
-        NativeMethods.TablePtr->C1.hs_method_0b29aa6e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void garbageCollectDescriptions() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BeardKernel mBeardKernel()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BeardKernel((nint)NativeMethods.TablePtr->C1.hs_method_195f823d(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mBeardKernel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescriptionsToProcess_Address
@@ -85,23 +81,17 @@ public sealed unsafe partial class FeatureTerrainAdjustments : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_5ddc5555((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? setBeardAndShaver(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox bb, int deltaY, float minBeardWidth, float maxBeardWidth)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_78665f08((void*)__hosihikari_shim_handle, (void*)bb.Handle, deltaY, minBeardWidth, maxBeardWidth);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint setBeardAndShaver(nint bb, int deltaY, float minBeardWidth, float maxBeardWidth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? setBeardifier(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox bb, int deltaY)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_b9c073a1((void*)__hosihikari_shim_handle, (void*)bb.Handle, deltaY);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint setBeardifier(nint bb, int deltaY) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? setBury(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox bb)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_ea9f7c48((void*)__hosihikari_shim_handle, (void*)bb.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint setBury(nint bb) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

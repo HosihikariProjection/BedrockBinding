@@ -92,25 +92,21 @@ public sealed unsafe partial class TridentChannelingEnchant : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C4.hs_get_837d1086((void*)__hosihikari_shim_handle);
     }
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_3396d19c((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxLevel()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_3c8625e1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_142146e2((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isCompatibleWith(byte type)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_7af78716((void*)__hosihikari_shim_handle, type) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isCompatibleWith(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TridentChannelingEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.TridentChannelingEnchant arg0)
     {

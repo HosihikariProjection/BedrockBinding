@@ -44,7 +44,7 @@ public sealed unsafe partial class StringViewHash : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_9373b228((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9373b228((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

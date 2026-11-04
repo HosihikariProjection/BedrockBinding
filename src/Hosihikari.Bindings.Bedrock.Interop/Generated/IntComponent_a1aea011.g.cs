@@ -40,8 +40,8 @@ public sealed unsafe partial class IntComponent : global::System.IDisposable
 
     public int mValue
     {
-        get => NativeMethods.TablePtr->C2.hs_get_de99086a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_de99086a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_de99086a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_de99086a((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class IntComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a1aea011((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_a1aea011((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

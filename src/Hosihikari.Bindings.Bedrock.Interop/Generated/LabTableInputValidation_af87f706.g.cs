@@ -38,24 +38,21 @@ public sealed unsafe partial class LabTableInputValidation : global::System.IDis
         return __hs_handle;
     }
 
-    public bool _canDestroy(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_656edd6c((void*)__hosihikari_shim_handle, (void*)screenContext.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canDestroy(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_5597fea4((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerSize(nint screenContext, nint container) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_91494bfe((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isItemAllowedInSlot(nint screenContext, nint slot, nint item, nint amount, bool arg4) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LabTableInputValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.LabTableInputValidation arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6a07c552((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_6a07c552((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,17 +63,17 @@ public sealed unsafe partial class LabTableInputValidation : global::System.IDis
 
     public bool canDestroy(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
     {
-        return NativeMethods.TablePtr->C2.hs_method_fb0006f1((void*)__hosihikari_shim_handle, (void*)screenContext.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_fb0006f1((void*)__hosihikari_shim_handle, (void*)screenContext.Handle) != 0;
     }
 
     public int getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
     {
-        return NativeMethods.TablePtr->C2.hs_method_1a16c1ca((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_1a16c1ca((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
     }
 
     public bool isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
     {
-        return NativeMethods.TablePtr->C2.hs_method_479ebbd6((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_479ebbd6((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
     }
 
 
@@ -86,7 +83,7 @@ public sealed unsafe partial class LabTableInputValidation : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_af87f706((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_af87f706((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

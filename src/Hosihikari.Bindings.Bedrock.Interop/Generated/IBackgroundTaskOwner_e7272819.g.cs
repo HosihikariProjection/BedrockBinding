@@ -40,7 +40,7 @@ public sealed unsafe partial class IBackgroundTaskOwner : global::System.IDispos
 
     public static IBackgroundTaskOwner Create(global::Hosihikari.Bindings.Bedrock.Interop.IBackgroundTaskOwner arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5a4aa3f2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_5a4aa3f2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class IBackgroundTaskOwner : global::System.IDispos
 
     public int getState()
     {
-        return NativeMethods.TablePtr->C2.hs_method_bff29327((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_bff29327((void*)__hosihikari_shim_handle);
     }
 
     public void processCoroutines()
     {
-        NativeMethods.TablePtr->C2.hs_method_b3a2c92d((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_b3a2c92d((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'TaskResult' is not supported.", false)]
@@ -69,17 +69,17 @@ public sealed unsafe partial class IBackgroundTaskOwner : global::System.IDispos
 
     public void requeueTask(global::Hosihikari.Bindings.Abi.SharedHandle? task, bool queueImmediate)
     {
-        NativeMethods.TablePtr->C2.hs_method_68af961b((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), queueImmediate);
+        NativeMethods.TablePtr->C1.hs_method_68af961b((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), queueImmediate);
     }
 
     public void taskComplete(global::Hosihikari.Bindings.Bedrock.Interop.BackgroundTaskBase? task)
     {
-        NativeMethods.TablePtr->C2.hs_method_e68323e2((void*)__hosihikari_shim_handle, (void*)(task?.Handle ?? 0));
+        NativeMethods.TablePtr->C1.hs_method_e68323e2((void*)__hosihikari_shim_handle, (void*)(task?.Handle ?? 0));
     }
 
     public void taskRegister(global::Hosihikari.Bindings.Abi.SharedHandle? task)
     {
-        NativeMethods.TablePtr->C2.hs_method_c2acaeaf((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        NativeMethods.TablePtr->C1.hs_method_c2acaeaf((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
 
@@ -89,7 +89,7 @@ public sealed unsafe partial class IBackgroundTaskOwner : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e7272819((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e7272819((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -49,15 +49,13 @@ public sealed unsafe partial class BribeableDefinition : global::System.IDisposa
         return new BribeableDefinition((nint)handle);
     }
 
-    public void addBribeItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor)
-    {
-        NativeMethods.TablePtr->C0.hs_method_06e6477a((void*)__hosihikari_shim_handle, (void*)itemDescriptor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addBribeItem(nint itemDescriptor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C0.hs_method_d23e24db(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float mBribeCooldown
     {

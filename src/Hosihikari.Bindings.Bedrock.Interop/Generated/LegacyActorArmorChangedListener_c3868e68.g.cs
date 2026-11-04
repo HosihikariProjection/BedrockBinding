@@ -38,10 +38,9 @@ public sealed unsafe partial class LegacyActorArmorChangedListener : global::Sys
         return __hs_handle;
     }
 
-    public void _containerContentChanged(int arg0)
-    {
-        NativeMethods.TablePtr->C2.hs_method_c669b6e4((void*)__hosihikari_shim_handle, arg0);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _containerContentChanged(int arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyActorArmorChangedListener Create()
     {
@@ -65,20 +64,18 @@ public sealed unsafe partial class LegacyActorArmorChangedListener : global::Sys
         return new LegacyActorArmorChangedListener((nint)handle);
     }
 
-    public static void containerContentChanged(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C2.hs_method_af6efe28((void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void containerContentChanged(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void containerContentChanged(int arg0)
     {
         NativeMethods.TablePtr->C2.hs_method_4df46829((void*)__hosihikari_shim_handle, arg0);
     }
 
-    public static void initializeEntity(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C2.hs_method_2d2f6eb4((void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initializeEntity(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka51d7e_Address

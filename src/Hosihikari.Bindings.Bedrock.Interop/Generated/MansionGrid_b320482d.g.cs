@@ -60,25 +60,21 @@ public sealed unsafe partial class MansionGrid : global::System.IDisposable
         return new MansionGrid((nint)handle);
     }
 
-    public static bool _cleanEdges(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.SimpleGrid grid)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_fdbb7a50((void*)grid.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _cleanEdges(nint grid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _identifyRooms(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.SimpleGrid fromGrid, global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.SimpleGrid roomGrid)
-    {
-        NativeMethods.TablePtr->C4.hs_method_9f6ed9de((void*)__hosihikari_shim_handle, (void*)fromGrid.Handle, (void*)roomGrid.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _identifyRooms(nint fromGrid, nint roomGrid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _recursiveCorridor(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.SimpleGrid grid, int x, int y, byte heading, int depth)
-    {
-        NativeMethods.TablePtr->C4.hs_method_91a72928((void*)__hosihikari_shim_handle, (void*)grid.Handle, x, y, heading, depth);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _recursiveCorridor(nint grid, int x, int y, byte heading, int depth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte get1x2RoomDirection(global::Hosihikari.Bindings.Bedrock.Interop.WoodlandMansionPieces_Nested.SimpleGrid grid, int x, int y, int floorNum, int roomId)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_29bc0384((void*)__hosihikari_shim_handle, (void*)grid.Handle, x, y, floorNum, roomId);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public byte get1x2RoomDirection(nint grid, int x, int y, int floorNum, int roomId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBaseGrid_Address

@@ -38,10 +38,9 @@ public sealed unsafe partial class CameraList : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_9cca821f((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CameraList Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class CameraList : global::System.IDisposable
         return new CameraList((nint)handle);
     }
 
-    public static CameraList Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets_Nested.CameraList arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f0531503((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CameraList((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CameraList Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address

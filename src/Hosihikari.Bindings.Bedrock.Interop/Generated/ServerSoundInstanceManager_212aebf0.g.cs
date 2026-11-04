@@ -66,9 +66,9 @@ public sealed unsafe partial class ServerSoundInstanceManager : global::System.I
         return new ServerSoundInstanceManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addTrackedInstance(nint handle, nint durationInfo, uint loopCount, nint now, nint broadcastInfo) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk326bec_Address
@@ -100,42 +100,26 @@ public sealed unsafe partial class ServerSoundInstanceManager : global::System.I
         get => (nint)NativeMethods.TablePtr->C3.hs_get_bfb9db58((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint notifyPlayerOfBroadcastsInRange(nint player, nint viewCenter, float defaultRadius, nint dimension, nint now) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundInstanceManager((nint)NativeMethods.TablePtr->C3.hs_method_38ae84a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle[] removeBroadcastsOutOfRange(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId player, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 viewCenter, float defaultRadius, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_c0396d11((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)viewCenter.Handle, defaultRadius, (void*)dimension.Handle);
-        var __hs_items = (void**)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle>() : new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle((nint)__hs_items[__hs_i]);
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint removeBroadcastsOutOfRange(nint player, nint viewCenter, float defaultRadius, nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle[] removePlayerFromBroadcasts(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId player, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType? dimension)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_05054b0b((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)(dimension?.Handle ?? 0), dimension is not null);
-        var __hs_items = (void**)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle>() : new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.ServerSoundHandle((nint)__hs_items[__hs_i]);
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint removePlayerFromBroadcasts(nint player, nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void tickSounds(nint now) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,10 +38,9 @@ public sealed unsafe partial class ActorVersionDescription : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _getJsonName()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_8587ba4a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getJsonName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorVersionDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorVersionDescription arg0)
     {

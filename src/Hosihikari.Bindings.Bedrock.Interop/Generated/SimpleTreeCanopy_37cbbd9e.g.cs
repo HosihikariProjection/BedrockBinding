@@ -38,13 +38,13 @@ public sealed unsafe partial class SimpleTreeCanopy : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _placeCanopy(nint target, nint pos, nint arg2, nint random, nint arg4, nint arg5, int arg6, nint arg7) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SimpleTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleTreeCanopy arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_33b09f9f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_33b09f9f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,49 +56,49 @@ public sealed unsafe partial class SimpleTreeCanopy : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mDecoration_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_03ac1968((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_03ac1968((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLeafBlockDescriptor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae3ce778((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae3ce778((void*)__hosihikari_shim_handle);
     }
 
     public int mMaxOffset
     {
-        get => NativeMethods.TablePtr->C4.hs_get_509173df((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_509173df((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_509173df((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_509173df((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMinOffset
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d115fa57((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d115fa57((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d115fa57((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d115fa57((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMinWidth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f3794b3d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f3794b3d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f3794b3d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f3794b3d((void*)__hosihikari_shim_handle, value);
     }
 
     public float mRiseInv
     {
-        get => NativeMethods.TablePtr->C4.hs_get_348e9ce8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_348e9ce8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_348e9ce8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_348e9ce8((void*)__hosihikari_shim_handle, value);
     }
 
     public int mRun
     {
-        get => NativeMethods.TablePtr->C4.hs_get_38a5a1ac((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_38a5a1ac((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_38a5a1ac((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_38a5a1ac((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVariationChancePerLayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_33dd424e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_33dd424e((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -112,7 +112,7 @@ public sealed unsafe partial class SimpleTreeCanopy : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_37cbbd9e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_37cbbd9e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

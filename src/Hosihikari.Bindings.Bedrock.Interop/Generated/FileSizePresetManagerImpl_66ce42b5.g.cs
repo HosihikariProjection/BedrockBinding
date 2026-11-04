@@ -44,24 +44,21 @@ public sealed unsafe partial class FileSizePresetManagerImpl : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_d3d2d936((void*)__hosihikari_shim_handle);
     }
 
-    public ulong? _checkFileInitialSize(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath)
-    {
-        var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C1.hs_method_c8077344((void*)__hosihikari_shim_handle, (void*)filePath.Handle, &__hs_hasValue);
-        return __hs_hasValue ? __hs_value : (ulong?)null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _checkFileInitialSize(nint filePath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Core::FileSizePresetToken' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _presetInitialSizeForFile(nint filePath, ulong initialFileSize) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Core::FileSizePresetToken' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForEnableNonOwnerReferences() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForFileSizePresetManager() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FileSizePresetManagerImpl Create()
     {

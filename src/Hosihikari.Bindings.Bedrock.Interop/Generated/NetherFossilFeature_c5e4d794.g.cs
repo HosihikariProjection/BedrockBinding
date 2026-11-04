@@ -62,14 +62,13 @@ public sealed unsafe partial class NetherFossilFeature : global::System.IDisposa
         set => NativeMethods.TablePtr->C2.hs_set_db497d3a((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_2c23ff4a((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)origin.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint origin, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NetherFossilFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherFossilFeature arg0)
     {
@@ -82,9 +81,9 @@ public sealed unsafe partial class NetherFossilFeature : global::System.IDisposa
         return new NetherFossilFeature((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'const std::basic_string<char> (&)[14]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint STRUCTURE_LOCATION_FOSSIL() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'const std::basic_string<char> (&)[14]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mMayPlaceInLava
     {

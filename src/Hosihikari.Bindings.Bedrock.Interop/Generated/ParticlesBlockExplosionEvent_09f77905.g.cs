@@ -40,7 +40,7 @@ public sealed unsafe partial class ParticlesBlockExplosionEvent : global::System
 
     public static ParticlesBlockExplosionEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticlesBlockExplosionEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_181de711((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_181de711((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,24 +52,24 @@ public sealed unsafe partial class ParticlesBlockExplosionEvent : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mOrigin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6efa5e62((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6efa5e62((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPositions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_23391aa1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_23391aa1((void*)__hosihikari_shim_handle);
     }
 
     public float mRadius
     {
-        get => NativeMethods.TablePtr->C3.hs_get_759f53c6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_759f53c6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_759f53c6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_759f53c6((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint save() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -78,7 +78,7 @@ public sealed unsafe partial class ParticlesBlockExplosionEvent : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_09f77905((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_09f77905((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

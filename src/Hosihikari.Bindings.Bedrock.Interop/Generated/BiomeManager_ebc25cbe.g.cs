@@ -38,14 +38,13 @@ public sealed unsafe partial class BiomeManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint biomes, nint automaticFeatureRules) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_b1757ceb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BiomeManager Create()
     {
@@ -58,17 +57,17 @@ public sealed unsafe partial class BiomeManager : global::System.IDisposable
         return new BiomeManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static BiomeManager Create(nint biomes, nint automaticFeatureRules) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _initializeServerBiomeRegistry(nint worldRegistries, nint levelSeed, nint levelStorage, nint linkedAssetValidator, nint biomeIdToResolvedData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void initializeBiomeRegistryAndAutomaticFeatureRulesOnServer(nint worldRegistries, nint resourcePackManager, nint levelSeed, nint levelStorage, nint linkedAssetValidator, nint biomeIdToResolvedData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map value type 'std::unique_ptr<BiomeJsonDocumentGlueResolvedBiomeData>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAutomaticFeatureRules_Address

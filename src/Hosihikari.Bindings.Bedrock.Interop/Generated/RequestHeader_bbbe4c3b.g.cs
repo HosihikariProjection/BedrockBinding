@@ -38,14 +38,13 @@ public sealed unsafe partial class RequestHeader : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_ec16f504((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RequestHeader Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0b666e7f();
+        var handle = NativeMethods.TablePtr->C0.hs_create_0b666e7f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class RequestHeader : global::System.IDisposable
 
     public static RequestHeader Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.RequestHeader arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f3a1dc3e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_f3a1dc3e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,24 +67,24 @@ public sealed unsafe partial class RequestHeader : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc57e98_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3dcfccb1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_3dcfccb1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke3702e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_68ebb832((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_68ebb832((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkefe2f4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f16e33ef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_f16e33ef((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.RequestHeader operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.RequestHeader arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.RequestHeader((nint)NativeMethods.TablePtr->C1.hs_method_b11ee63c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.RequestHeader((nint)NativeMethods.TablePtr->C0.hs_method_b11ee63c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -95,7 +94,7 @@ public sealed unsafe partial class RequestHeader : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_bbbe4c3b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_bbbe4c3b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

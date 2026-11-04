@@ -40,7 +40,7 @@ public sealed unsafe partial class Measurement : global::System.IDisposable
 
     public static Measurement Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_f9e0cc44();
+        var handle = NativeMethods.TablePtr->C3.hs_create_f9e0cc44();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Measurement : global::System.IDisposable
 
     public static Measurement Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2a270fe3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_2a270fe3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,36 +63,35 @@ public sealed unsafe partial class Measurement : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk64ed6f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae2110cd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae2110cd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkac30d6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_74c3ff59((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_74c3ff59((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb6c8f4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_27e9bbc4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_27e9bbc4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkeb15ce_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9731660f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9731660f((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement((nint)NativeMethods.TablePtr->C4.hs_method_494ac3de((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement((nint)NativeMethods.TablePtr->C3.hs_method_494ac3de((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void updateMeasurement(global::Hosihikari.Bindings.Bedrock.Interop.Social.Events.Measurement newMeasure)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f9c8bb21((void*)__hosihikari_shim_handle, (void*)newMeasure.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void updateMeasurement(nint newMeasure) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -100,7 +99,7 @@ public sealed unsafe partial class Measurement : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_0bec4922((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0bec4922((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

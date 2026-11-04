@@ -40,28 +40,28 @@ public sealed unsafe partial class NonStrictJsonLoader : global::System.IDisposa
 
     public nint mReflectionCtx
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_4449d630((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4449d630((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConfig_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_0bec85e6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0bec85e6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSchema_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_1d8d7265((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1d8d7265((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NonStrictJsonLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.NonStrictJsonLoader arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_392052e3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_392052e3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,7 +77,7 @@ public sealed unsafe partial class NonStrictJsonLoader : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_41ee89a2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_41ee89a2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

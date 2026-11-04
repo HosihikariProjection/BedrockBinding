@@ -40,7 +40,7 @@ public sealed unsafe partial class SetSpawnPositionPacketPayload : global::Syste
 
     public static SetSpawnPositionPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetSpawnPositionPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b9dc08a1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b9dc08a1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class SetSpawnPositionPacketPayload : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b6e3f261((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b6e3f261((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6a44c2b3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6a44c2b3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ad910204((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ad910204((void*)__hosihikari_shim_handle);
     }
 
     public int mSpawnPosType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f90ad146((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f90ad146((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f90ad146((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f90ad146((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class SetSpawnPositionPacketPayload : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_0c432a6c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0c432a6c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

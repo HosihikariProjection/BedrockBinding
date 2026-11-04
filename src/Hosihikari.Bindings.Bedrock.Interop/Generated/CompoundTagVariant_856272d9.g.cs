@@ -40,7 +40,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public static CompoundTagVariant Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_312da17b();
+        var handle = NativeMethods.TablePtr->C0.hs_create_312da17b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,7 +59,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public static CompoundTagVariant Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e9a6dbdb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_e9a6dbdb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +70,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public static CompoundTagVariant Create(global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr tag)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_1188d602((void*)tag.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_1188d602((void*)tag.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,7 +81,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public static CompoundTagVariant Create(double d)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_12584749(d);
+        var handle = NativeMethods.TablePtr->C0.hs_create_12584749(d);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -92,7 +92,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public static CompoundTagVariant Create(float f)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_643fda90(f);
+        var handle = NativeMethods.TablePtr->C0.hs_create_643fda90(f);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -116,7 +116,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(s, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C1.hs_create_970681d6(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            var handle = NativeMethods.TablePtr->C0.hs_create_970681d6(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -141,7 +141,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(s, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            var handle = NativeMethods.TablePtr->C1.hs_create_9588c24f(__hs_stringData0, (nuint)__hs_stringByteCount0);
+            var handle = NativeMethods.TablePtr->C0.hs_create_9588c24f(__hs_stringData0, (nuint)__hs_stringByteCount0);
             if (handle == null)
             {
                 throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -161,7 +161,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public static CompoundTagVariant Create_410afd85()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_410afd85();
+        var handle = NativeMethods.TablePtr->C0.hs_create_410afd85();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -180,22 +180,22 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_ begin_9c7bbc0f()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)NativeMethods.TablePtr->C1.hs_method_9c7bbc0f((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)NativeMethods.TablePtr->C0.hs_method_9c7bbc0f((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ begin_9be2488d()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C1.hs_method_9be2488d((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C0.hs_method_9be2488d((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ cbegin()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C1.hs_method_a92bc2b7((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C0.hs_method_a92bc2b7((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ cend()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C1.hs_method_f8623903((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C0.hs_method_f8623903((void*)__hosihikari_shim_handle));
     }
 
     public bool contains(string key)
@@ -213,7 +213,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C1.hs_method_bf63cbbe((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C0.hs_method_bf63cbbe((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
@@ -232,130 +232,130 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(key, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C1.hs_method_98802454((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, type) != 0;
+            return NativeMethods.TablePtr->C0.hs_method_98802454((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, type) != 0;
         }
     }
 
     public string dump(byte indent, uint snbtFormat)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_f40824c1((void*)__hosihikari_shim_handle, indent, snbtFormat);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_f40824c1((void*)__hosihikari_shim_handle, indent, snbtFormat);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_ end_96cfb6d5()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)NativeMethods.TablePtr->C1.hs_method_96cfb6d5((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_false_((nint)NativeMethods.TablePtr->C0.hs_method_96cfb6d5((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_ end_04eb7cc4()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C1.hs_method_04eb7cc4((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant_Nested.Iterator_true_((nint)NativeMethods.TablePtr->C0.hs_method_04eb7cc4((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Tag get_92aee7a4()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)NativeMethods.TablePtr->C1.hs_method_92aee7a4((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)NativeMethods.TablePtr->C0.hs_method_92aee7a4((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Tag get_e76546bd()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)NativeMethods.TablePtr->C1.hs_method_e76546bd((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Tag((nint)NativeMethods.TablePtr->C0.hs_method_e76546bd((void*)__hosihikari_shim_handle), false);
     }
 
     public byte getId()
     {
-        return NativeMethods.TablePtr->C1.hs_method_096dc965((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C0.hs_method_096dc965((void*)__hosihikari_shim_handle);
     }
 
     public bool hold(byte type)
     {
-        return NativeMethods.TablePtr->C1.hs_method_3fadbaa3((void*)__hosihikari_shim_handle, type) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_3fadbaa3((void*)__hosihikari_shim_handle, type) != 0;
     }
 
     public byte index()
     {
-        return NativeMethods.TablePtr->C1.hs_method_ff1b6a0b((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C0.hs_method_ff1b6a0b((void*)__hosihikari_shim_handle);
     }
 
     public bool is_array()
     {
-        return NativeMethods.TablePtr->C1.hs_method_13feddc4((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_13feddc4((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_binary()
     {
-        return NativeMethods.TablePtr->C1.hs_method_0938ff2e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_0938ff2e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_boolean()
     {
-        return NativeMethods.TablePtr->C1.hs_method_123abd34((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_123abd34((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_null()
     {
-        return NativeMethods.TablePtr->C1.hs_method_1bd0f374((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_1bd0f374((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_number()
     {
-        return NativeMethods.TablePtr->C1.hs_method_00bc0f90((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_00bc0f90((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_number_float()
     {
-        return NativeMethods.TablePtr->C1.hs_method_9282198d((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_9282198d((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_number_integer()
     {
-        return NativeMethods.TablePtr->C1.hs_method_498449dd((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_498449dd((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_number_signed()
     {
-        return NativeMethods.TablePtr->C1.hs_method_b338e86f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_b338e86f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_number_unsigned()
     {
-        return NativeMethods.TablePtr->C1.hs_method_d31b40c6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_d31b40c6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_object()
     {
-        return NativeMethods.TablePtr->C1.hs_method_e1ef49dc((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_e1ef49dc((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_primitive()
     {
-        return NativeMethods.TablePtr->C1.hs_method_fd04d2bb((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_fd04d2bb((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_string()
     {
-        return NativeMethods.TablePtr->C1.hs_method_d07afde1((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_d07afde1((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool is_structured()
     {
-        return NativeMethods.TablePtr->C1.hs_method_fc34d010((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_fc34d010((void*)__hosihikari_shim_handle) != 0;
     }
 
     public nint items_bd45cf2b()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_bd45cf2b((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C0.hs_method_bd45cf2b((void*)__hosihikari_shim_handle);
     }
 
     public nint items_2c8962db()
     {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_2c8962db((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C0.hs_method_2c8962db((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTagStorage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_76fd3c9f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_76fd3c9f((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: span element type 'std::pair<const std::basic_string<char>, CompoundTagVariant>' is not supported.", false)]
@@ -364,25 +364,25 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public string operator_basic_string_view()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_5e53f6f7((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_5e53f6f7((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string operator_const_std__basic_string_char___()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_88ad1a75((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_88ad1a75((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string operator_std__basic_string_char___()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_3b529ad6((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_3b529ad6((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string operator_std__basic_string_char____()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_eb544e3f((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_eb544e3f((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -392,12 +392,12 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C1.hs_method_956a3962((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C0.hs_method_956a3962((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant other)
     {
-        return NativeMethods.TablePtr->C1.hs_method_cdc4c77c((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_cdc4c77c((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant operator_index_42150a18(string index)
@@ -415,13 +415,13 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(index, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C1.hs_method_42150a18((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C0.hs_method_42150a18((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr operator_index_a40be84d(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C1.hs_method_a40be84d((void*)__hosihikari_shim_handle, index), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C0.hs_method_a40be84d((void*)__hosihikari_shim_handle, index), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant operator_index_87850f1b(string index)
@@ -439,13 +439,13 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
         global::System.Text.Encoding.UTF8.GetBytes(index, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C1.hs_method_87850f1b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
+            return new global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant((nint)NativeMethods.TablePtr->C0.hs_method_87850f1b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0), false);
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr operator_index_8accc57d(ulong index)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C1.hs_method_8accc57d((void*)__hosihikari_shim_handle, index), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C0.hs_method_8accc57d((void*)__hosihikari_shim_handle, index), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: expected value type 'CompoundTagVariant': by-value return type 'CompoundTagVariant' requires --link-carrier or --virtual-dispatch.", false)]
@@ -454,33 +454,33 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
 
     public void push_back(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTagVariant val)
     {
-        NativeMethods.TablePtr->C1.hs_method_5e80ba2a((void*)__hosihikari_shim_handle, (void*)val.Handle);
+        NativeMethods.TablePtr->C0.hs_method_5e80ba2a((void*)__hosihikari_shim_handle, (void*)val.Handle);
     }
 
     public ulong size()
     {
-        return NativeMethods.TablePtr->C1.hs_method_f665beb0((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C0.hs_method_f665beb0((void*)__hosihikari_shim_handle);
     }
 
     public string toSnbt(uint snbtFormat, byte indent)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_b4aa4352((void*)__hosihikari_shim_handle, snbtFormat, indent);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_b4aa4352((void*)__hosihikari_shim_handle, snbtFormat, indent);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr toUnique()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C1.hs_method_68b6c7e8((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C0.hs_method_68b6c7e8((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr toUniqueCopy()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C1.hs_method_9adac8f7((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.UniqueTagPtr((nint)NativeMethods.TablePtr->C0.hs_method_9adac8f7((void*)__hosihikari_shim_handle));
     }
 
     public string type_name()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_51ec6b28((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_51ec6b28((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -491,7 +491,7 @@ public sealed unsafe partial class CompoundTagVariant : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_856272d9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_856272d9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

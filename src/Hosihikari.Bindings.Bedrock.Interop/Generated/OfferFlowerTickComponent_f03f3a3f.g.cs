@@ -40,8 +40,8 @@ public sealed unsafe partial class OfferFlowerTickComponent : global::System.IDi
 
     public int mOfferFlowerTick
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2d58034e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2d58034e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2d58034e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2d58034e((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class OfferFlowerTickComponent : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f03f3a3f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f03f3a3f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

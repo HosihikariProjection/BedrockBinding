@@ -41,7 +41,7 @@ public sealed unsafe partial class IDType_LevelTagSetIDType_ : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_71d433f7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_71d433f7((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class IDType_LevelTagSetIDType_ : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_acc77e57((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_acc77e57((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

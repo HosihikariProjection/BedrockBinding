@@ -38,10 +38,9 @@ public sealed unsafe partial class InsideEndPortalBlockSystem : global::System.I
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C2.hs_method_249fd82f());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class InsideEndPortalBlockSystem : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d84e9eef((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_d84e9eef((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

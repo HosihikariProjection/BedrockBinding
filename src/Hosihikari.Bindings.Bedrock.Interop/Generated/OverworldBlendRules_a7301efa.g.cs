@@ -40,7 +40,7 @@ public sealed unsafe partial class OverworldBlendRules : global::System.IDisposa
 
     public static OverworldBlendRules Create(global::Hosihikari.Bindings.Bedrock.Interop.OverworldBlendRules arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_549e88dc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_549e88dc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,49 +52,49 @@ public sealed unsafe partial class OverworldBlendRules : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mBendableBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f125902a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f125902a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFloatingOnWaterBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f06557b5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f06557b5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLavaBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_33b81629((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_33b81629((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoShiftDownBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4668fd96((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4668fd96((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoShiftUpBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1b0b4dae((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1b0b4dae((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNotUnderwaterBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e7236fcd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e7236fcd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRemoveFloatingBlocksList_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3d6736a7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3d6736a7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWaterBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4d77b2bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4d77b2bd((void*)__hosihikari_shim_handle);
     }
 
 
@@ -104,7 +104,7 @@ public sealed unsafe partial class OverworldBlendRules : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a7301efa((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a7301efa((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

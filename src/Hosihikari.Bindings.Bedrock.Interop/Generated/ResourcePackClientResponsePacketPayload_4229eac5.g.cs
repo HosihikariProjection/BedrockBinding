@@ -38,10 +38,9 @@ public sealed unsafe partial class ResourcePackClientResponsePacketPayload : glo
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_9301e7bd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ResourcePackClientResponsePacketPayload Create()
     {
@@ -65,10 +64,9 @@ public sealed unsafe partial class ResourcePackClientResponsePacketPayload : glo
         return new ResourcePackClientResponsePacketPayload((nint)handle);
     }
 
-    public nint getDownloadingPacks()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_63880679((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getDownloadingPacks() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mResponse_Address

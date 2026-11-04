@@ -71,10 +71,9 @@ public sealed unsafe partial class ResolveHelper : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor_Nested.ResolveHelper((nint)NativeMethods.TablePtr->C0.hs_method_79f5a20c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void resolve(bool logInvalidBlocks)
-    {
-        NativeMethods.TablePtr->C0.hs_method_af77ee21((void*)__hosihikari_shim_handle, logInvalidBlocks);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void resolve(bool logInvalidBlocks) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

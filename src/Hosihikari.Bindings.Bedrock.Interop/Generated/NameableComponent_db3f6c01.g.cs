@@ -38,10 +38,9 @@ public sealed unsafe partial class NameableComponent : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C2.hs_method_e4a230da((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)player.Handle, handSlot));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getInteraction(nint owner, nint player, nint handSlot) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAllowNameTagRenaming
     {
@@ -55,10 +54,9 @@ public sealed unsafe partial class NameableComponent : global::System.IDisposabl
         set => NativeMethods.TablePtr->C2.hs_set_647a5239((void*)__hosihikari_shim_handle, value);
     }
 
-    public void nameEntity(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString name)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f07d9822((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)name.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void nameEntity(nint owner, nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

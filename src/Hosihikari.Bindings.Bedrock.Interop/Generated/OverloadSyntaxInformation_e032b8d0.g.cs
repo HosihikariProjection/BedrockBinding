@@ -38,28 +38,13 @@ public sealed unsafe partial class OverloadSyntaxInformation : global::System.ID
         return __hs_handle;
     }
 
-    public nint _ctor(string _text, uint _start, uint _end)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(_text);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(_text, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_64b7343a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, _start, _end);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint _text, uint _start, uint _end) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static OverloadSyntaxInformation Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_06eb87b3();
+        var handle = NativeMethods.TablePtr->C2.hs_create_06eb87b3();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +55,7 @@ public sealed unsafe partial class OverloadSyntaxInformation : global::System.ID
 
     public static OverloadSyntaxInformation Create(global::Hosihikari.Bindings.Bedrock.Interop.OverloadSyntaxInformation arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_beeae428((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_beeae428((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,47 +64,26 @@ public sealed unsafe partial class OverloadSyntaxInformation : global::System.ID
         return new OverloadSyntaxInformation((nint)handle);
     }
 
-    public static OverloadSyntaxInformation Create(string _text, uint _start, uint _end)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(_text);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(_text, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C3.hs_create_31861cf5(__hs_stringData0, (nuint)__hs_stringByteCount0, _start, _end);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new OverloadSyntaxInformation((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static OverloadSyntaxInformation Create(nint _text, uint _start, uint _end) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint length
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a1cb8195((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a1cb8195((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a1cb8195((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a1cb8195((void*)__hosihikari_shim_handle, value);
     }
 
     public uint start
     {
-        get => NativeMethods.TablePtr->C3.hs_get_44fe65c4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_44fe65c4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_44fe65c4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_44fe65c4((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint text_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d9ed1648((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d9ed1648((void*)__hosihikari_shim_handle);
     }
 
 
@@ -129,7 +93,7 @@ public sealed unsafe partial class OverloadSyntaxInformation : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e032b8d0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e032b8d0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

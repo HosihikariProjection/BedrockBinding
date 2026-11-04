@@ -38,15 +38,13 @@ public sealed unsafe partial class ServerNetworkController : global::System.IDis
         return __hs_handle;
     }
 
-    public bool _canChangePermission(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer player)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_52e680a9((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canChangePermission(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isDedicatedServer()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_7d29ce13((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isDedicatedServer() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerNetworkController Create()
     {

@@ -53,9 +53,9 @@ public sealed unsafe partial class FilterGroup : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_c79d873a((void*)__hosihikari_shim_handle, (void*)jsonVal.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FilterGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.FilterGroup arg0)
     {
@@ -74,39 +74,34 @@ public sealed unsafe partial class FilterGroup : global::System.IDisposable
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _parseFilterParam(nint filter, nint member, nint param, nint paramDef, nint input) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _parseMemberCollection(byte collectionType, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterGroupData filterGroupData)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_05b32f5e((void*)__hosihikari_shim_handle, collectionType, (void*)filterGroupData.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _parseMemberCollection(nint collectionType, nint filterGroupData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _parseTest(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterTestData filterTestData)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_e33b0517((void*)__hosihikari_shim_handle, (void*)filterTestData.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _parseTest(nint filterTestData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _setupContext(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest test, nint context)
     {
         return NativeMethods.TablePtr->C1.hs_method_dd57cbd4((void*)__hosihikari_shim_handle, (void*)test.Handle, (void*)context) != 0;
     }
 
-    public bool addFilterTest(global::Hosihikari.Bindings.Bedrock.Interop.FilterTest_Nested.Definition filterDef, global::Hosihikari.Bindings.Bedrock.Interop.FilterInputs inputs)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_36d29b4f((void*)__hosihikari_shim_handle, (void*)filterDef.Handle, (void*)inputs.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool addFilterTest(nint filterDef, nint inputs) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool evaluate(nint contextSet)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_0a073dbd((void*)__hosihikari_shim_handle, (void*)contextSet) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool evaluate(nint contextSet) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void fillFromData(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterGroupData filterGroupData)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d0183890((void*)__hosihikari_shim_handle, (void*)filterGroupData.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void fillFromData(nint filterGroupData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChildren_Address
@@ -131,10 +126,9 @@ public sealed unsafe partial class FilterGroup : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_526bdbe7((void*)__hosihikari_shim_handle, (void*)jsonVal.Handle) != 0;
     }
 
-    public void serialize(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jsonVal)
-    {
-        NativeMethods.TablePtr->C1.hs_method_fc9b054f((void*)__hosihikari_shim_handle, (void*)jsonVal.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void serialize(nint jsonVal) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

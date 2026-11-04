@@ -40,7 +40,7 @@ public sealed unsafe partial class LookAtPositionIntent : global::System.IDispos
 
     public static LookAtPositionIntent Create(global::Hosihikari.Bindings.Bedrock.Interop.sim.LookAtPositionIntent arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_83c59b7b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_83c59b7b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class LookAtPositionIntent : global::System.IDispos
 
     public int mCountdown
     {
-        get => NativeMethods.TablePtr->C5.hs_get_a6c53f91((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_a6c53f91((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_a6c53f91((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_a6c53f91((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_857f3c05((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_857f3c05((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class LookAtPositionIntent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_9c18b691((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9c18b691((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

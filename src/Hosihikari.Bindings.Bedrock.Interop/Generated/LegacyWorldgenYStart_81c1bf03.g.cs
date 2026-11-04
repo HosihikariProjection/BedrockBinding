@@ -40,17 +40,17 @@ public sealed unsafe partial class LegacyWorldgenYStart : global::System.IDispos
 
     public float startY
     {
-        get => NativeMethods.TablePtr->C2.hs_get_dcffc7dd((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C1.hs_get_dcffc7dd((void*)__hosihikari_shim_handle);
     }
 
     public float startYFraction
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9964ada3((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C1.hs_get_9964ada3((void*)__hosihikari_shim_handle);
     }
 
     public int startYUnit
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c7995285((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C1.hs_get_c7995285((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -59,7 +59,7 @@ public sealed unsafe partial class LegacyWorldgenYStart : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_81c1bf03((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_81c1bf03((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -67,10 +67,9 @@ public sealed unsafe partial class GameTestCommand : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_bd2b26ab((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C1.hs_method_089e817f((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameTestCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.GameTestCommand arg0)
     {
@@ -83,15 +82,13 @@ public sealed unsafe partial class GameTestCommand : global::System.IDisposable
         return new GameTestCommand((nint)handle);
     }
 
-    public void _handleRunSet(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTest gameTest, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, bool stopOtherTestsOnFailure)
-    {
-        NativeMethods.TablePtr->C1.hs_method_357bd54e((void*)__hosihikari_shim_handle, (void*)gameTest.Handle, (void*)region.Handle, (void*)origin.Handle, (void*)output.Handle, stopOtherTestsOnFailure);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _handleRunSet(nint gameTest, nint region, nint origin, nint output, bool stopOtherTestsOnFailure) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void addGameTestNameEnums(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftGameTest gameTest, global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry commandRegistry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_1732e3d7((void*)gameTest.Handle, (void*)commandRegistry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void addGameTestNameEnums(nint gameTest, nint commandRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {

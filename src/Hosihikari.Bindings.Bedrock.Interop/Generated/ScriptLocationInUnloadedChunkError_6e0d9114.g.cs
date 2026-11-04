@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptLocationInUnloadedChunkError : global::
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ccc5a53e((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptLocationInUnloadedChunkError Create()
     {
@@ -65,21 +64,13 @@ public sealed unsafe partial class ScriptLocationInUnloadedChunkError : global::
         return new ScriptLocationInUnloadedChunkError((nint)handle);
     }
 
-    public static ScriptLocationInUnloadedChunkError Create(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c9756198((void*)pos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptLocationInUnloadedChunkError Create(nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ScriptLocationInUnloadedChunkError((nint)handle);
-    }
-
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ErrorBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ErrorBinding((nint)NativeMethods.TablePtr->C3.hs_method_ebb52aea());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

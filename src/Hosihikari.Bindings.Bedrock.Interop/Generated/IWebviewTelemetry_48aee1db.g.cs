@@ -40,59 +40,41 @@ public sealed unsafe partial class IWebviewTelemetry : global::System.IDisposabl
 
     public nint mpSubject
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_bbbec253((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_bbbec253((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_bbbec253((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_bbbec253((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _fireCodeBuilderLoadPerformance(nint stage, ulong tutorialSize, ulong downloadSize, nint elapsedTimeMS) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _fireCodeBuilderRunPerformance(nint stage, nint elapsedTimeMS) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onDownloadBegin(nint downloadInfo)
-    {
-        NativeMethods.TablePtr->C2.hs_method_1ff924a2((void*)__hosihikari_shim_handle, (void*)downloadInfo);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onDownloadBegin(nint downloadInfo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onDownloadCanceled(nint downloadInfo)
-    {
-        NativeMethods.TablePtr->C2.hs_method_8f4e2c80((void*)__hosihikari_shim_handle, (void*)downloadInfo);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onDownloadCanceled(nint downloadInfo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onDownloadComplete(nint downloadInfo)
-    {
-        NativeMethods.TablePtr->C2.hs_method_59d50a4c((void*)__hosihikari_shim_handle, (void*)downloadInfo);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onDownloadComplete(nint downloadInfo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onMessageRecieved(string arg0)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(arg0);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C2.hs_method_68c8464f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onMessageRecieved(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IWebviewTelemetry Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_8b1d5737();
+        var handle = NativeMethods.TablePtr->C1.hs_create_8b1d5737();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -103,7 +85,7 @@ public sealed unsafe partial class IWebviewTelemetry : global::System.IDisposabl
 
     public static IWebviewTelemetry Create(global::Hosihikari.Bindings.Bedrock.Interop.IWebviewTelemetry arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_7f79fae5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_7f79fae5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -123,22 +105,22 @@ public sealed unsafe partial class IWebviewTelemetry : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3b1452_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_aa5d98d0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_aa5d98d0((void*)__hosihikari_shim_handle);
     }
 
     public void onDownloadBegin(nint downloadInfo)
     {
-        NativeMethods.TablePtr->C2.hs_method_a104807f((void*)__hosihikari_shim_handle, (void*)downloadInfo);
+        NativeMethods.TablePtr->C1.hs_method_a104807f((void*)__hosihikari_shim_handle, (void*)downloadInfo);
     }
 
     public void onDownloadCanceled(nint downloadInfo)
     {
-        NativeMethods.TablePtr->C2.hs_method_08b4a16d((void*)__hosihikari_shim_handle, (void*)downloadInfo);
+        NativeMethods.TablePtr->C1.hs_method_08b4a16d((void*)__hosihikari_shim_handle, (void*)downloadInfo);
     }
 
     public void onDownloadComplete(nint downloadInfo)
     {
-        NativeMethods.TablePtr->C2.hs_method_8506c95c((void*)__hosihikari_shim_handle, (void*)downloadInfo);
+        NativeMethods.TablePtr->C1.hs_method_8506c95c((void*)__hosihikari_shim_handle, (void*)downloadInfo);
     }
 
     public void onMessageRecieved(string arg0)
@@ -156,13 +138,13 @@ public sealed unsafe partial class IWebviewTelemetry : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_4ba7664e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
+            NativeMethods.TablePtr->C1.hs_method_4ba7664e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IWebviewTelemetry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IWebviewTelemetry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IWebviewTelemetry((nint)NativeMethods.TablePtr->C2.hs_method_220991c5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IWebviewTelemetry((nint)NativeMethods.TablePtr->C1.hs_method_220991c5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -172,7 +154,7 @@ public sealed unsafe partial class IWebviewTelemetry : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_48aee1db((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_48aee1db((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

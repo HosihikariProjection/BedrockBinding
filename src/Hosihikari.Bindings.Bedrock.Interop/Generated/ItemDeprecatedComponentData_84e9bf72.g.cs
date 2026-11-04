@@ -41,26 +41,24 @@ public sealed unsafe partial class ItemDeprecatedComponentData : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnConsumeTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b42c8b35((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b42c8b35((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_2bcf89f4(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_40.ItemDeprecatedComponentData arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1ec47eff((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_1ec47eff(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_9b0f8403((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemDeprecatedComponentData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2a859463();
+        var handle = NativeMethods.TablePtr->C3.hs_create_2a859463();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,70 +67,60 @@ public sealed unsafe partial class ItemDeprecatedComponentData : global::System.
         return new ItemDeprecatedComponentData((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static ItemDeprecatedComponentData Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ItemDeprecatedComponentData Create_990cdd7d(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ItemDeprecatedComponentData Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_40.ItemDeprecatedComponentData arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0bd9615f((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ItemDeprecatedComponentData Create_0bd9615f(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ItemDeprecatedComponentData((nint)handle);
-    }
-
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_a32f5447((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnHitActorTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_efd49e42((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_efd49e42((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnHitBlockTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ad4c2c1a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ad4c2c1a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnHurtActorTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0ec06aea((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0ec06aea((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnUseOnTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b70bf1e4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b70bf1e4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint legacyOnUseTriggerItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5a7f2847((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5a7f2847((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_40.ItemDeprecatedComponentData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_40.ItemDeprecatedComponentData arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_40.ItemDeprecatedComponentData((nint)NativeMethods.TablePtr->C4.hs_method_c0aced27((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_40.ItemDeprecatedComponentData arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_56a5be4b((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint renderOffsetsItemComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8eac69ec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8eac69ec((void*)__hosihikari_shim_handle);
     }
 
 
@@ -142,7 +130,7 @@ public sealed unsafe partial class ItemDeprecatedComponentData : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_84e9bf72((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_84e9bf72((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

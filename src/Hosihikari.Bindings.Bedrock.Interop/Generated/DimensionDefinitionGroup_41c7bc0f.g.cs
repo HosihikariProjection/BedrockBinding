@@ -38,15 +38,13 @@ public sealed unsafe partial class DimensionDefinitionGroup : global::System.IDi
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? rpm, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_d6824314((void*)__hosihikari_shim_handle, (void*)ctx.Handle, (void*)(rpm?.Handle ?? 0), (void*)eventing.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint ctx, nint rpm, nint eventing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_3e39b3ca((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DimensionDefinitionGroup Create()
     {
@@ -70,41 +68,17 @@ public sealed unsafe partial class DimensionDefinitionGroup : global::System.IDi
         return new DimensionDefinitionGroup((nint)handle);
     }
 
-    public static DimensionDefinitionGroup Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? rpm, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d96be55e((void*)ctx.Handle, (void*)(rpm?.Handle ?? 0), (void*)eventing.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new DimensionDefinitionGroup((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DimensionDefinitionGroup Create(nint ctx, nint rpm, nint eventing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public void forEachDimensionDefinition(nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.DimensionDefinitionGroup_Nested.DimensionDefinition? getDimensionDefinition(string dimensionName)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(dimensionName);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dimensionName, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C1.hs_method_08218c07((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.DimensionDefinitionGroup_Nested.DimensionDefinition((nint)__hs_handle) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getDimensionDefinition(nint dimensionName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionDefinitions_Address

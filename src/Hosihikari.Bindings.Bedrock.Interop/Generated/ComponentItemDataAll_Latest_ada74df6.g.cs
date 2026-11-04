@@ -38,13 +38,13 @@ public sealed unsafe partial class ComponentItemDataAll_Latest : global::System.
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ComponentItemDataAll_Latest Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b85a0a43();
+        var handle = NativeMethods.TablePtr->C0.hs_create_b85a0a43();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -53,13 +53,13 @@ public sealed unsafe partial class ComponentItemDataAll_Latest : global::System.
         return new ComponentItemDataAll_Latest((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ComponentItemDataAll_Latest Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ComponentItemDataAll_Latest Create(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemDataAll_Latest arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_559db69a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_559db69a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,25 +71,24 @@ public sealed unsafe partial class ComponentItemDataAll_Latest : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mCerealData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_6c0e966f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_6c0e966f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEvents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8c4c2570((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8c4c2570((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLegacyData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_65838295((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_65838295((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemDataAll_Latest operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemDataAll_Latest arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ComponentItemDataAll_Latest((nint)NativeMethods.TablePtr->C1.hs_method_cbd1424a((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -98,7 +97,7 @@ public sealed unsafe partial class ComponentItemDataAll_Latest : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ada74df6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_ada74df6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

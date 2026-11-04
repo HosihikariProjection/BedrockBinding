@@ -38,10 +38,9 @@ public sealed unsafe partial class BarrelContainerValidation : global::System.ID
         return __hs_handle;
     }
 
-    public int _getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_50865aad((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerSize(nint screenContext, nint container) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BarrelContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.BarrelContainerValidation arg0)
     {

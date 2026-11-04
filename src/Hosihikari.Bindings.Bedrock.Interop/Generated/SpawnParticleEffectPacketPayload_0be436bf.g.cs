@@ -44,7 +44,7 @@ public sealed unsafe partial class SpawnParticleEffectPacketPayload : global::Sy
 
     public static SpawnParticleEffectPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_59407b81();
+        var handle = NativeMethods.TablePtr->C3.hs_create_59407b81();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class SpawnParticleEffectPacketPayload : global::Sy
 
     public static SpawnParticleEffectPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnParticleEffectPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4ed817fe((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4ed817fe((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,31 +71,31 @@ public sealed unsafe partial class SpawnParticleEffectPacketPayload : global::Sy
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f7b4bec8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f7b4bec8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEffectName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_cc1cae99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cc1cae99((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMolangVariables_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0610523f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0610523f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_59e69fdf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_59e69fdf((void*)__hosihikari_shim_handle);
     }
 
     public byte mVanillaDimensionId
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a17b68ab((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a17b68ab((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a17b68ab((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a17b68ab((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -105,7 +105,7 @@ public sealed unsafe partial class SpawnParticleEffectPacketPayload : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_0be436bf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0be436bf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,14 +38,13 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PropertyBag EMPTY()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PropertyBag((nint)NativeMethods.TablePtr->C3.hs_method_e2fb1675(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint EMPTY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PropertyBag Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ea719a2c();
+        var handle = NativeMethods.TablePtr->C2.hs_create_ea719a2c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
 
     public static PropertyBag Create(global::Hosihikari.Bindings.Bedrock.Interop.PropertyBag arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1b7dca20((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_1b7dca20((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,14 +66,14 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
 
     public int mChangeVersion
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2df2c425((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2df2c425((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2df2c425((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2df2c425((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJsonValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2fbced5f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2fbced5f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -84,7 +83,7 @@ public sealed unsafe partial class PropertyBag : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9e1aa11d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9e1aa11d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

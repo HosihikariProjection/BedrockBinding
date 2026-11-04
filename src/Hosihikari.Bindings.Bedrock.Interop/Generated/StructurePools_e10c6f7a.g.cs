@@ -38,10 +38,9 @@ public sealed unsafe partial class StructurePools : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void bootstrap(global::Hosihikari.Bindings.Abi.SharedHandle? structureManager, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry featureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry jigsawStructureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
-    {
-        NativeMethods.TablePtr->C5.hs_method_9c5dac84(structureManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)featureRegistry.Handle, (void*)jigsawStructureRegistry.Handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bootstrap(nint structureManager, nint featureRegistry, nint jigsawStructureRegistry, nint baseGameVersion, nint experiments) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class StructurePools : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_e10c6f7a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_e10c6f7a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

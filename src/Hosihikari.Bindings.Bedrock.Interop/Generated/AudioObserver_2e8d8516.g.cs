@@ -38,18 +38,17 @@ public sealed unsafe partial class AudioObserver : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_c19b8fa8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AudioObserver Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSourceInterface_Nested.AudioObserver arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_ae2b721b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_ae2b721b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +59,7 @@ public sealed unsafe partial class AudioObserver : global::System.IDisposable
 
     public void OnSetVolume(double volume)
     {
-        NativeMethods.TablePtr->C5.hs_method_83ec8839((void*)__hosihikari_shim_handle, volume);
+        NativeMethods.TablePtr->C4.hs_method_83ec8839((void*)__hosihikari_shim_handle, volume);
     }
 
 
@@ -70,7 +69,7 @@ public sealed unsafe partial class AudioObserver : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_2e8d8516((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_2e8d8516((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

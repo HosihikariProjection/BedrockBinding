@@ -38,14 +38,13 @@ public sealed unsafe partial class GameTestTicker : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_c7854931((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameTestTicker Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_4705b847();
+        var handle = NativeMethods.TablePtr->C4.hs_create_4705b847();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class GameTestTicker : global::System.IDisposable
 
     public static GameTestTicker Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_7d3a9745((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_7d3a9745((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,54 +64,52 @@ public sealed unsafe partial class GameTestTicker : global::System.IDisposable
         return new GameTestTicker((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void add(nint clearTask) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void clear()
-    {
-        NativeMethods.TablePtr->C5.hs_method_ed50b4c8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clear() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1967c1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_25c878ca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_25c878ca((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk34e059_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_ae85c701((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae85c701((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk584414_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_5a5c97c4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5a5c97c4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb5b85a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_38754350((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_38754350((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc6363b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_18bd52a1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_18bd52a1((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker((nint)NativeMethods.TablePtr->C5.hs_method_52415431((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker((nint)NativeMethods.TablePtr->C4.hs_method_52415431((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void tick()
-    {
-        NativeMethods.TablePtr->C5.hs_method_f6760c79((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -121,7 +118,7 @@ public sealed unsafe partial class GameTestTicker : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_cf428070((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_cf428070((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,23 +38,21 @@ public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal : global::S
         return __hs_handle;
     }
 
-    public void _singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity)
-    {
-        NativeMethods.TablePtr->C3.hs_method_286504b9((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _singleTick(nint context, nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(nint context)
-    {
-        NativeMethods.TablePtr->C3.hs_method_1e2a0aeb((void*)__hosihikari_shim_handle, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LocalPlayerFilterAutoJumpInternal Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMoveSystemsImpl.LocalPlayerFilterAutoJumpInternal arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0d9bc28d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_0d9bc28d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,29 +61,28 @@ public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal : global::S
         return new LocalPlayerFilterAutoJumpInternal((nint)handle);
     }
 
-    public static bool _isAutoJumpEnabledGlobally(nint data)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_73d9464f((void*)data) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _isAutoJumpEnabledGlobally(nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _setJumpingIfPlayerCanAutoJump(nint entity, nint aabbShape, nint actorRotation, nint attributes, nint stateVector, nint synchedActorData, nint inputLock, nint moveInput, nint isOnGround, nint isRiding, nint collisionViews, nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mViews_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6ced8681((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ced8681((void*)__hosihikari_shim_handle);
     }
 
     public void singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity)
     {
-        NativeMethods.TablePtr->C3.hs_method_f95bc174((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
+        NativeMethods.TablePtr->C2.hs_method_f95bc174((void*)__hosihikari_shim_handle, (void*)context, (void*)entity.Handle);
     }
 
     public void tick(nint context)
     {
-        NativeMethods.TablePtr->C3.hs_method_e95d14ca((void*)__hosihikari_shim_handle, (void*)context);
+        NativeMethods.TablePtr->C2.hs_method_e95d14ca((void*)__hosihikari_shim_handle, (void*)context);
     }
 
 
@@ -95,7 +92,7 @@ public sealed unsafe partial class LocalPlayerFilterAutoJumpInternal : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_3b51598f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_3b51598f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

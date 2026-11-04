@@ -38,14 +38,13 @@ public sealed unsafe partial class PhotoTransferPacketPayload : global::System.I
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_24fe229a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PhotoTransferPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3af1a92a();
+        var handle = NativeMethods.TablePtr->C2.hs_create_3af1a92a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class PhotoTransferPacketPayload : global::System.I
 
     public static PhotoTransferPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PhotoTransferPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_164004e4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_164004e4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,43 +67,43 @@ public sealed unsafe partial class PhotoTransferPacketPayload : global::System.I
     // The native field type is not projected; this is the address of the field storage.
     public nint mBookId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e41d2027((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e41d2027((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNewPhotoName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0cfb3b35((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0cfb3b35((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOwnerId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e44e68f2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e44e68f2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPhotoData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4f91e0f9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4f91e0f9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPhotoName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2807eb27((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2807eb27((void*)__hosihikari_shim_handle);
     }
 
     public byte mSourceType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_3cfd1684((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_3cfd1684((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_3cfd1684((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_3cfd1684((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_594d3a9c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_594d3a9c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_594d3a9c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_594d3a9c((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -114,7 +113,7 @@ public sealed unsafe partial class PhotoTransferPacketPayload : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_46c5ecac((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_46c5ecac((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class ParsedConnectionString : global::System.IDisp
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_2d29ce76((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ParsedConnectionString Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseConnectionRequest_Nested.ParsedConnectionString arg0)
     {

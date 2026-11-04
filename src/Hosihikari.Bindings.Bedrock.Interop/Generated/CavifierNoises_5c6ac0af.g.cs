@@ -145,10 +145,9 @@ public sealed unsafe partial class CavifierNoises : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c84c6ad9((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.CavifierNoises make(global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory randomFactory)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CavifierNoises((nint)NativeMethods.TablePtr->C0.hs_method_0b27088b((void*)randomFactory.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint make(nint randomFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,22 +38,21 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, bool isClientSide)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d8abf665((void*)__hosihikari_shim_handle, levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isClientSide);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint levelStorage, bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getPictureTakenConnector() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PhotoManager Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c0385a01();
+        var handle = NativeMethods.TablePtr->C2.hs_create_c0385a01();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,45 +61,21 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
         return new PhotoManager((nint)handle);
     }
 
-    public static PhotoManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, bool isClientSide)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6b385f8b(levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), isClientSide);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PhotoManager Create(nint levelStorage, bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new PhotoManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getPhotoStoragePath() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ _getPhotoStoragePath()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_b6545d60((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void createPhotoStorage() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void createPhotoStorage()
-    {
-        NativeMethods.TablePtr->C3.hs_method_f4c4ed59((void*)__hosihikari_shim_handle);
-    }
-
-    public void createScreenshotsFolder(string levelId, global::Hosihikari.Bindings.Bedrock.Interop.AppPlatform appPlatform)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(levelId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(levelId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C3.hs_method_12c9243b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)appPlatform.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void createScreenshotsFolder(nint levelId, nint appPlatform) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
     public nint getPictureTakenConnector() =>
@@ -108,31 +83,31 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
 
     public bool mIsClientSide
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0ff0b5cb((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C2.hs_get_0ff0b5cb((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelStorage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2ab0ae99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2ab0ae99((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPhotoStorage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0c4b2239((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0c4b2239((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPictureTakenPublisher_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_635b1820((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_635b1820((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScreenshotsFolder_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3905f934((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3905f934((void*)__hosihikari_shim_handle);
     }
 
 
@@ -142,7 +117,7 @@ public sealed unsafe partial class PhotoManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bdc368ae((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bdc368ae((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

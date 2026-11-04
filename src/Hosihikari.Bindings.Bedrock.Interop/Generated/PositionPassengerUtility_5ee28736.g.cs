@@ -44,7 +44,7 @@ public sealed unsafe partial class PositionPassengerUtility : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_5ee28736((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_5ee28736((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

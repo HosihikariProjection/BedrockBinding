@@ -38,27 +38,25 @@ public sealed unsafe partial class Rule : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
-    {
-        NativeMethods.TablePtr->C5.hs_method_a5642545((void*)__hosihikari_shim_handle, (void*)hash.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _appendMetadataKey(nint hash) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _process(nint region, nint arg1, nint structurePos, nint originalBlockInfo, nint processedBlockInfo, nint arg5) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'br::worldgen::StructureBlockInfo' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte _type()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_c0970db6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _type() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Rule Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.Rule arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_483ab0ef((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_483ab0ef((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,13 +67,13 @@ public sealed unsafe partial class Rule : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C5.hs_method_b5da90e7((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C4.hs_method_b5da90e7((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRules_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_109b2804((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_109b2804((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'br::worldgen::StructureBlockInfo' is not supported.", false)]
@@ -84,7 +82,7 @@ public sealed unsafe partial class Rule : global::System.IDisposable
 
     public byte type()
     {
-        return NativeMethods.TablePtr->C5.hs_method_edc38110((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_edc38110((void*)__hosihikari_shim_handle);
     }
 
 
@@ -94,7 +92,7 @@ public sealed unsafe partial class Rule : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_b18dc953((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b18dc953((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

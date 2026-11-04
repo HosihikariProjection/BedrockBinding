@@ -38,33 +38,17 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(string identifier, global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules spawnRules)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(identifier);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C4.hs_method_57cb2179((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnRules.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint identifier, nint spawnRules) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_fd860b9a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SpawnGroupData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_96771ba4();
+        var handle = NativeMethods.TablePtr->C3.hs_create_96771ba4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,7 +59,7 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
 
     public static SpawnGroupData Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnGroupData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9261eeec((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9261eeec((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,41 +68,20 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
         return new SpawnGroupData((nint)handle);
     }
 
-    public static SpawnGroupData Create(string identifier, global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules spawnRules)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(identifier);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(identifier, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C4.hs_create_91073b07(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)spawnRules.Handle);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new SpawnGroupData((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static SpawnGroupData Create(nint identifier, nint spawnRules) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mIdentifier_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5e6026e8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5e6026e8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnRules_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a89eaf66((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a89eaf66((void*)__hosihikari_shim_handle);
     }
 
 
@@ -128,7 +91,7 @@ public sealed unsafe partial class SpawnGroupData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2d69c593((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_2d69c593((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

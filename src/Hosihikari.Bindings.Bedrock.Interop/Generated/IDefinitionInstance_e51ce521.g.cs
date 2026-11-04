@@ -38,18 +38,17 @@ public sealed unsafe partial class IDefinitionInstance : global::System.IDisposa
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_feaadb26((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IDefinitionInstance Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d14e956e();
+        var handle = NativeMethods.TablePtr->C1.hs_create_d14e956e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +59,7 @@ public sealed unsafe partial class IDefinitionInstance : global::System.IDisposa
 
     public static IDefinitionInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_29feebe6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_29feebe6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,43 +70,43 @@ public sealed unsafe partial class IDefinitionInstance : global::System.IDisposa
 
     public void _initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0)
     {
-        NativeMethods.TablePtr->C2.hs_method_58cddfa1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C1.hs_method_58cddfa1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _load(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag arg1, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper arg2)
     {
-        NativeMethods.TablePtr->C2.hs_method_8b0b42fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C1.hs_method_8b0b42fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle);
     }
 
     public void _reload(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0)
     {
-        NativeMethods.TablePtr->C2.hs_method_a0c4b09c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C1.hs_method_a0c4b09c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void _save(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag arg1)
     {
-        NativeMethods.TablePtr->C2.hs_method_2e48f57b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C1.hs_method_2e48f57b((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
     }
 
     public void _uninitialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext arg0)
     {
-        NativeMethods.TablePtr->C2.hs_method_2e8bf864((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C1.hs_method_2e8bf864((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public ushort getDefinitionTypeId()
     {
-        return NativeMethods.TablePtr->C2.hs_method_5c9b37de((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_5c9b37de((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3f4ee1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fb5d2a6d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_fb5d2a6d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance((nint)NativeMethods.TablePtr->C2.hs_method_738d3bb3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IDefinitionInstance((nint)NativeMethods.TablePtr->C1.hs_method_738d3bb3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -117,7 +116,7 @@ public sealed unsafe partial class IDefinitionInstance : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e51ce521((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e51ce521((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

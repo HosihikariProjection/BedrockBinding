@@ -40,7 +40,7 @@ public sealed unsafe partial class StructureBlockUpdatePacketPayload : global::S
 
     public static StructureBlockUpdatePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockUpdatePacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3a83d00c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_3a83d00c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class StructureBlockUpdatePacketPayload : global::S
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4f7adac7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4f7adac7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2716bff8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2716bff8((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsWaterlogged
     {
-        get => NativeMethods.TablePtr->C4.hs_get_df764807((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_df764807((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_df764807((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_df764807((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mTrigger
     {
-        get => NativeMethods.TablePtr->C4.hs_get_21787105((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_21787105((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_21787105((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_21787105((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class StructureBlockUpdatePacketPayload : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_2568dd20((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_2568dd20((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

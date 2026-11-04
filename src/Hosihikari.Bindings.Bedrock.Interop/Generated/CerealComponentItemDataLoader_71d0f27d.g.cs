@@ -38,10 +38,9 @@ public sealed unsafe partial class CerealComponentItemDataLoader : global::Syste
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLoadContext bedrockLoadContext, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_3219048a((void*)__hosihikari_shim_handle, (void*)bedrockLoadContext.Handle, (void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint bedrockLoadContext, nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CerealComponentItemDataLoader Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class CerealComponentItemDataLoader : global::Syste
         return new CerealComponentItemDataLoader((nint)handle);
     }
 
-    public static CerealComponentItemDataLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLoadContext bedrockLoadContext, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_d2ae6c39((void*)bedrockLoadContext.Handle, (void*)ctx.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CerealComponentItemDataLoader((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CerealComponentItemDataLoader Create(nint bedrockLoadContext, nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CerealComponentItemDataLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.CerealComponentItemDataLoader arg0)
     {

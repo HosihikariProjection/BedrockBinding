@@ -40,7 +40,7 @@ public sealed unsafe partial class Video : global::System.IDisposable
 
     public static Video Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_f3f2fa92();
+        var handle = NativeMethods.TablePtr->C4.hs_create_f3f2fa92();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class Video : global::System.IDisposable
 
     public static Video Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_7722da27((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_7722da27((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,48 +63,48 @@ public sealed unsafe partial class Video : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk301938_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_50e65375((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_50e65375((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6eb573_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_1c9fdbb4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1c9fdbb4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk807670_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_77144e2a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_77144e2a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk96316e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9742b735((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9742b735((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9a841f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_90f2e60b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_90f2e60b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc3ae8c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_bf77d47b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_bf77d47b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf3bcaa_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_da9d33a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_da9d33a0((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video((nint)NativeMethods.TablePtr->C5.hs_method_bbde22b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaConfig_Nested.Video((nint)NativeMethods.TablePtr->C4.hs_method_bbde22b5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -113,7 +113,7 @@ public sealed unsafe partial class Video : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_035a0144((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_035a0144((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

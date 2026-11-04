@@ -50,17 +50,13 @@ public sealed unsafe partial class LegacyTreeFeature : global::System.IDisposabl
         set => NativeMethods.TablePtr->C2.hs_set_052ee642((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _ctor(int placementType, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry registry, bool shouldPlaceLeafLitter)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_acad9315((void*)__hosihikari_shim_handle, placementType, (void*)registry.Handle, shouldPlaceLeafLitter);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint placementType, nint registry, bool shouldPlaceLeafLitter) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b49b15e1((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _place(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyTreeFeature Create()
     {
@@ -73,16 +69,9 @@ public sealed unsafe partial class LegacyTreeFeature : global::System.IDisposabl
         return new LegacyTreeFeature((nint)handle);
     }
 
-    public static LegacyTreeFeature Create(int placementType, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry registry, bool shouldPlaceLeafLitter)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c48daebd(placementType, (void*)registry.Handle, shouldPlaceLeafLitter);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LegacyTreeFeature((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LegacyTreeFeature Create(nint placementType, nint registry, bool shouldPlaceLeafLitter) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyTreeFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyTreeFeature arg0)
     {

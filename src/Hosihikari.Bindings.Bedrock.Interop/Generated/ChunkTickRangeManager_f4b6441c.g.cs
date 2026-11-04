@@ -49,20 +49,17 @@ public sealed unsafe partial class ChunkTickRangeManager : global::System.IDispo
         return new ChunkTickRangeManager((nint)handle);
     }
 
-    public void _onChunkLoaded(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk, int closestPlayerDistanceSquared)
-    {
-        NativeMethods.TablePtr->C0.hs_method_72d1698e((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)levelChunk.Handle, closestPlayerDistanceSquared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onChunkLoaded(nint arg0, nint levelChunk, int closestPlayerDistanceSquared) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isChunkInTickRange(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos chunkPos, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, bool shouldServerGenerate, float serverBuildRatio, int chunkViewRadius, int numActiveUsers)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_23fa99ee((void*)__hosihikari_shim_handle, (void*)chunkPos.Handle, (void*)dimension.Handle, shouldServerGenerate, serverBuildRatio, chunkViewRadius, numActiveUsers) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isChunkInTickRange(nint chunkPos, nint dimension, bool shouldServerGenerate, float serverBuildRatio, int chunkViewRadius, int numActiveUsers) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isChunkInTickRange(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, int? minDistToPlayer)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_3821f48a((void*)__hosihikari_shim_handle, (void*)lc.Handle, minDistToPlayer ?? default(int), minDistToPlayer.HasValue) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isChunkInTickRange(nint lc, nint minDistToPlayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mChunkTickRange
     {
@@ -82,10 +79,9 @@ public sealed unsafe partial class ChunkTickRangeManager : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_8a601f92((void*)__hosihikari_shim_handle);
     }
 
-    public void registerForLevelChunkEvents(global::Hosihikari.Bindings.Bedrock.Interop.ILevelChunkEventManagerConnector levelChunkEventManagerConnector)
-    {
-        NativeMethods.TablePtr->C0.hs_method_350851ad((void*)__hosihikari_shim_handle, (void*)levelChunkEventManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerForLevelChunkEvents(nint levelChunkEventManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

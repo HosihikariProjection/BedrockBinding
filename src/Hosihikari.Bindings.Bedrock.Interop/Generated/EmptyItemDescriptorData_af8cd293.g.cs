@@ -44,7 +44,7 @@ public sealed unsafe partial class EmptyItemDescriptorData : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_af8cd293((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_af8cd293((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

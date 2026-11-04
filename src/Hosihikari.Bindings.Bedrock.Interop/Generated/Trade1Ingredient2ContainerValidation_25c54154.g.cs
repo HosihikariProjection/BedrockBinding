@@ -38,23 +38,21 @@ public sealed unsafe partial class Trade1Ingredient2ContainerValidation : global
         return __hs_handle;
     }
 
-    public int _getContainerOffset(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_93fd8d3d((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerOffset(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg3, bool arg4)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_49ffde6b((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, arg1, (void*)item.Handle, arg3, arg4) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isItemAllowedInSlot(nint screenContext, nint arg1, nint item, nint arg3, bool arg4) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Trade1Ingredient2ContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade1Ingredient2ContainerValidation arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_05fba079((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_05fba079((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,17 +63,17 @@ public sealed unsafe partial class Trade1Ingredient2ContainerValidation : global
 
     public int getContainerOffset(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
     {
-        return NativeMethods.TablePtr->C4.hs_method_53f3ce93((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_53f3ce93((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
     }
 
     public bool isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int arg1, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int arg3, bool arg4)
     {
-        return NativeMethods.TablePtr->C4.hs_method_bd90003e((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, arg1, (void*)item.Handle, arg3, arg4) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_bd90003e((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, arg1, (void*)item.Handle, arg3, arg4) != 0;
     }
 
     public bool mIsServerSide
     {
-        get => NativeMethods.TablePtr->C4.hs_get_28a8ce22((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C3.hs_get_28a8ce22((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -85,7 +83,7 @@ public sealed unsafe partial class Trade1Ingredient2ContainerValidation : global
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_25c54154((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_25c54154((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

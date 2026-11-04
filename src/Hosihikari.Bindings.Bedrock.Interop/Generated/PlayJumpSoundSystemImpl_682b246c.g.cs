@@ -38,23 +38,21 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl : global::System.IDis
         return __hs_handle;
     }
 
-    public void _singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
-    {
-        NativeMethods.TablePtr->C3.hs_method_c133254e((void*)__hosihikari_shim_handle, (void*)context, (void*)entityContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _singleTick(nint context, nint entityContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _tick(nint context)
-    {
-        NativeMethods.TablePtr->C3.hs_method_482553aa((void*)__hosihikari_shim_handle, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayJumpSoundSystemImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayJumpSoundSystemImpl arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b1679d56((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b1679d56((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,30 +61,29 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl : global::System.IDis
         return new PlayJumpSoundSystemImpl((nint)handle);
     }
 
-    public static void doPlayJumpSoundSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.ActorDataFlagComponent actorFlags, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifierComponent actorIdentifier, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueIDComponent actorUniqueID, global::Hosihikari.Bindings.Bedrock.Interop.DimensionTypeComponent dimensionType, global::Hosihikari.Bindings.Bedrock.Interop.SoundEventPlayerComponent soundEventPlayerComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.AABBShapeComponent aabbShapeComponent, nint requestQueueView, int jumpType, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f92a34ee((void*)entity.Handle, (void*)actorFlags.Handle, (void*)actorIdentifier.Handle, (void*)actorUniqueID.Handle, (void*)dimensionType.Handle, (void*)soundEventPlayerComponent.Handle, (void*)stateVectorComponent.Handle, (void*)aabbShapeComponent.Handle, (void*)requestQueueView, jumpType, (void*)region.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void doPlayJumpSoundSystem(nint entity, nint actorFlags, nint actorIdentifier, nint actorUniqueID, nint dimensionType, nint soundEventPlayerComponent, nint stateVectorComponent, nint aabbShapeComponent, nint requestQueueView, nint jumpType, nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mJumpType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_76146403((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_76146403((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mViews_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1e0a3769((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1e0a3769((void*)__hosihikari_shim_handle);
     }
 
     public void singleTick(nint context, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
     {
-        NativeMethods.TablePtr->C3.hs_method_63548d4c((void*)__hosihikari_shim_handle, (void*)context, (void*)entityContext.Handle);
+        NativeMethods.TablePtr->C2.hs_method_63548d4c((void*)__hosihikari_shim_handle, (void*)context, (void*)entityContext.Handle);
     }
 
     public void tick(nint context)
     {
-        NativeMethods.TablePtr->C3.hs_method_4b356af0((void*)__hosihikari_shim_handle, (void*)context);
+        NativeMethods.TablePtr->C2.hs_method_4b356af0((void*)__hosihikari_shim_handle, (void*)context);
     }
 
 
@@ -96,7 +93,7 @@ public sealed unsafe partial class PlayJumpSoundSystemImpl : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_682b246c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_682b246c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

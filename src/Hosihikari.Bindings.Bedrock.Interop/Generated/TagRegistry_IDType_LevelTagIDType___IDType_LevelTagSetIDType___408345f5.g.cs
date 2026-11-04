@@ -40,7 +40,7 @@ public sealed unsafe partial class TagRegistry_IDType_LevelTagIDType___IDType_Le
 
     public static TagRegistry_IDType_LevelTagIDType___IDType_LevelTagSetIDType__ Create(global::Hosihikari.Bindings.Bedrock.Interop.TagRegistry_IDType_LevelTagIDType___IDType_LevelTagSetIDType__ arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_39ceab06((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_39ceab06((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,18 +64,18 @@ public sealed unsafe partial class TagRegistry_IDType_LevelTagIDType___IDType_Le
         global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagIDType_((nint)NativeMethods.TablePtr->C4.hs_method_6fef894c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagIDType_((nint)NativeMethods.TablePtr->C3.hs_method_6fef894c((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_ addTagToSet(global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagIDType_ arg0, global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_ arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_((nint)NativeMethods.TablePtr->C4.hs_method_33afe844((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_((nint)NativeMethods.TablePtr->C3.hs_method_33afe844((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_ getTagSetID(global::Hosihikari.Bindings.Bedrock.Interop.IndexSet arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_((nint)NativeMethods.TablePtr->C4.hs_method_261bceb1((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_((nint)NativeMethods.TablePtr->C3.hs_method_261bceb1((void*)__hosihikari_shim_handle, (void*)arg0.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_ getTagSetID(global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagIDType_[] arg0)
@@ -89,13 +89,13 @@ public sealed unsafe partial class TagRegistry_IDType_LevelTagIDType___IDType_Le
         fixed (nint* __hs_vectorHandleData0 = __hs_vectorHandles0)
         {
             var __hs_vectorData0 = (void**)__hs_vectorHandleData0;
-            return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_((nint)NativeMethods.TablePtr->C4.hs_method_31a9e928((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(arg0?.Length ?? 0)));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_((nint)NativeMethods.TablePtr->C3.hs_method_31a9e928((void*)__hosihikari_shim_handle, __hs_vectorData0, (nuint)(arg0?.Length ?? 0)));
         }
     }
 
     public string[] getTagsInSet(global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_ arg0)
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_0f0e0857((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_0f0e0857((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
         var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -108,30 +108,30 @@ public sealed unsafe partial class TagRegistry_IDType_LevelTagIDType___IDType_Le
     // The native field type is not projected; this is the address of the field storage.
     public nint mEmptyTagSet_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ba6c7de6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ba6c7de6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ea84b2ab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ea84b2ab((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTagIndexMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0cbcea80((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0cbcea80((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b49cc3eb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b49cc3eb((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_ removeTagFromSet(global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagIDType_ arg0, global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_ arg1)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_((nint)NativeMethods.TablePtr->C4.hs_method_20865d62((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagSetIDType_((nint)NativeMethods.TablePtr->C3.hs_method_20865d62((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagIDType_ tryGetTagID(string arg0)
@@ -149,7 +149,7 @@ public sealed unsafe partial class TagRegistry_IDType_LevelTagIDType___IDType_Le
         global::System.Text.Encoding.UTF8.GetBytes(arg0, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagIDType_((nint)NativeMethods.TablePtr->C4.hs_method_b24afa2e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.IDType_LevelTagIDType_((nint)NativeMethods.TablePtr->C3.hs_method_b24afa2e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0));
         }
     }
 
@@ -160,7 +160,7 @@ public sealed unsafe partial class TagRegistry_IDType_LevelTagIDType___IDType_Le
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_408345f5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_408345f5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

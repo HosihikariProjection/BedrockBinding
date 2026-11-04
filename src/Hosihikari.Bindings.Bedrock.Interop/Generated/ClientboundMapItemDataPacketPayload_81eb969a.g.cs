@@ -38,19 +38,17 @@ public sealed unsafe partial class ClientboundMapItemDataPacketPayload : global:
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::pair<MapItemTrackedActor::UniqueId, std::shared_ptr<MapDecoration>>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint mapId, byte scale, nint decorations, nint mapColors, int startX, int startY, int width, int height, nint dimension, bool isLocked, nint mapOrigin) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::pair<MapItemTrackedActor::UniqueId, std::shared_ptr<MapDecoration>>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData? newMapItem, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_714dda47((void*)__hosihikari_shim_handle, (void*)(newMapItem?.Handle ?? 0), (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint newMapItem, nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_9f65d263((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ClientboundMapItemDataPacketPayload Create()
     {
@@ -63,9 +61,9 @@ public sealed unsafe partial class ClientboundMapItemDataPacketPayload : global:
         return new ClientboundMapItemDataPacketPayload((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::pair<MapItemTrackedActor::UniqueId, std::shared_ptr<MapDecoration>>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ClientboundMapItemDataPacketPayload Create(nint mapId, byte scale, nint decorations, nint mapColors, int startX, int startY, int width, int height, nint dimension, bool isLocked, nint mapOrigin) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::pair<MapItemTrackedActor::UniqueId, std::shared_ptr<MapDecoration>>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ClientboundMapItemDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ClientboundMapItemDataPacketPayload arg0)
     {
@@ -78,16 +76,9 @@ public sealed unsafe partial class ClientboundMapItemDataPacketPayload : global:
         return new ClientboundMapItemDataPacketPayload((nint)handle);
     }
 
-    public static ClientboundMapItemDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.MapItemSavedData? newMapItem, global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_8937db4f((void*)(newMapItem?.Handle ?? 0), (void*)level.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ClientboundMapItemDataPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ClientboundMapItemDataPacketPayload Create(nint newMapItem, nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCreationMapIds_Address

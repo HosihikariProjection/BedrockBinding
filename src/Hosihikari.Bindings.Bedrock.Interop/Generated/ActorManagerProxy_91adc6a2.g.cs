@@ -38,10 +38,9 @@ public sealed unsafe partial class ActorManagerProxy : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public void _removeActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C0.hs_method_50b116ee((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _removeActor(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorManagerProxy arg0)
     {

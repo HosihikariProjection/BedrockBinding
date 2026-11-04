@@ -38,17 +38,17 @@ public sealed unsafe partial class TickingAreaList : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _removeDistantEntityAreasAndCheckForRemoved(nint playerPositions, nint requeue, nint levelStorage) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TickingAreaList Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreaList arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c36404b0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c36404b0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,7 +65,7 @@ public sealed unsafe partial class TickingAreaList : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mTickingAreas_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_04970bf5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_04970bf5((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -74,7 +74,7 @@ public sealed unsafe partial class TickingAreaList : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b4455bf5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b4455bf5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

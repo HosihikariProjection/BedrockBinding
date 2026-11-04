@@ -67,10 +67,9 @@ public sealed unsafe partial class EnableEncryptionCommand : global::System.IDis
         set => NativeMethods.TablePtr->C1.hs_set_66d137a3((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a2452d64((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EnableEncryptionCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.EnableEncryptionCommand arg0)
     {
@@ -88,9 +87,9 @@ public sealed unsafe partial class EnableEncryptionCommand : global::System.IDis
         NativeMethods.TablePtr->C1.hs_method_908ceb6f((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint mApp() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte mCipherMode
     {
@@ -110,10 +109,9 @@ public sealed unsafe partial class EnableEncryptionCommand : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a1641d8b((void*)__hosihikari_shim_handle);
     }
 
-    public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftApp app)
-    {
-        NativeMethods.TablePtr->C1.hs_method_7f312310((void*)registry.Handle, (void*)app.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void setup(nint registry, nint app) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

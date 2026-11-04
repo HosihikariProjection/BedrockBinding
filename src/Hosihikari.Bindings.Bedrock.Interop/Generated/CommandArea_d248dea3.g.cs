@@ -41,7 +41,7 @@ public sealed unsafe partial class CommandArea : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7fbde7d3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_7fbde7d3((void*)__hosihikari_shim_handle);
     }
 
 
@@ -51,7 +51,7 @@ public sealed unsafe partial class CommandArea : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d248dea3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_d248dea3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

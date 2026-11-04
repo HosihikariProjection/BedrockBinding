@@ -38,34 +38,17 @@ public sealed unsafe partial class BackgroundWorker : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool _canTaskRunAgain()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_fde364b7((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canTaskRunAgain() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(string name, byte frameType, bool async, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.OSThreadPriority priority, ulong? coreAffinity, int? idealCore, global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool workerPool)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C0.hs_method_123f4f94((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, frameType, async, (void*)priority.Handle, coreAffinity ?? default(ulong), idealCore ?? default(int), (void*)workerPool.Handle, coreAffinity.HasValue, idealCore.HasValue);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint name, nint frameType, bool async, nint priority, nint coreAffinity, nint idealCore, nint workerPool) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isAsync()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_b757393a((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isAsync() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BackgroundWorker Create()
     {
@@ -89,35 +72,13 @@ public sealed unsafe partial class BackgroundWorker : global::System.IDisposable
         return new BackgroundWorker((nint)handle);
     }
 
-    public static BackgroundWorker Create(string name, byte frameType, bool async, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Threading.OSThreadPriority priority, ulong? coreAffinity, int? idealCore, global::Hosihikari.Bindings.Bedrock.Interop.WorkerPool workerPool)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C0.hs_create_7f11d8ae(__hs_stringData0, (nuint)__hs_stringByteCount0, frameType, async, (void*)priority.Handle, coreAffinity ?? default(ulong), idealCore ?? default(int), (void*)workerPool.Handle, coreAffinity.HasValue, idealCore.HasValue);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BackgroundWorker Create(nint name, nint frameType, bool async, nint priority, nint coreAffinity, nint idealCore, nint workerPool) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-            return new BackgroundWorker((nint)handle);
-        }
-    }
-
-    public bool _processNextTask(nint options)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_48400c53((void*)__hosihikari_shim_handle, (void*)options) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _processNextTask(nint options) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool canTaskRunAgain()
     {
@@ -229,20 +190,17 @@ public sealed unsafe partial class BackgroundWorker : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BackgroundWorker((nint)NativeMethods.TablePtr->C0.hs_method_ea5592df((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void queue(global::Hosihikari.Bindings.Abi.SharedHandle? task)
-    {
-        NativeMethods.TablePtr->C0.hs_method_56750be8((void*)__hosihikari_shim_handle, task?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void queue(nint task) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void requestStop(bool wait)
-    {
-        NativeMethods.TablePtr->C0.hs_method_fbe81257((void*)__hosihikari_shim_handle, wait);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void requestStop(bool wait) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void start()
-    {
-        NativeMethods.TablePtr->C0.hs_method_d1db35ba((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void start() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

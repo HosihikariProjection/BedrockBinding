@@ -38,10 +38,9 @@ public sealed unsafe partial class AmbientSoundServerSystem : global::System.IDi
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C0.hs_method_d6b7a5fc((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AmbientSoundServerSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundServerSystem arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class AmbientSoundServerSystem : global::System.IDi
         return new AmbientSoundServerSystem((nint)handle);
     }
 
-    public static void _tickAmbientSoundComponent(global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent, global::Hosihikari.Bindings.Bedrock.Interop.AmbientSoundServerComponent ambientSoundServerComponent)
-    {
-        NativeMethods.TablePtr->C0.hs_method_42653fca((void*)actorOwnerComponent.Handle, (void*)ambientSoundServerComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _tickAmbientSoundComponent(nint actorOwnerComponent, nint ambientSoundServerComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {

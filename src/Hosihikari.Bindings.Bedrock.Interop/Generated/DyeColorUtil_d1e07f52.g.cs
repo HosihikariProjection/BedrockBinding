@@ -38,20 +38,17 @@ public sealed unsafe partial class DyeColorUtil : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint COLOR_TO_AUX()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_da5c7319();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint COLOR_TO_AUX() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint DYE_AUX_VALUES()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_2a7f6d08();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DYE_AUX_VALUES() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mColorMap()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_04a262aa();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mColorMap() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

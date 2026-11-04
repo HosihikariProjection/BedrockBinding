@@ -38,20 +38,17 @@ public sealed unsafe partial class CurseBindingEnchant : global::System.IDisposa
         return __hs_handle;
     }
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_b9680c9d((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_ebf169c1((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isTreasureOnly()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_5eb9cd70((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isTreasureOnly() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CurseBindingEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.CurseBindingEnchant arg0)
     {

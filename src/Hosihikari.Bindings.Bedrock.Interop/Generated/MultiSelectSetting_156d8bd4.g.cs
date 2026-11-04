@@ -38,19 +38,17 @@ public sealed unsafe partial class MultiSelectSetting : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.MultiSelectSetting arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_bf1ac252((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_23737f5e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MultiSelectSetting Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_39154e83();
+        var handle = NativeMethods.TablePtr->C3.hs_create_39154e83();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,68 +57,57 @@ public sealed unsafe partial class MultiSelectSetting : global::System.IDisposab
         return new MultiSelectSetting((nint)handle);
     }
 
-    public static MultiSelectSetting Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.MultiSelectSetting arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_99b1ec2b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MultiSelectSetting Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new MultiSelectSetting((nint)handle);
-    }
-
-    public static string TYPE_NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_0989c466();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint TYPE_NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaults_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e251052c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e251052c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_eff35643((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_eff35643((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_fd69f4f8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fd69f4f8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSelectionText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5400d899((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5400d899((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8ff9bd72((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8ff9bd72((void*)__hosihikari_shim_handle);
     }
 
     public byte mType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_5a3ab7a2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_5a3ab7a2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_5a3ab7a2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_5a3ab7a2((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.MultiSelectSetting operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.MultiSelectSetting arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.MultiSelectSetting((nint)NativeMethods.TablePtr->C4.hs_method_e50629f1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.MultiSelectSetting other)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_60fa4e88((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -129,7 +116,7 @@ public sealed unsafe partial class MultiSelectSetting : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_156d8bd4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_156d8bd4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

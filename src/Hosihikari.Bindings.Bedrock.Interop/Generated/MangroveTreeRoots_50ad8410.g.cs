@@ -38,12 +38,9 @@ public sealed unsafe partial class MangroveTreeRoots : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _placeRoots(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random, int trunkHeight, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams arg4, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_e0c9b2b0((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)random.Handle, trunkHeight, (void*)arg4.Handle, (void*)treeParams.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _placeRoots(nint target, nint pos, nint random, int trunkHeight, nint arg4, nint treeParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MangroveTreeRoots Create(global::Hosihikari.Bindings.Bedrock.Interop.MangroveTreeRoots arg0)
     {
@@ -56,20 +53,9 @@ public sealed unsafe partial class MangroveTreeRoots : global::System.IDisposabl
         return new MangroveTreeRoots((nint)handle);
     }
 
-    public bool _simulateRoots(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos rootPos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos newOrigin, byte dir, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos[] rootPositions, int layer, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams)
-    {
-        var __hs_vectorItems5 = rootPositions;
-        var __hs_vectorHandles5 = new nint[__hs_vectorItems5?.Length ?? 0];
-        for (var __hs_i5 = 0; __hs_i5 < __hs_vectorHandles5.Length; __hs_i5++)
-        {
-            __hs_vectorHandles5[__hs_i5] = __hs_vectorItems5![__hs_i5]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData5 = __hs_vectorHandles5)
-        {
-            var __hs_vectorData5 = (void**)__hs_vectorHandleData5;
-            return NativeMethods.TablePtr->C2.hs_method_af7d317c((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)random.Handle, (void*)rootPos.Handle, (void*)newOrigin.Handle, dir, layer, (void*)treeParams.Handle, __hs_vectorData5, (nuint)(rootPositions?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _simulateRoots(nint target, nint random, nint rootPos, nint newOrigin, nint dir, nint rootPositions, int layer, nint treeParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAboveRootBlockChance_Address

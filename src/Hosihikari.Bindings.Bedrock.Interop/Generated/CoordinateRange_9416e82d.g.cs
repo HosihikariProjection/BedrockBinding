@@ -38,10 +38,9 @@ public sealed unsafe partial class CoordinateRange : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_53cec4e7((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CoordinateRange Create(global::Hosihikari.Bindings.Bedrock.Interop.ScatterParams_Nested.CoordinateRange arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class CoordinateRange : global::System.IDisposable
         return new CoordinateRange((nint)handle);
     }
 
-    public int _eval(int evaluatedMin, int evaluatedMax, nint stepIndex, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_235b750c((void*)__hosihikari_shim_handle, evaluatedMin, evaluatedMax, (void*)stepIndex, (void*)random.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _eval(int evaluatedMin, int evaluatedMax, nint stepIndex, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mDistribution
     {

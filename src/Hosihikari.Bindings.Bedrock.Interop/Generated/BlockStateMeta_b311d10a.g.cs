@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockState blockState, global::Hosihikari.Bindings.Bedrock.Interop.BlockStateDefinition def)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_f2ffc0a1((void*)__hosihikari_shim_handle, (void*)blockState.Handle, (void*)def.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint blockState, nint def) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockStateMeta Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
         return new BlockStateMeta((nint)handle);
     }
 
-    public static BlockStateMeta Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockState blockState, global::Hosihikari.Bindings.Bedrock.Interop.BlockStateDefinition def)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_bb46237c((void*)blockState.Handle, (void*)def.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BlockStateMeta((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BlockStateMeta Create(nint blockState, nint def) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockStateMeta Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockStateMeta arg0)
     {
@@ -76,21 +68,17 @@ public sealed unsafe partial class BlockStateMeta : global::System.IDisposable
         return new BlockStateMeta((nint)handle);
     }
 
-    public bool getBool(int index)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_6888f8d4((void*)__hosihikari_shim_handle, index) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getBool(int index) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int getInt(int index)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_e8396dce((void*)__hosihikari_shim_handle, index);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getInt(int index) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string getString(int index)
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_0890cf57((void*)__hosihikari_shim_handle, index);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getString(int index) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockState_Address

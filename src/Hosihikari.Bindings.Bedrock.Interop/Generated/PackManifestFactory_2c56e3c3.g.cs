@@ -41,30 +41,28 @@ public sealed unsafe partial class PackManifestFactory : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_88d4d6d0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_88d4d6d0((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'PackManifest' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _create(nint accessStrategy, nint location, nint report, nint subpackInfoStack) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'PackManifest' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'IPackManifestFactoryImpl' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint packCapabilityRegistry, nint impl, nint context, nint loc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'IPackManifestFactoryImpl' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string MANIFEST_PACK_UUID_UPGRADE_SALT()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_168875d9();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint MANIFEST_PACK_UUID_UPGRADE_SALT() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PackManifestFactory Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_42ea9be3();
+        var handle = NativeMethods.TablePtr->C2.hs_create_42ea9be3();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,13 +71,13 @@ public sealed unsafe partial class PackManifestFactory : global::System.IDisposa
         return new PackManifestFactory((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'IPackManifestFactoryImpl' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static PackManifestFactory Create(nint packCapabilityRegistry, nint impl, nint context, nint loc) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'IPackManifestFactoryImpl' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PackManifestFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_53a1c4ad((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_53a1c4ad((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -92,49 +90,47 @@ public sealed unsafe partial class PackManifestFactory : global::System.IDisposa
     public nint create(nint accessStrategy, nint location, nint report, nint subpackInfoStack) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'PackManifest' has no accessible destructor.");
 
-    public static nint mAlternateContentKeys()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_524e3516();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mAlternateContentKeys() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mContentKeys()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_534bae13();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mContentKeys() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6440d6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6ae16281((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ae16281((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7afdc0_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_de2684cc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_de2684cc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk848295_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b5e5eb6e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b5e5eb6e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke128bf_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8510d1bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8510d1bd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf4e802_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2c9d2c4a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2c9d2c4a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory((nint)NativeMethods.TablePtr->C3.hs_method_80594f8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackManifestFactory((nint)NativeMethods.TablePtr->C2.hs_method_80594f8d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -144,7 +140,7 @@ public sealed unsafe partial class PackManifestFactory : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2c56e3c3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2c56e3c3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

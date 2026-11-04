@@ -38,19 +38,17 @@ public sealed unsafe partial class ITickingSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _singleTick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C2.hs_method_572c677f((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _singleTick_572c677f(nint registry, nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _singleTick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
-    {
-        NativeMethods.TablePtr->C2.hs_method_b0d193d8((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)entityContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _singleTick_b0d193d8(nint registry, nint entityContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ITickingSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ITickingSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_7120f54e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_7120f54e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,17 +59,17 @@ public sealed unsafe partial class ITickingSystem : global::System.IDisposable
 
     public void singleTick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
     {
-        NativeMethods.TablePtr->C2.hs_method_c757ba92((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)entity.Handle);
+        NativeMethods.TablePtr->C1.hs_method_c757ba92((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)entity.Handle);
     }
 
     public void singleTick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entityContext)
     {
-        NativeMethods.TablePtr->C2.hs_method_3ae80006((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)entityContext.Handle);
+        NativeMethods.TablePtr->C1.hs_method_3ae80006((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)entityContext.Handle);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C2.hs_method_7325f8ea((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C1.hs_method_7325f8ea((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -81,7 +79,7 @@ public sealed unsafe partial class ITickingSystem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e7b447c0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e7b447c0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

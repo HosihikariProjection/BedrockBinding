@@ -62,10 +62,9 @@ public sealed unsafe partial class LegacyEmeraldOreFeature : global::System.IDis
         set => NativeMethods.TablePtr->C2.hs_set_366613eb((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_fc7b6058((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)origin.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint origin, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyEmeraldOreFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyEmeraldOreFeature arg0)
     {

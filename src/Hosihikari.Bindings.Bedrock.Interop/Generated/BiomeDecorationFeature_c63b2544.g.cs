@@ -38,15 +38,13 @@ public sealed unsafe partial class BiomeDecorationFeature : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BiomeDecorationFeature arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_c7212a36((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_0c82a62d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BiomeDecorationFeature Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class BiomeDecorationFeature : global::System.IDisp
         return new BiomeDecorationFeature((nint)handle);
     }
 
-    public static BiomeDecorationFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeDecorationFeature arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_ff6950bd((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BiomeDecorationFeature((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BiomeDecorationFeature Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mCanUseInternalFeature
     {

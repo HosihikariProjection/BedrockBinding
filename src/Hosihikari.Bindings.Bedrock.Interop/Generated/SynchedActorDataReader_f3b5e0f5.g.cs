@@ -40,7 +40,7 @@ public sealed unsafe partial class SynchedActorDataReader : global::System.IDisp
 
     public static SynchedActorDataReader Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataReader arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_81d32ec0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_81d32ec0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class SynchedActorDataReader : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f4f2c20c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f4f2c20c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlagComponent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d0dc5a81((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d0dc5a81((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -67,7 +67,7 @@ public sealed unsafe partial class SynchedActorDataReader : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f3b5e0f5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f3b5e0f5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

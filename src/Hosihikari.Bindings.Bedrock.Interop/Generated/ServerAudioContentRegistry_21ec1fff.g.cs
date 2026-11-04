@@ -38,10 +38,9 @@ public sealed unsafe partial class ServerAudioContentRegistry : global::System.I
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? serverSoundDefinitionRegistry)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d7420fa3((void*)__hosihikari_shim_handle, serverSoundDefinitionRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint serverSoundDefinitionRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerAudioContentRegistry Create()
     {
@@ -65,35 +64,13 @@ public sealed unsafe partial class ServerAudioContentRegistry : global::System.I
         return new ServerAudioContentRegistry((nint)handle);
     }
 
-    public static ServerAudioContentRegistry Create(global::Hosihikari.Bindings.Abi.SharedHandle? serverSoundDefinitionRegistry)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a3d62da4(serverSoundDefinitionRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ServerAudioContentRegistry Create(nint serverSoundDefinitionRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ServerAudioContentRegistry((nint)handle);
-    }
-
-    public bool _removeAudioContentOwner(nint owner, string audioContentId)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(audioContentId);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(audioContentId, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            return NativeMethods.TablePtr->C3.hs_method_60ce5f9c((void*)__hosihikari_shim_handle, (void*)owner, __hs_stringData1, (nuint)__hs_stringByteCount1) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _removeAudioContentOwner(nint owner, nint audioContentId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk552830_Address
@@ -124,14 +101,13 @@ public sealed unsafe partial class ServerAudioContentRegistry : global::System.I
         return new global::Hosihikari.Bindings.Bedrock.Interop.ServerAudioContentRegistry((nint)NativeMethods.TablePtr->C3.hs_method_ff07a926((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'AudioContentRegistration' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint registerAudioContent(nint ctx, nint owner, nint audioContentRegistration, nint verifier) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'AudioContentRegistration' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void removeDefinitionsForOwner(nint owner)
-    {
-        NativeMethods.TablePtr->C3.hs_method_cad9c51a((void*)__hosihikari_shim_handle, (void*)owner);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeDefinitionsForOwner(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

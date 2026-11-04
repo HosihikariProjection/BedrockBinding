@@ -44,9 +44,9 @@ public sealed unsafe partial class CreativeGroupInfo : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C1.hs_get_422acec4((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CreativeGroupInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.CreativeGroupInfo arg0)
     {
@@ -59,10 +59,9 @@ public sealed unsafe partial class CreativeGroupInfo : global::System.IDisposabl
         return new CreativeGroupInfo((nint)handle);
     }
 
-    public void _addCreativeItemEntry(global::Hosihikari.Bindings.Bedrock.Interop.CreativeItemEntry? itemEntry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_767bafae((void*)__hosihikari_shim_handle, (void*)(itemEntry?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _addCreativeItemEntry(nint itemEntry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte mCategory
     {

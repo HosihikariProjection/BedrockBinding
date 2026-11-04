@@ -40,30 +40,27 @@ public sealed unsafe partial class SnapToSurfaceFeature : global::System.IDispos
 
     public bool mCanUseInternalFeature
     {
-        get => NativeMethods.TablePtr->C4.hs_get_798e0d83((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_798e0d83((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_798e0d83((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_798e0d83((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInternal
     {
-        get => NativeMethods.TablePtr->C4.hs_get_77a46cae((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_77a46cae((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_77a46cae((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_77a46cae((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b8e08d5f((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _place(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SnapToSurfaceFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapToSurfaceFeature arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b1f75758((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b1f75758((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,65 +69,62 @@ public sealed unsafe partial class SnapToSurfaceFeature : global::System.IDispos
         return new SnapToSurfaceFeature((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _findSnapPosInDirection(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte direction)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_670573ad((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, direction, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _findSnapPosInDirection(nint target, nint pos, byte direction) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAllowAirPlacement
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2a8a4474((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_2a8a4474((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2a8a4474((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_2a8a4474((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mAllowNonAirPlacement
     {
-        get => NativeMethods.TablePtr->C4.hs_get_3c74b4ee((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_3c74b4ee((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3c74b4ee((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_3c74b4ee((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mAllowUnderwaterPlacement
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1de098df((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_1de098df((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1de098df((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_1de098df((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAllowedSurfaceBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3df96000((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3df96000((void*)__hosihikari_shim_handle);
     }
 
     public bool mEmbedInSurface
     {
-        get => NativeMethods.TablePtr->C4.hs_get_fbe2082b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_fbe2082b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_fbe2082b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_fbe2082b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFeatureToSnap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e10e24b6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e10e24b6((void*)__hosihikari_shim_handle);
     }
 
     public int mSearchRange
     {
-        get => NativeMethods.TablePtr->C4.hs_get_051453c2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_051453c2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_051453c2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_051453c2((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSurface
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8e8c95f6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_8e8c95f6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8e8c95f6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8e8c95f6((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ea399c2a((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ea399c2a((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
@@ -141,7 +135,7 @@ public sealed unsafe partial class SnapToSurfaceFeature : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_6fc6a1a7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_6fc6a1a7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

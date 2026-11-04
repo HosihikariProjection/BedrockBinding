@@ -40,7 +40,7 @@ public sealed unsafe partial class RemoteClient : global::System.IDisposable
 
     public static RemoteClient Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_86c9f5f4();
+        var handle = NativeMethods.TablePtr->C2.hs_create_86c9f5f4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RemoteClient : global::System.IDisposable
 
     public static RemoteClient Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_fe731882((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_fe731882((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,49 +60,49 @@ public sealed unsafe partial class RemoteClient : global::System.IDisposable
         return new RemoteClient((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void SendOrBuffer(nint data, nint lengths, nint numParameters) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk15dcb5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d32a883d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d32a883d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4c556f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_15ef4d37((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_15ef4d37((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk582874_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6d456b82((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6d456b82((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5eab4b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5d8af01b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5d8af01b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdd2d6b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b707e5cf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b707e5cf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke2d806_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0978a8cd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0978a8cd((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient((nint)NativeMethods.TablePtr->C3.hs_method_7ad77ec2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RemoteClient((nint)NativeMethods.TablePtr->C2.hs_method_7ad77ec2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -111,7 +111,7 @@ public sealed unsafe partial class RemoteClient : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_dcb1b2c1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_dcb1b2c1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

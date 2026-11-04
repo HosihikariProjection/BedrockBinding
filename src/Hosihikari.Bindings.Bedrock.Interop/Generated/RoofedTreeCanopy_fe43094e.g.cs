@@ -38,9 +38,9 @@ public sealed unsafe partial class RoofedTreeCanopy : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _placeCanopy(nint target, nint pos, nint trunkSize, nint random, nint arg4, nint arg5, int arg6, nint arg7) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RoofedTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.RoofedTreeCanopy arg0)
     {

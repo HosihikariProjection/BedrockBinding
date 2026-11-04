@@ -40,7 +40,7 @@ public sealed unsafe partial class CollisionBoxComponent : global::System.IDispo
 
     public static CollisionBoxComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.CollisionBoxComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c1c6e14d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_c1c6e14d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class CollisionBoxComponent : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mBBDim_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8dd33d45((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8dd33d45((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class CollisionBoxComponent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c05448e8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_c05448e8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

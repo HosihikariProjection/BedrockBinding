@@ -38,21 +38,21 @@ public sealed unsafe partial class XoroshiroPositionalRandomFactory : global::Sy
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IRandom' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _forBlockPos(nint blockPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'IRandom' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'IRandom' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _forString(nint s) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'IRandom' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static XoroshiroPositionalRandomFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.XoroshiroPositionalRandomFactory arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_d14d7e0e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_d14d7e0e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,20 +71,19 @@ public sealed unsafe partial class XoroshiroPositionalRandomFactory : global::Sy
 
     public ulong mSeedHi
     {
-        get => NativeMethods.TablePtr->C5.hs_get_1b9275a6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_1b9275a6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_1b9275a6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_1b9275a6((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mSeedLo
     {
-        get => NativeMethods.TablePtr->C5.hs_get_560cb56a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_560cb56a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_560cb56a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_560cb56a((void*)__hosihikari_shim_handle, value);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Hash.md5 mThreadLocalDigest()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Crypto.Hash.md5((nint)NativeMethods.TablePtr->C5.hs_method_540bade5(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mThreadLocalDigest() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -93,7 +92,7 @@ public sealed unsafe partial class XoroshiroPositionalRandomFactory : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_bcbc5012((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_bcbc5012((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

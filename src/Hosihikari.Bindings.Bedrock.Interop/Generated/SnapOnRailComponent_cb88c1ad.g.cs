@@ -40,7 +40,7 @@ public sealed unsafe partial class SnapOnRailComponent : global::System.IDisposa
 
     public static SnapOnRailComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SnapOnRailComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4a9b37be((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4a9b37be((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,37 +51,37 @@ public sealed unsafe partial class SnapOnRailComponent : global::System.IDisposa
 
     public nint mBlock
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_430c99e8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_430c99e8((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsPowerTrack
     {
-        get => NativeMethods.TablePtr->C4.hs_get_de810f91((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_de810f91((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_de810f91((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_de810f91((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOriginalEntityPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_26d9d42d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_26d9d42d((void*)__hosihikari_shim_handle);
     }
 
     public int mRailDirection
     {
-        get => NativeMethods.TablePtr->C4.hs_get_55f49dd9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_55f49dd9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_55f49dd9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_55f49dd9((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mShouldHaltTrack
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c3a49a49((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_c3a49a49((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c3a49a49((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c3a49a49((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSnapToPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_87541006((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_87541006((void*)__hosihikari_shim_handle);
     }
 
 
@@ -91,7 +91,7 @@ public sealed unsafe partial class SnapOnRailComponent : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cb88c1ad((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_cb88c1ad((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class StorePreviousRideStatsSystem : global::System
         return __hs_handle;
     }
 
-    public static void _storePreviousRideStats(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.VanillaClientGameplayComponent vanillaClientGameplayComponent)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1e1ce351((void*)arg0.Handle, (void*)stateVectorComponent.Handle, (void*)vanillaClientGameplayComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _storePreviousRideStats(nint arg0, nint stateVectorComponent, nint vanillaClientGameplayComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class StorePreviousRideStatsSystem : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e2a4e188((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e2a4e188((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

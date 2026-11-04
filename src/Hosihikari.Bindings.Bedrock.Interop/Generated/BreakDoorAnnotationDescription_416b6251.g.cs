@@ -38,15 +38,13 @@ public sealed unsafe partial class BreakDoorAnnotationDescription : global::Syst
         return __hs_handle;
     }
 
-    public void _deserializeData(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams deserializeDataParams)
-    {
-        NativeMethods.TablePtr->C0.hs_method_4e757c30((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deserializeData(nint deserializeDataParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _getJsonName()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_982165c6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getJsonName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BreakDoorAnnotationDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BreakDoorAnnotationDescription arg0)
     {

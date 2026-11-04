@@ -49,9 +49,9 @@ public sealed unsafe partial class GameEventMovementTrackingComponent : global::
         return new GameEventMovementTrackingComponent((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the by-value record parameter has no eligible layout.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void initializeFromData(nint actor, nint settings) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the by-value record parameter has no eligible layout.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mConsiderVerticalComponentForAmphibiousMovement
     {

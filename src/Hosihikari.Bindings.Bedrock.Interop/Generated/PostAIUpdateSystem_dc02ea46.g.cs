@@ -38,9 +38,9 @@ public sealed unsafe partial class PostAIUpdateSystem : global::System.IDisposab
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void doPostAiUpdate(nint entity, nint onGround, nint noActionTime, nint mod) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const OnGroundFlagComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -48,7 +48,7 @@ public sealed unsafe partial class PostAIUpdateSystem : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_dc02ea46((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_dc02ea46((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

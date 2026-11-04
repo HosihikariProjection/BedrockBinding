@@ -38,14 +38,13 @@ public sealed unsafe partial class CalibratedSculkSensorVibrationConfig : global
         return __hs_handle;
     }
 
-    public bool _shouldListen(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent, nint gameEventContext)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_359a7e77((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)gameEvent.Handle, (void*)gameEventContext) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _shouldListen(nint region, nint gameEvent, nint gameEventContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CalibratedSculkSensorVibrationConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.CalibratedSculkSensorVibrationConfig arg0)
     {

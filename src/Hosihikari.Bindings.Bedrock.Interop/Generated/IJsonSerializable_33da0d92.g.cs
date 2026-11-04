@@ -40,7 +40,7 @@ public sealed unsafe partial class IJsonSerializable : global::System.IDisposabl
 
     public static IJsonSerializable Create(global::Hosihikari.Bindings.Bedrock.Interop.IJsonSerializable arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5bf90fd6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_5bf90fd6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class IJsonSerializable : global::System.IDisposabl
 
     public void deserialize(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root)
     {
-        NativeMethods.TablePtr->C2.hs_method_7cc65ab9((void*)__hosihikari_shim_handle, (void*)root.Handle);
+        NativeMethods.TablePtr->C1.hs_method_7cc65ab9((void*)__hosihikari_shim_handle, (void*)root.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value serialize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C2.hs_method_89eb28c9((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_89eb28c9((void*)__hosihikari_shim_handle));
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class IJsonSerializable : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_33da0d92((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_33da0d92((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

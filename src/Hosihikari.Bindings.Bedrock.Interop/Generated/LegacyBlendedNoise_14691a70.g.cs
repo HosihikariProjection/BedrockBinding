@@ -38,10 +38,9 @@ public sealed unsafe partial class LegacyBlendedNoise : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_885e9031((void*)__hosihikari_shim_handle, (void*)random.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyBlendedNoise Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class LegacyBlendedNoise : global::System.IDisposab
         return new LegacyBlendedNoise((nint)handle);
     }
 
-    public static LegacyBlendedNoise Create(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ee496373((void*)random.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LegacyBlendedNoise((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LegacyBlendedNoise Create(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyBlendedNoise Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyBlendedNoise arg0)
     {

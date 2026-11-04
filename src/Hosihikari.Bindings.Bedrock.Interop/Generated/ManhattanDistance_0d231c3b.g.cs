@@ -55,10 +55,9 @@ public sealed unsafe partial class ManhattanDistance : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_42ebec4b((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPosIterator_Nested.ManhattanDistance operator_operator__()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPosIterator_Nested.ManhattanDistance((nint)NativeMethods.TablePtr->C0.hs_method_f25a4e40((void*)__hosihikari_shim_handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_operator__() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

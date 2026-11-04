@@ -40,7 +40,7 @@ public sealed unsafe partial class GameTestErrorContext : global::System.IDispos
 
     public static GameTestErrorContext Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_afbc7f1d();
+        var handle = NativeMethods.TablePtr->C4.hs_create_afbc7f1d();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class GameTestErrorContext : global::System.IDispos
 
     public static GameTestErrorContext Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestErrorContext arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_42882d43((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_42882d43((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,32 +60,31 @@ public sealed unsafe partial class GameTestErrorContext : global::System.IDispos
         return new GameTestErrorContext((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InterfaceBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InterfaceBinding((nint)NativeMethods.TablePtr->C5.hs_method_cf27cbf3());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk144395_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_c04f7c69((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c04f7c69((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2a25a2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_8f6f73b1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8f6f73b1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdcbc69_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_72c4caa1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_72c4caa1((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestErrorContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestErrorContext arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestErrorContext((nint)NativeMethods.TablePtr->C5.hs_method_4bd02216((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestErrorContext((nint)NativeMethods.TablePtr->C4.hs_method_4bd02216((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -94,7 +93,7 @@ public sealed unsafe partial class GameTestErrorContext : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_9d39f5ee((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_9d39f5ee((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

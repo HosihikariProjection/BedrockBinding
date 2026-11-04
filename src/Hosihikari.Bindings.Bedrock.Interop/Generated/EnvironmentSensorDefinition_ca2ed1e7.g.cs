@@ -49,10 +49,9 @@ public sealed unsafe partial class EnvironmentSensorDefinition : global::System.
         return new EnvironmentSensorDefinition((nint)handle);
     }
 
-    public void addEnvironmentTrigger(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger trigger)
-    {
-        NativeMethods.TablePtr->C1.hs_method_1febbe1c((void*)__hosihikari_shim_handle, (void*)trigger.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addEnvironmentTrigger(nint trigger) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTriggers_Address

@@ -38,25 +38,21 @@ public sealed unsafe partial class ScriptTickListener : global::System.IDisposab
         return __hs_handle;
     }
 
-    public int _onLevelTickEnd(global::Hosihikari.Bindings.Bedrock.Interop.Level arg0)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_21b5f6a9((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onLevelTickEnd(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onLevelTickStart(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_e4083ed5((void*)__hosihikari_shim_handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onLevelTickStart(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onScriptTickEnd()
-    {
-        NativeMethods.TablePtr->C3.hs_method_4fbc77fd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onScriptTickEnd() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onScriptTickStart()
-    {
-        NativeMethods.TablePtr->C3.hs_method_dff95ca9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onScriptTickStart() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptTickListener Create()
     {
@@ -80,10 +76,9 @@ public sealed unsafe partial class ScriptTickListener : global::System.IDisposab
         return new ScriptTickListener((nint)handle);
     }
 
-    public nint _getServerPerfData()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_50f8de0f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getServerPerfData() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAsyncJobCoordinator_Address

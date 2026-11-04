@@ -78,18 +78,13 @@ public sealed unsafe partial class MessagingCommand : global::System.IDisposable
         return new MessagingCommand((nint)handle);
     }
 
-    public bool checkChatPermissions(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_ef54349a((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool checkChatPermissions(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool checkIfTextProcessorIsHealthyAndSendChatIfNot(global::Hosihikari.Bindings.Bedrock.Interop.CommandOriginIdentity identity, global::Hosihikari.Bindings.Bedrock.Interop.Level level, int[] events)
-    {
-        fixed (int* __hs_vectorData2 = events)
-        {
-            return NativeMethods.TablePtr->C2.hs_method_841b0c04((void*)identity.Handle, (void*)level.Handle, __hs_vectorData2, (nuint)(events?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool checkIfTextProcessorIsHealthyAndSendChatIfNot(nint identity, nint level, nint events) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mRequireChatPerms
     {

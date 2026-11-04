@@ -40,7 +40,7 @@ public sealed unsafe partial class CachedLineData : global::System.IDisposable
 
     public static CachedLineData Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedLineData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_25c55864((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_25c55864((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class CachedLineData : global::System.IDisposable
 
     public int lineLength
     {
-        get => NativeMethods.TablePtr->C4.hs_get_24a30084((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_24a30084((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_24a30084((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_24a30084((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint text_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4715a862((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4715a862((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class CachedLineData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_58fe49b3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_58fe49b3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

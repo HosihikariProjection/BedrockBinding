@@ -50,10 +50,9 @@ public sealed unsafe partial class FossilFeature : global::System.IDisposable
         set => NativeMethods.TablePtr->C1.hs_set_4549ea26((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_43b2c047((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)origin.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint origin, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FossilFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.FossilFeature arg0)
     {
@@ -66,9 +65,9 @@ public sealed unsafe partial class FossilFeature : global::System.IDisposable
         return new FossilFeature((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'const std::basic_string<char> (&)[8]' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint STRUCTURE_LOCATION_FOSSIL() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'const std::basic_string<char> (&)[8]' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mMaxEmptyCorners
     {

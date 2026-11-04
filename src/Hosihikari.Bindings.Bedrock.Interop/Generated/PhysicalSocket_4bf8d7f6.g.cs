@@ -38,202 +38,176 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket? _Accept(nint out_addr)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_48db320b((void*)__hosihikari_shim_handle, (void*)out_addr);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _Accept(nint out_addr) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _Bind(nint bind_addr)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_2b2f6877((void*)__hosihikari_shim_handle, (void*)bind_addr);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _Bind(nint bind_addr) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _Close()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_a80fa099((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _Close() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _Connect(nint addr)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_309f5d86((void*)__hosihikari_shim_handle, (void*)addr);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _Connect(nint addr) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _Create(int family, int type)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_99e1091f((void*)__hosihikari_shim_handle, family, type) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _Create(int family, int type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _DisableEvents(byte events)
-    {
-        NativeMethods.TablePtr->C5.hs_method_c38a508f((void*)__hosihikari_shim_handle, events);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _DisableEvents(byte events) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong _DoAccept(ulong socket, nint addr, nint addrlen)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_2d322a68((void*)__hosihikari_shim_handle, socket, (void*)addr, (void*)addrlen);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong _DoAccept(ulong socket, nint addr, nint addrlen) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _DoSend(ulong socket, nint buf, int len, int flags)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_d6b0b443((void*)__hosihikari_shim_handle, socket, (void*)buf, len, flags);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _DoSend(ulong socket, nint buf, int len, int flags) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _DoSendTo(ulong socket, nint buf, int len, int flags, nint dest_addr, int addrlen)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_6fb20fbb((void*)__hosihikari_shim_handle, socket, (void*)buf, len, flags, (void*)dest_addr, addrlen);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _DoSendTo(ulong socket, nint buf, int len, int flags, nint dest_addr, int addrlen) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _EnableEvents(byte events)
-    {
-        NativeMethods.TablePtr->C5.hs_method_32a62c77((void*)__hosihikari_shim_handle, events);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _EnableEvents(byte events) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _GetError()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_e8233ef9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _GetError() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::SocketAddress' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _GetLocalAddress() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::SocketAddress' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _GetOption(int opt, nint value)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_032fe7ea((void*)__hosihikari_shim_handle, opt, (void*)value);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _GetOption(nint opt, nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::SocketAddress' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _GetRemoteAddress() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'webrtc::SocketAddress' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _GetState()
-    {
-        return NativeMethods.TablePtr->C5.hs_method_e067be5a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _GetState() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _Listen(int backlog)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_b2b0246b((void*)__hosihikari_shim_handle, backlog);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _Listen(int backlog) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _Recv(nint buffer, ulong length, nint timestamp)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_4e7f3230((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)timestamp);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _Recv(nint buffer, ulong length, nint timestamp) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _RecvFrom(nint buffer, ulong length, nint out_addr, nint timestamp)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_ca0d067f((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)out_addr, (void*)timestamp);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _RecvFrom(nint buffer, ulong length, nint out_addr, nint timestamp) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _RecvFrom(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket_Nested.ReceiveBuffer buffer)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_31795c5d((void*)__hosihikari_shim_handle, (void*)buffer.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _RecvFrom(nint buffer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _Send(nint pv, ulong cb)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_615fa0fb((void*)__hosihikari_shim_handle, (void*)pv, cb);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _Send(nint pv, ulong cb) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _SendTo(nint buffer, ulong length, nint addr)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_9618f2c9((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)addr);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _SendTo(nint buffer, ulong length, nint addr) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _SetEnabledEvents(byte events)
-    {
-        NativeMethods.TablePtr->C5.hs_method_33e53665((void*)__hosihikari_shim_handle, events);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _SetEnabledEvents(byte events) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _SetError(int error)
-    {
-        NativeMethods.TablePtr->C5.hs_method_a6a77fcf((void*)__hosihikari_shim_handle, error);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _SetError(int error) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _SetOption(int opt, int value)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_c3481366((void*)__hosihikari_shim_handle, opt, value);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _SetOption(nint opt, int value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(nint ss, ulong s)
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_136f7fd3((void*)__hosihikari_shim_handle, (void*)ss, s);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint ss, ulong s) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_f571eab0((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForHasSlots() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForSocket() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket? Accept(nint out_addr)
     {
-        var __hs_handle = NativeMethods.TablePtr->C5.hs_method_85123a67((void*)__hosihikari_shim_handle, (void*)out_addr);
+        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_85123a67((void*)__hosihikari_shim_handle, (void*)out_addr);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket((nint)__hs_handle, false) : null;
     }
 
     public int Bind(nint bind_addr)
     {
-        return NativeMethods.TablePtr->C5.hs_method_9ff601f6((void*)__hosihikari_shim_handle, (void*)bind_addr);
+        return NativeMethods.TablePtr->C4.hs_method_9ff601f6((void*)__hosihikari_shim_handle, (void*)bind_addr);
     }
 
     public int Close()
     {
-        return NativeMethods.TablePtr->C5.hs_method_a7af387c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_a7af387c((void*)__hosihikari_shim_handle);
     }
 
     public int Connect(nint addr)
     {
-        return NativeMethods.TablePtr->C5.hs_method_ed66a2ed((void*)__hosihikari_shim_handle, (void*)addr);
+        return NativeMethods.TablePtr->C4.hs_method_ed66a2ed((void*)__hosihikari_shim_handle, (void*)addr);
     }
 
     public bool Create(int family, int type)
     {
-        return NativeMethods.TablePtr->C5.hs_method_fd6d422d((void*)__hosihikari_shim_handle, family, type) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_fd6d422d((void*)__hosihikari_shim_handle, family, type) != 0;
     }
 
     public void DisableEvents(byte events)
     {
-        NativeMethods.TablePtr->C5.hs_method_a4027f4a((void*)__hosihikari_shim_handle, events);
+        NativeMethods.TablePtr->C4.hs_method_a4027f4a((void*)__hosihikari_shim_handle, events);
     }
 
     public ulong DoAccept(ulong socket, nint addr, nint addrlen)
     {
-        return NativeMethods.TablePtr->C5.hs_method_9a5a8c39((void*)__hosihikari_shim_handle, socket, (void*)addr, (void*)addrlen);
+        return NativeMethods.TablePtr->C4.hs_method_9a5a8c39((void*)__hosihikari_shim_handle, socket, (void*)addr, (void*)addrlen);
     }
 
-    public int DoConnect(nint connect_addr)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_202be8b7((void*)__hosihikari_shim_handle, (void*)connect_addr);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int DoConnect(nint connect_addr) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int DoSend(ulong socket, nint buf, int len, int flags)
     {
-        return NativeMethods.TablePtr->C5.hs_method_5ef9a44a((void*)__hosihikari_shim_handle, socket, (void*)buf, len, flags);
+        return NativeMethods.TablePtr->C4.hs_method_5ef9a44a((void*)__hosihikari_shim_handle, socket, (void*)buf, len, flags);
     }
 
     public int DoSendTo(ulong socket, nint buf, int len, int flags, nint dest_addr, int addrlen)
     {
-        return NativeMethods.TablePtr->C5.hs_method_e0528f51((void*)__hosihikari_shim_handle, socket, (void*)buf, len, flags, (void*)dest_addr, addrlen);
+        return NativeMethods.TablePtr->C4.hs_method_e0528f51((void*)__hosihikari_shim_handle, socket, (void*)buf, len, flags, (void*)dest_addr, addrlen);
     }
 
     public void EnableEvents(byte events)
     {
-        NativeMethods.TablePtr->C5.hs_method_061b944f((void*)__hosihikari_shim_handle, events);
+        NativeMethods.TablePtr->C4.hs_method_061b944f((void*)__hosihikari_shim_handle, events);
     }
 
     public int GetError()
     {
-        return NativeMethods.TablePtr->C5.hs_method_6a9a2017((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_6a9a2017((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::SocketAddress' requires --link-carrier or --virtual-dispatch.", false)]
@@ -242,7 +216,7 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
 
     public int GetOption(int opt, nint value)
     {
-        return NativeMethods.TablePtr->C5.hs_method_90f1ff29((void*)__hosihikari_shim_handle, opt, (void*)value);
+        return NativeMethods.TablePtr->C4.hs_method_90f1ff29((void*)__hosihikari_shim_handle, opt, (void*)value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'webrtc::SocketAddress' requires --link-carrier or --virtual-dispatch.", false)]
@@ -251,17 +225,17 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
 
     public int GetState()
     {
-        return NativeMethods.TablePtr->C5.hs_method_0ee4bbe5((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_0ee4bbe5((void*)__hosihikari_shim_handle);
     }
 
     public int Listen(int backlog)
     {
-        return NativeMethods.TablePtr->C5.hs_method_3d87c0eb((void*)__hosihikari_shim_handle, backlog);
+        return NativeMethods.TablePtr->C4.hs_method_3d87c0eb((void*)__hosihikari_shim_handle, backlog);
     }
 
     public static PhysicalSocket Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_01f2f271();
+        var handle = NativeMethods.TablePtr->C4.hs_create_01f2f271();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -272,7 +246,7 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
 
     public static PhysicalSocket Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_34dccbfc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_34dccbfc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -281,161 +255,152 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
         return new PhysicalSocket((nint)handle);
     }
 
-    public static PhysicalSocket Create(nint ss, ulong s)
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_3524aef8((void*)ss, s);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PhysicalSocket((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PhysicalSocket Create(nint ss, ulong s) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int Recv(nint buffer, ulong length, nint timestamp)
     {
-        return NativeMethods.TablePtr->C5.hs_method_dce00b4c((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)timestamp);
+        return NativeMethods.TablePtr->C4.hs_method_dce00b4c((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)timestamp);
     }
 
     public int RecvFrom(nint buffer, ulong length, nint out_addr, nint timestamp)
     {
-        return NativeMethods.TablePtr->C5.hs_method_f668f221((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)out_addr, (void*)timestamp);
+        return NativeMethods.TablePtr->C4.hs_method_f668f221((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)out_addr, (void*)timestamp);
     }
 
     public int RecvFrom(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket_Nested.ReceiveBuffer buffer)
     {
-        return NativeMethods.TablePtr->C5.hs_method_a948feb8((void*)__hosihikari_shim_handle, (void*)buffer.Handle);
+        return NativeMethods.TablePtr->C4.hs_method_a948feb8((void*)__hosihikari_shim_handle, (void*)buffer.Handle);
     }
 
     public int Send(nint pv, ulong cb)
     {
-        return NativeMethods.TablePtr->C5.hs_method_26aea2ac((void*)__hosihikari_shim_handle, (void*)pv, cb);
+        return NativeMethods.TablePtr->C4.hs_method_26aea2ac((void*)__hosihikari_shim_handle, (void*)pv, cb);
     }
 
     public int SendTo(nint buffer, ulong length, nint addr)
     {
-        return NativeMethods.TablePtr->C5.hs_method_a4409daf((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)addr);
+        return NativeMethods.TablePtr->C4.hs_method_a4409daf((void*)__hosihikari_shim_handle, (void*)buffer, length, (void*)addr);
     }
 
     public void SetEnabledEvents(byte events)
     {
-        NativeMethods.TablePtr->C5.hs_method_b24c77d6((void*)__hosihikari_shim_handle, events);
+        NativeMethods.TablePtr->C4.hs_method_b24c77d6((void*)__hosihikari_shim_handle, events);
     }
 
     public void SetError(int error)
     {
-        NativeMethods.TablePtr->C5.hs_method_32a82963((void*)__hosihikari_shim_handle, error);
+        NativeMethods.TablePtr->C4.hs_method_32a82963((void*)__hosihikari_shim_handle, error);
     }
 
-    public int SetOption(int opt, nint value, ulong size)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_5e40cf62((void*)__hosihikari_shim_handle, opt, (void*)value, size);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int SetOption(nint opt, nint value, ulong size) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int SetOption(int opt, int value)
     {
-        return NativeMethods.TablePtr->C5.hs_method_d41d8c30((void*)__hosihikari_shim_handle, opt, value);
+        return NativeMethods.TablePtr->C4.hs_method_d41d8c30((void*)__hosihikari_shim_handle, opt, value);
     }
 
-    public int TranslateOption(int opt, nint slevel, nint sopt)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_2a9dcbc0((void*)__hosihikari_shim_handle, opt, (void*)slevel, (void*)sopt);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int TranslateOption(nint opt, nint slevel, nint sopt) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1f8ce7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_4d3de732((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4d3de732((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1fd5ca_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_7ca511a6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_7ca511a6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk260dba_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_ddd13761((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ddd13761((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk41fc38_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9ba80d5b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9ba80d5b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk490cec_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_1045771a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1045771a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk75eeb3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_5110d11a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5110d11a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8b4b60_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_28fdd7f6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_28fdd7f6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk980c93_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e14ae331((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e14ae331((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkab46d3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_570c919d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_570c919d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb735db_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3f4d454d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3f4d454d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkff94eb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_8b6daa01((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8b6daa01((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket((nint)NativeMethods.TablePtr->C5.hs_method_809a04bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.PhysicalSocket((nint)NativeMethods.TablePtr->C4.hs_method_809a04bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk345ea3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3d65ca83((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3d65ca83((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk757c34_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_12be5ae3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_12be5ae3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk90b6cc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_973e1245((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_973e1245((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk90b6d7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_13326bd9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_13326bd9((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -444,7 +409,7 @@ public sealed unsafe partial class PhysicalSocket : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_4bf8d7f6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_4bf8d7f6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

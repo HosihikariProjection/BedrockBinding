@@ -55,24 +55,9 @@ public sealed unsafe partial class SavedDataStorage : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_74b0c77e((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public bool loadAndSet(global::Hosihikari.Bindings.Bedrock.Interop.SavedData inoutData, string id)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(id);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(id, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            return NativeMethods.TablePtr->C3.hs_method_859ad922((void*)__hosihikari_shim_handle, (void*)inoutData.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool loadAndSet(nint inoutData, nint id) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint savedDatas_Address

@@ -38,14 +38,13 @@ public sealed unsafe partial class Compound : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_5d606d04((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Compound Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.BlockDescriptor_Nested.Compound arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c7444ef4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c7444ef4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,46 +53,30 @@ public sealed unsafe partial class Compound : global::System.IDisposable
         return new Compound((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_62077c63((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void fromString(string str)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(str);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(str, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_aa9db64a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void fromString(nint str) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mInt
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9a8c018f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_9a8c018f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_9a8c018f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_9a8c018f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mString_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_19540d6b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_19540d6b((void*)__hosihikari_shim_handle);
     }
 
     public int mType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4db6448f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_4db6448f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4db6448f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4db6448f((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -103,7 +86,7 @@ public sealed unsafe partial class Compound : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e94bdfa5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e94bdfa5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

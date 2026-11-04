@@ -38,15 +38,13 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.HashedString patternId, global::Hosihikari.Bindings.Bedrock.Interop.HashedString materialId)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_c20af3da((void*)__hosihikari_shim_handle, (void*)patternId.Handle, (void*)materialId.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint patternId, nint materialId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_b11006c3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ArmorTrim Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
         return new ArmorTrim((nint)handle);
     }
 
-    public static ArmorTrim Create(global::Hosihikari.Bindings.Bedrock.Interop.HashedString patternId, global::Hosihikari.Bindings.Bedrock.Interop.HashedString materialId)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_c7d16257((void*)patternId.Handle, (void*)materialId.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ArmorTrim((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ArmorTrim Create(nint patternId, nint materialId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ArmorTrim Create(global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrim arg0)
     {
@@ -81,41 +72,29 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
         return new ArmorTrim((nint)handle);
     }
 
-    public static string TAG_TRIM()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_e7e43ff9();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint TAG_TRIM() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string TAG_TRIM_MATERIAL()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_d53bd3f0();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint TAG_TRIM_MATERIAL() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string TAG_TRIM_PATTERN()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_3daba2cd();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint TAG_TRIM_PATTERN() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string WRONG_VERSION_OR_ITEM_ERROR()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_c590bc53();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint WRONG_VERSION_OR_ITEM_ERROR() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void appendUpgradeHoverText(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack, global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString hovertext)
-    {
-        NativeMethods.TablePtr->C0.hs_method_08954a1f((void*)stack.Handle, (void*)level.Handle, (void*)hovertext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void appendUpgradeHoverText(nint stack, nint level, nint hovertext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrim? getTrim(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6f54f162((void*)instance.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrim((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getTrim(nint instance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMaterialId_Address
@@ -129,10 +108,9 @@ public sealed unsafe partial class ArmorTrim : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_b0811a84((void*)__hosihikari_shim_handle);
     }
 
-    public static void setTrim(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase instance, global::Hosihikari.Bindings.Bedrock.Interop.ArmorTrim trim)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a4ec13b5((void*)instance.Handle, (void*)trim.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void setTrim(nint instance, nint trim) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -40,7 +40,7 @@ public sealed unsafe partial class BaseGameTestBatchRunner : global::System.IDis
 
     public static BaseGameTestBatchRunner Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_02fb9de6();
+        var handle = NativeMethods.TablePtr->C4.hs_create_02fb9de6();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class BaseGameTestBatchRunner : global::System.IDis
 
     public static BaseGameTestBatchRunner Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestBatchRunner arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_f52948b7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_f52948b7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,94 +60,92 @@ public sealed unsafe partial class BaseGameTestBatchRunner : global::System.IDis
         return new BaseGameTestBatchRunner((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestInstance>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _addTestInstanceWithRotation(nint instances, nint testFunction, nint rotation) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::shared_ptr<gametest::BaseGameTestInstance>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _createGameTestInstance(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestFunction function)
     {
-        var __hs_shared = NativeMethods.TablePtr->C5.hs_method_5c70337a((void*)__hosihikari_shim_handle, (void*)function.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_5c70337a((void*)__hosihikari_shim_handle, (void*)function.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
-    public void _runBatch(int batchIndex)
-    {
-        NativeMethods.TablePtr->C5.hs_method_be5e96a2((void*)__hosihikari_shim_handle, batchIndex);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _runBatch(int batchIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _runTest(global::Hosihikari.Bindings.Abi.SharedHandle? test, global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker ticker)
     {
-        NativeMethods.TablePtr->C5.hs_method_b3de7d47((void*)__hosihikari_shim_handle, test?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)ticker.Handle);
+        NativeMethods.TablePtr->C4.hs_method_b3de7d47((void*)__hosihikari_shim_handle, test?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)ticker.Handle);
     }
 
-    public void forceStop()
-    {
-        NativeMethods.TablePtr->C5.hs_method_a892939b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void forceStop() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1b7674_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_62aeadc1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_62aeadc1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk21b924_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3ca8be85((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3ca8be85((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk26cd31_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_420b3f55((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_420b3f55((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk62d7f4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_f0876631((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f0876631((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk763143_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_fdaa3936((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_fdaa3936((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8d0a12_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3ec113f4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3ec113f4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd25d6d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_1241f341((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1241f341((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke52d45_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_816b604a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_816b604a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf9be2e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_a187135a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a187135a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfa4478_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_748ac950((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_748ac950((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestBatchRunner operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestBatchRunner arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestBatchRunner((nint)NativeMethods.TablePtr->C5.hs_method_b2453f0f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestBatchRunner((nint)NativeMethods.TablePtr->C4.hs_method_b2453f0f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -157,7 +155,7 @@ public sealed unsafe partial class BaseGameTestBatchRunner : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_2824788b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_2824788b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -59,11 +59,9 @@ public sealed unsafe partial class LootTable : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_57d45b85((void*)__hosihikari_shim_handle, (void*)container.Handle, (void*)random.Handle, (void*)context.Handle);
     }
 
-    public string getDir()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_27278249((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getDir() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDir_Address

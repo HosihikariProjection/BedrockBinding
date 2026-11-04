@@ -48,10 +48,9 @@ public sealed unsafe partial class ElementBlockItem : global::System.IDisposable
         get => NativeMethods.TablePtr->C1.hs_get_23a6b435((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public void _fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
-    {
-        NativeMethods.TablePtr->C1.hs_method_8f74f46e((void*)__hosihikari_shim_handle, (void*)stack.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _fixupCommon(nint stack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
     {

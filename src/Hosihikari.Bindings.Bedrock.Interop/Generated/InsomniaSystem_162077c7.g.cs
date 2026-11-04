@@ -38,14 +38,13 @@ public sealed unsafe partial class InsomniaSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C2.hs_method_0a0ce5c6((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static InsomniaSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.InsomniaSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2a5c9f9e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_2a5c9f9e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class InsomniaSystem : global::System.IDisposable
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C2.hs_method_f1135a53((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C1.hs_method_f1135a53((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -66,7 +65,7 @@ public sealed unsafe partial class InsomniaSystem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_162077c7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_162077c7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

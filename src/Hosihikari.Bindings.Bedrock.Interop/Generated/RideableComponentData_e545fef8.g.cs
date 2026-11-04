@@ -38,15 +38,13 @@ public sealed unsafe partial class RideableComponentData : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.RideableComponentData arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_2f20a40c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_a9999d8a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RideableComponentData Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class RideableComponentData : global::System.IDispo
         return new RideableComponentData((nint)handle);
     }
 
-    public static RideableComponentData Create(global::Hosihikari.Bindings.Bedrock.Interop.RideableComponentData arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_90022f53((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RideableComponentData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static RideableComponentData Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mControllingSeat
     {
@@ -142,9 +133,9 @@ public sealed unsafe partial class RideableComponentData : global::System.IDispo
         set => NativeMethods.TablePtr->C3.hs_set_1ec50333((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RideableComponentData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RideableComponentData arg0)
     {

@@ -58,48 +58,43 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_5a595a95((void*)__hosihikari_shim_handle, (void*)pos.Handle, face, (void*)playerPos.Handle, (void*)hasDestroyedBlock) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint player, nint timer, nint messenger) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _destroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face)
     {
         return NativeMethods.TablePtr->C1.hs_method_5e1c3c57((void*)__hosihikari_shim_handle, (void*)pos.Handle, face) != 0;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_96b9c6aa((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public float _getPickRange(nint currentInputMode)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_0a09c316((void*)__hosihikari_shim_handle, (void*)currentInputMode);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getPickRange(nint currentInputMode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _interact(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 location, byte handSlot)
     {
         return NativeMethods.TablePtr->C1.hs_method_083df6ce((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)location.Handle, handSlot) != 0;
     }
 
-    public bool _isInTrialMode()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1197ec3d((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isInTrialMode() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _registerUpsellScreenCallback(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _releaseUsingItem()
-    {
-        NativeMethods.TablePtr->C1.hs_method_c5c03bb4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _releaseUsingItem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setTrialMode(bool isEnabled)
-    {
-        NativeMethods.TablePtr->C1.hs_method_2cb73bee((void*)__hosihikari_shim_handle, isEnabled);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setTrialMode(bool isEnabled) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _startBuildBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot)
     {
@@ -121,10 +116,9 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_1d265c00((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
-    public void _tick()
-    {
-        NativeMethods.TablePtr->C1.hs_method_0a1c7cd2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _useItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, byte handSlot)
     {
@@ -141,9 +135,9 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.InteractionResult((nint)NativeMethods.TablePtr->C1.hs_method_c6e30378((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)at.Handle, face, (void*)hit.Handle, handSlot, (void*)(targetBlock?.Handle ?? 0), isFirstEvent));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameMode Create()
     {
@@ -156,9 +150,9 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         return new GameMode((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static GameMode Create(nint player, nint timer, nint messenger) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameMode Create(global::Hosihikari.Bindings.Bedrock.Interop.GameMode arg0)
     {
@@ -171,25 +165,21 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         return new GameMode((nint)handle);
     }
 
-    public bool _attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, bool playPredictiveSound, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 hitPosition)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_6600408d((void*)__hosihikari_shim_handle, (void*)entity.Handle, playPredictiveSound, (void*)hitPosition.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _attack(nint entity, bool playPredictiveSound, nint hitPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _creativeDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_8989d1a3((void*)__hosihikari_shim_handle, (void*)pos.Handle, face) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _creativeDestroyBlock(nint pos, byte face) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _enableBlockBreakDelay()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1de9d3cd((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _enableBlockBreakDelay() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _sendPlayerInteractWithBlockAfterEvent(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack beforeItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack afterItem, global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos at, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 hit, bool isFirstEvent)
-    {
-        NativeMethods.TablePtr->C1.hs_method_ccb70f5f((void*)beforeItem.Handle, (void*)afterItem.Handle, (void*)player.Handle, (void*)at.Handle, face, (void*)hit.Handle, isFirstEvent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _sendPlayerInteractWithBlockAfterEvent(nint beforeItem, nint afterItem, nint player, nint at, byte face, nint hit, bool isFirstEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool attack(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 hitPosition)
     {
@@ -201,10 +191,9 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_7a18ab85((void*)__hosihikari_shim_handle, (void*)item.Handle, handSlot) != 0;
     }
 
-    public bool baseUseItemAsAttack(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 aimDirection, byte handSlot)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_40cd0dd9((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)aimDirection.Handle, handSlot) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool baseUseItemAsAttack(nint item, nint aimDirection, nint handSlot) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool buildBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, byte handSlot, bool isSimTick)
     {
@@ -222,10 +211,9 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_0b9fc833((void*)__hosihikari_shim_handle, (void*)pos.Handle, face, handSlot, buildDelayScale);
     }
 
-    public void continueBuildBlockAction(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.HitResult hr, byte handSlot, float buildDelayScale)
-    {
-        NativeMethods.TablePtr->C1.hs_method_efa0c5d7((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)hr.Handle, handSlot, buildDelayScale);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void continueBuildBlockAction(nint player, nint hr, nint handSlot, float buildDelayScale) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool continueDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte face, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 playerPos, nint hasDestroyedBlock)
     {
@@ -259,10 +247,9 @@ public sealed unsafe partial class GameMode : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_46a9a3d7((void*)__hosihikari_shim_handle), false);
     }
 
-    public float getDestroyRate(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_9fb923d1((void*)__hosihikari_shim_handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float getDestroyRate(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float getMaxPickRange()
     {

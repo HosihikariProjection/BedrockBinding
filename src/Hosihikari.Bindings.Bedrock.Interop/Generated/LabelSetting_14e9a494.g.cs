@@ -40,7 +40,7 @@ public sealed unsafe partial class LabelSetting : global::System.IDisposable
 
     public static LabelSetting Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v3_0_0.PackManifestDefinition.LabelSetting arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1943f15f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_1943f15f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,22 +49,20 @@ public sealed unsafe partial class LabelSetting : global::System.IDisposable
         return new LabelSetting((nint)handle);
     }
 
-    public static string TYPE_NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_296a19a0();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint TYPE_NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mText_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3907dde8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3907dde8((void*)__hosihikari_shim_handle);
     }
 
     public byte mType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d9032faf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d9032faf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d9032faf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d9032faf((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -74,7 +72,7 @@ public sealed unsafe partial class LabelSetting : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_14e9a494((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_14e9a494((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

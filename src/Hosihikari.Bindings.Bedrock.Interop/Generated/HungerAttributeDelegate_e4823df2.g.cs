@@ -41,26 +41,25 @@ public sealed unsafe partial class HungerAttributeDelegate : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttributeHandle_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f537f577((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f537f577((void*)__hosihikari_shim_handle);
     }
 
-    public void _notify(long type, nint context)
-    {
-        NativeMethods.TablePtr->C2.hs_method_be032128((void*)__hosihikari_shim_handle, type, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _notify(long type, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance mutableInstance, nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_fe6192f2((void*)__hosihikari_shim_handle, (void*)mutableInstance.Handle, (void*)context);
+        NativeMethods.TablePtr->C1.hs_method_fe6192f2((void*)__hosihikari_shim_handle, (void*)mutableInstance.Handle, (void*)context);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HungerAttributeDelegate Create(global::Hosihikari.Bindings.Bedrock.Interop.HungerAttributeDelegate arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b0fea15d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_b0fea15d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,36 +70,36 @@ public sealed unsafe partial class HungerAttributeDelegate : global::System.IDis
 
     public int mActionTickTimer
     {
-        get => NativeMethods.TablePtr->C2.hs_get_0bcaab47((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_0bcaab47((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_0bcaab47((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_0bcaab47((void*)__hosihikari_shim_handle, value);
     }
 
     public float mLastFoodLevel
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6eb675bd((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_6eb675bd((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_6eb675bd((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_6eb675bd((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mPlayer
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ae88773a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ae88773a((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_ae88773a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_ae88773a((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public int mTickCounter
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9e768f86((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_9e768f86((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_9e768f86((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_9e768f86((void*)__hosihikari_shim_handle, value);
     }
 
     public void notify(long type, nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_8dbede92((void*)__hosihikari_shim_handle, type, (void*)context);
+        NativeMethods.TablePtr->C1.hs_method_8dbede92((void*)__hosihikari_shim_handle, type, (void*)context);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.AttributeInstance mutableInstance, nint context)
     {
-        NativeMethods.TablePtr->C2.hs_method_a6675854((void*)__hosihikari_shim_handle, (void*)mutableInstance.Handle, (void*)context);
+        NativeMethods.TablePtr->C1.hs_method_a6675854((void*)__hosihikari_shim_handle, (void*)mutableInstance.Handle, (void*)context);
     }
 
 
@@ -110,7 +109,7 @@ public sealed unsafe partial class HungerAttributeDelegate : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e4823df2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e4823df2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

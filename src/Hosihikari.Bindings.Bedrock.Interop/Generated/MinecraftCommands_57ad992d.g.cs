@@ -38,13 +38,13 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint args) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MinecraftCommands Create()
     {
@@ -57,9 +57,9 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
         return new MinecraftCommands((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static MinecraftCommands Create(nint args) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MinecraftCommands Create(global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands arg0)
     {
@@ -76,38 +76,35 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
     public nint compileCommand(nint commandStr, nint origin, nint commandVersion, nint onParserError) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void enqueueDeferredCommand(nint context, bool suppressOutput, bool isRequest, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void enqueueDeferredCompiledCommand(nint command, nint origin) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT executeCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool suppressOutput)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT((nint)NativeMethods.TablePtr->C2.hs_method_f83d3c65((void*)__hosihikari_shim_handle, (void*)context.Handle, suppressOutput));
     }
 
-    public static int getOutputType(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_3d02deaa((void*)origin.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getOutputType(nint origin) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void handleOutput(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
         NativeMethods.TablePtr->C2.hs_method_dcb32e9b((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
-    public void initCoreEnums(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistryRef itemRegistry, global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.ActorFactory actorFactory, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion worldBaseGameVersion)
-    {
-        NativeMethods.TablePtr->C2.hs_method_01d44990((void*)__hosihikari_shim_handle, (void*)itemRegistry.Handle, (void*)level.Handle, (void*)actorFactory.Handle, (void*)experiments.Handle, (void*)worldBaseGameVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initCoreEnums(nint itemRegistry, nint level, nint actorFactory, nint experiments, nint worldBaseGameVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initCoreEnumsServer(global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionGroup actorDefinitionGroup, global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets cameraPresets, global::Hosihikari.Bindings.Bedrock.Interop.Recipes recipes)
-    {
-        NativeMethods.TablePtr->C2.hs_method_a8b09f66((void*)__hosihikari_shim_handle, (void*)actorDefinitionGroup.Handle, (void*)cameraPresets.Handle, (void*)recipes.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initCoreEnumsServer(nint actorDefinitionGroup, nint cameraPresets, nint recipes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChatPermissionsCallback_Address
@@ -162,25 +159,22 @@ public sealed unsafe partial class MinecraftCommands : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.MinecraftCommands((nint)NativeMethods.TablePtr->C2.hs_method_1ee03317((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public static void registerSharedClientServerEnums(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
-    {
-        NativeMethods.TablePtr->C2.hs_method_ce08c40b((void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void registerSharedClientServerEnums(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT requestCommandExecution(global::Hosihikari.Bindings.Bedrock.Interop.CommandContext context, bool suppressOutput)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MCRESULT((nint)NativeMethods.TablePtr->C2.hs_method_7f00910f((void*)__hosihikari_shim_handle, (void*)context.Handle, suppressOutput));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint requestCommandExecution(nint context, bool suppressOutput) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void runCommand(global::Hosihikari.Bindings.Bedrock.Interop.HashedString commandStr, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int commandVersion)
     {
         NativeMethods.TablePtr->C2.hs_method_41a42581((void*)__hosihikari_shim_handle, (void*)commandStr.Handle, (void*)origin.Handle, commandVersion);
     }
 
-    public void tick()
-    {
-        NativeMethods.TablePtr->C2.hs_method_228f3057((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

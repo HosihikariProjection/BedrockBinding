@@ -55,10 +55,9 @@ public sealed unsafe partial class BlockEventDispatcher : global::System.IDispos
         return new BlockEventDispatcher((nint)handle);
     }
 
-    public void dispatchEvent(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, uint layer, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.Block oldBlock, global::Hosihikari.Bindings.Bedrock.Interop.Actor? source)
-    {
-        NativeMethods.TablePtr->C0.hs_method_14552069((void*)__hosihikari_shim_handle, (void*)pos.Handle, layer, (void*)block.Handle, (void*)oldBlock.Handle, (void*)(source?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void dispatchEvent(nint pos, uint layer, nint block, nint oldBlock, nint source) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mHandleCounter
     {
@@ -72,9 +71,9 @@ public sealed unsafe partial class BlockEventDispatcher : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C0.hs_get_70e10411((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint registerListener(nint shapePos, float shapeRadius, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

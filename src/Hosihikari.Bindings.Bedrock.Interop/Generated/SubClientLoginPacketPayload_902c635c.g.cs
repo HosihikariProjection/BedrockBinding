@@ -41,7 +41,7 @@ public sealed unsafe partial class SubClientLoginPacketPayload : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mConnectionRequest_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9bad50e0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9bad50e0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -51,7 +51,7 @@ public sealed unsafe partial class SubClientLoginPacketPayload : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_902c635c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_902c635c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -49,9 +49,9 @@ public sealed unsafe partial class ChunkBlender : global::System.IDisposable
         return new ChunkBlender((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'TerrainInfo' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint attenuateTerrainInfo(nint worldQuartPos, nint defaultTerrainInfo) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'TerrainInfo' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkAttenuationData_Address
@@ -70,11 +70,9 @@ public sealed unsafe partial class ChunkBlender : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_669609e6((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Biome? tryGetAttenuatedBiome(nint worldQuartPos, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry, nint shiftNoise)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_1acdb352((void*)__hosihikari_shim_handle, (void*)worldQuartPos, (void*)biomeRegistry.Handle, (void*)shiftNoise);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint tryGetAttenuatedBiome(nint worldQuartPos, nint biomeRegistry, nint shiftNoise) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

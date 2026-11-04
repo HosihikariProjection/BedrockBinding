@@ -38,14 +38,13 @@ public sealed unsafe partial class PauseManager : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_0a9750ab((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PauseManager Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_844bad79();
+        var handle = NativeMethods.TablePtr->C2.hs_create_844bad79();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class PauseManager : global::System.IDisposable
 
     public static PauseManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PauseManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_bafacf2b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_bafacf2b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,48 +67,48 @@ public sealed unsafe partial class PauseManager : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2c9d89_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7a67be5a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7a67be5a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5b37dc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_45430746((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_45430746((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk903eb4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1228b99e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1228b99e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk994f71_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0f37b0da((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0f37b0da((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk99ce49_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3880fb24((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3880fb24((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd10131_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f6784004((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f6784004((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf88b2a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0b2f28a5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0b2f28a5((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PauseManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PauseManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PauseManager((nint)NativeMethods.TablePtr->C3.hs_method_547a9102((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PauseManager((nint)NativeMethods.TablePtr->C2.hs_method_547a9102((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -119,7 +118,7 @@ public sealed unsafe partial class PauseManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_15b3c202((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_15b3c202((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,41 +38,25 @@ public sealed unsafe partial class FileStream : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_9065c454((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, int openMode)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_dcca7301((void*)__hosihikari_shim_handle, (void*)filename.Handle, openMode);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint filename, int openMode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static FileStream Create()
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8c3206bf();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FileStream Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new FileStream((nint)handle);
-    }
-
-    public static FileStream Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, int openMode)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b693ceaa((void*)filename.Handle, openMode);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FileStream((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FileStream Create(nint filename, int openMode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FileStream Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStream arg0)
     {
@@ -97,10 +81,9 @@ public sealed unsafe partial class FileStream : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_dcb7e468((void*)__hosihikari_shim_handle);
     }
 
-    public void open(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filename, global::Hosihikari.Bindings.Bedrock.Interop.Core.FileOpenMode openMode)
-    {
-        NativeMethods.TablePtr->C1.hs_method_599f0614((void*)__hosihikari_shim_handle, (void*)filename.Handle, (void*)openMode.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void open(nint filename, nint openMode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStream operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStream arg0)
     {

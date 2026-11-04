@@ -38,10 +38,9 @@ public sealed unsafe partial class SystemParams : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(nint c, float sneakHeight, bool isClientSide)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_dd3f5f68((void*)__hosihikari_shim_handle, (void*)c, sneakHeight, isClientSide);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint c, float sneakHeight, bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SystemParams Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class SystemParams : global::System.IDisposable
         return new SystemParams((nint)handle);
     }
 
-    public static SystemParams Create(nint c, float sneakHeight, bool isClientSide)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e51c6eb5((void*)c, sneakHeight, isClientSide);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SystemParams((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static SystemParams Create(nint c, float sneakHeight, bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SystemParams Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateBoundingBox.SystemParams arg0)
     {

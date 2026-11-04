@@ -38,28 +38,25 @@ public sealed unsafe partial class PlayerContainerSetter : global::System.IDispo
         return __hs_handle;
     }
 
-    public void _setArmor(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f26a6353((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setArmor(int slot, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setOffhandSlot(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
-    {
-        NativeMethods.TablePtr->C3.hs_method_ae984f0f((void*)__hosihikari_shim_handle, (void*)item.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setOffhandSlot(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setPlayerUIItem(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
-    {
-        NativeMethods.TablePtr->C3.hs_method_23000772((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setPlayerUIItem(int slot, nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayerContainerSetter Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_98a783df();
+        var handle = NativeMethods.TablePtr->C2.hs_create_98a783df();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +67,7 @@ public sealed unsafe partial class PlayerContainerSetter : global::System.IDispo
 
     public static PlayerContainerSetter Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_cbec43cd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_cbec43cd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -82,27 +79,27 @@ public sealed unsafe partial class PlayerContainerSetter : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_92d9220c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_92d9220c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter((nint)NativeMethods.TablePtr->C3.hs_method_95e46b17((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerContainerSetter((nint)NativeMethods.TablePtr->C2.hs_method_95e46b17((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void setArmor(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C3.hs_method_46fade01((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
+        NativeMethods.TablePtr->C2.hs_method_46fade01((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
     }
 
     public void setOffhandSlot(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C3.hs_method_d6d266d3((void*)__hosihikari_shim_handle, (void*)item.Handle);
+        NativeMethods.TablePtr->C2.hs_method_d6d266d3((void*)__hosihikari_shim_handle, (void*)item.Handle);
     }
 
     public void setPlayerUIItem(int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item)
     {
-        NativeMethods.TablePtr->C3.hs_method_786d1a3c((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
+        NativeMethods.TablePtr->C2.hs_method_786d1a3c((void*)__hosihikari_shim_handle, slot, (void*)item.Handle);
     }
 
 
@@ -112,7 +109,7 @@ public sealed unsafe partial class PlayerContainerSetter : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a3b30252((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a3b30252((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

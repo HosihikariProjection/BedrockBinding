@@ -38,10 +38,9 @@ public sealed unsafe partial class VehicleServerMolangSeatPositionSystem : globa
         return __hs_handle;
     }
 
-    public static void _tickActor(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.PassengerComponent passengerComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorComponent, global::Hosihikari.Bindings.Bedrock.Interop.PositionPassengerRequestComponent positionPassengerRequestComponent, nint vehicleView)
-    {
-        NativeMethods.TablePtr->C4.hs_method_6989b484((void*)arg0.Handle, (void*)passengerComponent.Handle, (void*)actorComponent.Handle, (void*)positionPassengerRequestComponent.Handle, (void*)vehicleView);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _tickActor(nint arg0, nint passengerComponent, nint actorComponent, nint positionPassengerRequestComponent, nint vehicleView) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

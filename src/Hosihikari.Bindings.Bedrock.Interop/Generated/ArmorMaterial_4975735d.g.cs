@@ -40,32 +40,32 @@ public sealed unsafe partial class ArmorMaterial : global::System.IDisposable
 
     public int mDurabilityMultiplier
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4b1bff1b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_4b1bff1b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_4b1bff1b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_4b1bff1b((void*)__hosihikari_shim_handle, value);
     }
 
     public int mEnchantmentValue
     {
-        get => NativeMethods.TablePtr->C2.hs_get_09453448((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_09453448((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_09453448((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_09453448((void*)__hosihikari_shim_handle, value);
     }
 
     public float mKnockbackResistance
     {
-        get => NativeMethods.TablePtr->C2.hs_get_dbd7ffd3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_dbd7ffd3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_dbd7ffd3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_dbd7ffd3((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSlotProtections_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_293f08de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_293f08de((void*)__hosihikari_shim_handle);
     }
 
     public int mToughnessValue
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ff527776((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ff527776((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_ff527776((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_ff527776((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -74,7 +74,7 @@ public sealed unsafe partial class ArmorMaterial : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_4975735d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_4975735d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

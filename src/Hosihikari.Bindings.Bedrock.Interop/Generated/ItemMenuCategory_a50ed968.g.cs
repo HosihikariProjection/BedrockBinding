@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemMenuCategory : global::System.IDisposable
 
     public static ItemMenuCategory Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_20.ItemMenuCategory arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_415c6ae4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_415c6ae4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,32 +49,31 @@ public sealed unsafe partial class ItemMenuCategory : global::System.IDisposable
         return new ItemMenuCategory((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f2caaf13((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCreativeCategory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ca57c224((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ca57c224((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCreativeGroupName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f5250351((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f5250351((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mIsHiddenInCommands_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5d52994c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5d52994c((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void upgrade(nint oldData, nint newData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -83,7 +82,7 @@ public sealed unsafe partial class ItemMenuCategory : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a50ed968((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a50ed968((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

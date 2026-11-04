@@ -38,18 +38,17 @@ public sealed unsafe partial class LoadResultAny : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_aa41a96d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LoadResultAny Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_f9bbde1c();
+        var handle = NativeMethods.TablePtr->C2.hs_create_f9bbde1c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -58,13 +57,13 @@ public sealed unsafe partial class LoadResultAny : global::System.IDisposable
         return new LoadResultAny((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static LoadResultAny Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LoadResultAny Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7cc57357((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_7cc57357((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,35 +75,34 @@ public sealed unsafe partial class LoadResultAny : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk23851a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cf0a39dd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_cf0a39dd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk545455_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4ee62fdf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4ee62fdf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6e20bb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8a333995((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8a333995((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8aa8ef_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8aa74453((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8aa74453((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny makeError(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger log)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny((nint)NativeMethods.TablePtr->C3.hs_method_a88fa280((void*)log.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint makeError(nint log) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny((nint)NativeMethods.TablePtr->C3.hs_method_fa7b8fa8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny((nint)NativeMethods.TablePtr->C2.hs_method_fa7b8fa8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -114,7 +112,7 @@ public sealed unsafe partial class LoadResultAny : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0f27dcd0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0f27dcd0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

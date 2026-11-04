@@ -41,18 +41,18 @@ public sealed unsafe partial class PlaceBlockDefinition : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4cb50c99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4cb50c99((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTreeDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_bd0c1d53((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_bd0c1d53((void*)__hosihikari_shim_handle);
     }
 
     public static PlaceBlockDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.PlaceBlockDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8d2f62ed((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8d2f62ed((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,7 +68,7 @@ public sealed unsafe partial class PlaceBlockDefinition : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4ac0fa15((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4ac0fa15((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

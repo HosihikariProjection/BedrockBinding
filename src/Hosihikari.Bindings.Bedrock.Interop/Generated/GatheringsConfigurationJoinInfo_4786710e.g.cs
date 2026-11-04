@@ -38,15 +38,13 @@ public sealed unsafe partial class GatheringsConfigurationJoinInfo : global::Sys
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.GatheringsConfigurationJoinInfo arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d44a61d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_2d14b28b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GatheringsConfigurationJoinInfo Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class GatheringsConfigurationJoinInfo : global::Sys
         return new GatheringsConfigurationJoinInfo((nint)handle);
     }
 
-    public static GatheringsConfigurationJoinInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.GatheringsConfigurationJoinInfo arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6880afac((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GatheringsConfigurationJoinInfo((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static GatheringsConfigurationJoinInfo Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk358c16_Address
@@ -118,14 +109,13 @@ public sealed unsafe partial class GatheringsConfigurationJoinInfo : global::Sys
         get => (nint)NativeMethods.TablePtr->C3.hs_get_c310f02d((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_4de5e60e(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.GatheringsConfigurationJoinInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.GatheringsConfigurationJoinInfo arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ServerConfiguration.GatheringsConfigurationJoinInfo((nint)NativeMethods.TablePtr->C3.hs_method_aa1158c9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_aa1158c9(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

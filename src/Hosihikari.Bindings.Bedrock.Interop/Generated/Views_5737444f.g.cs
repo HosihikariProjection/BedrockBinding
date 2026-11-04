@@ -38,10 +38,9 @@ public sealed unsafe partial class Views : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(nint context)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_8e3a9e46((void*)__hosihikari_shim_handle, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Views Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class Views : global::System.IDisposable
         return new Views((nint)handle);
     }
 
-    public static Views Create(nint context)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_e97385e5((void*)context);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Views((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Views Create(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Views Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorSetPosSystem_Nested.Views arg0)
     {

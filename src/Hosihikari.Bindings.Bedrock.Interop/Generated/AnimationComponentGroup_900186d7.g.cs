@@ -38,16 +38,13 @@ public sealed unsafe partial class AnimationComponentGroup : global::System.IDis
         return __hs_handle;
     }
 
-    public static nint _getAllAnimationComponents(int groupType)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_fdea2e09(groupType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _getAllAnimationComponents(nint groupType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Abi.SharedHandle? getAnimationComponent(int groupType, global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponentID ownerUUID)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_0f4a02c4(groupType, (void*)ownerUUID.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getAnimationComponent(nint groupType, nint ownerUUID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

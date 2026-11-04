@@ -38,17 +38,13 @@ public sealed unsafe partial class CherryTreeTrunk : global::System.IDisposable
         return __hs_handle;
     }
 
-    public int _getTreeHeight(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_248c6552((void*)__hosihikari_shim_handle, (void*)random.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getTreeHeight(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _placeTrunk(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random, int treeHeight, global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams, global::Hosihikari.Bindings.Bedrock.Interop.ITreeCanopy? canopy)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6eebe5b1((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)random.Handle, treeHeight, (void*)renderParams.Handle, (void*)treeParams.Handle, (void*)(canopy?.Handle ?? 0), &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _placeTrunk(nint target, nint pos, nint random, int treeHeight, nint renderParams, nint treeParams, nint canopy) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CherryTreeTrunk Create(global::Hosihikari.Bindings.Bedrock.Interop.CherryTreeTrunk arg0)
     {
@@ -61,10 +57,9 @@ public sealed unsafe partial class CherryTreeTrunk : global::System.IDisposable
         return new CherryTreeTrunk((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos _generateBranch(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.Block trunkBlock, global::Hosihikari.Bindings.Bedrock.Interop.Block sidewaysTrunkBlock, global::Hosihikari.Bindings.Bedrock.Interop.Random random, int treeHeight, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos branchDirection, int offsetFromOrigin, bool middleContinuesUpwards)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C0.hs_method_304df872((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)trunkBlock.Handle, (void*)sidewaysTrunkBlock.Handle, (void*)random.Handle, treeHeight, (void*)origin.Handle, (void*)treeParams.Handle, (void*)branchDirection.Handle, offsetFromOrigin, middleContinuesUpwards));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _generateBranch(nint target, nint trunkBlock, nint sidewaysTrunkBlock, nint random, int treeHeight, nint origin, nint treeParams, nint branchDirection, int offsetFromOrigin, bool middleContinuesUpwards) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getTreeHeight(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
     {

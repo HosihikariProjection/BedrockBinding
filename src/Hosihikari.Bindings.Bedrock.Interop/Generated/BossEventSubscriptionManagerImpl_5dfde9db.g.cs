@@ -44,28 +44,25 @@ public sealed unsafe partial class BossEventSubscriptionManagerImpl : global::Sy
         get => (nint)NativeMethods.TablePtr->C0.hs_get_40ad1a69((void*)__hosihikari_shim_handle);
     }
 
-    public bool _areBossEventSubscribersReady()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_1389bfcc((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _areBossEventSubscribersReady() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _broadcastBossEvent(byte type)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b23054bf((void*)__hosihikari_shim_handle, type);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _broadcastBossEvent(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _broadcastBossEvent(byte type, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID id, global::Hosihikari.Bindings.Bedrock.Interop.BossEventPacket packet)
-    {
-        NativeMethods.TablePtr->C0.hs_method_8eb808ae((void*)__hosihikari_shim_handle, type, (void*)id.Handle, (void*)packet.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _broadcastBossEvent(nint type, nint id, nint packet) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _subscribeToBossEvent_ea28ce6f(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _subscribeToBossEvent_7a691454(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BossEventSubscriptionManagerImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.BossEventSubscriptionManagerImpl arg0)
     {

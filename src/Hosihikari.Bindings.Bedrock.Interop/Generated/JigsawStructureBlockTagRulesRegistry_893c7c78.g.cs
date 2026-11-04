@@ -40,7 +40,7 @@ public sealed unsafe partial class JigsawStructureBlockTagRulesRegistry : global
 
     public static JigsawStructureBlockTagRulesRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockTagRulesRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_76fd082e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_76fd082e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,40 +49,25 @@ public sealed unsafe partial class JigsawStructureBlockTagRulesRegistry : global
         return new JigsawStructureBlockTagRulesRegistry((nint)handle);
     }
 
-    public nint lookupByName(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C2.hs_method_d377e806((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint lookupByName(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockTagRuleLookupMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e11b4890((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_e11b4890((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockTagRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_20d65f25((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_20d65f25((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'std::vector<std::unique_ptr<StructurePoolBlockTagRule>>' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerBlockTagRules(nint name, nint ruleList) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'std::vector<std::unique_ptr<StructurePoolBlockTagRule>>' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -91,7 +76,7 @@ public sealed unsafe partial class JigsawStructureBlockTagRulesRegistry : global
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_893c7c78((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_893c7c78((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

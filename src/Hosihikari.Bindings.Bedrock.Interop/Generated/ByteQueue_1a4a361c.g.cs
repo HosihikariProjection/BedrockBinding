@@ -38,10 +38,9 @@ public sealed unsafe partial class ByteQueue : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool WriteBytes(nint @in, uint length, nint file, uint line)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_f033b1fa((void*)__hosihikari_shim_handle, (void*)@in, length, (void*)file, line) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool WriteBytes(nint @in, uint length, nint file, uint line) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint data
     {

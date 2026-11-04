@@ -38,18 +38,17 @@ public sealed unsafe partial class CustomComponentsItemComponent : global::Syste
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent component)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_5ed1b57e((void*)__hosihikari_shim_handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_5ed1b57e(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'entt::iterable_adaptor<cereal::internal::ComponentStorageIterator<brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>, SharedTypes::v1_26_30::ItemCustomComponent>, cereal::ComponentStorageSentinelType>' is not a known bindable declaration.", false)]
-    public nint _ctor(nint customComponentsData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'entt::iterable_adaptor<cereal::internal::ComponentStorageIterator<brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>, SharedTypes::v1_26_30::ItemCustomComponent>, cereal::ComponentStorageSentinelType>' is not a known bindable declaration.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_a833259c(nint customComponentsData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CustomComponentsItemComponent Create()
     {
@@ -73,25 +72,17 @@ public sealed unsafe partial class CustomComponentsItemComponent : global::Syste
         return new CustomComponentsItemComponent((nint)handle);
     }
 
-    public static CustomComponentsItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent component)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_a24f6fec((void*)component.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CustomComponentsItemComponent Create_a24f6fec(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new CustomComponentsItemComponent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CustomComponentsItemComponent Create_27f39472(nint customComponentsData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'entt::iterable_adaptor<cereal::internal::ComponentStorageIterator<brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>, SharedTypes::v1_26_30::ItemCustomComponent>, cereal::ComponentStorageSentinelType>' is not a known bindable declaration.", false)]
-    public static CustomComponentsItemComponent Create(nint customComponentsData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'entt::iterable_adaptor<cereal::internal::ComponentStorageIterator<brstd::associative_adapter<std::basic_string<char>, entt::meta_any, std::less<void>, std::vector<std::basic_string<char>>, std::vector<entt::meta_any>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<std::basic_string<char>>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<entt::meta_any>>>, std::pair<const std::basic_string<char> &, entt::meta_any &>>, SharedTypes::v1_26_30::ItemCustomComponent>, cereal::ComponentStorageSentinelType>' is not a known bindable declaration.");
-
-    public void _addComponent(global::Hosihikari.Bindings.Bedrock.Interop.HashedString compName, global::Hosihikari.Bindings.Bedrock.Interop.cereal.DynamicValue data)
-    {
-        NativeMethods.TablePtr->C1.hs_method_8cda393b((void*)__hosihikari_shim_handle, (void*)compName.Handle, (void*)data.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _addComponent(nint compName, nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponents_Address

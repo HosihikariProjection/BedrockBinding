@@ -38,20 +38,17 @@ public sealed unsafe partial class VibrationListenerConfig : global::System.IDis
         return __hs_handle;
     }
 
-    public bool _canReceiveOnlyIfAdjacentChunksAreTicking()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_caf5dad7((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canReceiveOnlyIfAdjacentChunksAreTicking() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isValidVibration(global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_6a1189ad((void*)__hosihikari_shim_handle, (void*)gameEvent.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValidVibration(nint gameEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onSerializableDataChanged(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
-    {
-        NativeMethods.TablePtr->C4.hs_method_7502d7d5((void*)__hosihikari_shim_handle, (void*)region.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onSerializableDataChanged(nint region) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VibrationListenerConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.VibrationListenerConfig arg0)
     {

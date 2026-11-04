@@ -40,14 +40,14 @@ public sealed unsafe partial class InteractionResult : global::System.IDisposabl
 
     public bool mSuccess
     {
-        get => NativeMethods.TablePtr->C2.hs_get_66c02ab5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_66c02ab5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_66c02ab5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_66c02ab5((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mSwing
     {
-        get => NativeMethods.TablePtr->C2.hs_get_30cdb48e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_30cdb48e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_30cdb48e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_30cdb48e((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class InteractionResult : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_4ab13d8a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_4ab13d8a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

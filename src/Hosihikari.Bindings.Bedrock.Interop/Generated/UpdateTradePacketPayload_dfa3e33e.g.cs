@@ -38,10 +38,9 @@ public sealed unsafe partial class UpdateTradePacketPayload : global::System.IDi
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload other)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_18464aa2((void*)__hosihikari_shim_handle, (void*)other.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UpdateTradePacketPayload Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class UpdateTradePacketPayload : global::System.IDi
         return new UpdateTradePacketPayload((nint)handle);
     }
 
-    public static UpdateTradePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateTradePacketPayload other)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4611700c((void*)other.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new UpdateTradePacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static UpdateTradePacketPayload Create(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public sbyte mContainerId
     {

@@ -38,14 +38,13 @@ public sealed unsafe partial class CopyableDataList : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_faea0824((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CopyableDataList Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_55a0b53b();
+        var handle = NativeMethods.TablePtr->C3.hs_create_55a0b53b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class CopyableDataList : global::System.IDisposable
 
     public static CopyableDataList Create(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData_Nested.CopyableDataList arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_82d44b49((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_82d44b49((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,13 +67,12 @@ public sealed unsafe partial class CopyableDataList : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_12a0137f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_12a0137f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData_Nested.CopyableDataList operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData_Nested.CopyableDataList other)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorData_Nested.CopyableDataList((nint)NativeMethods.TablePtr->C4.hs_method_6ae9ea5b((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -83,7 +81,7 @@ public sealed unsafe partial class CopyableDataList : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_43d77408((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_43d77408((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

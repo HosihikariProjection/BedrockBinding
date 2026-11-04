@@ -44,7 +44,7 @@ public sealed unsafe partial class TeleportPositionModeEventSystem : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_86800e63((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_86800e63((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

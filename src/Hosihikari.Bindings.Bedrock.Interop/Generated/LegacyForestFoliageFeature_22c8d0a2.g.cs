@@ -62,19 +62,17 @@ public sealed unsafe partial class LegacyForestFoliageFeature : global::System.I
         set => NativeMethods.TablePtr->C2.hs_set_21568277((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _ctor(int forestType, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry registry)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_7ffd4aa2((void*)__hosihikari_shim_handle, forestType, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint forestType, nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_c5465b9b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)origin.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint origin, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyForestFoliageFeature Create()
     {
@@ -87,16 +85,9 @@ public sealed unsafe partial class LegacyForestFoliageFeature : global::System.I
         return new LegacyForestFoliageFeature((nint)handle);
     }
 
-    public static LegacyForestFoliageFeature Create(int forestType, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry registry)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c764cc93(forestType, (void*)registry.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LegacyForestFoliageFeature((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LegacyForestFoliageFeature Create(nint forestType, nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyForestFoliageFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyForestFoliageFeature arg0)
     {

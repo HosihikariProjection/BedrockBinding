@@ -38,10 +38,9 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ILevel? level)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_7f132e68((void*)__hosihikari_shim_handle, (void*)(level?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
@@ -59,16 +58,9 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         return new Recipes((nint)handle);
     }
 
-    public static Recipes Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevel? level)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1584e61c((void*)(level?.Handle ?? 0));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Recipes((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Recipes Create(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Recipes Create(global::Hosihikari.Bindings.Bedrock.Interop.Recipes arg0)
     {
@@ -86,15 +78,13 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_a1983f68((void*)__hosihikari_shim_handle, (void*)baseGameVersion.Handle, (void*)experiments.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient _loadIngredientFromJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value obj, short molangVersion, bool allowItemCount, bool allowItemGroup)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C3.hs_method_bb17cb1c((void*)__hosihikari_shim_handle, (void*)obj.Handle, molangVersion, allowItemCount, allowItemGroup));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _loadIngredientFromJson(nint obj, nint molangVersion, bool allowItemCount, bool allowItemGroup) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient _loadInputIngredientFromJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value obj, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RecipeIngredient((nint)NativeMethods.TablePtr->C3.hs_method_20b5744d((void*)__hosihikari_shim_handle, (void*)obj.Handle, (void*)minEngineVersion.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _loadInputIngredientFromJson(nint obj, nint minEngineVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _loadRecipe(string recipeId, byte type, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value objData, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion formatVersion, bool isBaseGamePack, global::Hosihikari.Bindings.Bedrock.Interop.Recipes_Nested.Buffers buffers)
     {
@@ -115,58 +105,41 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingRequirement? _loadUnlockingRequirementFromJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value obj, short molangVersion, string recipeId)
-    {
-        var __hs_hasValue = false;
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(recipeId);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(recipeId, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_6bc9da05((void*)__hosihikari_shim_handle, (void*)obj.Handle, molangVersion, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_hasValue);
-            return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.RecipeUnlockingRequirement((nint)__hs_handle) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _loadUnlockingRequirementFromJson(nint obj, nint molangVersion, nint recipeId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'RecipeIngredient' is not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addDyedItemRecipe(nint recipeId, nint result, nint itemToDye, nint dye, nint unlockingReq, nint priority, nint formatVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'RecipeIngredient' is not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addShapedRecipe(nint recipeId, nint result, nint r0, nint r1, nint r2, nint types, nint tags, int priority, nint constructor, nint unlockingReq, nint formatVersion, bool assumeSymmetry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addShapedRecipe(nint recipeId, nint result, nint r0, nint r1, nint types, nint tags, int priority, nint constructor, nint unlockingReq, nint formatVersion, bool assumeSymmetry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addShapedRecipe_4838feb7(nint recipeId, nint result, nint r0, nint types, nint tags, nint priority, nint constructor, nint unlockingReq, nint formatVersion, nint assumeSymmetry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.", false)]
     public void addShapedRecipe_22265122(nint recipeId, nint result, nint rows, nint types, nint tags, nint priority, nint constructor, nint unlockingReq, nint formatVersion, nint assumeSymmetry) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addShapedRecipe_e5dd9f83(nint recipeId, nint result, nint rows, nint types, nint tags, nint priority, nint constructor, nint unlockingReq, nint formatVersion, nint assumeSymmetry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapedRecipe>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapelessRecipe>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addShapelessRecipe(nint recipeId, nint result, nint types, nint tags, int priority, nint constructor, nint unlockingReq, nint formatVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'std::unique_ptr<ShapelessRecipe>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addShulkerBoxRecipe(nint recipeId, nint result, nint types, nint tags, nint unlockingReq, nint formatVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void clearRecipes()
     {
@@ -177,9 +150,9 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
     public void forEachRecipeFor(nint tag, nint callback) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'RecipeIngredient' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void forEachUnlockableRecipeForIngredients(nint ingredients, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'RecipeIngredient' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance getFurnaceRecipeResult(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.HashedString tag)
     {
@@ -192,11 +165,9 @@ public sealed unsafe partial class Recipes : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Recipe((nint)__hs_handle, false) : null;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Recipe? getRecipeFor(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance result, global::Hosihikari.Bindings.Bedrock.Interop.HashedString tag)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_e008a1cc((void*)__hosihikari_shim_handle, (void*)result.Handle, (void*)tag.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Recipe((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getRecipeFor(nint result, nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void init(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager resourcePackManager, global::Hosihikari.Bindings.Bedrock.Interop.ExternalRecipeStore recipeStorage, nint queue, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion, global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments, global::Hosihikari.Bindings.Bedrock.Interop.IEducationOptions educationOptions)
     {

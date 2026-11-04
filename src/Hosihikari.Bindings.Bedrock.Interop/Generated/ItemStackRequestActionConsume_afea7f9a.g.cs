@@ -40,17 +40,17 @@ public sealed unsafe partial class ItemStackRequestActionConsume : global::Syste
 
     public byte mActionType
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4cea342e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_4cea342e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_4cea342e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_4cea342e((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemStackRequestActionConsume Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_deaf59e7();
+        var handle = NativeMethods.TablePtr->C1.hs_create_deaf59e7();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +61,7 @@ public sealed unsafe partial class ItemStackRequestActionConsume : global::Syste
 
     public static ItemStackRequestActionConsume Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionConsume arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_be0649e4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_be0649e4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,32 +73,32 @@ public sealed unsafe partial class ItemStackRequestActionConsume : global::Syste
 
     public byte mAmount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_34a92784((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_34a92784((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_34a92784((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_34a92784((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDst_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7361e87c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7361e87c((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsAmountSerialized
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a42ca2e5((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_a42ca2e5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_a42ca2e5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_a42ca2e5((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsDstSerialized
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ad4221a9((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_ad4221a9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_ad4221a9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_ad4221a9((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSrc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_33368d48((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_33368d48((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -107,7 +107,7 @@ public sealed unsafe partial class ItemStackRequestActionConsume : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_afea7f9a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_afea7f9a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

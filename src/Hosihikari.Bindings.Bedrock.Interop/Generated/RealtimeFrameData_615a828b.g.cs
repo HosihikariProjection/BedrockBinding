@@ -40,7 +40,7 @@ public sealed unsafe partial class RealtimeFrameData : global::System.IDisposabl
 
     public static RealtimeFrameData Create(global::Hosihikari.Bindings.Bedrock.Interop.ProfilerLite_Nested.RealtimeFrameData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6c63a5ac((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_6c63a5ac((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,44 +51,44 @@ public sealed unsafe partial class RealtimeFrameData : global::System.IDisposabl
 
     public float mFPS
     {
-        get => NativeMethods.TablePtr->C3.hs_get_32b95da3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_32b95da3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_32b95da3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_32b95da3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mFirstFrame
     {
-        get => NativeMethods.TablePtr->C3.hs_get_773e670b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_773e670b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_773e670b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_773e670b((void*)__hosihikari_shim_handle, value);
     }
 
     public float mFrameTime
     {
-        get => NativeMethods.TablePtr->C3.hs_get_8934f925((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_8934f925((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_8934f925((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_8934f925((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mFrames
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b95ab0d1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_b95ab0d1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_b95ab0d1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_b95ab0d1((void*)__hosihikari_shim_handle, value);
     }
 
     public float mGameUpdateFPS
     {
-        get => NativeMethods.TablePtr->C3.hs_get_d8179f12((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_d8179f12((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_d8179f12((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_d8179f12((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mGameUpdates
     {
-        get => NativeMethods.TablePtr->C3.hs_get_188d928e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_188d928e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_188d928e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_188d928e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastFrame_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b010a2b7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b010a2b7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -98,7 +98,7 @@ public sealed unsafe partial class RealtimeFrameData : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_615a828b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_615a828b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

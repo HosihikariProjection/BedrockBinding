@@ -164,14 +164,13 @@ public sealed unsafe partial class NavigationGenericDescription : global::System
         set => NativeMethods.TablePtr->C2.hs_set_67e7ac1f((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _getJsonName()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_63528e18((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getJsonName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NavigationGenericDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.NavigationGenericDescription arg0)
     {

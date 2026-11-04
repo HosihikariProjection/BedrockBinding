@@ -38,15 +38,13 @@ public sealed unsafe partial class BlockMaterialData : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_21e15755((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_9991b351((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockMaterialData Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class BlockMaterialData : global::System.IDisposabl
         return new BlockMaterialData((nint)handle);
     }
 
-    public static BlockMaterialData Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription_Nested.BlockMaterialData arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_ef287d28((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BlockMaterialData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BlockMaterialData Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint materialInstanceData_Address

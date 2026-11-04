@@ -38,25 +38,21 @@ public sealed unsafe partial class BlockComponentStorageFinalizer : global::Syst
         return __hs_handle;
     }
 
-    public void _checkForCollisionComponentBoxDuplication(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C0.hs_method_1af7242c((void*)__hosihikari_shim_handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _checkForCollisionComponentBoxDuplication(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _checkForMissingCullingComponentForMaterialOverride(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C0.hs_method_21c4bc99((void*)__hosihikari_shim_handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _checkForMissingCullingComponentForMaterialOverride(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _checkForMissingGeometryComponent(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e64dc6f4((void*)__hosihikari_shim_handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _checkForMissingGeometryComponent(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _checkForSelectionBoxComponentDuplication(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b5b619e6((void*)__hosihikari_shim_handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _checkForSelectionBoxComponentDuplication(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _finalizeCollisionBoxComponent(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
@@ -68,10 +64,9 @@ public sealed unsafe partial class BlockComponentStorageFinalizer : global::Syst
         NativeMethods.TablePtr->C0.hs_method_11773978((void*)__hosihikari_shim_handle, (void*)block.Handle);
     }
 
-    public void addRemainingComponents(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C0.hs_method_dfd2dd3c((void*)__hosihikari_shim_handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addRemainingComponents(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void finalizeComponentData(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {

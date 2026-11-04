@@ -38,25 +38,21 @@ public sealed unsafe partial class StrongholdStart : global::System.IDisposable
         return __hs_handle;
     }
 
-    public string _getStructureName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_54bba3b5((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getStructureName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isValid()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_c3e84c1b((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValid() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _requiresNeighborAwareBlockUpgrade()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_10cd7543((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _requiresNeighborAwareBlockUpgrade() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StrongholdStart Create(global::Hosihikari.Bindings.Bedrock.Interop.StrongholdStart arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4efadb7e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4efadb7e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,55 +63,55 @@ public sealed unsafe partial class StrongholdStart : global::System.IDisposable
 
     public string getStructureName()
     {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_389a0d29((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_389a0d29((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool isValid()
     {
-        return NativeMethods.TablePtr->C4.hs_method_7d7a1668((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_7d7a1668((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mValid
     {
-        get => NativeMethods.TablePtr->C4.hs_get_30450ceb((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_30450ceb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_30450ceb((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_30450ceb((void*)__hosihikari_shim_handle, value);
     }
 
     public bool requiresNeighborAwareBlockUpgrade()
     {
-        return NativeMethods.TablePtr->C4.hs_method_fa5d307f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_fa5d307f((void*)__hosihikari_shim_handle) != 0;
     }
 
 
     // The native field type is not projected; this is the address of the field storage.
     public nint boundingBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_eb02c9e3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_eb02c9e3((void*)__hosihikari_shim_handle);
     }
 
     public int chunkX
     {
-        get => NativeMethods.TablePtr->C4.hs_get_653491fa((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_653491fa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_653491fa((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_653491fa((void*)__hosihikari_shim_handle, value);
     }
 
     public int chunkZ
     {
-        get => NativeMethods.TablePtr->C4.hs_get_dfe53ee0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_dfe53ee0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_dfe53ee0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_dfe53ee0((void*)__hosihikari_shim_handle, value);
     }
 
     public int maxYSpawnOffset
     {
-        get => NativeMethods.TablePtr->C4.hs_get_809a525b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_809a525b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_809a525b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_809a525b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint pieces_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_79137fc8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_79137fc8((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -124,7 +120,7 @@ public sealed unsafe partial class StrongholdStart : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9889d57f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9889d57f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

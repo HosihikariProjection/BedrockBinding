@@ -38,10 +38,9 @@ public sealed unsafe partial class FurnaceResultContainerValidation : global::Sy
         return __hs_handle;
     }
 
-    public int _getContainerOffset(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1860a81f((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerOffset(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FurnaceResultContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.FurnaceResultContainerValidation arg0)
     {

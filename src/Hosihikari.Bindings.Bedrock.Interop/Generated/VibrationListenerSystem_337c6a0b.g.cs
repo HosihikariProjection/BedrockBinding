@@ -38,10 +38,9 @@ public sealed unsafe partial class VibrationListenerSystem : global::System.IDis
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C4.hs_method_b0b88b82((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VibrationListenerSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.VibrationListenerSystem arg0)
     {

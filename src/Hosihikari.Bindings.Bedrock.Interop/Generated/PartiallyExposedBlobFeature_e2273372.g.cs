@@ -40,26 +40,23 @@ public sealed unsafe partial class PartiallyExposedBlobFeature : global::System.
 
     public bool mCanUseInternalFeature
     {
-        get => NativeMethods.TablePtr->C3.hs_get_002c3260((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_002c3260((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_002c3260((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_002c3260((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInternal
     {
-        get => NativeMethods.TablePtr->C3.hs_get_df6f1a3c((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_df6f1a3c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_df6f1a3c((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_df6f1a3c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? _place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_59d18027((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _place(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PartiallyExposedBlobFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.PartiallyExposedBlobFeature arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_40e85d97((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_40e85d97((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,31 +68,31 @@ public sealed unsafe partial class PartiallyExposedBlobFeature : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockToPlace_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4b19a473((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4b19a473((void*)__hosihikari_shim_handle);
     }
 
     public byte mExposedFace
     {
-        get => NativeMethods.TablePtr->C3.hs_get_30aba70e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_30aba70e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_30aba70e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_30aba70e((void*)__hosihikari_shim_handle, value);
     }
 
     public float mPlacementProbabilityPerValidPosition
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ac580295((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_ac580295((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_ac580295((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_ac580295((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPlacementRadiusAroundFloor
     {
-        get => NativeMethods.TablePtr->C3.hs_get_20965b51((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_20965b51((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_20965b51((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_20965b51((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos? place(global::Hosihikari.Bindings.Bedrock.Interop.IFeature_Nested.PlacementContext context)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_da36e5cb((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_da36e5cb((void*)__hosihikari_shim_handle, (void*)context.Handle, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)__hs_handle) : null;
     }
 
@@ -106,7 +103,7 @@ public sealed unsafe partial class PartiallyExposedBlobFeature : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e2273372((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e2273372((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

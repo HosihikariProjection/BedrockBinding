@@ -40,7 +40,7 @@ public sealed unsafe partial class EndSpike : global::System.IDisposable
 
     public static EndSpike Create(global::Hosihikari.Bindings.Bedrock.Interop.SpikeFeature_Nested.EndSpike arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b472044f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b472044f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,33 +51,33 @@ public sealed unsafe partial class EndSpike : global::System.IDisposable
 
     public int mCenterX
     {
-        get => NativeMethods.TablePtr->C4.hs_get_65d180d5((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_65d180d5((void*)__hosihikari_shim_handle);
     }
 
     public int mCenterZ
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a353900e((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_a353900e((void*)__hosihikari_shim_handle);
     }
 
     public bool mGuarded
     {
-        get => NativeMethods.TablePtr->C4.hs_get_27cc0ee9((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C3.hs_get_27cc0ee9((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int mHeight
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ed5bb2ba((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_ed5bb2ba((void*)__hosihikari_shim_handle);
     }
 
     public int mRadius
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4ee006a5((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_4ee006a5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTopBoundingBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_afb58cdd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_afb58cdd((void*)__hosihikari_shim_handle);
     }
 
 
@@ -87,7 +87,7 @@ public sealed unsafe partial class EndSpike : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9934c556((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9934c556((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

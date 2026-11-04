@@ -60,15 +60,13 @@ public sealed unsafe partial class ResourceSignature : global::System.IDisposabl
         return new ResourceSignature((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ SIGNATURE_FILENAME()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C3.hs_method_616d4640(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SIGNATURE_FILENAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _areKnownFilesValid(global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy accessStrategy, bool requiresSignaturesFile)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_116c225e((void*)__hosihikari_shim_handle, (void*)accessStrategy.Handle, requiresSignaturesFile) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _areKnownFilesValid(nint accessStrategy, bool requiresSignaturesFile) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke8472c_Address

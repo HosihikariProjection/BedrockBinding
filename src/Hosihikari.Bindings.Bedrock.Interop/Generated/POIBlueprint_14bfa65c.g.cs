@@ -38,70 +38,13 @@ public sealed unsafe partial class POIBlueprint : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(string name, int type, float radius, bool useBoundingBox, ulong capacity, ulong weight, string soundEvent, string initEvent, string endEvent)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        var __hs_stringByteCount6 = global::System.Text.Encoding.UTF8.GetByteCount(soundEvent);
-        scoped global::System.Span<byte> __hs_stringBytes6;
-        if (__hs_stringByteCount6 <= 256)
-        {
-            __hs_stringBytes6 = stackalloc byte[__hs_stringByteCount6 == 0 ? 1 : __hs_stringByteCount6];
-        }
-        else
-        {
-            __hs_stringBytes6 = new byte[__hs_stringByteCount6];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(soundEvent, __hs_stringBytes6);
-        var __hs_stringByteCount7 = global::System.Text.Encoding.UTF8.GetByteCount(initEvent);
-        scoped global::System.Span<byte> __hs_stringBytes7;
-        if (__hs_stringByteCount7 <= 256)
-        {
-            __hs_stringBytes7 = stackalloc byte[__hs_stringByteCount7 == 0 ? 1 : __hs_stringByteCount7];
-        }
-        else
-        {
-            __hs_stringBytes7 = new byte[__hs_stringByteCount7];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(initEvent, __hs_stringBytes7);
-        var __hs_stringByteCount8 = global::System.Text.Encoding.UTF8.GetByteCount(endEvent);
-        scoped global::System.Span<byte> __hs_stringBytes8;
-        if (__hs_stringByteCount8 <= 256)
-        {
-            __hs_stringBytes8 = stackalloc byte[__hs_stringByteCount8 == 0 ? 1 : __hs_stringByteCount8];
-        }
-        else
-        {
-            __hs_stringBytes8 = new byte[__hs_stringByteCount8];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(endEvent, __hs_stringBytes8);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData6 = __hs_stringBytes6)
-            {
-                fixed (byte* __hs_stringData7 = __hs_stringBytes7)
-                {
-                    fixed (byte* __hs_stringData8 = __hs_stringBytes8)
-                    {
-                        return (nint)NativeMethods.TablePtr->C3.hs_method_bd58c887((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, type, radius, useBoundingBox, capacity, weight, __hs_stringData6, (nuint)__hs_stringByteCount6, __hs_stringData7, (nuint)__hs_stringByteCount7, __hs_stringData8, (nuint)__hs_stringByteCount8);
-                    }
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint name, nint type, float radius, bool useBoundingBox, ulong capacity, ulong weight, nint soundEvent, nint initEvent, nint endEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static POIBlueprint Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7a988906();
+        var handle = NativeMethods.TablePtr->C2.hs_create_7a988906();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -112,7 +55,7 @@ public sealed unsafe partial class POIBlueprint : global::System.IDisposable
 
     public static POIBlueprint Create(global::Hosihikari.Bindings.Bedrock.Interop.POIBlueprint arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_82613d06((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_82613d06((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -121,125 +64,62 @@ public sealed unsafe partial class POIBlueprint : global::System.IDisposable
         return new POIBlueprint((nint)handle);
     }
 
-    public static POIBlueprint Create(string name, int type, float radius, bool useBoundingBox, ulong capacity, ulong weight, string soundEvent, string initEvent, string endEvent)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        var __hs_stringByteCount6 = global::System.Text.Encoding.UTF8.GetByteCount(soundEvent);
-        scoped global::System.Span<byte> __hs_stringBytes6;
-        if (__hs_stringByteCount6 <= 256)
-        {
-            __hs_stringBytes6 = stackalloc byte[__hs_stringByteCount6 == 0 ? 1 : __hs_stringByteCount6];
-        }
-        else
-        {
-            __hs_stringBytes6 = new byte[__hs_stringByteCount6];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(soundEvent, __hs_stringBytes6);
-        var __hs_stringByteCount7 = global::System.Text.Encoding.UTF8.GetByteCount(initEvent);
-        scoped global::System.Span<byte> __hs_stringBytes7;
-        if (__hs_stringByteCount7 <= 256)
-        {
-            __hs_stringBytes7 = stackalloc byte[__hs_stringByteCount7 == 0 ? 1 : __hs_stringByteCount7];
-        }
-        else
-        {
-            __hs_stringBytes7 = new byte[__hs_stringByteCount7];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(initEvent, __hs_stringBytes7);
-        var __hs_stringByteCount8 = global::System.Text.Encoding.UTF8.GetByteCount(endEvent);
-        scoped global::System.Span<byte> __hs_stringBytes8;
-        if (__hs_stringByteCount8 <= 256)
-        {
-            __hs_stringBytes8 = stackalloc byte[__hs_stringByteCount8 == 0 ? 1 : __hs_stringByteCount8];
-        }
-        else
-        {
-            __hs_stringBytes8 = new byte[__hs_stringByteCount8];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(endEvent, __hs_stringBytes8);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData6 = __hs_stringBytes6)
-            {
-                fixed (byte* __hs_stringData7 = __hs_stringBytes7)
-                {
-                    fixed (byte* __hs_stringData8 = __hs_stringBytes8)
-                    {
-                        var handle = NativeMethods.TablePtr->C3.hs_create_96a684b3(__hs_stringData0, (nuint)__hs_stringByteCount0, type, radius, useBoundingBox, capacity, weight, __hs_stringData6, (nuint)__hs_stringByteCount6, __hs_stringData7, (nuint)__hs_stringByteCount7, __hs_stringData8, (nuint)__hs_stringByteCount8);
-                        if (handle == null)
-                        {
-                            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-                        }
-
-                        return new POIBlueprint((nint)handle);
-                    }
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static POIBlueprint Create(nint name, nint type, float radius, bool useBoundingBox, ulong capacity, ulong weight, nint soundEvent, nint initEvent, nint endEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mCapacity
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2bd056a7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2bd056a7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2bd056a7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2bd056a7((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEndEvent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d475dcbe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d475dcbe((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInitEvent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5ed592f6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5ed592f6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fa8070ec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fa8070ec((void*)__hosihikari_shim_handle);
     }
 
     public float mRadius
     {
-        get => NativeMethods.TablePtr->C3.hs_get_0463ba52((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_0463ba52((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_0463ba52((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_0463ba52((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSoundEvent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2e00494f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2e00494f((void*)__hosihikari_shim_handle);
     }
 
     public int mType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a8203989((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a8203989((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a8203989((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a8203989((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mUseBoundingBox
     {
-        get => NativeMethods.TablePtr->C3.hs_get_cf74303b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_cf74303b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_cf74303b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_cf74303b((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mWeight
     {
-        get => NativeMethods.TablePtr->C3.hs_get_d207736f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_d207736f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_d207736f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_d207736f((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -249,7 +129,7 @@ public sealed unsafe partial class POIBlueprint : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_14bfa65c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_14bfa65c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

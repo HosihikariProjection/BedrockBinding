@@ -38,9 +38,9 @@ public sealed unsafe partial class CherryTreeCanopy : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _placeCanopy(nint target, nint pos, nint trunkSize, nint random, nint arg4, nint treeParams, int arg6, nint arg7) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CherryTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.CherryTreeCanopy arg0)
     {
@@ -53,15 +53,13 @@ public sealed unsafe partial class CherryTreeCanopy : global::System.IDisposable
         return new CherryTreeCanopy((nint)handle);
     }
 
-    public void _placeLayerOfLeaves(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos canopyPos, int layerOffset, global::Hosihikari.Bindings.Bedrock.Interop.Block leavesBlock, int radius, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e4bdd0b9((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)random.Handle, (void*)canopyPos.Handle, layerOffset, (void*)leavesBlock.Handle, radius, (void*)treeParams.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _placeLayerOfLeaves(nint target, nint random, nint canopyPos, int layerOffset, nint leavesBlock, int radius, nint treeParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _placeLayerOfLeavesWithHangingLeavesBelow(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos canopyPos, int layerOffset, global::Hosihikari.Bindings.Bedrock.Interop.Block leavesBlock, int radius, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.TreeParams treeParams)
-    {
-        NativeMethods.TablePtr->C0.hs_method_ca51b2b4((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)random.Handle, (void*)canopyPos.Handle, layerOffset, (void*)leavesBlock.Handle, radius, (void*)treeParams.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _placeLayerOfLeavesWithHangingLeavesBelow(nint target, nint random, nint canopyPos, int layerOffset, nint leavesBlock, int radius, nint treeParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCornerHoleChance_Address

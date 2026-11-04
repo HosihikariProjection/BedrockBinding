@@ -40,7 +40,7 @@ public sealed unsafe partial class MaterialPtr : global::System.IDisposable
 
     public static MaterialPtr Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_56287fad();
+        var handle = NativeMethods.TablePtr->C4.hs_create_56287fad();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class MaterialPtr : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_25adb18f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_25adb18f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

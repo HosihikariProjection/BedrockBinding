@@ -38,21 +38,13 @@ public sealed unsafe partial class VanillaActorEventListenerManager : global::Sy
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_35298aef((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static VanillaActorEventListenerManager Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3adff7fa();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new VanillaActorEventListenerManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static VanillaActorEventListenerManager Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorHeldItemUpdater_Address
@@ -72,10 +64,9 @@ public sealed unsafe partial class VanillaActorEventListenerManager : global::Sy
         get => (nint)NativeMethods.TablePtr->C4.hs_get_7a73dd62((void*)__hosihikari_shim_handle);
     }
 
-    public void registerWithActorEventCoordinator(global::Hosihikari.Bindings.Bedrock.Interop.ActorEventCoordinator actorEventCoordinator)
-    {
-        NativeMethods.TablePtr->C4.hs_method_289e7356((void*)__hosihikari_shim_handle, (void*)actorEventCoordinator.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerWithActorEventCoordinator(nint actorEventCoordinator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

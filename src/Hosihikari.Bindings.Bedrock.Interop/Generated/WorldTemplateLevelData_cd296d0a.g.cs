@@ -38,25 +38,17 @@ public sealed unsafe partial class WorldTemplateLevelData : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_02a1e0c8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static WorldTemplateLevelData Create()
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_14c20d42();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new WorldTemplateLevelData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static WorldTemplateLevelData Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WorldTemplateLevelData Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateLevelData arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_09bcdcd1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_09bcdcd1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,50 +57,48 @@ public sealed unsafe partial class WorldTemplateLevelData : global::System.IDisp
         return new WorldTemplateLevelData((nint)handle);
     }
 
-    public void _getTagData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C5.hs_method_80353741((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _getTagData(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setTagData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C5.hs_method_c6c758ff((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setTagData(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBaseGameVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_2b8d86f4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_2b8d86f4((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsFromWorldTemplate
     {
-        get => NativeMethods.TablePtr->C5.hs_get_b4c13f82((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_b4c13f82((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_b4c13f82((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_b4c13f82((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsWorldTemplateOptionLocked
     {
-        get => NativeMethods.TablePtr->C5.hs_get_f9afe09d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_f9afe09d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f9afe09d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_f9afe09d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMaxBaseGameVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_67fe3664((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_67fe3664((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPremiumTemplateContentIdentity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e6d6a2b2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e6d6a2b2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWorldTemplateIdentity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_b5cd23af((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_b5cd23af((void*)__hosihikari_shim_handle);
     }
 
 
@@ -118,7 +108,7 @@ public sealed unsafe partial class WorldTemplateLevelData : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_cd296d0a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_cd296d0a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

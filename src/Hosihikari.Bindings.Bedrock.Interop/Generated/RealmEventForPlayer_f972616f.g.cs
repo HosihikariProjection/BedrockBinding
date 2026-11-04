@@ -38,10 +38,9 @@ public sealed unsafe partial class RealmEventForPlayer : global::System.IDisposa
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_60a15be6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RealmEventForPlayer Create(global::Hosihikari.Bindings.Bedrock.Interop.RealmEventForPlayer arg0)
     {

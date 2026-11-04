@@ -38,27 +38,23 @@ public sealed unsafe partial class PositionTrackingId : global::System.IDisposab
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingId INVALID_ID()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingId((nint)NativeMethods.TablePtr->C3.hs_method_036ab624(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint INVALID_ID() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mRawId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_5098509f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_5098509f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_5098509f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_5098509f((void*)__hosihikari_shim_handle, value);
     }
 
-    public static nint sNextId()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_e85143f5();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sNextId() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string toString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_9bb78316((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -66,7 +62,7 @@ public sealed unsafe partial class PositionTrackingId : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e9a3162d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e9a3162d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

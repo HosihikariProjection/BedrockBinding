@@ -38,19 +38,17 @@ public sealed unsafe partial class IndexSet : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.IndexSet other)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_1898823e((void*)__hosihikari_shim_handle, (void*)other.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_ec2d0d89((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IndexSet Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6d263c31();
+        var handle = NativeMethods.TablePtr->C1.hs_create_6d263c31();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,37 +57,29 @@ public sealed unsafe partial class IndexSet : global::System.IDisposable
         return new IndexSet((nint)handle);
     }
 
-    public static IndexSet Create(global::Hosihikari.Bindings.Bedrock.Interop.IndexSet other)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f4a40c62((void*)other.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static IndexSet Create(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new IndexSet((nint)handle);
-    }
-
-    public void insert(ulong index)
-    {
-        NativeMethods.TablePtr->C2.hs_method_cba40633((void*)__hosihikari_shim_handle, index);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void insert(ulong index) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf38d12_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_88b42573((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_88b42573((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf89f4f_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2a0da5f7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2a0da5f7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IndexSet operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IndexSet arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IndexSet((nint)NativeMethods.TablePtr->C2.hs_method_a077040b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IndexSet((nint)NativeMethods.TablePtr->C1.hs_method_a077040b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -99,7 +89,7 @@ public sealed unsafe partial class IndexSet : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0c926d16((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_0c926d16((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

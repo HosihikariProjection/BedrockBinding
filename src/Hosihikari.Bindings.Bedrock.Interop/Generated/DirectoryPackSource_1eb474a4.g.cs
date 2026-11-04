@@ -44,27 +44,25 @@ public sealed unsafe partial class DirectoryPackSource : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_f64d2106((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint __loadImpl(nint options) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DirectoryPackSourceOptions' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint options) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DirectoryPackSourceOptions' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte _getPackOrigin()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_b1fa0dc7((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getPackOrigin() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public sbyte _getPackType()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_e7ad1754((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getPackType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DirectoryPackSource Create()
     {
@@ -77,28 +75,25 @@ public sealed unsafe partial class DirectoryPackSource : global::System.IDisposa
         return new DirectoryPackSource((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DirectoryPackSourceOptions' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static DirectoryPackSource Create(nint options) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DirectoryPackSourceOptions' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public nint _loadImpl(nint options) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    public static void checkAndRemoveIncompletePacks(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path)
-    {
-        NativeMethods.TablePtr->C1.hs_method_92884483((void*)path.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void checkAndRemoveIncompletePacks(nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void checkAndRemoveIncompletePacks(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, nint io, bool saveEncryptedWorldTemplatePacksAsZips)
-    {
-        NativeMethods.TablePtr->C1.hs_method_0cda6ba7((void*)path.Handle, (void*)io, saveEncryptedWorldTemplatePacksAsZips);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void checkAndRemoveIncompletePacks(nint path, nint io, bool saveEncryptedWorldTemplatePacksAsZips) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void deleteAllPacksAndReset()
-    {
-        NativeMethods.TablePtr->C1.hs_method_4d981319((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void deleteAllPacksAndReset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte getPackOrigin()
     {
@@ -148,9 +143,9 @@ public sealed unsafe partial class DirectoryPackSource : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_2d0e3516((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void purgeOptimizedPremiumPacksIfRequested(bool purgeRequested, nint path, nint io, nint reportPackDeleted) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

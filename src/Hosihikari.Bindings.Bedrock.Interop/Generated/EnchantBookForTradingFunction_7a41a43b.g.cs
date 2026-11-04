@@ -38,20 +38,17 @@ public sealed unsafe partial class EnchantBookForTradingFunction : global::Syste
         return __hs_handle;
     }
 
-    public int _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2, global::Hosihikari.Bindings.Bedrock.Interop.Trade arg3)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1a86d9bc((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle, (void*)arg3.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _applyPreVersion(nint item, nint random, nint arg2, nint arg3) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
-    {
-        NativeMethods.TablePtr->C1.hs_method_8f2cec97((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyPreVersion(nint item, nint random, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getFunctionType()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_fcecaf32((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getFunctionType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EnchantBookForTradingFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.EnchantBookForTradingFunction arg0)
     {
@@ -64,12 +61,9 @@ public sealed unsafe partial class EnchantBookForTradingFunction : global::Syste
         return new EnchantBookForTradingFunction((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.EnchantmentInstance? _trySelectEnchantmentFromOptions(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_8b781739((void*)__hosihikari_shim_handle, (void*)random.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.EnchantmentInstance((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _trySelectEnchantmentFromOptions(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2, global::Hosihikari.Bindings.Bedrock.Interop.Trade arg3)
     {

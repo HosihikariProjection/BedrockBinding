@@ -40,7 +40,7 @@ public sealed unsafe partial class Enum : global::System.IDisposable
 
     public static Enum Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Enum arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_64d3d784((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_64d3d784((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class Enum : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint name_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7f88d40d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_7f88d40d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint parse_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_4c9bc40b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_4c9bc40b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint type_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_75bcdaeb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_75bcdaeb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint values_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0df7d83b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_0df7d83b((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class Enum : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_f3975061((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_f3975061((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

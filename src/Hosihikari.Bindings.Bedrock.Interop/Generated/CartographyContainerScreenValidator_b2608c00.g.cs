@@ -38,14 +38,13 @@ public sealed unsafe partial class CartographyContainerScreenValidator : global:
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getCraftResult(nint screenContext, nint screenValidation, nint craftInputs, nint numCrafts) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isCraftingImplemented()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_0c5d1f70((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isCraftingImplemented() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CartographyContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.CartographyContainerScreenValidator arg0)
     {

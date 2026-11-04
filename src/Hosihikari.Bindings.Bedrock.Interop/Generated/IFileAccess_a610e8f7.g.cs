@@ -41,12 +41,12 @@ public sealed unsafe partial class IFileAccess : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f29c3c21((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f29c3c21((void*)__hosihikari_shim_handle);
     }
 
     public static IFileAccess Create(global::Hosihikari.Bindings.Bedrock.Interop.IFileAccess arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2f046828((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_2f046828((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,7 +57,7 @@ public sealed unsafe partial class IFileAccess : global::System.IDisposable
 
     public int fclose(nint file)
     {
-        return NativeMethods.TablePtr->C2.hs_method_2b5c8210((void*)__hosihikari_shim_handle, (void*)file);
+        return NativeMethods.TablePtr->C1.hs_method_2b5c8210((void*)__hosihikari_shim_handle, (void*)file);
     }
 
     public nint fopen(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, string mode)
@@ -75,35 +75,35 @@ public sealed unsafe partial class IFileAccess : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(mode, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return (nint)NativeMethods.TablePtr->C2.hs_method_eb5323ac((void*)__hosihikari_shim_handle, (void*)filePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
+            return (nint)NativeMethods.TablePtr->C1.hs_method_eb5323ac((void*)__hosihikari_shim_handle, (void*)filePath.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
         }
     }
 
     public int fseek(nint file, long offset, int origin)
     {
-        return NativeMethods.TablePtr->C2.hs_method_5fa47097((void*)__hosihikari_shim_handle, (void*)file, offset, origin);
+        return NativeMethods.TablePtr->C1.hs_method_5fa47097((void*)__hosihikari_shim_handle, (void*)file, offset, origin);
     }
 
     public long ftell(nint file)
     {
-        return NativeMethods.TablePtr->C2.hs_method_5cbce0ae((void*)__hosihikari_shim_handle, (void*)file);
+        return NativeMethods.TablePtr->C1.hs_method_5cbce0ae((void*)__hosihikari_shim_handle, (void*)file);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess? getReadInterface()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_9c8d5b6f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_9c8d5b6f((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IFileReadAccess((nint)__hs_handle, false) : null;
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess? getWriteInterface()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_f899f0a5((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_f899f0a5((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.IFileWriteAccess((nint)__hs_handle, false) : null;
     }
 
     public void unload()
     {
-        NativeMethods.TablePtr->C2.hs_method_a45fe9e0((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_a45fe9e0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -113,7 +113,7 @@ public sealed unsafe partial class IFileAccess : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a610e8f7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_a610e8f7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

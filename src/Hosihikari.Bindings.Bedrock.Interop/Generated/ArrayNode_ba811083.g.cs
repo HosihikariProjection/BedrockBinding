@@ -49,10 +49,9 @@ public sealed unsafe partial class ArrayNode : global::System.IDisposable
         return new ArrayNode((nint)handle);
     }
 
-    public bool setContents(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.JSONObject.ValueWrapper contents)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_4115048d((void*)__hosihikari_shim_handle, (void*)contents.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool setContents(nint contents) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1af5e3_Address

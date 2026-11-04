@@ -40,7 +40,7 @@ public sealed unsafe partial class IServerNetworkController : global::System.IDi
 
     public static IServerNetworkController Create(global::Hosihikari.Bindings.Bedrock.Interop.IServerNetworkController arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_167e78d8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_167e78d8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class IServerNetworkController : global::System.IDi
 
     public bool canChangePermission(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer player)
     {
-        return NativeMethods.TablePtr->C2.hs_method_f4a3dee2((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_f4a3dee2((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
     public bool isDedicatedServer()
     {
-        return NativeMethods.TablePtr->C2.hs_method_dae2948a((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_dae2948a((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class IServerNetworkController : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_07e8a4dd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_07e8a4dd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

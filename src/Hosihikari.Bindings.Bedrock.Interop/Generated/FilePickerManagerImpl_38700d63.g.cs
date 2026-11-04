@@ -44,14 +44,13 @@ public sealed unsafe partial class FilePickerManagerImpl : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_20d8718a((void*)__hosihikari_shim_handle);
     }
 
-    public bool _directoryPickingEnabledForPlatform()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_73258146((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _directoryPickingEnabledForPlatform() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::FilePickerManager::DirectoryPickerResult>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _pickDirectory(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<Bedrock::FilePickerManager::DirectoryPickerResult>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FilePickerManagerImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FilePickerManagerImpl arg0)
     {

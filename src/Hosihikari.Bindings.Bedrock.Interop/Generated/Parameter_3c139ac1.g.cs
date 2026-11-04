@@ -43,10 +43,9 @@ public sealed unsafe partial class Parameter : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C0.hs_method_5db49eff((void*)__hosihikari_shim_handle, (void*)min, (void*)max);
     }
 
-    public nint _ctor(float min, float max)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_882194ff((void*)__hosihikari_shim_handle, min, max);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(float min, float max) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Parameter Create()
     {
@@ -70,16 +69,9 @@ public sealed unsafe partial class Parameter : global::System.IDisposable
         return new Parameter((nint)handle);
     }
 
-    public static Parameter Create(float min, float max)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_7ceb8076(min, max);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Parameter((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Parameter Create(float min, float max) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public long mMax
     {

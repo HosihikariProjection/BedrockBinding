@@ -40,7 +40,7 @@ public sealed unsafe partial class SubChunkBrightnessStorage : global::System.ID
 
     public static SubChunkBrightnessStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkBrightnessStorage arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_157cc570((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_157cc570((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class SubChunkBrightnessStorage : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mLightValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_053f251b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_053f251b((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class SubChunkBrightnessStorage : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_62733b6d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_62733b6d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

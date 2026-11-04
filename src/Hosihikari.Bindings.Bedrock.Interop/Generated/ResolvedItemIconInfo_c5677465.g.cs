@@ -38,24 +38,9 @@ public sealed unsafe partial class ResolvedItemIconInfo : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(string name, float u0, float u1, float v0, float v1, ushort texSizeW, ushort texSizeH)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_b59ffef2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, u0, u1, v0, v1, texSizeW, texSizeH);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint name, float u0, float u1, float v0, float v1, ushort texSizeW, ushort texSizeH) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
@@ -84,30 +69,9 @@ public sealed unsafe partial class ResolvedItemIconInfo : global::System.IDispos
         return new ResolvedItemIconInfo((nint)handle);
     }
 
-    public static ResolvedItemIconInfo Create(string name, float u0, float u1, float v0, float v1, ushort texSizeW, ushort texSizeH)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var handle = NativeMethods.TablePtr->C3.hs_create_b50be0ed(__hs_stringData0, (nuint)__hs_stringByteCount0, u0, u1, v0, v1, texSizeW, texSizeH);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new ResolvedItemIconInfo((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ResolvedItemIconInfo Create(nint name, float u0, float u1, float v0, float v1, ushort texSizeW, ushort texSizeH) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mIconFrame
     {

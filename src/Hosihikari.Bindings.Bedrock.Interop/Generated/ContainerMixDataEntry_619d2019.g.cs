@@ -40,20 +40,20 @@ public sealed unsafe partial class ContainerMixDataEntry : global::System.IDispo
 
     public int fromItemId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_618944d7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_618944d7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_618944d7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_618944d7((void*)__hosihikari_shim_handle, value);
     }
 
     public int reagentItemId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_f0acd2e1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_f0acd2e1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_f0acd2e1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_f0acd2e1((void*)__hosihikari_shim_handle, value);
     }
 
     public int toItemId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_ed119bc7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_ed119bc7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_ed119bc7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_ed119bc7((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -62,7 +62,7 @@ public sealed unsafe partial class ContainerMixDataEntry : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_619d2019((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_619d2019((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

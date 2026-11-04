@@ -38,14 +38,13 @@ public sealed unsafe partial class TickWorldComponent : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_96dda43b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TickWorldComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.TickWorldComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_56834d5f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_56834d5f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,48 +55,45 @@ public sealed unsafe partial class TickWorldComponent : global::System.IDisposab
 
     public bool mAlwaysActive
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c5348fd0((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_c5348fd0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c5348fd0((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c5348fd0((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mChanged
     {
-        get => NativeMethods.TablePtr->C4.hs_get_23fa1838((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_23fa1838((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_23fa1838((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_23fa1838((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mChunkRadius
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d65ec38d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d65ec38d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d65ec38d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d65ec38d((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMaxDistToPlayers
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ada797d6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_ada797d6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ada797d6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ada797d6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTickingArea_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_21e36a8c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_21e36a8c((void*)__hosihikari_shim_handle);
     }
 
-    public void removeArea()
-    {
-        NativeMethods.TablePtr->C4.hs_method_ddc24872((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeArea() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setTickingArea(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Abi.SharedHandle? tickingArea)
-    {
-        NativeMethods.TablePtr->C4.hs_method_e4f6dc8e((void*)__hosihikari_shim_handle, (void*)owner.Handle, tickingArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setTickingArea(nint owner, nint tickingArea) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void updateArea(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C4.hs_method_68abac6d((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void updateArea(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -106,7 +102,7 @@ public sealed unsafe partial class TickWorldComponent : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a4a793c0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a4a793c0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

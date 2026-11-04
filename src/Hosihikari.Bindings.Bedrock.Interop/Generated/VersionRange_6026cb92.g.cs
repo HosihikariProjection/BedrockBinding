@@ -38,19 +38,17 @@ public sealed unsafe partial class VersionRange : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion min, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion max, int type)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_7ddb64be((void*)__hosihikari_shim_handle, (void*)min.Handle, (void*)max.Handle, type);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint min, nint max, nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_e04987e9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VersionRange Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_68d1dd75();
+        var handle = NativeMethods.TablePtr->C2.hs_create_68d1dd75();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +59,7 @@ public sealed unsafe partial class VersionRange : global::System.IDisposable
 
     public static VersionRange Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0db6903a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_0db6903a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,49 +68,41 @@ public sealed unsafe partial class VersionRange : global::System.IDisposable
         return new VersionRange((nint)handle);
     }
 
-    public static VersionRange Create(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion min, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion max, int type)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ccecdf21((void*)min.Handle, (void*)max.Handle, type);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static VersionRange Create(nint min, nint max, nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new VersionRange((nint)handle);
-    }
-
-    public bool contains(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion v)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_9ac65f87((void*)__hosihikari_shim_handle, (void*)v.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool contains(nint v) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1a868c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_fbe6f540((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_fbe6f540((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7084e3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_78337784((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_78337784((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9d6c21_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d3b2a5a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d3b2a5a0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd68461_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a15b6bef((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a15b6bef((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange((nint)NativeMethods.TablePtr->C3.hs_method_52dd5fad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.VersionRange((nint)NativeMethods.TablePtr->C2.hs_method_52dd5fad((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -122,7 +112,7 @@ public sealed unsafe partial class VersionRange : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_6026cb92((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6026cb92((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

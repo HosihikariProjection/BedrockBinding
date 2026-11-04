@@ -38,19 +38,17 @@ public sealed unsafe partial class TestSummaryDisplayer : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _onTestFailed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
-    {
-        NativeMethods.TablePtr->C4.hs_method_22482b3d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestFailed(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTestPassed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
-    {
-        NativeMethods.TablePtr->C4.hs_method_3fbb6b0b((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestPassed(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TestSummaryDisplayer Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_a7cde9dd();
+        var handle = NativeMethods.TablePtr->C3.hs_create_a7cde9dd();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +59,7 @@ public sealed unsafe partial class TestSummaryDisplayer : global::System.IDispos
 
     public static TestSummaryDisplayer Create(global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_65cd3494((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_65cd3494((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,69 +68,39 @@ public sealed unsafe partial class TestSummaryDisplayer : global::System.IDispos
         return new TestSummaryDisplayer((nint)handle);
     }
 
-    public void _say(string text, string chatColor)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(text);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(text, __hs_stringBytes0);
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(chatColor);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(chatColor, __hs_stringBytes1);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-            {
-                NativeMethods.TablePtr->C4.hs_method_e6daeb0e((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, __hs_stringData1, (nuint)__hs_stringByteCount1);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _say(nint text, nint chatColor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _showTestSummaryIfAllDone()
-    {
-        NativeMethods.TablePtr->C4.hs_method_15e52668((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _showTestSummaryIfAllDone() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk36b5e9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_377d8c30((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_377d8c30((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf27c23_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bc315ba5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bc315ba5((void*)__hosihikari_shim_handle);
     }
 
     public void onTestFailed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_be6122e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C3.hs_method_be6122e0((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public void onTestPassed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_8233183d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C3.hs_method_8233183d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer((nint)NativeMethods.TablePtr->C4.hs_method_33411a28((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TestSummaryDisplayer((nint)NativeMethods.TablePtr->C3.hs_method_33411a28((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -142,7 +110,7 @@ public sealed unsafe partial class TestSummaryDisplayer : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a0edb8e1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a0edb8e1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

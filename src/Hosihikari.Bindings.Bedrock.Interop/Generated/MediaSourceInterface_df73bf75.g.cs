@@ -40,7 +40,7 @@ public sealed unsafe partial class MediaSourceInterface : global::System.IDispos
 
     public static MediaSourceInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.MediaSourceInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_584ecd9a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_584ecd9a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class MediaSourceInterface : global::System.IDispos
 
     public bool remote()
     {
-        return NativeMethods.TablePtr->C5.hs_method_4edfd0c6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_4edfd0c6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int state()
     {
-        return NativeMethods.TablePtr->C5.hs_method_5cce1d5c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_5cce1d5c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class MediaSourceInterface : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_df73bf75((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_df73bf75((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

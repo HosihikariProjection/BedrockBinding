@@ -38,15 +38,13 @@ public sealed unsafe partial class DefinitionEventLoader : global::System.IDispo
         return __hs_handle;
     }
 
-    public static void _loadCollection(global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent defEvent, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value collection, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, int eventCaller, global::Hosihikari.Bindings.Bedrock.Interop.EventResponseFactory? responseFactory)
-    {
-        NativeMethods.TablePtr->C1.hs_method_23399680((void*)defEvent.Handle, (void*)collection.Handle, (void*)minEngineVersion.Handle, eventCaller, (void*)(responseFactory?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _loadCollection(nint defEvent, nint collection, nint minEngineVersion, nint eventCaller, nint responseFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent loadEvent(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion, int eventCaller, global::Hosihikari.Bindings.Bedrock.Interop.EventResponseFactory? responseFactory)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DefinitionEvent((nint)NativeMethods.TablePtr->C1.hs_method_d1c69995((void*)root.Handle, (void*)minEngineVersion.Handle, eventCaller, (void*)(responseFactory?.Handle ?? 0)));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint loadEvent(nint root, nint minEngineVersion, nint eventCaller, nint responseFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

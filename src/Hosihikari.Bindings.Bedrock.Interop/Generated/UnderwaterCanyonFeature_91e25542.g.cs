@@ -49,22 +49,17 @@ public sealed unsafe partial class UnderwaterCanyonFeature : global::System.IDis
         get => NativeMethods.TablePtr->C4.hs_get_ff813a8f((void*)__hosihikari_shim_handle);
     }
 
-    public bool __carve(global::Hosihikari.Bindings.Bedrock.Interop.BlockVolume blocks, global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource localBiomeSource, nint arg2, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startPos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float horizontalRadius, float verticalRadius, float[] widthRandomization, global::Hosihikari.Bindings.Bedrock.Interop.WorldGenContext arg16, global::Hosihikari.Bindings.Bedrock.Interop.BiomeRegistry biomeRegistry)
-    {
-        fixed (float* __hs_vectorData15 = widthRandomization)
-        {
-            return NativeMethods.TablePtr->C4.hs_method_c17dbc20((void*)__hosihikari_shim_handle, (void*)blocks.Handle, (void*)localBiomeSource.Handle, (void*)arg2, (void*)random.Handle, (void*)pos.Handle, (void*)startPos.Handle, (void*)originalStartPos.Handle, x0, x1, y0, y1, z0, z1, horizontalRadius, verticalRadius, (void*)arg16.Handle, (void*)biomeRegistry.Handle, __hs_vectorData15, (nuint)(widthRandomization?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __carve(nint blocks, nint localBiomeSource, nint arg2, nint random, nint pos, nint startPos, nint originalStartPos, int x0, int x1, int y0, int y1, int z0, int z1, float horizontalRadius, float verticalRadius, nint widthRandomization, nint arg16, nint biomeRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool __isDiggable(global::Hosihikari.Bindings.Bedrock.Interop.BlockType block)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_41d57f41((void*)__hosihikari_shim_handle, (void*)block.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __isDiggable(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UnderwaterCanyonFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.UnderwaterCanyonFeature arg0)
     {

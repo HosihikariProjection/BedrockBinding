@@ -38,19 +38,17 @@ public sealed unsafe partial class DefinitionTrigger : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_6379c4ac((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_fadb7034((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DefinitionTrigger Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_271d89df();
+        var handle = NativeMethods.TablePtr->C3.hs_create_271d89df();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,49 +57,40 @@ public sealed unsafe partial class DefinitionTrigger : global::System.IDisposabl
         return new DefinitionTrigger((nint)handle);
     }
 
-    public static DefinitionTrigger Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_08e7a277((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static DefinitionTrigger Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new DefinitionTrigger((nint)handle);
-    }
-
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_ac4a2612((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCondition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7c1d5232((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7c1d5232((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEvent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_31a13e9b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_31a13e9b((void*)__hosihikari_shim_handle);
     }
 
     public short mTarget
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d3134973((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d3134973((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d3134973((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d3134973((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger((nint)NativeMethods.TablePtr->C4.hs_method_62dc40a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger((nint)NativeMethods.TablePtr->C3.hs_method_62dc40a5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.DefinitionTrigger arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_bf18df73((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -110,7 +99,7 @@ public sealed unsafe partial class DefinitionTrigger : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c3cdfe7c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c3cdfe7c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

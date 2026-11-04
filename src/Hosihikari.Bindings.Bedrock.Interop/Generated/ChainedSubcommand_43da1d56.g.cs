@@ -40,7 +40,7 @@ public sealed unsafe partial class ChainedSubcommand : global::System.IDisposabl
 
     public static ChainedSubcommand Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ChainedSubcommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c50ccf76((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_c50ccf76((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,25 +52,25 @@ public sealed unsafe partial class ChainedSubcommand : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint name_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9e25967b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_9e25967b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint parse_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1ca11999((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_1ca11999((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint type_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_c17109f1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_c17109f1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint values_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b97a9bf0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_b97a9bf0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class ChainedSubcommand : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_43da1d56((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_43da1d56((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

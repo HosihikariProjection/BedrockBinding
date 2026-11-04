@@ -40,7 +40,7 @@ public sealed unsafe partial class SetHudPacketPayload : global::System.IDisposa
 
     public static SetHudPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetHudPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_890ce8c7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_890ce8c7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class SetHudPacketPayload : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mHudElement_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2e38ee1a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2e38ee1a((void*)__hosihikari_shim_handle);
     }
 
     public int mHudVisible
     {
-        get => NativeMethods.TablePtr->C4.hs_get_73927c94((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_73927c94((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_73927c94((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_73927c94((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class SetHudPacketPayload : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_eae37f61((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_eae37f61((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

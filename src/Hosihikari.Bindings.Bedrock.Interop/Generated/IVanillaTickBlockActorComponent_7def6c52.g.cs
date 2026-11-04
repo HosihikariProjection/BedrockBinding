@@ -40,31 +40,31 @@ public sealed unsafe partial class IVanillaTickBlockActorComponent
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor getBlockActor_a029252d()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)NativeMethods.TablePtr->C2.hs_method_a029252d((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)NativeMethods.TablePtr->C1.hs_method_a029252d((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockActor getBlockActor_67ce9bb4()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)NativeMethods.TablePtr->C2.hs_method_67ce9bb4((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockActor((nint)NativeMethods.TablePtr->C1.hs_method_67ce9bb4((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getBlockActorPosition()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C2.hs_method_28fe8905((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_28fe8905((void*)__hosihikari_shim_handle), false);
     }
 
     public byte getBlockActorType()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7c75bdc7((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_7c75bdc7((void*)__hosihikari_shim_handle);
     }
 
     public int getTickCount()
     {
-        return NativeMethods.TablePtr->C2.hs_method_af3064b2((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_af3064b2((void*)__hosihikari_shim_handle);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C2.hs_method_2fc6076d((void*)__hosihikari_shim_handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C1.hs_method_2fc6076d((void*)__hosihikari_shim_handle, (void*)region.Handle);
     }
 }

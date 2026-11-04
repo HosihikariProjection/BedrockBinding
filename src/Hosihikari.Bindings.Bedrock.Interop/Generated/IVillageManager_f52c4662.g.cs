@@ -41,12 +41,12 @@ public sealed unsafe partial class IVillageManager : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f6cd5cdc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f6cd5cdc((void*)__hosihikari_shim_handle);
     }
 
     public static IVillageManager Create(global::Hosihikari.Bindings.Bedrock.Interop.IVillageManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_206b49f8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_206b49f8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,13 +57,13 @@ public sealed unsafe partial class IVillageManager : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? fetchClosestVillage(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos position, int maxDistFromVillageBounds, uint searchRadius)
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_364199a9((void*)__hosihikari_shim_handle, (void*)position.Handle, maxDistFromVillageBounds, searchRadius);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_364199a9((void*)__hosihikari_shim_handle, (void*)position.Handle, maxDistFromVillageBounds, searchRadius);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getVillageByID(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID villageID)
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_388985ba((void*)__hosihikari_shim_handle, (void*)villageID.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_388985ba((void*)__hosihikari_shim_handle, (void*)villageID.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -74,7 +74,7 @@ public sealed unsafe partial class IVillageManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_f52c4662((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_f52c4662((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

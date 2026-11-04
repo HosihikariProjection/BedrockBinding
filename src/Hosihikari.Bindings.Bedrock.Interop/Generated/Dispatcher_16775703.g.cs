@@ -38,23 +38,22 @@ public sealed unsafe partial class Dispatcher : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_8caa04db((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool CheckSignalClose()
     {
-        return NativeMethods.TablePtr->C5.hs_method_a295a9b3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_a295a9b3((void*)__hosihikari_shim_handle) != 0;
     }
 
     public static Dispatcher Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Dispatcher arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_e4073286((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_e4073286((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,22 +64,22 @@ public sealed unsafe partial class Dispatcher : global::System.IDisposable
 
     public uint GetRequestedEvents()
     {
-        return NativeMethods.TablePtr->C5.hs_method_8d183fe7((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_8d183fe7((void*)__hosihikari_shim_handle);
     }
 
     public ulong GetSocket()
     {
-        return NativeMethods.TablePtr->C5.hs_method_25786957((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_25786957((void*)__hosihikari_shim_handle);
     }
 
     public nint GetWSAEvent()
     {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_96e93352((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_96e93352((void*)__hosihikari_shim_handle);
     }
 
     public void OnEvent(uint ff, int err)
     {
-        NativeMethods.TablePtr->C5.hs_method_af48d1ca((void*)__hosihikari_shim_handle, ff, err);
+        NativeMethods.TablePtr->C4.hs_method_af48d1ca((void*)__hosihikari_shim_handle, ff, err);
     }
 
 
@@ -90,7 +89,7 @@ public sealed unsafe partial class Dispatcher : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_16775703((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_16775703((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

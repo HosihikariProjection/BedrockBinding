@@ -38,14 +38,13 @@ public sealed unsafe partial class RaidTriggerDefinition : global::System.IDispo
         return __hs_handle;
     }
 
-    public static nint JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_eac4a010();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint JSONUTIL_DROP_UNRECOGNIZED_FIELDS_VERSION() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RaidTriggerDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ff0897ef();
+        var handle = NativeMethods.TablePtr->C2.hs_create_ff0897ef();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class RaidTriggerDefinition : global::System.IDispo
 
     public static RaidTriggerDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7d6fc5d6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_7d6fc5d6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,12 +67,12 @@ public sealed unsafe partial class RaidTriggerDefinition : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkfea261_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1eac86ab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1eac86ab((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition((nint)NativeMethods.TablePtr->C3.hs_method_ac10d143((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RaidTriggerDefinition((nint)NativeMethods.TablePtr->C2.hs_method_ac10d143((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -82,7 +81,7 @@ public sealed unsafe partial class RaidTriggerDefinition : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d131eb01((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d131eb01((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

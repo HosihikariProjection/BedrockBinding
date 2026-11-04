@@ -68,15 +68,13 @@ public sealed unsafe partial class TransferToCommand : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_71cb7240((void*)__hosihikari_shim_handle);
     }
 
-    public void _execute()
-    {
-        NativeMethods.TablePtr->C0.hs_method_6ce06458((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isDone()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_9e3f3c5f((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isDone() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TransferToCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.AgentCommands.TransferToCommand arg0)
     {

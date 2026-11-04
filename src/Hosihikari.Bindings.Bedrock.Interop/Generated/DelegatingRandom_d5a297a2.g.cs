@@ -38,40 +38,33 @@ public sealed unsafe partial class DelegatingRandom : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _consumeCount(uint count)
-    {
-        NativeMethods.TablePtr->C2.hs_method_21f34523((void*)__hosihikari_shim_handle, count);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _consumeCount(uint count) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _nextBoolean()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_61728e49((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _nextBoolean() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public double _nextDouble()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_3f494ecd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public double _nextDouble() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public double _nextGaussianDouble()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_11ae5ec8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public double _nextGaussianDouble() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _nextInt()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_ac5fccc7((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _nextInt() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _nextInt(int bound)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_6543b357((void*)__hosihikari_shim_handle, bound);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _nextInt(nint bound) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public long _nextLong()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_c3a68d63((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public long _nextLong() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DelegatingRandom Create()
     {

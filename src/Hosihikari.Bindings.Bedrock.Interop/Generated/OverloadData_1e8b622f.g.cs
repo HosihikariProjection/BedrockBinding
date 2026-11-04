@@ -55,10 +55,9 @@ public sealed unsafe partial class OverloadData : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_fc4ab933((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.OverloadData other)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_f99a448b((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint @params_Address

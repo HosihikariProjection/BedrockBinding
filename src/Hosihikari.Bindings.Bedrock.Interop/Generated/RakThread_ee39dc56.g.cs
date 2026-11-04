@@ -38,9 +38,9 @@ public sealed unsafe partial class RakThread : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: parameter type 'unsigned int (*)(void *)' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static int Create(nint start_address, nint arglist, int priority) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'unsigned int (*)(void *)' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -48,7 +48,7 @@ public sealed unsafe partial class RakThread : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_ee39dc56((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ee39dc56((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

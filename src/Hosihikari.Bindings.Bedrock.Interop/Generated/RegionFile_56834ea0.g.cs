@@ -38,10 +38,9 @@ public sealed unsafe partial class RegionFile : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path basePath)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_516f17f9((void*)__hosihikari_shim_handle, (void*)basePath.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint basePath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RegionFile Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class RegionFile : global::System.IDisposable
         return new RegionFile((nint)handle);
     }
 
-    public static RegionFile Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path basePath)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e97d5edd((void*)basePath.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RegionFile((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static RegionFile Create(nint basePath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RegionFile Create(global::Hosihikari.Bindings.Bedrock.Interop.RegionFile arg0)
     {
@@ -106,14 +98,13 @@ public sealed unsafe partial class RegionFile : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_452554f9((void*)__hosihikari_shim_handle);
     }
 
-    public bool open()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_d883055c((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool open() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool readChunk(int x, int z, nint destChunkData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

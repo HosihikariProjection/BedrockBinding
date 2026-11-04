@@ -38,11 +38,9 @@ public sealed unsafe partial class WorkerPoolHandleImpl : global::System.IDispos
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _get()
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_e56d1453((void*)__hosihikari_shim_handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _get() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WorkerPoolHandleImpl Create()
     {

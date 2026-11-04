@@ -38,19 +38,17 @@ public sealed unsafe partial class CombatRegenerationListener : global::System.I
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorEventCoordinator coordinator)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_bab150ba((void*)__hosihikari_shim_handle, (void*)coordinator.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint coordinator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorNotificationEvent @event)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_9c5f3631((void*)__hosihikari_shim_handle, (void*)@event.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent(nint @event) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CombatRegenerationListener Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_030398e8();
+        var handle = NativeMethods.TablePtr->C0.hs_create_030398e8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,20 +57,13 @@ public sealed unsafe partial class CombatRegenerationListener : global::System.I
         return new CombatRegenerationListener((nint)handle);
     }
 
-    public static CombatRegenerationListener Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorEventCoordinator coordinator)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fa432d9a((void*)coordinator.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CombatRegenerationListener((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CombatRegenerationListener Create(nint coordinator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CombatRegenerationListener Create(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_5f610e81((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_5f610e81((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,35 +75,35 @@ public sealed unsafe partial class CombatRegenerationListener : global::System.I
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorEventCoordinator_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_071a1c73((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_071a1c73((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMobId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_cf04a939((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_cf04a939((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetActorId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8c53b84d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8c53b84d((void*)__hosihikari_shim_handle);
     }
 
     public bool mTargetKilledByMob
     {
-        get => NativeMethods.TablePtr->C1.hs_get_a5365a76((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_a5365a76((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_a5365a76((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_a5365a76((void*)__hosihikari_shim_handle, value);
     }
 
     public int onEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorNotificationEvent @event)
     {
-        return NativeMethods.TablePtr->C1.hs_method_932fe17b((void*)__hosihikari_shim_handle, (void*)@event.Handle);
+        return NativeMethods.TablePtr->C0.hs_method_932fe17b((void*)__hosihikari_shim_handle, (void*)@event.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener((nint)NativeMethods.TablePtr->C1.hs_method_74d883a6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationListener((nint)NativeMethods.TablePtr->C0.hs_method_74d883a6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -122,7 +113,7 @@ public sealed unsafe partial class CombatRegenerationListener : global::System.I
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_cf3d1396((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_cf3d1396((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
 
     public static ParseRule Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_625865c8();
+        var handle = NativeMethods.TablePtr->C0.hs_create_625865c8();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
 
     public static ParseRule Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e3d43013((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_e3d43013((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,34 +63,34 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint derivation_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_404e57c1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_404e57c1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint nonTerminal_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_925fa6d2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_925fa6d2((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint rhs) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule((nint)NativeMethods.TablePtr->C1.hs_method_dcec9f0b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.ParseRule((nint)NativeMethods.TablePtr->C0.hs_method_dcec9f0b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint process_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9859e8e0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_9859e8e0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint versions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0dbe96c0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_0dbe96c0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -100,7 +100,7 @@ public sealed unsafe partial class ParseRule : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_56a512cc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_56a512cc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

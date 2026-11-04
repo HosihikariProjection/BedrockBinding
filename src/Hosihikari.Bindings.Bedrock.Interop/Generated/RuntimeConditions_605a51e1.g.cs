@@ -60,10 +60,9 @@ public sealed unsafe partial class RuntimeConditions : global::System.IDisposabl
         return new RuntimeConditions((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions getMissing(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions runtimeConditions)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions((nint)NativeMethods.TablePtr->C3.hs_method_435a99b4((void*)__hosihikari_shim_handle, (void*)runtimeConditions.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getMissing(nint runtimeConditions) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk23fbfa_Address
@@ -76,11 +75,9 @@ public sealed unsafe partial class RuntimeConditions : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.RuntimeConditions((nint)NativeMethods.TablePtr->C3.hs_method_d5663d27((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public string toString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_153c739b((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

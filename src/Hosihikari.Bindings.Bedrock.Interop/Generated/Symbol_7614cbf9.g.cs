@@ -54,7 +54,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
 
     public static Symbol Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_369e7b1f();
+        var handle = NativeMethods.TablePtr->C0.hs_create_369e7b1f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,7 +65,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
 
     public static Symbol Create_f766d7a4(int data)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f766d7a4(data);
+        var handle = NativeMethods.TablePtr->C0.hs_create_f766d7a4(data);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,7 +76,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
 
     public static Symbol Create_0e9f30a4(int data)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0e9f30a4(data);
+        var handle = NativeMethods.TablePtr->C0.hs_create_0e9f30a4(data);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -87,7 +87,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
 
     public static Symbol Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_51027e26((void*)other.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_51027e26((void*)other.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -98,7 +98,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
 
     public static Symbol Create_b985b882(int val)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b985b882(val);
+        var handle = NativeMethods.TablePtr->C0.hs_create_b985b882(val);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -109,23 +109,23 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
 
     public int mValue
     {
-        get => NativeMethods.TablePtr->C1.hs_get_8476e4ab((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8476e4ab((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_8476e4ab((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_8476e4ab((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol((nint)NativeMethods.TablePtr->C1.hs_method_734990f6((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol((nint)NativeMethods.TablePtr->C0.hs_method_734990f6((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
     }
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry_Nested.Symbol other)
     {
-        return NativeMethods.TablePtr->C1.hs_method_a24a5a50((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_a24a5a50((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
     public ulong toIndex()
     {
-        return NativeMethods.TablePtr->C1.hs_method_88deaa6a((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C0.hs_method_88deaa6a((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -134,7 +134,7 @@ public sealed unsafe partial class Symbol : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_7614cbf9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_7614cbf9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

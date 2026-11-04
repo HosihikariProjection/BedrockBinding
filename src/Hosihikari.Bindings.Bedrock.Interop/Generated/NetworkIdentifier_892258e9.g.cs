@@ -65,11 +65,9 @@ public sealed unsafe partial class NetworkIdentifier : global::System.IDisposabl
         return new NetworkIdentifier((nint)handle);
     }
 
-    public static string calculateCorrelationId(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID rakId)
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_5ddb1ba4((void*)rakId.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint calculateCorrelationId(nint rakId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool equalsTypeData(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier other)
     {
@@ -82,11 +80,9 @@ public sealed unsafe partial class NetworkIdentifier : global::System.IDisposabl
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public string getCorrelationId()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_e49bf61b((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getCorrelationId() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong getHash()
     {
@@ -99,10 +95,9 @@ public sealed unsafe partial class NetworkIdentifier : global::System.IDisposabl
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public bool isUnassigned()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_1c7515a7((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isUnassigned() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGuid_Address

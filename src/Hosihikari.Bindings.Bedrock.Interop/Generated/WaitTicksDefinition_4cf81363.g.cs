@@ -50,10 +50,9 @@ public sealed unsafe partial class WaitTicksDefinition : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C4.hs_get_ab246bc8((void*)__hosihikari_shim_handle);
     }
 
-    public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
-    {
-        NativeMethods.TablePtr->C4.hs_method_4474424f((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _load(nint value, nint factory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WaitTicksDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.WaitTicksDefinition arg0)
     {

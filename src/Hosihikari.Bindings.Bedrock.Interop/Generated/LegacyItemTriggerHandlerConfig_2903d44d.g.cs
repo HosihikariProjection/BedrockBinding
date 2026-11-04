@@ -38,15 +38,13 @@ public sealed unsafe partial class LegacyItemTriggerHandlerConfig : global::Syst
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.LegacyItemTriggerHandlerConfig arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_f6c85937((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_78cd07e1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyItemTriggerHandlerConfig Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class LegacyItemTriggerHandlerConfig : global::Syst
         return new LegacyItemTriggerHandlerConfig((nint)handle);
     }
 
-    public static LegacyItemTriggerHandlerConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyItemTriggerHandlerConfig arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3fb0d82c((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LegacyItemTriggerHandlerConfig((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LegacyItemTriggerHandlerConfig Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorTriggerHandler_Address

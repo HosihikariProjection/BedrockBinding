@@ -38,19 +38,17 @@ public sealed unsafe partial class StringAppendBuffer : global::System.IDisposab
         return __hs_handle;
     }
 
-    public int _overflow(int c)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_7e6e8561((void*)__hosihikari_shim_handle, c);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _overflow(int c) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public long _xsputn(nint s, long n)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_5d788b73((void*)__hosihikari_shim_handle, (void*)s, n);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public long _xsputn(nint s, long n) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StringAppendBuffer Create()
     {

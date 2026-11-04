@@ -38,68 +38,49 @@ public sealed unsafe partial class BiomeSource3d : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Biome? __getBiome(nint getBiomeOptions)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_6a069387((void*)__hosihikari_shim_handle, (void*)getBiomeOptions);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __getBiome(nint getBiomeOptions) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _collectBiomesInColumn(int x, int z, int minY, int maxY, global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[] @out)
-    {
-        var __hs_vectorItems4 = @out;
-        var __hs_vectorHandles4 = new nint[__hs_vectorItems4?.Length ?? 0];
-        for (var __hs_i4 = 0; __hs_i4 < __hs_vectorHandles4.Length; __hs_i4++)
-        {
-            __hs_vectorHandles4[__hs_i4] = __hs_vectorItems4![__hs_i4]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData4 = __hs_vectorHandles4)
-        {
-            var __hs_vectorData4 = (void**)__hs_vectorHandleData4;
-            return NativeMethods.TablePtr->C0.hs_method_2c462f73((void*)__hosihikari_shim_handle, x, z, minY, maxY, __hs_vectorData4, (nuint)(@out?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _collectBiomesInColumn(int x, int z, int minY, int maxY, nint @out) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: span element type 'const BiomeIdType' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _containsOnly(int xo, int yo, int zo, int r, nint allowed) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: span element type 'const BiomeIdType' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlendedMultiNoiseBiomeProvider biomeProvider, global::Hosihikari.Bindings.Bedrock.Interop.DimensionHeightRange dimensionHeight)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_9ddb2f70((void*)__hosihikari_shim_handle, (void*)biomeProvider.Handle, (void*)dimensionHeight.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint biomeProvider, nint dimensionHeight) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _fillBiomes(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk, global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache? chunkLocalNoiseCache)
-    {
-        NativeMethods.TablePtr->C0.hs_method_703db671((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle, (void*)(chunkLocalNoiseCache?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _fillBiomes(nint levelChunk, nint chunkLocalNoiseCache) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea _getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox box, uint scale)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)NativeMethods.TablePtr->C0.hs_method_e7f242e6((void*)__hosihikari_shim_handle, (void*)box.Handle, scale));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getBiomeArea(nint box, uint scale) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea _getBiomeArea(global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox box, uint scale, nint getBiomeOptionsIn)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeArea((nint)NativeMethods.TablePtr->C0.hs_method_26e9cce6((void*)__hosihikari_shim_handle, (void*)box.Handle, scale, (void*)getBiomeOptionsIn));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getBiomeArea(nint box, uint scale, nint getBiomeOptionsIn) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'ChunkVolume::VolumeOf<Biome>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getBiomeVolumeToFill(short chunkHeight, nint chunkMin, uint levelSeed, nint chunkLocalNoiseCache) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'ChunkVolume::VolumeOf<Biome>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getType()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_cd94638e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _hasBiomeById(global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType id)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_c75fa826((void*)__hosihikari_shim_handle, (void*)id.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _hasBiomeById(nint id) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'BiomeHashType' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _hasBiomeByNameHash(nint hash) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'BiomeHashType' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BiomeSource3d Create()
     {
@@ -112,16 +93,9 @@ public sealed unsafe partial class BiomeSource3d : global::System.IDisposable
         return new BiomeSource3d((nint)handle);
     }
 
-    public static BiomeSource3d Create(global::Hosihikari.Bindings.Bedrock.Interop.BlendedMultiNoiseBiomeProvider biomeProvider, global::Hosihikari.Bindings.Bedrock.Interop.DimensionHeightRange dimensionHeight)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_52ed19b3((void*)biomeProvider.Handle, (void*)dimensionHeight.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BiomeSource3d((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BiomeSource3d Create(nint biomeProvider, nint dimensionHeight) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BiomeSource3d Create(global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource3d arg0)
     {
@@ -140,10 +114,9 @@ public sealed unsafe partial class BiomeSource3d : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Biome((nint)__hs_handle, false) : null;
     }
 
-    public void _populateBiomeSamples(nint biomeSamples, global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalNoiseCache chunkLocalNoiseCache)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b7cd9aec((void*)__hosihikari_shim_handle, (void*)biomeSamples, (void*)chunkLocalNoiseCache.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _populateBiomeSamples(nint biomeSamples, nint chunkLocalNoiseCache) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool collectBiomesInColumn(int x, int z, int minY, int maxY, global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[] @out)
     {

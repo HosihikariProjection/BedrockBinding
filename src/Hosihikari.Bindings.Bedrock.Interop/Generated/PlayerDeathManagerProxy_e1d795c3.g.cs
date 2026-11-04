@@ -38,29 +38,25 @@ public sealed unsafe partial class PlayerDeathManagerProxy : global::System.IDis
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? _fetchActor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorUniqueID)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_89e0e42d((void*)__hosihikari_shim_handle, (void*)actorUniqueID.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _fetchActor(nint actorUniqueID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onWorldOwnerHasDied()
-    {
-        NativeMethods.TablePtr->C3.hs_method_f67696b9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onWorldOwnerHasDied() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _shouldShowDeathMessages()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_93f756c9((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _shouldShowDeathMessages() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayerDeathManagerProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDeathManagerProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_17d9865f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_17d9865f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,24 +67,24 @@ public sealed unsafe partial class PlayerDeathManagerProxy : global::System.IDis
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Actor? fetchActor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorUniqueID)
     {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_b598b32e((void*)__hosihikari_shim_handle, (void*)actorUniqueID.Handle);
+        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_b598b32e((void*)__hosihikari_shim_handle, (void*)actorUniqueID.Handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mServerLevel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6ac4dbb3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ac4dbb3((void*)__hosihikari_shim_handle);
     }
 
     public void onWorldOwnerHasDied()
     {
-        NativeMethods.TablePtr->C3.hs_method_ce8a49e5((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_ce8a49e5((void*)__hosihikari_shim_handle);
     }
 
     public bool shouldShowDeathMessages()
     {
-        return NativeMethods.TablePtr->C3.hs_method_83f8ec9f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_83f8ec9f((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -98,7 +94,7 @@ public sealed unsafe partial class PlayerDeathManagerProxy : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e1d795c3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e1d795c3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

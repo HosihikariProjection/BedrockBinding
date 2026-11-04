@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockMaterialInstancesComponent : global::Sys
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription blockMaterialInstancesDescription)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_ee63c4cf((void*)__hosihikari_shim_handle, (void*)blockMaterialInstancesDescription.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint blockMaterialInstancesDescription) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockMaterialInstancesComponent Create()
     {
@@ -65,16 +64,9 @@ public sealed unsafe partial class BlockMaterialInstancesComponent : global::Sys
         return new BlockMaterialInstancesComponent((nint)handle);
     }
 
-    public static BlockMaterialInstancesComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstancesDescription blockMaterialInstancesDescription)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_60854097((void*)blockMaterialInstancesDescription.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BlockMaterialInstancesComponent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BlockMaterialInstancesComponent Create(nint blockMaterialInstancesDescription) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMaterials_Address

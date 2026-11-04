@@ -89,10 +89,9 @@ public sealed unsafe partial class UpdateAbilitiesPacket : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_6c17e20e((void*)__hosihikari_shim_handle, (void*)stream.Handle, (void*)reflectionCtx.Handle));
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.UpdateAbilitiesPacketPayload payload)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_9f12c11e((void*)__hosihikari_shim_handle, (void*)payload.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint payload) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _disallowBatching()
     {
@@ -146,9 +145,9 @@ public sealed unsafe partial class UpdateAbilitiesPacket : global::System.IDispo
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
@@ -187,16 +186,9 @@ public sealed unsafe partial class UpdateAbilitiesPacket : global::System.IDispo
         return new UpdateAbilitiesPacket((nint)handle);
     }
 
-    public static UpdateAbilitiesPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateAbilitiesPacketPayload payload)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ee44c483((void*)payload.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new UpdateAbilitiesPacket((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static UpdateAbilitiesPacket Create(nint payload) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UpdateAbilitiesPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.UpdateAbilitiesPacket arg0)
     {

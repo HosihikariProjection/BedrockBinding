@@ -40,7 +40,7 @@ public sealed unsafe partial class OnActorLeaveVolumeComponent : global::System.
 
     public static OnActorLeaveVolumeComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.OnActorLeaveVolumeComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_27b373f4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_27b373f4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class OnActorLeaveVolumeComponent : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mTriggers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_86b1acbb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_86b1acbb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class OnActorLeaveVolumeComponent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_93bb8a91((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_93bb8a91((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

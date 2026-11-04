@@ -40,7 +40,7 @@ public sealed unsafe partial class CodeBuilderPacketPayload : global::System.IDi
 
     public static CodeBuilderPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilderPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c0c5e5ff((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_c0c5e5ff((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class CodeBuilderPacketPayload : global::System.IDi
 
     public bool mShouldOpenCodeBuilder
     {
-        get => NativeMethods.TablePtr->C1.hs_get_c1b9accb((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_c1b9accb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_c1b9accb((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_c1b9accb((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mURL_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_43368a1a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_43368a1a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class CodeBuilderPacketPayload : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_821c004e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_821c004e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

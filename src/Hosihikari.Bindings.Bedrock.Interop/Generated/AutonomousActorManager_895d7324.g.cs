@@ -38,15 +38,13 @@ public sealed unsafe partial class AutonomousActorManager : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? entityRegistry, global::Hosihikari.Bindings.Abi.SharedHandle? actorManager)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_23afc476((void*)__hosihikari_shim_handle, entityRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint entityRegistry, nint actorManager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_7dfa6367((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AutonomousActorManager Create()
     {
@@ -70,49 +68,37 @@ public sealed unsafe partial class AutonomousActorManager : global::System.IDisp
         return new AutonomousActorManager((nint)handle);
     }
 
-    public static AutonomousActorManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? entityRegistry, global::Hosihikari.Bindings.Abi.SharedHandle? actorManager)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_92d9eb8f(entityRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AutonomousActorManager Create(nint entityRegistry, nint actorManager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new AutonomousActorManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onChunkDiscarded(nint levelChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onChunkDiscarded(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk)
-    {
-        NativeMethods.TablePtr->C0.hs_method_cf5c3db8((void*)__hosihikari_shim_handle, (void*)levelChunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onRemoveActorEntityReferences(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onRemoveActorEntityReferences(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C0.hs_method_795aa20d((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _saveAllAutonomousActors(nint levelStorage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _saveAllAutonomousActors(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a8767c1a((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint addAutonomousActorEntity_8c0e1faf(nint dimension, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint addAutonomousActorEntity_9780c04e(nint addActorEntityProxy, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool hasOwnedInactiveAutonomousActorWithUniqueID(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID actorUniqueID)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_218c25ff((void*)__hosihikari_shim_handle, (void*)actorUniqueID.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool hasOwnedInactiveAutonomousActorWithUniqueID(nint actorUniqueID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void loadAutonomousActorsFromDisk(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage, global::Hosihikari.Bindings.Bedrock.Interop.ActorFactory actorFactory)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b2bac4fa((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle, (void*)actorFactory.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void loadAutonomousActorsFromDisk(nint levelStorage, nint actorFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActiveAutonomousActors_Address
@@ -168,15 +154,13 @@ public sealed unsafe partial class AutonomousActorManager : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C0.hs_get_a650eff5((void*)__hosihikari_shim_handle);
     }
 
-    public void registerForLevelChunkEvents(global::Hosihikari.Bindings.Bedrock.Interop.ILevelChunkEventManagerConnector levelChunkEventManagerConnector)
-    {
-        NativeMethods.TablePtr->C0.hs_method_2ddecb13((void*)__hosihikari_shim_handle, (void*)levelChunkEventManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerForLevelChunkEvents(nint levelChunkEventManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void registerLevelStorageManagerListener(global::Hosihikari.Bindings.Bedrock.Interop.ILevelStorageManagerConnector levelStorageManagerConnector)
-    {
-        NativeMethods.TablePtr->C0.hs_method_3e6fb506((void*)__hosihikari_shim_handle, (void*)levelStorageManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerLevelStorageManagerListener(nint levelStorageManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

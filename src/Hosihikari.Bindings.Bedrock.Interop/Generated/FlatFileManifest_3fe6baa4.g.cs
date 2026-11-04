@@ -60,20 +60,17 @@ public sealed unsafe partial class FlatFileManifest : global::System.IDisposable
         return new FlatFileManifest((nint)handle);
     }
 
-    public void _clear()
-    {
-        NativeMethods.TablePtr->C1.hs_method_e53f765d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _clear() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _createFromVector(nint manifestPath, nint manifestInfoVector, ulong version, bool validatePaths) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestInfo? findFileOrDirectoryEntry(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView filePath, bool skipDeleted)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_aae9225b((void*)__hosihikari_shim_handle, (void*)filePath.Handle, skipDeleted);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestInfo((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint findFileOrDirectoryEntry(nint filePath, bool skipDeleted) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk15f051_Address

@@ -38,14 +38,13 @@ public sealed unsafe partial class PositionTrackingDBClient : global::System.IDi
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_a4bfaeb1((void*)__hosihikari_shim_handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PositionTrackingDBClient Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e47cc23d();
+        var handle = NativeMethods.TablePtr->C2.hs_create_e47cc23d();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,20 +53,13 @@ public sealed unsafe partial class PositionTrackingDBClient : global::System.IDi
         return new PositionTrackingDBClient((nint)handle);
     }
 
-    public static PositionTrackingDBClient Create(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_f5a7d352((void*)level.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PositionTrackingDBClient((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PositionTrackingDBClient Create(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PositionTrackingDBClient Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBClient arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d5f4ae6b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d5f4ae6b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,25 +68,25 @@ public sealed unsafe partial class PositionTrackingDBClient : global::System.IDi
         return new PositionTrackingDBClient((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint findTracker(nint id, nint outRecord) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f49a7a7c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f49a7a7c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLocalCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b340c2aa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b340c2aa((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBClient operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBClient arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBClient((nint)NativeMethods.TablePtr->C3.hs_method_37148260((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.PositionTrackingDBClient((nint)NativeMethods.TablePtr->C2.hs_method_37148260((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -104,7 +96,7 @@ public sealed unsafe partial class PositionTrackingDBClient : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2b437dd6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2b437dd6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

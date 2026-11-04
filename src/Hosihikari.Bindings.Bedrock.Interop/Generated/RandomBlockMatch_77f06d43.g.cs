@@ -38,23 +38,21 @@ public sealed unsafe partial class RandomBlockMatch : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
-    {
-        NativeMethods.TablePtr->C5.hs_method_aa5ebbba((void*)__hosihikari_shim_handle, (void*)hash.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _appendMetadataKey(nint hash) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
-    {
-        return NativeMethods.TablePtr->C5.hs_method_6ce70a94((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _test(nint block, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RandomBlockMatch Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.processors.BlockRules.RandomBlockMatch arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_e9f68bf9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_e9f68bf9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,23 +63,23 @@ public sealed unsafe partial class RandomBlockMatch : global::System.IDisposable
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C5.hs_method_8df70182((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C4.hs_method_8df70182((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public nint mBlock
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_aae7da00((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_aae7da00((void*)__hosihikari_shim_handle);
     }
 
     public float mProbability
     {
-        get => NativeMethods.TablePtr->C5.hs_get_1af03886((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_1af03886((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_1af03886((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_1af03886((void*)__hosihikari_shim_handle, value);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C5.hs_method_6feb54f8((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_6feb54f8((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
     }
 
 
@@ -91,7 +89,7 @@ public sealed unsafe partial class RandomBlockMatch : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_77f06d43((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_77f06d43((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

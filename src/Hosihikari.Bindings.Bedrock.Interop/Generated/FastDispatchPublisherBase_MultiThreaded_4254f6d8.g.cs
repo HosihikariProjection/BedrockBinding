@@ -38,9 +38,9 @@ public sealed unsafe partial class FastDispatchPublisherBase_MultiThreaded : glo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FastDispatchPublisherBase_MultiThreaded Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.FastDispatchPublisherBase_MultiThreaded arg0)
     {
@@ -53,10 +53,9 @@ public sealed unsafe partial class FastDispatchPublisherBase_MultiThreaded : glo
         return new FastDispatchPublisherBase_MultiThreaded((nint)handle);
     }
 
-    public bool _loadDispatchTargets(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.DispatchTargets targets)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_d60ba23b((void*)__hosihikari_shim_handle, (void*)targets.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _loadDispatchTargets(nint targets) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFastDispatchInfo_Address

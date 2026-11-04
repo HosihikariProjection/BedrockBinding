@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerStartItemCooldownPacketPayload : global
 
     public static PlayerStartItemCooldownPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerStartItemCooldownPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_cf5b91e6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_cf5b91e6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class PlayerStartItemCooldownPacketPayload : global
 
     public int mDurationTicks
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a42867ad((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_a42867ad((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a42867ad((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a42867ad((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemCategory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c801a2f0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c801a2f0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class PlayerStartItemCooldownPacketPayload : global
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_fabc6183((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_fabc6183((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

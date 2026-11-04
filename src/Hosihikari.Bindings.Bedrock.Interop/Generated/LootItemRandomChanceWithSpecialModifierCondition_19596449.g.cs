@@ -44,15 +44,13 @@ public sealed unsafe partial class LootItemRandomChanceWithSpecialModifierCondit
         get => (nint)NativeMethods.TablePtr->C2.hs_get_fbdb8582((void*)__hosihikari_shim_handle);
     }
 
-    public bool __applies(global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext context)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_418390af((void*)__hosihikari_shim_handle, (void*)random.Handle, (void*)context.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __applies(nint random, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getConditionType()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_a0accccc((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getConditionType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LootItemRandomChanceWithSpecialModifierCondition Create()
     {
@@ -81,9 +79,9 @@ public sealed unsafe partial class LootItemRandomChanceWithSpecialModifierCondit
         return NativeMethods.TablePtr->C2.hs_method_ef671af6((void*)__hosihikari_shim_handle, (void*)random.Handle, (void*)context.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemCondition' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint deserialize(nint @object) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemCondition' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getConditionType()
     {

@@ -38,10 +38,9 @@ public sealed unsafe partial class FlatFileManifestInfo : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_f393d8b2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FlatFileManifestInfo Create()
     {
@@ -94,10 +93,9 @@ public sealed unsafe partial class FlatFileManifestInfo : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.FlatFileManifestInfo((nint)NativeMethods.TablePtr->C1.hs_method_ee3b8e75((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void setPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView path)
-    {
-        NativeMethods.TablePtr->C1.hs_method_9f455783((void*)__hosihikari_shim_handle, (void*)path.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setPath(nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

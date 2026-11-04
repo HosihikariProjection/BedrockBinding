@@ -44,14 +44,13 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         set => NativeMethods.TablePtr->C3.hs_set_d726b881((void*)__hosihikari_shim_handle, (void*)value);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.RepairableItemComponent component)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_431fc3f9((void*)__hosihikari_shim_handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RepairableItemComponent Create()
     {
@@ -64,16 +63,9 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         return new RepairableItemComponent((nint)handle);
     }
 
-    public static RepairableItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.RepairableItemComponent component)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_bbf3317f((void*)component.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RepairableItemComponent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static RepairableItemComponent Create(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RepairableItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RepairableItemComponent arg0)
     {
@@ -86,29 +78,26 @@ public sealed unsafe partial class RepairableItemComponent : global::System.IDis
         return new RepairableItemComponent((nint)handle);
     }
 
-    public int _repairItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase materialItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase resultItem, global::Hosihikari.Bindings.Bedrock.Interop.ExpressionNode repairAmountExpression)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_05629b7b((void*)__hosihikari_shim_handle, (void*)materialItem.Handle, (void*)resultItem.Handle, (void*)repairAmountExpression.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _repairItem(nint materialItem, nint resultItem, nint repairAmountExpression) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.HashedString getIdentifier()
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.HashedString((nint)NativeMethods.TablePtr->C3.hs_method_0c8a43b7(), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.RepairItemResult handleItemRepair(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack inputItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack materialItem, bool allowBidirectionalRepair)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RepairItemResult((nint)NativeMethods.TablePtr->C3.hs_method_54e5e9e6((void*)__hosihikari_shim_handle, (void*)inputItem.Handle, (void*)materialItem.Handle, allowBidirectionalRepair));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint handleItemRepair(nint inputItem, nint materialItem, bool allowBidirectionalRepair) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isValidRepairItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase repairItem)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_a1c34f8a((void*)__hosihikari_shim_handle, (void*)repairItem.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isValidRepairItem(nint repairItem) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRepairItems_Address

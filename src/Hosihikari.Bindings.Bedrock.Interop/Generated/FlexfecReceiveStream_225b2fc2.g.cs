@@ -40,7 +40,7 @@ public sealed unsafe partial class FlexfecReceiveStream : global::System.IDispos
 
     public static FlexfecReceiveStream Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FlexfecReceiveStream arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_092f4a25((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_092f4a25((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +51,22 @@ public sealed unsafe partial class FlexfecReceiveStream : global::System.IDispos
 
     public nint GetStats()
     {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_f9930ecd((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C4.hs_method_f9930ecd((void*)__hosihikari_shim_handle);
     }
 
     public void SetPayloadType(int arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_c315341f((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C4.hs_method_c315341f((void*)__hosihikari_shim_handle, arg0);
     }
 
     public void SetRtcpMode(int arg0)
     {
-        NativeMethods.TablePtr->C5.hs_method_9d7c8493((void*)__hosihikari_shim_handle, arg0);
+        NativeMethods.TablePtr->C4.hs_method_9d7c8493((void*)__hosihikari_shim_handle, arg0);
     }
 
     public int payload_type()
     {
-        return NativeMethods.TablePtr->C5.hs_method_8f5b635f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C4.hs_method_8f5b635f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -76,7 +76,7 @@ public sealed unsafe partial class FlexfecReceiveStream : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_225b2fc2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_225b2fc2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

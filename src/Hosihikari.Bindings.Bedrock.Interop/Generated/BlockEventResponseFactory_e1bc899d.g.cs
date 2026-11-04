@@ -38,15 +38,13 @@ public sealed unsafe partial class BlockEventResponseFactory : global::System.ID
         return __hs_handle;
     }
 
-    public void _initSchema()
-    {
-        NativeMethods.TablePtr->C0.hs_method_bf61210d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initSchema() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _initializeFactory(global::Hosihikari.Bindings.Bedrock.Interop.PackLoadInfo packLoadInfo)
-    {
-        NativeMethods.TablePtr->C0.hs_method_21912938((void*)__hosihikari_shim_handle, (void*)packLoadInfo.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initializeFactory(nint packLoadInfo) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockEventResponseFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockEventResponseFactory arg0)
     {

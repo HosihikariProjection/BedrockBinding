@@ -92,40 +92,33 @@ public sealed unsafe partial class MeleeWeaponEnchant : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C2.hs_get_1a9a291f((void*)__hosihikari_shim_handle);
     }
 
-    public bool __isValidEnchantmentTypeForCategory(byte type)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_e61ac38d((void*)__hosihikari_shim_handle, type) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __isValidEnchantmentTypeForCategory(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _doPostAttack(global::Hosihikari.Bindings.Bedrock.Interop.Actor attacker, global::Hosihikari.Bindings.Bedrock.Interop.Actor victim, int level)
-    {
-        NativeMethods.TablePtr->C2.hs_method_48084387((void*)__hosihikari_shim_handle, (void*)attacker.Handle, (void*)victim.Handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doPostAttack(nint attacker, nint victim, int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public float _getDamageBonus(int level, global::Hosihikari.Bindings.Bedrock.Interop.Actor target, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg2)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_2cc25e89((void*)__hosihikari_shim_handle, level, (void*)target.Handle, (void*)arg2.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getDamageBonus(int level, nint target, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_1c109d10((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxLevel()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_2ba601a6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_7e1dbeda((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isMeleeDamageEnchant()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_686e3765((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isMeleeDamageEnchant() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MeleeWeaponEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.MeleeWeaponEnchant arg0)
     {
@@ -138,10 +131,9 @@ public sealed unsafe partial class MeleeWeaponEnchant : global::System.IDisposab
         return new MeleeWeaponEnchant((nint)handle);
     }
 
-    public static nint VALID_ENCHANTMENTS()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_ea596de7();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint VALID_ENCHANTMENTS() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _isValidEnchantmentTypeForCategory(byte type)
     {

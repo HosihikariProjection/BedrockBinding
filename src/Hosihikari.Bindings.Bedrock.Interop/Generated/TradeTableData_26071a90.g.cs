@@ -38,9 +38,9 @@ public sealed unsafe partial class TradeTableData : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_21_30::TradeTableData' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint parsedData, nint itemRegistry, bool usingUpcomingCreatorFeaturesExperiment, nint jsonVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_21_30::TradeTableData' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TradeTableData Create()
     {
@@ -53,9 +53,9 @@ public sealed unsafe partial class TradeTableData : global::System.IDisposable
         return new TradeTableData((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_21_30::TradeTableData' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static TradeTableData Create(nint parsedData, nint itemRegistry, bool usingUpcomingCreatorFeaturesExperiment, nint jsonVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'SharedTypes::v1_21_30::TradeTableData' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TradeTableData Create(global::Hosihikari.Bindings.Bedrock.Interop.TradeTableData arg0)
     {

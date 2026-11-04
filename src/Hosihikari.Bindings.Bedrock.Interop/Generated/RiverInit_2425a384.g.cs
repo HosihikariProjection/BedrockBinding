@@ -40,7 +40,7 @@ public sealed unsafe partial class RiverInit : global::System.IDisposable
 
     public static RiverInit Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e9d98ac5();
+        var handle = NativeMethods.TablePtr->C2.hs_create_e9d98ac5();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RiverInit : global::System.IDisposable
 
     public static RiverInit Create(global::Hosihikari.Bindings.Bedrock.Interop.OperationNodeFilters.RiverInit arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8318c4f9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8318c4f9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,7 +63,7 @@ public sealed unsafe partial class RiverInit : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoRiverBiomes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e63e9686((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e63e9686((void*)__hosihikari_shim_handle);
     }
 
 
@@ -73,7 +73,7 @@ public sealed unsafe partial class RiverInit : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2425a384((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2425a384((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

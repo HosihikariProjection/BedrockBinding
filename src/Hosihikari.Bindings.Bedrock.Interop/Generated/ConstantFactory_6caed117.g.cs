@@ -38,19 +38,17 @@ public sealed unsafe partial class ConstantFactory : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ConstantFactory arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_68d5f23e((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'entt::meta_type' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint name_, nint type_, bool primitive_, nint func_) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'entt::meta_type' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_6aac4d5e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ConstantFactory Create()
     {
@@ -63,20 +61,13 @@ public sealed unsafe partial class ConstantFactory : global::System.IDisposable
         return new ConstantFactory((nint)handle);
     }
 
-    public static ConstantFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ConstantFactory arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4d9e8638((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ConstantFactory Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ConstantFactory((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'entt::meta_type' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ConstantFactory Create(nint name_, nint type_, bool primitive_, nint func_) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'entt::meta_type' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2f1d92_Address
@@ -102,10 +93,9 @@ public sealed unsafe partial class ConstantFactory : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_681fabaa((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ConstantFactory operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ConstantFactory arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ConstantFactory((nint)NativeMethods.TablePtr->C3.hs_method_b57ed33d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     // The native field type is not projected; this is the address of the field storage.

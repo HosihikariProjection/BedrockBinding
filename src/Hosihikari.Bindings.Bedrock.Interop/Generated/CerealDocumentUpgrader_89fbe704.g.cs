@@ -60,11 +60,9 @@ public sealed unsafe partial class CerealDocumentUpgrader : global::System.IDisp
         return new CerealDocumentUpgrader((nint)handle);
     }
 
-    public static string getVersion(nint document)
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_26c9f595((void*)document);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getVersion(nint document) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk26485c_Address
@@ -83,31 +81,29 @@ public sealed unsafe partial class CerealDocumentUpgrader : global::System.IDisp
         return new global::Hosihikari.Bindings.Bedrock.Interop.CerealDocumentUpgrader((nint)NativeMethods.TablePtr->C0.hs_method_140279eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<SemVersion, rapidjson::GenericDocument<rapidjson::UTF8<>>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint parseDocument(nint json, bool allowMissingVersionAsZero, bool logRapidjsonErrors) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<SemVersion, rapidjson::GenericDocument<rapidjson::UTF8<>>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint parseJsonAndUpgrade(nint outDocumentVersion, nint document, nint json, nint resourceName, bool allowMissingVersionAsZero, bool betaApis, nint minVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool parseUpgradeAndStringifyJsonString(nint json, nint outDocumentVersion, nint document, nint resourceName, bool betaApis, nint minVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void registerUpgrade(global::Hosihikari.Bindings.Abi.SharedHandle? upgrade)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b48320c3((void*)__hosihikari_shim_handle, upgrade?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerUpgrade(nint upgrade) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int upgradeJsonDocument(nint document, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion documentVersion)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_01fd65e3((void*)__hosihikari_shim_handle, (void*)document, (void*)documentVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint upgradeJsonDocument(nint document, nint documentVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static bool validateParsedVersion(nint documentVersion, nint minVersion, bool betaApis) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

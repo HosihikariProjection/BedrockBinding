@@ -38,10 +38,9 @@ public sealed unsafe partial class SecureStorageKey : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_e814f240((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SecureStorageKey Create()
     {
@@ -65,11 +64,9 @@ public sealed unsafe partial class SecureStorageKey : global::System.IDisposable
         return new SecureStorageKey((nint)handle);
     }
 
-    public string getUnencodedKey()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_d58f6f98((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getUnencodedKey() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcf8570_Address

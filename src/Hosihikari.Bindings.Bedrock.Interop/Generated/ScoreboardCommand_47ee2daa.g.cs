@@ -67,10 +67,9 @@ public sealed unsafe partial class ScoreboardCommand : global::System.IDisposabl
         set => NativeMethods.TablePtr->C3.hs_set_8c89cf88((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f3a5053c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScoreboardCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand arg0)
     {
@@ -83,58 +82,25 @@ public sealed unsafe partial class ScoreboardCommand : global::System.IDisposabl
         return new ScoreboardCommand((nint)handle);
     }
 
-    public void _generateCumulativeOutput(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardCommand_Nested.SetScoreOutput cumulativeOutput, global::Hosihikari.Bindings.Bedrock.Interop.Objective objective, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C3.hs_method_00a9e93a((void*)__hosihikari_shim_handle, (void*)cumulativeOutput.Handle, (void*)objective.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _generateCumulativeOutput(nint cumulativeOutput, nint objective, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string[] _getNonSortableDisplaySlots(global::Hosihikari.Bindings.Bedrock.Interop.Scoreboard scoreboard)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_2c1e23ac((void*)scoreboard.Handle);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _getNonSortableDisplaySlots(nint scoreboard) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Objective? _getObjective(global::Hosihikari.Bindings.Bedrock.Interop.Scoreboard scoreboard, string name, bool forWrite, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C3.hs_method_4c584ff5((void*)__hosihikari_shim_handle, (void*)scoreboard.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, forWrite, (void*)output.Handle);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Objective((nint)__hs_handle, false) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getObjective(nint scoreboard, nint name, bool forWrite, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId[] _getScoreboardIdsForSelector(global::Hosihikari.Bindings.Bedrock.Interop.Scoreboard scoreboard, nint selector, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output, bool shouldCreateMissingId)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_b3f1b56f((void*)__hosihikari_shim_handle, (void*)scoreboard.Handle, (void*)selector, (void*)origin.Handle, (void*)output.Handle, shouldCreateMissingId);
-        var __hs_items = (void**)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId>() : new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId((nint)__hs_items[__hs_i]);
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getScoreboardIdsForSelector(nint scoreboard, nint selector, nint origin, nint output, bool shouldCreateMissingId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: callback return type 'const std::basic_string<char> &' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addPlayerScore(nint scoreboard, nint fn, nint targetId, nint objective, nint playerNameResolver, nint output, nint cumulativeOutput) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: callback return type 'const std::basic_string<char> &' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
@@ -243,10 +209,9 @@ public sealed unsafe partial class ScoreboardCommand : global::System.IDisposabl
         set => NativeMethods.TablePtr->C3.hs_set_920c0894((void*)__hosihikari_shim_handle, value);
     }
 
-    public void players(global::Hosihikari.Bindings.Bedrock.Interop.Scoreboard scoreboard, global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C3.hs_method_03927225((void*)__hosihikari_shim_handle, (void*)scoreboard.Handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void players(nint scoreboard, nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public static void setup(nint registry, nint dependencies) =>

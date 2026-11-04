@@ -38,10 +38,9 @@ public sealed unsafe partial class CanDestroyInCreativeItemComponent : global::S
         return __hs_handle;
     }
 
-    public void __initializeComponent(global::Hosihikari.Bindings.Bedrock.Interop.ComponentItem owner)
-    {
-        NativeMethods.TablePtr->C0.hs_method_1ad89391((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __initializeComponent(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CanDestroyInCreativeItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.CanDestroyInCreativeItemComponent arg0)
     {

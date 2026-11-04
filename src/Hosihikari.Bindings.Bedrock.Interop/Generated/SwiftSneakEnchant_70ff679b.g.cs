@@ -40,86 +40,81 @@ public sealed unsafe partial class SwiftSneakEnchant : global::System.IDisposabl
 
     public int mCompatibility
     {
-        get => NativeMethods.TablePtr->C4.hs_get_98a016a6((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_98a016a6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_394e1b9b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_394e1b9b((void*)__hosihikari_shim_handle);
     }
 
     public byte mEnchantType
     {
-        get => NativeMethods.TablePtr->C4.hs_get_fbf526ea((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_fbf526ea((void*)__hosihikari_shim_handle);
     }
 
     public int mFrequency
     {
-        get => NativeMethods.TablePtr->C4.hs_get_5bcc999b((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_5bcc999b((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsAvailableInVillagerTrading
     {
-        get => NativeMethods.TablePtr->C4.hs_get_48ea1ba9((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C3.hs_get_48ea1ba9((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool mIsDisabled
     {
-        get => NativeMethods.TablePtr->C4.hs_get_99363ef8((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_99363ef8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_99363ef8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_99363ef8((void*)__hosihikari_shim_handle, value);
     }
 
     public int mPrimarySlots
     {
-        get => NativeMethods.TablePtr->C4.hs_get_aa858cab((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_aa858cab((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScriptStringId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9bf2ab53((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9bf2ab53((void*)__hosihikari_shim_handle);
     }
 
     public int mSecondarySlots
     {
-        get => NativeMethods.TablePtr->C4.hs_get_9d8a6685((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_9d8a6685((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStringId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b7840d9e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b7840d9e((void*)__hosihikari_shim_handle);
     }
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_b69256ab((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxLevel()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_23dbb618((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_788c1612((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isDiscoverable()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_5f5875e1((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isDiscoverable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isTreasureOnly()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_ba52d628((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isTreasureOnly() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SwiftSneakEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.SwiftSneakEnchant arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ed8bb171((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ed8bb171((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -130,27 +125,27 @@ public sealed unsafe partial class SwiftSneakEnchant : global::System.IDisposabl
 
     public int getMaxCost(int level)
     {
-        return NativeMethods.TablePtr->C4.hs_method_626b01e2((void*)__hosihikari_shim_handle, level);
+        return NativeMethods.TablePtr->C3.hs_method_626b01e2((void*)__hosihikari_shim_handle, level);
     }
 
     public int getMaxLevel()
     {
-        return NativeMethods.TablePtr->C4.hs_method_fb8522ad((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_fb8522ad((void*)__hosihikari_shim_handle);
     }
 
     public int getMinCost(int level)
     {
-        return NativeMethods.TablePtr->C4.hs_method_a9508e98((void*)__hosihikari_shim_handle, level);
+        return NativeMethods.TablePtr->C3.hs_method_a9508e98((void*)__hosihikari_shim_handle, level);
     }
 
     public bool isDiscoverable()
     {
-        return NativeMethods.TablePtr->C4.hs_method_457a2bbc((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_457a2bbc((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isTreasureOnly()
     {
-        return NativeMethods.TablePtr->C4.hs_method_60e6ccc2((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_60e6ccc2((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -160,7 +155,7 @@ public sealed unsafe partial class SwiftSneakEnchant : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_70ff679b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_70ff679b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,17 +38,17 @@ public sealed unsafe partial class RandomSpreadTreeCanopy : global::System.IDisp
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _placeCanopy(nint target, nint arg1, nint arg2, nint random, nint arg4, nint treeParams, int arg6, nint attachmentInfos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RandomSpreadTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomSpreadTreeCanopy arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_51e6df45((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_51e6df45((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,25 +60,25 @@ public sealed unsafe partial class RandomSpreadTreeCanopy : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mCanopyHeight_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3daee196((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3daee196((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCanopyRadius_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_66f478b7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_66f478b7((void*)__hosihikari_shim_handle);
     }
 
     public int mLeafPlacementAttempts
     {
-        get => NativeMethods.TablePtr->C3.hs_get_dc78c45a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_dc78c45a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_dc78c45a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_dc78c45a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLeavesBlockDescriptors_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_353532eb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_353532eb((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -92,7 +92,7 @@ public sealed unsafe partial class RandomSpreadTreeCanopy : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0f37fd23((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0f37fd23((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

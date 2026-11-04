@@ -38,23 +38,21 @@ public sealed unsafe partial class ItemStackRequestActionCraftRecipeAuto : globa
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_e40da4d7((void*)__hosihikari_shim_handle, (void*)stream.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __read(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
-    {
-        NativeMethods.TablePtr->C2.hs_method_8529dd6b((void*)__hosihikari_shim_handle, (void*)stream.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __write(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemStackRequestActionCraftRecipeAuto Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2f61b4ba();
+        var handle = NativeMethods.TablePtr->C1.hs_create_2f61b4ba();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,7 +63,7 @@ public sealed unsafe partial class ItemStackRequestActionCraftRecipeAuto : globa
 
     public static ItemStackRequestActionCraftRecipeAuto Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftRecipeAuto arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_bcec0357((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_bcec0357((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -76,24 +74,24 @@ public sealed unsafe partial class ItemStackRequestActionCraftRecipeAuto : globa
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_8f019314((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_8f019314((void*)__hosihikari_shim_handle, (void*)stream.Handle));
     }
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C2.hs_method_9995061c((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C1.hs_method_9995061c((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mIngredients_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0037cb8f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0037cb8f((void*)__hosihikari_shim_handle);
     }
 
     public byte mNumIngredients
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7df52aa7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_7df52aa7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_7df52aa7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_7df52aa7((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -103,7 +101,7 @@ public sealed unsafe partial class ItemStackRequestActionCraftRecipeAuto : globa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_3226f1b0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_3226f1b0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

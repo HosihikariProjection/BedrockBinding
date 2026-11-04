@@ -49,10 +49,9 @@ public sealed unsafe partial class MoveControlComponent : global::System.IDispos
         return new MoveControlComponent((nint)handle);
     }
 
-    public void initMultiTypeMovementComponent(global::Hosihikari.Bindings.Bedrock.Interop.Mob entity, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionDescriptor initDescription)
-    {
-        NativeMethods.TablePtr->C2.hs_method_31dc49d8((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)initDescription.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initMultiTypeMovementComponent(nint entity, nint initDescription) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mHasWanted
     {
@@ -90,9 +89,9 @@ public sealed unsafe partial class MoveControlComponent : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_2277599c((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void setInternalType(nint type) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -41,22 +41,20 @@ public sealed unsafe partial class SpecificEnchantFunction : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3663ad0b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3663ad0b((void*)__hosihikari_shim_handle);
     }
 
-    public void _applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1c019654((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _applyPreVersion(nint item, nint random, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getFunctionType()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_1a580f8b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getFunctionType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SpecificEnchantFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.SpecificEnchantFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ee6af003((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ee6af003((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,22 +65,22 @@ public sealed unsafe partial class SpecificEnchantFunction : global::System.IDis
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C4.hs_method_69bdbeef((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C3.hs_method_69bdbeef((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint deserialize(nint @object, nint predicates) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'LootItemFunction' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C4.hs_method_e03ff1e3((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_e03ff1e3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnchantments_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_19c06ab4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_19c06ab4((void*)__hosihikari_shim_handle);
     }
 
 
@@ -92,7 +90,7 @@ public sealed unsafe partial class SpecificEnchantFunction : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b19cfa44((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b19cfa44((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

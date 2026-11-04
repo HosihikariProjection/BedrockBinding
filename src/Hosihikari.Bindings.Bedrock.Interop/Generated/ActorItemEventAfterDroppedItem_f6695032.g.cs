@@ -38,10 +38,9 @@ public sealed unsafe partial class ActorItemEventAfterDroppedItem : global::Syst
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_55d57a0e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ActorItemEventAfterDroppedItem Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorItemEventAfterDroppedItem arg0)
     {

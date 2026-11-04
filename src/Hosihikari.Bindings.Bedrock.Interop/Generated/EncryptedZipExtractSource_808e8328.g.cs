@@ -40,7 +40,7 @@ public sealed unsafe partial class EncryptedZipExtractSource : global::System.ID
 
     public static EncryptedZipExtractSource Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_41ffda3a();
+        var handle = NativeMethods.TablePtr->C3.hs_create_41ffda3a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class EncryptedZipExtractSource : global::System.ID
 
     public static EncryptedZipExtractSource Create(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8d48200a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8d48200a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,30 +63,30 @@ public sealed unsafe partial class EncryptedZipExtractSource : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1a01c7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ff192c83((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ff192c83((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8f08b7_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d6f5de2a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d6f5de2a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkad7aed_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d7d8fc28((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d7d8fc28((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf1bd8c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c1b3c6ac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c1b3c6ac((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource((nint)NativeMethods.TablePtr->C4.hs_method_cb6270f7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedZipExtractSource((nint)NativeMethods.TablePtr->C3.hs_method_cb6270f7((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -95,7 +95,7 @@ public sealed unsafe partial class EncryptedZipExtractSource : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_808e8328((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_808e8328((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

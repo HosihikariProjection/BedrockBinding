@@ -38,14 +38,13 @@ public sealed unsafe partial class ItemEnchantOption : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchantOption arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_5f1ec7b1((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemEnchantOption Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_539900d4();
+        var handle = NativeMethods.TablePtr->C1.hs_create_539900d4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,44 +53,37 @@ public sealed unsafe partial class ItemEnchantOption : global::System.IDisposabl
         return new ItemEnchantOption((nint)handle);
     }
 
-    public static ItemEnchantOption Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchantOption arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2a76c219((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ItemEnchantOption((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ItemEnchantOption Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mCost
     {
-        get => NativeMethods.TablePtr->C2.hs_get_23233c81((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_23233c81((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_23233c81((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_23233c81((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnchantName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a4c76fb6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a4c76fb6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnchantNetId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_aab9e9e0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_aab9e9e0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnchants_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_70f2d73a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_70f2d73a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchantOption operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchantOption arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchantOption((nint)NativeMethods.TablePtr->C2.hs_method_e09a35af((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemEnchantOption((nint)NativeMethods.TablePtr->C1.hs_method_e09a35af((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -101,7 +93,7 @@ public sealed unsafe partial class ItemEnchantOption : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_d81b2b4d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_d81b2b4d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

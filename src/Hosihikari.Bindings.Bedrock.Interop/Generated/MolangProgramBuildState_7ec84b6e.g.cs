@@ -60,14 +60,13 @@ public sealed unsafe partial class MolangProgramBuildState : global::System.IDis
         return new MolangProgramBuildState((nint)handle);
     }
 
-    public ulong allocateInstruction()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_e7199400((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong allocateInstruction() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void insertJumpWithMaddAtIndex(ulong instructionIndexToPutThisInstruction, ulong instructionToJumpTo, float mulValue, float addValue, nint source) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9b2202_Address
@@ -92,31 +91,29 @@ public sealed unsafe partial class MolangProgramBuildState : global::System.IDis
         return new global::Hosihikari.Bindings.Bedrock.Interop.Molang.details.MolangProgramBuildState((nint)NativeMethods.TablePtr->C2.hs_method_81c17cef((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void popForEachScope(ulong instructionIndex)
-    {
-        NativeMethods.TablePtr->C2.hs_method_0c6b1ecb((void*)__hosihikari_shim_handle, instructionIndex);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void popForEachScope(ulong instructionIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void popLoopScope(ulong instructionIndex)
-    {
-        NativeMethods.TablePtr->C2.hs_method_65a44f2e((void*)__hosihikari_shim_handle, instructionIndex);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void popLoopScope(ulong instructionIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void pushLoopScope(ulong loopScopeInitializationInstructionIndex, ulong loopRepeatLogicInstructionIndex, ulong loopCleanupInstructionIndex, ulong nextStatementIndex, nint source) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void pushReturnValue(nint source) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void pushValue(float value, nint source) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void setReturnValue(float value, nint source) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'brstd::source_location' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

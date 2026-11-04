@@ -41,45 +41,42 @@ public sealed unsafe partial class ItemStackRequestActionCraftResults_DEPRECATED
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fc699bcc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_fc699bcc((void*)__hosihikari_shim_handle);
     }
 
     public byte mActionType
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e56e81b4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_e56e81b4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_e56e81b4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_e56e81b4((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ __read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_4f52f320((void*)__hosihikari_shim_handle, (void*)stream.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __read(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
-    {
-        NativeMethods.TablePtr->C2.hs_method_92e35247((void*)__hosihikari_shim_handle, (void*)stream.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __write(nint stream) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'NetworkItemInstanceDescriptor' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint craftResults, byte numCrafts) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'NetworkItemInstanceDescriptor' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _postLoadItems_DEPRECATEDASKTYLAING(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, bool isClientSide)
-    {
-        NativeMethods.TablePtr->C2.hs_method_520b4aa2((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _postLoadItems_DEPRECATEDASKTYLAING(nint blockPalette, bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForEnableNonOwnerReferences() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForItemStackRequestAction() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_76f2eed9();
+        var handle = NativeMethods.TablePtr->C1.hs_create_76f2eed9();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -90,7 +87,7 @@ public sealed unsafe partial class ItemStackRequestActionCraftResults_DEPRECATED
 
     public static ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_90b8a1a8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_90b8a1a8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,41 +96,41 @@ public sealed unsafe partial class ItemStackRequestActionCraftResults_DEPRECATED
         return new ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'NetworkItemInstanceDescriptor' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ItemStackRequestActionCraftResults_DEPRECATEDASKTYLAING Create(nint craftResults, byte numCrafts) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'NetworkItemInstanceDescriptor' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ _read(global::Hosihikari.Bindings.Bedrock.Interop.ReadOnlyBinaryStream stream)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_d34a4053((void*)__hosihikari_shim_handle, (void*)stream.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C1.hs_method_d34a4053((void*)__hosihikari_shim_handle, (void*)stream.Handle));
     }
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.BinaryStream stream)
     {
-        NativeMethods.TablePtr->C2.hs_method_13e7f7f6((void*)__hosihikari_shim_handle, (void*)stream.Handle);
+        NativeMethods.TablePtr->C1.hs_method_13e7f7f6((void*)__hosihikari_shim_handle, (void*)stream.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCraftResults_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0357c6bb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0357c6bb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLoadedCraftResults_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a44b25f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a44b25f5((void*)__hosihikari_shim_handle);
     }
 
     public byte mNumCrafts
     {
-        get => NativeMethods.TablePtr->C2.hs_get_167ad29e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_167ad29e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_167ad29e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_167ad29e((void*)__hosihikari_shim_handle, value);
     }
 
     public void postLoadItems_DEPRECATEDASKTYLAING(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, bool isClientSide)
     {
-        NativeMethods.TablePtr->C2.hs_method_a43f8af3((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
+        NativeMethods.TablePtr->C1.hs_method_a43f8af3((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, isClientSide);
     }
 
 
@@ -143,7 +140,7 @@ public sealed unsafe partial class ItemStackRequestActionCraftResults_DEPRECATED
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_dd9dfc21((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_dd9dfc21((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

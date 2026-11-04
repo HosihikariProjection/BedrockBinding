@@ -60,25 +60,21 @@ public sealed unsafe partial class DenyList : global::System.IDisposable
         return new DenyList((nint)handle);
     }
 
-    public void addEntry(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry entry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_81195368((void*)__hosihikari_shim_handle, (void*)entry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addEntry(nint entry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int getDuration(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry entry)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_d39cf141((void*)__hosihikari_shim_handle, (void*)entry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getDuration(nint entry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isBlocked(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry entry)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_4a4d467e((void*)__hosihikari_shim_handle, (void*)entry.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isBlocked(nint entry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isBlocked(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry entry, nint it)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_7a7a7c46((void*)__hosihikari_shim_handle, (void*)entry.Handle, (void*)it) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isBlocked(nint entry, nint it) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3f8199_Address
@@ -97,10 +93,9 @@ public sealed unsafe partial class DenyList : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.DenyList((nint)NativeMethods.TablePtr->C1.hs_method_0b49cec5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void removeEntry(global::Hosihikari.Bindings.Bedrock.Interop.DenyList_Nested.Entry entry)
-    {
-        NativeMethods.TablePtr->C1.hs_method_89853ba2((void*)__hosihikari_shim_handle, (void*)entry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeEntry(nint entry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

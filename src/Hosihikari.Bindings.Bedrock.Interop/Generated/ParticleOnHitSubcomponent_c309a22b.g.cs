@@ -38,29 +38,25 @@ public sealed unsafe partial class ParticleOnHitSubcomponent : global::System.ID
         return __hs_handle;
     }
 
-    public void _doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent component)
-    {
-        NativeMethods.TablePtr->C3.hs_method_842bcdfb((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doOnHitEffect(nint owner, nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _getName()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_fa8fd22c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f8c4a1f0((void*)__hosihikari_shim_handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _initFromDefinition(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value component)
-    {
-        NativeMethods.TablePtr->C3.hs_method_dbd2cde5((void*)__hosihikari_shim_handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _writetoJSON(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ParticleOnHitSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleOnHitSubcomponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_60f3a8d8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_60f3a8d8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,52 +67,52 @@ public sealed unsafe partial class ParticleOnHitSubcomponent : global::System.ID
 
     public void doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent component)
     {
-        NativeMethods.TablePtr->C3.hs_method_9b110c40((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C2.hs_method_9b110c40((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
     }
 
     public nint getName()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_5da9d963((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C2.hs_method_5da9d963((void*)__hosihikari_shim_handle);
     }
 
     public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileOnHitSubcomponent component)
     {
-        NativeMethods.TablePtr->C3.hs_method_be240003((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C2.hs_method_be240003((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
     public int mNumParticles
     {
-        get => NativeMethods.TablePtr->C3.hs_get_94bb63c4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_94bb63c4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_94bb63c4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_94bb63c4((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mOnEntityHit
     {
-        get => NativeMethods.TablePtr->C3.hs_get_44f14d0b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_44f14d0b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_44f14d0b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_44f14d0b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mOnOtherHit
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f1b47605((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_f1b47605((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_f1b47605((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_f1b47605((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParticleItemName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_47214ea7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_47214ea7((void*)__hosihikari_shim_handle);
     }
 
     public int mParticleType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_6302aea7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_6302aea7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_6302aea7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_6302aea7((void*)__hosihikari_shim_handle, value);
     }
 
     public void writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value component)
     {
-        NativeMethods.TablePtr->C3.hs_method_4ae812de((void*)__hosihikari_shim_handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C2.hs_method_4ae812de((void*)__hosihikari_shim_handle, (void*)component.Handle);
     }
 
 
@@ -126,7 +122,7 @@ public sealed unsafe partial class ParticleOnHitSubcomponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c309a22b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c309a22b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

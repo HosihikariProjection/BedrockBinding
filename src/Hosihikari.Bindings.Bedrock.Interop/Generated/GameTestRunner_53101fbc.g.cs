@@ -38,15 +38,13 @@ public sealed unsafe partial class GameTestRunner : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void clearMarkers(global::Hosihikari.Bindings.Bedrock.Interop.Level level)
-    {
-        NativeMethods.TablePtr->C1.hs_method_c3609485((void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void clearMarkers(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void runTest(global::Hosihikari.Bindings.Abi.SharedHandle? test, global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestTicker ticker)
-    {
-        NativeMethods.TablePtr->C1.hs_method_6e9a7355(test?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)ticker.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void runTest(nint test, nint ticker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

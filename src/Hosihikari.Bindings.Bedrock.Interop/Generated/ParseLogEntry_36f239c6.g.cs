@@ -38,14 +38,13 @@ public sealed unsafe partial class ParseLogEntry : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_fea9f8fa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ParseLogEntry Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_aa635585();
+        var handle = NativeMethods.TablePtr->C2.hs_create_aa635585();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,38 +53,31 @@ public sealed unsafe partial class ParseLogEntry : global::System.IDisposable
         return new ParseLogEntry((nint)handle);
     }
 
-    public static ParseLogEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_fca38c1c((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ParseLogEntry((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ParseLogEntry Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3e9543_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5a524681((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5a524681((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb41697_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e2b315f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e2b315f5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd44d5c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a3e79519((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a3e79519((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry((nint)NativeMethods.TablePtr->C3.hs_method_f06961dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry((nint)NativeMethods.TablePtr->C2.hs_method_f06961dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -94,7 +86,7 @@ public sealed unsafe partial class ParseLogEntry : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_36f239c6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_36f239c6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

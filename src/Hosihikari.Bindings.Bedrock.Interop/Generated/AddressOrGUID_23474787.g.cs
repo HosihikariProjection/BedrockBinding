@@ -40,7 +40,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
 
     public static AddressOrGUID Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_847ae661();
+        var handle = NativeMethods.TablePtr->C2.hs_create_847ae661();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
 
     public static AddressOrGUID Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e2da400b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e2da400b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,7 +62,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
 
     public static AddressOrGUID Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetGUID input)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6b19c97b((void*)input.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_6b19c97b((void*)input.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -73,7 +73,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
 
     public static AddressOrGUID Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress input)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6148e2ce((void*)input.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_6148e2ce((void*)input.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,19 +84,19 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID((nint)NativeMethods.TablePtr->C3.hs_method_f543b7f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.AddressOrGUID((nint)NativeMethods.TablePtr->C2.hs_method_f543b7f4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint rakNetGuid_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0958a069((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0958a069((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint systemAddress_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a2405e0e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a2405e0e((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -105,7 +105,7 @@ public sealed unsafe partial class AddressOrGUID : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_23474787((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_23474787((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

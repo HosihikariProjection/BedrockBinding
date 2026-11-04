@@ -44,30 +44,25 @@ public sealed unsafe partial class ScriptFormPromiseTracker : global::System.IDi
         get => (nint)NativeMethods.TablePtr->C3.hs_get_ed06936b((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManagerEvents events, global::Hosihikari.Bindings.Bedrock.Interop.LevelEventCoordinator levelEventCoordinator, global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerEventCoordinator playerEventCooordinator)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_23616284((void*)__hosihikari_shim_handle, (void*)events.Handle, (void*)levelEventCoordinator.Handle, (void*)playerEventCooordinator.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint events, nint levelEventCoordinator, nint playerEventCooordinator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDataDrivenScreenClosedEvent formResponseEvent)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_2ea1c2a1((void*)__hosihikari_shim_handle, (void*)formResponseEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent_2ea1c2a1(nint formResponseEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerFormCloseEvent formCloseEvent)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_c6eab00b((void*)__hosihikari_shim_handle, (void*)formCloseEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent_c6eab00b(nint formCloseEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerFormResponseEvent formResponseEvent)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_b582ed56((void*)__hosihikari_shim_handle, (void*)formResponseEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent_b582ed56(nint formResponseEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onLevelRemovedPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_b4bc3f3a((void*)__hosihikari_shim_handle, (void*)player.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onLevelRemovedPlayer(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptFormPromiseTracker Create()
     {
@@ -80,16 +75,9 @@ public sealed unsafe partial class ScriptFormPromiseTracker : global::System.IDi
         return new ScriptFormPromiseTracker((nint)handle);
     }
 
-    public static ScriptFormPromiseTracker Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManagerEvents events, global::Hosihikari.Bindings.Bedrock.Interop.LevelEventCoordinator levelEventCoordinator, global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayerEventCoordinator playerEventCooordinator)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3d3567aa((void*)events.Handle, (void*)levelEventCoordinator.Handle, (void*)playerEventCooordinator.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptFormPromiseTracker((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptFormPromiseTracker Create(nint events, nint levelEventCoordinator, nint playerEventCooordinator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptFormPromiseTracker Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker arg0)
     {
@@ -102,10 +90,9 @@ public sealed unsafe partial class ScriptFormPromiseTracker : global::System.IDi
         return new ScriptFormPromiseTracker((nint)handle);
     }
 
-    public static void _sendToClient(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value formJson, uint formId)
-    {
-        NativeMethods.TablePtr->C3.hs_method_70e6559c((void*)player.Handle, (void*)formJson.Handle, formId);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _sendToClient(nint player, nint formJson, uint formId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFormRequests_Address
@@ -162,10 +149,9 @@ public sealed unsafe partial class ScriptFormPromiseTracker : global::System.IDi
         return new global::Hosihikari.Bindings.Bedrock.Interop.ScriptFormPromiseTracker((nint)NativeMethods.TablePtr->C3.hs_method_8ec349f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void rejectAll()
-    {
-        NativeMethods.TablePtr->C3.hs_method_79276b71((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void rejectAll() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void showDataDrivenScreenToPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player player, string screenId, uint? dataInstanceId, global::Hosihikari.Bindings.Abi.SharedHandle? promise)
     {

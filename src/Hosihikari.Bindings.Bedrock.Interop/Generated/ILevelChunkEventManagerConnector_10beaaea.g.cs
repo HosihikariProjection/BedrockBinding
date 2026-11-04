@@ -40,7 +40,7 @@ public sealed unsafe partial class ILevelChunkEventManagerConnector : global::Sy
 
     public static ILevelChunkEventManagerConnector Create(global::Hosihikari.Bindings.Bedrock.Interop.ILevelChunkEventManagerConnector arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3e31db0b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_3e31db0b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,7 +68,7 @@ public sealed unsafe partial class ILevelChunkEventManagerConnector : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_10beaaea((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_10beaaea((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

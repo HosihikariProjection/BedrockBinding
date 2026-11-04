@@ -49,10 +49,9 @@ public sealed unsafe partial class SculkChargeCursor : global::System.IDisposabl
         return new SculkChargeCursor((nint)handle);
     }
 
-    public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C3.hs_method_93883ae4((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void load(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mCharge
     {
@@ -84,25 +83,21 @@ public sealed unsafe partial class SculkChargeCursor : global::System.IDisposabl
         set => NativeMethods.TablePtr->C3.hs_set_b0fac0a7((void*)__hosihikari_shim_handle, value);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.DefaultSculkBehavior sDefaultSculkBehavior()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.DefaultSculkBehavior((nint)NativeMethods.TablePtr->C3.hs_method_7977d697(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sDefaultSculkBehavior() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.SculkBlockBehavior sSculkBlockBehavior()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SculkBlockBehavior((nint)NativeMethods.TablePtr->C3.hs_method_2d39e3d9(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sSculkBlockBehavior() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.SculkVeinBlockBehavior sSculkVeinBlockBehavior()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SculkVeinBlockBehavior((nint)NativeMethods.TablePtr->C3.hs_method_aed7e95b(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sSculkVeinBlockBehavior() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b3d87dff((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void save(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -402,68 +402,59 @@ public sealed unsafe partial class NetherDimension : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_e0afb496((void*)__hosihikari_shim_handle, (void*)tag.Handle, vers);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ChunkSource' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint __wrapStorageForVersionCompatibility(nint storageSource, nint levelVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ChunkSource' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'WorldGenerator' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _createGenerator(nint structureSetRegistry) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'WorldGenerator' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _fixWallChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
     {
         NativeMethods.TablePtr->C2.hs_method_5bd5427a((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)lc.Handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType _getDefaultBiomeId()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType((nint)NativeMethods.TablePtr->C2.hs_method_ebac6ecd((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getDefaultBiomeId() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public float _getTimeOfDay(int time, float a)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_507bf10d((void*)__hosihikari_shim_handle, time, a);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getTimeOfDay(int time, float a) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _init(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureSetRegistry structureSetRegistry)
-    {
-        NativeMethods.TablePtr->C2.hs_method_eef4e314((void*)__hosihikari_shim_handle, (void*)structureSetRegistry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _init(nint structureSetRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isNaturalDimension()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_011cfb2d((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isNaturalDimension() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isValidSpawn(int x, int z)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_a17d5c1b((void*)__hosihikari_shim_handle, x, z) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValidSpawn(int x, int z) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _levelChunkNeedsUpgrade(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc)
     {
         return NativeMethods.TablePtr->C2.hs_method_c8d8630c((void*)__hosihikari_shim_handle, (void*)lc.Handle) != 0;
     }
 
-    public bool _mayRespawnViaBed()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_ba558511((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _mayRespawnViaBed() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _showSky()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_8712d823((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _showSky() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 _translatePosAcrossDimension(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originalPos, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType fromId)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C2.hs_method_cc1d51e5((void*)__hosihikari_shim_handle, (void*)originalPos.Handle, (void*)fromId.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _translatePosAcrossDimension(nint originalPos, nint fromId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _upgradeLevelChunk(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk generatedChunk)
-    {
-        NativeMethods.TablePtr->C2.hs_method_7eddff6f((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)lc.Handle, (void*)generatedChunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _upgradeLevelChunk(nint source, nint lc, nint generatedChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NetherDimension Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherDimension arg0)
     {

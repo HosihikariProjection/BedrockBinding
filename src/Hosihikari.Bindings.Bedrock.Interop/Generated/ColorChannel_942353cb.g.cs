@@ -40,7 +40,7 @@ public sealed unsafe partial class ColorChannel : global::System.IDisposable
 
     public static ColorChannel Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b635c031();
+        var handle = NativeMethods.TablePtr->C0.hs_create_b635c031();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ColorChannel : global::System.IDisposable
 
     public static ColorChannel Create(global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8bf59731((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_8bf59731((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,20 +60,19 @@ public sealed unsafe partial class ColorChannel : global::System.IDisposable
         return new ColorChannel((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel INVALID()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel((nint)NativeMethods.TablePtr->C1.hs_method_ae187397(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint INVALID() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc791a4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_653713f7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_653713f7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel((nint)NativeMethods.TablePtr->C1.hs_method_0be425f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ColorChannel((nint)NativeMethods.TablePtr->C0.hs_method_0be425f5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -82,7 +81,7 @@ public sealed unsafe partial class ColorChannel : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_942353cb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_942353cb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

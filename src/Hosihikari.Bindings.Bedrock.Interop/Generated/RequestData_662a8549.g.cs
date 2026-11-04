@@ -40,7 +40,7 @@ public sealed unsafe partial class RequestData : global::System.IDisposable
 
     public static RequestData Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestPacketData.RequestData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6e48710d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_6e48710d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,31 +52,30 @@ public sealed unsafe partial class RequestData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mActions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_20917abb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_20917abb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientRequestId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_729ee7ce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_729ee7ce((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStringsToFilter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5cbeef34((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_5cbeef34((void*)__hosihikari_shim_handle);
     }
 
     public int mStringsToFilterOrigin
     {
-        get => NativeMethods.TablePtr->C2.hs_get_631d71e0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_631d71e0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_631d71e0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_631d71e0((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestPacketData.RequestData arg0)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_1fe60f08((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -85,7 +84,7 @@ public sealed unsafe partial class RequestData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_662a8549((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_662a8549((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

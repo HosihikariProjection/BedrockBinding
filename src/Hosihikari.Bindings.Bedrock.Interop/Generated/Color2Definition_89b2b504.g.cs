@@ -40,7 +40,7 @@ public sealed unsafe partial class Color2Definition : global::System.IDisposable
 
     public static Color2Definition Create(global::Hosihikari.Bindings.Bedrock.Interop.Color2Definition arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_315ffada((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_315ffada((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,15 +49,14 @@ public sealed unsafe partial class Color2Definition : global::System.IDisposable
         return new Color2Definition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C1.hs_method_81c1cdcc(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb1b293_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9c39e9ac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_9c39e9ac((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -66,7 +65,7 @@ public sealed unsafe partial class Color2Definition : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_89b2b504((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_89b2b504((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

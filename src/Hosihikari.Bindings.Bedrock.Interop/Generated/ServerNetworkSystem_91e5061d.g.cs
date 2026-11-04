@@ -218,9 +218,9 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
         set => NativeMethods.TablePtr->C3.hs_set_ca52d17e((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'PacketGroupDefinition::PacketGroupBuilder' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController, nint httpLibraryToken) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'PacketGroupDefinition::PacketGroupBuilder' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerNetworkSystem Create()
     {
@@ -233,9 +233,9 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
         return new ServerNetworkSystem((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional record parameter 'PacketGroupDefinition::PacketGroupBuilder' is abstract or not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ServerNetworkSystem Create(nint receiveThread, nint overrideBroadcastAddresses, nint networkToggles, nint networkDebugManager, nint appPlatform, nint networkSessionOwner, nint networkSettingOption, nint portConfig, nint defaultLogSeverity, nint networkId, nint signalingService, nint packetGroupBuilder, nint packetController, nint httpLibraryToken) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'PacketGroupDefinition::PacketGroupBuilder' is abstract or not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerNetworkSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerNetworkSystem arg0)
     {
@@ -248,15 +248,13 @@ public sealed unsafe partial class ServerNetworkSystem : global::System.IDisposa
         return new ServerNetworkSystem((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier getLocalNetworkId()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier((nint)NativeMethods.TablePtr->C3.hs_method_7fa27eec((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getLocalNetworkId() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool host(global::Hosihikari.Bindings.Bedrock.Interop.ConnectionDefinition definition, global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager keys)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_06ce9261((void*)__hosihikari_shim_handle, (void*)definition.Handle, (void*)keys.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool host(nint definition, nint keys) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,14 +38,13 @@ public sealed unsafe partial class FilterGroupDataMap : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_a87b77b6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FilterGroupDataMap Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_20.FilterGroupDataMap arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_dc11f9f5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_dc11f9f5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,15 +53,14 @@ public sealed unsafe partial class FilterGroupDataMap : global::System.IDisposab
         return new FilterGroupDataMap((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f4af3206((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCollectionGroups_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_19542748((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_19542748((void*)__hosihikari_shim_handle);
     }
 
 
@@ -72,7 +70,7 @@ public sealed unsafe partial class FilterGroupDataMap : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_7a1ea07e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_7a1ea07e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

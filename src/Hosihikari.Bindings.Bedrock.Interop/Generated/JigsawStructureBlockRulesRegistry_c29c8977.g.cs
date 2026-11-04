@@ -40,7 +40,7 @@ public sealed unsafe partial class JigsawStructureBlockRulesRegistry : global::S
 
     public static JigsawStructureBlockRulesRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockRulesRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_465ed03f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_465ed03f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,54 +49,39 @@ public sealed unsafe partial class JigsawStructureBlockRulesRegistry : global::S
         return new JigsawStructureBlockRulesRegistry((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'gsl::not_null<std::shared_ptr<const std::vector<gsl::not_null<std::shared_ptr<const br::worldgen::StructureProcessor>>>>>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint get(nint key) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'gsl::not_null<std::shared_ptr<const std::vector<gsl::not_null<std::shared_ptr<const br::worldgen::StructureProcessor>>>>>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint lookupByName(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return (nint)NativeMethods.TablePtr->C2.hs_method_539801eb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint lookupByName(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockRuleLookupMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1ed15a47((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_1ed15a47((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f41d6535((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f41d6535((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mProcessors_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8d8dfd48((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8d8dfd48((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'gsl::not_null<std::shared_ptr<const br::worldgen::StructureProcessor>>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void record(nint key, nint processors) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'gsl::not_null<std::shared_ptr<const br::worldgen::StructureProcessor>>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'std::vector<std::unique_ptr<StructurePoolBlockRule>>' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerBlockRules(nint name, nint ruleList) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'std::vector<std::unique_ptr<StructurePoolBlockRule>>' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -105,7 +90,7 @@ public sealed unsafe partial class JigsawStructureBlockRulesRegistry : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c29c8977((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_c29c8977((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class PackSettingsJsonValidator : global::System.ID
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property getValidator()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.JsonValidator_Nested.Property((nint)NativeMethods.TablePtr->C3.hs_method_a8794d64());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getValidator() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class PackSettingsJsonValidator : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_321e5a56((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_321e5a56((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

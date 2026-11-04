@@ -38,15 +38,13 @@ public sealed unsafe partial class GameTestNetworkListener : global::System.IDis
         return __hs_handle;
     }
 
-    public void _onTestFailed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance testInstance)
-    {
-        NativeMethods.TablePtr->C1.hs_method_caf77971((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestFailed(nint testInstance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onTestPassed(global::Hosihikari.Bindings.Bedrock.Interop.gametest.BaseGameTestInstance testInstance)
-    {
-        NativeMethods.TablePtr->C1.hs_method_2fb43186((void*)__hosihikari_shim_handle, (void*)testInstance.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onTestPassed(nint testInstance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameTestNetworkListener Create()
     {

@@ -38,33 +38,25 @@ public sealed unsafe partial class SystemFilePicker : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _initFilePick(nint filePath, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong _readBytes(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file, ulong offset, ulong bufferSize, byte[] buffer)
-    {
-        fixed (byte* __hs_vectorData3 = buffer)
-        {
-            return NativeMethods.TablePtr->C4.hs_method_9559d5ad((void*)__hosihikari_shim_handle, (void*)file.Handle, offset, bufferSize, __hs_vectorData3, (nuint)(buffer?.Length ?? 0));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong _readBytes(nint file, ulong offset, ulong bufferSize, nint buffer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _writeBytes(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file, ulong offset, ulong bufferSize, byte[] buffer)
-    {
-        fixed (byte* __hs_vectorData3 = buffer)
-        {
-            return NativeMethods.TablePtr->C4.hs_method_fe57e798((void*)__hosihikari_shim_handle, (void*)file.Handle, offset, bufferSize, __hs_vectorData3, (nuint)(buffer?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _writeBytes(nint file, ulong offset, ulong bufferSize, nint buffer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SystemFilePicker Create(global::Hosihikari.Bindings.Bedrock.Interop.SystemFilePicker arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8b7f34e7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8b7f34e7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,7 +73,7 @@ public sealed unsafe partial class SystemFilePicker : global::System.IDisposable
     {
         fixed (byte* __hs_vectorData3 = buffer)
         {
-            return NativeMethods.TablePtr->C4.hs_method_1fcb5796((void*)__hosihikari_shim_handle, (void*)file.Handle, offset, bufferSize, __hs_vectorData3, (nuint)(buffer?.Length ?? 0));
+            return NativeMethods.TablePtr->C3.hs_method_1fcb5796((void*)__hosihikari_shim_handle, (void*)file.Handle, offset, bufferSize, __hs_vectorData3, (nuint)(buffer?.Length ?? 0));
         }
     }
 
@@ -89,7 +81,7 @@ public sealed unsafe partial class SystemFilePicker : global::System.IDisposable
     {
         fixed (byte* __hs_vectorData3 = buffer)
         {
-            return NativeMethods.TablePtr->C4.hs_method_d3ae8fb1((void*)__hosihikari_shim_handle, (void*)file.Handle, offset, bufferSize, __hs_vectorData3, (nuint)(buffer?.Length ?? 0)) != 0;
+            return NativeMethods.TablePtr->C3.hs_method_d3ae8fb1((void*)__hosihikari_shim_handle, (void*)file.Handle, offset, bufferSize, __hs_vectorData3, (nuint)(buffer?.Length ?? 0)) != 0;
         }
     }
 
@@ -100,7 +92,7 @@ public sealed unsafe partial class SystemFilePicker : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_643ace1e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_643ace1e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

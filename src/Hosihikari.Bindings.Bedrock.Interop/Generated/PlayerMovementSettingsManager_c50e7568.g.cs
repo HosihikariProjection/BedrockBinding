@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerMovementSettingsManager : global::Syste
 
     public static PlayerMovementSettingsManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettingsManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_003dbd04((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_003dbd04((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,21 +49,19 @@ public sealed unsafe partial class PlayerMovementSettingsManager : global::Syste
         return new PlayerMovementSettingsManager((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings getPlayerMovementSettings()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings((nint)NativeMethods.TablePtr->C3.hs_method_3720bcaa((void*)__hosihikari_shim_handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getPlayerMovementSettings() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d5e2d201((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d5e2d201((void*)__hosihikari_shim_handle);
     }
 
-    public void setPlayerMovementSettings(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettings settings)
-    {
-        NativeMethods.TablePtr->C3.hs_method_69f0a297((void*)__hosihikari_shim_handle, (void*)settings.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setPlayerMovementSettings(nint settings) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -72,7 +70,7 @@ public sealed unsafe partial class PlayerMovementSettingsManager : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c50e7568((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c50e7568((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

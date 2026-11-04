@@ -38,10 +38,9 @@ public sealed unsafe partial class CategoryLogFile : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void AddChannel(int channel)
-    {
-        NativeMethods.TablePtr->C0.hs_method_08a85061((void*)__hosihikari_shim_handle, channel);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void AddChannel(nint channel) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CategoryLogFile Create()
     {

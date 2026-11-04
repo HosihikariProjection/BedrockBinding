@@ -49,10 +49,9 @@ public sealed unsafe partial class ScoreboardIdentityRef : global::System.IDispo
         return new ScoreboardIdentityRef((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardIdentityRef Undefined()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardIdentityRef((nint)NativeMethods.TablePtr->C3.hs_method_2b41a95c(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint Undefined() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mObjectiveReferences
     {

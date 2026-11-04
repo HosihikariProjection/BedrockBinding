@@ -38,14 +38,13 @@ public sealed unsafe partial class ChemistryItem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
-    {
-        NativeMethods.TablePtr->C0.hs_method_ab797a9f((void*)__hosihikari_shim_handle, (void*)stack.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _fixupCommon(nint stack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
     {
@@ -57,10 +56,9 @@ public sealed unsafe partial class ChemistryItem : global::System.IDisposable
         get => NativeMethods.TablePtr->C0.hs_get_0dc7bd1f((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static void validate(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack, bool isChemistryEnabled)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e5957de0((void*)stack.Handle, isChemistryEnabled);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void validate(nint stack, bool isChemistryEnabled) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public byte mAllowOffhand

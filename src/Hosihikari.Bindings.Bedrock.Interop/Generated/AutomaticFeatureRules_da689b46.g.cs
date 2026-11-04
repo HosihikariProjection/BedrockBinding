@@ -38,10 +38,9 @@ public sealed unsafe partial class AutomaticFeatureRules : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_0da4c03f((void*)__hosihikari_shim_handle, (void*)ctx.Handle, (void*)eventing.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint ctx, nint eventing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AutomaticFeatureRules Create()
     {
@@ -65,29 +64,21 @@ public sealed unsafe partial class AutomaticFeatureRules : global::System.IDispo
         return new AutomaticFeatureRules((nint)handle);
     }
 
-    public static AutomaticFeatureRules Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_cd13c087((void*)ctx.Handle, (void*)eventing.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AutomaticFeatureRules Create(nint ctx, nint eventing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new AutomaticFeatureRules((nint)handle);
-    }
-
-    public static nint SCHEMA_VERSION_1()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_042af9c1();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SCHEMA_VERSION_1() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Puv::LoadResult<SharedTypes::v1_21_20::AutomaticFeatureRulesData>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint _parseAndInsertUnsorted(nint filename, nint data, nint minEngineVersion, nint worldRegistries, nint bucketedFeatures, bool isBasePack) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Puv::LoadResult<SharedTypes::v1_21_20::AutomaticFeatureRulesData>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: map key type 'HashedString' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void attachAutomaticFeatures(nint resourcePackManager, nint worldRegistries, nint biomeDecorationFeatureMap) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: map key type 'HashedString' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEventing_Address

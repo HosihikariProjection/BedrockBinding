@@ -38,10 +38,9 @@ public sealed unsafe partial class LevelChunkBlockActorStorage : global::System.
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_be6a2e9c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LevelChunkBlockActorStorage Create()
     {
@@ -69,14 +68,13 @@ public sealed unsafe partial class LevelChunkBlockActorStorage : global::System.
     public nint emplace(nint pos, nint blockActor) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<const ChunkBlockPos, std::shared_ptr<BlockActor>>>>>, bool>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<const ChunkBlockPos, std::shared_ptr<BlockActor>>>>>' requires --link-carrier or --virtual-dispatch.", false)]
-    public nint erase(nint ite) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::_List_const_iterator<std::_List_val<std::_List_simple_types<std::pair<const ChunkBlockPos, std::shared_ptr<BlockActor>>>>>' requires --link-carrier or --virtual-dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint erase_365254f8(nint ite) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public ulong erase(global::Hosihikari.Bindings.Bedrock.Interop.ChunkBlockPos pos)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_8f3386e9((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong erase_8f3386e9(nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMap_Address
@@ -107,9 +105,9 @@ public sealed unsafe partial class LevelChunkBlockActorStorage : global::System.
         get => (nint)NativeMethods.TablePtr->C2.hs_get_97fef331((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunkBlockActorStorage arg0)
     {

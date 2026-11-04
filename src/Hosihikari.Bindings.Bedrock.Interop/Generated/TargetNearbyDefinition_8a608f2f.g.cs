@@ -40,7 +40,7 @@ public sealed unsafe partial class TargetNearbyDefinition : global::System.IDisp
 
     public static TargetNearbyDefinition Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_60c64f45();
+        var handle = NativeMethods.TablePtr->C3.hs_create_60c64f45();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class TargetNearbyDefinition : global::System.IDisp
 
     public static TargetNearbyDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c21a473f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c21a473f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,50 +60,49 @@ public sealed unsafe partial class TargetNearbyDefinition : global::System.IDisp
         return new TargetNearbyDefinition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C4.hs_method_0027babd(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1f1461_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_152bc933((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_152bc933((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk56719e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_03179576((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_03179576((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk59ffaa_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9f785b8f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9f785b8f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk809433_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e1531984((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e1531984((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc50ab8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ae195e88((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ae195e88((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf55c7e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4d25d239((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4d25d239((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition((nint)NativeMethods.TablePtr->C4.hs_method_4375088f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TargetNearbyDefinition((nint)NativeMethods.TablePtr->C3.hs_method_4375088f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -112,7 +111,7 @@ public sealed unsafe partial class TargetNearbyDefinition : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_8a608f2f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_8a608f2f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

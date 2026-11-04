@@ -49,10 +49,9 @@ public sealed unsafe partial class AssignedThread : global::System.IDisposable
         return new AssignedThread((nint)handle);
     }
 
-    public void assign(nint thread)
-    {
-        NativeMethods.TablePtr->C0.hs_method_1bfb3224((void*)__hosihikari_shim_handle, (void*)thread);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void assign(nint thread) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChildCount_Address

@@ -40,7 +40,7 @@ public sealed unsafe partial class TransformationDelay : global::System.IDisposa
 
     public static TransformationDelay Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TransformationComponentDefinition_Nested.TransformationDelay arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6a4046b1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6a4046b1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,56 +51,55 @@ public sealed unsafe partial class TransformationDelay : global::System.IDisposa
 
     public float mBlockAssistChance
     {
-        get => NativeMethods.TablePtr->C4.hs_get_40018fc3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_40018fc3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_40018fc3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_40018fc3((void*)__hosihikari_shim_handle, value);
     }
 
     public float mBlockChance
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f0c7cd6b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f0c7cd6b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f0c7cd6b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f0c7cd6b((void*)__hosihikari_shim_handle, value);
     }
 
     public int mBlockMax
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d291a6ed((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d291a6ed((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d291a6ed((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d291a6ed((void*)__hosihikari_shim_handle, value);
     }
 
     public int mBlockRadius
     {
-        get => NativeMethods.TablePtr->C4.hs_get_7a439248((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_7a439248((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7a439248((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7a439248((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockTypes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_edc69b40((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_edc69b40((void*)__hosihikari_shim_handle);
     }
 
     public float mRangeMax
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0eb6f1ce((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_0eb6f1ce((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0eb6f1ce((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0eb6f1ce((void*)__hosihikari_shim_handle, value);
     }
 
     public float mRangeMin
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2b1bfaf2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2b1bfaf2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2b1bfaf2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2b1bfaf2((void*)__hosihikari_shim_handle, value);
     }
 
     public float mValue
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a74f87e3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a74f87e3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a74f87e3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a74f87e3((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.TransformationComponentDefinition_Nested.TransformationDelay arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_65d0dd11((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -109,7 +108,7 @@ public sealed unsafe partial class TransformationDelay : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c5b8fd1f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c5b8fd1f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class ShooterDefinition : global::System.IDisposabl
 
     public static ShooterDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ShooterDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_e7a09546((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_e7a09546((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,84 +49,53 @@ public sealed unsafe partial class ShooterDefinition : global::System.IDisposabl
         return new ShooterDefinition((nint)handle);
     }
 
-    public void addSoundByName(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_72128a8a((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addSoundByName(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C4.hs_method_de4b14fa(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultActorDef_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4eb31307((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4eb31307((void*)__hosihikari_shim_handle);
     }
 
     public int mDefaultAuxValue
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8fa492c0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_8fa492c0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8fa492c0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8fa492c0((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mMagicAttacks
     {
-        get => NativeMethods.TablePtr->C4.hs_get_6b102429((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_6b102429((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6b102429((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_6b102429((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mShooterProjectileData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_06e1a9e5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_06e1a9e5((void*)__hosihikari_shim_handle);
     }
 
     public uint mSoundEvent
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1229d3f7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1229d3f7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1229d3f7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1229d3f7((void*)__hosihikari_shim_handle, value);
     }
 
     public float mThrowPower
     {
-        get => NativeMethods.TablePtr->C4.hs_get_3dafc080((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_3dafc080((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3dafc080((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3dafc080((void*)__hosihikari_shim_handle, value);
     }
 
-    public void setActorDefByName(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_05abd7a6((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setActorDefByName(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -135,7 +104,7 @@ public sealed unsafe partial class ShooterDefinition : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e2214f4b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e2214f4b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

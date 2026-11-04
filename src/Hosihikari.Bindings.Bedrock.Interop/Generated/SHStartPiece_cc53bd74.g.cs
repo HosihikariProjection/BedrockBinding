@@ -44,10 +44,9 @@ public sealed unsafe partial class SHStartPiece : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_f7fd8fdb((void*)__hosihikari_shim_handle, value);
     }
 
-    public int _getType()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_4e686d1c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SHStartPiece Create(global::Hosihikari.Bindings.Bedrock.Interop.SHStartPiece arg0)
     {

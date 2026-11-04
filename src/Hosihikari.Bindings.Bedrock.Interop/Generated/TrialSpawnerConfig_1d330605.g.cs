@@ -38,26 +38,17 @@ public sealed unsafe partial class TrialSpawnerConfig : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_1bb0807e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_ad659423((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static TrialSpawnerConfig Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d632f913();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new TrialSpawnerConfig((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static TrialSpawnerConfig Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TrialSpawnerConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.TrialSpawnerConfig arg0)
     {
@@ -70,14 +61,13 @@ public sealed unsafe partial class TrialSpawnerConfig : global::System.IDisposab
         return new TrialSpawnerConfig((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint asInlineConfig() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void loadConfig(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag? data)
-    {
-        NativeMethods.TablePtr->C4.hs_method_2ce39771((void*)__hosihikari_shim_handle, (void*)(data?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void loadConfig(nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemsToDropWhenOminous_Address
@@ -145,10 +135,9 @@ public sealed unsafe partial class TrialSpawnerConfig : global::System.IDisposab
         set => NativeMethods.TablePtr->C4.hs_set_07c92fcc((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TrialSpawnerConfig operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TrialSpawnerConfig arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TrialSpawnerConfig((nint)NativeMethods.TablePtr->C4.hs_method_311a67ff((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

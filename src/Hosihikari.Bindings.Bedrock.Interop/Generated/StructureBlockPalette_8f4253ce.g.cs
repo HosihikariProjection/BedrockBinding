@@ -38,14 +38,13 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_f6800bcd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StructureBlockPalette Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3567ad66((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_3567ad66((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,32 +53,31 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
         return new StructureBlockPalette((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Block getBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette blockPalette, ulong paletteId, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)NativeMethods.TablePtr->C4.hs_method_889d08e7((void*)__hosihikari_shim_handle, (void*)blockPalette.Handle, paletteId, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getBlock(nint blockPalette, ulong paletteId, nint unknownBlockRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData? getBlockPositionData(ulong blockIndex)
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_ed007965((void*)__hosihikari_shim_handle, blockIndex);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_ed007965((void*)__hosihikari_shim_handle, blockIndex);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.StructureBlockPalette_Nested.BlockPositionData((nint)__hs_handle, false) : null;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPositionData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_bd6179dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bd6179dc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructurePaletteIdToSerializationId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b4c3c2bd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b4c3c2bd((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Block? tryGetBlock(ulong paletteId, global::Hosihikari.Bindings.Abi.SharedHandle? unknownBlockRegistry)
     {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_104000ff((void*)__hosihikari_shim_handle, paletteId, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_104000ff((void*)__hosihikari_shim_handle, paletteId, unknownBlockRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Block((nint)__hs_handle, false) : null;
     }
 
@@ -90,7 +88,7 @@ public sealed unsafe partial class StructureBlockPalette : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_8f4253ce((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_8f4253ce((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

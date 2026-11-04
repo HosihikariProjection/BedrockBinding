@@ -49,27 +49,17 @@ public sealed unsafe partial class ScriptBlockComponents : global::System.IDispo
         return new ScriptBlockComponents((nint)handle);
     }
 
-    public static void bind(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ModuleBindingBuilder moduleBuilder, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.Version scriptingVersion, global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptComponentTypeEnumBuilder componentTypeEnumBuilder, global::Hosihikari.Bindings.Abi.SharedHandle? blockComponents)
-    {
-        NativeMethods.TablePtr->C3.hs_method_9d2c922f((void*)moduleBuilder.Handle, (void*)scriptingVersion.Handle, (void*)componentTypeEnumBuilder.Handle, blockComponents?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bind(nint moduleBuilder, nint scriptingVersion, nint componentTypeEnumBuilder, nint blockComponents) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint getOrCreateBlockComponentFactories()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8347b8f6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getOrCreateBlockComponentFactories() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string[] getSupportedComponentIds(nint permutation, bool includeCustom)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_df3cd7c4((void*)__hosihikari_shim_handle, (void*)permutation, includeCustom);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getSupportedComponentIds(nint permutation, bool includeCustom) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCustomComponentReader_Address
@@ -83,9 +73,9 @@ public sealed unsafe partial class ScriptBlockComponents : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C3.hs_get_02b2fde1((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::BaseScriptBlockComponent>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint tryCreateComponent(nint componentName, nint region, nint position, nint scope, bool allowCustomComponent) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'Scripting::StrongTypedObjectHandle<ScriptModuleMinecraft::BaseScriptBlockComponent>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

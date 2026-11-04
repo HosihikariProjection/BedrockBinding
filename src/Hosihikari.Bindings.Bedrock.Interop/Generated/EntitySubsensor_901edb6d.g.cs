@@ -38,10 +38,9 @@ public sealed unsafe partial class EntitySubsensor : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensor arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_f15a6789((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EntitySubsensor Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class EntitySubsensor : global::System.IDisposable
         return new EntitySubsensor((nint)handle);
     }
 
-    public static EntitySubsensor Create(global::Hosihikari.Bindings.Bedrock.Interop.EntitySubsensor arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e45f61e5((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EntitySubsensor((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static EntitySubsensor Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong mCooldownInTicks
     {

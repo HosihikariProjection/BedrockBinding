@@ -44,7 +44,7 @@ public sealed unsafe partial class LabTableCombineActionData : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_368fb05f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_368fb05f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

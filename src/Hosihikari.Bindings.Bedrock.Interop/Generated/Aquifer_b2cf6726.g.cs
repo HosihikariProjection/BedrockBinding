@@ -60,20 +60,17 @@ public sealed unsafe partial class Aquifer : global::System.IDisposable
         return new Aquifer((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Aquifer_Nested.FluidSample _computeAquifer(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos cellCenter)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Aquifer_Nested.FluidSample((nint)NativeMethods.TablePtr->C0.hs_method_47f0e066((void*)__hosihikari_shim_handle, (void*)cellCenter.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _computeAquifer(nint cellCenter) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint chunkOffset()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_c9c86c37();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint chunkOffset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void computeAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos worldPos)
-    {
-        NativeMethods.TablePtr->C0.hs_method_c0b60353((void*)__hosihikari_shim_handle, (void*)worldPos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void computeAt(nint worldPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAquiferNoises_Address

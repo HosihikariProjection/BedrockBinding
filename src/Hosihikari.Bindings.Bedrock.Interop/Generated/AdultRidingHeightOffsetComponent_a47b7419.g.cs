@@ -38,10 +38,9 @@ public sealed unsafe partial class AdultRidingHeightOffsetComponent : global::Sy
         return __hs_handle;
     }
 
-    public static nint SITTING_ANIMATION_OFFSET()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_153c0d80();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint SITTING_ANIMATION_OFFSET() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float mValue
     {

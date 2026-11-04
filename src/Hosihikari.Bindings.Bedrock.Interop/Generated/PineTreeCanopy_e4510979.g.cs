@@ -38,13 +38,13 @@ public sealed unsafe partial class PineTreeCanopy : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _placeCanopy(nint target, nint pos, nint trunkSize, nint random, nint arg4, nint treeParams, int arg6, nint arg7) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PineTreeCanopy Create(global::Hosihikari.Bindings.Bedrock.Interop.PineTreeCanopy arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_24f9103b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_24f9103b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,19 +56,19 @@ public sealed unsafe partial class PineTreeCanopy : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mHeight_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_afbf5eda((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_afbf5eda((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLeavesBlockDescriptor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e2876663((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e2876663((void*)__hosihikari_shim_handle);
     }
 
     public int mRadius
     {
-        get => NativeMethods.TablePtr->C3.hs_get_29c4f0a6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_29c4f0a6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_29c4f0a6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_29c4f0a6((void*)__hosihikari_shim_handle, value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
@@ -82,7 +82,7 @@ public sealed unsafe partial class PineTreeCanopy : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e4510979((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e4510979((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

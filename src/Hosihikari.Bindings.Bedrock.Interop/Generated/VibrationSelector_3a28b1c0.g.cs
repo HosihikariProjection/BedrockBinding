@@ -49,10 +49,9 @@ public sealed unsafe partial class VibrationSelector : global::System.IDisposabl
         return new VibrationSelector((nint)handle);
     }
 
-    public void addCandidate(global::Hosihikari.Bindings.Bedrock.Interop.Tick currentTick, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent, nint gameEventContext, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos destinationPos)
-    {
-        NativeMethods.TablePtr->C4.hs_method_4d5a4436((void*)__hosihikari_shim_handle, (void*)currentTick.Handle, (void*)gameEvent.Handle, (void*)gameEventContext, (void*)destinationPos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addCandidate(nint currentTick, nint gameEvent, nint gameEventContext, nint destinationPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCandidateVibrationInfo_Address
@@ -66,10 +65,9 @@ public sealed unsafe partial class VibrationSelector : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C4.hs_get_908daf40((void*)__hosihikari_shim_handle);
     }
 
-    public void save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C4.hs_method_dde83352((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void save(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

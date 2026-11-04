@@ -56,10 +56,9 @@ public sealed unsafe partial class ClockSpriteCalculator : global::System.IDispo
         set => NativeMethods.TablePtr->C0.hs_set_43be6d60((void*)__hosihikari_shim_handle, value);
     }
 
-    public int update(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, bool instant)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_cf6a34c0((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, instant);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int update(nint region, nint pos, bool instant) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

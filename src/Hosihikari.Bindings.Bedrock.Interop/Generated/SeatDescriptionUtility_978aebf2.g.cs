@@ -38,14 +38,13 @@ public sealed unsafe partial class SeatDescriptionUtility : global::System.IDisp
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint getSeatDescriptionOfPassenger(nint seats, int passengerCount, int passengerIndex) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void setValuesToSynchedActorData(global::Hosihikari.Bindings.Bedrock.Interop.ActorDataSeatOffsetComponent seatOffsetComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorDataDirtyFlagsComponent dirtyFlagsComponent, global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataWriter synchedActorData, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 offset, global::Hosihikari.Bindings.Bedrock.Interop.SeatDescription seat, float seatRotation)
-    {
-        NativeMethods.TablePtr->C3.hs_method_e7969da2((void*)seatOffsetComponent.Handle, (void*)dirtyFlagsComponent.Handle, (void*)synchedActorData.Handle, (void*)offset.Handle, (void*)seat.Handle, seatRotation);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void setValuesToSynchedActorData(nint seatOffsetComponent, nint dirtyFlagsComponent, nint synchedActorData, nint offset, nint seat, float seatRotation) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

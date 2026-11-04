@@ -38,10 +38,9 @@ public sealed unsafe partial class RailActivatorComponent : global::System.IDisp
         return __hs_handle;
     }
 
-    public void ejectAllPassengers(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C3.hs_method_33ff5e57((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void ejectAllPassengers(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class RailActivatorComponent : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_356722d9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_356722d9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

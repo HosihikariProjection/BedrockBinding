@@ -97,9 +97,9 @@ public sealed unsafe partial class ListTag : global::System.IDisposable
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _write(global::Hosihikari.Bindings.Bedrock.Interop.IDataOutput dos)
     {
@@ -177,10 +177,9 @@ public sealed unsafe partial class ListTag : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_d656d80f((void*)__hosihikari_shim_handle, (void*)dis.Handle));
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_ load(global::Hosihikari.Bindings.Bedrock.Interop.IDataInput dis, int depth)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_void__std__error_code_((nint)NativeMethods.TablePtr->C2.hs_method_f686b992((void*)__hosihikari_shim_handle, (void*)dis.Handle, depth));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint load(nint dis, int depth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte mType
     {
@@ -218,10 +217,9 @@ public sealed unsafe partial class ListTag : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_e41e0817((void*)__hosihikari_shim_handle, (void*)dos.Handle);
     }
 
-    public void write(global::Hosihikari.Bindings.Bedrock.Interop.IDataOutput dos, int depth)
-    {
-        NativeMethods.TablePtr->C2.hs_method_4731b2ef((void*)__hosihikari_shim_handle, (void*)dos.Handle, depth);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void write(nint dos, int depth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

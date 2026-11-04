@@ -40,7 +40,7 @@ public sealed unsafe partial class OwnerPtr_Dimension_ : global::System.IDisposa
 
     public static OwnerPtr_Dimension_ Create_36030ea6(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_36030ea6(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        var handle = NativeMethods.TablePtr->C2.hs_create_36030ea6(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class OwnerPtr_Dimension_ : global::System.IDisposa
 
     public static OwnerPtr_Dimension_ Create_2f4e3a73(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2f4e3a73(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        var handle = NativeMethods.TablePtr->C2.hs_create_2f4e3a73(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,7 +62,7 @@ public sealed unsafe partial class OwnerPtr_Dimension_ : global::System.IDisposa
 
     public static OwnerPtr_Dimension_ Create_4016dcaa(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4016dcaa(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        var handle = NativeMethods.TablePtr->C2.hs_create_4016dcaa(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,7 +78,7 @@ public sealed unsafe partial class OwnerPtr_Dimension_ : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_937e36b6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_937e36b6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

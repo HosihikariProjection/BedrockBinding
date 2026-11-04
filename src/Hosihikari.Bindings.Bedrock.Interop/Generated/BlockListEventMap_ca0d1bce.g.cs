@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockListEventMap : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_7fed9c14((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockListEventMap Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockListEventMap arg0)
     {

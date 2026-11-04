@@ -60,18 +60,17 @@ public sealed unsafe partial class StorageAreasTree : global::System.IDisposable
         return new StorageAreasTree((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void forEachStorageArea(nint visitorFunction) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Result<std::shared_ptr<Core::FileStorageArea>>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getStorageArea(nint path) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Result<std::shared_ptr<Core::FileStorageArea>>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void insertStorageArea(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea storageArea)
-    {
-        NativeMethods.TablePtr->C1.hs_method_aebb44df((void*)__hosihikari_shim_handle, (void*)storageArea.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void insertStorageArea(nint storageArea) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4e6c3d_Address
@@ -96,14 +95,13 @@ public sealed unsafe partial class StorageAreasTree : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreasTree((nint)NativeMethods.TablePtr->C1.hs_method_cc9e196c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void removeStorageArea(global::Hosihikari.Bindings.Bedrock.Interop.Core.FileStorageArea storageArea)
-    {
-        NativeMethods.TablePtr->C1.hs_method_15b882e6((void*)__hosihikari_shim_handle, (void*)storageArea.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeStorageArea(nint storageArea) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void teardown(nint teardownCallback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

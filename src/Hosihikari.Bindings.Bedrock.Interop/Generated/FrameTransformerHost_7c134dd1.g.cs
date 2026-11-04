@@ -38,13 +38,13 @@ public sealed unsafe partial class FrameTransformerHost : global::System.IDispos
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FrameTransformerHost Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.FrameTransformerHost arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_bdf725f5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_bdf725f5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class FrameTransformerHost : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_7c134dd1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_7c134dd1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

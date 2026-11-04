@@ -40,7 +40,7 @@ public sealed unsafe partial class ParsedName : global::System.IDisposable
 
     public static ParsedName Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemRegistry_Nested.ParsedName arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6cb84263((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_6cb84263((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,26 +51,26 @@ public sealed unsafe partial class ParsedName : global::System.IDisposable
 
     public int mAux
     {
-        get => NativeMethods.TablePtr->C2.hs_get_14c0e33a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_14c0e33a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_14c0e33a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_14c0e33a((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemIdentifier_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6240936a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_6240936a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParsedName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_52f07b17((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_52f07b17((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mParsedNamespace_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_74cf8978((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_74cf8978((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class ParsedName : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_aa22145a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_aa22145a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

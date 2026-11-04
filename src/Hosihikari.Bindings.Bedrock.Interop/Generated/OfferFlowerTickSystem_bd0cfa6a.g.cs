@@ -38,15 +38,13 @@ public sealed unsafe partial class OfferFlowerTickSystem : global::System.IDispo
         return __hs_handle;
     }
 
-    public static void _doOfferFlowerTickSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.OfferFlowerTickComponent offerFlowerTickComponent)
-    {
-        NativeMethods.TablePtr->C3.hs_method_49f023c3((void*)arg0.Handle, (void*)offerFlowerTickComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doOfferFlowerTickSystem(nint arg0, nint offerFlowerTickComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C3.hs_method_16cbe605());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -54,7 +52,7 @@ public sealed unsafe partial class OfferFlowerTickSystem : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bd0cfa6a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bd0cfa6a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

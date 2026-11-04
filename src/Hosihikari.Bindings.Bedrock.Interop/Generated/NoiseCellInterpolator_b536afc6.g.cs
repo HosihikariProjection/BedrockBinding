@@ -157,10 +157,9 @@ public sealed unsafe partial class NoiseCellInterpolator : global::System.IDispo
         set => NativeMethods.TablePtr->C2.hs_set_79af8fe5((void*)__hosihikari_shim_handle, value);
     }
 
-    public void selectCellXZ(int xzMinMinIdx, int xzMinMaxIdx, int xzMaxMinIdx, int xzMaxMaxIdx)
-    {
-        NativeMethods.TablePtr->C2.hs_method_5a957daa((void*)__hosihikari_shim_handle, xzMinMinIdx, xzMinMaxIdx, xzMaxMinIdx, xzMaxMaxIdx);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void selectCellXZ(int xzMinMinIdx, int xzMinMaxIdx, int xzMaxMinIdx, int xzMaxMaxIdx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

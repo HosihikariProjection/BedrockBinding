@@ -38,10 +38,9 @@ public sealed unsafe partial class MoveActorAbsoluteData : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_705b37cd((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MoveActorAbsoluteData Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class MoveActorAbsoluteData : global::System.IDispo
         return new MoveActorAbsoluteData((nint)handle);
     }
 
-    public static MoveActorAbsoluteData Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor entity)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_db04f7f0((void*)entity.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new MoveActorAbsoluteData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MoveActorAbsoluteData Create(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MoveActorAbsoluteData Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveActorAbsoluteData arg0)
     {
@@ -76,10 +68,9 @@ public sealed unsafe partial class MoveActorAbsoluteData : global::System.IDispo
         return new MoveActorAbsoluteData((nint)handle);
     }
 
-    public bool isDifferenceSignificant(global::Hosihikari.Bindings.Bedrock.Interop.MoveActorAbsoluteData old, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 velocity)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_29d483e3((void*)__hosihikari_shim_handle, (void*)old.Handle, (void*)velocity.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isDifferenceSignificant(nint old, nint velocity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHeader_Address

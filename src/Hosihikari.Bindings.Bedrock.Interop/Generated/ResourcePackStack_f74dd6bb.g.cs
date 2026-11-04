@@ -42,14 +42,13 @@ public sealed unsafe partial class ResourcePackStack : global::System.IDisposabl
     public nint _ctor(nint identities, nint repo, bool anyVersion) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_ec245615((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ResourcePackStack Create()
     {
@@ -79,26 +78,17 @@ public sealed unsafe partial class ResourcePackStack : global::System.IDisposabl
     public static nint deserialize(nint fileData, nint repo, nint levelId) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ResourcePackStack' has no accessible destructor.");
 
-    public string[] getPackTelemetryNamesWithVersion(global::Hosihikari.Bindings.Bedrock.Interop.I18n loc, sbyte type)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_68a72e87((void*)__hosihikari_shim_handle, (void*)loc.Handle, type);
-        var __hs_items = (global::Hosihikari.Bindings.Abi.StringView*)__hs_view.Data;
-        var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<string>() : new string[checked((int)__hs_view.Size)];
-        for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
-        {
-            __hs_result[__hs_i] = global::System.Text.Encoding.UTF8.GetString(__hs_items[__hs_i].Data, checked((int)__hs_items[__hs_i].Size));
-        }
-        return __hs_result;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getPackTelemetryNamesWithVersion(nint loc, nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'UnextractablePacks' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getPacksWhereAssetExtractionNotViable(nint getContentKey) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'UnextractablePacks' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void getSplitStacks(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack clientStack, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackStack serverStack)
-    {
-        NativeMethods.TablePtr->C3.hs_method_bc09b199((void*)__hosihikari_shim_handle, (void*)clientStack.Handle, (void*)serverStack.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void getSplitStacks(nint clientStack, nint serverStack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPackSourceReport_Address

@@ -38,15 +38,13 @@ public sealed unsafe partial class NetworkServerConfig : global::System.IDisposa
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.NetworkServerConfig arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_90e881e6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_da9a869b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NetworkServerConfig Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class NetworkServerConfig : global::System.IDisposa
         return new NetworkServerConfig((nint)handle);
     }
 
-    public static NetworkServerConfig Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkServerConfig arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e9b79f2a((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new NetworkServerConfig((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static NetworkServerConfig Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool allowSubclientLogin
     {

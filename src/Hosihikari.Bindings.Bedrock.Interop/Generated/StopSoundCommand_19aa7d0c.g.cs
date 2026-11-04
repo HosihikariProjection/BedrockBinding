@@ -40,41 +40,40 @@ public sealed unsafe partial class StopSoundCommand : global::System.IDisposable
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C4.hs_get_902cb710((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_902cb710((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_902cb710((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_902cb710((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6db71cfd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6db71cfd((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C4.hs_get_79cba201((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_79cba201((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_79cba201((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_79cba201((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_cc60dbba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_cc60dbba((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C4.hs_get_860323bc((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_860323bc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_860323bc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_860323bc((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1d69cb71((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StopSoundCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.StopSoundCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_00fe012c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_00fe012c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,24 +84,24 @@ public sealed unsafe partial class StopSoundCommand : global::System.IDisposable
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C4.hs_method_c83f536c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C3.hs_method_c83f536c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3c690c50((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3c690c50((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_82e1d369((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_82e1d369((void*)__hosihikari_shim_handle);
     }
 
     public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
     {
-        NativeMethods.TablePtr->C4.hs_method_8a89fc4a((void*)registry.Handle);
+        NativeMethods.TablePtr->C3.hs_method_8a89fc4a((void*)registry.Handle);
     }
 
 
@@ -112,7 +111,7 @@ public sealed unsafe partial class StopSoundCommand : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_19aa7d0c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_19aa7d0c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

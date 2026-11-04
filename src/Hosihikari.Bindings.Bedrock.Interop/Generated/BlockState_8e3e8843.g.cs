@@ -93,10 +93,9 @@ public sealed unsafe partial class BlockState : global::System.IDisposable
         get => NativeMethods.TablePtr->C0.hs_get_07d5478d((void*)__hosihikari_shim_handle);
     }
 
-    public void toNBT(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, int val)
-    {
-        NativeMethods.TablePtr->C0.hs_method_af8ec577((void*)__hosihikari_shim_handle, (void*)tag.Handle, val);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void toNBT(nint tag, int val) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

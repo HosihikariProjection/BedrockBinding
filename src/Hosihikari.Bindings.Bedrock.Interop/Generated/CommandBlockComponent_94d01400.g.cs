@@ -40,7 +40,7 @@ public sealed unsafe partial class CommandBlockComponent : global::System.IDispo
 
     public static CommandBlockComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d8df094d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_d8df094d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,76 +49,43 @@ public sealed unsafe partial class CommandBlockComponent : global::System.IDispo
         return new CommandBlockComponent((nint)handle);
     }
 
-    public void addAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag entityTag)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d75cc92d((void*)__hosihikari_shim_handle, (void*)entityTag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addAdditionalSaveData(nint entityTag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C1.hs_method_96e3c259((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initFromDefinition(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBaseCommandBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b57304c6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_b57304c6((void*)__hosihikari_shim_handle);
     }
 
     public int mCurrentTickCount
     {
-        get => NativeMethods.TablePtr->C1.hs_get_a1ce83e0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_a1ce83e0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_a1ce83e0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_a1ce83e0((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mTicking
     {
-        get => NativeMethods.TablePtr->C1.hs_get_78482218((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_78482218((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_78482218((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_78482218((void*)__hosihikari_shim_handle, value);
     }
 
-    public void onCommandBlockUpdate(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, string command, bool trackOutput, global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Safety.RedactableString name, int tickDelay, bool executeOnFirstTick)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(command);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(command, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C1.hs_method_ff7403ae((void*)__hosihikari_shim_handle, (void*)owner.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, trackOutput, (void*)name.Handle, tickDelay, executeOnFirstTick);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onCommandBlockUpdate(nint owner, nint command, bool trackOutput, nint name, int tickDelay, bool executeOnFirstTick) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void readAdditionalSaveData(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag entityTag, global::Hosihikari.Bindings.Bedrock.Interop.DataLoadHelper dataLoadHelper)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e9c9c484((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)entityTag.Handle, (void*)dataLoadHelper.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void readAdditionalSaveData(nint owner, nint entityTag, nint dataLoadHelper) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setLastOutput(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, string lastOutput)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(lastOutput);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(lastOutput, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C1.hs_method_a29c8a5f((void*)__hosihikari_shim_handle, (void*)owner.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setLastOutput(nint owner, nint lastOutput) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -127,7 +94,7 @@ public sealed unsafe partial class CommandBlockComponent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_94d01400((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_94d01400((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

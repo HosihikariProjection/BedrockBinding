@@ -38,10 +38,9 @@ public sealed unsafe partial class CreativeContentPacketPayload : global::System
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? creativeItemRegistryForWrite)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_085a619e((void*)__hosihikari_shim_handle, creativeItemRegistryForWrite?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint creativeItemRegistryForWrite) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CreativeContentPacketPayload Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class CreativeContentPacketPayload : global::System
         return new CreativeContentPacketPayload((nint)handle);
     }
 
-    public static CreativeContentPacketPayload Create(global::Hosihikari.Bindings.Abi.SharedHandle? creativeItemRegistryForWrite)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_7efda5bc(creativeItemRegistryForWrite?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CreativeContentPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CreativeContentPacketPayload Create(nint creativeItemRegistryForWrite) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CreativeContentPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.CreativeContentPacketPayload arg0)
     {

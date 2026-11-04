@@ -40,7 +40,7 @@ public sealed unsafe partial class SeatDescription : global::System.IDisposable
 
     public static SeatDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.RideableComponentDefinition_Nested.SeatDescription arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_fd6d93d0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_fd6d93d0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,61 +52,60 @@ public sealed unsafe partial class SeatDescription : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mCameraRelaxDistanceSmoothing_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e4cc2a47((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e4cc2a47((void*)__hosihikari_shim_handle);
     }
 
     public bool mHasSeatRotation
     {
-        get => NativeMethods.TablePtr->C4.hs_get_deb6b36b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_deb6b36b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_deb6b36b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_deb6b36b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mLockPassengerRotation
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f63096a1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_f63096a1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f63096a1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_f63096a1((void*)__hosihikari_shim_handle, value);
     }
 
     public float mLockPassengerRotationDegrees
     {
-        get => NativeMethods.TablePtr->C4.hs_get_54d71621((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_54d71621((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_54d71621((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_54d71621((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMaxSeatCount_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4bdb123d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4bdb123d((void*)__hosihikari_shim_handle);
     }
 
     public int mMinSeatCount
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e7ee79c2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e7ee79c2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e7ee79c2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e7ee79c2((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4cf6fc71((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4cf6fc71((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSeatRotation_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d05b38b0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d05b38b0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mThirdPersonCameraRadiusOverride_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e749802a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e749802a((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_60.RideableComponentDefinition_Nested.SeatDescription seat)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_04631d5a((void*)__hosihikari_shim_handle, (void*)seat.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint seat) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -115,7 +114,7 @@ public sealed unsafe partial class SeatDescription : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_d7c05300((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_d7c05300((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

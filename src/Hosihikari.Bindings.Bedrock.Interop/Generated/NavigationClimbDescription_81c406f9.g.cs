@@ -38,10 +38,9 @@ public sealed unsafe partial class NavigationClimbDescription : global::System.I
         return __hs_handle;
     }
 
-    public nint _getJsonName()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_25d851e4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getJsonName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NavigationClimbDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.NavigationClimbDescription arg0)
     {

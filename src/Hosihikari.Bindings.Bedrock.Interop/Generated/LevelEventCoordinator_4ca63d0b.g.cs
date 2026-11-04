@@ -80,24 +80,21 @@ public sealed unsafe partial class LevelEventCoordinator : global::System.IDispo
         set => NativeMethods.TablePtr->C2.hs_set_2b39d7d1((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_70f6c721((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onGameplayUserAdded(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity)
-    {
-        NativeMethods.TablePtr->C2.hs_method_c27afed4((void*)__hosihikari_shim_handle, (void*)entity.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onGameplayUserAdded(nint entity) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _postReloadActorAdded(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, byte arg1)
-    {
-        NativeMethods.TablePtr->C2.hs_method_0c39f560((void*)__hosihikari_shim_handle, (void*)actor.Handle, arg1);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _postReloadActorAdded(nint actor, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mGameRuleChangeSubscription_Address
@@ -129,49 +126,29 @@ public sealed unsafe partial class LevelEventCoordinator : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C2.hs_get_353f8d97((void*)__hosihikari_shim_handle);
     }
 
-    public void registerGameRules(global::Hosihikari.Bindings.Bedrock.Interop.GameRules gameRules)
-    {
-        NativeMethods.TablePtr->C2.hs_method_95ea645c((void*)__hosihikari_shim_handle, (void*)gameRules.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerGameRules(nint gameRules) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void registerWithActorManagerEvents(global::Hosihikari.Bindings.Bedrock.Interop.IActorManagerConnector actorManagerConnector, bool isClientSide)
-    {
-        NativeMethods.TablePtr->C2.hs_method_6bea0896((void*)__hosihikari_shim_handle, (void*)actorManagerConnector.Handle, isClientSide);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerWithActorManagerEvents(nint actorManagerConnector, bool isClientSide) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void registerWithGameplayUserManagerEvents(global::Hosihikari.Bindings.Bedrock.Interop.IGameplayUserManagerConnector gameplayUserManagerConnector)
-    {
-        NativeMethods.TablePtr->C2.hs_method_ac85d740((void*)__hosihikari_shim_handle, (void*)gameplayUserManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerWithGameplayUserManagerEvents(nint gameplayUserManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void sendLevelRemovedActor(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C2.hs_method_134f7c59((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void sendLevelRemovedActor(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void sendLevelWeatherChanged(string dimension, bool wasRaining, bool wasLightning, bool isRaining, bool isLightning)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(dimension);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dimension, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C2.hs_method_2655293f((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, wasRaining, wasLightning, isRaining, isLightning);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void sendLevelWeatherChanged(nint dimension, bool wasRaining, bool wasLightning, bool isRaining, bool isLightning) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void sendWorldClockTimeModified(nint clock)
-    {
-        NativeMethods.TablePtr->C2.hs_method_733cbc91((void*)__hosihikari_shim_handle, (void*)clock);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void sendWorldClockTimeModified(nint clock) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

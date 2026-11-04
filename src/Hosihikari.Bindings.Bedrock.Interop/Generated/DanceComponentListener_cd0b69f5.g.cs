@@ -38,10 +38,9 @@ public sealed unsafe partial class DanceComponentListener : global::System.IDisp
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_e8d1bb3a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DanceComponentListener Create(global::Hosihikari.Bindings.Bedrock.Interop.DanceComponentListener arg0)
     {
@@ -96,10 +95,9 @@ public sealed unsafe partial class DanceComponentListener : global::System.IDisp
         get => (nint)NativeMethods.TablePtr->C1.hs_get_1c8dc890((void*)__hosihikari_shim_handle);
     }
 
-    public void setLevel(global::Hosihikari.Bindings.Bedrock.Interop.ILevel level)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f55989ec((void*)__hosihikari_shim_handle, (void*)level.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setLevel(nint level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -40,7 +40,7 @@ public sealed unsafe partial class AboveColumnData : global::System.IDisposable
 
     public static AboveColumnData Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3513daad();
+        var handle = NativeMethods.TablePtr->C1.hs_create_3513daad();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class AboveColumnData : global::System.IDisposable
 
     public static AboveColumnData Create(global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.AboveColumnData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d7283036((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d7283036((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class AboveColumnData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5b361c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_68e15d44((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_68e15d44((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbf7308_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8f811e01((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8f811e01((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.AboveColumnData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.AboveColumnData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.AboveColumnData((nint)NativeMethods.TablePtr->C2.hs_method_613170cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InsideBubbleColumnBlockComponent_Nested.AboveColumnData((nint)NativeMethods.TablePtr->C1.hs_method_613170cf((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class AboveColumnData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_10f816e5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_10f816e5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,93 +40,84 @@ public sealed unsafe partial class PotionBrewing : global::System.IDisposable
 
     public static void addContainerRecipe(global::Hosihikari.Bindings.Bedrock.Interop.Item from, global::Hosihikari.Bindings.Bedrock.Interop.PotionBrewing_Nested.Ingredient ingredient, global::Hosihikari.Bindings.Bedrock.Interop.Item to)
     {
-        NativeMethods.TablePtr->C3.hs_method_4f40b3d4((void*)from.Handle, (void*)ingredient.Handle, (void*)to.Handle);
+        NativeMethods.TablePtr->C2.hs_method_4f40b3d4((void*)from.Handle, (void*)ingredient.Handle, (void*)to.Handle);
     }
 
     public static void addPotionMix(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor from, global::Hosihikari.Bindings.Bedrock.Interop.PotionBrewing_Nested.Ingredient ingredient, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor to)
     {
-        NativeMethods.TablePtr->C3.hs_method_06ca6c83((void*)from.Handle, (void*)ingredient.Handle, (void*)to.Handle);
+        NativeMethods.TablePtr->C2.hs_method_06ca6c83((void*)from.Handle, (void*)ingredient.Handle, (void*)to.Handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance getChemistryMix(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor from, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor ingredient)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C3.hs_method_9e7691f4((void*)from.Handle, (void*)ingredient.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getChemistryMix(nint from, nint ingredient) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int getFuelValue(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_646e1533((void*)item.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int getFuelValue(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static bool hasMix(global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance source, global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor ingredient)
     {
-        return NativeMethods.TablePtr->C3.hs_method_8dc3f22a((void*)source.Handle, (void*)ingredient.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_8dc3f22a((void*)source.Handle, (void*)ingredient.Handle) != 0;
     }
 
     public static void initPotionBrewing(global::Hosihikari.Bindings.Bedrock.Interop.IEducationOptions educationOptions)
     {
-        NativeMethods.TablePtr->C3.hs_method_0550548e((void*)educationOptions.Handle);
+        NativeMethods.TablePtr->C2.hs_method_0550548e((void*)educationOptions.Handle);
     }
 
-    public static bool isFuel(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_a9c97ebf((void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool isFuel(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static bool isIngredient(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
     {
-        return NativeMethods.TablePtr->C3.hs_method_4d1a4545((void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_4d1a4545((void*)item.Handle) != 0;
     }
 
     public static bool isPotionIngredient(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
     {
-        return NativeMethods.TablePtr->C3.hs_method_7a7dd55c((void*)item.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_7a7dd55c((void*)item.Handle) != 0;
     }
 
-    public static bool isPotionRecipeInput(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor item)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_848c1092((void*)item.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool isPotionRecipeInput(nint item) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mChemistryMixes()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_13de178b();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mChemistryMixes() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mContainerMixes()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_d79a710b();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mContainerMixes() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static nint mPotionMixes()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b9e660fc();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_b9e660fc();
     }
 
     public static nint mValidContainers()
     {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_067c881f();
+        return (nint)NativeMethods.TablePtr->C2.hs_method_067c881f();
     }
 
-    public static nint mValidIngredients()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_bf6e38e8();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mValidIngredients() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint mValidRecipeInputs()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_0264b92b();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mValidRecipeInputs() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance mix(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor ingredient, global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance source)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C3.hs_method_4fb20991((void*)ingredient.Handle, (void*)source.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ItemInstance((nint)NativeMethods.TablePtr->C2.hs_method_4fb20991((void*)ingredient.Handle, (void*)source.Handle));
     }
 
-    public static void shutdown()
-    {
-        NativeMethods.TablePtr->C3.hs_method_54baead2();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void shutdown() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -134,7 +125,7 @@ public sealed unsafe partial class PotionBrewing : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e7952f70((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e7952f70((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

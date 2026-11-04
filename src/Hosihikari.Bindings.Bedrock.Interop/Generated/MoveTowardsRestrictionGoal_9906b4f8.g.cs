@@ -56,15 +56,13 @@ public sealed unsafe partial class MoveTowardsRestrictionGoal : global::System.I
         set => NativeMethods.TablePtr->C2.hs_set_4dce7f3d((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _canContinueToUse()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_f2e5328d((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canContinueToUse() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _start()
-    {
-        NativeMethods.TablePtr->C2.hs_method_d4a93d71((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _start() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MoveTowardsRestrictionGoal Create()
     {
@@ -88,10 +86,9 @@ public sealed unsafe partial class MoveTowardsRestrictionGoal : global::System.I
         return new MoveTowardsRestrictionGoal((nint)handle);
     }
 
-    public bool _randomizeWantedPositionTowardsRestriction(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 restrictionCenter)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_06c27618((void*)__hosihikari_shim_handle, (void*)restrictionCenter.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _randomizeWantedPositionTowardsRestriction(nint restrictionCenter) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool canContinueToUse()
     {

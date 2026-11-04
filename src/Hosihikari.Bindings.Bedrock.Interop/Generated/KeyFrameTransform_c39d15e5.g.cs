@@ -40,7 +40,7 @@ public sealed unsafe partial class KeyFrameTransform : global::System.IDisposabl
 
     public static KeyFrameTransform Create(global::Hosihikari.Bindings.Bedrock.Interop.KeyFrameTransform arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ad5b0e1c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_ad5b0e1c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,32 +49,30 @@ public sealed unsafe partial class KeyFrameTransform : global::System.IDisposabl
         return new KeyFrameTransform((nint)handle);
     }
 
-    public void animate(global::Hosihikari.Bindings.Bedrock.Interop.RenderParams renderParams, global::Hosihikari.Bindings.Bedrock.Interop.BoneOrientation destBoneOrientation, float scale, int boneTransformType)
-    {
-        NativeMethods.TablePtr->C2.hs_method_59adc241((void*)__hosihikari_shim_handle, (void*)renderParams.Handle, (void*)destBoneOrientation.Handle, scale, boneTransformType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void animate(nint renderParams, nint destBoneOrientation, float scale, nint boneTransformType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void computeCubicPolynomial(global::Hosihikari.Bindings.Bedrock.Interop.KeyFrameTransform? p0, global::Hosihikari.Bindings.Bedrock.Interop.KeyFrameTransform p1, global::Hosihikari.Bindings.Bedrock.Interop.KeyFrameTransform p2, global::Hosihikari.Bindings.Bedrock.Interop.KeyFrameTransform? p3)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f3a84b44((void*)(p0?.Handle ?? 0), (void*)p1.Handle, (void*)p2.Handle, (void*)(p3?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void computeCubicPolynomial(nint p0, nint p1, nint p2, nint p3) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float mKeyFrameTimeStamp
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9c97d1c5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_9c97d1c5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_9c97d1c5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_9c97d1c5((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLerpMode_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_abc042f1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_abc042f1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPrePost_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9f771abb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_9f771abb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -84,7 +82,7 @@ public sealed unsafe partial class KeyFrameTransform : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_c39d15e5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_c39d15e5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

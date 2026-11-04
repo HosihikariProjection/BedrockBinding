@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemTagDescriptorData : global::System.IDispo
 
     public static ItemTagDescriptorData Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.ItemTagDescriptorData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e8f1f2a0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_e8f1f2a0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class ItemTagDescriptorData : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemTag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_31e5bed3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_31e5bed3((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class ItemTagDescriptorData : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e598504d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e598504d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class SetPlayerInventoryOptionsPacketPayload : glob
 
     public static SetPlayerInventoryOptionsPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetPlayerInventoryOptionsPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_7de2d94d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_7de2d94d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class SetPlayerInventoryOptionsPacketPayload : glob
     // The native field type is not projected; this is the address of the field storage.
     public nint mInventoryOptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3e0c04e0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3e0c04e0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class SetPlayerInventoryOptionsPacketPayload : glob
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_b2751e03((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b2751e03((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

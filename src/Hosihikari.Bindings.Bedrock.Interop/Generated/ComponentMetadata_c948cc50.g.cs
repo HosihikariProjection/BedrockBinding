@@ -38,10 +38,9 @@ public sealed unsafe partial class ComponentMetadata : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_530ba873((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ComponentMetadata Create()
     {
@@ -83,9 +82,9 @@ public sealed unsafe partial class ComponentMetadata : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_843e630f((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentFactory_Nested.ComponentMetadata operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockComponentFactory_Nested.ComponentMetadata arg0)
     {

@@ -40,7 +40,7 @@ public sealed unsafe partial class SubChunkRequestPacketPayload : global::System
 
     public static SubChunkRequestPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0aa31b63();
+        var handle = NativeMethods.TablePtr->C3.hs_create_0aa31b63();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class SubChunkRequestPacketPayload : global::System
 
     public static SubChunkRequestPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkRequestPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_36593eef((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_36593eef((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,19 +63,19 @@ public sealed unsafe partial class SubChunkRequestPacketPayload : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mCenterPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_32b01a54((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_32b01a54((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDimensionType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_749a7219((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_749a7219((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubChunkPosOffsets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_fa207749((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fa207749((void*)__hosihikari_shim_handle);
     }
 
 
@@ -85,7 +85,7 @@ public sealed unsafe partial class SubChunkRequestPacketPayload : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_91be854c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_91be854c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

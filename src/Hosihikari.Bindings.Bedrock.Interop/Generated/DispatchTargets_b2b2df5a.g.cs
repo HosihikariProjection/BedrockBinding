@@ -38,10 +38,9 @@ public sealed unsafe partial class DispatchTargets : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_47e868c8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DispatchTargets Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.DispatchTargets arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class DispatchTargets : global::System.IDisposable
         return new DispatchTargets((nint)handle);
     }
 
-    public bool loadSubscriptions(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.PublisherBase publisher)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_5fd16c63((void*)__hosihikari_shim_handle, (void*)publisher.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool loadSubscriptions(nint publisher) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mMultiDispatchBegin
     {

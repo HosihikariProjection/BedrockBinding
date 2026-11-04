@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerGameplayHandler : global::System.IDispo
 
     public static PlayerGameplayHandler Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameplayHandler arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c6d9f242((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_c6d9f242((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,17 +51,17 @@ public sealed unsafe partial class PlayerGameplayHandler : global::System.IDispo
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.MutablePlayerGameplayEvent_CoordinatorResult_ @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_fbb38653((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C2.hs_method_fbb38653((void*)__hosihikari_shim_handle, (void*)@event.Handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_ handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameplayEvent_CoordinatorResult_ @event)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C3.hs_method_5012be6b((void*)__hosihikari_shim_handle, (void*)@event.Handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.GameplayHandlerResult_CoordinatorResult_((nint)NativeMethods.TablePtr->C2.hs_method_5012be6b((void*)__hosihikari_shim_handle, (void*)@event.Handle));
     }
 
     public int handleEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerGameplayEvent_void_ arg0)
     {
-        return NativeMethods.TablePtr->C3.hs_method_e41232cd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_e41232cd((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class PlayerGameplayHandler : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_218d66f0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_218d66f0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

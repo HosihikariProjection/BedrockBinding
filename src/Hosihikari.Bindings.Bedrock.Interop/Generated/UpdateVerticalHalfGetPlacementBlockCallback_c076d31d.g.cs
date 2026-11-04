@@ -38,14 +38,13 @@ public sealed unsafe partial class UpdateVerticalHalfGetPlacementBlockCallback :
         return __hs_handle;
     }
 
-    public int _getCallbackOrder()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_04937cfa((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getCallbackOrder() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<const Block *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getPlacementBlock(nint block, nint arg1, nint arg2, byte face, nint clickPos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<const Block *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UpdateVerticalHalfGetPlacementBlockCallback Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTrait.PlacementPosition_Nested.UpdateVerticalHalfGetPlacementBlockCallback arg0)
     {

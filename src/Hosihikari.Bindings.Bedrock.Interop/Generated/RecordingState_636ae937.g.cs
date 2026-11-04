@@ -40,7 +40,7 @@ public sealed unsafe partial class RecordingState : global::System.IDisposable
 
     public static RecordingState Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_859b4205();
+        var handle = NativeMethods.TablePtr->C4.hs_create_859b4205();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RecordingState : global::System.IDisposable
 
     public static RecordingState Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_dcaab7a4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_dcaab7a4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class RecordingState : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc6631d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_671d18a4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_671d18a4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd92630_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_ac637fa1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ac637fa1((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState((nint)NativeMethods.TablePtr->C5.hs_method_4110171b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.VideoReceiveStreamInterface_Nested.RecordingState((nint)NativeMethods.TablePtr->C4.hs_method_4110171b((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class RecordingState : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_636ae937((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_636ae937((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

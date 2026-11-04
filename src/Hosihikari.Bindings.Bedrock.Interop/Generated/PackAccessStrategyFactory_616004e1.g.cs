@@ -38,21 +38,21 @@ public sealed unsafe partial class PackAccessStrategyFactory : global::System.ID
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'PackAccessStrategies' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint create(nint create) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'PackAccessStrategies' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'PackAccessStrategies' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createForDirectory(nint create) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'PackAccessStrategies' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'PackAccessStrategies' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createForEncryptedZip(nint create) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'PackAccessStrategies' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'PackAccessStrategies' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createForZip(nint create) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'PackAccessStrategies' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -60,7 +60,7 @@ public sealed unsafe partial class PackAccessStrategyFactory : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_616004e1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_616004e1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

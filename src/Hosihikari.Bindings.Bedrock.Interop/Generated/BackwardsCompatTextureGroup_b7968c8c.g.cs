@@ -60,10 +60,9 @@ public sealed unsafe partial class BackwardsCompatTextureGroup : global::System.
         return new BackwardsCompatTextureGroup((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureInfo invalidInfo()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BackwardsCompatTextureInfo((nint)NativeMethods.TablePtr->C0.hs_method_16f71d9f(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint invalidInfo() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkad3534_Address

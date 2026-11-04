@@ -40,7 +40,7 @@ public sealed unsafe partial class NetworkID : global::System.IDisposable
 
     public static NetworkID Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_da3e4880();
+        var handle = NativeMethods.TablePtr->C2.hs_create_da3e4880();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class NetworkID : global::System.IDisposable
 
     public static NetworkID Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMessaging.NetworkID arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e8412ec8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e8412ec8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,17 @@ public sealed unsafe partial class NetworkID : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk16c1ef_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1199ea3d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1199ea3d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlayerMessaging.NetworkID operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMessaging.NetworkID arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMessaging.NetworkID((nint)NativeMethods.TablePtr->C3.hs_method_2f2eab02((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlayerMessaging.NetworkID((nint)NativeMethods.TablePtr->C2.hs_method_2f2eab02((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value toJson()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C3.hs_method_0d9ec55e((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toJson() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -82,7 +81,7 @@ public sealed unsafe partial class NetworkID : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2aef02f1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2aef02f1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

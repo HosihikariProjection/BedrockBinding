@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptCustomComponentAfterEventList : global:
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_6990dc54((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptCustomComponentAfterEventList Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptCustomComponentAfterEventList arg0)
     {

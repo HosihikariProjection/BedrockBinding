@@ -49,30 +49,13 @@ public sealed unsafe partial class TradeTables : global::System.IDisposable
         return new TradeTables((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TradeTables_Nested.TradeTableLoadData _parseAndStoreTradeTable(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager? resourceLoader, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path tradeTablePath, bool usingUpcomingCreatorFeaturesExperiment, global::Hosihikari.Bindings.Abi.SharedHandle? validator)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TradeTables_Nested.TradeTableLoadData((nint)NativeMethods.TablePtr->C4.hs_method_360dc4cf((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)(resourceLoader?.Handle ?? 0), (void*)tradeTablePath.Handle, usingUpcomingCreatorFeaturesExperiment, validator?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _parseAndStoreTradeTable(nint level, nint resourceLoader, nint tradeTablePath, bool usingUpcomingCreatorFeaturesExperiment, nint validator) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TradeTable? fetchTable(string path)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(path);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(path, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            var __hs_handle = NativeMethods.TablePtr->C4.hs_method_b130e733((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-            return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TradeTable((nint)__hs_handle, false) : null;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint fetchTable(nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTradeTables_Address
@@ -80,10 +63,9 @@ public sealed unsafe partial class TradeTables : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C4.hs_get_85ef6b64((void*)__hosihikari_shim_handle);
     }
 
-    public void reload(global::Hosihikari.Bindings.Bedrock.Interop.Level level, bool usingUpcomingCreatorFeaturesExperiment, global::Hosihikari.Bindings.Bedrock.Interop.IMinecraftEventing eventing)
-    {
-        NativeMethods.TablePtr->C4.hs_method_4094a254((void*)__hosihikari_shim_handle, (void*)level.Handle, usingUpcomingCreatorFeaturesExperiment, (void*)eventing.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void reload(nint level, bool usingUpcomingCreatorFeaturesExperiment, nint eventing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

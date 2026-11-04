@@ -85,15 +85,13 @@ public sealed unsafe partial class CraftHandlerEnchant : global::System.IDisposa
         return NativeMethods.TablePtr->C1.hs_method_c8f898c3((void*)__hosihikari_shim_handle, (void*)requestAction.Handle);
     }
 
-    public void __postCraftRequest(bool wasSuccess)
-    {
-        NativeMethods.TablePtr->C1.hs_method_7ca8e759((void*)__hosihikari_shim_handle, wasSuccess);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __postCraftRequest(nint wasSuccess) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _endRequestBatch()
-    {
-        NativeMethods.TablePtr->C1.hs_method_f3ea0cdd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _endRequestBatch() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CraftHandlerEnchant Create()
     {

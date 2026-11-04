@@ -40,20 +40,20 @@ public sealed unsafe partial class OnHitActor : global::System.IDisposable
 
     public uint mSubscriberCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_559e8b9e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_559e8b9e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_559e8b9e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_559e8b9e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubscriptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_dd15b460((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_dd15b460((void*)__hosihikari_shim_handle);
     }
 
     public nint mOwner
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0d2ee8ad((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_0d2ee8ad((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0d2ee8ad((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_0d2ee8ad((void*)__hosihikari_shim_handle, (void*)value);
     }
 
 
@@ -63,7 +63,7 @@ public sealed unsafe partial class OnHitActor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_7e8fc3ff((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7e8fc3ff((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -67,10 +67,9 @@ public sealed unsafe partial class EquipItemComponent : global::System.IDisposab
         get => (nint)NativeMethods.TablePtr->C1.hs_get_41fb72b8((void*)__hosihikari_shim_handle);
     }
 
-    public void onEquipItemPickedUp(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack item, int countToPickup)
-    {
-        NativeMethods.TablePtr->C1.hs_method_bd5aef16((void*)__hosihikari_shim_handle, (void*)item.Handle, countToPickup);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onEquipItemPickedUp(nint item, int countToPickup) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

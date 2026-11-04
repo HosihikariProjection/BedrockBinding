@@ -38,14 +38,13 @@ public sealed unsafe partial class CollisionShapes : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_98534496((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CollisionShapes Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0778de3e();
+        var handle = NativeMethods.TablePtr->C0.hs_create_0778de3e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,46 +53,39 @@ public sealed unsafe partial class CollisionShapes : global::System.IDisposable
         return new CollisionShapes((nint)handle);
     }
 
-    public static CollisionShapes Create(global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8091023e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CollisionShapes Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new CollisionShapes((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<BlockPos, const Block *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getBlockPosCurrentlyStandingOn(nint box) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<BlockPos, const Block *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b32d88c6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_b32d88c6((void*)__hosihikari_shim_handle);
     }
 
     public bool mNearUnloadedChunk
     {
-        get => NativeMethods.TablePtr->C1.hs_get_6358d37f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_6358d37f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_6358d37f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_6358d37f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mShapes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_474af68b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_474af68b((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes((nint)NativeMethods.TablePtr->C1.hs_method_b2d683cc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CollisionShapes((nint)NativeMethods.TablePtr->C0.hs_method_b2d683cc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -103,7 +95,7 @@ public sealed unsafe partial class CollisionShapes : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_5b1c2279((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_5b1c2279((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

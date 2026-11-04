@@ -38,34 +38,29 @@ public sealed unsafe partial class Debugger : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public bool _attach(bool performHandshake, nint targetModuleUuid, nint handler) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _closed()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_9f1ed4de((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _closed() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _detach()
-    {
-        NativeMethods.TablePtr->C3.hs_method_4e64b054((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _detach() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _pumpMessages()
-    {
-        NativeMethods.TablePtr->C3.hs_method_7ead9dce((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _pumpMessages() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static uint ContextToId(nint ctx, nint arg1)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_9a49f353((void*)ctx, (void*)arg1);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static uint ContextToId(nint ctx, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint ContextToModuleUuidLowerCase(nint ctx, nint arg1)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_281cb0f1((void*)ctx, (void*)arg1);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ContextToModuleUuidLowerCase(nint ctx, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Debugger Create()
     {
@@ -89,45 +84,37 @@ public sealed unsafe partial class Debugger : global::System.IDisposable
         return new Debugger((nint)handle);
     }
 
-    public static void MessageHandler(nint udata, nint message, ulong length)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3207dd30((void*)udata, (void*)message, length);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void MessageHandler(nint udata, nint message, ulong length) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void NotifyResume(nint udata)
-    {
-        NativeMethods.TablePtr->C3.hs_method_5751fc34((void*)udata);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void NotifyResume(nint udata) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint ToTypeName(nint ctx, global::Hosihikari.Bindings.Bedrock.Interop.JSValue val)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8185de69((void*)ctx, (void*)val.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ToTypeName(nint ctx, nint val) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void TransportClose(nint arg0, nint udata)
-    {
-        NativeMethods.TablePtr->C3.hs_method_933aeea6((void*)arg0, (void*)udata);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void TransportClose(nint arg0, nint udata) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ulong TransportPeek(nint udata)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_08a3944c((void*)udata);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ulong TransportPeek(nint udata) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ulong TransportRead(nint udata, nint buffer, ulong length)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_cf6c7aec((void*)udata, (void*)buffer, length);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ulong TransportRead(nint udata, nint buffer, ulong length) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ulong TransportWrite(nint udata, nint buffer, ulong length)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_cbd8f783((void*)udata, (void*)buffer, length);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ulong TransportWrite(nint udata, nint buffer, ulong length) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static int ValidatePath(nint udata, nint path)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_b9fcee4e((void*)udata, (void*)path);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static int ValidatePath(nint udata, nint path) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public bool attach(bool performHandshake, nint targetModuleUuid, nint handler) =>

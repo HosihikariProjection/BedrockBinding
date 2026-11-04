@@ -40,7 +40,7 @@ public sealed unsafe partial class RakNetRandom : global::System.IDisposable
 
     public static RakNetRandom Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0c6a16eb();
+        var handle = NativeMethods.TablePtr->C2.hs_create_0c6a16eb();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RakNetRandom : global::System.IDisposable
 
     public static RakNetRandom Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetRandom arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_488ebfba((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_488ebfba((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,24 +63,24 @@ public sealed unsafe partial class RakNetRandom : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3b9378_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_17eeda7c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_17eeda7c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9cb157_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_27d50960((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_27d50960((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb6bf35_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_80b47b86((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_80b47b86((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetRandom operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetRandom arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetRandom((nint)NativeMethods.TablePtr->C3.hs_method_5a4781be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakNetRandom((nint)NativeMethods.TablePtr->C2.hs_method_5a4781be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class RakNetRandom : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_4ec03242((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4ec03242((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

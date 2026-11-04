@@ -41,54 +41,54 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoundingBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_214c76fb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_214c76fb((void*)__hosihikari_shim_handle);
     }
 
     public int mGenDepth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1760a7f7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1760a7f7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1760a7f7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1760a7f7((void*)__hosihikari_shim_handle, value);
     }
 
     public int mOrientation
     {
-        get => NativeMethods.TablePtr->C4.hs_get_7b8742cf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_7b8742cf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7b8742cf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7b8742cf((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainAdjustmentToken_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9a09e387((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9a09e387((void*)__hosihikari_shim_handle);
     }
 
     public nint _ctor(int depth)
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_8863ac65((void*)__hosihikari_shim_handle, depth);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_8863ac65((void*)__hosihikari_shim_handle, depth);
     }
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C4.hs_method_a69affb3((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_a69affb3((void*)__hosihikari_shim_handle);
     }
 
     public void _moveBoundingBox(int dx, int dy, int dz)
     {
-        NativeMethods.TablePtr->C4.hs_method_e71a21e4((void*)__hosihikari_shim_handle, dx, dy, dz);
+        NativeMethods.TablePtr->C3.hs_method_e71a21e4((void*)__hosihikari_shim_handle, dx, dy, dz);
     }
 
     public bool _postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C4.hs_method_752f3bec((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_752f3bec((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TemplateStructurePiece Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8bde8409();
+        var handle = NativeMethods.TablePtr->C3.hs_create_8bde8409();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -99,7 +99,7 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
 
     public static TemplateStructurePiece Create(global::Hosihikari.Bindings.Bedrock.Interop.TemplateStructurePiece arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_49aad12b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_49aad12b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -110,7 +110,7 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
 
     public static TemplateStructurePiece Create(int depth)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_b1790337(depth);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b1790337(depth);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -134,47 +134,47 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
         global::System.Text.Encoding.UTF8.GetBytes(markerId, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C4.hs_method_68accfc0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)position.Handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle);
+            NativeMethods.TablePtr->C3.hs_method_68accfc0((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)position.Handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle);
         }
     }
 
     public void _setBoundingBoxFromTemplate()
     {
-        NativeMethods.TablePtr->C4.hs_method_dbb94cbb((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_dbb94cbb((void*)__hosihikari_shim_handle);
     }
 
     public bool mPostProcessed
     {
-        get => NativeMethods.TablePtr->C4.hs_get_daa15d99((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_daa15d99((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_daa15d99((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_daa15d99((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSettings_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_84f017ca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_84f017ca((void*)__hosihikari_shim_handle);
     }
 
     public nint mTemplate
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_90159942((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_90159942((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_90159942((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_90159942((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTemplatePosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ed1dde95((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ed1dde95((void*)__hosihikari_shim_handle);
     }
 
     public void moveBoundingBox(int dx, int dy, int dz)
     {
-        NativeMethods.TablePtr->C4.hs_method_01c4e3b7((void*)__hosihikari_shim_handle, dx, dy, dz);
+        NativeMethods.TablePtr->C3.hs_method_01c4e3b7((void*)__hosihikari_shim_handle, dx, dy, dz);
     }
 
     public bool postProcess(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox chunkBB)
     {
-        return NativeMethods.TablePtr->C4.hs_method_9b322d7c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_9b322d7c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)random.Handle, (void*)chunkBB.Handle) != 0;
     }
 
 
@@ -184,7 +184,7 @@ public sealed unsafe partial class TemplateStructurePiece : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e4d1e761((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e4d1e761((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
 
     public static RakNetGUID Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d60532da();
+        var handle = NativeMethods.TablePtr->C2.hs_create_d60532da();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
 
     public static RakNetGUID Create(ulong g, ushort systemIndex)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_223918d3(g, systemIndex);
+        var handle = NativeMethods.TablePtr->C2.hs_create_223918d3(g, systemIndex);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,22 +60,20 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
         return new RakNetGUID((nint)handle);
     }
 
-    public string ToString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_f7b8d14e((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint ToString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong g
     {
-        get => NativeMethods.TablePtr->C3.hs_get_59d9279d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_59d9279d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_59d9279d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_59d9279d((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort systemIndex
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c5e8fa34((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_c5e8fa34((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_c5e8fa34((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_c5e8fa34((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -84,7 +82,7 @@ public sealed unsafe partial class RakNetGUID : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_e389bc0b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_e389bc0b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

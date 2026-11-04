@@ -40,7 +40,7 @@ public sealed unsafe partial class LoaderBase : global::System.IDisposable
 
     public static LoaderBase Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_905461d1();
+        var handle = NativeMethods.TablePtr->C2.hs_create_905461d1();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class LoaderBase : global::System.IDisposable
 
     public static LoaderBase Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.LoaderBase arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_dfc0f64e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_dfc0f64e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,35 +60,34 @@ public sealed unsafe partial class LoaderBase : global::System.IDisposable
         return new LoaderBase((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny doLoad(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Input input, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion parserVersion, byte contextArea)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.LoadResultAny((nint)NativeMethods.TablePtr->C3.hs_method_247d617b((void*)__hosihikari_shim_handle, (void*)input.Handle, (void*)parserVersion.Handle, contextArea));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint doLoad(nint input, nint parserVersion, nint contextArea) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8c6785_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9d094745((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9d094745((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkeaa9c8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f1977616((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f1977616((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.LoaderBase operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.LoaderBase arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.LoaderBase((nint)NativeMethods.TablePtr->C3.hs_method_08ffbc38((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.LoaderBase((nint)NativeMethods.TablePtr->C2.hs_method_08ffbc38((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerParser(nint parser) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr parameter pointee 'Puv::UpgraderBase' has no generated wrapper.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void registerUpgrader(nint upgrader) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr parameter pointee 'Puv::UpgraderBase' has no generated wrapper.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -96,7 +95,7 @@ public sealed unsafe partial class LoaderBase : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_97572fda((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_97572fda((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

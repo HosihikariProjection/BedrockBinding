@@ -40,7 +40,7 @@ public sealed unsafe partial class ActorLocationData : global::System.IDisposabl
 
     public static ActorLocationData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c5b5aa1a();
+        var handle = NativeMethods.TablePtr->C3.hs_create_c5b5aa1a();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ActorLocationData : global::System.IDisposabl
 
     public static ActorLocationData Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_4114e949((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_4114e949((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class ActorLocationData : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5be6b0_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0f0f0248((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0f0f0248((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk68bc8c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c8a54ed5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c8a54ed5((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData((nint)NativeMethods.TablePtr->C4.hs_method_da515485((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SoundEventRequest_Nested.ActorLocationData((nint)NativeMethods.TablePtr->C3.hs_method_da515485((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class ActorLocationData : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a9fdcc26((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a9fdcc26((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

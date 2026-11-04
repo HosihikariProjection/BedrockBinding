@@ -38,10 +38,9 @@ public sealed unsafe partial class MoveTowardsClosestSpaceSystemImpl : global::S
         return __hs_handle;
     }
 
-    public void _tick(nint context)
-    {
-        NativeMethods.TablePtr->C2.hs_method_0534bfd8((void*)__hosihikari_shim_handle, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MoveTowardsClosestSpaceSystemImpl Create(global::Hosihikari.Bindings.Bedrock.Interop.MoveTowardsClosestSpaceSystemImpl arg0)
     {
@@ -54,9 +53,9 @@ public sealed unsafe partial class MoveTowardsClosestSpaceSystemImpl : global::S
         return new MoveTowardsClosestSpaceSystemImpl((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const MovementInterpolatorComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void doTick(nint entity, nint synchedActorData, nint aabbShape, nint depenetration, nint moveInterpolator, nint stateVector, bool isClientSide, nint collisionViews, nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const MovementInterpolatorComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mIsClientSide
     {

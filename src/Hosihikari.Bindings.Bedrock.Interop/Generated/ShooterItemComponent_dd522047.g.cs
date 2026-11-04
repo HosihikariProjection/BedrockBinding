@@ -38,15 +38,13 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
         return __hs_handle;
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_87a16e69();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ShooterItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.ShooterItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6b35555f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6b35555f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,39 +53,37 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
         return new ShooterItemComponent((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_a42bd3db((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAmmunition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b6c5c5cb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b6c5c5cb((void*)__hosihikari_shim_handle);
     }
 
     public bool mChargeOnDraw
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0b43b0aa((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_0b43b0aa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0b43b0aa((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_0b43b0aa((void*)__hosihikari_shim_handle, value);
     }
 
     public float mMaxDrawDuration
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0c9ca75d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_0c9ca75d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0c9ca75d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0c9ca75d((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mScalePowerByDrawDuration
     {
-        get => NativeMethods.TablePtr->C4.hs_get_882c8a69((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_882c8a69((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_882c8a69((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_882c8a69((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.ShooterItemComponent arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_11b8b2b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -96,7 +92,7 @@ public sealed unsafe partial class ShooterItemComponent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_dd522047((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_dd522047((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

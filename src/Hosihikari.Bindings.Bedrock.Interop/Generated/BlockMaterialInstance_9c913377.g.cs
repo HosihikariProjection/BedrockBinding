@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockMaterialInstance : global::System.IDispo
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_9f6f0ac3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockMaterialInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockMaterialInstance arg0)
     {
@@ -90,10 +89,9 @@ public sealed unsafe partial class BlockMaterialInstance : global::System.IDispo
         set => NativeMethods.TablePtr->C0.hs_set_6ee1d52b((void*)__hosihikari_shim_handle, value);
     }
 
-    public static nint renderLayerNameBiMap()
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_b9fce142();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint renderLayerNameBiMap() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

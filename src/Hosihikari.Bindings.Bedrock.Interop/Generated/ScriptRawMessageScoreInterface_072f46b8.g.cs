@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptRawMessageScoreInterface : global::Syst
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_7de30444((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptRawMessageScoreInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptRawMessageScoreInterface arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class ScriptRawMessageScoreInterface : global::Syst
         return new ScriptRawMessageScoreInterface((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InterfaceBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InterfaceBinding((nint)NativeMethods.TablePtr->C3.hs_method_c6373e5b());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint name_Address
@@ -71,10 +69,9 @@ public sealed unsafe partial class ScriptRawMessageScoreInterface : global::Syst
         get => (nint)NativeMethods.TablePtr->C3.hs_get_71ee1fde((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptRawMessageScoreInterface other)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_21f5b595((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

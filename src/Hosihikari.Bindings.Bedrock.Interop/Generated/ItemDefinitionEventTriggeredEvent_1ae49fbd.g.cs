@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemDefinitionEventTriggeredEvent : global::S
 
     public static ItemDefinitionEventTriggeredEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemDefinitionEventTriggeredEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c630db67((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_c630db67((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,19 +52,19 @@ public sealed unsafe partial class ItemDefinitionEventTriggeredEvent : global::S
     // The native field type is not projected; this is the address of the field storage.
     public nint mActor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f2f8816e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f2f8816e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEventName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_73a0400c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_73a0400c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemInstance_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0320ba89((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_0320ba89((void*)__hosihikari_shim_handle);
     }
 
 
@@ -74,7 +74,7 @@ public sealed unsafe partial class ItemDefinitionEventTriggeredEvent : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_1ae49fbd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_1ae49fbd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

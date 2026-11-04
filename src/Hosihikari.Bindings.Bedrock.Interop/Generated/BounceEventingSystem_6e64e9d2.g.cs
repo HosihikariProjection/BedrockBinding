@@ -38,10 +38,9 @@ public sealed unsafe partial class BounceEventingSystem : global::System.IDispos
         return __hs_handle;
     }
 
-    public static void _doBounceEventingSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueIDComponent actorUniqueIDComponent, global::Hosihikari.Bindings.Bedrock.Interop.EventingDispatcherComponent eventingDispatcherComponent, global::Hosihikari.Bindings.Bedrock.Interop.BounceComponent bounceComponent, nint requestQueueView)
-    {
-        NativeMethods.TablePtr->C0.hs_method_450803e8((void*)arg0.Handle, (void*)stateVectorComponent.Handle, (void*)actorUniqueIDComponent.Handle, (void*)eventingDispatcherComponent.Handle, (void*)bounceComponent.Handle, (void*)requestQueueView);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doBounceEventingSystem(nint arg0, nint stateVectorComponent, nint actorUniqueIDComponent, nint eventingDispatcherComponent, nint bounceComponent, nint requestQueueView) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

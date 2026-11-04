@@ -38,10 +38,9 @@ public sealed unsafe partial class NpcSystem : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C2.hs_method_20150444((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NpcSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcSystem arg0)
     {
@@ -59,10 +58,9 @@ public sealed unsafe partial class NpcSystem : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_5a11f7f9((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
-    public static void tickCountdown(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, nint leaveMenuCountdownComponent)
-    {
-        NativeMethods.TablePtr->C2.hs_method_a2a0829e((void*)entity.Handle, (void*)leaveMenuCountdownComponent);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void tickCountdown(nint entity, nint leaveMenuCountdownComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -60,10 +60,9 @@ public sealed unsafe partial class ClampedNormalFloat : global::System.IDisposab
         return new ClampedNormalFloat((nint)handle);
     }
 
-    public float generateNext(global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_20d43165((void*)__hosihikari_shim_handle, (void*)random.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float generateNext(nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1f8356_Address

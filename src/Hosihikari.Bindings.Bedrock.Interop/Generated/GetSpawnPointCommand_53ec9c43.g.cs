@@ -67,10 +67,9 @@ public sealed unsafe partial class GetSpawnPointCommand : global::System.IDispos
         set => NativeMethods.TablePtr->C1.hs_set_71e60b3b((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C1.hs_method_e2e87c23((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GetSpawnPointCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.GetSpawnPointCommand arg0)
     {

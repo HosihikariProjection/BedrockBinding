@@ -40,7 +40,7 @@ public sealed unsafe partial class IGameTestHelperProvider : global::System.IDis
 
     public static IGameTestHelperProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.gametest.IGameTestHelperProvider arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_9d32f352((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_9d32f352((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class IGameTestHelperProvider : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_4235bc8b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_4235bc8b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

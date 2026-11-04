@@ -38,10 +38,9 @@ public sealed unsafe partial class GameSession : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_c1803ab4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GameSession Create()
     {
@@ -112,9 +111,9 @@ public sealed unsafe partial class GameSession : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.GameSession((nint)NativeMethods.TablePtr->C1.hs_method_477f681f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'std::pair<std::unique_ptr<Level>, OwnerPtr<EntityContext>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void setLevel(nint levelEntity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'std::pair<std::unique_ptr<Level>, OwnerPtr<EntityContext>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

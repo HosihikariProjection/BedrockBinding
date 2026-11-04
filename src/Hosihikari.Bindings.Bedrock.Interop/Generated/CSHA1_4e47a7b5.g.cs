@@ -60,15 +60,13 @@ public sealed unsafe partial class CSHA1 : global::System.IDisposable
         return new CSHA1((nint)handle);
     }
 
-    public void Final()
-    {
-        NativeMethods.TablePtr->C0.hs_method_74572b1c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Final() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void Transform(nint pState, nint pBuffer)
-    {
-        NativeMethods.TablePtr->C0.hs_method_8814f396((void*)__hosihikari_shim_handle, (void*)pState, (void*)pBuffer);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Transform(nint pState, nint pBuffer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1f7c52_Address

@@ -38,168 +38,69 @@ public sealed unsafe partial class TextObjectParser : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static string RAW_TEXT_ERROR_NOT_ARRAY()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_83b2f02f();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_NOT_ARRAY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_NOT_OBJECT()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_90a260ed();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_NOT_OBJECT() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_NO_DATA()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_55542835();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_NO_DATA() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_PARSE_FAILED()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_dbae41b9();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_PARSE_FAILED() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_e418279c();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_SCORE_NAME_NOT_STRING() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_SCORE_NOT_OBJECT()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_759b12ca();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_SCORE_NOT_OBJECT() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_670ec1ec();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_SCORE_OBJECTIVE_NOT_STRING() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_SELECTOR_NOT_STRING()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_55f637b4();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_SELECTOR_NOT_STRING() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_TEXT_NOT_STRING()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_4e58557a();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_TEXT_NOT_STRING() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_TRANSLATE_NOT_STRING()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_c55232da();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_TRANSLATE_NOT_STRING() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_630db3bf();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint RAW_TEXT_ERROR_WITH_NOT_ARRAY_OR_RAW_TEXT() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool _getObjectsFromTextObject(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectRoot parsedObject, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ServerData? serverData, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization errorLocalization)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_aa80af04((void*)root.Handle, (void*)parsedObject.Handle, (void*)(serverData?.Handle ?? 0), (void*)errorLocalization.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _getObjectsFromTextObject(nint root, nint parsedObject, nint serverData, nint errorLocalization) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool _textObjectFromJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectRoot parsedObject, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ServerData? serverData, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization errorLocalization)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_dc0fea7c((void*)root.Handle, (void*)parsedObject.Handle, (void*)(serverData?.Handle ?? 0), (void*)errorLocalization.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _textObjectFromJson(nint root, nint parsedObject, nint serverData, nint errorLocalization) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool _textObjectFromString(string jsonAsString, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectRoot parsedObject, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ServerData? serverData, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization errorLocalization)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(jsonAsString);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(jsonAsString, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C4.hs_method_07ea9736(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)parsedObject.Handle, (void*)(serverData?.Handle ?? 0), (void*)errorLocalization.Handle) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool _textObjectFromString(nint jsonAsString, nint parsedObject, nint serverData, nint errorLocalization) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool textObjectFromJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectRoot parsedObject, ref string errorMsg)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(errorMsg);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(errorMsg, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            try
-            {
-                return NativeMethods.TablePtr->C4.hs_method_5bd2c370((void*)root.Handle, (void*)parsedObject.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
-            }
-            finally
-            {
-                errorMsg = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool textObjectFromJson(nint root, nint parsedObject, nint errorMsg) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool textObjectFromJsonString(string jsonAsString, global::Hosihikari.Bindings.Bedrock.Interop.TextObjectRoot parsedObject, ref string errorMsg)
-    {
-        var __hs_strOut0 = default(global::Hosihikari.Bindings.Abi.StringView);
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(jsonAsString);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(jsonAsString, __hs_stringBytes0);
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(errorMsg);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(errorMsg, __hs_stringBytes2);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-            {
-                try
-                {
-                    return NativeMethods.TablePtr->C4.hs_method_4e64681a(__hs_stringData0, (nuint)__hs_stringByteCount0, (void*)parsedObject.Handle, __hs_stringData2, (nuint)__hs_stringByteCount2, &__hs_strOut0) != 0;
-                }
-                finally
-                {
-                    errorMsg = __hs_strOut0.Data == null ? "" : global::System.Text.Encoding.UTF8.GetString(__hs_strOut0.Data, checked((int)__hs_strOut0.Size));
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool textObjectFromJsonString(nint jsonAsString, nint parsedObject, nint errorMsg) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -207,7 +108,7 @@ public sealed unsafe partial class TextObjectParser : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_1e9972a0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_1e9972a0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

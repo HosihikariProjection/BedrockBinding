@@ -38,14 +38,13 @@ public sealed unsafe partial class ErrorLocalization : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_9b23125a((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ErrorLocalization Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1a501932();
+        var handle = NativeMethods.TablePtr->C3.hs_create_1a501932();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class ErrorLocalization : global::System.IDisposabl
 
     public static ErrorLocalization Create(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_612e3bf8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_612e3bf8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,18 +67,18 @@ public sealed unsafe partial class ErrorLocalization : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk435676_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4346bba7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4346bba7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk789f23_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_523e66ff((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_523e66ff((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization((nint)NativeMethods.TablePtr->C4.hs_method_994041dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.TextObjectParser_Nested.ErrorLocalization((nint)NativeMethods.TablePtr->C3.hs_method_994041dc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -89,7 +88,7 @@ public sealed unsafe partial class ErrorLocalization : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f10d1367((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f10d1367((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

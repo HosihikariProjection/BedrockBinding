@@ -40,7 +40,7 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
 
     public static TcpProxy Create(global::Hosihikari.Bindings.Bedrock.Interop.TcpProxy arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_1b7011b5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_1b7011b5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
 
     public void close(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress address)
     {
-        NativeMethods.TablePtr->C4.hs_method_400c2283((void*)__hosihikari_shim_handle, (void*)address.Handle);
+        NativeMethods.TablePtr->C3.hs_method_400c2283((void*)__hosihikari_shim_handle, (void*)address.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress connect(string host, ushort port)
@@ -69,48 +69,48 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(host, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C4.hs_method_3ce8fdad((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port));
+            return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_3ce8fdad((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, port));
         }
     }
 
     public void deallocatePacket(nint packet)
     {
-        NativeMethods.TablePtr->C4.hs_method_0325b3aa((void*)__hosihikari_shim_handle, (void*)packet);
+        NativeMethods.TablePtr->C3.hs_method_0325b3aa((void*)__hosihikari_shim_handle, (void*)packet);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextCompletedConnectionAttempt()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C4.hs_method_3379b145((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_3379b145((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextFailedConnectionAttempt()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C4.hs_method_94cf9996((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_94cf9996((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress nextLostConnection()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C4.hs_method_0de06ef9((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress((nint)NativeMethods.TablePtr->C3.hs_method_0de06ef9((void*)__hosihikari_shim_handle));
     }
 
     public nint nextPacket()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_ae686327((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_ae686327((void*)__hosihikari_shim_handle);
     }
 
     public bool packetsAvailable()
     {
-        return NativeMethods.TablePtr->C4.hs_method_4cfac0a6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_4cfac0a6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void send(nint data, uint length, global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress address)
     {
-        NativeMethods.TablePtr->C4.hs_method_560b0abb((void*)__hosihikari_shim_handle, (void*)data, length, (void*)address.Handle);
+        NativeMethods.TablePtr->C3.hs_method_560b0abb((void*)__hosihikari_shim_handle, (void*)data, length, (void*)address.Handle);
     }
 
     public bool start(ushort port, ushort maxIncomming, ushort maxOutgoing)
     {
-        return NativeMethods.TablePtr->C4.hs_method_406a3059((void*)__hosihikari_shim_handle, port, maxIncomming, maxOutgoing) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_406a3059((void*)__hosihikari_shim_handle, port, maxIncomming, maxOutgoing) != 0;
     }
 
 
@@ -120,7 +120,7 @@ public sealed unsafe partial class TcpProxy : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3464c613((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_3464c613((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

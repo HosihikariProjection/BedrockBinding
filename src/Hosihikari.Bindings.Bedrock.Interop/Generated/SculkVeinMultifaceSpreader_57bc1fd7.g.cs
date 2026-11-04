@@ -44,24 +44,21 @@ public sealed unsafe partial class SculkVeinMultifaceSpreader : global::System.I
         get => (nint)NativeMethods.TablePtr->C3.hs_get_b2572219((void*)__hosihikari_shim_handle);
     }
 
-    public bool __canSpreadFrom(global::Hosihikari.Bindings.Bedrock.Interop.Block block, byte facing)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_d8526ed9((void*)__hosihikari_shim_handle, (void*)block.Handle, facing) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __canSpreadFrom(nint block, nint facing) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool __canSpreadInto(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.Block self, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, byte placementDirection)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_5fe0e8d5((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)self.Handle, (void*)pos.Handle, placementDirection) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __canSpreadInto(nint target, nint self, nint pos, nint placementDirection) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool __isOtherBlockValidAsSource(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_83b4398a((void*)__hosihikari_shim_handle, (void*)block.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __isOtherBlockValidAsSource(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SculkVeinMultifaceSpreader Create(global::Hosihikari.Bindings.Bedrock.Interop.SculkVeinMultifaceSpreader arg0)
     {

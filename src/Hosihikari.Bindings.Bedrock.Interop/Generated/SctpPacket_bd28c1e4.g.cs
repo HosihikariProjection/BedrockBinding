@@ -38,13 +38,13 @@ public sealed unsafe partial class SctpPacket : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint Parse(nint data, nint options) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'webrtc::ArrayView<const unsigned char>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SctpPacket Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_f0061b92();
+        var handle = NativeMethods.TablePtr->C4.hs_create_f0061b92();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class SctpPacket : global::System.IDisposable
 
     public static SctpPacket Create(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_93bf8b53((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_93bf8b53((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,24 +67,24 @@ public sealed unsafe partial class SctpPacket : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk64fdff_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_f29578f9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f29578f9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkab7d8a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_1c561110((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1c561110((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd09989_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_727084b5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_727084b5((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket((nint)NativeMethods.TablePtr->C5.hs_method_e2dec4be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.dcsctp.SctpPacket((nint)NativeMethods.TablePtr->C4.hs_method_e2dec4be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -93,7 +93,7 @@ public sealed unsafe partial class SctpPacket : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_bd28c1e4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_bd28c1e4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

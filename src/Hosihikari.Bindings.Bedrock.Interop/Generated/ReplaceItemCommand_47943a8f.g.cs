@@ -67,10 +67,9 @@ public sealed unsafe partial class ReplaceItemCommand : global::System.IDisposab
         set => NativeMethods.TablePtr->C3.hs_set_0a1a3f6c((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C3.hs_method_ee0db16f((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ReplaceItemCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ReplaceItemCommand arg0)
     {
@@ -83,9 +82,9 @@ public sealed unsafe partial class ReplaceItemCommand : global::System.IDisposab
         return new ReplaceItemCommand((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Util::ReplacementResults' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _outputError(nint output, nint errorDetails, nint itemName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Util::ReplacementResults' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {

@@ -38,24 +38,21 @@ public sealed unsafe partial class PerlinNoise : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random, int levels)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_0b3e5746((void*)__hosihikari_shim_handle, (void*)random.Handle, levels);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint random, int levels) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(uint seed, int levels)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_6af013dc((void*)__hosihikari_shim_handle, seed, levels);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(uint seed, int levels) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_86043bfa((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PerlinNoise Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6bcc6da6();
+        var handle = NativeMethods.TablePtr->C2.hs_create_6bcc6da6();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,20 +61,13 @@ public sealed unsafe partial class PerlinNoise : global::System.IDisposable
         return new PerlinNoise((nint)handle);
     }
 
-    public static PerlinNoise Create(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random, int levels)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c6c55127((void*)random.Handle, levels);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PerlinNoise((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PerlinNoise Create(nint random, int levels) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PerlinNoise Create(global::Hosihikari.Bindings.Bedrock.Interop.PerlinNoise arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_bfb7d932((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_bfb7d932((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -86,37 +76,29 @@ public sealed unsafe partial class PerlinNoise : global::System.IDisposable
         return new PerlinNoise((nint)handle);
     }
 
-    public static PerlinNoise Create(uint seed, int levels)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_42e4b2a0(seed, levels);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PerlinNoise Create(uint seed, int levels) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new PerlinNoise((nint)handle);
-    }
-
-    public float getValue(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_d0867a0f((void*)__hosihikari_shim_handle, (void*)pos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float getValue(nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mLevels
     {
-        get => NativeMethods.TablePtr->C3.hs_get_5a86acbb((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_5a86acbb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNoiseLevels_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1a375cba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1a375cba((void*)__hosihikari_shim_handle);
     }
 
     public float mNormalizationFactor
     {
-        get => NativeMethods.TablePtr->C3.hs_get_174a1660((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_174a1660((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_174a1660((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_174a1660((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -126,7 +108,7 @@ public sealed unsafe partial class PerlinNoise : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_235d5040((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_235d5040((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

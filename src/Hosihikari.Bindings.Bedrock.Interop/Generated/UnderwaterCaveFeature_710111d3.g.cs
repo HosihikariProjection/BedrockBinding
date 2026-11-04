@@ -172,10 +172,9 @@ public sealed unsafe partial class UnderwaterCaveFeature : global::System.IDispo
         set => NativeMethods.TablePtr->C4.hs_set_1610c2ac((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _carveEllipsoidVolume(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.CaveFeatureUtils.CarverConfiguration arg1, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 startPos, global::Hosihikari.Bindings.Bedrock.Interop.BoundingBox volume, float rad, float yRad, global::Hosihikari.Bindings.Bedrock.Interop.CaveFeatureUtils.CarvingParameters carveValues)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_2a91a472((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)arg1.Handle, (void*)random.Handle, (void*)pos.Handle, (void*)startPos.Handle, (void*)volume.Handle, rad, yRad, (void*)carveValues.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _carveEllipsoidVolume(nint target, nint arg1, nint random, nint pos, nint startPos, nint volume, float rad, float yRad, nint carveValues) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UnderwaterCaveFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.UnderwaterCaveFeature arg0)
     {

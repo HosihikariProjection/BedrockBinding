@@ -38,9 +38,9 @@ public sealed unsafe partial class CappedSurfaceAttributes : global::System.IDis
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CappedSurfaceAttributes Create(global::Hosihikari.Bindings.Bedrock.Interop.CappedSurfaceAttributes arg0)
     {
@@ -53,10 +53,9 @@ public sealed unsafe partial class CappedSurfaceAttributes : global::System.IDis
         return new CappedSurfaceAttributes((nint)handle);
     }
 
-    public void initializeNoise(uint levelSeed)
-    {
-        NativeMethods.TablePtr->C0.hs_method_4451d58c((void*)__hosihikari_shim_handle, levelSeed);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initializeNoise(uint levelSeed) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mBeachMaterial
     {

@@ -40,7 +40,7 @@ public sealed unsafe partial class IStructurePoolBlockTagPredicate : global::Sys
 
     public static IStructurePoolBlockTagPredicate Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructurePoolBlockTagPredicate arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a3652ee8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_a3652ee8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +51,12 @@ public sealed unsafe partial class IStructurePoolBlockTagPredicate : global::Sys
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C2.hs_method_9290dde6((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C1.hs_method_9290dde6((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
     {
-        return NativeMethods.TablePtr->C2.hs_method_d4b92af1((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)tag.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_d4b92af1((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)tag.Handle) != 0;
     }
 
 
@@ -66,7 +66,7 @@ public sealed unsafe partial class IStructurePoolBlockTagPredicate : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6bb1edd1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_6bb1edd1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

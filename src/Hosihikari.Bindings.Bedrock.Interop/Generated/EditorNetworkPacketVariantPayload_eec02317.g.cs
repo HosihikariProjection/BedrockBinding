@@ -38,10 +38,9 @@ public sealed unsafe partial class EditorNetworkPacketVariantPayload : global::S
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EditorNetworkPacketVariantPayload arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_0f23bc05((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EditorNetworkPacketVariantPayload Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class EditorNetworkPacketVariantPayload : global::S
         return new EditorNetworkPacketVariantPayload((nint)handle);
     }
 
-    public static EditorNetworkPacketVariantPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.EditorNetworkPacketVariantPayload arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c93f8cb6((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EditorNetworkPacketVariantPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static EditorNetworkPacketVariantPayload Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRawVariantData_Address
@@ -83,9 +75,9 @@ public sealed unsafe partial class EditorNetworkPacketVariantPayload : global::S
         set => NativeMethods.TablePtr->C1.hs_set_bc05e34d((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.EditorNetworkPacketVariantPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.EditorNetworkPacketVariantPayload arg0)
     {

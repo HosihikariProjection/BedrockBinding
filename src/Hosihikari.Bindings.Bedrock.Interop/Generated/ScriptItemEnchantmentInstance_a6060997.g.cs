@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptItemEnchantmentInstance : global::Syste
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_5018077d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptItemEnchantmentInstance Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptItemEnchantmentInstance arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class ScriptItemEnchantmentInstance : global::Syste
         return new ScriptItemEnchantmentInstance((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InterfaceBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.InterfaceBinding((nint)NativeMethods.TablePtr->C3.hs_method_24b814ec());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEnchantType_Address
@@ -71,9 +69,9 @@ public sealed unsafe partial class ScriptItemEnchantmentInstance : global::Syste
         set => NativeMethods.TablePtr->C3.hs_set_5a6f1052((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::variant<EnchantmentInstance, ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError, ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint tryResolveInstance(nint itemEnchants) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::variant<EnchantmentInstance, ScriptModuleMinecraft::ScriptItemEnchantmentLevelOutOfBoundsError, ScriptModuleMinecraft::ScriptItemEnchantmentUnknownIdError, ScriptModuleMinecraft::ScriptItemEnchantmentTypeNotCompatibleError>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

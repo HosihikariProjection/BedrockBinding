@@ -38,48 +38,17 @@ public sealed unsafe partial class MobSpawnHerdInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_12e9e0aa((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(uint min, uint max, string initialEvent, uint initialEventCount, string herdEvent, uint herdEventSkipCount)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(initialEvent);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(initialEvent, __hs_stringBytes2);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(herdEvent);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(herdEvent, __hs_stringBytes4);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-            {
-                return (nint)NativeMethods.TablePtr->C2.hs_method_af0d01e8((void*)__hosihikari_shim_handle, min, max, __hs_stringData2, (nuint)__hs_stringByteCount2, initialEventCount, __hs_stringData4, (nuint)__hs_stringByteCount4, herdEventSkipCount);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(uint min, uint max, nint initialEvent, uint initialEventCount, nint herdEvent, uint herdEventSkipCount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_363edea2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MobSpawnHerdInfo Create()
     {
@@ -92,55 +61,13 @@ public sealed unsafe partial class MobSpawnHerdInfo : global::System.IDisposable
         return new MobSpawnHerdInfo((nint)handle);
     }
 
-    public static MobSpawnHerdInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_059d0b6e((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MobSpawnHerdInfo Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new MobSpawnHerdInfo((nint)handle);
-    }
-
-    public static MobSpawnHerdInfo Create(uint min, uint max, string initialEvent, uint initialEventCount, string herdEvent, uint herdEventSkipCount)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(initialEvent);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(initialEvent, __hs_stringBytes2);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(herdEvent);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(herdEvent, __hs_stringBytes4);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-            {
-                var handle = NativeMethods.TablePtr->C2.hs_create_f4dc3389(min, max, __hs_stringData2, (nuint)__hs_stringByteCount2, initialEventCount, __hs_stringData4, (nuint)__hs_stringByteCount4, herdEventSkipCount);
-                if (handle == null)
-                {
-                    throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-                }
-
-                return new MobSpawnHerdInfo((nint)handle);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MobSpawnHerdInfo Create(uint min, uint max, nint initialEvent, uint initialEventCount, nint herdEvent, uint herdEventSkipCount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHerdEvent_Address

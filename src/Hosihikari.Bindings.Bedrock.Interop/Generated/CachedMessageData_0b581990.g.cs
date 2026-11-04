@@ -40,7 +40,7 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
 
     public static CachedMessageData Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c1e3778d();
+        var handle = NativeMethods.TablePtr->C3.hs_create_c1e3778d();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
 
     public static CachedMessageData Create(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0e34b712((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_0e34b712((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -62,48 +62,48 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
 
     public nint cachedFontCompare
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c7481e33((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c7481e33((void*)__hosihikari_shim_handle);
     }
 
     public bool dirty
     {
-        get => NativeMethods.TablePtr->C4.hs_get_75efd9ca((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_75efd9ca((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_75efd9ca((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_75efd9ca((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint filteredMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3d666048((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3d666048((void*)__hosihikari_shim_handle);
     }
 
     public uint inputMode
     {
-        get => NativeMethods.TablePtr->C4.hs_get_61b47c12((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_61b47c12((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_61b47c12((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_61b47c12((void*)__hosihikari_shim_handle, value);
     }
 
     public int interactionModel
     {
-        get => NativeMethods.TablePtr->C4.hs_get_20f89340((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_20f89340((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_20f89340((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_20f89340((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint lineData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_b19c099d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b19c099d((void*)__hosihikari_shim_handle);
     }
 
     public uint numLines
     {
-        get => NativeMethods.TablePtr->C4.hs_get_47317652((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_47317652((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_47317652((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_47317652((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData((nint)NativeMethods.TablePtr->C4.hs_method_33a5ba8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SignBlockActor_Nested.CachedMessageData((nint)NativeMethods.TablePtr->C3.hs_method_33a5ba8f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -113,7 +113,7 @@ public sealed unsafe partial class CachedMessageData : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_0b581990((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0b581990((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

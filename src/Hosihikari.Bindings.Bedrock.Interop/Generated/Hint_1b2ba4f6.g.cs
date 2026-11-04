@@ -40,7 +40,7 @@ public sealed unsafe partial class Hint : global::System.IDisposable
 
     public nint node
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f052d278((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f052d278((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class Hint : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_1b2ba4f6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_1b2ba4f6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

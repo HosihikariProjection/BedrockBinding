@@ -38,9 +38,9 @@ public sealed unsafe partial class PostprocessingManager : global::System.IDispo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'std::vector<PostprocessingManager::LockedChunk>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint tryLock(nint center, nint neighborhood) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'std::vector<PostprocessingManager::LockedChunk>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -48,7 +48,7 @@ public sealed unsafe partial class PostprocessingManager : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d5391529((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d5391529((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

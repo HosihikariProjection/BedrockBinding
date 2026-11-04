@@ -38,10 +38,9 @@ public sealed unsafe partial class ArmSize : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint mInfoList()
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_972e25cc();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mInfoList() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class ArmSize : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_afb83bc3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_afb83bc3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

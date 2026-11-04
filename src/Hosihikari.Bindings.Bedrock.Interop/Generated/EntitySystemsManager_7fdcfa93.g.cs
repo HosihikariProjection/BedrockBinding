@@ -38,10 +38,9 @@ public sealed unsafe partial class EntitySystemsManager : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(bool isClientSide, byte subClientId, global::Hosihikari.Bindings.Abi.SharedHandle? entityRegistry, global::Hosihikari.Bindings.Abi.SharedHandle? pauseManager)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_40d3e81c((void*)__hosihikari_shim_handle, isClientSide, subClientId, entityRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), pauseManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(bool isClientSide, nint subClientId, nint entityRegistry, nint pauseManager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EntitySystemsManager Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class EntitySystemsManager : global::System.IDispos
         return new EntitySystemsManager((nint)handle);
     }
 
-    public static EntitySystemsManager Create(bool isClientSide, byte subClientId, global::Hosihikari.Bindings.Abi.SharedHandle? entityRegistry, global::Hosihikari.Bindings.Abi.SharedHandle? pauseManager)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ae0e9ac8(isClientSide, subClientId, entityRegistry?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), pauseManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EntitySystemsManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static EntitySystemsManager Create(bool isClientSide, nint subClientId, nint entityRegistry, nint pauseManager) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityRegistry_Address
@@ -93,10 +85,9 @@ public sealed unsafe partial class EntitySystemsManager : global::System.IDispos
         get => NativeMethods.TablePtr->C1.hs_get_1a2936c9((void*)__hosihikari_shim_handle);
     }
 
-    public void tickEntitySystems()
-    {
-        NativeMethods.TablePtr->C1.hs_method_796a7915((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tickEntitySystems() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

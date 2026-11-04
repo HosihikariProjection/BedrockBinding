@@ -584,14 +584,13 @@ public sealed unsafe partial class Breeze : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_c29d7f83((void*)__hosihikari_shim_handle, value);
     }
 
-    public float _causeFallDamageToActor(float distance, float multiplier, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_93c7b742((void*)__hosihikari_shim_handle, distance, multiplier, (void*)source.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _causeFallDamageToActor(float distance, float multiplier, nint source) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float causeFallDamageToActor(float distance, float multiplier, global::Hosihikari.Bindings.Bedrock.Interop.ActorDamageSource source)
     {

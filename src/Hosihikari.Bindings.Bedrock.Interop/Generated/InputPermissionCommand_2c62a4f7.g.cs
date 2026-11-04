@@ -40,41 +40,40 @@ public sealed unsafe partial class InputPermissionCommand : global::System.IDisp
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4a615e25((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_4a615e25((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_4a615e25((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_4a615e25((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d66d0d1f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d66d0d1f((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C2.hs_get_aa19e94e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_aa19e94e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_aa19e94e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_aa19e94e((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a71763d0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a71763d0((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C2.hs_get_75b297b1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_75b297b1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_75b297b1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_75b297b1((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C2.hs_method_eda83fde((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static InputPermissionCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.InputPermissionCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_93bdcdf3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_93bdcdf3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,36 +84,36 @@ public sealed unsafe partial class InputPermissionCommand : global::System.IDisp
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C2.hs_method_ea13bf94((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C1.hs_method_ea13bf94((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public int mActionType
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8a1d8ae8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8a1d8ae8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_8a1d8ae8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_8a1d8ae8((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mPermission
     {
-        get => NativeMethods.TablePtr->C2.hs_get_3c7c1140((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_3c7c1140((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_3c7c1140((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_3c7c1140((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargets_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_80973942((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_80973942((void*)__hosihikari_shim_handle);
     }
 
     public int mValueType
     {
-        get => NativeMethods.TablePtr->C2.hs_get_56fc59bb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_56fc59bb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_56fc59bb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_56fc59bb((void*)__hosihikari_shim_handle, value);
     }
 
     public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
     {
-        NativeMethods.TablePtr->C2.hs_method_17939e2c((void*)registry.Handle);
+        NativeMethods.TablePtr->C1.hs_method_17939e2c((void*)registry.Handle);
     }
 
 
@@ -124,7 +123,7 @@ public sealed unsafe partial class InputPermissionCommand : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_2c62a4f7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_2c62a4f7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class BlazePreTravelSystem : global::System.IDispos
         return __hs_handle;
     }
 
-    public static void _doBlazePreTravelSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent)
-    {
-        NativeMethods.TablePtr->C0.hs_method_945b06d6((void*)arg0.Handle, (void*)actorOwnerComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doBlazePreTravelSystem(nint arg0, nint actorOwnerComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

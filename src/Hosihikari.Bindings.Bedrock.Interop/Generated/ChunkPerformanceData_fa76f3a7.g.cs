@@ -44,14 +44,13 @@ public sealed unsafe partial class ChunkPerformanceData : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C0.hs_get_3e224b75((void*)__hosihikari_shim_handle);
     }
 
-    public void _resetAll()
-    {
-        NativeMethods.TablePtr->C0.hs_method_eb763163((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _resetAll() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _visit(nint visitor) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ChunkPerformanceData Create(global::Hosihikari.Bindings.Bedrock.Interop.ChunkPerformanceData arg0)
     {
@@ -64,10 +63,9 @@ public sealed unsafe partial class ChunkPerformanceData : global::System.IDispos
         return new ChunkPerformanceData((nint)handle);
     }
 
-    public void _onChunkLoaded(global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource arg0, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk levelChunk, int arg2)
-    {
-        NativeMethods.TablePtr->C0.hs_method_e53e51a4((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)levelChunk.Handle, arg2);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onChunkLoaded(nint arg0, nint levelChunk, int arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkLoadTelemetryData_Address
@@ -381,10 +379,9 @@ public sealed unsafe partial class ChunkPerformanceData : global::System.IDispos
         set => NativeMethods.TablePtr->C0.hs_set_10f47165((void*)__hosihikari_shim_handle, value);
     }
 
-    public void registerForLevelChunkEvents(global::Hosihikari.Bindings.Bedrock.Interop.ILevelChunkEventManagerConnector levelChunkEventManagerConnector)
-    {
-        NativeMethods.TablePtr->C0.hs_method_29f31da8((void*)__hosihikari_shim_handle, (void*)levelChunkEventManagerConnector.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void registerForLevelChunkEvents(nint levelChunkEventManagerConnector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void resetAll()
     {

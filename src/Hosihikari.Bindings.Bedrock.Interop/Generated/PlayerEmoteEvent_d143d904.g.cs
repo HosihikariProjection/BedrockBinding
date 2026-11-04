@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerEmoteEvent : global::System.IDisposable
 
     public static PlayerEmoteEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerEmoteEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1d740de7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_1d740de7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class PlayerEmoteEvent : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mEmotePieceId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5c9b8470((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5c9b8470((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2cfb869a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2cfb869a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class PlayerEmoteEvent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d143d904((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d143d904((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

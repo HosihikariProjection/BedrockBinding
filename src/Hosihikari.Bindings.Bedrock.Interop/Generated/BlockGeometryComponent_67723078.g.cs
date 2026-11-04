@@ -38,42 +38,25 @@ public sealed unsafe partial class BlockGeometryComponent : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryComponent other)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_80d331ca((void*)__hosihikari_shim_handle, (void*)other.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryDescription blockGeometryDescription, global::Hosihikari.Bindings.Bedrock.Interop.BlockType? blockType)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_c2107fc0((void*)__hosihikari_shim_handle, (void*)blockGeometryDescription.Handle, (void*)(blockType?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint blockGeometryDescription, nint blockType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_49098ade((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BlockGeometryComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryComponent other)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_6d74a40e((void*)other.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BlockGeometryComponent Create(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new BlockGeometryComponent((nint)handle);
-    }
-
-    public static BlockGeometryComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryDescription blockGeometryDescription, global::Hosihikari.Bindings.Bedrock.Interop.BlockType? blockType)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_2a19fe37((void*)blockGeometryDescription.Handle, (void*)(blockType?.Handle ?? 0));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BlockGeometryComponent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BlockGeometryComponent Create(nint blockGeometryDescription, nint blockType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockSchematic_Address
@@ -156,10 +139,9 @@ public sealed unsafe partial class BlockGeometryComponent : global::System.IDisp
         set => NativeMethods.TablePtr->C0.hs_set_89690097((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryComponent arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockGeometryComponent((nint)NativeMethods.TablePtr->C0.hs_method_d3f9c263((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

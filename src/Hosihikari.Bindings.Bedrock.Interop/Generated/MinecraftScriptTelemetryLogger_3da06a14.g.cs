@@ -38,29 +38,25 @@ public sealed unsafe partial class MinecraftScriptTelemetryLogger : global::Syst
         return __hs_handle;
     }
 
-    public void _onDebuggerConnect(bool autoAttach, int retries)
-    {
-        NativeMethods.TablePtr->C2.hs_method_b473d551((void*)__hosihikari_shim_handle, autoAttach, retries);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onDebuggerConnect(bool autoAttach, int retries) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onDebuggerListen(bool autoAttach)
-    {
-        NativeMethods.TablePtr->C2.hs_method_f5a1547a((void*)__hosihikari_shim_handle, autoAttach);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onDebuggerListen(bool autoAttach) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onPluginDiscovery(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult pluginManagerResult)
-    {
-        NativeMethods.TablePtr->C2.hs_method_6d1e8600((void*)__hosihikari_shim_handle, (void*)pluginManagerResult.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onPluginDiscovery(nint pluginManagerResult) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onPluginRun(global::Hosihikari.Bindings.Bedrock.Interop.ScriptPluginManagerResult pluginManagerResult)
-    {
-        NativeMethods.TablePtr->C2.hs_method_14326f10((void*)__hosihikari_shim_handle, (void*)pluginManagerResult.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onPluginRun(nint pluginManagerResult) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MinecraftScriptTelemetryLogger Create()
     {

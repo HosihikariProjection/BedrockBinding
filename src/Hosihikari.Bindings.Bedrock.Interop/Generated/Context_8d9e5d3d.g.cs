@@ -40,7 +40,7 @@ public sealed unsafe partial class Context : global::System.IDisposable
 
     public static Context Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.BasicSerializerContext_Nested.Context arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_5dbaa8de((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_5dbaa8de((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,26 +51,26 @@ public sealed unsafe partial class Context : global::System.IDisposable
 
     public uint mPrevIndex
     {
-        get => NativeMethods.TablePtr->C5.hs_get_24446252((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_24446252((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_24446252((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_24446252((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mToken_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_9f68054d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9f68054d((void*)__hosihikari_shim_handle);
     }
 
     public uint mTokenId
     {
-        get => NativeMethods.TablePtr->C5.hs_get_5172c97f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_5172c97f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_5172c97f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_5172c97f((void*)__hosihikari_shim_handle, value);
     }
 
     public int mType
     {
-        get => NativeMethods.TablePtr->C5.hs_get_acb7d9d5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_acb7d9d5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_acb7d9d5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_acb7d9d5((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class Context : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_8d9e5d3d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_8d9e5d3d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class ConditionalBandwidthOptimizationDefinition : 
 
     public static ConditionalBandwidthOptimizationDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0651d799((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_0651d799((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,31 +49,28 @@ public sealed unsafe partial class ConditionalBandwidthOptimizationDefinition : 
         return new ConditionalBandwidthOptimizationDefinition((nint)handle);
     }
 
-    public void addConditionalBandwidthOptimization(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization optimization)
-    {
-        NativeMethods.TablePtr->C1.hs_method_96a92888((void*)__hosihikari_shim_handle, (void*)optimization.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addConditionalBandwidthOptimization(nint optimization) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addDefaultBandwidthOptimization(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization optimization)
-    {
-        NativeMethods.TablePtr->C1.hs_method_89e81da9((void*)__hosihikari_shim_handle, (void*)optimization.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addDefaultBandwidthOptimization(nint optimization) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a9e2147a(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConditionalValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_95bf05be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_95bf05be((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8c7bdf20((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8c7bdf20((void*)__hosihikari_shim_handle);
     }
 
 
@@ -83,7 +80,7 @@ public sealed unsafe partial class ConditionalBandwidthOptimizationDefinition : 
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_78b812b2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_78b812b2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

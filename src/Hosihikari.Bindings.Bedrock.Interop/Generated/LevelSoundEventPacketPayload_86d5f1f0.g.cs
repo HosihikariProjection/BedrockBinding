@@ -38,15 +38,13 @@ public sealed unsafe partial class LevelSoundEventPacketPayload : global::System
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier soundEvent, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, nint actorSoundIdentifier, bool isGlobal, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? fireAtPosition)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_8c9cc624((void*)__hosihikari_shim_handle, (void*)soundEvent.Handle, (void*)pos.Handle, data, (void*)actorSoundIdentifier, isGlobal, (void*)(fireAtPosition?.Handle ?? 0), fireAtPosition is not null);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint soundEvent, nint pos, int data, nint actorSoundIdentifier, bool isGlobal, nint fireAtPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundEventPacketPayload arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_55430363((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
@@ -64,27 +62,13 @@ public sealed unsafe partial class LevelSoundEventPacketPayload : global::System
         return new LevelSoundEventPacketPayload((nint)handle);
     }
 
-    public static LevelSoundEventPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SoundEventIdentifier soundEvent, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 pos, int data, nint actorSoundIdentifier, bool isGlobal, global::Hosihikari.Bindings.Bedrock.Interop.Vec3? fireAtPosition)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a557400f((void*)soundEvent.Handle, (void*)pos.Handle, data, (void*)actorSoundIdentifier, isGlobal, (void*)(fireAtPosition?.Handle ?? 0), fireAtPosition is not null);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LevelSoundEventPacketPayload Create(nint soundEvent, nint pos, int data, nint actorSoundIdentifier, bool isGlobal, nint fireAtPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new LevelSoundEventPacketPayload((nint)handle);
-    }
-
-    public static LevelSoundEventPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelSoundEventPacketPayload arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3e495bce((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LevelSoundEventPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LevelSoundEventPacketPayload Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActor_Address

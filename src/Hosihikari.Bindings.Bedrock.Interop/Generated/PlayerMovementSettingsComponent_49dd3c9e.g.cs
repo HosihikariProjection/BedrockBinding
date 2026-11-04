@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerMovementSettingsComponent : global::Sys
 
     public static PlayerMovementSettingsComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerMovementSettingsComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_364277d7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_364277d7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class PlayerMovementSettingsComponent : global::Sys
     // The native field type is not projected; this is the address of the field storage.
     public nint mSettings_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_71f26005((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_71f26005((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class PlayerMovementSettingsComponent : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_49dd3c9e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_49dd3c9e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

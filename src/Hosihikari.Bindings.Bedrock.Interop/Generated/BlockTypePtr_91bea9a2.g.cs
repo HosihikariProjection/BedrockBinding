@@ -43,11 +43,9 @@ public sealed unsafe partial class BlockTypePtr : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_a6e31854((void*)__hosihikari_shim_handle);
     }
 
-    public string toString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_ff0a0885((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

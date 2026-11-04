@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptSystemLevelEventListener : global::Syst
         return __hs_handle;
     }
 
-    public void _onRunSystemTick(nint deferredTracker)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3c6dfe7f((void*)__hosihikari_shim_handle, (void*)deferredTracker);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onRunSystemTick(nint deferredTracker) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptSystemLevelEventListener Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleMinecraft.ScriptSystemLevelEventListener arg0)
     {

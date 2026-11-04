@@ -38,15 +38,13 @@ public sealed unsafe partial class BlockCollision118Upgrade : global::System.IDi
         return __hs_handle;
     }
 
-    public bool _previousSchema(nint component)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_5a400850((void*)__hosihikari_shim_handle, (void*)component) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _previousSchema(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _upgradeToNext(nint document, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg1)
-    {
-        NativeMethods.TablePtr->C0.hs_method_d21a331d((void*)__hosihikari_shim_handle, (void*)document, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _upgradeToNext(nint document, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockCollision118Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockCollisionVersioning.BlockCollision118Upgrade arg0)
     {

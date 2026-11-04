@@ -40,7 +40,7 @@ public sealed unsafe partial class CacheManager : global::System.IDisposable
 
     public static CacheManager Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_de31f150();
+        var handle = NativeMethods.TablePtr->C2.hs_create_de31f150();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class CacheManager : global::System.IDisposable
 
     public static CacheManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b44827fc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b44827fc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,25 +60,25 @@ public sealed unsafe partial class CacheManager : global::System.IDisposable
         return new CacheManager((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'gsl::not_null<PositionTrackingDB::TrackingRecord *>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint createTrackingRecordInLocalCache(nint id, nint pos, nint dimension) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'gsl::not_null<PositionTrackingDB::TrackingRecord *>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7cf13de5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7cf13de5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLocalCache_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c815c20d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c815c20d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager((nint)NativeMethods.TablePtr->C3.hs_method_f39c46c3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PositionTrackingDB.CacheManager((nint)NativeMethods.TablePtr->C2.hs_method_f39c46c3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -88,7 +88,7 @@ public sealed unsafe partial class CacheManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_3cbf5dc6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_3cbf5dc6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

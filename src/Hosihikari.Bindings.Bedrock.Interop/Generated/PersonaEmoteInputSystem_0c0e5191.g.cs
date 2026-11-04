@@ -38,15 +38,13 @@ public sealed unsafe partial class PersonaEmoteInputSystem : global::System.IDis
         return __hs_handle;
     }
 
-    public static void _personaEmoteInputSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.EventingDispatcherComponent eventingDispatcherComponent, global::Hosihikari.Bindings.Bedrock.Interop.EmotePlayedTelemetryDataComponent emotePlayedTelemetryDataComponent, nint requestQueueView, nint modifier)
-    {
-        NativeMethods.TablePtr->C3.hs_method_c0d4b0e0((void*)entity.Handle, (void*)eventingDispatcherComponent.Handle, (void*)emotePlayedTelemetryDataComponent.Handle, (void*)requestQueueView, (void*)modifier);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _personaEmoteInputSystem(nint entity, nint eventingDispatcherComponent, nint emotePlayedTelemetryDataComponent, nint requestQueueView, nint modifier) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C3.hs_method_cdefe086());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -54,7 +52,7 @@ public sealed unsafe partial class PersonaEmoteInputSystem : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0c0e5191((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0c0e5191((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

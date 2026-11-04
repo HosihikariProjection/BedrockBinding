@@ -44,10 +44,9 @@ public sealed unsafe partial class TransformationComponent : global::System.IDis
         set => NativeMethods.TablePtr->C4.hs_set_681a77e2((void*)__hosihikari_shim_handle, value);
     }
 
-    public void reloadComponent(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C4.hs_method_e02fe77c((void*)__hosihikari_shim_handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void reloadComponent(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void transformIfAble(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, bool shouldRemove)
     {

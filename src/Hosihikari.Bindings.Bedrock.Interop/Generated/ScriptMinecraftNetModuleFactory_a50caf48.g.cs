@@ -38,15 +38,13 @@ public sealed unsafe partial class ScriptMinecraftNetModuleFactory : global::Sys
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? serverScheduler, global::Hosihikari.Bindings.Abi.SharedHandle? packConfigManager, global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel? level, global::Hosihikari.Bindings.Abi.SharedHandle? webSocketFactory)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b0a9f6e2((void*)__hosihikari_shim_handle, serverScheduler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), packConfigManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(level?.Handle ?? 0), webSocketFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint serverScheduler, nint packConfigManager, nint level, nint webSocketFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID ModuleUUID()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID((nint)NativeMethods.TablePtr->C3.hs_method_7b5d48eb(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint ModuleUUID() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptMinecraftNetModuleFactory Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class ScriptMinecraftNetModuleFactory : global::Sys
         return new ScriptMinecraftNetModuleFactory((nint)handle);
     }
 
-    public static ScriptMinecraftNetModuleFactory Create(global::Hosihikari.Bindings.Abi.SharedHandle? serverScheduler, global::Hosihikari.Bindings.Abi.SharedHandle? packConfigManager, global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel? level, global::Hosihikari.Bindings.Abi.SharedHandle? webSocketFactory)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4ea646b3(serverScheduler?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), packConfigManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(level?.Handle ?? 0), webSocketFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptMinecraftNetModuleFactory((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptMinecraftNetModuleFactory Create(nint serverScheduler, nint packConfigManager, nint level, nint webSocketFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptMinecraftNetModuleFactory Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptMinecraftNetModuleFactory arg0)
     {
@@ -81,9 +72,9 @@ public sealed unsafe partial class ScriptMinecraftNetModuleFactory : global::Sys
         return new ScriptMinecraftNetModuleFactory((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _generateBindings(nint moduleBuilder, nint contextConfig, bool allowUntagged, nint allowedTags) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk167a04_Address

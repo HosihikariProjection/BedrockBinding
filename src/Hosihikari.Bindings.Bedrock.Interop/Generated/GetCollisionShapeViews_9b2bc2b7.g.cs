@@ -38,10 +38,9 @@ public sealed unsafe partial class GetCollisionShapeViews : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(nint context)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_31c91cbf((void*)__hosihikari_shim_handle, (void*)context);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GetCollisionShapeViews Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class GetCollisionShapeViews : global::System.IDisp
         return new GetCollisionShapeViews((nint)handle);
     }
 
-    public static GetCollisionShapeViews Create(nint context)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_51af8577((void*)context);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new GetCollisionShapeViews((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static GetCollisionShapeViews Create(nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static GetCollisionShapeViews Create(global::Hosihikari.Bindings.Bedrock.Interop.GetCollisionShapeViews arg0)
     {

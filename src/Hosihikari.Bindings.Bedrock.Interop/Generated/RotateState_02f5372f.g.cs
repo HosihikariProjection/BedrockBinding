@@ -44,10 +44,9 @@ public sealed unsafe partial class RotateState : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C3.hs_get_71c00792((void*)__hosihikari_shim_handle);
     }
 
-    public void _tick()
-    {
-        NativeMethods.TablePtr->C3.hs_method_79b295ba((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RotateState Create(global::Hosihikari.Bindings.Bedrock.Interop.RotateState arg0)
     {

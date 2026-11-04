@@ -40,12 +40,12 @@ public sealed unsafe partial class Command : global::System.IDisposable
 
     public bool _collectOptionalArguments()
     {
-        return NativeMethods.TablePtr->C1.hs_method_c76b4372((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_c76b4372((void*)__hosihikari_shim_handle) != 0;
     }
 
     public static Command Create(global::Hosihikari.Bindings.Bedrock.Interop.Command arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b8572e48((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_b8572e48((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,77 +56,74 @@ public sealed unsafe partial class Command : global::System.IDisposable
 
     public bool collectOptionalArguments()
     {
-        return NativeMethods.TablePtr->C1.hs_method_b9d477d6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_b9d477d6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C1.hs_method_12cb9b2c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C0.hs_method_12cb9b2c((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public string getCommandName()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_afa34a6b((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_afa34a6b((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    public static bool isWildcard(global::Hosihikari.Bindings.Bedrock.Interop.CommandSelectorBase selector)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_12563b2d((void*)selector.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool isWildcard(nint selector) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C1.hs_get_b8b6223f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_b8b6223f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_b8b6223f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_b8b6223f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_09c0dc00((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_09c0dc00((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C1.hs_get_eca268ea((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_eca268ea((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_eca268ea((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_eca268ea((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_845e8bac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_845e8bac((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C1.hs_get_e19da7ce((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_e19da7ce((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_e19da7ce((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_e19da7ce((void*)__hosihikari_shim_handle, value);
     }
 
     public void run(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C1.hs_method_03ca83d0((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C0.hs_method_03ca83d0((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public void sendTelemetry(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C1.hs_method_5c543e40((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C0.hs_method_5c543e40((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
-    public static bool shouldUseCommandOriginRotation(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, int version)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_44f48fca((void*)origin.Handle, version) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool shouldUseCommandOriginRotation(nint origin, int version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool validRange(float input, float low, float high, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_2933d102(input, low, high, (void*)output.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool validRange(float input, float low, float high, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static bool validRange(int input, int low, int high, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        return NativeMethods.TablePtr->C1.hs_method_81efc93b(input, low, high, (void*)output.Handle) != 0;
+        return NativeMethods.TablePtr->C0.hs_method_81efc93b(input, low, high, (void*)output.Handle) != 0;
     }
 
 
@@ -136,7 +133,7 @@ public sealed unsafe partial class Command : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_3016f3a4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_3016f3a4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

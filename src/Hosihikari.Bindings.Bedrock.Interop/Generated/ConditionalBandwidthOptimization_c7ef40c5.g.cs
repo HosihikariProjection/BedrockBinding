@@ -40,7 +40,7 @@ public sealed unsafe partial class ConditionalBandwidthOptimization : global::Sy
 
     public static ConditionalBandwidthOptimization Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_9777d29f();
+        var handle = NativeMethods.TablePtr->C0.hs_create_9777d29f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ConditionalBandwidthOptimization : global::Sy
 
     public static ConditionalBandwidthOptimization Create(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ac620ac0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_ac620ac0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,30 +63,30 @@ public sealed unsafe partial class ConditionalBandwidthOptimization : global::Sy
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk640ded_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f5d72a16((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_f5d72a16((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka93dbc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_aa91e750((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_aa91e750((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkda7886_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_36c7c71b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_36c7c71b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf1bed1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_44aa8a61((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_44aa8a61((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization((nint)NativeMethods.TablePtr->C1.hs_method_ca488c53((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization((nint)NativeMethods.TablePtr->C0.hs_method_ca488c53((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -95,7 +95,7 @@ public sealed unsafe partial class ConditionalBandwidthOptimization : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c7ef40c5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_c7ef40c5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

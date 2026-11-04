@@ -40,7 +40,7 @@ public sealed unsafe partial class StrictEntityContext : global::System.IDisposa
 
     public static StrictEntityContext Create(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3387b480((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_3387b480((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class StrictEntityContext : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntity_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_1077b471((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1077b471((void*)__hosihikari_shim_handle);
     }
 
     public uint mRegistryId
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ac018495((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_ac018495((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ac018495((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ac018495((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class StrictEntityContext : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_003e2a13((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_003e2a13((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

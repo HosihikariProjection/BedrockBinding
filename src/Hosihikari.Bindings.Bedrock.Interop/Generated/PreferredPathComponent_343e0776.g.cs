@@ -40,7 +40,7 @@ public sealed unsafe partial class PreferredPathComponent : global::System.IDisp
 
     public static PreferredPathComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PreferredPathComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6447b3ef((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_6447b3ef((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,33 +49,32 @@ public sealed unsafe partial class PreferredPathComponent : global::System.IDisp
         return new PreferredPathComponent((nint)handle);
     }
 
-    public void initFromDefinition(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C3.hs_method_450595f7((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initFromDefinition(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public float mDefaultBlockCost
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e5344ebe((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e5344ebe((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_e5344ebe((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_e5344ebe((void*)__hosihikari_shim_handle, value);
     }
 
     public float mJumpCost
     {
-        get => NativeMethods.TablePtr->C3.hs_get_89395058((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_89395058((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_89395058((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_89395058((void*)__hosihikari_shim_handle, value);
     }
 
     public int mMaxFallBlocks
     {
-        get => NativeMethods.TablePtr->C3.hs_get_4a224ba6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_4a224ba6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_4a224ba6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_4a224ba6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreferredPathGroup_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_422c2eeb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_422c2eeb((void*)__hosihikari_shim_handle);
     }
 
 
@@ -85,7 +84,7 @@ public sealed unsafe partial class PreferredPathComponent : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_343e0776((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_343e0776((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class NullType : global::System.IDisposable
 
     public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.cereal.NullType arg0)
     {
-        return NativeMethods.TablePtr->C5.hs_method_2eb25531((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
+        return NativeMethods.TablePtr->C4.hs_method_2eb25531((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
     }
 
     public void Dispose()
@@ -49,7 +49,7 @@ public sealed unsafe partial class NullType : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_04359d23((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_04359d23((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,33 +38,29 @@ public sealed unsafe partial class StorageAreaStateListener : global::System.IDi
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_760733d6((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onCriticalDiskError(bool bSet, nint errorCode)
-    {
-        NativeMethods.TablePtr->C1.hs_method_86ce6c70((void*)__hosihikari_shim_handle, bSet, (void*)errorCode);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onCriticalDiskError(nint bSet, nint errorCode) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _onExtendDiskSpace(nint bSet, nint storageAreaWeakPtr, ulong freeSpace, nint onHandledEventCallback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onLowDiskSpace(bool bSet, ulong freeSpace)
-    {
-        NativeMethods.TablePtr->C1.hs_method_1470e5b0((void*)__hosihikari_shim_handle, bSet, freeSpace);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onLowDiskSpace(nint bSet, ulong freeSpace) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _onOutOfDiskSpace(bool bSet, ulong freeSpace)
-    {
-        NativeMethods.TablePtr->C1.hs_method_4d117660((void*)__hosihikari_shim_handle, bSet, freeSpace);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _onOutOfDiskSpace(nint bSet, ulong freeSpace) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StorageAreaStateListener Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.StorageAreaStateListener arg0)
     {
@@ -77,10 +73,9 @@ public sealed unsafe partial class StorageAreaStateListener : global::System.IDi
         return new StorageAreaStateListener((nint)handle);
     }
 
-    public void initListener(global::Hosihikari.Bindings.Abi.SharedHandle? fileStorageArea)
-    {
-        NativeMethods.TablePtr->C1.hs_method_c9cc098c((void*)__hosihikari_shim_handle, fileStorageArea?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initListener(nint fileStorageArea) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFileStorageArea_Address
@@ -113,10 +108,9 @@ public sealed unsafe partial class StorageAreaStateListener : global::System.IDi
         NativeMethods.TablePtr->C1.hs_method_dbd48035((void*)__hosihikari_shim_handle, bSet, freeSpace);
     }
 
-    public void removeListener()
-    {
-        NativeMethods.TablePtr->C1.hs_method_fc876894((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeListener() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

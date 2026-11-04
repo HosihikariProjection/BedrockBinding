@@ -40,7 +40,7 @@ public sealed unsafe partial class ScopedLogger : global::System.IDisposable
 
     public static ScopedLogger Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a1a99d3e();
+        var handle = NativeMethods.TablePtr->C2.hs_create_a1a99d3e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ScopedLogger : global::System.IDisposable
 
     public static ScopedLogger Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.ScopedLogger arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e00a0cd7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e00a0cd7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,24 +63,24 @@ public sealed unsafe partial class ScopedLogger : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1f5128_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a57f447f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a57f447f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk45a0a2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_726a6dda((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_726a6dda((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5d9f89_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0085fc3d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0085fc3d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.ScopedLogger operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.ScopedLogger arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.ScopedLogger((nint)NativeMethods.TablePtr->C3.hs_method_5d2a7631((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.@internal.ScopedLogger((nint)NativeMethods.TablePtr->C2.hs_method_5d2a7631((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class ScopedLogger : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_3bcd56b1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_3bcd56b1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

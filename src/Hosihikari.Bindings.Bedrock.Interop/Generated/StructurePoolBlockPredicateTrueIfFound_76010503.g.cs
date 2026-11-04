@@ -38,33 +38,29 @@ public sealed unsafe partial class StructurePoolBlockPredicateTrueIfFound : glob
         return __hs_handle;
     }
 
-    public void _appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
-    {
-        NativeMethods.TablePtr->C4.hs_method_f51e93ea((void*)__hosihikari_shim_handle, (void*)hash.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _appendMetadataKey(nint hash) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getType()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_78e731bc((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_e0df3093((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _test(nint block, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _test(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg1, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg2)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_65e3d5ba((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _test(nint arg0, nint arg1, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StructurePoolBlockPredicateTrueIfFound Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockPredicateTrueIfFound arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_526b289f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_526b289f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -75,33 +71,33 @@ public sealed unsafe partial class StructurePoolBlockPredicateTrueIfFound : glob
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C4.hs_method_c9868555((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C3.hs_method_c9868555((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public int getType()
     {
-        return NativeMethods.TablePtr->C4.hs_method_de3a174f((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_de3a174f((void*)__hosihikari_shim_handle);
     }
 
     public float mProbability
     {
-        get => NativeMethods.TablePtr->C4.hs_get_7fe4d112((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_7fe4d112((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReplacable_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ac082f0e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ac082f0e((void*)__hosihikari_shim_handle);
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
-        return NativeMethods.TablePtr->C4.hs_method_6f91953b((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_6f91953b((void*)__hosihikari_shim_handle, (void*)block.Handle, (void*)random.Handle) != 0;
     }
 
     public bool test(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg1, global::Hosihikari.Bindings.Bedrock.Interop.IRandom arg2)
     {
-        return NativeMethods.TablePtr->C4.hs_method_4ca206fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_4ca206fd((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle) != 0;
     }
 
 
@@ -111,7 +107,7 @@ public sealed unsafe partial class StructurePoolBlockPredicateTrueIfFound : glob
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_76010503((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_76010503((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

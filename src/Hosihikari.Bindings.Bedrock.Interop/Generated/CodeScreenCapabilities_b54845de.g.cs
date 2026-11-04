@@ -38,13 +38,13 @@ public sealed unsafe partial class CodeScreenCapabilities : global::System.IDisp
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CodeScreenCapabilities Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeScreenCapabilities arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_efbc38d2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_efbc38d2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +60,7 @@ public sealed unsafe partial class CodeScreenCapabilities : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_b54845de((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_b54845de((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

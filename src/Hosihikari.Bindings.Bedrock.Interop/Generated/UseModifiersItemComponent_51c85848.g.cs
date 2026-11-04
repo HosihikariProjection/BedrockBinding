@@ -38,15 +38,13 @@ public sealed unsafe partial class UseModifiersItemComponent : global::System.ID
         return __hs_handle;
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_6840d75b();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UseModifiersItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_20_50.UseModifiersItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d90115ab((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_d90115ab((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,33 +53,32 @@ public sealed unsafe partial class UseModifiersItemComponent : global::System.ID
         return new UseModifiersItemComponent((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_9755adc6((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mEmitVibrations
     {
-        get => NativeMethods.TablePtr->C4.hs_get_bd5bc519((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_bd5bc519((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bd5bc519((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_bd5bc519((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMovementModifier_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_dc8eb21d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dc8eb21d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStartSound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_48bdb25d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_48bdb25d((void*)__hosihikari_shim_handle);
     }
 
     public float mUseDuration
     {
-        get => NativeMethods.TablePtr->C4.hs_get_b3bc736c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_b3bc736c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b3bc736c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b3bc736c((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -91,7 +88,7 @@ public sealed unsafe partial class UseModifiersItemComponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_51c85848((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_51c85848((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

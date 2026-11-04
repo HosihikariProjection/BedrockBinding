@@ -40,7 +40,7 @@ public sealed unsafe partial class CustomComponentsItemComponent : global::Syste
 
     public static CustomComponentsItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_60.CustomComponentsItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_bbc55547((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_bbc55547((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,32 +49,29 @@ public sealed unsafe partial class CustomComponentsItemComponent : global::Syste
         return new CustomComponentsItemComponent((nint)handle);
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_bc7d23d6();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_e6d13d0b((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c77fa91d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c77fa91d((void*)__hosihikari_shim_handle);
     }
 
     public bool mCreatedFromJsonDescription
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a980d2c7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_a980d2c7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a980d2c7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_a980d2c7((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void upgrade(nint oldComp, nint newComp) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -83,7 +80,7 @@ public sealed unsafe partial class CustomComponentsItemComponent : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_5d325594((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5d325594((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

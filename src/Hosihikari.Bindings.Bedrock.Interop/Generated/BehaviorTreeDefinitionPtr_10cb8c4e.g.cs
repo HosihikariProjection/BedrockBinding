@@ -38,10 +38,9 @@ public sealed unsafe partial class BehaviorTreeDefinitionPtr : global::System.ID
         return __hs_handle;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.BehaviorTreeDefinitionPtr NONE()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BehaviorTreeDefinitionPtr((nint)NativeMethods.TablePtr->C0.hs_method_94d87c72(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NONE() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mGroup
     {

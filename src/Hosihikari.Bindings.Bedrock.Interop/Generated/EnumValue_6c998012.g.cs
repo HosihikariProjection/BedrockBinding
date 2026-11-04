@@ -38,19 +38,17 @@ public sealed unsafe partial class EnumValue : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.EnumValue arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_5fbe8791((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_c164bb93((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EnumValue Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_c7a40269();
+        var handle = NativeMethods.TablePtr->C4.hs_create_c7a40269();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,51 +57,43 @@ public sealed unsafe partial class EnumValue : global::System.IDisposable
         return new EnumValue((nint)handle);
     }
 
-    public static EnumValue Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.EnumValue arg0)
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_f7cf374b((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EnumValue((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static EnumValue Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCerealProperties_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_52076576((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_52076576((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_77830b17((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_77830b17((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_d5dd6d41((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d5dd6d41((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNonPublicFlag_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e26f2f70((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e26f2f70((void*)__hosihikari_shim_handle);
     }
 
     public long mValue
     {
-        get => NativeMethods.TablePtr->C5.hs_get_ff7a009c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_ff7a009c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ff7a009c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_ff7a009c((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.EnumValue operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.EnumValue arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.EnumValue((nint)NativeMethods.TablePtr->C5.hs_method_48bcbf80((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -112,7 +102,7 @@ public sealed unsafe partial class EnumValue : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_6c998012((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_6c998012((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

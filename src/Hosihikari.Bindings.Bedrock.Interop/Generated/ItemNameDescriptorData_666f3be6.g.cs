@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemNameDescriptorData : global::System.IDisp
 
     public static ItemNameDescriptorData Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestCereal.ItemNameDescriptorData arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_7a9689f8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_7a9689f8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class ItemNameDescriptorData : global::System.IDisp
 
     public int mAuxValue
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6406a9b0((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_6406a9b0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_6406a9b0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_6406a9b0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFullName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_310658c5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_310658c5((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class ItemNameDescriptorData : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_666f3be6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_666f3be6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -41,39 +41,38 @@ public sealed unsafe partial class SimpleBlockVolumeIterator : global::System.ID
     // The native field type is not projected; this is the address of the field storage.
     public nint mCurrent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_569404c8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_569404c8((void*)__hosihikari_shim_handle);
     }
 
     public bool mDone
     {
-        get => NativeMethods.TablePtr->C4.hs_get_3f720239((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_3f720239((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3f720239((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_3f720239((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMax_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f0c97b27((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f0c97b27((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e4bef37c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e4bef37c((void*)__hosihikari_shim_handle);
     }
 
-    public bool _isValid()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_26e71de2((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValid() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SimpleBlockVolumeIterator Create(global::Hosihikari.Bindings.Bedrock.Interop.SimpleBlockVolumeIterator arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_35329c48((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_35329c48((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -84,7 +83,7 @@ public sealed unsafe partial class SimpleBlockVolumeIterator : global::System.ID
 
     public bool isValid()
     {
-        return NativeMethods.TablePtr->C4.hs_method_fab238e3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_fab238e3((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -94,7 +93,7 @@ public sealed unsafe partial class SimpleBlockVolumeIterator : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ea538b97((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ea538b97((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

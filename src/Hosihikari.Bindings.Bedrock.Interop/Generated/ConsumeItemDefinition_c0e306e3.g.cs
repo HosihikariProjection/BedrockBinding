@@ -41,18 +41,18 @@ public sealed unsafe partial class ConsumeItemDefinition : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_346e797c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_346e797c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTreeDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5a960a5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_5a960a5d((void*)__hosihikari_shim_handle);
     }
 
     public static ConsumeItemDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.ConsumeItemDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_0b4d6be1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_0b4d6be1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,7 +68,7 @@ public sealed unsafe partial class ConsumeItemDefinition : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c0e306e3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_c0e306e3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

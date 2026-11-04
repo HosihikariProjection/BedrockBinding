@@ -38,14 +38,13 @@ public sealed unsafe partial class Weather : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _levelEvent(short type, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 arg1, int data)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1f457f87((void*)__hosihikari_shim_handle, type, (void*)arg1.Handle, data);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _levelEvent(nint type, nint arg1, int data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Weather Create()
     {
@@ -69,20 +68,17 @@ public sealed unsafe partial class Weather : global::System.IDisposable
         return new Weather((nint)handle);
     }
 
-    public int calcSnowBlockDepth(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int maxLayerDepth)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_0d02b061((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, maxLayerDepth);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int calcSnowBlockDepth(nint region, nint pos, int maxLayerDepth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool canPlaceTopSnow(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool fromFallingSnow, bool checkSnowDepthLevel, nint newHeightAfterPlacement)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_e57716c7((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, fromFallingSnow, checkSnowDepthLevel, (void*)newHeightAfterPlacement) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool canPlaceTopSnow(nint region, nint pos, bool fromFallingSnow, bool checkSnowDepthLevel, nint newHeightAfterPlacement) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool isPrecipitatingAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_da6059d8((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool isPrecipitatingAt(nint region, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool isRainingAt(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
@@ -171,25 +167,21 @@ public sealed unsafe partial class Weather : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Weather((nint)NativeMethods.TablePtr->C4.hs_method_22d287b9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public static void rebuildTopSnowToDepth(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos testPos, int desiredDepth)
-    {
-        NativeMethods.TablePtr->C4.hs_method_8befe47d((void*)region.Handle, (void*)testPos.Handle, desiredDepth);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void rebuildTopSnowToDepth(nint region, nint testPos, int desiredDepth) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void serverTick()
-    {
-        NativeMethods.TablePtr->C4.hs_method_c79ada5b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void serverTick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tick()
-    {
-        NativeMethods.TablePtr->C4.hs_method_73c20dd8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool tryToPlaceTopSnow(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool fromFallingSnow, bool fillLowerNeighborsFirst)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_93601b1b((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle, fromFallingSnow, fillLowerNeighborsFirst) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool tryToPlaceTopSnow(nint region, nint pos, bool fromFallingSnow, bool fillLowerNeighborsFirst) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

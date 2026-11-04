@@ -38,21 +38,20 @@ public sealed unsafe partial class IntRange : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool parseJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value node, int minDefault, int maxDefault)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_0aead5af((void*)__hosihikari_shim_handle, (void*)node.Handle, minDefault, maxDefault) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool parseJson(nint node, int minDefault, int maxDefault) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int rangeMax
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e274d28f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_e274d28f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_e274d28f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_e274d28f((void*)__hosihikari_shim_handle, value);
     }
 
     public int rangeMin
     {
-        get => NativeMethods.TablePtr->C2.hs_get_662f58a2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_662f58a2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_662f58a2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_662f58a2((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -61,7 +60,7 @@ public sealed unsafe partial class IntRange : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5658f048((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_5658f048((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

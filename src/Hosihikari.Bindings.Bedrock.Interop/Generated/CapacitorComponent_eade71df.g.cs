@@ -134,10 +134,9 @@ public sealed unsafe partial class CapacitorComponent : global::System.IDisposab
         set => NativeMethods.TablePtr->C0.hs_set_35bdab3b((void*)__hosihikari_shim_handle, value);
     }
 
-    public ulong _getCircuitComponentType()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_fb0153e8((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getCircuitComponentType() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CapacitorComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.CapacitorComponent arg0)
     {

@@ -40,7 +40,7 @@ public sealed unsafe partial class IGameModeTimer : global::System.IDisposable
 
     public static IGameModeTimer Create(global::Hosihikari.Bindings.Bedrock.Interop.IGameModeTimer arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9582c9fb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_9582c9fb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,12 +55,12 @@ public sealed unsafe partial class IGameModeTimer : global::System.IDisposable
 
     public double getDestroyProgressSeconds()
     {
-        return NativeMethods.TablePtr->C2.hs_method_96dbe381((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_96dbe381((void*)__hosihikari_shim_handle);
     }
 
     public void tick()
     {
-        NativeMethods.TablePtr->C2.hs_method_33aa8870((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_33aa8870((void*)__hosihikari_shim_handle);
     }
 
 
@@ -70,7 +70,7 @@ public sealed unsafe partial class IGameModeTimer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_4873a166((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_4873a166((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

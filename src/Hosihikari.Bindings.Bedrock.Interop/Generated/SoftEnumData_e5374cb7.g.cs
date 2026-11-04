@@ -55,10 +55,9 @@ public sealed unsafe partial class SoftEnumData : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_01613383((void*)__hosihikari_shim_handle);
     }
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.AvailableCommandsPacketPayload_Nested.SoftEnumData other)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_ca68c652((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint values_Address

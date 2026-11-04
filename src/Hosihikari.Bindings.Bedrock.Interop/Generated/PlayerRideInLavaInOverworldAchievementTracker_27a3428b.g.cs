@@ -40,7 +40,7 @@ public sealed unsafe partial class PlayerRideInLavaInOverworldAchievementTracker
 
     public static PlayerRideInLavaInOverworldAchievementTracker Create(global::Hosihikari.Bindings.Bedrock.Interop.Strider_Nested.PlayerRideInLavaInOverworldAchievementTracker arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c0831454((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_c0831454((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,32 +51,32 @@ public sealed unsafe partial class PlayerRideInLavaInOverworldAchievementTracker
 
     public bool mHasSentAchievement
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e0f60d37((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_e0f60d37((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e0f60d37((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_e0f60d37((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mInLavaWithPlayer
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c8422dd4((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_c8422dd4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c8422dd4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c8422dd4((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mPlayer
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d047abee((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d047abee((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d047abee((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d047abee((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStartPosInLava_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_25129eb8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_25129eb8((void*)__hosihikari_shim_handle);
     }
 
     public byte mState
     {
-        get => NativeMethods.TablePtr->C4.hs_get_5281e617((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_5281e617((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_5281e617((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_5281e617((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -86,7 +86,7 @@ public sealed unsafe partial class PlayerRideInLavaInOverworldAchievementTracker
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_27a3428b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_27a3428b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

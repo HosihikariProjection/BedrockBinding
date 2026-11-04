@@ -41,12 +41,12 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_af0e09a7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_af0e09a7((void*)__hosihikari_shim_handle);
     }
 
     public static IAppPlatform Create(global::Hosihikari.Bindings.Bedrock.Interop.IAppPlatform arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_d9386417((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d9386417((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,130 +57,130 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
 
     public bool areTreatmentPacksThrottled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_102e09bd((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_102e09bd((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int getBuildPlatform()
     {
-        return NativeMethods.TablePtr->C2.hs_method_6d7199cd((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_6d7199cd((void*)__hosihikari_shim_handle);
     }
 
     public int getDefaultNetworkMaxPlayers()
     {
-        return NativeMethods.TablePtr->C2.hs_method_302fcc82((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_302fcc82((void*)__hosihikari_shim_handle);
     }
 
     public string getDeviceId()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_924ce56f((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_924ce56f((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public string getEdition()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_204060ab((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_204060ab((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public nint getHardwareMemoryTierUtil()
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_b53c5fb6((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C1.hs_method_b53c5fb6((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ getLoggingPath()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C2.hs_method_70b0603e((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__((nint)NativeMethods.TablePtr->C1.hs_method_70b0603e((void*)__hosihikari_shim_handle));
     }
 
     public ulong getLowPhysicalMemoryThreshold()
     {
-        return NativeMethods.TablePtr->C2.hs_method_787f0bd6((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_787f0bd6((void*)__hosihikari_shim_handle);
     }
 
     public string getPlatformString()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_0591b0c0((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C1.hs_method_0591b0c0((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public ulong getTotalPhysicalMemory()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b02525bd((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_b02525bd((void*)__hosihikari_shim_handle);
     }
 
     public void goToExternalConsumablesStoreListing()
     {
-        NativeMethods.TablePtr->C2.hs_method_c1261f0e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_c1261f0e((void*)__hosihikari_shim_handle);
     }
 
     public bool hasPlatformSpecificInvites()
     {
-        return NativeMethods.TablePtr->C2.hs_method_541536b6((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_541536b6((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void initAppPlatformNetworkSettings()
     {
-        NativeMethods.TablePtr->C2.hs_method_c56fa9ff((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_c56fa9ff((void*)__hosihikari_shim_handle);
     }
 
     public bool isInternetAvailable()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7406f2f4((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_7406f2f4((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isLANAllowed()
     {
-        return NativeMethods.TablePtr->C2.hs_method_5fd842f7((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_5fd842f7((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isLANAvailable()
     {
-        return NativeMethods.TablePtr->C2.hs_method_e98ead74((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_e98ead74((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isLowMemoryDevice()
     {
-        return NativeMethods.TablePtr->C2.hs_method_f98784fd((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_f98784fd((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isLowPhysicalMemoryDevice()
     {
-        return NativeMethods.TablePtr->C2.hs_method_afae3db1((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_afae3db1((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isNetworkAvailable()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7a28a565((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_7a28a565((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isNetworkEnabled(bool arg0)
     {
-        return NativeMethods.TablePtr->C2.hs_method_0fad3a23((void*)__hosihikari_shim_handle, arg0) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_0fad3a23((void*)__hosihikari_shim_handle, arg0) != 0;
     }
 
     public bool isRealmsEnabled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_0a33d739((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_0a33d739((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool multiplayerRequiresPremiumAccess()
     {
-        return NativeMethods.TablePtr->C2.hs_method_37084e4e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_37084e4e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool multiplayerRequiresUGCEnabled()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7fd7778a((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_7fd7778a((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int numberOfThrottledTreatmentPacksToImportPerMinute()
     {
-        return NativeMethods.TablePtr->C2.hs_method_e030078e((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_e030078e((void*)__hosihikari_shim_handle);
     }
 
     public bool restartRequested()
     {
-        return NativeMethods.TablePtr->C2.hs_method_b60d7d0f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_b60d7d0f((void*)__hosihikari_shim_handle) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -194,7 +194,7 @@ public sealed unsafe partial class IAppPlatform : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a0631e0d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_a0631e0d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

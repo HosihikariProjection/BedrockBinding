@@ -38,14 +38,13 @@ public sealed unsafe partial class ChunkLoadedRequest : global::System.IDisposab
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint tickingAreaName, nint requestAction, bool allowNonTickingPlayerAndTickingAreaChunks) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_f2407ac4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ChunkLoadedRequest Create()
     {
@@ -58,20 +57,17 @@ public sealed unsafe partial class ChunkLoadedRequest : global::System.IDisposab
         return new ChunkLoadedRequest((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static ChunkLoadedRequest Create(nint tickingAreaName, nint requestAction, bool allowNonTickingPlayerAndTickingAreaChunks) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ITickingAreaView? _getTickingArea(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ae8745e7((void*)__hosihikari_shim_handle, (void*)dimension.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.ITickingAreaView((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getTickingArea(nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte areAllChunksLoaded(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentLevelTick)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_b7b3c522((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)currentLevelTick.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint areAllChunksLoaded(nint dimension, nint currentLevelTick) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAllowNonTickingPlayerAndTickingAreaChunks
     {

@@ -38,10 +38,9 @@ public sealed unsafe partial class SitComponent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Interaction getInteraction(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte arg2)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Interaction((nint)NativeMethods.TablePtr->C4.hs_method_6e0e6657((void*)__hosihikari_shim_handle, (void*)actor.Handle, (void*)player.Handle, arg2));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getInteraction(nint actor, nint player, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class SitComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_c5fa4d39((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_c5fa4d39((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

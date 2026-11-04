@@ -40,111 +40,102 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
 
     public nint mClientUIContainer
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_24a3c231((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_24a3c231((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_24a3c231((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_24a3c231((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public int mContainerCategory
     {
-        get => NativeMethods.TablePtr->C2.hs_get_d60c29d5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_d60c29d5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_d60c29d5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_d60c29d5((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerStringName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_9a87ca80((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_9a87ca80((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFullContainerName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8f874982((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8f874982((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsClientSide
     {
-        get => NativeMethods.TablePtr->C2.hs_get_f8b24788((void*)__hosihikari_shim_handle) != 0;
+        get => NativeMethods.TablePtr->C1.hs_get_f8b24788((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemSource_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dd8b36f0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_dd8b36f0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItems_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c1af1ff2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c1af1ff2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnContainerChangedCallbacks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b685916d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b685916d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayerNotificationCallbacks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5fe734e6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_5fe734e6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTrackedOnContainerChangedCallbacks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_aac34efc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_aac34efc((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Container? __getContainer()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_cae217b6((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __getContainer() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int __getContainerOffset()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_6b4b345b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int __getContainerOffset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void __onItemChanged(int modelSlot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d5809d2a((void*)__hosihikari_shim_handle, modelSlot, (void*)oldItem.Handle, (void*)newItem.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void __onItemChanged(int modelSlot, nint oldItem, nint newItem) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _containerContentChanged(int slot)
-    {
-        NativeMethods.TablePtr->C2.hs_method_605b8fc9((void*)__hosihikari_shim_handle, slot);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _containerContentChanged(int slot) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef _getContainerWeakRef()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)NativeMethods.TablePtr->C2.hs_method_55c43345((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getContainerWeakRef() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isValid()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_e5abf78c((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValid() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _postInit()
-    {
-        NativeMethods.TablePtr->C2.hs_method_cefcee2c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _postInit() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _releaseResources()
-    {
-        NativeMethods.TablePtr->C2.hs_method_c4023428((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _releaseResources() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static InventoryContainerModel Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_a0af3d04();
+        var handle = NativeMethods.TablePtr->C1.hs_create_a0af3d04();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -155,7 +146,7 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
 
     public static InventoryContainerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9564f195((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_9564f195((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -166,54 +157,54 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Container? _getContainer()
     {
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_2e01db0f((void*)__hosihikari_shim_handle);
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_2e01db0f((void*)__hosihikari_shim_handle);
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Container((nint)__hs_handle, false) : null;
     }
 
     public int _getContainerOffset()
     {
-        return NativeMethods.TablePtr->C2.hs_method_4d5eb720((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_4d5eb720((void*)__hosihikari_shim_handle);
     }
 
     public void _onItemChanged(int modelSlot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem)
     {
-        NativeMethods.TablePtr->C2.hs_method_ae87237f((void*)__hosihikari_shim_handle, modelSlot, (void*)oldItem.Handle, (void*)newItem.Handle);
+        NativeMethods.TablePtr->C1.hs_method_ae87237f((void*)__hosihikari_shim_handle, modelSlot, (void*)oldItem.Handle, (void*)newItem.Handle);
     }
 
     public void containerContentChanged(int slot)
     {
-        NativeMethods.TablePtr->C2.hs_method_5befaa77((void*)__hosihikari_shim_handle, slot);
+        NativeMethods.TablePtr->C1.hs_method_5befaa77((void*)__hosihikari_shim_handle, slot);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef getContainerWeakRef()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)NativeMethods.TablePtr->C2.hs_method_12df71f7((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerWeakRef((nint)NativeMethods.TablePtr->C1.hs_method_12df71f7((void*)__hosihikari_shim_handle));
     }
 
     public bool isValid()
     {
-        return NativeMethods.TablePtr->C2.hs_method_8beeaafb((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_8beeaafb((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8f9baa04((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8f9baa04((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel((nint)NativeMethods.TablePtr->C2.hs_method_1eacbfee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InventoryContainerModel((nint)NativeMethods.TablePtr->C1.hs_method_1eacbfee((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void postInit()
     {
-        NativeMethods.TablePtr->C2.hs_method_9d4f99ce((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_9d4f99ce((void*)__hosihikari_shim_handle);
     }
 
     public void releaseResources()
     {
-        NativeMethods.TablePtr->C2.hs_method_677f4fdf((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_677f4fdf((void*)__hosihikari_shim_handle);
     }
 
 
@@ -223,7 +214,7 @@ public sealed unsafe partial class InventoryContainerModel : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_4e630e4b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_4e630e4b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

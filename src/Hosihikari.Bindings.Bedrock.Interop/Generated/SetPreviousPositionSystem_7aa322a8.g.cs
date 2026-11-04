@@ -38,15 +38,13 @@ public sealed unsafe partial class SetPreviousPositionSystem : global::System.ID
         return __hs_handle;
     }
 
-    public static void _doSetPreviousPositionSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent)
-    {
-        NativeMethods.TablePtr->C4.hs_method_4384f136((void*)arg0.Handle, (void*)stateVectorComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doSetPreviousPositionSystem(nint arg0, nint stateVectorComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_825cf41c());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -54,7 +52,7 @@ public sealed unsafe partial class SetPreviousPositionSystem : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_7aa322a8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_7aa322a8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

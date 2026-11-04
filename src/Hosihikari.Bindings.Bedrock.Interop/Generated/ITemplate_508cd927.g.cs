@@ -40,7 +40,7 @@ public sealed unsafe partial class ITemplate : global::System.IDisposable
 
     public static ITemplate Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolElement_Nested.ITemplate arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ffc467b4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ffc467b4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,17 +51,17 @@ public sealed unsafe partial class ITemplate : global::System.IDisposable
 
     public nint getJigsawMarkers()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_5ed11df7((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_5ed11df7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos getSize(byte rotation)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C4.hs_method_c55386ec((void*)__hosihikari_shim_handle, rotation));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C3.hs_method_c55386ec((void*)__hosihikari_shim_handle, rotation));
     }
 
     public bool isLegacyStructure()
     {
-        return NativeMethods.TablePtr->C4.hs_method_e8d7c489((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_e8d7c489((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class ITemplate : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_508cd927((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_508cd927((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

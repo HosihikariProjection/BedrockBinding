@@ -40,41 +40,40 @@ public sealed unsafe partial class ToggleDownfallCommand : global::System.IDispo
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C4.hs_get_69c8ef11((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_69c8ef11((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_69c8ef11((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_69c8ef11((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5e417a56((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5e417a56((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c1e9d8f5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_c1e9d8f5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c1e9d8f5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c1e9d8f5((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0ee5f313((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0ee5f313((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0872087d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_0872087d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0872087d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0872087d((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C4.hs_method_dbe6a453((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ToggleDownfallCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.ToggleDownfallCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3de04b71((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_3de04b71((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -85,13 +84,12 @@ public sealed unsafe partial class ToggleDownfallCommand : global::System.IDispo
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C4.hs_method_f2c546cd((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C3.hs_method_f2c546cd((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
-    public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
-    {
-        NativeMethods.TablePtr->C4.hs_method_74b55675((void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void setup(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -100,7 +98,7 @@ public sealed unsafe partial class ToggleDownfallCommand : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3a342c83((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_3a342c83((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

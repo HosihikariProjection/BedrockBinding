@@ -40,8 +40,8 @@ public sealed unsafe partial class SetCommandsEnabledPacketPayload : global::Sys
 
     public bool mCommandsEnabled
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f832edf1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_f832edf1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f832edf1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_f832edf1((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class SetCommandsEnabledPacketPayload : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_69d1a1aa((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_69d1a1aa((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

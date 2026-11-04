@@ -60,29 +60,25 @@ public sealed unsafe partial class LevelChunkVolumeData : global::System.IDispos
         return new LevelChunkVolumeData((nint)handle);
     }
 
-    public void addStructure(global::Hosihikari.Bindings.Bedrock.Interop.StructureStart start)
-    {
-        NativeMethods.TablePtr->C2.hs_method_fce7f983((void*)__hosihikari_shim_handle, (void*)start.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addStructure_fce7f983(nint start) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addStructure(global::Hosihikari.Bindings.Abi.SharedHandle? instance)
-    {
-        NativeMethods.TablePtr->C2.hs_method_672583d6((void*)__hosihikari_shim_handle, instance?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addStructure_672583d6(nint instance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addStructureReference(global::Hosihikari.Bindings.Bedrock.Interop.StructureStart start)
-    {
-        NativeMethods.TablePtr->C2.hs_method_1d505c14((void*)__hosihikari_shim_handle, (void*)start.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addStructureReference_1d505c14(nint start) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addStructureReference(global::Hosihikari.Bindings.Abi.SharedHandle? instance)
-    {
-        NativeMethods.TablePtr->C2.hs_method_d16e58cf((void*)__hosihikari_shim_handle, instance?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addStructureReference_d16e58cf(nint instance) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getOverlappingStructures() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChunkPos_Address

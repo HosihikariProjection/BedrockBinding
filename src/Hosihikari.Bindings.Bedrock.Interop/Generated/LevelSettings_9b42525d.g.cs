@@ -43,19 +43,17 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C2.hs_method_df58b431((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_597e2f40(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.LevelData data, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_73bf736b((void*)__hosihikari_shim_handle, (void*)data.Handle, (void*)dimension.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint data, nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_34781bc2((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_34781bc2(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
@@ -73,41 +71,25 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
         return new LevelSettings((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static LevelSettings Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LevelSettings Create_ab4718f9(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelData data, global::Hosihikari.Bindings.Bedrock.Interop.DimensionType dimension)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3d41f1c6((void*)data.Handle, (void*)dimension.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LevelSettings Create(nint data, nint dimension) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new LevelSettings((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LevelSettings Create_35e8ba63(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static LevelSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_35e8ba63((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getSpawnSettings() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new LevelSettings((nint)handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings getSpawnSettings()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings((nint)NativeMethods.TablePtr->C2.hs_method_b92dd9ca((void*)__hosihikari_shim_handle));
-    }
-
-    public bool hasCloudSaveAssociation()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_e5359368((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool hasCloudSaveAssociation() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mAchievementsDisabled
     {
@@ -549,10 +531,9 @@ public sealed unsafe partial class LevelSettings : global::System.IDisposable
         }
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings setExperiments(global::Hosihikari.Bindings.Bedrock.Interop.ExperimentStorage experiments)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelSettings((nint)NativeMethods.TablePtr->C2.hs_method_591a211c((void*)__hosihikari_shim_handle, (void*)experiments.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint setExperiments(nint experiments) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

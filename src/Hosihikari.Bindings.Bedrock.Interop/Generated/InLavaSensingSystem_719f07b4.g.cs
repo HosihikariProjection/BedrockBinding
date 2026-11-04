@@ -38,10 +38,9 @@ public sealed unsafe partial class InLavaSensingSystem : global::System.IDisposa
         return __hs_handle;
     }
 
-    public static void doInLavaSensing(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.UpdateWaterStateRequestComponent updateWaterStateRequestComponent, nint mod)
-    {
-        NativeMethods.TablePtr->C2.hs_method_9aae81c8((void*)entity.Handle, (void*)updateWaterStateRequestComponent.Handle, (void*)mod);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void doInLavaSensing(nint entity, nint updateWaterStateRequestComponent, nint mod) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class InLavaSensingSystem : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_719f07b4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_719f07b4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

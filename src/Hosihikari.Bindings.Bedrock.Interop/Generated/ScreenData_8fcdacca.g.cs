@@ -41,25 +41,25 @@ public sealed unsafe partial class ScreenData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mCraftRequestHandler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ad33740((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_6ad33740((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRecentRequests_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_87ae2aec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_87ae2aec((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRuntimeIdSparseContainerMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_018e6569((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_018e6569((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScreenHandler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4123585b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_4123585b((void*)__hosihikari_shim_handle);
     }
 
 
@@ -69,7 +69,7 @@ public sealed unsafe partial class ScreenData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_8fcdacca((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_8fcdacca((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

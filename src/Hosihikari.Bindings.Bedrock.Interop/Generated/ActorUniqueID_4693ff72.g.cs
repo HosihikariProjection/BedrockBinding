@@ -43,10 +43,9 @@ public sealed unsafe partial class ActorUniqueID : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID((nint)NativeMethods.TablePtr->C0.hs_method_43bd84a4(), false);
     }
 
-    public ulong getHash()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_8cdd8f44((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public ulong getHash() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: the return type needs a generated C++ type.", false)]
     public nint operator_compare(nint other) =>
@@ -63,11 +62,9 @@ public sealed unsafe partial class ActorUniqueID : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_88a5f77d((void*)__hosihikari_shim_handle, value);
     }
 
-    public string toString()
-    {
-        var __hs_view = NativeMethods.TablePtr->C0.hs_method_e7231f01((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toString() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

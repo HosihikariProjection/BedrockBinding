@@ -38,14 +38,13 @@ public sealed unsafe partial class FitDoubleYRoom : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'OceanMonumentPiece' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _create(nint orientation, nint definition, nint random) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'OceanMonumentPiece' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _fits(global::Hosihikari.Bindings.Bedrock.Interop.RoomDefinition definition)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_d463db2f((void*)__hosihikari_shim_handle, (void*)definition.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _fits(nint definition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FitDoubleYRoom Create(global::Hosihikari.Bindings.Bedrock.Interop.FitDoubleYRoom arg0)
     {

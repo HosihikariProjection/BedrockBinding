@@ -77,10 +77,9 @@ public sealed unsafe partial class FloatRange : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.FloatRange((nint)NativeMethods.TablePtr->C1.hs_method_a77bffb8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public bool parseJson(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value node, float minDefault, float maxDefault)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_0d6b1e4e((void*)__hosihikari_shim_handle, (void*)node.Handle, minDefault, maxDefault) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool parseJson(nint node, float minDefault, float maxDefault) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

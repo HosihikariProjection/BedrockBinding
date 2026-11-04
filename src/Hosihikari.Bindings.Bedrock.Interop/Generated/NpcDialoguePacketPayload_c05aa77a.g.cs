@@ -38,76 +38,17 @@ public sealed unsafe partial class NpcDialoguePacketPayload : global::System.IDi
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID npcID)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_04ae78e3((void*)__hosihikari_shim_handle, (void*)npcID.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint npcID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID npcID, int dialogueActionType, string dialogueText, string sceneName, string npcName, string actionJSON)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(dialogueText);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dialogueText, __hs_stringBytes2);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(sceneName);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(sceneName, __hs_stringBytes3);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(npcName);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(npcName, __hs_stringBytes4);
-        var __hs_stringByteCount5 = global::System.Text.Encoding.UTF8.GetByteCount(actionJSON);
-        scoped global::System.Span<byte> __hs_stringBytes5;
-        if (__hs_stringByteCount5 <= 256)
-        {
-            __hs_stringBytes5 = stackalloc byte[__hs_stringByteCount5 == 0 ? 1 : __hs_stringByteCount5];
-        }
-        else
-        {
-            __hs_stringBytes5 = new byte[__hs_stringByteCount5];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(actionJSON, __hs_stringBytes5);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-                {
-                    fixed (byte* __hs_stringData5 = __hs_stringBytes5)
-                    {
-                        return (nint)NativeMethods.TablePtr->C2.hs_method_4678fe35((void*)__hosihikari_shim_handle, (void*)npcID.Handle, dialogueActionType, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5);
-                    }
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint npcID, nint dialogueActionType, nint dialogueText, nint sceneName, nint npcName, nint actionJSON) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_e1f78470((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NpcDialoguePacketPayload Create()
     {
@@ -120,83 +61,13 @@ public sealed unsafe partial class NpcDialoguePacketPayload : global::System.IDi
         return new NpcDialoguePacketPayload((nint)handle);
     }
 
-    public static NpcDialoguePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID npcID)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ca9df876((void*)npcID.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static NpcDialoguePacketPayload Create(nint npcID) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new NpcDialoguePacketPayload((nint)handle);
-    }
-
-    public static NpcDialoguePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID npcID, int dialogueActionType, string dialogueText, string sceneName, string npcName, string actionJSON)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(dialogueText);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(dialogueText, __hs_stringBytes2);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(sceneName);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(sceneName, __hs_stringBytes3);
-        var __hs_stringByteCount4 = global::System.Text.Encoding.UTF8.GetByteCount(npcName);
-        scoped global::System.Span<byte> __hs_stringBytes4;
-        if (__hs_stringByteCount4 <= 256)
-        {
-            __hs_stringBytes4 = stackalloc byte[__hs_stringByteCount4 == 0 ? 1 : __hs_stringByteCount4];
-        }
-        else
-        {
-            __hs_stringBytes4 = new byte[__hs_stringByteCount4];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(npcName, __hs_stringBytes4);
-        var __hs_stringByteCount5 = global::System.Text.Encoding.UTF8.GetByteCount(actionJSON);
-        scoped global::System.Span<byte> __hs_stringBytes5;
-        if (__hs_stringByteCount5 <= 256)
-        {
-            __hs_stringBytes5 = stackalloc byte[__hs_stringByteCount5 == 0 ? 1 : __hs_stringByteCount5];
-        }
-        else
-        {
-            __hs_stringBytes5 = new byte[__hs_stringByteCount5];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(actionJSON, __hs_stringBytes5);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                fixed (byte* __hs_stringData4 = __hs_stringBytes4)
-                {
-                    fixed (byte* __hs_stringData5 = __hs_stringBytes5)
-                    {
-                        var handle = NativeMethods.TablePtr->C2.hs_create_cceba698((void*)npcID.Handle, dialogueActionType, __hs_stringData2, (nuint)__hs_stringByteCount2, __hs_stringData3, (nuint)__hs_stringByteCount3, __hs_stringData4, (nuint)__hs_stringByteCount4, __hs_stringData5, (nuint)__hs_stringByteCount5);
-                        if (handle == null)
-                        {
-                            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-                        }
-
-                        return new NpcDialoguePacketPayload((nint)handle);
-                    }
-                }
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static NpcDialoguePacketPayload Create(nint npcID, nint dialogueActionType, nint dialogueText, nint sceneName, nint npcName, nint actionJSON) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NpcDialoguePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.NpcDialoguePacketPayload arg0)
     {
@@ -209,24 +80,9 @@ public sealed unsafe partial class NpcDialoguePacketPayload : global::System.IDi
         return new NpcDialoguePacketPayload((nint)handle);
     }
 
-    public static bool initializePacket(global::Hosihikari.Bindings.Bedrock.Interop.NpcDialoguePacket outPacket, global::Hosihikari.Bindings.Bedrock.Interop.NpcDialogueStorage? storage, string sceneName)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(sceneName);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(sceneName, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            return NativeMethods.TablePtr->C2.hs_method_372b1eb4((void*)outPacket.Handle, (void*)(storage?.Handle ?? 0), __hs_stringData2, (nuint)__hs_stringByteCount2) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool initializePacket(nint outPacket, nint storage, nint sceneName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActionJSON_Address

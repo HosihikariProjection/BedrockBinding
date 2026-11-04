@@ -40,8 +40,8 @@ public sealed unsafe partial class CommandSoftEnumRegistry : global::System.IDis
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5abe538d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_5abe538d((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_5abe538d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_5abe538d((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class CommandSoftEnumRegistry : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_2c07e17e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_2c07e17e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

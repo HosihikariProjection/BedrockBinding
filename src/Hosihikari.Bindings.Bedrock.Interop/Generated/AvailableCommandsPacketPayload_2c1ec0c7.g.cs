@@ -43,9 +43,9 @@ public sealed unsafe partial class AvailableCommandsPacketPayload : global::Syst
         return (nint)NativeMethods.TablePtr->C0.hs_method_75aa5d60((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint enumValues, nint chainedSubcommandValues, nint postfixes, nint enumData, nint chainedSubcommandData, nint constraints, nint commandData, nint softEnumData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _dtor()
     {
@@ -74,9 +74,9 @@ public sealed unsafe partial class AvailableCommandsPacketPayload : global::Syst
         return new AvailableCommandsPacketPayload((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static AvailableCommandsPacketPayload Create(nint enumValues, nint chainedSubcommandValues, nint postfixes, nint enumData, nint chainedSubcommandData, nint constraints, nint commandData, nint softEnumData) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChainedSubcommandValues_Address

@@ -44,7 +44,7 @@ public sealed unsafe partial class CraftNonImplementedActionData : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_03b77d36((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_03b77d36((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -71,24 +71,9 @@ public sealed unsafe partial class GameTestNetworkAdapter : global::System.IDisp
         return new global::Hosihikari.Bindings.Bedrock.Interop.GameTestNetworkAdapter((nint)NativeMethods.TablePtr->C1.hs_method_6f4efa96((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void rungametest(global::Hosihikari.Bindings.Bedrock.Interop.PacketSender? packetSender, string testName, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.gametest.TestParameters @params)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(testName);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(testName, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C1.hs_method_9e4520ae((void*)__hosihikari_shim_handle, (void*)(packetSender?.Handle ?? 0), __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)dimension.Handle, (void*)@params.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void rungametest(nint packetSender, nint testName, nint dimension, nint @params) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

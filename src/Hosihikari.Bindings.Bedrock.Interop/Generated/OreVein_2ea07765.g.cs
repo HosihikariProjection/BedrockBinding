@@ -40,27 +40,27 @@ public sealed unsafe partial class OreVein : global::System.IDisposable
 
     public nint fillerBlock
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_54ff9e62((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_54ff9e62((void*)__hosihikari_shim_handle);
     }
 
     public int maxY
     {
-        get => NativeMethods.TablePtr->C3.hs_get_a53a4522((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_a53a4522((void*)__hosihikari_shim_handle);
     }
 
     public int minY
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c32d9bc4((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_c32d9bc4((void*)__hosihikari_shim_handle);
     }
 
     public nint oreBlock
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_de40150e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_de40150e((void*)__hosihikari_shim_handle);
     }
 
     public nint rawOreBlock
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b9f8b2e2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b9f8b2e2((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -69,7 +69,7 @@ public sealed unsafe partial class OreVein : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_2ea07765((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_2ea07765((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

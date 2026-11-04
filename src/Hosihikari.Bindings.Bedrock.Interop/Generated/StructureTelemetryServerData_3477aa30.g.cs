@@ -40,7 +40,7 @@ public sealed unsafe partial class StructureTelemetryServerData : global::System
 
     public static StructureTelemetryServerData Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTelemetryServerData arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ee2da34d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ee2da34d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,20 +51,20 @@ public sealed unsafe partial class StructureTelemetryServerData : global::System
 
     public bool mHasBeenActivatedByRedstone
     {
-        get => NativeMethods.TablePtr->C4.hs_get_29c5ac65((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_29c5ac65((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_29c5ac65((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_29c5ac65((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHasLoadedIntoUnloadedChunks
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8d0db1ef((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_8d0db1ef((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8d0db1ef((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_8d0db1ef((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastOffsetWhenLoadingIntoUnloadedChunks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_584ca8d7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_584ca8d7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -74,7 +74,7 @@ public sealed unsafe partial class StructureTelemetryServerData : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_3477aa30((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_3477aa30((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

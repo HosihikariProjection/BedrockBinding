@@ -91,10 +91,9 @@ public sealed unsafe partial class ChunkLoadTelemetryData : global::System.IDisp
         set => NativeMethods.TablePtr->C0.hs_set_cf1b5778((void*)__hosihikari_shim_handle, value);
     }
 
-    public void recordLoadedChunk(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk chunk)
-    {
-        NativeMethods.TablePtr->C0.hs_method_88a5191e((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void recordLoadedChunk(nint chunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

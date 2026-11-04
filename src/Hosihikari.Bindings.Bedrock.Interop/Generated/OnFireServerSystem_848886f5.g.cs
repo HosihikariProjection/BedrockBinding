@@ -38,14 +38,13 @@ public sealed unsafe partial class OnFireServerSystem : global::System.IDisposab
         return __hs_handle;
     }
 
-    public void _tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
-    {
-        NativeMethods.TablePtr->C3.hs_method_26a7c259((void*)__hosihikari_shim_handle, (void*)registry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _tick(nint registry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static OnFireServerSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.OnFireServerSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e432a18e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e432a18e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,13 +53,13 @@ public sealed unsafe partial class OnFireServerSystem : global::System.IDisposab
         return new OnFireServerSystem((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const AbilitiesComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _tickServer(nint entity, nint actorOwnerComponent, nint onFireComponent, nint abilities) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const AbilitiesComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C3.hs_method_8f76e15a((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_8f76e15a((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -70,7 +69,7 @@ public sealed unsafe partial class OnFireServerSystem : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_848886f5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_848886f5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

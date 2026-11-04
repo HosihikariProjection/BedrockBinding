@@ -38,19 +38,17 @@ public sealed unsafe partial class EntityStorageBlockActorComponent : global::Sy
         return __hs_handle;
     }
 
-    public void _load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag parentTag, global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, short version)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d6ba76ca((void*)__hosihikari_shim_handle, (void*)parentTag.Handle, (void*)level.Handle, version);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _load(nint parentTag, nint level, nint version) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag parentTag, nint arg1)
-    {
-        NativeMethods.TablePtr->C1.hs_method_ac97d086((void*)__hosihikari_shim_handle, (void*)parentTag.Handle, (void*)arg1);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _save(nint parentTag, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EntityStorageBlockActorComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageBlockActorComponent arg0)
     {
@@ -63,9 +61,9 @@ public sealed unsafe partial class EntityStorageBlockActorComponent : global::Sy
         return new EntityStorageBlockActorComponent((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'EntityStorageBlockActorComponent::EntityStorageInfo' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getEntities(nint bucket) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'EntityStorageBlockActorComponent::EntityStorageInfo' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag parentTag, global::Hosihikari.Bindings.Bedrock.Interop.ILevel level, short version)
     {
@@ -78,71 +76,26 @@ public sealed unsafe partial class EntityStorageBlockActorComponent : global::Sy
         get => (nint)NativeMethods.TablePtr->C1.hs_get_27a45773((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint release(nint bucket, nint entityId, nint outActor, nint context) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag parentTag, nint arg1)
     {
         NativeMethods.TablePtr->C1.hs_method_b52a66d1((void*)__hosihikari_shim_handle, (void*)parentTag.Handle, (void*)arg1);
     }
 
-    public int size(string bucket)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(bucket);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(bucket, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C1.hs_method_3c6bbb89((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int size(nint bucket) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte store(string bucket, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID outEntityId, global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageBlockActorComponent_Nested.Context context)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(bucket);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(bucket, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C1.hs_method_01162e00((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)actor.Handle, (void*)outEntityId.Handle, (void*)context.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint store(nint bucket, nint actor, nint outEntityId, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public byte transfer(string bucket, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID entityId, global::Hosihikari.Bindings.Bedrock.Interop.BlockActor targetBlockActor, global::Hosihikari.Bindings.Bedrock.Interop.EntityStorageBlockActorComponent_Nested.Context context)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(bucket);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(bucket, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return NativeMethods.TablePtr->C1.hs_method_dde49309((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)entityId.Handle, (void*)targetBlockActor.Handle, (void*)context.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint transfer(nint bucket, nint entityId, nint targetBlockActor, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

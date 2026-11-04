@@ -38,9 +38,9 @@ public sealed unsafe partial class Motif : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'glm::vec<4, float>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint name, int w, int h, nint UVs, bool isPublic, bool isSplitMeshPainting) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'glm::vec<4, float>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Motif Create()
     {
@@ -64,140 +64,114 @@ public sealed unsafe partial class Motif : global::System.IDisposable
         return new Motif((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'glm::vec<4, float>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static Motif Create(nint name, int w, int h, nint UVs, bool isPublic, bool isSplitMeshPainting) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'glm::vec<4, float>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string getName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_8e955565((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mAlban()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_0f6cc23d(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mAlban() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mAztec()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_12294cce(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mAztec() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mAztec2()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_7736e185(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mAztec2() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mBackyard()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_d5066ef2(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mBackyard() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mBaroque()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_a702f6b6(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mBaroque() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mBomb()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_be625745(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mBomb() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mBouquet()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_b65576b3(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mBouquet() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mBurningSkull()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_b9df27b5(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mBurningSkull() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mBust()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_978e9dfa(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mBust() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mCavebird()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_709e8a6b(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mCavebird() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mChainging()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_e8322252(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mChainging() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mCotan()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_ea22184d(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mCotan() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mCourbet()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_61bfd001(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mCourbet() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mCreebet()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_bf842fa4(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mCreebet() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mDennis()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_509c7d76(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mDennis() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mDonkeyKong()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_5c501816(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mDonkeyKong() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mEarth()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_297fcbcb(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mEarth() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mEndboss()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_d9a2cb40(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mEndboss() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mFern()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_06a59022(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mFern() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mFighters()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_9f0962c9(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mFighters() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mFinding()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_787fbb72(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mFinding() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mFire()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_4f54c513(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mFire() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mGraham()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_dbfd581c(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mGraham() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mHeight
     {
         get => NativeMethods.TablePtr->C2.hs_get_182a4319((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mHumble()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_0b5e7964(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mHumble() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mIsPublic
     {
@@ -209,25 +183,21 @@ public sealed unsafe partial class Motif : global::System.IDisposable
         get => NativeMethods.TablePtr->C2.hs_get_3a8c3593((void*)__hosihikari_shim_handle) != 0;
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mKebab()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_874a411a(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mKebab() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mLowmist()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_0f6e54ae(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mLowmist() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mMatch()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_5e60894a(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mMatch() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mMeditative()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_5bc0c340(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mMeditative() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
@@ -235,85 +205,69 @@ public sealed unsafe partial class Motif : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_533c12f2((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mOrb()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_bfb1052d(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mOrb() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mOwlemons()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_2ad97ff5(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mOwlemons() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mPassage()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_96a91dfb(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPassage() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mPigscene()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_b6bd0525(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPigscene() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mPlant()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_2644386d(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPlant() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mPointer()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_3810c23c(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPointer() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mPond()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_4959fd4e(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPond() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mPool()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_591f7f39(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPool() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mPrairieRide()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_25f70d63(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPrairieRide() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mSea()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_4cc1ec93(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mSea() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mSkeleton()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_85e81eca(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mSkeleton() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mSkullAndRoses()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_f798e13c(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mSkullAndRoses() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mStage()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_421cbc4e(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mStage() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mSunflowers()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_05c6ce9a(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mSunflowers() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mSunset()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_d591f8ce(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mSunset() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mTides()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_7005f76a(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mTides() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUVs_Address
@@ -321,45 +275,38 @@ public sealed unsafe partial class Motif : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C2.hs_get_56b8129f((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mUnpacked()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_5e6fe22c(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mUnpacked() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mVoid()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_2ab272b7(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mVoid() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mWanderer()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_5b34439f(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mWanderer() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mWasteland()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_a4abbfa5(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mWasteland() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mWater()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_2f5716d1(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mWater() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mWidth
     {
         get => NativeMethods.TablePtr->C2.hs_get_a1f15aa1((void*)__hosihikari_shim_handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mWind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_347fb2ae(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mWind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Motif mWither()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Motif((nint)NativeMethods.TablePtr->C2.hs_method_10f7c3ba(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mWither() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

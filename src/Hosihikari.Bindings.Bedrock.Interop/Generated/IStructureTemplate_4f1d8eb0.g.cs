@@ -40,7 +40,7 @@ public sealed unsafe partial class IStructureTemplate : global::System.IDisposab
 
     public static IStructureTemplate Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructureTemplate arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_4f727dd7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_4f727dd7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,12 +55,12 @@ public sealed unsafe partial class IStructureTemplate : global::System.IDisposab
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BlockPos rawSize()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C2.hs_method_2df178bd((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPos((nint)NativeMethods.TablePtr->C1.hs_method_2df178bd((void*)__hosihikari_shim_handle));
     }
 
     public int shouldHandleUpgradeForBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block block)
     {
-        return NativeMethods.TablePtr->C2.hs_method_9e61a1f1((void*)__hosihikari_shim_handle, (void*)block.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_9e61a1f1((void*)__hosihikari_shim_handle, (void*)block.Handle);
     }
 
 
@@ -70,7 +70,7 @@ public sealed unsafe partial class IStructureTemplate : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_4f1d8eb0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_4f1d8eb0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

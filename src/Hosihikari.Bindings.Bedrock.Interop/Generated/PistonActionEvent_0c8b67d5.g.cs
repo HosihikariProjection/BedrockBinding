@@ -40,7 +40,7 @@ public sealed unsafe partial class PistonActionEvent : global::System.IDisposabl
 
     public static PistonActionEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.PistonActionEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7117a1c4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_7117a1c4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,26 +51,26 @@ public sealed unsafe partial class PistonActionEvent : global::System.IDisposabl
 
     public sbyte mActionType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_74fb00c5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_74fb00c5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_74fb00c5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_74fb00c5((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockSourceHandle_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_28eed5a2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_28eed5a2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPistonBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_eb7858de((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_eb7858de((void*)__hosihikari_shim_handle);
     }
 
     public bool mShouldCheckAttachedBlocks
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f299dfbc((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_f299dfbc((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_f299dfbc((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_f299dfbc((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class PistonActionEvent : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0c8b67d5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0c8b67d5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

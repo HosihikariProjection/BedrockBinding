@@ -38,27 +38,25 @@ public sealed unsafe partial class UndefinedSchema : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _doLoad(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaReader arg0, nint arg1, nint arg2, nint state)
-    {
-        NativeMethods.TablePtr->C5.hs_method_a67a2dff((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1, (void*)arg2, (void*)state);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doLoad(nint arg0, nint arg1, nint arg2, nint state) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _doSave(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaWriter arg0, nint any, nint state)
-    {
-        NativeMethods.TablePtr->C5.hs_method_ec1511eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)any, (void*)state);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _doSave(nint arg0, nint any, nint state) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _makeDescription(nint arg0, nint arg1) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UndefinedSchema Create(global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.UndefinedSchema arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_4914515c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_4914515c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,12 +67,12 @@ public sealed unsafe partial class UndefinedSchema : global::System.IDisposable
 
     public void doLoad(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaReader arg0, nint arg1, nint arg2, nint state)
     {
-        NativeMethods.TablePtr->C5.hs_method_356fc0fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1, (void*)arg2, (void*)state);
+        NativeMethods.TablePtr->C4.hs_method_356fc0fe((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1, (void*)arg2, (void*)state);
     }
 
     public void doSave(global::Hosihikari.Bindings.Bedrock.Interop.cereal.SchemaWriter arg0, nint any, nint state)
     {
-        NativeMethods.TablePtr->C5.hs_method_07e9c8d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)any, (void*)state);
+        NativeMethods.TablePtr->C4.hs_method_07e9c8d5((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)any, (void*)state);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'cereal::DescriptionConfig' is not a known bindable declaration.", false)]
@@ -88,7 +86,7 @@ public sealed unsafe partial class UndefinedSchema : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_0c0d6055((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_0c0d6055((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

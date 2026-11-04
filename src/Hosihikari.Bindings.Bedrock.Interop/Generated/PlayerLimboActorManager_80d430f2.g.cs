@@ -38,19 +38,17 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, global::Hosihikari.Bindings.Abi.SharedHandle? actorManager, global::Hosihikari.Bindings.Abi.SharedHandle? actorFactory)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_145dc524((void*)__hosihikari_shim_handle, levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint levelStorage, nint actorManager, nint actorFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_fc24a1d3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayerLimboActorManager Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_43c373c3();
+        var handle = NativeMethods.TablePtr->C2.hs_create_43c373c3();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +59,7 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
 
     public static PlayerLimboActorManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerLimboActorManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_9d3dae7e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_9d3dae7e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,67 +68,53 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
         return new PlayerLimboActorManager((nint)handle);
     }
 
-    public static PlayerLimboActorManager Create(global::Hosihikari.Bindings.Abi.SharedHandle? levelStorage, global::Hosihikari.Bindings.Abi.SharedHandle? actorManager, global::Hosihikari.Bindings.Abi.SharedHandle? actorFactory)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_935a253e(levelStorage?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), actorFactory?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PlayerLimboActorManager Create(nint levelStorage, nint actorManager, nint actorFactory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new PlayerLimboActorManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void clearOwnedEntityLimboForPlayer(nint playerId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void clearOwnedEntityLimboForPlayer(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID playerId)
-    {
-        NativeMethods.TablePtr->C3.hs_method_2b94b23c((void*)__hosihikari_shim_handle, (void*)playerId.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getOwnedEntityLimboStorageKeyForPlayer(nint playerId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string getOwnedEntityLimboStorageKeyForPlayer(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID playerId)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_02c3817a((void*)playerId.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
-
-    public void loadAllOwnedLimboActors()
-    {
-        NativeMethods.TablePtr->C3.hs_method_28da584f((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void loadAllOwnedLimboActors() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorFactory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3eea7d94((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3eea7d94((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3f8e58e3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3f8e58e3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelStorage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_63422553((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_63422553((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOwnedActorsDimensionTransferLimbo_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b028202f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b028202f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? processOwnedAgentForPlayer(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag agentCompoundTag, global::Hosihikari.Bindings.Bedrock.Interop.IAddActorEntityProxy addActorEntityProxy, global::Hosihikari.Bindings.Bedrock.Interop.DimensionHeightRange heightRange, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 spawnPosition)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_3fe73bf1((void*)__hosihikari_shim_handle, (void*)agentCompoundTag.Handle, (void*)addActorEntityProxy.Handle, (void*)heightRange.Handle, (void*)spawnPosition.Handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint processOwnedAgentForPlayer(nint agentCompoundTag, nint addActorEntityProxy, nint heightRange, nint spawnPosition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void transferActorToOwnedEntityLimbo(global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID playerUniqueID, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor)
-    {
-        NativeMethods.TablePtr->C3.hs_method_4a97fc9c((void*)__hosihikari_shim_handle, (void*)playerUniqueID.Handle, (void*)actor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void transferActorToOwnedEntityLimbo(nint playerUniqueID, nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -139,7 +123,7 @@ public sealed unsafe partial class PlayerLimboActorManager : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_80d430f2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_80d430f2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

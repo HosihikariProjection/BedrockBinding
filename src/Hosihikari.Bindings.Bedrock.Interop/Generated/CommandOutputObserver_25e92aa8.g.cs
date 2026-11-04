@@ -40,14 +40,14 @@ public sealed unsafe partial class CommandOutputObserver : global::System.IDispo
 
     public void onCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C1.hs_method_c7fc7210((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C0.hs_method_c7fc7210((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
 
     public nint mpSubject
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5245352c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_5245352c((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_5245352c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_5245352c((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class CommandOutputObserver : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_25e92aa8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_25e92aa8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

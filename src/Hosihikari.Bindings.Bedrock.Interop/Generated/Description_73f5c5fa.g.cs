@@ -38,10 +38,9 @@ public sealed unsafe partial class Description : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _deserializeData(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams deserializeDataParams)
-    {
-        NativeMethods.TablePtr->C1.hs_method_69c75a1d((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _deserializeData(nint deserializeDataParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Description Create(global::Hosihikari.Bindings.Bedrock.Interop.Description arg0)
     {
@@ -64,14 +63,13 @@ public sealed unsafe partial class Description : global::System.IDisposable
         return (nint)NativeMethods.TablePtr->C1.hs_method_4500630b((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'ActorDocumentDataParams' is not a known bindable declaration.", false)]
-    public bool parseDescription(nint actorDocumentDataParams) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'ActorDocumentDataParams' is not a known bindable declaration.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool parseDescription_35008189(nint actorDocumentDataParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool parseDescription(global::Hosihikari.Bindings.Bedrock.Interop.DeserializeDataParams deserializeDataParams)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_9b94a5e8((void*)__hosihikari_shim_handle, (void*)deserializeDataParams.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool parseDescription_9b94a5e8(nint deserializeDataParams) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

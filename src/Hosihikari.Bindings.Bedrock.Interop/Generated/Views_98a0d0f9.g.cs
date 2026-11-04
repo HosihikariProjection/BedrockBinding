@@ -40,7 +40,7 @@ public sealed unsafe partial class Views : global::System.IDisposable
 
     public static Views Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerValidation.ValidationSystem_Nested.Views arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_2c825fda((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_2c825fda((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class Views : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mView_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f7d4e4be((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f7d4e4be((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class Views : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_98a0d0f9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_98a0d0f9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

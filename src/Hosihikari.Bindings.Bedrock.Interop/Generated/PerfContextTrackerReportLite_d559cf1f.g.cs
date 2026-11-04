@@ -38,14 +38,13 @@ public sealed unsafe partial class PerfContextTrackerReportLite : global::System
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_98a1c46d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PerfContextTrackerReportLite Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_624b19b4();
+        var handle = NativeMethods.TablePtr->C2.hs_create_624b19b4();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class PerfContextTrackerReportLite : global::System
 
     public static PerfContextTrackerReportLite Create(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8d18a841((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8d18a841((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,18 +67,18 @@ public sealed unsafe partial class PerfContextTrackerReportLite : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2c11f8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_efcf342d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_efcf342d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5d4aad_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6e252430((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6e252430((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite((nint)NativeMethods.TablePtr->C3.hs_method_8cf76426((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PerfContextTrackerReportLite((nint)NativeMethods.TablePtr->C2.hs_method_8cf76426((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -89,7 +88,7 @@ public sealed unsafe partial class PerfContextTrackerReportLite : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d559cf1f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d559cf1f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

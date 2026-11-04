@@ -38,28 +38,13 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
         return __hs_handle;
     }
 
-    public int _onScoreChanged(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id, string objective, int score)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(objective);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(objective, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            return NativeMethods.TablePtr->C3.hs_method_12409c1e((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, score);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onScoreChanged(nint id, nint objective, int score) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlayerScoreboardEventListener Create(global::Hosihikari.Bindings.Bedrock.Interop.PlayerScoreboardEventListener arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_dbc9918e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_dbc9918e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,15 +53,14 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
         return new PlayerScoreboardEventListener((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubscribedObjectives getPlayerSubscriptions(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubscribedObjectives((nint)NativeMethods.TablePtr->C3.hs_method_f2333362((void*)__hosihikari_shim_handle, (void*)id.Handle, (void*)player.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getPlayerSubscriptions(nint id, nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubscribedObjectives_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0bb2cb7a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0bb2cb7a((void*)__hosihikari_shim_handle);
     }
 
     public int onScoreChanged(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId id, string objective, int score)
@@ -94,7 +78,7 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
         global::System.Text.Encoding.UTF8.GetBytes(objective, __hs_stringBytes1);
         fixed (byte* __hs_stringData1 = __hs_stringBytes1)
         {
-            return NativeMethods.TablePtr->C3.hs_method_c1a0c58c((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, score);
+            return NativeMethods.TablePtr->C2.hs_method_c1a0c58c((void*)__hosihikari_shim_handle, (void*)id.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, score);
         }
     }
 
@@ -105,7 +89,7 @@ public sealed unsafe partial class PlayerScoreboardEventListener : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0d8c9cff((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0d8c9cff((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,18 +38,17 @@ public sealed unsafe partial class PlanterItemComponentLegacyFactoryData : globa
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_3e0b2791((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PlanterItemComponentLegacyFactoryData Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_d82627f6();
+        var handle = NativeMethods.TablePtr->C2.hs_create_d82627f6();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +59,7 @@ public sealed unsafe partial class PlanterItemComponentLegacyFactoryData : globa
 
     public static PlanterItemComponentLegacyFactoryData Create(global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_61b1d210((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_61b1d210((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,29 +68,29 @@ public sealed unsafe partial class PlanterItemComponentLegacyFactoryData : globa
         return new PlanterItemComponentLegacyFactoryData((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void bindType(nint ctx, nint requiredToggles, nint releasedMinFormatVersion) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAllowedUseBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_2a66b249((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2a66b249((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9bfdf81f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9bfdf81f((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData((nint)NativeMethods.TablePtr->C3.hs_method_4d4e74d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PlanterItemComponentLegacyFactoryData((nint)NativeMethods.TablePtr->C2.hs_method_4d4e74d8((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -101,7 +100,7 @@ public sealed unsafe partial class PlanterItemComponentLegacyFactoryData : globa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c117161c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c117161c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,19 +40,19 @@ public sealed unsafe partial class ContainerClosePacketPayload
 
     public sbyte mContainerId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_095d6485((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_095d6485((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_095d6485((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_095d6485((void*)__hosihikari_shim_handle, value);
     }
 
     public sbyte mContainerType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_8c26e629((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8c26e629((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_8c26e629((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_8c26e629((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mServerInitiatedClose
     {
-        get => NativeMethods.TablePtr->C1.hs_get_08f83f3a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_08f83f3a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_08f83f3a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_08f83f3a((void*)__hosihikari_shim_handle, value);
     }
 }

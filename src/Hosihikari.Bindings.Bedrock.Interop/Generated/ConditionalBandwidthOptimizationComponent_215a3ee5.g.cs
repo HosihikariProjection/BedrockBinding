@@ -38,23 +38,21 @@ public sealed unsafe partial class ConditionalBandwidthOptimizationComponent : g
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_eab12c2e(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationComponent arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_335ea141((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_335ea141(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_f39b7bed((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ConditionalBandwidthOptimizationComponent Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e96c4f1d();
+        var handle = NativeMethods.TablePtr->C0.hs_create_e96c4f1d();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,57 +61,49 @@ public sealed unsafe partial class ConditionalBandwidthOptimizationComponent : g
         return new ConditionalBandwidthOptimizationComponent((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static ConditionalBandwidthOptimizationComponent Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ConditionalBandwidthOptimizationComponent Create_ded33903(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ConditionalBandwidthOptimizationComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationComponent arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_7ccbeadc((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ConditionalBandwidthOptimizationComponent Create_7ccbeadc(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ConditionalBandwidthOptimizationComponent((nint)handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization getCurrentOptimizationValues(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimization((nint)NativeMethods.TablePtr->C1.hs_method_db21bad3((void*)__hosihikari_shim_handle, (void*)owner.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getCurrentOptimizationValues(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCachedOptimizationValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e2175332((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_e2175332((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConditionalValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0a7d79ad((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_0a7d79ad((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultValues_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5ed15760((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_5ed15760((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLastRequestedValuesTick_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_85faf5eb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_85faf5eb((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationComponent arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationComponent((nint)NativeMethods.TablePtr->C1.hs_method_113e77b6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ConditionalBandwidthOptimizationComponent((nint)NativeMethods.TablePtr->C0.hs_method_113e77b6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -123,7 +113,7 @@ public sealed unsafe partial class ConditionalBandwidthOptimizationComponent : g
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_215a3ee5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_215a3ee5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

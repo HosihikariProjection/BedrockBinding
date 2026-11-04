@@ -38,100 +38,88 @@ public sealed unsafe partial class BitStream : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool AddBitsAndReallocate(uint numberOfBitsToWrite)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_f157360d((void*)__hosihikari_shim_handle, numberOfBitsToWrite) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool AddBitsAndReallocate(uint numberOfBitsToWrite) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool Read(nint outByteArray, uint numberOfBytes)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_e55f7ae4((void*)__hosihikari_shim_handle, (void*)outByteArray, numberOfBytes) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool Read(nint outByteArray, uint numberOfBytes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool ReadAlignedBytes(nint inOutByteArray, uint numberOfBytesToRead)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_bf343d84((void*)__hosihikari_shim_handle, (void*)inOutByteArray, numberOfBytesToRead) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool ReadAlignedBytes(nint inOutByteArray, uint numberOfBytesToRead) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool ReadAlignedVar16(nint inOutByteArray)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_29bb4693((void*)__hosihikari_shim_handle, (void*)inOutByteArray) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool ReadAlignedVar16(nint inOutByteArray) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool ReadAlignedVar32(nint inOutByteArray)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_a3eb5456((void*)__hosihikari_shim_handle, (void*)inOutByteArray) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool ReadAlignedVar32(nint inOutByteArray) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool ReadBits(nint inOutByteArray, uint numberOfBitsToRead, bool alignBitsToRight)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_2c366bfb((void*)__hosihikari_shim_handle, (void*)inOutByteArray, numberOfBitsToRead, alignBitsToRight) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool ReadBits(nint inOutByteArray, uint numberOfBitsToRead, bool alignBitsToRight) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void Write(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.BitStream? bitStream, uint numberOfBits)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3c7e6639((void*)__hosihikari_shim_handle, (void*)(bitStream?.Handle ?? 0), numberOfBits);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Write_3c7e6639(nint bitStream, uint numberOfBits) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void Write(nint inputByteArray, uint numberOfBytes)
-    {
-        NativeMethods.TablePtr->C3.hs_method_88b728c1((void*)__hosihikari_shim_handle, (void*)inputByteArray, numberOfBytes);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void Write_88b728c1(nint inputByteArray, uint numberOfBytes) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void WriteAlignedBytes(nint inByteArray, uint numberOfBytesToWrite)
-    {
-        NativeMethods.TablePtr->C3.hs_method_5ee3702b((void*)__hosihikari_shim_handle, (void*)inByteArray, numberOfBytesToWrite);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void WriteAlignedBytes(nint inByteArray, uint numberOfBytesToWrite) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void WriteAlignedVar16(nint inByteArray)
-    {
-        NativeMethods.TablePtr->C3.hs_method_c4111cab((void*)__hosihikari_shim_handle, (void*)inByteArray);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void WriteAlignedVar16(nint inByteArray) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void WriteAlignedVar32(nint inByteArray)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f8405c38((void*)__hosihikari_shim_handle, (void*)inByteArray);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void WriteAlignedVar32(nint inByteArray) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void WriteBits(nint inByteArray, uint numberOfBitsToWrite, bool rightAlignedBits)
-    {
-        NativeMethods.TablePtr->C3.hs_method_6bcf4323((void*)__hosihikari_shim_handle, (void*)inByteArray, numberOfBitsToWrite, rightAlignedBits);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void WriteBits(nint inByteArray, uint numberOfBitsToWrite, bool rightAlignedBits) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool copyData
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ec258963((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_ec258963((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_ec258963((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_ec258963((void*)__hosihikari_shim_handle, value);
     }
 
     public nint data
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c3c89e95((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_c3c89e95((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c3c89e95((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_c3c89e95((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public uint numberOfBitsAllocated
     {
-        get => NativeMethods.TablePtr->C3.hs_get_46b3661a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_46b3661a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_46b3661a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_46b3661a((void*)__hosihikari_shim_handle, value);
     }
 
     public uint numberOfBitsUsed
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2e5e3fac((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2e5e3fac((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2e5e3fac((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2e5e3fac((void*)__hosihikari_shim_handle, value);
     }
 
     public uint readOffset
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b33239a6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_b33239a6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_b33239a6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_b33239a6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint stackData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_27cb53df((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_27cb53df((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -140,7 +128,7 @@ public sealed unsafe partial class BitStream : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9a819809((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9a819809((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

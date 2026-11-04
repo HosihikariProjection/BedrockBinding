@@ -40,14 +40,14 @@ public sealed unsafe partial class PlayerInteractionModelComponent : global::Sys
 
     public int mModel
     {
-        get => NativeMethods.TablePtr->C3.hs_get_3912f046((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_3912f046((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_3912f046((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_3912f046((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mShouldApplyBlockBreakingDelay
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f0e8204e((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_f0e8204e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_f0e8204e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_f0e8204e((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class PlayerInteractionModelComponent : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c22fd554((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c22fd554((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

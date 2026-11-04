@@ -49,25 +49,21 @@ public sealed unsafe partial class BreathableDefinition : global::System.IDispos
         return new BreathableDefinition((nint)handle);
     }
 
-    public void addBreathableBlockDescriptor(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor blockDescriptor)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a1424ce9((void*)__hosihikari_shim_handle, (void*)blockDescriptor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addBreathableBlockDescriptor(nint blockDescriptor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void addNonBreathableBlockDescriptor(global::Hosihikari.Bindings.Bedrock.Interop.BlockDescriptor blockDescriptor)
-    {
-        NativeMethods.TablePtr->C0.hs_method_6678705b((void*)__hosihikari_shim_handle, (void*)blockDescriptor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addNonBreathableBlockDescriptor(nint blockDescriptor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C0.hs_method_b5df6b4e(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initialize(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.BreathableComponent component)
-    {
-        NativeMethods.TablePtr->C0.hs_method_455e0cbb((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)component.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initialize(nint entity, nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBreathableBlocks_Address

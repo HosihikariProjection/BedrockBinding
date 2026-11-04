@@ -38,10 +38,9 @@ public sealed unsafe partial class SimulatedPlayerPostAIStepSystem : global::Sys
         return __hs_handle;
     }
 
-    public static void _doSimulatedPlayerPostAIStepSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.ActorOwnerComponent actorOwnerComponent)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5491ba78((void*)arg0.Handle, (void*)actorOwnerComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doSimulatedPlayerPostAIStepSystem(nint arg0, nint actorOwnerComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -49,7 +48,7 @@ public sealed unsafe partial class SimulatedPlayerPostAIStepSystem : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_649206b8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_649206b8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,290 +38,267 @@ public sealed unsafe partial class ProjectileComponentDefinition : global::Syste
         return __hs_handle;
     }
 
-    public nint _ctor()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_f391f750((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_ab247681(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileComponentDefinition arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_680b071d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_680b071d(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_0c72fe66((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3 DEFAULT_OFFSET()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C4.hs_method_d00584fc(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DEFAULT_OFFSET() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_53fedaf4();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ProjectileComponentDefinition Create()
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8fb7de15();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ProjectileComponentDefinition Create() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ProjectileComponentDefinition((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ProjectileComponentDefinition Create_85c2b68c(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static ProjectileComponentDefinition Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ProjectileComponentDefinition Create_8d5a5328(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ProjectileComponentDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileComponentDefinition arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8d5a5328((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ProjectileComponentDefinition((nint)handle);
-    }
-
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_19887b29((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte mAnchor
     {
-        get => NativeMethods.TablePtr->C4.hs_get_81c91ad6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_81c91ad6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_81c91ad6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_81c91ad6((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCatchFire
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c53de9ea((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_c53de9ea((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c53de9ea((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c53de9ea((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCritParticleOnHurt
     {
-        get => NativeMethods.TablePtr->C4.hs_get_358d2b64((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_358d2b64((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_358d2b64((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_358d2b64((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mDestroyOnHurt
     {
-        get => NativeMethods.TablePtr->C4.hs_get_057f8e3a((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_057f8e3a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_057f8e3a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_057f8e3a((void*)__hosihikari_shim_handle, value);
     }
 
     public float mGravity
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0478b8ce((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_0478b8ce((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0478b8ce((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0478b8ce((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHitEntitySound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e21af4d5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e21af4d5((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mHitGroundSound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_00cecc91((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_00cecc91((void*)__hosihikari_shim_handle);
     }
 
     public bool mHitNearestPassenger
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4b612967((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_4b612967((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4b612967((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_4b612967((void*)__hosihikari_shim_handle, value);
     }
 
     public int mHitParticle
     {
-        get => NativeMethods.TablePtr->C4.hs_get_3ab9261b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_3ab9261b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_3ab9261b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_3ab9261b((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHitWater
     {
-        get => NativeMethods.TablePtr->C4.hs_get_b793f1ff((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_b793f1ff((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b793f1ff((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_b793f1ff((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mIgnoredEntities_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8b37848b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8b37848b((void*)__hosihikari_shim_handle);
     }
 
     public float mInertiaMod
     {
-        get => NativeMethods.TablePtr->C4.hs_get_fcfcd131((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_fcfcd131((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_fcfcd131((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_fcfcd131((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsDangerous
     {
-        get => NativeMethods.TablePtr->C4.hs_get_685830f1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_685830f1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_685830f1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_685830f1((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsHoming
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f3e26d08((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_f3e26d08((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f3e26d08((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_f3e26d08((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsolatedPhysics
     {
-        get => NativeMethods.TablePtr->C4.hs_get_73667cbf((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_73667cbf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_73667cbf((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_73667cbf((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mLightningOnHit
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d8e7a124((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_d8e7a124((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d8e7a124((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_d8e7a124((void*)__hosihikari_shim_handle, value);
     }
 
     public float mLiquidInertia
     {
-        get => NativeMethods.TablePtr->C4.hs_get_678ccdd4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_678ccdd4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_678ccdd4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_678ccdd4((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mMultipleHits
     {
-        get => NativeMethods.TablePtr->C4.hs_get_6962d5c7((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_6962d5c7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6962d5c7((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_6962d5c7((void*)__hosihikari_shim_handle, value);
     }
 
     public float mOnFireTime
     {
-        get => NativeMethods.TablePtr->C4.hs_get_57718c84((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_57718c84((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_57718c84((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_57718c84((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnHitCommands_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_06d078c7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_06d078c7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnHitEvent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2657d844((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2657d844((void*)__hosihikari_shim_handle);
     }
 
     public int mPotionEffect
     {
-        get => NativeMethods.TablePtr->C4.hs_get_b3432774((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_b3432774((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b3432774((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b3432774((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mProjectileOffset_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c2cf2a14((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c2cf2a14((void*)__hosihikari_shim_handle);
     }
 
     public float mProjectilePower
     {
-        get => NativeMethods.TablePtr->C4.hs_get_0ca8639c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_0ca8639c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_0ca8639c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_0ca8639c((void*)__hosihikari_shim_handle, value);
     }
 
     public float mReflectImmunityInSeconds
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f3964f0f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f3964f0f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f3964f0f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f3964f0f((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mReflectOnHurt
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ec406363((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_ec406363((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ec406363((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_ec406363((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mShootSound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d7eeea58((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d7eeea58((void*)__hosihikari_shim_handle);
     }
 
     public bool mShootTarget
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f0fd327d((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_f0fd327d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f0fd327d((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_f0fd327d((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mShouldBounce
     {
-        get => NativeMethods.TablePtr->C4.hs_get_269906ed((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_269906ed((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_269906ed((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_269906ed((void*)__hosihikari_shim_handle, value);
     }
 
     public float mSplashRange
     {
-        get => NativeMethods.TablePtr->C4.hs_get_6cf37ce3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_6cf37ce3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_6cf37ce3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_6cf37ce3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mSpreadFire
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4b6de0c2((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_4b6de0c2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4b6de0c2((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_4b6de0c2((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mStopOnHurt
     {
-        get => NativeMethods.TablePtr->C4.hs_get_c79dd977((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_c79dd977((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c79dd977((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_c79dd977((void*)__hosihikari_shim_handle, value);
     }
 
     public float mUncertaintyBase
     {
-        get => NativeMethods.TablePtr->C4.hs_get_d2fc6766((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_d2fc6766((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_d2fc6766((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_d2fc6766((void*)__hosihikari_shim_handle, value);
     }
 
     public float mUncertaintyMultiplier
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f5b9bd7a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f5b9bd7a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f5b9bd7a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f5b9bd7a((void*)__hosihikari_shim_handle, value);
     }
 
     public float mUpwardsAngleOffset
     {
-        get => NativeMethods.TablePtr->C4.hs_get_271bb428((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_271bb428((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_271bb428((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_271bb428((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_57cddc2d(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileComponentDefinition operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileComponentDefinition arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileComponentDefinition((nint)NativeMethods.TablePtr->C4.hs_method_affd2aa4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_affd2aa4(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_50.ProjectileComponentDefinition arg0)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_8dfb2d4e((void*)__hosihikari_shim_handle, (void*)arg0.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool operator_equal(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -330,7 +307,7 @@ public sealed unsafe partial class ProjectileComponentDefinition : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_739ce554((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_739ce554((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

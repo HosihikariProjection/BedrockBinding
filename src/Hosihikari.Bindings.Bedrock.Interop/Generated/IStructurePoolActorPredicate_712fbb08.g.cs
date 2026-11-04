@@ -40,7 +40,7 @@ public sealed unsafe partial class IStructurePoolActorPredicate : global::System
 
     public static IStructurePoolActorPredicate Create(global::Hosihikari.Bindings.Bedrock.Interop.IStructurePoolActorPredicate arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b72505eb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_b72505eb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class IStructurePoolActorPredicate : global::System
 
     public void appendMetadataKey(global::Hosihikari.Bindings.Bedrock.Interop.Util.XXHash hash)
     {
-        NativeMethods.TablePtr->C2.hs_method_dfe894b8((void*)__hosihikari_shim_handle, (void*)hash.Handle);
+        NativeMethods.TablePtr->C1.hs_method_dfe894b8((void*)__hosihikari_shim_handle, (void*)hash.Handle);
     }
 
     public bool test(string actor)
@@ -69,7 +69,7 @@ public sealed unsafe partial class IStructurePoolActorPredicate : global::System
         global::System.Text.Encoding.UTF8.GetBytes(actor, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C2.hs_method_1aa146d1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C1.hs_method_1aa146d1((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class IStructurePoolActorPredicate : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_712fbb08((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_712fbb08((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

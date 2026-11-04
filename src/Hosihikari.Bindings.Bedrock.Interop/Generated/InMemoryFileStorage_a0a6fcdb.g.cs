@@ -40,7 +40,7 @@ public sealed unsafe partial class InMemoryFileStorage : global::System.IDisposa
 
     public static InMemoryFileStorage Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b99e13dc();
+        var handle = NativeMethods.TablePtr->C1.hs_create_b99e13dc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class InMemoryFileStorage : global::System.IDisposa
 
     public static InMemoryFileStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_055c3fa4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_055c3fa4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,43 +60,41 @@ public sealed unsafe partial class InMemoryFileStorage : global::System.IDisposa
         return new InMemoryFileStorage((nint)handle);
     }
 
-    public bool deleteFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path fileName)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_58c4ac50((void*)__hosihikari_shim_handle, (void*)fileName.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool deleteFile(nint fileName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool findFile(global::Hosihikari.Bindings.Bedrock.Interop.Core.Path fileName, global::Hosihikari.Bindings.Abi.SharedHandle? outFile)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_79f9f263((void*)__hosihikari_shim_handle, (void*)fileName.Handle, outFile?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool findFile(nint fileName, nint outFile) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk7c3254_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_77d7f0bb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_77d7f0bb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc80eb9_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b9a155c1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b9a155c1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcc7879_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_cdbfbd8a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_cdbfbd8a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdd8d87_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2cfa933d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2cfa933d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage((nint)NativeMethods.TablePtr->C2.hs_method_b78d23eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryFileStorage((nint)NativeMethods.TablePtr->C1.hs_method_b78d23eb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -105,7 +103,7 @@ public sealed unsafe partial class InMemoryFileStorage : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a0a6fcdb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_a0a6fcdb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

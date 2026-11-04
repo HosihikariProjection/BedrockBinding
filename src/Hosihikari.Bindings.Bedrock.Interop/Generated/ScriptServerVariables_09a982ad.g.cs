@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptServerVariables : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Abi.SharedHandle? packConfigManager, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig contextConfig)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_6bf43871((void*)__hosihikari_shim_handle, packConfigManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)contextConfig.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint packConfigManager, nint contextConfig) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptServerVariables Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class ScriptServerVariables : global::System.IDispo
         return new ScriptServerVariables((nint)handle);
     }
 
-    public static ScriptServerVariables Create(global::Hosihikari.Bindings.Abi.SharedHandle? packConfigManager, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextConfig contextConfig)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_00a671f6(packConfigManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)contextConfig.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ScriptServerVariables((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ScriptServerVariables Create(nint packConfigManager, nint contextConfig) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptServerVariables Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleServerAdmin.ScriptServerVariables arg0)
     {
@@ -76,10 +68,9 @@ public sealed unsafe partial class ScriptServerVariables : global::System.IDispo
         return new ScriptServerVariables((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding bind()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ClassBinding((nint)NativeMethods.TablePtr->C3.hs_method_e18294c1());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint bind() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkacdc32_Address

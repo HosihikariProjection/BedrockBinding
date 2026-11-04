@@ -40,7 +40,7 @@ public sealed unsafe partial class SyncActorPropertyPacketPayload : global::Syst
 
     public static SyncActorPropertyPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SyncActorPropertyPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_ea1b5781((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ea1b5781((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class SyncActorPropertyPacketPayload : global::Syst
     // The native field type is not projected; this is the address of the field storage.
     public nint mPropertyData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_d50b5ec4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d50b5ec4((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class SyncActorPropertyPacketPayload : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_fc50068c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_fc50068c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

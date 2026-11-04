@@ -40,7 +40,7 @@ public sealed unsafe partial class SendCodecSpec : global::System.IDisposable
 
     public static SendCodecSpec Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_08e1e08d();
+        var handle = NativeMethods.TablePtr->C4.hs_create_08e1e08d();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class SendCodecSpec : global::System.IDisposable
 
     public static SendCodecSpec Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config_Nested.SendCodecSpec arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_06848777((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_06848777((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,48 +63,48 @@ public sealed unsafe partial class SendCodecSpec : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk17c131_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_674b14dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_674b14dc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk20505e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e2c08617((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e2c08617((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk42daf3_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_06a84b15((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_06a84b15((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8490c4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_3dfe2366((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_3dfe2366((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk94972b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_11a1a138((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_11a1a138((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkab6438_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_ff566850((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ff566850((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkde1b4d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_22bc78f7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_22bc78f7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config_Nested.SendCodecSpec operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config_Nested.SendCodecSpec arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config_Nested.SendCodecSpec((nint)NativeMethods.TablePtr->C5.hs_method_e50832bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.AudioSendStream_Nested.Config_Nested.SendCodecSpec((nint)NativeMethods.TablePtr->C4.hs_method_e50832bc((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -113,7 +113,7 @@ public sealed unsafe partial class SendCodecSpec : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_b29d6848((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b29d6848((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

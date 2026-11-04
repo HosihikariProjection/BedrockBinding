@@ -60,10 +60,9 @@ public sealed unsafe partial class FlushingIOController : global::System.IDispos
         return new FlushingIOController((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result flush()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C0.hs_method_80356398((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint flush() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5f53e1_Address
@@ -94,10 +93,9 @@ public sealed unsafe partial class FlushingIOController : global::System.IDispos
         return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.FlushingIOController((nint)NativeMethods.TablePtr->C0.hs_method_940180ef((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Core.Result write(nint data, ulong byteCount)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Core.Result((nint)NativeMethods.TablePtr->C0.hs_method_eecf5af3((void*)__hosihikari_shim_handle, (void*)data, byteCount));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint write(nint data, ulong byteCount) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

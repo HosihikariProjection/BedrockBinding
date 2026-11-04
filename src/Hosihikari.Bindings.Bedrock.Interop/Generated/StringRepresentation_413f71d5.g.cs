@@ -40,7 +40,7 @@ public sealed unsafe partial class StringRepresentation : global::System.IDispos
 
     public static StringRepresentation Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.Legacy.ExpressionNode_Nested.StringRepresentation arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_3df2b149((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_3df2b149((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class StringRepresentation : global::System.IDispos
 
     public short mMolangVersion
     {
-        get => NativeMethods.TablePtr->C4.hs_get_4e52dbbb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_4e52dbbb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_4e52dbbb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4e52dbbb((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c7721f0b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c7721f0b((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class StringRepresentation : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_413f71d5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_413f71d5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

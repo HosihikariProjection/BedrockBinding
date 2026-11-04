@@ -38,18 +38,17 @@ public sealed unsafe partial class StructurePoolBlockTagRule : global::System.ID
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _ctor(nint sourceBlockTagPredicate, nint resultKey, nint resultValue) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_da928fe1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StructurePoolBlockTagRule Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_d7d30f21();
+        var handle = NativeMethods.TablePtr->C3.hs_create_d7d30f21();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +59,7 @@ public sealed unsafe partial class StructurePoolBlockTagRule : global::System.ID
 
     public static StructurePoolBlockTagRule Create(global::Hosihikari.Bindings.Bedrock.Interop.StructurePoolBlockTagRule arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0efb5281((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_0efb5281((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,26 +68,26 @@ public sealed unsafe partial class StructurePoolBlockTagRule : global::System.ID
         return new StructurePoolBlockTagRule((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static StructurePoolBlockTagRule Create(nint sourceBlockTagPredicate, nint resultKey, nint resultValue) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mResultKey_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e8b5ccf0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e8b5ccf0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mResultValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_40ad4919((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_40ad4919((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSourcePredicate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a686f0f8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a686f0f8((void*)__hosihikari_shim_handle);
     }
 
 
@@ -98,7 +97,7 @@ public sealed unsafe partial class StructurePoolBlockTagRule : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_e1c8703c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e1c8703c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

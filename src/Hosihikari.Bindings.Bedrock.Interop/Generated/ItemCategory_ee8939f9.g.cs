@@ -38,20 +38,17 @@ public sealed unsafe partial class ItemCategory : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static void bindCreativeItemCategoryType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_faf66501((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindCreativeItemCategoryType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: expected error type 'SharedTypes::v1_21_110::ItemCategory::CreativeItemCategoryStringError' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint creativeItemCategoryFromString(nint str) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: expected error type 'SharedTypes::v1_21_110::ItemCategory::CreativeItemCategoryStringError' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string stringFromCreativeItemCategory(byte category)
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_6e8e3777(category);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint stringFromCreativeItemCategory(nint category) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -59,7 +56,7 @@ public sealed unsafe partial class ItemCategory : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ee8939f9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ee8939f9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

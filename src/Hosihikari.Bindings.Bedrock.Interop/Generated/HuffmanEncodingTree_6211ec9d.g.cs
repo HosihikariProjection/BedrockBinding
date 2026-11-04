@@ -38,19 +38,17 @@ public sealed unsafe partial class HuffmanEncodingTree : global::System.IDisposa
         return __hs_handle;
     }
 
-    public void FreeMemory()
-    {
-        NativeMethods.TablePtr->C3.hs_method_7e463967((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void FreeMemory() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void GenerateFromFrequencyTable(nint frequencyTable)
-    {
-        NativeMethods.TablePtr->C3.hs_method_82bd4bec((void*)__hosihikari_shim_handle, (void*)frequencyTable);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void GenerateFromFrequencyTable(nint frequencyTable) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static HuffmanEncodingTree Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e045c609();
+        var handle = NativeMethods.TablePtr->C2.hs_create_e045c609();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +59,7 @@ public sealed unsafe partial class HuffmanEncodingTree : global::System.IDisposa
 
     public static HuffmanEncodingTree Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_0e10e1d7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_0e10e1d7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,26 +68,25 @@ public sealed unsafe partial class HuffmanEncodingTree : global::System.IDisposa
         return new HuffmanEncodingTree((nint)handle);
     }
 
-    public static void InsertNodeIntoSortedList(nint node, nint huffmanEncodingTreeNodeList)
-    {
-        NativeMethods.TablePtr->C3.hs_method_290ac6ee((void*)node, (void*)huffmanEncodingTreeNodeList);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void InsertNodeIntoSortedList(nint node, nint huffmanEncodingTreeNodeList) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9c3a19_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7ac38e5b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_7ac38e5b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkffa0a4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ab68bed1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ab68bed1((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree((nint)NativeMethods.TablePtr->C3.hs_method_e5d21632((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.HuffmanEncodingTree((nint)NativeMethods.TablePtr->C2.hs_method_e5d21632((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -98,7 +95,7 @@ public sealed unsafe partial class HuffmanEncodingTree : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_6211ec9d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_6211ec9d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

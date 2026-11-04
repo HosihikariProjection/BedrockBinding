@@ -40,7 +40,7 @@ public sealed unsafe partial class SubscribedObjectives : global::System.IDispos
 
     public static SubscribedObjectives Create(global::Hosihikari.Bindings.Bedrock.Interop.SubscribedObjectives arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9e1d8706((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9e1d8706((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,35 +49,20 @@ public sealed unsafe partial class SubscribedObjectives : global::System.IDispos
         return new SubscribedObjectives((nint)handle);
     }
 
-    public void addObjective(string objective)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(objective);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(objective, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_4f62d3fc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void addObjective(nint objective) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mObjectives_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_2a20b65a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2a20b65a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPlayer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0ecae609((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0ecae609((void*)__hosihikari_shim_handle);
     }
 
 
@@ -87,7 +72,7 @@ public sealed unsafe partial class SubscribedObjectives : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_1e72cbbf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_1e72cbbf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

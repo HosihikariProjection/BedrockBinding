@@ -50,10 +50,9 @@ public sealed unsafe partial class LegacyBodyControl : global::System.IDisposabl
         set => NativeMethods.TablePtr->C2.hs_set_7557e126((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _clientTick(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C2.hs_method_6f7ca593((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _clientTick(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacyBodyControl Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacyBodyControl arg0)
     {

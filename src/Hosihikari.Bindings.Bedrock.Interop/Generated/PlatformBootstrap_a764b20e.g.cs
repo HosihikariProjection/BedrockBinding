@@ -38,60 +38,29 @@ public sealed unsafe partial class PlatformBootstrap : global::System.IDisposabl
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: variadic methods are not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _makeCreateDirectoryError(nint code, nint errorBuffer, ulong errorBufferSize, nint errorFormat) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variadic methods are not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: variadic methods are not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _makeLoadError(nint code, nint errorBuffer, ulong errorBufferSize, nint errorFormat) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variadic methods are not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: variadic methods are not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _makeSaveError(nint code, nint errorBuffer, ulong errorBufferSize, nint errorFormat) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: variadic methods are not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult _rawCreateDirectory_std(nint path, nint errorBuffer, ulong errorBufferSize)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.CreateDirectoryResult((nint)NativeMethods.TablePtr->C0.hs_method_aa2eb93f((void*)__hosihikari_shim_handle, (void*)path, (void*)errorBuffer, errorBufferSize));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _rawCreateDirectory_std(nint path, nint errorBuffer, ulong errorBufferSize) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.LoadResult _rawLoadFile_cstdio(nint buffer, ulong bufferSize, string root, nint path, nint errorBuffer, ulong errorBufferSize)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(root);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(root, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.LoadResult((nint)NativeMethods.TablePtr->C0.hs_method_81c005ff((void*)__hosihikari_shim_handle, (void*)buffer, bufferSize, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)path, (void*)errorBuffer, errorBufferSize));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _rawLoadFile_cstdio(nint buffer, ulong bufferSize, nint root, nint path, nint errorBuffer, ulong errorBufferSize) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult _rawSaveFile_cstdio(nint buffer, ulong bufferSize, string root, nint path, nint errorBuffer, ulong errorBufferSize)
-    {
-        var __hs_stringByteCount2 = global::System.Text.Encoding.UTF8.GetByteCount(root);
-        scoped global::System.Span<byte> __hs_stringBytes2;
-        if (__hs_stringByteCount2 <= 256)
-        {
-            __hs_stringBytes2 = stackalloc byte[__hs_stringByteCount2 == 0 ? 1 : __hs_stringByteCount2];
-        }
-        else
-        {
-            __hs_stringBytes2 = new byte[__hs_stringByteCount2];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(root, __hs_stringBytes2);
-        fixed (byte* __hs_stringData2 = __hs_stringBytes2)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PlatformBootstrap_Nested.SaveResult((nint)NativeMethods.TablePtr->C0.hs_method_1e34263f((void*)__hosihikari_shim_handle, (void*)buffer, bufferSize, __hs_stringData2, (nuint)__hs_stringByteCount2, (void*)path, (void*)errorBuffer, errorBufferSize));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _rawSaveFile_cstdio(nint buffer, ulong bufferSize, nint root, nint path, nint errorBuffer, ulong errorBufferSize) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

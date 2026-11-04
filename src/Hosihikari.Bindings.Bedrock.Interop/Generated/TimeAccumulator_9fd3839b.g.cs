@@ -40,20 +40,20 @@ public sealed unsafe partial class TimeAccumulator : global::System.IDisposable
 
     public ulong mCount
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e88b4c4d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e88b4c4d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e88b4c4d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e88b4c4d((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mMaxSample
     {
-        get => NativeMethods.TablePtr->C4.hs_get_af2446f5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_af2446f5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_af2446f5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_af2446f5((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mNanoseconds
     {
-        get => NativeMethods.TablePtr->C4.hs_get_18c3d2d1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_18c3d2d1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_18c3d2d1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_18c3d2d1((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -62,7 +62,7 @@ public sealed unsafe partial class TimeAccumulator : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_9fd3839b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9fd3839b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,9 +38,9 @@ public sealed unsafe partial class INetherNetTransportInterfaceCallbacks : globa
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<bool>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _OnSessionResponse(nint networkID, ulong sessionId, nint assertion, nint fingerprintJson, bool isLan) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Bedrock::Threading::Async<bool>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static INetherNetTransportInterfaceCallbacks Create(global::Hosihikari.Bindings.Bedrock.Interop.NetherNet.INetherNetTransportInterfaceCallbacks arg0)
     {

@@ -40,30 +40,28 @@ public sealed unsafe partial class CombatRegenerationComponent : global::System.
 
     public void _applyCombatBuffsToMob(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Actor mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_90d06360((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C0.hs_method_90d06360((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)mob.Handle);
     }
 
-    public bool _shouldApplyCombatBuffs(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.Actor mob)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_deff0ee5((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)mob.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _shouldApplyCombatBuffs(nint owner, nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCombatRegenerationListener_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_42ee7696((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_42ee7696((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetID_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_14c29b97((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_14c29b97((void*)__hosihikari_shim_handle);
     }
 
-    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner)
-    {
-        NativeMethods.TablePtr->C1.hs_method_f27ffa08((void*)__hosihikari_shim_handle, (void*)owner.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick(nint owner) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -72,7 +70,7 @@ public sealed unsafe partial class CombatRegenerationComponent : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_b70b79c1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_b70b79c1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

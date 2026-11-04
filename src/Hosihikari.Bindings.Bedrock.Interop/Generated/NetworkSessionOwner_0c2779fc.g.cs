@@ -44,9 +44,9 @@ public sealed unsafe partial class NetworkSessionOwner : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C2.hs_get_0332fa13((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static NetworkSessionOwner Create()
     {
@@ -70,10 +70,9 @@ public sealed unsafe partial class NetworkSessionOwner : global::System.IDisposa
         return new NetworkSessionOwner((nint)handle);
     }
 
-    public void createNetworkSession(int transportLayer)
-    {
-        NativeMethods.TablePtr->C2.hs_method_e15627ad((void*)__hosihikari_shim_handle, transportLayer);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void createNetworkSession(nint transportLayer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka4b08c_Address

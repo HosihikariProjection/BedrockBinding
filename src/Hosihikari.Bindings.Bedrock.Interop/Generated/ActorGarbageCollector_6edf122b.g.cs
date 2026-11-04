@@ -67,15 +67,13 @@ public sealed unsafe partial class ActorGarbageCollector : global::System.IDispo
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c51ce2b1((void*)__hosihikari_shim_handle);
     }
 
-    public void teardown()
-    {
-        NativeMethods.TablePtr->C0.hs_method_bec10795((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void teardown() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void update()
-    {
-        NativeMethods.TablePtr->C0.hs_method_70c47930((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void update() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

@@ -38,16 +38,13 @@ public sealed unsafe partial class RealmsStoriesData : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_8c1bcdd3((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint levelStorage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string REALMS_STORIES_PREFIX()
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_08dd0dd7();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint REALMS_STORIES_PREFIX() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RealmsStoriesData Create()
     {
@@ -60,16 +57,9 @@ public sealed unsafe partial class RealmsStoriesData : global::System.IDisposabl
         return new RealmsStoriesData((nint)handle);
     }
 
-    public static RealmsStoriesData Create(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_6e5d39c4((void*)levelStorage.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new RealmsStoriesData((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static RealmsStoriesData Create(nint levelStorage) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static RealmsStoriesData Create(global::Hosihikari.Bindings.Bedrock.Interop.RealmsStoriesData arg0)
     {
@@ -82,10 +72,9 @@ public sealed unsafe partial class RealmsStoriesData : global::System.IDisposabl
         return new RealmsStoriesData((nint)handle);
     }
 
-    public static nint mRealmEventInternalNames()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_b8d60354();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mRealmEventInternalNames() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk28ab59_Address
@@ -110,48 +99,17 @@ public sealed unsafe partial class RealmsStoriesData : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.RealmsStoriesData((nint)NativeMethods.TablePtr->C3.hs_method_e6cb3891((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void setPlayerRealmEventPublished(int eventId, string xuid)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(xuid);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C3.hs_method_1077fb98((void*)__hosihikari_shim_handle, eventId, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setPlayerRealmEventPublished(nint eventId, nint xuid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setWorldRealmEventPublished(int eventId)
-    {
-        NativeMethods.TablePtr->C3.hs_method_87319ef7((void*)__hosihikari_shim_handle, eventId);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setWorldRealmEventPublished(nint eventId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool wasPlayerRealmEventPublished(int eventId, string xuid)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(xuid);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(xuid, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            return NativeMethods.TablePtr->C3.hs_method_e1232f35((void*)__hosihikari_shim_handle, eventId, __hs_stringData1, (nuint)__hs_stringByteCount1) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool wasPlayerRealmEventPublished(nint eventId, nint xuid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

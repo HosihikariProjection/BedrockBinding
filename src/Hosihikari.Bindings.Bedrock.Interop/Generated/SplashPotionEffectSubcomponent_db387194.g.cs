@@ -40,7 +40,7 @@ public sealed unsafe partial class SplashPotionEffectSubcomponent : global::Syst
 
     public static SplashPotionEffectSubcomponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SplashPotionEffectSubcomponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_2384505a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_2384505a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,23 +51,23 @@ public sealed unsafe partial class SplashPotionEffectSubcomponent : global::Syst
 
     public void doOnHitEffect(global::Hosihikari.Bindings.Bedrock.Interop.Actor owner, global::Hosihikari.Bindings.Bedrock.Interop.ProjectileComponent component)
     {
-        NativeMethods.TablePtr->C4.hs_method_e1d9a341((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e1d9a341((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)component.Handle);
     }
 
     public nint getName()
     {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d81da007((void*)__hosihikari_shim_handle);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_d81da007((void*)__hosihikari_shim_handle);
     }
 
     public int mPotionEffect
     {
-        get => NativeMethods.TablePtr->C4.hs_get_8cd009d5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_8cd009d5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8cd009d5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8cd009d5((void*)__hosihikari_shim_handle, value);
     }
 
     public void writetoJSON(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value arg0)
     {
-        NativeMethods.TablePtr->C4.hs_method_6cc7f503((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+        NativeMethods.TablePtr->C3.hs_method_6cc7f503((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
     }
 
 
@@ -77,7 +77,7 @@ public sealed unsafe partial class SplashPotionEffectSubcomponent : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_db387194((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_db387194((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

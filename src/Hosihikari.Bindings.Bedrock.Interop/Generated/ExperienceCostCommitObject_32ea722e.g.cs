@@ -44,20 +44,17 @@ public sealed unsafe partial class ExperienceCostCommitObject : global::System.I
         set => NativeMethods.TablePtr->C1.hs_set_70659135((void*)__hosihikari_shim_handle, value);
     }
 
-    public bool _append(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationCommitObject? other)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_31e42617((void*)__hosihikari_shim_handle, (void*)(other?.Handle ?? 0)) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _append(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _canCommit(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_1eff57d3((void*)__hosihikari_shim_handle, (void*)screenContext.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _canCommit(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _commit(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
-    {
-        NativeMethods.TablePtr->C1.hs_method_2b720d36((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _commit(nint screenContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ExperienceCostCommitObject Create()
     {

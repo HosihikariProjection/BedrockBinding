@@ -38,23 +38,21 @@ public sealed unsafe partial class SpawnActorParameters : global::System.IDispos
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_7e77d2e2(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_8b68b02c((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_8b68b02c(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_e552d585((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SpawnActorParameters Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_49899bce();
+        var handle = NativeMethods.TablePtr->C3.hs_create_49899bce();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,163 +61,108 @@ public sealed unsafe partial class SpawnActorParameters : global::System.IDispos
         return new SpawnActorParameters((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static SpawnActorParameters Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static SpawnActorParameters Create_d41259c7(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static SpawnActorParameters Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters arg0)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_0f864288((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SpawnActorParameters((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static SpawnActorParameters Create_0f864288(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_abfb35f8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_abfb35f8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilters_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_e23bd82c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e23bd82c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemDescriptor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f9320122((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f9320122((void*)__hosihikari_shim_handle);
     }
 
     public int mNumToSpawn
     {
-        get => NativeMethods.TablePtr->C4.hs_get_da6afd7f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_da6afd7f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_da6afd7f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_da6afd7f((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnItemSpawnEvent_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_09689d8b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_09689d8b((void*)__hosihikari_shim_handle);
     }
 
     public bool mShouldLeash
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1daa7ad4((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_1daa7ad4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1daa7ad4((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_1daa7ad4((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mSingleUse
     {
-        get => NativeMethods.TablePtr->C4.hs_get_bb254e76((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_bb254e76((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bb254e76((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_bb254e76((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSpawnMethod_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f55e9069((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f55e9069((void*)__hosihikari_shim_handle);
     }
 
     public uint mSpawnSound
     {
-        get => NativeMethods.TablePtr->C4.hs_get_a31b0195((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_a31b0195((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a31b0195((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a31b0195((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSpawnTimeMax
     {
-        get => NativeMethods.TablePtr->C4.hs_get_ab3186cf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_ab3186cf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ab3186cf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ab3186cf((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSpawnTimeMin
     {
-        get => NativeMethods.TablePtr->C4.hs_get_87e1f95b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_87e1f95b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_87e1f95b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_87e1f95b((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters((nint)NativeMethods.TablePtr->C4.hs_method_1952d441((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.SpawnActorParameters((nint)NativeMethods.TablePtr->C3.hs_method_1952d441((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void setItem(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor itemDescriptor)
-    {
-        NativeMethods.TablePtr->C4.hs_method_e61475e7((void*)__hosihikari_shim_handle, (void*)itemDescriptor.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setItem(nint itemDescriptor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setSpawnEntity(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_37a08937((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setSpawnEntity(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setSpawnEvent(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_3a254b63((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setSpawnEvent(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setSpawnSound(string name)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(name);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(name, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C4.hs_method_d5dc20dc((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setSpawnSound(nint name) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setSpawnTimeMax(nint value)
-    {
-        NativeMethods.TablePtr->C4.hs_method_cb1c7078((void*)__hosihikari_shim_handle, (void*)value);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setSpawnTimeMax(nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setSpawnTimeMin(nint value)
-    {
-        NativeMethods.TablePtr->C4.hs_method_b0746a9c((void*)__hosihikari_shim_handle, (void*)value);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setSpawnTimeMin(nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -228,7 +171,7 @@ public sealed unsafe partial class SpawnActorParameters : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_819894ec((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_819894ec((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

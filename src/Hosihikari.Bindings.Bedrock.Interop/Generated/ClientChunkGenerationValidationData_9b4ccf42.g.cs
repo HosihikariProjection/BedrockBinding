@@ -38,10 +38,9 @@ public sealed unsafe partial class ClientChunkGenerationValidationData : global:
         return __hs_handle;
     }
 
-    public void _captureChunkData(nint data, global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource chunkSource)
-    {
-        NativeMethods.TablePtr->C0.hs_method_3e81aa15((void*)__hosihikari_shim_handle, (void*)data, (void*)chunkSource.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _captureChunkData(nint data, nint chunkSource) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

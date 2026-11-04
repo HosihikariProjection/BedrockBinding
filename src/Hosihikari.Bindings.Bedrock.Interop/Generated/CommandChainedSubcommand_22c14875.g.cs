@@ -40,14 +40,14 @@ public sealed unsafe partial class CommandChainedSubcommand : global::System.IDi
 
     public string getCommandName()
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_24cf3666((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C0.hs_method_24cf3666((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCommand_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a0d71e1f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_a0d71e1f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -57,7 +57,7 @@ public sealed unsafe partial class CommandChainedSubcommand : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_22c14875((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_22c14875((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

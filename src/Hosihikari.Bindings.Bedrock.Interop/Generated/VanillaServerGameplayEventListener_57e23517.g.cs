@@ -38,70 +38,50 @@ public sealed unsafe partial class VanillaServerGameplayEventListener : global::
         return __hs_handle;
     }
 
-    public int _onActorCreated(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, byte initializationMethod)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_842f633d((void*)__hosihikari_shim_handle, (void*)actor.Handle, initializationMethod);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onActorCreated(nint actor, nint initializationMethod) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onActorCreationAttemptFailed(global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, string message)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(message);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(message, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            return NativeMethods.TablePtr->C4.hs_method_5cb602f9((void*)__hosihikari_shim_handle, (void*)actor.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onActorCreationAttemptFailed(nint actor, nint message) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onBlockInteractedWith(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_881563b3((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)blockPos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onBlockInteractedWith(nint player, nint blockPos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onBlockPlacedByPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Block placedBlock, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, bool isUnderwater)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_82ac4d3d((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)placedBlock.Handle, (void*)pos.Handle, isUnderwater);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onBlockPlacedByPlayer(nint player, nint placedBlock, nint pos, bool isUnderwater) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.ActorHurtEvent actorHurtEvent)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_1324180b((void*)__hosihikari_shim_handle, (void*)actorHurtEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent_1324180b(nint actorHurtEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerDamageEvent playerDamageEvent)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_14562bfb((void*)__hosihikari_shim_handle, (void*)playerDamageEvent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _onEvent_14562bfb(nint playerDamageEvent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int _onEvent(global::Hosihikari.Bindings.Bedrock.Interop.PlayerOpenContainerEvent playerOpenContainerEvent)
     {
         return NativeMethods.TablePtr->C4.hs_method_aa4483e8((void*)__hosihikari_shim_handle, (void*)playerOpenContainerEvent.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForEventListenerDispatcherActorEventListener() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForEventListenerDispatcherBlockEventListener() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForEventListenerDispatcherLevelEventListener() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftableForEventListenerDispatcherPlayerEventListener() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static VanillaServerGameplayEventListener Create(global::Hosihikari.Bindings.Bedrock.Interop.VanillaServerGameplayEventListener arg0)
     {

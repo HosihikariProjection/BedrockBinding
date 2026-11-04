@@ -40,7 +40,7 @@ public sealed unsafe partial class ContainerContentChangeListener : global::Syst
 
     public static ContainerContentChangeListener Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerContentChangeListener arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_c5630bfc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_c5630bfc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ContainerContentChangeListener : global::Syst
 
     public void containerContentChanged(int slot)
     {
-        NativeMethods.TablePtr->C1.hs_method_e27e2ce1((void*)__hosihikari_shim_handle, slot);
+        NativeMethods.TablePtr->C0.hs_method_e27e2ce1((void*)__hosihikari_shim_handle, slot);
     }
 
 
@@ -61,7 +61,7 @@ public sealed unsafe partial class ContainerContentChangeListener : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_32cb9f94((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_32cb9f94((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,7 +40,7 @@ public sealed unsafe partial class PostTickPositionDeltaComponent : global::Syst
 
     public static PostTickPositionDeltaComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.PostTickPositionDeltaComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8c71f5c3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8c71f5c3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -53,7 +53,7 @@ public sealed unsafe partial class PostTickPositionDeltaComponent : global::Syst
     // The native field type is not projected; this is the address of the field storage.
     public nint mValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_dc19349a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_dc19349a((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -62,7 +62,7 @@ public sealed unsafe partial class PostTickPositionDeltaComponent : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_936b7f5b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_936b7f5b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

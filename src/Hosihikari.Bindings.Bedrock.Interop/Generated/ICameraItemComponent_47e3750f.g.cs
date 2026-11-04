@@ -40,7 +40,7 @@ public sealed unsafe partial class ICameraItemComponent : global::System.IDispos
 
     public static ICameraItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ICameraItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_79597247((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_79597247((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,62 +51,62 @@ public sealed unsafe partial class ICameraItemComponent : global::System.IDispos
 
     public float blackBarsDuration()
     {
-        return NativeMethods.TablePtr->C2.hs_method_4a8f0062((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_4a8f0062((void*)__hosihikari_shim_handle);
     }
 
     public float blackBarsScreenRatio()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7c5ed5fd((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_7c5ed5fd((void*)__hosihikari_shim_handle);
     }
 
     public bool canPlace(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Actor actor, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos blockPos, byte face)
     {
-        return NativeMethods.TablePtr->C2.hs_method_87d39d39((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)blockPos.Handle, face) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_87d39d39((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)actor.Handle, (void*)blockPos.Handle, face) != 0;
     }
 
     public float pictureDuration()
     {
-        return NativeMethods.TablePtr->C2.hs_method_6ecc453a((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_6ecc453a((void*)__hosihikari_shim_handle);
     }
 
     public void registerCallbacks(nint callbacks)
     {
-        NativeMethods.TablePtr->C2.hs_method_beb628d1((void*)__hosihikari_shim_handle, (void*)callbacks);
+        NativeMethods.TablePtr->C1.hs_method_beb628d1((void*)__hosihikari_shim_handle, (void*)callbacks);
     }
 
     public void releaseUsing(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, int durationLeft)
     {
-        NativeMethods.TablePtr->C2.hs_method_ab92891a((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, durationLeft);
+        NativeMethods.TablePtr->C1.hs_method_ab92891a((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, durationLeft);
     }
 
     public float shutterDuration()
     {
-        return NativeMethods.TablePtr->C2.hs_method_1266d836((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_1266d836((void*)__hosihikari_shim_handle);
     }
 
     public float shutterScreenRatio()
     {
-        return NativeMethods.TablePtr->C2.hs_method_6d344b56((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_6d344b56((void*)__hosihikari_shim_handle);
     }
 
     public float slideAwayDuration()
     {
-        return NativeMethods.TablePtr->C2.hs_method_359c50c8((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_359c50c8((void*)__hosihikari_shim_handle);
     }
 
     public void takePictureNow(global::Hosihikari.Bindings.Bedrock.Interop.Player player, global::Hosihikari.Bindings.Bedrock.Interop.Actor? camera, global::Hosihikari.Bindings.Bedrock.Interop.Actor? target)
     {
-        NativeMethods.TablePtr->C2.hs_method_2633c9b1((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)(camera?.Handle ?? 0), (void*)(target?.Handle ?? 0));
+        NativeMethods.TablePtr->C1.hs_method_2633c9b1((void*)__hosihikari_shim_handle, (void*)player.Handle, (void*)(camera?.Handle ?? 0), (void*)(target?.Handle ?? 0));
     }
 
     public void use(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack instance, global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte handSlot)
     {
-        NativeMethods.TablePtr->C2.hs_method_05416473((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot);
+        NativeMethods.TablePtr->C1.hs_method_05416473((void*)__hosihikari_shim_handle, (void*)instance.Handle, (void*)player.Handle, handSlot);
     }
 
     public bool useOn(global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arg0, global::Hosihikari.Bindings.Bedrock.Interop.Actor arg1, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg2, byte arg3, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 arg4, byte arg5)
     {
-        return NativeMethods.TablePtr->C2.hs_method_f6da542c((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, arg3, (void*)arg4.Handle, arg5) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_f6da542c((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, arg3, (void*)arg4.Handle, arg5) != 0;
     }
 
 
@@ -116,7 +116,7 @@ public sealed unsafe partial class ICameraItemComponent : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_47e3750f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_47e3750f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

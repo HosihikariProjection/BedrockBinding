@@ -38,14 +38,13 @@ public sealed unsafe partial class WorldTemplateInfo : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest manifest, global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy? accessStrategy)
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_8380b033((void*)__hosihikari_shim_handle, (void*)manifest.Handle, (void*)(accessStrategy?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint manifest, nint accessStrategy) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WorldTemplateInfo Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_68f54bbf();
+        var handle = NativeMethods.TablePtr->C4.hs_create_68f54bbf();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class WorldTemplateInfo : global::System.IDisposabl
 
     public static WorldTemplateInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_ce5d69dc((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_ce5d69dc((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,35 +64,27 @@ public sealed unsafe partial class WorldTemplateInfo : global::System.IDisposabl
         return new WorldTemplateInfo((nint)handle);
     }
 
-    public static WorldTemplateInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplatePackManifest manifest, global::Hosihikari.Bindings.Bedrock.Interop.PackAccessStrategy? accessStrategy)
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_6d366dd6((void*)manifest.Handle, (void*)(accessStrategy?.Handle ?? 0));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static WorldTemplateInfo Create(nint manifest, nint accessStrategy) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new WorldTemplateInfo((nint)handle);
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'WorldTemplateData' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint buildTemplateData(nint manifest, nint accessStrategy) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'WorldTemplateData' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo getInvalid()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)NativeMethods.TablePtr->C5.hs_method_13bc2290(), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint getInvalid() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk207bb5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_4e8a2b34((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4e8a2b34((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)NativeMethods.TablePtr->C5.hs_method_3bb6c451((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.WorldTemplateInfo((nint)NativeMethods.TablePtr->C4.hs_method_3bb6c451((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -102,7 +93,7 @@ public sealed unsafe partial class WorldTemplateInfo : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_0138d179((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_0138d179((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

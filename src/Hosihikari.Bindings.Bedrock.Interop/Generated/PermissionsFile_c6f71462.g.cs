@@ -40,7 +40,7 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
 
     public static PermissionsFile Create(global::Hosihikari.Bindings.Bedrock.Interop.PermissionsFile arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_edbe3d55((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_edbe3d55((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,66 +49,46 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
         return new PermissionsFile((nint)handle);
     }
 
-    public static string _getPermissionIdForPlayer(global::Hosihikari.Bindings.Bedrock.Interop.Player player)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_af73ac96((void*)player.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint _getPermissionIdForPlayer(nint player) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void applyPlayerPermissionsFromDisk(global::Hosihikari.Bindings.Bedrock.Interop.Player player, byte opCommandPermissionLevel)
-    {
-        NativeMethods.TablePtr->C3.hs_method_baa14a98((void*)__hosihikari_shim_handle, (void*)player.Handle, opCommandPermissionLevel);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void applyPlayerPermissionsFromDisk(nint player, nint opCommandPermissionLevel) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFilePath_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_28207037((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_28207037((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPermissions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4ef33bd6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4ef33bd6((void*)__hosihikari_shim_handle);
     }
 
     public void persistPlayerPermissionsToDisk(global::Hosihikari.Bindings.Bedrock.Interop.Player player, sbyte permission)
     {
-        NativeMethods.TablePtr->C3.hs_method_6b995daa((void*)__hosihikari_shim_handle, (void*)player.Handle, permission);
+        NativeMethods.TablePtr->C2.hs_method_6b995daa((void*)__hosihikari_shim_handle, (void*)player.Handle, permission);
     }
 
-    public void persistPlayerPermissionsToDisk(string playerId, sbyte permission)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(playerId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(playerId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C3.hs_method_c45c42c4((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, permission);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void persistPlayerPermissionsToDisk(nint playerId, nint permission) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::tuple<FileReadResult, Json::Value>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint readPermissionFile() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::tuple<FileReadResult, Json::Value>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int reload()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_b87bd9cd((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint reload() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int reloadAndApply(global::Hosihikari.Bindings.Abi.SharedHandle? userManager, byte opCommandPermissionLevel)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_dc68e118((void*)__hosihikari_shim_handle, userManager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), opCommandPermissionLevel);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint reloadAndApply(nint userManager, nint opCommandPermissionLevel) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -117,7 +97,7 @@ public sealed unsafe partial class PermissionsFile : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c6f71462((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c6f71462((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

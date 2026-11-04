@@ -40,7 +40,7 @@ public sealed unsafe partial class RequestIdAssignments : global::System.IDispos
 
     public static RequestIdAssignments Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionHandler_Nested.RequestIdAssignments arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_107f7b0a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_107f7b0a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class RequestIdAssignments : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8b313ece((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8b313ece((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExpireTime_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3ba7475c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3ba7475c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class RequestIdAssignments : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_941294a6((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_941294a6((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

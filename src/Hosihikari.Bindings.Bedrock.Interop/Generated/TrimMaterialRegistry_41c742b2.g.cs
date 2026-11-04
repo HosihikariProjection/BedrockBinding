@@ -49,17 +49,13 @@ public sealed unsafe partial class TrimMaterialRegistry : global::System.IDispos
         return new TrimMaterialRegistry((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.TrimMaterial? getTrimMaterialByMaterialId(global::Hosihikari.Bindings.Bedrock.Interop.HashedString materialId)
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_7c54ae5e((void*)__hosihikari_shim_handle, (void*)materialId.Handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.TrimMaterial((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getTrimMaterialByMaterialId(nint materialId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void initializeServer()
-    {
-        NativeMethods.TablePtr->C4.hs_method_71132378((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void initializeServer() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTrimMaterials_Address

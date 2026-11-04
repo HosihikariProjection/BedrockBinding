@@ -40,8 +40,8 @@ public sealed unsafe partial class I18nObserver : global::System.IDisposable
 
     public nint mpSubject
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ab3a72af((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ab3a72af((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_ab3a72af((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_ab3a72af((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void onLanguageChanged(string code, bool languageSystemInitializing)
@@ -59,18 +59,18 @@ public sealed unsafe partial class I18nObserver : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(code, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_a9a909de((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, languageSystemInitializing);
+            NativeMethods.TablePtr->C1.hs_method_a9a909de((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, languageSystemInitializing);
         }
     }
 
     public void onLanguageKeywordsLoadedFromPack(global::Hosihikari.Bindings.Bedrock.Interop.PackManifest manifest)
     {
-        NativeMethods.TablePtr->C2.hs_method_4b41220a((void*)__hosihikari_shim_handle, (void*)manifest.Handle);
+        NativeMethods.TablePtr->C1.hs_method_4b41220a((void*)__hosihikari_shim_handle, (void*)manifest.Handle);
     }
 
     public void onLanguagesLoaded()
     {
-        NativeMethods.TablePtr->C2.hs_method_a9d6a15c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_a9d6a15c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -80,7 +80,7 @@ public sealed unsafe partial class I18nObserver : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_b630d4e8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_b630d4e8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

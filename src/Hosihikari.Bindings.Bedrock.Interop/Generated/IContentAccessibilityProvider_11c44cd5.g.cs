@@ -41,12 +41,12 @@ public sealed unsafe partial class IContentAccessibilityProvider : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2be30cc4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_2be30cc4((void*)__hosihikari_shim_handle);
     }
 
     public static IContentAccessibilityProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.IContentAccessibilityProvider arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3a2fd8a3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_3a2fd8a3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,7 +57,7 @@ public sealed unsafe partial class IContentAccessibilityProvider : global::Syste
 
     public bool canAccess(global::Hosihikari.Bindings.Bedrock.Interop.ContentIdentity contentIdentity)
     {
-        return NativeMethods.TablePtr->C2.hs_method_0091a432((void*)__hosihikari_shim_handle, (void*)contentIdentity.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_0091a432((void*)__hosihikari_shim_handle, (void*)contentIdentity.Handle) != 0;
     }
 
 
@@ -67,7 +67,7 @@ public sealed unsafe partial class IContentAccessibilityProvider : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_11c44cd5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_11c44cd5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

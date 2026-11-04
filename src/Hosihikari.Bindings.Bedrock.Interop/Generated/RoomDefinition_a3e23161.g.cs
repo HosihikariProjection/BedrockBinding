@@ -49,10 +49,9 @@ public sealed unsafe partial class RoomDefinition : global::System.IDisposable
         return new RoomDefinition((nint)handle);
     }
 
-    public bool findSource(int scanIndex)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_bc7a82d5((void*)__hosihikari_shim_handle, scanIndex) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool findSource(int scanIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mClaimed
     {
@@ -90,10 +89,9 @@ public sealed unsafe partial class RoomDefinition : global::System.IDisposable
         set => NativeMethods.TablePtr->C3.hs_set_04f3a4b2((void*)__hosihikari_shim_handle, value);
     }
 
-    public void setConnection(nint direction, global::Hosihikari.Bindings.Abi.SharedHandle? definition)
-    {
-        NativeMethods.TablePtr->C3.hs_method_4ff39be6((void*)__hosihikari_shim_handle, (void*)direction, definition?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setConnection(nint direction, nint definition) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

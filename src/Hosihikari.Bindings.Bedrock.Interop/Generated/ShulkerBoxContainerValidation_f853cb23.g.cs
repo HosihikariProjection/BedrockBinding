@@ -38,19 +38,18 @@ public sealed unsafe partial class ShulkerBoxContainerValidation : global::Syste
         return __hs_handle;
     }
 
-    public int _getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_f7aeb288((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getContainerSize(nint screenContext, nint container) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
     {
-        return NativeMethods.TablePtr->C4.hs_method_f7b808b7((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_f7b808b7((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
     }
 
     public static ShulkerBoxContainerValidation Create(global::Hosihikari.Bindings.Bedrock.Interop.ShulkerBoxContainerValidation arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_26473501((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_26473501((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,12 +60,12 @@ public sealed unsafe partial class ShulkerBoxContainerValidation : global::Syste
 
     public int getContainerSize(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, global::Hosihikari.Bindings.Bedrock.Interop.Container container)
     {
-        return NativeMethods.TablePtr->C4.hs_method_ab9b6a78((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
+        return NativeMethods.TablePtr->C3.hs_method_ab9b6a78((void*)__hosihikari_shim_handle, (void*)screenContext.Handle, (void*)container.Handle);
     }
 
     public bool isItemAllowedInSlot(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext arg0, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, int amount, bool arg4)
     {
-        return NativeMethods.TablePtr->C4.hs_method_98884214((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_98884214((void*)__hosihikari_shim_handle, (void*)arg0.Handle, slot, (void*)item.Handle, amount, arg4) != 0;
     }
 
 
@@ -76,7 +75,7 @@ public sealed unsafe partial class ShulkerBoxContainerValidation : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_f853cb23((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_f853cb23((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

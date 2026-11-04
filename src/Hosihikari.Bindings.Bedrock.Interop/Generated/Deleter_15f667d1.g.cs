@@ -40,7 +40,7 @@ public sealed unsafe partial class Deleter : global::System.IDisposable
 
     public static Deleter Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_8ef32100();
+        var handle = NativeMethods.TablePtr->C4.hs_create_8ef32100();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,12 +56,12 @@ public sealed unsafe partial class Deleter : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint m_func_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_c637d98a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c637d98a((void*)__hosihikari_shim_handle);
     }
 
     public void operator_call(nint p)
     {
-        NativeMethods.TablePtr->C5.hs_method_2db03f23((void*)__hosihikari_shim_handle, (void*)p);
+        NativeMethods.TablePtr->C4.hs_method_2db03f23((void*)__hosihikari_shim_handle, (void*)p);
     }
 
     public void Dispose()
@@ -70,7 +70,7 @@ public sealed unsafe partial class Deleter : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_15f667d1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_15f667d1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

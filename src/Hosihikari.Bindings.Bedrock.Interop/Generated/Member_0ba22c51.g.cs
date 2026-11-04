@@ -60,15 +60,13 @@ public sealed unsafe partial class Member : global::System.IDisposable
         return new Member((nint)handle);
     }
 
-    public bool check(nint value)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_74faf3ef((void*)__hosihikari_shim_handle, (void*)value) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool check(nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool doCheck(nint value)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_7f9f9778((void*)__hosihikari_shim_handle, (void*)value) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool doCheck(nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4020a9_Address

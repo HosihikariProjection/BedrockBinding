@@ -38,17 +38,13 @@ public sealed unsafe partial class ScriptAsyncGameTestFunctionRunResult : global
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError? _getError()
-    {
-        var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_7965d155((void*)__hosihikari_shim_handle, &__hs_hasValue);
-        return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.gametest.GameTestError((nint)__hs_handle) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getError() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isComplete()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_66620b6b((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isComplete() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptAsyncGameTestFunctionRunResult Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptModuleGameTest.ScriptAsyncGameTestFunctionRunResult arg0)
     {

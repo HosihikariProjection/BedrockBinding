@@ -38,19 +38,17 @@ public sealed unsafe partial class MinecartMoveAlongRailSystem : global::System.
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'Optional<const VehicleComponent>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _calculateRailMovementSystem(nint context, nint railMovementComponent, nint snapOnRailComponent, nint stateVectorComponent, nint vehicleComponent, nint playerView, nint mod) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'Optional<const VehicleComponent>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _postRailMovementCalculateMinecartPositionSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.SnapOnRailComponent snapOnRailComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, nint mod, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource constBlockSource)
-    {
-        NativeMethods.TablePtr->C2.hs_method_19c74a0b((void*)context.Handle, (void*)snapOnRailComponent.Handle, (void*)stateVectorComponent.Handle, (void*)mod, (void*)constBlockSource.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _postRailMovementCalculateMinecartPositionSystem(nint context, nint snapOnRailComponent, nint stateVectorComponent, nint mod, nint constBlockSource) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _preRailMovementCalculateMinecartPositionSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext context, global::Hosihikari.Bindings.Bedrock.Interop.OffsetsComponent offsetsComponent, global::Hosihikari.Bindings.Bedrock.Interop.StateVectorComponent stateVectorComponent, global::Hosihikari.Bindings.Bedrock.Interop.FallDistanceComponent fallDistanceComponent, global::Hosihikari.Bindings.Bedrock.Interop.SnapOnRailComponent snapOnRailComponent, nint mod, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource constBlockSource)
-    {
-        NativeMethods.TablePtr->C2.hs_method_4b3977f3((void*)context.Handle, (void*)offsetsComponent.Handle, (void*)stateVectorComponent.Handle, (void*)fallDistanceComponent.Handle, (void*)snapOnRailComponent.Handle, (void*)mod, (void*)constBlockSource.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _preRailMovementCalculateMinecartPositionSystem(nint context, nint offsetsComponent, nint stateVectorComponent, nint fallDistanceComponent, nint snapOnRailComponent, nint mod, nint constBlockSource) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

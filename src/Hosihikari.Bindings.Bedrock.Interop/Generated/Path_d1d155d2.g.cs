@@ -40,12 +40,12 @@ public sealed unsafe partial class Path : global::System.IDisposable
 
     public void _dtor()
     {
-        NativeMethods.TablePtr->C3.hs_method_c186a5c9((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C2.hs_method_c186a5c9((void*)__hosihikari_shim_handle);
     }
 
     public static Path Create(global::Hosihikari.Bindings.Bedrock.Interop.Path arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_1cfa4219((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_1cfa4219((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -54,38 +54,35 @@ public sealed unsafe partial class Path : global::System.IDisposable
         return new Path((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 currentPos(global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C3.hs_method_47b28fda((void*)__hosihikari_shim_handle, (void*)(actor?.Handle ?? 0)));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint currentPos(nint actor) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Vec3 getPos(global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, ulong index)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)NativeMethods.TablePtr->C3.hs_method_1547a850((void*)__hosihikari_shim_handle, (void*)(actor?.Handle ?? 0), index));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getPos(nint actor, ulong index) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte mCompletionType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2763e32d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2763e32d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2763e32d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2763e32d((void*)__hosihikari_shim_handle, value);
     }
 
     public ulong mIndex
     {
-        get => NativeMethods.TablePtr->C3.hs_get_916ed217((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_916ed217((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_916ed217((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_916ed217((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mNodes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5eb9626f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5eb9626f((void*)__hosihikari_shim_handle);
     }
 
-    public void setSize(ulong length)
-    {
-        NativeMethods.TablePtr->C3.hs_method_2499209e((void*)__hosihikari_shim_handle, length);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setSize(ulong length) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -94,7 +91,7 @@ public sealed unsafe partial class Path : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d1d155d2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d1d155d2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

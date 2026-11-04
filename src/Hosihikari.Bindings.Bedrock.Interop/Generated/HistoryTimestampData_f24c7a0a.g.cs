@@ -40,7 +40,7 @@ public sealed unsafe partial class HistoryTimestampData : global::System.IDispos
 
     public static HistoryTimestampData Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b3179945();
+        var handle = NativeMethods.TablePtr->C2.hs_create_b3179945();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class HistoryTimestampData : global::System.IDispos
 
     public static HistoryTimestampData Create(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryTimestampData arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_670153b8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_670153b8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,32 +60,31 @@ public sealed unsafe partial class HistoryTimestampData : global::System.IDispos
         return new HistoryTimestampData((nint)handle);
     }
 
-    public static nint mSequenceIdGenerator()
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_ab65a245();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mSequenceIdGenerator() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk274cb5_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_dc8fb793((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_dc8fb793((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4baf21_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8d760925((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8d760925((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcc9bee_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b90e7375((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b90e7375((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryTimestampData operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryTimestampData arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryTimestampData((nint)NativeMethods.TablePtr->C3.hs_method_838c8ef4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PredictedMovementComponent_Nested.HistoryTimestampData((nint)NativeMethods.TablePtr->C2.hs_method_838c8ef4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -94,7 +93,7 @@ public sealed unsafe partial class HistoryTimestampData : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_f24c7a0a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_f24c7a0a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class StringBasedRuntime : global::System.IDisposab
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny _run(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ContextId contextId, global::Hosihikari.Bindings.Bedrock.Interop.Scripting.IPayload? payload, byte? privilege)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Scripting.ResultAny((nint)NativeMethods.TablePtr->C3.hs_method_1a4256bc((void*)__hosihikari_shim_handle, (void*)contextId.Handle, (void*)(payload?.Handle ?? 0), privilege ?? default(byte), privilege.HasValue));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _run(nint contextId, nint payload, nint privilege) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StringBasedRuntime Create(global::Hosihikari.Bindings.Bedrock.Interop.Scripting.StringBasedRuntime arg0)
     {

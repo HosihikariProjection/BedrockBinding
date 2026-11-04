@@ -40,7 +40,7 @@ public sealed unsafe partial class ContentLogEndPointData : global::System.IDisp
 
     public static ContentLogEndPointData Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog_Nested.ContentLogEndPointData arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_5167015c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_5167015c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class ContentLogEndPointData : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mContentLogEndPoint_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7d1bd1bc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_7d1bd1bc((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class ContentLogEndPointData : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d463bdcc((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_d463bdcc((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class ResetJumpRidingScaleSystem : global::System.I
         return __hs_handle;
     }
 
-    public static void _doResetJumpRidingScaleSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.JumpRidingScaleComponent jumpRidingScaleComponent, global::Hosihikari.Bindings.Bedrock.Interop.VanillaClientGameplayComponent vanillaClientGameplayComponent)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f53b6a57((void*)arg0.Handle, (void*)jumpRidingScaleComponent.Handle, (void*)vanillaClientGameplayComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doResetJumpRidingScaleSystem(nint arg0, nint jumpRidingScaleComponent, nint vanillaClientGameplayComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

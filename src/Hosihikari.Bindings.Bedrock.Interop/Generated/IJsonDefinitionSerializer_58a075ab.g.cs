@@ -38,13 +38,13 @@ public sealed unsafe partial class IJsonDefinitionSerializer : global::System.ID
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IJsonDefinitionSerializer Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_0211f5bc();
+        var handle = NativeMethods.TablePtr->C1.hs_create_0211f5bc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class IJsonDefinitionSerializer : global::System.ID
 
     public static IJsonDefinitionSerializer Create(global::Hosihikari.Bindings.Bedrock.Interop.IJsonDefinitionSerializer arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f50e7fb8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f50e7fb8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,30 +66,30 @@ public sealed unsafe partial class IJsonDefinitionSerializer : global::System.ID
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? _serializeDefinitionInstance(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value arg0, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion arg1, bool arg2, bool arg3)
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_ce5ddf84((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_ce5ddf84((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, arg2, arg3);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkff0ac1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_514f687c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_514f687c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.IJsonDefinitionSerializer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.IJsonDefinitionSerializer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.IJsonDefinitionSerializer((nint)NativeMethods.TablePtr->C2.hs_method_5dc70135((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.IJsonDefinitionSerializer((nint)NativeMethods.TablePtr->C1.hs_method_5dc70135((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? serializeDefinitionInstance(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value arg0, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion arg1)
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_7ad430ea((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_7ad430ea((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? serializeDefinitionInstance(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value arg0, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion arg1, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg2, bool arg3)
     {
-        var __hs_shared = NativeMethods.TablePtr->C2.hs_method_8ab59662((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, arg3);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_8ab59662((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle, (void*)arg2.Handle, arg3);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -100,7 +100,7 @@ public sealed unsafe partial class IJsonDefinitionSerializer : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_58a075ab((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_58a075ab((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

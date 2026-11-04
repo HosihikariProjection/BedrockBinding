@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockPermutationDescription : global::System.
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockPermutationDescription arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_fe3eb388((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockPermutationDescription Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class BlockPermutationDescription : global::System.
         return new BlockPermutationDescription((nint)handle);
     }
 
-    public static BlockPermutationDescription Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockPermutationDescription arg0)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_49dc0ea6((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BlockPermutationDescription((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static BlockPermutationDescription Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponents_Address

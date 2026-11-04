@@ -60,16 +60,13 @@ public sealed unsafe partial class CustomBlockStateVariant : global::System.IDis
         get => NativeMethods.TablePtr->C1.hs_get_8d283697((void*)__hosihikari_shim_handle);
     }
 
-    public int? __fromNBT(global::Hosihikari.Bindings.Bedrock.Interop.Tag tag)
-    {
-        var __hs_hasValue = false;
-        var __hs_value = NativeMethods.TablePtr->C1.hs_method_829db489((void*)__hosihikari_shim_handle, (void*)tag.Handle, &__hs_hasValue);
-        return __hs_hasValue ? __hs_value : (int?)null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __fromNBT(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Tag' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint __toNBT(int val) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Tag' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int? _fromNBT(global::Hosihikari.Bindings.Bedrock.Interop.Tag tag)
     {

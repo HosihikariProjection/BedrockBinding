@@ -40,7 +40,7 @@ public sealed unsafe partial class OpenSignPacketPayload : global::System.IDispo
 
     public static OpenSignPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.OpenSignPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4a685e58((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_4a685e58((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class OpenSignPacketPayload : global::System.IDispo
 
     public bool mIsFrontSide
     {
-        get => NativeMethods.TablePtr->C3.hs_get_803ba6ed((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_803ba6ed((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_803ba6ed((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_803ba6ed((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_69cd09a2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_69cd09a2((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class OpenSignPacketPayload : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_51d6180f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_51d6180f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

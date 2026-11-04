@@ -38,48 +38,44 @@ public sealed unsafe partial class InMemoryWritableFile : global::System.IDispos
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Append(nint data)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_e14faa55((void*)__hosihikari_shim_handle, (void*)data));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _Append(nint data) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Close()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_bacd7e03((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _Close() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Flush()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_62370a34((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _Flush() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status _Sync()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_40b6cd8d((void*)__hosihikari_shim_handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _Sync() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Append(nint data)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_4ca2d7de((void*)__hosihikari_shim_handle, (void*)data));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_4ca2d7de((void*)__hosihikari_shim_handle, (void*)data));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Close()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_2c1621a0((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_2c1621a0((void*)__hosihikari_shim_handle));
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Flush()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_1ee15d88((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_1ee15d88((void*)__hosihikari_shim_handle));
     }
 
     public static InMemoryWritableFile Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_dd219cb2();
+        var handle = NativeMethods.TablePtr->C1.hs_create_dd219cb2();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -90,7 +86,7 @@ public sealed unsafe partial class InMemoryWritableFile : global::System.IDispos
 
     public static InMemoryWritableFile Create(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_c508ec78((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_c508ec78((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -101,18 +97,18 @@ public sealed unsafe partial class InMemoryWritableFile : global::System.IDispos
 
     public global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status Sync()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C2.hs_method_0edfbf84((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.leveldb.Status((nint)NativeMethods.TablePtr->C1.hs_method_0edfbf84((void*)__hosihikari_shim_handle));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkeee101_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ab9bc7c9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_ab9bc7c9((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile((nint)NativeMethods.TablePtr->C2.hs_method_241fecb4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.InMemoryWritableFile((nint)NativeMethods.TablePtr->C1.hs_method_241fecb4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -122,7 +118,7 @@ public sealed unsafe partial class InMemoryWritableFile : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6c727f5a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_6c727f5a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

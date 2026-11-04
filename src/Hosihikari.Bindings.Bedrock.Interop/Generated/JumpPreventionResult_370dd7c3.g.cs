@@ -40,7 +40,7 @@ public sealed unsafe partial class JumpPreventionResult : global::System.IDispos
 
     public static JumpPreventionResult Create(global::Hosihikari.Bindings.Bedrock.Interop.JumpPreventionResult arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e85f97c1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_e85f97c1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,14 +51,14 @@ public sealed unsafe partial class JumpPreventionResult : global::System.IDispos
 
     public bool mJumpIsPrevented
     {
-        get => NativeMethods.TablePtr->C2.hs_get_23b93d44((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_23b93d44((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_23b93d44((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_23b93d44((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPreventingBlockBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5061a3cc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_5061a3cc((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class JumpPreventionResult : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_370dd7c3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_370dd7c3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,10 +38,9 @@ public sealed unsafe partial class BodyControl : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _clientTick(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
-    {
-        NativeMethods.TablePtr->C0.hs_method_98550631((void*)__hosihikari_shim_handle, (void*)mob.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _clientTick(nint mob) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BodyControl Create(global::Hosihikari.Bindings.Bedrock.Interop.BodyControl arg0)
     {

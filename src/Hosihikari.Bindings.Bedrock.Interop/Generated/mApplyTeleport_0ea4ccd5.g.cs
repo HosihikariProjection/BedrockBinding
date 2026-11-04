@@ -44,7 +44,7 @@ public sealed unsafe partial class mApplyTeleport : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_0ea4ccd5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0ea4ccd5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

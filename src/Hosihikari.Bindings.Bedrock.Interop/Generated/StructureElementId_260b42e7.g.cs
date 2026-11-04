@@ -40,7 +40,7 @@ public sealed unsafe partial class StructureElementId : global::System.IDisposab
 
     public static StructureElementId Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureUtils.StructureElementId arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_51a849e0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_51a849e0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class StructureElementId : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_27ff93d7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_27ff93d7((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class StructureElementId : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_260b42e7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_260b42e7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

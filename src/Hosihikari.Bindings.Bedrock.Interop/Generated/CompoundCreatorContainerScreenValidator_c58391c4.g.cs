@@ -40,7 +40,7 @@ public sealed unsafe partial class CompoundCreatorContainerScreenValidator : glo
 
     public static CompoundCreatorContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.CompoundCreatorContainerScreenValidator arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_09a5230a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_09a5230a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -53,7 +53,7 @@ public sealed unsafe partial class CompoundCreatorContainerScreenValidator : glo
     // The native field type is not projected; this is the address of the field storage.
     public nint mValidContainerEnumNames_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2511fa7d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_2511fa7d((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -62,7 +62,7 @@ public sealed unsafe partial class CompoundCreatorContainerScreenValidator : glo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_c58391c4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_c58391c4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

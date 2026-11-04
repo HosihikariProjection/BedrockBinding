@@ -38,19 +38,17 @@ public sealed unsafe partial class ChunksLoadedInfo : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static byte areAllChunksLoadedAndTicking(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds, bool isCircleArea, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentLevelTick, bool allowNonTickingPlayerAndTickingAreaChunks)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_23e561c6((void*)dimension.Handle, (void*)source.Handle, (void*)bounds.Handle, isCircleArea, (void*)currentLevelTick.Handle, allowNonTickingPlayerAndTickingAreaChunks);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint areAllChunksLoadedAndTicking(nint dimension, nint source, nint bounds, bool isCircleArea, nint currentLevelTick, bool allowNonTickingPlayerAndTickingAreaChunks) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ChunksLoadedInfo calculateChunksLoadedInfo(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.ChunkSource source, global::Hosihikari.Bindings.Bedrock.Interop.Bounds bounds, bool isCircleArea, global::Hosihikari.Bindings.Bedrock.Interop.Tick currentLevelTick, bool allowUnloadedChunks, bool allowNonTickingPlayerAndTickingAreaChunks, bool allowPlayerChunks)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunksLoadedInfo((nint)NativeMethods.TablePtr->C0.hs_method_3b8ea0b8((void*)dimension.Handle, (void*)source.Handle, (void*)bounds.Handle, isCircleArea, (void*)currentLevelTick.Handle, allowUnloadedChunks, allowNonTickingPlayerAndTickingAreaChunks, allowPlayerChunks));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint calculateChunksLoadedInfo(nint dimension, nint source, nint bounds, bool isCircleArea, nint currentLevelTick, bool allowUnloadedChunks, bool allowNonTickingPlayerAndTickingAreaChunks, bool allowPlayerChunks) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'ChunkViewSource' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getChunkViewSource() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'ChunkViewSource' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mPlayer
     {

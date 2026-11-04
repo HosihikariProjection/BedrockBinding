@@ -38,15 +38,13 @@ public sealed unsafe partial class SwingSoundsItemComponent : global::System.IDi
         return __hs_handle;
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_9507c7d9();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SwingSoundsItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_21_90.SwingSoundsItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_8cd48355((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8cd48355((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,27 +53,26 @@ public sealed unsafe partial class SwingSoundsItemComponent : global::System.IDi
         return new SwingSoundsItemComponent((nint)handle);
     }
 
-    public static void bindType(global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx ctx)
-    {
-        NativeMethods.TablePtr->C4.hs_method_24d3af7d((void*)ctx.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void bindType(nint ctx) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttackCriticalHitSound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_967dbc2c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_967dbc2c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttackHitSound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_583610e6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_583610e6((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAttackMissSound_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_244b8b91((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_244b8b91((void*)__hosihikari_shim_handle);
     }
 
 
@@ -85,7 +82,7 @@ public sealed unsafe partial class SwingSoundsItemComponent : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_447a38a0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_447a38a0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

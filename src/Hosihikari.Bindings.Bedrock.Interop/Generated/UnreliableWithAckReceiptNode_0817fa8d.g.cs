@@ -40,7 +40,7 @@ public sealed unsafe partial class UnreliableWithAckReceiptNode : global::System
 
     public static UnreliableWithAckReceiptNode Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_75fdae25();
+        var handle = NativeMethods.TablePtr->C2.hs_create_75fdae25();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class UnreliableWithAckReceiptNode : global::System
 
     public static UnreliableWithAckReceiptNode Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.UnreliableWithAckReceiptNode arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3005f934((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_3005f934((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,24 +63,24 @@ public sealed unsafe partial class UnreliableWithAckReceiptNode : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5e6576_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1fb9b095((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1fb9b095((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc09fef_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_46e518fa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_46e518fa((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkced6ba_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6b1ae385((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6b1ae385((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.UnreliableWithAckReceiptNode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.UnreliableWithAckReceiptNode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.UnreliableWithAckReceiptNode((nint)NativeMethods.TablePtr->C3.hs_method_60c507a0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.UnreliableWithAckReceiptNode((nint)NativeMethods.TablePtr->C2.hs_method_60c507a0((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -89,7 +89,7 @@ public sealed unsafe partial class UnreliableWithAckReceiptNode : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0817fa8d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0817fa8d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

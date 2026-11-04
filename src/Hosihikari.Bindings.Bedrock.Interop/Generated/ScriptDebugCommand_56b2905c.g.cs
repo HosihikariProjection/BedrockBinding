@@ -78,76 +78,17 @@ public sealed unsafe partial class ScriptDebugCommand : global::System.IDisposab
         return new ScriptDebugCommand((nint)handle);
     }
 
-    public void _handleDebuggerAttach(global::Hosihikari.Bindings.Bedrock.Interop.IScriptDebugger? debugger, string locPrefix, int action, string host, ushort port, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(locPrefix);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(locPrefix, __hs_stringBytes1);
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(host);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(host, __hs_stringBytes3);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-            {
-                NativeMethods.TablePtr->C3.hs_method_dbdf8b97((void*)__hosihikari_shim_handle, (void*)(debugger?.Handle ?? 0), __hs_stringData1, (nuint)__hs_stringByteCount1, action, __hs_stringData3, (nuint)__hs_stringByteCount3, port, (void*)output.Handle);
-            }
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _handleDebuggerAttach(nint debugger, nint locPrefix, nint action, nint host, ushort port, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _handleDiagnosticsAction(nint diagnosticsPublishToFile, string locPrefix, int action, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(locPrefix);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(locPrefix, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C3.hs_method_cc944d35((void*)__hosihikari_shim_handle, (void*)diagnosticsPublishToFile, __hs_stringData1, (nuint)__hs_stringByteCount1, action, (void*)output.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _handleDiagnosticsAction(nint diagnosticsPublishToFile, nint locPrefix, nint action, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _handleProfilerAction(global::Hosihikari.Bindings.Bedrock.Interop.IScriptDebugger? debugger, string locPrefix, int action, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(locPrefix);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(locPrefix, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            NativeMethods.TablePtr->C3.hs_method_ec96f921((void*)__hosihikari_shim_handle, (void*)(debugger?.Handle ?? 0), __hs_stringData1, (nuint)__hs_stringByteCount1, action, (void*)output.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _handleProfilerAction(nint debugger, nint locPrefix, nint action, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

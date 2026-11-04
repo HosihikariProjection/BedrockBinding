@@ -38,34 +38,29 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint __clearActiveProcess() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int __getProcessingState()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_5cf30cf1((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __getProcessingState() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult __processRedo(nint services)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)NativeMethods.TablePtr->C1.hs_method_26f8d459((void*)__hosihikari_shim_handle, (void*)services));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __processRedo(nint services) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult __processUndo(nint services)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)NativeMethods.TablePtr->C1.hs_method_616a38ac((void*)__hosihikari_shim_handle, (void*)services));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __processUndo(nint services) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public string _getName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_4bdb9970((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockChangedOperation Create()
     {
@@ -89,17 +84,13 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
         return new BlockChangedOperation((nint)handle);
     }
 
-    public static string DEFAULT_OPERATION_NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_e8a3d680();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint DEFAULT_OPERATION_NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string LIQUID_SAFE_OPERATION_NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_5e68625f();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint LIQUID_SAFE_OPERATION_NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint _clearActiveProcess() =>
@@ -110,14 +101,13 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
         return NativeMethods.TablePtr->C1.hs_method_cb42d099((void*)__hosihikari_shim_handle);
     }
 
-    public void _neutralizeLiquids(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, ulong startIndex, ulong count)
-    {
-        NativeMethods.TablePtr->C1.hs_method_5428cdde((void*)__hosihikari_shim_handle, (void*)region.Handle, startIndex, count);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _neutralizeLiquids(nint region, ulong startIndex, ulong count) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _performOperation(nint services, bool isUndo) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult _processRedo(nint services)
     {
@@ -129,26 +119,25 @@ public sealed unsafe partial class BlockChangedOperation : global::System.IDispo
         return new global::Hosihikari.Bindings.Bedrock.Interop.Editor.Transactions.IOperation_Nested.ProcessResult((nint)NativeMethods.TablePtr->C1.hs_method_c621d5e9((void*)__hosihikari_shim_handle, (void*)services));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _setBlock(nint level, nint region, nint blockToPlace, nint extraBlockToPlace, nint blockData, nint pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _setBlocks(nint level, nint region, bool isUndo, ulong startIndex, ulong count) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'Scripting::Result_deprecated<void>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _updateNeighbors(global::Hosihikari.Bindings.Bedrock.Interop.Level level, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, int transition, ulong startIndex, ulong count)
-    {
-        NativeMethods.TablePtr->C1.hs_method_d6d1f40e((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)region.Handle, transition, startIndex, count);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _updateNeighbors(nint level, nint region, nint transition, ulong startIndex, ulong count) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'Editor::Transactions::BlockChangedOperationData' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void appendResolvedBlockChange(nint region, nint blockIntentData, nint changedBlocks) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'Editor::Transactions::BlockChangedOperationData' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector return type 'Editor::Transactions::BlockChangeIntentData' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint createBlockChangeIntentFromLocation(nint region, nint pos, bool includeAll) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector return type 'Editor::Transactions::BlockChangeIntentData' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public string getName()
     {

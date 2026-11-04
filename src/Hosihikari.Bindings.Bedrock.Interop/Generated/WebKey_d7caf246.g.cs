@@ -38,10 +38,9 @@ public sealed unsafe partial class WebKey : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_6237c720((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static WebKey Create()
     {
@@ -65,24 +64,9 @@ public sealed unsafe partial class WebKey : global::System.IDisposable
         return new WebKey((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_WebKey__std__error_code_ fromRawPublicKey(string publicKey)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(publicKey);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(publicKey, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_WebKey__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_4daf488b(__hs_stringData0, (nuint)__hs_stringByteCount0));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint fromRawPublicKey(nint publicKey) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk59454e_Address
@@ -101,29 +85,13 @@ public sealed unsafe partial class WebKey : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.WebKey((nint)NativeMethods.TablePtr->C4.hs_method_2e924ae2((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_WebKey__std__error_code_ parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value jwk)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_WebKey__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_925cd203((void*)jwk.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint parse(nint jwk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_Json__Value__std__error_code_ toJson(string? kid)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(kid ?? string.Empty);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(kid ?? string.Empty, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            return new global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.Result_Json__Value__std__error_code_((nint)NativeMethods.TablePtr->C4.hs_method_2bb1d442((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, kid is not null));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint toJson(nint kid) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

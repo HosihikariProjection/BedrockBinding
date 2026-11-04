@@ -40,7 +40,7 @@ public sealed unsafe partial class IGameConnectionInfoProvider : global::System.
 
     public static IGameConnectionInfoProvider Create(global::Hosihikari.Bindings.Bedrock.Interop.Social.IGameConnectionInfoProvider arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_32f8cb7b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_32f8cb7b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,13 +51,13 @@ public sealed unsafe partial class IGameConnectionInfoProvider : global::System.
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo getConnectionInfo()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)NativeMethods.TablePtr->C4.hs_method_67f57023((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Social.GameConnectionInfo((nint)NativeMethods.TablePtr->C3.hs_method_67f57023((void*)__hosihikari_shim_handle), false);
     }
 
     public string? getNetworkInfoString()
     {
         var __hs_hasValue = false;
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_490495ff((void*)__hosihikari_shim_handle, &__hs_hasValue);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_490495ff((void*)__hosihikari_shim_handle, &__hs_hasValue);
         return __hs_hasValue ? global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size)) : null;
     }
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class IGameConnectionInfoProvider : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_a15dc66c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a15dc66c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

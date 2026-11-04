@@ -40,7 +40,7 @@ public sealed unsafe partial class ItemStackResponseSlotInfo : global::System.ID
 
     public static ItemStackResponseSlotInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackResponseSlotInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_8e119d50((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_8e119d50((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,38 +51,38 @@ public sealed unsafe partial class ItemStackResponseSlotInfo : global::System.ID
 
     public byte mAmount
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1a30648c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_1a30648c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_1a30648c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_1a30648c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCustomName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_363722d1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_363722d1((void*)__hosihikari_shim_handle);
     }
 
     public short mDurabilityCorrection
     {
-        get => NativeMethods.TablePtr->C2.hs_get_6ee28de5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_6ee28de5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_6ee28de5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_6ee28de5((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemStackNetId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3eed9a27((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3eed9a27((void*)__hosihikari_shim_handle);
     }
 
     public byte mRequestedSlot
     {
-        get => NativeMethods.TablePtr->C2.hs_get_cdd0da0c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_cdd0da0c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_cdd0da0c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_cdd0da0c((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mSlot
     {
-        get => NativeMethods.TablePtr->C2.hs_get_4fa98a83((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_4fa98a83((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_4fa98a83((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_4fa98a83((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -92,7 +92,7 @@ public sealed unsafe partial class ItemStackResponseSlotInfo : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_69497914((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_69497914((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -62,15 +62,13 @@ public sealed unsafe partial class LegacySpringsFeature : global::System.IDispos
         set => NativeMethods.TablePtr->C2.hs_set_059a1566((void*)__hosihikari_shim_handle, value);
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_73143676((void*)__hosihikari_shim_handle, (void*)registry.Handle, (void*)baseGameVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint registry, nint baseGameVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _place(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin, global::Hosihikari.Bindings.Bedrock.Interop.Random random)
-    {
-        return NativeMethods.TablePtr->C2.hs_method_8732e420((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)origin.Handle, (void*)random.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _place(nint region, nint origin, nint random) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacySpringsFeature Create()
     {
@@ -83,16 +81,9 @@ public sealed unsafe partial class LegacySpringsFeature : global::System.IDispos
         return new LegacySpringsFeature((nint)handle);
     }
 
-    public static LegacySpringsFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry registry, global::Hosihikari.Bindings.Bedrock.Interop.BaseGameVersion baseGameVersion)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_3bea9a72((void*)registry.Handle, (void*)baseGameVersion.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LegacySpringsFeature((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static LegacySpringsFeature Create(nint registry, nint baseGameVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LegacySpringsFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.LegacySpringsFeature arg0)
     {

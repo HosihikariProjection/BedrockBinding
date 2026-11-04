@@ -40,7 +40,7 @@ public sealed unsafe partial class StructurePair : global::System.IDisposable
 
     public static StructurePair Create(global::Hosihikari.Bindings.Bedrock.Interop.br.worldgen.StructureCache_Nested.StructurePair arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_de66f32d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_de66f32d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class StructurePair : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mInstance_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_ac3ee104((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ac3ee104((void*)__hosihikari_shim_handle);
     }
 
     public ulong mStructure
     {
-        get => NativeMethods.TablePtr->C5.hs_get_5fba6569((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_5fba6569((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_5fba6569((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_5fba6569((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class StructurePair : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_6683c1fd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_6683c1fd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

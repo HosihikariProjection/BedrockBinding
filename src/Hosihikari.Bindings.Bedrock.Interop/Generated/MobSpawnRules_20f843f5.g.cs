@@ -38,19 +38,17 @@ public sealed unsafe partial class MobSpawnRules : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint _ctor(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_c30ace62(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_04a454d6((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_04a454d6(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_f3123f27((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MobSpawnRules Create()
     {
@@ -63,36 +61,26 @@ public sealed unsafe partial class MobSpawnRules : global::System.IDisposable
         return new MobSpawnRules((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public static MobSpawnRules Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MobSpawnRules Create_0d5a254f(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static MobSpawnRules Create(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules arg0)
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_707d1394((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static MobSpawnRules Create_707d1394(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new MobSpawnRules((nint)handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules addPermutation(int weight, int guaranteedCount, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier id)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules((nint)NativeMethods.TablePtr->C2.hs_method_e3bf0c3d((void*)__hosihikari_shim_handle, weight, guaranteedCount, (void*)id.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint addPermutation(int weight, int guaranteedCount, nint id) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool canSpawnInConditions(global::Hosihikari.Bindings.Bedrock.Interop.SpawnConditions conditions, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
         return NativeMethods.TablePtr->C2.hs_method_41c0d69d((void*)__hosihikari_shim_handle, (void*)conditions.Handle, (void*)region.Handle) != 0;
     }
 
-    public string getMobToDelayId()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_4c2f366c((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getMobToDelayId() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mAboveBlockDistance
     {
@@ -328,23 +316,22 @@ public sealed unsafe partial class MobSpawnRules : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_5c3aab80((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_c9e44528(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnRules((nint)NativeMethods.TablePtr->C2.hs_method_e46ef561((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_e46ef561(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo selectRandomHerd(global::Hosihikari.Bindings.Bedrock.Interop.IRandom random)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.MobSpawnHerdInfo((nint)NativeMethods.TablePtr->C2.hs_method_5bfc23e9((void*)__hosihikari_shim_handle, (void*)random.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint setHardcodedSpawnRuleCallback(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

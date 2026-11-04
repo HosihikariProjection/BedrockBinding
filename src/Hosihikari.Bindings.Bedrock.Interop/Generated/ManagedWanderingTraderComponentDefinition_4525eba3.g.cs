@@ -38,11 +38,9 @@ public sealed unsafe partial class ManagedWanderingTraderComponentDefinition : g
         return __hs_handle;
     }
 
-    public static string NAME()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_f6e0a116();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint NAME() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -50,7 +48,7 @@ public sealed unsafe partial class ManagedWanderingTraderComponentDefinition : g
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_4525eba3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_4525eba3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

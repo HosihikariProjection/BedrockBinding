@@ -42,16 +42,13 @@ public sealed unsafe partial class AnvilContainerScreenValidator : global::Syste
     public nint _getCraftResult(nint screenContext, nint screenValidation, nint craftInputs, nint numCrafts) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
-    public bool _isCraftingImplemented()
-    {
-        return NativeMethods.TablePtr->C0.hs_method_0f5b7e29((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isCraftingImplemented() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? _postCommitItemRemoved(byte containerEnumName, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack arg2)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_d18c5068((void*)__hosihikari_shim_handle, containerEnumName, slot, (void*)arg2.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _postCommitItemRemoved(nint containerEnumName, nint slot, nint arg2) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AnvilContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.AnvilContainerScreenValidator arg0)
     {

@@ -38,14 +38,13 @@ public sealed unsafe partial class ReceiveBuffer : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_8cc56d6d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ReceiveBuffer Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_dff63718();
+        var handle = NativeMethods.TablePtr->C4.hs_create_dff63718();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class ReceiveBuffer : global::System.IDisposable
 
     public static ReceiveBuffer Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket_Nested.ReceiveBuffer arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_f5ffefeb((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_f5ffefeb((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,30 +67,30 @@ public sealed unsafe partial class ReceiveBuffer : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk38a29c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_71e31a24((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_71e31a24((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk65f069_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_d2a553db((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d2a553db((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk96d7aa_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_abe44a7e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_abe44a7e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd916f6_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_e134eb5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e134eb5d((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket_Nested.ReceiveBuffer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket_Nested.ReceiveBuffer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket_Nested.ReceiveBuffer((nint)NativeMethods.TablePtr->C5.hs_method_6ce71012((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.Socket_Nested.ReceiveBuffer((nint)NativeMethods.TablePtr->C4.hs_method_6ce71012((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -101,7 +100,7 @@ public sealed unsafe partial class ReceiveBuffer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_bac50f35((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_bac50f35((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

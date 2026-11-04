@@ -38,15 +38,13 @@ public sealed unsafe partial class BlockLightDampening118Upgrade : global::Syste
         return __hs_handle;
     }
 
-    public bool _previousSchema(nint component)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_de19324a((void*)__hosihikari_shim_handle, (void*)component) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _previousSchema(nint component) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _upgradeToNext(nint document, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion arg1)
-    {
-        NativeMethods.TablePtr->C0.hs_method_c971a364((void*)__hosihikari_shim_handle, (void*)document, (void*)arg1.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _upgradeToNext(nint document, nint arg1) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockLightDampening118Upgrade Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockLightDampeningVersioning.BlockLightDampening118Upgrade arg0)
     {

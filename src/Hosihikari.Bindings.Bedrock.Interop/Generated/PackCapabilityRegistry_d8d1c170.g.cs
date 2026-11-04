@@ -38,14 +38,13 @@ public sealed unsafe partial class PackCapabilityRegistry : global::System.IDisp
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_5e24c43d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PackCapabilityRegistry Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_31641789();
+        var handle = NativeMethods.TablePtr->C2.hs_create_31641789();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +55,7 @@ public sealed unsafe partial class PackCapabilityRegistry : global::System.IDisp
 
     public static PackCapabilityRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_555c0f7a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_555c0f7a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -68,12 +67,12 @@ public sealed unsafe partial class PackCapabilityRegistry : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk27dd51_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_adb84c12((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_adb84c12((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry((nint)NativeMethods.TablePtr->C3.hs_method_4b4d2e52((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PackCapabilityRegistry((nint)NativeMethods.TablePtr->C2.hs_method_4b4d2e52((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -83,7 +82,7 @@ public sealed unsafe partial class PackCapabilityRegistry : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_d8d1c170((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d8d1c170((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

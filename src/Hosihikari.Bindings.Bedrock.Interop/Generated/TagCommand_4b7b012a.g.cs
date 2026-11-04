@@ -40,41 +40,40 @@ public sealed unsafe partial class TagCommand : global::System.IDisposable
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C4.hs_get_1c63f959((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_1c63f959((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1c63f959((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1c63f959((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFlags_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_3983e664((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3983e664((void*)__hosihikari_shim_handle);
     }
 
     public byte mPermissionLevel
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2ea9655d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_2ea9655d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2ea9655d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_2ea9655d((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mRegistry
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_f1f8feac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f1f8feac((void*)__hosihikari_shim_handle);
     }
 
     public int mVersion
     {
-        get => NativeMethods.TablePtr->C4.hs_get_aefc4f10((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_aefc4f10((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_aefc4f10((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_aefc4f10((void*)__hosihikari_shim_handle, value);
     }
 
-    public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
-    {
-        NativeMethods.TablePtr->C4.hs_method_d4d87a50((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _execute(nint origin, nint output) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static TagCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.TagCommand arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_be0cd96e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_be0cd96e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -83,38 +82,36 @@ public sealed unsafe partial class TagCommand : global::System.IDisposable
         return new TagCommand((nint)handle);
     }
 
-    public string _getTagWithPercentageFixed()
-    {
-        var __hs_view = NativeMethods.TablePtr->C4.hs_method_558fdc62((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _getTagWithPercentageFixed() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput output)
     {
-        NativeMethods.TablePtr->C4.hs_method_892a81eb((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
+        NativeMethods.TablePtr->C3.hs_method_892a81eb((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)output.Handle);
     }
 
     public byte mAction
     {
-        get => NativeMethods.TablePtr->C4.hs_get_39cd8001((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_39cd8001((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_39cd8001((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_39cd8001((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSelector_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a7ab2a8e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a7ab2a8e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTagString_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_49d14ea2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_49d14ea2((void*)__hosihikari_shim_handle);
     }
 
     public static void setup(global::Hosihikari.Bindings.Bedrock.Interop.CommandRegistry registry)
     {
-        NativeMethods.TablePtr->C4.hs_method_75e98ccd((void*)registry.Handle);
+        NativeMethods.TablePtr->C3.hs_method_75e98ccd((void*)registry.Handle);
     }
 
 
@@ -124,7 +121,7 @@ public sealed unsafe partial class TagCommand : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_4b7b012a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_4b7b012a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

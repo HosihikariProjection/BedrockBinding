@@ -38,20 +38,9 @@ public sealed unsafe partial class BiomeSource : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool _collectBiomesInColumn(int x, int z, int minY, int maxY, global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[] @out)
-    {
-        var __hs_vectorItems4 = @out;
-        var __hs_vectorHandles4 = new nint[__hs_vectorItems4?.Length ?? 0];
-        for (var __hs_i4 = 0; __hs_i4 < __hs_vectorHandles4.Length; __hs_i4++)
-        {
-            __hs_vectorHandles4[__hs_i4] = __hs_vectorItems4![__hs_i4]?.Handle ?? 0;
-        }
-        fixed (nint* __hs_vectorHandleData4 = __hs_vectorHandles4)
-        {
-            var __hs_vectorData4 = (void**)__hs_vectorHandleData4;
-            return NativeMethods.TablePtr->C0.hs_method_728bec05((void*)__hosihikari_shim_handle, x, z, minY, maxY, __hs_vectorData4, (nuint)(@out?.Length ?? 0)) != 0;
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _collectBiomesInColumn(int x, int z, int minY, int maxY, nint @out) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     [global::System.Obsolete("BindingShim cannot project this member: optional return type 'OperationGraphResult<const Biome *>' is not supported.", false)]
     public nint _getBiomeAreaToFill(nint levelChunk) =>

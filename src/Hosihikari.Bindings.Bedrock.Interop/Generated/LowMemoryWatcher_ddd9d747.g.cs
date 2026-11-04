@@ -38,10 +38,9 @@ public sealed unsafe partial class LowMemoryWatcher : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static nint mPleaseLeakMemory()
-    {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_a6a66f09();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mPleaseLeakMemory() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

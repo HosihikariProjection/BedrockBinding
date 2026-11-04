@@ -40,7 +40,7 @@ public sealed unsafe partial class ChatMessage : global::System.IDisposable
 
     public static ChatMessage Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f8de3e66();
+        var handle = NativeMethods.TablePtr->C0.hs_create_f8de3e66();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ChatMessage : global::System.IDisposable
 
     public static ChatMessage Create(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8a6750b3((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_8a6750b3((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,30 +63,30 @@ public sealed unsafe partial class ChatMessage : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk1e10fb_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2d00c189((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_2d00c189((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk8af4dc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a0c7ddfe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_a0c7ddfe((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka490a2_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5eaef9ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_5eaef9ba((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdc9074_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a6525d14((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_a6525d14((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage((nint)NativeMethods.TablePtr->C1.hs_method_441bfb64((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CodeBuilder.ChatMessage((nint)NativeMethods.TablePtr->C0.hs_method_441bfb64((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -95,7 +95,7 @@ public sealed unsafe partial class ChatMessage : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_b198852e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_b198852e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

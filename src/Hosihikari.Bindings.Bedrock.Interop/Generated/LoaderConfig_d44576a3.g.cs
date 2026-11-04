@@ -40,8 +40,8 @@ public sealed unsafe partial class LoaderConfig : global::System.IDisposable
 
     public bool mReadDeprecatedFields
     {
-        get => NativeMethods.TablePtr->C5.hs_get_daaf151f((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C5.hs_set_daaf151f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_daaf151f((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_daaf151f((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class LoaderConfig : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_d44576a3((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_d44576a3((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

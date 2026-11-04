@@ -38,15 +38,13 @@ public sealed unsafe partial class ServerCameraStatesComponent : global::System.
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets presets)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_4f24bfae((void*)__hosihikari_shim_handle, (void*)presets.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_4f24bfae(nint presets) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ServerCameraStatesComponent arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_4f19e955((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor_4f19e955(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ServerCameraStatesComponent Create()
     {
@@ -59,27 +57,13 @@ public sealed unsafe partial class ServerCameraStatesComponent : global::System.
         return new ServerCameraStatesComponent((nint)handle);
     }
 
-    public static ServerCameraStatesComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.CameraPresets presets)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_78ca8e7a((void*)presets.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ServerCameraStatesComponent Create_78ca8e7a(nint presets) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new ServerCameraStatesComponent((nint)handle);
-    }
-
-    public static ServerCameraStatesComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ServerCameraStatesComponent arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_70b22c71((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ServerCameraStatesComponent((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ServerCameraStatesComponent Create_70b22c71(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActiveCameraPreset_Address
@@ -93,9 +77,9 @@ public sealed unsafe partial class ServerCameraStatesComponent : global::System.
         get => (nint)NativeMethods.TablePtr->C3.hs_get_cf4c2691((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ServerCameraStatesComponent operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ServerCameraStatesComponent arg0)
     {

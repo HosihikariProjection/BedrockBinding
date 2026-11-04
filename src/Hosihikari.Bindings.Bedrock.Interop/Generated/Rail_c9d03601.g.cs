@@ -38,10 +38,9 @@ public sealed unsafe partial class Rail : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_bd729fe3((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)pos.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint region, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Rail Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class Rail : global::System.IDisposable
         return new Rail((nint)handle);
     }
 
-    public static Rail Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_44c80ead((void*)region.Handle, (void*)pos.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new Rail((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static Rail Create(nint region, nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static Rail Create(global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail arg0)
     {
@@ -76,16 +68,13 @@ public sealed unsafe partial class Rail : global::System.IDisposable
         return new Rail((nint)handle);
     }
 
-    public global::Hosihikari.Bindings.Abi.SharedHandle? getRail(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos p)
-    {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_11bfb5f6((void*)__hosihikari_shim_handle, (void*)p.Handle);
-        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getRail(nint p) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool hasNeighborRail(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
-    {
-        return NativeMethods.TablePtr->C0.hs_method_9697878e((void*)__hosihikari_shim_handle, (void*)pos.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool hasNeighborRail(nint pos) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConnections_Address
@@ -116,20 +105,17 @@ public sealed unsafe partial class Rail : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.BaseRailBlock_Nested.Rail((nint)NativeMethods.TablePtr->C0.hs_method_ecc7591d((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void place(int signalStrength, bool first)
-    {
-        NativeMethods.TablePtr->C0.hs_method_01c048f1((void*)__hosihikari_shim_handle, signalStrength, first);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void place(int signalStrength, bool first) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void removeSoftConnections()
-    {
-        NativeMethods.TablePtr->C0.hs_method_8bc3bedc((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void removeSoftConnections() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void updateConnections(int direction)
-    {
-        NativeMethods.TablePtr->C0.hs_method_2df327fe((void*)__hosihikari_shim_handle, direction);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void updateConnections(int direction) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

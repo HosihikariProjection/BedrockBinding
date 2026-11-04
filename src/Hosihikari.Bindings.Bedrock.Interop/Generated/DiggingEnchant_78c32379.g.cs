@@ -38,25 +38,21 @@ public sealed unsafe partial class DiggingEnchant : global::System.IDisposable
         return __hs_handle;
     }
 
-    public bool __isValidEnchantmentTypeForCategory(byte type)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_6d991f7d((void*)__hosihikari_shim_handle, type) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool __isValidEnchantmentTypeForCategory(nint type) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxCost(int level)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_0c21fc62((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMaxLevel()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_b7bd2954((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMaxLevel() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int _getMinCost(int level)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_a16b7c7d((void*)__hosihikari_shim_handle, level);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _getMinCost(int level) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DiggingEnchant Create(global::Hosihikari.Bindings.Bedrock.Interop.DiggingEnchant arg0)
     {
@@ -69,10 +65,9 @@ public sealed unsafe partial class DiggingEnchant : global::System.IDisposable
         return new DiggingEnchant((nint)handle);
     }
 
-    public static nint VALID_ENCHANTMENTS()
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_6767f818();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint VALID_ENCHANTMENTS() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool _isValidEnchantmentTypeForCategory(byte type)
     {

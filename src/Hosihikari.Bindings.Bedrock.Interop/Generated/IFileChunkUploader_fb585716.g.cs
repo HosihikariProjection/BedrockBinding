@@ -38,18 +38,17 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _uploadStream(nint file, ulong streamSize, nint boundary, nint onCompleteCallback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _useFileSizeLimit()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_d72def7e((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _useFileSizeLimit() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static IFileChunkUploader Create(global::Hosihikari.Bindings.Bedrock.Interop.IFileChunkUploader arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_9c6f7eb6((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_9c6f7eb6((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,27 +59,27 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
 
     public bool canCancelUpload(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file)
     {
-        return NativeMethods.TablePtr->C2.hs_method_8d71ec07((void*)__hosihikari_shim_handle, (void*)file.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_8d71ec07((void*)__hosihikari_shim_handle, (void*)file.Handle) != 0;
     }
 
     public void cancelUpload(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file)
     {
-        NativeMethods.TablePtr->C2.hs_method_60a052b4((void*)__hosihikari_shim_handle, (void*)file.Handle);
+        NativeMethods.TablePtr->C1.hs_method_60a052b4((void*)__hosihikari_shim_handle, (void*)file.Handle);
     }
 
     public void confirmChunkReceived(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file, global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo chunk)
     {
-        NativeMethods.TablePtr->C2.hs_method_85b038b5((void*)__hosihikari_shim_handle, (void*)file.Handle, (void*)chunk.Handle);
+        NativeMethods.TablePtr->C1.hs_method_85b038b5((void*)__hosihikari_shim_handle, (void*)file.Handle, (void*)chunk.Handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo getChunkInfo(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file, int chunkID)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo((nint)NativeMethods.TablePtr->C2.hs_method_1257b67f((void*)__hosihikari_shim_handle, (void*)file.Handle, chunkID));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo((nint)NativeMethods.TablePtr->C1.hs_method_1257b67f((void*)__hosihikari_shim_handle, (void*)file.Handle, chunkID));
     }
 
     public int getInitErrorCode()
     {
-        return NativeMethods.TablePtr->C2.hs_method_fdfb662c((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C1.hs_method_fdfb662c((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -89,7 +88,7 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
 
     public float getUploadProgress(global::Hosihikari.Bindings.Bedrock.Interop.FileInfo file)
     {
-        return NativeMethods.TablePtr->C2.hs_method_a19e1769((void*)__hosihikari_shim_handle, (void*)file.Handle);
+        return NativeMethods.TablePtr->C1.hs_method_a19e1769((void*)__hosihikari_shim_handle, (void*)file.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -106,7 +105,7 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
 
     public bool useFileSizeLimit()
     {
-        return NativeMethods.TablePtr->C2.hs_method_c43672a2((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_c43672a2((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -116,7 +115,7 @@ public sealed unsafe partial class IFileChunkUploader : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_fb585716((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_fb585716((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

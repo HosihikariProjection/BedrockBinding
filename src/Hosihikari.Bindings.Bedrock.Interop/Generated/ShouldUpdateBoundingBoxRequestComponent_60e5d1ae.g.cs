@@ -40,7 +40,7 @@ public sealed unsafe partial class ShouldUpdateBoundingBoxRequestComponent : glo
 
     public static ShouldUpdateBoundingBoxRequestComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.ShouldUpdateBoundingBoxRequestComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_9147ebd9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_9147ebd9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class ShouldUpdateBoundingBoxRequestComponent : glo
     // The native field type is not projected; this is the address of the field storage.
     public nint mUpdate_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_efb6fbab((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_efb6fbab((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class ShouldUpdateBoundingBoxRequestComponent : glo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_60e5d1ae((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_60e5d1ae((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,18 +38,17 @@ public sealed unsafe partial class CommandDispatcher : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public int _performCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.Command command)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_daa0030f((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)command.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int _performCommand(nint origin, nint command) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CommandDispatcher Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandDispatcher arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_f2a52703((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_f2a52703((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -60,7 +59,7 @@ public sealed unsafe partial class CommandDispatcher : global::System.IDisposabl
 
     public int performCommand(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.Command command)
     {
-        return NativeMethods.TablePtr->C1.hs_method_223624c5((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)command.Handle);
+        return NativeMethods.TablePtr->C0.hs_method_223624c5((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)command.Handle);
     }
 
 
@@ -70,7 +69,7 @@ public sealed unsafe partial class CommandDispatcher : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_54de181e((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_54de181e((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

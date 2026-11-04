@@ -43,10 +43,9 @@ public sealed unsafe partial class ChemistryAuxDataBlockItem : global::System.ID
         get => (nint)NativeMethods.TablePtr->C0.hs_get_007dd597((void*)__hosihikari_shim_handle);
     }
 
-    public void _fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
-    {
-        NativeMethods.TablePtr->C0.hs_method_725951ef((void*)__hosihikari_shim_handle, (void*)stack.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _fixupCommon(nint stack) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void fixupCommon(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase stack)
     {

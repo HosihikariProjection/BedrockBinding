@@ -40,6 +40,6 @@ public sealed unsafe partial class function_base_brstd__detail__function__Derive
 
     public global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__01659bc1 operator_assign()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__01659bc1((nint)NativeMethods.TablePtr->C5.hs_method_635566c6((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function.function_base_brstd__detail__function__DerivedType__MoveOnly__brstd__detail__function__function__01659bc1((nint)NativeMethods.TablePtr->C4.hs_method_635566c6((void*)__hosihikari_shim_handle), false);
     }
 }

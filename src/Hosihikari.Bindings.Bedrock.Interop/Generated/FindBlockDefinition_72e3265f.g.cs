@@ -50,10 +50,9 @@ public sealed unsafe partial class FindBlockDefinition : global::System.IDisposa
         get => (nint)NativeMethods.TablePtr->C1.hs_get_61b5e9d6((void*)__hosihikari_shim_handle);
     }
 
-    public void _load(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value value, global::Hosihikari.Bindings.Bedrock.Interop.BehaviorFactory factory)
-    {
-        NativeMethods.TablePtr->C1.hs_method_a09849e6((void*)__hosihikari_shim_handle, (void*)value.Handle, (void*)factory.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _load(nint value, nint factory) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FindBlockDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.FindBlockDefinition arg0)
     {

@@ -40,7 +40,7 @@ public sealed unsafe partial class IGameModeMessenger : global::System.IDisposab
 
     public static IGameModeMessenger Create(global::Hosihikari.Bindings.Bedrock.Interop.IGameModeMessenger arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ba2d366b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_ba2d366b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,42 +55,42 @@ public sealed unsafe partial class IGameModeMessenger : global::System.IDisposab
 
     public void sendChangeContinueDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int face)
     {
-        NativeMethods.TablePtr->C2.hs_method_ec403e59((void*)__hosihikari_shim_handle, (void*)pos.Handle, face);
+        NativeMethods.TablePtr->C1.hs_method_ec403e59((void*)__hosihikari_shim_handle, (void*)pos.Handle, face);
     }
 
     public void sendContinueDestroyAboutToDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int face)
     {
-        NativeMethods.TablePtr->C2.hs_method_7dde2721((void*)__hosihikari_shim_handle, (void*)pos.Handle, face);
+        NativeMethods.TablePtr->C1.hs_method_7dde2721((void*)__hosihikari_shim_handle, (void*)pos.Handle, face);
     }
 
     public void sendDenyDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int face)
     {
-        NativeMethods.TablePtr->C2.hs_method_deff21bc((void*)__hosihikari_shim_handle, (void*)pos.Handle, face);
+        NativeMethods.TablePtr->C1.hs_method_deff21bc((void*)__hosihikari_shim_handle, (void*)pos.Handle, face);
     }
 
     public void sendDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.Block oldBlock, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int variantData)
     {
-        NativeMethods.TablePtr->C2.hs_method_86872c52((void*)__hosihikari_shim_handle, (void*)oldBlock.Handle, (void*)pos.Handle, variantData);
+        NativeMethods.TablePtr->C1.hs_method_86872c52((void*)__hosihikari_shim_handle, (void*)oldBlock.Handle, (void*)pos.Handle, variantData);
     }
 
     public void sendStartDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int face)
     {
-        NativeMethods.TablePtr->C2.hs_method_f4de06e4((void*)__hosihikari_shim_handle, (void*)pos.Handle, face);
+        NativeMethods.TablePtr->C1.hs_method_f4de06e4((void*)__hosihikari_shim_handle, (void*)pos.Handle, face);
     }
 
     public void sendStartItemUseOn(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos buildPos, int face)
     {
-        NativeMethods.TablePtr->C2.hs_method_d635f590((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)buildPos.Handle, face);
+        NativeMethods.TablePtr->C1.hs_method_d635f590((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)buildPos.Handle, face);
     }
 
     public void sendStopDestroyBlock(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos arg0, float arg1)
     {
-        NativeMethods.TablePtr->C2.hs_method_df936fca((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
+        NativeMethods.TablePtr->C1.hs_method_df936fca((void*)__hosihikari_shim_handle, (void*)arg0.Handle, arg1);
     }
 
     public void sendStopItemUseOn(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos)
     {
-        NativeMethods.TablePtr->C2.hs_method_55453658((void*)__hosihikari_shim_handle, (void*)pos.Handle);
+        NativeMethods.TablePtr->C1.hs_method_55453658((void*)__hosihikari_shim_handle, (void*)pos.Handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -99,7 +99,7 @@ public sealed unsafe partial class IGameModeMessenger : global::System.IDisposab
 
     public void tryRotateTowardsAimAssist()
     {
-        NativeMethods.TablePtr->C2.hs_method_2dfea077((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_2dfea077((void*)__hosihikari_shim_handle);
     }
 
 
@@ -109,7 +109,7 @@ public sealed unsafe partial class IGameModeMessenger : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_81d63f4c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_81d63f4c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

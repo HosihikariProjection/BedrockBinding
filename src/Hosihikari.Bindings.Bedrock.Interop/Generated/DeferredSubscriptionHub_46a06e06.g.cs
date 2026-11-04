@@ -82,9 +82,9 @@ public sealed unsafe partial class DeferredSubscriptionHub : global::System.IDis
         return NativeMethods.TablePtr->C0.hs_method_bd66c58a((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'Bedrock::PubSub::DeferredSubscriptionHub' has no accessible destructor.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint makePriorityHub() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'Bedrock::PubSub::DeferredSubscriptionHub' has no accessible destructor.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public ulong runDeferredEvents(ulong maxToRun)
     {

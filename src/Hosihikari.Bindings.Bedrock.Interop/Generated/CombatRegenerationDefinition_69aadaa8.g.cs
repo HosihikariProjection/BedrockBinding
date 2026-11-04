@@ -40,7 +40,7 @@ public sealed unsafe partial class CombatRegenerationDefinition : global::System
 
     public static CombatRegenerationDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.CombatRegenerationDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_03976dd9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_03976dd9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,52 +49,35 @@ public sealed unsafe partial class CombatRegenerationDefinition : global::System
         return new CombatRegenerationDefinition((nint)handle);
     }
 
-    public static void buildSchema(global::Hosihikari.Bindings.Abi.SharedHandle? root)
-    {
-        NativeMethods.TablePtr->C1.hs_method_703b628e(root?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void buildSchema(nint root) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool mApplyToFamily
     {
-        get => NativeMethods.TablePtr->C1.hs_get_428f56e6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_428f56e6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_428f56e6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_428f56e6((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mApplyToSelf
     {
-        get => NativeMethods.TablePtr->C1.hs_get_b6b70928((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_b6b70928((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C0.hs_get_b6b70928((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_b6b70928((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRegenerationDuration_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_c373d952((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_c373d952((void*)__hosihikari_shim_handle);
     }
 
-    public void setRegenDuration(nint duration)
-    {
-        NativeMethods.TablePtr->C1.hs_method_dff6e778((void*)__hosihikari_shim_handle, (void*)duration);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setRegenDuration(nint duration) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void setRegenDurationWithInfiniteString(string duration)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(duration);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(duration, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_342f05b5((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void setRegenDurationWithInfiniteString(nint duration) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -103,7 +86,7 @@ public sealed unsafe partial class CombatRegenerationDefinition : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_69aadaa8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_69aadaa8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

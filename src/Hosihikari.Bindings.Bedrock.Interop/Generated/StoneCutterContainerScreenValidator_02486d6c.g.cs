@@ -41,25 +41,24 @@ public sealed unsafe partial class StoneCutterContainerScreenValidator : global:
     // The native field type is not projected; this is the address of the field storage.
     public nint mValidContainerEnumNames_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c168a093((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c168a093((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _getCraftResult(nint screenContext, nint screenValidation, nint craftInputs, nint numCrafts) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isCraftingImplemented()
-    {
-        return NativeMethods.TablePtr->C4.hs_method_7bb62fd8((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isCraftingImplemented() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static StoneCutterContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.StoneCutterContainerScreenValidator arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_236ac89d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_236ac89d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -74,7 +73,7 @@ public sealed unsafe partial class StoneCutterContainerScreenValidator : global:
 
     public bool isCraftingImplemented()
     {
-        return NativeMethods.TablePtr->C4.hs_method_02253267((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_02253267((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -84,7 +83,7 @@ public sealed unsafe partial class StoneCutterContainerScreenValidator : global:
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_02486d6c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_02486d6c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

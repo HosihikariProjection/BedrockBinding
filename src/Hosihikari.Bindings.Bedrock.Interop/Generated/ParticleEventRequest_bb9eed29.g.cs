@@ -40,7 +40,7 @@ public sealed unsafe partial class ParticleEventRequest : global::System.IDispos
 
     public static ParticleEventRequest Create(global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_709bbcf9((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_709bbcf9((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -49,15 +49,14 @@ public sealed unsafe partial class ParticleEventRequest : global::System.IDispos
         return new ParticleEventRequest((nint)handle);
     }
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest addParticleEffect(global::Hosihikari.Bindings.Bedrock.Interop.HashedString effect, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 emitterPosition, global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap molangVariables)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ParticleEventRequest((nint)NativeMethods.TablePtr->C3.hs_method_a328a669((void*)effect.Handle, (void*)emitterPosition.Handle, (void*)molangVariables.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint addParticleEffect(nint effect, nint emitterPosition, nint molangVariables) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9db2b425((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9db2b425((void*)__hosihikari_shim_handle);
     }
 
 
@@ -67,7 +66,7 @@ public sealed unsafe partial class ParticleEventRequest : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_bb9eed29((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_bb9eed29((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

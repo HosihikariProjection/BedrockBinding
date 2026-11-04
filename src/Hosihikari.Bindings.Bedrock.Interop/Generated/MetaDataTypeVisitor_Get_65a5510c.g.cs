@@ -38,10 +38,9 @@ public sealed unsafe partial class MetaDataTypeVisitor_Get : global::System.IDis
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_fc09e8e4((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static MetaDataTypeVisitor_Get Create()
     {
@@ -77,13 +76,13 @@ public sealed unsafe partial class MetaDataTypeVisitor_Get : global::System.IDis
         get => (nint)NativeMethods.TablePtr->C2.hs_get_be1fbc3c((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'std::variant<BaseGameVersion, std::basic_string<char>, LevelSeed64, GeneratorType, bool, short, DimensionHeightRange, NeighborAwareBlockUpgradeVersionType>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_call_5177558d(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'std::variant<BaseGameVersion, std::basic_string<char>, LevelSeed64, GeneratorType, bool, short, DimensionHeightRange, NeighborAwareBlockUpgradeVersionType>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: optional return type 'std::variant<BaseGameVersion, std::basic_string<char>, LevelSeed64, GeneratorType, bool, short, DimensionHeightRange, NeighborAwareBlockUpgradeVersionType>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_call_18c89576(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: optional return type 'std::variant<BaseGameVersion, std::basic_string<char>, LevelSeed64, GeneratorType, bool, short, DimensionHeightRange, NeighborAwareBlockUpgradeVersionType>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.MetaDataTypeVisitor_Get arg0)
     {

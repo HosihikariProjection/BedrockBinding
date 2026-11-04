@@ -38,42 +38,38 @@ public sealed unsafe partial class ConsoleChunkBlender : global::System.IDisposa
         return __hs_handle;
     }
 
-    public void _blendChunkOverworld(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk generatedChunk, global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, int shiftBlockType)
-    {
-        NativeMethods.TablePtr->C1.hs_method_313a92b8((void*)__hosihikari_shim_handle, (void*)generatedChunk.Handle, (void*)lc.Handle, shiftBlockType);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _blendChunkOverworld(nint generatedChunk, nint lc, nint shiftBlockType) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalHeight _findTopMostWaterHeight(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, int x, int z, nint waterBlocks)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalHeight((nint)NativeMethods.TablePtr->C1.hs_method_80aa1fc4((void*)__hosihikari_shim_handle, (void*)lc.Handle, x, z, (void*)waterBlocks));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _findTopMostWaterHeight(nint lc, int x, int z, nint waterBlocks) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _prepInterpTable()
-    {
-        NativeMethods.TablePtr->C1.hs_method_d9f6a4e2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _prepInterpTable() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void _shiftColumnBySetBlocks(global::Hosihikari.Bindings.Bedrock.Interop.LevelChunk lc, int x, int z, int adj, bool isSeaBlock, global::Hosihikari.Bindings.Bedrock.Interop.ChunkLocalHeight topSeaBlockHeight, int shiftBlockType, global::Hosihikari.Bindings.Bedrock.Interop.OverworldBlendRules blendRules)
-    {
-        NativeMethods.TablePtr->C1.hs_method_6e6bce01((void*)lc.Handle, x, z, adj, isSeaBlock, (void*)topSeaBlockHeight.Handle, shiftBlockType, (void*)blendRules.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _shiftColumnBySetBlocks(nint lc, int x, int z, int adj, bool isSeaBlock, nint topSeaBlockHeight, nint shiftBlockType, nint blendRules) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConversionBlendNoise_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a7927ec7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_a7927ec7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInterpCorners_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9abfa009((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_9abfa009((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mInterpTable_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_7ed92a6f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_7ed92a6f((void*)__hosihikari_shim_handle);
     }
 
 
@@ -83,7 +79,7 @@ public sealed unsafe partial class ConsoleChunkBlender : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_2bce55e1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_2bce55e1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

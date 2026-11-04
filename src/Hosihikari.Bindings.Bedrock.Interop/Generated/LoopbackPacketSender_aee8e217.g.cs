@@ -44,34 +44,31 @@ public sealed unsafe partial class LoopbackPacketSender : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C2.hs_get_d504510f((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _flush(nint id, nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isInitialized()
-    {
-        return NativeMethods.TablePtr->C2.hs_method_d825f2e1((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isInitialized() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _send(global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
         NativeMethods.TablePtr->C2.hs_method_4559df98((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
-    public void _sendBroadcast(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier exceptId, byte exceptSubid, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
-    {
-        NativeMethods.TablePtr->C2.hs_method_852a1721((void*)__hosihikari_shim_handle, (void*)exceptId.Handle, exceptSubid, (void*)packet.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendBroadcast(nint exceptId, nint exceptSubid, nint packet) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _sendBroadcast(global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
     {
         NativeMethods.TablePtr->C2.hs_method_3de8777b((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
-    public void _sendTo(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, byte subid, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet)
-    {
-        NativeMethods.TablePtr->C2.hs_method_469a9f50((void*)__hosihikari_shim_handle, (void*)id.Handle, subid, (void*)packet.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _sendTo(nint id, nint subid, nint packet) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void _sendToClient(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier id, global::Hosihikari.Bindings.Bedrock.Interop.Packet packet, byte recipientSubId)
     {
@@ -103,9 +100,9 @@ public sealed unsafe partial class LoopbackPacketSender : global::System.IDispos
         NativeMethods.TablePtr->C2.hs_method_661782f2((void*)__hosihikari_shim_handle, (void*)packet.Handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LoopbackPacketSender Create(global::Hosihikari.Bindings.Bedrock.Interop.LoopbackPacketSender arg0)
     {

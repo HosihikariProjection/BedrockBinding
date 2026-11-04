@@ -40,38 +40,38 @@ public sealed unsafe partial class PotionMixDataEntry : global::System.IDisposab
 
     public int fromItemAux
     {
-        get => NativeMethods.TablePtr->C3.hs_get_c31f9f0a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_c31f9f0a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_c31f9f0a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_c31f9f0a((void*)__hosihikari_shim_handle, value);
     }
 
     public int fromItemId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_493b1247((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_493b1247((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_493b1247((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_493b1247((void*)__hosihikari_shim_handle, value);
     }
 
     public int reagentItemAux
     {
-        get => NativeMethods.TablePtr->C3.hs_get_6ee58e36((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_6ee58e36((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_6ee58e36((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_6ee58e36((void*)__hosihikari_shim_handle, value);
     }
 
     public int reagentItemId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_4fd1c710((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_4fd1c710((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_4fd1c710((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_4fd1c710((void*)__hosihikari_shim_handle, value);
     }
 
     public int toItemAux
     {
-        get => NativeMethods.TablePtr->C3.hs_get_9fd3ec05((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_9fd3ec05((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_9fd3ec05((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_9fd3ec05((void*)__hosihikari_shim_handle, value);
     }
 
     public int toItemId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_2039a425((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_2039a425((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_2039a425((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_2039a425((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -80,7 +80,7 @@ public sealed unsafe partial class PotionMixDataEntry : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_9fa7abd8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9fa7abd8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

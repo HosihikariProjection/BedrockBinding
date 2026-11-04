@@ -84,10 +84,9 @@ public sealed unsafe partial class TransferTracker : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C0.hs_get_73b985b9((void*)__hosihikari_shim_handle);
     }
 
-    public void onAckReceived(ulong acked)
-    {
-        NativeMethods.TablePtr->C0.hs_method_5fa95d03((void*)__hosihikari_shim_handle, acked);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void onAckReceived(ulong acked) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ClientBlobCache.Server.ActiveTransfersManager_Nested.TransferTracker arg0)
     {

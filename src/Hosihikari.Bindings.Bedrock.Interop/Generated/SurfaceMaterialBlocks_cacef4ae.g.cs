@@ -40,33 +40,33 @@ public sealed unsafe partial class SurfaceMaterialBlocks : global::System.IDispo
 
     public nint mFoundation
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_40c70e57((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_40c70e57((void*)__hosihikari_shim_handle);
     }
 
     public nint mMid
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_5d8ecc5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5d8ecc5d((void*)__hosihikari_shim_handle);
     }
 
     public nint mSea
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_12367d23((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_12367d23((void*)__hosihikari_shim_handle);
     }
 
     public nint mSeaFloor
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6789d0d7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6789d0d7((void*)__hosihikari_shim_handle);
     }
 
     public int mSeaFloorDepth
     {
-        get => NativeMethods.TablePtr->C4.hs_get_40930511((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_40930511((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_40930511((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_40930511((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mTop
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9517b0ea((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9517b0ea((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -75,7 +75,7 @@ public sealed unsafe partial class SurfaceMaterialBlocks : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_cacef4ae((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_cacef4ae((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

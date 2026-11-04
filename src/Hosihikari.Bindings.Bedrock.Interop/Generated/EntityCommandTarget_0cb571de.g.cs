@@ -40,7 +40,7 @@ public sealed unsafe partial class EntityCommandTarget : global::System.IDisposa
 
     public static EntityCommandTarget Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandBlockUpdatePacketPayload_Nested.EntityCommandTarget arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_88e9993f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_88e9993f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class EntityCommandTarget : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntityId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_90c136e0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_90c136e0((void*)__hosihikari_shim_handle);
     }
 
 
@@ -62,7 +62,7 @@ public sealed unsafe partial class EntityCommandTarget : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_0cb571de((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_0cb571de((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

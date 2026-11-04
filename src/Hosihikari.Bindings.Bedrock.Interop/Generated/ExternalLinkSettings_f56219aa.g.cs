@@ -38,10 +38,9 @@ public sealed unsafe partial class ExternalLinkSettings : global::System.IDispos
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_318b7510((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ExternalLinkSettings Create()
     {
@@ -54,16 +53,9 @@ public sealed unsafe partial class ExternalLinkSettings : global::System.IDispos
         return new ExternalLinkSettings((nint)handle);
     }
 
-    public static ExternalLinkSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_fba23c63((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ExternalLinkSettings((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static ExternalLinkSettings Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint displayName_Address
@@ -71,9 +63,9 @@ public sealed unsafe partial class ExternalLinkSettings : global::System.IDispos
         get => (nint)NativeMethods.TablePtr->C1.hs_get_cbf3451d((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint operator_assign(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ExternalLinkSettings arg0)
     {

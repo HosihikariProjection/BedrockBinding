@@ -38,15 +38,13 @@ public sealed unsafe partial class UnburiedConstraint : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structure)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_59f7ce2b((void*)__hosihikari_shim_handle, (void*)structure.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint structure) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isSatisfied(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos structurePos, nint structureRot, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos centeringOffset)
-    {
-        return NativeMethods.TablePtr->C4.hs_method_a30fc840((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)structurePos.Handle, (void*)structureRot, (void*)centeringOffset.Handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isSatisfied(nint target, nint structurePos, nint structureRot, nint centeringOffset) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UnburiedConstraint Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class UnburiedConstraint : global::System.IDisposab
         return new UnburiedConstraint((nint)handle);
     }
 
-    public static UnburiedConstraint Create(global::Hosihikari.Bindings.Bedrock.Interop.StructureTemplate structure)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_6820e9d9((void*)structure.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new UnburiedConstraint((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static UnburiedConstraint Create(nint structure) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static UnburiedConstraint Create(global::Hosihikari.Bindings.Bedrock.Interop.UnburiedConstraint arg0)
     {

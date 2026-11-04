@@ -42,20 +42,20 @@ public sealed unsafe partial class PacketGroupBuilder : global::System.IDisposab
     public static PacketGroupBuilder Create(nint other) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addPacketAlgorithm(nint packetIds, nint algorithm) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBasicPacketGroups_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4723ad78((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_4723ad78((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultAlgorithm_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a676d182((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a676d182((void*)__hosihikari_shim_handle);
     }
 
 
@@ -65,7 +65,7 @@ public sealed unsafe partial class PacketGroupBuilder : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c8c73415((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c8c73415((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

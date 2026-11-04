@@ -38,10 +38,9 @@ public sealed unsafe partial class ScriptBlockCustomComponentsFinalizer : global
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_c9b9056e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ScriptBlockCustomComponentsFinalizer Create(global::Hosihikari.Bindings.Bedrock.Interop.ScriptBlockCustomComponentsFinalizer arg0)
     {
@@ -54,9 +53,9 @@ public sealed unsafe partial class ScriptBlockCustomComponentsFinalizer : global
         return new ScriptBlockCustomComponentsFinalizer((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'gsl::not_null<BlockCustomComponentsComponent *>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void finalizeBlock(nint block, nint customComps) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'gsl::not_null<BlockCustomComponentsComponent *>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRegistry_Address

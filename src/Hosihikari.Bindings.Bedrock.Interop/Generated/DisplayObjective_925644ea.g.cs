@@ -38,11 +38,9 @@ public sealed unsafe partial class DisplayObjective : global::System.IDisposable
         return __hs_handle;
     }
 
-    public string getBelowNameStringForId(global::Hosihikari.Bindings.Bedrock.Interop.ScoreboardId scoreboardId)
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_81814d18((void*)__hosihikari_shim_handle, (void*)scoreboardId.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getBelowNameStringForId(nint scoreboardId) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mObjective
     {

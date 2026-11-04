@@ -38,20 +38,17 @@ public sealed unsafe partial class AddVolumeEntityPacketPayload : global::System
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.AddVolumeEntityPacketPayload other)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_055d8680((void*)__hosihikari_shim_handle, (void*)other.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag components, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_87870a0d((void*)__hosihikari_shim_handle, (void*)entity.Handle, (void*)components.Handle, (void*)minEngineVersion.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint entity, nint components, nint minEngineVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_7de24f1b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AddVolumeEntityPacketPayload Create()
     {
@@ -64,27 +61,13 @@ public sealed unsafe partial class AddVolumeEntityPacketPayload : global::System
         return new AddVolumeEntityPacketPayload((nint)handle);
     }
 
-    public static AddVolumeEntityPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AddVolumeEntityPacketPayload other)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_70de2970((void*)other.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AddVolumeEntityPacketPayload Create(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-        return new AddVolumeEntityPacketPayload((nint)handle);
-    }
-
-    public static AddVolumeEntityPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.EntityContext entity, global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag components, global::Hosihikari.Bindings.Bedrock.Interop.MinEngineVersion minEngineVersion)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_be123230((void*)entity.Handle, (void*)components.Handle, (void*)minEngineVersion.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new AddVolumeEntityPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AddVolumeEntityPacketPayload Create(nint entity, nint components, nint minEngineVersion) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponents_Address
@@ -134,14 +117,13 @@ public sealed unsafe partial class AddVolumeEntityPacketPayload : global::System
         get => (nint)NativeMethods.TablePtr->C0.hs_get_2790aa1d((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
-    public nint operator_assign(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_e0a79931(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.AddVolumeEntityPacketPayload operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.AddVolumeEntityPacketPayload other)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.AddVolumeEntityPacketPayload((nint)NativeMethods.TablePtr->C0.hs_method_2fff31fb((void*)__hosihikari_shim_handle, (void*)other.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_assign_2fff31fb(nint other) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

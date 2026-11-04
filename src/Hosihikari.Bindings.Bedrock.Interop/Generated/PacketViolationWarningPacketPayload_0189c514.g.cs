@@ -38,28 +38,13 @@ public sealed unsafe partial class PacketViolationWarningPacketPayload : global:
         return __hs_handle;
     }
 
-    public nint _ctor(nint error_code, int violationResponse, int violatingPacketId, string violationContext)
-    {
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(violationContext);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(violationContext, __hs_stringBytes3);
-        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-        {
-            return (nint)NativeMethods.TablePtr->C3.hs_method_c5d6dc4f((void*)__hosihikari_shim_handle, (void*)error_code, violationResponse, violatingPacketId, __hs_stringData3, (nuint)__hs_stringByteCount3);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint error_code, nint violationResponse, nint violatingPacketId, nint violationContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PacketViolationWarningPacketPayload Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_020f2675();
+        var handle = NativeMethods.TablePtr->C2.hs_create_020f2675();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,7 +55,7 @@ public sealed unsafe partial class PacketViolationWarningPacketPayload : global:
 
     public static PacketViolationWarningPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.PacketViolationWarningPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_7346bddf((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_7346bddf((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,53 +64,32 @@ public sealed unsafe partial class PacketViolationWarningPacketPayload : global:
         return new PacketViolationWarningPacketPayload((nint)handle);
     }
 
-    public static PacketViolationWarningPacketPayload Create(nint error_code, int violationResponse, int violatingPacketId, string violationContext)
-    {
-        var __hs_stringByteCount3 = global::System.Text.Encoding.UTF8.GetByteCount(violationContext);
-        scoped global::System.Span<byte> __hs_stringBytes3;
-        if (__hs_stringByteCount3 <= 256)
-        {
-            __hs_stringBytes3 = stackalloc byte[__hs_stringByteCount3 == 0 ? 1 : __hs_stringByteCount3];
-        }
-        else
-        {
-            __hs_stringBytes3 = new byte[__hs_stringByteCount3];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(violationContext, __hs_stringBytes3);
-        fixed (byte* __hs_stringData3 = __hs_stringBytes3)
-        {
-            var handle = NativeMethods.TablePtr->C3.hs_create_ae7bc326((void*)error_code, violationResponse, violatingPacketId, __hs_stringData3, (nuint)__hs_stringByteCount3);
-            if (handle == null)
-            {
-                throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-            }
-
-            return new PacketViolationWarningPacketPayload((nint)handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PacketViolationWarningPacketPayload Create(nint error_code, nint violationResponse, nint violatingPacketId, nint violationContext) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mViolatingPacketId
     {
-        get => NativeMethods.TablePtr->C3.hs_get_49494210((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_49494210((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_49494210((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_49494210((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mViolationContext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_27371e4e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_27371e4e((void*)__hosihikari_shim_handle);
     }
 
     public int mViolationSeverity
     {
-        get => NativeMethods.TablePtr->C3.hs_get_d7672d6d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_d7672d6d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_d7672d6d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_d7672d6d((void*)__hosihikari_shim_handle, value);
     }
 
     public int mViolationType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_062d525f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_062d525f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_062d525f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_062d525f((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -135,7 +99,7 @@ public sealed unsafe partial class PacketViolationWarningPacketPayload : global:
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0189c514((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0189c514((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

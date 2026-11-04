@@ -38,15 +38,13 @@ public sealed unsafe partial class EmotePacketPayload : global::System.IDisposab
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.EmotePacketPayload arg0)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_76ee24de((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_68703c53((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static EmotePacketPayload Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class EmotePacketPayload : global::System.IDisposab
         return new EmotePacketPayload((nint)handle);
     }
 
-    public static EmotePacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.EmotePacketPayload arg0)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_520c5ef7((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new EmotePacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static EmotePacketPayload Create(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public uint mEmoteTicks
     {

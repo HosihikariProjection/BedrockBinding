@@ -38,15 +38,13 @@ public sealed unsafe partial class AddActorPacketPayload : global::System.IDispo
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Actor e)
-    {
-        return (nint)NativeMethods.TablePtr->C0.hs_method_2b89439f((void*)__hosihikari_shim_handle, (void*)e.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint e) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_796a253b((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AddActorPacketPayload Create()
     {
@@ -59,16 +57,9 @@ public sealed unsafe partial class AddActorPacketPayload : global::System.IDispo
         return new AddActorPacketPayload((nint)handle);
     }
 
-    public static AddActorPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.Actor e)
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_897a7bb4((void*)e.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new AddActorPacketPayload((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static AddActorPacketPayload Create(nint e) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AddActorPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.AddActorPacketPayload arg0)
     {

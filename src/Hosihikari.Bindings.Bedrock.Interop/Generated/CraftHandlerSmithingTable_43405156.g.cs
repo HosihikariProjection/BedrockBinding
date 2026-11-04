@@ -80,11 +80,9 @@ public sealed unsafe partial class CraftHandlerSmithingTable : global::System.ID
         set => NativeMethods.TablePtr->C1.hs_set_2cdaff96((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.Recipes? __getLevelRecipes()
-    {
-        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_aa4252eb((void*)__hosihikari_shim_handle);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Recipes((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint __getLevelRecipes() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public byte __handleCraftAction(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackRequestActionCraftBase requestAction)
     {

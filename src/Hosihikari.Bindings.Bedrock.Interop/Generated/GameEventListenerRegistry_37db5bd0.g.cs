@@ -55,9 +55,9 @@ public sealed unsafe partial class GameEventListenerRegistry : global::System.ID
         get => (nint)NativeMethods.TablePtr->C1.hs_get_76b88ec2((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: return type 'gsl::final_action<std::function<void ()>>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint registerListener(nint gameEventListener) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: return type 'gsl::final_action<std::function<void ()>>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

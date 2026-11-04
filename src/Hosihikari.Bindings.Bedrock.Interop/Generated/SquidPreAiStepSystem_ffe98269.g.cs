@@ -38,15 +38,13 @@ public sealed unsafe partial class SquidPreAiStepSystem : global::System.IDispos
         return __hs_handle;
     }
 
-    public static void _doSquidPreAiStepSystem(global::Hosihikari.Bindings.Bedrock.Interop.StrictEntityContext arg0, global::Hosihikari.Bindings.Bedrock.Interop.LocalMoveVelocityComponent localMoveVelocityComponent)
-    {
-        NativeMethods.TablePtr->C4.hs_method_8b81b8af((void*)arg0.Handle, (void*)localMoveVelocityComponent.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void _doSquidPreAiStepSystem(nint arg0, nint localMoveVelocityComponent) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo createSystem()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.TickingSystemWithInfo((nint)NativeMethods.TablePtr->C4.hs_method_5bfc93fe());
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint createSystem() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -54,7 +52,7 @@ public sealed unsafe partial class SquidPreAiStepSystem : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_ffe98269((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ffe98269((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

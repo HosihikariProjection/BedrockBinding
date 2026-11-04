@@ -40,7 +40,7 @@ public sealed unsafe partial class SettingsCommandPacketPayload : global::System
 
     public static SettingsCommandPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SettingsCommandPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_cdc4876f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_cdc4876f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class SettingsCommandPacketPayload : global::System
     // The native field type is not projected; this is the address of the field storage.
     public nint mCommandString_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8d8013d2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8d8013d2((void*)__hosihikari_shim_handle);
     }
 
     public bool mSuppressOutput
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e82a48d8((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_e82a48d8((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e82a48d8((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_e82a48d8((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class SettingsCommandPacketPayload : global::System
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_20669319((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_20669319((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

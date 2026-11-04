@@ -38,9 +38,9 @@ public sealed unsafe partial class DelayActionList : global::System.IDisposable
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static DelayActionList Create(global::Hosihikari.Bindings.Bedrock.Interop.DelayActionList arg0)
     {
@@ -53,19 +53,17 @@ public sealed unsafe partial class DelayActionList : global::System.IDisposable
         return new DelayActionList((nint)handle);
     }
 
-    public void _loadRequests(global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage, global::Hosihikari.Bindings.Bedrock.Interop.ICommandOriginLoader loader, ulong currentTick)
-    {
-        NativeMethods.TablePtr->C1.hs_method_98dd71f6((void*)__hosihikari_shim_handle, (void*)dimension.Handle, (void*)levelStorage.Handle, (void*)loader.Handle, currentTick);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _loadRequests(nint dimension, nint levelStorage, nint loader, ulong currentTick) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DelayRequest' is not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _queueRequestOrExecuteAction(nint request, nint levelStorage, nint dimension, ulong currentTick, bool allowDuplicates) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DelayRequest' is not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public int clearRequestWithAction(global::Hosihikari.Bindings.Bedrock.Interop.LevelStorage levelStorage, global::Hosihikari.Bindings.Bedrock.Interop.IRequestAction? actionToRemove)
-    {
-        return NativeMethods.TablePtr->C1.hs_method_69a9a369((void*)__hosihikari_shim_handle, (void*)levelStorage.Handle, (void*)(actionToRemove?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public int clearRequestWithAction(nint levelStorage, nint actionToRemove) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDelayRequests_Address
@@ -79,14 +77,13 @@ public sealed unsafe partial class DelayActionList : global::System.IDisposable
         get => (nint)NativeMethods.TablePtr->C1.hs_get_a2449a76((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'DelayRequest' is not copy-constructible.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint queueRequestOrExecuteAction(nint request, nint dimension, ulong currentTick, bool allowDuplicates) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'DelayRequest' is not copy-constructible.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void tick(global::Hosihikari.Bindings.Bedrock.Interop.ServerLevel level, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension, ulong currentTick)
-    {
-        NativeMethods.TablePtr->C1.hs_method_c7c18235((void*)__hosihikari_shim_handle, (void*)level.Handle, (void*)dimension.Handle, currentTick);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void tick(nint level, nint dimension, ulong currentTick) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

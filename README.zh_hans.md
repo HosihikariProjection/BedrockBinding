@@ -15,9 +15,10 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 
 ## 当前状态
 
-- Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,222 个生成的 C# 文件。
-- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 155,635 个函数。
-- 覆盖：`win-x64-server` 配置绑定 12,150 个声明与 101,789 个成员。
+- Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,184 个生成的 C# 文件。
+- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 133,615 个函数。
+- 覆盖：`win-x64-server` 配置绑定 12,138 个声明与 101,794 个成员。
+- 载体标注为 `MCNAPI`（已知但不导出）的成员保留为带原因的 stub：对锁定数据实测，27,673 个名称中仅 2 个可解析，而 4,183 个 `MCAPI` 名称中有 3,871 个可解析。
 - `scripts/headers-26.60.txt` 列出解析的 5,169 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
 
 shim 以 `--symbol-dispatch --resolve-by-name` 模式发射。支持的 ABI：

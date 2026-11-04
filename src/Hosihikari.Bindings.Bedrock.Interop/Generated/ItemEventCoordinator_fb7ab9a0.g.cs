@@ -41,58 +41,58 @@ public sealed unsafe partial class ItemEventCoordinator : global::System.IDispos
     // The native field type is not projected; this is the address of the field storage.
     public nint mEventsToProcess_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1d408b75((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_1d408b75((void*)__hosihikari_shim_handle);
     }
 
     public bool mHasPendingRegistrations
     {
-        get => NativeMethods.TablePtr->C2.hs_get_2c9344fa((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_2c9344fa((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_2c9344fa((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_2c9344fa((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mListeners_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c75654ac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c75654ac((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingRegistrations_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b5220538((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b5220538((void*)__hosihikari_shim_handle);
     }
 
     public uint mThreadCheckIndex
     {
-        get => NativeMethods.TablePtr->C2.hs_get_9afd3407((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_9afd3407((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_9afd3407((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_9afd3407((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mThreadId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_90dc8faf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_90dc8faf((void*)__hosihikari_shim_handle);
     }
 
     public bool mThreadIdInitialized
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c6c02634((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_c6c02634((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_c6c02634((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_c6c02634((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemGameplayHandler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_31ad40d6((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_31ad40d6((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'EventRef<MutableItemGameplayEvent<CoordinatorResult>>' is not a known bindable declaration.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint sendEvent(nint @event) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'EventRef<MutableItemGameplayEvent<CoordinatorResult>>' is not a known bindable declaration.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -101,7 +101,7 @@ public sealed unsafe partial class ItemEventCoordinator : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_fb7ab9a0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_fb7ab9a0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

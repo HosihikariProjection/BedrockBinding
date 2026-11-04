@@ -103,10 +103,9 @@ public sealed unsafe partial class FromCenter : global::System.IDisposable
         set => NativeMethods.TablePtr->C0.hs_set_0acf5fd2((void*)__hosihikari_shim_handle, value);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.BlockPosIterator_Nested.FromCenter operator_operator__()
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockPosIterator_Nested.FromCenter((nint)NativeMethods.TablePtr->C0.hs_method_ad3645db((void*)__hosihikari_shim_handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint operator_operator__() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

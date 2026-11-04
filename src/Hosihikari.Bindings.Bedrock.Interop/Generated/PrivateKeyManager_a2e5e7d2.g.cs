@@ -41,37 +41,34 @@ public sealed unsafe partial class PrivateKeyManager : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka2774b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f8435a83((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f8435a83((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbe6af1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e6b290ed((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e6b290ed((void*)__hosihikari_shim_handle);
     }
 
-    public nint _ctor(int system)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_4d69e384((void*)__hosihikari_shim_handle, system);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint system) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_29262762((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public bool _isValid()
-    {
-        return NativeMethods.TablePtr->C3.hs_method_947c5284((void*)__hosihikari_shim_handle) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public bool _isValid() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PrivateKeyManager Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_4963d94b();
+        var handle = NativeMethods.TablePtr->C2.hs_create_4963d94b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -80,20 +77,13 @@ public sealed unsafe partial class PrivateKeyManager : global::System.IDisposabl
         return new PrivateKeyManager((nint)handle);
     }
 
-    public static PrivateKeyManager Create(int system)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_8369dbe1(system);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new PrivateKeyManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static PrivateKeyManager Create(nint system) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PrivateKeyManager Create(global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_26466940((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_26466940((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -102,26 +92,24 @@ public sealed unsafe partial class PrivateKeyManager : global::System.IDisposabl
         return new PrivateKeyManager((nint)handle);
     }
 
-    public string computeSecret(global::Hosihikari.Bindings.Bedrock.Interop.KeyManager peer)
-    {
-        var __hs_view = NativeMethods.TablePtr->C3.hs_method_f13e7f8b((void*)__hosihikari_shim_handle, (void*)peer.Handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint computeSecret(nint peer) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool isValid()
     {
-        return NativeMethods.TablePtr->C3.hs_method_bfd5a1c0((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_bfd5a1c0((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkdcc79d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c83fe5d7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c83fe5d7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager((nint)NativeMethods.TablePtr->C3.hs_method_34f69b25((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.PrivateKeyManager((nint)NativeMethods.TablePtr->C2.hs_method_34f69b25((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -131,7 +119,7 @@ public sealed unsafe partial class PrivateKeyManager : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_a2e5e7d2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_a2e5e7d2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

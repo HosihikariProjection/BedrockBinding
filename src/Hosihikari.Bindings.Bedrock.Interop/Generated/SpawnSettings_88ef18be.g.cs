@@ -38,14 +38,13 @@ public sealed unsafe partial class SpawnSettings : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_f2e552c5((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SpawnSettings Create(global::Hosihikari.Bindings.Bedrock.Interop.SpawnSettings arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_df77c774((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_df77c774((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,19 +56,19 @@ public sealed unsafe partial class SpawnSettings : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint dimension_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a9adaaea((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a9adaaea((void*)__hosihikari_shim_handle);
     }
 
     public short type
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e1e4a6d6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e1e4a6d6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e1e4a6d6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e1e4a6d6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint userDefinedBiomeName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9b393261((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_9b393261((void*)__hosihikari_shim_handle);
     }
 
 
@@ -79,7 +78,7 @@ public sealed unsafe partial class SpawnSettings : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_88ef18be((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_88ef18be((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

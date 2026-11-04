@@ -38,10 +38,9 @@ public sealed unsafe partial class LootTableContext : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_b2628de2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static LootTableContext Create(global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg0)
     {
@@ -54,11 +53,9 @@ public sealed unsafe partial class LootTableContext : global::System.IDisposable
         return new LootTableContext((nint)handle);
     }
 
-    public string getOriginalItemName()
-    {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_872597d2((void*)__hosihikari_shim_handle);
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getOriginalItemName() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public nint mDeathSource
     {

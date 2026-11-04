@@ -40,8 +40,8 @@ public sealed unsafe partial class ItemUseSlowdownModifierComponent : global::Sy
 
     public float mModifier
     {
-        get => NativeMethods.TablePtr->C2.hs_get_15fe8a9d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_15fe8a9d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_15fe8a9d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_15fe8a9d((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class ItemUseSlowdownModifierComponent : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_610e0032((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_610e0032((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

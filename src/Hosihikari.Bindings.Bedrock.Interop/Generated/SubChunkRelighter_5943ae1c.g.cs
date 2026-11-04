@@ -38,19 +38,17 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.IBlockSource source, ulong centerSubChunkIndex, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos centerChunkPos, int absorptionBehavior, bool originalLighting, bool useFullyDarkSubchunk)
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_d5050f2e((void*)__hosihikari_shim_handle, (void*)source.Handle, centerSubChunkIndex, (void*)centerChunkPos.Handle, absorptionBehavior, originalLighting, useFullyDarkSubchunk);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint source, ulong centerSubChunkIndex, nint centerChunkPos, nint absorptionBehavior, bool originalLighting, bool useFullyDarkSubchunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_09f039b9((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SubChunkRelighter Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_863e674f();
+        var handle = NativeMethods.TablePtr->C3.hs_create_863e674f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,20 +57,13 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
         return new SubChunkRelighter((nint)handle);
     }
 
-    public static SubChunkRelighter Create(global::Hosihikari.Bindings.Bedrock.Interop.IBlockSource source, ulong centerSubChunkIndex, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos centerChunkPos, int absorptionBehavior, bool originalLighting, bool useFullyDarkSubchunk)
-    {
-        var handle = NativeMethods.TablePtr->C4.hs_create_c751603d((void*)source.Handle, centerSubChunkIndex, (void*)centerChunkPos.Handle, absorptionBehavior, originalLighting, useFullyDarkSubchunk);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SubChunkRelighter((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static SubChunkRelighter Create(nint source, ulong centerSubChunkIndex, nint centerChunkPos, nint absorptionBehavior, bool originalLighting, bool useFullyDarkSubchunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SubChunkRelighter Create(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkRelighter arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_aad79583((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_aad79583((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,190 +72,171 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
         return new SubChunkRelighter((nint)handle);
     }
 
-    public void _checkEdgeForSubtractiveBlockLightProcessing(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkLightIndex coordIndex)
-    {
-        NativeMethods.TablePtr->C4.hs_method_b874dbfc((void*)__hosihikari_shim_handle, (void*)coordIndex.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _checkEdgeForSubtractiveBlockLightProcessing(nint coordIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _checkEdgeForSubtractiveSkyLightProcessing(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkLightIndex coordIndex)
-    {
-        NativeMethods.TablePtr->C4.hs_method_87eed5cf((void*)__hosihikari_shim_handle, (void*)coordIndex.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _checkEdgeForSubtractiveSkyLightProcessing(nint coordIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunk? _dirtySubChunk(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkLightIndex coordIndex, nint subChunkIndex)
-    {
-        var __hs_handle = NativeMethods.TablePtr->C4.hs_method_57075165((void*)__hosihikari_shim_handle, (void*)coordIndex.Handle, (void*)subChunkIndex);
-        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.SubChunk((nint)__hs_handle, false) : null;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _dirtySubChunk(nint coordIndex, nint subChunkIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _propagateBlockLight()
-    {
-        NativeMethods.TablePtr->C4.hs_method_b070ee4c((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _propagateBlockLight() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _propagateSkyLight()
-    {
-        NativeMethods.TablePtr->C4.hs_method_016b1f3e((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _propagateSkyLight() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _propagateSubtractiveBlockLight()
-    {
-        NativeMethods.TablePtr->C4.hs_method_d559be45((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _propagateSubtractiveBlockLight() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _propagateSubtractiveSkyLight()
-    {
-        NativeMethods.TablePtr->C4.hs_method_8762b4bb((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _propagateSubtractiveSkyLight() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setLightHelper(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkLightIndex coordIndex, global::Hosihikari.Bindings.Bedrock.Interop.Brightness oldBrightness, global::Hosihikari.Bindings.Bedrock.Interop.Brightness newBrightness, global::Hosihikari.Bindings.Bedrock.Interop.Brightness oldAbsorption, global::Hosihikari.Bindings.Bedrock.Interop.Brightness newAbsorption, uint lightType, uint subChunkIndex)
-    {
-        NativeMethods.TablePtr->C4.hs_method_94850f20((void*)__hosihikari_shim_handle, (void*)coordIndex.Handle, (void*)oldBrightness.Handle, (void*)newBrightness.Handle, (void*)oldAbsorption.Handle, (void*)newAbsorption.Handle, lightType, subChunkIndex);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setLightHelper(nint coordIndex, nint oldBrightness, nint newBrightness, nint oldAbsorption, nint newAbsorption, uint lightType, uint subChunkIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setPropagatedBlockLightValue(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkLightIndex coordIndex, byte brightness)
-    {
-        NativeMethods.TablePtr->C4.hs_method_1be9e717((void*)__hosihikari_shim_handle, (void*)coordIndex.Handle, brightness);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setPropagatedBlockLightValue(nint coordIndex, byte brightness) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setPropagatedSkyLightValue(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkLightIndex coordIndex, byte brightness)
-    {
-        NativeMethods.TablePtr->C4.hs_method_ab06ef3b((void*)__hosihikari_shim_handle, (void*)coordIndex.Handle, brightness);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setPropagatedSkyLightValue(nint coordIndex, byte brightness) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _setSkyLight(global::Hosihikari.Bindings.Bedrock.Interop.SubChunkLightIndex coordIndex, global::Hosihikari.Bindings.Bedrock.Interop.Brightness oldBrightness, global::Hosihikari.Bindings.Bedrock.Interop.Brightness newBrightness, global::Hosihikari.Bindings.Bedrock.Interop.Brightness oldAbsorption, global::Hosihikari.Bindings.Bedrock.Interop.Brightness newAbsorption)
-    {
-        NativeMethods.TablePtr->C4.hs_method_16f69951((void*)__hosihikari_shim_handle, (void*)coordIndex.Handle, (void*)oldBrightness.Handle, (void*)newBrightness.Handle, (void*)oldAbsorption.Handle, (void*)newAbsorption.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _setSkyLight(nint coordIndex, nint oldBrightness, nint newBrightness, nint oldAbsorption, nint newAbsorption) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void getBlock(nint pos, nint block, nint extraBlock) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkBrightnessStorage_Nested.LightPair getLightPair(global::Hosihikari.Bindings.Bedrock.Interop.Pos coord)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkBrightnessStorage_Nested.LightPair((nint)NativeMethods.TablePtr->C4.hs_method_e4a223a0((void*)__hosihikari_shim_handle, (void*)coord.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getLightPair(nint coord) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SubChunkBrightnessStorage_Nested.LightPair getLightPairWithPlaceholderCheck(global::Hosihikari.Bindings.Bedrock.Interop.Pos coord, global::Hosihikari.Bindings.Bedrock.Interop.SubChunkBrightnessStorage_Nested.LightPair defaultLightPairIfPlaceholderSubChunk)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SubChunkBrightnessStorage_Nested.LightPair((nint)NativeMethods.TablePtr->C4.hs_method_458f3e95((void*)__hosihikari_shim_handle, (void*)coord.Handle, (void*)defaultLightPairIfPlaceholderSubChunk.Handle));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint getLightPairWithPlaceholderCheck(nint coord, nint defaultLightPairIfPlaceholderSubChunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void initializeStatics()
-    {
-        NativeMethods.TablePtr->C4.hs_method_48c499cc();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initializeStatics() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public int mAbsorptionBehavior
     {
-        get => NativeMethods.TablePtr->C4.hs_get_38b62c2c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_38b62c2c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_38b62c2c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_38b62c2c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAbsorptionBlocksToProcess_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_efd0e5ec((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_efd0e5ec((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAdditiveBlocksToProcess_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0d635e9d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0d635e9d((void*)__hosihikari_shim_handle);
     }
 
-    public static nint mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_28247cc2();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mAllSubChunkBorderBitsExceptTheOuterEdgeOfComputationBits() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlocksToProcess_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_12c7789b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_12c7789b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCenterChunkPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_789ca84a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_789ca84a((void*)__hosihikari_shim_handle);
     }
 
     public ulong mCenterSubChunkIndex
     {
-        get => NativeMethods.TablePtr->C4.hs_get_f988b976((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_f988b976((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_f988b976((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_f988b976((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDefaultLightPair_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_a6725a99((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a6725a99((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEdgeBlocksToProcess_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_c1756e6c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c1756e6c((void*)__hosihikari_shim_handle);
     }
 
     public bool mNeedToResetToDoBits
     {
-        get => NativeMethods.TablePtr->C4.hs_get_2853a560((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_2853a560((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_2853a560((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_2853a560((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOldAbsorption_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_0988e8cf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0988e8cf((void*)__hosihikari_shim_handle);
     }
 
     public bool mOriginalLighting
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e98c3e82((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C4.hs_set_e98c3e82((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e98c3e82((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_e98c3e82((void*)__hosihikari_shim_handle, value);
     }
 
-    public static nint mOuterEdgeOfComputationBits()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_a46f8610();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint mOuterEdgeOfComputationBits() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubChunkPtrArray_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_6199f35d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6199f35d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubChunkTouched_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_ec72d103((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ec72d103((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSubtractiveBlocks_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_610df8b4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_610df8b4((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mToDo_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_dde4423b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dde4423b((void*)__hosihikari_shim_handle);
     }
 
-    public static nint sFullyDarkSubChunk()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_66315cb0();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sFullyDarkSubChunk() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static nint sFullyLitSubChunk()
-    {
-        return (nint)NativeMethods.TablePtr->C4.hs_method_e348088a();
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint sFullyLitSubChunk() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -273,7 +245,7 @@ public sealed unsafe partial class SubChunkRelighter : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_5943ae1c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5943ae1c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

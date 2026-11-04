@@ -38,14 +38,13 @@ public sealed unsafe partial class PoolAliasLookup : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C3.hs_method_c9f125c3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static PoolAliasLookup Create(global::Hosihikari.Bindings.Bedrock.Interop.PoolAliasBinding_Nested.PoolAliasLookup arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_68616ce0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_68616ce0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,7 +56,7 @@ public sealed unsafe partial class PoolAliasLookup : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mLookupTable_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c7f5875c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_c7f5875c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -67,7 +66,7 @@ public sealed unsafe partial class PoolAliasLookup : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_0df3d4d1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_0df3d4d1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

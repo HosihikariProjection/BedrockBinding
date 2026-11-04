@@ -38,141 +38,105 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         return __hs_handle;
     }
 
-    public static bool parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionTrigger definitionTrigger, bool acceptString)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_2baf9dd7((void*)val.Handle, (void*)definitionTrigger.Handle, acceptString) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool parse_2baf9dd7(nint val, nint definitionTrigger, bool acceptString) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.DefinitionTrigger definitionTrigger, bool acceptString)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_4733427f((void*)val.Handle, (void*)definitionTrigger.Handle, acceptString) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool parse_4733427f(nint val, nint definitionTrigger, bool acceptString) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.EffectDuration variable, nint jsonName, bool convertToTicks)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_a88f8d5c((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, convertToTicks) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool parse_a88f8d5c(nint val, nint variable, nint jsonName, bool convertToTicks) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'ItemDescriptor' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static bool parse_e480c694(nint val, nint molangVersion, nint itemDescriptors) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'ItemDescriptor' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static bool parse_a834636e(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint target, nint jsonName, nint defaultValue)
-    {
-        return NativeMethods.TablePtr->C3.hs_method_a834636e((void*)val.Handle, (void*)target, (void*)jsonName, (void*)defaultValue) != 0;
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static bool parse_a834636e(nint val, nint target, nint jsonName, nint defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static bool parse(nint val, nint triggers) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static bool parse_a83860d2(nint val, nint triggers, nint jsonName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.ActorDefinitionIdentifier variable, nint jsonName, nint defaultValue)
-    {
-        NativeMethods.TablePtr->C3.hs_method_ecded49b((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_ecded49b(nint val, nint variable, nint jsonName, nint defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.MobEffectInstance variable, nint jsonName)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f184efaa((void*)val.Handle, (void*)variable.Handle, (void*)jsonName);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_f184efaa(nint val, nint variable, nint jsonName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse_3f944d77(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint variable, nint jsonName, nint defaultValue)
-    {
-        NativeMethods.TablePtr->C3.hs_method_3f944d77((void*)val.Handle, (void*)variable, (void*)jsonName, (void*)defaultValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_3f944d77(nint val, nint variable, nint jsonName, nint defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse_99be0a8d(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint variable, nint jsonName, nint defaultValue)
-    {
-        NativeMethods.TablePtr->C3.hs_method_99be0a8d((void*)val.Handle, (void*)variable, (void*)jsonName, (void*)defaultValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_99be0a8d(nint val, nint variable, nint jsonName, nint defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 variable, nint jsonName, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 defaultValue)
-    {
-        NativeMethods.TablePtr->C3.hs_method_d6a9886f((void*)val.Handle, (void*)variable.Handle, (void*)jsonName, (void*)defaultValue.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_d6a9886f(nint val, nint variable, nint jsonName, nint defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, global::Hosihikari.Bindings.Bedrock.Interop.WeightedChoices_ActorDefinitionTrigger_ variable, nint jsonName)
-    {
-        NativeMethods.TablePtr->C3.hs_method_f2b3301c((void*)val.Handle, (void*)variable.Handle, (void*)jsonName);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_f2b3301c(nint val, nint variable, nint jsonName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint variable, nint jsonName, bool defaultValue)
-    {
-        NativeMethods.TablePtr->C3.hs_method_7e674786((void*)val.Handle, (void*)variable, (void*)jsonName, defaultValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_7e674786(nint val, nint variable, nint jsonName, bool defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, string variable, nint jsonName, nint defaultValue)
-    {
-        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(variable);
-        scoped global::System.Span<byte> __hs_stringBytes1;
-        if (__hs_stringByteCount1 <= 256)
-        {
-            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
-        }
-        else
-        {
-            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(variable, __hs_stringBytes1);
-        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
-        {
-            var __hs_view = NativeMethods.TablePtr->C3.hs_method_545d0567((void*)val.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1, (void*)jsonName, (void*)defaultValue);
-            return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_545d0567(nint val, nint variable, nint jsonName, nint defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
-    public static void parse(nint val, nint variable, nint jsonName, nint defaultValue) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_76e106d2(nint val, nint variable, nint jsonName, nint defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, uint[] variable, nint jsonName, nint defaultValue)
-    {
-        fixed (uint* __hs_vectorData1 = variable)
-        {
-            NativeMethods.TablePtr->C3.hs_method_1d37a7ac((void*)val.Handle, (void*)jsonName, (void*)defaultValue, __hs_vectorData1, (nuint)(variable?.Length ?? 0));
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse_1d37a7ac(nint val, nint variable, nint jsonName, nint defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void parse(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint face, byte defaultValue)
-    {
-        NativeMethods.TablePtr->C3.hs_method_fee5f1a5((void*)val.Handle, (void*)face, defaultValue);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void parse(nint val, nint face, byte defaultValue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void serialize_b8f28fa4(nint variable, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint jsonName)
-    {
-        NativeMethods.TablePtr->C3.hs_method_b8f28fa4((void*)variable, (void*)val.Handle, (void*)jsonName);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void serialize_b8f28fa4(nint variable, nint val, nint jsonName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void serialize(global::Hosihikari.Bindings.Bedrock.Interop.FloatRange variable, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint jsonName)
-    {
-        NativeMethods.TablePtr->C3.hs_method_5119c913((void*)variable.Handle, (void*)val.Handle, (void*)jsonName);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void serialize_5119c913(nint variable, nint val, nint jsonName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void serialize_0bfbbb43(nint variable, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint jsonName)
-    {
-        NativeMethods.TablePtr->C3.hs_method_0bfbbb43((void*)variable, (void*)val.Handle, (void*)jsonName);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void serialize_0bfbbb43(nint variable, nint val, nint jsonName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static void serialize_74f93423(nint variable, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value val, nint jsonName)
-    {
-        NativeMethods.TablePtr->C3.hs_method_74f93423((void*)variable, (void*)val.Handle, (void*)jsonName);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void serialize_74f93423(nint variable, nint val, nint jsonName) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void serialize_5daa3fc9(nint variable, nint val, nint jsonName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void serialize_6b784887(nint variable, nint val, nint jsonName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void serialize_19c15d7c(nint variable, nint val, nint jsonName) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the vector element type is not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {
@@ -180,7 +144,7 @@ public sealed unsafe partial class Parser : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_c944e2ed((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_c944e2ed((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

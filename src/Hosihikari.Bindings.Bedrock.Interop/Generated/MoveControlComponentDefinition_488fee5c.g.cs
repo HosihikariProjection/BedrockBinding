@@ -40,8 +40,8 @@ public sealed unsafe partial class MoveControlComponentDefinition : global::Syst
 
     public float mMaxTurn
     {
-        get => NativeMethods.TablePtr->C4.hs_get_e0c84ff4((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_e0c84ff4((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_e0c84ff4((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_e0c84ff4((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +50,7 @@ public sealed unsafe partial class MoveControlComponentDefinition : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_488fee5c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_488fee5c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

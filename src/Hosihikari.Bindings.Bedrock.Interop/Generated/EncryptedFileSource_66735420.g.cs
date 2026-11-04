@@ -40,7 +40,7 @@ public sealed unsafe partial class EncryptedFileSource : global::System.IDisposa
 
     public static EncryptedFileSource Create()
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_207daa73();
+        var handle = NativeMethods.TablePtr->C3.hs_create_207daa73();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class EncryptedFileSource : global::System.IDisposa
 
     public static EncryptedFileSource Create(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_357f0fce((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_357f0fce((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class EncryptedFileSource : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkcec3cf_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_4ba61af2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4ba61af2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke80587_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_44348e2b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_44348e2b((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource((nint)NativeMethods.TablePtr->C4.hs_method_9e8840f9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.StreamableAssetSource_Nested.EncryptedFileSource((nint)NativeMethods.TablePtr->C3.hs_method_9e8840f9((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class EncryptedFileSource : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_66735420((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_66735420((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

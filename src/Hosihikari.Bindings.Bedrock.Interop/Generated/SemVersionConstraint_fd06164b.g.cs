@@ -38,14 +38,13 @@ public sealed unsafe partial class SemVersionConstraint : global::System.IDispos
         return __hs_handle;
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription _doDescription(byte arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)NativeMethods.TablePtr->C4.hs_method_3a863a66((void*)__hosihikari_shim_handle, arg0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _doDescription(nint arg0) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SemVersionConstraint Create(global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.SemVersionConstraint arg0)
     {
-        var handle = NativeMethods.TablePtr->C4.hs_create_02dbdf8c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_02dbdf8c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,30 +55,28 @@ public sealed unsafe partial class SemVersionConstraint : global::System.IDispos
 
     public global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription doDescription(byte arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)NativeMethods.TablePtr->C4.hs_method_81878374((void*)__hosihikari_shim_handle, arg0));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.cereal.@internal.ConstraintDescription((nint)NativeMethods.TablePtr->C3.hs_method_81878374((void*)__hosihikari_shim_handle, arg0));
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMax_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_7d4792ce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7d4792ce((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mMin_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_8cc2f06f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8cc2f06f((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.SemVersionConstraint range(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion min, global::Hosihikari.Bindings.Bedrock.Interop.SemVersion max)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.SemVersionConstraint((nint)NativeMethods.TablePtr->C4.hs_method_0f98db7c((void*)__hosihikari_shim_handle, (void*)min.Handle, (void*)max.Handle), false);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint range(nint min, nint max) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void validateValue(global::Hosihikari.Bindings.Bedrock.Interop.SemVersion vers, global::Hosihikari.Bindings.Bedrock.Interop.cereal.SerializerContext context)
-    {
-        NativeMethods.TablePtr->C4.hs_method_142b73e4((void*)__hosihikari_shim_handle, (void*)vers.Handle, (void*)context.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void validateValue(nint vers, nint context) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()
@@ -88,7 +85,7 @@ public sealed unsafe partial class SemVersionConstraint : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C4.hs_destroy_fd06164b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_fd06164b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

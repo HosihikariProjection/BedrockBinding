@@ -41,18 +41,18 @@ public sealed unsafe partial class CompositeDefinition : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_bacd1fb3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_bacd1fb3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTreeDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_df4e471d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_df4e471d((void*)__hosihikari_shim_handle);
     }
 
     public static CompositeDefinition Create(global::Hosihikari.Bindings.Bedrock.Interop.CompositeDefinition arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_cf34422b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C0.hs_create_cf34422b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,14 +61,14 @@ public sealed unsafe partial class CompositeDefinition : global::System.IDisposa
         return new CompositeDefinition((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<BehaviorDefinition>' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static void _compositeLoadChildrenBehaviors(nint value, nint childList, nint factory, nint ptr) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: vector parameter type 'std::unique_ptr<BehaviorDefinition>' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mChildren_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_bdb7e944((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_bdb7e944((void*)__hosihikari_shim_handle);
     }
 
 
@@ -78,7 +78,7 @@ public sealed unsafe partial class CompositeDefinition : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_793fbbaf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C0.hs_destroy_793fbbaf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

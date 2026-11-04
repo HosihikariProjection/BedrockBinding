@@ -127,9 +127,9 @@ public sealed unsafe partial class MobDescriptor : global::System.IDisposable
         set => NativeMethods.TablePtr->C2.hs_set_9521b863((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'SharedTypes::v1_21_120::MobDescriptor' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint toSharedTypes() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'SharedTypes::v1_21_120::MobDescriptor' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

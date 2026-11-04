@@ -38,10 +38,9 @@ public sealed unsafe partial class VanillaVillageJigsawStructureElements : globa
         return __hs_handle;
     }
 
-    public static void initialize(global::Hosihikari.Bindings.Abi.SharedHandle? manager, global::Hosihikari.Bindings.Bedrock.Interop.FeatureRegistry featureRegistry, global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureRegistry jigsawRegistry)
-    {
-        NativeMethods.TablePtr->C4.hs_method_6af49626(manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)featureRegistry.Handle, (void*)jigsawRegistry.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static void initialize(nint manager, nint featureRegistry, nint jigsawRegistry) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

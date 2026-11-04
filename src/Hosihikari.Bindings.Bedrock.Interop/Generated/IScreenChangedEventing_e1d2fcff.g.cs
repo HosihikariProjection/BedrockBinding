@@ -40,7 +40,7 @@ public sealed unsafe partial class IScreenChangedEventing : global::System.IDisp
 
     public static IScreenChangedEventing Create(global::Hosihikari.Bindings.Bedrock.Interop.IScreenChangedEventing arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f819b860((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_f819b860((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -64,7 +64,7 @@ public sealed unsafe partial class IScreenChangedEventing : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e1d2fcff((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_e1d2fcff((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

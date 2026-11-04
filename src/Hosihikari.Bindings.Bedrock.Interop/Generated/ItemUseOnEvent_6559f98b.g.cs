@@ -38,14 +38,13 @@ public sealed unsafe partial class ItemUseOnEvent : global::System.IDisposable
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C2.hs_method_57e1a0c3((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static ItemUseOnEvent Create(global::Hosihikari.Bindings.Bedrock.Interop.ItemUseOnEvent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1d322749((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_1d322749((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -57,37 +56,37 @@ public sealed unsafe partial class ItemUseOnEvent : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mActor_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b1ac7aaa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b1ac7aaa((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_de18db4f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_de18db4f((void*)__hosihikari_shim_handle);
     }
 
     public byte mFace
     {
-        get => NativeMethods.TablePtr->C2.hs_get_e9ff1c67((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_e9ff1c67((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_e9ff1c67((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_e9ff1c67((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mFaceLocation_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_98ab5df7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_98ab5df7((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsFirstEvent
     {
-        get => NativeMethods.TablePtr->C2.hs_get_eb153af0((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_eb153af0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_eb153af0((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_eb153af0((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mItemBeforeUse_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_568bd5ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_568bd5ba((void*)__hosihikari_shim_handle);
     }
 
 
@@ -97,7 +96,7 @@ public sealed unsafe partial class ItemUseOnEvent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6559f98b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_6559f98b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

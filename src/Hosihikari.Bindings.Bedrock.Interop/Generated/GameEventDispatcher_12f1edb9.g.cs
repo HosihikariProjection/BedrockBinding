@@ -38,10 +38,9 @@ public sealed unsafe partial class GameEventDispatcher : global::System.IDisposa
         return __hs_handle;
     }
 
-    public void post(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Actor? source, global::Hosihikari.Bindings.Bedrock.Interop.GameEvent gameEvent, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 originPos, global::Hosihikari.Bindings.Bedrock.Interop.Block? affectedBlock)
-    {
-        NativeMethods.TablePtr->C1.hs_method_17faf48c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)(source?.Handle ?? 0), (void*)gameEvent.Handle, (void*)originPos.Handle, (void*)(affectedBlock?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void post(nint region, nint source, nint gameEvent, nint originPos, nint affectedBlock) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void Dispose()
     {

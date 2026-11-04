@@ -40,19 +40,19 @@ public sealed unsafe partial class WorldGenContext
 
     public short mMaxHeight
     {
-        get => NativeMethods.TablePtr->C5.hs_get_89c035e1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_89c035e1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_89c035e1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_89c035e1((void*)__hosihikari_shim_handle, value);
     }
 
     public short mMinHeight
     {
-        get => NativeMethods.TablePtr->C5.hs_get_1e12eaa1((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_1e12eaa1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_1e12eaa1((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_1e12eaa1((void*)__hosihikari_shim_handle, value);
     }
 
     public short mSeaLevel
     {
-        get => NativeMethods.TablePtr->C5.hs_get_5ff99f3b((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_5ff99f3b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_5ff99f3b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_5ff99f3b((void*)__hosihikari_shim_handle, value);
     }
 }

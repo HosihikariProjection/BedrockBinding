@@ -379,10 +379,9 @@ public sealed unsafe partial class CherryLeavesBlock : global::System.IDisposabl
         get => (nint)NativeMethods.TablePtr->C0.hs_get_c89ef119((void*)__hosihikari_shim_handle);
     }
 
-    public void _animateTick(nint tickData)
-    {
-        NativeMethods.TablePtr->C0.hs_method_416428f8((void*)__hosihikari_shim_handle, (void*)tickData);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _animateTick(nint tickData) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void animateTick(nint tickData)
     {

@@ -38,14 +38,13 @@ public sealed unsafe partial class SecureStorage : global::System.IDisposable
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView settingsPath)
-    {
-        return (nint)NativeMethods.TablePtr->C3.hs_method_1612ac89((void*)__hosihikari_shim_handle, (void*)settingsPath.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint settingsPath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint _vftable() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record returns are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SecureStorage Create()
     {
@@ -58,16 +57,9 @@ public sealed unsafe partial class SecureStorage : global::System.IDisposable
         return new SecureStorage((nint)handle);
     }
 
-    public static SecureStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathView settingsPath)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_eb062e0d((void*)settingsPath.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new SecureStorage((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static SecureStorage Create(nint settingsPath) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static SecureStorage Create(global::Hosihikari.Bindings.Bedrock.Interop.SecureStorage arg0)
     {

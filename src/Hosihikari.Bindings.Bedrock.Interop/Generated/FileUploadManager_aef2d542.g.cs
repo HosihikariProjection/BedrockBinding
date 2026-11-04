@@ -38,45 +38,25 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.TaskGroup taskGroup, global::Hosihikari.Bindings.Abi.SharedHandle? fileUploader)
-    {
-        return (nint)NativeMethods.TablePtr->C1.hs_method_43b16ae1((void*)__hosihikari_shim_handle, (void*)taskGroup.Handle, fileUploader?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint taskGroup, nint fileUploader) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C1.hs_method_27b1b43d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public float _getUploadProgress()
-    {
-        return NativeMethods.TablePtr->C1.hs_method_aa4f8b17((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public float _getUploadProgress() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _uploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(uploadId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(uploadId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_b320e8bb((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)path.Handle, slotIndex);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _uploadFileToRealmStorage(nint uploadId, nint path, nint slotIndex) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static string BOUNDARY()
-    {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_09f382b5();
-        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static nint BOUNDARY() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FileUploadManager Create()
     {
@@ -89,16 +69,9 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
         return new FileUploadManager((nint)handle);
     }
 
-    public static FileUploadManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TaskGroup taskGroup, global::Hosihikari.Bindings.Abi.SharedHandle? fileUploader)
-    {
-        var handle = NativeMethods.TablePtr->C1.hs_create_7900ea23((void*)taskGroup.Handle, fileUploader?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new FileUploadManager((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static FileUploadManager Create(nint taskGroup, nint fileUploader) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static FileUploadManager Create(global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager arg0)
     {
@@ -111,14 +84,13 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
         return new FileUploadManager((nint)handle);
     }
 
-    public void _uploadChunk(global::Hosihikari.Bindings.Bedrock.Interop.FileChunkInfo chunk)
-    {
-        NativeMethods.TablePtr->C1.hs_method_061c740e((void*)__hosihikari_shim_handle, (void*)chunk.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _uploadChunk(nint chunk) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void addCallbackQueue(nint callback) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void archiveAndUploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path worldID, int slotIndex, string realmsGuid)
     {
@@ -229,24 +201,9 @@ public sealed unsafe partial class FileUploadManager : global::System.IDisposabl
         return new global::Hosihikari.Bindings.Bedrock.Interop.FileUploadManager((nint)NativeMethods.TablePtr->C1.hs_method_502f8a4c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    public void uploadFile(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path filePath, bool autoStartUpload, global::Hosihikari.Bindings.Bedrock.Interop.Json.Value uploadOptions)
-    {
-        var __hs_stringByteCount0 = global::System.Text.Encoding.UTF8.GetByteCount(uploadId);
-        scoped global::System.Span<byte> __hs_stringBytes0;
-        if (__hs_stringByteCount0 <= 256)
-        {
-            __hs_stringBytes0 = stackalloc byte[__hs_stringByteCount0 == 0 ? 1 : __hs_stringByteCount0];
-        }
-        else
-        {
-            __hs_stringBytes0 = new byte[__hs_stringByteCount0];
-        }
-        global::System.Text.Encoding.UTF8.GetBytes(uploadId, __hs_stringBytes0);
-        fixed (byte* __hs_stringData0 = __hs_stringBytes0)
-        {
-            NativeMethods.TablePtr->C1.hs_method_cd9940e2((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, (void*)filePath.Handle, autoStartUpload, (void*)uploadOptions.Handle);
-        }
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void uploadFile(nint uploadId, nint filePath, bool autoStartUpload, nint uploadOptions) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void uploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex)
     {

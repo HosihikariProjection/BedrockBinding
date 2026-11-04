@@ -38,19 +38,17 @@ public sealed unsafe partial class CurrentTaskQueueSetter : global::System.IDisp
         return __hs_handle;
     }
 
-    public nint _ctor(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase? task_queue)
-    {
-        return (nint)NativeMethods.TablePtr->C5.hs_method_63a56818((void*)__hosihikari_shim_handle, (void*)(task_queue?.Handle ?? 0));
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public nint _ctor(nint task_queue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C5.hs_method_84c95bd2((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static CurrentTaskQueueSetter Create()
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_4b93fed3();
+        var handle = NativeMethods.TablePtr->C4.hs_create_4b93fed3();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -61,7 +59,7 @@ public sealed unsafe partial class CurrentTaskQueueSetter : global::System.IDisp
 
     public static CurrentTaskQueueSetter Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_b5dd139d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_b5dd139d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -70,26 +68,19 @@ public sealed unsafe partial class CurrentTaskQueueSetter : global::System.IDisp
         return new CurrentTaskQueueSetter((nint)handle);
     }
 
-    public static CurrentTaskQueueSetter Create(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase? task_queue)
-    {
-        var handle = NativeMethods.TablePtr->C5.hs_create_623ab3a9((void*)(task_queue?.Handle ?? 0));
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new CurrentTaskQueueSetter((nint)handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public static CurrentTaskQueueSetter Create(nint task_queue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk543d91_Address
     {
-        get => (nint)NativeMethods.TablePtr->C5.hs_get_c51d2db7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_c51d2db7((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter((nint)NativeMethods.TablePtr->C5.hs_method_e3a7696c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.webrtc.TaskQueueBase_Nested.CurrentTaskQueueSetter((nint)NativeMethods.TablePtr->C4.hs_method_e3a7696c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -99,7 +90,7 @@ public sealed unsafe partial class CurrentTaskQueueSetter : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_c3404ad7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_c3404ad7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -40,19 +40,19 @@ public sealed unsafe partial class floatN3_Vec3_ : global::System.IDisposable
 
     public float b
     {
-        get => NativeMethods.TablePtr->C5.hs_get_d9f69ce7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_d9f69ce7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_d9f69ce7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_d9f69ce7((void*)__hosihikari_shim_handle, value);
     }
 
     public float g
     {
-        get => NativeMethods.TablePtr->C5.hs_get_0957e380((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_0957e380((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0957e380((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_0957e380((void*)__hosihikari_shim_handle, value);
     }
 
     public static floatN3_Vec3_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN3_Vec3_ arg0)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_4630119f((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_4630119f((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,7 +63,7 @@ public sealed unsafe partial class floatN3_Vec3_ : global::System.IDisposable
 
     public static floatN3_Vec3_ Create(float all)
     {
-        var handle = NativeMethods.TablePtr->C5.hs_create_63bbd319(all);
+        var handle = NativeMethods.TablePtr->C4.hs_create_63bbd319(all);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -78,7 +78,7 @@ public sealed unsafe partial class floatN3_Vec3_ : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN3_Vec3_ operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN3_Vec3_ arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN3_Vec3_((nint)NativeMethods.TablePtr->C5.hs_method_52853050((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ll.math.floatN3_Vec3_((nint)NativeMethods.TablePtr->C4.hs_method_52853050((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
@@ -94,44 +94,44 @@ public sealed unsafe partial class floatN3_Vec3_ : global::System.IDisposable
 
     public float p
     {
-        get => NativeMethods.TablePtr->C5.hs_get_5879e013((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_5879e013((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_5879e013((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_5879e013((void*)__hosihikari_shim_handle, value);
     }
 
     public float r
     {
-        get => NativeMethods.TablePtr->C5.hs_get_ba86b4ca((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_ba86b4ca((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ba86b4ca((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_ba86b4ca((void*)__hosihikari_shim_handle, value);
     }
 
     public float s
     {
-        get => NativeMethods.TablePtr->C5.hs_get_d89b8980((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_d89b8980((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_d89b8980((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_d89b8980((void*)__hosihikari_shim_handle, value);
     }
 
     public float t
     {
-        get => NativeMethods.TablePtr->C5.hs_get_365f3814((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_365f3814((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_365f3814((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_365f3814((void*)__hosihikari_shim_handle, value);
     }
 
     public float x
     {
-        get => NativeMethods.TablePtr->C5.hs_get_d760a2d5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_d760a2d5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_d760a2d5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_d760a2d5((void*)__hosihikari_shim_handle, value);
     }
 
     public float y
     {
-        get => NativeMethods.TablePtr->C5.hs_get_0868229e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_0868229e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_0868229e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_0868229e((void*)__hosihikari_shim_handle, value);
     }
 
     public float z
     {
-        get => NativeMethods.TablePtr->C5.hs_get_f3b40734((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C5.hs_set_f3b40734((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f3b40734((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f3b40734((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -140,7 +140,7 @@ public sealed unsafe partial class floatN3_Vec3_ : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C5.hs_destroy_23096b5a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_23096b5a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

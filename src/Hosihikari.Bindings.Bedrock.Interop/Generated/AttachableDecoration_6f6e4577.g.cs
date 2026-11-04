@@ -38,10 +38,9 @@ public sealed unsafe partial class AttachableDecoration : global::System.IDispos
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C4.hs_method_726eb241((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static AttachableDecoration Create(global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.AttachableDecoration arg0)
     {
@@ -54,10 +53,9 @@ public sealed unsafe partial class AttachableDecoration : global::System.IDispos
         return new AttachableDecoration((nint)handle);
     }
 
-    public void _placeMultiDecoration(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, int dir, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos origin)
-    {
-        NativeMethods.TablePtr->C4.hs_method_5fea74cf((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)random.Handle, (void*)pos.Handle, dir, (void*)origin.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _placeMultiDecoration(nint target, nint random, nint pos, nint dir, nint origin) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDecorationBlock_Address
@@ -89,10 +87,9 @@ public sealed unsafe partial class AttachableDecoration : global::System.IDispos
         set => NativeMethods.TablePtr->C4.hs_set_16bfabe2((void*)__hosihikari_shim_handle, value);
     }
 
-    public void placeDecoration(global::Hosihikari.Bindings.Bedrock.Interop.IBlockWorldGenAPI target, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.TreeHelper.AttachableDecoration_Nested.DirectionMask mask)
-    {
-        NativeMethods.TablePtr->C4.hs_method_60f75b0d((void*)__hosihikari_shim_handle, (void*)target.Handle, (void*)pos.Handle, (void*)random.Handle, (void*)mask.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void placeDecoration(nint target, nint pos, nint random, nint mask) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
 
     public void Dispose()

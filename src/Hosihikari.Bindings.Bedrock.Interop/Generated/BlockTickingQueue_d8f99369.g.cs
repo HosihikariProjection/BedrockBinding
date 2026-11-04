@@ -38,10 +38,9 @@ public sealed unsafe partial class BlockTickingQueue : global::System.IDisposabl
         return __hs_handle;
     }
 
-    public void _dtor()
-    {
-        NativeMethods.TablePtr->C0.hs_method_68a09d08((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _dtor() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public static BlockTickingQueue Create(global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue arg0)
     {
@@ -54,20 +53,17 @@ public sealed unsafe partial class BlockTickingQueue : global::System.IDisposabl
         return new BlockTickingQueue((nint)handle);
     }
 
-    public void _acquireAllTicks(global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue otherChunkQueue)
-    {
-        NativeMethods.TablePtr->C0.hs_method_2e9506e6((void*)__hosihikari_shim_handle, (void*)otherChunkQueue.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _acquireAllTicks(nint otherChunkQueue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _eliminateTicksForZeroAndAbove(global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.TickDataSet queue)
-    {
-        NativeMethods.TablePtr->C0.hs_method_a0dcb060((void*)__hosihikari_shim_handle, (void*)queue.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _eliminateTicksForZeroAndAbove(nint queue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void _saveQueue(global::Hosihikari.Bindings.Bedrock.Interop.ListTag list, global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.TickDataSet queue)
-    {
-        NativeMethods.TablePtr->C0.hs_method_1e1dd116((void*)__hosihikari_shim_handle, (void*)list.Handle, (void*)queue.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void _saveQueue(nint list, nint queue) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public void add(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, int tickDelay, int priorityOffset)
     {
@@ -79,29 +75,26 @@ public sealed unsafe partial class BlockTickingQueue : global::System.IDisposabl
         NativeMethods.TablePtr->C0.hs_method_d6383ae4((void*)__hosihikari_shim_handle, (void*)lc.Handle, (void*)pos.Handle, (void*)block.Handle, tickDelay, priorityOffset);
     }
 
-    public void eliminateDuplicatesOf(global::Hosihikari.Bindings.Bedrock.Interop.BlockType block)
-    {
-        NativeMethods.TablePtr->C0.hs_method_c2fcda2a((void*)__hosihikari_shim_handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void eliminateDuplicatesOf(nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void finishInstaticking()
-    {
-        NativeMethods.TablePtr->C0.hs_method_81ceb23d((void*)__hosihikari_shim_handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void finishInstaticking() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool getNextUpdateForPos(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Tick tick)
     {
         return NativeMethods.TablePtr->C0.hs_method_331e0099((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)tick.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::unordered_multimap<BlockPos, TickDelayBlock>' requires --link-carrier or --virtual-dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint getTickDelaysInArea(nint boundingBox) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::unordered_multimap<BlockPos, TickDelayBlock>' requires --link-carrier or --virtual-dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void load(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag, global::Hosihikari.Bindings.Bedrock.Interop.BlockPalette palette)
-    {
-        NativeMethods.TablePtr->C0.hs_method_fd3cb8e9((void*)__hosihikari_shim_handle, (void*)tag.Handle, (void*)palette.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void load(nint tag, nint palette) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActiveTickQueue_Address
@@ -145,19 +138,17 @@ public sealed unsafe partial class BlockTickingQueue : global::System.IDisposabl
         set => NativeMethods.TablePtr->C0.hs_set_e683c7d3((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void remove(nint removeCondition) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void remove(global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block)
-    {
-        NativeMethods.TablePtr->C0.hs_method_21e126b8((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)block.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void remove(nint pos, nint block) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public void save(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag tag)
-    {
-        NativeMethods.TablePtr->C0.hs_method_c6e5eae2((void*)__hosihikari_shim_handle, (void*)tag.Handle);
-    }
+    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
+    public void save(nint tag) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     public bool tickPendingTicks(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.Tick until, int max, bool instaTick_)
     {
