@@ -8,6 +8,7 @@ param(
     [string]$Output = "artifacts/regenerated",
     [string[]]$AdditionalIncludePath = @(),
     [string[]]$ExternalRoot = @(),
+    [string]$CarrierLabel = "",
     [switch]$SkipFrontend,
     [switch]$SkipBuild,
     [string]$IrDirectory = ""
@@ -157,6 +158,9 @@ if ([string]::IsNullOrWhiteSpace($IrDirectory) -and (-not $SkipFrontend)) {
 
 $GeneratorProject = Join-Path $GeneratorRoot "src\Hosihikari.Bindings.Generator\Hosihikari.Bindings.Generator.csproj"
 dotnet run --project $GeneratorProject -c Release -- emit $Manifest $HeaderIr $Output --symbol-dispatch --resolve-by-name --allow-ir-errors --abi-header $AbiHeader
+if ($LASTEXITCODE -ne 0) {
+    throw "The generator exited with $LASTEXITCODE."
+}
 
 $InteropGenerated = Join-Path $RepoRoot "src\Hosihikari.Bindings.Bedrock.Interop\Generated"
 $ShimTarget = Join-Path $RepoRoot "native\BindingShim\generated\win-x64-server\bedrock"
@@ -185,6 +189,15 @@ $CarrierCommit = "unknown"
 if (Test-Path (Join-Path $LeviLaminaRoot ".git")) {
     $CarrierCommit = (& git -C $LeviLaminaRoot rev-parse HEAD).Trim()
 }
+if ([string]::IsNullOrWhiteSpace($CarrierLabel)) {
+    $BdsVersion = $null
+    $CarrierLua = Join-Path $LeviLaminaRoot "xmake.lua"
+    if (Test-Path $CarrierLua) {
+        $Match = Select-String -Path $CarrierLua -Pattern 'bedrockdata\s+v(\d+\.\d+\.\d+)-(?:server|client)\.\d+' | Select-Object -First 1
+        if ($Match) { $BdsVersion = $Match.Matches[0].Groups[1].Value }
+    }
+    $CarrierLabel = if ($BdsVersion) { "BDS 1.$BdsVersion" } else { "unknown BDS" }
+}
 $GeneratorVersion = (& dotnet run --project $GeneratorProject -c Release -- version).Trim()
 
 $Provenance = [ordered]@{
@@ -192,7 +205,7 @@ $Provenance = [ordered]@{
     irVersion = $Summary.irVersion
     irManifestSha256 = $Summary.irManifestSha256
     coverageManifestSha256 = $Summary.manifestSha256
-    carrier = "LeviLamina $CarrierCommit (BDS 1.26.60.6)"
+    carrier = "LeviLamina $CarrierCommit ($CarrierLabel)"
     carrierCommit = $CarrierCommit
     headers = (Get-Content $HeaderList | Where-Object { $_.Trim() -ne "" }).Count
     surface = "bedrock"
