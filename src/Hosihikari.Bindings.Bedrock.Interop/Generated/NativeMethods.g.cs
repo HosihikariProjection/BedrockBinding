@@ -19536,6 +19536,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*, int, int, bool, void*> hs_method_56276c75;
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_d7d3dec8;
         public delegate* unmanaged[Cdecl]<void*, void*, ulong> hs_method_29dce3e6;
+        public delegate* unmanaged[Cdecl]<void*, void> hs_method_dc6db67c;
         public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_6e57adc0;
         public delegate* unmanaged[Cdecl]<void*> hs_method_2f097c1e;
         public delegate* unmanaged[Cdecl]<void*, ulong, void*> hs_method_d60831e5;
@@ -30009,12 +30010,12 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, int> hs_get_ccc76ae5;
         public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_ccc76ae5;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_5033a7a0;
-        public delegate* unmanaged[Cdecl]<void*, void*, void*, void> hs_method_d3ebeea6;
     }
 
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     internal struct TableChunk1
     {
+        public delegate* unmanaged[Cdecl]<void*, void*, void*, void> hs_method_d3ebeea6;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_create_8c9926cd;
         public delegate* unmanaged[Cdecl]<void*, void*, void*, void> hs_method_eaaf170d;
         public delegate* unmanaged[Cdecl]<void*, void*, void> hs_method_a87f7506;
@@ -60014,12 +60015,12 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_050fc4b7;
         public delegate* unmanaged[Cdecl]<void*, uint> hs_get_8d22075d;
         public delegate* unmanaged[Cdecl]<void*, uint, void> hs_set_8d22075d;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_7ae379ed;
     }
 
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     internal struct TableChunk2
     {
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_7ae379ed;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_8afd3b36;
         public delegate* unmanaged[Cdecl]<void*, byte, void> hs_set_8afd3b36;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_527989db;
@@ -83036,6 +83037,7 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*, byte> hs_method_70856ecb;
         public delegate* unmanaged[Cdecl]<void*, ushort, void*, void*, void> hs_method_45707ddd;
         public delegate* unmanaged[Cdecl]<void*, ushort, void*, void> hs_method_c2e66c09;
+        public delegate* unmanaged[Cdecl]<void*, void*, void*, void> hs_method_56567323;
         public delegate* unmanaged[Cdecl]<void*, ulong, void*, void*, bool, void> hs_method_f89ecde8;
         public delegate* unmanaged[Cdecl]<void*, void> hs_destroy_7b1be707;
         public delegate* unmanaged[Cdecl]<void*, int> hs_get_7ffa5bc5;
@@ -90018,13 +90020,13 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, int> hs_method_c22639a3;
         public delegate* unmanaged[Cdecl]<void*, void*, void*, void*, byte> hs_method_8a27a859;
         public delegate* unmanaged[Cdecl]<void*, byte> hs_get_b755ce75;
-        public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_b755ce75;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_a932559f;
     }
 
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     internal struct TableChunk3
     {
+        public delegate* unmanaged[Cdecl]<void*, bool, void> hs_set_b755ce75;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_a932559f;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_12354e3f;
         public delegate* unmanaged[Cdecl]<void*, int> hs_get_ea3f8adb;
         public delegate* unmanaged[Cdecl]<void*, int, void> hs_set_ea3f8adb;
@@ -120023,13 +120025,13 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*, void*, void*, ulong, bool, void*> hs_method_0918aa78;
         public delegate* unmanaged[Cdecl]<void*, void> hs_method_8e884df2;
         public delegate* unmanaged[Cdecl]<void*> hs_create_4317ff48;
-        public delegate* unmanaged[Cdecl]<void*, void*, void*, ulong, bool, void*> hs_create_669d990a;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_create_ecd5b7dd;
     }
 
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     internal struct TableChunk4
     {
+        public delegate* unmanaged[Cdecl]<void*, void*, void*, ulong, bool, void*> hs_create_669d990a;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_create_ecd5b7dd;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_b9588213;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_07cbb308;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_cf7021b6;
@@ -150028,13 +150030,13 @@ public static unsafe class NativeMethods
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_c32d176e;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_f52db7a9;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_6dfcf207;
-        public delegate* unmanaged[Cdecl]<void*, void*, void> hs_set_6dfcf207;
-        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_9deb5bc0;
     }
 
     [global::System.Runtime.InteropServices.StructLayout(global::System.Runtime.InteropServices.LayoutKind.Sequential)]
     internal struct TableChunk5
     {
+        public delegate* unmanaged[Cdecl]<void*, void*, void> hs_set_6dfcf207;
+        public delegate* unmanaged[Cdecl]<void*, void*> hs_get_9deb5bc0;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_0349225c;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_1615a53f;
         public delegate* unmanaged[Cdecl]<void*, void*> hs_get_f50f8828;

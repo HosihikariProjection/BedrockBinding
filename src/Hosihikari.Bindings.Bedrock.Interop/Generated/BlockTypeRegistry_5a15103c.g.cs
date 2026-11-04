@@ -78,6 +78,11 @@ public sealed unsafe partial class BlockTypeRegistry : global::System.IDisposabl
         return NativeMethods.TablePtr->C0.hs_method_29dce3e6((void*)__hosihikari_shim_handle, (void*)worldBaseGameVersion.Handle);
     }
 
+    public void finalizeBlockComponentStorage()
+    {
+        NativeMethods.TablePtr->C0.hs_method_dc6db67c((void*)__hosihikari_shim_handle);
+    }
+
     public void finalizeBlockCustomComponentEvents(global::Hosihikari.Bindings.Bedrock.Interop.ServerScriptManager scriptManager)
     {
         NativeMethods.TablePtr->C0.hs_method_6e57adc0((void*)__hosihikari_shim_handle, (void*)scriptManager.Handle);

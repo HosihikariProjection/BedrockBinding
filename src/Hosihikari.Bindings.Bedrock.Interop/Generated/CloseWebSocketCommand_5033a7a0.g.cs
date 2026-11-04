@@ -40,7 +40,7 @@ public sealed unsafe partial class CloseWebSocketCommand : global::System.IDispo
 
     public void _execute(global::Hosihikari.Bindings.Bedrock.Interop.CommandOrigin origin, global::Hosihikari.Bindings.Bedrock.Interop.CommandOutput arg1)
     {
-        NativeMethods.TablePtr->C0.hs_method_d3ebeea6((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C1.hs_method_d3ebeea6((void*)__hosihikari_shim_handle, (void*)origin.Handle, (void*)arg1.Handle);
     }
 
     public static CloseWebSocketCommand Create(global::Hosihikari.Bindings.Bedrock.Interop.CloseWebSocketCommand arg0)

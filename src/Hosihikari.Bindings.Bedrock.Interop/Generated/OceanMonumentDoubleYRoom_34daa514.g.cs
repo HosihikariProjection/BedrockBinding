@@ -73,13 +73,13 @@ public sealed unsafe partial class OceanMonumentDoubleYRoom : global::System.IDi
     public bool mDoFill
     {
         get => NativeMethods.TablePtr->C2.hs_get_b755ce75((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_b755ce75((void*)__hosihikari_shim_handle, value);
+        set => NativeMethods.TablePtr->C3.hs_set_b755ce75((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRoomDefinition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a932559f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a932559f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

@@ -61,7 +61,7 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
 
     public static SetActorDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID id, global::Hosihikari.Bindings.Bedrock.Interop.SynchedActorDataEntityWrapper entityData, global::Hosihikari.Bindings.Bedrock.Interop.PropertyComponent? propertyComponent, ulong tick, bool packAll)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_669d990a((void*)id.Handle, (void*)entityData.Handle, (void*)(propertyComponent?.Handle ?? 0), tick, packAll);
+        var handle = NativeMethods.TablePtr->C4.hs_create_669d990a((void*)id.Handle, (void*)entityData.Handle, (void*)(propertyComponent?.Handle ?? 0), tick, packAll);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -72,7 +72,7 @@ public sealed unsafe partial class SetActorDataPacketPayload : global::System.ID
 
     public static SetActorDataPacketPayload Create(global::Hosihikari.Bindings.Bedrock.Interop.SetActorDataPacketPayload arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ecd5b7dd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_ecd5b7dd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");

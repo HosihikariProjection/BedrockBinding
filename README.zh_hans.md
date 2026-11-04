@@ -4,7 +4,7 @@
 
 Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近原生风格的 **Interop** 与按符号分发的原生 **绑定垫片**。
 
-本分支面向 **BDS 1.26.60.6**，数据来自 LeviLamina `6e4f440`（26.60 开发线）的头文件；`v1.21.3` 分支保留从载体调试符号生成的 1.21.3.01 面，`v1.26.51` 分支保留 1.26.51.1 面。
+本分支面向 **BDS 1.26.60.6**，数据来自 LeviLamina `v26.60.0`（26.60 开发线）的头文件；`v1.21.3` 分支保留从载体调试符号生成的 1.21.3.01 面，`v1.26.51` 分支保留 1.26.51.1 面。
 
 ## 边界
 
@@ -41,7 +41,7 @@ map 需要具名 key/value 类型与匹配的 hash/equality functor，合并后�
 
 ## 生成
 
-重新生成只需要公开输入：一份 LeviLamina `6e4f440` 检出，以及用 LLVM 23.1.4 构建的生成器。预编译依赖来自 LeviLamina 构建所用的本地 xmake 包仓库。
+重新生成只需要公开输入：一份 LeviLamina `v26.60.0` 检出，以及用 LLVM 23.1.4 构建的生成器。预编译依赖来自 LeviLamina 构建所用的本地 xmake 包仓库。
 
 ```shell
 powershell -File scripts/regenerate.ps1 `
@@ -61,7 +61,7 @@ powershell -File native/BindingShim/build.ps1
 
 ## 运行时冒烟
 
-`tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `TextPacket` 并调用实例方法，再经一个接收字符串、按值返回 `TextPacket` 的工厂创建系统消息包。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。服务器本身需要 PreLoader 1.16.6、来自 `bedrockdata v26.60.6-server.4` 的 `bedrock_runtime_data`，以及用同一 `6e4f440` 载体构建的 LeviLamina。
+`tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `TextPacket` 并调用实例方法，再经一个接收字符串、按值返回 `TextPacket` 的工厂创建系统消息包。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。服务器本身需要 PreLoader 1.16.6、来自 `bedrockdata v26.60.6-server.5` 的 `bedrock_runtime_data`，以及用同一 `v26.60.0` 载体构建的 LeviLamina。
 
 ## 分发
 

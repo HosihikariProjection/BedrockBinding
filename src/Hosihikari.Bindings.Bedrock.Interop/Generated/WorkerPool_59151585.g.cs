@@ -92,13 +92,13 @@ public sealed unsafe partial class WorkerPool : global::System.IDisposable
     public nint mOwnerScheduler
     {
         get => (nint)NativeMethods.TablePtr->C4.hs_get_6dfcf207((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C4.hs_set_6dfcf207((void*)__hosihikari_shim_handle, (void*)value);
+        set => NativeMethods.TablePtr->C5.hs_set_6dfcf207((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingWorkQueue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C4.hs_get_9deb5bc0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C5.hs_get_9deb5bc0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.

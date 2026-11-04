@@ -4,7 +4,7 @@
 
 The **Bedrock / MCAPI** interop surface for the Hosihikari projection: a generated native-style **Interop** and a symbol-dispatched native **binding shim**.
 
-This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `6e4f440` (the 26.60 development line). The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols, and `v1.26.51` keeps the 1.26.51.1 surface.
+This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `v26.60.0` (the 26.60 development line). The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols, and `v1.26.51` keeps the 1.26.51.1 surface.
 
 ## Boundary
 
@@ -41,7 +41,7 @@ Maps require named key/value types and matching hash/equality functors, which th
 
 ## Generate
 
-Regeneration needs only public inputs: a LeviLamina `6e4f440` checkout and a generator built with LLVM 23.1.4. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
+Regeneration needs only public inputs: a LeviLamina `v26.60.0` checkout and a generator built with LLVM 23.1.4. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
 
 ```shell
 powershell -File scripts/regenerate.ps1 `
@@ -61,7 +61,7 @@ The generated shim directories contain `hosihikari_abi.h` from `BindingAbi`, so 
 
 ## Runtime smoke
 
-`tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `TextPacket` and calls an instance method, and creates a system-message packet through a factory that takes a string and returns `TextPacket` by value. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`. The server itself needs PreLoader 1.16.6, `bedrock_runtime_data` from `bedrockdata v26.60.6-server.4`, and a LeviLamina built from the same `6e4f440` carrier.
+`tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `TextPacket` and calls an instance method, and creates a system-message packet through a factory that takes a string and returns `TextPacket` by value. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`. The server itself needs PreLoader 1.16.6, `bedrock_runtime_data` from `bedrockdata v26.60.6-server.5`, and a LeviLamina built from the same `v26.60.0` carrier.
 
 ## Distribution
 

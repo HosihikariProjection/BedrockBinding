@@ -124,6 +124,11 @@ public sealed unsafe partial class MolangVariableMap : global::System.IDisposabl
         NativeMethods.TablePtr->C2.hs_method_c2e66c09((void*)__hosihikari_shim_handle, molangVariableIndex, (void*)value.Handle);
     }
 
+    public void setMolangVariable(global::Hosihikari.Bindings.Bedrock.Interop.HashedString variableName, global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg value)
+    {
+        NativeMethods.TablePtr->C2.hs_method_56567323((void*)__hosihikari_shim_handle, (void*)variableName.Handle, (void*)value.Handle);
+    }
+
     public void setMolangVariable(ulong variableNameHash, nint variableName, global::Hosihikari.Bindings.Bedrock.Interop.MolangScriptArg value, bool allowSpecialCharacters)
     {
         NativeMethods.TablePtr->C2.hs_method_f89ecde8((void*)__hosihikari_shim_handle, variableNameHash, (void*)variableName, (void*)value.Handle, allowSpecialCharacters);

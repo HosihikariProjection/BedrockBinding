@@ -2,23 +2,23 @@
 #nullable enable
 #pragma warning disable CS0618
 
-namespace Hosihikari.Bindings.Bedrock.Interop.AnimationComponentID_Nested;
+namespace Hosihikari.Bindings.Bedrock.Interop.RakNet.SystemAddress_Nested;
 
 [global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_f28a4b5_src__fa8f3b41
+public sealed partial class _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_0_src_2556c086
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
 
-    public _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_f28a4b5_src__fa8f3b41(nint handle) : this(handle, true) { }
+    public _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_0_src_2556c086(nint handle) : this(handle, true) { }
 
-    internal _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_f28a4b5_src__fa8f3b41(nint handle, bool ownsHandle)
+    internal _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_0_src_2556c086(nint handle, bool ownsHandle)
     {
         __hosihikari_shim_handle = handle;
         _ownsHandle = ownsHandle;
     }
 
-    public static _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_f28a4b5_src__fa8f3b41 Borrow(nint handle) => new _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_f28a4b5_src__fa8f3b41(handle, false);
+    public static _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_0_src_2556c086 Borrow(nint handle) => new _unnamed_union_at_C__Users_root_source_repos_hosihikari_Projection_Third_LeviLamina_v26_60_0_src_2556c086(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
 
@@ -40,28 +40,21 @@ public sealed partial class _unnamed_union_at_C__Users_root_source_repos_hosihik
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public ulong mActorUniqueId
+    public nint addr4
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public ulong mAllBits
+    public nint addr6
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public ulong mAttachableIndex
-    {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
-    }
-
-    [global::System.Obsolete("BindingShim cannot project this member: the native name is not a valid C++ qualified name.", false)]
-    public ulong mSubClientId
+    public nint sa_stor
     {
         get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
         set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the native name is not a valid C++ qualified name.");
