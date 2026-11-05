@@ -53,9 +53,9 @@ public sealed unsafe partial class CommandParameterData : global::System.IDispos
         return new CommandParameterData((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: parameter type 'bool (CommandRegistry::*)(void *, const CommandRegistry::ParseToken &, const CommandOrigin &, int, std::basic_string<char> &, std::vector<std::basic_string<char>> &) const' is not supported.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
     public static CommandParameterData Create(nint typeIndex, nint parser, nint name, nint type, nint enumNameOrPostfix, nint subChain, int offset, bool optional, int flagOffset, nint options, nint rule) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: parameter type 'bool (CommandRegistry::*)(void *, const CommandRegistry::ParseToken &, const CommandOrigin &, int, std::basic_string<char> &, std::vector<std::basic_string<char>> &) const' is not supported.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: the parameter needs a generated C++ type.");
 
     public static CommandParameterData Create(global::Hosihikari.Bindings.Bedrock.Interop.CommandParameterData arg0)
     {
