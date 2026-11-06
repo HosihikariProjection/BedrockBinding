@@ -28,8 +28,9 @@ jobs:
           ref: v26.60.2
           path: Third/LeviLamina
 
-      - name: xmake
-        run: choco install xmake --no-progress -y
+      - uses: xmake-io/github-action-setup-xmake@v1
+        with:
+          xmake-version: latest
 
       - name: Carrier packages
         working-directory: Third/LeviLamina
