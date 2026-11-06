@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class EnumSet_BlockClientPredictionOverrides__7_
+public sealed unsafe partial class EnumSet_BlockClientPredictionOverrides__7_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -41,18 +40,31 @@ public sealed partial class EnumSet_BlockClientPredictionOverrides__7_
 
     public const ulong MaxSize = 7;
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool contains(nint value) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint insert(nint value) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint mContainer
+    public bool contains(byte value)
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return NativeMethods.TablePtr->C0.hs_method_a4eb7957((void*)__hosihikari_shim_handle, value) != 0;
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::pair<Bedrock::EnumSet<BlockClientPredictionOverrides, 7>::iterator, bool>' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint insert(nint value) =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::pair<Bedrock::EnumSet<BlockClientPredictionOverrides, 7>::iterator, bool>' requires --link-carrier or --virtual-dispatch.");
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mContainer_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_5bf95925((void*)__hosihikari_shim_handle);
+    }
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_d2e05aea((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

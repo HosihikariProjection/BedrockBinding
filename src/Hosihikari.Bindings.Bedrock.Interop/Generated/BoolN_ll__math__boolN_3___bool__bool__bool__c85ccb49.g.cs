@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.ll.math;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class BoolN_ll__math__boolN_3___bool__bool__bool_
+public sealed unsafe partial class BoolN_ll__math__boolN_3___bool__bool__bool_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,51 +38,67 @@ public sealed partial class BoolN_ll__math__boolN_3___bool__bool__bool_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool all() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool all()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_5f5d6750((void*)__hosihikari_shim_handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool any() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool any()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_fccf546f((void*)__hosihikari_shim_handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool operator_bool() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool operator_bool()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_92f6678f((void*)__hosihikari_shim_handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint operator_operator_() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint operator_operator___0cb66798(nint x) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint operator_operator___968eda39(nint x) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint operator_operator__6418b842(nint x) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint operator_operator__a184451f(nint x) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint operator_operator___987f977c(nint x) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint operator_operator___9c2d2bd3(nint x) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint xnor_af5d4506(nint x) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint xnor_bdae156e(nint x) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<3>' requires --link-carrier or --virtual-dispatch.");
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_c85ccb49((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

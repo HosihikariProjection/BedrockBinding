@@ -40,7 +40,7 @@ public sealed unsafe partial class ThreadSpecificData : global::System.IDisposab
 
     public static ThreadSpecificData Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog_Nested.ThreadSpecificData arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_22059f89((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_22059f89((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,13 +52,13 @@ public sealed unsafe partial class ThreadSpecificData : global::System.IDisposab
     // The native field type is not projected; this is the address of the field storage.
     public nint mMessageLoggers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_3c4eace1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3c4eace1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScope_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_c4d43e0a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_c4d43e0a((void*)__hosihikari_shim_handle);
     }
 
 
@@ -68,7 +68,7 @@ public sealed unsafe partial class ThreadSpecificData : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_f1f97846((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_f1f97846((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

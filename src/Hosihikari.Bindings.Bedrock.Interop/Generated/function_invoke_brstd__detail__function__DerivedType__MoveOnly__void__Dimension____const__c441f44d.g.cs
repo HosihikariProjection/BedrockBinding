@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_
+public sealed unsafe partial class function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,19 +38,43 @@ public sealed partial class function_invoke_brstd__detail__function__DerivedType
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_ Create() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_ Create()
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_3741c977();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_((nint)handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    public static function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_ Create_32bd5317()
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_32bd5317();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new function_invoke_brstd__detail__function__DerivedType__MoveOnly__void__Dimension____const_((nint)handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public void swap(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_c441f44d((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

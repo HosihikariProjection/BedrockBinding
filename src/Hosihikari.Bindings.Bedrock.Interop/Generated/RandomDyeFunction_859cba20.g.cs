@@ -41,7 +41,7 @@ public sealed unsafe partial class RandomDyeFunction : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredicates_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_de5c726a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_de5c726a((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -58,7 +58,7 @@ public sealed unsafe partial class RandomDyeFunction : global::System.IDisposabl
 
     public static RandomDyeFunction Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomDyeFunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_22769d39((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_22769d39((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -69,12 +69,12 @@ public sealed unsafe partial class RandomDyeFunction : global::System.IDisposabl
 
     public void applyPreVersion(global::Hosihikari.Bindings.Bedrock.Interop.ItemStackBase item, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.LootTableContext arg2)
     {
-        NativeMethods.TablePtr->C2.hs_method_988b771d((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
+        NativeMethods.TablePtr->C3.hs_method_988b771d((void*)__hosihikari_shim_handle, (void*)item.Handle, (void*)random.Handle, (void*)arg2.Handle);
     }
 
     public int getFunctionType()
     {
-        return NativeMethods.TablePtr->C2.hs_method_a24c9853((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_a24c9853((void*)__hosihikari_shim_handle);
     }
 
 
@@ -84,7 +84,7 @@ public sealed unsafe partial class RandomDyeFunction : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_859cba20((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_859cba20((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

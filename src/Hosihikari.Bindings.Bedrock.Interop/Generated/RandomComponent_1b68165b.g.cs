@@ -40,7 +40,7 @@ public sealed unsafe partial class RandomComponent : global::System.IDisposable
 
     public static RandomComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_cb2ffd5b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_cb2ffd5b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,7 +52,7 @@ public sealed unsafe partial class RandomComponent : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mRandom_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a5a2c502((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a5a2c502((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -61,7 +61,7 @@ public sealed unsafe partial class RandomComponent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_1b68165b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_1b68165b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

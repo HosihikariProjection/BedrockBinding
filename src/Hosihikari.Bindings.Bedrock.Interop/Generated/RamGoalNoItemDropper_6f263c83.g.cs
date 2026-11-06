@@ -52,7 +52,7 @@ public sealed unsafe partial class RamGoalNoItemDropper : global::System.IDispos
 
     public static RamGoalNoItemDropper Create(global::Hosihikari.Bindings.Bedrock.Interop.RamAttackGoalUtils.RamGoalNoItemDropper arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_8aa8a620((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8aa8a620((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,17 +63,17 @@ public sealed unsafe partial class RamGoalNoItemDropper : global::System.IDispos
 
     public void checkForHornDropOnCollision(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 collisionPos)
     {
-        NativeMethods.TablePtr->C2.hs_method_e2a4cf41((void*)__hosihikari_shim_handle, (void*)collisionPos.Handle);
+        NativeMethods.TablePtr->C3.hs_method_e2a4cf41((void*)__hosihikari_shim_handle, (void*)collisionPos.Handle);
     }
 
     public void dontDropHorn()
     {
-        NativeMethods.TablePtr->C2.hs_method_ad77212c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_ad77212c((void*)__hosihikari_shim_handle);
     }
 
     public void tryDropHorn(global::Hosihikari.Bindings.Bedrock.Interop.Vec3 dropPos)
     {
-        NativeMethods.TablePtr->C2.hs_method_5ca3cc33((void*)__hosihikari_shim_handle, (void*)dropPos.Handle);
+        NativeMethods.TablePtr->C3.hs_method_5ca3cc33((void*)__hosihikari_shim_handle, (void*)dropPos.Handle);
     }
 
 
@@ -83,7 +83,7 @@ public sealed unsafe partial class RamGoalNoItemDropper : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6f263c83((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_6f263c83((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

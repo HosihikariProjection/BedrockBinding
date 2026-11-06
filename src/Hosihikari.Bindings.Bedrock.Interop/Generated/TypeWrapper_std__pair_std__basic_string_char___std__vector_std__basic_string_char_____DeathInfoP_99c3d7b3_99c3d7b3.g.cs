@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3
+public sealed unsafe partial class TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,19 +38,50 @@ public sealed partial class TypeWrapper_std__pair_std__basic_string_char___std__
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create()
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_6b3af97d();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create_ac3aee18(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3((nint)handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create_41d640b9(nint other) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create(global::Hosihikari.Bindings.Bedrock.Interop.TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 arg0)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_ac3aee18((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3((nint)handle);
+    }
+
+    public static TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3 Create(nint other)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_41d640b9((void*)other);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new TypeWrapper_std__pair_std__basic_string_char___std__vector_std__basic_string_char_____DeathInfoP_99c3d7b3((nint)handle);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_99c3d7b3((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

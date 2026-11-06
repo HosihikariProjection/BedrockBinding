@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.brstd.detail;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class bitset_base_brstd__bitset_7__unsigned_char___std__array_unsigned_char__1__
+public sealed unsafe partial class bitset_base_brstd__bitset_7__unsigned_char___std__array_unsigned_char__1__ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,15 +38,31 @@ public sealed partial class bitset_base_brstd__bitset_7__unsigned_char___std__ar
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint set(ulong pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public nint set(ulong pos)
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_e75c89a0((void*)__hosihikari_shim_handle, pos);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint set(ulong pos, bool value) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public nint set(ulong pos, bool value)
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_3d52ca56((void*)__hosihikari_shim_handle, pos, value);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool test(ulong pos) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool test(ulong pos)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_f182f1b6((void*)__hosihikari_shim_handle, pos) != 0;
+    }
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_9a5a3978((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

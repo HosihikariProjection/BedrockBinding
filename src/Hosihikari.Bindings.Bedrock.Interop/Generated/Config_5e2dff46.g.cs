@@ -40,14 +40,14 @@ public sealed unsafe partial class Config : global::System.IDisposable
 
     public int mApplyTo
     {
-        get => NativeMethods.TablePtr->C0.hs_get_4a2f3c08((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_4a2f3c08((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_4a2f3c08((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_4a2f3c08((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mIsClientSide
     {
-        get => NativeMethods.TablePtr->C0.hs_get_859b7645((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_859b7645((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_859b7645((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_859b7645((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +56,7 @@ public sealed unsafe partial class Config : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_5e2dff46((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_5e2dff46((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

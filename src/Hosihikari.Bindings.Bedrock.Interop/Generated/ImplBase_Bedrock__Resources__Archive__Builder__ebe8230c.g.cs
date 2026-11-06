@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class ImplBase_Bedrock__Resources__Archive__Builder_
+public sealed unsafe partial class ImplBase_Bedrock__Resources__Archive__Builder_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,11 +38,28 @@ public sealed partial class ImplBase_Bedrock__Resources__Archive__Builder_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static ImplBase_Bedrock__Resources__Archive__Builder_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static ImplBase_Bedrock__Resources__Archive__Builder_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.ImplBase_Bedrock__Resources__Archive__Builder_ arg0)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_fb04c122((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new ImplBase_Bedrock__Resources__Archive__Builder_((nint)handle);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_ebe8230c((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

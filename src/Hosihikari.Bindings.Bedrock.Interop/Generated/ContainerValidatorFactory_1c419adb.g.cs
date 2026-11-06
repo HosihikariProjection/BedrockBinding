@@ -40,7 +40,7 @@ public sealed unsafe partial class ContainerValidatorFactory : global::System.ID
 
     public static global::Hosihikari.Bindings.Abi.SharedHandle? createContainerValidator(global::Hosihikari.Bindings.Bedrock.Interop.FullContainerName containerId, global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext, int caller)
     {
-        var __hs_shared = NativeMethods.TablePtr->C0.hs_method_e2506e28((void*)containerId.Handle, (void*)screenContext.Handle, caller);
+        var __hs_shared = NativeMethods.TablePtr->C1.hs_method_e2506e28((void*)containerId.Handle, (void*)screenContext.Handle, caller);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
@@ -50,7 +50,7 @@ public sealed unsafe partial class ContainerValidatorFactory : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_1c419adb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_1c419adb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

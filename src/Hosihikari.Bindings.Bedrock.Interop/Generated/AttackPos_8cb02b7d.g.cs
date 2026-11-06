@@ -63,20 +63,20 @@ public sealed unsafe partial class AttackPos : global::System.IDisposable
 
     public float mDistance
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b68a10f9((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b68a10f9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b68a10f9((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b68a10f9((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mHasChargePos
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b7d23a03((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C2.hs_set_b7d23a03((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b7d23a03((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_b7d23a03((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPosition_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_779a163d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_779a163d((void*)__hosihikari_shim_handle);
     }
 
 

@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class WeakRef_EntityRegistry_
+public sealed unsafe partial class WeakRef_EntityRegistry_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,27 +38,67 @@ public sealed partial class WeakRef_EntityRegistry_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static WeakRef_EntityRegistry_ Create_c106b94c(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static WeakRef_EntityRegistry_ Create_c106b94c(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_c106b94c(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static WeakRef_EntityRegistry_ Create_a2247688(nint ptr) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new WeakRef_EntityRegistry_((nint)handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static WeakRef_EntityRegistry_ Create_da957b9c(nint ptr) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static WeakRef_EntityRegistry_ Create_a2247688(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_a2247688(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static WeakRef_EntityRegistry_ Create_2156dfc2(nint ptr) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new WeakRef_EntityRegistry_((nint)handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint @lock() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static WeakRef_EntityRegistry_ Create_da957b9c(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_da957b9c(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new WeakRef_EntityRegistry_((nint)handle);
+    }
+
+    public static WeakRef_EntityRegistry_ Create_2156dfc2(global::Hosihikari.Bindings.Abi.SharedHandle? ptr)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_2156dfc2(ptr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new WeakRef_EntityRegistry_((nint)handle);
+    }
+
+    public global::Hosihikari.Bindings.Abi.SharedHandle? @lock()
+    {
+        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_11545a74((void*)__hosihikari_shim_handle);
+        return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_60879429((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

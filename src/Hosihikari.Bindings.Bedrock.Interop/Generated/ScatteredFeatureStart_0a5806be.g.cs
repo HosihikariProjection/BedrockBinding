@@ -52,7 +52,7 @@ public sealed unsafe partial class ScatteredFeatureStart : global::System.IDispo
 
     public static ScatteredFeatureStart Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomScatteredLargeFeatureDetails.ScatteredFeatureStart arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_2d11a7b8((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_2d11a7b8((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,55 +63,55 @@ public sealed unsafe partial class ScatteredFeatureStart : global::System.IDispo
 
     public int getMaxYSpawnOffset()
     {
-        return NativeMethods.TablePtr->C2.hs_method_f440b969((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_f440b969((void*)__hosihikari_shim_handle);
     }
 
     public string getStructureName()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_667fb9c5((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_667fb9c5((void*)__hosihikari_shim_handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
     public bool requiresNeighborAwareBlockUpgrade()
     {
-        return NativeMethods.TablePtr->C2.hs_method_72691155((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_72691155((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int type
     {
-        get => NativeMethods.TablePtr->C2.hs_get_7dc7d591((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_7dc7d591((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_7dc7d591((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_7dc7d591((void*)__hosihikari_shim_handle, value);
     }
 
 
     // The native field type is not projected; this is the address of the field storage.
     public nint boundingBox_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_29e1d05e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_29e1d05e((void*)__hosihikari_shim_handle);
     }
 
     public int chunkX
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ff9cc2c6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ff9cc2c6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ff9cc2c6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ff9cc2c6((void*)__hosihikari_shim_handle, value);
     }
 
     public int chunkZ
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b23f9643((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b23f9643((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b23f9643((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b23f9643((void*)__hosihikari_shim_handle, value);
     }
 
     public int maxYSpawnOffset
     {
-        get => NativeMethods.TablePtr->C2.hs_get_31f510a6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_31f510a6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_31f510a6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_31f510a6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint pieces_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4a35abed((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4a35abed((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -120,7 +120,7 @@ public sealed unsafe partial class ScatteredFeatureStart : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_0a5806be((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_0a5806be((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

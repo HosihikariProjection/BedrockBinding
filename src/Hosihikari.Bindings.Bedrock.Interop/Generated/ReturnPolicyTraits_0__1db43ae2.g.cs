@@ -39,10 +39,10 @@ public sealed partial class ReturnPolicyTraits_0_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the static field has no symbol in the IR.", false)]
     public static nint value
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the static field has no symbol in the IR.");
+        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the static field has no symbol in the IR.");
     }
 }

@@ -44,7 +44,7 @@ public sealed unsafe partial class ContentCatalogQueryData : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_86d17be2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_86d17be2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

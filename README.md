@@ -16,7 +16,7 @@ This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `v26.60.
 ## Current state
 
 - Interop: 9,190 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
-- Binding Shim: 133,727 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
+- Binding Shim: 136,358 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
 - Coverage: 12,144 declarations and 101,843 members bound for `win-x64-server`.
 - Members the carrier annotates `MCNAPI` (known but not exported) are reasoned stubs: against the pinned runtime data, 2 of 27,673 such names resolve, while 3,871 of the 4,183 `MCAPI` names do.
 - `scripts/headers-26.60.txt` lists the 5,169 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
@@ -37,6 +37,8 @@ The shim is emitted in `--symbol-dispatch --resolve-by-name` mode. Supported ABI
 - `gsl::span<T>` parameters and results: a returned `{size, pointer}` span becomes an array; scalar elements are copied, pointer and `gsl::not_null<T*>` elements surface as `nint[]`, and trivially destructible record elements become owned wrapper objects;
 - `std::optional<T>` parameters and results over scalars, strings, and records; a trivially copyable payload uses a layout-compatible blob, a non-trivial record payload is copied through its resolved copy constructor and the in-place original is destroyed through its resolved destructor, and returned records become owned wrappers;
 - `std::shared_ptr<T>` parameters and results, which keep one shared reference alive in a shim holder; `std::weak_ptr<T>` results are locked once into a strong snapshot and surface as null when expired.
+
+Inline member bodies of template instances are compiled into the shim instead of resolved by name: the shim includes their headers, resolves the headers their template arguments need, and links a delay-loaded `bedrock_runtime_api.lib` that prelink generated from the data snapshot. The shim therefore builds with clang-cl (MSVC rejects a few carrier headers) and needs the LLVM tree and a `bedrockdata` package at build time.
 
 Maps require named key/value types and matching hash/equality functors, which the merged IR does not carry. Callbacks, variants, custom owning wrappers, and records without a proven layout remain Interop stubs.
 

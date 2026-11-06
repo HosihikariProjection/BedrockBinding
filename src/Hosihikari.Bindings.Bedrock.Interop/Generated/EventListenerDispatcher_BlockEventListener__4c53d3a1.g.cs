@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class EventListenerDispatcher_BlockEventListener_
+public sealed unsafe partial class EventListenerDispatcher_BlockEventListener_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,11 +38,28 @@ public sealed partial class EventListenerDispatcher_BlockEventListener_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static EventListenerDispatcher_BlockEventListener_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static EventListenerDispatcher_BlockEventListener_ Create(global::Hosihikari.Bindings.Bedrock.Interop.EventListenerDispatcher_BlockEventListener_ arg0)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_02fbae49((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new EventListenerDispatcher_BlockEventListener_((nint)handle);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C1.hs_destroy_4c53d3a1((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

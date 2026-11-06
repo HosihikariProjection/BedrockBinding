@@ -40,7 +40,7 @@ public sealed unsafe partial class ContainerValidationSlotInfo : global::System.
 
     public static ContainerValidationSlotInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationSlotInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_df7ca962((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_df7ca962((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -52,19 +52,19 @@ public sealed unsafe partial class ContainerValidationSlotInfo : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_b058bbd1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b058bbd1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSlotData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_b0598394((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b0598394((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValidator_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_52acf978((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_52acf978((void*)__hosihikari_shim_handle);
     }
 
 
@@ -74,7 +74,7 @@ public sealed unsafe partial class ContainerValidationSlotInfo : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_d6fb2fbb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_d6fb2fbb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

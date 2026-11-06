@@ -41,7 +41,7 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_e0ffdaf4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_e0ffdaf4((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -58,7 +58,7 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
 
     public static ContentLog Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLog arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_6997c9d4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_6997c9d4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -77,32 +77,32 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
 
     public bool mEnabled
     {
-        get => NativeMethods.TablePtr->C0.hs_get_2c9f2783((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_2c9f2783((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_2c9f2783((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_2c9f2783((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEndPoints_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_adffd776((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_adffd776((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEndpointMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_62f390c7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_62f390c7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnceOnlyMessages_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d0db3405((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d0db3405((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScopeHandler_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_eeb538e2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_eeb538e2((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -120,7 +120,7 @@ public sealed unsafe partial class ContentLog : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_fad41599((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_fad41599((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

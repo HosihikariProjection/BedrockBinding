@@ -44,7 +44,7 @@ public sealed unsafe partial class OpenSSLRandomInterface : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5d3d4db7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5d3d4db7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

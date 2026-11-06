@@ -44,7 +44,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
 
     public nint _ctor(uint seed)
     {
-        return (nint)NativeMethods.TablePtr->C2.hs_method_1e63a2f3((void*)__hosihikari_shim_handle, seed);
+        return (nint)NativeMethods.TablePtr->C3.hs_method_1e63a2f3((void*)__hosihikari_shim_handle, seed);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the parameter needs a generated C++ type.", false)]
@@ -53,7 +53,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[] _getRequiredBiomes()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_6ced5b49((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_6ced5b49((void*)__hosihikari_shim_handle);
         var __hs_items = (void**)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType>() : new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -65,22 +65,22 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
 
     public bool _isFeatureChunk(global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, uint levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.IPreliminarySurfaceProvider preliminarySurfaceLevel, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        return NativeMethods.TablePtr->C2.hs_method_637c5f47((void*)__hosihikari_shim_handle, (void*)biomeSource.Handle, (void*)random.Handle, (void*)pos.Handle, levelSeed, (void*)preliminarySurfaceLevel.Handle, (void*)dimension.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_637c5f47((void*)__hosihikari_shim_handle, (void*)biomeSource.Handle, (void*)random.Handle, (void*)pos.Handle, levelSeed, (void*)preliminarySurfaceLevel.Handle, (void*)dimension.Handle) != 0;
     }
 
     public bool _shouldAddHardcodedSpawnAreas()
     {
-        return NativeMethods.TablePtr->C2.hs_method_429ea5ab((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_429ea5ab((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool _shouldPostProcessMobs()
     {
-        return NativeMethods.TablePtr->C2.hs_method_7f463e86((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_7f463e86((void*)__hosihikari_shim_handle) != 0;
     }
 
     public static RandomScatteredLargeFeature Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_862bc12f();
+        var handle = NativeMethods.TablePtr->C3.hs_create_862bc12f();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -91,7 +91,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
 
     public static RandomScatteredLargeFeature Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomScatteredLargeFeature arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_f35ab857((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_f35ab857((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -102,7 +102,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
 
     public static RandomScatteredLargeFeature Create(uint seed)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_b6876c78(seed);
+        var handle = NativeMethods.TablePtr->C3.hs_create_b6876c78(seed);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -121,7 +121,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
 
     public global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[] getRequiredBiomes()
     {
-        var __hs_view = NativeMethods.TablePtr->C2.hs_method_e2a38c07((void*)__hosihikari_shim_handle);
+        var __hs_view = NativeMethods.TablePtr->C3.hs_method_e2a38c07((void*)__hosihikari_shim_handle);
         var __hs_items = (void**)__hs_view.Data;
         var __hs_result = __hs_view.Size == 0 ? global::System.Array.Empty<global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType>() : new global::Hosihikari.Bindings.Bedrock.Interop.BiomeIdType[checked((int)__hs_view.Size)];
         for (var __hs_i = 0; __hs_i < __hs_result.Length; __hs_i++)
@@ -133,102 +133,102 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
 
     public bool isFeatureChunk(global::Hosihikari.Bindings.Bedrock.Interop.BiomeSource biomeSource, global::Hosihikari.Bindings.Bedrock.Interop.Random random, global::Hosihikari.Bindings.Bedrock.Interop.ChunkPos pos, uint levelSeed, global::Hosihikari.Bindings.Bedrock.Interop.IPreliminarySurfaceProvider preliminarySurfaceLevel, global::Hosihikari.Bindings.Bedrock.Interop.Dimension dimension)
     {
-        return NativeMethods.TablePtr->C2.hs_method_efc6fa93((void*)__hosihikari_shim_handle, (void*)biomeSource.Handle, (void*)random.Handle, (void*)pos.Handle, levelSeed, (void*)preliminarySurfaceLevel.Handle, (void*)dimension.Handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_efc6fa93((void*)__hosihikari_shim_handle, (void*)biomeSource.Handle, (void*)random.Handle, (void*)pos.Handle, levelSeed, (void*)preliminarySurfaceLevel.Handle, (void*)dimension.Handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAllowedBiomes_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1fb7d529((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1fb7d529((void*)__hosihikari_shim_handle);
     }
 
     public int mMinSeparation
     {
-        get => NativeMethods.TablePtr->C2.hs_get_68dbaece((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_68dbaece((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_68dbaece((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_68dbaece((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSpacing
     {
-        get => NativeMethods.TablePtr->C2.hs_get_bbb514c3((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_bbb514c3((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_bbb514c3((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_bbb514c3((void*)__hosihikari_shim_handle, value);
     }
 
     public bool shouldAddHardcodedSpawnAreas()
     {
-        return NativeMethods.TablePtr->C2.hs_method_fa2e4cc3((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_fa2e4cc3((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool shouldPostProcessMobs()
     {
-        return NativeMethods.TablePtr->C2.hs_method_98b37304((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_98b37304((void*)__hosihikari_shim_handle) != 0;
     }
 
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActiveBlueprintCreateCount_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_0fbd8020((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_0fbd8020((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlueprintWaitVar_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_b6e00ce0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b6e00ce0((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlueprintsFinished_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_93c85ccd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_93c85ccd((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCacheMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3139fce1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3139fce1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCachedStructures_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_12b76225((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_12b76225((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCreateBlueprintsAndVisitedPositionsMutex_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_42564a7b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_42564a7b((void*)__hosihikari_shim_handle);
     }
 
     public uint mRadius
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a6c450d2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_a6c450d2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a6c450d2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a6c450d2((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureFeatureType_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_339b6cbe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_339b6cbe((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mVisitedPositions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f9efd303((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f9efd303((void*)__hosihikari_shim_handle);
     }
 
     public int mXScale
     {
-        get => NativeMethods.TablePtr->C2.hs_get_ebc040e6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_ebc040e6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_ebc040e6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_ebc040e6((void*)__hosihikari_shim_handle, value);
     }
 
     public int mZScale
     {
-        get => NativeMethods.TablePtr->C2.hs_get_35e8e659((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_35e8e659((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_35e8e659((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_35e8e659((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -237,7 +237,7 @@ public sealed unsafe partial class RandomScatteredLargeFeature : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5f5868bb((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5f5868bb((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

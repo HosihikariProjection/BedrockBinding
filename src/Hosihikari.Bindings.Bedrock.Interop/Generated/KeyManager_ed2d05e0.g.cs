@@ -60,7 +60,7 @@ public sealed unsafe partial class KeyManager : global::System.IDisposable
 
     public static KeyManager Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_171eaefb();
+        var handle = NativeMethods.TablePtr->C2.hs_create_171eaefb();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,19 +79,19 @@ public sealed unsafe partial class KeyManager : global::System.IDisposable
 
     public bool isValid()
     {
-        return NativeMethods.TablePtr->C1.hs_method_d820b7d7((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_d820b7d7((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnka2774b_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0a8335b8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0a8335b8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbe6af1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_45121658((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_45121658((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -105,7 +105,7 @@ public sealed unsafe partial class KeyManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_ed2d05e0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_ed2d05e0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

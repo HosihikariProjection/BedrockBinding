@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class TypedClientNetId_ItemStackLegacyRequestIdTag__int__0_
+public sealed unsafe partial class TypedClientNetId_ItemStackLegacyRequestIdTag__int__0_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,33 +38,51 @@ public sealed partial class TypedClientNetId_ItemStackLegacyRequestIdTag__int__0
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static TypedClientNetId_ItemStackLegacyRequestIdTag__int__0_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static TypedClientNetId_ItemStackLegacyRequestIdTag__int__0_ Create(nint arg0)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_42eacb4a((void*)arg0);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void clientInit() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new TypedClientNetId_ItemStackLegacyRequestIdTag__int__0_((nint)handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void clientInit(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public void clientInit()
+    {
+        NativeMethods.TablePtr->C4.hs_method_d173e088((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    public void clientInit(nint arg0)
+    {
+        NativeMethods.TablePtr->C4.hs_method_49ae3b15((void*)__hosihikari_shim_handle, (void*)arg0);
+    }
+
     public int mRawId
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C4.hs_get_0158f003((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_0158f003((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: the static field has no symbol in the IR.", false)]
     public static int sNextRawId
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the static field has no symbol in the IR.");
+        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the static field has no symbol in the IR.");
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_0fc76e2a((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

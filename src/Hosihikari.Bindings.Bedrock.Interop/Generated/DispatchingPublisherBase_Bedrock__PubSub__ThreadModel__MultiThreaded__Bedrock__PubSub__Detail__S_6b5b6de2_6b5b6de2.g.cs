@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class DispatchingPublisherBase_Bedrock__PubSub__ThreadModel__MultiThreaded__Bedrock__PubSub__Detail__S_6b5b6de2
+public sealed unsafe partial class DispatchingPublisherBase_Bedrock__PubSub__ThreadModel__MultiThreaded__Bedrock__PubSub__Detail__S_6b5b6de2 : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,7 +38,41 @@ public sealed partial class DispatchingPublisherBase_Bedrock__PubSub__ThreadMode
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mFastDispatchInfo_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_e23e758e((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mMutex_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_8a515a30((void*)__hosihikari_shim_handle);
+    }
+
+    public uint mSubscriberCount
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_cbc5df56((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_cbc5df56((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSubscriptions_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_7badd1e2((void*)__hosihikari_shim_handle);
+    }
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_6b5b6de2((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

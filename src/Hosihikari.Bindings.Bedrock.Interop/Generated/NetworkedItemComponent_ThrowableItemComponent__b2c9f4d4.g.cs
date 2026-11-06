@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class NetworkedItemComponent_ThrowableItemComponent_
+public sealed unsafe partial class NetworkedItemComponent_ThrowableItemComponent_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,23 +38,48 @@ public sealed partial class NetworkedItemComponent_ThrowableItemComponent_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static NetworkedItemComponent_ThrowableItemComponent_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public nint mOwner
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a375743d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a375743d((void*)__hosihikari_shim_handle, (void*)value);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    public static NetworkedItemComponent_ThrowableItemComponent_ Create(global::Hosihikari.Bindings.Bedrock.Interop.NetworkedItemComponent_ThrowableItemComponent_ arg0)
+    {
+        var handle = NativeMethods.TablePtr->C2.hs_create_627516ee((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new NetworkedItemComponent_ThrowableItemComponent_((nint)handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.", false)]
     public nint buildNetworkTag(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: unique_ptr return type 'CompoundTag' has no accessible destructor.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool initializeFromNetwork(nint arg0, nint arg1) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool initializeFromNetwork(global::Hosihikari.Bindings.Bedrock.Interop.CompoundTag arg0, global::Hosihikari.Bindings.Bedrock.Interop.cereal.ReflectionCtx arg1)
+    {
+        return NativeMethods.TablePtr->C2.hs_method_972907b8((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool isNetworkComponent() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool isNetworkComponent()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_5f624a28((void*)__hosihikari_shim_handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C2.hs_destroy_b2c9f4d4((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

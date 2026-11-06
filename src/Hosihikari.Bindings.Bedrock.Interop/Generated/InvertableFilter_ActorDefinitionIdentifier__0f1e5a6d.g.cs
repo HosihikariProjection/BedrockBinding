@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class InvertableFilter_ActorDefinitionIdentifier_
+public sealed unsafe partial class InvertableFilter_ActorDefinitionIdentifier_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,25 +38,40 @@ public sealed partial class InvertableFilter_ActorDefinitionIdentifier_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static InvertableFilter_ActorDefinitionIdentifier_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static InvertableFilter_ActorDefinitionIdentifier_ Create(global::Hosihikari.Bindings.Bedrock.Interop.InvertableFilter_ActorDefinitionIdentifier_ arg0)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_f7cb8bc3((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+        return new InvertableFilter_ActorDefinitionIdentifier_((nint)handle);
+    }
+
     public bool inverted
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        get => NativeMethods.TablePtr->C1.hs_get_dec6d616((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_dec6d616((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint value
+    // The native field type is not projected; this is the address of the field storage.
+    public nint value_Address
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_9d650567((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C1.hs_destroy_0f1e5a6d((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

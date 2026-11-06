@@ -41,7 +41,7 @@ public sealed unsafe partial class LabTableContainerScreenValidator : global::Sy
     // The native field type is not projected; this is the address of the field storage.
     public nint mValidContainerEnumNames_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_086bb3a2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_086bb3a2((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -50,7 +50,7 @@ public sealed unsafe partial class LabTableContainerScreenValidator : global::Sy
 
     public static LabTableContainerScreenValidator Create(global::Hosihikari.Bindings.Bedrock.Interop.LabTableContainerScreenValidator arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_b958513d((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_b958513d((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,7 +66,7 @@ public sealed unsafe partial class LabTableContainerScreenValidator : global::Sy
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_4d1ced7b((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4d1ced7b((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

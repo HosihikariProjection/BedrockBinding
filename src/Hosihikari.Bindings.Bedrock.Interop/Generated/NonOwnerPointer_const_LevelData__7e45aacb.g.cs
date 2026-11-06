@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class NonOwnerPointer_const_LevelData_
+public sealed unsafe partial class NonOwnerPointer_const_LevelData_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,61 +38,105 @@ public sealed partial class NonOwnerPointer_const_LevelData_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static NonOwnerPointer_const_LevelData_ Create() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static NonOwnerPointer_const_LevelData_ Create_b36b37f6(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static NonOwnerPointer_const_LevelData_ Create_a3c930b3(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static NonOwnerPointer_const_LevelData_ Create(nint cb, nint p) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint get() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint mControlBlock
+    public static NonOwnerPointer_const_LevelData_ Create()
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        var handle = NativeMethods.TablePtr->C0.hs_create_ae902baa();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new NonOwnerPointer_const_LevelData_((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    public static NonOwnerPointer_const_LevelData_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? arg0)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_b36b37f6(arg0?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new NonOwnerPointer_const_LevelData_((nint)handle);
+    }
+
+    public static NonOwnerPointer_const_LevelData_ Create_a3c930b3()
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_a3c930b3();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new NonOwnerPointer_const_LevelData_((nint)handle);
+    }
+
+    public static NonOwnerPointer_const_LevelData_ Create(global::Hosihikari.Bindings.Abi.SharedHandle? cb, global::Hosihikari.Bindings.Bedrock.Interop.LevelData? p)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_020de8ea(cb?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), (void*)(p?.Handle ?? 0));
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new NonOwnerPointer_const_LevelData_((nint)handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData? get()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_924faf22((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)__hs_handle, false) : null;
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mControlBlock_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_d81b2dd5((void*)__hosihikari_shim_handle);
+    }
+
     public nint mPointer
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_28aeb063((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool operator_bool() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool operator_bool()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_8c59e2f3((void*)__hosihikari_shim_handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint operator_const_LevelData__() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData? operator_const_LevelData__()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_e789d535((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)__hs_handle, false) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint operator_multiply() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData operator_multiply()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)NativeMethods.TablePtr->C0.hs_method_5ec9511b((void*)__hosihikari_shim_handle), false);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint operator_operator__() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.LevelData? operator_operator__()
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_20afea3c((void*)__hosihikari_shim_handle);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.LevelData((nint)__hs_handle, false) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool operator_equal(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool operator_equal()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_7c881413((void*)__hosihikari_shim_handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_7e45aacb((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

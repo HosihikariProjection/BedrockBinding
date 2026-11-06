@@ -48,7 +48,7 @@ public sealed unsafe partial class CooldownItemComponent : global::System.IDispo
 
     public static CooldownItemComponent Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_6f221efc();
+        var handle = NativeMethods.TablePtr->C1.hs_create_6f221efc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,7 +63,7 @@ public sealed unsafe partial class CooldownItemComponent : global::System.IDispo
 
     public static CooldownItemComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.CooldownItemComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_3c77eab2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_3c77eab2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -79,26 +79,26 @@ public sealed unsafe partial class CooldownItemComponent : global::System.IDispo
     // The native field type is not projected; this is the address of the field storage.
     public nint mCategory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_39644235((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_39644235((void*)__hosihikari_shim_handle);
     }
 
     public float mDuration
     {
-        get => NativeMethods.TablePtr->C0.hs_get_53c81643((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_53c81643((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_53c81643((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_53c81643((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mType
     {
-        get => NativeMethods.TablePtr->C0.hs_get_b0b6ae99((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_b0b6ae99((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_b0b6ae99((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_b0b6ae99((void*)__hosihikari_shim_handle, value);
     }
 
 
     public nint mOwner
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_3b26e165((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_3b26e165((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3b26e165((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_3b26e165((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void Dispose()
@@ -107,7 +107,7 @@ public sealed unsafe partial class CooldownItemComponent : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_aa92494f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_aa92494f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.ll.reflection;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class Serializer_mce__UUID__void_
+public sealed unsafe partial class Serializer_mce__UUID__void_
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,11 +38,13 @@ public sealed partial class Serializer_mce__UUID__void_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: expected value type 'mce::UUID': by-value return type 'mce::UUID' requires --link-carrier or --virtual-dispatch.", false)]
     public static nint from_string(nint s) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: expected value type 'mce::UUID': by-value return type 'mce::UUID' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static nint to_string(nint t) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static string to_string(global::Hosihikari.Bindings.Bedrock.Interop.mce.UUID t)
+    {
+        var __hs_view = NativeMethods.TablePtr->C4.hs_method_92ffcb2b((void*)t.Handle);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
 }

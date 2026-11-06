@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class Publisher_void__ItemOnUseResult____ItemStackBase____const_DefinitionTrigger____RenderParams______5da1e8e8
+public sealed unsafe partial class Publisher_void__ItemOnUseResult____ItemStackBase____const_DefinitionTrigger____RenderParams______5da1e8e8 : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,15 +38,56 @@ public sealed partial class Publisher_void__ItemOnUseResult____ItemStackBase____
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static Publisher_void__ItemOnUseResult____ItemStackBase____const_DefinitionTrigger____RenderParams______5da1e8e8 Create() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mFastDispatchInfo_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_ed463767((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mMutex_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_62234e44((void*)__hosihikari_shim_handle);
+    }
+
+    public uint mSubscriberCount
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_e2c92887((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_e2c92887((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSubscriptions_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_3419d6f8((void*)__hosihikari_shim_handle);
+    }
+
+    public static Publisher_void__ItemOnUseResult____ItemStackBase____const_DefinitionTrigger____RenderParams______5da1e8e8 Create()
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_6dc1326e();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Publisher_void__ItemOnUseResult____ItemStackBase____const_DefinitionTrigger____RenderParams______5da1e8e8((nint)handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.", false)]
     public static Publisher_void__ItemOnUseResult____ItemStackBase____const_DefinitionTrigger____RenderParams______5da1e8e8 Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameters are not supported by symbol dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_5da1e8e8((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

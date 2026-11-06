@@ -53,7 +53,7 @@ public sealed unsafe partial class RandomPos : global::System.IDisposable
     public static global::Hosihikari.Bindings.Bedrock.Interop.Vec3? getPosAvoid(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, int xzDist, int yDist, global::Hosihikari.Bindings.Bedrock.Interop.Vec3 avoidPos, byte blockTest, int tries)
     {
         var __hs_hasValue = false;
-        var __hs_handle = NativeMethods.TablePtr->C2.hs_method_67a2f31e((void*)mob.Handle, xzDist, yDist, (void*)avoidPos.Handle, blockTest, tries, &__hs_hasValue);
+        var __hs_handle = NativeMethods.TablePtr->C3.hs_method_67a2f31e((void*)mob.Handle, xzDist, yDist, (void*)avoidPos.Handle, blockTest, tries, &__hs_hasValue);
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Vec3((nint)__hs_handle) : null;
     }
 
@@ -71,7 +71,7 @@ public sealed unsafe partial class RandomPos : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_62d88e75((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_62d88e75((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

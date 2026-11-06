@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class function_invoke_base_brstd__detail__function__DerivedType__MoveOnly__OwnerPtr_Dimension___const__ea1cf505
+public sealed unsafe partial class function_invoke_base_brstd__detail__function__DerivedType__MoveOnly__OwnerPtr_Dimension___const__ea1cf505 : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,11 +38,36 @@ public sealed partial class function_invoke_base_brstd__detail__function__Derive
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint operator_call(nint args, nint args1) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_ operator_call(global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtrFactory_Dimension__DerivedDimensionArguments____ args, string args1)
+    {
+        var __hs_stringByteCount1 = global::System.Text.Encoding.UTF8.GetByteCount(args1);
+        scoped global::System.Span<byte> __hs_stringBytes1;
+        if (__hs_stringByteCount1 <= 256)
+        {
+            __hs_stringBytes1 = stackalloc byte[__hs_stringByteCount1 == 0 ? 1 : __hs_stringByteCount1];
+        }
+        else
+        {
+            __hs_stringBytes1 = new byte[__hs_stringByteCount1];
+        }
+        global::System.Text.Encoding.UTF8.GetBytes(args1, __hs_stringBytes1);
+        fixed (byte* __hs_stringData1 = __hs_stringBytes1)
+        {
+            return new global::Hosihikari.Bindings.Bedrock.Interop.OwnerPtr_Dimension_((nint)NativeMethods.TablePtr->C4.hs_method_2b3fe9aa((void*)__hosihikari_shim_handle, (void*)args.Handle, __hs_stringData1, (nuint)__hs_stringByteCount1));
+        }
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_ea1cf505((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

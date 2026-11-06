@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__SingleThreaded_
+public sealed unsafe partial class ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__SingleThreaded_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,11 +38,40 @@ public sealed partial class ThreadingPublisherBase_Bedrock__PubSub__ThreadModel_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__SingleThreaded_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public uint mSubscriberCount
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_25a83117((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_25a83117((void*)__hosihikari_shim_handle, value);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mSubscriptions_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_d0aa3bea((void*)__hosihikari_shim_handle);
+    }
+
+    public static ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__SingleThreaded_ Create(global::Hosihikari.Bindings.Bedrock.Interop.Bedrock.PubSub.Detail.ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__SingleThreaded_ arg0)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_ce9767d4((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ThreadingPublisherBase_Bedrock__PubSub__ThreadModel__SingleThreaded_((nint)handle);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C0.hs_destroy_3d2b70f3((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

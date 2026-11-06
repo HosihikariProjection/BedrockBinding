@@ -40,7 +40,7 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
 
     public static ContentTierIncompatibleReason Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_b42d6f17();
+        var handle = NativeMethods.TablePtr->C1.hs_create_b42d6f17();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
 
     public static ContentTierIncompatibleReason Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_6715cc27((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_6715cc27((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,12 +71,12 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk32cd20_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_596070a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_596070a0((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason((nint)NativeMethods.TablePtr->C0.hs_method_f912b00f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentTierIncompatibleReason((nint)NativeMethods.TablePtr->C1.hs_method_f912b00f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -85,7 +85,7 @@ public sealed unsafe partial class ContentTierIncompatibleReason : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_2a827238((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_2a827238((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -44,7 +44,7 @@ public sealed unsafe partial class getThreadLocal : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_6366e198((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_6366e198((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

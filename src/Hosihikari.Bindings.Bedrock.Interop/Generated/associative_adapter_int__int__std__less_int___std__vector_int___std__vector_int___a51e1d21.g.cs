@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.brstd;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class associative_adapter_int__int__std__less_int___std__vector_int___std__vector_int__
+public sealed unsafe partial class associative_adapter_int__int__std__less_int___std__vector_int___std__vector_int__
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,45 +38,47 @@ public sealed partial class associative_adapter_int__int__std__less_int___std__v
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint begin_2a436d7a() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, int &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint begin_77aa73f5() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint cbegin() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint cend() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint end_dbe8b52e() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, int &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint end_b9b79406() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint find_0e4c5b08(nint key) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, const int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, int &>>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint find_d4b3ae4e(nint key) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'brstd::associative_adapter<int, int, std::less<int>, std::vector<int>, std::vector<int>>::iterator_impl<std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::_Vector_iterator<std::_Vector_val<std::_Simple_types<int>>>, std::pair<const int &, int &>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint keys() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public nint keys()
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_311b5960((void*)__hosihikari_shim_handle);
+    }
 
     public const bool no_mapped_container = false;
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint values() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public nint values()
+    {
+        return (nint)NativeMethods.TablePtr->C4.hs_method_5a74d184((void*)__hosihikari_shim_handle);
+    }
 }

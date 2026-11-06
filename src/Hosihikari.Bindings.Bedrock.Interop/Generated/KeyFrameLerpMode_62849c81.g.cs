@@ -40,14 +40,14 @@ public sealed unsafe partial class KeyFrameLerpMode : global::System.IDisposable
 
     public int mLerpStyle
     {
-        get => NativeMethods.TablePtr->C1.hs_get_1084317c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_1084317c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_1084317c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_1084317c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPrecomputedCubicCoeffs_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2f928848((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2f928848((void*)__hosihikari_shim_handle);
     }
 
 
@@ -57,7 +57,7 @@ public sealed unsafe partial class KeyFrameLerpMode : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_62849c81((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_62849c81((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

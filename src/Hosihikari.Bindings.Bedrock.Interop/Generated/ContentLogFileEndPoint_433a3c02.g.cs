@@ -41,7 +41,7 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
     // The native field type is not projected; this is the address of the field storage.
     public nint mControlBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_b919c8aa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b919c8aa((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -74,7 +74,7 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
 
     public static ContentLogFileEndPoint Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_6a11efaa();
+        var handle = NativeMethods.TablePtr->C1.hs_create_6a11efaa();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -89,7 +89,7 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
 
     public static ContentLogFileEndPoint Create(global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_66b4984b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_66b4984b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -100,69 +100,69 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
 
     public void flush()
     {
-        NativeMethods.TablePtr->C0.hs_method_9e4207b1((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C1.hs_method_9e4207b1((void*)__hosihikari_shim_handle);
     }
 
     public bool isEnabled()
     {
-        return NativeMethods.TablePtr->C0.hs_method_fc2dbfe9((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_fc2dbfe9((void*)__hosihikari_shim_handle) != 0;
     }
 
     public void log(uint area, uint level, nint message)
     {
-        NativeMethods.TablePtr->C0.hs_method_677f6c38((void*)__hosihikari_shim_handle, area, level, (void*)message);
+        NativeMethods.TablePtr->C1.hs_method_677f6c38((void*)__hosihikari_shim_handle, area, level, (void*)message);
     }
 
     public bool logOnlyOnce()
     {
-        return NativeMethods.TablePtr->C0.hs_method_7006bb38((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_7006bb38((void*)__hosihikari_shim_handle) != 0;
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk29444e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d447fb02((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d447fb02((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk299ac4_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_57160139((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_57160139((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5cdc54_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_46e59ca1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_46e59ca1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk6f25b1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_698a2ce2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_698a2ce2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbe8544_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_8902cdee((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_8902cdee((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd6cbc8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_79f81082((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_79f81082((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnke5cbb0_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d3b19e9c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d3b19e9c((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint((nint)NativeMethods.TablePtr->C0.hs_method_cece1e00((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContentLogFileEndPoint((nint)NativeMethods.TablePtr->C1.hs_method_cece1e00((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -171,7 +171,7 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
 
     public void setEnabled(bool newState)
     {
-        NativeMethods.TablePtr->C0.hs_method_58e9432c((void*)__hosihikari_shim_handle, newState);
+        NativeMethods.TablePtr->C1.hs_method_58e9432c((void*)__hosihikari_shim_handle, newState);
     }
 
 
@@ -181,7 +181,7 @@ public sealed unsafe partial class ContentLogFileEndPoint : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_433a3c02((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_433a3c02((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

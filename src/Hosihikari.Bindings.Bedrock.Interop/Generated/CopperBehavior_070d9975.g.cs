@@ -44,7 +44,7 @@ public sealed unsafe partial class CopperBehavior : global::System.IDisposable
 
     public static CopperBehavior Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_f84f2177();
+        var handle = NativeMethods.TablePtr->C1.hs_create_f84f2177();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class CopperBehavior : global::System.IDisposable
 
     public static CopperBehavior Create(global::Hosihikari.Bindings.Bedrock.Interop.CopperBehavior arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_b9f9fcb7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_b9f9fcb7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,24 +71,24 @@ public sealed unsafe partial class CopperBehavior : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockSet_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_f14b97b1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_f14b97b1((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsWaxed
     {
-        get => NativeMethods.TablePtr->C0.hs_get_29d7f1e1((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C0.hs_set_29d7f1e1((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_29d7f1e1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C1.hs_set_29d7f1e1((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mType
     {
-        get => NativeMethods.TablePtr->C0.hs_get_5faad7f5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_5faad7f5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_5faad7f5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_5faad7f5((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.CopperBehavior operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.CopperBehavior arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.CopperBehavior((nint)NativeMethods.TablePtr->C0.hs_method_c765ceeb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.CopperBehavior((nint)NativeMethods.TablePtr->C1.hs_method_c765ceeb((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -97,7 +97,7 @@ public sealed unsafe partial class CopperBehavior : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_070d9975((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_070d9975((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

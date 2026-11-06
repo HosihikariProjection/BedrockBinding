@@ -40,127 +40,127 @@ public sealed unsafe partial class TorchflowerCropBlock : global::System.IDispos
 
     public bool mAllowsRunes
     {
-        get => NativeMethods.TablePtr->C3.hs_get_06f65159((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_06f65159((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_06f65159((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_06f65159((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mAlteredStateCollections_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_6c40ac21((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_6c40ac21((void*)__hosihikari_shim_handle);
     }
 
     public uint mBitsUsed
     {
-        get => NativeMethods.TablePtr->C3.hs_get_596e334c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_596e334c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_596e334c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_596e334c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockComponentEventSubscriber_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e2dbebda((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e2dbebda((void*)__hosihikari_shim_handle);
     }
 
     public byte mBlockEntityType
     {
-        get => NativeMethods.TablePtr->C3.hs_get_7650796c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_7650796c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_7650796c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_7650796c((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockPermutations_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_43d2598c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_43d2598c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockStateGroup_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a28e02d5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a28e02d5((void*)__hosihikari_shim_handle);
     }
 
     public bool mCanBeBrokenFromFalling
     {
-        get => NativeMethods.TablePtr->C3.hs_get_6baaf3a9((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_6baaf3a9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_6baaf3a9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_6baaf3a9((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCanBeExtraBlock
     {
-        get => NativeMethods.TablePtr->C3.hs_get_045e30f6((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_045e30f6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_045e30f6((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_045e30f6((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCanBeOriginalSurface
     {
-        get => NativeMethods.TablePtr->C3.hs_get_985a79ed((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_985a79ed((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_985a79ed((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_985a79ed((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCanReactToNeighborsDuringInstatick
     {
-        get => NativeMethods.TablePtr->C3.hs_get_21371e04((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_21371e04((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_21371e04((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_21371e04((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mCanSlide
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ca957a8b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_ca957a8b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ca957a8b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_ca957a8b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mClientPredictionOverrides_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_f5f2a55d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f5f2a55d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mComponents_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_53a8dfdd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_53a8dfdd((void*)__hosihikari_shim_handle);
     }
 
     public byte mCreativeCategory
     {
-        get => NativeMethods.TablePtr->C3.hs_get_e35d7663((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_e35d7663((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_e35d7663((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_e35d7663((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mCreativeGroup_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_ecc8b1aa((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_ecc8b1aa((void*)__hosihikari_shim_handle);
     }
 
     public bool mDataDrivenVanillaBlocksAndItemsEnabled
     {
-        get => NativeMethods.TablePtr->C3.hs_get_7de5a076((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_7de5a076((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_7de5a076((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_7de5a076((void*)__hosihikari_shim_handle, value);
     }
 
     public nint mDefaultState
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8388bb5d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_8388bb5d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDescriptionId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_5ea8835b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_5ea8835b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEventManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_105df214((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_105df214((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mExperienceDropRange_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cc54523f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_cc54523f((void*)__hosihikari_shim_handle);
     }
 
     public bool mFalling
@@ -484,7 +484,7 @@ public sealed unsafe partial class TorchflowerCropBlock : global::System.IDispos
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_58fba72d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_58fba72d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

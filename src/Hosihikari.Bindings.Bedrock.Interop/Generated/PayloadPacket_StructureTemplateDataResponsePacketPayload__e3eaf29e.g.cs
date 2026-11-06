@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.ll;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class PayloadPacket_StructureTemplateDataResponsePacketPayload_
+public sealed unsafe partial class PayloadPacket_StructureTemplateDataResponsePacketPayload_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,11 +38,87 @@ public sealed partial class PayloadPacket_StructureTemplateDataResponsePacketPay
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static PayloadPacket_StructureTemplateDataResponsePacketPayload_ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public int mCompressible
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_874d46bf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_874d46bf((void*)__hosihikari_shim_handle, value);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public nint mHandler
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_20ccca71((void*)__hosihikari_shim_handle);
+    }
+
+    public bool mIsHandled
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_f4fc9da3((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_f4fc9da3((void*)__hosihikari_shim_handle, value);
+    }
+
+    public int mPriority
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_395d1c31((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_395d1c31((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mReceiveTimepoint_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e9cb1b2f((void*)__hosihikari_shim_handle);
+    }
+
+    public int mReliability
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_462470fc((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_462470fc((void*)__hosihikari_shim_handle, value);
+    }
+
+    public byte mSenderSubId
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_053f280d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_053f280d((void*)__hosihikari_shim_handle, value);
+    }
+
+    public byte mResponseType
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_5f9a8913((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_5f9a8913((void*)__hosihikari_shim_handle, value);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mStructureName_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_71b5c982((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mStructureTag_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_f624593b((void*)__hosihikari_shim_handle);
+    }
+
+    public static PayloadPacket_StructureTemplateDataResponsePacketPayload_ Create(global::Hosihikari.Bindings.Bedrock.Interop.ll.PayloadPacket_StructureTemplateDataResponsePacketPayload_ arg0)
+    {
+        var handle = NativeMethods.TablePtr->C4.hs_create_d2f2808c((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new PayloadPacket_StructureTemplateDataResponsePacketPayload_((nint)handle);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_e3eaf29e((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

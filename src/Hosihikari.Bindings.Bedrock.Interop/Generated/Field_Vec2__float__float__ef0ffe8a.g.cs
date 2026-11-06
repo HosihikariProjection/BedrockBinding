@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.ll.math;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class Field_Vec2__float__float_
+public sealed unsafe partial class Field_Vec2__float__float_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -39,83 +38,111 @@ public sealed partial class Field_Vec2__float__float_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public double distanceTo(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public double distanceTo(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_7fab9cd6((void*)__hosihikari_shim_handle, (void*)b.Handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public double distanceToSqr(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public double distanceToSqr(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_1edd72e9((void*)__hosihikari_shim_handle, (void*)b.Handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint div(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 div(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_cc77421b((void*)__hosihikari_shim_handle, (void*)b.Handle));
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public double dot(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public double dot(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_3108a98f((void*)__hosihikari_shim_handle, (void*)b.Handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint ge(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::array<Vec2, 4>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint getNeighbors() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::array<Vec2, 4>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint gt(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint le(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public double length() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public double length()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_e8a75020((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public double lengthSqr() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public double lengthSqr()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_20c23589((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.", false)]
     public nint lt(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'll::math::boolN<2>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint mul(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 mul(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_b4ad3131((void*)__hosihikari_shim_handle, (void*)b.Handle));
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint operator_multiply(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 operator_multiply(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_948ad276((void*)__hosihikari_shim_handle, (void*)b.Handle));
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint operator_operator___2f9a2907(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 operator_operator___2f9a2907(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_2f9a2907((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint operator_divide(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 operator_divide(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_c98c71c5((void*)__hosihikari_shim_handle, (void*)b.Handle));
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint operator_operator___5f9bc4f6(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Vec2 operator_operator___5f9bc4f6(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Vec2((nint)NativeMethods.TablePtr->C4.hs_method_5f9bc4f6((void*)__hosihikari_shim_handle, (void*)b.Handle), false);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool operator_less(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_ddad4d0b((void*)__hosihikari_shim_handle, (void*)b.Handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool operator_less_equal(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool operator_less_equal(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_c326731e((void*)__hosihikari_shim_handle, (void*)b.Handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool operator_greater(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool operator_greater(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_3de26784((void*)__hosihikari_shim_handle, (void*)b.Handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool operator_greater_equal(nint b) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool operator_greater_equal(global::Hosihikari.Bindings.Bedrock.Interop.Vec2 b)
+    {
+        return NativeMethods.TablePtr->C4.hs_method_7921b4b1((void*)__hosihikari_shim_handle, (void*)b.Handle) != 0;
+    }
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_ef0ffe8a((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }
