@@ -44,7 +44,7 @@ public sealed unsafe partial class Trade : global::System.IDisposable
 
     public static Trade Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b7e51d4e();
+        var handle = NativeMethods.TablePtr->C4.hs_create_b7e51d4e();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +55,7 @@ public sealed unsafe partial class Trade : global::System.IDisposable
 
     public static Trade Create(global::Hosihikari.Bindings.Bedrock.Interop.Trade arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_ed8eb71a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_ed8eb71a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -66,44 +66,44 @@ public sealed unsafe partial class Trade : global::System.IDisposable
 
     public int mMaxUses
     {
-        get => NativeMethods.TablePtr->C3.hs_get_edd5723d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_edd5723d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_edd5723d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_edd5723d((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOffer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_a40924fe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_a40924fe((void*)__hosihikari_shim_handle);
     }
 
     public int mPrimaryOfferCount
     {
-        get => NativeMethods.TablePtr->C3.hs_get_fb10d23e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_fb10d23e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_fb10d23e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_fb10d23e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReceive_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d9e5fdc1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_d9e5fdc1((void*)__hosihikari_shim_handle);
     }
 
     public bool mRewardExperience
     {
-        get => NativeMethods.TablePtr->C3.hs_get_b980eed9((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_b980eed9((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_b980eed9((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_b980eed9((void*)__hosihikari_shim_handle, value);
     }
 
     public uint mTraderExperience
     {
-        get => NativeMethods.TablePtr->C3.hs_get_63c4ca13((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_63c4ca13((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_63c4ca13((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_63c4ca13((void*)__hosihikari_shim_handle, value);
     }
 
     public int mWeight
     {
-        get => NativeMethods.TablePtr->C3.hs_get_f4567c9c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_f4567c9c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_f4567c9c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_f4567c9c((void*)__hosihikari_shim_handle, value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -112,7 +112,7 @@ public sealed unsafe partial class Trade : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Trade operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Trade arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Trade((nint)NativeMethods.TablePtr->C3.hs_method_dd628fc5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Trade((nint)NativeMethods.TablePtr->C4.hs_method_dd628fc5((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
 
@@ -122,7 +122,7 @@ public sealed unsafe partial class Trade : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_209862d1((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_209862d1((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -38,17 +38,6 @@ public sealed unsafe partial class LoadAllVersionsOptions : global::System.IDisp
         return __hs_handle;
     }
 
-    public static LoadAllVersionsOptions Create()
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_a8429f01();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new LoadAllVersionsOptions((nint)handle);
-    }
-
     public static LoadAllVersionsOptions Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader_Nested.LoadAllVersionsOptions arg0)
     {
         var handle = NativeMethods.TablePtr->C3.hs_create_858c699f((void*)arg0.Handle);
@@ -61,27 +50,23 @@ public sealed unsafe partial class LoadAllVersionsOptions : global::System.IDisp
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk511682_Address
+    public nint loadAsCategory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_b35c9b1e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c8c7ce97((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnka2e56b_Address
+    public nint mergeOptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e732281e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f75f3668((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkdb630c_Address
+    public nint packInstanceFilter_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_cc483b8f((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_18b89661((void*)__hosihikari_shim_handle);
     }
 
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader_Nested.LoadAllVersionsOptions operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader_Nested.LoadAllVersionsOptions arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader_Nested.LoadAllVersionsOptions((nint)NativeMethods.TablePtr->C3.hs_method_0459de83((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
-    }
 
     public void Dispose()
     {

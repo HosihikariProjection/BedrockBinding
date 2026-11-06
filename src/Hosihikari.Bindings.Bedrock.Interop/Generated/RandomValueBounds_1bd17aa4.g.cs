@@ -40,7 +40,7 @@ public sealed unsafe partial class RandomValueBounds : global::System.IDisposabl
 
     public static RandomValueBounds Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_971f8107();
+        var handle = NativeMethods.TablePtr->C3.hs_create_971f8107();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +51,7 @@ public sealed unsafe partial class RandomValueBounds : global::System.IDisposabl
 
     public static RandomValueBounds Create(global::Hosihikari.Bindings.Bedrock.Interop.RandomValueBounds arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_22914d98((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_22914d98((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +63,18 @@ public sealed unsafe partial class RandomValueBounds : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk79891e_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8835a662((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8835a662((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk98064d_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2ad5e1a0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2ad5e1a0((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RandomValueBounds operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RandomValueBounds arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RandomValueBounds((nint)NativeMethods.TablePtr->C2.hs_method_5e824eb3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RandomValueBounds((nint)NativeMethods.TablePtr->C3.hs_method_5e824eb3((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +83,7 @@ public sealed unsafe partial class RandomValueBounds : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_1bd17aa4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_1bd17aa4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -65,33 +65,33 @@ public sealed unsafe partial class ResourcePackManagerArgs : global::System.IDis
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk542099_Address
+    public nint categoryFileMapping_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_68917294((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_f79e81f7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk6180e5_Address
+    public nint contentTierManager_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_631ccaa1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1d21a419((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkc1a4c3_Address
+    public nint getPath_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_c8f36a25((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_b01c6178((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkd67bde_Address
+    public nint mergeStrategyFactory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_7ee7fb8a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_72b62f3f((void*)__hosihikari_shim_handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkf0d8cc_Address
+    public bool needsToInitialize
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_3e5a5d6e((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C3.hs_get_17b6fdb1((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C3.hs_set_17b6fdb1((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackManager_Nested.ResourcePackManagerArgs arg0)

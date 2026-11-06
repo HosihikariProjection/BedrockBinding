@@ -62,9 +62,10 @@ public sealed unsafe partial class RenderParams : global::System.IDisposable
     public static RenderParams Create(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint init(nint baseActorRenderContext, nint actor, nint animationComponent, nint variableMap, nint model, float frameAlpha, float modelScale, bool isDitheringEnabled) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.RenderParams init(nint baseActorRenderContext, global::Hosihikari.Bindings.Bedrock.Interop.Actor? actor, global::Hosihikari.Bindings.Bedrock.Interop.AnimationComponent? animationComponent, global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap? variableMap, global::Hosihikari.Bindings.Abi.SharedHandle? model, float frameAlpha, float modelScale, bool isDitheringEnabled)
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RenderParams((nint)NativeMethods.TablePtr->C3.hs_method_845cde5c((void*)__hosihikari_shim_handle, (void*)baseActorRenderContext, (void*)(actor?.Handle ?? 0), (void*)(animationComponent?.Handle ?? 0), (void*)(variableMap?.Handle ?? 0), model?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), frameAlpha, modelScale, isDitheringEnabled), false);
+    }
 
     public nint mActor
     {

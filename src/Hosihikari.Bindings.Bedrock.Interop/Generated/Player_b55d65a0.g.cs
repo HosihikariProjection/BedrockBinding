@@ -3361,9 +3361,10 @@ public sealed unsafe partial class Player : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_ee9d5dfc((void*)__hosihikari_shim_handle, (void*)menu.Handle, id, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setContainerManagerModel(nint manager) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setContainerManagerModel(global::Hosihikari.Bindings.Abi.SharedHandle? manager)
+    {
+        NativeMethods.TablePtr->C2.hs_method_118497ec((void*)__hosihikari_shim_handle, manager?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void setName(string newName)
     {
@@ -3561,9 +3562,10 @@ public sealed unsafe partial class Player : global::System.IDisposable
         NativeMethods.TablePtr->C2.hs_method_b28f710b((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void updateSkin(nint skin, int clientSubID) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void updateSkin(global::Hosihikari.Bindings.Bedrock.Interop.SerializedSkinRef skin, int clientSubID)
+    {
+        NativeMethods.TablePtr->C2.hs_method_99b962a4((void*)__hosihikari_shim_handle, (void*)skin.Handle, clientSubID);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void updateTouch() =>

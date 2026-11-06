@@ -49,9 +49,10 @@ public sealed unsafe partial class CommonResourceDefinitionMap : global::System.
         return new CommonResourceDefinitionMap((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getAnimateScriptArray() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint getAnimateScriptArray()
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_58c02c4b((void*)__hosihikari_shim_handle);
+    }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mActorAnimateScriptArray_Address

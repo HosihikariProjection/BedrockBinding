@@ -42,17 +42,6 @@ public sealed unsafe partial class BedrockLoadContext : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static BedrockLoadContext Create()
-    {
-        var handle = NativeMethods.TablePtr->C0.hs_create_9fc0f037();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new BedrockLoadContext((nint)handle);
-    }
-
     public static BedrockLoadContext Create(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLoadContext arg0)
     {
         var handle = NativeMethods.TablePtr->C0.hs_create_6eb58a54((void*)arg0.Handle);
@@ -64,39 +53,34 @@ public sealed unsafe partial class BedrockLoadContext : global::System.IDisposab
         return new BedrockLoadContext((nint)handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk6d4ee9_Address
+    public nint mBrainMemoryValidationContext
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_1be5bc3b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_fab6e6a0((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_fab6e6a0((void*)__hosihikari_shim_handle, (void*)value);
+    }
+
+    public bool mCanLoadBeta
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_b070352a((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_b070352a((void*)__hosihikari_shim_handle, value);
+    }
+
+    public bool mHasBetaPermissionContext
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_d49f728e((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C0.hs_set_d49f728e((void*)__hosihikari_shim_handle, value);
+    }
+
+    public short mMolangVersion
+    {
+        get => NativeMethods.TablePtr->C0.hs_get_b1606d71((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C0.hs_set_b1606d71((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk722b9f_Address
+    public nint mValidator_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_8342b1f6((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk7888ec_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_49341253((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk8ae26c_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_cb7673b1((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkc24318_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d7369022((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.BedrockLoadContext operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.BedrockLoadContext arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.BedrockLoadContext((nint)NativeMethods.TablePtr->C0.hs_method_7e50ceda((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_798124b9((void*)__hosihikari_shim_handle);
     }
 
 

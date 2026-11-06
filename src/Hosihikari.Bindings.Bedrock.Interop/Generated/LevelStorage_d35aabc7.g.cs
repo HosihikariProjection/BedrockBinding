@@ -204,9 +204,11 @@ public sealed unsafe partial class LevelStorage : global::System.IDisposable
         return new global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult((nint)NativeMethods.TablePtr->C2.hs_method_31baca31((void*)__hosihikari_shim_handle));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint getServerId(nint client, bool isXboxLive) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public string getServerId(global::Hosihikari.Bindings.Bedrock.Interop.Player client, bool isXboxLive)
+    {
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_858221ae((void*)__hosihikari_shim_handle, (void*)client.Handle, isXboxLive);
+        return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
+    }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Core.LevelStorageResult getState()
     {

@@ -142,9 +142,10 @@ public sealed unsafe partial class ResourcePackFileUploadManager : global::Syste
     public static ResourcePackFileUploadManager Create(nint appPlatform, nint taskGroup, nint fileUploader, nint zipUtility, nint previousUpload, nint resourcePackPathCache) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _addZipPath(nint resourceZipPath) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _addZipPath(global::Hosihikari.Bindings.Bedrock.Interop.Core.PathBuffer_std__basic_string_char__ resourceZipPath)
+    {
+        NativeMethods.TablePtr->C3.hs_method_8030dca9((void*)__hosihikari_shim_handle, (void*)resourceZipPath.Handle);
+    }
 
     public void archiveAndUploadFileToRealmStorage(string uploadId, global::Hosihikari.Bindings.Bedrock.Interop.Core.Path path, int slotIndex, string realmsGuid)
     {

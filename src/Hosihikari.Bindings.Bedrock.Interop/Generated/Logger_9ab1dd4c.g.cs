@@ -77,46 +77,46 @@ public sealed unsafe partial class Logger : global::System.IDisposable
     public nint log(nint res, nint path, nint msg) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk2f69a4_Address
+    public bool mHasErrors
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3f2710ed((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_052cb5e5((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_052cb5e5((void*)__hosihikari_shim_handle, value);
+    }
+
+    public ushort mParseErrorCodes
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_3916fb7e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_3916fb7e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk3c26f9_Address
+    public nint mParseLog_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d26af342((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0f3c7aff((void*)__hosihikari_shim_handle);
+    }
+
+    public byte mUpgradeErrorCodes
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_79a2fb58((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_79a2fb58((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk9fdd72_Address
+    public nint mUpgradeLog_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_06836a7a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5804538e((void*)__hosihikari_shim_handle);
+    }
+
+    public byte mValidationErrorCodes
+    {
+        get => NativeMethods.TablePtr->C2.hs_get_fedbd1ad((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_fedbd1ad((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnka0317f_Address
+    public nint mValidationLog_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a55c4efa((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnka1ba32_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_18a56928((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkb27419_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_f15c4305((void*)__hosihikari_shim_handle);
-    }
-
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkbcb18b_Address
-    {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_961c65ca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_024b4ddd((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

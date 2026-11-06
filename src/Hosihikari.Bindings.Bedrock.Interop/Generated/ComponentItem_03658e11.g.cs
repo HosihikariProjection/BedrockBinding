@@ -217,9 +217,10 @@ public sealed unsafe partial class ComponentItem : global::System.IDisposable
     public short _getMaxDamage() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public byte _getMaxStackSize(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public byte _getMaxStackSize(global::Hosihikari.Bindings.Bedrock.Interop.ItemDescriptor arg0)
+    {
+        return NativeMethods.TablePtr->C0.hs_method_1b53826d((void*)__hosihikari_shim_handle, (void*)arg0.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public uint _getSwingDuration() =>

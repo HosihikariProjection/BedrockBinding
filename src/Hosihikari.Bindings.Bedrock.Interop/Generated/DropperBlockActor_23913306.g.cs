@@ -198,9 +198,10 @@ public sealed unsafe partial class DropperBlockActor : global::System.IDisposabl
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool pushOutItems(nint region) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool pushOutItems(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
+    {
+        return NativeMethods.TablePtr->C1.hs_method_795762f8((void*)__hosihikari_shim_handle, (void*)region.Handle) != 0;
+    }
 
 
     // The native field type is not projected; this is the address of the field storage.

@@ -51,27 +51,27 @@ public sealed unsafe partial class ResourcePackManager : global::System.IDisposa
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk86cf50_Address
+    public nint mCategoryFileMapping_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_90340fd9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_868a71b1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkea7f9a_Address
+    public nint mFullStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1c4a1274((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6cece794((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkf914db_Address
+    public nint mMergeStrategyFactory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_48110c9c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3601be71((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkfb1985_Address
+    public nint mWeakThis_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_252b0f89((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8534e32d((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]

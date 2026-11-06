@@ -4,7 +4,7 @@
 
 The **Bedrock / MCAPI** interop surface for the Hosihikari projection: a generated native-style **Interop** and a symbol-dispatched native **binding shim**.
 
-This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `v26.60.0` (the 26.60 development line). The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols, and `v1.26.51` keeps the 1.26.51.1 surface.
+This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `v26.60.2` (the 26.60 development line). The `v1.21.3` branch keeps the 1.21.3.01 surface generated from the carrier's debug symbols, and `v1.26.51` keeps the 1.26.51.1 surface.
 
 ## Boundary
 
@@ -15,9 +15,9 @@ This branch targets **BDS 1.26.60.6** through the headers of LeviLamina `v26.60.
 
 ## Current state
 
-- Interop: 9,184 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
-- Binding Shim: 133,615 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
-- Coverage: 12,138 declarations and 101,794 members bound for `win-x64-server`.
+- Interop: 9,190 generated C# files under `src/Hosihikari.Bindings.Bedrock.Interop/Generated/`.
+- Binding Shim: 133,727 functions in `native/BindingShim/generated/win-x64-server/bedrock/`.
+- Coverage: 12,144 declarations and 101,843 members bound for `win-x64-server`.
 - Members the carrier annotates `MCNAPI` (known but not exported) are reasoned stubs: against the pinned runtime data, 2 of 27,673 such names resolve, while 3,871 of the 4,183 `MCAPI` names do.
 - `scripts/headers-26.60.txt` lists the 5,169 headers parsed for the surface. Every declaration reachable from them is emitted; layouts and field offsets come from the frontend's AST record layout, so a record keeps its fields as long as the headers prove them.
 
@@ -42,7 +42,7 @@ Maps require named key/value types and matching hash/equality functors, which th
 
 ## Generate
 
-Regeneration needs only public inputs: a LeviLamina `v26.60.0` checkout and a generator built with LLVM 23.1.4. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
+Regeneration needs only public inputs: a LeviLamina `v26.60.2` checkout and a generator built with LLVM 23.1. The precompiled dependencies come from the local xmake package store the LeviLamina build uses.
 
 ```shell
 powershell -File scripts/regenerate.ps1 `
@@ -62,7 +62,7 @@ The generated shim directories contain `hosihikari_abi.h` from `BindingAbi`, so 
 
 ## Runtime smoke
 
-`tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `TextPacket` and calls an instance method, and creates a system-message packet through a factory that takes a string and returns `TextPacket` by value. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`. The server itself needs PreLoader 1.16.6, `bedrock_runtime_data` from `bedrockdata v26.60.6-server.5`, and a LeviLamina built from the same `v26.60.0` carrier.
+`tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `TextPacket` and calls an instance method, and creates a system-message packet through a factory that takes a string and returns `TextPacket` by value. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`. The server itself needs PreLoader 1.16.6, `bedrock_runtime_data` from `bedrockdata v26.60.6-server.8`, and a LeviLamina built from the same `v26.60.2` carrier.
 
 ## Distribution
 

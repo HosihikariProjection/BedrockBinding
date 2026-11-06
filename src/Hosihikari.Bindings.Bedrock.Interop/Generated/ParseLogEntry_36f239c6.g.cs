@@ -58,27 +58,28 @@ public sealed unsafe partial class ParseLogEntry : global::System.IDisposable
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk3e9543_Address
+    public nint mContext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5a524681((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d7d5a78f((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkb41697_Address
+    public nint mMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e2b315f5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_709fcb37((void*)__hosihikari_shim_handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkd44d5c_Address
+    public ushort mResultCode
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a3e79519((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_ca839402((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_ca839402((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ParseLogEntry((nint)NativeMethods.TablePtr->C2.hs_method_f06961dd((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
+
 
     public void Dispose()
     {

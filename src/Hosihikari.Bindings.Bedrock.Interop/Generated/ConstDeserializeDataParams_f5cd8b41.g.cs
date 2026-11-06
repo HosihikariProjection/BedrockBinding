@@ -73,21 +73,21 @@ public sealed unsafe partial class ConstDeserializeDataParams : global::System.I
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk25c848_Address
+    public nint mFormatVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_6bef255c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_82d00ea2((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk53e6e0_Address
+    public nint mMinEngineVersion_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_4fe7b5f0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_b88aca40((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkcb3186_Address
+    public nint mValue_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_b09ce1ca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C0.hs_get_24de129a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ConstDeserializeDataParams arg0)

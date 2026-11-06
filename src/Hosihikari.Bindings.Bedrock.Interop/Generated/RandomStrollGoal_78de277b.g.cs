@@ -195,22 +195,22 @@ public sealed unsafe partial class RandomStrollGoal : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RandomStrollGoal operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RandomStrollGoal arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RandomStrollGoal((nint)NativeMethods.TablePtr->C2.hs_method_f9205afe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RandomStrollGoal((nint)NativeMethods.TablePtr->C3.hs_method_f9205afe((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void start()
     {
-        NativeMethods.TablePtr->C2.hs_method_8c2f70ef((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_8c2f70ef((void*)__hosihikari_shim_handle);
     }
 
     public void stop()
     {
-        NativeMethods.TablePtr->C2.hs_method_d3c57acc((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_d3c57acc((void*)__hosihikari_shim_handle);
     }
 
     public void tick()
     {
-        NativeMethods.TablePtr->C2.hs_method_1f9f41d8((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_1f9f41d8((void*)__hosihikari_shim_handle);
     }
 
 

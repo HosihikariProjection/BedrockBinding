@@ -79,9 +79,10 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
         return __hs_hasValue && __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo((nint)__hs_handle) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _allowIncomingPacketId(nint sender, nint packetId, ulong packetSize) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public int _allowIncomingPacketId(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifierWithSubId sender, int packetId, ulong packetSize)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_7fc7faf2((void*)__hosihikari_shim_handle, (void*)sender.Handle, packetId, packetSize);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public nint _allowOutgoingPacket(nint ids, nint packet) =>
@@ -640,9 +641,10 @@ public sealed unsafe partial class ServerNetworkHandler : global::System.IDispos
     public void _onClientAsyncAuthorized(nint source, nint request, nint playerInfo, nint hostMessToken) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: optional record parameter 'MessToken' is abstract or not copy-constructible.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _onClientAuthenticated(nint source, nint playerInfo) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _onClientAuthenticated(global::Hosihikari.Bindings.Bedrock.Interop.NetworkIdentifier source, global::Hosihikari.Bindings.Bedrock.Interop.PlayerAuthenticationInfo playerInfo)
+    {
+        NativeMethods.TablePtr->C3.hs_method_eb81efd3((void*)__hosihikari_shim_handle, (void*)source.Handle, (void*)playerInfo.Handle);
+    }
 
     public void _onPlayerLeft(global::Hosihikari.Bindings.Bedrock.Interop.ServerPlayer? player, bool skipMessage)
     {

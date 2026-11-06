@@ -75,9 +75,10 @@ public sealed unsafe partial class MolangVariableMap : global::System.IDisposabl
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariable((nint)__hs_handle, false) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint clear() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap clear()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.MolangVariableMap((nint)NativeMethods.TablePtr->C2.hs_method_a782edfd((void*)__hosihikari_shim_handle), false);
+    }
 
     public bool mHasPublicVariables
     {

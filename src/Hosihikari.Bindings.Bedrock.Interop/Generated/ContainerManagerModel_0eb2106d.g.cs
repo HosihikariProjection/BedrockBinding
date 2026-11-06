@@ -46,9 +46,10 @@ public sealed unsafe partial class ContainerManagerModel : global::System.IDispo
     public void _broadcastChanges() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public nint _ctor(nint containerId, nint player) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public nint _ctor(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    {
+        return (nint)NativeMethods.TablePtr->C0.hs_method_1c03dad7((void*)__hosihikari_shim_handle, containerId, (void*)player.Handle);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _debitPlayerLevels(int levels) =>
@@ -129,9 +130,16 @@ public sealed unsafe partial class ContainerManagerModel : global::System.IDispo
         return new ContainerManagerModel((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static ContainerManagerModel Create(nint containerId, nint player) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static ContainerManagerModel Create(sbyte containerId, global::Hosihikari.Bindings.Bedrock.Interop.Player player)
+    {
+        var handle = NativeMethods.TablePtr->C0.hs_create_92b7e83d(containerId, (void*)player.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new ContainerManagerModel((nint)handle);
+    }
 
     public static ContainerManagerModel Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerManagerModel arg0)
     {

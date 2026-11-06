@@ -4,7 +4,7 @@
 
 Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近原生风格的 **Interop** 与按符号分发的原生 **绑定垫片**。
 
-本分支面向 **BDS 1.26.60.6**，数据来自 LeviLamina `v26.60.0`（26.60 开发线）的头文件；`v1.21.3` 分支保留从载体调试符号生成的 1.21.3.01 面，`v1.26.51` 分支保留 1.26.51.1 面。
+本分支面向 **BDS 1.26.60.6**，数据来自 LeviLamina `v26.60.2`（26.60 开发线）的头文件；`v1.21.3` 分支保留从载体调试符号生成的 1.21.3.01 面，`v1.26.51` 分支保留 1.26.51.1 面。
 
 ## 边界
 
@@ -15,9 +15,9 @@ Hosihikari 绑定项目的 **Bedrock / MCAPI** 互操作面：生成的、贴近
 
 ## 当前状态
 
-- Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,184 个生成的 C# 文件。
-- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 133,615 个函数。
-- 覆盖：`win-x64-server` 配置绑定 12,138 个声明与 101,794 个成员。
+- Interop：`src/Hosihikari.Bindings.Bedrock.Interop/Generated/` 下 9,190 个生成的 C# 文件。
+- 绑定垫片：`native/BindingShim/generated/win-x64-server/bedrock/` 下 133,727 个函数。
+- 覆盖：`win-x64-server` 配置绑定 12,144 个声明与 101,843 个成员。
 - 载体标注为 `MCNAPI`（已知但不导出）的成员保留为带原因的 stub：对锁定数据实测，27,673 个名称中仅 2 个可解析，而 4,183 个 `MCAPI` 名称中有 3,871 个可解析。
 - `scripts/headers-26.60.txt` 列出解析的 5,169 个头文件。从这些头文件可达的声明都会发射；布局与字段偏移来自前端的 AST record layout，只要头文件能证明，record 就保留字段。
 
@@ -42,7 +42,7 @@ map 需要具名 key/value 类型与匹配的 hash/equality functor，合并后�
 
 ## 生成
 
-重新生成只需要公开输入：一份 LeviLamina `v26.60.0` 检出，以及用 LLVM 23.1.4 构建的生成器。预编译依赖来自 LeviLamina 构建所用的本地 xmake 包仓库。
+重新生成只需要公开输入：一份 LeviLamina `v26.60.2` 检出，以及用 LLVM 23.1 构建的生成器。预编译依赖来自 LeviLamina 构建所用的本地 xmake 包仓库。
 
 ```shell
 powershell -File scripts/regenerate.ps1 `
@@ -62,7 +62,7 @@ powershell -File native/BindingShim/build.ps1
 
 ## 运行时冒烟
 
-`tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `TextPacket` 并调用实例方法，再经一个接收字符串、按值返回 `TextPacket` 的工厂创建系统消息包。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。服务器本身需要 PreLoader 1.16.6、来自 `bedrockdata v26.60.6-server.5` 的 `bedrock_runtime_data`，以及用同一 `v26.60.0` 载体构建的 LeviLamina。
+`tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `TextPacket` 并调用实例方法，再经一个接收字符串、按值返回 `TextPacket` 的工厂创建系统消息包。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。服务器本身需要 PreLoader 1.16.6、来自 `bedrockdata v26.60.6-server.8` 的 `bedrock_runtime_data`，以及用同一 `v26.60.2` 载体构建的 LeviLamina。
 
 ## 分发
 

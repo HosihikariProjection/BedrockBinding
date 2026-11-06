@@ -48,7 +48,7 @@ public sealed unsafe partial class LabTableReactionComponent : global::System.ID
 
     public static LabTableReactionComponent Create(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReactionComponent arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d6b7d166((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d6b7d166((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,17 +59,17 @@ public sealed unsafe partial class LabTableReactionComponent : global::System.ID
 
     public void _onEnd(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction owner, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region)
     {
-        NativeMethods.TablePtr->C1.hs_method_e04876b7((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
+        NativeMethods.TablePtr->C2.hs_method_e04876b7((void*)__hosihikari_shim_handle, (void*)owner.Handle, (void*)region.Handle);
     }
 
     public void _onStart(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg1)
     {
-        NativeMethods.TablePtr->C1.hs_method_0f677832((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C2.hs_method_0f677832((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
     }
 
     public void _onTick(global::Hosihikari.Bindings.Bedrock.Interop.LabTableReaction arg0, global::Hosihikari.Bindings.Bedrock.Interop.BlockSource arg1)
     {
-        NativeMethods.TablePtr->C1.hs_method_0dc85219((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
+        NativeMethods.TablePtr->C2.hs_method_0dc85219((void*)__hosihikari_shim_handle, (void*)arg0.Handle, (void*)arg1.Handle);
     }
 
 
@@ -79,7 +79,7 @@ public sealed unsafe partial class LabTableReactionComponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_7b1298c7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7b1298c7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

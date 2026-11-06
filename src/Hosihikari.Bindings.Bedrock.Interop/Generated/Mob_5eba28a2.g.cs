@@ -908,9 +908,10 @@ public sealed unsafe partial class Mob : global::System.IDisposable
     public void _setSpeed(float speed) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _setSprinting(bool shouldSprint) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _setSprinting(bool shouldSprint)
+    {
+        NativeMethods.TablePtr->C2.hs_method_d5201571((void*)__hosihikari_shim_handle, shouldSprint);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _setTarget(nint target) =>

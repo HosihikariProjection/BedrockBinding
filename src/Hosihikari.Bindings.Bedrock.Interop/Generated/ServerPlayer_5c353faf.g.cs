@@ -1637,9 +1637,10 @@ public sealed unsafe partial class ServerPlayer : global::System.IDisposable
         NativeMethods.TablePtr->C3.hs_method_3b2cb00b((void*)__hosihikari_shim_handle, gameType);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void _slotChanged(nint menu, nint container, int slot, nint oldItem, nint newItem, bool isResultSlot) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void _slotChanged(global::Hosihikari.Bindings.Bedrock.Interop.IContainerManager menu, global::Hosihikari.Bindings.Bedrock.Interop.Container container, int slot, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack oldItem, global::Hosihikari.Bindings.Bedrock.Interop.ItemStack newItem, bool isResultSlot)
+    {
+        NativeMethods.TablePtr->C3.hs_method_51eb7da8((void*)__hosihikari_shim_handle, (void*)menu.Handle, (void*)container.Handle, slot, (void*)oldItem.Handle, (void*)newItem.Handle, isResultSlot);
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public void _stopSleepInBed(bool forcefulWakeUp, bool updateLevelList) =>

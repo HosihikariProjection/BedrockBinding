@@ -100,9 +100,10 @@ public sealed unsafe partial class AnimatedImageData : global::System.IDisposabl
         set => NativeMethods.TablePtr->C0.hs_set_e33902f7((void*)__hosihikari_shim_handle, value);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public void setSkinImage(nint image) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public void setSkinImage(global::Hosihikari.Bindings.Bedrock.Interop.SkinImage image)
+    {
+        NativeMethods.TablePtr->C0.hs_method_3c9a9c1b((void*)__hosihikari_shim_handle, (void*)image.Handle);
+    }
 
 
     public void Dispose()

@@ -172,9 +172,10 @@ public sealed unsafe partial class SerializedPersonaPieceHandle : global::System
         return new global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle((nint)NativeMethods.TablePtr->C3.hs_method_7842a00c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool operator_equal(nint rhs) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool operator_equal(global::Hosihikari.Bindings.Bedrock.Interop.SerializedPersonaPieceHandle rhs)
+    {
+        return NativeMethods.TablePtr->C3.hs_method_9f5de890((void*)__hosihikari_shim_handle, (void*)rhs.Handle) != 0;
+    }
 
 
     public void Dispose()

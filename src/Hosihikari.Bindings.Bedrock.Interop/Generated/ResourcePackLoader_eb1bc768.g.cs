@@ -137,17 +137,6 @@ public sealed unsafe partial class ResourcePackLoader : global::System.IDisposab
         return new ResourcePackLoader((nint)handle);
     }
 
-    public static ResourcePackLoader Create(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader arg0)
-    {
-        var handle = NativeMethods.TablePtr->C3.hs_create_58572298((void*)arg0.Handle);
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ResourcePackLoader((nint)handle);
-    }
-
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static bool _alwaysPassingPackFilter(nint arg0) =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
@@ -351,32 +340,27 @@ public sealed unsafe partial class ResourcePackLoader : global::System.IDisposab
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk86cf50_Address
+    public nint mCategoryFileMapping_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_d0b25b4e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3d0cb77b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkea7f9a_Address
+    public nint mFullStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_953ad0c0((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_63baf412((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkf914db_Address
+    public nint mMergeStrategyFactory_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_72c32ebe((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a69621ec((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkfb1985_Address
+    public nint mWeakThis_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_8796404f((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ResourcePackLoader((nint)NativeMethods.TablePtr->C3.hs_method_e5c96941((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a74654ce((void*)__hosihikari_shim_handle);
     }
 
 

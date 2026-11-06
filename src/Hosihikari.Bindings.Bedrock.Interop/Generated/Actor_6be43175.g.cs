@@ -1758,9 +1758,10 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return NativeMethods.TablePtr->C0.hs_method_8c99d4e7((void*)__hosihikari_shim_handle, types) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public bool hasUniqueID() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public bool hasUniqueID()
+    {
+        return NativeMethods.TablePtr->C0.hs_method_f058c8f7((void*)__hosihikari_shim_handle) != 0;
+    }
 
     public void heal(int heal)
     {
@@ -1891,9 +1892,20 @@ public sealed unsafe partial class Actor : global::System.IDisposable
     public bool isInClouds() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
-    public static bool isInLiquid(nint liquidType, nint region, nint mainAABB, nint subAABBs) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
+    public static bool isInLiquid(byte liquidType, global::Hosihikari.Bindings.Bedrock.Interop.IConstBlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.AABB mainAABB, global::Hosihikari.Bindings.Bedrock.Interop.AABB[] subAABBs)
+    {
+        var __hs_vectorItems3 = subAABBs;
+        var __hs_vectorHandles3 = new nint[__hs_vectorItems3?.Length ?? 0];
+        for (var __hs_i3 = 0; __hs_i3 < __hs_vectorHandles3.Length; __hs_i3++)
+        {
+            __hs_vectorHandles3[__hs_i3] = __hs_vectorItems3![__hs_i3]?.Handle ?? 0;
+        }
+        fixed (nint* __hs_vectorHandleData3 = __hs_vectorHandles3)
+        {
+            var __hs_vectorData3 = (void**)__hs_vectorHandleData3;
+            return NativeMethods.TablePtr->C0.hs_method_9ec67060(liquidType, (void*)region.Handle, (void*)mainAABB.Handle, __hs_vectorData3, (nuint)(subAABBs?.Length ?? 0)) != 0;
+        }
+    }
 
     public bool isInLove()
     {

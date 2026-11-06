@@ -1,6 +1,6 @@
 param(
     [string]$LeviLaminaRoot = "",
-    [string]$LlvmRoot = "$env:LOCALAPPDATA\Temp\hosihikari-llvm\clang+llvm-23.1.4-x86_64-pc-windows-msvc",
+    [string]$LlvmRoot = "$env:LOCALAPPDATA\Temp\hosihikari-llvm\clang+llvm-23.1.0-x86_64-pc-windows-msvc",
     [string]$EnttRoot = "",
     [string]$HeaderList = "",
     [string]$GeneratorRoot = "",
@@ -19,7 +19,7 @@ $ErrorActionPreference = "Stop"
 $StartTime = Get-Date
 $RepoRoot = (Resolve-Path (Join-Path $PSScriptRoot "..")).Path
 if ([string]::IsNullOrWhiteSpace($LeviLaminaRoot)) {
-    $LeviLaminaRoot = (Resolve-Path (Join-Path $RepoRoot "..\Third\LeviLamina-v26.60.0")).Path
+    $LeviLaminaRoot = (Resolve-Path (Join-Path $RepoRoot "..\Third\LeviLamina-v26.60.2")).Path
 } else {
     $LeviLaminaRoot = (Resolve-Path $LeviLaminaRoot).Path
 }

@@ -58,33 +58,34 @@ public sealed unsafe partial class UpgradeLogEntry : global::System.IDisposable
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk4f5fdc_Address
+    public nint mContextDst_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4589a71b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6d49c4ff((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk615a04_Address
+    public nint mContextSrc_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_42429d7e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6ced4e0e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnk89974d_Address
+    public nint mMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_98bc9fba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_adf15232((void*)__hosihikari_shim_handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkecd095_Address
+    public byte mResultCode
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_77c77520((void*)__hosihikari_shim_handle);
+        get => NativeMethods.TablePtr->C2.hs_get_7aa01001((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_7aa01001((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.UpgradeLogEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.UpgradeLogEntry arg0)
     {
         return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.UpgradeLogEntry((nint)NativeMethods.TablePtr->C2.hs_method_bbf02a6f((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
+
 
     public void Dispose()
     {

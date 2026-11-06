@@ -42,17 +42,6 @@ public sealed unsafe partial class ValidationLogEntry : global::System.IDisposab
     public void _dtor() =>
         throw new global::System.NotSupportedException("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.");
 
-    public static ValidationLogEntry Create()
-    {
-        var handle = NativeMethods.TablePtr->C2.hs_create_13d3a6e9();
-        if (handle == null)
-        {
-            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
-        }
-
-        return new ValidationLogEntry((nint)handle);
-    }
-
     public static ValidationLogEntry Create(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry arg0)
     {
         var handle = NativeMethods.TablePtr->C2.hs_create_8fb95ee7((void*)arg0.Handle);
@@ -65,20 +54,15 @@ public sealed unsafe partial class ValidationLogEntry : global::System.IDisposab
     }
 
     // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkb040ef_Address
+    public nint mMessage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_20e76b81((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8000fbb0((void*)__hosihikari_shim_handle);
     }
 
-    // The native field type is not projected; this is the address of the field storage.
-    public nint mUnkfab5d3_Address
+    public byte mResultCode
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2a0b270e((void*)__hosihikari_shim_handle);
-    }
-
-    public global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry arg0)
-    {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Puv.Logger_Nested.ValidationLogEntry((nint)NativeMethods.TablePtr->C2.hs_method_979841f6((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        get => NativeMethods.TablePtr->C2.hs_get_9586481b((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_9586481b((void*)__hosihikari_shim_handle, value);
     }
 
 
