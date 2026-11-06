@@ -62,6 +62,8 @@ The generated shim directories contain `hosihikari_abi.h` from `BindingAbi`, so 
 
 ## Runtime smoke
 
+`scripts/measure-annotation-hits.py <header-ir-dir> <bedrock_runtime_data> [--macro MCNAPI]` reports how many annotated members the data snapshot can actually resolve: it compiles one clang-cl reference per decorated name and lets prelink resolve them, which is the same lookup the game performs at load time. On `bedrockdata v26.60.6-server.8` 4 of 27,593 `MCNAPI` names resolve (0.01%) against 3,948 of 4,263 `MCAPI` names (92.6%), so the annotation is a reliable availability signal.
+
 `tests/runtime-smoke/` is a plugin script that loads the shim inside a real server, checks two static accessors, constructs a `TextPacket` and calls an instance method, and creates a system-message packet through a factory that takes a string and returns `TextPacket` by value. `scripts/run-runtime-smoke.ps1 -ServerRoot <dir>` builds everything, deploys the plugin, starts the server, and requires `result=OK`. The server itself needs PreLoader 1.16.6, `bedrock_runtime_data` from `bedrockdata v26.60.6-server.8`, and a LeviLamina built from the same `v26.60.2` carrier.
 
 ## Distribution

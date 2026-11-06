@@ -62,6 +62,8 @@ powershell -File native/BindingShim/build.ps1
 
 ## 运行时冒烟
 
+`scripts/measure-annotation-hits.py <头文件IR目录> <bedrock_runtime_data> [--macro MCNAPI]` 统计数据快照实际能解析多少被标注的成员：它为每个修饰名编译一条 clang-cl 引用再交给 prelink 解析，与游戏加载时的查找路径一致。在 `bedrockdata v26.60.6-server.8` 上，27,593 个 `MCNAPI` 名称命中 4 个（0.01%），而 4,263 个 `MCAPI` 名称命中 3,948 个（92.6%），因此该标注是可靠的可用性信号。
+
 `tests/runtime-smoke/` 是一个插件脚本：在真实服务器进程内加载垫片，校验两个静态访问器，构造 `TextPacket` 并调用实例方法，再经一个接收字符串、按值返回 `TextPacket` 的工厂创建系统消息包。`scripts/run-runtime-smoke.ps1 -ServerRoot <目录>` 会构建、部署插件、启动服务器并要求 `result=OK`。服务器本身需要 PreLoader 1.16.6、来自 `bedrockdata v26.60.6-server.8` 的 `bedrock_runtime_data`，以及用同一 `v26.60.2` 载体构建的 LeviLamina。
 
 ## 分发
