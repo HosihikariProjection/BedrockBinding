@@ -47,5 +47,23 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      # The shim compiles inline template bodies, so it needs the carrier headers and the
+      # packages the carrier builds with.
+      - name: Carrier
+        uses: actions/checkout@v4
+        with:
+          repository: LiteLDev/LeviLamina
+          ref: v26.60.2
+          path: Third/LeviLamina
+
+      - name: xmake
+        run: choco install xmake --no-progress -y
+
+      - name: Carrier packages
+        working-directory: Third/LeviLamina
+        run: xmake f -y -m release
+
       - name: Build Windows shim
-        run: powershell -NoProfile -ExecutionPolicy Bypass -File native/BindingShim/build.ps1 -Configuration win-x64-server -Output artifacts/native/Hosihikari.Bindings.Bedrock.Shim.dll
+        run: |
+          $env:PATH = "C:/Program Files/LLVM/bin;$env:PATH"
+          powershell -NoProfile -ExecutionPolicy Bypass -File native/BindingShim/build.ps1 -Configuration win-x64-server -LeviLaminaRoot Third/LeviLamina -Output artifacts/native/Hosihikari.Bindings.Bedrock.Shim.dll

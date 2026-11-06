@@ -42,12 +42,13 @@ $Includes = @(
     "-I", (Join-Path $LeviLaminaRoot "src\mc"),
     "-I", (Join-Path $LeviLaminaRoot "src-server")
 )
+# entt is pinned as a source checkout locally, but CI only has the xmake package of it.
 $EnttRoot = "$env:LOCALAPPDATA\Temp\entt-41aab92\src"
 if (Test-Path $EnttRoot) {
     $Includes += @("-I", $EnttRoot)
 }
 foreach ($package in Get-ChildItem "$env:LOCALAPPDATA\.xmake\packages" -Recurse -Directory -Filter "include" -ErrorAction SilentlyContinue |
-    Where-Object { $_.FullName -notmatch '\\e\\entt\\' } | Sort-Object FullName -Unique) {
+    Where-Object { -not (Test-Path $EnttRoot) -or $_.FullName -notmatch '\\e\\entt\\' } | Sort-Object FullName -Unique) {
     $Includes += @("-I", $package.FullName)
 }
 foreach ($nested in @("magic_enum", "stb", "concurrentqueue\moodycamel")) {
@@ -83,6 +84,9 @@ if ([string]::IsNullOrWhiteSpace($BedrockRuntimeData)) {
         Select-Object -First 1
     if (-not $Data) { throw "bedrock_runtime_data was not found; pass -BedrockRuntimeData." }
     $BedrockRuntimeData = $Data.FullName
+} else {
+    # prelink runs from the caller's directory; an explicit relative path must survive that.
+    $BedrockRuntimeData = (Resolve-Path $BedrockRuntimeData).Path
 }
 if ([string]::IsNullOrWhiteSpace($PrelinkExe)) {
     $Prelink = Get-ChildItem "$env:LOCALAPPDATA\.xmake\packages\p\prelink" -Recurse -Filter prelink.exe -ErrorAction SilentlyContinue |
