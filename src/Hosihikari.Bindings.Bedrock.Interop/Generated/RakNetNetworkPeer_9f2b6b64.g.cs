@@ -21,6 +21,8 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -41,7 +43,7 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mPeer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_a3cf9e9e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_a3cf9e9e((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -70,7 +72,7 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
 
     public static RakNetNetworkPeer Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1771026b();
+        var handle = NativeMethods.TablePtr->C3.hs_create_1771026b();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -81,7 +83,7 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
 
     public static RakNetNetworkPeer Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6800f07b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_6800f07b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -108,7 +110,7 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
         {
             try
             {
-                return NativeMethods.TablePtr->C2.hs_method_6cc58d6b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, timepointPtr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), &__hs_strOut0);
+                return NativeMethods.TablePtr->C3.hs_method_6cc58d6b((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, timepointPtr?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), &__hs_strOut0);
             }
             finally
             {
@@ -119,64 +121,64 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
 
     public global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus getNetworkStatus()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)NativeMethods.TablePtr->C2.hs_method_bcb1a054((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.NetworkPeer_Nested.NetworkStatus((nint)NativeMethods.TablePtr->C3.hs_method_bcb1a054((void*)__hosihikari_shim_handle));
     }
 
     public bool isEncrypted()
     {
-        return NativeMethods.TablePtr->C2.hs_method_0cdcfa8f((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_0cdcfa8f((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool isLocal()
     {
-        return NativeMethods.TablePtr->C2.hs_method_9a25039e((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_9a25039e((void*)__hosihikari_shim_handle) != 0;
     }
 
     public int mApproximateMaxBps
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c355609a((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c355609a((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c355609a((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c355609a((void*)__hosihikari_shim_handle, value);
     }
 
     public int mAveragePing
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b86be4c2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b86be4c2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b86be4c2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b86be4c2((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mId_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d87c1f52((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d87c1f52((void*)__hosihikari_shim_handle);
     }
 
     public int mLastPing
     {
-        get => NativeMethods.TablePtr->C2.hs_get_1b2b667e((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_1b2b667e((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_1b2b667e((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_1b2b667e((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mRakPeer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_7f2ef857((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_7f2ef857((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mReadBufferDatas_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_21b4545d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_21b4545d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSendBuffer_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_ec3e04d4((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_ec3e04d4((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer((nint)NativeMethods.TablePtr->C2.hs_method_99f78cf1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNetConnector_Nested.RakNetNetworkPeer((nint)NativeMethods.TablePtr->C3.hs_method_99f78cf1((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void sendPacket(string data, int reliability, int arg2)
@@ -194,13 +196,13 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
         global::System.Text.Encoding.UTF8.GetBytes(data, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            NativeMethods.TablePtr->C2.hs_method_81773581((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, reliability, arg2);
+            NativeMethods.TablePtr->C3.hs_method_81773581((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0, reliability, arg2);
         }
     }
 
     public void update()
     {
-        NativeMethods.TablePtr->C2.hs_method_4bc5cd8c((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C3.hs_method_4bc5cd8c((void*)__hosihikari_shim_handle);
     }
 
 
@@ -210,7 +212,7 @@ public sealed unsafe partial class RakNetNetworkPeer : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_9f2b6b64((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9f2b6b64((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

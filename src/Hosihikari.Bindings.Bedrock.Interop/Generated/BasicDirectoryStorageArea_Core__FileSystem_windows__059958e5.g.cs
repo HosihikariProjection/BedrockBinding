@@ -22,6 +22,8 @@ public sealed partial class BasicDirectoryStorageArea_Core__FileSystem_windows_
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

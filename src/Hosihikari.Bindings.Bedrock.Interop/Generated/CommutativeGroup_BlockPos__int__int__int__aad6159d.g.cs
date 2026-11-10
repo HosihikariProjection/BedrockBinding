@@ -21,6 +21,8 @@ public sealed unsafe partial class CommutativeGroup_BlockPos__int__int__int_ : g
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

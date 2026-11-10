@@ -21,6 +21,8 @@ public sealed unsafe partial class IPSupportInterface : global::System.IDisposab
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class IPSupportInterface : global::System.IDisposab
 
     public static IPSupportInterface Create(global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper_Nested.IPSupportInterface arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_54f523d5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_54f523d5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,22 +53,22 @@ public sealed unsafe partial class IPSupportInterface : global::System.IDisposab
 
     public ushort getDefaultGamePort()
     {
-        return NativeMethods.TablePtr->C2.hs_method_a63801fb((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_a63801fb((void*)__hosihikari_shim_handle);
     }
 
     public ushort getDefaultGamePortv6()
     {
-        return NativeMethods.TablePtr->C2.hs_method_9f9646fe((void*)__hosihikari_shim_handle);
+        return NativeMethods.TablePtr->C3.hs_method_9f9646fe((void*)__hosihikari_shim_handle);
     }
 
     public bool useIPv4Only()
     {
-        return NativeMethods.TablePtr->C2.hs_method_ace9bdff((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_ace9bdff((void*)__hosihikari_shim_handle) != 0;
     }
 
     public bool useIPv6Only()
     {
-        return NativeMethods.TablePtr->C2.hs_method_3d5208a7((void*)__hosihikari_shim_handle) != 0;
+        return NativeMethods.TablePtr->C3.hs_method_3d5208a7((void*)__hosihikari_shim_handle) != 0;
     }
 
 
@@ -76,7 +78,7 @@ public sealed unsafe partial class IPSupportInterface : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_b690509c((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_b690509c((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

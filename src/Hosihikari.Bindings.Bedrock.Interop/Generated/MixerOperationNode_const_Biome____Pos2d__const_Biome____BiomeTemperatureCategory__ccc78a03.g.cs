@@ -22,6 +22,8 @@ public sealed partial class MixerOperationNode_const_Biome____Pos2d__const_Biome
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

@@ -21,6 +21,8 @@ public sealed unsafe partial class Result_std__basic_string_char___std__error_co
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

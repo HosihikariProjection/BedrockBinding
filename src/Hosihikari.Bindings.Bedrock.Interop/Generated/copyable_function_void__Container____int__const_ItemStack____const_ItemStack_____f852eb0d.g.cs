@@ -22,6 +22,8 @@ public sealed partial class copyable_function_void__Container____int__const_Item
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

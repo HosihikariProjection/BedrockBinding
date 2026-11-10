@@ -21,6 +21,8 @@ public sealed unsafe partial class StringCompressor : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -53,7 +55,7 @@ public sealed unsafe partial class StringCompressor : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint huffmanEncodingTrees_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_fdbe83a5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_fdbe83a5((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -70,7 +72,7 @@ public sealed unsafe partial class StringCompressor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_9ae79705((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_9ae79705((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

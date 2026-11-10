@@ -21,6 +21,8 @@ public sealed unsafe partial class SignaledEvent : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,8 +42,8 @@ public sealed unsafe partial class SignaledEvent : global::System.IDisposable
 
     public nint eventList
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_34ba7a92((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_34ba7a92((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_34ba7a92((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_34ba7a92((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public void Dispose()
@@ -50,7 +52,7 @@ public sealed unsafe partial class SignaledEvent : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_945b37b9((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_945b37b9((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

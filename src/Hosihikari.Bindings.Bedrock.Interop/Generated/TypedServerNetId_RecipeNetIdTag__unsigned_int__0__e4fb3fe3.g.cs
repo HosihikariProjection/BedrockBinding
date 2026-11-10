@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class TypedServerNetId_RecipeNetIdTag__unsigned_int__0_
+public sealed unsafe partial class TypedServerNetId_RecipeNetIdTag__unsigned_int__0_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -21,6 +20,8 @@ public sealed partial class TypedServerNetId_RecipeNetIdTag__unsigned_int__0_
     public static TypedServerNetId_RecipeNetIdTag__unsigned_int__0_ Borrow(nint handle) => new TypedServerNetId_RecipeNetIdTag__unsigned_int__0_(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
+
+    internal bool OwnsHandle => _ownsHandle;
 
     internal nint ReleaseHandle()
     {
@@ -39,25 +40,45 @@ public sealed partial class TypedServerNetId_RecipeNetIdTag__unsigned_int__0_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static TypedServerNetId_RecipeNetIdTag__unsigned_int__0_ Create(nint rawId) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public uint mRawId
+    public static TypedServerNetId_RecipeNetIdTag__unsigned_int__0_ Create(nint rawId)
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        var handle = NativeMethods.TablePtr->C4.hs_create_b1855810((void*)rawId);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new TypedServerNetId_RecipeNetIdTag__unsigned_int__0_((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public uint operator_unsigned_int() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public uint mRawId
+    {
+        get => NativeMethods.TablePtr->C4.hs_get_2378d6b5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_2378d6b5((void*)__hosihikari_shim_handle, value);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
+    public uint operator_unsigned_int()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_a2cefb8b((void*)__hosihikari_shim_handle);
+    }
+
+    [global::System.Obsolete("BindingShim cannot project this member: the static field has no symbol in the IR.", false)]
     public static uint sNextRawId
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: the static field has no symbol in the IR.");
+        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: the static field has no symbol in the IR.");
+    }
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_e4fb3fe3((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
     }
 }

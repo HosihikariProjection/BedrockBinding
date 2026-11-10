@@ -21,6 +21,8 @@ public sealed unsafe partial class CZString : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -88,13 +90,13 @@ public sealed unsafe partial class CZString : global::System.IDisposable
 
     public nint cstr_
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_41ea7c6c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_41ea7c6c((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_41ea7c6c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_41ea7c6c((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public bool operator_less(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value_Nested.CZString other)
     {
-        return NativeMethods.TablePtr->C1.hs_method_8a09c4f9((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
+        return NativeMethods.TablePtr->C2.hs_method_8a09c4f9((void*)__hosihikari_shim_handle, (void*)other.Handle) != 0;
     }
 
     public bool operator_less(string other)
@@ -112,7 +114,7 @@ public sealed unsafe partial class CZString : global::System.IDisposable
         global::System.Text.Encoding.UTF8.GetBytes(other, __hs_stringBytes0);
         fixed (byte* __hs_stringData0 = __hs_stringBytes0)
         {
-            return NativeMethods.TablePtr->C1.hs_method_3555cb11((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
+            return NativeMethods.TablePtr->C2.hs_method_3555cb11((void*)__hosihikari_shim_handle, __hs_stringData0, (nuint)__hs_stringByteCount0) != 0;
         }
     }
 
@@ -123,7 +125,7 @@ public sealed unsafe partial class CZString : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_cb2d16f0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_cb2d16f0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

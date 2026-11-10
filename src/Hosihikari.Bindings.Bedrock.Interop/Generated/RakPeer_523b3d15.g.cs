@@ -21,6 +21,8 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -1304,20 +1306,20 @@ public sealed unsafe partial class RakPeer : global::System.IDisposable
 
     public nint userUpdateThreadData
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8217c0ca((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8217c0ca((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8217c0ca((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8217c0ca((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint userUpdateThreadPtr_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8f7272ba((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8f7272ba((void*)__hosihikari_shim_handle);
     }
 
     public uint validationInteger
     {
-        get => NativeMethods.TablePtr->C2.hs_get_47440c04((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_47440c04((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_47440c04((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_47440c04((void*)__hosihikari_shim_handle, value);
     }
 
 

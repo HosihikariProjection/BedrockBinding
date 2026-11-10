@@ -21,6 +21,8 @@ public sealed unsafe partial class ToggleDownfallCommand : global::System.IDispo
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,8 +42,8 @@ public sealed unsafe partial class ToggleDownfallCommand : global::System.IDispo
 
     public int mCommandSymbol
     {
-        get => NativeMethods.TablePtr->C3.hs_get_69c8ef11((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C3.hs_set_69c8ef11((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_69c8ef11((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C4.hs_set_69c8ef11((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
@@ -98,7 +100,7 @@ public sealed unsafe partial class ToggleDownfallCommand : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_3a342c83((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_3a342c83((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

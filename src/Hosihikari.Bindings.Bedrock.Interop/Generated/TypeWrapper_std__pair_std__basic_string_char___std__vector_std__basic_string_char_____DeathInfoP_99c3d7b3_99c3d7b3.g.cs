@@ -21,6 +21,8 @@ public sealed unsafe partial class TypeWrapper_std__pair_std__basic_string_char_
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

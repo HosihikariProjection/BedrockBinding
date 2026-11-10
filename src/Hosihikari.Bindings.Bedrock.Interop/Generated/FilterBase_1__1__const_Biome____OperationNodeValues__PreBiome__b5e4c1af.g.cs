@@ -22,6 +22,8 @@ public sealed partial class FilterBase_1__1__const_Biome____OperationNodeValues_
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

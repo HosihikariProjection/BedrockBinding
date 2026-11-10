@@ -21,6 +21,8 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -44,7 +46,7 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
 
     public static TickingAreasManager Create()
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_b046fd48();
+        var handle = NativeMethods.TablePtr->C4.hs_create_b046fd48();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -59,7 +61,7 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
 
     public static TickingAreasManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreasManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_3a4f4000((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_3a4f4000((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -115,43 +117,43 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mActiveAreas_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_47662e39((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_47662e39((void*)__hosihikari_shim_handle);
     }
 
     public bool mIsPreloadDone
     {
-        get => NativeMethods.TablePtr->C3.hs_get_ff57ee69((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C3.hs_set_ff57ee69((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C4.hs_get_ff57ee69((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C4.hs_set_ff57ee69((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelStorage_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_4f2b020b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_4f2b020b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLimitPolicy_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_9be61b0d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_9be61b0d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mOnCanStartGameSaveTimerCheckSubscription_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_394bd464((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_394bd464((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPendingAreas_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_13507cdb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_13507cdb((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPostReloadActorAdded_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_09372256((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_09372256((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -193,7 +195,7 @@ public sealed unsafe partial class TickingAreasManager : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_15251ae5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_15251ae5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -21,6 +21,8 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
 
     public static MessageNumberNode Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_946d3edc();
+        var handle = NativeMethods.TablePtr->C3.hs_create_946d3edc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +53,7 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
 
     public static MessageNumberNode Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_cbebb771((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_cbebb771((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +65,18 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk3b91de_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_05b47df9((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_05b47df9((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk470a41_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_3078124a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_3078124a((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode((nint)NativeMethods.TablePtr->C2.hs_method_7563993e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.MessageNumberNode((nint)NativeMethods.TablePtr->C3.hs_method_7563993e((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +85,7 @@ public sealed unsafe partial class MessageNumberNode : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_a85da0a2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_a85da0a2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

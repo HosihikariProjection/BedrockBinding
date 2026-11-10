@@ -21,6 +21,8 @@ public sealed unsafe partial class ContainerValidationCommitObject : global::Sys
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class ContainerValidationCommitObject : global::Sys
 
     public static ContainerValidationCommitObject Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationCommitObject arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_d37ddbcd((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d37ddbcd((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +53,7 @@ public sealed unsafe partial class ContainerValidationCommitObject : global::Sys
 
     public bool append(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationCommitObject? other)
     {
-        return NativeMethods.TablePtr->C0.hs_method_65dc3ee4((void*)__hosihikari_shim_handle, (void*)(other?.Handle ?? 0)) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_65dc3ee4((void*)__hosihikari_shim_handle, (void*)(other?.Handle ?? 0)) != 0;
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -60,18 +62,18 @@ public sealed unsafe partial class ContainerValidationCommitObject : global::Sys
 
     public bool canCommit(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
     {
-        return NativeMethods.TablePtr->C0.hs_method_33af1c9f((void*)__hosihikari_shim_handle, (void*)screenContext.Handle) != 0;
+        return NativeMethods.TablePtr->C1.hs_method_33af1c9f((void*)__hosihikari_shim_handle, (void*)screenContext.Handle) != 0;
     }
 
     public void commit(global::Hosihikari.Bindings.Bedrock.Interop.ContainerScreenContext screenContext)
     {
-        NativeMethods.TablePtr->C0.hs_method_c7afa857((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
+        NativeMethods.TablePtr->C1.hs_method_c7afa857((void*)__hosihikari_shim_handle, (void*)screenContext.Handle);
     }
 
     public int mType
     {
-        get => NativeMethods.TablePtr->C0.hs_get_d9b47fc6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_d9b47fc6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_d9b47fc6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_d9b47fc6((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -81,7 +83,7 @@ public sealed unsafe partial class ContainerValidationCommitObject : global::Sys
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_56ec1dbf((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_56ec1dbf((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

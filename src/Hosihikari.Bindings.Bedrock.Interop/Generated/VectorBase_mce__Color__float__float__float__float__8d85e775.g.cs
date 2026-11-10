@@ -21,6 +21,8 @@ public sealed unsafe partial class VectorBase_mce__Color__float__float__float__f
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

@@ -21,6 +21,8 @@ public sealed unsafe partial class JumpControlSystem : global::System.IDisposabl
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -44,7 +46,7 @@ public sealed unsafe partial class JumpControlSystem : global::System.IDisposabl
 
     public static JumpControlSystem Create(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlSystem arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_3311d38b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_3311d38b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,7 +57,7 @@ public sealed unsafe partial class JumpControlSystem : global::System.IDisposabl
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.EntityRegistry registry)
     {
-        NativeMethods.TablePtr->C1.hs_method_80c8a987((void*)__hosihikari_shim_handle, (void*)registry.Handle);
+        NativeMethods.TablePtr->C2.hs_method_80c8a987((void*)__hosihikari_shim_handle, (void*)registry.Handle);
     }
 
 
@@ -65,7 +67,7 @@ public sealed unsafe partial class JumpControlSystem : global::System.IDisposabl
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_fb8d6396((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_fb8d6396((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

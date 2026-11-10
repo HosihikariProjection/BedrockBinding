@@ -74,7 +74,10 @@ if (-not (Test-Path $ClangCl)) { throw "clang-cl was not found at $ClangCl." }
 # imports into a delay-loaded import library against the run-time data. Prelink skips names
 # the data does not have; those stay unresolved imports of bedrock_runtime.dll either way.
 $Object = [System.IO.Path]::ChangeExtension($Output, ".obj")
-$Compile = "`"$ClangCl`" /nologo /std:c++20 /EHsc /MD /O2 /utf-8 /bigobj /c `"$ShimSource`" /I `"$ShimDirectory`" $IncludeArgs /Fo:`"$Object`""
+# The carrier builds with these; they decide which standard library branches the inline
+# bodies see, so they have to match the carrier's own build.
+$Defines = "/DLL_PLAT_S /DLL_EXPORT /D_HAS_CXX23=1 /D_AMD64_ /DUNICODE /DWIN32_LEAN_AND_MEAN /DNDEBUG"
+$Compile = "`"$ClangCl`" /nologo /std:c++20 /EHsc /MD /O2 /utf-8 /bigobj $Defines /c `"$ShimSource`" /I `"$ShimDirectory`" $IncludeArgs /Fo:`"$Object`""
 & cmd.exe /c "`"$DevCmd`" -arch=x64 -host_arch=x64 -no_logo >nul 2>&1 && $Compile"
 if ($LASTEXITCODE -ne 0) { throw "clang-cl could not compile the shim." }
 
@@ -103,9 +106,61 @@ New-Item -ItemType Directory -Force -Path (Join-Path $PrelinkDirectory "lib") | 
 if ($LASTEXITCODE -ne 0) { throw "prelink exited with $LASTEXITCODE." }
 
 $BedrockRuntimeLibrary = Join-Path $PrelinkDirectory "lib\bedrock_runtime_api.lib"
-$Link = "`"$ClangCl`" /nologo /LD `"$Object`" `"$BedrockRuntimeLibrary`" /Fe:`"$Output`" /link /DELAYLOAD:bedrock_runtime.dll delayimp.lib"
-& cmd.exe /c "`"$DevCmd`" -arch=x64 -host_arch=x64 -no_logo >nul 2>&1 && $Link"
-if ($LASTEXITCODE -ne 0) { throw "clang-cl could not link the shim." }
+
+# Prelink only imports the helpers the emitter names explicitly. An inline body can also
+# call a game function directly: a template destructor, a vector algorithm helper. Those
+# names cannot be known up front, so link, read the unresolved ones back from the linker's
+# output, and retry with an import library that supplies them. The delayed load switch keeps
+# a name the running build lacks a null thunk until it is used.
+$FmtLibraries = @(Get-ChildItem (Join-Path $env:LOCALAPPDATA (".xmake" + [IO.Path]::DirectorySeparatorChar + "packages" + [IO.Path]::DirectorySeparatorChar + "f" + [IO.Path]::DirectorySeparatorChar + "fmt")) -Recurse -Filter "fmt.lib" -ErrorAction SilentlyContinue |
+    Sort-Object FullName -Descending)
+if ($FmtLibraries.Count -eq 0) { throw "fmt.lib was not found; the carrier headers need it." }
+
+$LinkLog = Join-Path $OutputDirectory "shim-link.log"
+function Invoke-ShimLink([string]$DirectLibrary) {
+    $DirectArgument = if ($DirectLibrary) { "`"$DirectLibrary`"" } else { "" }
+    $Command = "`"$ClangCl`" /nologo /LD `"$Object`" `"$BedrockRuntimeLibrary`" $DirectArgument `"$($FmtLibraries[0].FullName)`" /Fe:`"$Output`" /link /DEMANGLE:NO /DELAYLOAD:bedrock_runtime.dll delayimp.lib > `"$LinkLog`" 2>&1"
+    & cmd.exe /c "`"$DevCmd`" -arch=x64 -host_arch=x64 -no_logo >nul 2>&1 && $Command"
+    return $LASTEXITCODE
+}
+
+$DirectLibrary = Join-Path $PrelinkDirectory (Join-Path "lib" "bedrock_runtime_direct.lib")
+$DefFile = [System.IO.Path]::ChangeExtension($DirectLibrary, ".def")
+$MsvcRoot = Join-Path $VsRoot (Join-Path "VC" (Join-Path "Tools" "MSVC"))
+$MsvcVersion = Get-ChildItem $MsvcRoot | Sort-Object Name -Descending | Select-Object -First 1 -ExpandProperty Name
+$LibExe = Join-Path $MsvcRoot (Join-Path $MsvcVersion (Join-Path "bin" (Join-Path "Hostx64" (Join-Path "x64" "lib.exe"))))
+
+# Each retry can leave a name for the next one: resolving a symbol pulls in its own
+# dependencies. Every name here is one the prelink data does not carry, so a round that
+# yields none means the object is as far as import libraries can take it.
+$Imported = @()
+for ($Attempt = 1; $Attempt -le 8; $Attempt++) {
+    if ((Invoke-ShimLink $(if ($Imported.Count) { $DirectLibrary } else { $null })) -eq 0) { break }
+    # The linker reports an unresolved import as "undefined symbol: __imp_<name>". Demangling
+    # is off so the message keeps the mangled spelling the def file needs; the prefix is
+    # only there when the reference came through __declspec(dllimport).
+    $Unresolved = @(Get-Content $LinkLog |
+        Where-Object { $_ -match 'undefined symbol:' } |
+        ForEach-Object { [regex]::Match($_, 'undefined symbol: (?:__imp_)?(\S+)') } |
+        Where-Object { $_.Success } |
+        ForEach-Object { $_.Groups[1].Value } |
+        Where-Object { $_ -match '^\?' -and $Imported -notcontains $_ } |
+        Sort-Object -Unique)
+    if ($Unresolved.Count -eq 0 -or $Attempt -eq 8) {
+        Get-Content $LinkLog -Tail 20
+        throw "clang-cl could not link the shim."
+    }
+
+    $Imported += $Unresolved
+    $Lines = @("LIBRARY bedrock_runtime.dll", "EXPORTS") + ($Imported | ForEach-Object { "  $_" })
+    [System.IO.File]::WriteAllLines($DefFile, $Lines)
+    & cmd.exe /c "`"$LibExe`" /nologo `/def:`"$DefFile`" `/out:`"$DirectLibrary`" /machine:x64 > nul 2>&1"
+    if ($LASTEXITCODE -ne 0) { throw "lib.exe could not build the direct import library." }
+    Write-Output "Link retry $Attempt with $($Imported.Count) direct import(s)."
+}
+
+Remove-Item $LinkLog -Force -ErrorAction SilentlyContinue
+
 Remove-Item $Object -Force -ErrorAction SilentlyContinue
 
 Write-Output "Built $Output"

@@ -21,6 +21,8 @@ public sealed unsafe partial class ContainerSetDataPacketPayload : global::Syste
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,20 +42,20 @@ public sealed unsafe partial class ContainerSetDataPacketPayload : global::Syste
 
     public sbyte mContainerId
     {
-        get => NativeMethods.TablePtr->C0.hs_get_95b00ed2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_95b00ed2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_95b00ed2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_95b00ed2((void*)__hosihikari_shim_handle, value);
     }
 
     public int mId
     {
-        get => NativeMethods.TablePtr->C0.hs_get_d5f67d82((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_d5f67d82((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_d5f67d82((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_d5f67d82((void*)__hosihikari_shim_handle, value);
     }
 
     public int mValue
     {
-        get => NativeMethods.TablePtr->C0.hs_get_ae8d06fb((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_ae8d06fb((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_ae8d06fb((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_ae8d06fb((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -62,7 +64,7 @@ public sealed unsafe partial class ContainerSetDataPacketPayload : global::Syste
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_6638e1b4((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_6638e1b4((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

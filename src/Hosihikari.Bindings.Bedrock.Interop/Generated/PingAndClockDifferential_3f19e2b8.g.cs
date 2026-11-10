@@ -21,6 +21,8 @@ public sealed unsafe partial class PingAndClockDifferential : global::System.IDi
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,14 +42,14 @@ public sealed unsafe partial class PingAndClockDifferential : global::System.IDi
 
     public ulong clockDifferential
     {
-        get => NativeMethods.TablePtr->C2.hs_get_c4132d96((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_c4132d96((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_c4132d96((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_c4132d96((void*)__hosihikari_shim_handle, value);
     }
 
     public ushort pingTime
     {
-        get => NativeMethods.TablePtr->C2.hs_get_b6df3b8c((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_b6df3b8c((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_b6df3b8c((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_b6df3b8c((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +58,7 @@ public sealed unsafe partial class PingAndClockDifferential : global::System.IDi
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_3f19e2b8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_3f19e2b8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

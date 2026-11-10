@@ -22,6 +22,8 @@ public sealed partial class list_standard_operations_Bedrock__JSONObject__NodeBa
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

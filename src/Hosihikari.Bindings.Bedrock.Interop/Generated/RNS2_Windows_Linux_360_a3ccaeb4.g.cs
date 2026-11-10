@@ -21,6 +21,8 @@ public sealed unsafe partial class RNS2_Windows_Linux_360 : global::System.IDisp
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

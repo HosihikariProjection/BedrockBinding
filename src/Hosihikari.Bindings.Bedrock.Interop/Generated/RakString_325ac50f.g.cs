@@ -21,6 +21,8 @@ public sealed unsafe partial class RakString : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -60,7 +62,7 @@ public sealed unsafe partial class RakString : global::System.IDisposable
 
     public static RakString Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_dbe32930();
+        var handle = NativeMethods.TablePtr->C3.hs_create_dbe32930();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,7 +73,7 @@ public sealed unsafe partial class RakString : global::System.IDisposable
 
     public static RakString Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_77e2f0f2((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_77e2f0f2((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -95,12 +97,12 @@ public sealed unsafe partial class RakString : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk886291_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_e97fa077((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_e97fa077((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString((nint)NativeMethods.TablePtr->C2.hs_method_39748394((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.RakString((nint)NativeMethods.TablePtr->C3.hs_method_39748394((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -109,7 +111,7 @@ public sealed unsafe partial class RakString : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_325ac50f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_325ac50f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

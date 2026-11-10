@@ -21,6 +21,8 @@ public sealed unsafe partial class VectorBase_ll__math__doubleN_4___double__doub
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

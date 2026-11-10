@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.Core;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class Observer_I18nObserver__std__mutex_
+public sealed unsafe partial class Observer_I18nObserver__std__mutex_ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -21,6 +20,8 @@ public sealed partial class Observer_I18nObserver__std__mutex_
     public static Observer_I18nObserver__std__mutex_ Borrow(nint handle) => new Observer_I18nObserver__std__mutex_(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
+
+    internal bool OwnsHandle => _ownsHandle;
 
     internal nint ReleaseHandle()
     {
@@ -39,34 +40,60 @@ public sealed partial class Observer_I18nObserver__std__mutex_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static Observer_I18nObserver__std__mutex_ Create() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static Observer_I18nObserver__std__mutex_ Create(nint subject) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void _onSubjectDestroyed() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint getSubject() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint mpSubject
+    public static Observer_I18nObserver__std__mutex_ Create()
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        var handle = NativeMethods.TablePtr->C1.hs_create_bcd90dda();
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new Observer_I18nObserver__std__mutex_((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void removeFromSubject() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public static Observer_I18nObserver__std__mutex_ Create(nint subject)
+    {
+        var handle = NativeMethods.TablePtr->C1.hs_create_0560e525((void*)subject);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        return new Observer_I18nObserver__std__mutex_((nint)handle);
+    }
+
+    public void _onSubjectDestroyed()
+    {
+        NativeMethods.TablePtr->C1.hs_method_9b03b51f((void*)__hosihikari_shim_handle);
+    }
+
+    public nint getSubject()
+    {
+        return (nint)NativeMethods.TablePtr->C1.hs_method_ac40fe70((void*)__hosihikari_shim_handle);
+    }
+
+    public nint mpSubject
+    {
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_3c09493d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_3c09493d((void*)__hosihikari_shim_handle, (void*)value);
+    }
+
+    public void removeFromSubject()
+    {
+        NativeMethods.TablePtr->C1.hs_method_7967e617((void*)__hosihikari_shim_handle);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C1.hs_destroy_7e3c6087((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

@@ -21,6 +21,8 @@ public sealed unsafe partial class associative_adapter_std__basic_string_char___
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

@@ -21,6 +21,8 @@ public sealed unsafe partial class JigsawBlockActor : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -210,25 +212,25 @@ public sealed unsafe partial class JigsawBlockActor : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mProperties_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_ef656791((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_ef656791((void*)__hosihikari_shim_handle);
     }
 
     public byte mRendererId
     {
-        get => NativeMethods.TablePtr->C1.hs_get_f8dfc9cf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_f8dfc9cf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_f8dfc9cf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_f8dfc9cf((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTerrainInterlockData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_12fcec0a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_12fcec0a((void*)__hosihikari_shim_handle);
     }
 
     public int mTickCount
     {
-        get => NativeMethods.TablePtr->C1.hs_get_180d89db((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_180d89db((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_180d89db((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_180d89db((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()

@@ -21,6 +21,8 @@ public sealed unsafe partial class move_only_function_void__const_Json__Value___
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

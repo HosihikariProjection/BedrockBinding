@@ -21,6 +21,8 @@ public sealed unsafe partial class ServerAuth : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class ServerAuth : global::System.IDisposable
 
     public static ServerAuth Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_56fba550();
+        var handle = NativeMethods.TablePtr->C1.hs_create_56fba550();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +53,7 @@ public sealed unsafe partial class ServerAuth : global::System.IDisposable
 
     public static ServerAuth Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.ServerAuth arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_d9359d2b((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_d9359d2b((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,12 +65,12 @@ public sealed unsafe partial class ServerAuth : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5a0a61_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_a32aace1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a32aace1((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.ServerAuth operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.ServerAuth arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.ServerAuth((nint)NativeMethods.TablePtr->C0.hs_method_a2ef1813((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationDebug_Nested.ServerAuth((nint)NativeMethods.TablePtr->C1.hs_method_a2ef1813((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -77,7 +79,7 @@ public sealed unsafe partial class ServerAuth : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_21fbeeed((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_21fbeeed((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

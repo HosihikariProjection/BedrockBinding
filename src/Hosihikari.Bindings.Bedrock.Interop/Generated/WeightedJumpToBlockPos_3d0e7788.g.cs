@@ -21,6 +21,8 @@ public sealed unsafe partial class WeightedJumpToBlockPos : global::System.IDisp
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class WeightedJumpToBlockPos : global::System.IDisp
 
     public static WeightedJumpToBlockPos Create(global::Hosihikari.Bindings.Bedrock.Interop.JumpToBlockGoal_Nested.WeightedJumpToBlockPos arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_6d3b342a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_6d3b342a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,20 +53,20 @@ public sealed unsafe partial class WeightedJumpToBlockPos : global::System.IDisp
 
     public int mWeight
     {
-        get => NativeMethods.TablePtr->C1.hs_get_06417036((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_06417036((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_06417036((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_06417036((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint targetPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_37b1d66d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_37b1d66d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint velocityVector_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3441d287((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3441d287((void*)__hosihikari_shim_handle);
     }
 
 
@@ -74,7 +76,7 @@ public sealed unsafe partial class WeightedJumpToBlockPos : global::System.IDisp
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_3d0e7788((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_3d0e7788((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -21,6 +21,8 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -44,7 +46,7 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
 
     public static OwnedContainer Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerOwner_Nested.OwnedContainer arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_fe2bcf7c((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_fe2bcf7c((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +58,7 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerModel_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d4975c25((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d4975c25((void*)__hosihikari_shim_handle);
     }
 
 
@@ -66,7 +68,7 @@ public sealed unsafe partial class OwnedContainer : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_47ddc28a((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_47ddc28a((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

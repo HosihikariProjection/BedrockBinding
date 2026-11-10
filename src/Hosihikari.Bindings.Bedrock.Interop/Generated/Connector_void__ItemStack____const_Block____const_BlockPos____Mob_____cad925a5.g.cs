@@ -22,6 +22,8 @@ public sealed partial class Connector_void__ItemStack____const_Block____const_Bl
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

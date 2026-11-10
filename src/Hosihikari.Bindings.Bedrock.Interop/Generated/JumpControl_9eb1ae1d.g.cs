@@ -21,6 +21,8 @@ public sealed unsafe partial class JumpControl : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -76,7 +78,7 @@ public sealed unsafe partial class JumpControl : global::System.IDisposable
 
     public static JumpControl Create(global::Hosihikari.Bindings.Bedrock.Interop.JumpControl arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_8f89ae38((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_8f89ae38((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -91,37 +93,37 @@ public sealed unsafe partial class JumpControl : global::System.IDisposable
 
     public int getJumpDelay(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent parent)
     {
-        return NativeMethods.TablePtr->C1.hs_method_d2956f97((void*)__hosihikari_shim_handle, (void*)parent.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_d2956f97((void*)__hosihikari_shim_handle, (void*)parent.Handle);
     }
 
     public float getJumpPower(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent parent)
     {
-        return NativeMethods.TablePtr->C1.hs_method_6fef0f52((void*)__hosihikari_shim_handle, (void*)parent.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_6fef0f52((void*)__hosihikari_shim_handle, (void*)parent.Handle);
     }
 
     public int getJumpType(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent parent)
     {
-        return NativeMethods.TablePtr->C1.hs_method_6dc18849((void*)__hosihikari_shim_handle, (void*)parent.Handle);
+        return NativeMethods.TablePtr->C2.hs_method_6dc18849((void*)__hosihikari_shim_handle, (void*)parent.Handle);
     }
 
     public void initializeInternal(global::Hosihikari.Bindings.Bedrock.Interop.Mob mob, global::Hosihikari.Bindings.Bedrock.Interop.SharedTypes.v1_26_40.JumpControlComponentDefinition? description)
     {
-        NativeMethods.TablePtr->C1.hs_method_02f76cfd((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
+        NativeMethods.TablePtr->C2.hs_method_02f76cfd((void*)__hosihikari_shim_handle, (void*)mob.Handle, (void*)(description?.Handle ?? 0));
     }
 
     public void resetSpeedModifier(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_6f822cbb((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C2.hs_method_6f822cbb((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
     public void setJumpType(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent parent, int type)
     {
-        NativeMethods.TablePtr->C1.hs_method_96d12b26((void*)__hosihikari_shim_handle, (void*)parent.Handle, type);
+        NativeMethods.TablePtr->C2.hs_method_96d12b26((void*)__hosihikari_shim_handle, (void*)parent.Handle, type);
     }
 
     public void tick(global::Hosihikari.Bindings.Bedrock.Interop.JumpControlComponent parent, global::Hosihikari.Bindings.Bedrock.Interop.Mob mob)
     {
-        NativeMethods.TablePtr->C1.hs_method_4a7dbb0f((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
+        NativeMethods.TablePtr->C2.hs_method_4a7dbb0f((void*)__hosihikari_shim_handle, (void*)parent.Handle, (void*)mob.Handle);
     }
 
 
@@ -131,7 +133,7 @@ public sealed unsafe partial class JumpControl : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_9eb1ae1d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_9eb1ae1d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

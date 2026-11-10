@@ -21,6 +21,8 @@ public sealed unsafe partial class Actor : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -3236,9 +3238,11 @@ public sealed unsafe partial class Actor : global::System.IDisposable
         return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'StackRefResult<EntityContext>' is not a known bindable declaration.", false)]
-    public static nint tryGetFromEntity(nint entity, bool includeRemoved) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'StackRefResult<EntityContext>' is not a known bindable declaration.");
+    public static global::Hosihikari.Bindings.Bedrock.Interop.Actor? tryGetFromEntity(global::Hosihikari.Bindings.Abi.SharedHandle? entity, bool includeRemoved)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C0.hs_method_ac677167(entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData), includeRemoved);
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+    }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
     public static nint tryGetFromEntity(nint entity, nint registry, bool includeRemoved) =>

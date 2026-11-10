@@ -21,6 +21,8 @@ public sealed unsafe partial class StyledWriter : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -60,7 +62,7 @@ public sealed unsafe partial class StyledWriter : global::System.IDisposable
 
     public static StyledWriter Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.StyledWriter arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_bd6dbeda((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_bd6dbeda((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -71,20 +73,20 @@ public sealed unsafe partial class StyledWriter : global::System.IDisposable
 
     public bool addChildValues_
     {
-        get => NativeMethods.TablePtr->C1.hs_get_94c64552((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_94c64552((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_94c64552((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_94c64552((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint childValues__Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1ebf6a01((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1ebf6a01((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint document__Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_00746d79((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_00746d79((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -93,20 +95,20 @@ public sealed unsafe partial class StyledWriter : global::System.IDisposable
 
     public int indentSize_
     {
-        get => NativeMethods.TablePtr->C1.hs_get_978cb5a6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_978cb5a6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_978cb5a6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_978cb5a6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint indentString__Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_d9a79959((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d9a79959((void*)__hosihikari_shim_handle);
     }
 
     public int rightMargin_
     {
-        get => NativeMethods.TablePtr->C1.hs_get_c008b35d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_c008b35d((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_c008b35d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_c008b35d((void*)__hosihikari_shim_handle, value);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -115,7 +117,7 @@ public sealed unsafe partial class StyledWriter : global::System.IDisposable
 
     public string write(global::Hosihikari.Bindings.Bedrock.Interop.Json.Value root)
     {
-        var __hs_view = NativeMethods.TablePtr->C1.hs_method_532b4aa6((void*)__hosihikari_shim_handle, (void*)root.Handle);
+        var __hs_view = NativeMethods.TablePtr->C2.hs_method_532b4aa6((void*)__hosihikari_shim_handle, (void*)root.Handle);
         return global::System.Text.Encoding.UTF8.GetString(__hs_view.Data, checked((int)__hs_view.Size));
     }
 
@@ -138,7 +140,7 @@ public sealed unsafe partial class StyledWriter : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_d9b04fe0((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_d9b04fe0((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

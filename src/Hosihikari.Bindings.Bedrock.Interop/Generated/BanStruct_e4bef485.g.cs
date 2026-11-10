@@ -21,6 +21,8 @@ public sealed unsafe partial class BanStruct : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,14 +42,14 @@ public sealed unsafe partial class BanStruct : global::System.IDisposable
 
     public nint IP
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_4288e159((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_4288e159((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_4288e159((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_4288e159((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public uint timeout
     {
-        get => NativeMethods.TablePtr->C2.hs_get_a665de36((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_a665de36((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_a665de36((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_a665de36((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -56,7 +58,7 @@ public sealed unsafe partial class BanStruct : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_e4bef485((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_e4bef485((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

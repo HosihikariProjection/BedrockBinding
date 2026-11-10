@@ -22,6 +22,8 @@ public sealed partial class SimpleWeightedEntry_std__basic_string_char__
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

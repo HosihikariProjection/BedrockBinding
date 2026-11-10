@@ -21,6 +21,8 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
 
     public static RakWebSocketDataFrameParser Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_11610498();
+        var handle = NativeMethods.TablePtr->C3.hs_create_11610498();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +53,7 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
 
     public static RakWebSocketDataFrameParser Create(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_25365321((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_25365321((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,36 +69,36 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk435c68_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_bdd15516((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_bdd15516((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk860b01_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_03b6d637((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_03b6d637((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk9b171a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_5da8931c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_5da8931c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkc8951a_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_26401720((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_26401720((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkf9f17c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_42eb2331((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_42eb2331((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser((nint)NativeMethods.TablePtr->C2.hs_method_3ccc4784((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakWebSocketDataFrameParser((nint)NativeMethods.TablePtr->C3.hs_method_3ccc4784((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -105,7 +107,7 @@ public sealed unsafe partial class RakWebSocketDataFrameParser : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_113047e2((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_113047e2((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

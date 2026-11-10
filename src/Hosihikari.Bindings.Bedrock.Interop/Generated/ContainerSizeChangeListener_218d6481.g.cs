@@ -21,6 +21,8 @@ public sealed unsafe partial class ContainerSizeChangeListener : global::System.
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class ContainerSizeChangeListener : global::System.
 
     public static ContainerSizeChangeListener Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerSizeChangeListener arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_c4596fa5((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_c4596fa5((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +53,7 @@ public sealed unsafe partial class ContainerSizeChangeListener : global::System.
 
     public void containerSizeChanged(int size)
     {
-        NativeMethods.TablePtr->C0.hs_method_9e816e7a((void*)__hosihikari_shim_handle, size);
+        NativeMethods.TablePtr->C1.hs_method_9e816e7a((void*)__hosihikari_shim_handle, size);
     }
 
 
@@ -61,7 +63,7 @@ public sealed unsafe partial class ContainerSizeChangeListener : global::System.
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_218d6481((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_218d6481((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

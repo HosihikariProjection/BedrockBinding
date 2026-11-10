@@ -21,6 +21,8 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -56,7 +58,7 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
 
     public static ContainerScreenValidation Create()
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_5932fecc();
+        var handle = NativeMethods.TablePtr->C1.hs_create_5932fecc();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -107,50 +109,50 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
 
     public int mCaller
     {
-        get => NativeMethods.TablePtr->C0.hs_get_80ea0af6((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_80ea0af6((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_80ea0af6((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_80ea0af6((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerIndexMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_642de733((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_642de733((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerScreenValidator_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_7d6bf00a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7d6bf00a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerValidatorMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_7e0b4fde((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_7e0b4fde((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDebug_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_b2cda87e((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_b2cda87e((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredictiveContainers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_35c67b44((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_35c67b44((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScreenContext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_d3bcb5bf((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_d3bcb5bf((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValidationStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_73af6a57((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_73af6a57((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -159,7 +161,7 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
 
     public global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult tryActivate()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)NativeMethods.TablePtr->C0.hs_method_27e4024a((void*)__hosihikari_shim_handle));
+        return new global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationResult((nint)NativeMethods.TablePtr->C1.hs_method_27e4024a((void*)__hosihikari_shim_handle));
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -193,7 +195,7 @@ public sealed unsafe partial class ContainerScreenValidation : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_4310f2c8((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_4310f2c8((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

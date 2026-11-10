@@ -21,6 +21,8 @@ public sealed unsafe partial class BlockFriction11920Upgrade : global::System.ID
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

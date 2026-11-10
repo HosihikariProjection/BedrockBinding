@@ -21,6 +21,8 @@ public sealed unsafe partial class DatagramHistoryNode : global::System.IDisposa
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class DatagramHistoryNode : global::System.IDisposa
 
     public static DatagramHistoryNode Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_6b6860d7();
+        var handle = NativeMethods.TablePtr->C3.hs_create_6b6860d7();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +53,7 @@ public sealed unsafe partial class DatagramHistoryNode : global::System.IDisposa
 
     public static DatagramHistoryNode Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_1e524502((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_1e524502((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,18 +65,18 @@ public sealed unsafe partial class DatagramHistoryNode : global::System.IDisposa
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk187106_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_aa714b0a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_aa714b0a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb2aca8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1011b0cd((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1011b0cd((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode((nint)NativeMethods.TablePtr->C2.hs_method_412903be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ReliabilityLayer_Nested.DatagramHistoryNode((nint)NativeMethods.TablePtr->C3.hs_method_412903be((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -83,7 +85,7 @@ public sealed unsafe partial class DatagramHistoryNode : global::System.IDisposa
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_ac24bb77((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_ac24bb77((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

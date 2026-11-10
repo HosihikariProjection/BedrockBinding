@@ -21,6 +21,8 @@ public sealed unsafe partial class CommutativeGroup_Vec2__float__float_ : global
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

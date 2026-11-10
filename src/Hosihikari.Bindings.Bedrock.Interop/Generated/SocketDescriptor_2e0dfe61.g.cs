@@ -21,6 +21,8 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
 
     public static SocketDescriptor Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_bbb78dd2();
+        var handle = NativeMethods.TablePtr->C3.hs_create_bbb78dd2();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +53,7 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
 
     public static SocketDescriptor Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_ab9387b7((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_ab9387b7((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -63,48 +65,48 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk2cd57c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_13e3ca23((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_13e3ca23((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk49c06c_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_82539c88((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_82539c88((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk4d2ea1_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_2c1352ea((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_2c1352ea((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnk5da729_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_57b4cbb7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_57b4cbb7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkb22ff8_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_1da3a2dc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_1da3a2dc((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkbdabaa_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_915740a8((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_915740a8((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mUnkd9c721_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_dc1f38fc((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_dc1f38fc((void*)__hosihikari_shim_handle);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor((nint)NativeMethods.TablePtr->C2.hs_method_1f7c22e4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakNet.SocketDescriptor((nint)NativeMethods.TablePtr->C3.hs_method_1f7c22e4((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     public void Dispose()
@@ -113,7 +115,7 @@ public sealed unsafe partial class SocketDescriptor : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_2e0dfe61((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_2e0dfe61((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

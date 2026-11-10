@@ -22,6 +22,8 @@ public sealed partial class AsyncResultBase_Bedrock__Http__Response_
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

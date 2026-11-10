@@ -22,6 +22,8 @@ public sealed partial class SimpleWeightedEntry_std__vector_std__shared_ptr_Pool
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

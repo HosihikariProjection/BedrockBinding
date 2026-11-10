@@ -21,6 +21,8 @@ public sealed unsafe partial class ContainerValidationCraftInputs : global::Syst
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class ContainerValidationCraftInputs : global::Syst
 
     public static ContainerValidationCraftInputs Create(global::Hosihikari.Bindings.Bedrock.Interop.ContainerValidationCraftInputs arg0)
     {
-        var handle = NativeMethods.TablePtr->C0.hs_create_2e75a040((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C1.hs_create_2e75a040((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,7 +58,7 @@ public sealed unsafe partial class ContainerValidationCraftInputs : global::Syst
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_0747cd0d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_0747cd0d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

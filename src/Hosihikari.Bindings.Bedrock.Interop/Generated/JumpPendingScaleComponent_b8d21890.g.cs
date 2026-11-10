@@ -21,6 +21,8 @@ public sealed unsafe partial class JumpPendingScaleComponent : global::System.ID
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,8 +42,8 @@ public sealed unsafe partial class JumpPendingScaleComponent : global::System.ID
 
     public float mValue
     {
-        get => NativeMethods.TablePtr->C1.hs_get_24056d52((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_24056d52((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_24056d52((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_24056d52((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -50,7 +52,7 @@ public sealed unsafe partial class JumpPendingScaleComponent : global::System.ID
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_b8d21890((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_b8d21890((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

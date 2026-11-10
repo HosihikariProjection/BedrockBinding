@@ -21,6 +21,8 @@ public sealed unsafe partial class TickTimeManager : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -44,7 +46,7 @@ public sealed unsafe partial class TickTimeManager : global::System.IDisposable
 
     public static TickTimeManager Create(global::Hosihikari.Bindings.Bedrock.Interop.TickTimeManager arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_e96221f4((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_e96221f4((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -55,37 +57,37 @@ public sealed unsafe partial class TickTimeManager : global::System.IDisposable
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getWorldClockRegistry_c2df79bc()
     {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_c2df79bc((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_c2df79bc((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     public global::Hosihikari.Bindings.Abi.SharedHandle? getWorldClockRegistry_d5880b48()
     {
-        var __hs_shared = NativeMethods.TablePtr->C3.hs_method_d5880b48((void*)__hosihikari_shim_handle);
+        var __hs_shared = NativeMethods.TablePtr->C4.hs_method_d5880b48((void*)__hosihikari_shim_handle);
         return global::Hosihikari.Bindings.Abi.SharedHandle.FromNative(__hs_shared);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mLevelData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_e473360a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_e473360a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPacketSender_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_1abed119((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_1abed119((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mWorldClockSubscriptions_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_0a4bd173((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_0a4bd173((void*)__hosihikari_shim_handle);
     }
 
     public void update()
     {
-        NativeMethods.TablePtr->C3.hs_method_eef5d91e((void*)__hosihikari_shim_handle);
+        NativeMethods.TablePtr->C4.hs_method_eef5d91e((void*)__hosihikari_shim_handle);
     }
 
 
@@ -95,7 +97,7 @@ public sealed unsafe partial class TickTimeManager : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_ff5b9057((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_ff5b9057((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

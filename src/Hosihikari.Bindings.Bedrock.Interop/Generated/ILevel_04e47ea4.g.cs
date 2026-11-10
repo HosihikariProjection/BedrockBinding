@@ -21,6 +21,8 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -90,9 +92,11 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_057b0fb7((void*)__hosihikari_shim_handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public nint addAutonomousEntity(nint region, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? addAutonomousEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Abi.SharedHandle? entity)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_5a33d7ea((void*)__hosihikari_shim_handle, (void*)region.Handle, entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+    }
 
     public void addBiomeTintedParticleEffect(global::Hosihikari.Bindings.Bedrock.Interop.HashedString effect, global::Hosihikari.Bindings.Bedrock.Interop.BlockPos pos, global::Hosihikari.Bindings.Bedrock.Interop.Block block, global::Hosihikari.Bindings.Bedrock.Interop.mce.Color? overrideColor)
     {
@@ -109,17 +113,23 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_8994669e((void*)__hosihikari_shim_handle, chunkViewSource?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public nint addDisplayEntity(nint region, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? addDisplayEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Abi.SharedHandle? entity)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_7fc30cb6((void*)__hosihikari_shim_handle, (void*)region.Handle, entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public nint addEntity(nint region, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? addEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Abi.SharedHandle? entity)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_c5e7920e((void*)__hosihikari_shim_handle, (void*)region.Handle, entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public nint addGlobalEntity(nint region, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? addGlobalEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Abi.SharedHandle? entity)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_cded309c((void*)__hosihikari_shim_handle, (void*)region.Handle, entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+    }
 
     public void addListener(global::Hosihikari.Bindings.Bedrock.Interop.LevelListener listener)
     {
@@ -156,9 +166,10 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_85a67259((void*)__hosihikari_shim_handle, (void*)dimensionId.Handle, tickingAreas?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public void addUser(nint userEntity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public void addUser(global::Hosihikari.Bindings.Abi.SharedHandle? userEntity)
+    {
+        NativeMethods.TablePtr->C1.hs_method_d7b1bf34((void*)__hosihikari_shim_handle, userEntity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public nint asClientLevel()
     {
@@ -1883,9 +1894,10 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
         return NativeMethods.TablePtr->C1.hs_method_b9621ad9((void*)__hosihikari_shim_handle, (void*)player.Handle) != 0;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public void levelCleanupQueueEntityRemoval(nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public void levelCleanupQueueEntityRemoval(global::Hosihikari.Bindings.Abi.SharedHandle? entity)
+    {
+        NativeMethods.TablePtr->C1.hs_method_fbcf598c((void*)__hosihikari_shim_handle, entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void loadBlockDefinitionGroup(global::Hosihikari.Bindings.Bedrock.Interop.Experiments experiments)
     {
@@ -1967,17 +1979,22 @@ public sealed unsafe partial class ILevel : global::System.IDisposable
         NativeMethods.TablePtr->C1.hs_method_31bb6a91((void*)__hosihikari_shim_handle, (void*)pos.Handle, (void*)color.Handle, instantaneousEffect);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public nint putEntity(nint region, nint id, nint runtimeId, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? putEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID id, global::Hosihikari.Bindings.Bedrock.Interop.ActorRuntimeID runtimeId, global::Hosihikari.Bindings.Abi.SharedHandle? entity)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_21325596((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, (void*)runtimeId.Handle, entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public nint putEntity(nint region, nint id, nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public global::Hosihikari.Bindings.Bedrock.Interop.Actor? putEntity(global::Hosihikari.Bindings.Bedrock.Interop.BlockSource region, global::Hosihikari.Bindings.Bedrock.Interop.ActorUniqueID id, global::Hosihikari.Bindings.Abi.SharedHandle? entity)
+    {
+        var __hs_handle = NativeMethods.TablePtr->C1.hs_method_43d1056c((void*)__hosihikari_shim_handle, (void*)region.Handle, (void*)id.Handle, entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+        return __hs_handle != null ? new global::Hosihikari.Bindings.Bedrock.Interop.Actor((nint)__hs_handle, false) : null;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.", false)]
-    public void queueEntityDestruction(nint entity) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value record parameter 'OwnerPtr<EntityContext>' is not a known bindable declaration.");
+    public void queueEntityDestruction(global::Hosihikari.Bindings.Abi.SharedHandle? entity)
+    {
+        NativeMethods.TablePtr->C1.hs_method_b85c8027((void*)__hosihikari_shim_handle, entity?.ToNative() ?? default(global::Hosihikari.Bindings.Abi.SharedHandleData));
+    }
 
     public void registerTemporaryPointer(nint ptr)
     {

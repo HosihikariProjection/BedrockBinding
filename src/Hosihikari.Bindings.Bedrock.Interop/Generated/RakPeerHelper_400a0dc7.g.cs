@@ -21,6 +21,8 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
 
     public static RakPeerHelper Create()
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_5463bf6c();
+        var handle = NativeMethods.TablePtr->C3.hs_create_5463bf6c();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,7 +53,7 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
 
     public static RakPeerHelper Create(global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_8575f841((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_8575f841((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -67,30 +69,30 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mBoundPorts_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_8936596c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_8936596c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mConnectionIndices_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_540bb06a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_540bb06a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mIPSupportInterface_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_6d253c85((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_6d253c85((void*)__hosihikari_shim_handle);
     }
 
     public int mResult
     {
-        get => NativeMethods.TablePtr->C2.hs_get_8132d522((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C2.hs_set_8132d522((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C3.hs_get_8132d522((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C3.hs_set_8132d522((void*)__hosihikari_shim_handle, value);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper operator_assign(global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper arg0)
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper((nint)NativeMethods.TablePtr->C2.hs_method_0e7bd98c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.RakPeerHelper((nint)NativeMethods.TablePtr->C3.hs_method_0e7bd98c((void*)__hosihikari_shim_handle, (void*)arg0.Handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -103,7 +105,7 @@ public sealed unsafe partial class RakPeerHelper : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_400a0dc7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_400a0dc7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

@@ -21,6 +21,8 @@ public sealed unsafe partial class JigsawJunction : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class JigsawJunction : global::System.IDisposable
 
     public static JigsawJunction Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawJunction arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_e3bda3e1((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_e3bda3e1((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,32 +53,32 @@ public sealed unsafe partial class JigsawJunction : global::System.IDisposable
 
     public int mDeltaSourceY
     {
-        get => NativeMethods.TablePtr->C1.hs_get_7bc8ade5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_7bc8ade5((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_7bc8ade5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_7bc8ade5((void*)__hosihikari_shim_handle, value);
     }
 
     public int mDeltaTargetY
     {
-        get => NativeMethods.TablePtr->C1.hs_get_9fee1fbf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_9fee1fbf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_9fee1fbf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_9fee1fbf((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mSourceBlockPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f8b68fe2((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f8b68fe2((void*)__hosihikari_shim_handle);
     }
 
     public byte mSourceProjection
     {
-        get => NativeMethods.TablePtr->C1.hs_get_77496ca7((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_77496ca7((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_77496ca7((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_77496ca7((void*)__hosihikari_shim_handle, value);
     }
 
     public byte mTargetProjection
     {
-        get => NativeMethods.TablePtr->C1.hs_get_73eb56e2((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_73eb56e2((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_73eb56e2((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_73eb56e2((void*)__hosihikari_shim_handle, value);
     }
 
 
@@ -86,7 +88,7 @@ public sealed unsafe partial class JigsawJunction : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_49496bb7((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_49496bb7((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

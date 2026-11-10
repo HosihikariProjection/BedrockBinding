@@ -21,6 +21,8 @@ public sealed unsafe partial class JigsawStructureRegistry : global::System.IDis
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -57,49 +59,49 @@ public sealed unsafe partial class JigsawStructureRegistry : global::System.IDis
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawActorRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3b33bcc3((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3b33bcc3((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawBlockRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0412c727((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0412c727((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawBlockTagRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_5f990aac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_5f990aac((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawElementRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_a694b647((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_a694b647((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawPoolLookupMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_762088e7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_762088e7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mJigsawStructureData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_75c17d27((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_75c17d27((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_6da0a21b((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6da0a21b((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mStructureSetRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_3d0b44ca((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_3d0b44ca((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -113,7 +115,7 @@ public sealed unsafe partial class JigsawStructureRegistry : global::System.IDis
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_82396256((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_82396256((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

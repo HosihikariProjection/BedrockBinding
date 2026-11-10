@@ -21,6 +21,8 @@ public sealed unsafe partial class D3D12_RAYTRACING_GEOMETRY_DESC : global::Syst
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

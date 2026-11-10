@@ -21,6 +21,8 @@ public sealed unsafe partial class ValueHolder : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,44 +42,44 @@ public sealed unsafe partial class ValueHolder : global::System.IDisposable
 
     public nint array_
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_0b4927a5((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_0b4927a5((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_0b4927a5((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_0b4927a5((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public bool bool_
     {
-        get => NativeMethods.TablePtr->C1.hs_get_3196bcb0((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_3196bcb0((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_3196bcb0((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_3196bcb0((void*)__hosihikari_shim_handle, value);
     }
 
     public long int_
     {
-        get => NativeMethods.TablePtr->C1.hs_get_a873c991((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_a873c991((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a873c991((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_a873c991((void*)__hosihikari_shim_handle, value);
     }
 
     public nint map_
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_49c8319d((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_49c8319d((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_49c8319d((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_49c8319d((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public double real_
     {
-        get => NativeMethods.TablePtr->C1.hs_get_aba1c76f((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_aba1c76f((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_aba1c76f((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_aba1c76f((void*)__hosihikari_shim_handle, value);
     }
 
     public nint string_
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_8d49e7f8((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8d49e7f8((void*)__hosihikari_shim_handle, (void*)value);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_8d49e7f8((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_8d49e7f8((void*)__hosihikari_shim_handle, (void*)value);
     }
 
     public ulong uint_
     {
-        get => NativeMethods.TablePtr->C1.hs_get_9cfc6e63((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_9cfc6e63((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_9cfc6e63((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_9cfc6e63((void*)__hosihikari_shim_handle, value);
     }
 
     public void Dispose()
@@ -86,7 +88,7 @@ public sealed unsafe partial class ValueHolder : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_dfefa219((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_dfefa219((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

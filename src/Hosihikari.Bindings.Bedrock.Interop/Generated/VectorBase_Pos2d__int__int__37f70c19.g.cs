@@ -21,6 +21,8 @@ public sealed unsafe partial class VectorBase_Pos2d__int__int_ : global::System.
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

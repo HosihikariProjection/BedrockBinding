@@ -22,6 +22,8 @@ public sealed partial class CommutativeGroup_ll__math__doubleN_4___double__doubl
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

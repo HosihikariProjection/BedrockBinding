@@ -21,6 +21,8 @@ public sealed unsafe partial class JigsawEditorData : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -56,7 +58,7 @@ public sealed unsafe partial class JigsawEditorData : global::System.IDisposable
 
     public static JigsawEditorData Create()
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_13983fca();
+        var handle = NativeMethods.TablePtr->C2.hs_create_13983fca();
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -80,49 +82,49 @@ public sealed unsafe partial class JigsawEditorData : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mFinalBlock_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_6cd74f35((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_6cd74f35((void*)__hosihikari_shim_handle);
     }
 
     public byte mJointType
     {
-        get => NativeMethods.TablePtr->C1.hs_get_8f597502((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_8f597502((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_8f597502((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_8f597502((void*)__hosihikari_shim_handle, value);
     }
 
     public bool mJointTypeVisible
     {
-        get => NativeMethods.TablePtr->C1.hs_get_a52ccf21((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_a52ccf21((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_a52ccf21((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_a52ccf21((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mName_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_67e72fcb((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_67e72fcb((void*)__hosihikari_shim_handle);
     }
 
     public int mPlacementPriority
     {
-        get => NativeMethods.TablePtr->C1.hs_get_1331afaf((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_1331afaf((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_1331afaf((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_1331afaf((void*)__hosihikari_shim_handle, value);
     }
 
     public int mSelectionPriority
     {
-        get => NativeMethods.TablePtr->C1.hs_get_d5719843((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C1.hs_set_d5719843((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_d5719843((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C2.hs_set_d5719843((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTarget_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_b6e3aa28((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_b6e3aa28((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mTargetPool_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f23e3c91((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f23e3c91((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -140,7 +142,7 @@ public sealed unsafe partial class JigsawEditorData : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_7df6db47((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_7df6db47((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

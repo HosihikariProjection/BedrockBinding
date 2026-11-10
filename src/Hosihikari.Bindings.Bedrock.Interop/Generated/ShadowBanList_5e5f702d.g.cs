@@ -21,6 +21,8 @@ public sealed unsafe partial class ShadowBanList : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class ShadowBanList : global::System.IDisposable
 
     public static ShadowBanList Create(global::Hosihikari.Bindings.Bedrock.Interop.RakNet.ShadowBanList arg0)
     {
-        var handle = NativeMethods.TablePtr->C2.hs_create_e4f7f56a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C3.hs_create_e4f7f56a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,25 +58,25 @@ public sealed unsafe partial class ShadowBanList : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint appHandshakeGracePeriod_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d5ee8a8d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d5ee8a8d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint banExpiryDuration_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_edbbadee((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_edbbadee((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBanCallback_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_c995c9a7((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_c995c9a7((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEntries_Address
     {
-        get => (nint)NativeMethods.TablePtr->C2.hs_get_d41901ce((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C3.hs_get_d41901ce((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -88,7 +90,7 @@ public sealed unsafe partial class ShadowBanList : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C2.hs_destroy_5e5f702d((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C3.hs_destroy_5e5f702d((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

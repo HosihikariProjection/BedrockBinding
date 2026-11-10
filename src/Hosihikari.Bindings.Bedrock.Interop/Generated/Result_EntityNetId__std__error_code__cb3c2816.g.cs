@@ -21,6 +21,8 @@ public sealed unsafe partial class Result_EntityNetId__std__error_code_ : global
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

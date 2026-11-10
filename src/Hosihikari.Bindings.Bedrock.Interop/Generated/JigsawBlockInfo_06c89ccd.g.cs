@@ -21,6 +21,8 @@ public sealed unsafe partial class JigsawBlockInfo : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class JigsawBlockInfo : global::System.IDisposable
 
     public static JigsawBlockInfo Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawBlockInfo arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_d3d8140a((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_d3d8140a((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,24 +53,24 @@ public sealed unsafe partial class JigsawBlockInfo : global::System.IDisposable
 
     public nint mBlock
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_9a1db191((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_9a1db191((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mEditorData_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1341e6d5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1341e6d5((void*)__hosihikari_shim_handle);
     }
 
     public nint mFinalBlock
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_2819b32a((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_2819b32a((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPos_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_1a075b32((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_1a075b32((void*)__hosihikari_shim_handle);
     }
 
 
@@ -78,7 +80,7 @@ public sealed unsafe partial class JigsawBlockInfo : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_06c89ccd((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_06c89ccd((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

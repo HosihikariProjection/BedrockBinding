@@ -21,6 +21,8 @@ public sealed unsafe partial class JigsawStructureBlockTagRulesRegistry : global
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class JigsawStructureBlockTagRulesRegistry : global
 
     public static JigsawStructureBlockTagRulesRegistry Create(global::Hosihikari.Bindings.Bedrock.Interop.JigsawStructureBlockTagRulesRegistry arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_76fd082e((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_76fd082e((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -56,13 +58,13 @@ public sealed unsafe partial class JigsawStructureBlockTagRulesRegistry : global
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockTagRuleLookupMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e11b4890((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e11b4890((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mBlockTagRulesRegistry_Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_20d65f25((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_20d65f25((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -76,7 +78,7 @@ public sealed unsafe partial class JigsawStructureBlockTagRulesRegistry : global
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_893c7c78((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_893c7c78((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

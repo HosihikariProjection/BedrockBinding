@@ -21,6 +21,8 @@ public sealed unsafe partial class ContainerScreenValidationCrafting : global::S
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,50 +42,50 @@ public sealed unsafe partial class ContainerScreenValidationCrafting : global::S
 
     public int mCaller
     {
-        get => NativeMethods.TablePtr->C0.hs_get_093ef070((void*)__hosihikari_shim_handle);
-        set => NativeMethods.TablePtr->C0.hs_set_093ef070((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C1.hs_get_093ef070((void*)__hosihikari_shim_handle);
+        set => NativeMethods.TablePtr->C1.hs_set_093ef070((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerIndexMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_a0351367((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_a0351367((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerScreenValidator_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_cc9794ac((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_cc9794ac((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mContainerValidatorMap_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_015a9f0d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_015a9f0d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mDebug_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_035fe70d((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_035fe70d((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mPredictiveContainers_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_03eecf0c((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_03eecf0c((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mScreenContext_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_345a3e47((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_345a3e47((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint mValidationStack_Address
     {
-        get => (nint)NativeMethods.TablePtr->C0.hs_get_79243b77((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C1.hs_get_79243b77((void*)__hosihikari_shim_handle);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -113,7 +115,7 @@ public sealed unsafe partial class ContainerScreenValidationCrafting : global::S
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_48671e7f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_48671e7f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

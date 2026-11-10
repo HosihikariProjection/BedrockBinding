@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop.brstd.detail.function;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class function_base_impl_brstd__detail__function__DerivedType__MoveOnly__void__false__int____ItemStack_9dca40a6
+public sealed unsafe partial class function_base_impl_brstd__detail__function__DerivedType__MoveOnly__void__false__int____ItemStack_9dca40a6 : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -21,6 +20,8 @@ public sealed partial class function_base_impl_brstd__detail__function__DerivedT
     public static function_base_impl_brstd__detail__function__DerivedType__MoveOnly__void__false__int____ItemStack_9dca40a6 Borrow(nint handle) => new function_base_impl_brstd__detail__function__DerivedType__MoveOnly__void__false__int____ItemStack_9dca40a6(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
+
+    internal bool OwnsHandle => _ownsHandle;
 
     internal nint ReleaseHandle()
     {
@@ -39,7 +40,21 @@ public sealed partial class function_base_impl_brstd__detail__function__DerivedT
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool operator_bool() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool operator_bool()
+    {
+        return NativeMethods.TablePtr->C4.hs_method_77003fed((void*)__hosihikari_shim_handle) != 0;
+    }
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C4.hs_destroy_9dca40a6((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

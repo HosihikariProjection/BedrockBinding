@@ -22,6 +22,8 @@ public sealed partial class _unnamed_struct_at_C__Users_root_source_repos_hosihi
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

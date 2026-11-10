@@ -21,6 +21,8 @@ public sealed unsafe partial class TickingAreaList : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -48,7 +50,7 @@ public sealed unsafe partial class TickingAreaList : global::System.IDisposable
 
     public static TickingAreaList Create(global::Hosihikari.Bindings.Bedrock.Interop.TickingAreaList arg0)
     {
-        var handle = NativeMethods.TablePtr->C3.hs_create_c36404b0((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C4.hs_create_c36404b0((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -65,7 +67,7 @@ public sealed unsafe partial class TickingAreaList : global::System.IDisposable
     // The native field type is not projected; this is the address of the field storage.
     public nint mTickingAreas_Address
     {
-        get => (nint)NativeMethods.TablePtr->C3.hs_get_04970bf5((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C4.hs_get_04970bf5((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -74,7 +76,7 @@ public sealed unsafe partial class TickingAreaList : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C3.hs_destroy_b4455bf5((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C4.hs_destroy_b4455bf5((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

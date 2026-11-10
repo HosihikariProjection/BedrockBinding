@@ -21,6 +21,8 @@ public sealed unsafe partial class ContainerRuntimeIdTag : global::System.IDispo
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -44,7 +46,7 @@ public sealed unsafe partial class ContainerRuntimeIdTag : global::System.IDispo
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C0.hs_destroy_3bc35726((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C1.hs_destroy_3bc35726((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

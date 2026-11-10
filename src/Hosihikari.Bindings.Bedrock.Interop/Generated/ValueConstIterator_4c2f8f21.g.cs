@@ -21,6 +21,8 @@ public sealed unsafe partial class ValueConstIterator : global::System.IDisposab
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -40,7 +42,7 @@ public sealed unsafe partial class ValueConstIterator : global::System.IDisposab
 
     public static ValueConstIterator Create(global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator arg0)
     {
-        var handle = NativeMethods.TablePtr->C1.hs_create_ef7563ad((void*)arg0.Handle);
+        var handle = NativeMethods.TablePtr->C2.hs_create_ef7563ad((void*)arg0.Handle);
         if (handle == null)
         {
             throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
@@ -51,12 +53,12 @@ public sealed unsafe partial class ValueConstIterator : global::System.IDisposab
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.Value operator_multiply()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C1.hs_method_d397ba9a((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.Value((nint)NativeMethods.TablePtr->C2.hs_method_d397ba9a((void*)__hosihikari_shim_handle), false);
     }
 
     public global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator operator_operator__()
     {
-        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator((nint)NativeMethods.TablePtr->C1.hs_method_4740e90a((void*)__hosihikari_shim_handle), false);
+        return new global::Hosihikari.Bindings.Bedrock.Interop.Json.ValueConstIterator((nint)NativeMethods.TablePtr->C2.hs_method_4740e90a((void*)__hosihikari_shim_handle), false);
     }
 
     [global::System.Obsolete("BindingShim cannot project this member: the carrier annotates this member MCNAPI, so the run time does not export it.", false)]
@@ -70,20 +72,20 @@ public sealed unsafe partial class ValueConstIterator : global::System.IDisposab
 
     public bool isArray_
     {
-        get => NativeMethods.TablePtr->C1.hs_get_7d1e342b((void*)__hosihikari_shim_handle) != 0;
-        set => NativeMethods.TablePtr->C1.hs_set_7d1e342b((void*)__hosihikari_shim_handle, value);
+        get => NativeMethods.TablePtr->C2.hs_get_7d1e342b((void*)__hosihikari_shim_handle) != 0;
+        set => NativeMethods.TablePtr->C2.hs_set_7d1e342b((void*)__hosihikari_shim_handle, value);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint array__Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_f66fe9f1((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_f66fe9f1((void*)__hosihikari_shim_handle);
     }
 
     // The native field type is not projected; this is the address of the field storage.
     public nint map__Address
     {
-        get => (nint)NativeMethods.TablePtr->C1.hs_get_e4317238((void*)__hosihikari_shim_handle);
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_e4317238((void*)__hosihikari_shim_handle);
     }
 
     public void Dispose()
@@ -92,7 +94,7 @@ public sealed unsafe partial class ValueConstIterator : global::System.IDisposab
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_4c2f8f21((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_4c2f8f21((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

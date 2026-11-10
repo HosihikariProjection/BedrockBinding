@@ -22,6 +22,8 @@ public sealed partial class flat_map_int__int__std__less_int___std__vector_int__
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

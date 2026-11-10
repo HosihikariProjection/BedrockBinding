@@ -4,8 +4,7 @@
 
 namespace Hosihikari.Bindings.Bedrock.Interop;
 
-[global::System.Obsolete("BindingShim cannot project any member of this type; it is exported for type identity only.", false)]
-public sealed partial class MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__
+public sealed unsafe partial class MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__ : global::System.IDisposable
 {
     private nint __hosihikari_shim_handle;
     private readonly bool _ownsHandle;
@@ -21,6 +20,8 @@ public sealed partial class MovePriorityQueue_BlockTickingQueue__BlockTick__std_
     public static MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__ Borrow(nint handle) => new MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__(handle, false);
 
     public nint Handle => __hosihikari_shim_handle;
+
+    internal bool OwnsHandle => _ownsHandle;
 
     internal nint ReleaseHandle()
     {
@@ -39,66 +40,90 @@ public sealed partial class MovePriorityQueue_BlockTickingQueue__BlockTick__std_
         return __hs_handle;
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public static MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__ Create(nint arg0) =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint begin_9eab32b1() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint begin_17d61144() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void clear() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public bool empty() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint end_b12e145d() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint end_e3fc5183() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint getInternalContainer() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint mC
+    public static MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__ Create(global::Hosihikari.Bindings.Bedrock.Interop.MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__ arg0)
     {
-        get => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
-        set => throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+        var handle = NativeMethods.TablePtr->C2.hs_create_8438e85a((void*)arg0.Handle);
+        if (handle == null)
+        {
+            throw new global::System.InvalidOperationException(NativeMethods.GetLastError() ?? "BindingShim create call failed.");
+        }
+
+        return new MovePriorityQueue_BlockTickingQueue__BlockTick__std__greater_BlockTickingQueue__BlockTick__((nint)handle);
     }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint pop() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<BlockTickingQueue::BlockTick>>>' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint begin_9eab32b1() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<BlockTickingQueue::BlockTick>>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void resort() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<BlockTickingQueue::BlockTick>>>' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint begin_17d61144() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<BlockTickingQueue::BlockTick>>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public ulong size() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public void clear()
+    {
+        NativeMethods.TablePtr->C2.hs_method_6ec681f4((void*)__hosihikari_shim_handle);
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint top_2f65d4fc() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    public bool empty()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_961c80c1((void*)__hosihikari_shim_handle) != 0;
+    }
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public nint top_2d8ff382() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<BlockTickingQueue::BlockTick>>>' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint end_b12e145d() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::_Vector_const_iterator<std::_Vector_val<std::_Simple_types<BlockTickingQueue::BlockTick>>>' requires --link-carrier or --virtual-dispatch.");
 
-    [global::System.Obsolete("BindingShim cannot project this member: template classes are not supported by symbol dispatch.", false)]
-    public void Destroy() =>
-        throw new global::System.NotSupportedException("BindingShim cannot project this member: template classes are not supported by symbol dispatch.");
+    [global::System.Obsolete("BindingShim cannot project this member: by-value return type 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<BlockTickingQueue::BlockTick>>>' requires --link-carrier or --virtual-dispatch.", false)]
+    public nint end_e3fc5183() =>
+        throw new global::System.NotSupportedException("BindingShim cannot project this member: by-value return type 'std::_Vector_iterator<std::_Vector_val<std::_Simple_types<BlockTickingQueue::BlockTick>>>' requires --link-carrier or --virtual-dispatch.");
+
+    public nint getInternalContainer()
+    {
+        return (nint)NativeMethods.TablePtr->C2.hs_method_e98b2bc0((void*)__hosihikari_shim_handle);
+    }
+
+    // The native field type is not projected; this is the address of the field storage.
+    public nint mC_Address
+    {
+        get => (nint)NativeMethods.TablePtr->C2.hs_get_d9d6d5d4((void*)__hosihikari_shim_handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick pop()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)NativeMethods.TablePtr->C2.hs_method_84e74fcd((void*)__hosihikari_shim_handle));
+    }
+
+    public void resort()
+    {
+        NativeMethods.TablePtr->C2.hs_method_85d5c536((void*)__hosihikari_shim_handle);
+    }
+
+    public ulong size()
+    {
+        return NativeMethods.TablePtr->C2.hs_method_00faff90((void*)__hosihikari_shim_handle);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick top_2f65d4fc()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)NativeMethods.TablePtr->C2.hs_method_2f65d4fc((void*)__hosihikari_shim_handle), false);
+    }
+
+    public global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick top_2d8ff382()
+    {
+        return new global::Hosihikari.Bindings.Bedrock.Interop.BlockTickingQueue_Nested.BlockTick((nint)NativeMethods.TablePtr->C2.hs_method_2d8ff382((void*)__hosihikari_shim_handle), false);
+    }
+
+
+    public void Dispose()
+    {
+        if (__hosihikari_shim_handle != 0)
+        {
+            if (_ownsHandle)
+            {
+                NativeMethods.TablePtr->C2.hs_destroy_ed07c3f2((void*)__hosihikari_shim_handle);
+            }
+
+            __hosihikari_shim_handle = 0;
+        }
+    }
 }

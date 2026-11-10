@@ -22,6 +22,8 @@ public sealed partial class bitset_base_brstd__bitset_109__unsigned_long_long___
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

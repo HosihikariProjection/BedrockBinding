@@ -21,6 +21,8 @@ public sealed unsafe partial class JumpInputSystem : global::System.IDisposable
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
@@ -44,7 +46,7 @@ public sealed unsafe partial class JumpInputSystem : global::System.IDisposable
         {
             if (_ownsHandle)
             {
-                NativeMethods.TablePtr->C1.hs_destroy_5e46884f((void*)__hosihikari_shim_handle);
+                NativeMethods.TablePtr->C2.hs_destroy_5e46884f((void*)__hosihikari_shim_handle);
             }
 
             __hosihikari_shim_handle = 0;

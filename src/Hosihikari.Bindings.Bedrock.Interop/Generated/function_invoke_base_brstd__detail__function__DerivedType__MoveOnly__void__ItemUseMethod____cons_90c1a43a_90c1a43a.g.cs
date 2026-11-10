@@ -22,6 +22,8 @@ public sealed partial class function_invoke_base_brstd__detail__function__Derive
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)

@@ -21,6 +21,8 @@ public sealed unsafe partial class function_invoke_brstd__detail__function__Deri
 
     public nint Handle => __hosihikari_shim_handle;
 
+    internal bool OwnsHandle => _ownsHandle;
+
     internal nint ReleaseHandle()
     {
         if (__hosihikari_shim_handle == 0)
