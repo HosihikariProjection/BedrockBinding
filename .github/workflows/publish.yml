@@ -46,9 +46,26 @@ jobs:
       - name: Verify generated sources
         run: python scripts/verify_generated.py
 
+      - name: Cache LLVM
+        id: llvm-cache
+        uses: actions/cache@v4
+        with:
+          path: llvm.tar.xz
+          key: llvm-23.1.0-windows-x64
+
+      - name: Download LLVM
+        if: steps.llvm-cache.outputs.cache-hit != 'true'
+        run: |
+          curl.exe -fsSL -o llvm.tar.xz https://github.com/llvm/llvm-project/releases/download/llvmorg-23.1.0/clang+llvm-23.1.0-x86_64-pc-windows-msvc.tar.xz
+
+      - name: Extract LLVM
+        run: |
+          New-Item -ItemType Directory -Force llvm | Out-Null
+          tar -xf llvm.tar.xz -C llvm --strip-components=1
+
       - name: Build native shim
         run: |
-          $env:PATH = "C:/Program Files/LLVM/bin;$env:PATH"
+          $env:HOSIHIKARI_CLANG_CL = "${{ github.workspace }}/llvm/bin/clang-cl.exe"
           powershell -NoProfile -ExecutionPolicy Bypass -File native/BindingShim/build.ps1 -Configuration win-x64-server -LeviLaminaRoot Third/LeviLamina -Output artifacts/native/Hosihikari.Bindings.Bedrock.Shim.dll
 
       - name: Pack
